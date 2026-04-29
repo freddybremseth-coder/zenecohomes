@@ -599,6 +599,10 @@ select {
   line-height: 1.8;
 }
 
+.area-property-link {
+  margin-top: 22px;
+}
+
 .list-heading {
   display: flex;
   justify-content: space-between;

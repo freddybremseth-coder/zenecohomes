@@ -74,6 +74,12 @@ export default async function AreasPage() {
                       ))}
                     </ul>
                   )}
+                  <a
+                    className="text-button area-property-link"
+                    href={`/eiendommer?region=${group.key}&area=${encodeURIComponent(profile.name)}`}
+                  >
+                    Se boliger i {profile.name}
+                  </a>
                 </section>
               </article>
             ))
@@ -105,6 +111,9 @@ export default async function AreasPage() {
                 <h2>{profile.name}</h2>
                 {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
                 {profile.description && <p>{profile.description}</p>}
+                <a className="text-button area-property-link" href={`/eiendommer?area=${encodeURIComponent(profile.name)}`}>
+                  Se boliger i {profile.name}
+                </a>
               </section>
             </article>
           ))}

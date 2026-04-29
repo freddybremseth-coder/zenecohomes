@@ -225,6 +225,13 @@ export function propertyMatchesRegion(property: Property, region?: string) {
   return regionTerms.some((term) => normalizedHaystack.includes(normalizeSearchText(term)));
 }
 
+export function propertyMatchesArea(property: Property, area?: string) {
+  if (!area) return true;
+  const areaTerm = normalizeSearchText(area);
+  const normalizedHaystack = getPropertySearchText(property);
+  return normalizedHaystack.includes(areaTerm);
+}
+
 export function areaMatchesRegion(profile: AreaProfile, region?: string) {
   if (!region) return true;
   const selected = regions.find((item) => item.key === region);
