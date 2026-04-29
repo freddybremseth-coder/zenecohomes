@@ -8,3 +8,5 @@ config.local.php
 .DS_Store
 node_modules/
 vendor/
+.next/
+out/
