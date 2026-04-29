@@ -220,6 +220,14 @@ export function propertyMatchesRegion(property: Property, region?: string) {
   if (!region) return true;
   const selected = regions.find((item) => item.key === region);
   if (!selected) return true;
+  const normalizedRegion = normalizeSearchText(property.region || "");
+  if (normalizedRegion) {
+    const regionAliases = regions.flatMap((item) =>
+      item.aliases.map((alias) => ({ region: item.key, alias: normalizeSearchText(alias) })),
+    );
+    const explicitMatch = regionAliases.find(({ alias }) => normalizedRegion.includes(alias));
+    if (explicitMatch) return explicitMatch.region === selected.key;
+  }
   const normalizedHaystack = getPropertySearchText(property);
   const regionTerms = [...selected.aliases, ...selected.locations];
   return regionTerms.some((term) => normalizedHaystack.includes(normalizeSearchText(term)));
