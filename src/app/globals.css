@@ -917,6 +917,237 @@ select {
   margin-top: 20px;
 }
 
+.portal-shell {
+  width: min(1220px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 78px 0 96px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+}
+
+.portal-sidebar,
+.portal-panel {
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(22, 34, 43, 0.07);
+}
+
+.portal-sidebar {
+  padding: 28px;
+  align-self: start;
+  position: sticky;
+  top: 96px;
+}
+
+.portal-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  background: var(--sage);
+  color: var(--gold);
+}
+
+.portal-sidebar h2,
+.portal-topline h2,
+.portal-panel h3 {
+  margin: 0;
+  color: var(--dark);
+}
+
+.portal-sidebar p,
+.message-preview p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.portal-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 8px;
+  margin: 26px 0;
+  background: #f7f6ef;
+}
+
+.portal-mode button,
+.access-panel button {
+  border: 0;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.portal-mode button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 10px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.portal-mode button.active {
+  background: white;
+  color: var(--dark);
+  box-shadow: 0 8px 20px rgba(22, 34, 43, 0.08);
+}
+
+.portal-admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--dark);
+  font-weight: 900;
+}
+
+.portal-main {
+  min-width: 0;
+}
+
+.portal-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.portal-topline span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.portal-panel {
+  padding: 26px;
+}
+
+.wide-panel {
+  grid-column: 1 / -1;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+
+.access-panel form {
+  display: grid;
+  gap: 14px;
+}
+
+.access-panel label {
+  display: grid;
+  gap: 7px;
+  color: var(--dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.access-panel input,
+.access-panel textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  padding: 13px 14px;
+  background: #fbfbf7;
+  color: var(--text);
+  font: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.access-panel textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.access-panel button {
+  padding: 14px 18px;
+  background: var(--gold);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.buyer-steps {
+  display: grid;
+  gap: 12px;
+}
+
+.buyer-steps div,
+.portal-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.buyer-steps div:last-child,
+.portal-list li:last-child {
+  border-bottom: 0;
+}
+
+.buyer-steps span,
+.portal-list span {
+  color: var(--text);
+}
+
+.buyer-steps strong {
+  color: var(--gold);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.portal-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portal-list li {
+  justify-content: flex-start;
+}
+
+.portal-list svg {
+  color: var(--gold);
+  flex: 0 0 auto;
+}
+
+.message-preview {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px;
+  background: #f8f8f3;
+  color: var(--gold);
+}
+
+.message-preview p {
+  margin: 0;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -972,12 +1203,23 @@ footer {
   .detail-layout,
   .detail-facts,
   .article-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .portal-shell,
+  .portal-grid {
     grid-template-columns: 1fr;
   }
 
   .sticky-card {
     position: static;
+  }
+
+  .portal-sidebar {
+    position: static;
+  }
+
+  .portal-topline {
+    display: grid;
+    align-items: start;
   }
 
   .form-grid {

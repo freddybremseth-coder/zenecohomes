@@ -3,9 +3,11 @@ import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
   getProperties,
+  getPropertySearchText,
   getPropertyTitle,
   getPropertyType,
   getRegionLabel,
+  normalizeSearchText,
   propertyMatchesRegion,
   regions,
 } from "@/lib/realtyflow";
@@ -20,15 +22,12 @@ export default async function PropertiesPage({
   searchParams: Promise<{ q?: string; type?: string; region?: string }>;
 }) {
   const params = await searchParams;
-  const q = (params.q || "").toLowerCase();
+  const q = normalizeSearchText(params.q || "");
   const type = (params.type || "").toLowerCase();
   const region = params.region || "";
   const properties = await getProperties();
   const filtered = properties.filter((property) => {
-    const haystack = [getPropertyTitle(property), property.location, property.town, property.ref, getPropertyType(property)]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
+    const haystack = getPropertySearchText(property);
     const matchesQuery = q ? haystack.includes(q) : true;
     const matchesType = type ? getPropertyType(property).toLowerCase().includes(type) : true;
     const matchesRegion = propertyMatchesRegion(property, region);

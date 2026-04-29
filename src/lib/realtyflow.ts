@@ -65,24 +65,26 @@ export type LeadPayload = {
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
 
-function normalizeSearchText(value: string) {
+export function normalizeSearchText(value: string) {
   return value
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 }
 
-export const regions: Array<{ key: RegionKey; label: string; description: string; locations: string[] }> = [
+export const regions: Array<{ key: RegionKey; label: string; description: string; aliases: string[]; locations: string[] }> = [
   {
     key: "costa-blanca-nord",
     label: "Costa Blanca Nord",
     description: "Altea, Albir, Calpe, Finestrat, Polop, La Nucia, Denia, Javea og Moraira.",
+    aliases: ["costa blanca north", "costa blanca north inland", "costa blanca nord", "costa blanca norte"],
     locations: ["altea", "albir", "calpe", "benidorm", "denia", "javea", "jávea", "polop", "la nucia", "finestrat", "villajoyosa", "moraira", "alfaz", "alfas"],
   },
   {
     key: "costa-blanca-sor",
     label: "Costa Blanca Sør",
     description: "Torrevieja, Orihuela Costa, Ciudad Quesada, Guardamar, Alicante og Santa Pola.",
+    aliases: ["costa blanca south", "costa blanca south inland", "costa blanca sør", "costa blanca sor", "costa blanca sur"],
     locations: [
       "torrevieja",
       "orihuela",
@@ -105,6 +107,7 @@ export const regions: Array<{ key: RegionKey; label: string; description: string
     key: "costa-calida",
     label: "Costa Calida",
     description: "San Pedro del Pinatar, Los Alcazares, La Manga, Cartagena, Murcia og nærliggende områder.",
+    aliases: ["costa calida", "costa cálida", "costa calida inland", "costa cálida inland"],
     locations: [
       "calida",
       "cálida",
@@ -191,16 +194,35 @@ export function getRegionLabel(region?: string) {
   return regions.find((item) => item.key === region)?.label || "";
 }
 
+export function getPropertySearchText(property: Property) {
+  return normalizeSearchText(
+    [
+      property.region,
+      property.location,
+      property.town,
+      property.title,
+      property.title_no,
+      property.title_en,
+      property.description,
+      property.description_no,
+      property.description_en,
+      property.ref,
+      property.external_id,
+      property.property_type,
+      property.type,
+    ]
+      .filter(Boolean)
+      .join(" "),
+  );
+}
+
 export function propertyMatchesRegion(property: Property, region?: string) {
   if (!region) return true;
   const selected = regions.find((item) => item.key === region);
   if (!selected) return true;
-  const haystack = [property.region, property.location, property.town]
-    .filter(Boolean)
-    .join(" ")
-    .toString();
-  const normalizedHaystack = normalizeSearchText(haystack);
-  return selected.locations.some((location) => normalizedHaystack.includes(normalizeSearchText(location)));
+  const normalizedHaystack = getPropertySearchText(property);
+  const regionTerms = [...selected.aliases, ...selected.locations];
+  return regionTerms.some((term) => normalizedHaystack.includes(normalizeSearchText(term)));
 }
 
 export function areaMatchesRegion(profile: AreaProfile, region?: string) {
@@ -217,7 +239,9 @@ export function areaMatchesRegion(profile: AreaProfile, region?: string) {
   if (region === "costa-calida" && /(calida|murcia)/.test(normalizedHaystack)) return true;
   if (region === "costa-blanca-nord" && /(nord|north|norte)/.test(normalizedHaystack)) return true;
 
-  return selected.locations.some((location) => normalizedHaystack.includes(normalizeSearchText(location)));
+  return [...selected.aliases, ...selected.locations].some((location) =>
+    normalizedHaystack.includes(normalizeSearchText(location)),
+  );
 }
 
 export async function getProperties(limit?: number): Promise<Property[]> {
