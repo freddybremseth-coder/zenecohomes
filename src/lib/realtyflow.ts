@@ -1,0 +1,213 @@
+export type Property = {
+  id?: string;
+  ref?: string;
+  external_id?: string;
+  title?: string;
+  title_no?: string;
+  title_en?: string;
+  description?: string;
+  description_no?: string;
+  description_en?: string;
+  location?: string;
+  town?: string;
+  price?: number;
+  bedrooms?: number;
+  bathrooms?: number;
+  built_area?: number;
+  area?: number;
+  plot_size?: number;
+  terrace_size?: number;
+  primary_image?: string;
+  image_path?: string;
+  gallery?: string[];
+  images_json?: string | string[];
+  property_type?: string;
+  type?: string;
+  pool?: boolean;
+  energy_rating?: string;
+  status?: string;
+};
+
+export type LeadPayload = {
+  name: string;
+  email: string;
+  phone?: string;
+  preferred_area?: string;
+  budget?: string;
+  property_type?: string;
+  bedrooms?: string;
+  timeline?: string;
+  message?: string;
+  source?: string;
+};
+
+const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
+
+export function getPropertyTitle(property: Property) {
+  return property.title_no || property.title || property.title_en || "Nybygg i Spania";
+}
+
+export function getPropertyDescription(property: Property) {
+  return property.description_no || property.description || property.description_en || "";
+}
+
+export function getPropertyRef(property: Property) {
+  return property.ref || property.external_id || property.id || "";
+}
+
+export function getPropertyType(property: Property) {
+  return property.property_type || property.type || "Nybygg";
+}
+
+export function getPropertyArea(property: Property) {
+  return property.built_area || property.area || 0;
+}
+
+export function getPropertyImages(property: Property) {
+  const images = new Set<string>();
+  if (property.primary_image) images.add(property.primary_image);
+  if (property.image_path) images.add(property.image_path);
+
+  if (Array.isArray(property.gallery)) {
+    property.gallery.filter(Boolean).forEach((image) => images.add(image));
+  }
+
+  if (Array.isArray(property.images_json)) {
+    property.images_json.filter(Boolean).forEach((image) => images.add(image));
+  }
+
+  if (typeof property.images_json === "string") {
+    try {
+      const parsed = JSON.parse(property.images_json);
+      if (Array.isArray(parsed)) parsed.filter(Boolean).forEach((image) => images.add(String(image)));
+    } catch {
+      if (property.images_json.startsWith("http")) images.add(property.images_json);
+    }
+  }
+
+  return Array.from(images);
+}
+
+export function getPrimaryImage(property: Property, fallback = fallbackImages[0]) {
+  return getPropertyImages(property)[0] || fallback;
+}
+
+export function formatPrice(price?: number) {
+  if (!price) return "Pris på forespørsel";
+  return new Intl.NumberFormat("nb-NO", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+  }).format(price);
+}
+
+export async function getProperties(limit?: number): Promise<Property[]> {
+  try {
+    const res = await fetch(`${REALTYFLOW_BASE}/api/properties`, {
+      next: { revalidate: 1800 },
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return fallbackProperties.slice(0, limit);
+    const data = await res.json();
+    const items = Array.isArray(data) ? data : [];
+    return (limit ? items.slice(0, limit) : items) as Property[];
+  } catch {
+    return fallbackProperties.slice(0, limit);
+  }
+}
+
+export async function getProperty(id: string): Promise<Property | null> {
+  const properties = await getProperties();
+  return (
+    properties.find((property) => {
+      const ref = getPropertyRef(property);
+      return property.id === id || ref === id;
+    }) || null
+  );
+}
+
+export async function sendLead(payload: LeadPayload) {
+  const notes = [
+    payload.message,
+    payload.preferred_area ? `Område: ${payload.preferred_area}` : "",
+    payload.budget ? `Budsjett: ${payload.budget}` : "",
+    payload.property_type ? `Boligtype: ${payload.property_type}` : "",
+    payload.bedrooms ? `Soverom: ${payload.bedrooms}` : "",
+    payload.timeline ? `Tidslinje: ${payload.timeline}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const res = await fetch(`${REALTYFLOW_BASE}/api/contacts`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: payload.name,
+      email: payload.email,
+      phone: payload.phone || null,
+      source: payload.source || "zenecohomes-next",
+      notes,
+      pipeline_status: "NEW",
+      brand_id: "zeneco",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error("Kunne ikke sende lead til RealtyFlow");
+  }
+
+  return res.json();
+}
+
+export const fallbackImages = [
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=82",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=82",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=82",
+];
+
+export const fallbackProperties: Property[] = [
+  {
+    id: "fallback-finestrat",
+    ref: "ZEH-FIN-001",
+    title_no: "Moderne villa med basseng",
+    location: "Finestrat",
+    price: 545000,
+    bedrooms: 3,
+    bathrooms: 3,
+    built_area: 156,
+    property_type: "Villa",
+    primary_image: fallbackImages[0],
+    description_no:
+      "Et stilrent nybygg med privat uteområde, moderne planløsning og kort vei til strand, golf og servicetilbud.",
+  },
+  {
+    id: "fallback-altea",
+    ref: "ZEH-ALT-002",
+    title_no: "Ny leilighet nær strand og sentrum",
+    location: "Altea",
+    price: 349000,
+    bedrooms: 2,
+    bathrooms: 2,
+    built_area: 98,
+    property_type: "Leilighet",
+    primary_image: fallbackImages[1],
+    description_no:
+      "Lys og moderne leilighet i et nyere prosjekt med gode fellesområder og praktisk beliggenhet.",
+  },
+  {
+    id: "fallback-polop",
+    ref: "ZEH-POL-003",
+    title_no: "Energieffektivt rekkehus med takterrasse",
+    location: "Polop",
+    price: 289000,
+    bedrooms: 3,
+    bathrooms: 2,
+    built_area: 112,
+    property_type: "Rekkehus",
+    primary_image: fallbackImages[2],
+    description_no:
+      "Et innbydende nybygg for deg som vil ha roligere omgivelser, fjellutsikt og kort vei til kysten.",
+  },
+];

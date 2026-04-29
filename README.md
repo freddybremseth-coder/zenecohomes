@@ -1,17 +1,34 @@
 # Zen Eco Homes
 
-Public website and client portal for Zen Eco Homes.
+Next.js website for Zen Eco Homes, deployed on Vercel.
 
 ## Architecture
 
-- `public_html/` is the web root that should be deployed to the hosting account.
+- `src/app/` is the active Next.js application used by Vercel.
 - RealtyFlow remains the CRM, property, content and automation system.
-- Zen Eco Homes receives website leads locally and forwards them to RealtyFlow.
-- Admin can pull active properties from RealtyFlow through `public_html/sync-realtyflow.php`.
+- The website reads property data from RealtyFlow and sends leads back to RealtyFlow.
+- `public_html/` is legacy PHP code kept as backup during migration. It is not used by Vercel.
+
+## Routes
+
+- `/` - front page
+- `/eiendommer` - property search/listing
+- `/eiendommer/[id]` - property detail page
+- `/omrader` - area guide
+- `/kjopsprosessen` - buying process
+- `/magasin` - magazine/guide page
+- `/min-side` - transition page for customer portal
+- `/api/contact` - lead capture endpoint forwarding to RealtyFlow
 
 ## Local/Production Config
 
-Never put real credentials in `public_html/config.php`.
+For the Next.js app, set these Vercel environment variables when needed:
+
+```bash
+REALTYFLOW_BASE_URL=https://realtyflow.chatgenius.pro
+```
+
+For legacy PHP hosting only, never put real credentials in `public_html/config.php`.
 
 Create `config.local.php` one level above `public_html`:
 
@@ -25,12 +42,26 @@ Then fill in database credentials and API keys. `config.local.php` is ignored by
 
 Current integration points:
 
-- Leads: `public_html/api.php` stores the lead locally and forwards it to `https://realtyflow.chatgenius.pro/api/contacts`.
-- Chatbot: `public_html/includes/footer.php` embeds the RealtyFlow chatbot with `data-brand="zeneco"`.
-- Properties: `public_html/sync-realtyflow.php` imports/upserts properties from RealtyFlow into the local `properties` table. This endpoint requires admin login.
+- Leads: `src/app/api/contact/route.ts` forwards website leads to `https://realtyflow.chatgenius.pro/api/contacts`.
+- Properties: `src/lib/realtyflow.ts` reads properties from `https://realtyflow.chatgenius.pro/api/properties`.
+- Legacy chatbot/PHP sync still exists under `public_html/` during migration.
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Build check:
+
+```bash
+npm run build
+```
 
 ## Security Notes
 
-- Customer login uses a 6-digit email code stored as a hash in `client_login_tokens`.
-- Admin login still depends on the existing `admins` table and `password_verify`.
+- Do not commit `config.local.php`, `.env` files, API keys, database passwords or GitHub tokens.
+- The Next.js contact endpoint does not store credentials.
+- Customer login/admin migration should be completed against RealtyFlow or Supabase before removing the legacy PHP portal.
 - Rotate any credentials that have previously been stored in public files.
