@@ -474,13 +474,24 @@ select {
 .region-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  position: sticky;
+  top: 72px;
+  z-index: 30;
   background: white;
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(22, 34, 43, 0.06);
 }
 
 .region-strip a {
   padding: 28px 34px;
   border-right: 1px solid var(--line);
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.region-strip a:hover {
+  background: var(--sage);
 }
 
 .region-strip strong,
@@ -501,6 +512,36 @@ select {
 .area-profile-grid {
   display: grid;
   gap: 22px;
+}
+
+.area-intro {
+  padding-bottom: 20px;
+}
+
+.region-area-section {
+  padding-top: 44px;
+  scroll-margin-top: 150px;
+}
+
+.region-heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: end;
+  text-align: left;
+}
+
+.region-heading div {
+  max-width: 720px;
+}
+
+.region-heading h2 {
+  margin-bottom: 10px;
+}
+
+.muted-card {
+  background: #f8f8f3;
 }
 
 .area-profile-card {
@@ -906,6 +947,15 @@ footer {
   .split,
   .area-profile-card {
     grid-template-columns: 1fr;
+  }
+
+  .region-strip {
+    position: static;
+  }
+
+  .region-heading {
+    display: grid;
+    text-align: left;
   }
 
   .trust-band div {

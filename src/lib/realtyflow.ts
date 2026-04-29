@@ -65,24 +65,67 @@ export type LeadPayload = {
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
 
+function normalizeSearchText(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 export const regions: Array<{ key: RegionKey; label: string; description: string; locations: string[] }> = [
   {
     key: "costa-blanca-nord",
     label: "Costa Blanca Nord",
     description: "Altea, Albir, Calpe, Finestrat, Polop, La Nucia, Denia, Javea og Moraira.",
-    locations: ["altea", "albir", "calpe", "benidorm", "denia", "javea", "jávea", "polop", "la nucia", "finestrat", "villajoyosa", "moraira", "alfaz"],
+    locations: ["altea", "albir", "calpe", "benidorm", "denia", "javea", "jávea", "polop", "la nucia", "finestrat", "villajoyosa", "moraira", "alfaz", "alfas"],
   },
   {
     key: "costa-blanca-sor",
     label: "Costa Blanca Sør",
     description: "Torrevieja, Orihuela Costa, Ciudad Quesada, Guardamar, Alicante og Santa Pola.",
-    locations: ["torrevieja", "orihuela", "ciudad quesada", "villamartin", "guardamar", "alicante", "santa pola", "rojales", "san miguel"],
+    locations: [
+      "torrevieja",
+      "orihuela",
+      "ciudad quesada",
+      "ciudad quesasa",
+      "villamartin",
+      "guardamar",
+      "alicante",
+      "santa pola",
+      "rojales",
+      "san miguel",
+      "campoamor",
+      "gran alacant",
+      "la mata",
+      "la zenia",
+      "san fulgencio",
+    ],
   },
   {
     key: "costa-calida",
     label: "Costa Calida",
     description: "San Pedro del Pinatar, Los Alcazares, La Manga, Cartagena, Murcia og nærliggende områder.",
-    locations: ["calida", "cálida", "murcia", "la manga", "san pedro", "pilar de la horadada", "los alcazares", "los alcázares", "torre pacheco", "cartagena"],
+    locations: [
+      "calida",
+      "cálida",
+      "murcia",
+      "la manga",
+      "san pedro",
+      "san pienetar",
+      "pilar de la horadada",
+      "los alcazares",
+      "los alcázares",
+      "torre pacheco",
+      "cartagena",
+      "altaona",
+      "calasparra",
+      "playa honda",
+      "roda",
+      "san javier",
+      "santiago de la ribera",
+      "santiage de la ribera",
+      "yecla",
+    ],
   },
 ];
 
@@ -155,8 +198,26 @@ export function propertyMatchesRegion(property: Property, region?: string) {
   const haystack = [property.region, property.location, property.town]
     .filter(Boolean)
     .join(" ")
-    .toLowerCase();
-  return selected.locations.some((location) => haystack.includes(location));
+    .toString();
+  const normalizedHaystack = normalizeSearchText(haystack);
+  return selected.locations.some((location) => normalizedHaystack.includes(normalizeSearchText(location)));
+}
+
+export function areaMatchesRegion(profile: AreaProfile, region?: string) {
+  if (!region) return true;
+  const selected = regions.find((item) => item.key === region);
+  if (!selected) return true;
+  const haystack = [profile.region, profile.name, profile.slug]
+    .filter(Boolean)
+    .join(" ")
+    .toString();
+  const normalizedHaystack = normalizeSearchText(haystack);
+
+  if (region === "costa-blanca-sor" && /(sor|south|sur)/.test(normalizedHaystack)) return true;
+  if (region === "costa-calida" && /(calida|murcia)/.test(normalizedHaystack)) return true;
+  if (region === "costa-blanca-nord" && /(nord|north|norte)/.test(normalizedHaystack)) return true;
+
+  return selected.locations.some((location) => normalizedHaystack.includes(normalizeSearchText(location)));
 }
 
 export async function getProperties(limit?: number): Promise<Property[]> {
@@ -177,7 +238,7 @@ export async function getProperties(limit?: number): Promise<Property[]> {
 export async function getAreaProfiles(): Promise<AreaProfile[]> {
   try {
     const res = await fetch(`${REALTYFLOW_BASE}/api/area-profiles?brandId=zeneco&public=1`, {
-      next: { revalidate: 1800 },
+      cache: "no-store",
       headers: { Accept: "application/json" },
     });
     if (!res.ok) return [];
