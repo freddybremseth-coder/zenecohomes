@@ -107,6 +107,34 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Hvorfor Zeneco</p>
+          <h2>En roligere og mer strukturert vei til bolig i Spania</h2>
+          <p>
+            Mange kjøpere møter et uoversiktlig marked med like prospekter, ulike meglere og lite norsk oppfølging.
+            Zeneco samler områdevalg, boligmatch og dialog i én ryddig prosess.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article>
+            <strong>01</strong>
+            <h3>Område først</h3>
+            <p>Vi hjelper deg å sortere Costa Blanca Nord, Costa Blanca Sør og Costa Calida før du forelsker deg i feil bolig.</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3>Nybygg og prosjekter</h3>
+            <p>Fokus på moderne boliger, energieffektive løsninger, lavere vedlikehold og tryggere overtakelse.</p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3>Digital oppfølging</h3>
+            <p>RealtyFlow holder orden på leads, favoritter, områder og neste steg, slik at du slipper å starte på nytt hver gang.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="contact-section" id="kontakt">
         <div>
           <p className="eyebrow">Klar for en prat?</p>

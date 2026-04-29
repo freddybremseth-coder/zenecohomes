@@ -371,6 +371,42 @@ select {
   color: var(--gold);
 }
 
+.proof-section {
+  padding-top: 24px;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.proof-grid article {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 32px rgba(22, 34, 43, 0.06);
+}
+
+.proof-grid strong {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+.proof-grid h3 {
+  margin: 12px 0 10px;
+  color: var(--dark);
+  font-size: 1.28rem;
+}
+
+.proof-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 .contact-section {
   display: flex;
   align-items: center;
@@ -444,6 +480,8 @@ select {
 
 .page-search {
   margin: 24px 0 0;
+  width: min(1120px, 100%);
+  grid-template-columns: minmax(220px, 1.4fr) repeat(4, minmax(132px, 0.7fr)) auto;
 }
 
 .quick-filters {
@@ -677,7 +715,7 @@ select {
 
 .detail-facts {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 12px;
   margin-bottom: 42px;
 }
@@ -716,6 +754,42 @@ select {
   white-space: pre-line;
 }
 
+.buyer-next-steps {
+  margin-top: 18px;
+  padding: 30px;
+  background: var(--sage);
+  border: 1px solid rgba(22, 34, 43, 0.08);
+}
+
+.buyer-next-steps h2 {
+  margin: 0 0 18px;
+}
+
+.buyer-next-steps div {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px 0;
+  border-top: 1px solid rgba(22, 34, 43, 0.1);
+}
+
+.buyer-next-steps span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: white;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.buyer-next-steps p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -745,6 +819,28 @@ select {
 .sticky-card p {
   color: var(--muted);
   line-height: 1.7;
+}
+
+.property-cta-row {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.mini-cta {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  background: #fbfbf7;
+  color: var(--dark);
+  font-weight: 900;
+}
+
+.mini-cta svg {
+  color: var(--gold);
 }
 
 .lead-form {
@@ -1205,6 +1301,7 @@ footer {
   .region-strip,
   .property-grid,
   .split,
+  .proof-grid,
   .area-profile-card {
     grid-template-columns: 1fr;
   }

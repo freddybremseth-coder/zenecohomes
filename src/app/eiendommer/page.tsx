@@ -25,13 +25,24 @@ export const metadata = {
 export default async function PropertiesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; type?: string; region?: string; area?: string }>;
+  searchParams: Promise<{
+    q?: string;
+    type?: string;
+    region?: string;
+    area?: string;
+    minPrice?: string;
+    maxPrice?: string;
+    bedrooms?: string;
+  }>;
 }) {
   const params = await searchParams;
   const q = normalizeSearchText(params.q || "");
   const type = (params.type || "").toLowerCase();
   const region = params.region || "";
   const area = params.area || "";
+  const minPrice = Number(params.minPrice || 0);
+  const maxPrice = Number(params.maxPrice || 0);
+  const minBedrooms = Number(params.bedrooms || 0);
   const properties = await getProperties();
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
@@ -39,7 +50,10 @@ export default async function PropertiesPage({
     const matchesType = type ? getPropertyType(property).toLowerCase().includes(type) : true;
     const matchesRegion = propertyMatchesRegion(property, region);
     const matchesArea = propertyMatchesArea(property, area);
-    return matchesQuery && matchesType && matchesRegion && matchesArea;
+    const matchesMinPrice = minPrice && property.price ? property.price >= minPrice : true;
+    const matchesMaxPrice = maxPrice && property.price ? property.price <= maxPrice : true;
+    const matchesBedrooms = minBedrooms && property.bedrooms ? property.bedrooms >= minBedrooms : true;
+    return matchesQuery && matchesType && matchesRegion && matchesArea && matchesMinPrice && matchesMaxPrice && matchesBedrooms;
   });
   const locationLabel = area || getRegionLabel(region);
 
@@ -74,6 +88,32 @@ export default async function PropertiesPage({
             <option>Villa</option>
             <option>Leilighet</option>
             <option>Rekkehus</option>
+            <option>Penthouse</option>
+          </select>
+          <select name="minPrice" defaultValue={params.minPrice || ""}>
+            <option value="">Pris fra</option>
+            <option value="200000">€200 000</option>
+            <option value="300000">€300 000</option>
+            <option value="400000">€400 000</option>
+            <option value="500000">€500 000</option>
+            <option value="750000">€750 000</option>
+            <option value="1000000">€1 000 000</option>
+          </select>
+          <select name="maxPrice" defaultValue={params.maxPrice || ""}>
+            <option value="">Pris til</option>
+            <option value="300000">€300 000</option>
+            <option value="400000">€400 000</option>
+            <option value="500000">€500 000</option>
+            <option value="750000">€750 000</option>
+            <option value="1000000">€1 000 000</option>
+            <option value="1500000">€1 500 000</option>
+          </select>
+          <select name="bedrooms" defaultValue={params.bedrooms || ""}>
+            <option value="">Soverom</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
           </select>
           <button type="submit">Søk</button>
         </form>

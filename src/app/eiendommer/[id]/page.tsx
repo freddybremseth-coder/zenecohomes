@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowLeft, Bath, BedDouble, Home, Ruler, Tag } from "lucide-react";
+import { ArrowLeft, Bath, BedDouble, Download, Home, MessageCircle, Ruler, Tag } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -60,6 +60,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   const images = getPropertyImages(property);
   const mainImage = getPrimaryImage(property);
   const description = getPropertyDescription(property);
+  const location = property.location || property.town || "Spania";
   const detailFacts = [
     { icon: <Tag />, label: `Ref ${getPropertyRef(property)}` },
     { icon: <Home />, label: getPropertyType(property) },
@@ -71,6 +72,33 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   return (
     <main>
       <SiteHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Residence",
+            name: getPropertyTitle(property),
+            description:
+              description ||
+              "Moderne bolig til salgs i Spania. Kontakt Zen Eco Homes for prospekt, tilgjengelighet og visning.",
+            image: images.length ? images : [mainImage],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: location,
+              addressCountry: "ES",
+            },
+            offers: property.price
+              ? {
+                  "@type": "Offer",
+                  price: property.price,
+                  priceCurrency: "EUR",
+                  availability: "https://schema.org/InStock",
+                }
+              : undefined,
+          }),
+        }}
+      />
       <section className="property-detail-hero" style={{ backgroundImage: `url(${mainImage})` }}>
         <div>
           <Link className="back-link" href="/eiendommer">
@@ -100,6 +128,22 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
             </p>
           </article>
 
+          <section className="buyer-next-steps">
+            <h2>Neste steg</h2>
+            <div>
+              <span>1</span>
+              <p>Vi sjekker oppdatert tilgjengelighet, pris og betalingsplan.</p>
+            </div>
+            <div>
+              <span>2</span>
+              <p>Du får prospekt, områdevurdering og relevante alternativer.</p>
+            </div>
+            <div>
+              <span>3</span>
+              <p>Vi planlegger digital eller fysisk visning og hjelper deg videre i kjøpsprosessen.</p>
+            </div>
+          </section>
+
           {images.length > 1 && (
             <div className="gallery-grid">
               {images.slice(1, 7).map((image) => (
@@ -112,6 +156,15 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
         <aside className="sticky-card">
           <h2>Interessert?</h2>
           <p>Send forespørsel, så hjelper vi deg med prospekt, visning og neste steg.</p>
+          <div className="property-cta-row">
+            <a className="mini-cta" href="#kontakt">
+              <MessageCircle size={16} /> Spør om boligen
+            </a>
+            <a className="mini-cta" href="#kontakt">
+              <Download size={16} /> Be om prospekt
+            </a>
+          </div>
+          <div id="kontakt" />
           <ContactForm source={`property-${getPropertyRef(property)}`} />
         </aside>
       </section>
