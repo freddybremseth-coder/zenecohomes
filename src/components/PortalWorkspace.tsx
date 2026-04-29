@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {
   Bell,
   Building2,
@@ -10,11 +10,13 @@ import {
   KeyRound,
   LayoutDashboard,
   LockKeyhole,
+  LogOut,
   Mail,
   MessageSquareText,
   ShieldCheck,
   UserRound,
 } from "lucide-react";
+import { supabase } from "@/lib/supabase-browser";
 
 const buyerSteps = [
   { label: "Behov og budsjett", status: "Klar" },
@@ -32,6 +34,23 @@ const savedProperties = [
 export function PortalWorkspace() {
   const [mode, setMode] = useState<"customer" | "admin">("customer");
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginStatus, setLoginStatus] = useState<"idle" | "sent" | "error" | "missing-config">("idle");
+  const [sessionEmail, setSessionEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!supabase) return;
+
+    supabase.auth.getUser().then(({ data }) => {
+      setSessionEmail(data.user?.email || null);
+    });
+
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSessionEmail(session?.user?.email || null);
+    });
+
+    return () => data.subscription.unsubscribe();
+  }, []);
 
   async function requestAccess(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -55,6 +74,31 @@ export function PortalWorkspace() {
     } catch {
       setStatus("error");
     }
+  }
+
+  async function sendMagicLink(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoginStatus("idle");
+
+    if (!supabase) {
+      setLoginStatus("missing-config");
+      return;
+    }
+
+    const { error } = await supabase.auth.signInWithOtp({
+      email: loginEmail,
+      options: {
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
+        shouldCreateUser: false,
+      },
+    });
+
+    setLoginStatus(error ? "error" : "sent");
+  }
+
+  async function signOut() {
+    await supabase?.auth.signOut();
+    setSessionEmail(null);
   }
 
   return (
@@ -83,16 +127,53 @@ export function PortalWorkspace() {
       <div className="portal-main">
         <div className="portal-topline">
           <div>
-            <p className="eyebrow">{mode === "admin" ? "Admin" : "Kundeportal"}</p>
+            <p className="eyebrow">{sessionEmail ? "Innlogget" : mode === "admin" ? "Admin" : "Kundeportal"}</p>
             <h2>{mode === "admin" ? "Kontrollrom for Zen Eco Homes" : "Din kjøpsreise i Spania"}</h2>
           </div>
-          <span>
-            <Bell size={17} /> Kobles mot RealtyFlow
-          </span>
+          {sessionEmail ? (
+            <button className="portal-session-button" onClick={signOut} type="button">
+              <LogOut size={17} /> Logg ut {sessionEmail}
+            </button>
+          ) : (
+            <span>
+              <Bell size={17} /> Kobles mot RealtyFlow
+            </span>
+          )}
         </div>
 
         <div className="portal-grid">
-          <article className="portal-panel access-panel">
+          {!sessionEmail && (
+            <article className="portal-panel access-panel">
+              <div className="panel-title">
+                <Mail size={20} />
+                <h3>Har du fått tilgang?</h3>
+              </div>
+              <form onSubmit={sendMagicLink}>
+                <label>
+                  E-post
+                  <input
+                    name="email"
+                    onChange={(event) => setLoginEmail(event.target.value)}
+                    placeholder="din@epost.no"
+                    required
+                    type="email"
+                    value={loginEmail}
+                  />
+                </label>
+                <button type="submit">Send innloggingslenke</button>
+                {loginStatus === "sent" && <p className="form-success">Sjekk e-posten din for innloggingslenke.</p>}
+                {loginStatus === "error" && (
+                  <p className="form-error">Kunne ikke sende lenke. Kontroller at du har fått tilgang først.</p>
+                )}
+                {loginStatus === "missing-config" && (
+                  <p className="form-error">Supabase-nøkler mangler i Zeneco-prosjektet.</p>
+                )}
+              </form>
+            </article>
+          )}
+
+          {!sessionEmail && (
+            <article className="portal-panel access-panel">
             <div className="panel-title">
               <KeyRound size={20} />
               <h3>{mode === "admin" ? "Admin-tilgang" : "Be om innlogging"}</h3>
@@ -119,6 +200,7 @@ export function PortalWorkspace() {
               {status === "error" && <p className="form-error">Kunne ikke sende akkurat nå. Prøv igjen.</p>}
             </form>
           </article>
+          )}
 
           <article className="portal-panel">
             <div className="panel-title">
