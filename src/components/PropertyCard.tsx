@@ -13,6 +13,11 @@ export function PropertyCard({ property, priority = false }: { property: Propert
   const href = `/eiendommer/${encodeURIComponent(getPropertyRef(property))}`;
   const title = getPropertyTitle(property);
   const image = getPrimaryImage(property);
+  const facts = [
+    property.bedrooms ? `${property.bedrooms} sov` : "",
+    property.bathrooms ? `${property.bathrooms} bad` : "",
+    getPropertyArea(property) ? `${getPropertyArea(property)} m²` : "",
+  ].filter(Boolean);
 
   return (
     <Link className="property-card" href={href} prefetch={priority}>
@@ -23,11 +28,13 @@ export function PropertyCard({ property, priority = false }: { property: Propert
         <p>{property.location || property.town || "Costa Blanca"}</p>
         <h3>{title}</h3>
         <strong>{formatPrice(property.price)}</strong>
-        <div className="facts">
-          <span>{property.bedrooms || 3} sov</span>
-          <span>{property.bathrooms || 2} bad</span>
-          <span>{getPropertyArea(property) || 120} m²</span>
-        </div>
+        {facts.length > 0 && (
+          <div className="facts">
+            {facts.map((fact) => (
+              <span key={fact}>{fact}</span>
+            ))}
+          </div>
+        )}
       </div>
     </Link>
   );

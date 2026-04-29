@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, Home, Ruler, Tag } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
@@ -24,7 +25,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
-  return { title: `${property ? getPropertyTitle(property) : "Bolig"} | Zen Eco Homes` };
+  const title = property ? getPropertyTitle(property) : "Bolig";
+  const description = property
+    ? `${formatPrice(property.price)} · ${property.location || property.town || "Spania"} · ${getPropertyType(property)}`
+    : "Bolig til salgs i Spania hos Zen Eco Homes.";
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/eiendommer/${encodeURIComponent(id)}`,
+    },
+  };
 }
 
 export default async function PropertyPage({ params }: { params: Promise<{ id: string }> }) {
@@ -49,6 +60,13 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   const images = getPropertyImages(property);
   const mainImage = getPrimaryImage(property);
   const description = getPropertyDescription(property);
+  const detailFacts = [
+    { icon: <Tag />, label: `Ref ${getPropertyRef(property)}` },
+    { icon: <Home />, label: getPropertyType(property) },
+    property.bedrooms ? { icon: <BedDouble />, label: `${property.bedrooms} soverom` } : null,
+    property.bathrooms ? { icon: <Bath />, label: `${property.bathrooms} bad` } : null,
+    getPropertyArea(property) ? { icon: <Ruler />, label: `${getPropertyArea(property)} m²` } : null,
+  ].filter(Boolean) as Array<{ icon: ReactNode; label: string }>;
 
   return (
     <main>
@@ -67,21 +85,11 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
       <section className="detail-layout">
         <div>
           <div className="detail-facts">
-            <span>
-              <Tag /> Ref {getPropertyRef(property)}
-            </span>
-            <span>
-              <Home /> {getPropertyType(property)}
-            </span>
-            <span>
-              <BedDouble /> {property.bedrooms || 0} soverom
-            </span>
-            <span>
-              <Bath /> {property.bathrooms || 0} bad
-            </span>
-            <span>
-              <Ruler /> {getPropertyArea(property) || 0} m²
-            </span>
+            {detailFacts.map((fact) => (
+              <span key={fact.label}>
+                {fact.icon} {fact.label}
+              </span>
+            ))}
           </div>
 
           <article className="rich-text">

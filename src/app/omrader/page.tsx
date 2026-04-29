@@ -5,7 +5,12 @@ import { areas } from "@/lib/content";
 import { areaMatchesRegion, getAreaProfiles, regions } from "@/lib/realtyflow";
 
 export const metadata = {
-  title: "Områder | Zen Eco Homes",
+  title: "Områder",
+  description:
+    "Utforsk Altea, Albir, Calpe, Finestrat, Torrevieja, Orihuela Costa, Los Alcazares og andre områder før du velger bolig i Spania.",
+  alternates: {
+    canonical: "/omrader",
+  },
 };
 
 export const dynamic = "force-dynamic";

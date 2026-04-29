@@ -22,7 +22,8 @@ export default async function Home() {
           <p className="eyebrow">Norsk rådgivning · Nybygg i Spania</p>
           <h1>Ditt moderne hjem i solen</h1>
           <p className="hero-copy">
-            Zen Eco Homes hjelper deg å finne energieffektive nybygg og trygge prosjekter på Costa Blanca og Costa Calida.
+            Zen Eco Homes hjelper nordmenn med å finne moderne nybygg på Costa Blanca og Costa Calida,
+            med tydelige områdevalg, kuraterte prosjekter og trygg oppfølging fra første samtale.
           </p>
           <form className="search-card" action="/eiendommer">
             <input name="q" placeholder="Hvor vil du bo? Altea, Finestrat, Polop..." />
@@ -49,8 +50,8 @@ export default async function Home() {
           <span>Rådgivning fra første samtale til overtakelse</span>
         </div>
         <div>
-          <strong>RealtyFlow CRM</strong>
-          <span>Boliger, leads og oppfølging samlet i system</span>
+          <strong>1329+ boliger</strong>
+          <span>Oppdateres fra RealtyFlow med regioner og områdevalg</span>
         </div>
       </section>
 

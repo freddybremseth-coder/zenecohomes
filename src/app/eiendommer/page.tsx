@@ -14,7 +14,12 @@ import {
 } from "@/lib/realtyflow";
 
 export const metadata = {
-  title: "Boliger til salgs | Zen Eco Homes",
+  title: "Boliger til salgs",
+  description:
+    "Søk blant nybygg og moderne boliger på Costa Blanca Nord, Costa Blanca Sør og Costa Calida.",
+  alternates: {
+    canonical: "/eiendommer",
+  },
 };
 
 export default async function PropertiesPage({
