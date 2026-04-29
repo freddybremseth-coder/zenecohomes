@@ -1,7 +1,14 @@
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getProperties, getPropertyTitle, getPropertyType } from "@/lib/realtyflow";
+import {
+  getProperties,
+  getPropertyTitle,
+  getPropertyType,
+  getRegionLabel,
+  propertyMatchesRegion,
+  regions,
+} from "@/lib/realtyflow";
 
 export const metadata = {
   title: "Boliger til salgs | Zen Eco Homes",
@@ -10,11 +17,12 @@ export const metadata = {
 export default async function PropertiesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; type?: string }>;
+  searchParams: Promise<{ q?: string; type?: string; region?: string }>;
 }) {
   const params = await searchParams;
   const q = (params.q || "").toLowerCase();
   const type = (params.type || "").toLowerCase();
+  const region = params.region || "";
   const properties = await getProperties();
   const filtered = properties.filter((property) => {
     const haystack = [getPropertyTitle(property), property.location, property.town, property.ref, getPropertyType(property)]
@@ -23,7 +31,8 @@ export default async function PropertiesPage({
       .toLowerCase();
     const matchesQuery = q ? haystack.includes(q) : true;
     const matchesType = type ? getPropertyType(property).toLowerCase().includes(type) : true;
-    return matchesQuery && matchesType;
+    const matchesRegion = propertyMatchesRegion(property, region);
+    return matchesQuery && matchesType && matchesRegion;
   });
 
   return (
@@ -32,9 +41,25 @@ export default async function PropertiesPage({
       <section className="page-hero compact-hero">
         <p className="eyebrow">Boligsøk</p>
         <h1>Nybygg i Spania</h1>
-        <p>Utforsk prosjekter og boliger fra RealtyFlow. Bruk søket for område, referanse eller boligtype.</p>
+        <p>
+          Utforsk prosjekter og boliger fra RealtyFlow.
+          {region ? ` Viser ${getRegionLabel(region) || "valgt region"}.` : " Velg region med ett klikk."}
+        </p>
+        <div className="quick-filters">
+          <a className={!region ? "active" : ""} href="/eiendommer">Alle</a>
+          {regions.map((item) => (
+            <a
+              className={region === item.key ? "active" : ""}
+              href={`/eiendommer?region=${item.key}`}
+              key={item.key}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
         <form className="search-card page-search" action="/eiendommer">
           <input name="q" defaultValue={params.q || ""} placeholder="Søk område, referanse eller stil" />
+          {region && <input type="hidden" name="region" value={region} />}
           <select name="type" defaultValue={params.type || ""}>
             <option value="">Alle typer</option>
             <option>Villa</option>

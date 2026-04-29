@@ -446,6 +446,118 @@ select {
   margin: 24px 0 0;
 }
 
+.quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.quick-filters a {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: white;
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.quick-filters a.active,
+.quick-filters a:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+}
+
+.region-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.region-strip a {
+  padding: 28px 34px;
+  border-right: 1px solid var(--line);
+}
+
+.region-strip strong,
+.region-strip span {
+  display: block;
+}
+
+.region-strip strong {
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.region-strip span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.area-profile-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.area-profile-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  background: white;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.area-profile-card.no-photo {
+  grid-template-columns: 1fr;
+}
+
+.area-profile-card > div {
+  min-height: 320px;
+  background-size: cover;
+  background-position: center;
+}
+
+.area-profile-card section {
+  padding: 34px;
+}
+
+.area-profile-card span {
+  display: block;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.area-profile-card h2 {
+  margin: 0 0 12px;
+}
+
+.area-profile-card strong {
+  display: block;
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+
+.area-profile-card p {
+  color: var(--muted);
+  line-height: 1.85;
+  white-space: pre-line;
+}
+
+.area-profile-card ul {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
 .list-heading {
   display: flex;
   justify-content: space-between;
@@ -789,8 +901,10 @@ footer {
 
   .search-card,
   .trust-band,
+  .region-strip,
   .property-grid,
-  .split {
+  .split,
+  .area-profile-card {
     grid-template-columns: 1fr;
   }
 

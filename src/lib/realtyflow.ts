@@ -26,6 +26,28 @@ export type Property = {
   pool?: boolean;
   energy_rating?: string;
   status?: string;
+  region?: string;
+};
+
+export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida";
+
+export type AreaProfile = {
+  id?: string;
+  brand_id?: string;
+  name: string;
+  slug?: string;
+  country?: string | null;
+  region?: string | null;
+  hero_blurb?: string | null;
+  description?: string | null;
+  highlights?: string[] | null;
+  climate?: string | null;
+  lifestyle?: string | null;
+  photo_url?: string | null;
+  show_on_website?: boolean | null;
+  website_visible?: boolean | null;
+  is_public?: boolean | null;
+  published?: boolean | null;
 };
 
 export type LeadPayload = {
@@ -42,6 +64,27 @@ export type LeadPayload = {
 };
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
+
+export const regions: Array<{ key: RegionKey; label: string; description: string; locations: string[] }> = [
+  {
+    key: "costa-blanca-nord",
+    label: "Costa Blanca Nord",
+    description: "Altea, Albir, Calpe, Finestrat, Polop, La Nucia, Denia, Javea og Moraira.",
+    locations: ["altea", "albir", "calpe", "benidorm", "denia", "javea", "jávea", "polop", "la nucia", "finestrat", "villajoyosa", "moraira", "alfaz"],
+  },
+  {
+    key: "costa-blanca-sor",
+    label: "Costa Blanca Sør",
+    description: "Torrevieja, Orihuela Costa, Ciudad Quesada, Guardamar, Alicante og Santa Pola.",
+    locations: ["torrevieja", "orihuela", "ciudad quesada", "villamartin", "guardamar", "alicante", "santa pola", "rojales", "san miguel"],
+  },
+  {
+    key: "costa-calida",
+    label: "Costa Calida",
+    description: "San Pedro del Pinatar, Los Alcazares, La Manga, Cartagena, Murcia og nærliggende områder.",
+    locations: ["calida", "cálida", "murcia", "la manga", "san pedro", "pilar de la horadada", "los alcazares", "los alcázares", "torre pacheco", "cartagena"],
+  },
+];
 
 export function getPropertyTitle(property: Property) {
   return property.title_no || property.title || property.title_en || "Nybygg i Spania";
@@ -101,6 +144,21 @@ export function formatPrice(price?: number) {
   }).format(price);
 }
 
+export function getRegionLabel(region?: string) {
+  return regions.find((item) => item.key === region)?.label || "";
+}
+
+export function propertyMatchesRegion(property: Property, region?: string) {
+  if (!region) return true;
+  const selected = regions.find((item) => item.key === region);
+  if (!selected) return true;
+  const haystack = [property.region, property.location, property.town]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  return selected.locations.some((location) => haystack.includes(location));
+}
+
 export async function getProperties(limit?: number): Promise<Property[]> {
   try {
     const res = await fetch(`${REALTYFLOW_BASE}/api/properties`, {
@@ -113,6 +171,29 @@ export async function getProperties(limit?: number): Promise<Property[]> {
     return (limit ? items.slice(0, limit) : items) as Property[];
   } catch {
     return fallbackProperties.slice(0, limit);
+  }
+}
+
+export async function getAreaProfiles(): Promise<AreaProfile[]> {
+  try {
+    const res = await fetch(`${REALTYFLOW_BASE}/api/area-profiles?brandId=zeneco&public=1`, {
+      next: { revalidate: 1800 },
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    const profiles = Array.isArray(data.profiles) ? (data.profiles as AreaProfile[]) : [];
+    return profiles.filter((profile) => {
+      const visibilityFields = [
+        profile.show_on_website,
+        profile.website_visible,
+        profile.is_public,
+        profile.published,
+      ].filter((value) => typeof value === "boolean");
+      return visibilityFields.length ? visibilityFields.some(Boolean) : true;
+    });
+  } catch {
+    return [];
   }
 }
 
