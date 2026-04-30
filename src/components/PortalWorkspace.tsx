@@ -26,9 +26,9 @@ const buyerSteps = [
 ];
 
 const savedProperties = [
-  "Villa med basseng i Finestrat",
-  "Leilighet nær strand i Torrevieja",
-  "Golfbolig ved Los Alcazares",
+  { ref: "demo-1", title: "Villa med basseng i Finestrat", location: "Finestrat", price: "Pris på forespørsel", href: "/eiendommer?area=Finestrat" },
+  { ref: "demo-2", title: "Leilighet nær strand i Torrevieja", location: "Torrevieja", price: "Pris på forespørsel", href: "/eiendommer?area=Torrevieja" },
+  { ref: "demo-3", title: "Golfbolig ved Los Alcazares", location: "Los Alcazares", price: "Pris på forespørsel", href: "/eiendommer?area=Los%20Alcazares" },
 ];
 
 export function PortalWorkspace() {
@@ -37,6 +37,18 @@ export function PortalWorkspace() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginStatus, setLoginStatus] = useState<"idle" | "sent" | "error" | "missing-config">("idle");
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
+  const [favorites, setFavorites] = useState(savedProperties);
+
+  useEffect(() => {
+    function loadFavorites() {
+      const stored = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]") as typeof savedProperties;
+      setFavorites(stored.length ? stored : savedProperties);
+    }
+
+    loadFavorites();
+    window.addEventListener("zeneco:favorites-updated", loadFavorites);
+    return () => window.removeEventListener("zeneco:favorites-updated", loadFavorites);
+  }, []);
 
   useEffect(() => {
     if (!supabase) return;
@@ -223,10 +235,13 @@ export function PortalWorkspace() {
               <h3>Favoritter</h3>
             </div>
             <ul className="portal-list">
-              {savedProperties.map((property) => (
-                <li key={property}>
+              {favorites.map((property) => (
+                <li key={property.ref}>
                   <Building2 size={17} />
-                  <span>{property}</span>
+                  <a href={property.href}>
+                    <span>{property.title}</span>
+                    <small>{property.location} · {property.price}</small>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -261,8 +276,8 @@ export function PortalWorkspace() {
             <div className="message-preview">
               <Mail size={19} />
               <p>
-                Neste steg er å koble denne flaten mot kundeprofil, favoritter og meldinger i RealtyFlow. Forespørsler
-                fra skjemaet går allerede inn via Zen Eco Homes sitt kontakt-API.
+                Forespørsler og tilgang styres i RealtyFlow. Når du lagrer boliger på nettsiden vises de her, slik at
+                neste samtale kan handle om riktige områder, budsjett og aktuelle prosjekter.
               </p>
             </div>
           </article>

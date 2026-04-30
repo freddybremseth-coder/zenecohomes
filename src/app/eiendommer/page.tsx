@@ -9,6 +9,7 @@ import {
   getRegionLabel,
   normalizeSearchText,
   propertyMatchesArea,
+  propertyMatchesLifestyle,
   propertyMatchesRegion,
   regions,
 } from "@/lib/realtyflow";
@@ -33,6 +34,8 @@ export default async function PropertiesPage({
     minPrice?: string;
     maxPrice?: string;
     bedrooms?: string;
+    bathrooms?: string;
+    lifestyle?: string;
   }>;
 }) {
   const params = await searchParams;
@@ -43,6 +46,8 @@ export default async function PropertiesPage({
   const minPrice = Number(params.minPrice || 0);
   const maxPrice = Number(params.maxPrice || 0);
   const minBedrooms = Number(params.bedrooms || 0);
+  const minBathrooms = Number(params.bathrooms || 0);
+  const lifestyle = params.lifestyle || "";
   const properties = await getProperties();
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
@@ -53,7 +58,19 @@ export default async function PropertiesPage({
     const matchesMinPrice = minPrice && property.price ? property.price >= minPrice : true;
     const matchesMaxPrice = maxPrice && property.price ? property.price <= maxPrice : true;
     const matchesBedrooms = minBedrooms && property.bedrooms ? property.bedrooms >= minBedrooms : true;
-    return matchesQuery && matchesType && matchesRegion && matchesArea && matchesMinPrice && matchesMaxPrice && matchesBedrooms;
+    const matchesBathrooms = minBathrooms && property.bathrooms ? property.bathrooms >= minBathrooms : true;
+    const matchesLifestyle = propertyMatchesLifestyle(property, lifestyle);
+    return (
+      matchesQuery &&
+      matchesType &&
+      matchesRegion &&
+      matchesArea &&
+      matchesMinPrice &&
+      matchesMaxPrice &&
+      matchesBedrooms &&
+      matchesBathrooms &&
+      matchesLifestyle
+    );
   });
   const locationLabel = area || getRegionLabel(region);
 
@@ -114,6 +131,19 @@ export default async function PropertiesPage({
             <option value="2">2+</option>
             <option value="3">3+</option>
             <option value="4">4+</option>
+          </select>
+          <select name="bathrooms" defaultValue={params.bathrooms || ""}>
+            <option value="">Bad</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+          <select name="lifestyle" defaultValue={params.lifestyle || ""}>
+            <option value="">Livsstil</option>
+            <option value="pool">Basseng</option>
+            <option value="sea">Nær sjø / havutsikt</option>
+            <option value="golf">Golf</option>
           </select>
           <button type="submit">Søk</button>
         </form>

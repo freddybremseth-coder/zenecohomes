@@ -30,7 +30,23 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="no">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              name: "Zen Eco Homes",
+              url: "https://www.zenecohomes.com",
+              areaServed: ["Costa Blanca", "Costa Calida", "Spania"],
+              knowsAbout: ["Nybygg i Spania", "Costa Blanca", "Costa Calida", "Boligkjøp i Spania"],
+              sameAs: [],
+            }),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

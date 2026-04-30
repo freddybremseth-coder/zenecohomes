@@ -56,9 +56,14 @@ export default async function AreasPage() {
               <h2>{group.label}</h2>
               <p>{group.description}</p>
             </div>
-            <a className="text-button" href={`/eiendommer?region=${group.key}`}>
-              Se boliger i {group.label}
-            </a>
+            <div className="region-heading-actions">
+              <a className="text-button" href={`/omrader/${group.key}`}>
+                Les regionguide
+              </a>
+              <a className="text-button" href={`/eiendommer?region=${group.key}`}>
+                Se boliger i {group.label}
+              </a>
+            </div>
           </div>
           {group.profiles.length > 0 ? (
             group.profiles.map((profile) => (

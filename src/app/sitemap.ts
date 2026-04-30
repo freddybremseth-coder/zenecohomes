@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getProperties, getPropertyRef } from "@/lib/realtyflow";
+import { getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
 
 const baseUrl = "https://www.zenecohomes.com";
 
@@ -9,6 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "",
     "/eiendommer",
     "/omrader",
+    ...regions.map((region) => `/omrader/${region.key}`),
     "/kjopsprosessen",
     "/magasin",
     "/min-side",

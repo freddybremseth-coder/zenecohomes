@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, Download, Home, MessageCircle, Ruler, Tag } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { FavoriteButton } from "@/components/FavoriteButton";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
@@ -107,6 +108,20 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
           <p className="eyebrow">{property.location || property.town || "Costa Blanca"}</p>
           <h1>{getPropertyTitle(property)}</h1>
           <strong>{formatPrice(property.price)}</strong>
+          <div className="hero-actions">
+            <FavoriteButton
+              favorite={{
+                ref: getPropertyRef(property),
+                title: getPropertyTitle(property),
+                location,
+                price: formatPrice(property.price),
+                href: `/eiendommer/${encodeURIComponent(getPropertyRef(property))}`,
+              }}
+            />
+            <a href="#kontakt">
+              <MessageCircle size={17} /> Book visning
+            </a>
+          </div>
         </div>
       </section>
 
@@ -145,12 +160,53 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
           </section>
 
           {images.length > 1 && (
-            <div className="gallery-grid">
-              {images.slice(1, 7).map((image) => (
-                <div key={image} style={{ backgroundImage: `url(${image})` }} />
-              ))}
-            </div>
+            <section className="premium-gallery">
+              <h2>Bilder</h2>
+              <div className="gallery-grid">
+                {images.slice(1, 10).map((image) => (
+                  <div key={image} style={{ backgroundImage: `url(${image})` }} />
+                ))}
+              </div>
+            </section>
           )}
+          <section className="area-context">
+            <h2>Område og beliggenhet</h2>
+            <p>
+              Boligen ligger i {location}. Vi vurderer alltid området sammen med deg: avstand til strand, golf,
+              restauranter, helsetjenester, flyplass og hvordan stedet fungerer utenom høysesong.
+            </p>
+            <div>
+              <span>Norsk vurdering av området</span>
+              <span>Alternativer i samme prisklasse</span>
+              <span>Digital eller fysisk visning</span>
+            </div>
+          </section>
+          <nav className="breadcrumb-nav" aria-label="Brødsmule">
+            <Link href="/">Forside</Link>
+            <span>/</span>
+            <Link href="/eiendommer">Boliger</Link>
+            <span>/</span>
+            <span>{getPropertyTitle(property)}</span>
+          </nav>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Forside", item: "https://www.zenecohomes.com" },
+                  { "@type": "ListItem", position: 2, name: "Boliger", item: "https://www.zenecohomes.com/eiendommer" },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: getPropertyTitle(property),
+                    item: `https://www.zenecohomes.com/eiendommer/${encodeURIComponent(getPropertyRef(property))}`,
+                  },
+                ],
+              }),
+            }}
+          />
         </div>
 
         <aside className="sticky-card">

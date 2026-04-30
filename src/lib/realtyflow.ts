@@ -240,6 +240,19 @@ export function propertyMatchesArea(property: Property, area?: string) {
   return normalizedHaystack.includes(areaTerm);
 }
 
+export function propertyMatchesLifestyle(property: Property, lifestyle?: string) {
+  if (!lifestyle) return true;
+  const haystack = getPropertySearchText(property);
+  const terms: Record<string, string[]> = {
+    pool: ["pool", "basseng", "private pool", "privat basseng"],
+    sea: ["sea", "sjo", "sjø", "beach", "strand", "hav", "seafront", "sea view", "havutsikt"],
+    golf: ["golf", "golf resort", "golfbane", "la marquesa", "altaona", "roda"],
+  };
+
+  if (lifestyle === "pool" && property.pool) return true;
+  return (terms[lifestyle] || []).some((term) => haystack.includes(normalizeSearchText(term)));
+}
+
 export function areaMatchesRegion(profile: AreaProfile, region?: string) {
   if (!region) return true;
   const selected = regions.find((item) => item.key === region);
