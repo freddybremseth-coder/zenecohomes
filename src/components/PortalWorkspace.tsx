@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 import {
   Bell,
   Building2,
+  Calculator,
   CheckCircle2,
   FileText,
   Heart,
@@ -61,6 +62,28 @@ type PortalPlot = {
   zoning?: string;
 };
 
+type PortalDocument = {
+  id: string;
+  type: string;
+  title: string;
+  summary?: string;
+  content?: string;
+  publishedAt?: string;
+  source?: string;
+};
+
+type FinanceRates = {
+  eurNok: number;
+  updatedAt: string;
+  exchangeSource: string;
+  purchaseCostRate: number;
+  loanAssumptions: {
+    spainRate: number;
+    norwayRate: number;
+    sourceNote: string;
+  };
+};
+
 type Preferences = {
   budgetMin: string;
   budgetMax: string;
@@ -105,6 +128,18 @@ function formatEuro(value?: number) {
   return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
 }
 
+function formatNok(value?: number) {
+  if (!value) return "NOK 0";
+  return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(value);
+}
+
+function calculateMonthlyPayment(principal: number, annualRate: number, years: number) {
+  if (!principal || !annualRate || !years) return 0;
+  const months = years * 12;
+  const monthlyRate = annualRate / 12;
+  return (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
+}
+
 function propertyRef(property: PortalProperty) {
   return property.ref || property.external_id || property.id || "";
 }
@@ -144,6 +179,16 @@ export function PortalWorkspace() {
   const [favorites, setFavorites] = useState(savedProperties);
   const [properties, setProperties] = useState<PortalProperty[]>([]);
   const [plots, setPlots] = useState<PortalPlot[]>([]);
+  const [documents, setDocuments] = useState<PortalDocument[]>([]);
+  const [expandedDocument, setExpandedDocument] = useState<string | null>(null);
+  const [financeRates, setFinanceRates] = useState<FinanceRates | null>(null);
+  const [calculator, setCalculator] = useState({
+    price: "450000",
+    ownCapital: "150000",
+    years: "25",
+    spainRate: "",
+    norwayRate: "",
+  });
   const [preferences, setPreferences] = useState<Preferences>(initialPreferences);
   const [signalStatus, setSignalStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
 
@@ -184,6 +229,35 @@ export function PortalWorkspace() {
       })
       .catch(() => {});
   }, [sessionEmail]);
+
+  useEffect(() => {
+    if (!sessionEmail || !supabase) return;
+
+    supabase.auth.getSession().then(({ data }) => {
+      const token = data.session?.access_token;
+      if (!token) return;
+      fetch("/api/portal/documents", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((res) => res.json())
+        .then((data) => setDocuments(Array.isArray(data.documents) ? data.documents : []))
+        .catch(() => setDocuments([]));
+    });
+  }, [sessionEmail]);
+
+  useEffect(() => {
+    fetch("/api/finance/rates")
+      .then((res) => res.json())
+      .then((data) => {
+        setFinanceRates(data);
+        setCalculator((prev) => ({
+          ...prev,
+          spainRate: prev.spainRate || String(Math.round(Number(data.loanAssumptions?.spainRate || 0.0425) * 10000) / 100),
+          norwayRate: prev.norwayRate || String(Math.round(Number(data.loanAssumptions?.norwayRate || 0.055) * 10000) / 100),
+        }));
+      })
+      .catch(() => {});
+  }, []);
 
   const filteredProperties = properties
     .filter((property) => {
@@ -226,6 +300,15 @@ export function PortalWorkspace() {
       );
     })
     .slice(0, 6);
+
+  const purchasePrice = Number(calculator.price || 0);
+  const purchaseCostRate = financeRates?.purchaseCostRate ?? 0.135;
+  const purchaseCosts = purchasePrice * purchaseCostRate;
+  const totalPrice = purchasePrice + purchaseCosts;
+  const loanAmount = Math.max(0, totalPrice - Number(calculator.ownCapital || 0));
+  const years = Number(calculator.years || 25);
+  const spainMonthly = calculateMonthlyPayment(loanAmount, Number(calculator.spainRate || 0) / 100, years);
+  const norwayMonthly = calculateMonthlyPayment(loanAmount, Number(calculator.norwayRate || 0) / 100, years);
 
   async function requestAccess(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -697,19 +780,105 @@ export function PortalWorkspace() {
               <h3>Dokumenter</h3>
             </div>
             <ul className="portal-list">
-              <li>
-                <FileText size={17} />
-                <span>Kjøpsguide og sjekkliste</span>
-              </li>
-              <li>
-                <FileText size={17} />
-                <span>Reservasjonsdokumenter</span>
-              </li>
-              <li>
-                <FileText size={17} />
-                <span>Notar og finansiering</span>
-              </li>
+              {(sessionEmail && documents.length ? documents : [
+                { id: "demo-guide", type: "guide", title: "Kjøpsguide og sjekkliste", summary: "Logg inn for personlige rapporter og dokumenter." },
+                { id: "demo-costs", type: "guide", title: "Kostnader og finansiering", summary: "Kalkyle for skatt, kjøpskostnader og lån." },
+              ]).map((document) => (
+                <li key={document.id} className="portal-document-item">
+                  <FileText size={17} />
+                  <div>
+                    <span>{document.title}</span>
+                    {document.summary && <small>{document.summary}</small>}
+                    {document.content && expandedDocument === document.id && (
+                      <p className="portal-document-content">{document.content}</p>
+                    )}
+                    {document.content && (
+                      <button
+                        className="text-button"
+                        type="button"
+                        onClick={() => setExpandedDocument(expandedDocument === document.id ? null : document.id)}
+                      >
+                        {expandedDocument === document.id ? "Vis mindre" : "Les mer"}
+                      </button>
+                    )}
+                  </div>
+                </li>
+              ))}
             </ul>
+          </article>
+
+          <article className="portal-panel">
+            <div className="panel-title">
+              <Calculator size={20} />
+              <h3>Kjøpskalkulator</h3>
+            </div>
+            <div className="portal-calculator">
+              <label>
+                Boligpris EUR
+                <input
+                  inputMode="numeric"
+                  onChange={(event) => setCalculator((prev) => ({ ...prev, price: event.target.value }))}
+                  value={calculator.price}
+                />
+              </label>
+              <label>
+                Egenkapital EUR
+                <input
+                  inputMode="numeric"
+                  onChange={(event) => setCalculator((prev) => ({ ...prev, ownCapital: event.target.value }))}
+                  value={calculator.ownCapital}
+                />
+              </label>
+              <div className="form-grid compact-fields">
+                <label>
+                  År
+                  <input
+                    inputMode="numeric"
+                    onChange={(event) => setCalculator((prev) => ({ ...prev, years: event.target.value }))}
+                    value={calculator.years}
+                  />
+                </label>
+                <label>
+                  Spania %
+                  <input
+                    inputMode="decimal"
+                    onChange={(event) => setCalculator((prev) => ({ ...prev, spainRate: event.target.value }))}
+                    value={calculator.spainRate}
+                  />
+                </label>
+                <label>
+                  Norge %
+                  <input
+                    inputMode="decimal"
+                    onChange={(event) => setCalculator((prev) => ({ ...prev, norwayRate: event.target.value }))}
+                    value={calculator.norwayRate}
+                  />
+                </label>
+              </div>
+              <div className="calculator-results">
+                <div>
+                  <small>Ca. skatt og kostnader</small>
+                  <strong>{formatEuro(purchaseCosts)}</strong>
+                </div>
+                <div>
+                  <small>Total kjøpsramme</small>
+                  <strong>{formatEuro(totalPrice)}</strong>
+                  <span>{formatNok(totalPrice * (financeRates?.eurNok || 0))}</span>
+                </div>
+                <div>
+                  <small>Estimert lån</small>
+                  <strong>{formatEuro(loanAmount)}</strong>
+                </div>
+                <div>
+                  <small>Mnd. Spania / Norge</small>
+                  <strong>{formatEuro(spainMonthly)} / {formatEuro(norwayMonthly)}</strong>
+                </div>
+              </div>
+              <p className="calculator-note">
+                Kurs {financeRates?.eurNok?.toFixed(4) || "--"} fra {financeRates?.exchangeSource || "valutakilde"}.
+                Renter er veiledende og kan justeres.
+              </p>
+            </div>
           </article>
 
           <article className="portal-panel wide-panel">
