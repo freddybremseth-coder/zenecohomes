@@ -8,6 +8,7 @@ export type Property = {
   description?: string;
   description_no?: string;
   description_en?: string;
+  marketing_description?: string;
   location?: string;
   town?: string;
   price?: number;
@@ -137,7 +138,11 @@ export function getPropertyTitle(property: Property) {
 }
 
 export function getPropertyDescription(property: Property) {
-  return cleanPropertyText(property.description_no || property.description || property.description_en || "");
+  const descriptions = [property.marketing_description, property.description_no, property.description, property.description_en]
+    .map((value) => cleanPropertyText(value || ""))
+    .filter(Boolean)
+    .sort((a, b) => b.length - a.length);
+  return descriptions[0] || "";
 }
 
 export function cleanPropertyText(value: string) {
