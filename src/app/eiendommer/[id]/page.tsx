@@ -4,6 +4,7 @@ import { ArrowLeft, Bath, BedDouble, Download, Home, MessageCircle, Ruler, Tag }
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { Footer } from "@/components/Footer";
+import { ReadMoreText } from "@/components/ReadMoreText";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
   formatPrice,
@@ -137,10 +138,12 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
 
           <article className="rich-text">
             <h2>Om boligen</h2>
-            <p>
-              {description ||
-                "Dette er et moderne nybygg/prosjekt i Spania. Kontakt oss for komplett prospekt, plantegninger og oppdatert tilgjengelighet."}
-            </p>
+            <ReadMoreText
+              text={
+                description ||
+                "Dette er et moderne nybygg/prosjekt i Spania. Kontakt oss for komplett prospekt, plantegninger og oppdatert tilgjengelighet."
+              }
+            />
           </article>
 
           <section className="buyer-next-steps">

@@ -31,6 +31,8 @@ const savedProperties = [
   { ref: "demo-3", title: "Golfbolig ved Los Alcazares", location: "Los Alcazares", price: "Pris på forespørsel", href: "/eiendommer?area=Los%20Alcazares" },
 ];
 
+const portalRedirectUrl = "https://www.zenecohomes.com/auth/callback";
+
 export function PortalWorkspace() {
   const [mode, setMode] = useState<"customer" | "admin">("customer");
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
@@ -100,7 +102,7 @@ export function PortalWorkspace() {
     const { error } = await supabase.auth.signInWithOtp({
       email: loginEmail,
       options: {
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
+        emailRedirectTo: portalRedirectUrl,
         shouldCreateUser: false,
       },
     });

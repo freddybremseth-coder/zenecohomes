@@ -16,6 +16,15 @@ export function AuthCallbackClient() {
         return;
       }
 
+      const code = new URLSearchParams(window.location.search).get("code");
+      if (code) {
+        const { error } = await supabase.auth.exchangeCodeForSession(code);
+        if (error) {
+          setMessage("Innloggingslenken kunne ikke brukes. Be om en ny lenke fra Min side.");
+          return;
+        }
+      }
+
       const { data } = await supabase.auth.getSession();
       if (!mounted) return;
 

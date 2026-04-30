@@ -841,11 +841,24 @@ select {
   margin-top: 0;
 }
 
-.rich-text p {
+.rich-text p,
+.read-more-text p {
   color: var(--muted);
   font-size: 1.08rem;
   line-height: 1.9;
   white-space: pre-line;
+}
+
+.read-more-text button {
+  border: 0;
+  margin-top: 8px;
+  padding: 0;
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .buyer-next-steps {
