@@ -139,6 +139,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
           <article className="rich-text">
             <h2>Om boligen</h2>
             <ReadMoreText
+              actionLabel="Be om komplett tilbud"
               text={
                 description ||
                 "Dette er et moderne nybygg/prosjekt i Spania. Kontakt oss for komplett prospekt, plantegninger og oppdatert tilgjengelighet."
@@ -220,11 +221,16 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
               <MessageCircle size={16} /> Spør om boligen
             </a>
             <a className="mini-cta" href="#kontakt">
-              <Download size={16} /> Be om prospekt
+              <Download size={16} /> Be om komplett tilbud
             </a>
           </div>
           <div id="kontakt" />
-          <ContactForm source={`property-${getPropertyRef(property)}`} />
+          <ContactForm
+            propertyRef={getPropertyRef(property)}
+            propertyTitle={getPropertyTitle(property)}
+            requestType="Komplett tilbud/prospekt"
+            source={`property-${getPropertyRef(property)}`}
+          />
         </aside>
       </section>
       <Footer />

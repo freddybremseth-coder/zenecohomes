@@ -18,10 +18,10 @@ export default function PortalPage() {
       <SiteHeader />
       <section className="page-hero compact-hero">
         <p className="eyebrow">Min Side</p>
-        <h1>Kundeportal for kjøpere og admin</h1>
+        <h1>Kundeportal for kjøpere</h1>
         <p>
-          En ryddig portal for boligmatch, dokumenter, meldinger og administrasjon. Første versjon er bygget i Next.js
-          og klargjort for kobling mot RealtyFlow.
+          En ryddig portal for boligmatch, dokumenter og meldinger. Admin, leads og samtaler håndteres i RealtyFlow,
+          slik at alt ligger samlet i huben din.
         </p>
         <div className="portal-actions">
           <Link className="contact-button" href="#portal">

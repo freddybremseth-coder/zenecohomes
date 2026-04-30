@@ -62,6 +62,9 @@ export type LeadPayload = {
   timeline?: string;
   message?: string;
   source?: string;
+  property_ref?: string;
+  property_title?: string;
+  request_type?: string;
 };
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
@@ -343,7 +346,12 @@ export async function getProperty(id: string): Promise<Property | null> {
 }
 
 export async function sendLead(payload: LeadPayload) {
+  const pipelineValue = payload.budget ? Number(String(payload.budget).replace(/[^0-9]/g, "")) || 0 : 0;
+  const propertyInterest = [payload.property_ref, payload.property_title].filter(Boolean).join(" - ");
   const notes = [
+    payload.request_type ? `Forespørsel: ${payload.request_type}` : "",
+    payload.property_ref ? `Boligref: ${payload.property_ref}` : "",
+    payload.property_title ? `Bolig: ${payload.property_title}` : "",
     payload.message,
     payload.preferred_area ? `Område: ${payload.preferred_area}` : "",
     payload.budget ? `Budsjett: ${payload.budget}` : "",
@@ -364,6 +372,9 @@ export async function sendLead(payload: LeadPayload) {
       source: payload.source || "zenecohomes-next",
       notes,
       pipeline_status: "NEW",
+      pipeline_value: pipelineValue,
+      property_interest: propertyInterest || payload.preferred_area || "",
+      brand: "zeneco",
       brand_id: "zeneco",
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),

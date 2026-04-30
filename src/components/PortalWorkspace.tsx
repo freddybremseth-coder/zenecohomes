@@ -13,7 +13,6 @@ import {
   LogOut,
   Mail,
   MessageSquareText,
-  ShieldCheck,
   UserRound,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-browser";
@@ -34,7 +33,6 @@ const savedProperties = [
 const portalRedirectUrl = "https://www.zenecohomes.com/auth/callback";
 
 export function PortalWorkspace() {
-  const [mode, setMode] = useState<"customer" | "admin">("customer");
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginStatus, setLoginStatus] = useState<"idle" | "sent" | "error" | "missing-config">("idle");
@@ -78,8 +76,9 @@ export function PortalWorkspace() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
-          source: mode === "admin" ? "zenecohomes-admin-access" : "zenecohomes-customer-access",
-          message: `Ber om tilgang til ${mode === "admin" ? "adminpanel" : "kundeportal"}. ${data.message || ""}`,
+          source: "zenecohomes-customer-access",
+          request_type: "Kundeportal tilgang",
+          message: `Ber om tilgang til kundeportal. ${data.message || ""}`,
         }),
       });
       if (!res.ok) throw new Error("Access request failed");
@@ -125,24 +124,21 @@ export function PortalWorkspace() {
           <h2>Min side</h2>
           <p>Samle boligmatch, dokumenter, meldinger og neste steg i kjøpsreisen.</p>
         </div>
-        <div className="portal-mode">
-          <button className={mode === "customer" ? "active" : ""} onClick={() => setMode("customer")} type="button">
-            <UserRound size={17} /> Kunde
-          </button>
-          <button className={mode === "admin" ? "active" : ""} onClick={() => setMode("admin")} type="button">
-            <ShieldCheck size={17} /> Admin
-          </button>
+        <div className="portal-mode single">
+          <span>
+            <UserRound size={17} /> Kundeportal
+          </span>
         </div>
         <a className="portal-admin-link" href="https://realtyflow.chatgenius.pro">
-          <LayoutDashboard size={18} /> Åpne RealtyFlow
+          <LayoutDashboard size={18} /> Admin ligger i RealtyFlow
         </a>
       </aside>
 
       <div className="portal-main">
         <div className="portal-topline">
           <div>
-            <p className="eyebrow">{sessionEmail ? "Innlogget" : mode === "admin" ? "Admin" : "Kundeportal"}</p>
-            <h2>{mode === "admin" ? "Kontrollrom for Zen Eco Homes" : "Din kjøpsreise i Spania"}</h2>
+            <p className="eyebrow">{sessionEmail ? "Innlogget" : "Kundeportal"}</p>
+            <h2>Din kjøpsreise i Spania</h2>
           </div>
           {sessionEmail ? (
             <button className="portal-session-button" onClick={signOut} type="button">
@@ -190,7 +186,7 @@ export function PortalWorkspace() {
             <article className="portal-panel access-panel">
             <div className="panel-title">
               <KeyRound size={20} />
-              <h3>{mode === "admin" ? "Admin-tilgang" : "Be om innlogging"}</h3>
+              <h3>Be om innlogging</h3>
             </div>
             <form onSubmit={requestAccess}>
               <label>
@@ -209,7 +205,7 @@ export function PortalWorkspace() {
                 Melding
                 <textarea name="message" placeholder="Kort om hva du trenger tilgang til" />
               </label>
-              <button type="submit">{mode === "admin" ? "Send adminforespørsel" : "Send innloggingsforespørsel"}</button>
+              <button type="submit">Send innloggingsforespørsel</button>
               {status === "sent" && <p className="form-success">Forespørselen er sendt til RealtyFlow.</p>}
               {status === "error" && <p className="form-error">Kunne ikke sende akkurat nå. Prøv igjen.</p>}
             </form>

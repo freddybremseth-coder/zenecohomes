@@ -3,7 +3,19 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 
-export function ContactForm({ source = "zenecohomes-next" }: { source?: string }) {
+type ContactFormProps = {
+  source?: string;
+  propertyRef?: string;
+  propertyTitle?: string;
+  requestType?: string;
+};
+
+export function ContactForm({
+  source = "zenecohomes-next",
+  propertyRef,
+  propertyTitle,
+  requestType = "general",
+}: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -15,7 +27,7 @@ export function ContactForm({ source = "zenecohomes-next" }: { source?: string }
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, source }),
+      body: JSON.stringify({ ...data, source, property_ref: propertyRef, property_title: propertyTitle, request_type: requestType }),
     });
 
     if (res.ok) {
@@ -83,7 +95,15 @@ export function ContactForm({ source = "zenecohomes-next" }: { source?: string }
       </label>
       <label>
         Hva ser du etter?
-        <textarea name="message" rows={5} placeholder="Fortell kort om ønsker, område, livsstil og behov." />
+        <textarea
+          name="message"
+          rows={5}
+          placeholder={
+            propertyTitle
+              ? `Jeg ønsker komplett tilbud/prospekt for ${propertyTitle}.`
+              : "Fortell kort om ønsker, område, livsstil og behov."
+          }
+        />
       </label>
       <button className="submit-button" disabled={status === "sending"}>
         <Send size={18} />

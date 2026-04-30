@@ -2,7 +2,17 @@
 
 import { useState } from "react";
 
-export function ReadMoreText({ text, initialLength = 520 }: { text: string; initialLength?: number }) {
+export function ReadMoreText({
+  text,
+  initialLength = 520,
+  actionHref = "#kontakt",
+  actionLabel = "Be om komplett tilbud",
+}: {
+  text: string;
+  initialLength?: number;
+  actionHref?: string;
+  actionLabel?: string;
+}) {
   const [expanded, setExpanded] = useState(false);
   const looksSourceTruncated = /\.\.\.$/.test(text.trim());
   const shouldTruncate = text.length > initialLength;
@@ -13,9 +23,14 @@ export function ReadMoreText({ text, initialLength = 520 }: { text: string; init
     <div className="read-more-text">
       <p>{visibleText}</p>
       {showAction && (
-        <button type="button" onClick={() => setExpanded(!expanded)}>
-          {shouldTruncate ? (expanded ? "Vis mindre" : "Les mer") : "Be om komplett prospekt"}
-        </button>
+        <div className="read-more-actions">
+          {shouldTruncate && (
+            <button type="button" onClick={() => setExpanded(!expanded)}>
+              {expanded ? "Vis mindre" : "Les mer"}
+            </button>
+          )}
+          {(!shouldTruncate || expanded || looksSourceTruncated) && <a href={actionHref}>{actionLabel}</a>}
+        </div>
       )}
     </div>
   );

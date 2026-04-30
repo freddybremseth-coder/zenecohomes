@@ -20,6 +20,9 @@ export async function POST(request: Request) {
       timeline: body.timeline ? String(body.timeline) : undefined,
       message: body.message ? String(body.message) : undefined,
       source: body.source ? String(body.source) : "zenecohomes-next",
+      property_ref: body.property_ref ? String(body.property_ref) : undefined,
+      property_title: body.property_title ? String(body.property_title) : undefined,
+      request_type: body.request_type ? String(body.request_type) : undefined,
     });
 
     return NextResponse.json({ ok: true });

@@ -849,9 +849,17 @@ select {
   white-space: pre-line;
 }
 
-.read-more-text button {
-  border: 0;
+.read-more-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
   margin-top: 8px;
+}
+
+.read-more-text button,
+.read-more-text a {
+  border: 0;
   padding: 0;
   background: transparent;
   color: var(--gold);
@@ -1226,6 +1234,10 @@ select {
   background: #f7f6ef;
 }
 
+.portal-mode.single {
+  grid-template-columns: 1fr;
+}
+
 .portal-mode button,
 .access-panel button {
   border: 0;
@@ -1233,7 +1245,8 @@ select {
   font-weight: 900;
 }
 
-.portal-mode button {
+.portal-mode button,
+.portal-mode span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1241,6 +1254,13 @@ select {
   padding: 12px 10px;
   background: transparent;
   color: var(--muted);
+}
+
+.portal-mode span {
+  background: white;
+  color: var(--dark);
+  font-weight: 900;
+  box-shadow: 0 8px 20px rgba(22, 34, 43, 0.08);
 }
 
 .portal-mode button.active {
