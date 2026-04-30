@@ -1760,6 +1760,117 @@ select {
   margin: 0;
 }
 
+.portal-search-panel {
+  display: grid;
+  gap: 24px;
+}
+
+.portal-preferences {
+  display: grid;
+  gap: 14px;
+}
+
+.portal-preferences label {
+  display: grid;
+  gap: 7px;
+  color: var(--dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.portal-preferences input,
+.portal-preferences select,
+.portal-preferences textarea {
+  width: 100%;
+  border: 1px solid #d7dce2;
+  border-radius: 4px;
+  padding: 12px 13px;
+  background: white;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.portal-preferences textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.portal-preferences button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--gold);
+  color: white;
+  cursor: pointer;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.compact-fields {
+  grid-template-columns: 0.7fr 0.7fr 1.2fr;
+}
+
+.portal-checkbox {
+  display: flex !important;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px !important;
+}
+
+.portal-checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+.portal-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.small-title {
+  margin-bottom: 10px;
+}
+
+.portal-match-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portal-match-list li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: #fbfbf7;
+  color: var(--muted);
+}
+
+.portal-match-list a,
+.portal-match-list span,
+.portal-match-list small {
+  display: block;
+}
+
+.portal-match-list span {
+  color: var(--dark);
+  font-weight: 900;
+}
+
+.portal-match-list small {
+  margin-top: 4px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -1820,6 +1931,8 @@ footer {
   .region-landing-grid,
   .portal-shell,
   .portal-grid,
+  .portal-results,
+  .compact-fields,
   .plots-layout,
   .plot-card dl {
     grid-template-columns: 1fr;

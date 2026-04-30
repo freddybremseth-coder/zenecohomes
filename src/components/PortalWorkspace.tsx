@@ -12,7 +12,10 @@ import {
   LockKeyhole,
   LogOut,
   Mail,
+  MapPin,
   MessageSquareText,
+  Search,
+  SlidersHorizontal,
   UserRound,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-browser";
@@ -30,6 +33,105 @@ const savedProperties = [
   { ref: "demo-3", title: "Golfbolig ved Los Alcazares", location: "Los Alcazares", price: "Pris på forespørsel", href: "/eiendommer?area=Los%20Alcazares" },
 ];
 
+type PortalProperty = {
+  id?: string;
+  ref?: string;
+  external_id?: string;
+  title?: string;
+  title_no?: string;
+  location?: string;
+  town?: string;
+  price?: number;
+  bedrooms?: number;
+  bathrooms?: number;
+  built_area?: number;
+  area?: number;
+  property_type?: string;
+  type?: string;
+  pool?: boolean;
+};
+
+type PortalPlot = {
+  id?: string;
+  plot_number?: string;
+  location?: string;
+  municipality?: string;
+  area?: number;
+  price?: number;
+  zoning?: string;
+};
+
+type Preferences = {
+  budgetMin: string;
+  budgetMax: string;
+  region: string;
+  area: string;
+  propertyType: string;
+  bedrooms: string;
+  bathrooms: string;
+  lifestyle: string;
+  timeline: string;
+  wantsPlots: boolean;
+  minPlotArea: string;
+  maxPlotPrice: string;
+  notes: string;
+};
+
+const initialPreferences: Preferences = {
+  budgetMin: "",
+  budgetMax: "",
+  region: "",
+  area: "",
+  propertyType: "",
+  bedrooms: "",
+  bathrooms: "",
+  lifestyle: "",
+  timeline: "",
+  wantsPlots: false,
+  minPlotArea: "",
+  maxPlotPrice: "",
+  notes: "",
+};
+
+function normalize(value?: string) {
+  return (value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function formatEuro(value?: number) {
+  if (!value) return "Pris på forespørsel";
+  return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
+}
+
+function propertyRef(property: PortalProperty) {
+  return property.ref || property.external_id || property.id || "";
+}
+
+function propertyTitle(property: PortalProperty) {
+  return property.title_no || property.title || "Nybygg i Spania";
+}
+
+function propertyArea(property: PortalProperty) {
+  return property.built_area || property.area || 0;
+}
+
+function plotRef(plot: PortalPlot) {
+  return plot.plot_number || plot.id || "Tomt";
+}
+
+function regionMatches(haystack: string, region: string) {
+  if (!region) return true;
+  const terms: Record<string, string[]> = {
+    "costa blanca nord": ["costa blanca nord", "costa blanca north", "altea", "albir", "calpe", "finestrat", "denia", "javea", "moraira", "polop"],
+    "costa blanca sør": ["costa blanca sør", "costa blanca sor", "costa blanca south", "torrevieja", "orihuela", "ciudad quesada", "guardamar", "alicante", "la zenia"],
+    "costa calida": ["costa calida", "costa cálida", "murcia", "san pedro", "los alcazares", "la manga", "cartagena", "altaona"],
+  };
+  const normalizedRegion = normalize(region);
+  return (terms[normalizedRegion] || [region]).some((term) => haystack.includes(normalize(term)));
+}
+
 export function PortalWorkspace() {
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
   const [loginEmail, setLoginEmail] = useState("");
@@ -40,6 +142,10 @@ export function PortalWorkspace() {
   const [loginStatus, setLoginStatus] = useState<"idle" | "sent" | "error" | "missing-config">("idle");
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
   const [favorites, setFavorites] = useState(savedProperties);
+  const [properties, setProperties] = useState<PortalProperty[]>([]);
+  const [plots, setPlots] = useState<PortalPlot[]>([]);
+  const [preferences, setPreferences] = useState<Preferences>(initialPreferences);
+  const [signalStatus, setSignalStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
 
   useEffect(() => {
     function loadFavorites() {
@@ -67,6 +173,59 @@ export function PortalWorkspace() {
 
     return () => data.subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (!sessionEmail) return;
+    fetch("/api/portal/catalog")
+      .then((res) => res.json())
+      .then((data) => {
+        setProperties(Array.isArray(data.properties) ? data.properties : []);
+        setPlots(Array.isArray(data.plots) ? data.plots : []);
+      })
+      .catch(() => {});
+  }, [sessionEmail]);
+
+  const filteredProperties = properties
+    .filter((property) => {
+      const haystack = normalize(
+        [
+          propertyTitle(property),
+          property.location,
+          property.town,
+          property.property_type,
+          property.type,
+          property.ref,
+          property.external_id,
+        ]
+          .filter(Boolean)
+          .join(" "),
+      );
+      const price = Number(property.price || 0);
+      return (
+        regionMatches(haystack, preferences.region) &&
+        (!preferences.area || haystack.includes(normalize(preferences.area))) &&
+        (!preferences.propertyType || haystack.includes(normalize(preferences.propertyType))) &&
+        (!preferences.budgetMin || price >= Number(preferences.budgetMin)) &&
+        (!preferences.budgetMax || price <= Number(preferences.budgetMax)) &&
+        (!preferences.bedrooms || Number(property.bedrooms || 0) >= Number(preferences.bedrooms)) &&
+        (!preferences.bathrooms || Number(property.bathrooms || 0) >= Number(preferences.bathrooms)) &&
+        (!preferences.lifestyle ||
+          (preferences.lifestyle === "pool" && property.pool) ||
+          haystack.includes(normalize(preferences.lifestyle)))
+      );
+    })
+    .slice(0, 6);
+
+  const filteredPlots = plots
+    .filter((plot) => {
+      const haystack = normalize([plotRef(plot), plot.location, plot.municipality, plot.zoning].filter(Boolean).join(" "));
+      return (
+        (!preferences.area || haystack.includes(normalize(preferences.area))) &&
+        (!preferences.minPlotArea || Number(plot.area || 0) >= Number(preferences.minPlotArea)) &&
+        (!preferences.maxPlotPrice || Number(plot.price || 0) <= Number(preferences.maxPlotPrice))
+      );
+    })
+    .slice(0, 6);
 
   async function requestAccess(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -139,6 +298,29 @@ export function PortalWorkspace() {
     await supabase?.auth.signOut();
     setSessionEmail(null);
     setMustChangePassword(false);
+  }
+
+  async function savePreferences(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!supabase) return;
+    setSignalStatus("saving");
+    const { data } = await supabase.auth.getSession();
+    const token = data.session?.access_token;
+    if (!token) {
+      setSignalStatus("error");
+      return;
+    }
+
+    const res = await fetch("/api/portal/preferences", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ preferences }),
+    });
+
+    setSignalStatus(res.ok ? "saved" : "error");
   }
 
   return (
@@ -242,6 +424,207 @@ export function PortalWorkspace() {
                 {passwordStatus === "saved" && <p className="form-success">Passordet er oppdatert.</p>}
                 {passwordStatus === "error" && <p className="form-error">Kunne ikke lagre passordet.</p>}
               </form>
+            </article>
+          )}
+
+          {sessionEmail && (
+            <article className="portal-panel wide-panel portal-search-panel">
+              <div className="panel-title">
+                <SlidersHorizontal size={20} />
+                <h3>Mine boligønsker</h3>
+              </div>
+              <form className="portal-preferences" onSubmit={savePreferences}>
+                <div className="form-grid">
+                  <label>
+                    Budsjett fra
+                    <input
+                      inputMode="numeric"
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, budgetMin: event.target.value }))}
+                      placeholder="250000"
+                      value={preferences.budgetMin}
+                    />
+                  </label>
+                  <label>
+                    Budsjett til
+                    <input
+                      inputMode="numeric"
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, budgetMax: event.target.value }))}
+                      placeholder="650000"
+                      value={preferences.budgetMax}
+                    />
+                  </label>
+                </div>
+                <div className="form-grid">
+                  <label>
+                    Region
+                    <select
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, region: event.target.value }))}
+                      value={preferences.region}
+                    >
+                      <option value="">Alle regioner</option>
+                      <option>Costa Blanca Nord</option>
+                      <option>Costa Blanca Sør</option>
+                      <option>Costa Calida</option>
+                    </select>
+                  </label>
+                  <label>
+                    Område/sted
+                    <input
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, area: event.target.value }))}
+                      placeholder="Calpe, Altea, Torrevieja..."
+                      value={preferences.area}
+                    />
+                  </label>
+                </div>
+                <div className="form-grid">
+                  <label>
+                    Boligtype
+                    <select
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, propertyType: event.target.value }))}
+                      value={preferences.propertyType}
+                    >
+                      <option value="">Alle typer</option>
+                      <option>Villa</option>
+                      <option>Leilighet</option>
+                      <option>Rekkehus</option>
+                      <option>Penthouse</option>
+                    </select>
+                  </label>
+                  <label>
+                    Livsstil
+                    <select
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, lifestyle: event.target.value }))}
+                      value={preferences.lifestyle}
+                    >
+                      <option value="">Åpen</option>
+                      <option value="pool">Basseng</option>
+                      <option value="sea">Nær sjø / havutsikt</option>
+                      <option value="golf">Golf</option>
+                    </select>
+                  </label>
+                </div>
+                <div className="form-grid compact-fields">
+                  <label>
+                    Soverom
+                    <input
+                      min="0"
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, bedrooms: event.target.value }))}
+                      type="number"
+                      value={preferences.bedrooms}
+                    />
+                  </label>
+                  <label>
+                    Bad
+                    <input
+                      min="0"
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, bathrooms: event.target.value }))}
+                      type="number"
+                      value={preferences.bathrooms}
+                    />
+                  </label>
+                  <label>
+                    Tidslinje
+                    <select
+                      onChange={(event) => setPreferences((prev) => ({ ...prev, timeline: event.target.value }))}
+                      value={preferences.timeline}
+                    >
+                      <option value="">Ikke valgt</option>
+                      <option>Klar nå</option>
+                      <option>Innen 3 mnd</option>
+                      <option>6-12 mnd</option>
+                      <option>Senere</option>
+                    </select>
+                  </label>
+                </div>
+                <label className="portal-checkbox">
+                  <input
+                    checked={preferences.wantsPlots}
+                    onChange={(event) => setPreferences((prev) => ({ ...prev, wantsPlots: event.target.checked }))}
+                    type="checkbox"
+                  />
+                  Jeg vurderer også tomt
+                </label>
+                {preferences.wantsPlots && (
+                  <div className="form-grid">
+                    <label>
+                      Tomteareal fra
+                      <input
+                        inputMode="numeric"
+                        onChange={(event) => setPreferences((prev) => ({ ...prev, minPlotArea: event.target.value }))}
+                        placeholder="1000"
+                        value={preferences.minPlotArea}
+                      />
+                    </label>
+                    <label>
+                      Tomtepris til
+                      <input
+                        inputMode="numeric"
+                        onChange={(event) => setPreferences((prev) => ({ ...prev, maxPlotPrice: event.target.value }))}
+                        placeholder="75000"
+                        value={preferences.maxPlotPrice}
+                      />
+                    </label>
+                  </div>
+                )}
+                <label>
+                  Notat
+                  <textarea
+                    onChange={(event) => setPreferences((prev) => ({ ...prev, notes: event.target.value }))}
+                    placeholder="Fortell om beliggenhet, utsikt, avstand til strand/golf, overtakelse eller andre ønsker."
+                    value={preferences.notes}
+                  />
+                </label>
+                <button disabled={signalStatus === "saving"} type="submit">
+                  {signalStatus === "saving" ? "Lagrer..." : "Lagre ønsker i RealtyFlow"}
+                </button>
+                {signalStatus === "saved" && <p className="form-success">Ønskene er lagret. Freddy får dette som kjøpssignal.</p>}
+                {signalStatus === "error" && <p className="form-error">Kunne ikke lagre ønskene akkurat nå.</p>}
+              </form>
+
+              <div className="portal-results">
+                <div>
+                  <div className="panel-title small-title">
+                    <Search size={18} />
+                    <h3>Boliger som matcher</h3>
+                  </div>
+                  <ul className="portal-match-list">
+                    {filteredProperties.map((property) => (
+                      <li key={propertyRef(property)}>
+                        <Building2 size={17} />
+                        <a href={`/eiendommer/${encodeURIComponent(propertyRef(property))}`}>
+                          <span>{propertyTitle(property)}</span>
+                          <small>
+                            {property.location || property.town || "Spania"} · {formatEuro(property.price)} ·{" "}
+                            {property.bedrooms || 0} sov · {property.bathrooms || 0} bad · {propertyArea(property).toLocaleString("nb-NO")} m²
+                          </small>
+                        </a>
+                      </li>
+                    ))}
+                    {!filteredProperties.length && <li>Ingen boliger matcher filtrene akkurat nå.</li>}
+                  </ul>
+                </div>
+                <div>
+                  <div className="panel-title small-title">
+                    <MapPin size={18} />
+                    <h3>Tomter som matcher</h3>
+                  </div>
+                  <ul className="portal-match-list">
+                    {filteredPlots.map((plot) => (
+                      <li key={plotRef(plot)}>
+                        <MapPin size={17} />
+                        <a href="/tomter">
+                          <span>{plotRef(plot)}</span>
+                          <small>
+                            {plot.municipality || plot.location || "Spania"} · {formatEuro(plot.price)} ·{" "}
+                            {Number(plot.area || 0).toLocaleString("nb-NO")} m²
+                          </small>
+                        </a>
+                      </li>
+                    ))}
+                    {!filteredPlots.length && <li>Ingen tomter matcher filtrene akkurat nå.</li>}
+                  </ul>
+                </div>
+              </div>
             </article>
           )}
 
