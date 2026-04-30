@@ -516,6 +516,28 @@ select {
   box-shadow: var(--shadow);
 }
 
+.map-surface.real-map {
+  background: #d7d8cf;
+}
+
+.leaflet-plot-map {
+  width: 100%;
+  min-height: 610px;
+  height: 610px;
+  z-index: 1;
+}
+
+.leaflet-container {
+  font-family: var(--font-body, inherit);
+}
+
+.leaflet-tooltip,
+.leaflet-popup-content-wrapper {
+  border-radius: 6px;
+  color: var(--dark);
+  font: inherit;
+}
+
 .map-label {
   position: absolute;
   left: 18px;

@@ -1,4 +1,5 @@
 import { Footer } from "@/components/Footer";
+import { PlotsMap } from "@/components/PlotsMap";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getLandPlots, type LandPlot } from "@/lib/realtyflow";
 
@@ -24,19 +25,6 @@ function normalize(value?: string) {
 
 function plotRef(plot: LandPlot) {
   return plot.plot_number || plot.plotNumber || plot.id || "Tomt";
-}
-
-function getMapPoint(plot: LandPlot, plots: LandPlot[]) {
-  const valid = plots.filter((item) => item.lat && item.lng);
-  const lats = valid.map((item) => Number(item.lat));
-  const lngs = valid.map((item) => Number(item.lng));
-  const minLat = Math.min(...lats);
-  const maxLat = Math.max(...lats);
-  const minLng = Math.min(...lngs);
-  const maxLng = Math.max(...lngs);
-  const x = ((Number(plot.lng) - minLng) / Math.max(maxLng - minLng, 0.01)) * 86 + 7;
-  const y = (1 - (Number(plot.lat) - minLat) / Math.max(maxLat - minLat, 0.01)) * 78 + 11;
-  return { left: `${x}%`, top: `${y}%` };
 }
 
 export default async function PlotsPage({
@@ -97,22 +85,7 @@ export default async function PlotsPage({
 
       <section className="plots-layout">
         <div className="plots-map">
-          <div className="map-surface">
-            <span className="map-label">Kartoversikt</span>
-            {mapped.map((plot) => (
-              <a
-                className="plot-marker"
-                href={`#plot-${plot.id || encodeURIComponent(plotRef(plot))}`}
-                key={plot.id || plotRef(plot)}
-                style={getMapPoint(plot, mapped)}
-              >
-                <span>
-                  <strong>{plotRef(plot)}</strong>
-                  {formatEuro(plot.price)} · {Number(plot.area || 0).toLocaleString("nb-NO")} m²
-                </span>
-              </a>
-            ))}
-          </div>
+          <PlotsMap plots={mapped} />
         </div>
 
         <div className="plots-list">
