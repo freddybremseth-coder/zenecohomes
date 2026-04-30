@@ -30,11 +30,13 @@ const savedProperties = [
   { ref: "demo-3", title: "Golfbolig ved Los Alcazares", location: "Los Alcazares", price: "Pris på forespørsel", href: "/eiendommer?area=Los%20Alcazares" },
 ];
 
-const portalRedirectUrl = "https://www.zenecohomes.com/auth/callback";
-
 export function PortalWorkspace() {
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
   const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [mustChangePassword, setMustChangePassword] = useState(false);
+  const [passwordStatus, setPasswordStatus] = useState<"idle" | "saved" | "error">("idle");
   const [loginStatus, setLoginStatus] = useState<"idle" | "sent" | "error" | "missing-config">("idle");
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
   const [favorites, setFavorites] = useState(savedProperties);
@@ -55,10 +57,12 @@ export function PortalWorkspace() {
 
     supabase.auth.getUser().then(({ data }) => {
       setSessionEmail(data.user?.email || null);
+      setMustChangePassword(Boolean(data.user?.user_metadata?.must_change_password));
     });
 
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
       setSessionEmail(session?.user?.email || null);
+      setMustChangePassword(Boolean(session?.user?.user_metadata?.must_change_password));
     });
 
     return () => data.subscription.unsubscribe();
@@ -89,7 +93,7 @@ export function PortalWorkspace() {
     }
   }
 
-  async function sendMagicLink(event: FormEvent<HTMLFormElement>) {
+  async function signInWithPassword(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoginStatus("idle");
 
@@ -98,20 +102,43 @@ export function PortalWorkspace() {
       return;
     }
 
-    const { error } = await supabase.auth.signInWithOtp({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: loginEmail,
-      options: {
-        emailRedirectTo: portalRedirectUrl,
-        shouldCreateUser: false,
-      },
+      password: loginPassword,
     });
 
+    if (!error) {
+      setSessionEmail(data.user?.email || null);
+      setMustChangePassword(Boolean(data.user?.user_metadata?.must_change_password));
+      setLoginPassword("");
+    }
     setLoginStatus(error ? "error" : "sent");
+  }
+
+  async function changePassword(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setPasswordStatus("idle");
+    if (!supabase || newPassword.length < 8) {
+      setPasswordStatus("error");
+      return;
+    }
+    const { data, error } = await supabase.auth.updateUser({
+      password: newPassword,
+      data: { must_change_password: false },
+    });
+    if (error) {
+      setPasswordStatus("error");
+      return;
+    }
+    setNewPassword("");
+    setMustChangePassword(Boolean(data.user?.user_metadata?.must_change_password));
+    setPasswordStatus("saved");
   }
 
   async function signOut() {
     await supabase?.auth.signOut();
     setSessionEmail(null);
+    setMustChangePassword(false);
   }
 
   return (
@@ -158,7 +185,7 @@ export function PortalWorkspace() {
                 <Mail size={20} />
                 <h3>Har du fått tilgang?</h3>
               </div>
-              <form onSubmit={sendMagicLink}>
+              <form onSubmit={signInWithPassword}>
                 <label>
                   E-post
                   <input
@@ -170,14 +197,50 @@ export function PortalWorkspace() {
                     value={loginEmail}
                   />
                 </label>
-                <button type="submit">Send innloggingslenke</button>
-                {loginStatus === "sent" && <p className="form-success">Sjekk e-posten din for innloggingslenke.</p>}
+                <label>
+                  Passord
+                  <input
+                    name="password"
+                    onChange={(event) => setLoginPassword(event.target.value)}
+                    placeholder="Midlertidig eller eget passord"
+                    required
+                    type="password"
+                    value={loginPassword}
+                  />
+                </label>
+                <button type="submit">Logg inn</button>
+                {loginStatus === "sent" && <p className="form-success">Du er logget inn.</p>}
                 {loginStatus === "error" && (
-                  <p className="form-error">Kunne ikke sende lenke. Kontroller at du har fått tilgang først.</p>
+                  <p className="form-error">Kunne ikke logge inn. Kontroller e-post og passord.</p>
                 )}
                 {loginStatus === "missing-config" && (
                   <p className="form-error">Supabase-nøkler mangler i Zeneco-prosjektet.</p>
                 )}
+              </form>
+            </article>
+          )}
+
+          {sessionEmail && mustChangePassword && (
+            <article className="portal-panel access-panel wide-panel">
+              <div className="panel-title">
+                <KeyRound size={20} />
+                <h3>Sett nytt passord</h3>
+              </div>
+              <form onSubmit={changePassword}>
+                <label>
+                  Nytt passord
+                  <input
+                    minLength={8}
+                    onChange={(event) => setNewPassword(event.target.value)}
+                    placeholder="Minst 8 tegn"
+                    required
+                    type="password"
+                    value={newPassword}
+                  />
+                </label>
+                <button type="submit">Lagre nytt passord</button>
+                {passwordStatus === "saved" && <p className="form-success">Passordet er oppdatert.</p>}
+                {passwordStatus === "error" && <p className="form-error">Kunne ikke lagre passordet.</p>}
               </form>
             </article>
           )}

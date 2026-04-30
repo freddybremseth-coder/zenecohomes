@@ -8,6 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
     "/eiendommer",
+    "/tomter",
     "/omrader",
     ...regions.map((region) => `/omrader/${region.key}`),
     "/kjopsprosessen",

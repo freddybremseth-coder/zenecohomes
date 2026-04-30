@@ -51,6 +51,26 @@ export type AreaProfile = {
   published?: boolean | null;
 };
 
+export type LandPlot = {
+  id?: string;
+  plot_number?: string;
+  plotNumber?: string;
+  area?: number;
+  price?: number;
+  location?: string;
+  municipality?: string;
+  zoning?: string;
+  water?: boolean;
+  electricity?: boolean;
+  slope?: string;
+  road_access?: boolean;
+  roadAccess?: boolean;
+  notes?: string;
+  lat?: number;
+  lng?: number;
+  source?: string;
+};
+
 export type LeadPayload = {
   name: string;
   email: string;
@@ -330,6 +350,20 @@ export async function getAreaProfiles(): Promise<AreaProfile[]> {
       ].filter((value) => typeof value === "boolean");
       return visibilityFields.length ? visibilityFields.some(Boolean) : true;
     });
+  } catch {
+    return [];
+  }
+}
+
+export async function getLandPlots(): Promise<LandPlot[]> {
+  try {
+    const res = await fetch(`${REALTYFLOW_BASE}/api/plots`, {
+      cache: "no-store",
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return Array.isArray(data.plots) ? (data.plots as LandPlot[]) : [];
   } catch {
     return [];
   }

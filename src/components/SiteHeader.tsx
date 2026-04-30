@@ -8,6 +8,7 @@ export function SiteHeader() {
       </Link>
       <nav className="nav">
         <Link href="/eiendommer">Boliger</Link>
+        <Link href="/tomter">Tomter</Link>
         <Link href="/omrader">Områder</Link>
         <Link href="/kjopsprosessen">Kjøpsprosess</Link>
         <Link href="/magasin">Magasin</Link>

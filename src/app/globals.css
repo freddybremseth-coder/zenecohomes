@@ -484,6 +484,288 @@ select {
   grid-template-columns: minmax(220px, 1.4fr) repeat(6, minmax(118px, 0.7fr)) auto;
 }
 
+.plots-search {
+  grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(128px, 0.8fr)) auto;
+}
+
+.plots-layout {
+  width: min(1220px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 72px 0 92px;
+  display: grid;
+  grid-template-columns: minmax(420px, 0.95fr) 1.05fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.plots-map {
+  position: sticky;
+  top: 96px;
+}
+
+.map-surface {
+  position: relative;
+  min-height: 610px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background:
+    linear-gradient(135deg, rgba(203, 214, 196, 0.72), rgba(247, 246, 239, 0.88)),
+    repeating-linear-gradient(0deg, rgba(22, 34, 43, 0.06) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(90deg, rgba(22, 34, 43, 0.06) 0 1px, transparent 1px 42px);
+  box-shadow: var(--shadow);
+}
+
+.map-label {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: rgba(22, 34, 43, 0.86);
+  color: white;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.plot-marker {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 8px 24px rgba(22, 34, 43, 0.28);
+}
+
+.plot-marker > span {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  width: 220px;
+  transform: translateX(-50%);
+  display: none;
+  padding: 12px;
+  border-radius: 6px;
+  background: #101920;
+  color: white;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  z-index: 5;
+}
+
+.plot-marker:hover > span,
+.plot-marker:focus-visible > span {
+  display: block;
+}
+
+.plot-marker strong {
+  display: block;
+  color: var(--gold);
+}
+
+.plots-list {
+  display: grid;
+  gap: 16px;
+}
+
+.plot-card {
+  display: grid;
+  gap: 20px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 8px 28px rgba(22, 34, 43, 0.07);
+}
+
+.plot-card p:first-child {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.plot-card h2 {
+  margin: 0 0 10px;
+  color: var(--dark);
+  font-family: "Playfair Display", serif;
+}
+
+.plot-card strong {
+  color: var(--dark);
+  font-size: 1.2rem;
+}
+
+.plot-card dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 0;
+}
+
+.plot-card dl div {
+  padding: 12px;
+  background: #f8f8f3;
+}
+
+.plot-card dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.plot-card dd {
+  margin: 4px 0 0;
+  color: var(--dark);
+  font-weight: 900;
+}
+
+.plot-notes {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.chatbot-shell {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+}
+
+.chatbot-toggle {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: var(--gold);
+  color: white;
+  box-shadow: 0 18px 40px rgba(22, 34, 43, 0.25);
+  cursor: pointer;
+}
+
+.chatbot-panel {
+  width: min(390px, calc(100vw - 44px));
+  margin-bottom: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.chatbot-panel header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  background: #101920;
+  color: white;
+}
+
+.chatbot-panel header strong,
+.chatbot-panel header span {
+  display: block;
+}
+
+.chatbot-panel header span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.8rem;
+}
+
+.chatbot-panel header button,
+.chatbot-input button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  max-height: 300px;
+  overflow-y: auto;
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  background: #fbfbf7;
+}
+
+.chatbot-messages p {
+  margin: 0;
+  padding: 11px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.chatbot-messages .assistant {
+  background: white;
+  color: var(--text);
+}
+
+.chatbot-messages .user {
+  justify-self: end;
+  background: var(--gold);
+  color: white;
+}
+
+.chatbot-form,
+.chatbot-input {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.chatbot-form input,
+.chatbot-form textarea,
+.chatbot-input input {
+  width: 100%;
+  border: 1px solid #d7dce2;
+  border-radius: 4px;
+  padding: 11px 12px;
+  font: inherit;
+}
+
+.chatbot-form textarea {
+  min-height: 86px;
+  resize: vertical;
+}
+
+.chatbot-form button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--gold);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.chatbot-input {
+  grid-template-columns: 1fr 44px;
+}
+
+.chatbot-input button {
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: var(--gold);
+  color: white;
+}
+
 .quick-filters {
   display: flex;
   flex-wrap: wrap;
@@ -1515,7 +1797,9 @@ footer {
   .gallery-grid,
   .region-landing-grid,
   .portal-shell,
-  .portal-grid {
+  .portal-grid,
+  .plots-layout,
+  .plot-card dl {
     grid-template-columns: 1fr;
   }
 
@@ -1523,7 +1807,8 @@ footer {
     position: static;
   }
 
-  .portal-sidebar {
+  .portal-sidebar,
+  .plots-map {
     position: static;
   }
 
