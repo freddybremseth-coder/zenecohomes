@@ -85,6 +85,7 @@ export type LeadPayload = {
   property_ref?: string;
   property_title?: string;
   request_type?: string;
+  page_url?: string;
 };
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
@@ -396,13 +397,19 @@ export async function sendLead(payload: LeadPayload) {
     .filter(Boolean)
     .join("\n");
 
-  const res = await fetch(`${REALTYFLOW_BASE}/api/contacts`, {
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  if (process.env.ZENECO_API_KEY) {
+    headers["x-realtyflow-source-key"] = process.env.ZENECO_API_KEY;
+  }
+
+  const res = await fetch(`${REALTYFLOW_BASE}/api/public/leads`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify({
       name: payload.name,
       email: payload.email,
       phone: payload.phone || null,
+      page_url: payload.page_url || null,
       source: payload.source || "zenecohomes-next",
       notes,
       pipeline_status: "NEW",
