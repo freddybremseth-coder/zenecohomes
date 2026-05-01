@@ -1792,6 +1792,80 @@ select {
   margin: 0;
 }
 
+.portal-message-box {
+  display: grid;
+  gap: 14px;
+}
+
+.portal-message-thread {
+  display: grid;
+  gap: 10px;
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.portal-message {
+  border: 1px solid rgba(30, 45, 40, 0.12);
+  border-radius: 14px;
+  padding: 12px;
+  background: #f8f8f3;
+}
+
+.portal-message.from-customer {
+  margin-left: clamp(0px, 12%, 80px);
+  background: rgba(127, 157, 129, 0.12);
+  border-color: rgba(127, 157, 129, 0.28);
+}
+
+.portal-message.from-admin {
+  margin-right: clamp(0px, 12%, 80px);
+}
+
+.portal-message small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  margin-bottom: 6px;
+}
+
+.portal-message p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.portal-message a {
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--green);
+  font-size: 0.85rem;
+}
+
+.message-empty {
+  color: var(--muted);
+  margin: 0;
+}
+
+.portal-message-form {
+  display: grid;
+  gap: 10px;
+}
+
+.portal-message-form textarea,
+.portal-message-form input {
+  width: 100%;
+  border: 1px solid rgba(30, 45, 40, 0.12);
+  background: #fff;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.portal-message-form textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
 .portal-search-panel {
   display: grid;
   gap: 24px;

@@ -72,6 +72,15 @@ type PortalDocument = {
   source?: string;
 };
 
+type PortalMessage = {
+  id: string;
+  sender_type: "customer" | "admin" | "system";
+  sender_name?: string;
+  body: string;
+  attachments?: { name?: string; url?: string }[];
+  created_at: string;
+};
+
 type FinanceRates = {
   eurNok: number;
   updatedAt: string;
@@ -180,6 +189,10 @@ export function PortalWorkspace() {
   const [properties, setProperties] = useState<PortalProperty[]>([]);
   const [plots, setPlots] = useState<PortalPlot[]>([]);
   const [documents, setDocuments] = useState<PortalDocument[]>([]);
+  const [messages, setMessages] = useState<PortalMessage[]>([]);
+  const [messageText, setMessageText] = useState("");
+  const [attachmentUrl, setAttachmentUrl] = useState("");
+  const [messageStatus, setMessageStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [expandedDocument, setExpandedDocument] = useState<string | null>(null);
   const [financeRates, setFinanceRates] = useState<FinanceRates | null>(null);
   const [calculator, setCalculator] = useState({
@@ -244,6 +257,21 @@ export function PortalWorkspace() {
         .catch(() => setDocuments([]));
     });
   }, [sessionEmail]);
+
+  useEffect(() => {
+    if (!sessionEmail || !supabase) return;
+
+    supabase.auth.getSession().then(({ data }) => {
+      const token = data.session?.access_token;
+      if (!token) return;
+      fetch("/api/portal/messages", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((res) => res.json())
+        .then((data) => setMessages(Array.isArray(data.messages) ? data.messages : []))
+        .catch(() => setMessages([]));
+    });
+  }, [sessionEmail, messageStatus]);
 
   useEffect(() => {
     fetch("/api/finance/rates")
@@ -404,6 +432,41 @@ export function PortalWorkspace() {
     });
 
     setSignalStatus(res.ok ? "saved" : "error");
+  }
+
+  async function sendPortalMessage(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!supabase || (!messageText.trim() && !attachmentUrl.trim())) return;
+    setMessageStatus("sending");
+    const { data } = await supabase.auth.getSession();
+    const token = data.session?.access_token;
+    if (!token) {
+      setMessageStatus("error");
+      return;
+    }
+
+    const res = await fetch("/api/portal/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        body: messageText,
+        attachmentUrl,
+        attachmentName: attachmentUrl ? "Vedlegg" : "",
+      }),
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      setMessages((prev) => [...prev, data.message]);
+      setMessageText("");
+      setAttachmentUrl("");
+      setMessageStatus("sent");
+    } else {
+      setMessageStatus("error");
+    }
   }
 
   return (
@@ -886,13 +949,48 @@ export function PortalWorkspace() {
               <MessageSquareText size={20} />
               <h3>Meldinger og oppfølging</h3>
             </div>
-            <div className="message-preview">
-              <Mail size={19} />
-              <p>
-                Forespørsler og tilgang styres i RealtyFlow. Når du lagrer boliger på nettsiden vises de her, slik at
-                neste samtale kan handle om riktige områder, budsjett og aktuelle prosjekter.
-              </p>
-            </div>
+            {sessionEmail ? (
+              <div className="portal-message-box">
+                <div className="portal-message-thread">
+                  {messages.length ? messages.map((message) => (
+                    <div key={message.id} className={`portal-message ${message.sender_type === "customer" ? "from-customer" : "from-admin"}`}>
+                      <small>{message.sender_type === "customer" ? "Du" : message.sender_name || "Zen Eco Homes"} · {new Date(message.created_at).toLocaleString("nb-NO")}</small>
+                      <p>{message.body}</p>
+                      {message.attachments?.map((attachment, index) => attachment.url ? (
+                        <a key={index} href={attachment.url} rel="noopener noreferrer" target="_blank">
+                          {attachment.name || attachment.url}
+                        </a>
+                      ) : null)}
+                    </div>
+                  )) : (
+                    <p className="message-empty">Ingen meldinger ennå. Send spørsmål, dokumenter eller lenker direkte her.</p>
+                  )}
+                </div>
+                <form className="portal-message-form" onSubmit={sendPortalMessage}>
+                  <textarea
+                    onChange={(event) => setMessageText(event.target.value)}
+                    placeholder="Skriv en melding til Freddy / Zen Eco Homes..."
+                    value={messageText}
+                  />
+                  <input
+                    onChange={(event) => setAttachmentUrl(event.target.value)}
+                    placeholder="Vedlegg/lenke, f.eks. PDF eller delt dokument"
+                    type="url"
+                    value={attachmentUrl}
+                  />
+                  <button disabled={messageStatus === "sending"} type="submit">
+                    {messageStatus === "sending" ? "Sender..." : "Send melding"}
+                  </button>
+                  {messageStatus === "sent" && <p className="form-success">Meldingen er sendt.</p>}
+                  {messageStatus === "error" && <p className="form-error">Kunne ikke sende meldingen.</p>}
+                </form>
+              </div>
+            ) : (
+              <div className="message-preview">
+                <Mail size={19} />
+                <p>Logg inn for direkte meldinger, svar og vedlegg.</p>
+              </div>
+            )}
           </article>
         </div>
       </div>

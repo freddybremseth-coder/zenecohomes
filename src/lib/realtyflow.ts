@@ -28,6 +28,8 @@ export type Property = {
   energy_rating?: string;
   status?: string;
   region?: string;
+  show_on_website?: boolean | null;
+  website_visible?: boolean | null;
 };
 
 export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida";
@@ -326,7 +328,11 @@ export async function getProperties(limit?: number): Promise<Property[]> {
     });
     if (!res.ok) return fallbackProperties.slice(0, limit);
     const data = await res.json();
-    const items = Array.isArray(data) ? data : [];
+    const items = (Array.isArray(data) ? data : []).filter((property: Property) => {
+      if (typeof property.show_on_website === "boolean") return property.show_on_website;
+      if (typeof property.website_visible === "boolean") return property.website_visible;
+      return true;
+    });
     return (limit ? items.slice(0, limit) : items) as Property[];
   } catch {
     return fallbackProperties.slice(0, limit);
