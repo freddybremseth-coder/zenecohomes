@@ -82,6 +82,10 @@ export type LeadPayload = {
   property_type?: string;
   bedrooms?: string;
   timeline?: string;
+  purchase_goal?: string;
+  financing_status?: string;
+  spain_experience?: string;
+  next_step?: string;
   message?: string;
   source?: string;
   property_ref?: string;
@@ -399,6 +403,10 @@ export async function sendLead(payload: LeadPayload) {
     payload.property_type ? `Boligtype: ${payload.property_type}` : "",
     payload.bedrooms ? `Soverom: ${payload.bedrooms}` : "",
     payload.timeline ? `Tidslinje: ${payload.timeline}` : "",
+    payload.purchase_goal ? `Bruk/mål: ${payload.purchase_goal}` : "",
+    payload.financing_status ? `Finansiering: ${payload.financing_status}` : "",
+    payload.spain_experience ? `Spania-erfaring: ${payload.spain_experience}` : "",
+    payload.next_step ? `Ønsket neste steg: ${payload.next_step}` : "",
   ]
     .filter(Boolean)
     .join("\n");

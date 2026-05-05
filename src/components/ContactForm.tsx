@@ -93,6 +93,47 @@ export function ContactForm({
           <option>Planlegger fremtidig pensjon</option>
         </select>
       </label>
+      <div className="form-grid">
+        <label>
+          Bruk av boligen
+          <select name="purchase_goal" defaultValue="Feriebolig">
+            <option>Feriebolig</option>
+            <option>Pensjon / lengre opphold</option>
+            <option>Investering og utleie</option>
+            <option>Flytting til Spania</option>
+            <option>Tomt og bygging</option>
+          </select>
+        </label>
+        <label>
+          Finansiering
+          <select name="financing_status" defaultValue="Ikke avklart ennå">
+            <option>Finansiering klar</option>
+            <option>Trenger låneavklaring</option>
+            <option>Skal selge bolig først</option>
+            <option>Ikke avklart ennå</option>
+          </select>
+        </label>
+      </div>
+      <div className="form-grid">
+        <label>
+          Spania-erfaring
+          <select name="spain_experience" defaultValue="Har vært i området før">
+            <option>Har vært i området før</option>
+            <option>Har kjøpt i Spania før</option>
+            <option>Første gang vi vurderer Spania</option>
+            <option>Usikker på område</option>
+          </select>
+        </label>
+        <label>
+          Ønsket neste steg
+          <select name="next_step" defaultValue="Få shortlist">
+            <option>Få shortlist</option>
+            <option>Digital visning</option>
+            <option>Planlegge Spania-tur</option>
+            <option>Avklaringssamtale</option>
+          </select>
+        </label>
+      </div>
       <label>
         Hva ser du etter?
         <textarea

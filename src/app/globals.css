@@ -407,6 +407,85 @@ select {
   line-height: 1.75;
 }
 
+.buyer-match {
+  width: 100%;
+  max-width: none;
+  padding-right: max(24px, calc((100vw - 1220px) / 2));
+  padding-left: max(24px, calc((100vw - 1220px) / 2));
+  background: #eef3ef;
+}
+
+.quiz-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 26px;
+  align-items: start;
+}
+
+.quiz-form,
+.quiz-result {
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 32px rgba(22, 34, 43, 0.06);
+}
+
+.quiz-form {
+  display: grid;
+  gap: 14px;
+  padding: 28px;
+}
+
+.quiz-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.quiz-form input,
+.quiz-form select,
+.quiz-form textarea {
+  width: 100%;
+  border: 1px solid #d7dce2;
+  border-radius: 4px;
+  padding: 13px 14px;
+  background: white;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.quiz-form textarea {
+  resize: vertical;
+}
+
+.quiz-result {
+  position: sticky;
+  top: 110px;
+  padding: 30px;
+}
+
+.quiz-result > svg {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  color: var(--gold);
+}
+
+.quiz-result h3 {
+  margin: 0 0 12px;
+  color: var(--dark);
+  font-size: 1.55rem;
+}
+
+.quiz-result p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 .contact-section {
   display: flex;
   align-items: center;
@@ -1171,6 +1250,53 @@ select {
   font-weight: 900;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.decision-grid article {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.decision-grid h2 {
+  margin: 0 0 14px;
+  color: var(--dark);
+  font-size: 1.35rem;
+}
+
+.decision-grid p,
+.decision-grid li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.decision-grid ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.cost-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 16px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.cost-box span {
+  color: var(--muted);
+}
+
+.cost-box strong {
+  color: var(--dark);
 }
 
 .buyer-next-steps {
@@ -2061,6 +2187,7 @@ footer {
   .region-strip,
   .property-grid,
   .split,
+  .quiz-layout,
   .proof-grid,
   .area-profile-card {
     grid-template-columns: 1fr;
@@ -2093,10 +2220,11 @@ footer {
   .region-landing-grid,
   .portal-shell,
   .portal-grid,
-  .portal-results,
-  .compact-fields,
-  .plots-layout,
-  .plot-card dl {
+    .portal-results,
+    .compact-fields,
+    .decision-grid,
+    .plots-layout,
+    .plot-card dl {
     grid-template-columns: 1fr;
   }
 
@@ -2105,6 +2233,7 @@ footer {
   }
 
   .portal-sidebar,
+  .quiz-result,
   .plots-map {
     position: static;
   }

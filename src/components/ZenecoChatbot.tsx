@@ -6,6 +6,26 @@ import { MessageCircle, Send, X } from "lucide-react";
 type LeadInfo = { name: string; email: string; phone: string; need: string };
 type ChatMessage = { role: "assistant" | "user"; text: string };
 
+function createAdvisorReply(text: string) {
+  const lower = text.toLowerCase();
+  if (lower.includes("tomt") || lower.includes("bygge")) {
+    return "Da bør vi vurdere tomt på en annen måte enn bolig: regulering, vann, strøm, adkomst, grunnforhold, byggekost og avstand til service. Vil du ha rolig innland/Pinoso, eller tomt nærmere kysten?";
+  }
+  if (lower.includes("invest") || lower.includes("utleie") || lower.includes("leie")) {
+    return "For investering bør vi ikke bare se på pris. Vi bør vurdere turistlisens, sesong, område, konkurranse, felleskostnader og hvem boligen passer for. Hva er viktigst: trygg utleie, verdistigning eller egen bruk?";
+  }
+  if (lower.includes("calpe") || lower.includes("altea") || lower.includes("finestrat") || lower.includes("moraira")) {
+    return "Det peker mot Costa Blanca Nord. Der bør vi sammenligne utsikt, kvalitet, helårsservice, reisevei og prisnivå. Nord passer ofte godt for kjøpere som prioriterer område og kvalitet mer enn laveste pris.";
+  }
+  if (lower.includes("torrevieja") || lower.includes("orihuela") || lower.includes("quesada") || lower.includes("guardamar")) {
+    return "Det peker mot Costa Blanca Sør. Der finnes ofte flere nybygg i lavere prisklasser, kort vei til strand, golf og flyplass, og mange områder med norsk/skandinavisk miljø.";
+  }
+  if (lower.includes("kost") || lower.includes("skatt") || lower.includes("pris")) {
+    return "Som tommelfingerregel bør du beregne ca. 13,5% ekstra på kjøpesummen til skatt og kjøpskostnader. Vi bør også sjekke betalingsplan, hva som er inkludert, møbler, basseng og løpende kostnader.";
+  }
+  return "For å gi en god anbefaling trenger jeg mål med kjøpet, budsjett, område, soverom, om du vil ha basseng/nær sjø/golf, og når du tidligst kan reise til Spania. Da kan Freddy lage en konkret shortlist.";
+}
+
 export function ZenecoChatbot() {
   const [open, setOpen] = useState(false);
   const [lead, setLead] = useState<LeadInfo | null>(null);
@@ -13,7 +33,7 @@ export function ZenecoChatbot() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      text: "Hei, jeg kan hjelpe med boliger, tomter og områder i Spania. Først trenger jeg litt kontaktinfo, så kan vi gi konkrete forslag og følge deg opp riktig.",
+      text: "Hei, jeg kan hjelpe deg å finne riktig område og bolig i Spania. Først tar jeg kontaktinfo, så kan jeg stille bedre spørsmål og sende ønskene dine til Freddy i RealtyFlow.",
     },
   ]);
 
@@ -33,7 +53,7 @@ export function ZenecoChatbot() {
       { role: "user", text: nextLead.need },
       {
         role: "assistant",
-        text: "Takk. Jeg har lagret forespørselen i RealtyFlow. Spør meg gjerne om område, budsjett, boligtype eller tomter, så peker jeg deg i riktig retning.",
+        text: "Takk. Jeg har lagret forespørselen i RealtyFlow. Hva er viktigst for deg nå: feriebolig, pensjon, investering, flytting eller tomt/bygging?",
       },
     ]);
     await fetch("/api/contact", {
@@ -54,14 +74,7 @@ export function ZenecoChatbot() {
     const text = input.trim();
     if (!text) return;
     setInput("");
-    const lower = text.toLowerCase();
-    const reply = lower.includes("tomt")
-      ? "Se Tomter i menyen. Der kan du filtrere på pris, størrelse og regulering. Jeg anbefaler å lagre aktuelle tomter og be om vurdering av vann, strøm, regulering og byggekost."
-      : lower.includes("calpe") || lower.includes("altea") || lower.includes("finestrat")
-        ? "Det høres ut som Costa Blanca Nord. Der bør vi sammenligne utsikt, tilgang til service hele året, byggekvalitet og betalingsplan."
-        : lower.includes("torrevieja") || lower.includes("orihuela")
-          ? "Det høres ut som Costa Blanca Sør. Der finnes ofte flere nybygg i lavere prisklasser og kort vei til strand, golf og flyplass."
-          : "Fortell gjerne ønsket område, budsjett, soverom, om du vil ha basseng, nær sjø/golf, eller om du vurderer tomt. Da kan vi lage en mer presis shortlist.";
+    const reply = createAdvisorReply(text);
     setMessages((prev) => [...prev, { role: "user", text }, { role: "assistant", text: reply }]);
   }
 

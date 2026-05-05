@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Building2, Check, Leaf, ShieldCheck, Sparkles } from "lucide-react";
+import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -19,11 +20,11 @@ export default async function Home() {
         </video>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Norsk rådgivning · Nybygg i Spania</p>
-          <h1>Ditt moderne hjem i solen</h1>
+          <p className="eyebrow">Norsk, uavhengig rådgivning · Nybygg i Spania</p>
+          <h1>Kjøp bolig i Spania trygt</h1>
           <p className="hero-copy">
-            Zen Eco Homes hjelper nordmenn med å finne moderne nybygg på Costa Blanca og Costa Calida,
-            med tydelige områdevalg, kuraterte prosjekter og trygg oppfølging fra første samtale.
+            Med norsk, uavhengig rådgivning fra første søk til overtakelse. Vi hjelper deg å vurdere område,
+            prosjekt, pris, risiko og neste steg før du reserverer.
           </p>
           <form className="search-card" action="/eiendommer">
             <input name="q" placeholder="Hvor vil du bo? Altea, Finestrat, Polop..." />
@@ -42,16 +43,44 @@ export default async function Home() {
 
       <section className="trust-band">
         <div>
-          <strong>Nybygg først</strong>
-          <span>Moderne prosjekter med lavere vedlikehold</span>
+          <strong>Uavhengig rådgivning</strong>
+          <span>Vi hjelper deg å sammenligne boliger, områder og utbyggere</span>
         </div>
         <div>
-          <strong>Norsk trygghet</strong>
-          <span>Rådgivning fra første samtale til overtakelse</span>
+          <strong>Norsk oppfølging</strong>
+          <span>Én trygg prosess med dialog, dokumenter og shortlist</span>
         </div>
         <div>
           <strong>1329+ boliger</strong>
           <span>Oppdateres fra RealtyFlow med regioner og områdevalg</span>
+        </div>
+      </section>
+
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Hvorfor ikke bare portal eller utbygger?</p>
+          <h2>Du trenger mer enn en boligannonse</h2>
+          <p>
+            Portaler viser mange boliger. Utbyggere selger sine egne prosjekter. Zen Eco Homes hjelper deg å forstå
+            hva som faktisk passer deg, hva du bør sjekke, og hvilke steg som bør tas før reservasjon.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article>
+            <strong>01</strong>
+            <h3>Først behov, så bolig</h3>
+            <p>Vi starter med livsstil, budsjett, bruk, område og risiko før vi lager shortlist.</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3>Områdekunnskap</h3>
+            <p>Vi sammenligner Costa Blanca Nord, Sør og Costa Calida med helårsservice, flyplass, strand og prisnivå.</p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3>Trygg kjøpsprosess</h3>
+            <p>Du får hjelp med prospekt, visning, betalingsplan, kostnader, advokat og neste steg.</p>
+          </article>
         </div>
       </section>
 
@@ -72,6 +101,8 @@ export default async function Home() {
           </Link>
         </div>
       </section>
+
+      <BuyerMatchQuiz />
 
       <section className="section split">
         <div>

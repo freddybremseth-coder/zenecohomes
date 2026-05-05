@@ -63,6 +63,8 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   const mainImage = getPrimaryImage(property);
   const description = getPropertyDescription(property);
   const location = property.location || property.town || "Spania";
+  const estimatedCosts = property.price ? Math.round(property.price * 0.135) : 0;
+  const estimatedTotal = property.price ? property.price + estimatedCosts : 0;
   const detailFacts = [
     { icon: <Tag />, label: `Ref ${getPropertyRef(property)}` },
     { icon: <Home />, label: getPropertyType(property) },
@@ -146,6 +148,46 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
               }
             />
           </article>
+
+          <section className="decision-grid">
+            <article>
+              <h2>Dette bør sjekkes før reservasjon</h2>
+              <ul>
+                <li>Oppdatert tilgjengelighet, pris og hva som faktisk er inkludert.</li>
+                <li>Betalingsplan, byggefase og forventet overtakelse.</li>
+                <li>Utbygger, kvalitet, garantier og tidligere leveranser.</li>
+                <li>Avstand til strand, service, flyplass og helårsaktivitet.</li>
+              </ul>
+            </article>
+            <article>
+              <h2>Estimert kjøpskostnad</h2>
+              <p>
+                I Spania bør du normalt beregne ca. 13,5% ekstra til skatt, notar, register, advokat og øvrige kostnader.
+              </p>
+              <div className="cost-box">
+                <span>Pris</span>
+                <strong>{formatPrice(property.price)}</strong>
+                <span>Ca. kostnader</span>
+                <strong>{estimatedCosts ? formatPrice(estimatedCosts) : "Avklares"}</strong>
+                <span>Estimert total</span>
+                <strong>{estimatedTotal ? formatPrice(estimatedTotal) : "Pris på forespørsel"}</strong>
+              </div>
+            </article>
+            <article>
+              <h2>Passer den for utleie?</h2>
+              <p>
+                Vi vurderer beliggenhet, turistlisens, felleskostnader, sesong, målgruppe og konkurranse før du baserer
+                kjøpet på forventet leieinntekt.
+              </p>
+            </article>
+            <article>
+              <h2>Hva er inkludert?</h2>
+              <p>
+                Be om komplett tilbud, så sjekker vi hvitevarer, belysning, basseng, hage, parkering, møbler, klima,
+                solcellevalg og eventuelle tillegg.
+              </p>
+            </article>
+          </section>
 
           <section className="buyer-next-steps">
             <h2>Neste steg</h2>
