@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
 import "./globals.css";
 
@@ -47,6 +48,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         {children}
+        <Script
+          src="https://appointment.chatgenius.pro/embed.js"
+          strategy="afterInteractive"
+          data-brand="zen"
+          data-config-url="https://realtyflow.chatgenius.pro/api/public/booking-config?brand_id=zeneco"
+        />
         <ZenecoChatbot />
       </body>
     </html>
