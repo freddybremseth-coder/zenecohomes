@@ -70,16 +70,63 @@ export default async function Home() {
             <strong>01</strong>
             <h3>Først behov, så bolig</h3>
             <p>Vi starter med livsstil, budsjett, bruk, område og risiko før vi lager shortlist.</p>
+            <Link className="text-button" href="/magasin/omradeguide-eiendomskjop-i-spania">
+              Les områdeguiden <ArrowRight size={16} />
+            </Link>
           </article>
           <article>
             <strong>02</strong>
-            <h3>Områdekunnskap</h3>
-            <p>Vi sammenligner Costa Blanca Nord, Sør og Costa Calida med helårsservice, flyplass, strand og prisnivå.</p>
+            <h3>Ikke stol blindt på portaler</h3>
+            <p>Idealista, Finn.no og andre portaler kan ha duplikater, gamle annonser og feil tilgjengelighet.</p>
+            <Link className="text-button" href="/magasin/idealista-finn-ikke-alltid-til-a-stole-pa">
+              Unngå lokkeannonser <ArrowRight size={16} />
+            </Link>
           </article>
           <article>
             <strong>03</strong>
             <h3>Trygg kjøpsprosess</h3>
             <p>Du får hjelp med prospekt, visning, betalingsplan, kostnader, advokat og neste steg.</p>
+            <Link className="text-button" href="/magasin/kjopsprosess-bolig-i-spania">
+              Se kjøpsprosessen <ArrowRight size={16} />
+            </Link>
+          </article>
+        </div>
+      </section>
+
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Kjøpe bolig i Spania med norsk rådgiver</p>
+          <h2>Riktig område, riktig bolig og riktig prosess</h2>
+          <p>
+            Zen Eco Homes hjelper nordmenn med å finne bolig, nybygg, tomt eller villa i Spania. Vi fokuserer
+            spesielt på Costa Blanca, Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og innlandsområder med
+            store tomter og moderne boliger.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article>
+            <strong>Boliger</strong>
+            <h3>Nybygg og moderne boliger</h3>
+            <p>Se villaer, leiligheter, rekkehus og prosjekter i utvalgte områder.</p>
+            <Link className="text-button" href="/eiendommer">
+              Se boliger <ArrowRight size={16} />
+            </Link>
+          </article>
+          <article>
+            <strong>Tomter</strong>
+            <h3>Bygg nytt i Spania</h3>
+            <p>Vurder tomt, regulering, vann, strøm, adkomst, arkitekt og budsjett før kjøp.</p>
+            <Link className="text-button" href="/magasin/guide-tomtekjop-bygging-i-spania">
+              Les tomteguide <ArrowRight size={16} />
+            </Link>
+          </article>
+          <article>
+            <strong>Rådgivning</strong>
+            <h3>En rådgiver som jobber for deg</h3>
+            <p>God rådgivning kan spare deg for feilkjøp, tid, stress og unødvendige kostnader.</p>
+            <Link className="text-button" href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">
+              Hvorfor rådgiver er viktig <ArrowRight size={16} />
+            </Link>
           </article>
         </div>
       </section>
@@ -152,16 +199,25 @@ export default async function Home() {
             <strong>01</strong>
             <h3>Område først</h3>
             <p>Vi hjelper deg å sortere Costa Blanca Nord, Costa Blanca Sør og Costa Calida før du forelsker deg i feil bolig.</p>
+            <Link className="text-button" href="/omrader">
+              Sammenlign områder <ArrowRight size={16} />
+            </Link>
           </article>
           <article>
             <strong>02</strong>
             <h3>Nybygg og prosjekter</h3>
             <p>Fokus på moderne boliger, energieffektive løsninger, lavere vedlikehold og tryggere overtakelse.</p>
+            <Link className="text-button" href="/magasin/kjop-bolig-i-spania-na-eller-vente">
+              Kjøpe nå eller vente? <ArrowRight size={16} />
+            </Link>
           </article>
           <article>
             <strong>03</strong>
             <h3>Digital oppfølging</h3>
             <p>RealtyFlow holder orden på leads, favoritter, områder og neste steg, slik at du slipper å starte på nytt hver gang.</p>
+            <Link className="text-button" href="/kjopsprosessen">
+              Se prosessen <ArrowRight size={16} />
+            </Link>
           </article>
         </div>
       </section>
