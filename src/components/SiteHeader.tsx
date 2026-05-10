@@ -12,6 +12,9 @@ export function SiteHeader() {
         <Link href="/omrader">Områder</Link>
         <Link href="/kjopsprosessen">Kjøpsprosess</Link>
         <Link href="/magasin">Magasin</Link>
+        <a href="https://www.freddybremseth.com" target="_blank" rel="noopener noreferrer">
+          Om Freddy
+        </a>
         <Link className="nav-cta" href="/min-side">
           Min side
         </Link>
