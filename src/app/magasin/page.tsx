@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
-import { articles } from "@/lib/content";
+import { allArticles } from "@/lib/magazine";
 
 export const metadata = {
   title: "Magasin | Guider om boligkjøp i Spania",
@@ -44,18 +44,16 @@ export default function MagazinePage() {
         </div>
 
         <div className="property-grid">
-          {articles.map((article) => (
+          {allArticles.map((article) => (
             <article className="property-card" key={article.slug}>
               <div
                 className="property-image"
                 style={{ backgroundImage: `url(${article.image})` }}
                 role="img"
                 aria-label={article.imageAlt}
-              >
-                <span>{article.category}</span>
-              </div>
+              />
               <div className="property-body">
-                <p>{new Intl.DateTimeFormat("nb-NO").format(new Date(article.date))}</p>
+                <p>{article.category} · {new Intl.DateTimeFormat("nb-NO").format(new Date(article.date))}</p>
                 <h2 style={{ margin: "0 0 14px", fontFamily: "\"Playfair Display\", serif", fontSize: "1.55rem" }}>
                   {article.title}
                 </h2>
