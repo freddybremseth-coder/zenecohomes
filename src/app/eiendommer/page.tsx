@@ -15,11 +15,18 @@ import {
 } from "@/lib/realtyflow";
 
 export const metadata = {
-  title: "Boliger til salgs",
+  title: "Boliger til salgs i Spania | Nybygg på Costa Blanca og Costa Cálida",
   description:
-    "Søk blant nybygg og moderne boliger på Costa Blanca Nord, Costa Blanca Sør og Costa Calida.",
+    "Se moderne boliger, villaer, leiligheter og nybygg i Spania. Zen Eco Homes hjelper nordmenn med trygg kjøpsprosess på Costa Blanca og Costa Cálida.",
   alternates: {
     canonical: "/eiendommer",
+  },
+  openGraph: {
+    title: "Boliger til salgs i Spania | Zen Eco Homes",
+    description:
+      "Søk blant nybygg, villaer og leiligheter på Costa Blanca Nord, Costa Blanca Sør og Costa Cálida med norsk rådgivning.",
+    url: "https://www.zenecohomes.com/eiendommer",
+    type: "website",
   },
 };
 
@@ -78,10 +85,10 @@ export default async function PropertiesPage({
     <main>
       <SiteHeader />
       <section className="page-hero compact-hero">
-        <p className="eyebrow">Boligsøk</p>
-        <h1>Nybygg i Spania</h1>
+        <p className="eyebrow">Boligsøk i Spania</p>
+        <h1>Boliger og nybygg til salgs i Spania</h1>
         <p>
-          Utforsk prosjekter og boliger fra RealtyFlow.
+          Utforsk villaer, leiligheter, rekkehus og moderne nybygg fra RealtyFlow.
           {locationLabel ? ` Viser ${locationLabel}.` : " Velg region med ett klikk."}
         </p>
         <div className="quick-filters">
