@@ -27,15 +27,21 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
-  const title = property ? getPropertyTitle(property) : "Bolig";
+  const title = property ? `${getPropertyTitle(property)} | Bolig i Spania` : "Bolig i Spania";
   const description = property
-    ? `${formatPrice(property.price)} · ${property.location || property.town || "Spania"} · ${getPropertyType(property)}`
+    ? `${formatPrice(property.price)} · ${property.location || property.town || "Spania"} · ${getPropertyType(property)}. Be om prospekt, tilgjengelighet og norsk vurdering fra Zen Eco Homes.`
     : "Bolig til salgs i Spania hos Zen Eco Homes.";
   return {
     title,
     description,
     alternates: {
       canonical: `/eiendommer/${encodeURIComponent(id)}`,
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: `https://www.zenecohomes.com/eiendommer/${encodeURIComponent(id)}`,
     },
   };
 }
@@ -63,62 +69,106 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   const mainImage = getPrimaryImage(property);
   const description = getPropertyDescription(property);
   const location = property.location || property.town || "Spania";
+  const ref = getPropertyRef(property);
+  const title = getPropertyTitle(property);
+  const type = getPropertyType(property);
   const estimatedCosts = property.price ? Math.round(property.price * 0.135) : 0;
   const estimatedTotal = property.price ? property.price + estimatedCosts : 0;
+  const propertyUrl = `https://www.zenecohomes.com/eiendommer/${encodeURIComponent(ref)}`;
   const detailFacts = [
-    { icon: <Tag />, label: `Ref ${getPropertyRef(property)}` },
-    { icon: <Home />, label: getPropertyType(property) },
+    { icon: <Tag />, label: `Ref ${ref}` },
+    { icon: <Home />, label: type },
     property.bedrooms ? { icon: <BedDouble />, label: `${property.bedrooms} soverom` } : null,
     property.bathrooms ? { icon: <Bath />, label: `${property.bathrooms} bad` } : null,
     getPropertyArea(property) ? { icon: <Ruler />, label: `${getPropertyArea(property)} m²` } : null,
   ].filter(Boolean) as Array<{ icon: ReactNode; label: string }>;
 
+  const propertyJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Residence",
+        "@id": `${propertyUrl}#residence`,
+        name: title,
+        description:
+          description ||
+          "Moderne bolig til salgs i Spania. Kontakt Zen Eco Homes for prospekt, tilgjengelighet og visning.",
+        image: images.length ? images : [mainImage],
+        numberOfRooms: property.bedrooms,
+        floorSize: getPropertyArea(property)
+          ? {
+              "@type": "QuantitativeValue",
+              value: getPropertyArea(property),
+              unitCode: "MTK",
+            }
+          : undefined,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: location,
+          addressCountry: "ES",
+        },
+      },
+      {
+        "@type": "Product",
+        "@id": `${propertyUrl}#offer`,
+        name: title,
+        description:
+          description ||
+          "Bolig til salgs i Spania. Be om komplett prospekt, oppdatert tilgjengelighet og norsk rådgivning.",
+        image: images.length ? images : [mainImage],
+        sku: ref,
+        category: type,
+        brand: {
+          "@type": "Organization",
+          name: "Zen Eco Homes",
+          url: "https://www.zenecohomes.com",
+        },
+        offers: property.price
+          ? {
+              "@type": "Offer",
+              url: propertyUrl,
+              price: property.price,
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              seller: {
+                "@type": "RealEstateAgent",
+                name: "Zen Eco Homes",
+                url: "https://www.zenecohomes.com",
+              },
+            }
+          : undefined,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Forside", item: "https://www.zenecohomes.com" },
+          { "@type": "ListItem", position: 2, name: "Boliger", item: "https://www.zenecohomes.com/eiendommer" },
+          { "@type": "ListItem", position: 3, name: title, item: propertyUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <main>
       <SiteHeader />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Residence",
-            name: getPropertyTitle(property),
-            description:
-              description ||
-              "Moderne bolig til salgs i Spania. Kontakt Zen Eco Homes for prospekt, tilgjengelighet og visning.",
-            image: images.length ? images : [mainImage],
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: location,
-              addressCountry: "ES",
-            },
-            offers: property.price
-              ? {
-                  "@type": "Offer",
-                  price: property.price,
-                  priceCurrency: "EUR",
-                  availability: "https://schema.org/InStock",
-                }
-              : undefined,
-          }),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(propertyJsonLd) }} />
       <section className="property-detail-hero" style={{ backgroundImage: `url(${mainImage})` }}>
         <div>
           <Link className="back-link" href="/eiendommer">
             <ArrowLeft size={18} /> Alle boliger
           </Link>
-          <p className="eyebrow">{property.location || property.town || "Costa Blanca"}</p>
-          <h1>{getPropertyTitle(property)}</h1>
+          <p className="eyebrow">{location}</p>
+          <h1>{title}</h1>
           <strong>{formatPrice(property.price)}</strong>
           <div className="hero-actions">
             <FavoriteButton
               favorite={{
-                ref: getPropertyRef(property),
-                title: getPropertyTitle(property),
+                ref,
+                title,
                 location,
                 price: formatPrice(property.price),
-                href: `/eiendommer/${encodeURIComponent(getPropertyRef(property))}`,
+                href: `/eiendommer/${encodeURIComponent(ref)}`,
               }}
             />
             <a href="#kontakt">
@@ -158,6 +208,9 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
                 <li>Utbygger, kvalitet, garantier og tidligere leveranser.</li>
                 <li>Avstand til strand, service, flyplass og helårsaktivitet.</li>
               </ul>
+              <Link className="text-button" href="/magasin/kjopsprosess-bolig-i-spania">
+                Les kjøpsprosessen
+              </Link>
             </article>
             <article>
               <h2>Estimert kjøpskostnad</h2>
@@ -172,6 +225,9 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
                 <span>Estimert total</span>
                 <strong>{estimatedTotal ? formatPrice(estimatedTotal) : "Pris på forespørsel"}</strong>
               </div>
+              <Link className="text-button" href="/magasin/finansiering-notar-nie-boligkjop-spania">
+                Finansiering, notar og NIE
+              </Link>
             </article>
             <article>
               <h2>Passer den for utleie?</h2>
@@ -179,6 +235,9 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
                 Vi vurderer beliggenhet, turistlisens, felleskostnader, sesong, målgruppe og konkurranse før du baserer
                 kjøpet på forventet leieinntekt.
               </p>
+              <Link className="text-button" href="/magasin/omradeguide-eiendomskjop-i-spania">
+                Vurder området
+              </Link>
             </article>
             <article>
               <h2>Hva er inkludert?</h2>
@@ -186,6 +245,9 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
                 Be om komplett tilbud, så sjekker vi hvitevarer, belysning, basseng, hage, parkering, møbler, klima,
                 solcellevalg og eventuelle tillegg.
               </p>
+              <Link className="text-button" href="/nybygg-i-spania">
+                Les om nybygg
+              </Link>
             </article>
           </section>
 
@@ -232,27 +294,8 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
             <span>/</span>
             <Link href="/eiendommer">Boliger</Link>
             <span>/</span>
-            <span>{getPropertyTitle(property)}</span>
+            <span>{title}</span>
           </nav>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Forside", item: "https://www.zenecohomes.com" },
-                  { "@type": "ListItem", position: 2, name: "Boliger", item: "https://www.zenecohomes.com/eiendommer" },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: getPropertyTitle(property),
-                    item: `https://www.zenecohomes.com/eiendommer/${encodeURIComponent(getPropertyRef(property))}`,
-                  },
-                ],
-              }),
-            }}
-          />
         </div>
 
         <aside className="sticky-card">
@@ -268,10 +311,10 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
           </div>
           <div id="kontakt" />
           <ContactForm
-            propertyRef={getPropertyRef(property)}
-            propertyTitle={getPropertyTitle(property)}
+            propertyRef={ref}
+            propertyTitle={title}
             requestType="Komplett tilbud/prospekt"
-            source={`property-${getPropertyRef(property)}`}
+            source={`property-${ref}`}
           />
         </aside>
       </section>
