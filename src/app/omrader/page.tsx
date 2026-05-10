@@ -5,11 +5,18 @@ import { areas } from "@/lib/content";
 import { areaMatchesRegion, getAreaProfiles, regions } from "@/lib/realtyflow";
 
 export const metadata = {
-  title: "Områder",
+  title: "Områder i Spania for boligkjøp | Costa Blanca, Costa Cálida og Alicante",
   description:
-    "Utforsk Altea, Albir, Calpe, Finestrat, Torrevieja, Orihuela Costa, Los Alcazares og andre områder før du velger bolig i Spania.",
+    "Finn riktig område for boligkjøp i Spania. Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida, Altea, Calpe, Finestrat, Polop og flere populære områder.",
   alternates: {
     canonical: "/omrader",
+  },
+  openGraph: {
+    title: "Områder i Spania for boligkjøp | Zen Eco Homes",
+    description:
+      "Sammenlign områder før du kjøper bolig i Spania: Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og utvalgte byer.",
+    url: "https://www.zenecohomes.com/omrader",
+    type: "website",
   },
 };
 
@@ -29,9 +36,12 @@ export default async function AreasPage() {
     <main>
       <SiteHeader />
       <section className="page-hero compact-hero image-hero">
-        <p className="eyebrow">Områder</p>
-        <h1>Finn riktig sted før du velger bolig</h1>
-        <p>For mange kjøpere er beliggenhet, hverdagsliv og avstand til tjenester viktigere enn selve boligen.</p>
+        <p className="eyebrow">Områder i Spania</p>
+        <h1>Finn riktig område før du velger bolig</h1>
+        <p>
+          Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og utvalgte byer før du bestemmer deg for
+          bolig, nybygg, tomt eller investering i Spania.
+        </p>
       </section>
       <section className="region-strip">
         {regions.map((region) => (
@@ -43,9 +53,12 @@ export default async function AreasPage() {
       </section>
       <section className="section area-intro">
         <div className="section-heading">
-          <p className="eyebrow">Fra RealtyFlow</p>
-          <h2>Områder valgt for nettsiden</h2>
-          <p>Disse områdeprofilene er hentet fra RealtyFlow og vises når de er markert for nettsiden.</p>
+          <p className="eyebrow">Områdevalg</p>
+          <h2>Velg område før du forelsker deg i boligen</h2>
+          <p>
+            Riktig beliggenhet påvirker hverdagsliv, videresalg, utleie, prisnivå, service og hvor godt boligen
+            fungerer utenom høysesong.
+          </p>
         </div>
       </section>
       {groupedProfiles.map((group) => (
