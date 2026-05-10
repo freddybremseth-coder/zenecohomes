@@ -68,6 +68,8 @@ export default async function ArticlePage({ params }: PageProps) {
     image: `https://www.zenecohomes.com${article.image}`,
     datePublished: article.date,
     dateModified: article.updated,
+    about: article.keywords,
+    mentions: ["Boligkjøp i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsrådgivning"],
     author: {
       "@type": "Organization",
       name: "Zen Eco Homes",
@@ -94,11 +96,27 @@ export default async function ArticlePage({ params }: PageProps) {
     })),
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Forside", item: "https://www.zenecohomes.com" },
+      { "@type": "ListItem", position: 2, name: "Magasin", item: "https://www.zenecohomes.com/magasin" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `https://www.zenecohomes.com/magasin/${article.slug}`,
+      },
+    ],
+  };
+
   return (
     <main>
       <SiteHeader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <section className="page-hero compact-hero" style={{ paddingBottom: 42 }}>
         <Link className="text-button light" href="/magasin" style={{ marginBottom: 26 }}>
