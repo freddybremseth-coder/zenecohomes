@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { articles } from "@/lib/content";
 import { getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
 
 const baseUrl = "https://www.zenecohomes.com";
@@ -13,12 +14,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...regions.map((region) => `/omrader/${region.key}`),
     "/kjopsprosessen",
     "/magasin",
+    ...articles.map((article) => `/magasin/${article.slug}`),
     "/min-side",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,
-    changeFrequency: route === "/eiendommer" ? "daily" : "weekly",
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency: route.startsWith("/magasin/") ? "monthly" : route === "/eiendommer" ? "daily" : "weekly",
+    priority: route === "" ? 1 : route.startsWith("/magasin/") ? 0.75 : 0.8,
   }));
 
   const properties = await getProperties(100);
