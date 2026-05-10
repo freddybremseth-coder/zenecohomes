@@ -3,8 +3,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
 import { getSeoLandingPage, seoLandingPages } from "@/lib/seoLandingPages";
 import { notFound } from "next/navigation";
+
+const allSeoPages = [...seoLandingPages, ...localSeoLandingPages];
+
+function getLandingPage(slug: string) {
+  return getSeoLandingPage(slug) || localSeoLandingPages.find((page) => page.slug === slug);
+}
 
 type PageProps = {
   params: Promise<{
@@ -13,12 +20,12 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return seoLandingPages.map((page) => ({ slug: page.slug }));
+  return allSeoPages.map((page) => ({ slug: page.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getSeoLandingPage(slug);
+  const page = getLandingPage(slug);
 
   if (!page) {
     return {
@@ -43,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function SeoLandingPage({ params }: PageProps) {
   const { slug } = await params;
-  const page = getSeoLandingPage(slug);
+  const page = getLandingPage(slug);
 
   if (!page) {
     notFound();
