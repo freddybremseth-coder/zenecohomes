@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
-import { articles, getArticle } from "@/lib/content";
+import { allArticles, getMagazineArticle } from "@/lib/magazine";
 
 type PageProps = {
   params: Promise<{
@@ -13,12 +13,12 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  return allArticles.map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = getMagazineArticle(slug);
 
   if (!article) {
     return {
@@ -52,13 +52,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const article = getArticle(slug);
+  const article = getMagazineArticle(slug);
 
   if (!article) {
     notFound();
   }
 
-  const relatedArticles = articles.filter((item) => item.slug !== article.slug).slice(0, 3);
+  const relatedArticles = allArticles.filter((item) => item.slug !== article.slug).slice(0, 3);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
