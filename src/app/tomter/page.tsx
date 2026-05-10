@@ -4,10 +4,18 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { getLandPlots, type LandPlot } from "@/lib/realtyflow";
 
 export const metadata = {
-  title: "Tomter i Spania",
-  description: "Se tomter fra RealtyFlow med kart, pris, størrelse og filtrering.",
+  title: "Tomter til salgs i Spania | Bygg moderne bolig på Costa Blanca",
+  description:
+    "Finn tomter og byggeprosjekter i Spania. Vi hjelper deg å vurdere regulering, vann, strøm, adkomst, arkitekt og trygg kjøpsprosess.",
   alternates: {
     canonical: "/tomter",
+  },
+  openGraph: {
+    title: "Tomter til salgs i Spania | Zen Eco Homes",
+    description:
+      "Utforsk tomter på Costa Blanca og i Spania med kart, regulering, pris, størrelse og norsk rådgivning før kjøp.",
+    url: "https://www.zenecohomes.com/tomter",
+    type: "website",
   },
 };
 
@@ -54,9 +62,12 @@ export default async function PlotsPage({
     <main>
       <SiteHeader />
       <section className="page-hero compact-hero image-hero">
-        <p className="eyebrow">Tomter</p>
-        <h1>Tomter fra RealtyFlow</h1>
-        <p>Utforsk tomter med størrelse, pris, regulering og beliggenhet. Listen hentes direkte fra RealtyFlow.</p>
+        <p className="eyebrow">Tomter i Spania</p>
+        <h1>Tomter til salgs og byggeprosjekter i Spania</h1>
+        <p>
+          Utforsk tomter med størrelse, pris, regulering, vann, strøm og beliggenhet. Vi hjelper deg å vurdere
+          om tomten faktisk passer for boligen du ønsker å bygge.
+        </p>
         <form className="search-card page-search plots-search" action="/tomter">
           <input name="q" defaultValue={params.q || ""} placeholder="Søk sted, kommune eller ref" />
           <select name="minArea" defaultValue={params.minArea || ""}>
