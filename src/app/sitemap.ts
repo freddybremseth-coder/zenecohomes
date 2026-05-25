@@ -1,14 +1,24 @@
 import type { MetadataRoute } from "next";
+
 import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
 import { allArticles } from "@/lib/magazine";
 import { getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
+import { fetchPublishedPosts } from "@/lib/website-content";
 
 const baseUrl = "https://www.zenecohomes.com";
 const allSeoPages = [...seoLandingPages, ...localSeoLandingPages];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
+  const cmsPosts = await fetchPublishedPosts("magasin");
+  const articlePaths = Array.from(
+    new Set([
+      ...allArticles.map((article) => `/magasin/${article.slug}`),
+      ...cmsPosts.map((post) => `/magasin/${post.slug}`),
+    ]),
+  );
+
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
     "/eiendommer",
@@ -18,13 +28,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...allSeoPages.map((page) => `/${page.slug}`),
     "/kjopsprosessen",
     "/magasin",
-    ...allArticles.map((article) => `/magasin/${article.slug}`),
+    ...articlePaths,
     "/min-side",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,
     changeFrequency: route.startsWith("/magasin/") ? "monthly" : route === "/eiendommer" ? "daily" : "weekly",
-    priority: route === "" ? 1 : route.startsWith("/magasin/") ? 0.75 : allSeoPages.some((page) => route === `/${page.slug}`) ? 0.86 : 0.8,
+    priority:
+      route === ""
+        ? 1
+        : route.startsWith("/magasin/")
+          ? 0.75
+          : allSeoPages.some((page) => route === `/${page.slug}`)
+            ? 0.86
+            : 0.8,
   }));
 
   const properties = await getProperties(100);

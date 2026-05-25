@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, CalendarDays, Clock } from "lucide-react";
 import { notFound } from "next/navigation";
+
+import MarkdownArticle from "@/components/MarkdownArticle";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { allArticles, getMagazineArticle } from "@/lib/magazine";
+import { fetchPublishedPost, fetchPublishedPosts } from "@/lib/website-content";
 
 type PageProps = {
   params: Promise<{
@@ -12,14 +15,55 @@ type PageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return allArticles.map((article) => ({ slug: article.slug }));
+function formatDate(value?: string | null) {
+  if (!value) return "";
+  return new Intl.DateTimeFormat("nb-NO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(value));
+}
+
+export async function generateStaticParams() {
+  const cmsPosts = await fetchPublishedPosts("magasin");
+  const slugs = new Set<string>([
+    ...allArticles.map((article) => article.slug),
+    ...cmsPosts.map((post) => post.slug),
+  ]);
+
+  return Array.from(slugs).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = getMagazineArticle(slug);
+  const cmsPost = await fetchPublishedPost("magasin", slug);
 
+  if (cmsPost) {
+    return {
+      title: `${cmsPost.title} | Zen Eco Homes`,
+      description: cmsPost.summary || "Guider og innsikt fra Zen Eco Homes.",
+      alternates: {
+        canonical: `/magasin/${cmsPost.slug}`,
+      },
+      openGraph: {
+        title: cmsPost.title,
+        description: cmsPost.summary || "Guider og innsikt fra Zen Eco Homes.",
+        url: `https://www.zenecohomes.com/magasin/${cmsPost.slug}`,
+        type: "article",
+        publishedTime: cmsPost.published_at || cmsPost.created_at,
+        images: cmsPost.image_url
+          ? [
+              {
+                url: cmsPost.image_url,
+                alt: cmsPost.title,
+              },
+            ]
+          : [],
+      },
+    };
+  }
+
+  const article = getMagazineArticle(slug);
   if (!article) {
     return {
       title: "Artikkel ikke funnet | Zen Eco Homes",
@@ -52,8 +96,46 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const article = getMagazineArticle(slug);
+  const cmsPost = await fetchPublishedPost("magasin", slug);
 
+  if (cmsPost && !cmsPost.id.startsWith("fallback-")) {
+    return (
+      <main>
+        <SiteHeader />
+        <section className="page-hero compact-hero">
+          <p className="eyebrow">Magasin</p>
+          <h1>{cmsPost.title}</h1>
+          <p>{cmsPost.summary || "Innsikt, guider og tryggere beslutningsstotte for boligkjopere i Spania."}</p>
+        </section>
+        <section className="section">
+          <div className="mx-auto max-w-4xl px-5 md:px-8">
+            <Link
+              href="/magasin"
+              className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900"
+            >
+              <ArrowLeft size={16} /> Tilbake til magasin
+            </Link>
+            {cmsPost.published_at && (
+              <p className="mb-6 inline-flex items-center gap-2 text-sm text-slate-500">
+                <Calendar size={16} /> {formatDate(cmsPost.published_at)}
+              </p>
+            )}
+            {cmsPost.image_url ? (
+              <img
+                src={cmsPost.image_url}
+                alt={cmsPost.title}
+                className="mb-10 aspect-[16/9] w-full rounded-2xl object-cover"
+              />
+            ) : null}
+            <MarkdownArticle markdown={cmsPost.markdown} />
+          </div>
+        </section>
+        <Footer />
+      </main>
+    );
+  }
+
+  const article = getMagazineArticle(slug);
   if (!article) {
     notFound();
   }
@@ -69,7 +151,7 @@ export default async function ArticlePage({ params }: PageProps) {
     datePublished: article.date,
     dateModified: article.updated,
     about: article.keywords,
-    mentions: ["Boligkjøp i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsrådgivning"],
+    mentions: ["Boligkjop i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsradgivning"],
     author: {
       "@type": "Organization",
       name: "Zen Eco Homes",
@@ -209,7 +291,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   marginTop: 0,
                 }}
               >
-                Slik går du videre
+                Slik gar du videre
               </h2>
               <ol style={{ display: "grid", gap: 10, paddingLeft: 20, lineHeight: 1.75 }}>
                 {article.nextSteps.map((step) => (
@@ -219,7 +301,7 @@ export default async function ArticlePage({ params }: PageProps) {
             </section>
 
             <section style={{ marginTop: 46 }}>
-              <p className="eyebrow">Vanlige spørsmål</p>
+              <p className="eyebrow">Vanlige sporsmal</p>
               <h2
                 style={{
                   color: "var(--dark)",
@@ -244,10 +326,10 @@ export default async function ArticlePage({ params }: PageProps) {
             <div style={{ display: "block" }}>
               <p className="eyebrow">Trenger du hjelp?</p>
               <h3 style={{ margin: "0 0 12px", color: "var(--dark)", fontSize: "1.45rem" }}>
-                Få en personlig vurdering
+                Fa en personlig vurdering
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-                Vi hjelper deg å vurdere område, budsjett, boligtype, risiko og neste steg før du reserverer.
+                Vi hjelper deg a vurdere omrade, budsjett, boligtype, risiko og neste steg for du reserverer.
               </p>
               <Link className="contact-button" href="/#kontakt" style={{ marginTop: 12 }}>
                 Kontakt Zen Eco Homes <ArrowRight size={17} />
@@ -266,7 +348,6 @@ export default async function ArticlePage({ params }: PageProps) {
           </aside>
         </div>
       </section>
-
       <Footer />
     </main>
   );
