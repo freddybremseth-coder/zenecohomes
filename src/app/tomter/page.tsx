@@ -1,3 +1,4 @@
+import { CatastroSummary } from "@/components/CatastroSummary";
 import { Footer } from "@/components/Footer";
 import { PlotsMap } from "@/components/PlotsMap";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -184,20 +185,7 @@ export default async function PlotsPage({
         </form>
       </section>
 
-      <section className="catastro-summary" aria-label="Catastro-funksjoner">
-        <article>
-          <strong>{withCatastro.length}</strong>
-          <span>tomter med Catastro/polígono/parcela</span>
-        </article>
-        <article>
-          <strong>{mapped.length}</strong>
-          <span>tomter med kartposisjon</span>
-        </article>
-        <article>
-          <strong>WMS</strong>
-          <span>offentlig Catastro-kartlag med parcelgrenser</span>
-        </article>
-      </section>
+      <CatastroSummary withCatastro={withCatastro.length} mapped={mapped.length} total={filtered.length} />
 
       <section className="plots-layout">
         <div className="plots-map">
