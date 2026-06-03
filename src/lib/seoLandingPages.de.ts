@@ -187,6 +187,126 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
       { label: "Neubau an der Costa Blanca", href: "/de/neubau-costa-blanca" },
     ],
   },
+  {
+    slug: "neubau-in-spanien",
+    title: "Neubau in Spanien",
+    eyebrow: "Neubau kaufen",
+    hero: "Neubau in Spanien kaufen – modern, effizient, sicher",
+    description:
+      "Neubauwohnungen, Villen und Projekte in Spanien mit hoher Energieeffizienz und moderner Ausstattung. Wir begleiten Sie von der Auswahl über Zahlungsplan und Bankgarantie bis zur Übergabe.",
+    seoTitle: "Neubau in Spanien kaufen | Moderne Immobilien",
+    seoDescription:
+      "Neubau in Spanien: moderne, energieeffiziente Wohnungen und Villen. Beratung zu Lage, Bauträger, Zahlungsplan, Bankgarantie und Übergabe – sicher und verständlich.",
+    primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
+    secondaryCta: { label: "Immobilien ansehen", href: "/eiendommer" },
+    sections: [
+      {
+        heading: "Die Vorteile eines Neubaus",
+        body: [
+          "Neubauten bieten moderne Grundrisse, gute Dämmung, Klimatisierung und niedrige Betriebskosten – oft mit Energieklasse A. Bei frühem Einstieg können Sie Ausstattung und teils den Grundriss mitgestalten.",
+          "Spanien ist mehr als die Costa Blanca: auch Costa Cálida, Costa del Sol und das Hinterland bieten attraktive Projekte. Entscheidend ist, Region und Nutzung vor der Reservierung zu klären.",
+        ],
+        bullets: [
+          "Energieklasse A, niedrige laufende Kosten.",
+          "Moderne Ausstattung, oft mit Pool und Gemeinschaftsanlagen.",
+          "Auswahl bei frühem Kauf – die besten Einheiten zuerst.",
+        ],
+      },
+      {
+        heading: "Sicher kaufen beim Neubau",
+        body: [
+          "Beim Neubau zahlen Sie nach Baufortschritt. Anzahlungen müssen durch eine Bankgarantie abgesichert sein, und der Bauträger sollte sorgfältig geprüft werden.",
+          "Wir koordinieren mit Bauträger, Bank und einem unabhängigen Anwalt, damit Vertrag, Garantien und Übergabetermine stimmen.",
+        ],
+        bullets: [
+          "Zahlung nach Baufortschritt mit Bankgarantie.",
+          "Prüfung von Bauträger, Lizenzen und Übergabetermin.",
+          "Unabhängiger Anwalt für die rechtliche Kontrolle.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Was ist beim Neubau-Kauf in Spanien zu beachten?",
+        answer:
+          "Wichtig sind ein geprüfter Bauträger, abgesicherte Anzahlungen (Bankgarantie), eine gültige Baulizenz und ein unabhängiger Anwalt. So ist der Kauf auch beim Bau in Etappen sicher.",
+      },
+      {
+        question: "Wie lange dauert die Fertigstellung?",
+        answer:
+          "Je nach Projekt meist 12–24 Monate. Bei schon fertiggestellten Neubauten (Key-ready) ist der Einzug sofort möglich. Wir nennen Ihnen realistische Termine.",
+      },
+      {
+        question: "Kann ich Ausstattung und Grundriss anpassen?",
+        answer:
+          "Bei frühem Einstieg oft ja – Böden, Küche, Bäder und teils Raumaufteilung. Je weiter der Bau, desto weniger Spielraum. Daher lohnt sich frühe Beratung.",
+      },
+    ],
+    related: [
+      { label: "Neubau an der Costa Blanca", href: "/de/neubau-costa-blanca" },
+      { label: "Immobilie in Spanien kaufen", href: "/de/immobilie-in-spanien" },
+    ],
+  },
+  {
+    slug: "grundstueck-in-spanien",
+    title: "Grundstück in Spanien",
+    eyebrow: "Grundstück & Hausbau",
+    hero: "Grundstück in Spanien kaufen und Haus bauen",
+    description:
+      "Ein eigenes Grundstück an der Costa Blanca und ein Haus nach Ihren Wünschen – mit Begleitung bei Bebaubarkeit, Lizenzen, Bauträgerwahl und sicherem Kaufprozess.",
+    seoTitle: "Grundstück in Spanien kaufen | Bauen mit Beratung",
+    seoDescription:
+      "Grundstück in Spanien kaufen und bauen: Prüfung von Bebaubarkeit, Lizenzen und Lage, Auswahl von Bauträger und Architekt sowie ein sicherer Kaufprozess.",
+    primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
+    secondaryCta: { label: "Grundstücke ansehen", href: "/eiendommer" },
+    sections: [
+      {
+        heading: "Erst die Bebaubarkeit prüfen, dann kaufen",
+        body: [
+          "Nicht jedes Grundstück ist (so) bebaubar, wie es scheint. Bebauungsgrad, Mindestabstände, Anschlüsse (Wasser, Strom) und Flächennutzungsplan entscheiden, was Sie wirklich bauen dürfen.",
+          "Wir prüfen mit Anwalt und Architekt, was auf dem Grundstück möglich ist – bevor Sie kaufen.",
+        ],
+        bullets: [
+          "Urbano oder rústico – das macht einen großen Unterschied.",
+          "Bebauungsgrad, Abstände und Anschlüsse klären.",
+          "Realistisches Budget für Grundstück + Bau + Nebenkosten.",
+        ],
+      },
+      {
+        heading: "Von der Idee bis zur Schlüsselübergabe",
+        body: [
+          "Ein eigenes Haus zu bauen ist die individuellste Lösung – erfordert aber Planung: Architekt, Baulizenz, Bauträger und Bauüberwachung müssen koordiniert werden.",
+          "Wir helfen bei Auswahl und Koordination, damit Qualität, Zeitplan und Budget zusammenpassen.",
+        ],
+        bullets: [
+          "Architekt und Baulizenz (licencia de obra).",
+          "Seriöser Bauträger mit Referenzen und Garantien.",
+          "Begleitung bis zur Schlüsselübergabe.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Kann ich als Ausländer ein Grundstück in Spanien kaufen?",
+        answer:
+          "Ja. Sie benötigen eine NIE-Nummer und einen unabhängigen Anwalt. Wichtig ist, vor dem Kauf die Bebaubarkeit und alle Lizenzen zu prüfen.",
+      },
+      {
+        question: "Was kostet der Hausbau in Spanien?",
+        answer:
+          "Das hängt von Größe, Qualität und Lage ab. Planen Sie neben dem Grundstück Baukosten, Architekt, Lizenzen und Steuern ein. Wir helfen Ihnen, ein realistisches Gesamtbudget aufzustellen.",
+      },
+      {
+        question: "Urbano oder rústico – was ist der Unterschied?",
+        answer:
+          "Urbanes Bauland ist für Wohnbebauung vorgesehen; ländliches Land (rústico) ist stark eingeschränkt bebaubar. Diese Einstufung sollten Sie immer vor dem Kauf prüfen lassen.",
+      },
+    ],
+    related: [
+      { label: "Immobilie in Spanien kaufen", href: "/de/immobilie-in-spanien" },
+      { label: "Immobilienberater für Spanien", href: "/de/immobilienberater-spanien" },
+    ],
+  },
 ];
 
 export function getSeoLandingPageDE(slug: string) {

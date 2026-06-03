@@ -5,6 +5,7 @@ import { allArticles } from "@/lib/magazine";
 import { getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
 import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
+import { seoLandingPagesEN } from "@/lib/seoLandingPages.en";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const baseUrl = "https://www.zenecohomes.com";
@@ -28,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...regions.map((region) => `/omrader/${region.key}`),
     ...allSeoPages.map((page) => `/${page.slug}`),
     ...seoLandingPagesDE.map((page) => `/de/${page.slug}`),
+    ...seoLandingPagesEN.map((page) => `/en/${page.slug}`),
     "/kjopsprosessen",
     "/magasin",
     ...articlePaths,

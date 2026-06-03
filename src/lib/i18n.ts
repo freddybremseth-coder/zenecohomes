@@ -73,9 +73,11 @@ export const ui: Record<
  * Brukes til hreflang. Legg til en rad når en side oversettes.
  */
 export const seoEquivalents: { no: string; de?: string; en?: string }[] = [
-  { no: "bolig-i-spania", de: "immobilie-in-spanien" },
-  { no: "nybygg-costa-blanca", de: "neubau-costa-blanca" },
-  { no: "eiendomsradgiver-spania", de: "immobilienberater-spanien" },
+  { no: "bolig-i-spania", de: "immobilie-in-spanien", en: "property-in-spain" },
+  { no: "nybygg-i-spania", de: "neubau-in-spanien", en: "new-build-in-spain" },
+  { no: "nybygg-costa-blanca", de: "neubau-costa-blanca", en: "new-build-costa-blanca" },
+  { no: "eiendomsradgiver-spania", de: "immobilienberater-spanien", en: "property-advisor-spain" },
+  { no: "tomt-i-spania", de: "grundstueck-in-spanien", en: "plot-of-land-in-spain" },
 ];
 
 const BASE = "https://www.zenecohomes.com";
