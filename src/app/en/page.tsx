@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { seoLandingPagesEN } from "@/lib/seoLandingPages.en";
@@ -89,6 +90,19 @@ export default function EnglishHome() {
               {page.title}
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="section" id="kontakt">
+        <p className="eyebrow">Contact</p>
+        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+          Tell us what you are looking for
+        </h2>
+        <p style={{ color: "var(--muted)", maxWidth: 620, lineHeight: 1.7 }}>
+          We will get back to you personally – independent, in English, with no obligation.
+        </p>
+        <div style={{ maxWidth: 760, marginTop: 18 }}>
+          <ContactForm locale="en" />
         </div>
       </section>
 

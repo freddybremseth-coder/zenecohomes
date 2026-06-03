@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
@@ -89,6 +90,19 @@ export default function GermanHome() {
               {page.title}
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="section" id="kontakt">
+        <p className="eyebrow">Kontakt</p>
+        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+          Erzählen Sie uns, wonach Sie suchen
+        </h2>
+        <p style={{ color: "var(--muted)", maxWidth: 620, lineHeight: 1.7 }}>
+          Wir melden uns persönlich – unabhängig, auf Deutsch, und ohne Verpflichtung.
+        </p>
+        <div style={{ maxWidth: 760, marginTop: 18 }}>
+          <ContactForm locale="de" />
         </div>
       </section>
 

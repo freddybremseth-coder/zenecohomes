@@ -52,7 +52,7 @@ export const ui: Record<
     contactCta: "Kontakt aufnehmen",
     relatedHeading: "Verwandte Seiten",
     home: "Startseite",
-    contactHref: "https://appointment.chatgenius.pro/zeneco",
+    contactHref: "/de#kontakt",
   },
   en: {
     faqEyebrow: "Frequently asked questions",
@@ -64,7 +64,7 @@ export const ui: Record<
     contactCta: "Contact us",
     relatedHeading: "Related pages",
     home: "Home",
-    contactHref: "https://appointment.chatgenius.pro/zeneco",
+    contactHref: "/en#kontakt",
   },
 };
 
