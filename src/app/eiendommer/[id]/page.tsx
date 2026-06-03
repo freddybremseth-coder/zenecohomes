@@ -6,6 +6,7 @@ import { FavoriteButton } from "@/components/FavoriteButton";
 import { Footer } from "@/components/Footer";
 import { ReadMoreText } from "@/components/ReadMoreText";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 import {
   formatPrice,
   getPrimaryImage,
@@ -53,7 +54,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   if (!property) {
     return (
       <main>
-        <SiteHeader />
+        <SiteHeader languageLinks={homeLanguageLinks("no")} />
         <section className="page-hero compact-hero">
           <h1>Bolig ikke funnet</h1>
           <Link className="text-button" href="/eiendommer">
@@ -151,7 +152,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(propertyJsonLd) }} />
       <section className="property-detail-hero" style={{ backgroundImage: `url(${mainImage})` }}>
         <div>

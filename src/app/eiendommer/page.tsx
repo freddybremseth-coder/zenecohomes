@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 import {
   getProperties,
   getPropertySearchText,
@@ -83,7 +84,7 @@ export default async function PropertiesPage({
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero">
         <p className="eyebrow">Boligsøk i Spania</p>
         <h1>Boliger og nybygg til salgs i Spania</h1>

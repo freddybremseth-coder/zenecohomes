@@ -3,6 +3,7 @@ import { ExternalLink, LockKeyhole, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
   title: "Min side",
@@ -15,7 +16,7 @@ export const metadata = {
 export default function PortalPage() {
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero">
         <p className="eyebrow">Min Side</p>
         <h1>Kundeportal for kjøpere</h1>

@@ -3,6 +3,7 @@ import { ArrowRight, MapPin, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 import {
   areaMatchesRegion,
   getAreaProfiles,
@@ -57,7 +58,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
   if (!selected || !copy) {
     return (
       <main>
-        <SiteHeader />
+        <SiteHeader languageLinks={homeLanguageLinks("no")} />
         <section className="page-hero compact-hero">
           <h1>Område ikke funnet</h1>
           <Link className="text-button light" href="/omrader">Til områder</Link>
@@ -73,7 +74,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Regionguide</p>
         <h1>{copy.title}</h1>

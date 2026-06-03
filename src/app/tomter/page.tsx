@@ -2,6 +2,7 @@ import { CatastroSummary } from "@/components/CatastroSummary";
 import { Footer } from "@/components/Footer";
 import { PlotsMap } from "@/components/PlotsMap";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 import { getLandPlots, type LandPlot } from "@/lib/realtyflow";
 
 const CATASTRO_REF_PATTERN = /\b\d{5}[A-Z]\d{7}[A-Z0-9]{7}\b/i;
@@ -151,7 +152,7 @@ export default async function PlotsPage({
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Tomter i Spania · Catastro · kart</p>
         <h1>Tomter til salgs og byggeprosjekter i Spania</h1>

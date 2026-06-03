@@ -3,6 +3,7 @@ import { ArrowRight, Clock } from "lucide-react";
 
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 import { allArticles } from "@/lib/magazine";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
@@ -29,7 +30,7 @@ export default async function MagazinePage() {
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Magasin</p>
         <h1>Guider for tryggere boligkjop i Spania</h1>

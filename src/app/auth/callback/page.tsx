@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AuthCallbackClient } from "@/components/AuthCallbackClient";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
   title: "Logger inn | Zen Eco Homes",
@@ -10,7 +11,7 @@ export const metadata = {
 export default function AuthCallbackPage() {
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero">
         <p className="eyebrow">Min side</p>
         <h1>Innlogging fullføres</h1>

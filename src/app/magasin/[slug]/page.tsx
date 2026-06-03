@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import MarkdownArticle from "@/components/MarkdownArticle";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 import { allArticles, getMagazineArticle } from "@/lib/magazine";
 import { fetchPublishedPost, fetchPublishedPosts } from "@/lib/website-content";
 
@@ -101,7 +102,7 @@ export default async function ArticlePage({ params }: PageProps) {
   if (cmsPost && !cmsPost.id.startsWith("fallback-")) {
     return (
       <main>
-        <SiteHeader />
+        <SiteHeader languageLinks={homeLanguageLinks("no")} />
         <section className="page-hero compact-hero">
           <p className="eyebrow">Magasin</p>
           <h1>{cmsPost.title}</h1>
@@ -195,7 +196,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />

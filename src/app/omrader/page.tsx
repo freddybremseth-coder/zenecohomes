@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { homeLanguageLinks } from "@/lib/i18n";
 import { areas } from "@/lib/content";
 import { areaMatchesRegion, getAreaProfiles, regions } from "@/lib/realtyflow";
 
@@ -34,7 +35,7 @@ export default async function AreasPage() {
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Områder i Spania</p>
         <h1>Finn riktig område før du velger bolig</h1>
