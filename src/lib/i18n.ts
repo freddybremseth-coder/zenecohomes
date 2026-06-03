@@ -115,6 +115,40 @@ export function homeHreflang(): Record<string, string> {
   };
 }
 
+/** Hovedmeny per språk. Norsk beholder full meny; de/en får en lokalisert,
+ *  litt slankere meny som kun peker til sider vi faktisk har på språket. */
+export type NavLink = { label: string; href: string; external?: boolean; cta?: boolean };
+
+export function navLinks(locale: Locale): NavLink[] {
+  if (locale === "de") {
+    return [
+      { label: "Immobilien", href: "/eiendommer" },
+      { label: "Neubau", href: "/de/neubau-costa-blanca" },
+      { label: "Beratung", href: "/de/immobilienberater-spanien" },
+      { label: "Über Freddy", href: "https://www.freddybremseth.com", external: true },
+      { label: "Kontakt", href: "https://appointment.chatgenius.pro/zeneco", cta: true },
+    ];
+  }
+  if (locale === "en") {
+    return [
+      { label: "Properties", href: "/eiendommer" },
+      { label: "New build", href: "/en/new-build-costa-blanca" },
+      { label: "Advice", href: "/en/property-advisor-spain" },
+      { label: "About Freddy", href: "https://www.freddybremseth.com", external: true },
+      { label: "Contact", href: "https://appointment.chatgenius.pro/zeneco", cta: true },
+    ];
+  }
+  return [
+    { label: "Boliger", href: "/eiendommer" },
+    { label: "Tomter", href: "/tomter" },
+    { label: "Områder", href: "/omrader" },
+    { label: "Kjøpsprosess", href: "/kjopsprosessen" },
+    { label: "Magasin", href: "/magasin" },
+    { label: "Om Freddy", href: "https://www.freddybremseth.com", external: true },
+    { label: "Min side", href: "/min-side", cta: true },
+  ];
+}
+
 /** Språkbytter-lenker for forsidene. */
 export function homeLanguageLinks(current: Locale): { locale: Locale; href: string; current: boolean }[] {
   return [

@@ -11,3 +11,4 @@ vendor/
 .next/
 out/
 .vercel
+tsconfig.tsbuildinfo
