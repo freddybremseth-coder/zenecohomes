@@ -6,13 +6,19 @@ import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getProperties } from "@/lib/realtyflow";
+import { homeHreflang, homeLanguageLinks } from "@/lib/i18n";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/", languages: homeHreflang() },
+};
 
 export default async function Home() {
   const properties = await getProperties(6);
 
   return (
     <main>
-      <SiteHeader />
+      <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
 
       <section id="top" className="hero">
         <video className="hero-video" autoPlay muted loop playsInline poster="/assets/areas.jpg">
