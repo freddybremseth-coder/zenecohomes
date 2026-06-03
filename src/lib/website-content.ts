@@ -71,6 +71,7 @@ export async function fetchPublishedPosts(destinationId: string): Promise<Public
     .from("website_posts")
     .select(selectColumns)
     .eq("status", "published")
+    .eq("brand_id", "zeneco")
     .eq("destination_id", destinationId)
     .order("published_at", { ascending: false, nullsFirst: false })
     .order("created_at", { ascending: false });
