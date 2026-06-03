@@ -104,3 +104,22 @@ export function seoHreflang(eq: { no: string; de?: string; en?: string }): Recor
 export function findEquivalentBySlug(locale: Locale, slug: string) {
   return seoEquivalents.find((e) => e[locale] === slug);
 }
+
+/** hreflang for forsidene (no=/, de=/de, en=/en). */
+export function homeHreflang(): Record<string, string> {
+  return {
+    "nb-NO": `${BASE}/`,
+    "x-default": `${BASE}/`,
+    "de-DE": `${BASE}/de`,
+    en: `${BASE}/en`,
+  };
+}
+
+/** Språkbytter-lenker for forsidene. */
+export function homeLanguageLinks(current: Locale): { locale: Locale; href: string; current: boolean }[] {
+  return [
+    { locale: "no", href: "/", current: current === "no" },
+    { locale: "de", href: "/de", current: current === "de" },
+    { locale: "en", href: "/en", current: current === "en" },
+  ];
+}
