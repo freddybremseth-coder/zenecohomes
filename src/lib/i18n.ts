@@ -78,6 +78,13 @@ export const seoEquivalents: { no: string; de?: string; en?: string }[] = [
   { no: "nybygg-costa-blanca", de: "neubau-costa-blanca", en: "new-build-costa-blanca" },
   { no: "eiendomsradgiver-spania", de: "immobilienberater-spanien", en: "property-advisor-spain" },
   { no: "tomt-i-spania", de: "grundstueck-in-spanien", en: "plot-of-land-in-spain" },
+  // Områdesider (long-tail)
+  { no: "bolig-i-altea", de: "immobilie-altea", en: "property-in-altea" },
+  { no: "bolig-i-albir", de: "immobilie-albir", en: "property-in-albir" },
+  { no: "bolig-i-calpe", de: "immobilie-calpe", en: "property-in-calpe" },
+  { no: "bolig-i-finestrat", de: "immobilie-finestrat", en: "property-in-finestrat" },
+  { no: "bolig-i-polop", de: "immobilie-polop", en: "property-in-polop" },
+  { no: "bolig-i-pinoso", de: "immobilie-pinoso", en: "property-in-pinoso" },
 ];
 
 const BASE = "https://www.zenecohomes.com";
