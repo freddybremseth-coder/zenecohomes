@@ -5,34 +5,36 @@ import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
+const BASE = "https://www.zenecohomes.com";
+
 export const metadata = {
-  title: "Min side",
-  description: "Kundeportal for boligmatch, dokumenter, meldinger og oppfølging hos Zen Eco Homes.",
+  title: "My account",
+  description: "Customer portal for property matches, documents, messages and guidance at Zen Eco Homes.",
   alternates: {
-    canonical: "/min-side",
+    canonical: "/en/min-side",
     languages: {
-      "nb-NO": "https://www.zenecohomes.com/min-side",
-      "x-default": "https://www.zenecohomes.com/min-side",
-      "de-DE": "https://www.zenecohomes.com/de/min-side",
-      en: "https://www.zenecohomes.com/en/min-side",
+      "nb-NO": `${BASE}/min-side`,
+      "x-default": `${BASE}/min-side`,
+      "de-DE": `${BASE}/de/min-side`,
+      en: `${BASE}/en/min-side`,
     },
   },
 };
 
-export default function PortalPage() {
+export default function EnglishPortalPage() {
   return (
-    <main>
-      <SiteHeader languageLinks={homeLanguageLinks("no")} />
+    <main lang="en">
+      <SiteHeader locale="en" languageLinks={homeLanguageLinks("en")} />
       <section className="page-hero compact-hero">
-        <p className="eyebrow">Min Side</p>
-        <h1>Kundeportal for kjøpere</h1>
+        <p className="eyebrow">My account</p>
+        <h1>Customer portal for buyers</h1>
         <p>
-          En ryddig portal for boligmatch, dokumenter og meldinger. Admin, leads og samtaler håndteres i RealtyFlow,
-          slik at alt ligger samlet i huben din.
+          A clean portal for property matches, documents and messages. Admin, leads and conversations are handled
+          in RealtyFlow, so everything stays in one hub.
         </p>
         <div className="portal-actions">
           <Link className="contact-button" href="#portal">
-            <LockKeyhole size={19} /> Logg inn på Min side
+            <LockKeyhole size={19} /> Log in to the portal
           </Link>
           <Link className="text-button light" href="https://realtyflow.chatgenius.pro">
             <ShieldCheck size={18} /> RealtyFlow admin <ExternalLink size={18} />
@@ -40,7 +42,7 @@ export default function PortalPage() {
         </div>
       </section>
       <section id="portal">
-        <PortalWorkspace />
+        <PortalWorkspace locale="en" />
       </section>
       <Footer />
     </main>

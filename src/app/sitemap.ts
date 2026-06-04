@@ -38,6 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/magasin",
     ...articlePaths,
     "/min-side",
+    "/de/min-side",
+    "/en/min-side",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,

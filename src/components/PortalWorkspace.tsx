@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import type { Locale } from "@/lib/i18n";
 import {
   Bell,
   Building2,
@@ -176,7 +177,124 @@ function regionMatches(haystack: string, region: string) {
   return (terms[normalizedRegion] || [region]).some((term) => haystack.includes(normalize(term)));
 }
 
-export function PortalWorkspace() {
+type PortalStrings = {
+  sidebarTitle: string;
+  sidebarDesc: string;
+  portalLabel: string;
+  adminNote: string;
+  loggedIn: string;
+  topHeading: string;
+  signOut: string;
+  connecting: string;
+  accessTitle: string;
+  email: string;
+  emailPh: string;
+  password: string;
+  passwordPh: string;
+  login: string;
+  loginSuccess: string;
+  loginError: string;
+  missingConfig: string;
+  requestTitle: string;
+  name: string;
+  namePh: string;
+  phone: string;
+  message: string;
+  messagePh: string;
+  requestSubmit: string;
+  requestSent: string;
+  requestError: string;
+};
+
+const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
+  no: {
+    sidebarTitle: "Min side",
+    sidebarDesc: "Samle boligmatch, dokumenter, meldinger og neste steg i kjøpsreisen.",
+    portalLabel: "Kundeportal",
+    adminNote: "Admin ligger i RealtyFlow",
+    loggedIn: "Innlogget",
+    topHeading: "Din kjøpsreise i Spania",
+    signOut: "Logg ut",
+    connecting: "Kobles mot RealtyFlow",
+    accessTitle: "Har du fått tilgang?",
+    email: "E-post",
+    emailPh: "din@epost.no",
+    password: "Passord",
+    passwordPh: "Midlertidig eller eget passord",
+    login: "Logg inn",
+    loginSuccess: "Du er logget inn.",
+    loginError: "Kunne ikke logge inn. Kontroller e-post og passord.",
+    missingConfig: "Supabase-nøkler mangler i Zeneco-prosjektet.",
+    requestTitle: "Be om innlogging",
+    name: "Navn",
+    namePh: "Ditt navn",
+    phone: "Telefon",
+    message: "Melding",
+    messagePh: "Kort om hva du trenger tilgang til",
+    requestSubmit: "Send innloggingsforespørsel",
+    requestSent: "Forespørselen er sendt til RealtyFlow.",
+    requestError: "Kunne ikke sende akkurat nå. Prøv igjen.",
+  },
+  de: {
+    sidebarTitle: "Mein Bereich",
+    sidebarDesc: "Immobilien-Auswahl, Dokumente, Nachrichten und nächste Schritte Ihrer Kaufreise an einem Ort.",
+    portalLabel: "Kundenportal",
+    adminNote: "Admin liegt in RealtyFlow",
+    loggedIn: "Angemeldet",
+    topHeading: "Ihre Kaufreise in Spanien",
+    signOut: "Abmelden",
+    connecting: "Verbindung mit RealtyFlow",
+    accessTitle: "Haben Sie bereits Zugang?",
+    email: "E-Mail",
+    emailPh: "ihre@email.de",
+    password: "Passwort",
+    passwordPh: "Temporäres oder eigenes Passwort",
+    login: "Anmelden",
+    loginSuccess: "Sie sind angemeldet.",
+    loginError: "Anmeldung fehlgeschlagen. Bitte E-Mail und Passwort prüfen.",
+    missingConfig: "Supabase-Schlüssel fehlen im Zeneco-Projekt.",
+    requestTitle: "Zugang anfordern",
+    name: "Name",
+    namePh: "Ihr Name",
+    phone: "Telefon",
+    message: "Nachricht",
+    messagePh: "Kurz, wozu Sie Zugang brauchen",
+    requestSubmit: "Zugang anfordern",
+    requestSent: "Ihre Anfrage wurde an RealtyFlow gesendet.",
+    requestError: "Senden gerade nicht möglich. Bitte erneut versuchen.",
+  },
+  en: {
+    sidebarTitle: "My account",
+    sidebarDesc: "Property matches, documents, messages and your next steps in one place.",
+    portalLabel: "Customer portal",
+    adminNote: "Admin lives in RealtyFlow",
+    loggedIn: "Logged in",
+    topHeading: "Your buying journey in Spain",
+    signOut: "Sign out",
+    connecting: "Connecting to RealtyFlow",
+    accessTitle: "Have you been given access?",
+    email: "Email",
+    emailPh: "you@email.com",
+    password: "Password",
+    passwordPh: "Temporary or your own password",
+    login: "Log in",
+    loginSuccess: "You are logged in.",
+    loginError: "Could not log in. Please check your email and password.",
+    missingConfig: "Supabase keys are missing in the Zeneco project.",
+    requestTitle: "Request access",
+    name: "Name",
+    namePh: "Your name",
+    phone: "Phone",
+    message: "Message",
+    messagePh: "Briefly, what you need access to",
+    requestSubmit: "Send access request",
+    requestSent: "Your request has been sent to RealtyFlow.",
+    requestError: "Could not send right now. Please try again.",
+  },
+};
+
+export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
+  const p = PORTAL_STRINGS[locale];
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -476,32 +594,32 @@ export function PortalWorkspace() {
           <span className="portal-icon">
             <LockKeyhole size={22} />
           </span>
-          <h2>Min side</h2>
-          <p>Samle boligmatch, dokumenter, meldinger og neste steg i kjøpsreisen.</p>
+          <h2>{p.sidebarTitle}</h2>
+          <p>{p.sidebarDesc}</p>
         </div>
         <div className="portal-mode single">
           <span>
-            <UserRound size={17} /> Kundeportal
+            <UserRound size={17} /> {p.portalLabel}
           </span>
         </div>
         <a className="portal-admin-link" href="https://realtyflow.chatgenius.pro">
-          <LayoutDashboard size={18} /> Admin ligger i RealtyFlow
+          <LayoutDashboard size={18} /> {p.adminNote}
         </a>
       </aside>
 
       <div className="portal-main">
         <div className="portal-topline">
           <div>
-            <p className="eyebrow">{sessionEmail ? "Innlogget" : "Kundeportal"}</p>
-            <h2>Din kjøpsreise i Spania</h2>
+            <p className="eyebrow">{sessionEmail ? p.loggedIn : p.portalLabel}</p>
+            <h2>{p.topHeading}</h2>
           </div>
           {sessionEmail ? (
             <button className="portal-session-button" onClick={signOut} type="button">
-              <LogOut size={17} /> Logg ut {sessionEmail}
+              <LogOut size={17} /> {p.signOut} {sessionEmail}
             </button>
           ) : (
             <span>
-              <Bell size={17} /> Kobles mot RealtyFlow
+              <Bell size={17} /> {p.connecting}
             </span>
           )}
         </div>
@@ -511,38 +629,38 @@ export function PortalWorkspace() {
             <article className="portal-panel access-panel">
               <div className="panel-title">
                 <Mail size={20} />
-                <h3>Har du fått tilgang?</h3>
+                <h3>{p.accessTitle}</h3>
               </div>
               <form onSubmit={signInWithPassword}>
                 <label>
-                  E-post
+                  {p.email}
                   <input
                     name="email"
                     onChange={(event) => setLoginEmail(event.target.value)}
-                    placeholder="din@epost.no"
+                    placeholder={p.emailPh}
                     required
                     type="email"
                     value={loginEmail}
                   />
                 </label>
                 <label>
-                  Passord
+                  {p.password}
                   <input
                     name="password"
                     onChange={(event) => setLoginPassword(event.target.value)}
-                    placeholder="Midlertidig eller eget passord"
+                    placeholder={p.passwordPh}
                     required
                     type="password"
                     value={loginPassword}
                   />
                 </label>
-                <button type="submit">Logg inn</button>
-                {loginStatus === "sent" && <p className="form-success">Du er logget inn.</p>}
+                <button type="submit">{p.login}</button>
+                {loginStatus === "sent" && <p className="form-success">{p.loginSuccess}</p>}
                 {loginStatus === "error" && (
-                  <p className="form-error">Kunne ikke logge inn. Kontroller e-post og passord.</p>
+                  <p className="form-error">{p.loginError}</p>
                 )}
                 {loginStatus === "missing-config" && (
-                  <p className="form-error">Supabase-nøkler mangler i Zeneco-prosjektet.</p>
+                  <p className="form-error">{p.missingConfig}</p>
                 )}
               </form>
             </article>
@@ -778,28 +896,28 @@ export function PortalWorkspace() {
             <article className="portal-panel access-panel">
             <div className="panel-title">
               <KeyRound size={20} />
-              <h3>Be om innlogging</h3>
+              <h3>{p.requestTitle}</h3>
             </div>
             <form onSubmit={requestAccess}>
               <label>
-                Navn
-                <input name="name" required placeholder="Ditt navn" />
+                {p.name}
+                <input name="name" required placeholder={p.namePh} />
               </label>
               <label>
-                E-post
-                <input name="email" required type="email" placeholder="din@epost.no" />
+                {p.email}
+                <input name="email" required type="email" placeholder={p.emailPh} />
               </label>
               <label>
-                Telefon
-                <input name="phone" placeholder="+47..." />
+                {p.phone}
+                <input name="phone" placeholder="+34..." />
               </label>
               <label>
-                Melding
-                <textarea name="message" placeholder="Kort om hva du trenger tilgang til" />
+                {p.message}
+                <textarea name="message" placeholder={p.messagePh} />
               </label>
-              <button type="submit">Send innloggingsforespørsel</button>
-              {status === "sent" && <p className="form-success">Forespørselen er sendt til RealtyFlow.</p>}
-              {status === "error" && <p className="form-error">Kunne ikke sende akkurat nå. Prøv igjen.</p>}
+              <button type="submit">{p.requestSubmit}</button>
+              {status === "sent" && <p className="form-success">{p.requestSent}</p>}
+              {status === "error" && <p className="form-error">{p.requestError}</p>}
             </form>
           </article>
           )}

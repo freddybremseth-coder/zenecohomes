@@ -127,7 +127,7 @@ export function navLinks(locale: Locale): NavLink[] {
       { label: "Beratung", href: "/de/immobilienberater-spanien" },
       { label: "Kontakt", href: "/de#kontakt" },
       { label: "Über Freddy", href: "https://www.freddybremseth.com", external: true },
-      { label: "Mein Bereich", href: "/min-side", cta: true },
+      { label: "Mein Bereich", href: "/de/min-side", cta: true },
     ];
   }
   if (locale === "en") {
@@ -137,7 +137,7 @@ export function navLinks(locale: Locale): NavLink[] {
       { label: "Advice", href: "/en/property-advisor-spain" },
       { label: "Contact", href: "/en#kontakt" },
       { label: "About Freddy", href: "https://www.freddybremseth.com", external: true },
-      { label: "My account", href: "/min-side", cta: true },
+      { label: "My account", href: "/en/min-side", cta: true },
     ];
   }
   return [
