@@ -102,7 +102,7 @@ export default function EnglishHome() {
           We will get back to you personally – independent, in English, with no obligation.
         </p>
         <div style={{ maxWidth: 760, marginTop: 18 }}>
-          <ContactForm locale="en" />
+          <ContactForm locale="en" variant="compact" />
         </div>
       </section>
 

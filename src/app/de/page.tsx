@@ -102,7 +102,7 @@ export default function GermanHome() {
           Wir melden uns persönlich – unabhängig, auf Deutsch, und ohne Verpflichtung.
         </p>
         <div style={{ maxWidth: 760, marginTop: 18 }}>
-          <ContactForm locale="de" />
+          <ContactForm locale="de" variant="compact" />
         </div>
       </section>
 

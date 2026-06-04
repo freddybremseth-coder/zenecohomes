@@ -10,6 +10,8 @@ type ContactFormProps = {
   propertyTitle?: string;
   requestType?: string;
   locale?: Locale;
+  /** "full" = alle felt (varm norsk trafikk). "compact" = 5 felt (kald DE/EN-trafikk). */
+  variant?: "full" | "compact";
 };
 
 type Strings = {
@@ -146,8 +148,10 @@ export function ContactForm({
   propertyTitle,
   requestType = "general",
   locale = "no",
+  variant = "full",
 }: ContactFormProps) {
   const t = T[locale];
+  const full = variant === "full";
   const leadSource = source || `zenecohomes-${locale}`;
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -208,64 +212,68 @@ export function ContactForm({
           <input name="budget" placeholder={t.budgetPh} />
         </label>
       </div>
-      <div className="form-grid">
-        <label>
-          {t.propertyType}
-          <select name="property_type" defaultValue={t.propertyTypeOptions[0]}>
-            {t.propertyTypeOptions.map((o) => (
-              <option key={o}>{o}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          {t.bedrooms}
-          <input name="bedrooms" type="number" min="1" placeholder="2" />
-        </label>
-      </div>
-      <label>
-        {t.timeline}
-        <select name="timeline" defaultValue={t.timelineOptions[1]}>
-          {t.timelineOptions.map((o) => (
-            <option key={o}>{o}</option>
-          ))}
-        </select>
-      </label>
-      <div className="form-grid">
-        <label>
-          {t.purchaseGoal}
-          <select name="purchase_goal" defaultValue={t.purchaseGoalOptions[0]}>
-            {t.purchaseGoalOptions.map((o) => (
-              <option key={o}>{o}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          {t.financing}
-          <select name="financing_status" defaultValue={t.financingOptions[3]}>
-            {t.financingOptions.map((o) => (
-              <option key={o}>{o}</option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <div className="form-grid">
-        <label>
-          {t.spainExp}
-          <select name="spain_experience" defaultValue={t.spainExpOptions[0]}>
-            {t.spainExpOptions.map((o) => (
-              <option key={o}>{o}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          {t.nextStep}
-          <select name="next_step" defaultValue={t.nextStepOptions[0]}>
-            {t.nextStepOptions.map((o) => (
-              <option key={o}>{o}</option>
-            ))}
-          </select>
-        </label>
-      </div>
+      {full && (
+        <>
+          <div className="form-grid">
+            <label>
+              {t.propertyType}
+              <select name="property_type" defaultValue={t.propertyTypeOptions[0]}>
+                {t.propertyTypeOptions.map((o) => (
+                  <option key={o}>{o}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              {t.bedrooms}
+              <input name="bedrooms" type="number" min="1" placeholder="2" />
+            </label>
+          </div>
+          <label>
+            {t.timeline}
+            <select name="timeline" defaultValue={t.timelineOptions[1]}>
+              {t.timelineOptions.map((o) => (
+                <option key={o}>{o}</option>
+              ))}
+            </select>
+          </label>
+          <div className="form-grid">
+            <label>
+              {t.purchaseGoal}
+              <select name="purchase_goal" defaultValue={t.purchaseGoalOptions[0]}>
+                {t.purchaseGoalOptions.map((o) => (
+                  <option key={o}>{o}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              {t.financing}
+              <select name="financing_status" defaultValue={t.financingOptions[3]}>
+                {t.financingOptions.map((o) => (
+                  <option key={o}>{o}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div className="form-grid">
+            <label>
+              {t.spainExp}
+              <select name="spain_experience" defaultValue={t.spainExpOptions[0]}>
+                {t.spainExpOptions.map((o) => (
+                  <option key={o}>{o}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              {t.nextStep}
+              <select name="next_step" defaultValue={t.nextStepOptions[0]}>
+                {t.nextStepOptions.map((o) => (
+                  <option key={o}>{o}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+        </>
+      )}
       <label>
         {t.message}
         <textarea
