@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-  formatPrice,
   getPrimaryImage,
   getPropertyArea,
   getPropertyRef,
@@ -9,13 +8,38 @@ import {
   type Property,
 } from "@/lib/realtyflow";
 
-export function PropertyCard({ property, priority = false }: { property: Property; priority?: boolean }) {
-  const href = `/eiendommer/${encodeURIComponent(getPropertyRef(property))}`;
+type PropertyCardLocale = "no" | "de" | "en";
+
+function formatCardPrice(price: number | undefined, locale: PropertyCardLocale) {
+  if (!price) {
+    if (locale === "de") return "Preis auf Anfrage";
+    if (locale === "en") return "Price on request";
+    return "Pris på forespørsel";
+  }
+  return new Intl.NumberFormat(locale === "de" ? "de-DE" : locale === "en" ? "en-GB" : "nb-NO", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+  }).format(price);
+}
+
+export function PropertyCard({
+  property,
+  priority = false,
+  locale = "no",
+  detailBasePath = "/eiendommer",
+}: {
+  property: Property;
+  priority?: boolean;
+  locale?: PropertyCardLocale;
+  detailBasePath?: string;
+}) {
+  const href = `${detailBasePath}/${encodeURIComponent(getPropertyRef(property))}`;
   const title = getPropertyTitle(property);
   const image = getPrimaryImage(property);
   const facts = [
-    property.bedrooms ? `${property.bedrooms} sov` : "",
-    property.bathrooms ? `${property.bathrooms} bad` : "",
+    property.bedrooms ? `${property.bedrooms} ${locale === "de" ? "Schlafz." : locale === "en" ? "beds" : "sov"}` : "",
+    property.bathrooms ? `${property.bathrooms} ${locale === "de" ? "Bad" : locale === "en" ? "baths" : "bad"}` : "",
     getPropertyArea(property) ? `${getPropertyArea(property)} m²` : "",
   ].filter(Boolean);
 
@@ -27,7 +51,7 @@ export function PropertyCard({ property, priority = false }: { property: Propert
       <div className="property-body">
         <p>{property.location || property.town || "Costa Blanca"}</p>
         <h3>{title}</h3>
-        <strong>{formatPrice(property.price)}</strong>
+        <strong>{formatCardPrice(property.price, locale)}</strong>
         {facts.length > 0 && (
           <div className="facts">
             {facts.map((fact) => (

@@ -9,7 +9,7 @@ import { localSeoLandingPagesEN } from "@/lib/localSeoLandingPages.en";
 import { homeHreflang, homeLanguageLinks, ogLocale } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
-const BOOKING = "https://appointment.chatgenius.pro/zeneco";
+const BOOKING = "/en#kontakt";
 
 export const metadata: Metadata = {
   title: "Buy Property in Spain | Zen Eco Homes",
@@ -41,7 +41,7 @@ export default function EnglishHome() {
           <Link className="contact-button" href={BOOKING}>
             Book a consultation <ArrowRight size={18} />
           </Link>
-          <Link className="text-button light" href="/eiendommer">
+          <Link className="text-button light" href="/en/properties">
             Browse properties
           </Link>
         </div>

@@ -4,7 +4,7 @@ import type { SeoLandingPage } from "./seoLandingPages";
 // Slugs tilpasset tyske søk: "Immobilie Spanien kaufen", "Neubau Costa Blanca",
 // "Immobilienberater Spanien". Legg nye sider her + i seoEquivalents (i18n.ts).
 
-const BOOKING = "https://appointment.chatgenius.pro/zeneco";
+const BOOKING = "/de#kontakt";
 
 export const seoLandingPagesDE: SeoLandingPage[] = [
   {
@@ -18,7 +18,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     seoDescription:
       "Sie überlegen, eine Immobilie in Spanien zu kaufen? Wir helfen bei Regionswahl, Neubau, Villa, Wohnung, Finanzierung, NIE, Anwalt und sicherem Kaufprozess.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
-    secondaryCta: { label: "Immobilien ansehen", href: "/eiendommer" },
+    secondaryCta: { label: "Immobilien ansehen", href: "/de/immobilien" },
     sections: [
       {
         heading: "Beginnen Sie mit Region und Lebensstil, nicht nur mit der Immobilie",
@@ -78,7 +78,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     seoDescription:
       "Neubau an der Costa Blanca: moderne Wohnungen, Villen und Projekte mit hoher Energieeffizienz. Beratung zu Lage, Bauträger, Zahlungsplan und Übergabe.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
-    secondaryCta: { label: "Immobilien ansehen", href: "/eiendommer" },
+    secondaryCta: { label: "Immobilien ansehen", href: "/de/immobilien" },
     sections: [
       {
         heading: "Warum Neubau?",
@@ -138,7 +138,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     seoDescription:
       "Unabhängiger Immobilienberater für Spanien: Marktüberblick, Regionswahl, Objektvergleich, Kaufprozess, NIE, Anwalt und Finanzierung an der Costa Blanca.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
-    secondaryCta: { label: "Immobilien ansehen", href: "/eiendommer" },
+    secondaryCta: { label: "Immobilien ansehen", href: "/de/immobilien" },
     sections: [
       {
         heading: "Was ein Berater für Sie tut",
@@ -198,7 +198,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     seoDescription:
       "Neubau in Spanien: moderne, energieeffiziente Wohnungen und Villen. Beratung zu Lage, Bauträger, Zahlungsplan, Bankgarantie und Übergabe – sicher und verständlich.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
-    secondaryCta: { label: "Immobilien ansehen", href: "/eiendommer" },
+    secondaryCta: { label: "Immobilien ansehen", href: "/de/immobilien" },
     sections: [
       {
         heading: "Die Vorteile eines Neubaus",
@@ -258,7 +258,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     seoDescription:
       "Grundstück in Spanien kaufen und bauen: Prüfung von Bebaubarkeit, Lizenzen und Lage, Auswahl von Bauträger und Architekt sowie ein sicherer Kaufprozess.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
-    secondaryCta: { label: "Grundstücke ansehen", href: "/eiendommer" },
+    secondaryCta: { label: "Grundstücke ansehen", href: "/de/immobilien" },
     sections: [
       {
         heading: "Erst die Bebaubarkeit prüfen, dann kaufen",

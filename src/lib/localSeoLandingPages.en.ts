@@ -97,7 +97,7 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
       "Suited to modern apartments, villas and view projects.",
       "A good choice for year-round use and long-term ownership.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Altea",
+    filterHref: "/en/properties?region=costa-blanca-nord&area=Altea",
     extraBody:
       "In Altea pay particular attention to elevation changes, driving distance to daily services, sun orientation, views, community fees and whether the area suits everyday or mainly holiday use.",
   }),
@@ -113,7 +113,7 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
       "Near Altea, Benidorm, Alfaz del Pi and Alicante airport.",
       "Suited to apartments, holiday and year-round use.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Albir",
+    filterHref: "/en/properties?region=costa-blanca-nord&area=Albir",
     extraBody:
       "In Albir the exact position within the area matters. Some homes are within walking distance of everything; others need more driving — which affects use, rental and resale.",
   }),
@@ -129,7 +129,7 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
       "Good services and a clear summer season.",
       "For buyers who want beachside living with urban comfort.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Calpe",
+    filterHref: "/en/properties?region=costa-blanca-nord&area=Calpe",
     extraBody:
       "In Calpe consider distance to the beach, noise, parking, views, building age and how well the property works outside high season.",
   }),
@@ -145,7 +145,7 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
       "For buyers who want views and a modern standard.",
       "A strong area to consider for new build and investment.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Finestrat",
+    filterHref: "/en/properties?region=costa-blanca-nord&area=Finestrat",
     extraBody:
       "In Finestrat compare build phases, views, road noise, access to services and what is included in the new-build price. Price levels can vary significantly between projects.",
   }),
@@ -161,7 +161,7 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
       "Suited to villas, townhouses and new-build projects.",
       "Good for year-round use and buyers who want more space.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Polop",
+    filterHref: "/en/properties?region=costa-blanca-nord&area=Polop",
     extraBody:
       "In Polop consider transport needs, distance to daily services, sun exposure, views and community fees — and whether you prefer a calmer daily life over a beachside location.",
   }),
@@ -177,7 +177,7 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
       "For buyers who want nature, privacy and a long-term lifestyle.",
       "Check water, electricity, access, zoning and building permits.",
     ],
-    filterHref: "/eiendommer?area=Pinoso",
+    filterHref: "/en/properties?area=Pinoso",
     extraBody:
       "In Pinoso due diligence is extra important for plots and new build. Zoning, water, electricity, access, ground conditions and total budget should be clarified before reserving or buying.",
   }),

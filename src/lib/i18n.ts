@@ -122,7 +122,7 @@ export type NavLink = { label: string; href: string; external?: boolean; cta?: b
 export function navLinks(locale: Locale): NavLink[] {
   if (locale === "de") {
     return [
-      { label: "Immobilien", href: "/eiendommer" },
+      { label: "Immobilien", href: "/de/immobilien" },
       { label: "Neubau", href: "/de/neubau-costa-blanca" },
       { label: "Beratung", href: "/de/immobilienberater-spanien" },
       { label: "Kontakt", href: "/de#kontakt" },
@@ -132,7 +132,7 @@ export function navLinks(locale: Locale): NavLink[] {
   }
   if (locale === "en") {
     return [
-      { label: "Properties", href: "/eiendommer" },
+      { label: "Properties", href: "/en/properties" },
       { label: "New build", href: "/en/new-build-costa-blanca" },
       { label: "Advice", href: "/en/property-advisor-spain" },
       { label: "Contact", href: "/en#kontakt" },

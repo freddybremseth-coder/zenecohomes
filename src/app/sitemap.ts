@@ -26,6 +26,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
     "/eiendommer",
+    "/de/immobilien",
+    "/en/properties",
     "/tomter",
     "/omrader",
     ...regions.map((region) => `/omrader/${region.key}`),
@@ -43,7 +45,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,
-    changeFrequency: route.startsWith("/magasin/") ? "monthly" : route === "/eiendommer" ? "daily" : "weekly",
+    changeFrequency:
+      route.startsWith("/magasin/") ||
+      route === "/eiendommer" ||
+      route === "/de/immobilien" ||
+      route === "/en/properties"
+        ? route.startsWith("/magasin/")
+          ? "monthly"
+          : "daily"
+        : "weekly",
     priority:
       route === ""
         ? 1

@@ -97,7 +97,7 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
       "Geeignet für moderne Wohnungen, Villen und Projekte mit Aussicht.",
       "Gute Wahl für Ganzjahresnutzung und langfristigen Besitz.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Altea",
+    filterHref: "/de/immobilien?region=costa-blanca-nord&area=Altea",
     extraBody:
       "In Altea sollten Sie besonders auf Höhenunterschiede, Fahrwege zu täglichen Diensten, Sonnenausrichtung, Ausblick, Gemeinschaftskosten und die Eignung für Alltags- oder Ferienbedarf achten.",
   }),
@@ -113,7 +113,7 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
       "Nah an Altea, Benidorm, Alfaz del Pi und Flughafen Alicante.",
       "Geeignet für Wohnungen, Ferien- und Ganzjahresnutzung.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Albir",
+    filterHref: "/de/immobilien?region=costa-blanca-nord&area=Albir",
     extraBody:
       "In Albir ist die genaue Lage im Ort wichtig. Manche Objekte liegen fußläufig zu allem, andere erfordern mehr Autonutzung – das beeinflusst Nutzung, Vermietung und Wiederverkauf.",
   }),
@@ -129,7 +129,7 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
       "Gutes Serviceangebot und ausgeprägte Sommersaison.",
       "Für Käufer, die strandnahes Leben und urbanen Komfort suchen.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Calpe",
+    filterHref: "/de/immobilien?region=costa-blanca-nord&area=Calpe",
     extraBody:
       "In Calpe sollten Sie Strandentfernung, Lärm, Parksituation, Ausblick, Gebäudealter und die Eignung außerhalb der Hochsaison prüfen.",
   }),
@@ -145,7 +145,7 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
       "Für Käufer, die Ausblick und modernen Standard suchen.",
       "Gute Lage für Neubau und Kapitalanlage.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Finestrat",
+    filterHref: "/de/immobilien?region=costa-blanca-nord&area=Finestrat",
     extraBody:
       "In Finestrat sollten Sie Bauphasen, Ausblick, Straßenlärm, Erreichbarkeit von Diensten und Leistungsumfang im Neubaupreis vergleichen. Das Preisniveau variiert je Projekt deutlich.",
   }),
@@ -161,7 +161,7 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
       "Für Villen, Reihenhäuser und Neubauprojekte.",
       "Gut für Ganzjahresnutzung und mehr Platz.",
     ],
-    filterHref: "/eiendommer?region=costa-blanca-nord&area=Polop",
+    filterHref: "/de/immobilien?region=costa-blanca-nord&area=Polop",
     extraBody:
       "In Polop sollten Sie Transportbedarf, Entfernung zu täglichen Diensten, Sonnenlage, Ausblick und Gemeinschaftskosten bewerten – und ob Sie Ruhe gegenüber Strandnähe bevorzugen.",
   }),
@@ -177,7 +177,7 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
       "Für Käufer, die Natur, Privatsphäre und langfristigen Lebensstil suchen.",
       "Wasser, Strom, Zufahrt, Bebauungsrecht und Baulizenz unbedingt prüfen.",
     ],
-    filterHref: "/eiendommer?area=Pinoso",
+    filterHref: "/de/immobilien?area=Pinoso",
     extraBody:
       "In Pinoso ist Due Diligence bei Grundstück und Neubau besonders wichtig. Bebauungsrecht, Wasser, Strom, Zufahrt, Bodenverhältnisse und Gesamtbudget sollten vor Reservierung oder Kauf geklärt sein.",
   }),

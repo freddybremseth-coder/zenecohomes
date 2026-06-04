@@ -4,7 +4,7 @@ import type { SeoLandingPage } from "./seoLandingPages";
 // Targets international buyers: British, Dutch, Belgian, Scandinavian, Irish.
 // Add new pages here + in seoEquivalents (i18n.ts).
 
-const BOOKING = "https://appointment.chatgenius.pro/zeneco";
+const BOOKING = "/en#kontakt";
 
 export const seoLandingPagesEN: SeoLandingPage[] = [
   {
@@ -18,7 +18,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     seoDescription:
       "Thinking of buying property in Spain? Get help with area selection, new builds, villas, apartments, financing, NIE, lawyer and a safe buying process on the Costa Blanca.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
-    secondaryCta: { label: "Browse properties", href: "/eiendommer" },
+    secondaryCta: { label: "Browse properties", href: "/en/properties" },
     sections: [
       {
         heading: "Start with area and lifestyle, not just the property",
@@ -78,7 +78,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     seoDescription:
       "New build in Spain: modern, energy-efficient apartments and villas. Advice on location, developer, payment plan, bank guarantee and handover — clear and secure.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
-    secondaryCta: { label: "Browse properties", href: "/eiendommer" },
+    secondaryCta: { label: "Browse properties", href: "/en/properties" },
     sections: [
       {
         heading: "The advantages of a new build",
@@ -138,7 +138,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     seoDescription:
       "New build on the Costa Blanca: modern apartments, villas and projects with high energy efficiency. Advice on location, developer, payment plan and handover.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
-    secondaryCta: { label: "Browse properties", href: "/eiendommer" },
+    secondaryCta: { label: "Browse properties", href: "/en/properties" },
     sections: [
       {
         heading: "Why new build?",
@@ -198,7 +198,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     seoDescription:
       "Independent property advisor for Spain: market overview, area selection, comparing options, the buying process, NIE, lawyer and financing on the Costa Blanca.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
-    secondaryCta: { label: "Browse properties", href: "/eiendommer" },
+    secondaryCta: { label: "Browse properties", href: "/en/properties" },
     sections: [
       {
         heading: "What an advisor does for you",
@@ -258,7 +258,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     seoDescription:
       "Buy a plot of land in Spain and build: checks on buildability, licences and location, choosing builder and architect, and a safe buying process on the Costa Blanca.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
-    secondaryCta: { label: "Browse plots", href: "/eiendommer" },
+    secondaryCta: { label: "Browse plots", href: "/en/properties" },
     sections: [
       {
         heading: "Check buildability first, then buy",
