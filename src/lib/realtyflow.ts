@@ -5,10 +5,21 @@ export type Property = {
   title?: string;
   title_no?: string;
   title_en?: string;
+  title_de?: string;
+  title_es?: string;
+  title_fr?: string;
+  title_ru?: string;
   description?: string;
   description_no?: string;
   description_en?: string;
+  description_de?: string;
+  description_es?: string;
+  description_fr?: string;
+  description_ru?: string;
   marketing_description?: string;
+  marketing_description_no?: string;
+  marketing_description_en?: string;
+  marketing_description_de?: string;
   location?: string;
   town?: string;
   price?: number;
@@ -23,14 +34,23 @@ export type Property = {
   gallery?: string[];
   images_json?: string | string[];
   property_type?: string;
+  property_type_no?: string;
+  property_type_en?: string;
+  property_type_de?: string;
   type?: string;
+  type_no?: string;
+  type_en?: string;
+  type_de?: string;
   pool?: boolean;
   energy_rating?: string;
   status?: string;
   region?: string;
   show_on_website?: boolean | null;
   website_visible?: boolean | null;
+  translations?: unknown;
 };
+
+export type PropertyLocale = "no" | "de" | "en";
 
 export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida";
 
@@ -163,16 +183,206 @@ export const regions: Array<{ key: RegionKey; label: string; description: string
   },
 ];
 
+const defaultTitle: Record<PropertyLocale, string> = {
+  no: "Nybygg i Spania",
+  de: "Neubau in Spanien",
+  en: "New build in Spain",
+};
+
+const fallbackLocaleOrder: Record<PropertyLocale, PropertyLocale[]> = {
+  no: ["no", "en", "de"],
+  de: ["de", "en", "no"],
+  en: ["en", "de", "no"],
+};
+
+const commonTypeTranslations: Record<PropertyLocale, Record<string, string>> = {
+  no: {
+    apartment: "Leilighet",
+    apartments: "Leilighet",
+    wohnung: "Leilighet",
+    townhouse: "Rekkehus",
+    townhouses: "Rekkehus",
+    reihenhaus: "Rekkehus",
+    plot: "Tomt",
+    plots: "Tomt",
+    grundstuck: "Tomt",
+    grundstueck: "Tomt",
+    "new build": "Nybygg",
+    neubau: "Nybygg",
+  },
+  de: {
+    leilighet: "Wohnung",
+    apartment: "Wohnung",
+    apartments: "Wohnung",
+    rekkehus: "Reihenhaus",
+    townhouse: "Reihenhaus",
+    townhouses: "Reihenhaus",
+    tomannsbolig: "Doppelhaushälfte",
+    "semi detached": "Doppelhaushälfte",
+    nybygg: "Neubau",
+    "new build": "Neubau",
+    "new builds": "Neubau",
+    tomt: "Grundstück",
+    plot: "Grundstück",
+    plots: "Grundstücke",
+    villa: "Villa",
+    penthouse: "Penthouse",
+    bungalow: "Bungalow",
+    duplex: "Duplex",
+    finca: "Finca",
+  },
+  en: {
+    leilighet: "Apartment",
+    wohnung: "Apartment",
+    rekkehus: "Townhouse",
+    reihenhaus: "Townhouse",
+    tomannsbolig: "Semi-detached",
+    doppelhaushalfte: "Semi-detached",
+    doppelhaushaelfte: "Semi-detached",
+    nybygg: "New build",
+    neubau: "New build",
+    tomt: "Plot",
+    grundstuck: "Plot",
+    grundstueck: "Plot",
+    villa: "Villa",
+    penthouse: "Penthouse",
+    bungalow: "Bungalow",
+    duplex: "Duplex",
+    finca: "Finca",
+  },
+};
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function cleanStringValue(value: unknown) {
+  if (typeof value === "string") return cleanPropertyText(value);
+  if (typeof value === "number" || typeof value === "boolean") return String(value);
+  return "";
+}
+
+function readField(property: Property, key: string) {
+  return cleanStringValue((property as Record<string, unknown>)[key]);
+}
+
+function readTranslationObject(value: unknown, field: string, locale: PropertyLocale): string {
+  if (!isRecord(value)) return "";
+
+  const directLocale = value[locale];
+  if (isRecord(directLocale)) {
+    const translated =
+      directLocale[field] ||
+      directLocale[`${field}_${locale}`] ||
+      (field === "title" ? directLocale.name || directLocale.heading : undefined);
+    const translatedText = cleanStringValue(translated);
+    if (translatedText) return translatedText;
+  }
+
+  const directField = value[field];
+  if (isRecord(directField)) {
+    const translated = cleanStringValue(directField[locale]);
+    if (translated) return translated;
+  }
+
+  const localeField = cleanStringValue(value[`${field}_${locale}`]);
+  if (localeField) return localeField;
+
+  return "";
+}
+
+function readTranslationArray(value: unknown, field: string, locale: PropertyLocale): string {
+  if (!Array.isArray(value)) return "";
+  const match = value.find((item) => {
+    if (!isRecord(item)) return false;
+    const lang = cleanStringValue(item.locale || item.language || item.lang).toLowerCase();
+    return lang === locale || lang.startsWith(`${locale}-`) || (locale === "no" && lang === "nb");
+  });
+  return isRecord(match)
+    ? cleanStringValue(match[field] || match[`${field}_${locale}`] || (field === "title" ? match.name : undefined))
+    : "";
+}
+
+function readTranslatedField(property: Property, field: string, locale: PropertyLocale) {
+  const fromObject = readTranslationObject(property.translations, field, locale);
+  if (fromObject) return fromObject;
+  return readTranslationArray(property.translations, field, locale);
+}
+
+function pickLongest(candidates: string[]) {
+  return candidates.filter(Boolean).sort((a, b) => b.length - a.length)[0] || "";
+}
+
+function localizedFieldCandidates(field: string, locale: PropertyLocale) {
+  const suffixes =
+    locale === "no"
+      ? ["no", "nb", "nb_no", "nb-NO"]
+      : locale === "de"
+        ? ["de", "de_de", "de-DE"]
+        : ["en", "en_gb", "en-GB", "en_us", "en-US"];
+  return suffixes.map((suffix) => `${field}_${suffix}`);
+}
+
+export function getLocalizedPropertyTitle(property: Property, locale: PropertyLocale = "no") {
+  const localized = [
+    ...localizedFieldCandidates("title", locale).map((field) => readField(property, field)),
+    readTranslatedField(property, "title", locale),
+  ].find(Boolean);
+  if (localized) return localized;
+
+  for (const fallbackLocale of fallbackLocaleOrder[locale]) {
+    const fallback = [
+      ...localizedFieldCandidates("title", fallbackLocale).map((field) => readField(property, field)),
+      readTranslatedField(property, "title", fallbackLocale),
+    ].find(Boolean);
+    if (fallback) return fallback;
+  }
+
+  return readField(property, "title") || defaultTitle[locale];
+}
+
+export function getLocalizedPropertyDescription(property: Property, locale: PropertyLocale = "no") {
+  const localized = pickLongest([
+    ...localizedFieldCandidates("marketing_description", locale).map((field) => readField(property, field)),
+    ...localizedFieldCandidates("description", locale).map((field) => readField(property, field)),
+    readTranslatedField(property, "marketing_description", locale),
+    readTranslatedField(property, "description", locale),
+  ]);
+  if (localized) return localized;
+
+  for (const fallbackLocale of fallbackLocaleOrder[locale]) {
+    const fallback = pickLongest([
+      ...localizedFieldCandidates("marketing_description", fallbackLocale).map((field) => readField(property, field)),
+      ...localizedFieldCandidates("description", fallbackLocale).map((field) => readField(property, field)),
+      readTranslatedField(property, "marketing_description", fallbackLocale),
+      readTranslatedField(property, "description", fallbackLocale),
+    ]);
+    if (fallback) return fallback;
+  }
+
+  return pickLongest([readField(property, "marketing_description"), readField(property, "description")]);
+}
+
+export function getLocalizedPropertyType(property: Property, locale: PropertyLocale = "no") {
+  const localized = [
+    ...localizedFieldCandidates("property_type", locale).map((field) => readField(property, field)),
+    ...localizedFieldCandidates("type", locale).map((field) => readField(property, field)),
+    readTranslatedField(property, "property_type", locale),
+    readTranslatedField(property, "type", locale),
+  ].find(Boolean);
+  if (localized) return localized;
+
+  const raw = readField(property, "property_type") || readField(property, "type") || "Nybygg";
+  const key = normalizeSearchText(raw);
+  return commonTypeTranslations[locale][key] || raw;
+}
+
 export function getPropertyTitle(property: Property) {
-  return property.title_no || property.title || property.title_en || "Nybygg i Spania";
+  return getLocalizedPropertyTitle(property, "no");
 }
 
 export function getPropertyDescription(property: Property) {
-  const descriptions = [property.marketing_description, property.description_no, property.description, property.description_en]
-    .map((value) => cleanPropertyText(value || ""))
-    .filter(Boolean)
-    .sort((a, b) => b.length - a.length);
-  return descriptions[0] || "";
+  return getLocalizedPropertyDescription(property, "no");
 }
 
 export function cleanPropertyText(value: string) {
@@ -197,7 +407,7 @@ export function getPropertyRef(property: Property) {
 }
 
 export function getPropertyType(property: Property) {
-  return property.property_type || property.type || "Nybygg";
+  return getLocalizedPropertyType(property, "no");
 }
 
 export function getPropertyArea(property: Property) {
@@ -233,13 +443,21 @@ export function getPrimaryImage(property: Property, fallback = fallbackImages[0]
   return getPropertyImages(property)[0] || fallback;
 }
 
-export function formatPrice(price?: number) {
-  if (!price) return "Pris på forespørsel";
-  return new Intl.NumberFormat("nb-NO", {
+export function formatPriceForLocale(price?: number, locale: PropertyLocale = "no") {
+  if (!price) {
+    if (locale === "de") return "Preis auf Anfrage";
+    if (locale === "en") return "Price on request";
+    return "Pris på forespørsel";
+  }
+  return new Intl.NumberFormat(locale === "de" ? "de-DE" : locale === "en" ? "en-GB" : "nb-NO", {
     style: "currency",
     currency: "EUR",
     maximumFractionDigits: 0,
   }).format(price);
+}
+
+export function formatPrice(price?: number) {
+  return formatPriceForLocale(price, "no");
 }
 
 export function getRegionLabel(region?: string) {
@@ -255,13 +473,28 @@ export function getPropertySearchText(property: Property) {
       property.title,
       property.title_no,
       property.title_en,
+      property.title_de,
+      property.title_es,
+      property.title_fr,
+      property.title_ru,
       property.description,
       property.description_no,
       property.description_en,
+      property.description_de,
+      property.description_es,
+      property.description_fr,
+      property.description_ru,
       property.ref,
       property.external_id,
       property.property_type,
+      property.property_type_no,
+      property.property_type_en,
+      property.property_type_de,
       property.type,
+      property.type_no,
+      property.type_en,
+      property.type_de,
+      JSON.stringify(property.translations || ""),
     ]
       .filter(Boolean)
       .join(" "),
@@ -454,6 +687,8 @@ export const fallbackProperties: Property[] = [
     id: "fallback-finestrat",
     ref: "ZEH-FIN-001",
     title_no: "Moderne villa med basseng",
+    title_de: "Moderne Villa mit Pool",
+    title_en: "Modern villa with pool",
     location: "Finestrat",
     price: 545000,
     bedrooms: 3,
@@ -463,11 +698,17 @@ export const fallbackProperties: Property[] = [
     primary_image: fallbackImages[0],
     description_no:
       "Et stilrent nybygg med privat uteområde, moderne planløsning og kort vei til strand, golf og servicetilbud.",
+    description_de:
+      "Ein stilvoller Neubau mit privatem Außenbereich, moderner Raumaufteilung und kurzer Entfernung zu Strand, Golf und Dienstleistungen.",
+    description_en:
+      "A stylish new build with private outdoor space, a modern layout and easy access to beach, golf and everyday services.",
   },
   {
     id: "fallback-altea",
     ref: "ZEH-ALT-002",
     title_no: "Ny leilighet nær strand og sentrum",
+    title_de: "Neue Wohnung nahe Strand und Zentrum",
+    title_en: "New apartment near the beach and town centre",
     location: "Altea",
     price: 349000,
     bedrooms: 2,
@@ -477,11 +718,17 @@ export const fallbackProperties: Property[] = [
     primary_image: fallbackImages[1],
     description_no:
       "Lys og moderne leilighet i et nyere prosjekt med gode fellesområder og praktisk beliggenhet.",
+    description_de:
+      "Helle, moderne Wohnung in einem neueren Projekt mit guten Gemeinschaftsbereichen und praktischer Lage.",
+    description_en:
+      "A bright modern apartment in a newer development with good communal areas and a practical location.",
   },
   {
     id: "fallback-polop",
     ref: "ZEH-POL-003",
     title_no: "Energieffektivt rekkehus med takterrasse",
+    title_de: "Energieeffizientes Reihenhaus mit Dachterrasse",
+    title_en: "Energy-efficient townhouse with roof terrace",
     location: "Polop",
     price: 289000,
     bedrooms: 3,
@@ -491,5 +738,9 @@ export const fallbackProperties: Property[] = [
     primary_image: fallbackImages[2],
     description_no:
       "Et innbydende nybygg for deg som vil ha roligere omgivelser, fjellutsikt og kort vei til kysten.",
+    description_de:
+      "Ein einladender Neubau für Käufer, die ruhigere Umgebung, Bergblick und kurze Wege zur Küste wünschen.",
+    description_en:
+      "An inviting new build for buyers who want quieter surroundings, mountain views and quick access to the coast.",
   },
 ];

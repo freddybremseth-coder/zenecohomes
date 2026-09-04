@@ -7,11 +7,15 @@ export function ReadMoreText({
   initialLength = 520,
   actionHref = "#kontakt",
   actionLabel = "Be om komplett tilbud",
+  moreLabel = "Les mer",
+  lessLabel = "Vis mindre",
 }: {
   text: string;
   initialLength?: number;
   actionHref?: string;
   actionLabel?: string;
+  moreLabel?: string;
+  lessLabel?: string;
 }) {
   const [expanded, setExpanded] = useState(false);
   const looksSourceTruncated = /\.\.\.$/.test(text.trim());
@@ -26,7 +30,7 @@ export function ReadMoreText({
         <div className="read-more-actions">
           {shouldTruncate && (
             <button type="button" onClick={() => setExpanded(!expanded)}>
-              {expanded ? "Vis mindre" : "Les mer"}
+              {expanded ? lessLabel : moreLabel}
             </button>
           )}
           {(!shouldTruncate || expanded || looksSourceTruncated) && <a href={actionHref}>{actionLabel}</a>}

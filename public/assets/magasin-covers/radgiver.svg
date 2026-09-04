@@ -1,0 +1,19 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">God radgiver</title>
+  <desc id="desc">Cover om radgiver og trygg boligreise.</desc>
+  <rect width="1200" height="760" fill="#dfece8"/>
+  <path d="M0 395 C230 330 430 390 610 320 C810 242 975 280 1200 210 V760 H0 Z" fill="#88a093"/>
+  <path d="M0 540 C210 500 460 565 690 508 C900 456 1030 496 1200 462 V760 H0 Z" fill="#dfc98f"/>
+  <g transform="translate(760 260)">
+    <circle cx="64" cy="44" r="44" fill="#16222b"/>
+    <rect x="18" y="104" width="92" height="150" rx="46" fill="#16222b"/>
+    <circle cx="226" cy="44" r="44" fill="#c5a059"/>
+    <rect x="180" y="104" width="92" height="150" rx="46" fill="#c5a059"/>
+    <path d="M118 164 C150 135 164 135 194 164" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <rect x="72" y="86" width="520" height="312" rx="10" fill="#16222b" opacity="0.94"/>
+  <text x="112" y="146" fill="#c5a059" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="5">RADGIVNING</text>
+  <text x="112" y="230" fill="#ffffff" font-family="Georgia, serif" font-size="76" font-weight="700">God</text>
+  <text x="112" y="310" fill="#ffffff" font-family="Georgia, serif" font-size="76" font-weight="700">radgiver</text>
+  <text x="112" y="354" fill="#edf3ef" font-family="Arial, sans-serif" font-size="28" font-weight="700">Din trygghet i Spania</text>
+</svg>

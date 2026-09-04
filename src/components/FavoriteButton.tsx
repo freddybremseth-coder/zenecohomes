@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
+import type { Locale } from "@/lib/i18n";
 
 type Favorite = {
   ref: string;
@@ -11,8 +12,15 @@ type Favorite = {
   href: string;
 };
 
-export function FavoriteButton({ favorite }: { favorite: Favorite }) {
+const labels: Record<Locale, { saved: string; save: string }> = {
+  no: { saved: "Lagret", save: "Lagre favoritt" },
+  de: { saved: "Gespeichert", save: "Favorit speichern" },
+  en: { saved: "Saved", save: "Save favourite" },
+};
+
+export function FavoriteButton({ favorite, locale = "no" }: { favorite: Favorite; locale?: Locale }) {
   const [saved, setSaved] = useState(false);
+  const text = labels[locale];
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]") as Favorite[];
@@ -31,7 +39,7 @@ export function FavoriteButton({ favorite }: { favorite: Favorite }) {
 
   return (
     <button className={`favorite-button${saved ? " active" : ""}`} type="button" onClick={toggleFavorite}>
-      <Heart size={17} /> {saved ? "Lagret" : "Lagre favoritt"}
+      <Heart size={17} /> {saved ? text.saved : text.save}
     </button>
   );
 }

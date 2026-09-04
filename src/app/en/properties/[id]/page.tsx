@@ -18,32 +18,33 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
   const ref = property ? getPropertyRef(property) : decodeURIComponent(id);
-  const title = property ? `${getLocalizedPropertyTitle(property, "no")} | Bolig i Spania` : "Bolig i Spania";
+  const title = property ? `${getLocalizedPropertyTitle(property, "en")} | Property in Spain` : "Property in Spain";
   const description = property
-    ? `${formatPriceForLocale(property.price, "no")} · ${property.location || property.town || "Spania"} · ${getLocalizedPropertyType(property, "no")}. Be om prospekt, tilgjengelighet og norsk vurdering fra Zen Eco Homes.`
-    : "Bolig til salgs i Spania hos Zen Eco Homes.";
+    ? `${formatPriceForLocale(property.price, "en")} · ${property.location || property.town || "Spain"} · ${getLocalizedPropertyType(property, "en")}. Request brochure, availability and advice from Zen Eco Homes.`
+    : "Property for sale in Spain with Zen Eco Homes.";
 
   return {
     title,
     description,
     alternates: {
-      canonical: getPropertyDetailPath(ref, "no"),
+      canonical: getPropertyDetailPath(ref, "en"),
       languages: propertyHreflang(ref),
     },
     openGraph: {
       title,
       description,
+      locale: "en_GB",
       type: "website",
-      url: `https://www.zenecohomes.com${getPropertyDetailPath(ref, "no")}`,
+      url: `https://www.zenecohomes.com${getPropertyDetailPath(ref, "en")}`,
     },
   };
 }
 
-export default async function PropertyPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function EnglishPropertyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
 
-  if (!property) return <PropertyNotFoundView locale="no" />;
+  if (!property) return <PropertyNotFoundView locale="en" />;
 
-  return <PropertyDetailView property={property} locale="no" />;
+  return <PropertyDetailView property={property} locale="en" />;
 }

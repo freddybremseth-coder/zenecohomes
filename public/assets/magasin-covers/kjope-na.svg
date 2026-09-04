@@ -1,0 +1,16 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kjope na eller vente</title>
+  <desc id="desc">Cover med markedskurve, sol og kyst.</desc>
+  <rect width="1200" height="760" fill="#eef3ef"/>
+  <circle cx="980" cy="146" r="72" fill="#c5a059"/>
+  <path d="M0 442 C190 350 360 395 555 310 C740 230 920 292 1200 180 V760 H0 Z" fill="#72858f"/>
+  <path d="M0 514 C250 470 492 540 714 482 C905 430 1040 460 1200 420 V760 H0 Z" fill="#3192ad"/>
+  <path d="M0 612 C210 575 410 638 650 598 C860 562 1010 602 1200 560 V760 H0 Z" fill="#f2dfb6"/>
+  <polyline points="648,498 728,460 806,482 884,408 970,430 1090,330" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="648,498 728,460 806,482 884,408 970,430 1090,330" fill="none" stroke="#c5a059" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="72" y="86" width="522" height="300" rx="10" fill="#16222b" opacity="0.94"/>
+  <text x="112" y="146" fill="#c5a059" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="5">MARKED</text>
+  <text x="112" y="228" fill="#ffffff" font-family="Georgia, serif" font-size="78" font-weight="700">Kjope na?</text>
+  <text x="112" y="292" fill="#edf3ef" font-family="Arial, sans-serif" font-size="30" font-weight="700">Timing, risiko og</text>
+  <text x="112" y="334" fill="#edf3ef" font-family="Arial, sans-serif" font-size="30" font-weight="700">muligheter i Spania</text>
+</svg>

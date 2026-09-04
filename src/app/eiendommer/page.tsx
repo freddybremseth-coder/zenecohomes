@@ -5,7 +5,6 @@ import { homeLanguageLinks } from "@/lib/i18n";
 import {
   getProperties,
   getPropertySearchText,
-  getPropertyTitle,
   getPropertyType,
   getRegionLabel,
   normalizeSearchText,
@@ -21,6 +20,12 @@ export const metadata = {
     "Se moderne boliger, villaer, leiligheter og nybygg i Spania. Zen Eco Homes hjelper nordmenn med trygg kjøpsprosess på Costa Blanca og Costa Cálida.",
   alternates: {
     canonical: "/eiendommer",
+    languages: {
+      "nb-NO": "https://www.zenecohomes.com/eiendommer",
+      "x-default": "https://www.zenecohomes.com/eiendommer",
+      "de-DE": "https://www.zenecohomes.com/de/immobilien",
+      en: "https://www.zenecohomes.com/en/properties",
+    },
   },
   openGraph: {
     title: "Boliger til salgs i Spania | Zen Eco Homes",

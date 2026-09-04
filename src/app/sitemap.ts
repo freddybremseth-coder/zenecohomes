@@ -8,6 +8,7 @@ import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
 import { localSeoLandingPagesDE } from "@/lib/localSeoLandingPages.de";
 import { seoLandingPagesEN } from "@/lib/seoLandingPages.en";
 import { localSeoLandingPagesEN } from "@/lib/localSeoLandingPages.en";
+import { getPropertyDetailPath } from "@/lib/propertyRouting";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const baseUrl = "https://www.zenecohomes.com";
@@ -65,15 +66,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const properties = await getProperties(100);
-  const propertyRoutes = properties
+  const propertyRefs = properties
     .map((property) => getPropertyRef(property))
-    .filter(Boolean)
-    .map((ref) => ({
-      url: `${baseUrl}/eiendommer/${encodeURIComponent(ref)}`,
+    .filter(Boolean);
+  const propertyRoutes = propertyRefs.flatMap((ref) =>
+    (["no", "de", "en"] as const).map((locale) => ({
+      url: `${baseUrl}${getPropertyDetailPath(ref, locale)}`,
       lastModified: now,
       changeFrequency: "daily" as const,
       priority: 0.7,
-    }));
+    })),
+  );
 
   return [...staticRoutes, ...propertyRoutes];
 }

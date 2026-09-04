@@ -30,7 +30,9 @@ export const metadata = {
     canonical: "/de/immobilien",
     languages: {
       "nb-NO": "https://www.zenecohomes.com/eiendommer",
+      "x-default": "https://www.zenecohomes.com/eiendommer",
       "de-DE": "https://www.zenecohomes.com/de/immobilien",
+      en: "https://www.zenecohomes.com/en/properties",
     },
   },
   openGraph: {
@@ -101,6 +103,7 @@ export default async function GermanPropertiesPage({
         languageLinks={[
           { locale: "no", href: "/eiendommer", current: false },
           { locale: "de", href: "/de/immobilien", current: true },
+          { locale: "en", href: "/en/properties", current: false },
         ]}
       />
       <section className="page-hero compact-hero">
@@ -189,7 +192,7 @@ export default async function GermanPropertiesPage({
               key={property.id || property.ref || index}
               property={property}
               locale="de"
-              detailBasePath="/eiendommer"
+              detailBasePath="/de/immobilien"
             />
           ))}
         </div>

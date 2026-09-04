@@ -30,6 +30,8 @@ export const metadata = {
     canonical: "/en/properties",
     languages: {
       "nb-NO": "https://www.zenecohomes.com/eiendommer",
+      "x-default": "https://www.zenecohomes.com/eiendommer",
+      "de-DE": "https://www.zenecohomes.com/de/immobilien",
       en: "https://www.zenecohomes.com/en/properties",
     },
   },
@@ -100,6 +102,7 @@ export default async function EnglishPropertiesPage({
         locale="en"
         languageLinks={[
           { locale: "no", href: "/eiendommer", current: false },
+          { locale: "de", href: "/de/immobilien", current: false },
           { locale: "en", href: "/en/properties", current: true },
         ]}
       />
@@ -189,7 +192,7 @@ export default async function EnglishPropertiesPage({
               key={property.id || property.ref || index}
               property={property}
               locale="en"
-              detailBasePath="/eiendommer"
+              detailBasePath="/en/properties"
             />
           ))}
         </div>
@@ -198,4 +201,3 @@ export default async function EnglishPropertiesPage({
     </main>
   );
 }
-

@@ -78,6 +78,20 @@ select {
   text-transform: uppercase;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(22, 34, 43, 0.14);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--dark);
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(22, 34, 43, 0.08);
+}
+
 .nav a {
   transition: color 0.2s ease;
 }
@@ -90,6 +104,25 @@ select {
   border: 1px solid var(--gold);
   padding: 10px 18px;
   color: var(--gold);
+}
+
+.language-switcher {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.language-switcher a {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+
+.language-switcher a[aria-current="true"] {
+  opacity: 1;
 }
 
 .hero {
@@ -316,6 +349,326 @@ select {
   margin-bottom: 18px;
   color: var(--dark);
   font-size: 1.25rem;
+}
+
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.magazine-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: white;
+  border: 1px solid rgba(22, 34, 43, 0.09);
+  border-radius: 6px;
+  box-shadow: 0 14px 42px rgba(22, 34, 43, 0.08);
+}
+
+.magazine-cover-image,
+.magazine-cover,
+.magazine-illustration {
+  width: 100%;
+  height: 292px;
+}
+
+.magazine-cover-image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.magazine-cover,
+.magazine-illustration {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: white;
+  background:
+    linear-gradient(160deg, rgba(22, 34, 43, 0.15), rgba(22, 34, 43, 0.88)),
+    url("/assets/areas.jpg") center/cover;
+}
+
+.magazine-cover::before,
+.magazine-cover::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.magazine-cover::before {
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+}
+
+.magazine-cover::after {
+  right: 26px;
+  top: 28px;
+  width: 76px;
+  height: 76px;
+  border-radius: 999px;
+  background: rgba(197, 160, 89, 0.94);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+}
+
+.magazine-cover > *,
+.magazine-illustration > * {
+  position: relative;
+  z-index: 1;
+}
+
+.magazine-cover span,
+.magazine-illustration span {
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 7px 11px;
+  background: rgba(22, 34, 43, 0.72);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.magazine-cover strong,
+.magazine-illustration strong {
+  max-width: 86%;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.45rem);
+  line-height: 1;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+.magazine-cover small {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.magazine-cover-villa {
+  background:
+    linear-gradient(160deg, rgba(22, 34, 43, 0.1), rgba(22, 34, 43, 0.9)),
+    url("/assets/process.jpg") center/cover;
+}
+
+.magazine-cover-process {
+  background:
+    linear-gradient(160deg, rgba(22, 34, 43, 0.08), rgba(22, 34, 43, 0.88)),
+    url("/assets/magasin/kjopsprosess-spania.svg") center/cover;
+}
+
+.magazine-cover-market {
+  background:
+    linear-gradient(160deg, rgba(22, 34, 43, 0.08), rgba(22, 34, 43, 0.88)),
+    url("/assets/magasin/idealista-finn-boligportaler.svg") center/cover;
+}
+
+.magazine-cover-finance {
+  background:
+    linear-gradient(160deg, rgba(22, 34, 43, 0.08), rgba(22, 34, 43, 0.88)),
+    url("/assets/magasin/finansiering-nie-notar.svg") center/cover;
+}
+
+.magazine-cover-advisor {
+  background:
+    linear-gradient(160deg, rgba(22, 34, 43, 0.08), rgba(22, 34, 43, 0.88)),
+    url("/assets/magasin/god-eiendomsradgiver.svg") center/cover;
+}
+
+.magazine-illustration {
+  align-items: flex-start;
+  background:
+    linear-gradient(180deg, rgba(22, 34, 43, 0.04), rgba(22, 34, 43, 0.92)),
+    #edf3ef;
+}
+
+.magazine-illustration img {
+  position: absolute;
+  inset: 18px 18px auto auto;
+  width: min(58%, 260px);
+  height: auto;
+  max-height: 176px;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(22, 34, 43, 0.18));
+}
+
+.magazine-illustration div {
+  display: grid;
+  gap: 10px;
+}
+
+.magazine-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 26px;
+}
+
+.magazine-body .magazine-meta {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.magazine-body h2 {
+  margin: 0 0 14px;
+  color: var(--dark);
+  font-family: "Playfair Display", serif;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.magazine-body > p:not(.magazine-meta) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.72;
+  text-transform: none;
+}
+
+.magazine-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.magazine-actions .text-button {
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.book-showcase {
+  padding: 90px max(24px, calc((100vw - 1220px) / 2));
+  background:
+    linear-gradient(180deg, rgba(22, 34, 43, 0.97), rgba(22, 34, 43, 0.9)),
+    url("/assets/areas.jpg") center/cover;
+  color: white;
+}
+
+.book-showcase-inner {
+  display: grid;
+  grid-template-columns: 0.56fr 1.44fr;
+  gap: 46px;
+  align-items: start;
+}
+
+.book-showcase-heading {
+  position: sticky;
+  top: 112px;
+  display: grid;
+  gap: 22px;
+}
+
+.book-showcase-heading h2 {
+  margin: 0;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.04;
+}
+
+.book-showcase-heading p:not(.eyebrow) {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.book-showcase-heading .contact-button {
+  width: fit-content;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.book-card {
+  min-width: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 440px 1fr;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: var(--dark);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 68px rgba(0, 0, 0, 0.3);
+}
+
+.book-cover-wrap {
+  position: relative;
+  min-height: 440px;
+  background: #0e344f;
+}
+
+.book-cover-wrap img {
+  object-fit: contain;
+  object-position: top center;
+  padding: 14px;
+}
+
+.book-card-body {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+}
+
+.book-card-body span,
+.book-card-body strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.book-card-body h3 {
+  margin: 0;
+  color: var(--dark);
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.book-card-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
 
 .facts {
@@ -2171,11 +2524,74 @@ footer {
 
 @media (max-width: 900px) {
   .site-header {
-    padding: 0 22px;
+    min-height: 74px;
+    padding: 0 18px;
   }
 
-  .nav a:not(.nav-cta) {
-    display: none;
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 14px;
+    right: 14px;
+    display: grid;
+    gap: 0;
+    align-items: stretch;
+    padding: 10px;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(22, 34, 43, 0.12);
+    box-shadow: 0 22px 60px rgba(22, 34, 43, 0.18);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    visibility: hidden;
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0.18s ease;
+  }
+
+  .nav.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .nav a,
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 0;
+    border-bottom: 1px solid rgba(22, 34, 43, 0.08);
+  }
+
+  .nav-cta {
+    margin-top: 8px;
+    justify-content: center;
+    border: 1px solid var(--gold);
+  }
+
+  .language-switcher {
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 0 0;
+  }
+
+  .language-switcher a {
+    min-height: 36px;
+    width: auto;
+    border: 1px solid rgba(22, 34, 43, 0.1);
+    padding: 9px 12px;
   }
 
   .hero {
@@ -2186,6 +2602,8 @@ footer {
   .trust-band,
   .region-strip,
   .property-grid,
+  .magazine-grid,
+  .book-showcase-inner,
   .split,
   .quiz-layout,
   .proof-grid,
@@ -2234,8 +2652,13 @@ footer {
 
   .portal-sidebar,
   .quiz-result,
-  .plots-map {
+  .plots-map,
+  .book-showcase-heading {
     position: static;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .portal-topline {
@@ -2254,8 +2677,16 @@ footer {
     letter-spacing: 1px;
   }
 
+  .site-header {
+    padding: 0 14px;
+  }
+
+  .mobile-menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
   .nav-cta {
-    padding: 9px 12px;
     font-size: 11px;
   }
 
@@ -2266,5 +2697,37 @@ footer {
   .section {
     width: min(100% - 32px, 1220px);
     padding: 70px 0;
+  }
+
+  .magazine-cover-image,
+  .magazine-cover,
+  .magazine-illustration {
+    height: 250px;
+  }
+
+  .magazine-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .book-showcase {
+    padding: 70px 16px;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .book-card {
+    grid-template-rows: 430px 1fr;
+  }
+
+  .book-cover-wrap {
+    min-height: 430px;
+  }
+
+  .book-card-body {
+    padding: 13px;
   }
 }
