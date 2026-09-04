@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
 import { localSeoLandingPagesDE } from "@/lib/localSeoLandingPages.de";
-import { homeHreflang, homeLanguageLinks, ogLocale } from "@/lib/i18n";
+import { CARE_URL, homeHreflang, homeLanguageLinks, ogLocale } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
 const BOOKING = "/de#kontakt";
@@ -90,6 +90,47 @@ export default function GermanHome() {
               {page.title}
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <p className="eyebrow">Neue Services</p>
+        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+          Mehr als der Kauf – wir begleiten Sie den ganzen Weg
+        </h2>
+        <p style={{ color: "var(--muted)", maxWidth: 640, lineHeight: 1.7 }}>
+          Bei Zen Eco Homes geht es nicht nur um den Kauf. Wir finden für Sie den Traum im Hinterland und kümmern
+          uns um Ihre Immobilie, wenn Sie nicht da sind – zwei neue Services für sicheres Eigentum in Spanien.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 18, marginTop: 18 }}>
+          <Link
+            href="/de/inland"
+            style={{ display: "block", background: "white", border: "1px solid var(--line)", padding: 22, boxShadow: "0 8px 24px rgba(22,34,43,0.05)" }}
+          >
+            <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>Inland</strong>
+            <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>
+              Größere Grundstücke, Fincas und Neubauten rund um Pinoso, Aspe und Novelda – oft zu niedrigeren
+              Quadratmeterpreisen als an der Küste. Wir prüfen Wasser, Strom, Zufahrt und Einstufung.
+            </p>
+            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+              Hinterland entdecken <ArrowRight size={15} />
+            </span>
+          </Link>
+          <a
+            href={CARE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "block", background: "white", border: "1px solid var(--line)", padding: 22, boxShadow: "0 8px 24px rgba(22,34,43,0.05)" }}
+          >
+            <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>Keyholding</strong>
+            <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>
+              Schlüsselverwaltung, Kontrolle, Wartung und Vorbereitung vor der Ankunft. Mit care.zenecohomes.com
+              haben Sie einen verlässlichen Partner vor Ort, der sich zwischen den Aufenthalten um Ihre Immobilie kümmert.
+            </p>
+            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+              Keyholding ansehen <ArrowRight size={15} />
+            </span>
+          </a>
         </div>
       </section>
 
