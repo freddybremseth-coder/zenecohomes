@@ -1,12 +1,30 @@
-import { Home, MapPin, Sprout, Droplets, Ruler, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import type { Metadata } from "next";
+import {
+  ArrowRight,
+  Check,
+  Droplets,
+  Grape,
+  Home,
+  Landmark,
+  Leaf,
+  MapPin,
+  Ruler,
+  ShieldCheck,
+  Sprout,
+  TreeDeciduous,
+} from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
+import { INLAND_BRAND, inlandTowns } from "@/lib/inland";
+import { getInlandProperties } from "@/lib/inlandFeed";
 
-export const metadata = {
-  title: "Inland – bolig og tomt i innlandet i Spania | Pinoso, Aspe, Novelda",
-  description:
-    "Utforsk innlandet på Costa Blanca: større tomter, finca-eiendommer, nybygg og ro rundt Pinoso, Aspe og Novelda. Norsk rådgivning på vann, strøm, adkomst og trygg kjøpsprosess.",
+export const metadata: Metadata = {
+  title: "Innlandet på Costa Blanca – finca, landsbyhus og gård",
+  description: INLAND_BRAND.description,
   alternates: {
     canonical: "/inland",
     languages: {
@@ -17,10 +35,11 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Inland i Spania | Zen Eco Homes",
-    description:
-      "Bolig, tomt og finca i innlandet på Costa Blanca. Mer plass, natur og lavere pris per kvadratmeter – med trygg norsk rådgivning.",
+    title: `${INLAND_BRAND.name} | Finca og landsbyhus i innlandet`,
+    description: INLAND_BRAND.tagline,
     url: "https://www.zenecohomes.com/inland",
+    siteName: "Zen Eco Homes",
+    locale: "nb_NO",
     type: "website",
   },
 };
@@ -48,40 +67,93 @@ const highlights = [
   },
 ];
 
-const areas = [
+const faq = [
   {
-    name: "Pinoso",
-    text: "Kjent for vin, salt og landlige finca-eiendommer. Store tomter, gode byggemuligheter og et hyggelig lokalsamfunn.",
+    q: "Hva koster en finca i innlandet sammenlignet med kysten?",
+    a: "For prisen av en leilighet ved kysten får du ofte et landsted med flere mål tomt i innlandet. Prisnivået varierer mye med stand, beliggenhet og dokumentasjon – derfor starter vi alltid med en ærlig vurdering av hva budsjettet ditt faktisk rekker til.",
   },
   {
-    name: "Aspe",
-    text: "Frodig innland med druer og oliven, kort vei til Alicante og flyplass. Mer urbant tilbud kombinert med landlig ro.",
+    q: "Er det trygt å kjøpe finca på rustikk tomt?",
+    a: "Ja, når det gjøres riktig. Landeiendommer har andre regler enn boliger i by: byggetillatelser, vannrettigheter, brønner og hva som faktisk er lovlig oppført må sjekkes før du signerer noe. Det er nettopp dette vi hjelper deg gjennom.",
   },
   {
-    name: "Novelda",
-    text: "Historisk by med marmorindustri og modernistisk arkitektur. Godt utgangspunkt for tomt, nybygg og større eiendommer.",
+    q: "Hvor langt er det til kysten og flyplassen?",
+    a: "De fleste innlandsområdene ligger 30–60 minutter fra Alicante flyplass. Hondón-dalene og Castalla er nærmest, Villena har i tillegg høyhastighetstog som tar deg til Alicante på rundt 20 minutter.",
+  },
+  {
+    q: "Kan jeg bo i innlandet hele året?",
+    a: "Landsbyene her er levende hele året – de lever av landbruk, industri og lokalt næringsliv, ikke av turisme. Skoler, helsetilbud og butikker holder åpent i februar som i juli. Vintrene er kjøligere enn ved kysten, så god oppvarming er et av punktene vi alltid vurderer.",
   },
 ];
 
-export default function InlandPage() {
+export default async function InlandPage() {
+  const properties = await getInlandProperties();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["RealEstateAgent", "LocalBusiness"],
+        "@id": "https://www.zenecohomes.com/inland#agent",
+        name: INLAND_BRAND.name,
+        url: "https://www.zenecohomes.com/inland",
+        description: INLAND_BRAND.description,
+        parentOrganization: { "@id": "https://www.zenecohomes.com/#organization" },
+        areaServed: inlandTowns.map((town) => town.name),
+        founder: {
+          "@type": "Person",
+          name: "Freddy Bremseth",
+          url: "https://www.freddybremseth.com",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      },
+    ],
+  };
+
   return (
-    <main>
-      <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <section className="page-hero compact-hero image-hero">
-        <p className="eyebrow">Ny tjeneste · Innlandet i Spania</p>
-        <h1>Inland – bolig, tomt og finca i innlandet</h1>
-        <p>
-          Vil du ha mer plass, natur og ro enn ved kysten? I innlandet rundt Pinoso, Aspe og Novelda finner du
-          større tomter, finca-eiendommer og nybygg til en lavere pris per kvadratmeter – med trygg norsk
-          rådgivning hele veien.
-        </p>
-        <div className="hero-actions">
-          <a className="contact-button" href="/tomter">
-            Se tomter i innlandet
-          </a>
-          <a className="text-button" href="/#kontakt">
-            Snakk med rådgiver
-          </a>
+    <main className="inland-theme">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
+
+      <section className="hero inland-hero">
+        <div className="hero-overlay" />
+        <div className="hero-content">
+          <p className="eyebrow">{INLAND_BRAND.name} · Biar · Villena · Sax · Pinoso</p>
+          <h1>Det ekte Spania ligger en time fra stranden</h1>
+          <p className="hero-copy">
+            Fincaer med oliventrær, landsbyhus med historie og gårder med plass til drømmene – til priser
+            kysten sluttet å tilby for lenge siden. Vi bor her selv, og hjelper deg å kjøpe trygt.
+          </p>
+          <div className="portal-actions">
+            <a className="contact-button" href="#eiendommer">
+              Se innlandseiendommer <ArrowRight size={18} />
+            </a>
+            <a className="text-button light" href="#freddy">
+              Møt rådgiveren som bor her
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="trust-band inland-trust">
+        <div>
+          <strong>Vi bor her selv</strong>
+          <span>Rådgiveren din bor i Biar og driver egen olivengård i innlandet</span>
+        </div>
+        <div>
+          <strong>Fincaer og landsbyhus</strong>
+          <span>Eiendomstyper og tomter som ikke lenger finnes ved kysten</span>
+        </div>
+        <div>
+          <strong>Trygt landkjøp</strong>
+          <span>Rustikk tomt, vann, brønner og dokumentasjon sjekkes før du signerer</span>
         </div>
       </section>
 
@@ -97,36 +169,167 @@ export default function InlandPage() {
         ))}
       </section>
 
-      <section className="section area-intro">
-        <div className="section-heading">
-          <p className="eyebrow">Populære innlandsområder</p>
-          <h2>Hvor i innlandet passer for deg?</h2>
+      <section className="section split" id="freddy">
+        <div>
+          <p className="eyebrow">Din rådgiver bor i innlandet</p>
+          <h2>«Jeg valgte selv innlandet – og hjelper deg å gjøre det trygt»</h2>
           <p>
-            Innlandet gir ofte mer tomt, natur og lavere pris – men vann, strøm, adkomst og regulering varierer mye
-            fra eiendom til eiendom. Vi hjelper deg å sammenligne.
+            Freddy Bremseth har bodd og jobbet med eiendom i Spania i en årrekke – og da han skulle velge sitt
+            eget sted, ble det ikke kysten, men middelalderlandsbyen Biar. Der driver han i dag sin egen
+            olivengård, midt i landskapet han hjelper norske kjøpere inn i.
           </p>
+          <p>
+            Det gir deg en rådgiver som kjenner innlandet fra innsiden: hvilke landsbyer som lever hele året,
+            hva en finca faktisk krever, hva vann- og byggerettigheter betyr i praksis – og hva eiendommene er
+            verdt, ikke bare hva de annonseres for.
+          </p>
+          <div className="check-list">
+            {[
+              "Norsk rådgivning fra første idé til overtakelse",
+              "Lokalkunnskap fra Biar, Villena, Sax, Pinoso og dalene rundt",
+              "Uavhengig vurdering av pris, stand og dokumentasjon",
+            ].map((item) => (
+              <span key={item}>
+                <Check size={18} /> {item}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="feature-panel">
+          <div>
+            <Home /> Bor selv i Biar
+          </div>
+          <div>
+            <TreeDeciduous /> Driver egen olivengård
+          </div>
+          <div>
+            <ShieldCheck /> Uavhengig norsk rådgiver
+          </div>
+          <div>
+            <Landmark /> Kjenner landsbyene innenfra
+          </div>
         </div>
       </section>
 
-      <section className="section card-list">
-        {areas.map((area) => (
-          <article className="info-card" key={area.name}>
-            <MapPin />
-            <div>
-              <h2>{area.name}</h2>
-              <p>{area.text}</p>
-            </div>
+      <section className="section" id="eiendommer">
+        <div className="section-heading">
+          <p className="eyebrow">Aktuelle eiendommer</p>
+          <h2>Fincaer, landsbyhus og gårder i innlandet</h2>
+          <p>
+            Utvalget oppdateres automatisk – nye innlandseiendommer fra våre kilder dukker opp her uten at du
+            trenger å lete gjennom portalene.
+          </p>
+        </div>
+        {properties.length > 0 ? (
+          <div className="property-grid">
+            {properties.slice(0, 6).map((property, index) => (
+              <PropertyCard key={property.id || property.ref || index} property={property} priority={index < 3} />
+            ))}
+          </div>
+        ) : (
+          <div className="section-heading">
+            <p>
+              Akkurat nå har vi ingen publiserte innlandseiendommer – men vi vet ofte om fincaer og landsbyhus
+              før de annonseres. <a href="#kontakt">Fortell oss hva du ser etter</a>, så varsler vi deg først.
+            </p>
+          </div>
+        )}
+        <div className="center-action">
+          <Link className="text-button" href="/eiendommer?region=innlandet">
+            Se alle innlandseiendommer <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section area-profile-grid">
+        <div className="section-heading">
+          <p className="eyebrow">Velg ditt innland</p>
+          <h2>Landsbyene og dalene vi anbefaler</h2>
+          <p>
+            Innlandet er ikke ett sted – det er fjellandsbyer, vinbyer og stille daler med hver sin karakter.
+            Start med området, så finner vi eiendommen.
+          </p>
+        </div>
+        {inlandTowns.map((town) => (
+          <article className="area-profile-card" key={town.slug}>
+            <div style={{ backgroundImage: `url(${town.photo})` }} />
+            <section>
+              <span>{town.eyebrow}</span>
+              <h2>{town.name}</h2>
+              <p>{town.intro}</p>
+              <Link className="text-button area-property-link" href={`/inland/${town.slug}`}>
+                <MapPin size={17} /> Utforsk {town.name}
+              </Link>
+            </section>
           </article>
         ))}
       </section>
 
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Derfor er innlandskjøp annerledes</p>
+          <h2>Landeiendom krever mer enn en visning</h2>
+          <p>
+            Fincaer og landsteder selges ofte med uklare grenser, uregistrerte utbygg og vannløsninger du ikke
+            finner i prospektet. Det er ikke farlig – men det må sjekkes av noen som vet hvor de skal lete.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article>
+            <strong>01</strong>
+            <h3>Tomt og dokumentasjon</h3>
+            <p>Rustikk eller urban tomt? Er alt på eiendommen lovlig oppført og registrert? Vi sjekker før du forelsker deg.</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3>Vann, brønn og strøm</h3>
+            <p>Byvann, vanningsrettigheter, brønn eller tank – vi vurderer hva løsningen faktisk betyr for hverdag og verdi.</p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3>Riktig pris og stand</h3>
+            <p>Vi vurderer byggets stand, oppvarming og oppgraderingsbehov, og forhandler ut fra hva eiendommen er verdt.</p>
+          </article>
+        </div>
+        <div className="center-action">
+          <Link className="text-button" href="/kjopsprosessen">
+            Se hele kjøpsprosessen <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="dona-band">
+        <div>
+          <p className="eyebrow">
+            <Grape size={16} /> Fra vår egen gård
+          </p>
+          <h2>Smaken av livet her: Doña Anna</h2>
+          <p>
+            På gården i Biar produserer vi Doña Anna – økologisk extra virgin olivenolje med sporbar
+            opprinnelse. Det er ikke en sidegeskjeft; det er grunnen til at vi kan si at vi kjenner
+            innlandslivet fra innsiden. Jorden, vannet, naboene og rytmen i landsbyen.
+          </p>
+          <a className="text-button" href="https://donaanna.com" target="_blank" rel="noopener noreferrer">
+            Besøk donaanna.com <ArrowRight size={16} />
+          </a>
+        </div>
+        <div className="feature-panel">
+          <div>
+            <Leaf /> Økologisk olivengård i Biar
+          </div>
+          <div>
+            <ShieldCheck /> Sporbar opprinnelse
+          </div>
+        </div>
+      </section>
+
       <section className="section area-intro">
         <div className="section-heading">
-          <p className="eyebrow">Neste steg</p>
-          <h2>Kyst eller innland – vi hjelper deg å velge riktig</h2>
+          <p className="eyebrow">Kyst eller innland?</p>
+          <h2>Vi hjelper deg å velge riktig</h2>
           <p>
             Kysten gir enklere utleie, strand og mer service. Innlandet gir mer tomt, ro og natur. Valget bør styres
-            av livsstil og hvordan du faktisk skal bruke boligen.
+            av livsstil og hvordan du faktisk skal bruke boligen – og vi hjelper deg å sammenligne ærlig.
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="/eiendommer">
@@ -137,6 +340,33 @@ export default function InlandPage() {
             </a>
           </div>
         </div>
+      </section>
+
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Vanlige spørsmål</p>
+          <h2>Lurer du på det samme som andre kjøpere?</h2>
+        </div>
+        <div className="proof-grid inland-faq">
+          {faq.map((item) => (
+            <article key={item.q}>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="contact-section" id="kontakt">
+        <div>
+          <p className="eyebrow">Neste steg</p>
+          <h2>Fortell oss om innlandsdrømmen din</h2>
+          <p>
+            Finca med oliventrær? Landsbyhus i Biar? Gård med plass til hester? Fortell oss hva du ser for
+            deg, så svarer vi med områder, eiendommer og en ærlig vurdering av budsjettet.
+          </p>
+        </div>
+        <ContactForm source={INLAND_BRAND.leadSource} />
       </section>
 
       <Footer />

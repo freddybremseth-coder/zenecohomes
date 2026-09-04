@@ -149,6 +149,7 @@ export function navLinks(locale: Locale): NavLink[] {
   }
   return [
     { label: "Boliger", href: "/eiendommer" },
+    { label: "Innlandet", href: "/inland" },
     { label: "Tomter", href: "/tomter" },
     { label: "Inland", href: "/inland" },
     { label: "Områder", href: "/omrader" },

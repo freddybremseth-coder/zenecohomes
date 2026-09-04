@@ -32,6 +32,12 @@ const regionCopy: Record<RegionKey, { title: string; intro: string; proof: strin
       "Costa Calida og Murcia-regionen passer for deg som ønsker nye prosjekter, golfresorter, roligere omgivelser og ofte mer bolig for pengene. Områdene rundt Los Alcazares, San Pedro del Pinatar, La Manga og Altaona er særlig aktuelle.",
     proof: ["Ofte mer bolig for budsjettet", "Golf, laguner og roligere kystbyer", "Spennende vekstområde for nybygg"],
   },
+  innlandet: {
+    title: "Bolig i innlandet på Costa Blanca",
+    intro:
+      "Innlandet passer for deg som vil ha ekte spanske landsbyer, store tomter, fincaer og mer eiendom for pengene – med kysten under en time unna. Her finner du Biar, Villena, Sax, Castalla, Pinoso, Monóvar og Hondón-dalene.",
+    proof: ["Fincaer, landsbyhus og store tomter", "Levende, helårsåpne spanske landsbyer", "Rådgiver som selv bor i Biar"],
+  },
 };
 
 export function generateStaticParams() {

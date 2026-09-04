@@ -32,7 +32,7 @@ export type Property = {
   website_visible?: boolean | null;
 };
 
-export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida";
+export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida" | "innlandet";
 
 export type AreaProfile = {
   id?: string;
@@ -159,6 +159,52 @@ export const regions: Array<{ key: RegionKey; label: string; description: string
       "santiago de la ribera",
       "santiage de la ribera",
       "yecla",
+    ],
+  },
+  {
+    key: "innlandet",
+    label: "Innlandet",
+    description: "Biar, Villena, Sax, Castalla, Banyeres, Pinoso, Monóvar, Salinas, La Romana og Hondón-dalene.",
+    aliases: [
+      "innlandet",
+      "inland",
+      "costa blanca inland",
+      "costa blanca innland",
+      "alicante inland",
+      "vinalopo",
+      "vinalopó",
+    ],
+    locations: [
+      "biar",
+      "villena",
+      "sax",
+      "castalla",
+      "onil",
+      "ibi",
+      "tibi",
+      "agost",
+      "banyeres",
+      "bañeres",
+      "beneixama",
+      "camp de mirra",
+      "canada",
+      "cañada",
+      "pinoso",
+      "el pinos",
+      "el pinós",
+      "monovar",
+      "monóvar",
+      "salinas",
+      "la romana",
+      "alguena",
+      "algueña",
+      "hondon",
+      "hondón",
+      "aspe",
+      "novelda",
+      "monforte del cid",
+      "petrer",
+      "elda",
     ],
   },
 ];
