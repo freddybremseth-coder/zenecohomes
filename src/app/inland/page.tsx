@@ -200,6 +200,51 @@ export default async function InlandPage() {
         </div>
       </section>
 
+      <section className="section inland-gallery-section">
+        <div className="section-heading">
+          <p className="eyebrow">Livet i innlandet</p>
+          <h2>Slik ser hverdagen ut</h2>
+          <p>
+            Oliven- og mandellunder, middelalderlandsbyer med borg på høyden og fjell som skifter farge gjennom
+            dagen. Dette er landskapet du våkner til – roligere, grønnere og mer ekte enn kysten.
+          </p>
+        </div>
+        <div className="inland-gallery">
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1780234215509-992d69f3d5da?auto=format&fit=crop&w=900&q=75"
+              alt="Landsby i innlandet med flislagt kirketårn, frukthager og fjell"
+              loading="lazy"
+            />
+            <figcaption>Landsbyliv med historie</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1767022094253-e24308b8947e?auto=format&fit=crop&w=900&q=75"
+              alt="Olivenlunder på en skråning under et klippefjell i innlandet"
+              loading="lazy"
+            />
+            <figcaption>Oliven- og mandellunder</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1763498535698-3bc5c0c59cc0?auto=format&fit=crop&w=900&q=75"
+              alt="Frukthage med fjell i horisonten i det spanske innlandet"
+              loading="lazy"
+            />
+            <figcaption>Fjell og frukthager</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1633368098503-d4ff388f4f82?auto=format&fit=crop&w=900&q=75"
+              alt="Ekte spansk landsby med terrakottatak omgitt av grønne åser"
+              loading="lazy"
+            />
+            <figcaption>Ekte spanske landsbyer</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="section" id="eiendommer">
         <div className="section-heading">
           <p className="eyebrow">Aktuelle eiendommer</p>
