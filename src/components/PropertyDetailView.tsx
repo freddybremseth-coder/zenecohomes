@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, BookOpen, Coins, Download, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
+import { PropertyGallery } from "@/components/PropertyGallery";
 import { Footer } from "@/components/Footer";
 import { ReadMoreText } from "@/components/ReadMoreText";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -514,11 +515,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
           {images.length > 1 && (
             <section className="premium-gallery">
               <h2>{t.images}</h2>
-              <div className="gallery-grid">
-                {images.slice(1, 10).map((image) => (
-                  <div key={image} style={{ backgroundImage: `url(${image})` }} />
-                ))}
-              </div>
+              <PropertyGallery images={images} title={title} />
             </section>
           )}
           <section className="area-context">
