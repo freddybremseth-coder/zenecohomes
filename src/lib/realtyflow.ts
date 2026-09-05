@@ -149,9 +149,12 @@ const TOWN_DISPLAY: Array<[string, string]> = [
   // Costa Cálida / Almería
   ["san pedro del pinatar", "San Pedro del Pinatar"], ["san javier", "San Javier"], ["los alcazares", "Los Alcázares"],
   ["torre pacheco", "Torre Pacheco"], ["mazarron", "Mazarrón"], ["aguilas", "Águilas"], ["cartagena", "Cartagena"],
-  ["fuente alamo", "Fuente Álamo"], ["alhama", "Alhama de Murcia"], ["baños y mendigo", "Baños y Mendigo"],
+  ["fuente alamo", "Fuente Álamo"], ["alhama", "Alhama de Murcia"], ["banos y mendigo", "Baños y Mendigo"],
   ["avileses", "Avileses"], ["moratalla", "Moratalla"], ["vera", "Vera"], ["almerimar", "Almerimar"],
 ];
+
+// Nøklene sammenlignes mot normalisert tekst – normaliser dem for å unngå aksent-bommer.
+const TOWN_MATCH: Array<[string, string]> = TOWN_DISPLAY.map(([key, display]) => [normalizeSearchText(key), display]);
 
 /**
  * Pent bynavn for en bolig – trekkes ut fra tittel/sted (byen ligger i tittelen,
@@ -160,18 +163,47 @@ const TOWN_DISPLAY: Array<[string, string]> = [
  */
 export function getPropertyTown(property: Property): string | null {
   if (property.town && property.town.trim()) return property.town.trim();
+  // 1) Tittel + sted er mest pålitelig.
   const hay = normalizeSearchText(
     [property.title, property.title_no, property.title_en, property.title_de, property.location]
       .filter(Boolean)
       .join(" "),
   );
-  for (const [key, display] of TOWN_DISPLAY) {
+  for (const [key, display] of TOWN_MATCH) {
     if (hay.includes(key)) return display;
   }
+  // 2) "Town, Area"-sted (ikke en grov "Costa ..."-sone).
   const loc = (property.location || "").trim();
   if (loc && !/^costa /i.test(loc)) {
     const first = loc.split(/[,_]/)[0].trim();
     if (first) return first;
+  }
+  // 3) Fallback: byen ligger noen ganger bare i beskrivelsesteksten – velg den mest omtalte.
+  const desc = normalizeSearchText(
+    [
+      property.description,
+      property.description_no,
+      property.description_en,
+      property.description_de,
+      property.marketing_description,
+      property.marketing_description_no,
+      property.marketing_description_en,
+      property.marketing_description_de,
+    ]
+      .filter(Boolean)
+      .join(" "),
+  );
+  if (desc) {
+    let best: string | null = null;
+    let bestCount = 0;
+    for (const [key, display] of TOWN_MATCH) {
+      const count = desc.split(key).length - 1;
+      if (count > bestCount) {
+        bestCount = count;
+        best = display;
+      }
+    }
+    if (best) return best;
   }
   return null;
 }

@@ -13,6 +13,17 @@ import {
 
 const NUM_LOCALE: Record<PropertyLocale, string> = { no: "nb-NO", de: "de-DE", en: "en-GB" };
 
+function capitalize(value: string) {
+  return value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
+}
+
+// Gjør ropende STORE-BOKSTAV-marketingtitler om til lesbar setningsform.
+function toReadable(value: string) {
+  return value && value === value.toUpperCase()
+    ? value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
+    : value;
+}
+
 export function PropertyCard({
   property,
   priority = false,
@@ -28,7 +39,9 @@ export function PropertyCard({
   const title = getLocalizedPropertyTitle(property, locale);
   const image = getPrimaryImage(property);
   const type = getLocalizedPropertyType(property, locale);
-  const town = getPropertyTown(property) || property.location || "Costa Blanca";
+  const town = getPropertyTown(property);
+  // Ryddig, spesifikk overskrift ("Villa i Finestrat") i stedet for lange, like marketingtitler.
+  const heading = town ? `${capitalize(type)} ${locale === "no" ? "i" : "in"} ${town}` : toReadable(title);
   const area = getPropertyArea(property);
   const pricePerM2 =
     property.price && area ? new Intl.NumberFormat(NUM_LOCALE[locale]).format(Math.round(property.price / area)) : null;
@@ -45,8 +58,7 @@ export function PropertyCard({
         <span>{type}</span>
       </div>
       <div className="property-body">
-        <p>{town}</p>
-        <h3>{title}</h3>
+        <h3>{heading}</h3>
         <div className="property-price-row">
           <strong>{formatPriceForLocale(property.price, locale)}</strong>
           {pricePerM2 && <span className="price-per-m2">{pricePerM2} €/m²</span>}
