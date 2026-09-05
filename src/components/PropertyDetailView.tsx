@@ -384,6 +384,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               url: propertyUrl,
               price: property.price,
               priceCurrency: "EUR",
+              priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
               availability: "https://schema.org/InStock",
               seller: {
                 "@type": "RealEstateAgent",

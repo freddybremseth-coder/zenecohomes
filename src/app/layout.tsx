@@ -53,7 +53,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         url: "https://www.zenecohomes.com",
         description:
           "Norsk rådgiver for boligkjøp, nybygg, tomter og eiendomsprosjekter i Spania, med særlig fokus på Costa Blanca og Costa Cálida.",
-        areaServed: ["Costa Blanca", "Costa Blanca Nord", "Costa Blanca Sør", "Costa Cálida", "Alicante", "Spania"],
+        telephone: "+4796009965",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Biar",
+          addressRegion: "Alicante / Costa Blanca",
+          addressCountry: "ES",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+4796009965",
+          contactType: "sales",
+          areaServed: ["ES", "NO"],
+          availableLanguage: ["Norwegian", "English", "German", "Spanish"],
+        },
+        areaServed: ["Biar", "Benidorm", "Costa Blanca", "Costa Blanca Nord", "Costa Blanca Sør", "Costa Cálida", "Alicante", "Spania"],
         knowsAbout: [
           "Boligkjøp i Spania",
           "Nybygg i Spania",

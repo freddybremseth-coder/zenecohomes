@@ -7,6 +7,7 @@ import {
   getProperties,
   getProperty,
   getPropertyRef,
+  getPropertyTown,
 } from "@/lib/realtyflow";
 
 export async function generateStaticParams() {
@@ -18,10 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
   const ref = property ? getPropertyRef(property) : decodeURIComponent(id);
+  const town = property ? getPropertyTown(property) || property.location || "Spania" : "Spania";
   const title = property ? `${getLocalizedPropertyTitle(property, "no")} | Bolig i Spania` : "Bolig i Spania";
   const description = property
-    ? `${formatPriceForLocale(property.price, "no")} · ${property.location || property.town || "Spania"} · ${getLocalizedPropertyType(property, "no")}. Be om prospekt, tilgjengelighet og norsk vurdering fra Zen Eco Homes.`
+    ? `${formatPriceForLocale(property.price, "no")} · ${town} · ${getLocalizedPropertyType(property, "no")}. Be om prospekt, tilgjengelighet og norsk vurdering fra Zen Eco Homes.`
     : "Bolig til salgs i Spania hos Zen Eco Homes.";
+  const ogImage = `https://www.zenecohomes.com/eiendommer/${encodeURIComponent(ref)}/og`;
 
   return {
     title,
@@ -35,6 +38,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       description,
       type: "website",
       url: `https://www.zenecohomes.com${getPropertyDetailPath(ref, "no")}`,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }
