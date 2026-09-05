@@ -151,7 +151,6 @@ export function navLinks(locale: Locale): NavLink[] {
     { label: "Boliger", href: "/eiendommer" },
     { label: "Innlandet", href: "/inland" },
     { label: "Tomter", href: "/tomter" },
-    { label: "Inland", href: "/inland" },
     { label: "Områder", href: "/omrader" },
     { label: "Keyholding", href: CARE_URL, external: true },
     { label: "Kjøpsprosess", href: "/kjopsprosessen" },

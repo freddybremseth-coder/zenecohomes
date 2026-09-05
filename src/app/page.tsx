@@ -240,7 +240,7 @@ export default async function Home() {
         </div>
         <div className="proof-grid">
           <article>
-            <strong>Inland</strong>
+            <strong>Innlandet</strong>
             <h3>Mer plass, natur og ro</h3>
             <p>
               Større tomter, finca-eiendommer og nybygg i innlandet rundt Pinoso, Aspe og Novelda – ofte til en
