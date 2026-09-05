@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowLeft, Bath, BedDouble, Download, Home, MessageCircle, Ruler, Tag } from "lucide-react";
+import { ArrowLeft, Bath, BedDouble, BookOpen, Download, Home, MessageCircle, Ruler, Tag } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { Footer } from "@/components/Footer";
@@ -22,8 +22,11 @@ import {
   getPropertyArea,
   getPropertyImages,
   getPropertyRef,
+  propertyMatchesRegion,
+  regions,
   type Property,
 } from "@/lib/realtyflow";
+import { bookForProperty } from "@/lib/books";
 
 type DetailText = {
   allProperties: string;
@@ -61,6 +64,9 @@ type DetailText = {
   areaTitle: string;
   areaBody: (location: string) => string;
   areaBadges: string[];
+  bookLead: string;
+  areaReadMore: string;
+  bookCta: string;
   breadcrumbLabel: string;
   home: string;
   interested: string;
@@ -123,6 +129,9 @@ const T: Record<Locale, DetailText> = {
     areaBody: (location) =>
       `Boligen ligger i ${location}. Vi vurderer alltid området sammen med deg: avstand til strand, golf, restauranter, helsetjenester, flyplass og hvordan stedet fungerer utenom høysesong.`,
     areaBadges: ["Norsk vurdering av området", "Alternativer i samme prisklasse", "Digital eller fysisk visning"],
+    bookLead: "Fra Freddys guidebok",
+    areaReadMore: "Les mer om området",
+    bookCta: "Kjøp e-bok – 5 €",
     breadcrumbLabel: "Brødsmule",
     home: "Forside",
     interested: "Interessert?",
@@ -183,6 +192,9 @@ const T: Record<Locale, DetailText> = {
     areaBody: (location) =>
       `Die Immobilie befindet sich in ${location}. Wir bewerten die Lage gemeinsam mit Ihnen: Entfernung zu Strand, Golf, Restaurants, Gesundheitsdiensten, Flughafen und wie der Ort außerhalb der Hochsaison funktioniert.`,
     areaBadges: ["Regionseinschätzung", "Alternativen in ähnlicher Preislage", "Digitale oder persönliche Besichtigung"],
+    bookLead: "Aus Freddys Reiseführer",
+    areaReadMore: "Mehr über die Gegend",
+    bookCta: "E-Book kaufen – 5 €",
     breadcrumbLabel: "Breadcrumb",
     home: "Startseite",
     interested: "Interessiert?",
@@ -243,6 +255,9 @@ const T: Record<Locale, DetailText> = {
     areaBody: (location) =>
       `The property is in ${location}. We always assess the area with you: distance to beach, golf, restaurants, healthcare, airport and how the place works outside high season.`,
     areaBadges: ["Area assessment", "Alternatives in the same price range", "Virtual or in-person viewing"],
+    bookLead: "From Freddy's guidebook",
+    areaReadMore: "Read more about the area",
+    bookCta: "Buy e-book – 5 €",
     breadcrumbLabel: "Breadcrumb",
     home: "Home",
     interested: "Interested?",
@@ -279,6 +294,15 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
   const location = property.location || property.town || "Spania";
   const ref = getPropertyRef(property);
   const title = getLocalizedPropertyTitle(property, locale);
+  const areaBook = bookForProperty(`${title} ${location} ${property.town || ""}`, locale);
+  const areaRegionKey = regions.find((r) => propertyMatchesRegion(property, r.key))?.key;
+  const localePrefix = locale === "no" ? "" : `/${locale}`;
+  const areaPageHref =
+    areaRegionKey === "innlandet"
+      ? `${localePrefix}/inland`
+      : areaRegionKey
+        ? `/omrader/${areaRegionKey}`
+        : "/omrader";
   const type = getLocalizedPropertyType(property, locale);
   const estimatedCosts = property.price ? Math.round(property.price * 0.135) : 0;
   const estimatedTotal = property.price ? property.price + estimatedCosts : 0;
@@ -483,6 +507,26 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               {t.areaBadges.map((badge) => (
                 <span key={badge}>{badge}</span>
               ))}
+            </div>
+            <div className="area-book">
+              <p className="area-book-lead">
+                <BookOpen size={16} /> {t.bookLead}
+              </p>
+              <strong>«{areaBook.title}»</strong>
+              <p>{areaBook.blurb}</p>
+              <div className="area-book-actions">
+                <Link className="text-button" href={areaPageHref}>
+                  {t.areaReadMore}
+                </Link>
+                <a
+                  className="contact-button"
+                  href={areaBook.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.bookCta}
+                </a>
+              </div>
             </div>
           </section>
           <nav className="breadcrumb-nav" aria-label={t.breadcrumbLabel}>

@@ -2835,6 +2835,43 @@ footer {
   margin-top: 18px;
 }
 
+.area-book {
+  margin-top: 22px;
+  padding: 22px 24px;
+  border: 1px solid rgba(90, 110, 60, 0.28);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(120, 140, 78, 0.08), rgba(120, 140, 78, 0.02));
+}
+
+.area-book-lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5a6e3c;
+}
+
+.area-book strong {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.area-book > p {
+  margin: 0 0 14px;
+}
+
+.area-book-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
 .inland-trust strong {
   color: var(--gold-dark);
 }
