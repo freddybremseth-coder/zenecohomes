@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   Check,
-  Droplets,
   Grape,
   Home,
   Landmark,
@@ -54,16 +53,6 @@ const highlights = [
     icon: Sprout,
     title: "Ro, natur og selvforsyning",
     text: "Vingårder, mandeltrær og åpne landskap. Perfekt for en roligere hverdag og en mer selvforsynt livsstil.",
-  },
-  {
-    icon: Droplets,
-    title: "Vann, strøm og adkomst",
-    text: "Vi sjekker vannkilde (kommunalt nett, vannlag, brønn eller tank), strømtilkobling og lovlig dokumentert adkomst før du binder deg.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Trygg regulering",
-    text: "Rustico, urbano eller urbanizable? Vi avklarer hva du faktisk kan bygge, og hvilke tillatelser som trengs.",
   },
 ];
 
