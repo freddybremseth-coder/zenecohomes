@@ -8,7 +8,8 @@ import { homeLanguageLinks } from "@/lib/i18n";
 import { allArticles } from "@/lib/magazine";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
-const booksUrl = "https://freddybremseth.com";
+const booksUrl = "https://books.freddybremseth.com";
+const bookUrl = (slug: string) => `${booksUrl}/book/${slug}`;
 
 const articleCovers: Record<string, string> = {
   "omradeguide-eiendomskjop-i-spania": "/assets/magasin-covers/omradevalg.svg",
@@ -26,60 +27,70 @@ const bookGuides = [
     language: "Norsk",
     image: "/assets/books/altea-norsk.png",
     description: "Den hvite byen, havet og hverdagslivet.",
+    slug: "guide-altea-no",
   },
   {
     title: "Calpe",
     language: "Norsk",
     image: "/assets/books/calpe-norsk.png",
     description: "Klippen, strendene og byen.",
+    slug: "guide-calpe-no",
   },
   {
     title: "Finestrat",
     language: "Norsk",
     image: "/assets/books/finestrat-norsk.png",
     description: "Landsbyen, stranden og nybyen.",
+    slug: "guide-finestrat-no",
   },
   {
     title: "La Nucia",
     language: "Norsk",
     image: "/assets/books/la-nucia-norsk.png",
     description: "Høydene mellom kyst og fjell.",
+    slug: "guide-la-nucia-no",
   },
   {
     title: "Polop",
     language: "Norsk",
     image: "/assets/books/polop-norsk.png",
     description: "Fontene, fjell og stillhet over kysten.",
+    slug: "guide-polop-no",
   },
   {
     title: "Benidorm",
     language: "English",
     image: "/assets/books/benidorm-english.jpg",
     description: "Beyond the high-rises.",
+    slug: "guide-benidorm-en",
   },
   {
     title: "Dénia",
     language: "English",
     image: "/assets/books/denia-english.png",
     description: "Port, beaches and year-round life.",
+    slug: "guide-denia-en",
   },
   {
     title: "El Campello",
     language: "English",
     image: "/assets/books/el-campello-english.png",
     description: "Beaches, marina and daily life.",
+    slug: "guide-el-campello-en",
   },
   {
     title: "Sant Joan d'Alacant",
     language: "English",
     image: "/assets/books/sant-joan-english.png",
     description: "Residential life near Alicante.",
+    slug: "guide-sant-joan-en",
   },
   {
     title: "Moraira",
     language: "Norsk",
     image: "/assets/books/moraira-norsk.jpg",
     description: "Områder, livsstil og hverdag.",
+    slug: "guide-moraira-no",
   },
 ];
 
@@ -195,10 +206,10 @@ export default async function MagazinePage() {
             <h2>Områdebøker for deg som vurderer bolig og liv i Spania</h2>
             <p>
               Praktiske områdeguider om hverdagsliv, kostnader, transport, nabolag og lokale valg. Bøkene kan
-              kjøpes for 5 euro på freddybremseth.com.
+              kjøpes for 5 euro på books.freddybremseth.com.
             </p>
-            <Link className="contact-button" href={booksUrl} target="_blank" rel="noreferrer">
-              Kjøp bøker for 5 euro <ArrowRight size={18} />
+            <Link className="contact-button" href={`${booksUrl}/library`} target="_blank" rel="noreferrer">
+              Se alle bøkene <ArrowRight size={18} />
             </Link>
           </div>
 
@@ -206,7 +217,7 @@ export default async function MagazinePage() {
             {bookGuides.map((book, index) => (
               <Link
                 className={`book-card ${index === 0 ? "featured-book" : ""}`}
-                href={booksUrl}
+                href={bookUrl(book.slug)}
                 target="_blank"
                 rel="noreferrer"
                 key={`${book.title}-${book.language}`}
