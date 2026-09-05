@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowLeft, Bath, BedDouble, BookOpen, Download, Home, MessageCircle, Ruler, Tag } from "lucide-react";
+import { ArrowLeft, Bath, BedDouble, BookOpen, Download, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { Footer } from "@/components/Footer";
@@ -318,6 +318,13 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
       ? { icon: <Bath />, label: `${property.bathrooms} ${locale === "de" ? "Bäder" : locale === "en" ? "bathrooms" : "bad"}` }
       : null,
     getPropertyArea(property) ? { icon: <Ruler />, label: `${getPropertyArea(property)} m²` } : null,
+    property.plot_size
+      ? { icon: <LandPlot />, label: `${property.plot_size} m² ${locale === "de" ? "Grundstück" : locale === "en" ? "plot" : "tomt"}` }
+      : null,
+    property.pool ? { icon: <Waves />, label: locale === "de" ? "Pool" : locale === "en" ? "Pool" : "Basseng" } : null,
+    property.energy_rating
+      ? { icon: <Zap />, label: `${locale === "de" ? "Energie" : locale === "en" ? "Energy" : "Energi"} ${property.energy_rating}` }
+      : null,
   ].filter(Boolean) as Array<{ icon: ReactNode; label: string }>;
 
   const propertyJsonLd = {
@@ -556,7 +563,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
             propertyTitle={title}
             requestType={t.requestType}
             source={`property-${locale}-${ref}`}
-            variant={locale === "no" ? "full" : "compact"}
+            variant="compact"
           />
         </aside>
       </section>

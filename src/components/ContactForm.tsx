@@ -198,20 +198,22 @@ export function ContactForm({
         {t.email}
         <input name="email" type="email" required placeholder={t.emailPh} />
       </label>
-      <div className="form-grid">
-        <label>
-          {t.area}
-          <select name="preferred_area" defaultValue={t.areaOptions[0]}>
-            {t.areaOptions.map((o) => (
-              <option key={o}>{o}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          {t.budget}
-          <input name="budget" placeholder={t.budgetPh} />
-        </label>
-      </div>
+      {!propertyRef && (
+        <div className="form-grid">
+          <label>
+            {t.area}
+            <select name="preferred_area" defaultValue={t.areaOptions[0]}>
+              {t.areaOptions.map((o) => (
+                <option key={o}>{o}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            {t.budget}
+            <input name="budget" placeholder={t.budgetPh} />
+          </label>
+        </div>
+      )}
       {full && (
         <>
           <div className="form-grid">
