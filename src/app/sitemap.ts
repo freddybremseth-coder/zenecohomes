@@ -4,6 +4,7 @@ import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
 import { allArticles } from "@/lib/magazine";
 import { getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
+import { inlandTowns } from "@/lib/inland";
 import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
 import { localSeoLandingPagesDE } from "@/lib/localSeoLandingPages.de";
 import { seoLandingPagesEN } from "@/lib/seoLandingPages.en";
@@ -30,8 +31,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/de/immobilien",
     "/en/properties",
     "/tomter",
+    "/inland",
+    "/de/inland",
+    "/en/inland",
     "/omrader",
     ...regions.map((region) => `/omrader/${region.key}`),
+    "/inland",
+    ...inlandTowns.map((town) => `/inland/${town.slug}`),
     ...allSeoPages.map((page) => `/${page.slug}`),
     ...seoLandingPagesDE.map((page) => `/de/${page.slug}`),
     ...localSeoLandingPagesDE.map((page) => `/de/${page.slug}`),

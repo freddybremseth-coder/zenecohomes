@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { seoLandingPagesEN } from "@/lib/seoLandingPages.en";
 import { localSeoLandingPagesEN } from "@/lib/localSeoLandingPages.en";
-import { homeHreflang, homeLanguageLinks, ogLocale } from "@/lib/i18n";
+import { CARE_URL, homeHreflang, homeLanguageLinks, ogLocale } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
 const BOOKING = "/en#kontakt";
@@ -90,6 +90,47 @@ export default function EnglishHome() {
               {page.title}
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <p className="eyebrow">New services</p>
+        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+          More than the purchase – we stay with you all the way
+        </h2>
+        <p style={{ color: "var(--muted)", maxWidth: 640, lineHeight: 1.7 }}>
+          Zen Eco Homes is about more than the purchase itself. We help you find the dream in the interior, and we
+          look after your home while you are away – two new services that make owning in Spain easier and safer.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 18, marginTop: 18 }}>
+          <Link
+            href="/en/inland"
+            style={{ display: "block", background: "white", border: "1px solid var(--line)", padding: 22, boxShadow: "0 8px 24px rgba(22,34,43,0.05)" }}
+          >
+            <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>Inland</strong>
+            <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>
+              Larger plots, finca properties and new builds around Pinoso, Aspe and Novelda – often at a lower price
+              per square metre than the coast. We check water, power, access and zoning before you commit.
+            </p>
+            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+              Explore the interior <ArrowRight size={15} />
+            </span>
+          </Link>
+          <a
+            href={CARE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "block", background: "white", border: "1px solid var(--line)", padding: 22, boxShadow: "0 8px 24px rgba(22,34,43,0.05)" }}
+          >
+            <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>Keyholding</strong>
+            <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>
+              Key holding, inspections, maintenance and getting the home ready before you arrive. With
+              care.zenecohomes.com you have a trusted local partner looking after your property between every stay.
+            </p>
+            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+              See keyholding <ArrowRight size={15} />
+            </span>
+          </a>
         </div>
       </section>
 

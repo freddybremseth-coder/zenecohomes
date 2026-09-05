@@ -2731,3 +2731,106 @@ footer {
     padding: 13px;
   }
 }
+
+/* ===== Innlandet (/inland) – sub-brandet ZenEco Inland ===== */
+
+.inland-theme {
+  /* Oliven-aksent i stedet for gull: samme system, egen identitet. */
+  --gold: #6f7f42;
+  --gold-dark: #58662f;
+  --sage: #eef0e2;
+}
+
+.inland-hero {
+  background-image:
+    linear-gradient(180deg, rgba(22, 34, 43, 0.25), rgba(30, 38, 22, 0.55) 55%, rgba(23, 30, 16, 0.82)),
+    url("https://images.unsplash.com/photo-1445264618000-f1e069c5920f?auto=format&fit=crop&w=1900&q=80");
+  background-size: cover;
+  background-position: center;
+  min-height: 680px;
+  height: 92vh;
+}
+
+.inland-hero .hero-overlay {
+  background: linear-gradient(180deg, rgba(23, 30, 16, 0.05), rgba(23, 30, 16, 0.45) 60%, rgba(23, 30, 16, 0.8));
+}
+
+.town-hero {
+  min-height: 560px;
+  height: 72vh;
+}
+
+.inland-trust strong {
+  color: var(--gold-dark);
+}
+
+.dona-band {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin: 64px auto;
+  max-width: 1180px;
+  padding: 56px 60px;
+  border-radius: 6px;
+  background: #0f3d22;
+  color: #f4f1e6;
+}
+
+.dona-band .eyebrow {
+  color: #c5d3a8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dona-band h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(28px, 3.4vw, 40px);
+  margin: 10px 0 16px;
+  color: #fdfbf3;
+}
+
+.dona-band p {
+  line-height: 1.75;
+  color: rgba(244, 241, 230, 0.88);
+  margin: 0 0 22px;
+}
+
+.dona-band .text-button {
+  color: #d9e3bd;
+}
+
+.dona-band .feature-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.dona-band .feature-panel div {
+  color: #f4f1e6;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dona-band .feature-panel svg {
+  color: #c5d3a8;
+}
+
+.inland-faq {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.inland-faq article h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 980px) {
+  .dona-band {
+    grid-template-columns: 1fr;
+    padding: 40px 28px;
+    margin: 48px 20px;
+  }
+
+  .inland-faq {
+    grid-template-columns: 1fr;
+  }
+}

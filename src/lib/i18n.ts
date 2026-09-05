@@ -119,12 +119,17 @@ export function homeHreflang(): Record<string, string> {
  *  litt slankere meny som kun peker til sider vi faktisk har på språket. */
 export type NavLink = { label: string; href: string; external?: boolean; cta?: boolean };
 
+/** Keyholding / property care ligger på eget subdomene (care.zenecohomes.com). */
+export const CARE_URL = "https://care.zenecohomes.com";
+
 export function navLinks(locale: Locale): NavLink[] {
   if (locale === "de") {
     return [
       { label: "Immobilien", href: "/de/immobilien" },
+      { label: "Inland", href: "/de/inland" },
       { label: "Neubau", href: "/de/neubau-costa-blanca" },
       { label: "Beratung", href: "/de/immobilienberater-spanien" },
+      { label: "Keyholding", href: CARE_URL, external: true },
       { label: "Kontakt", href: "/de#kontakt" },
       { label: "Über Freddy", href: "https://www.freddybremseth.com", external: true },
       { label: "Mein Bereich", href: "/de/min-side", cta: true },
@@ -133,8 +138,10 @@ export function navLinks(locale: Locale): NavLink[] {
   if (locale === "en") {
     return [
       { label: "Properties", href: "/en/properties" },
+      { label: "Inland", href: "/en/inland" },
       { label: "New build", href: "/en/new-build-costa-blanca" },
       { label: "Advice", href: "/en/property-advisor-spain" },
+      { label: "Keyholding", href: CARE_URL, external: true },
       { label: "Contact", href: "/en#kontakt" },
       { label: "About Freddy", href: "https://www.freddybremseth.com", external: true },
       { label: "My account", href: "/en/min-side", cta: true },
@@ -142,8 +149,11 @@ export function navLinks(locale: Locale): NavLink[] {
   }
   return [
     { label: "Boliger", href: "/eiendommer" },
+    { label: "Innlandet", href: "/inland" },
     { label: "Tomter", href: "/tomter" },
+    { label: "Inland", href: "/inland" },
     { label: "Områder", href: "/omrader" },
+    { label: "Keyholding", href: CARE_URL, external: true },
     { label: "Kjøpsprosess", href: "/kjopsprosessen" },
     { label: "Magasin", href: "/magasin" },
     { label: "Om Freddy", href: "https://www.freddybremseth.com", external: true },

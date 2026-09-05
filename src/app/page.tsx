@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getProperties } from "@/lib/realtyflow";
-import { homeHreflang, homeLanguageLinks } from "@/lib/i18n";
+import { CARE_URL, homeHreflang, homeLanguageLinks } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -224,6 +224,42 @@ export default async function Home() {
             <Link className="text-button" href="/kjopsprosessen">
               Se prosessen <ArrowRight size={16} />
             </Link>
+          </article>
+        </div>
+      </section>
+
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Nye tjenester</p>
+          <h2>Mer enn kjøp – vi følger deg hele veien</h2>
+          <p>
+            Zen Eco Homes handler ikke bare om selve kjøpet. Vi hjelper deg å finne drømmen i innlandet, og vi
+            passer på boligen din når du ikke er der. To nye tjenester som gjør eierskapet i Spania enklere og
+            tryggere.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article>
+            <strong>Inland</strong>
+            <h3>Mer plass, natur og ro</h3>
+            <p>
+              Større tomter, finca-eiendommer og nybygg i innlandet rundt Pinoso, Aspe og Novelda – ofte til en
+              lavere pris per kvadratmeter enn ved kysten. Vi sjekker vann, strøm, adkomst og regulering før du binder deg.
+            </p>
+            <Link className="text-button" href="/inland">
+              Utforsk innlandet <ArrowRight size={16} />
+            </Link>
+          </article>
+          <article>
+            <strong>Keyholding</strong>
+            <h3>Vi passer på boligen din</h3>
+            <p>
+              Nøkkelforvaltning, tilsyn, vedlikehold og klargjøring før ankomst. Med care.zenecohomes.com har du en
+              trygg lokal partner som tar seg av boligen mellom hvert opphold.
+            </p>
+            <a className="text-button" href={CARE_URL} target="_blank" rel="noopener noreferrer">
+              Se keyholding-tjenesten <ArrowRight size={16} />
+            </a>
           </article>
         </div>
       </section>
