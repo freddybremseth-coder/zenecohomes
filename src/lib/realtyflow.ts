@@ -553,6 +553,13 @@ export function propertyMatchesRegion(property: Property, region?: string) {
   if (!selected) return true;
   const explicitRegionText = normalizeSearchText([property.region, property.location].filter(Boolean).join(" "));
   if (explicitRegionText) {
+    // RealtyFlow merker innlandssonene på Costa Blanca som "Costa Blanca South/North - Inland".
+    // Disse hører til innlandet (Aspe, Pinoso, Hondón, Monóvar m.fl.), selv om teksten også
+    // inneholder kyst-aliaset "costa blanca south/north". La innland-signalet vinne her.
+    // Costa Calida - Inland / Costa de Almeria - Inland berøres ikke (utenfor Costa Blanca-innlandet).
+    if (/costa blanca[^]*\b(inland|innland)/.test(explicitRegionText)) {
+      return selected.key === "innlandet";
+    }
     const regionAliases = regions.flatMap((item) =>
       item.aliases.map((alias) => ({ region: item.key, alias: normalizeSearchText(alias) })),
     );
