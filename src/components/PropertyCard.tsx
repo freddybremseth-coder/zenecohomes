@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   formatPriceForLocale,
@@ -54,7 +55,17 @@ export function PropertyCard({
 
   return (
     <Link className="property-card" href={href} prefetch={priority}>
-      <div className="property-image" style={{ backgroundImage: `url(${image})` }}>
+      <div className="property-image">
+        {image ? (
+          <Image
+            src={image}
+            alt={heading}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 380px"
+            style={{ objectFit: "cover" }}
+            priority={priority}
+          />
+        ) : null}
         <span>{type}</span>
       </div>
       <div className="property-body">

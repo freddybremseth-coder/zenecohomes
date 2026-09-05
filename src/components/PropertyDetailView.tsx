@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, BookOpen, Coins, Download, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
@@ -414,7 +415,17 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
     <main lang={locale === "no" ? undefined : locale}>
       <SiteHeader locale={locale} languageLinks={propertyLanguageLinks(ref, locale)} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(propertyJsonLd) }} />
-      <section className="property-detail-hero" style={{ backgroundImage: `url(${mainImage})` }}>
+      <section className="property-detail-hero">
+        {mainImage ? (
+          <Image
+            src={mainImage}
+            alt={title}
+            fill
+            sizes="100vw"
+            priority
+            style={{ objectFit: "cover", zIndex: 0 }}
+          />
+        ) : null}
         <div>
           <Link className="back-link" href={propertyListPathByLocale[locale]}>
             <ArrowLeft size={18} /> {t.allProperties}

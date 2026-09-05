@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "realtyflow.chatgenius.pro" },
+      { protocol: "https", hostname: "*.apinmo.com" },
+      { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
   async redirects() {
