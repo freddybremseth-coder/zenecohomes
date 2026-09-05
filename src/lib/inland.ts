@@ -133,7 +133,7 @@ export const inlandTowns: InlandTown[] = [
       "Rundt Monóvar og nabolandsbyene La Romana, Algueña og Salinas ligger noen av innlandets mest prisgunstige landsteder, ofte med vinmark, mandeltrær og romslige tomter.",
     ],
     highlights: ["Ca. 35–45 min til flyplassen", "Vinmarker og prisgunstige fincaer", "Ekte spansk byliv uten turisme"],
-    matchTerms: ["monovar", "monóvar", "la romana", "alguena", "algueña", "salinas"],
+    matchTerms: ["monovar", "monóvar", "alguena", "algueña", "salinas"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Monovar.Ermita_de_Santa_B%C3%A1rbara.jpg/960px-Monovar.Ermita_de_Santa_B%C3%A1rbara.jpg",
   },
@@ -149,9 +149,73 @@ export const inlandTowns: InlandTown[] = [
       "Dalene ligger perfekt til for deg som vil ha innlandsprisene og roen, men strand i Alicante eller Elche-området på en drøy halvtime.",
     ],
     highlights: ["Ca. 30–40 min til kysten", "Modent marked, mange villaer med basseng", "Vinlandskap og rolige landsbyer"],
-    matchTerms: ["hondon", "hondón", "la canalosa", "aspe"],
+    matchTerms: ["hondon", "hondón", "la canalosa"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg/960px-Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg",
+  },
+  {
+    slug: "aspe",
+    name: "Aspe",
+    title: "Bolig og finca i Aspe",
+    eyebrow: "Bordruer og nybygg · Vinalopó",
+    intro:
+      "Aspe ligger i Vinalopó-dalen, kjent for de innpakkede bordruene (uva embolsada), et livlig sentrum rundt Basílica del Socorro og noe av den korteste veien til flyplassen av alle innlandsområdene. Et voksende område med både tradisjonelle fincaer og moderne nybygg.",
+    body: [
+      "Aspe er en ekte spansk arbeidsby som lever hele året – med marked, butikker, skoler og helsetilbud – omgitt av druemarker, oliven og mandeltrær. Rundt byen finner du casas de campo og fincaer med romslige tomter, og de siste årene har det kommet et godt tilbud av nybygde villaer med basseng.",
+      "Beliggenheten er noe av det sterkeste: Alicante flyplass, Elche og motorveien nås på 20–30 minutter, og både kysten ved Santa Pola og innlandsroen i Hondón-dalene ligger like ved. Det gjør Aspe til et praktisk valg for deg som vil ha plass og pris uten å gi slipp på nærheten til alt.",
+    ],
+    highlights: ["Ca. 20–30 min til Alicante flyplass", "Nybygde villaer og finca-tomter", "Levende by med druer, oliven og mandel"],
+    matchTerms: ["aspe"],
+    photo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Basilica_de_Aspe.JPG/960px-Basilica_de_Aspe.JPG",
+  },
+  {
+    slug: "novelda",
+    name: "Novelda",
+    title: "Bolig i Novelda",
+    eyebrow: "Modernisme, marmor og safran",
+    intro:
+      "Novelda er en velstående vin- og industriby kjent for marmor, safran og krydder – og for enestående modernistisk arkitektur, kronet av det Gaudí-inspirerte Santuario de Santa María Magdalena på åsen over byen.",
+    body: [
+      "Sentrum har full byservice, praktbygg fra modernismen og et rikt kulturliv, mens omlandet mot Monóvar, Aspe og La Romana byr på vinmarker, mandeltrær og fincaer i alle prisklasser. For deg som vil ha en by med sjel og historie – ikke bare en soveby – er Novelda et av innlandets mest komplette valg.",
+      "Byen ligger midt i Vinalopó med motorvei til Alicante og flyplassen på rundt 30 minutter, og med Elda/Petrer, Monóvar og Pinoso som nære naboer. Godt utgangspunkt både for helårsliv og for deg som pendler til og fra Norge.",
+    ],
+    highlights: ["Full byservice og rikt kulturliv", "Gaudí-inspirert santuario og modernisme", "Ca. 30 min til Alicante flyplass"],
+    matchTerms: ["novelda"],
+    photo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Santuario_Novelda.jpg/960px-Santuario_Novelda.jpg",
+  },
+  {
+    slug: "la-romana",
+    name: "La Romana",
+    title: "Bolig og finca i La Romana",
+    eyebrow: "Stille vindal mellom Pinoso og Novelda",
+    intro:
+      "La Romana er en liten, rolig landsby omgitt av vinmarker og mandeltrær, midt mellom Pinoso, Novelda og Monóvar. Et etablert favorittområde for utenlandske kjøpere som vil ha ekte finca-ro uten å være langt fra service.",
+    body: [
+      "Her handler livet om det landlige: druemarker, olivenlunder og casas de campo med brønner, uthus og romslige tomter – ofte til priser godt under de mer kjente nabolandsbyene. Landsbyen selv har det daglige du trenger, og et hyggelig, uturistisk lokalmiljø.",
+      "Til tross for roen er du bare 10–15 minutter fra Novelda og Pinoso, og rundt 35–45 minutter fra Alicante flyplass. La Romana passer deg som vil ha innlandslivet på sitt mest autentiske, med naboer, natur og god plass.",
+    ],
+    highlights: ["Prisgunstige fincaer og landsteder", "Vinmarker og mandeltrær rundt landsbyen", "Rolig, uturistisk lokalmiljø"],
+    matchTerms: ["la romana", "romana"],
+    photo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/La_Romana_Sunrise.jpg/960px-La_Romana_Sunrise.jpg",
+  },
+  {
+    slug: "monforte-del-cid",
+    name: "Monforte del Cid",
+    title: "Bolig i Monforte del Cid",
+    eyebrow: "Vin og golf · minutter fra flyplassen",
+    intro:
+      "Monforte del Cid ligger blant vinmarker i Vinalopó, bare et kvarter fra Alicante flyplass, med golfbanen Font del Llop og et voksende tilbud av nybygg, villaer og fincaer. Kombinasjonen av landlig ro og topp beliggenhet gjør byen stadig mer ettertraktet.",
+    body: [
+      "Byen har et hyggelig historisk sentrum med den gamle morería-bydelen, alt av daglig service, og et omland av druemarker og landsteder. Rundt golfresortet Font del Llop finner du moderne villaer og bungalower, mens du utenfor byen fortsatt finner klassiske fincaer med plass og tomt.",
+      "Det som virkelig skiller Monforte ut er nærheten: Alicante flyplass på cirka 15 minutter, motorvei til både kysten og innlandet, og Elche, Novelda og Aspe som nære naboer. Ideelt for deg som vil ha innlandsro og enkel reise til og fra Norge i samme pakke.",
+    ],
+    highlights: ["Ca. 15 min til Alicante flyplass", "Golf (Font del Llop) og moderne nybygg", "Vinmarker, morería og ekte byliv"],
+    matchTerms: ["monforte", "monforte del cid"],
+    photo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Vi%C3%B1edos_en_Monforte_del_Cid.jpg/960px-Vi%C3%B1edos_en_Monforte_del_Cid.jpg",
   },
 ];
 
