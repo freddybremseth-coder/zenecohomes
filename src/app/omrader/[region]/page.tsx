@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { booksForRegion, bookUrl } from "@/lib/books";
+import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
 import {
   areaMatchesRegion,
   getAreaProfiles,
@@ -158,6 +158,26 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
           </Link>
         </div>
       </section>
+
+      {region === "innlandet" && (
+        <section className="section book-band">
+          <div className="book-band-body">
+            <p className="eyebrow">
+              <BookOpen size={16} /> Fra forfatteren
+            </p>
+            <h2>«{generalGuideBook.title}»</h2>
+            <p>{generalGuideBook.blurb}</p>
+            <a
+              className="contact-button"
+              href={bookUrl(generalGuideBook.slug)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kjøp e-bok – 5 € <ArrowRight size={18} />
+            </a>
+          </div>
+        </section>
+      )}
 
       {regionBooks.length > 0 && (
         <section className="book-showcase">
