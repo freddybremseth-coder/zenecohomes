@@ -123,6 +123,59 @@ export function normalizeSearchText(value: string) {
     .toLowerCase();
 }
 
+// Normaliserte søkeord (spesifikke først) → pent visningsnavn for byen.
+// Brukes til å vise ekte bynavn i stedet for RealtyFlows grove soner ("Costa Blanca South - Inland").
+const TOWN_DISPLAY: Array<[string, string]> = [
+  // Innlandet
+  ["banyeres", "Banyeres de Mariola"], ["hondon de las nieves", "Hondón de las Nieves"],
+  ["hondon de los frailes", "Hondón de los Frailes"], ["hondon", "Hondón"], ["monforte del cid", "Monforte del Cid"],
+  ["monforte", "Monforte del Cid"], ["la romana", "La Romana"], ["el pinos", "Pinoso"], ["pinoso", "Pinoso"],
+  ["monovar", "Monóvar"], ["novelda", "Novelda"], ["aspe", "Aspe"], ["villena", "Villena"], ["biar", "Biar"],
+  ["castalla", "Castalla"], ["salinas", "Salinas"], ["alguena", "Algueña"], ["petrer", "Petrer"], ["elda", "Elda"],
+  ["agost", "Agost"], ["onil", "Onil"], ["tibi", "Tibi"], ["ibi", "Ibi"], ["sax", "Sax"], ["fortuna", "Fortuna"],
+  ["abanilla", "Abanilla"], ["crevillent", "Crevillent"], ["crevillente", "Crevillent"],
+  // Costa Blanca Nord
+  ["alfas del pi", "Alfàs del Pi"], ["alfaz", "Alfàs del Pi"], ["albir", "Albir"], ["altea", "Altea"],
+  ["calpe", "Calpe"], ["calp", "Calpe"], ["denia", "Dénia"], ["finestrat", "Finestrat"], ["la nucia", "La Nucía"],
+  ["nucia", "La Nucía"], ["moraira", "Moraira"], ["teulada", "Teulada"], ["polop", "Polop"], ["benidorm", "Benidorm"],
+  ["campello", "El Campello"], ["sant joan", "Sant Joan d'Alacant"], ["mutxamel", "Mutxamel"], ["muchamiel", "Mutxamel"],
+  ["javea", "Jávea"], ["xabia", "Jávea"], ["villajoyosa", "Villajoyosa"], ["vila joiosa", "Villajoyosa"],
+  // Costa Blanca Sør
+  ["torrevieja", "Torrevieja"], ["orihuela", "Orihuela Costa"], ["guardamar", "Guardamar del Segura"],
+  ["santa pola", "Santa Pola"], ["gran alacant", "Gran Alacant"], ["ciudad quesada", "Ciudad Quesada"],
+  ["rojales", "Rojales"], ["pilar de la horadada", "Pilar de la Horadada"], ["los montesinos", "Los Montesinos"],
+  ["algorfa", "Algorfa"], ["benijofar", "Benijófar"], ["dolores", "Dolores"], ["catral", "Catral"],
+  ["daya", "Daya Nueva"], ["bigastro", "Bigastro"], ["jacarilla", "Jacarilla"], ["san miguel", "San Miguel de Salinas"],
+  // Costa Cálida / Almería
+  ["san pedro del pinatar", "San Pedro del Pinatar"], ["san javier", "San Javier"], ["los alcazares", "Los Alcázares"],
+  ["torre pacheco", "Torre Pacheco"], ["mazarron", "Mazarrón"], ["aguilas", "Águilas"], ["cartagena", "Cartagena"],
+  ["fuente alamo", "Fuente Álamo"], ["alhama", "Alhama de Murcia"], ["baños y mendigo", "Baños y Mendigo"],
+  ["avileses", "Avileses"], ["moratalla", "Moratalla"], ["vera", "Vera"], ["almerimar", "Almerimar"],
+];
+
+/**
+ * Pent bynavn for en bolig – trekkes ut fra tittel/sted (byen ligger i tittelen,
+ * mens RealtyFlows `location` ofte bare er en grov sone). Faller tilbake til
+ * delen før komma i location, ellers null.
+ */
+export function getPropertyTown(property: Property): string | null {
+  if (property.town && property.town.trim()) return property.town.trim();
+  const hay = normalizeSearchText(
+    [property.title, property.title_no, property.title_en, property.title_de, property.location]
+      .filter(Boolean)
+      .join(" "),
+  );
+  for (const [key, display] of TOWN_DISPLAY) {
+    if (hay.includes(key)) return display;
+  }
+  const loc = (property.location || "").trim();
+  if (loc && !/^costa /i.test(loc)) {
+    const first = loc.split(/[,_]/)[0].trim();
+    if (first) return first;
+  }
+  return null;
+}
+
 export const regions: Array<{ key: RegionKey; label: string; description: string; aliases: string[]; locations: string[] }> = [
   {
     key: "costa-blanca-nord",

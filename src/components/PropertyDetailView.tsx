@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowLeft, Bath, BedDouble, BookOpen, Download, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
+import { ArrowLeft, Bath, BedDouble, BookOpen, Coins, Download, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { Footer } from "@/components/Footer";
@@ -22,6 +22,7 @@ import {
   getPropertyArea,
   getPropertyImages,
   getPropertyRef,
+  getPropertyTown,
   propertyMatchesRegion,
   regions,
   type Property,
@@ -292,6 +293,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
   const mainImage = getPrimaryImage(property);
   const description = getLocalizedPropertyDescription(property, locale);
   const location = property.location || property.town || "Spania";
+  const townDisplay = getPropertyTown(property) || location;
   const ref = getPropertyRef(property);
   const title = getLocalizedPropertyTitle(property, locale);
   const areaBook = bookForProperty(`${title} ${location} ${property.town || ""}`, locale);
@@ -324,6 +326,14 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
     property.pool ? { icon: <Waves />, label: locale === "de" ? "Pool" : locale === "en" ? "Pool" : "Basseng" } : null,
     property.energy_rating
       ? { icon: <Zap />, label: `${locale === "de" ? "Energie" : locale === "en" ? "Energy" : "Energi"} ${property.energy_rating}` }
+      : null,
+    getPropertyArea(property) && property.price
+      ? {
+          icon: <Coins />,
+          label: `${new Intl.NumberFormat(locale === "de" ? "de-DE" : locale === "en" ? "en-GB" : "nb-NO").format(
+            Math.round(property.price / getPropertyArea(property)!),
+          )} €/m²`,
+        }
       : null,
   ].filter(Boolean) as Array<{ icon: ReactNode; label: string }>;
 
@@ -403,7 +413,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
           <Link className="back-link" href={propertyListPathByLocale[locale]}>
             <ArrowLeft size={18} /> {t.allProperties}
           </Link>
-          <p className="eyebrow">{location}</p>
+          <p className="eyebrow">{townDisplay}</p>
           <h1>{title}</h1>
           <strong>{formatPriceForLocale(property.price, locale)}</strong>
           <div className="hero-actions">
@@ -412,7 +422,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               favorite={{
                 ref,
                 title,
-                location,
+                location: townDisplay,
                 price: formatPriceForLocale(property.price, locale),
                 href: detailPath,
               }}
@@ -509,7 +519,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
           )}
           <section className="area-context">
             <h2>{t.areaTitle}</h2>
-            <p>{t.areaBody(location)}</p>
+            <p>{t.areaBody(townDisplay)}</p>
             <div>
               {t.areaBadges.map((badge) => (
                 <span key={badge}>{badge}</span>

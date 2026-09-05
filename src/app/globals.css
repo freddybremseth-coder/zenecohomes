@@ -2872,6 +2872,19 @@ footer {
   align-items: center;
 }
 
+.property-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.price-per-m2 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
 .inland-trust strong {
   color: var(--gold-dark);
 }
