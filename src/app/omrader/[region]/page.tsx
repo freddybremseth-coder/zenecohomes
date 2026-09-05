@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, MapPin, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
+import { booksForRegion, bookUrl } from "@/lib/books";
 import {
   areaMatchesRegion,
   getAreaProfiles,
@@ -77,6 +79,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
   const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties()]);
   const regionProfiles = profiles.filter((profile) => areaMatchesRegion(profile, region));
   const regionProperties = properties.filter((property) => propertyMatchesRegion(property, region));
+  const regionBooks = booksForRegion(region);
 
   return (
     <main>
@@ -155,6 +158,46 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
           </Link>
         </div>
       </section>
+
+      {regionBooks.length > 0 && (
+        <section className="book-showcase">
+          <div className="book-showcase-inner">
+            <div className="book-showcase-heading">
+              <p className="eyebrow">
+                <BookOpen size={16} /> Områdebøker
+              </p>
+              <h2>Les deg opp på {selected.label} før du kjøper</h2>
+              <p>
+                Freddy har skrevet egne lokalguider for flere av byene her – om hverdagsliv, nabolag, kostnader og
+                hva hvert sted faktisk er. E-bøker til 5 euro på books.freddybremseth.com.
+              </p>
+            </div>
+            <div className="book-grid">
+              {regionBooks.map((book) => (
+                <a
+                  className="book-card"
+                  href={bookUrl(book.slug)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={book.slug}
+                >
+                  <div className="book-cover-wrap">
+                    <Image src={book.cover} alt={`Bokomslag: ${book.title}`} fill sizes="(max-width: 900px) 88vw, 330px" />
+                  </div>
+                  <div className="book-card-body">
+                    <span>
+                      <BookOpen size={14} /> {book.town}
+                    </span>
+                    <h3>{book.title}</h3>
+                    <p>{book.blurb}</p>
+                    <strong>Kjøpes for 5 euro</strong>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <Footer />
     </main>
   );
