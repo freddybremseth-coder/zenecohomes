@@ -68,6 +68,7 @@ type DetailText = {
   bookLead: string;
   areaReadMore: string;
   bookCta: string;
+  mapTitle: string;
   breadcrumbLabel: string;
   home: string;
   interested: string;
@@ -133,6 +134,7 @@ const T: Record<Locale, DetailText> = {
     bookLead: "Fra Freddys guidebok",
     areaReadMore: "Les mer om området",
     bookCta: "Kjøp e-bok – 5 €",
+    mapTitle: "Kart og beliggenhet",
     breadcrumbLabel: "Brødsmule",
     home: "Forside",
     interested: "Interessert?",
@@ -196,6 +198,7 @@ const T: Record<Locale, DetailText> = {
     bookLead: "Aus Freddys Reiseführer",
     areaReadMore: "Mehr über die Gegend",
     bookCta: "E-Book kaufen – 5 €",
+    mapTitle: "Karte und Lage",
     breadcrumbLabel: "Breadcrumb",
     home: "Startseite",
     interested: "Interessiert?",
@@ -259,6 +262,7 @@ const T: Record<Locale, DetailText> = {
     bookLead: "From Freddy's guidebook",
     areaReadMore: "Read more about the area",
     bookCta: "Buy e-book – 5 €",
+    mapTitle: "Map and location",
     breadcrumbLabel: "Breadcrumb",
     home: "Home",
     interested: "Interested?",
@@ -545,6 +549,15 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
                 </a>
               </div>
             </div>
+          </section>
+          <section className="property-map">
+            <h2>{t.mapTitle}</h2>
+            <iframe
+              title={`${t.mapTitle} – ${townDisplay}`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(`${townDisplay}, Alicante, Spain`)}&z=12&output=embed`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </section>
           <nav className="breadcrumb-nav" aria-label={t.breadcrumbLabel}>
             <Link href={locale === "no" ? "/" : `/${locale}`}>{t.home}</Link>
