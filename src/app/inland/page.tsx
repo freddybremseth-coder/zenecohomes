@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import {
   ArrowRight,
+  BookOpen,
   Check,
   Grape,
   Home,
@@ -373,6 +374,28 @@ export default async function InlandPage() {
               Les om kjøpsprosessen
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="section book-band">
+        <div className="book-band-body">
+          <p className="eyebrow">
+            <BookOpen size={16} /> Fra forfatteren
+          </p>
+          <h2>«Costa Blanca — North, South or Inland?»</h2>
+          <p>
+            Bok 1 i Freddys serie <em>Let Me Guide You</em> – en ærlig, praktisk guide til å velge riktig del av
+            Costa Blanca (nord, sør eller innland) før du kjøper. Hva hvert område faktisk er, og hvordan du
+            velger godt.
+          </p>
+          <a
+            className="contact-button"
+            href="https://books.freddybremseth.com/book/guide-costa-blanca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Kjøp e-bok – 5 € <ArrowRight size={18} />
+          </a>
         </div>
       </section>
 

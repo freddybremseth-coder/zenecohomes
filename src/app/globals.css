@@ -2806,6 +2806,35 @@ footer {
   }
 }
 
+.book-band {
+  display: flex;
+  justify-content: center;
+}
+
+.book-band-body {
+  max-width: 760px;
+  text-align: center;
+  padding: 40px 32px;
+  border: 1px solid rgba(90, 110, 60, 0.28);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(120, 140, 78, 0.08), rgba(120, 140, 78, 0.02));
+}
+
+.book-band-body .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.book-band-body h2 {
+  margin: 6px 0 10px;
+}
+
+.book-band-body .contact-button {
+  margin-top: 18px;
+}
+
 .inland-trust strong {
   color: var(--gold-dark);
 }
