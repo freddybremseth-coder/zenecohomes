@@ -6,6 +6,7 @@ import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
+import { MeetFreddy } from "@/components/MeetFreddy";
 import {
   areaMatchesRegion,
   getAreaProfiles,
@@ -218,6 +219,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
           </div>
         </section>
       )}
+      <MeetFreddy />
       <Footer />
     </main>
   );

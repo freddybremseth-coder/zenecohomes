@@ -13,6 +13,9 @@ export function Footer() {
         <a href="https://www.freddybremseth.com" target="_blank" rel="noopener noreferrer">
           Freddy Bremseth
         </a>
+        <a href="https://remaster.freddybremseth.com" target="_blank" rel="noopener noreferrer">
+          Re-Master Freddy (musikk)
+        </a>
       </nav>
     </footer>
   );

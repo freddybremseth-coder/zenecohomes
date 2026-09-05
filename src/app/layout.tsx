@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
+import { RemasterPlayer } from "@/components/RemasterPlayer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-config-url="https://realtyflow.chatgenius.pro/api/public/booking-config?brand_id=zeneco"
         />
         <ZenecoChatbot />
+        <RemasterPlayer />
       </body>
     </html>
   );
