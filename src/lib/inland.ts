@@ -39,7 +39,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Borg fra 1100-tallet og bevart gamleby", "Fincaer og gårder med store tomter", "Ca. 45–55 min til Alicante flyplass"],
     matchTerms: ["biar"],
     photo:
-      "https://images.unsplash.com/photo-1583002083769-cd9683173b13?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Pueblo_y_castillo_de_Biar%2C_Alicante.jpg/960px-Pueblo_y_castillo_de_Biar%2C_Alicante.jpg",
   },
   {
     slug: "villena",
@@ -55,7 +55,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Full byservice og sykehus", "AVE-stasjon – Alicante på ca. 20 min", "Vinområde med lange tradisjoner"],
     matchTerms: ["villena"],
     photo:
-      "https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sierra_de_la_Villa._Villena._Castillo_de_la_Atalaya_1.jpg/960px-Sierra_de_la_Villa._Villena._Castillo_de_la_Atalaya_1.jpg",
   },
   {
     slug: "sax",
@@ -71,7 +71,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Særpreget borg og levende sentrum", "Togstasjon og enkel adkomst via A-31", "Casas de campo med etablerte tomter"],
     matchTerms: ["sax"],
     photo:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sax.Castillo.jpg/960px-Sax.Castillo.jpg",
   },
   {
     slug: "castalla",
@@ -87,7 +87,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Ca. 30–40 min til Alicante", "Borg, gamleby og ekte landsbyliv", "Fjellnatur og kjøligere somre"],
     matchTerms: ["castalla", "onil", "ibi", "tibi"],
     photo:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Castillo_de_Castalla_visto_de_lejos_03.jpg/960px-Castillo_de_Castalla_visto_de_lejos_03.jpg",
   },
   {
     slug: "banyeres-de-mariola",
@@ -103,7 +103,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Inne i naturparken Serra de Mariola", "Kjølige somre – over 800 moh", "Levende landsby med full service"],
     matchTerms: ["banyeres", "bañeres", "beneixama", "camp de mirra", "canada", "cañada"],
     photo:
-      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Banyeres._Castell_1.JPG/960px-Banyeres._Castell_1.JPG",
   },
   {
     slug: "pinoso",
@@ -119,7 +119,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Stort utvalg fincaer og landsteder", "Etablert internasjonalt miljø", "Vinlandskap og sterk lokal økonomi"],
     matchTerms: ["pinoso", "el pinos", "el pinós", "ubeda", "encebras"],
     photo:
-      "https://images.unsplash.com/photo-1566903451935-7e8835ed3e97?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Pinoso-_Torre_del_Reloj.jpg/960px-Pinoso-_Torre_del_Reloj.jpg",
   },
   {
     slug: "monovar",
@@ -135,7 +135,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Ca. 35–45 min til flyplassen", "Vinmarker og prisgunstige fincaer", "Ekte spansk byliv uten turisme"],
     matchTerms: ["monovar", "monóvar", "la romana", "alguena", "algueña", "salinas"],
     photo:
-      "https://images.unsplash.com/photo-1528114039593-4366cc08227d?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Monovar.Ermita_de_Santa_B%C3%A1rbara.jpg/960px-Monovar.Ermita_de_Santa_B%C3%A1rbara.jpg",
   },
   {
     slug: "hondon-dalene",
@@ -151,7 +151,7 @@ export const inlandTowns: InlandTown[] = [
     highlights: ["Ca. 30–40 min til kysten", "Modent marked, mange villaer med basseng", "Vinlandskap og rolige landsbyer"],
     matchTerms: ["hondon", "hondón", "la canalosa", "aspe"],
     photo:
-      "https://images.unsplash.com/photo-1445217143695-467124038776?auto=format&fit=crop&w=1400&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg/960px-Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg",
   },
 ];
 
