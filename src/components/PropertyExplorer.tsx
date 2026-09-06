@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import { PropertyCard } from "@/components/PropertyCard";
 import { getPropertyArea, propertyMatchesType, type Property } from "@/lib/realtyflow";
@@ -29,8 +29,9 @@ function euro(n: number) {
 }
 
 type ExplorerProperty = Property & { regionKeys?: string[] };
+type FilterItem = Pick<Property, "price" | "property_type" | "built_area"> & { regionKeys?: string[] };
 
-export function PropertyExplorer({ properties }: { properties: ExplorerProperty[] }) {
+export function PropertyExplorer({ filterData, cards }: { filterData: FilterItem[]; cards: ExplorerProperty[] }) {
   const [typeIdx, setTypeIdx] = useState(0);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
@@ -81,18 +82,22 @@ export function PropertyExplorer({ properties }: { properties: ExplorerProperty[
     });
   }, [region]);
 
-  const filtered = useMemo(() => {
-    return properties.filter((p) => {
-      const typeOk = propertyMatchesType(p, TYPE_FILTERS[typeIdx].value);
+  const matches = useCallback(
+    (p: FilterItem) => {
+      const typeOk = propertyMatchesType(p as Property, TYPE_FILTERS[typeIdx].value);
       const regionOk = !region || (p.regionKeys || []).includes(region);
       const priceOk =
         (!minPrice || (p.price != null && p.price >= minPrice)) && (!maxPrice || (p.price != null && p.price <= maxPrice));
       // Areal er kjent for kun ~11 % av importen; behold boliger uten areal-data.
-      const size = getPropertyArea(p) || 0;
+      const size = getPropertyArea(p as Property) || 0;
       const sizeOk = !minSize || size === 0 || size >= minSize;
       return typeOk && regionOk && priceOk && sizeOk;
-    });
-  }, [properties, typeIdx, region, minPrice, maxPrice, minSize]);
+    },
+    [typeIdx, region, minPrice, maxPrice, minSize],
+  );
+
+  const count = useMemo(() => filterData.filter(matches).length, [filterData, matches]);
+  const previewCards = useMemo(() => cards.filter(matches).slice(0, 6), [cards, matches]);
 
   const filterQuery = useMemo(() => {
     const params = new URLSearchParams();
@@ -164,7 +169,7 @@ export function PropertyExplorer({ properties }: { properties: ExplorerProperty[
         <div className="explorer-results">
           <div className="explorer-results-head">
             <strong>
-              {filtered.length} {filtered.length === 1 ? "bolig" : "boliger"}
+              {count} {count === 1 ? "bolig" : "boliger"}
             </strong>
             {region && (
               <button type="button" className="region-chip" onClick={() => setRegion("")}>
@@ -172,21 +177,23 @@ export function PropertyExplorer({ properties }: { properties: ExplorerProperty[
               </button>
             )}
           </div>
-          {filtered.length > 0 ? (
+          {previewCards.length > 0 ? (
             <div className="property-grid">
-              {filtered.slice(0, 6).map((property, index) => (
-                <PropertyCard key={property.id || property.ref || index} property={property} />
+              {previewCards.map((property, index) => (
+                <PropertyCard key={property.ref || index} property={property} />
               ))}
             </div>
+          ) : count > 0 ? (
+            <p className="explorer-empty">Trykk «Se alle {count} treff» for å se disse boligene.</p>
           ) : (
-            <p className="explorer-empty">Ingen treff med disse filtrene – prøv å justere pris, type eller region.</p>
+            <p className="explorer-empty">Ingen treff med disse filtrene – juster pris, type eller region.</p>
           )}
         </div>
       </div>
 
       <div className="center-action">
         <a className="contact-button" href={allHref}>
-          Se alle {filtered.length} {filtered.length === 1 ? "treff" : "treff"}
+          Se alle {count} treff
         </a>
       </div>
     </section>

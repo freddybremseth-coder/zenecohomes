@@ -22,25 +22,33 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const properties = await getProperties(6);
   const regionKeys = regions.map((r) => r.key);
-  const explorerProperties = (await getProperties()).map((p) => ({
-    ref: getPropertyRef(p),
-    id: p.id,
-    title: p.title,
-    title_no: p.title_no,
+  const allProps = await getProperties();
+  const properties = allProps.slice(0, 6);
+  const withRegions = allProps.map((p) => ({
+    p,
+    rk: regionKeys.filter((k) => propertyMatchesRegion(p, k)),
+  }));
+  // Lett datasett for hele basen – kun det som trengs til nøyaktig telling/filtrering.
+  const explorerFilter = withRegions.map(({ p, rk }) => ({
     price: p.price,
     property_type: p.property_type,
-    type: p.type,
+    built_area: p.built_area,
+    regionKeys: rk,
+  }));
+  // Fullt kort-datasett kun for forhåndsvisningen (bilder o.l. bare for disse).
+  const explorerCards = withRegions.slice(0, 48).map(({ p, rk }) => ({
+    ref: getPropertyRef(p),
+    title: p.title,
+    price: p.price,
+    property_type: p.property_type,
     primary_image: getPrimaryImage(p),
     bedrooms: p.bedrooms,
     bathrooms: p.bathrooms,
     built_area: p.built_area,
-    area: p.area,
     pool: p.pool,
-    location: p.location,
     town: getPropertyTown(p) || undefined,
-    regionKeys: regionKeys.filter((k) => propertyMatchesRegion(p, k)),
+    regionKeys: rk,
   }));
 
   return (
@@ -89,7 +97,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <PropertyExplorer properties={explorerProperties} />
+      <PropertyExplorer filterData={explorerFilter} cards={explorerCards} />
 
       <section className="section proof-section">
         <div className="section-heading">
