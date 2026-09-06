@@ -11,8 +11,11 @@ import {
   MapPin,
   Ruler,
   ShieldCheck,
+  Snowflake,
   Sprout,
+  Sun,
   TreeDeciduous,
+  Zap,
 } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
@@ -273,6 +276,47 @@ export default async function InlandPage() {
           <Link className="text-button" href="/eiendommer?region=innlandet">
             Se alle innlandseiendommer <ArrowRight size={18} />
           </Link>
+        </div>
+        <p className="area-disclaimer">
+          Boligtypene du ser her kan bygges på alle innlandsstedene våre. Ligger tomten lenger unna, kan
+          transport og arbeidskraft gi noe ekstra kostnad – dette avklarer vi alltid tydelig med deg før vi
+          blir enige.
+        </p>
+      </section>
+
+      <section className="section split inland-build">
+        <div>
+          <p className="eyebrow">
+            <Sun size={16} /> Bygg nytt – energismart
+          </p>
+          <h2>Nybygg som er billig å eie, både vinter og sommer</h2>
+          <p>
+            I innlandet anbefaler vi å bygge nytt. Da kan vi gjøre boligen energismart fra grunnen av: kraftig
+            isolasjon som holder på varmen om vinteren og stenger heten ute om sommeren, og solpanel som kutter
+            strømregningen. Resultatet er lave driftskostnader og en behagelig innetemperatur hele året.
+          </p>
+          <p>
+            Det er også framtidsrettet: fra 2030 ventes strengere energikrav for salg og utleie av bolig i
+            Spania (EU-direktivet om bygningers energiytelse). En energieffektiv bolig står da langt sterkere –
+            både i bruk, ved utleie og ved videresalg.
+          </p>
+          <a className="text-button" href="https://books.freddybremseth.com/book/spania-2030" target="_blank" rel="noopener noreferrer">
+            Les mer i «Spania 2030» <ArrowRight size={16} />
+          </a>
+        </div>
+        <div className="feature-panel">
+          <div>
+            <Snowflake /> Isolasjon for vinter
+          </div>
+          <div>
+            <Sun /> Skjerming mot sommervarme
+          </div>
+          <div>
+            <Zap /> Solpanel og lave driftskostnader
+          </div>
+          <div>
+            <ShieldCheck /> Klar for energikravene fra 2030
+          </div>
         </div>
       </section>
 
