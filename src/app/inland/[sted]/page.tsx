@@ -92,9 +92,12 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
 
       <section className="section" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">Aktuelle eiendommer</p>
-          <h2>Til salgs i og rundt {town.name}</h2>
-          <p>Utvalget oppdateres automatisk fra våre kilder. Er det tomt her akkurat nå – spør oss, vi vet ofte om eiendommer før de annonseres.</p>
+          <p className="eyebrow">Bygg din bolig</p>
+          <h2>Boliger du kan bygge i {town.name}</h2>
+          <p>
+            Boligene under er byggemodeller som passer {town.name} og innlandet ellers. De kan settes opp på din
+            egen tomt – og vi hjelper deg å finne riktig tomt i området du ønsker.
+          </p>
         </div>
         {properties.length > 0 ? (
           <div className="property-grid">
@@ -115,6 +118,10 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
             Se alle innlandseiendommer <ArrowRight size={18} />
           </Link>
         </div>
+        <p className="area-disclaimer">
+          Prisene inkluderer en beregnet tomtekostnad (fra 50 000–85 000 euro). Endelig tomtepris regnes ut fra
+          tomten du velger, og avklares tydelig med deg før avtale.
+        </p>
       </section>
 
       <section className="section area-profile-grid">

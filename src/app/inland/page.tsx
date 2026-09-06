@@ -251,11 +251,11 @@ export default async function InlandPage() {
 
       <section className="section" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">Aktuelle eiendommer</p>
-          <h2>Fincaer, landsbyhus og gårder i innlandet</h2>
+          <p className="eyebrow">Bygg din bolig</p>
+          <h2>Boliger du kan bygge i innlandet</h2>
           <p>
-            Utvalget oppdateres automatisk – nye innlandseiendommer fra våre kilder dukker opp her uten at du
-            trenger å lete gjennom portalene.
+            Boligene under er byggemodeller som passer innlandet – fra fincaer og landsbyhus til moderne villaer.
+            De kan settes opp på din egen tomt, og vi hjelper deg å finne riktig tomt der du ønsker å bo.
           </p>
         </div>
         {properties.length > 0 ? (
@@ -278,9 +278,9 @@ export default async function InlandPage() {
           </Link>
         </div>
         <p className="area-disclaimer">
-          Boligtypene du ser her kan bygges på alle innlandsstedene våre. Ligger tomten lenger unna, kan
-          transport og arbeidskraft gi noe ekstra kostnad – dette avklarer vi alltid tydelig med deg før vi
-          blir enige.
+          Boligtypene kan bygges på alle innlandsstedene våre. Prisene inkluderer en beregnet tomtekostnad (fra
+          50 000–85 000 euro) – endelig tomtepris regnes ut fra tomten du velger. Ligger tomten lenger unna, kan
+          transport og arbeidskraft gi noe ekstra kostnad. Alt avklarer vi tydelig med deg før vi blir enige.
         </p>
       </section>
 
