@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
+import { SaveSearchButton } from "@/components/SaveSearchButton";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
   getProperties,
@@ -181,10 +182,21 @@ export default async function GermanPropertiesPage({
       </section>
       <section className="section">
         <div className="list-heading">
+          <div>
           <h2>
             {filtered.length} Immobilien{area ? ` in ${area}` : ""}
           </h2>
           <span>Neueste und relevanteste zuerst</span>
+          </div>
+          <SaveSearchButton
+            locale="de"
+            filters={{
+              region: region || undefined,
+              type: type || undefined,
+              minPrice: minPrice || undefined,
+              maxPrice: maxPrice || undefined,
+            }}
+          />
         </div>
         <div className="property-grid">
           {filtered.map((property, index) => (

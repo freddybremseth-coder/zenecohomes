@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
+import { SaveSearchButton } from "@/components/SaveSearchButton";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
@@ -182,8 +183,20 @@ export default async function PropertiesPage({
       </section>
       <section className="section">
         <div className="list-heading">
-          <h2>{filtered.length} boliger{area ? ` i ${area}` : ""}</h2>
-          <span>Viser nyeste og mest relevante først</span>
+          <div>
+            <h2>{filtered.length} boliger{area ? ` i ${area}` : ""}</h2>
+            <span>Viser nyeste og mest relevante først</span>
+          </div>
+          <SaveSearchButton
+            locale="no"
+            filters={{
+              region: region || undefined,
+              type: type || undefined,
+              minPrice: minPrice || undefined,
+              maxPrice: maxPrice || undefined,
+              minSize: minSize || undefined,
+            }}
+          />
         </div>
         <div className="property-grid">
           {filtered.map((property, index) => (

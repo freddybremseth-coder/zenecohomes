@@ -226,6 +226,31 @@ export function propertyMatchesType(property: Property, typeLabel?: string): boo
   return terms.some((term) => t.includes(term));
 }
 
+/** Lagret søk / varsel: kjernefiltrene brukt på boligsøket og kartutforskeren. */
+export type PropertyFilters = {
+  region?: string;
+  type?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  minSize?: number;
+};
+
+/**
+ * Matcher en bolig mot et lagret søk. Samme logikk som /eiendommer og kart-utforskeren,
+ * slik at varsel-cronen aldri sender treff brukeren ikke ville sett i søket.
+ */
+export function propertyMatchesFilters(property: Property, f: PropertyFilters): boolean {
+  if (f.region && !propertyMatchesRegion(property, f.region)) return false;
+  if (f.type && !propertyMatchesType(property, f.type)) return false;
+  if (f.minPrice && property.price && property.price < f.minPrice) return false;
+  if (f.maxPrice && property.price && property.price > f.maxPrice) return false;
+  if (f.minSize) {
+    const propArea = getPropertyArea(property) || 0;
+    if (propArea !== 0 && propArea < f.minSize) return false;
+  }
+  return true;
+}
+
 export const regions: Array<{ key: RegionKey; label: string; description: string; aliases: string[]; locations: string[] }> = [
   {
     key: "costa-blanca-nord",
