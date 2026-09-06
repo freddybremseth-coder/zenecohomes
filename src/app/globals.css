@@ -3090,6 +3090,85 @@ footer {
   font-style: italic;
 }
 
+/* Interaktivt regionkart på forsiden. */
+.area-map-section {
+  text-align: center;
+}
+
+.area-map-wrap {
+  max-width: 960px;
+  margin: 10px auto 0;
+}
+
+.area-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-sea-label {
+  fill: #9db6bd;
+  font-size: 22px;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 1px;
+}
+
+.map-region {
+  cursor: pointer;
+}
+
+.map-label {
+  fill: #2f3a22;
+  font-size: 27px;
+  font-weight: 800;
+  font-family: system-ui, sans-serif;
+}
+
+.map-sub {
+  fill: #6b7280;
+  font-size: 18px;
+  font-family: system-ui, sans-serif;
+}
+
+.map-zone {
+  fill: rgba(120, 140, 78, 0.14);
+  stroke: rgba(120, 140, 78, 0.42);
+  stroke-width: 2;
+  transition: fill 0.2s ease;
+}
+
+.map-dot {
+  fill: #6f7f42;
+}
+
+.map-pin {
+  fill: #c5a059;
+  transition: fill 0.2s ease;
+}
+
+.map-pin-core {
+  fill: #ffffff;
+}
+
+.map-leader {
+  stroke: #c9b48b;
+  stroke-width: 2;
+  stroke-dasharray: 4 5;
+}
+
+.map-region:hover .map-label {
+  fill: #6f7f42;
+}
+
+.map-region:hover .map-pin {
+  fill: #6f7f42;
+}
+
+.map-region:hover .map-zone {
+  fill: rgba(120, 140, 78, 0.26);
+}
+
 /* Nøytral knapperad på lys bakgrunn (uten mørk-hero-overstyring). */
 .cta-row {
   display: flex;

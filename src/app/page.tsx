@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Building2, Check, Leaf, ShieldCheck, Sparkles } from "lucide-react";
+import { AreaMap } from "@/components/AreaMap";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
@@ -61,6 +62,8 @@ export default async function Home() {
           <span>Oppdateres fra RealtyFlow med regioner og områdevalg</span>
         </div>
       </section>
+
+      <AreaMap />
 
       <section className="section proof-section">
         <div className="section-heading">
