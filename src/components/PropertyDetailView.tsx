@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, BookOpen, Coins, Download, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
+import { AreaInsight } from "@/components/AreaInsight";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
+import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { Footer } from "@/components/Footer";
 import { ReadMoreText } from "@/components/ReadMoreText";
@@ -538,6 +540,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
                 <span key={badge}>{badge}</span>
               ))}
             </div>
+            <AreaInsight regionKey={areaRegionKey} locale={locale} />
             <div className="area-book">
               <p className="area-book-lead">
                 <BookOpen size={16} /> {t.bookLead}
@@ -588,6 +591,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               <Download size={16} /> {t.requestOffer}
             </a>
           </div>
+          <MortgageCalculator price={property.price} locale={locale} />
           <div id="kontakt" />
           <ContactForm
             locale={locale}

@@ -3090,6 +3090,105 @@ footer {
   font-style: italic;
 }
 
+/* Boliglånskalkulator */
+.mortgage-calc {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid rgba(23, 30, 16, 0.12);
+  border-radius: 14px;
+  background: #fbfaf5;
+}
+
+.mortgage-calc .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mortgage-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0 12px;
+}
+
+.mortgage-calc label {
+  display: block;
+  font-size: 0.9rem;
+  margin: 12px 0;
+}
+
+.mortgage-calc input[type="range"] {
+  width: 100%;
+  margin-top: 6px;
+  accent-color: #6f7f42;
+}
+
+.mortgage-result {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(23, 30, 16, 0.1);
+}
+
+.mortgage-result > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.mortgage-result strong {
+  font-size: 1.5rem;
+  color: #2f3a22;
+}
+
+.mortgage-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.mortgage-note {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Område-innsikt på boligsiden */
+.area-insight {
+  margin: 18px 0;
+}
+
+.area-insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.area-insight-grid span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #2f3a22;
+}
+
+.area-insight-grid svg {
+  color: #6f7f42;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 520px) {
+  .area-insight-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Interaktiv boligutforsker (kart + filtre) på forsiden. */
 .explorer-section {
   text-align: center;
