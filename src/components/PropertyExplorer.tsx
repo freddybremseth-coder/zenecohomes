@@ -35,6 +35,7 @@ export function PropertyExplorer({ properties }: { properties: Property[] }) {
   const [minSize, setMinSize] = useState(0);
   const mapNode = useRef<HTMLDivElement>(null);
   const mapRef = useRef<{ remove: () => void } | null>(null);
+  const filterQueryRef = useRef("");
 
   useEffect(() => {
     let mounted = true;
@@ -58,7 +59,8 @@ export function PropertyExplorer({ properties }: { properties: Property[] }) {
         }).addTo(map);
         marker.bindTooltip(r.label, { direction: "top", permanent: true, className: "region-tip", offset: [0, -10] });
         marker.on("click", () => {
-          window.location.href = `/eiendommer?region=${r.key}`;
+          const fq = filterQueryRef.current;
+          window.location.href = `/eiendommer?region=${r.key}${fq ? `&${fq}` : ""}`;
         });
         marker.on("mouseover", () => marker.setStyle({ fillColor: "#c5a059" }));
         marker.on("mouseout", () => marker.setStyle({ fillColor: "#6f7f42" }));
@@ -80,20 +82,27 @@ export function PropertyExplorer({ properties }: { properties: Property[] }) {
       const typeOk = terms.length === 0 || terms.some((term) => t.includes(term));
       const priceOk =
         (!minPrice || (p.price != null && p.price >= minPrice)) && (!maxPrice || (p.price != null && p.price <= maxPrice));
-      const size = getPropertyArea(p);
-      const sizeOk = !minSize || (size != null && size >= minSize);
+      // Areal er kjent for kun ~11 % av importen; behold boliger uten areal-data.
+      const size = getPropertyArea(p) || 0;
+      const sizeOk = !minSize || size === 0 || size >= minSize;
       return typeOk && priceOk && sizeOk;
     });
   }, [properties, typeIdx, minPrice, maxPrice, minSize]);
 
-  const allHref = useMemo(() => {
+  const filterQuery = useMemo(() => {
     const params = new URLSearchParams();
     if (TYPE_FILTERS[typeIdx].value) params.set("type", TYPE_FILTERS[typeIdx].value);
     if (minPrice) params.set("minPrice", String(minPrice));
     if (maxPrice) params.set("maxPrice", String(maxPrice));
-    const qs = params.toString();
-    return `/eiendommer${qs ? `?${qs}` : ""}`;
-  }, [typeIdx, minPrice, maxPrice]);
+    if (minSize) params.set("minSize", String(minSize));
+    return params.toString();
+  }, [typeIdx, minPrice, maxPrice, minSize]);
+
+  useEffect(() => {
+    filterQueryRef.current = filterQuery;
+  }, [filterQuery]);
+
+  const allHref = `/eiendommer${filterQuery ? `?${filterQuery}` : ""}`;
 
   return (
     <section className="section explorer-section">

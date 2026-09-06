@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
   getProperties,
+  getPropertyArea,
   getPropertySearchText,
   getPropertyType,
   getRegionLabel,
@@ -48,6 +49,7 @@ export default async function PropertiesPage({
     maxPrice?: string;
     bedrooms?: string;
     bathrooms?: string;
+    minSize?: string;
     lifestyle?: string;
   }>;
 }) {
@@ -60,6 +62,7 @@ export default async function PropertiesPage({
   const maxPrice = Number(params.maxPrice || 0);
   const minBedrooms = Number(params.bedrooms || 0);
   const minBathrooms = Number(params.bathrooms || 0);
+  const minSize = Number(params.minSize || 0);
   const lifestyle = params.lifestyle || "";
   const properties = await getProperties();
   const filtered = properties.filter((property) => {
@@ -72,6 +75,9 @@ export default async function PropertiesPage({
     const matchesMaxPrice = maxPrice && property.price ? property.price <= maxPrice : true;
     const matchesBedrooms = minBedrooms && property.bedrooms ? property.bedrooms >= minBedrooms : true;
     const matchesBathrooms = minBathrooms && property.bathrooms ? property.bathrooms >= minBathrooms : true;
+    // Areal er kjent for kun ~11 % av importen; behold boliger uten areal-data i stedet for å skjule dem.
+    const propArea = getPropertyArea(property) || 0;
+    const matchesMinSize = minSize ? propArea === 0 || propArea >= minSize : true;
     const matchesLifestyle = propertyMatchesLifestyle(property, lifestyle);
     return (
       matchesQuery &&
@@ -82,6 +88,7 @@ export default async function PropertiesPage({
       matchesMaxPrice &&
       matchesBedrooms &&
       matchesBathrooms &&
+      matchesMinSize &&
       matchesLifestyle
     );
   });
@@ -160,6 +167,14 @@ export default async function PropertiesPage({
             <option value="pool">Basseng</option>
             <option value="sea">Nær sjø / havutsikt</option>
             <option value="golf">Golf</option>
+          </select>
+          <select name="minSize" defaultValue={params.minSize || ""}>
+            <option value="">Størrelse fra</option>
+            <option value="80">80 m²+</option>
+            <option value="100">100 m²+</option>
+            <option value="150">150 m²+</option>
+            <option value="200">200 m²+</option>
+            <option value="300">300 m²+</option>
           </select>
           </div>
           <button type="submit">Søk</button>
