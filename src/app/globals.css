@@ -3090,6 +3090,50 @@ footer {
   font-style: italic;
 }
 
+/* Nøytral knapperad på lys bakgrunn (uten mørk-hero-overstyring). */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.text-button.dark {
+  color: #2f3a22;
+}
+
+/* Mobil-søk: filtre bak "Flere filtre", full visning på PC. */
+.search-more-btn {
+  display: none;
+}
+
+.search-more-fields {
+  display: contents;
+}
+
+@media (max-width: 720px) {
+  .search-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    color: var(--gold);
+    font-weight: 700;
+    padding: 8px 2px;
+  }
+  .search-more-fields {
+    display: none;
+  }
+  .search-more-toggle:checked ~ .search-more-fields {
+    display: contents;
+  }
+  .search-hero > p:not(.eyebrow) {
+    display: none;
+  }
+}
+
 .property-map {
   margin-top: 8px;
 }

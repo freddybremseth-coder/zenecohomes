@@ -90,7 +90,7 @@ export default async function PropertiesPage({
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <section className="page-hero compact-hero">
+      <section className="page-hero compact-hero search-hero">
         <p className="eyebrow">Boligsøk i Spania</p>
         <h1>Boliger og nybygg til salgs i Spania</h1>
         <p>
@@ -113,6 +113,9 @@ export default async function PropertiesPage({
           <input name="q" defaultValue={params.q || ""} placeholder="Søk område, referanse eller stil" />
           {region && <input type="hidden" name="region" value={region} />}
           {area && <input type="hidden" name="area" value={area} />}
+          <input type="checkbox" id="search-more" className="search-more-toggle" hidden />
+          <label htmlFor="search-more" className="search-more-btn">Flere filtre</label>
+          <div className="search-more-fields">
           <select name="type" defaultValue={params.type || ""}>
             <option value="">Alle typer</option>
             <option>Villa</option>
@@ -158,6 +161,7 @@ export default async function PropertiesPage({
             <option value="sea">Nær sjø / havutsikt</option>
             <option value="golf">Golf</option>
           </select>
+          </div>
           <button type="submit">Søk</button>
         </form>
       </section>

@@ -410,12 +410,12 @@ export default async function InlandPage() {
             Kysten gir enklere utleie, strand og mer service. Innlandet gir mer tomt, ro og natur. Valget bør styres
             av livsstil og hvordan du faktisk skal bruke boligen – og vi hjelper deg å sammenligne ærlig.
           </p>
-          <div className="hero-actions">
+          <div className="cta-row">
             <a className="contact-button" href="/eiendommer">
               <Home size={18} /> Se boliger
             </a>
-            <a className="text-button" href="/kjopsprosessen">
-              Les om kjøpsprosessen
+            <a className="text-button dark" href="/kjopsprosessen">
+              Les om kjøpsprosessen <ArrowRight size={16} />
             </a>
           </div>
         </div>
