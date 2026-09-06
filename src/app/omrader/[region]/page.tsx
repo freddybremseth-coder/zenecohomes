@@ -43,6 +43,65 @@ const regionCopy: Record<RegionKey, { title: string; intro: string; proof: strin
   },
 };
 
+const regionFaq: Record<RegionKey, { q: string; a: string }[]> = {
+  "costa-blanca-nord": [
+    {
+      q: "Hvor langt er det til flyplassen fra Costa Blanca Nord?",
+      a: "De nordlige byene som Altea, Calpe og Dénia ligger typisk 45–75 minutter fra Alicante flyplass. Dénia og Jávea har i tillegg Valencia flyplass innen rekkevidde.",
+    },
+    {
+      q: "Kan man bo på Costa Blanca Nord hele året?",
+      a: "Ja. Dette er etablerte helårsområder med full service, sykehus, skoler og et levende lokalmiljø også utenom turistsesongen.",
+    },
+    {
+      q: "Er Costa Blanca Nord dyrere enn Costa Blanca Sør?",
+      a: "Generelt ja. De nordlige byene har ofte høyere kvadratmeterpris og en mer eksklusiv profil, men også mer variert natur med fjell og bukter.",
+    },
+  ],
+  "costa-blanca-sor": [
+    {
+      q: "Hvorfor velge Costa Blanca Sør?",
+      a: "Sør har stort utvalg av nybygg, lavere inngangspriser, flate og lettgåtte områder, mange golfbaner og store internasjonale miljøer.",
+    },
+    {
+      q: "Hvor nær er flyplassen fra Costa Blanca Sør?",
+      a: "Mange sørlige områder som Torrevieja, Orihuela Costa og Guardamar ligger rundt 30–45 minutter fra Alicante flyplass.",
+    },
+    {
+      q: "Passer Costa Blanca Sør for helårsbruk?",
+      a: "Ja, med store etablerte utlendingsmiljøer og full service. Enkelte rene ferieurbanisasjoner er likevel roligere om vinteren.",
+    },
+  ],
+  "costa-calida": [
+    {
+      q: "Hva kjennetegner Costa Cálida?",
+      a: "Murcia-kysten med den varme Mar Menor-lagunen, golfresorter og ofte mer bolig for pengene. Roligere og mindre turistpreget enn Costa Blanca.",
+    },
+    {
+      q: "Hvilken flyplass bruker man på Costa Cálida?",
+      a: "Murcia (Corvera) flyplass ligger nærmest, mens Alicante flyplass også er innen rekkevidde fra de nordlige delene.",
+    },
+    {
+      q: "Er Costa Cálida rimeligere enn Costa Blanca?",
+      a: "Ofte ja. Inngangsprisene er gjerne lavere, særlig på nybygg i golfresortene rundt Los Alcázares og San Pedro del Pinatar.",
+    },
+  ],
+  innlandet: [
+    {
+      q: "Hvor langt er innlandet fra kysten og flyplassen?",
+      a: "De fleste innlandsområdene ligger 30–60 minutter fra Alicante flyplass og under en time fra strendene.",
+    },
+    {
+      q: "Hva får jeg for pengene i innlandet kontra kysten?",
+      a: "Ofte betydelig mer tomt og bolig per krone – finca, landsbyhus eller gård med plass, gjerne til lavere pris per kvadratmeter enn tilsvarende ved kysten.",
+    },
+    {
+      q: "Er innlandslandsbyene levende hele året?",
+      a: "Ja. De lever av landbruk, industri og lokalt næringsliv – ikke av turisme – så skoler, helsetilbud og butikker holder åpent hele året.",
+    },
+  ],
+};
+
 export function generateStaticParams() {
   return regions.map((region) => ({ region: region.key }));
 }
@@ -81,6 +140,19 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
   const regionProfiles = profiles.filter((profile) => areaMatchesRegion(profile, region));
   const regionProperties = properties.filter((property) => propertyMatchesRegion(property, region));
   const regionBooks = booksForRegion(region);
+  const regionFaqItems = regionFaq[region as RegionKey] || [];
+  const faqJsonLd =
+    regionFaqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: regionFaqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }
+      : null;
 
   return (
     <main>
@@ -216,6 +288,23 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
                 </a>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+      {faqJsonLd && (
+        <section className="section proof-section">
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+          <div className="section-heading">
+            <p className="eyebrow">Vanlige spørsmål</p>
+            <h2>{selected.label} – spørsmål og svar</h2>
+          </div>
+          <div className="proof-grid inland-faq">
+            {regionFaqItems.map((item) => (
+              <article key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
+              </article>
+            ))}
           </div>
         </section>
       )}

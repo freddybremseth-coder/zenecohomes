@@ -60,13 +60,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           addressRegion: "Alicante / Costa Blanca",
           addressCountry: "ES",
         },
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+4796009965",
-          contactType: "sales",
-          areaServed: ["ES", "NO"],
-          availableLanguage: ["Norwegian", "English", "German", "Spanish"],
-        },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: "+4796009965",
+            contactType: "sales",
+            areaServed: ["NO", "ES"],
+            availableLanguage: ["Norwegian", "English", "German", "Spanish"],
+          },
+          {
+            "@type": "ContactPoint",
+            telephone: "+34624297325",
+            contactType: "sales",
+            areaServed: ["ES", "NO"],
+            availableLanguage: ["Spanish", "English", "Norwegian"],
+          },
+        ],
         areaServed: ["Biar", "Benidorm", "Costa Blanca", "Costa Blanca Nord", "Costa Blanca Sør", "Costa Cálida", "Alicante", "Spania"],
         knowsAbout: [
           "Boligkjøp i Spania",
