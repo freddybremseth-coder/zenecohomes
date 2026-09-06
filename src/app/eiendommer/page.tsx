@@ -6,12 +6,12 @@ import {
   getProperties,
   getPropertyArea,
   getPropertySearchText,
-  getPropertyType,
   getRegionLabel,
   normalizeSearchText,
   propertyMatchesArea,
   propertyMatchesLifestyle,
   propertyMatchesRegion,
+  propertyMatchesType,
   regions,
 } from "@/lib/realtyflow";
 
@@ -68,7 +68,7 @@ export default async function PropertiesPage({
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
     const matchesQuery = q ? haystack.includes(q) : true;
-    const matchesType = type ? getPropertyType(property).toLowerCase().includes(type) : true;
+    const matchesType = propertyMatchesType(property, type);
     const matchesRegion = propertyMatchesRegion(property, region);
     const matchesArea = propertyMatchesArea(property, area);
     const matchesMinPrice = minPrice && property.price ? property.price >= minPrice : true;

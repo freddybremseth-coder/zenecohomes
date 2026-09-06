@@ -208,6 +208,24 @@ export function getPropertyTown(property: Property): string | null {
   return null;
 }
 
+// Boligtype-grupper: en etikett (f.eks. "Leilighet") matcher flere rå typer i dataene
+// (blandet norsk/engelsk: "Leilighet", "Ground floor apartment", "Apartment", "studio" …).
+const TYPE_BUCKETS: Record<string, string[]> = {
+  villa: ["villa"],
+  leilighet: ["leilighet", "apartment", "studio"],
+  penthouse: ["penthouse"],
+  rekkehus: ["rekkehus", "semidetached", "quad", "townhouse"],
+  bungalow: ["bungalow"],
+};
+
+/** Matcher en bolig mot en type-etikett via type-gruppene (konsistent på tvers av søkeflater). */
+export function propertyMatchesType(property: Property, typeLabel?: string): boolean {
+  if (!typeLabel) return true;
+  const terms = TYPE_BUCKETS[normalizeSearchText(typeLabel)] || [normalizeSearchText(typeLabel)];
+  const t = normalizeSearchText(String(property.property_type || property.type || ""));
+  return terms.some((term) => t.includes(term));
+}
+
 export const regions: Array<{ key: RegionKey; label: string; description: string; aliases: string[]; locations: string[] }> = [
   {
     key: "costa-blanca-nord",

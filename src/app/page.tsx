@@ -6,7 +6,14 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getProperties } from "@/lib/realtyflow";
+import {
+  getPrimaryImage,
+  getProperties,
+  getPropertyRef,
+  getPropertyTown,
+  propertyMatchesRegion,
+  regions,
+} from "@/lib/realtyflow";
 import { CARE_URL, homeHreflang, homeLanguageLinks } from "@/lib/i18n";
 import type { Metadata } from "next";
 
@@ -16,7 +23,25 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const properties = await getProperties(6);
-  const explorerProperties = await getProperties(90);
+  const regionKeys = regions.map((r) => r.key);
+  const explorerProperties = (await getProperties()).map((p) => ({
+    ref: getPropertyRef(p),
+    id: p.id,
+    title: p.title,
+    title_no: p.title_no,
+    price: p.price,
+    property_type: p.property_type,
+    type: p.type,
+    primary_image: getPrimaryImage(p),
+    bedrooms: p.bedrooms,
+    bathrooms: p.bathrooms,
+    built_area: p.built_area,
+    area: p.area,
+    pool: p.pool,
+    location: p.location,
+    town: getPropertyTown(p) || undefined,
+    regionKeys: regionKeys.filter((k) => propertyMatchesRegion(p, k)),
+  }));
 
   return (
     <main>

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import { PropertyCard } from "@/components/PropertyCard";
-import { getPropertyArea, type Property } from "@/lib/realtyflow";
+import { getPropertyArea, propertyMatchesType, type Property } from "@/lib/realtyflow";
 
 const TYPE_FILTERS: { label: string; value: string; terms: string[] }[] = [
   { label: "Alle", value: "", terms: [] },
@@ -28,13 +28,17 @@ function euro(n: number) {
   return `€${n.toLocaleString("nb-NO")}`;
 }
 
-export function PropertyExplorer({ properties }: { properties: Property[] }) {
+type ExplorerProperty = Property & { regionKeys?: string[] };
+
+export function PropertyExplorer({ properties }: { properties: ExplorerProperty[] }) {
   const [typeIdx, setTypeIdx] = useState(0);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
   const [minSize, setMinSize] = useState(0);
+  const [region, setRegion] = useState("");
   const mapNode = useRef<HTMLDivElement>(null);
   const mapRef = useRef<{ remove: () => void } | null>(null);
+  const markersRef = useRef<Record<string, { setStyle: (o: Record<string, unknown>) => void }>>({});
   const filterQueryRef = useRef("");
 
   useEffect(() => {
@@ -58,12 +62,8 @@ export function PropertyExplorer({ properties }: { properties: Property[] }) {
           fillOpacity: 0.95,
         }).addTo(map);
         marker.bindTooltip(r.label, { direction: "top", permanent: true, className: "region-tip", offset: [0, -10] });
-        marker.on("click", () => {
-          const fq = filterQueryRef.current;
-          window.location.href = `/eiendommer?region=${r.key}${fq ? `&${fq}` : ""}`;
-        });
-        marker.on("mouseover", () => marker.setStyle({ fillColor: "#c5a059" }));
-        marker.on("mouseout", () => marker.setStyle({ fillColor: "#6f7f42" }));
+        markersRef.current[r.key] = marker;
+        marker.on("click", () => setRegion((prev) => (prev === r.key ? "" : r.key)));
       });
     })();
     return () => {
@@ -75,28 +75,34 @@ export function PropertyExplorer({ properties }: { properties: Property[] }) {
     };
   }, []);
 
+  useEffect(() => {
+    Object.entries(markersRef.current).forEach(([key, m]) => {
+      m.setStyle({ fillColor: key === region ? "#c5a059" : "#6f7f42", radius: key === region ? 16 : 13 });
+    });
+  }, [region]);
+
   const filtered = useMemo(() => {
-    const terms = TYPE_FILTERS[typeIdx].terms;
     return properties.filter((p) => {
-      const t = String(p.property_type || p.type || "").toLowerCase();
-      const typeOk = terms.length === 0 || terms.some((term) => t.includes(term));
+      const typeOk = propertyMatchesType(p, TYPE_FILTERS[typeIdx].value);
+      const regionOk = !region || (p.regionKeys || []).includes(region);
       const priceOk =
         (!minPrice || (p.price != null && p.price >= minPrice)) && (!maxPrice || (p.price != null && p.price <= maxPrice));
       // Areal er kjent for kun ~11 % av importen; behold boliger uten areal-data.
       const size = getPropertyArea(p) || 0;
       const sizeOk = !minSize || size === 0 || size >= minSize;
-      return typeOk && priceOk && sizeOk;
+      return typeOk && regionOk && priceOk && sizeOk;
     });
-  }, [properties, typeIdx, minPrice, maxPrice, minSize]);
+  }, [properties, typeIdx, region, minPrice, maxPrice, minSize]);
 
   const filterQuery = useMemo(() => {
     const params = new URLSearchParams();
+    if (region) params.set("region", region);
     if (TYPE_FILTERS[typeIdx].value) params.set("type", TYPE_FILTERS[typeIdx].value);
     if (minPrice) params.set("minPrice", String(minPrice));
     if (maxPrice) params.set("maxPrice", String(maxPrice));
     if (minSize) params.set("minSize", String(minSize));
     return params.toString();
-  }, [typeIdx, minPrice, maxPrice, minSize]);
+  }, [region, typeIdx, minPrice, maxPrice, minSize]);
 
   useEffect(() => {
     filterQueryRef.current = filterQuery;
@@ -156,6 +162,16 @@ export function PropertyExplorer({ properties }: { properties: Property[] }) {
       <div className="explorer-grid-wrap">
         <div ref={mapNode} className="explorer-map" />
         <div className="explorer-results">
+          <div className="explorer-results-head">
+            <strong>
+              {filtered.length} {filtered.length === 1 ? "bolig" : "boliger"}
+            </strong>
+            {region && (
+              <button type="button" className="region-chip" onClick={() => setRegion("")}>
+                {REGIONS.find((r) => r.key === region)?.label} ✕
+              </button>
+            )}
+          </div>
           {filtered.length > 0 ? (
             <div className="property-grid">
               {filtered.slice(0, 6).map((property, index) => (
@@ -163,14 +179,14 @@ export function PropertyExplorer({ properties }: { properties: Property[] }) {
               ))}
             </div>
           ) : (
-            <p className="explorer-empty">Ingen treff i utvalget – prøv «Se alle treff» for hele basen.</p>
+            <p className="explorer-empty">Ingen treff med disse filtrene – prøv å justere pris, type eller region.</p>
           )}
         </div>
       </div>
 
       <div className="center-action">
         <a className="contact-button" href={allHref}>
-          Se alle treff{TYPE_FILTERS[typeIdx].value ? ` for ${TYPE_FILTERS[typeIdx].label.toLowerCase()}` : ""}
+          Se alle {filtered.length} {filtered.length === 1 ? "treff" : "treff"}
         </a>
       </div>
     </section>

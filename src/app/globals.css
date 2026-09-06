@@ -3164,6 +3164,33 @@ footer {
   text-align: left;
 }
 
+.explorer-results-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.explorer-results-head strong {
+  font-size: 1.1rem;
+  color: #2f3a22;
+}
+
+.region-chip {
+  border: 0;
+  background: #6f7f42;
+  color: #fff;
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.region-chip:hover {
+  background: #5a682f;
+}
+
 .explorer-empty {
   text-align: center;
   color: #6b7280;
