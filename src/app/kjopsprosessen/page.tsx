@@ -22,36 +22,50 @@ export const metadata = {
   },
 };
 
+const faq = [
+  {
+    q: "Trenger jeg NIE for å kjøpe bolig i Spania?",
+    a: "Ja. NIE (Número de Identificación de Extranjero) er utlendingens skattenummer og er normalt nødvendig for eiendomskjøp, skatt, bank og registrering. Vi hjelper deg å skaffe det.",
+  },
+  {
+    q: "Bør jeg bruke advokat ved boligkjøp i Spania?",
+    a: "Ja, det anbefales sterkt å bruke en uavhengig spansk advokat (abogado) som kontrollerer eiendomsrett, heftelser, lovlighet, kontrakter og skatter før du signerer noe.",
+  },
+  {
+    q: "Hva koster det å kjøpe bolig i Spania – utover selve prisen?",
+    a: "Regn med om lag 11–14 % i omkostninger på toppen av kjøpesummen. På bruktbolig betaler du overføringsskatt (ITP), som i Valencia-regionen typisk er rundt 10 %, pluss notar, registrering og advokat. På nybygg betaler du 10 % IVA (moms) + 1,5 % stempelavgift (AJD) i tillegg til notar og registrering.",
+  },
+  {
+    q: "Kan nordmenn få boliglån i en spansk bank?",
+    a: "Ja. Spanske banker gir ofte lån til utenlandske kjøpere, vanligvis med 60–70 % belåning av kjøpesummen (verdivurdering) for ikke-residenter. Renten og vilkårene avhenger av bank, inntekt og profil.",
+  },
+  {
+    q: "Hva er forskjellen på nybygg og bruktbolig når det gjelder avgifter?",
+    a: "Nybygg (førstegangssalg fra utbygger) har 10 % IVA + 1,5 % AJD. Bruktbolig har overføringsskatt ITP i stedet (typisk rundt 10 % i Valencia-regionen). Nybygg selges ofte med betalingsplan underveis i byggeperioden.",
+  },
+  {
+    q: "Hvordan fungerer reservasjon og kontrakt?",
+    a: "Prosessen går normalt fra en reservasjonsavtale (tar boligen av markedet), til en depositumskontrakt (contrato de arras, ofte ~10 %), og til slutt signering av skjøtet (escritura) hos notar der resten betales og nøklene overleveres.",
+  },
+  {
+    q: "Hvor lang tid tar kjøpsprosessen i Spania?",
+    a: "Et vanlig kjøp gjennomføres ofte på 4–8 uker etter reservasjon, avhengig av finansiering, dokumentasjon og juridisk kontroll. Nybygg følger byggeperioden og kan ta lengre tid.",
+  },
+  {
+    q: "Hvilke løpende kostnader har en bolig i Spania?",
+    a: "De vanligste er kommunal eiendomsskatt (IBI), fellesutgifter (comunidad) hvis boligen ligger i en urbanisasjon, forsikring, strøm og vann, samt en årlig ikke-resident-skatt for utenlandske eiere som ikke er bosatt i Spania.",
+  },
+];
+
 export default function BuyingProcessPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Trenger jeg NIE for å kjøpe bolig i Spania?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ja, NIE er normalt nødvendig for eiendomskjøp, skatt, bank og registrering i Spania.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Bør jeg bruke advokat ved boligkjøp i Spania?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ja, det anbefales sterkt å bruke uavhengig spansk advokat som kontrollerer eiendomsrett, kontrakter, heftelser, skatter og lovlighet.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Hvor lang tid tar kjøpsprosessen i Spania?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Et vanlig kjøp kan ofte gjennomføres på 4–8 uker etter reservasjon, men dette avhenger av finansiering, dokumentasjon og juridisk kontroll.",
-        },
-      },
-    ],
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   };
 
   return (
@@ -134,6 +148,22 @@ export default function BuyingProcessPage() {
           </article>
         </div>
       </section>
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Vanlige spørsmål</p>
+          <h2>Kjøpsprosessen i Spania – spørsmål og svar</h2>
+          <p>De vanligste spørsmålene nordmenn stiller om NIE, kostnader, finansiering og prosessen.</p>
+        </div>
+        <div className="proof-grid inland-faq">
+          {faq.map((item) => (
+            <article key={item.q}>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="contact-section">
         <div>
           <p className="eyebrow">Neste steg</p>
