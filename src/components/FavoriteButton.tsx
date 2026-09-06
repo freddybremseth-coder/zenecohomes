@@ -10,6 +10,13 @@ type Favorite = {
   location: string;
   price: string;
   href: string;
+  image?: string;
+  priceNum?: number;
+  area?: number;
+  bedrooms?: number;
+  bathrooms?: number;
+  energy?: string;
+  type?: string;
 };
 
 const labels: Record<Locale, { saved: string; save: string }> = {

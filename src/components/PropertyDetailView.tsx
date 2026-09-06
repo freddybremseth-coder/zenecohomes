@@ -444,6 +444,13 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
                 location: townDisplay,
                 price: formatPriceForLocale(property.price, locale),
                 href: detailPath,
+                image: mainImage || undefined,
+                priceNum: property.price || undefined,
+                area: getPropertyArea(property) || undefined,
+                bedrooms: property.bedrooms || undefined,
+                bathrooms: property.bathrooms || undefined,
+                energy: property.energy_rating || undefined,
+                type: getLocalizedPropertyType(property, locale) || undefined,
               }}
             />
             <a href="#kontakt">

@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import {
+  ArrowRight,
   Bell,
   Building2,
   Calculator,
@@ -953,6 +954,11 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
                 </li>
               ))}
             </ul>
+            {favorites.length > 1 && (
+              <a className="text-button" href="/sammenlign">
+                Sammenlign boliger <ArrowRight size={15} />
+              </a>
+            )}
           </article>
 
           <article className="portal-panel">
