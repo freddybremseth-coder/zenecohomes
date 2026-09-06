@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Building2, Check, Leaf, ShieldCheck, Sparkles } from "lucide-react";
-import { AreaMap } from "@/components/AreaMap";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
+import { PropertyExplorer } from "@/components/PropertyExplorer";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const properties = await getProperties(6);
+  const explorerProperties = await getProperties(90);
 
   return (
     <main>
@@ -63,7 +64,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <AreaMap />
+      <PropertyExplorer properties={explorerProperties} />
 
       <section className="section proof-section">
         <div className="section-heading">

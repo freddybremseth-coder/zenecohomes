@@ -3090,6 +3090,100 @@ footer {
   font-style: italic;
 }
 
+/* Interaktiv boligutforsker (kart + filtre) på forsiden. */
+.explorer-section {
+  text-align: center;
+}
+
+.explorer-filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.explorer-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.explorer-chips button {
+  border: 1px solid rgba(23, 30, 16, 0.16);
+  background: #fff;
+  color: #2f3a22;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.explorer-chips button:hover {
+  border-color: #6f7f42;
+}
+
+.explorer-chips button.active {
+  background: #6f7f42;
+  border-color: #6f7f42;
+  color: #fff;
+}
+
+.explorer-selects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.explorer-selects select {
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(23, 30, 16, 0.16);
+  border-radius: 8px;
+  background: #fff;
+  color: #2f3a22;
+  font-size: 0.92rem;
+}
+
+.explorer-map {
+  height: 440px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 12px 30px rgba(23, 30, 16, 0.14);
+  z-index: 0;
+}
+
+.explorer-results {
+  margin-top: 24px;
+  text-align: left;
+}
+
+.explorer-empty {
+  text-align: center;
+  color: #6b7280;
+  padding: 24px 0;
+}
+
+.leaflet-tooltip.region-tip {
+  background: #1e2416;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.leaflet-tooltip.region-tip::before {
+  border-top-color: #1e2416;
+}
+
 /* Interaktivt regionkart på forsiden. */
 .area-map-section {
   text-align: center;
