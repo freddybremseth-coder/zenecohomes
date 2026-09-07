@@ -1,6 +1,7 @@
 import { ShieldCheck } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
-import { getPropertyArea, type Property } from "@/lib/realtyflow";
+import { getPropertyArea, getPropertyRef, type Property } from "@/lib/realtyflow";
+import { FLAGSHIP_HEADING, getFlagshipAssessment } from "@/lib/flagshipAssessments";
 
 /**
  * "Zen Eco Homes' vurdering" – en redaksjonell tekstblokk øverst på boligsiden.
@@ -131,6 +132,20 @@ export function PropertyAssessment({
   typeLabel: string;
 }) {
   const c = COPY[locale];
+
+  // Nivå A: manuelt godkjent «Freddys vurdering» overstyrer den auto-genererte teksten.
+  const flagship = getFlagshipAssessment(getPropertyRef(property), locale);
+  if (flagship) {
+    return (
+      <aside className="property-assessment flagship">
+        <p className="eyebrow">
+          <ShieldCheck size={15} /> {FLAGSHIP_HEADING[locale]}
+        </p>
+        <p>{flagship}</p>
+      </aside>
+    );
+  }
+
   const bucket = bucketOf(property);
   const area = getPropertyArea(property);
   const regionCtx = regionKey ? REGION_CTX[regionKey]?.[locale] : undefined;
