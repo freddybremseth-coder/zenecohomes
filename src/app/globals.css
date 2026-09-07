@@ -3781,3 +3781,74 @@ footer {
     justify-content: center;
   }
 }
+
+/* ── Hero sekundær-CTA (rådgivning/boligmatch) ────── */
+.hero-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+.hero-secondary a {
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+}
+.hero-secondary a:hover {
+  color: var(--gold);
+}
+.hero-secondary span {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+/* ── Eco / energi-posisjonering ───────────────────── */
+.eco-section .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+.eco-grid > div {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 20px;
+}
+.eco-grid svg {
+  width: 26px;
+  height: 26px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.eco-grid strong {
+  display: block;
+  font-size: 1.02rem;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.eco-grid span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+@media (max-width: 900px) {
+  .eco-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .eco-grid {
+    grid-template-columns: 1fr;
+  }
+}

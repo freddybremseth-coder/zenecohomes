@@ -77,7 +77,7 @@ export function BuyerMatchQuiz() {
         <p className="eyebrow">Boligmatch</p>
         <h2>Finn riktig område og boligtype på 2 minutter</h2>
         <p>
-          Svar på noen få spørsmål, så får RealtyFlow et bedre grunnlag for shortlist, oppfølging og anbefalte neste steg.
+          Svar på noen få spørsmål, så får vi et bedre grunnlag for shortlist, oppfølging og anbefalte neste steg.
         </p>
       </div>
       <div className="quiz-layout">
@@ -170,7 +170,7 @@ export function BuyerMatchQuiz() {
             <Send size={18} />
             {status === "sending" ? "Sender..." : "Få anbefaling"}
           </button>
-          {status === "sent" && <p className="form-success">Takk. Vi har sendt svarene til RealtyFlow og viser en første anbefaling her.</p>}
+          {status === "sent" && <p className="form-success">Takk. Vi har mottatt svarene dine og viser en første anbefaling her.</p>}
           {status === "error" && <p className="form-error">Noe gikk galt. Prøv igjen om litt.</p>}
         </form>
         <aside className="quiz-result">

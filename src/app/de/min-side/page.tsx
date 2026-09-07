@@ -29,15 +29,15 @@ export default function GermanPortalPage() {
         <p className="eyebrow">Mein Bereich</p>
         <h1>Kundenportal für Käufer</h1>
         <p>
-          Ein übersichtliches Portal für Immobilien-Auswahl, Dokumente und Nachrichten. Admin, Leads und Gespräche
-          laufen in RealtyFlow, damit alles an einem Ort zusammenläuft.
+          Ein übersichtliches Portal für Immobilien-Auswahl, Dokumente und Nachrichten. Alles an einem Ort,
+          mit direktem Draht zu Ihrem Berater.
         </p>
         <div className="portal-actions">
           <Link className="contact-button" href="#portal">
             <LockKeyhole size={19} /> Im Kundenportal anmelden
           </Link>
           <Link className="text-button light" href="https://realtyflow.chatgenius.pro">
-            <ShieldCheck size={18} /> RealtyFlow Admin <ExternalLink size={18} />
+            <ShieldCheck size={18} /> Admin-Login <ExternalLink size={18} />
           </Link>
         </div>
       </section>

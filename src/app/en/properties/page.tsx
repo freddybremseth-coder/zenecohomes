@@ -111,7 +111,7 @@ export default async function EnglishPropertiesPage({
         <p className="eyebrow">Property search in Spain</p>
         <h1>Properties and new builds for sale in Spain</h1>
         <p>
-          Explore villas, apartments, townhouses and modern new builds from RealtyFlow.
+          Explore villas, apartments, townhouses and modern new builds in our selection.
           {locationLabel ? ` Showing ${locationLabel}.` : " Choose a region with one click."}
         </p>
         <div className="quick-filters">

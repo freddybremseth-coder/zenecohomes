@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Building2, Check, Leaf, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Building2, Check, Leaf, ShieldCheck, Snowflake, Sparkles, Sun, Zap } from "lucide-react";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { PropertyExplorer } from "@/components/PropertyExplorer";
 import { ContactForm } from "@/components/ContactForm";
@@ -79,6 +79,11 @@ export default async function Home() {
               Søk boliger <ArrowRight size={18} />
             </button>
           </form>
+          <div className="hero-secondary">
+            <a href="#boligmatch">Prøv Boligmatchen (2 min)</a>
+            <span>eller</span>
+            <a href="#kontakt">Ta en uforpliktende rådgivningsprat</a>
+          </div>
         </div>
       </section>
 
@@ -93,7 +98,7 @@ export default async function Home() {
         </div>
         <div>
           <strong>1329+ boliger</strong>
-          <span>Oppdateres fra RealtyFlow med regioner og områdevalg</span>
+          <span>Oppdateres løpende med regioner og områdevalg</span>
         </div>
       </section>
 
@@ -178,7 +183,7 @@ export default async function Home() {
         <div className="section-heading">
           <p className="eyebrow">Utvalgte boliger</p>
           <h2>Aktuelle nybygg og prosjekter</h2>
-          <p>Et kuratert utvalg hentes fra RealtyFlow. Når databasen oppdateres der, følger nettsiden etter.</p>
+          <p>Et kuratert utvalg fra vår egen boligdatabase. Når nye prosjekter kommer inn, følger nettsiden etter.</p>
         </div>
         <div className="property-grid">
           {properties.map((property, index) => (
@@ -192,6 +197,40 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="section eco-section">
+        <div className="section-heading">
+          <p className="eyebrow"><Leaf size={15} /> Derfor «Eco»</p>
+          <h2>Energieffektive nybygg – ikke gamle, fuktige betongboliger</h2>
+          <p>
+            «Eco» i Zen Eco Homes handler om moderne nybygg med lav energibruk: god isolasjon mot både
+            vinterkulde og sommervarme, høy energiklasse og mulighet for solceller. Det gir lavere strømregning,
+            bedre inneklima og boliger som er rustet for strengere energikrav fram mot 2030.
+          </p>
+        </div>
+        <div className="eco-grid">
+          <div>
+            <Zap />
+            <strong>Energiklasse A/B</strong>
+            <span>Moderne nybygg leveres med høy energistandard – langt bedre enn eldre spanske boliger.</span>
+          </div>
+          <div>
+            <Snowflake />
+            <strong>Isolasjon vinter + sommer</strong>
+            <span>Godt isolerte vegger og vinduer holder på varmen om vinteren og kjølig inne om sommeren.</span>
+          </div>
+          <div>
+            <Sun />
+            <strong>Solceller og lav strømkostnad</strong>
+            <span>Klargjort for solceller, som kutter strømregningen i et av Europas mest solrike områder.</span>
+          </div>
+          <div>
+            <ShieldCheck />
+            <strong>Klar for 2030-kravene</strong>
+            <span>EU strammer inn energikravene for salg og utleie. Energieffektive boliger står tryggere.</span>
+          </div>
+        </div>
+      </section>
+
       <BuyerMatchQuiz />
 
       <section className="section split">
@@ -200,10 +239,10 @@ export default async function Home() {
           <h2>Bygget for nordmenn som vil kjøpe nybygg i Spania</h2>
           <p>
             Siden kombinerer et stilrent førsteinntrykk med en praktisk kundereise: boligsøk, match, kundeportal og
-            oppfølging via RealtyFlow.
+            personlig oppfølging fra rådgiverne dine.
           </p>
           <div className="check-list">
-            {["Prosjektutvalg og rådgivning", "Dokumenter og meldinger på Min Side", "Automatisert leadflyt til CRM"].map(
+            {["Prosjektutvalg og rådgivning", "Dokumenter og meldinger på Min Side", "Personlig oppfølging hele veien"].map(
               (item) => (
                 <span key={item}>
                   <Check size={18} /> {item}
@@ -257,7 +296,7 @@ export default async function Home() {
           <article>
             <strong>03</strong>
             <h3>Digital oppfølging</h3>
-            <p>RealtyFlow holder orden på leads, favoritter, områder og neste steg, slik at du slipper å starte på nytt hver gang.</p>
+            <p>Vi holder orden på ønskene dine, favoritter, områder og neste steg, slik at du slipper å starte på nytt hver gang.</p>
             <Link className="text-button" href="/kjopsprosessen">
               Se prosessen <ArrowRight size={16} />
             </Link>

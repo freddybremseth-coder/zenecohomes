@@ -29,15 +29,15 @@ export default function EnglishPortalPage() {
         <p className="eyebrow">My account</p>
         <h1>Customer portal for buyers</h1>
         <p>
-          A clean portal for property matches, documents and messages. Admin, leads and conversations are handled
-          in RealtyFlow, so everything stays in one hub.
+          A clean portal for property matches, documents and messages. Everything in one place, with a direct
+          line to your adviser.
         </p>
         <div className="portal-actions">
           <Link className="contact-button" href="#portal">
             <LockKeyhole size={19} /> Log in to the portal
           </Link>
           <Link className="text-button light" href="https://realtyflow.chatgenius.pro">
-            <ShieldCheck size={18} /> RealtyFlow admin <ExternalLink size={18} />
+            <ShieldCheck size={18} /> Admin login <ExternalLink size={18} />
           </Link>
         </div>
       </section>

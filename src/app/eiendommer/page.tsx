@@ -102,7 +102,7 @@ export default async function PropertiesPage({
         <p className="eyebrow">Boligsøk i Spania</p>
         <h1>Boliger og nybygg til salgs i Spania</h1>
         <p>
-          Utforsk villaer, leiligheter, rekkehus og moderne nybygg fra RealtyFlow.
+          Utforsk villaer, leiligheter, rekkehus og moderne nybygg i vårt utvalg.
           {locationLabel ? ` Viser ${locationLabel}.` : " Velg region med ett klikk."}
         </p>
         <div className="quick-filters">

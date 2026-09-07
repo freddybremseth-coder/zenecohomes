@@ -27,15 +27,15 @@ export default function PortalPage() {
         <p className="eyebrow">Min Side</p>
         <h1>Kundeportal for kjøpere</h1>
         <p>
-          En ryddig portal for boligmatch, dokumenter og meldinger. Admin, leads og samtaler håndteres i RealtyFlow,
-          slik at alt ligger samlet i huben din.
+          En ryddig portal for boligmatch, dokumenter og meldinger. Alt ligger samlet ett sted, med direkte
+          dialog med rådgiveren din.
         </p>
         <div className="portal-actions">
           <Link className="contact-button" href="#portal">
             <LockKeyhole size={19} /> Logg inn på Min side
           </Link>
           <Link className="text-button light" href="https://realtyflow.chatgenius.pro">
-            <ShieldCheck size={18} /> RealtyFlow admin <ExternalLink size={18} />
+            <ShieldCheck size={18} /> Admin-innlogging <ExternalLink size={18} />
           </Link>
         </div>
       </section>

@@ -112,7 +112,7 @@ export default async function AreasPage() {
               <MapPin />
               <div>
                 <h2>Ingen publiserte områder ennå</h2>
-                <p>Når et område i RealtyFlow er huket av for nettsiden, dukker det opp her automatisk.</p>
+                <p>Når vi merker et område for nettsiden, dukker det opp her automatisk.</p>
               </div>
             </article>
           )}

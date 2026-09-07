@@ -111,7 +111,7 @@ export default async function GermanPropertiesPage({
         <p className="eyebrow">Immobiliensuche in Spanien</p>
         <h1>Immobilien und Neubau zum Verkauf in Spanien</h1>
         <p>
-          Entdecken Sie Villen, Wohnungen, Reihenhäuser und moderne Neubauten von RealtyFlow.
+          Entdecken Sie Villen, Wohnungen, Reihenhäuser und moderne Neubauten in unserer Auswahl.
           {locationLabel ? ` Angezeigt wird ${locationLabel}.` : " Wählen Sie eine Region mit einem Klick."}
         </p>
         <div className="quick-filters">

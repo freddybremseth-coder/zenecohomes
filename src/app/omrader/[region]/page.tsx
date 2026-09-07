@@ -188,7 +188,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
           <strong>{regionProperties.length}</strong>
           <span>publiserte boliger i regionen</span>
           <strong>{regionProfiles.length}</strong>
-          <span>områdeprofiler fra RealtyFlow</span>
+          <span>områdeprofiler fra oss</span>
         </aside>
       </section>
 

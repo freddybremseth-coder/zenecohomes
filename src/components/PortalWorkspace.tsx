@@ -212,11 +212,11 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     sidebarTitle: "Min side",
     sidebarDesc: "Samle boligmatch, dokumenter, meldinger og neste steg i kjøpsreisen.",
     portalLabel: "Kundeportal",
-    adminNote: "Admin ligger i RealtyFlow",
+    adminNote: "Admin håndteres internt",
     loggedIn: "Innlogget",
     topHeading: "Din kjøpsreise i Spania",
     signOut: "Logg ut",
-    connecting: "Kobles mot RealtyFlow",
+    connecting: "Kobler til portalen",
     accessTitle: "Har du fått tilgang?",
     email: "E-post",
     emailPh: "din@epost.no",
@@ -233,18 +233,18 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     message: "Melding",
     messagePh: "Kort om hva du trenger tilgang til",
     requestSubmit: "Send innloggingsforespørsel",
-    requestSent: "Forespørselen er sendt til RealtyFlow.",
+    requestSent: "Forespørselen er sendt til rådgiverne våre.",
     requestError: "Kunne ikke sende akkurat nå. Prøv igjen.",
   },
   de: {
     sidebarTitle: "Mein Bereich",
     sidebarDesc: "Immobilien-Auswahl, Dokumente, Nachrichten und nächste Schritte Ihrer Kaufreise an einem Ort.",
     portalLabel: "Kundenportal",
-    adminNote: "Admin liegt in RealtyFlow",
+    adminNote: "Admin wird intern verwaltet",
     loggedIn: "Angemeldet",
     topHeading: "Ihre Kaufreise in Spanien",
     signOut: "Abmelden",
-    connecting: "Verbindung mit RealtyFlow",
+    connecting: "Verbindung zum Portal",
     accessTitle: "Haben Sie bereits Zugang?",
     email: "E-Mail",
     emailPh: "ihre@email.de",
@@ -261,18 +261,18 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     message: "Nachricht",
     messagePh: "Kurz, wozu Sie Zugang brauchen",
     requestSubmit: "Zugang anfordern",
-    requestSent: "Ihre Anfrage wurde an RealtyFlow gesendet.",
+    requestSent: "Ihre Anfrage wurde an unsere Berater gesendet.",
     requestError: "Senden gerade nicht möglich. Bitte erneut versuchen.",
   },
   en: {
     sidebarTitle: "My account",
     sidebarDesc: "Property matches, documents, messages and your next steps in one place.",
     portalLabel: "Customer portal",
-    adminNote: "Admin lives in RealtyFlow",
+    adminNote: "Admin is handled internally",
     loggedIn: "Logged in",
     topHeading: "Your buying journey in Spain",
     signOut: "Sign out",
-    connecting: "Connecting to RealtyFlow",
+    connecting: "Connecting to the portal",
     accessTitle: "Have you been given access?",
     email: "Email",
     emailPh: "you@email.com",
@@ -289,7 +289,7 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     message: "Message",
     messagePh: "Briefly, what you need access to",
     requestSubmit: "Send access request",
-    requestSent: "Your request has been sent to RealtyFlow.",
+    requestSent: "Your request has been sent to our advisers.",
     requestError: "Could not send right now. Please try again.",
   },
 };
@@ -840,7 +840,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
                   />
                 </label>
                 <button disabled={signalStatus === "saving"} type="submit">
-                  {signalStatus === "saving" ? "Lagrer..." : "Lagre ønsker i RealtyFlow"}
+                  {signalStatus === "saving" ? "Lagrer..." : "Lagre ønskene mine"}
                 </button>
                 {signalStatus === "saved" && <p className="form-success">Ønskene er lagret. Freddy får dette som kjøpssignal.</p>}
                 {signalStatus === "error" && <p className="form-error">Kunne ikke lagre ønskene akkurat nå.</p>}

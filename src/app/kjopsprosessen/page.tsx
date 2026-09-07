@@ -108,7 +108,7 @@ export default function BuyingProcessPage() {
             <CheckCircle2 /> Rådgivning på norsk
           </div>
           <div>
-            <CheckCircle2 /> RealtyFlow-oppfølging
+            <CheckCircle2 /> Personlig oppfølging
           </div>
         </div>
       </section>

@@ -33,7 +33,7 @@ export function ZenecoChatbot() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
-      text: "Hei, jeg kan hjelpe deg å finne riktig område og bolig i Spania. Først tar jeg kontaktinfo, så kan jeg stille bedre spørsmål og sende ønskene dine til Freddy i RealtyFlow.",
+      text: "Hei, jeg kan hjelpe deg å finne riktig område og bolig i Spania. Først tar jeg kontaktinfo, så kan jeg stille bedre spørsmål og sende ønskene dine til Freddy.",
     },
   ]);
 
@@ -53,7 +53,7 @@ export function ZenecoChatbot() {
       { role: "user", text: nextLead.need },
       {
         role: "assistant",
-        text: "Takk. Jeg har lagret forespørselen i RealtyFlow. Hva er viktigst for deg nå: feriebolig, pensjon, investering, flytting eller tomt/bygging?",
+        text: "Takk. Jeg har lagret forespørselen din. Hva er viktigst for deg nå: feriebolig, pensjon, investering, flytting eller tomt/bygging?",
       },
     ]);
     await fetch("/api/contact", {
