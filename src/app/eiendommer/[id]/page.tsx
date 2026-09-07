@@ -18,6 +18,8 @@ function pickSeoText(value?: string | null, maxLen?: number): string {
   const t = (value || "").replace(/\s+/g, " ").trim();
   if (!t) return "";
   if (/&#\d|&[a-z]+;/i.test(t)) return "";
+  // Aldri publiser plassholdere (samsvarer med RealtyFlows «ikke publiser Villa i Ukjent»).
+  if (/\b(ukjent|ikke angitt|unknown)\b/i.test(t)) return "";
   const letters = t.replace(/[^A-Za-zÆØÅæøå]/g, "");
   const caps = letters.replace(/[^A-ZÆØÅ]/g, "");
   if (letters.length > 8 && caps.length / letters.length > 0.7) return "";
