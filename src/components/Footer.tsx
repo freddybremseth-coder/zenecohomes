@@ -1,21 +1,23 @@
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n";
+import type { SiteLocale } from "@/lib/i18n";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
-const TAGLINE: Record<Locale, string> = {
+const TAGLINE: Record<SiteLocale, string> = {
   no: "Norsk eiendomsrådgiver på Costa Blanca · Rådgivning først. Boligen etterpå.",
   de: "Immobilienberater an der Costa Blanca · Beratung zuerst. Die Immobilie danach.",
   en: "Property advisor on the Costa Blanca · Advice first. The property second.",
+  es: "Asesor inmobiliario en la Costa Blanca · Primero el asesoramiento. Después, la vivienda.",
 };
 
-const SUBLINE: Record<Locale, string> = {
+const SUBLINE: Record<SiteLocale, string> = {
   no: "Nybygg · Costa Blanca · Costa Cálida",
   de: "Neubau · Costa Blanca · Costa Cálida",
   en: "New builds · Costa Blanca · Costa Cálida",
+  es: "Obra nueva · Costa Blanca · Costa Cálida",
 };
 
-const LINKS: Record<Locale, FooterLink[]> = {
+const LINKS: Record<SiteLocale, FooterLink[]> = {
   no: [
     { label: "Bolig i Spania", href: "/bolig-i-spania" },
     { label: "Nybygg Costa Blanca", href: "/nybygg-costa-blanca" },
@@ -38,15 +40,23 @@ const LINKS: Record<Locale, FooterLink[]> = {
     { label: "Inland", href: "/en/inland" },
     { label: "About Freddy", href: "https://www.freddybremseth.com", external: true },
   ],
+  es: [
+    { label: "Propiedades", href: "/es/propiedades" },
+    { label: "Obra nueva Costa Blanca", href: "/es/obra-nueva-costa-blanca" },
+    { label: "Asesor inmobiliario en España", href: "/es/asesor-inmobiliario-espana" },
+    { label: "Interior", href: "/es/interior" },
+    { label: "Sobre Freddy", href: "/es/sobre-freddy" },
+  ],
 };
 
-const MUSIC: Record<Locale, string> = {
+const MUSIC: Record<SiteLocale, string> = {
   no: "Re-Master Freddy (musikk)",
   de: "Re-Master Freddy (Musik)",
   en: "Re-Master Freddy (music)",
+  es: "Re-Master Freddy (música)",
 };
 
-export function Footer({ locale = "no" }: { locale?: Locale } = {}) {
+export function Footer({ locale = "no" }: { locale?: SiteLocale } = {}) {
   const links = LINKS[locale];
 
   return (
