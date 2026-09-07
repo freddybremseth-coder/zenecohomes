@@ -3,15 +3,15 @@ import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import type { SeoLandingPage } from "@/lib/seoLandingPages";
-import { htmlLang, ui, withLocale, type Locale } from "@/lib/i18n";
+import { htmlLang, siteLocales, ui, withLocale, type SeoEquivalent, type SiteLocale } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
 
 type Props = {
   page: SeoLandingPage;
-  locale: Locale;
+  locale: SiteLocale;
   /** Ekvivalens-rad for hreflang/språkbytter (uten locale-prefiks). */
-  eq?: { no: string; de?: string; en?: string };
+  eq?: SeoEquivalent;
 };
 
 export function SeoLandingView({ page, locale, eq }: Props) {
@@ -38,9 +38,8 @@ export function SeoLandingView({ page, locale, eq }: Props) {
     ],
   };
 
-  // Språkbytter: lenker til de tilgjengelige språkversjonene av denne siden.
   const languageLinks = eq
-    ? (["no", "de", "en"] as Locale[])
+    ? siteLocales
         .filter((l) => eq[l])
         .map((l) => ({ locale: l, href: withLocale(l, `/${eq[l]}`), current: l === locale }))
     : undefined;
