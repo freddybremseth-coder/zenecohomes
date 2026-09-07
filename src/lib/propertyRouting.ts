@@ -1,6 +1,7 @@
 import type { Locale } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
+const SPANISH_LIST_PATH = "/es/propiedades";
 
 export const propertyListPathByLocale: Record<Locale, string> = {
   no: "/eiendommer",
@@ -12,20 +13,30 @@ export function getPropertyDetailPath(ref: string, locale: Locale) {
   return `${propertyListPathByLocale[locale]}/${encodeURIComponent(ref)}`;
 }
 
+export function getSpanishPropertyDetailPath(ref: string) {
+  return `${SPANISH_LIST_PATH}/${encodeURIComponent(ref)}`;
+}
+
 export function propertyLanguageLinks(ref: string, current: Locale) {
-  return (["no", "de", "en"] as Locale[]).map((locale) => ({
-    locale,
-    href: getPropertyDetailPath(ref, locale),
-    current: locale === current,
-  }));
+  return [
+    ...(["no", "de", "en"] as Locale[]).map((locale) => ({
+      locale,
+      href: getPropertyDetailPath(ref, locale),
+      current: locale === current,
+    })),
+    { locale: "es" as const, href: getSpanishPropertyDetailPath(ref), current: false },
+  ];
 }
 
 export function propertyListLanguageLinks(current: Locale) {
-  return (["no", "de", "en"] as Locale[]).map((locale) => ({
-    locale,
-    href: propertyListPathByLocale[locale],
-    current: locale === current,
-  }));
+  return [
+    ...(["no", "de", "en"] as Locale[]).map((locale) => ({
+      locale,
+      href: propertyListPathByLocale[locale],
+      current: locale === current,
+    })),
+    { locale: "es" as const, href: SPANISH_LIST_PATH, current: false },
+  ];
 }
 
 export function propertyHreflang(ref: string) {
@@ -34,5 +45,6 @@ export function propertyHreflang(ref: string) {
     "x-default": `${BASE}${getPropertyDetailPath(ref, "no")}`,
     "de-DE": `${BASE}${getPropertyDetailPath(ref, "de")}`,
     en: `${BASE}${getPropertyDetailPath(ref, "en")}`,
+    "es-ES": `${BASE}${getSpanishPropertyDetailPath(ref)}`,
   };
 }
