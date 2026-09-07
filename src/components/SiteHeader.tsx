@@ -3,21 +3,29 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { navLinks, withLocale, type Locale } from "@/lib/i18n";
+import { navLinks, withLocale, type SiteLocale } from "@/lib/i18n";
 
-type LanguageLink = { locale: Locale; href: string; current: boolean };
+type LanguageLink = { locale: SiteLocale; href: string; current: boolean };
 
 export function SiteHeader({
   locale = "no",
   languageLinks,
 }: {
-  locale?: Locale;
+  locale?: SiteLocale;
   languageLinks?: LanguageLink[];
 } = {}) {
   const links = navLinks(locale);
   const [menuOpen, setMenuOpen] = useState(false);
-  const openLabel = locale === "de" ? "Menü öffnen" : locale === "en" ? "Open menu" : "Åpne meny";
-  const closeLabel = locale === "de" ? "Menü schließen" : locale === "en" ? "Close menu" : "Lukk meny";
+  const openLabel =
+    locale === "de" ? "Menü öffnen" : locale === "en" ? "Open menu" : locale === "es" ? "Abrir menú" : "Åpne meny";
+  const closeLabel =
+    locale === "de"
+      ? "Menü schließen"
+      : locale === "en"
+        ? "Close menu"
+        : locale === "es"
+          ? "Cerrar menú"
+          : "Lukk meny";
 
   return (
     <header className="site-header">
