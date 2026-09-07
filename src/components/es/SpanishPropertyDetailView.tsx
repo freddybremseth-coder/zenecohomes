@@ -10,13 +10,13 @@ import {
   getPropertyArea,
   getPropertyImages,
   getPropertyRef,
-  getPropertyTown,
   type Property,
 } from "@/lib/realtyflow";
 import {
   formatSpanishPrice,
   getSpanishPropertyDescription,
   getSpanishPropertyHeading,
+  getSpanishPropertyPlace,
   getSpanishPropertyTitle,
   getSpanishPropertyType,
 } from "@/lib/spanishProperty";
@@ -47,7 +47,7 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
   const heading = getSpanishPropertyHeading(property);
   const type = getSpanishPropertyType(property);
   const description = getSpanishPropertyDescription(property);
-  const town = getPropertyTown(property) || property.location || "Costa Blanca";
+  const town = getSpanishPropertyPlace(property) || "Costa Blanca";
   const images = getPropertyImages(property);
   const mainImage = getPrimaryImage(property);
   const area = getPropertyArea(property);
