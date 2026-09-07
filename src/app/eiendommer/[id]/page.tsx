@@ -1,6 +1,7 @@
 import { PropertyDetailView, PropertyNotFoundView } from "@/components/PropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
 import {
+  buildEditorialDescription,
   formatPriceForLocale,
   getLocalizedPropertyType,
   getProperties,
@@ -28,9 +29,19 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       : `${propType} i ${town}`
     : "Bolig i Spania";
   const title = cleanTitle;
-  const description = property
-    ? `${propType}${property.bedrooms ? ` med ${property.bedrooms} soverom` : ""} i ${town}. ${formatPriceForLocale(property.price, "no")} – se pris, estimert kjøpskostnad, hva som bør kontrolleres og Zen Eco Homes' vurdering.`
-    : "Bolig til salgs i Spania hos Zen Eco Homes.";
+  // Meta-beskrivelse: bruk RealtyFlows redaksjonelle tekst (editorial_no) som autoritativ
+  // kilde når den finnes, ellers en ren faktabasert fallback.
+  const editorialMeta =
+    property && property.editorial_no_approved !== false
+      ? buildEditorialDescription(property.editorial_no).replace(/\s+/g, " ").trim()
+      : "";
+  const description = editorialMeta
+    ? editorialMeta.length > 160
+      ? `${editorialMeta.slice(0, 157).trimEnd()}…`
+      : editorialMeta
+    : property
+      ? `${propType}${property.bedrooms ? ` med ${property.bedrooms} soverom` : ""} i ${town}. ${formatPriceForLocale(property.price, "no")} – se pris, estimert kjøpskostnad, hva som bør kontrolleres og Zen Eco Homes' vurdering.`
+      : "Bolig til salgs i Spania hos Zen Eco Homes.";
   const ogImage = `https://www.zenecohomes.com/eiendommer/${encodeURIComponent(ref)}/og`;
 
   return {

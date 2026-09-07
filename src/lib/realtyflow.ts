@@ -1,3 +1,46 @@
+/** RealtyFlows redaksjonelle norske tekst-objekt (fra property-editorial-pipelinen). */
+export type EditorialNo = {
+  headline_no?: string;
+  intro_no?: string;
+  bullets_no?: string[];
+  orientation_no?: string;
+  model?: string;
+  generation_mode?: string;
+};
+
+/**
+ * Bygger ferdig norsk redaksjonell beskrivelse fra editorial_no (objekt eller
+ * JSON-streng). Returnerer tom streng hvis den ikke finnes eller er tom.
+ * Ren template-fallback uten reell prosa (kun bar intro, ingen punkter) slippes
+ * IKKE gjennom – da faller vi heller tilbake til rå feed-tekst.
+ */
+export function buildEditorialDescription(value: EditorialNo | string | null | undefined): string {
+  if (!value) return "";
+  let obj: EditorialNo | null = null;
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (!trimmed) return "";
+    try {
+      obj = JSON.parse(trimmed) as EditorialNo;
+    } catch {
+      // Ikke et JSON-objekt – behandle strengen som ferdig tekst.
+      return trimmed;
+    }
+  } else if (typeof value === "object") {
+    obj = value;
+  }
+  if (!obj) return "";
+
+  const intro = typeof obj.intro_no === "string" ? obj.intro_no.trim() : "";
+  const bullets = Array.isArray(obj.bullets_no)
+    ? obj.bullets_no.filter((b) => typeof b === "string" && b.trim()).map((b) => `• ${b.trim()}`)
+    : [];
+
+  // Kun bar template-fallback (ingen punkter + veldig kort intro) → ikke bruk.
+  if (obj.generation_mode === "template" && bullets.length === 0 && intro.length < 60) return "";
+  return [intro, bullets.join("\n")].filter(Boolean).join("\n\n").trim();
+}
+
 export type Property = {
   id?: string;
   ref?: string;
@@ -20,6 +63,14 @@ export type Property = {
   marketing_description_no?: string;
   marketing_description_en?: string;
   marketing_description_de?: string;
+  // RealtyFlow redaksjonell normalisering (norsk faktabasert tekst). editorial_no
+  // er den autoritative normaliserte beskrivelsen (strukturert objekt), mens
+  // source_description er rå feed-tekst som aldri overskrives. Se realtyflow-pro
+  // sin property-editorial-pipeline.
+  editorial_no?: EditorialNo | string | null;
+  editorial_no_approved?: boolean | null;
+  source_description?: string | null;
+  amenities_no?: string | null;
   location?: string;
   town?: string;
   price?: number;
@@ -516,6 +567,15 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
 }
 
 export function getLocalizedPropertyDescription(property: Property, locale: PropertyLocale = "no") {
+  // Norsk: bruk RealtyFlows redaksjonelle, faktabaserte tekst (editorial_no) når den
+  // finnes. Rå feed-beskrivelse (source_description/description) er fallback. Ingen
+  // AI-kall her – teksten er ferdig generert i RealtyFlow.
+  if (locale === "no" && property.editorial_no_approved !== false) {
+    // Respekter godkjenning: vis redaksjonell tekst med mindre den er eksplisitt ikke godkjent.
+    const editorial = buildEditorialDescription(property.editorial_no);
+    if (editorial) return editorial;
+  }
+
   const localized = pickLongest([
     ...localizedFieldCandidates("marketing_description", locale).map((field) => readField(property, field)),
     ...localizedFieldCandidates("description", locale).map((field) => readField(property, field)),
