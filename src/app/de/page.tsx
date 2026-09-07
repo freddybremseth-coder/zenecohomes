@@ -14,11 +14,11 @@ const BOOKING = "/de#kontakt";
 export const metadata: Metadata = {
   title: "Immobilie in Spanien kaufen | Costa Blanca Berater",
   description:
-    "Neubau, Villen und Grundstücke an der Costa Blanca – mit unabhängiger Beratung auf Deutsch. Region, Budget, Kaufprozess, NIE und Anwalt sicher koordiniert.",
+    "Neubau, Villen und Grundstücke an der Costa Blanca – mit unabhängiger Beratung (Englisch, Norwegisch, Spanisch). Region, Budget, Kaufprozess, NIE und Anwalt sicher koordiniert.",
   alternates: { canonical: "/de", languages: homeHreflang() },
   openGraph: {
     title: "Immobilie in Spanien kaufen | Zen Eco Homes",
-    description: "Neubau und Immobilien an der Costa Blanca mit deutschsprachiger Beratung.",
+    description: "Neubau und Immobilien an der Costa Blanca mit unabhängiger Beratung.",
     url: `${BASE}/de`,
     locale: ogLocale.de,
     type: "website",
@@ -35,7 +35,8 @@ export default function GermanHome() {
         <h1>Sicher eine Immobilie in Spanien kaufen</h1>
         <p>
           Zen Eco Homes begleitet internationale Käufer beim Kauf von Neubauten, Villen und Grundstücken an
-          der Costa Blanca – unabhängig, auf Deutsch, von der Region bis zur Schlüsselübergabe.
+          der Costa Blanca – unabhängig, von der Region bis zur Schlüsselübergabe. Diese Website ist auf
+          Deutsch verfügbar; die persönliche Beratung bieten wir auf Englisch, Norwegisch und Spanisch.
         </p>
         <div className="hero-actions">
           <Link className="contact-button" href={BOOKING}>
@@ -140,7 +141,8 @@ export default function GermanHome() {
           Erzählen Sie uns, wonach Sie suchen
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 620, lineHeight: 1.7 }}>
-          Wir melden uns persönlich – unabhängig, auf Deutsch, und ohne Verpflichtung.
+          Wir melden uns persönlich – unabhängig und ohne Verpflichtung. Die Beratung erfolgt auf Englisch,
+          Norwegisch oder Spanisch.
         </p>
         <div style={{ maxWidth: 760, marginTop: 18 }}>
           <ContactForm locale="de" variant="compact" />

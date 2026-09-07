@@ -26,7 +26,7 @@ function getGermanRegionLabel(region?: string) {
 export const metadata = {
   title: "Immobilien zum Verkauf in Spanien | Neubau an der Costa Blanca",
   description:
-    "Suchen Sie Villen, Wohnungen, Reihenhäuser und moderne Neubauten in Spanien. Zen Eco Homes begleitet internationale Käufer auf Deutsch.",
+    "Suchen Sie Villen, Wohnungen, Reihenhäuser und moderne Neubauten in Spanien. Zen Eco Homes begleitet internationale Käufer unabhängig.",
   alternates: {
     canonical: "/de/immobilien",
     languages: {
@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: "Immobilien zum Verkauf in Spanien | Zen Eco Homes",
     description:
-      "Suchen Sie Neubau, Villen und Wohnungen an der Costa Blanca Nord, Costa Blanca Süd und Costa Cálida mit deutschsprachiger Beratung.",
+      "Suchen Sie Neubau, Villen und Wohnungen an der Costa Blanca Nord, Costa Blanca Süd und Costa Cálida mit unabhängiger Beratung.",
     url: "https://www.zenecohomes.com/de/immobilien",
     locale: "de_DE",
     type: "website",

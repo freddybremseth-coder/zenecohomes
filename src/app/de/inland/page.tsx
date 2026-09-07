@@ -6,7 +6,7 @@ import { homeLanguageLinks } from "@/lib/i18n";
 export const metadata = {
   title: "Inland – Immobilie und Grundstück im Landesinneren Spaniens | Pinoso, Aspe, Novelda",
   description:
-    "Entdecken Sie das Hinterland der Costa Blanca: größere Grundstücke, Fincas, Neubauten und Ruhe rund um Pinoso, Aspe und Novelda. Beratung auf Deutsch zu Wasser, Strom, Zufahrt und sicherem Kaufprozess.",
+    "Entdecken Sie das Hinterland der Costa Blanca: größere Grundstücke, Fincas, Neubauten und Ruhe rund um Pinoso, Aspe und Novelda. Beratung auf Englisch, Norwegisch und Spanisch zu Wasser, Strom, Zufahrt und sicherem Kaufprozess.",
   alternates: {
     canonical: "/de/inland",
     languages: {
@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: "Inland in Spanien | Zen Eco Homes",
     description:
-      "Immobilie, Grundstück und Finca im Hinterland der Costa Blanca. Mehr Platz, Natur und niedrigere Quadratmeterpreise – mit sicherer Beratung auf Deutsch.",
+      "Immobilie, Grundstück und Finca im Hinterland der Costa Blanca. Mehr Platz, Natur und niedrigere Quadratmeterpreise – mit sicherer Beratung auf Englisch, Norwegisch und Spanisch.",
     url: "https://www.zenecohomes.com/de/inland",
     type: "website",
   },
@@ -73,7 +73,7 @@ export default function GermanInlandPage() {
         <p>
           Sie möchten mehr Platz, Natur und Ruhe als an der Küste? Im Hinterland rund um Pinoso, Aspe und Novelda
           finden Sie größere Grundstücke, Fincas und Neubauten zu niedrigeren Quadratmeterpreisen – mit sicherer
-          Beratung auf Deutsch, den ganzen Weg.
+          Beratung auf Englisch, Norwegisch und Spanisch, den ganzen Weg.
         </p>
         <div className="hero-actions">
           <a className="contact-button" href="/tomter">

@@ -100,8 +100,8 @@ export default async function Home() {
           <span>Én trygg prosess med dialog, dokumenter og shortlist</span>
         </div>
         <div>
-          <strong>1329+ boliger</strong>
-          <span>Oppdateres løpende med regioner og områdevalg</span>
+          <strong>Boliger fra hele Costa Blanca</strong>
+          <span>Databasen oppdateres løpende med regioner og områdevalg</span>
         </div>
       </section>
 
@@ -207,18 +207,18 @@ export default async function Home() {
       <section className="section eco-section">
         <div className="section-heading">
           <p className="eyebrow"><Leaf size={15} /> Derfor «Eco»</p>
-          <h2>Energieffektive nybygg – ikke gamle, fuktige betongboliger</h2>
+          <h2>Energieffektive boliger bygget for dagens krav</h2>
           <p>
-            «Eco» i Zen Eco Homes handler om moderne nybygg med lav energibruk: god isolasjon mot både
-            vinterkulde og sommervarme, høy energiklasse og mulighet for solceller. Det gir lavere strømregning,
-            bedre inneklima og boliger som er rustet for strengere energikrav fram mot 2030.
+            «Eco» i Zen Eco Homes handler om boliger med lav energibruk: god isolasjon mot både vinterkulde og
+            sommervarme, høy energiklasse og mulighet for solceller. Det gir lavere strømregning, bedre inneklima
+            og boliger som er godt rustet for stadig strengere energikrav.
           </p>
         </div>
         <div className="eco-grid">
           <div>
             <Zap />
             <strong>Energiklasse A/B</strong>
-            <span>Moderne nybygg leveres med høy energistandard – langt bedre enn eldre spanske boliger.</span>
+            <span>Moderne boliger leveres med høy energistandard – langt bedre enn eldre bygningsmasse.</span>
           </div>
           <div>
             <Snowflake />
@@ -232,8 +232,8 @@ export default async function Home() {
           </div>
           <div>
             <ShieldCheck />
-            <strong>Klar for 2030-kravene</strong>
-            <span>EU strammer inn energikravene for salg og utleie. Energieffektive boliger står tryggere.</span>
+            <strong>Godt rustet for strengere energikrav</strong>
+            <span>Energikravene i EU skjerpes gradvis. Energieffektive boliger står tryggere for framtiden.</span>
           </div>
         </div>
       </section>
