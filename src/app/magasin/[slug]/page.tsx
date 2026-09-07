@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 import MarkdownArticle from "@/components/MarkdownArticle";
 import { ArticleView, buildArticleMetadata } from "@/components/ArticleView";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { allArticles, articleSilo, getMagazineArticle, siloedSlugs } from "@/lib/magazine";
+import { allArticles, articlePath, articleSilo, getMagazineArticle, siloedSlugs } from "@/lib/magazine";
 import { fetchPublishedPost, fetchPublishedPosts } from "@/lib/website-content";
 
 type PageProps = {
@@ -80,6 +80,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
+
+  // Datadrevet sikkerhetsnett: en siloet artikkel skal aldri serveres på /magasin.
+  // Speiler 301-redirecten i next.config, men styres av SILO_BY_SLUG – kan ikke drifte.
+  const staticArticle = getMagazineArticle(slug);
+  if (staticArticle && articleSilo(staticArticle)) {
+    permanentRedirect(articlePath(staticArticle));
+  }
+
   const cmsPost = await fetchPublishedPost("magasin", slug);
 
   if (cmsPost && !cmsPost.id.startsWith("fallback-")) {
