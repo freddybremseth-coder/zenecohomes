@@ -71,6 +71,9 @@ export type Property = {
   editorial_no_approved?: boolean | null;
   source_description?: string | null;
   amenities_no?: string | null;
+  // Deterministisk SEO-metadata fra RealtyFlow-editorial-pipelinen (uten branding).
+  meta_title_no?: string | null;
+  meta_description_no?: string | null;
   location?: string;
   town?: string;
   price?: number;
