@@ -209,7 +209,7 @@ export default async function EnglishPropertiesPage({
           ))}
         </div>
       </section>
-      <Footer />
+      <Footer locale="en" />
     </main>
   );
 }

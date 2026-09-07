@@ -12,7 +12,7 @@ const BASE = "https://www.zenecohomes.com";
 const BOOKING = "/en#kontakt";
 
 export const metadata: Metadata = {
-  title: "Buy Property in Spain | Zen Eco Homes",
+  title: "Buy Property in Spain | Costa Blanca Advisor",
   description:
     "New builds, villas and plots on the Costa Blanca with independent, English-speaking advice. Area, budget, buying process, NIE and lawyer safely coordinated.",
   alternates: { canonical: "/en", languages: homeHreflang() },
@@ -147,7 +147,7 @@ export default function EnglishHome() {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale="en" />
     </main>
   );
 }

@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata = {
-  title: "Immobilien vergleichen | Zen Eco Homes",
+  title: "Immobilien vergleichen – Seite an Seite",
   description:
     "Sehen Sie Ihre gespeicherten Immobilien nebeneinander – Preis, Preis pro m², Fläche, Schlafzimmer, Bäder und Energieklasse an einem Ort.",
   alternates: {
@@ -38,7 +38,7 @@ export default function VergleichenPage() {
       <section className="section">
         <CompareView locale="de" />
       </section>
-      <Footer />
+      <Footer locale="de" />
     </main>
   );
 }

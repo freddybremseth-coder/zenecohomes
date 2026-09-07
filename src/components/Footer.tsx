@@ -1,21 +1,73 @@
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
 
-export function Footer() {
+type FooterLink = { label: string; href: string; external?: boolean };
+
+const TAGLINE: Record<Locale, string> = {
+  no: "Norsk eiendomsrådgiver på Costa Blanca · Rådgivning først. Boligen etterpå.",
+  de: "Immobilienberater an der Costa Blanca · Beratung zuerst. Die Immobilie danach.",
+  en: "Property advisor on the Costa Blanca · Advice first. The property second.",
+};
+
+const SUBLINE: Record<Locale, string> = {
+  no: "Nybygg · Costa Blanca · Costa Cálida",
+  de: "Neubau · Costa Blanca · Costa Cálida",
+  en: "New builds · Costa Blanca · Costa Cálida",
+};
+
+const LINKS: Record<Locale, FooterLink[]> = {
+  no: [
+    { label: "Bolig i Spania", href: "/bolig-i-spania" },
+    { label: "Nybygg Costa Blanca", href: "/nybygg-costa-blanca" },
+    { label: "Eiendomsrådgiver Spania", href: "/eiendomsradgiver-spania" },
+    { label: "Tomt i Spania", href: "/tomt-i-spania" },
+    { label: "Om Freddy", href: "/om-freddy" },
+    { label: "freddybremseth.com", href: "https://www.freddybremseth.com", external: true },
+  ],
+  de: [
+    { label: "Immobilien", href: "/de/immobilien" },
+    { label: "Neubau Costa Blanca", href: "/de/neubau-costa-blanca" },
+    { label: "Immobilienberater Spanien", href: "/de/immobilienberater-spanien" },
+    { label: "Inland", href: "/de/inland" },
+    { label: "Über Freddy", href: "https://www.freddybremseth.com", external: true },
+  ],
+  en: [
+    { label: "Properties", href: "/en/properties" },
+    { label: "New build Costa Blanca", href: "/en/new-build-costa-blanca" },
+    { label: "Property advisor Spain", href: "/en/property-advisor-spain" },
+    { label: "Inland", href: "/en/inland" },
+    { label: "About Freddy", href: "https://www.freddybremseth.com", external: true },
+  ],
+};
+
+const MUSIC: Record<Locale, string> = {
+  no: "Re-Master Freddy (musikk)",
+  de: "Re-Master Freddy (Musik)",
+  en: "Re-Master Freddy (music)",
+};
+
+export function Footer({ locale = "no" }: { locale?: Locale } = {}) {
+  const links = LINKS[locale];
+
   return (
     <footer>
       <span>© {new Date().getFullYear()} Zen Eco Homes</span>
-      <span>Norsk eiendomsrådgiver på Costa Blanca · Rådgivning først. Boligen etterpå.</span>
-      <nav aria-label="Footer lenker" style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
-        <Link href="/bolig-i-spania">Bolig i Spania</Link>
-        <Link href="/nybygg-costa-blanca">Nybygg Costa Blanca</Link>
-        <Link href="/eiendomsradgiver-spania">Eiendomsrådgiver Spania</Link>
-        <Link href="/tomt-i-spania">Tomt i Spania</Link>
-        <Link href="/om-freddy">Om Freddy</Link>
-        <a href="https://www.freddybremseth.com" target="_blank" rel="noopener noreferrer">
-          freddybremseth.com
-        </a>
+      <span>{TAGLINE[locale]}</span>
+      <span>{SUBLINE[locale]}</span>
+      <nav aria-label="Footer" style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+        {links.map((l) =>
+          l.external ? (
+            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">
+              {l.label}
+            </a>
+          ) : (
+            <Link key={l.href} href={l.href}>
+              {l.label}
+            </Link>
+          ),
+        )}
         <a href="https://remaster.freddybremseth.com" target="_blank" rel="noopener noreferrer">
-          Re-Master Freddy (musikk)
+          {MUSIC[locale]}
         </a>
       </nav>
     </footer>

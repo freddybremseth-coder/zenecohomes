@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata = {
-  title: "Sammenlign boliger | Zen Eco Homes",
+  title: "Sammenlign boliger side ved side",
   description:
     "Se de lagrede boligene dine side ved side – pris, pris per m², areal, soverom, bad og energiklasse samlet på ett sted.",
   alternates: {

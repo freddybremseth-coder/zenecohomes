@@ -54,7 +54,7 @@ export default function GermanPortalPage() {
       <section id="portal">
         <PortalWorkspace locale="de" />
       </section>
-      <Footer />
+      <Footer locale="de" />
     </main>
   );
 }

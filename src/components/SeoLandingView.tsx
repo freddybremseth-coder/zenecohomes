@@ -151,7 +151,7 @@ export function SeoLandingView({ page, locale, eq }: Props) {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale={locale} />
     </main>
   );
 }

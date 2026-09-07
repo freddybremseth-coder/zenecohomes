@@ -54,7 +54,7 @@ export default function EnglishPortalPage() {
       <section id="portal">
         <PortalWorkspace locale="en" />
       </section>
-      <Footer />
+      <Footer locale="en" />
     </main>
   );
 }

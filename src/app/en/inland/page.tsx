@@ -139,7 +139,7 @@ export default function EnglishInlandPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale="en" />
     </main>
   );
 }

@@ -239,7 +239,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
       {
         question: "Which languages do you speak?",
         answer:
-          "We advise international buyers and communicate in English and German, so you understand every step without a language barrier.",
+          "Freddy advises in English, Norwegian and Spanish, so you understand every step of the process without a language barrier.",
       },
     ],
     related: [

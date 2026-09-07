@@ -139,7 +139,7 @@ export default function GermanInlandPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer locale="de" />
     </main>
   );
 }
