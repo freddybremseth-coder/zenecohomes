@@ -3938,3 +3938,28 @@ footer {
   font-size: 0.85rem;
   font-style: italic;
 }
+
+/* ── Boligvurdering (unik redaksjonell blokk) ─────── */
+.property-assessment {
+  background: var(--sage);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 28px;
+}
+.property-assessment .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.property-assessment .eyebrow svg {
+  color: var(--gold);
+}
+.property-assessment p:last-child {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}

@@ -6,6 +6,7 @@ import { AreaInsight } from "@/components/AreaInsight";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
+import { PropertyAssessment } from "@/components/PropertyAssessment";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { Footer } from "@/components/Footer";
 import { ReadMoreText } from "@/components/ReadMoreText";
@@ -469,6 +470,14 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               </span>
             ))}
           </div>
+
+          <PropertyAssessment
+            property={property}
+            locale={locale}
+            town={townDisplay}
+            regionKey={areaRegionKey}
+            typeLabel={type || (locale === "de" ? "Immobilie" : locale === "en" ? "property" : "bolig")}
+          />
 
           <article className="rich-text">
             <h2>{t.about}</h2>
