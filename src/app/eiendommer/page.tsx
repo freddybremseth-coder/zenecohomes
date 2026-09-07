@@ -16,27 +16,41 @@ import {
   regions,
 } from "@/lib/realtyflow";
 
-export const metadata = {
-  title: "Boliger til salgs i Spania | Nybygg på Costa Blanca og Costa Cálida",
-  description:
-    "Se moderne boliger, villaer, leiligheter og nybygg i Spania. Zen Eco Homes hjelper nordmenn med trygg kjøpsprosess på Costa Blanca og Costa Cálida.",
-  alternates: {
-    canonical: "/eiendommer",
-    languages: {
-      "nb-NO": "https://www.zenecohomes.com/eiendommer",
-      "x-default": "https://www.zenecohomes.com/eiendommer",
-      "de-DE": "https://www.zenecohomes.com/de/immobilien",
-      en: "https://www.zenecohomes.com/en/properties",
-    },
-  },
-  openGraph: {
-    title: "Boliger til salgs i Spania | Zen Eco Homes",
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | undefined>>;
+}) {
+  const params = await searchParams;
+  // Filtrerte/søkte varianter (?region=…, ?type=…, ?q=… osv.) skal ikke indekseres –
+  // det sparer crawl-budsjett og hindrer duplikat. Bar /eiendommer forblir indekserbar.
+  const isFiltered = ["q", "type", "region", "area", "minPrice", "maxPrice", "bedrooms", "bathrooms", "minSize", "lifestyle"].some(
+    (key) => Boolean(params[key]),
+  );
+
+  return {
+    title: "Boliger til salgs i Spania | Nybygg på Costa Blanca og Costa Cálida",
     description:
-      "Søk blant nybygg, villaer og leiligheter på Costa Blanca Nord, Costa Blanca Sør og Costa Cálida med norsk rådgivning.",
-    url: "https://www.zenecohomes.com/eiendommer",
-    type: "website",
-  },
-};
+      "Se moderne boliger, villaer, leiligheter og nybygg i Spania. Zen Eco Homes hjelper nordmenn med trygg kjøpsprosess på Costa Blanca og Costa Cálida.",
+    ...(isFiltered ? { robots: { index: false, follow: true } } : {}),
+    alternates: {
+      canonical: "/eiendommer",
+      languages: {
+        "nb-NO": "https://www.zenecohomes.com/eiendommer",
+        "x-default": "https://www.zenecohomes.com/eiendommer",
+        "de-DE": "https://www.zenecohomes.com/de/immobilien",
+        en: "https://www.zenecohomes.com/en/properties",
+      },
+    },
+    openGraph: {
+      title: "Boliger til salgs i Spania | Zen Eco Homes",
+      description:
+        "Søk blant nybygg, villaer og leiligheter på Costa Blanca Nord, Costa Blanca Sør og Costa Cálida med norsk rådgivning.",
+      url: "https://www.zenecohomes.com/eiendommer",
+      type: "website",
+    },
+  };
+}
 
 export default async function PropertiesPage({
   searchParams,

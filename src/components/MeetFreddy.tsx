@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-/** Diskré "Møt rådgiveren"-kort som viser hvem Freddy er og lenker til freddybremseth.com. */
+/** Diskré "Møt rådgiveren"-kort som viser hvem Freddy er og lenker til Om Freddy-siden. */
 export function MeetFreddy() {
   return (
     <section className="section meet-freddy">
@@ -12,16 +13,18 @@ export function MeetFreddy() {
         <p className="eyebrow">Møt rådgiveren</p>
         <h2>Freddy Bremseth</h2>
         <blockquote className="meet-freddy-quote">
-          «Jeg hjelper deg å unngå feilene de fleste gjør når de kjøper i Spania.»
+          «Jeg sier like ofte nei til et prosjekt som ja. Holder ikke beliggenheten eller papirene mål,
+          skal du få vite det.»
         </blockquote>
         <p>
-          Norsk eiendomsrådgiver som selv bor i Spania og kjenner Costa Blanca fra innsiden – fra kysten til
-          landsbyene i innlandet. Ved siden av eiendom skriver Freddy bøker om områdene, livet og kjøpsprosessen,
-          slik at du kan ta trygge valg.
+          Norsk, uavhengig boligrådgiver bosatt på Costa Blanca, med base i Biar. Freddy hjelper nordmenn
+          med å kjøpe bolig i Spania – trygt og på norsk – fra første samtale til utlevert nøkkel. Med
+          lokalkunnskap om både kysten og innlandet er målet alltid det samme: at du tar en informert
+          beslutning du blir stående i. Snakker norsk, engelsk og spansk.
         </p>
-        <a className="text-button" href="https://www.freddybremseth.com" target="_blank" rel="noopener noreferrer">
+        <Link className="text-button" href="/om-freddy">
           Bli bedre kjent med Freddy <ArrowRight size={16} />
-        </a>
+        </Link>
       </div>
     </section>
   );

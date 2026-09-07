@@ -3963,3 +3963,25 @@ footer {
   line-height: 1.7;
   font-size: 1.02rem;
 }
+
+/* ── Om Freddy ────────────────────────────────────── */
+.om-freddy-bio {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.om-freddy-bio p {
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+.om-freddy-sign {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--muted);
+}
+.section-heading .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

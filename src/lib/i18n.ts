@@ -155,7 +155,7 @@ export function navLinks(locale: Locale): NavLink[] {
     { label: "Keyholding", href: CARE_URL, external: true },
     { label: "Kjøpsprosess", href: "/kjopsprosessen" },
     { label: "Magasin", href: "/magasin" },
-    { label: "Om Freddy", href: "https://www.freddybremseth.com", external: true },
+    { label: "Om Freddy", href: "/om-freddy" },
     { label: "Min side", href: "/min-side", cta: true },
   ];
 }
