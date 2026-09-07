@@ -6,9 +6,22 @@ import {
   type Property,
 } from "@/lib/realtyflow";
 
+const PLACEHOLDER_TEXT = /\b(?:ukjent|ikke angitt|unknown)\b/i;
+const PLACEHOLDER_PLACE = /^(?:ukjent|ikke angitt|unknown|n\/a|na|-)$/i;
+
 function read(property: Property, key: string): string {
   const value = (property as Record<string, unknown>)[key];
   return typeof value === "string" ? value.trim() : "";
+}
+
+function cleanPlace(value?: string | null): string {
+  const place = (value || "").replace(/\s+/g, " ").trim();
+  if (!place || PLACEHOLDER_PLACE.test(place)) return "";
+  return place;
+}
+
+export function getSpanishPropertyPlace(property: Property): string {
+  return cleanPlace(getPropertyTown(property)) || cleanPlace(read(property, "location"));
 }
 
 function translated(property: Property, field: string): string {
@@ -64,7 +77,7 @@ export function getSpanishPropertyType(property: Property): string {
 
 export function getSpanishPropertyHeading(property: Property): string {
   const type = getSpanishPropertyType(property);
-  const town = getPropertyTown(property);
+  const town = getSpanishPropertyPlace(property);
   const bedrooms = property.bedrooms || 0;
   if (town && bedrooms) return `${type} de ${bedrooms} dormitorios en ${town}`;
   if (town) return `${type} en ${town}`;
@@ -74,7 +87,7 @@ export function getSpanishPropertyHeading(property: Property): string {
 
 export function getSpanishPropertyTitle(property: Property): string {
   const localized = read(property, "title_es") || translated(property, "title");
-  return localized || getSpanishPropertyHeading(property);
+  return localized && !PLACEHOLDER_TEXT.test(localized) ? localized : getSpanishPropertyHeading(property);
 }
 
 export function getSpanishPropertyDescription(property: Property): string {
@@ -83,9 +96,9 @@ export function getSpanishPropertyDescription(property: Property): string {
     read(property, "description_es") ||
     translated(property, "marketing_description") ||
     translated(property, "description");
-  if (localized) return localized;
+  if (localized && !PLACEHOLDER_TEXT.test(localized)) return localized;
 
-  const town = getPropertyTown(property);
+  const town = getSpanishPropertyPlace(property);
   const type = getSpanishPropertyType(property).toLowerCase();
   const facts = [
     property.bedrooms ? `${property.bedrooms} dormitorios` : "",
@@ -108,7 +121,7 @@ export function formatSpanishPrice(price?: number): string {
 }
 
 export function getSpanishPropertySeoDescription(property: Property): string {
-  const town = getPropertyTown(property) || property.location || "España";
+  const town = getSpanishPropertyPlace(property) || "España";
   return `${formatSpanishPrice(property.price)} · ${town} · ${getSpanishPropertyType(property)}. Solicita planos, disponibilidad, coste total orientativo y asesoramiento de Zen Eco Homes.`;
 }
 
