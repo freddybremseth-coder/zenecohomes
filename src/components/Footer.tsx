@@ -42,8 +42,11 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
   ],
   es: [
     { label: "Propiedades", href: "/es/propiedades" },
+    { label: "Zonas", href: "/es/zonas" },
+    { label: "Proceso de compra", href: "/es/proceso-de-compra" },
+    { label: "Guías", href: "/es/guias" },
     { label: "Obra nueva Costa Blanca", href: "/es/obra-nueva-costa-blanca" },
-    { label: "Asesor inmobiliario en España", href: "/es/asesor-inmobiliario-espana" },
+    { label: "Terrenos", href: "/es/terreno-en-espana" },
     { label: "Interior", href: "/es/interior" },
     { label: "Sobre Freddy", href: "/es/sobre-freddy" },
   ],
