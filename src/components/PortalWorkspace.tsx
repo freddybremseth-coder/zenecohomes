@@ -4,7 +4,6 @@ import { FormEvent, useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import {
   ArrowRight,
-  Bell,
   Building2,
   Calculator,
   CheckCircle2,
@@ -30,11 +29,9 @@ const buyerSteps = [
   { label: "Reservasjon", status: "Ikke startet" },
 ];
 
-const savedProperties = [
-  { ref: "demo-1", title: "Villa med basseng i Finestrat", location: "Finestrat", price: "Pris på forespørsel", href: "/eiendommer?area=Finestrat" },
-  { ref: "demo-2", title: "Leilighet nær strand i Torrevieja", location: "Torrevieja", price: "Pris på forespørsel", href: "/eiendommer?area=Torrevieja" },
-  { ref: "demo-3", title: "Golfbolig ved Los Alcazares", location: "Los Alcazares", price: "Pris på forespørsel", href: "/eiendommer?area=Los%20Alcazares" },
-];
+// Ingen demo-boliger: favoritter kommer kun fra kundens egne lagrede boliger (localStorage).
+type SavedProperty = { ref: string; title: string; location: string; price: string; href: string };
+const savedProperties: SavedProperty[] = [];
 
 type PortalProperty = {
   id?: string;
@@ -297,12 +294,9 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
 export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   const p = PORTAL_STRINGS[locale];
   const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [mustChangePassword, setMustChangePassword] = useState(false);
   const [passwordStatus, setPasswordStatus] = useState<"idle" | "saved" | "error">("idle");
-  const [loginStatus, setLoginStatus] = useState<"idle" | "sent" | "error" | "missing-config">("idle");
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
   const [favorites, setFavorites] = useState(savedProperties);
   const [properties, setProperties] = useState<PortalProperty[]>([]);
@@ -482,28 +476,6 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
     }
   }
 
-  async function signInWithPassword(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setLoginStatus("idle");
-
-    if (!supabase) {
-      setLoginStatus("missing-config");
-      return;
-    }
-
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: loginEmail,
-      password: loginPassword,
-    });
-
-    if (!error) {
-      setSessionEmail(data.user?.email || null);
-      setMustChangePassword(Boolean(data.user?.user_metadata?.must_change_password));
-      setLoginPassword("");
-    }
-    setLoginStatus(error ? "error" : "sent");
-  }
-
   async function changePassword(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setPasswordStatus("idle");
@@ -588,6 +560,10 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
     }
   }
 
+  // Pre-login håndteres av selve Min side-siden (magic-link + fordeler). Portalen
+  // viser kun det innloggede dashbordet – ingen passord-skjema, admin eller demo.
+  if (!sessionEmail) return null;
+
   return (
     <section className="portal-shell">
       <aside className="portal-sidebar">
@@ -603,9 +579,6 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
             <UserRound size={17} /> {p.portalLabel}
           </span>
         </div>
-        <a className="portal-admin-link" href="https://realtyflow.chatgenius.pro">
-          <LayoutDashboard size={18} /> {p.adminNote}
-        </a>
       </aside>
 
       <div className="portal-main">
@@ -614,60 +587,13 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
             <p className="eyebrow">{sessionEmail ? p.loggedIn : p.portalLabel}</p>
             <h2>{p.topHeading}</h2>
           </div>
-          {sessionEmail ? (
-            <button className="portal-session-button" onClick={signOut} type="button">
-              <LogOut size={17} /> {p.signOut} {sessionEmail}
-            </button>
-          ) : (
-            <span>
-              <Bell size={17} /> {p.connecting}
-            </span>
-          )}
+          <button className="portal-session-button" onClick={signOut} type="button">
+            <LogOut size={17} /> {p.signOut} {sessionEmail}
+          </button>
         </div>
 
         <div className="portal-grid">
-          {!sessionEmail && (
-            <article className="portal-panel access-panel">
-              <div className="panel-title">
-                <Mail size={20} />
-                <h3>{p.accessTitle}</h3>
-              </div>
-              <form onSubmit={signInWithPassword}>
-                <label>
-                  {p.email}
-                  <input
-                    name="email"
-                    onChange={(event) => setLoginEmail(event.target.value)}
-                    placeholder={p.emailPh}
-                    required
-                    type="email"
-                    value={loginEmail}
-                  />
-                </label>
-                <label>
-                  {p.password}
-                  <input
-                    name="password"
-                    onChange={(event) => setLoginPassword(event.target.value)}
-                    placeholder={p.passwordPh}
-                    required
-                    type="password"
-                    value={loginPassword}
-                  />
-                </label>
-                <button type="submit">{p.login}</button>
-                {loginStatus === "sent" && <p className="form-success">{p.loginSuccess}</p>}
-                {loginStatus === "error" && (
-                  <p className="form-error">{p.loginError}</p>
-                )}
-                {loginStatus === "missing-config" && (
-                  <p className="form-error">{p.missingConfig}</p>
-                )}
-              </form>
-            </article>
-          )}
-
-          {sessionEmail && mustChangePassword && (
+          {mustChangePassword && (
             <article className="portal-panel access-panel wide-panel">
               <div className="panel-title">
                 <KeyRound size={20} />

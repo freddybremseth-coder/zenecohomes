@@ -32,7 +32,7 @@ type FeedbackState = { status: "saving" | "saved" | "error"; action?: "intereste
 
 const strings = {
   no: {
-    eyebrow: "Nexus personlig shortlist",
+    eyebrow: "Din personlige boligliste",
     title: "Boligene som passer deg best akkurat nå",
     intro: "Listen rangeres fra kundedialogen, boligønskene dine og tidligere tilbakemeldinger. Jo mer du markerer, jo mer presis blir neste shortlist.",
     login: "Logg inn på Min side for å se din personlige shortlist.",
@@ -45,7 +45,7 @@ const strings = {
     reason: "Hvorfor denne matcher",
   },
   en: {
-    eyebrow: "Nexus personal shortlist",
+    eyebrow: "Your personal property list",
     title: "The properties that fit you best right now",
     intro: "The list is ranked from your dialogue, preferences and previous feedback. Every signal makes the next shortlist more precise.",
     login: "Log in to My account to see your personal shortlist.",
@@ -58,7 +58,7 @@ const strings = {
     reason: "Why this matches",
   },
   de: {
-    eyebrow: "Nexus persönliche Auswahl",
+    eyebrow: "Ihre persönliche Immobilienliste",
     title: "Die Immobilien, die aktuell am besten zu Ihnen passen",
     intro: "Die Reihenfolge basiert auf Dialog, Wünschen und bisherigem Feedback. Jede Rückmeldung verbessert die nächste Auswahl.",
     login: "Melden Sie sich an, um Ihre persönliche Auswahl zu sehen.",

@@ -1,11 +1,19 @@
 import Link from "next/link";
-import { ExternalLink, LockKeyhole, ShieldCheck } from "lucide-react";
+import { CalendarDays, FileText, Heart, ListChecks, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
+
+const benefits = [
+  { icon: Heart, title: "Boliger og favoritter", text: "Boligforslag og favorittene dine samlet, alltid tilgjengelig." },
+  { icon: ListChecks, title: "Din personlige boligliste", text: "Personlig shortlist og boligønsker, oppdatert etter dialogen med Freddy." },
+  { icon: CalendarDays, title: "Visninger og neste steg", text: "Planlagte visninger, avtaler og hva som skjer videre i kjøpsreisen." },
+  { icon: FileText, title: "Dokumenter og kalkyler", text: "Prospekter, kostnadskalkyler og viktige dokumenter på ett sted." },
+  { icon: MessageSquareText, title: "Meldinger og oppfølging", text: "Hold dialogen med rådgiveren din trygt og ryddig." },
+];
 
 export const metadata = {
   title: "Min side",
@@ -26,24 +34,49 @@ export default function PortalPage() {
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero">
-        <p className="eyebrow">Min Side</p>
-        <h1>Din personlige boligoversikt og dialog</h1>
+        <p className="eyebrow">Min side</p>
+        <h1>Din boligreise – samlet på ett sted</h1>
         <p>
-          Se boligene vi vurderer sammen, marker hva som er interessant eller ikke passer, oppdater ønskene dine
-          og hold dialog, dokumenter og neste steg samlet på ett sted.
+          Når du samarbeider med Zen Eco Homes får du din egen side med boligforslag, favoritter, dokumenter,
+          meldinger og neste steg – trygt og ryddig.
         </p>
-        <div className="portal-actions">
-          <Link className="contact-button" href="#portal-login">
-            <LockKeyhole size={19} /> Åpne Min side
-          </Link>
-          <Link className="text-button light" href="https://realtyflow.chatgenius.pro">
-            <ShieldCheck size={18} /> Admin-innlogging <ExternalLink size={18} />
+      </section>
+
+      <section className="section">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 18,
+            marginBottom: 30,
+          }}
+        >
+          {benefits.map((item) => (
+            <article className="info-card" key={item.title}>
+              <item.icon />
+              <div>
+                <h2>{item.title}</h2>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div id="portal-login">
+          <PortalMagicLinkLogin />
+        </div>
+
+        <div style={{ maxWidth: 760, margin: "24px auto 0", textAlign: "center" }}>
+          <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
+            Tilgang aktiveres personlig for kunder hos Zen Eco Homes. Vi oppretter ikke offentlige kontoer
+            automatisk.
+          </p>
+          <Link className="text-button" href="/#kontakt">
+            <ShieldCheck size={17} /> Ikke kunde ennå? Start med en prat
           </Link>
         </div>
       </section>
-      <section id="portal-login" style={{ padding: "2rem 1rem 0" }}>
-        <PortalMagicLinkLogin />
-      </section>
+
       <section style={{ padding: "1rem 1rem 0" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <PersonalizedPortalMatches locale="no" />

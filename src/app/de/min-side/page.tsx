@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalLink, LockKeyhole, ShieldCheck } from "lucide-react";
+import { LockKeyhole } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
@@ -37,9 +37,6 @@ export default function GermanPortalPage() {
         <div className="portal-actions">
           <Link className="contact-button" href="#portal-login">
             <LockKeyhole size={19} /> Mein Bereich öffnen
-          </Link>
-          <Link className="text-button light" href="https://realtyflow.chatgenius.pro">
-            <ShieldCheck size={18} /> Admin-Login <ExternalLink size={18} />
           </Link>
         </div>
       </section>
