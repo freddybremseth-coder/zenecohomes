@@ -180,10 +180,11 @@ export function navLinks(locale: SiteLocale): NavLink[] {
     return [
       { label: "Propiedades", href: "/es/propiedades" },
       { label: "Interior", href: "/es/interior" },
-      { label: "Obra nueva", href: "/es/obra-nueva-costa-blanca" },
-      { label: "Asesoramiento", href: "/es/asesor-inmobiliario-espana" },
+      { label: "Terrenos", href: "/es/terreno-en-espana" },
+      { label: "Zonas", href: "/es/zonas" },
       { label: "Keyholding", href: CARE_URL, external: true },
-      { label: "Contacto", href: "/es#contacto" },
+      { label: "Proceso de compra", href: "/es/proceso-de-compra" },
+      { label: "Guías", href: "/es/guias" },
       { label: "Sobre Freddy", href: "/es/sobre-freddy" },
       { label: "Mi área", href: "/es/mi-area", cta: true },
     ];
