@@ -26,11 +26,40 @@ const areaAdvice: Record<string, { title: string; text: string; href: string }> 
   },
 };
 
+// Det første, store valget: hva slags Spania-drøm ser kunden for seg?
+// Dette skiller kyst-, bolig-, innland- og investeringsløpene tidlig.
+const dreamAdvice: Record<string, { title: string; text: string; href: string }> = {
+  "Kystliv": {
+    title: "Kystliv passer deg",
+    text: "Vi ser mot strandnære byer med service, restauranter og enkel feriebruk – som Villajoyosa, Finestrat, Albir og Torrevieja-området.",
+    href: "/eiendommer",
+  },
+  "Rolig boligområde": {
+    title: "Et rolig helårsområde passer deg",
+    text: "Vi ser mot etablerte boligområder med hverdagsliv, service og god infrastruktur – gjerne litt tilbaketrukket fra de mest turistpregede strøkene.",
+    href: "/eiendommer",
+  },
+  "Innland og mer plass": {
+    title: "Innlandet passer deg",
+    text: "Mer plass, natur og ro – tomt, finca eller villa i innlandet rundt Biar, Pinoso, Aspe og Novelda, med kysten under en time unna.",
+    href: "/inland",
+  },
+  "Investering / utleie": {
+    title: "Vi vurderer utleiepotensialet først",
+    text: "Vi ser på beliggenhet, etterspørsel, sesong og videresalg – ikke bare kvadratmeter. Beliggenhet og gangavstand betyr ofte mer enn størrelsen for leieinntekten.",
+    href: "/eiendommer",
+  },
+};
+
 export function BuyerMatchQuiz() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [resultArea, setResultArea] = useState("Usikker");
+  const [resultDream, setResultDream] = useState("Usikker");
 
-  const result = useMemo(() => areaAdvice[resultArea] || areaAdvice.Usikker, [resultArea]);
+  const result = useMemo(
+    () => dreamAdvice[resultDream] || areaAdvice[resultArea] || areaAdvice.Usikker,
+    [resultDream, resultArea],
+  );
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,9 +69,11 @@ export function BuyerMatchQuiz() {
 
     const preferredArea = data.preferred_area || "Usikker";
     setResultArea(preferredArea);
+    setResultDream(data.dream || "Usikker");
 
     const message = [
-      `Boligmatch-quiz: ${data.goal || "Ikke valgt"}`,
+      `Boligmatch-quiz: ${data.dream || "Ikke valgt"}`,
+      `Mål: ${data.goal || "Ikke valgt"}`,
       `Viktigst: ${data.priority || "Ikke valgt"}`,
       `Strand/golf/ro: ${data.lifestyle || "Ikke valgt"}`,
       `Flyplass: ${data.airport || "Ikke valgt"}`,
@@ -82,6 +113,16 @@ export function BuyerMatchQuiz() {
       </div>
       <div className="quiz-layout">
         <form className="quiz-form" onSubmit={onSubmit}>
+          <label className="quiz-dream">
+            Hva slags Spania ser du for deg?
+            <select name="dream" defaultValue="Usikker">
+              <option value="Kystliv">🌊 Kystliv – strand, restauranter og feriebruk</option>
+              <option value="Rolig boligområde">🏡 Rolig boligområde – helårsbolig og hverdagsliv</option>
+              <option value="Innland og mer plass">🌿 Innland og mer plass – tomt, natur, finca eller villa</option>
+              <option value="Investering / utleie">💰 Investering / utleie – avkastning og videresalg</option>
+              <option value="Usikker">❓ Usikker – hjelp meg å velge</option>
+            </select>
+          </label>
           <div className="form-grid">
             <label>
               Hva er målet?

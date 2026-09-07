@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarClock, MessageCircle, ShieldCheck } from "lucide-react";
+import { CalendarClock, MessageCircle } from "lucide-react";
 
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -22,28 +22,13 @@ export const metadata = {
   },
 };
 
-const cases = [
-  {
-    title: "Ekteparet som styrte unna det forsinkede prosjektet",
-    body: "Et ektepar i 50-årene ønsket en moderne leilighet nær stranden, med et budsjett rundt €450 000. De var i ferd med å binde seg til et prosjekt i Torrevieja som viste tegn til forsinkelse. Vi tok en uavhengig gjennomgang av papirene, og fant i stedet en energieffektiv leilighet i Finestrat med bankgaranti på plass fra dag én. Resultatet: en tryggere handel – og en god natts søvn gjennom hele byggeperioden.",
-  },
-  {
-    title: "Familien som fant roen i innlandet",
-    body: "En norsk familie var lei av kø, støy og høye priser langs kysten, og drømte om plass, utsikt og et ekte spansk nabolag. Vi så innover i landet – mot Biar og Villena – og fant en bolig med god standard, kort vei til flyplass, og olivenlunder som nærmeste nabo. For familier som prioriterer plass og helårskvalitet fremfor strandnærhet, er innlandet ofte den best bevarte hemmeligheten på Costa Blanca.",
-  },
-  {
-    title: "Kjøperen som slapp å bekymre seg for boligen mellom besøkene",
-    body: "En kjøper som bare skulle bruke boligen deler av året, var usikker på hvem som skulle se til den resten av tiden. Etter kjøpet tok vi hånd om det praktiske gjennom nøkkelhåndteringen vår: tilsyn, nøkler ved besøk og håndtering av småting som dukker opp. Trygghet fra dag én – også når du selv er hjemme i Norge.",
-  },
-];
-
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Freddy Bremseth",
   jobTitle: "Uavhengig boligrådgiver",
   worksFor: { "@type": "Organization", name: "Zen Eco Homes", url: "https://www.zenecohomes.com" },
-  address: { "@type": "PostalAddress", addressLocality: "Biar", addressRegion: "Alicante", addressCountry: "ES" },
+  address: { "@type": "PostalAddress", addressLocality: "Benidorm", addressRegion: "Alicante", addressCountry: "ES" },
   knowsLanguage: ["no", "en", "es"],
   image: "https://www.zenecohomes.com/assets/freddy-bremseth.jpg",
   url: "https://www.zenecohomes.com/om-freddy",
@@ -238,25 +223,6 @@ export default function OmFreddyPage() {
             </Link>
           </div>
         </article>
-      </section>
-
-      <section className="section">
-        <div className="section-heading">
-          <p className="eyebrow"><ShieldCheck size={15} /> Representative eksempler</p>
-          <h2>Slik jobber vi i praksis</h2>
-          <p>
-            Representative eksempler bygget på reelle situasjoner – ikke navngitte enkeltkunder. De viser
-            hvordan uavhengig rådgivning gjør en forskjell.
-          </p>
-        </div>
-        <div className="proof-grid">
-          {cases.map((c) => (
-            <article key={c.title}>
-              <h3>{c.title}</h3>
-              <p>{c.body}</p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <Testimonials />

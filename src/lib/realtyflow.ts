@@ -537,6 +537,34 @@ export function getLocalizedPropertyDescription(property: Property, locale: Prop
   return pickLongest([readField(property, "marketing_description"), readField(property, "description")]);
 }
 
+/**
+ * Substring-basert normalisering av engelske/blandede feed-boligtyper til rene
+ * norske etiketter ("Ground Floor Bungalow" → "Bungalow", "Semidetached" →
+ * "Tomannsbolig", "Quad" → "Rekkehus"). Rekkefølgen er prioritert.
+ */
+function norwegianTypeFromRaw(raw: string): string {
+  const t = raw.toLowerCase();
+  const has = (...terms: string[]) => terms.some((term) => t.includes(term));
+  if (has("penthouse")) return "Toppleilighet";
+  if (has("studio")) return "Studioleilighet";
+  if (has("duplex")) return "Toplansleilighet";
+  if (has("bungalow")) return "Bungalow";
+  if (has("semi detached", "semi-detached", "semidetached", "tomannsbolig")) return "Tomannsbolig";
+  if (has("quad")) return "Rekkehus";
+  if (has("town", "terraced", "rekkehus", "reihenhaus")) return "Rekkehus";
+  if (has("apartment", "apartments", "flat", "wohnung", "leilighet", "ground floor", "top floor", "middle floor"))
+    return "Leilighet";
+  if (has("finca", "country house", "cortijo", "rural")) return "Finca";
+  if (has("villa", "detached", "chalet")) return "Villa";
+  if (has("plot", "land", "grundst")) return "Tomt";
+  if (has("commercial", "business", "local")) return "Næringslokale";
+  if (has("new build", "neubau", "nybygg", "obra nueva")) return "Nybygg";
+  // Ellers: gjør om ROPENDE/rå tekst til pen setningsform.
+  return raw
+    .toLowerCase()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 export function getLocalizedPropertyType(property: Property, locale: PropertyLocale = "no") {
   const localized = [
     ...localizedFieldCandidates("property_type", locale).map((field) => readField(property, field)),
@@ -548,7 +576,11 @@ export function getLocalizedPropertyType(property: Property, locale: PropertyLoc
 
   const raw = readField(property, "property_type") || readField(property, "type") || "Nybygg";
   const key = normalizeSearchText(raw);
-  return commonTypeTranslations[locale][key] || raw;
+  const dict = commonTypeTranslations[locale][key];
+  if (dict) return dict;
+  // Norsk er primærmarkedet: normaliser engelske/blandede feed-typer til rene etiketter.
+  if (locale === "no") return norwegianTypeFromRaw(raw);
+  return raw;
 }
 
 export function getPropertyTitle(property: Property) {

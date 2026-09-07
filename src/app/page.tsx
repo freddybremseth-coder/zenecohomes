@@ -266,7 +266,7 @@ export default async function Home() {
             <Leaf /> Energieffektive boliger
           </div>
           <div>
-            <Sparkles /> AI-støttet boligmatch
+            <Sparkles /> Boliger valgt etter dine behov
           </div>
           <div>
             <Building2 /> Nybygg og prosjekter

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowLeft, Bath, BedDouble, BookOpen, Coins, Download, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
+import { ArrowLeft, Bath, BedDouble, BookOpen, Check, Coins, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
 import { AreaInsight } from "@/components/AreaInsight";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
@@ -81,6 +81,8 @@ type DetailText = {
   askProperty: string;
   requestOffer: string;
   requestType: string;
+  fullInfoTitle: string;
+  fullInfoList: string[];
   residenceFallback: string;
   offerFallback: string;
 };
@@ -146,6 +148,15 @@ const T: Record<Locale, DetailText> = {
     interestedBody: "Send forespørsel, så hjelper vi deg med prospekt, visning og neste steg.",
     askProperty: "Spør om boligen",
     requestOffer: "Be om komplett tilbud",
+    fullInfoTitle: "Få komplett informasjon om denne boligen",
+    fullInfoList: [
+      "Prospekt og plantegninger",
+      "Oppdatert pris og tilgjengelighet",
+      "Hva som er inkludert",
+      "Estimert total kjøpskostnad",
+      "Freddys vurdering",
+      "Alternative boliger",
+    ],
     requestType: "Komplett tilbud/prospekt",
     residenceFallback: "Moderne bolig til salgs i Spania. Kontakt Zen Eco Homes for prospekt, tilgjengelighet og visning.",
     offerFallback: "Bolig til salgs i Spania. Be om komplett prospekt, oppdatert tilgjengelighet og norsk rådgivning.",
@@ -211,6 +222,15 @@ const T: Record<Locale, DetailText> = {
     askProperty: "Zur Immobilie fragen",
     requestOffer: "Komplettes Angebot",
     requestType: "Komplettes Angebot/Exposé",
+    fullInfoTitle: "Komplette Informationen zu dieser Immobilie erhalten",
+    fullInfoList: [
+      "Exposé und Grundrisse",
+      "Aktueller Preis und Verfügbarkeit",
+      "Was inbegriffen ist",
+      "Geschätzte Gesamtkaufkosten",
+      "Freddys Einschätzung",
+      "Alternative Immobilien",
+    ],
     residenceFallback: "Moderne Immobilie zum Verkauf in Spanien. Kontaktieren Sie Zen Eco Homes für Exposé, Verfügbarkeit und Besichtigung.",
     offerFallback: "Immobilie zum Verkauf in Spanien. Fordern Sie Exposé, aktuelle Verfügbarkeit und Beratung an.",
   },
@@ -275,6 +295,15 @@ const T: Record<Locale, DetailText> = {
     askProperty: "Ask about this property",
     requestOffer: "Request full offer",
     requestType: "Full offer/brochure",
+    fullInfoTitle: "Get complete information about this property",
+    fullInfoList: [
+      "Brochure and floor plans",
+      "Updated price and availability",
+      "What is included",
+      "Estimated total purchase cost",
+      "Freddy's assessment",
+      "Alternative properties",
+    ],
     residenceFallback: "Modern property for sale in Spain. Contact Zen Eco Homes for brochure, availability and viewing.",
     offerFallback: "Property for sale in Spain. Request the full brochure, updated availability and advice.",
   },
@@ -315,6 +344,15 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
         ? `/omrader/${areaRegionKey}`
         : "/omrader";
   const type = getLocalizedPropertyType(property, locale);
+  // Ren, spesifikk overskrift ("Villa med 3 soverom i Finestrat") i stedet for
+  // den rå, ofte maskinoversatte marketingtittelen.
+  const bedroomWord = locale === "de" ? "Schlafzimmern" : locale === "en" ? "bedrooms" : "soverom";
+  const withWord = locale === "de" ? "mit" : locale === "en" ? "with" : "med";
+  const inWord = locale === "de" ? "in" : locale === "en" ? "in" : "i";
+  const cleanHeading =
+    townDisplay && type
+      ? `${type}${property.bedrooms ? ` ${withWord} ${property.bedrooms} ${bedroomWord}` : ""} ${inWord} ${townDisplay}`
+      : title;
   const estimatedCosts = property.price ? Math.round(property.price * 0.135) : 0;
   const estimatedTotal = property.price ? property.price + estimatedCosts : 0;
   const detailPath = getPropertyDetailPath(ref, locale);
@@ -434,7 +472,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
             <ArrowLeft size={18} /> {t.allProperties}
           </Link>
           <p className="eyebrow">{townDisplay}</p>
-          <h1>{title}</h1>
+          <h1>{cleanHeading}</h1>
           <strong>{formatPriceForLocale(property.price, locale)}</strong>
           <div className="hero-actions">
             <FavoriteButton
@@ -597,16 +635,14 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
         </div>
 
         <aside className="sticky-card">
-          <h2>{t.interested}</h2>
-          <p>{t.interestedBody}</p>
-          <div className="property-cta-row">
-            <a className="mini-cta" href="#kontakt">
-              <MessageCircle size={16} /> {t.askProperty}
-            </a>
-            <a className="mini-cta" href="#kontakt">
-              <Download size={16} /> {t.requestOffer}
-            </a>
-          </div>
+          <h2>{t.fullInfoTitle}</h2>
+          <ul className="property-info-list">
+            {t.fullInfoList.map((item) => (
+              <li key={item}>
+                <Check size={15} /> {item}
+              </li>
+            ))}
+          </ul>
           <MortgageCalculator price={property.price} locale={locale} />
           <div id="kontakt" />
           <ContactForm
