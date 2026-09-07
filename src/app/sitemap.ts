@@ -9,6 +9,8 @@ import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
 import { localSeoLandingPagesDE } from "@/lib/localSeoLandingPages.de";
 import { seoLandingPagesEN } from "@/lib/seoLandingPages.en";
 import { localSeoLandingPagesEN } from "@/lib/localSeoLandingPages.en";
+import { seoLandingPagesES } from "@/lib/seoLandingPages.es";
+import { localSeoLandingPagesES } from "@/lib/localSeoLandingPages.es";
 import { getPropertyDetailPath } from "@/lib/propertyRouting";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
@@ -29,30 +31,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
+    "/de",
+    "/en",
+    "/es",
     "/eiendommer",
     "/de/immobilien",
     "/en/properties",
+    "/es/propiedades",
     "/tomter",
     "/inland",
     "/de/inland",
     "/en/inland",
+    "/es/interior",
     "/omrader",
     ...regions.map((region) => `/omrader/${region.key}`),
-    "/inland",
     ...inlandTowns.map((town) => `/inland/${town.slug}`),
     ...allSeoPages.map((page) => `/${page.slug}`),
     ...seoLandingPagesDE.map((page) => `/de/${page.slug}`),
     ...localSeoLandingPagesDE.map((page) => `/de/${page.slug}`),
     ...seoLandingPagesEN.map((page) => `/en/${page.slug}`),
     ...localSeoLandingPagesEN.map((page) => `/en/${page.slug}`),
+    ...seoLandingPagesES.map((page) => `/es/${page.slug}`),
+    ...localSeoLandingPagesES.map((page) => `/es/${page.slug}`),
     "/kjopsprosessen",
     "/kjopsprosess",
     "/guide",
     "/magasin",
     ...articlePaths,
+    "/om-freddy",
+    "/es/sobre-freddy",
     "/min-side",
     "/de/min-side",
     "/en/min-side",
+    "/es/mi-area",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: now,
@@ -60,17 +71,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       isArticleRoute(route) ||
       route === "/eiendommer" ||
       route === "/de/immobilien" ||
-      route === "/en/properties"
+      route === "/en/properties" ||
+      route === "/es/propiedades"
         ? isArticleRoute(route)
           ? "monthly"
           : "daily"
         : "weekly",
     priority:
-      route === ""
+      route === "" || route === "/de" || route === "/en" || route === "/es"
         ? 1
         : isArticleRoute(route)
           ? 0.75
-          : allSeoPages.some((page) => route === `/${page.slug}`)
+          : allSeoPages.some((page) => route === `/${page.slug}`) ||
+              seoLandingPagesES.some((page) => route === `/es/${page.slug}`) ||
+              localSeoLandingPagesES.some((page) => route === `/es/${page.slug}`)
             ? 0.86
             : 0.8,
   }));
@@ -80,7 +94,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .map((property) => getPropertyRef(property))
     .filter(Boolean);
   const propertyRoutes = propertyRefs.flatMap((ref) =>
-    (["no", "de", "en"] as const).map((locale) => ({
+    (["no", "de", "en", "es"] as const).map((locale) => ({
       url: `${baseUrl}${getPropertyDetailPath(ref, locale)}`,
       lastModified: now,
       changeFrequency: "daily" as const,
