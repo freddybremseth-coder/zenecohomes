@@ -6,11 +6,11 @@ import { SpanishPropertyCard } from "@/components/es/SpanishPropertyCard";
 import {
   getProperties,
   getPropertySearchText,
-  getPropertyType,
   normalizeSearchText,
   propertyMatchesArea,
   propertyMatchesLifestyle,
   propertyMatchesRegion,
+  propertyMatchesType,
   regions,
 } from "@/lib/realtyflow";
 
@@ -63,7 +63,7 @@ export default async function SpanishPropertiesPage({
 }) {
   const params = await searchParams;
   const q = normalizeSearchText(params.q || "");
-  const type = (params.type || "").toLowerCase();
+  const type = params.type || "";
   const region = params.region || "";
   const area = params.area || "";
   const minPrice = Number(params.minPrice || 0);
@@ -75,7 +75,7 @@ export default async function SpanishPropertiesPage({
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
     const matchesQuery = q ? haystack.includes(q) : true;
-    const matchesType = type ? getPropertyType(property).toLowerCase().includes(type) : true;
+    const matchesType = propertyMatchesType(property, type);
     const matchesRegion = propertyMatchesRegion(property, region);
     const matchesArea = propertyMatchesArea(property, area);
     const matchesMinPrice = minPrice && property.price ? property.price >= minPrice : true;
@@ -125,10 +125,11 @@ export default async function SpanishPropertiesPage({
           {area && <input type="hidden" name="area" value={area} />}
           <select name="type" defaultValue={params.type || ""}>
             <option value="">Todos los tipos</option>
-            <option>Villa</option>
-            <option value="Leilighet">Apartamento</option>
-            <option value="Rekkehus">Adosado</option>
-            <option value="Penthouse">Ático</option>
+            <option value="villa">Villa</option>
+            <option value="leilighet">Apartamento</option>
+            <option value="rekkehus">Adosado</option>
+            <option value="penthouse">Ático</option>
+            <option value="bungalow">Bungalow</option>
           </select>
           <select name="minPrice" defaultValue={params.minPrice || ""}>
             <option value="">Precio desde</option>
