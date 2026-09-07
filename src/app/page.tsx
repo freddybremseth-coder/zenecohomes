@@ -3,6 +3,7 @@ import { ArrowRight, Building2, Check, Leaf, ShieldCheck, Snowflake, Sparkles, S
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { GuideDownload } from "@/components/GuideDownload";
 import { MeetFreddy } from "@/components/MeetFreddy";
+import { Testimonials } from "@/components/Testimonials";
 import { PropertyExplorer } from "@/components/PropertyExplorer";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
@@ -182,6 +183,8 @@ export default async function Home() {
       </section>
 
       <MeetFreddy />
+
+      <Testimonials />
 
       <section className="section">
         <div className="section-heading">

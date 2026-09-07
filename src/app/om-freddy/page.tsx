@@ -4,6 +4,7 @@ import { CalendarClock, MessageCircle, ShieldCheck } from "lucide-react";
 
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
@@ -257,6 +258,8 @@ export default function OmFreddyPage() {
           ))}
         </div>
       </section>
+
+      <Testimonials />
 
       <section className="contact-section" id="kontakt-om">
         <div>
