@@ -28,6 +28,8 @@ export type Article = {
   sections: ArticleSection[];
   nextSteps: string[];
   faq: { question: string; answer: string }[];
+  /** Valgfri artikkel-CTA (f.eks. lenke til filtrert boligsøk eller Boligmatch). */
+  cta?: { label: string; href: string };
 };
 
 export const areas = [
@@ -691,6 +693,205 @@ export const articles: Article[] = [
           "Nei. I Spania dekkes meglerens provisjon normalt av utbygger/selger. Du som kjøper betaler ingenting til megler/rådgiver, men du må engasjere og betale din egen uavhengige advokat for juridisk kontroll.",
       },
     ],
+    cta: { label: "Prøv Boligmatchen – finn prosjekter som passer budsjettet", href: "/#boligmatch" },
+  },
+  {
+    slug: "bankgaranti-nybygg-spania",
+    title: "Bankgaranti ved nybygg i Spania: slik sikres pengene dine",
+    excerpt:
+      "Kjøper du nybygg på tegning i Spania, skal hver delbetaling sikres med bankgaranti på en egen sperret konto. Slik fungerer reglene – fra Ley 57/1968 til dagens LOE.",
+    date: "2026-09-07",
+    updated: "2026-09-07",
+    category: "Kjøpsprosess",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin/kjopsprosess-spania.svg",
+    imageAlt: "Illustrasjon av sikret betaling og bankgaranti ved nybygg i Spania",
+    seoTitle: "Bankgaranti ved nybygg i Spania | Ley 57/1968 forklart (2026/2027)",
+    seoDescription:
+      "Hvordan sikres forskuddsbetalinger ved kjøp av nybygg i Spania? Guide til bankgaranti, sperret konto og Ley 57/1968 / LOE for norske kjøpere.",
+    keywords: [
+      "bankgaranti nybygg Spania",
+      "Ley 57/1968 Spania",
+      "sikkerhet nybygg Spania",
+      "forskuddsbetaling utbygger Spania",
+      "aval bancario Spania",
+    ],
+    intro: [
+      "Når du kjøper nybygg «på tegning» (off-plan) i Spania, betaler du ofte en betydelig del av kjøpesummen underveis i byggeperioden – lenge før boligen står ferdig. Det store spørsmålet er: hva skjer med pengene dine hvis utbyggeren får økonomiske problemer, forsinkes kraftig, eller ikke fullfører prosjektet?",
+      "Spansk lov gir deg et sterkt vern her: samtlige forskuddsbetalinger skal sikres med en bankgaranti eller forsikring, og pengene skal settes inn på en egen, øremerket konto. Denne guiden forklarer hvordan ordningen fungerer, hva du må kontrollere, og hva du gjør hvis noe går galt. Dette er generell informasjon – din uavhengige advokat skal alltid verifisere garantiene i ditt konkrete kjøp.",
+    ],
+    sections: [
+      {
+        heading: "Hva er en bankgaranti ved nybygg – og hvorfor er den avgjørende?",
+        body: [
+          "En bankgaranti (spansk: aval bancario) eller en tilsvarende forsikringspolise er utbyggerens skriftlige forpliktelse om at du får tilbake alle forskuddsbetalte beløp – med renter – dersom boligen ikke leveres som avtalt. Garantien utstedes av en bank eller et forsikringsselskap, ikke av utbyggeren selv.",
+          "Poenget er å flytte risikoen bort fra deg som kjøper. Uten en gyldig garanti kan du i verste fall tape hele forskuddet hvis utbyggeren går konkurs midt i byggeperioden. Med garantien har du et selvstendig krav mot banken/forsikringsselskapet.",
+        ],
+      },
+      {
+        heading: "Loven bak: Fra Ley 57/1968 til dagens LOE",
+        body: [
+          "Kravet om å sikre forskuddsbetalinger stammer opprinnelig fra den historiske loven Ley 57/1968. Denne ble opphevet og videreført inn i byggeloven Ley de Ordenación de la Edificación (LOE), med endringene som trådte i kraft 1. januar 2016. Prinsippet er det samme, men reglene er modernisert.",
+        ],
+        table: {
+          caption: "Forenklet oversikt. Din advokat bekrefter hva som gjelder for ditt konkrete prosjekt.",
+          headers: ["Element", "Hva loven krever i dag"],
+          rows: [
+            ["Hvem er beskyttet", "Kjøpere som forskuddsbetaler for bolig under oppføring"],
+            ["Hva må sikres", "Alle beløp du betaler før overtakelse, pluss renter"],
+            ["Hvordan sikres det", "Bankgaranti (aval) eller forsikringspolise fra bank/forsikringsselskap"],
+            ["Hvor havner pengene", "En egen, øremerket («special») konto som kun kan brukes til byggingen"],
+            ["Når utløses kravet", "Ved manglende levering, vesentlig forsinkelse eller manglende byggetillatelse"],
+          ],
+        },
+      },
+      {
+        heading: "Slik fungerer garantien i praksis",
+        body: [
+          "To ting henger sammen: den øremerkede kontoen og det individuelle garantibeviset. Utbyggeren skal ha en egen konto for prosjektet der kjøpernes innbetalinger holdes atskilt fra selskapets øvrige økonomi, og hver kjøper skal få et eget garantidokument som dekker nettopp sine innbetalinger.",
+        ],
+        bullets: [
+          "Egen konto (cuenta especial): innbetalingene dine skal gå til en øremerket prosjektkonto, ikke rett inn i utbyggerens driftskonto.",
+          "Individuelt garantibevis (certificado individual): du skal motta et eget bevis som dekker dine konkrete delbetalinger – ikke bare en generell rammegaranti.",
+          "Renter: garantien skal også dekke renter på det innbetalte beløpet fra innbetalingsdato.",
+          "Hver delbetaling: nye innbetalinger underveis skal også være dekket – be om oppdatert dokumentasjon for hver betaling.",
+        ],
+      },
+      {
+        heading: "Hva du må sjekke før du betaler",
+        body: [
+          "Dette er nøyaktig den typen kontroll en uavhengig advokat gjør for deg før du overfører reservasjonsgebyr eller delbetalinger. Ikke betal store beløp før dette er på plass:",
+        ],
+        bullets: [
+          "At det finnes en gyldig bankgaranti eller forsikringspolise for prosjektet, utstedt av bank/forsikringsselskap.",
+          "At du får et individuelt garantibevis i ditt navn som dekker dine innbetalinger.",
+          "At kontonummeret i kontrakten er den øremerkede prosjektkontoen.",
+          "At byggetillatelsen (Licencia de Obra) foreligger.",
+          "At ferdigattest/brukstillatelse (Licencia de Primera Ocupación) skal foreligge før du gjør sluttbetalingen ved overtakelse.",
+        ],
+      },
+      {
+        heading: "Hva skjer hvis utbygger ikke leverer?",
+        body: [
+          "Dersom boligen ikke blir levert, blir vesentlig forsinket eller prosjektet ikke får nødvendige tillatelser, kan du kreve tilbake de innbetalte beløpene pluss renter ved å påberope garantien overfor banken eller forsikringsselskapet. Fordi kravet rettes mot en finansinstitusjon – ikke bare mot utbyggeren – står du langt tryggere enn uten garanti.",
+          "Nettopp derfor er dokumentasjonen så viktig. Har du de individuelle garantibevisene og kvitteringer på at innbetalingene gikk til den øremerkede kontoen, har advokaten din et konkret grunnlag å fremme kravet på.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Be om dokumentasjon på bankgaranti eller forsikring før du betaler reservasjonsgebyr.",
+      "La en uavhengig spansk advokat kontrollere garantien og den øremerkede kontoen.",
+      "Ta vare på individuelle garantibevis og kvitteringer for hver delbetaling.",
+      "Bekreft at brukstillatelsen foreligger før du gjør sluttbetalingen ved overtakelse.",
+    ],
+    faq: [
+      {
+        question: "Gjelder Ley 57/1968 fortsatt?",
+        answer:
+          "Selve loven Ley 57/1968 er opphevet, men prinsippet – at forskuddsbetalinger ved nybygg skal sikres – er videreført i byggeloven LOE, med endringer som trådte i kraft 1. januar 2016. I praksis har du fortsatt krav på at pengene sikres. Din advokat bekrefter hva som gjelder for ditt kjøp.",
+      },
+      {
+        question: "Må hver enkelt delbetaling være dekket?",
+        answer:
+          "Ja. Alle beløp du betaler før overtakelse skal være sikret, inkludert renter. Be om oppdatert garantidokumentasjon for hver innbetaling du gjør i byggeperioden.",
+      },
+      {
+        question: "Hva er en «egen» eller «sperret» konto?",
+        answer:
+          "Det er en øremerket prosjektkonto (cuenta especial) der kjøpernes innbetalinger holdes atskilt fra utbyggerens øvrige økonomi og bare kan brukes til byggingen. Sjekk at kontonummeret i kontrakten er denne kontoen.",
+      },
+    ],
+    cta: { label: "Bruk Boligmatchen for å finne trygge nybyggprosjekter", href: "/#boligmatch" },
+  },
+  {
+    slug: "nybygg-finestrat-omradeguide",
+    title: "Nybygg og moderne villaer i Finestrat: områdeguide for norske kjøpere",
+    excerpt:
+      "Vurderer du nybygg i Finestrat? Les om mikro-lokasjonene (Sierra Cortina, Balcón de Finestrat, Finestrat Pueblo), prisnivå, solforhold og hva du bør sjekke før du reserverer.",
+    date: "2026-09-07",
+    updated: "2026-09-07",
+    category: "Områdeguide",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin/omradeguide-spania.svg",
+    imageAlt: "Illustrasjon av Finestrat med fjell, kyst og moderne nybygg på Costa Blanca Nord",
+    seoTitle: "Nybygg og villa i Finestrat | Norsk rådgiverguide | Zen Eco Homes",
+    seoDescription:
+      "Vurderer du nybygg i Finestrat? Les om prisnivå, solforhold, mikrobeliggenheter (Sierra Cortina vs. Balcón) og se aktuelle prosjekter.",
+    keywords: [
+      "nybygg Finestrat",
+      "villa Finestrat nybygg",
+      "leilighet Finestrat Sierra Cortina",
+      "bolig Finestrat Costa Blanca",
+      "Balcón de Finestrat",
+    ],
+    intro: [
+      "Finestrat ligger på Costa Blanca Nord, i fjellsiden under det markante Puig Campana-fjellet og bare noen minutter fra strendene ved Benidorm. Kombinasjonen av fjell, sjøutsikt, nærhet til service og et stort innslag av moderne nybygg har gjort området til et av de mest populære blant nordmenn som vil ha nytt og energieffektivt uten å gi slipp på kystlivet.",
+      "Denne guiden gir deg innsikt vanlige portaler mangler: forskjellen på mikro-lokasjonene, hva du faktisk får for pengene, og hva du bør sjekke rundt utsikt, innsyn og byggeaktivitet før du reserverer.",
+    ],
+    sections: [
+      {
+        heading: "Hvorfor Finestrat?",
+        body: [
+          "Finestrat gir deg mye på én gang: panoramautsikt mot Benidorms skyline og Middelhavet, kort vei til strand, golf, shopping og et bredt helsetilbud, og samtidig roligere boligområder oppe i åssidene. For mange nordmenn er dette den ideelle balansen mellom livlig kystby og et mer avslappet helårsliv.",
+          "Området har svært mange nybyggprosjekter med høy energistandard – moderne leiligheter og frittliggende villaer med basseng, godt isolerte og ofte klargjort for solceller.",
+        ],
+        bullets: [
+          "Utsikt: mange prosjekter har fri sjøutsikt mot Benidorm-bukten.",
+          "Beliggenhet: 5–10 minutter til strand, ca. 40–50 minutter til Alicante flyplass.",
+          "Livsstil: helårsmiljø med service, golf og natur i Puig Campana-området.",
+          "Boligtype: stort utvalg moderne nybygg med lav energibruk.",
+        ],
+      },
+      {
+        heading: "Mikro-lokasjonene forklart",
+        body: [
+          "Finestrat er ikke ett ensartet område – hvor i kommunen du kjøper, avgjør både utsikt, hverdagsliv og prisnivå. Her er de viktigste å kjenne til:",
+        ],
+        bullets: [
+          "Sierra Cortina: etablert resort- og golfområde nær Puig Campana, med moderne leilighetskomplekser, fellesbasseng og kort vei til Benidorm. Populært for både helårsbruk og utleie.",
+          "Balcón de Finestrat: hillside-området med noen av de beste sjøutsiktene mot Benidorm-bukten – mye villaer og townhouses.",
+          "Finestrat Pueblo: den autentiske gamle landsbyen oppe i fjellsiden, roligere og mer spansk, med utsikt og karakter framfor strandnærhet.",
+        ],
+      },
+      {
+        heading: "Prisbilde og kvadratmeter",
+        body: [
+          "Prisene varierer med mikro-lokasjon, utsikt, standard og om det er leilighet eller frittliggende villa. Som en grov pekepinn ligger moderne nybygde leiligheter typisk fra rundt 250 000–450 000 euro, mens frittliggende villaer med basseng og sjøutsikt ofte starter rundt 500 000 euro og oppover.",
+          "Utsikt og nærhet til strand/golf er de faktorene som slår sterkest ut på prisen. Vi hjelper deg å vurdere hva som er riktig prisnivå for det konkrete prosjektet – og hva som faktisk er inkludert.",
+        ],
+      },
+      {
+        heading: "Freddys vurdering",
+        body: [
+          "«I Finestrat er det tre ting jeg alltid ber kjøpere sjekke før de reserverer: Hva skjer på nabotomtene? Et prosjekt med fri sjøutsikt i dag kan få utsikten bygget ned neste år. Hvordan er vind- og solforholdene på akkurat den beliggenheten? Og hvor mye innsyn får du fra naboterrasser i tett bebygde komplekser?»",
+          "«Dette er lokalkunnskap som ikke står i en portalannonse. Jeg drar gjerne på befaring for deg, eller går gjennom prosjektet på video, slik at du vet nøyaktig hva du kjøper.»",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bestem deg for mikro-lokasjon: strandnært og sosialt (Sierra Cortina), utsikt (Balcón de Finestrat) eller ro og karakter (Pueblo).",
+      "Sjekk byggeaktivitet og reguleringen på nabotomtene før du reserverer.",
+      "Vurder sol-, vind- og innsynsforhold på den konkrete beliggenheten.",
+      "Be om en uavhengig vurdering av prosjektet før du legger inn reservasjon.",
+    ],
+    faq: [
+      {
+        question: "Er Finestrat et godt sted for nordmenn å kjøpe nybygg?",
+        answer:
+          "Ja, Finestrat er blant de mest populære områdene på Costa Blanca Nord for nordmenn. Du får moderne, energieffektive nybygg med sjøutsikt, kort vei til strand og service i Benidorm, og samtidig roligere boligområder i fjellsiden.",
+      },
+      {
+        question: "Hva er forskjellen på Sierra Cortina og Balcón de Finestrat?",
+        answer:
+          "Sierra Cortina er et etablert resort- og golfområde med moderne leilighetskomplekser nær Benidorm, mens Balcón de Finestrat er et hillside-område kjent for noen av de beste sjøutsiktene, med mer villaer og townhouses.",
+      },
+      {
+        question: "Hvor langt er det fra Finestrat til flyplassen?",
+        answer:
+          "Det er cirka 40–50 minutter med bil til Alicante lufthavn (ALC), avhengig av nøyaktig beliggenhet og trafikk.",
+      },
+    ],
+    cta: { label: "Se aktuelle boliger i Finestrat", href: "/eiendommer?q=finestrat" },
   },
 ];
 

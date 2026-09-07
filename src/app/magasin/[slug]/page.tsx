@@ -322,6 +322,11 @@ export default async function ArticlePage({ params }: PageProps) {
                   <li key={step}>{step}</li>
                 ))}
               </ol>
+              {article.cta && (
+                <Link className="contact-button" href={article.cta.href} style={{ marginTop: 20 }}>
+                  {article.cta.label} <ArrowRight size={17} />
+                </Link>
+              )}
             </section>
 
             <section style={{ marginTop: 46 }}>
