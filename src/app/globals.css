@@ -1817,6 +1817,17 @@ select {
   margin: 4px 0 10px;
 }
 
+.meet-freddy-quote {
+  margin: 0 0 14px;
+  padding: 0 0 0 16px;
+  border-left: 3px solid var(--gold);
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--text);
+  font-style: italic;
+}
+
 @media (max-width: 620px) {
   .meet-freddy {
     gap: 18px;
@@ -3851,4 +3862,44 @@ footer {
   .eco-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── To-trinns kontaktskjema (progressiv profilering) ─ */
+.form-steps {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.form-steps span {
+  flex: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+}
+.form-steps span.active {
+  color: var(--gold-dark);
+  border-bottom-color: var(--gold);
+}
+.form-step-lead {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.form-step-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+.form-step-actions .submit-button {
+  flex: 1;
+}
+.form-step-actions .text-button {
+  white-space: nowrap;
 }

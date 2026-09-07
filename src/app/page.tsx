@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Building2, Check, Leaf, ShieldCheck, Snowflake, Sparkles, Sun, Zap } from "lucide-react";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
+import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyExplorer } from "@/components/PropertyExplorer";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
@@ -178,6 +179,8 @@ export default async function Home() {
           </article>
         </div>
       </section>
+
+      <MeetFreddy />
 
       <section className="section">
         <div className="section-heading">

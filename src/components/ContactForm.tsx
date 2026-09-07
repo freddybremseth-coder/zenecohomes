@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Send } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 
@@ -44,6 +44,13 @@ type Strings = {
   sending: string;
   success: string;
   error: string;
+  next: string;
+  back: string;
+  sendNow: string;
+  step1: string;
+  step2: string;
+  step1Lead: string;
+  step2Lead: string;
 };
 
 const T: Record<Locale, Strings> = {
@@ -77,6 +84,13 @@ const T: Record<Locale, Strings> = {
     sending: "Sender...",
     success: "Takk. Vi har mottatt forespørselen din.",
     error: "Noe gikk galt. Prøv igjen eller send e-post direkte.",
+    next: "Neste",
+    back: "Tilbake",
+    sendNow: "Send nå",
+    step1: "Steg 1 av 2",
+    step2: "Steg 2 av 2",
+    step1Lead: "Fortell oss kort hva du ser etter – så tar vi kontakt.",
+    step2Lead: "Legg gjerne til noen detaljer, så blir anbefalingene mer treffsikre (valgfritt).",
   },
   de: {
     name: "Name",
@@ -108,6 +122,13 @@ const T: Record<Locale, Strings> = {
     sending: "Senden...",
     success: "Danke. Wir haben Ihre Anfrage erhalten.",
     error: "Etwas ist schiefgelaufen. Bitte erneut versuchen oder direkt per E-Mail.",
+    next: "Weiter",
+    back: "Zurück",
+    sendNow: "Jetzt senden",
+    step1: "Schritt 1 von 2",
+    step2: "Schritt 2 von 2",
+    step1Lead: "Sagen Sie uns kurz, wonach Sie suchen – wir melden uns.",
+    step2Lead: "Fügen Sie gern ein paar Details hinzu, dann werden die Empfehlungen treffsicherer (optional).",
   },
   en: {
     name: "Name",
@@ -139,6 +160,13 @@ const T: Record<Locale, Strings> = {
     sending: "Sending...",
     success: "Thank you. We have received your enquiry.",
     error: "Something went wrong. Please try again or email us directly.",
+    next: "Next",
+    back: "Back",
+    sendNow: "Send now",
+    step1: "Step 1 of 2",
+    step2: "Step 2 of 2",
+    step1Lead: "Tell us briefly what you're looking for – we'll be in touch.",
+    step2Lead: "Feel free to add a few details to sharpen the recommendations (optional).",
   },
 };
 
@@ -154,13 +182,12 @@ export function ContactForm({
   const full = variant === "full";
   const leadSource = source || `zenecohomes-${locale}`;
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [step, setStep] = useState<1 | 2>(1);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function submitForm(form: HTMLFormElement) {
     setStatus("sending");
-    const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
-
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -173,121 +200,209 @@ export function ContactForm({
         request_type: requestType,
       }),
     });
-
     if (res.ok) {
       setStatus("sent");
       form.reset();
+      setStep(1);
     } else {
       setStatus("error");
     }
   }
 
-  return (
-    <form className="lead-form" onSubmit={onSubmit}>
-      <div className="form-grid">
-        <label>
-          {t.name}
-          <input name="name" required placeholder={t.namePh} />
-        </label>
-        <label>
-          {t.phone}
-          <input name="phone" placeholder="+34..." />
-        </label>
-      </div>
-      <label>
-        {t.email}
-        <input name="email" type="email" required placeholder={t.emailPh} />
-      </label>
-      {!propertyRef && (
+  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    submitForm(event.currentTarget);
+  }
+
+  function goNext() {
+    const form = formRef.current;
+    if (!form) return;
+    const name = form.elements.namedItem("name") as HTMLInputElement | null;
+    const email = form.elements.namedItem("email") as HTMLInputElement | null;
+    if (name && !name.reportValidity()) return;
+    if (email && !email.reportValidity()) return;
+    setStep(2);
+  }
+
+  // Kompakt variant (kald DE/EN-trafikk og boligsider): kort ett-trinns skjema.
+  if (!full) {
+    return (
+      <form className="lead-form" ref={formRef} onSubmit={onSubmit}>
         <div className="form-grid">
           <label>
-            {t.area}
-            <select name="preferred_area" defaultValue={t.areaOptions[0]}>
-              {t.areaOptions.map((o) => (
-                <option key={o}>{o}</option>
-              ))}
-            </select>
+            {t.name}
+            <input name="name" required placeholder={t.namePh} />
           </label>
           <label>
-            {t.budget}
-            <input name="budget" placeholder={t.budgetPh} />
+            {t.phone}
+            <input name="phone" placeholder="+34..." />
           </label>
         </div>
-      )}
-      {full && (
-        <>
+        <label>
+          {t.email}
+          <input name="email" type="email" required placeholder={t.emailPh} />
+        </label>
+        {!propertyRef && (
           <div className="form-grid">
             <label>
-              {t.propertyType}
-              <select name="property_type" defaultValue={t.propertyTypeOptions[0]}>
-                {t.propertyTypeOptions.map((o) => (
+              {t.area}
+              <select name="preferred_area" defaultValue={t.areaOptions[0]}>
+                {t.areaOptions.map((o) => (
                   <option key={o}>{o}</option>
                 ))}
               </select>
             </label>
             <label>
-              {t.bedrooms}
-              <input name="bedrooms" type="number" min="1" placeholder="2" />
+              {t.budget}
+              <input name="budget" placeholder={t.budgetPh} />
             </label>
           </div>
+        )}
+        <label>
+          {t.message}
+          <textarea
+            name="message"
+            rows={5}
+            placeholder={propertyTitle ? t.messagePhProp(propertyTitle) : t.messagePh}
+          />
+        </label>
+        <button className="submit-button" disabled={status === "sending"}>
+          <Send size={18} />
+          {status === "sending" ? t.sending : t.submit}
+        </button>
+        {status === "sent" && <p className="form-success">{t.success}</p>}
+        {status === "error" && <p className="form-error">{t.error}</p>}
+      </form>
+    );
+  }
+
+  // Full variant: to trinn (progressiv profilering) for å senke terskelen.
+  return (
+    <form className="lead-form" ref={formRef} onSubmit={onSubmit}>
+      <div className="form-steps">
+        <span className={step === 1 ? "active" : ""}>{t.step1}</span>
+        <span className={step === 2 ? "active" : ""}>{t.step2}</span>
+      </div>
+
+      <div hidden={step !== 1}>
+        <p className="form-step-lead">{t.step1Lead}</p>
+        <div className="form-grid">
           <label>
-            {t.timeline}
-            <select name="timeline" defaultValue={t.timelineOptions[1]}>
-              {t.timelineOptions.map((o) => (
+            {t.name}
+            <input name="name" required placeholder={t.namePh} />
+          </label>
+          <label>
+            {t.phone}
+            <input name="phone" placeholder="+34..." />
+          </label>
+        </div>
+        <label>
+          {t.email}
+          <input name="email" type="email" required placeholder={t.emailPh} />
+        </label>
+        <label>
+          {t.purchaseGoal}
+          <select name="purchase_goal" defaultValue={t.purchaseGoalOptions[0]}>
+            {t.purchaseGoalOptions.map((o) => (
+              <option key={o}>{o}</option>
+            ))}
+          </select>
+        </label>
+        <div className="form-step-actions">
+          <button type="button" className="submit-button" onClick={goNext}>
+            {t.next}
+          </button>
+          <button type="submit" className="text-button" disabled={status === "sending"}>
+            {status === "sending" ? t.sending : t.sendNow}
+          </button>
+        </div>
+      </div>
+
+      <div hidden={step !== 2}>
+        <p className="form-step-lead">{t.step2Lead}</p>
+        {!propertyRef && (
+          <div className="form-grid">
+            <label>
+              {t.area}
+              <select name="preferred_area" defaultValue={t.areaOptions[0]}>
+                {t.areaOptions.map((o) => (
+                  <option key={o}>{o}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              {t.budget}
+              <input name="budget" placeholder={t.budgetPh} />
+            </label>
+          </div>
+        )}
+        <div className="form-grid">
+          <label>
+            {t.propertyType}
+            <select name="property_type" defaultValue={t.propertyTypeOptions[0]}>
+              {t.propertyTypeOptions.map((o) => (
                 <option key={o}>{o}</option>
               ))}
             </select>
           </label>
-          <div className="form-grid">
-            <label>
-              {t.purchaseGoal}
-              <select name="purchase_goal" defaultValue={t.purchaseGoalOptions[0]}>
-                {t.purchaseGoalOptions.map((o) => (
-                  <option key={o}>{o}</option>
-                ))}
-              </select>
-            </label>
-            <label>
-              {t.financing}
-              <select name="financing_status" defaultValue={t.financingOptions[3]}>
-                {t.financingOptions.map((o) => (
-                  <option key={o}>{o}</option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div className="form-grid">
-            <label>
-              {t.spainExp}
-              <select name="spain_experience" defaultValue={t.spainExpOptions[0]}>
-                {t.spainExpOptions.map((o) => (
-                  <option key={o}>{o}</option>
-                ))}
-              </select>
-            </label>
-            <label>
-              {t.nextStep}
-              <select name="next_step" defaultValue={t.nextStepOptions[0]}>
-                {t.nextStepOptions.map((o) => (
-                  <option key={o}>{o}</option>
-                ))}
-              </select>
-            </label>
-          </div>
-        </>
-      )}
-      <label>
-        {t.message}
-        <textarea
-          name="message"
-          rows={5}
-          placeholder={propertyTitle ? t.messagePhProp(propertyTitle) : t.messagePh}
-        />
-      </label>
-      <button className="submit-button" disabled={status === "sending"}>
-        <Send size={18} />
-        {status === "sending" ? t.sending : t.submit}
-      </button>
+          <label>
+            {t.bedrooms}
+            <input name="bedrooms" type="number" min="1" placeholder="2" />
+          </label>
+        </div>
+        <label>
+          {t.timeline}
+          <select name="timeline" defaultValue={t.timelineOptions[1]}>
+            {t.timelineOptions.map((o) => (
+              <option key={o}>{o}</option>
+            ))}
+          </select>
+        </label>
+        <div className="form-grid">
+          <label>
+            {t.financing}
+            <select name="financing_status" defaultValue={t.financingOptions[3]}>
+              {t.financingOptions.map((o) => (
+                <option key={o}>{o}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            {t.spainExp}
+            <select name="spain_experience" defaultValue={t.spainExpOptions[0]}>
+              {t.spainExpOptions.map((o) => (
+                <option key={o}>{o}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <label>
+          {t.nextStep}
+          <select name="next_step" defaultValue={t.nextStepOptions[0]}>
+            {t.nextStepOptions.map((o) => (
+              <option key={o}>{o}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          {t.message}
+          <textarea
+            name="message"
+            rows={4}
+            placeholder={propertyTitle ? t.messagePhProp(propertyTitle) : t.messagePh}
+          />
+        </label>
+        <div className="form-step-actions">
+          <button type="button" className="text-button" onClick={() => setStep(1)}>
+            {t.back}
+          </button>
+          <button type="submit" className="submit-button" disabled={status === "sending"}>
+            <Send size={18} />
+            {status === "sending" ? t.sending : t.submit}
+          </button>
+        </div>
+      </div>
+
       {status === "sent" && <p className="form-success">{t.success}</p>}
       {status === "error" && <p className="form-error">{t.error}</p>}
     </form>

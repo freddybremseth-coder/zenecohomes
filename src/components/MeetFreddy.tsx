@@ -11,6 +11,9 @@ export function MeetFreddy() {
       <div className="meet-freddy-body">
         <p className="eyebrow">Møt rådgiveren</p>
         <h2>Freddy Bremseth</h2>
+        <blockquote className="meet-freddy-quote">
+          «Jeg hjelper deg å unngå feilene de fleste gjør når de kjøper i Spania.»
+        </blockquote>
         <p>
           Norsk eiendomsrådgiver som selv bor i Spania og kjenner Costa Blanca fra innsiden – fra kysten til
           landsbyene i innlandet. Ved siden av eiendom skriver Freddy bøker om områdene, livet og kjøpsprosessen,
