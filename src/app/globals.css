@@ -4103,3 +4103,27 @@ footer {
   border-left-width: 4px;
   background: linear-gradient(180deg, rgba(197,160,89,0.10), var(--sage));
 }
+
+.om-freddy-bio h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--dark);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  margin: 34px 0 12px;
+}
+.om-freddy-bio h3 {
+  color: var(--dark);
+  font-size: 1.15rem;
+  margin: 26px 0 10px;
+}
+.om-freddy-bio ul {
+  margin: 0 0 18px;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  line-height: 1.6;
+}
+.om-freddy-bio strong {
+  color: var(--dark);
+}

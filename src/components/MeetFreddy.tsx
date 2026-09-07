@@ -13,14 +13,14 @@ export function MeetFreddy() {
         <p className="eyebrow">Møt rådgiveren</p>
         <h2>Freddy Bremseth</h2>
         <blockquote className="meet-freddy-quote">
-          «Jeg sier like ofte nei til et prosjekt som ja. Holder ikke beliggenheten eller papirene mål,
-          skal du få vite det.»
+          «Rådgivning først. Boligen etterpå.»
         </blockquote>
         <p>
-          Norsk, uavhengig boligrådgiver bosatt på Costa Blanca, med base i Biar. Freddy hjelper nordmenn
-          med å kjøpe bolig i Spania – trygt og på norsk – fra første samtale til utlevert nøkkel. Med
-          lokalkunnskap om både kysten og innlandet er målet alltid det samme: at du tar en informert
-          beslutning du blir stående i. Snakker norsk, engelsk og spansk.
+          Norsk eiendomsrådgiver bosatt på Costa Blanca. Freddy bodde først 3,5 år i Ciudad Quesada – der han
+          jobbet med CRM-systemer for megler og driftet utleie – og holdt siden ukentlige informasjonsmøter på
+          Høvik for nordmenn som vurderte bolig i Spania. I 2025 flyttet han permanent tilbake, bor i Benidorm
+          og driver familiens olivengård i Biar. Han kjenner markedet fra Valencia til La Manga og hjelper deg
+          med områdevalg, boligjakt, effektive visninger, kjøpsprosess og utleievurdering.
         </p>
         <Link className="text-button" href="/om-freddy">
           Bli bedre kjent med Freddy <ArrowRight size={16} />
