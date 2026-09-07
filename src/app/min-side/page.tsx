@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ExternalLink, LockKeyhole, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -25,19 +26,22 @@ export default function PortalPage() {
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero">
         <p className="eyebrow">Min Side</p>
-        <h1>Kundeportal for kjøpere</h1>
+        <h1>Din personlige boligoversikt og dialog</h1>
         <p>
-          En ryddig portal for boligmatch, dokumenter og meldinger. Alt ligger samlet ett sted, med direkte
-          dialog med rådgiveren din.
+          Se boligene vi vurderer sammen, marker hva som er interessant eller ikke passer, oppdater ønskene dine
+          og hold dialog, dokumenter og neste steg samlet på ett sted.
         </p>
         <div className="portal-actions">
-          <Link className="contact-button" href="#portal">
-            <LockKeyhole size={19} /> Logg inn på Min side
+          <Link className="contact-button" href="#portal-login">
+            <LockKeyhole size={19} /> Åpne Min side
           </Link>
           <Link className="text-button light" href="https://realtyflow.chatgenius.pro">
             <ShieldCheck size={18} /> Admin-innlogging <ExternalLink size={18} />
           </Link>
         </div>
+      </section>
+      <section id="portal-login" style={{ padding: "2rem 1rem 0" }}>
+        <PortalMagicLinkLogin />
       </section>
       <section id="portal">
         <PortalWorkspace />
