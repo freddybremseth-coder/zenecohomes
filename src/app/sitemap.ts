@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
-import { allArticles } from "@/lib/magazine";
+import { allArticles, articlePath } from "@/lib/magazine";
 import { getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
 import { inlandTowns } from "@/lib/inland";
@@ -20,10 +20,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const cmsPosts = await fetchPublishedPosts("magasin");
   const articlePaths = Array.from(
     new Set([
-      ...allArticles.map((article) => `/magasin/${article.slug}`),
+      ...allArticles.map((article) => articlePath(article)),
       ...cmsPosts.map((post) => `/magasin/${post.slug}`),
     ]),
   );
+  const isArticleRoute = (route: string) =>
+    route.startsWith("/magasin/") || route.startsWith("/kjopsprosess/") || route.startsWith("/guide/");
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
@@ -44,6 +46,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...seoLandingPagesEN.map((page) => `/en/${page.slug}`),
     ...localSeoLandingPagesEN.map((page) => `/en/${page.slug}`),
     "/kjopsprosessen",
+    "/kjopsprosess",
+    "/guide",
     "/magasin",
     ...articlePaths,
     "/min-side",
@@ -53,18 +57,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${route}`,
     lastModified: now,
     changeFrequency:
-      route.startsWith("/magasin/") ||
+      isArticleRoute(route) ||
       route === "/eiendommer" ||
       route === "/de/immobilien" ||
       route === "/en/properties"
-        ? route.startsWith("/magasin/")
+        ? isArticleRoute(route)
           ? "monthly"
           : "daily"
         : "weekly",
     priority:
       route === ""
         ? 1
-        : route.startsWith("/magasin/")
+        : isArticleRoute(route)
           ? 0.75
           : allSeoPages.some((page) => route === `/${page.slug}`)
             ? 0.86

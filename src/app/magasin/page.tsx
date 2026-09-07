@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { allArticles } from "@/lib/magazine";
+import { allArticles, articlePath } from "@/lib/magazine";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const booksUrl = "https://books.freddybremseth.com";
@@ -189,7 +189,7 @@ export default async function MagazinePage() {
                   <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
                     <Clock size={15} /> {article.readingTime}
                   </span>
-                  <Link className="text-button" href={`/magasin/${article.slug}`}>
+                  <Link className="text-button" href={articlePath(article)}>
                     Les guide <ArrowRight size={16} />
                   </Link>
                 </div>

@@ -70,9 +70,9 @@ export const seoLandingPages: SeoLandingPage[] = [
       },
     ],
     related: [
-      { label: "Områdeguide for eiendomskjøp i Spania", href: "/magasin/omradeguide-eiendomskjop-i-spania" },
-      { label: "Kjøpsprosess for bolig i Spania", href: "/magasin/kjopsprosess-bolig-i-spania" },
-      { label: "Finansiering, notar og NIE", href: "/magasin/finansiering-notar-nie-boligkjop-spania" },
+      { label: "Områdeguide for eiendomskjøp i Spania", href: "/guide/omradeguide-eiendomskjop-i-spania" },
+      { label: "Kjøpsprosess for bolig i Spania", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
+      { label: "Finansiering, notar og NIE", href: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania" },
     ],
   },
   {
@@ -86,7 +86,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     seoDescription:
       "Se nybygg i Spania og få hjelp til å vurdere prosjekter, utbygger, betalingsplan, område, pris og trygg kjøpsprosess.",
     primaryCta: { label: "Se nybygg og boliger", href: "/eiendommer" },
-    secondaryCta: { label: "Kjøpe nå eller vente?", href: "/magasin/kjop-bolig-i-spania-na-eller-vente" },
+    secondaryCta: { label: "Kjøpe nå eller vente?", href: "/guide/kjop-bolig-i-spania-na-eller-vente" },
     sections: [
       {
         heading: "Hvorfor mange velger nybygg",
@@ -131,8 +131,8 @@ export const seoLandingPages: SeoLandingPage[] = [
       },
     ],
     related: [
-      { label: "Bør man kjøpe bolig i Spania nå, eller vente?", href: "/magasin/kjop-bolig-i-spania-na-eller-vente" },
-      { label: "Kjøpsprosess for bolig i Spania", href: "/magasin/kjopsprosess-bolig-i-spania" },
+      { label: "Bør man kjøpe bolig i Spania nå, eller vente?", href: "/guide/kjop-bolig-i-spania-na-eller-vente" },
+      { label: "Kjøpsprosess for bolig i Spania", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
       { label: "Boliger til salgs", href: "/eiendommer" },
     ],
   },
@@ -192,7 +192,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     related: [
       { label: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
-      { label: "Områdeguide", href: "/magasin/omradeguide-eiendomskjop-i-spania" },
+      { label: "Områdeguide", href: "/guide/omradeguide-eiendomskjop-i-spania" },
       { label: "Se boliger", href: "/eiendommer" },
     ],
   },
@@ -268,7 +268,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     seoDescription:
       "Kjøpe tomt i Spania? Få hjelp til å vurdere byggbarhet, regulering, vann, strøm, adkomst, arkitekt, kostnader og trygg prosess.",
     primaryCta: { label: "Se tomter", href: "/tomter" },
-    secondaryCta: { label: "Les tomteguiden", href: "/magasin/guide-tomtekjop-bygging-i-spania" },
+    secondaryCta: { label: "Les tomteguiden", href: "/guide/guide-tomtekjop-bygging-i-spania" },
     sections: [
       {
         heading: "Tomt gir frihet, men krever kontroll",
@@ -312,7 +312,7 @@ export const seoLandingPages: SeoLandingPage[] = [
       },
     ],
     related: [
-      { label: "Guide til tomtekjøp og bygging i Spania", href: "/magasin/guide-tomtekjop-bygging-i-spania" },
+      { label: "Guide til tomtekjøp og bygging i Spania", href: "/guide/guide-tomtekjop-bygging-i-spania" },
       { label: "Se tomter", href: "/tomter" },
       { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
     ],

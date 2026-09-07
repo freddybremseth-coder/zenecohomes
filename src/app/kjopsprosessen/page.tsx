@@ -80,10 +80,10 @@ export default function BuyingProcessPage() {
           kontrakt, notar og overtakelse.
         </p>
         <div className="hero-actions">
-          <Link className="text-button light" href="/magasin/kjopsprosess-bolig-i-spania">
+          <Link className="text-button light" href="/kjopsprosess/kjopsprosess-bolig-i-spania">
             Les komplett guide <ArrowRight size={17} />
           </Link>
-          <Link className="text-button light" href="/magasin/finansiering-notar-nie-boligkjop-spania">
+          <Link className="text-button light" href="/kjopsprosess/finansiering-notar-nie-boligkjop-spania">
             Finansiering, notar og NIE
           </Link>
         </div>
@@ -142,7 +142,7 @@ export default function BuyingProcessPage() {
             <strong>03</strong>
             <h3>Sammenlign områder</h3>
             <p>Riktig område påvirker livskvalitet, kostnader, utleie og videresalg.</p>
-            <Link className="text-button" href="/magasin/omradeguide-eiendomskjop-i-spania">
+            <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
               Les mer <ArrowRight size={16} />
             </Link>
           </article>

@@ -224,3 +224,57 @@ export const allArticles: Article[] = [...baseArticles, ...extraArticles];
 export function getMagazineArticle(slug: string) {
   return allArticles.find((article) => article.slug === slug);
 }
+
+export type Silo = "kjopsprosess" | "guide";
+
+/** Slug → silo. Styrer URL-struktur og tematisk gruppering; resten blir /magasin. */
+const SILO_BY_SLUG: Record<string, Silo> = {
+  "omkostninger-nybygg-spania": "kjopsprosess",
+  "bankgaranti-nybygg-spania": "kjopsprosess",
+  "kjopsprosess-bolig-i-spania": "kjopsprosess",
+  "finansiering-notar-nie-boligkjop-spania": "kjopsprosess",
+  "omradeguide-eiendomskjop-i-spania": "guide",
+  "guide-tomtekjop-bygging-i-spania": "guide",
+  "kjop-bolig-i-spania-na-eller-vente": "guide",
+  "nybygg-finestrat-omradeguide": "guide",
+};
+
+export const SILO_META: Record<Silo, { label: string; title: string; href: string; intro: string }> = {
+  kjopsprosess: {
+    label: "Kjøpsprosess",
+    title: "Kjøpsprosessen i Spania",
+    href: "/kjopsprosess",
+    intro:
+      "Alt du trenger å forstå før du kjøper: omkostninger og skatt, bankgaranti, finansiering, NIE, notar og selve prosessen fra reservasjon til overtakelse.",
+  },
+  guide: {
+    label: "Guide",
+    title: "Guider og områdeinnsikt",
+    href: "/guide",
+    intro:
+      "Områdeguider, livsstil og tryggere valg: hvor du bør kjøpe, kyst vs. innland, tomt og bygging, og når det lønner seg å slå til.",
+  },
+};
+
+export function articleSilo(article: Article): Silo | undefined {
+  return article.silo ?? SILO_BY_SLUG[article.slug];
+}
+
+/** Kanonisk basissti for en artikkel: /kjopsprosess, /guide eller /magasin. */
+export function articleBasePath(article: Article): string {
+  const silo = articleSilo(article);
+  return silo ? `/${silo}` : "/magasin";
+}
+
+export function articlePath(article: Article): string {
+  return `${articleBasePath(article)}/${article.slug}`;
+}
+
+export function articlesInSilo(silo: Silo): Article[] {
+  return allArticles.filter((article) => articleSilo(article) === silo);
+}
+
+/** Slugs som har flyttet til en silo – brukes for 301-redirect fra /magasin. */
+export function siloedSlugs(): string[] {
+  return allArticles.filter((article) => articleSilo(article)).map((article) => article.slug);
+}

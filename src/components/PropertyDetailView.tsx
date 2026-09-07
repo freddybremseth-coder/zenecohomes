@@ -105,7 +105,7 @@ const T: Record<Locale, DetailText> = {
       "Avstand til strand, service, flyplass og helårsaktivitet.",
     ],
     processLink: "Les kjøpsprosessen",
-    processHref: "/magasin/kjopsprosess-bolig-i-spania",
+    processHref: "/kjopsprosess/kjopsprosess-bolig-i-spania",
     costsTitle: "Estimert kjøpskostnad",
     costsBody:
       "I Spania bør du normalt beregne ca. 13,5% ekstra til skatt, notar, register, advokat og øvrige kostnader.",
@@ -114,12 +114,12 @@ const T: Record<Locale, DetailText> = {
     total: "Estimert total",
     clarify: "Avklares",
     financingLink: "Finansiering, notar og NIE",
-    financingHref: "/magasin/finansiering-notar-nie-boligkjop-spania",
+    financingHref: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania",
     rentalTitle: "Passer den for utleie?",
     rentalBody:
       "Vi vurderer beliggenhet, turistlisens, felleskostnader, sesong, målgruppe og konkurranse før du baserer kjøpet på forventet leieinntekt.",
     areaLink: "Vurder området",
-    areaHref: "/magasin/omradeguide-eiendomskjop-i-spania",
+    areaHref: "/guide/omradeguide-eiendomskjop-i-spania",
     includedTitle: "Hva er inkludert?",
     includedBody:
       "Be om komplett tilbud, så sjekker vi hvitevarer, belysning, basseng, hage, parkering, møbler, klima, solcellevalg og eventuelle tillegg.",

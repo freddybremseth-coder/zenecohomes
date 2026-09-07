@@ -119,7 +119,7 @@ export default async function Home() {
             <strong>01</strong>
             <h3>Først behov, så bolig</h3>
             <p>Vi starter med livsstil, budsjett, bruk, område og risiko før vi lager shortlist.</p>
-            <Link className="text-button" href="/magasin/omradeguide-eiendomskjop-i-spania">
+            <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
               Les områdeguiden <ArrowRight size={16} />
             </Link>
           </article>
@@ -135,7 +135,7 @@ export default async function Home() {
             <strong>03</strong>
             <h3>Trygg kjøpsprosess</h3>
             <p>Du får hjelp med prospekt, visning, betalingsplan, kostnader, advokat og neste steg.</p>
-            <Link className="text-button" href="/magasin/kjopsprosess-bolig-i-spania">
+            <Link className="text-button" href="/kjopsprosess/kjopsprosess-bolig-i-spania">
               Se kjøpsprosessen <ArrowRight size={16} />
             </Link>
           </article>
@@ -165,7 +165,7 @@ export default async function Home() {
             <strong>Tomter</strong>
             <h3>Bygg nytt i Spania</h3>
             <p>Vurder tomt, regulering, vann, strøm, adkomst, arkitekt og budsjett før kjøp.</p>
-            <Link className="text-button" href="/magasin/guide-tomtekjop-bygging-i-spania">
+            <Link className="text-button" href="/guide/guide-tomtekjop-bygging-i-spania">
               Les tomteguide <ArrowRight size={16} />
             </Link>
           </article>
@@ -292,7 +292,7 @@ export default async function Home() {
             <strong>02</strong>
             <h3>Nybygg og prosjekter</h3>
             <p>Fokus på moderne boliger, energieffektive løsninger, lavere vedlikehold og tryggere overtakelse.</p>
-            <Link className="text-button" href="/magasin/kjop-bolig-i-spania-na-eller-vente">
+            <Link className="text-button" href="/guide/kjop-bolig-i-spania-na-eller-vente">
               Kjøpe nå eller vente? <ArrowRight size={16} />
             </Link>
           </article>

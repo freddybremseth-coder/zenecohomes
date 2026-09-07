@@ -30,6 +30,8 @@ export type Article = {
   faq: { question: string; answer: string }[];
   /** Valgfri artikkel-CTA (f.eks. lenke til filtrert boligsøk eller Boligmatch). */
   cta?: { label: string; href: string };
+  /** Innholdssilo for URL-struktur og tematisk gruppering. Uten verdi = /magasin. */
+  silo?: "kjopsprosess" | "guide";
 };
 
 export const areas = [
