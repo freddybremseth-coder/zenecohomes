@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ExternalLink, LockKeyhole, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -42,6 +43,11 @@ export default function PortalPage() {
       </section>
       <section id="portal-login" style={{ padding: "2rem 1rem 0" }}>
         <PortalMagicLinkLogin />
+      </section>
+      <section style={{ padding: "1rem 1rem 0" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+          <PersonalizedPortalMatches locale="no" />
+        </div>
       </section>
       <section id="portal">
         <PortalWorkspace />
