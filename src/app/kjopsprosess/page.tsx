@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 
 import { Footer } from "@/components/Footer";
+import { GuideDownload } from "@/components/GuideDownload";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { articlePath, articlesInSilo, SILO_META } from "@/lib/magazine";
@@ -74,6 +75,8 @@ export default function KjopsprosessHub() {
           ))}
         </div>
       </section>
+
+      <GuideDownload />
 
       <section className="contact-section" id="kontakt">
         <div>
