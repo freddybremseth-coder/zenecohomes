@@ -1,7 +1,14 @@
+export type ArticleTable = {
+  caption?: string;
+  headers: string[];
+  rows: string[][];
+};
+
 export type ArticleSection = {
   heading: string;
   body?: string[];
   bullets?: string[];
+  table?: ArticleTable;
 };
 
 export type Article = {
@@ -548,6 +555,140 @@ export const articles: Article[] = [
         question: "Kan samme bolig selges av flere meglere?",
         answer:
           "Ja, det er vanlig i Spania. Derfor bør du velge megler eller rådgiver ut fra hvem som gir best prosess, ikke bare hvem som har annonsen.",
+      },
+    ],
+  },
+  {
+    slug: "omkostninger-nybygg-spania",
+    title: "Omkostninger ved kjøp av nybygg i Spania: skatter og gebyrer",
+    excerpt:
+      "Hvor mye koster det egentlig å kjøpe nybygg i Spania? Full oversikt over 10 % IVA, AJD-stempelavgift, notar, tinglysning, advokat og skjulte kostnader – med regneeksempel.",
+    date: "2026-09-07",
+    updated: "2026-09-07",
+    category: "Kjøpsprosess",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin/finansiering-nie-notar.svg",
+    imageAlt: "Illustrasjon av kostnader, skatter og gebyrer ved boligkjøp i Spania",
+    seoTitle: "Omkostninger ved kjøp av nybygg i Spania | Komplett guide (2026/2027)",
+    seoDescription:
+      "Hvor mye koster det egentlig å kjøpe nybygg i Spania? Få full oversikt over 10 % IVA, AJD-stempelavgift, notargebyr, advokat og skjulte kostnader.",
+    keywords: [
+      "omkostninger boligkjøp Spania nybygg",
+      "skatt nybygg Spania",
+      "gebyrer boligkjøp Spania",
+      "IVA nybygg Spania",
+      "AJD stempelavgift Spania",
+    ],
+    intro: [
+      "Mange nordmenn forelsker seg i prislappen på et moderne nybygg på Costa Blanca eller Costa Cálida, men blir overrasket over at den endelige totalsummen er vesentlig høyere enn annonsert pris. I motsetning til i Norge, hvor dokumentavgiften for nybygg kun beregnes av tomteverdien, har Spania et helt annet avgiftssystem.",
+      "Som tommelfingerregel må du beregne mellom 12 % og 14 % i tillegg til kjøpesummen når du kjøper nybygg i Spania. Kjøper du med spansk boliglån, tilkommer det enkelte ekstra administrative kostnader. I denne guiden går vi gjennom nøyaktig hva hver euro går til, slik at du har full økonomisk forutsigbarhet før du signerer reservasjonskontrakten.",
+    ],
+    sections: [
+      {
+        heading: "Rask oversikt: Hva utgjør omkostningene på et nybygg?",
+        body: [
+          "For nybygg er det to statlige/regionale skatter du må forholde deg til, i tillegg til juridiske og tinglysningsmessige gebyrer:",
+        ],
+        table: {
+          headers: ["Kostnadstype", "Hva er det?", "Sats / kostnad", "Betales til"],
+          rows: [
+            ["IVA (merverdiavgift)", "Spansk moms på nye boliger", "10 % av kjøpesummen", "Den spanske staten (via utbygger)"],
+            ["AJD (stempelavgift)", "Dokumentavgift på skjøtet", "1,5 % (1,2 % i Murcia)", "Den autonome regionen"],
+            ["Notarius publicus", "Offisiell signering av skjøtet (Escritura)", "Ca. 800 – 1 400 €", "Notarkontoret"],
+            ["Tinglysning", "Registro de la Propiedad", "Ca. 500 – 900 €", "Eiendomsregisteret"],
+            ["Uavhengig advokat", "Juridisk kontroll og sjekk av garantier", "1 % + IVA (eller fast ca. 2 000–3 000 €)", "Ditt advokatfirma"],
+            ["Tilkobling strøm/vann", "Oppstart og målerinstallasjon", "Ca. 500 – 800 €", "Forsyningsselskapene"],
+            ["Totalt beregnet tillegg", "Forventet totalpåslag", "Ca. 12,5 % – 13,5 %", "—"],
+          ],
+        },
+      },
+      {
+        heading: "1. De offentlige skattene ved nybygg: IVA og AJD",
+        body: [
+          "Dette er den største forskjellen mellom å kjøpe nybygg og en bruktbolig (resale) i Spania. Når en bolig aldri har vært bebodd før og selges direkte fra utbygger, regnes det som en førstegangsoverdragelse. Det utløser 10 % IVA (Impuesto sobre el Valor Añadido). Hvis villaen koster 400 000 €, utgjør IVA nøyaktig 40 000 €.",
+          "I tillegg til moms betaler du stempelavgift på rettslige dokumenter (Actos Jurídicos Documentados, AJD). I Comunidad Valenciana (Alicante, Altea, Finestrat, Torrevieja) er satsen 1,5 %. I naboregionen Murcia (Costa Cálida, Altaona Golf) er satsen 1,2 %.",
+        ],
+        bullets: [
+          "10 % IVA gjelder nøkkelferdige nybygg og boliger under oppføring solgt direkte fra utbygger.",
+          "1,5 % AJD i Valencia-regionen, 1,2 % i Murcia.",
+          "Ved bruktbolig betaler du ikke IVA eller AJD, men overdragelsesskatten ITP (ca. 10 % i Valencia, 8 % i Murcia).",
+          "Kjøper du en tomt separat uten godkjent byggeprosjekt fra et selskap, kan IVA være 21 %.",
+        ],
+      },
+      {
+        heading: "2. Gebyrer til notar og eiendomsregisteret",
+        body: [
+          "I Spania må alle eiendomshandler signeres foran en statsautorisert notar for at skjøtet (Escritura de Compraventa) skal være gyldig. Notaren representerer ikke deg som kjøper, men den spanske staten, og bekrefter identitet, overføring av midler og lovlighet. Honoraret er regulert av statlige takster og lander vanligvis på mellom 800 € og 1 400 €.",
+          "Etter signering hos notaren må skjøtet registreres i det offisielle eiendomsregisteret (Registro de la Propiedad) for å gi deg fullt rettsvern mot tredjeparter. Gebyret beregnes etter en fast skala og ligger vanligvis på mellom 500 € og 900 €.",
+        ],
+      },
+      {
+        heading: "3. Nødvendige rådgiver- og etableringskostnader",
+        body: [
+          "Å kjøpe bolig i Spania uten egen advokat er den største feilen utenlandske kjøpere gjør. Utbyggerens kontrakt er utformet for å beskytte utbyggeren – ikke deg. En uavhengig advokat tar vanligvis 1 % av kjøpesummen + IVA, ofte med et minimumshonorar på rundt 2 000–2 500 € for lavere summer.",
+          "Når et nybygg ferdigstilles, må det tegnes nye kontrakter med strøm- og vannleverandør, samt installeres målere. Sett av 500 – 800 € til opprettelse av abonnementer og tekniske godkjenninger.",
+        ],
+        bullets: [
+          "Advokaten kontrollerer byggelisens og tillatelser fra kommunen (Licencia de Obra).",
+          "Advokaten sikrer at samtlige delbetalinger er forsikret med bankgaranti på sperret konto.",
+          "Advokaten sjekker at ferdigattest (Licencia de Primera Ocupación) foreligger før sluttbetaling.",
+          "Advokaten ordner NIE-nummer og kan gjennomføre overtakelse via fullmakt (Poder Notarial).",
+        ],
+      },
+      {
+        heading: "Eksempelregnestykke: Hva koster en ny villa til 500 000 €?",
+        body: [
+          "Her er en realistisk oppstilling for en nybygget villa i Finestrat (Costa Blanca Nord) til 500 000 €:",
+        ],
+        table: {
+          caption: "Estimat. Faktiske gebyrer varierer med prosjekt, bank og advokat.",
+          headers: ["Post", "Beløp"],
+          rows: [
+            ["Kjøpesum", "500 000 €"],
+            ["10 % IVA (moms)", "50 000 €"],
+            ["1,5 % AJD (stempelavgift)", "7 500 €"],
+            ["Notargebyr (estimert)", "1 100 €"],
+            ["Tinglysning i registeret (estimert)", "750 €"],
+            ["Advokathonorar (1 % + 21 % moms)", "6 050 €"],
+            ["Tilkobling av strøm og vann", "600 €"],
+            ["Diverse gebyrer / gestoría", "500 €"],
+            ["Totale omkostninger", "66 500 € (13,3 %)"],
+            ["Total investering", "566 500 €"],
+          ],
+        },
+      },
+      {
+        heading: "Hva koster det hvis du skal ha spansk boliglån?",
+        body: [
+          "Siden den spanske boliglånsreformen i 2019 må banken betale de fleste avgiftene knyttet til opprettelsen av pantet (inkludert bankens egen notar, register og AJD på selve lånet). Som låntaker må du likevel dekke enkelte kostnader:",
+        ],
+        bullets: [
+          "Takst (Tasación): en offisiell takstmann må vurdere eiendommen for banken. Kostnad: 300 – 600 €.",
+          "Etableringsgebyr til banken (Comisión de apertura): fra 0 % til 1 % av lånebeløpet, avhengig av bank og forhandlinger.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Regn med 12–14 % i omkostninger på toppen av annonsert pris før du setter budsjettet.",
+      "Engasjer en uavhengig spansk advokat før du signerer reservasjonskontrakten.",
+      "Be om dokumentasjon på bankgaranti for hver delbetaling i byggeperioden.",
+      "Prøv Boligmatchen for å finne prosjekter som passer budsjettet ditt – inkludert omkostninger.",
+    ],
+    faq: [
+      {
+        question: "Kan jeg forhandle bort de 10 % i IVA?",
+        answer:
+          "Nei. IVA er en lovpålagt statlig avgift som utbygger må kreve inn og betale direkte til skattemyndighetene (Agencia Tributaria).",
+      },
+      {
+        question: "Når må omkostningene betales?",
+        answer:
+          "Ved delbetalinger betaler du 10 % IVA på hver delbetaling i byggeperioden. Ved overtakelse hos notar betaler du resterende kjøpesum, resterende IVA, samt et forskuddsbeløp til notar, stempelavgift og tinglysning (provisión de fondos).",
+      },
+      {
+        question: "Dekker meglerhonoraret advokatutgiftene mine?",
+        answer:
+          "Nei. I Spania dekkes meglerens provisjon normalt av utbygger/selger. Du som kjøper betaler ingenting til megler/rådgiver, men du må engasjere og betale din egen uavhengige advokat for juridisk kontroll.",
       },
     ],
   },

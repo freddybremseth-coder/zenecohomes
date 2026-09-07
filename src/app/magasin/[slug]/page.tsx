@@ -280,6 +280,29 @@ export default async function ArticlePage({ params }: PageProps) {
                     ))}
                   </ul>
                 )}
+                {section.table && (
+                  <div style={{ overflowX: "auto", marginTop: 18 }}>
+                    <table className="article-table">
+                      <thead>
+                        <tr>
+                          {section.table.headers.map((h) => (
+                            <th key={h}>{h}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.table.rows.map((row, ri) => (
+                          <tr key={ri}>
+                            {row.map((cell, ci) => (
+                              <td key={ci}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    {section.table.caption && <p className="article-table-caption">{section.table.caption}</p>}
+                  </div>
+                )}
               </section>
             ))}
 

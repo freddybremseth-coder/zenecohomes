@@ -3903,3 +3903,38 @@ footer {
 .form-step-actions .text-button {
   white-space: nowrap;
 }
+
+/* ── Artikkeltabeller (magasin) ───────────────────── */
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 460px;
+}
+.article-table th,
+.article-table td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.article-table thead th {
+  background: var(--sage);
+  color: var(--dark);
+  font-weight: 900;
+  border-bottom: 2px solid var(--line);
+}
+.article-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.article-table tbody td:first-child {
+  color: var(--text);
+  font-weight: 700;
+}
+.article-table-caption {
+  margin: 10px 2px 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
