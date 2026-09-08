@@ -53,6 +53,13 @@ const faq = [
   },
 ];
 
+function displayTownIntro(town: (typeof inlandTowns)[number]) {
+  if (town.slug === "biar") {
+    return "Biar er en av de best bevarte middelalderlandsbyene i Alicante-provinsen – med borg, smale gater og levende landsbyliv hele året. Freddy bor i Benidorm, mens familien har en oliveneiendom i Biar med rundt 1.500 trær.";
+  }
+  return town.intro;
+}
+
 export default async function InlandPage() {
   const properties = await getInlandShowcaseProperties();
 
@@ -135,7 +142,7 @@ export default async function InlandPage() {
                 <span>{town.eyebrow}</span>
               </div>
               <h2>{town.name}</h2>
-              <p>{town.intro}</p>
+              <p>{displayTownIntro(town)}</p>
               <Link className="text-button area-property-link" href={`/inland/${town.slug}`}>
                 <MapPin size={17} /> Utforsk {town.name}
               </Link>
