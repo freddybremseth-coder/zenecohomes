@@ -1,44 +1,44 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { KeyRound, Loader2, Mail, ShieldCheck } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase-browser";
 
 const copy = {
   no: {
-    eyebrow: "Rask innlogging",
+    eyebrow: "Sikker innlogging",
     title: "Åpne Min side uten passord",
-    intro: "Har du allerede fått tilgang? Skriv inn e-postadressen din, så sender vi en personlig innloggingslenke.",
+    intro: "Har du allerede fått tilgang? Skriv inn e-postadressen din, så sender vi en personlig og sikker innloggingslenke.",
     placeholder: "din@epost.no",
     send: "Send meg innloggingslenke",
     sending: "Sender…",
     sent: "Sjekk e-posten din. Hvis adressen har tilgang til Min side, får du en innloggingslenke.",
-    error: "Vi kunne ikke sende lenken akkurat nå. Har du ikke fått tilgang ennå, bruk skjemaet under for å be om Min side.",
+    error: "Vi kunne ikke sende lenken akkurat nå. Kontakt rådgiveren din hvis du trenger hjelp med tilgang.",
     missing: "Innlogging er midlertidig utilgjengelig. Kontakt rådgiveren din for tilgang.",
     path: "/min-side",
   },
   en: {
-    eyebrow: "Quick login",
+    eyebrow: "Secure sign-in",
     title: "Open My account without a password",
-    intro: "Already invited? Enter your email address and we will send you a personal sign-in link.",
+    intro: "Already invited? Enter your email address and we will send you a personal and secure sign-in link.",
     placeholder: "you@email.com",
     send: "Send my sign-in link",
     sending: "Sending…",
     sent: "Check your email. If this address has portal access, you will receive a sign-in link.",
-    error: "We could not send the link right now. If you have not been invited yet, use the access request form below.",
+    error: "We could not send the link right now. Contact your adviser if you need help with access.",
     missing: "Sign-in is temporarily unavailable. Contact your adviser for access.",
     path: "/en/min-side",
   },
   de: {
-    eyebrow: "Schneller Login",
+    eyebrow: "Sicherer Login",
     title: "Mein Bereich ohne Passwort öffnen",
-    intro: "Bereits eingeladen? Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen persönlichen Login-Link.",
+    intro: "Bereits eingeladen? Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen persönlichen und sicheren Login-Link.",
     placeholder: "ihre@email.de",
     send: "Login-Link senden",
     sending: "Wird gesendet…",
     sent: "Prüfen Sie Ihre E-Mails. Wenn diese Adresse Zugang hat, erhalten Sie einen Login-Link.",
-    error: "Der Link konnte gerade nicht gesendet werden. Falls Sie noch nicht eingeladen wurden, nutzen Sie bitte das Zugangsformular unten.",
+    error: "Der Link konnte gerade nicht gesendet werden. Kontaktieren Sie Ihren Berater, wenn Sie Hilfe beim Zugang benötigen.",
     missing: "Der Login ist vorübergehend nicht verfügbar. Kontaktieren Sie Ihren Berater.",
     path: "/de/min-side",
   },
@@ -47,7 +47,22 @@ const copy = {
 export function PortalMagicLinkLogin({ locale = "no" }: { locale?: Locale }) {
   const t = copy[locale];
   const [email, setEmail] = useState("");
+  const [signedIn, setSignedIn] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "missing-config">("idle");
+
+  useEffect(() => {
+    if (!supabase) return;
+
+    supabase.auth.getSession().then(({ data }) => {
+      setSignedIn(Boolean(data.session));
+    });
+
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSignedIn(Boolean(session));
+    });
+
+    return () => data.subscription.unsubscribe();
+  }, []);
 
   async function sendMagicLink(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -71,6 +86,8 @@ export function PortalMagicLinkLogin({ locale = "no" }: { locale?: Locale }) {
     setStatus(error ? "error" : "sent");
   }
 
+  if (signedIn) return null;
+
   return (
     <section
       aria-labelledby="magic-link-title"
@@ -85,7 +102,18 @@ export function PortalMagicLinkLogin({ locale = "no" }: { locale?: Locale }) {
       }}
     >
       <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-        <div aria-hidden="true" style={{ width: 42, height: 42, borderRadius: 14, display: "grid", placeItems: "center", background: "#eef6f4", flexShrink: 0 }}>
+        <div
+          aria-hidden="true"
+          style={{
+            width: 42,
+            height: 42,
+            borderRadius: 14,
+            display: "grid",
+            placeItems: "center",
+            background: "#eef6f4",
+            flexShrink: 0,
+          }}
+        >
           <KeyRound size={21} />
         </div>
         <div style={{ flex: 1 }}>
@@ -97,7 +125,16 @@ export function PortalMagicLinkLogin({ locale = "no" }: { locale?: Locale }) {
             <label style={{ flex: "1 1 280px" }}>
               <span className="sr-only">E-mail</span>
               <div style={{ position: "relative" }}>
-                <Mail size={18} style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", opacity: 0.55 }} />
+                <Mail
+                  size={18}
+                  style={{
+                    position: "absolute",
+                    left: 14,
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    opacity: 0.55,
+                  }}
+                />
                 <input
                   type="email"
                   autoComplete="email"
@@ -105,11 +142,23 @@ export function PortalMagicLinkLogin({ locale = "no" }: { locale?: Locale }) {
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder={t.placeholder}
-                  style={{ width: "100%", minHeight: 48, borderRadius: 14, border: "1px solid rgba(15,23,42,0.18)", padding: "0 14px 0 44px", font: "inherit" }}
+                  style={{
+                    width: "100%",
+                    minHeight: 48,
+                    borderRadius: 14,
+                    border: "1px solid rgba(15,23,42,0.18)",
+                    padding: "0 14px 0 44px",
+                    font: "inherit",
+                  }}
                 />
               </div>
             </label>
-            <button className="contact-button" type="submit" disabled={status === "sending"} style={{ minHeight: 48, border: 0, cursor: "pointer" }}>
+            <button
+              className="contact-button"
+              type="submit"
+              disabled={status === "sending"}
+              style={{ minHeight: 48, border: 0, cursor: "pointer" }}
+            >
               {status === "sending" ? <Loader2 size={18} className="spin" /> : <ShieldCheck size={18} />}
               {status === "sending" ? t.sending : t.send}
             </button>

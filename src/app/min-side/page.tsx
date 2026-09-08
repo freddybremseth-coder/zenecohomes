@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarDays, FileText, Heart, ListChecks, MessageSquareText, ShieldCheck } from "lucide-react";
+import { FileText, Heart, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
@@ -8,11 +8,21 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 const benefits = [
-  { icon: Heart, title: "Boliger og favoritter", text: "Boligforslag og favorittene dine samlet, alltid tilgjengelig." },
-  { icon: ListChecks, title: "Din personlige boligliste", text: "Personlig shortlist og boligønsker, oppdatert etter dialogen med Freddy." },
-  { icon: CalendarDays, title: "Visninger og neste steg", text: "Planlagte visninger, avtaler og hva som skjer videre i kjøpsreisen." },
-  { icon: FileText, title: "Dokumenter og kalkyler", text: "Prospekter, kostnadskalkyler og viktige dokumenter på ett sted." },
-  { icon: MessageSquareText, title: "Meldinger og oppfølging", text: "Hold dialogen med rådgiveren din trygt og ryddig." },
+  {
+    icon: Heart,
+    title: "Din personlige boligliste",
+    text: "Se boligene vi vurderer sammen, favorittene dine og forslag som passer ønskene dine.",
+  },
+  {
+    icon: FileText,
+    title: "Dokumenter og kalkyler",
+    text: "Ha viktige dokumenter, kostnader og beregninger samlet på ett sted.",
+  },
+  {
+    icon: MessageSquareText,
+    title: "Meldinger og neste steg",
+    text: "Hold dialogen ryddig og ha oversikt over hva som skjer videre i kjøpsprosessen.",
+  },
 ];
 
 export const metadata = {
@@ -25,6 +35,7 @@ export const metadata = {
       "x-default": "https://www.zenecohomes.com/min-side",
       "de-DE": "https://www.zenecohomes.com/de/min-side",
       en: "https://www.zenecohomes.com/en/min-side",
+      "es-ES": "https://www.zenecohomes.com/es/mi-area",
     },
   },
 };
@@ -33,12 +44,13 @@ export default function PortalPage() {
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
+
       <section className="page-hero compact-hero">
         <p className="eyebrow">Min side</p>
         <h1>Din boligreise – samlet på ett sted</h1>
         <p>
-          Når du samarbeider med Zen Eco Homes får du din egen side med boligforslag, favoritter, dokumenter,
-          meldinger og neste steg – trygt og ryddig.
+          Når du samarbeider med Zen Eco Homes får du din egen side med boligforslag, dokumenter,
+          meldinger og oppfølging – trygt og ryddig.
         </p>
       </section>
 
@@ -68,11 +80,10 @@ export default function PortalPage() {
 
         <div style={{ maxWidth: 760, margin: "24px auto 0", textAlign: "center" }}>
           <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-            Tilgang aktiveres personlig for kunder hos Zen Eco Homes. Vi oppretter ikke offentlige kontoer
-            automatisk.
+            Tilgang aktiveres personlig for kunder hos Zen Eco Homes. Vi oppretter ikke offentlige kontoer automatisk.
           </p>
           <Link className="text-button" href="/#kontakt">
-            <ShieldCheck size={17} /> Ikke kunde ennå? Start med en prat
+            <ShieldCheck size={17} /> Trenger du tilgang? Kontakt oss
           </Link>
         </div>
       </section>
@@ -82,9 +93,11 @@ export default function PortalPage() {
           <PersonalizedPortalMatches locale="no" />
         </div>
       </section>
+
       <section id="portal">
         <PortalWorkspace />
       </section>
+
       <Footer />
     </main>
   );
