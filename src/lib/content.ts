@@ -1314,6 +1314,249 @@ export const articles: Article[] = [
     ],
     cta: { label: "Se energieffektive nybygg", href: "/eiendommer?type=villa" },
   },
+  {
+    slug: "juridiske-fallgruver-boligkjop-spania",
+    title: "Juridiske fallgruver ved boligkjøp i Spania – og hvordan unngå dem",
+    excerpt:
+      "De vanligste juridiske fellene: heftelser og gjeld, ulovlige tilbygg, manglende ferdigattest, reservasjonsavtaler og press. Slik beskytter du deg.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Kjøpsprosess",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/juridisk.svg",
+    imageAlt: "Illustrasjon av juridiske fallgruver og kontroll ved boligkjøp i Spania",
+    seoTitle: "Juridiske fallgruver ved boligkjøp i Spania | Sjekkliste for kjøpere",
+    seoDescription:
+      "Unngå de vanligste juridiske fellene ved boligkjøp i Spania: heftelser, ulovlige tilbygg, manglende ferdigattest og risikable kontrakter. Guide for norske kjøpere.",
+    keywords: [
+      "juridiske fallgruver boligkjøp Spania",
+      "advokat boligkjøp Spania",
+      "ulovlig tilbygg Spania",
+      "heftelser bolig Spania",
+      "trygg boligkjøp Spania",
+    ],
+    intro: [
+      "Det spanske systemet er trygt når du følger stegene i riktig rekkefølge og har din egen fagperson i ryggen. De aller fleste «skrekkhistoriene» fra markedet skyldes at kjøperen ikke hadde uavhengig juridisk kontroll – og oppdaget problemet for sent.",
+      "Denne guiden går gjennom de vanligste juridiske fallgruvene og hvordan en uavhengig advokat luker dem ut før du binder deg. Dette er generell informasjon; din advokat vurderer den konkrete boligen.",
+    ],
+    sections: [
+      {
+        heading: "Hvorfor du trenger din egen advokat",
+        body: [
+          "Verken megler eller notar representerer deg som kjøper. En uavhengig spansk advokat (abogado) gjør derimot due diligence på dine vegne: kontrollerer eierforhold, heftelser, lovlighet, tillatelser, kontrakter og skatter før du signerer. Kostnaden er en brøkdel av det en feil kan koste.",
+        ],
+      },
+      {
+        heading: "De vanligste fallgruvene",
+        body: [
+          "De fleste problemene handler om at noe ikke er som det fremstår. Her er de typiske tingene en advokat sjekker:",
+        ],
+        bullets: [
+          "Heftelser og gjeld: pant, ubetalt IBI, fellesutgifter eller lån som følger boligen.",
+          "Ulovlige tilbygg: basseng, terrasse eller påbygg uten godkjenning kan gi pålegg og bøter.",
+          "Manglende ferdigattest / brukstillatelse (Licencia de Primera Ocupación) på nybygg.",
+          "Uoverensstemmelser mellom det som er registrert (matrikkel/register) og virkeligheten.",
+          "Avvik i areal, tomtegrenser eller adkomst/veirett – særlig på landeiendom.",
+          "Reservasjons- og depositumsavtaler med ugunstige eller uklare vilkår.",
+        ],
+      },
+      {
+        heading: "Reservasjon, arras og press",
+        body: [
+          "Prosessen går normalt fra reservasjonsavtale (tar boligen av markedet), til depositumskontrakt (contrato de arras, ofte rundt 10 %), og til slutt signering av skjøtet (escritura) hos notar. Ikke overfør reservasjonsgebyr eller depositum før advokaten har sett dokumentene.",
+          "Vær varsom med press om rask betaling, betaling til privatkonto i stedet for utbyggers sperrede prosjektkonto, eller «bruk vår advokat, det er enklere». Behold din egen uavhengige kontroll.",
+        ],
+      },
+      {
+        heading: "Slik sikrer du en trygg handel",
+        body: [
+          "Med riktig rekkefølge og en uavhengig fagperson er spansk boligkjøp trygt. Nøkkelen er å kontrollere før du betaler – ikke etterpå.",
+        ],
+        bullets: [
+          "Skaff NIE og engasjer en uavhengig advokat tidlig.",
+          "La advokaten kontrollere register, heftelser, lovlighet og tillatelser.",
+          "Betal kun til dokumenterte, riktige kontoer – aldri privatkonto ved nybygg.",
+          "Få bankgaranti på delbetalinger ved kjøp på prospekt.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Engasjer en uavhengig spansk advokat før du betaler noe.",
+      "Be om utskrift fra eiendomsregisteret (nota simple) og sjekk heftelser.",
+      "Kontroller at tilbygg, basseng og ferdigattest er lovlige og på plass.",
+      "Les reservasjons-/depositumsavtalen nøye før signering.",
+    ],
+    faq: [
+      {
+        question: "Trenger jeg advokat når jeg allerede har megler?",
+        answer:
+          "Ja. Megleren representerer normalt selger/utbygger, og notaren representerer staten – ikke deg. En uavhengig advokat gjør due diligence på dine vegne og er den viktigste tryggheten i handelen.",
+      },
+      {
+        question: "Hva er de vanligste juridiske problemene?",
+        answer:
+          "Heftelser og gjeld som følger boligen, ulovlige tilbygg uten godkjenning, manglende ferdigattest på nybygg, og avvik mellom det som er registrert og virkeligheten. Alt dette kan en advokat avdekke før du signerer.",
+      },
+      {
+        question: "Kan jeg miste reservasjonsgebyret?",
+        answer:
+          "Det avhenger av avtalen. Derfor bør du aldri betale reservasjon eller depositum før en uavhengig advokat har gjennomgått vilkårene og dokumentene på boligen.",
+      },
+    ],
+    cta: { label: "Les mer om en trygg kjøpsprosess", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
+  },
+  {
+    slug: "skatt-ved-salg-bolig-spania",
+    title: "Skatt ved salg av bolig i Spania: gevinstskatt, plusvalía og 3 %-regelen",
+    excerpt:
+      "Skal du selge boligen i Spania en dag? Slik fungerer gevinstskatt, kommunal plusvalía og det 3 % tilbaketrekket som gjelder for ikke-residenter.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Kjøpsprosess",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/skatt-salg.svg",
+    imageAlt: "Illustrasjon av skatt og kostnader ved salg av bolig i Spania",
+    seoTitle: "Skatt ved salg av bolig i Spania | Gevinstskatt, plusvalía og 3 %-regelen",
+    seoDescription:
+      "Hva koster det å selge bolig i Spania? Guide til gevinstskatt, kommunal plusvalía og 3 %-tilbaketrekket for ikke-residenter – for norske eiere.",
+    keywords: [
+      "skatt salg bolig Spania",
+      "gevinstskatt Spania",
+      "plusvalia Spania",
+      "3 prosent tilbakehold Spania",
+      "selge bolig Spania skatt",
+    ],
+    intro: [
+      "De fleste tenker mest på kostnadene ved kjøp. Men det lønner seg å kjenne skattene ved et fremtidig salg allerede når du kjøper – de påvirker den reelle avkastningen. Dette er generell informasjon; en gestor eller advokat regner ut ditt konkrete tilfelle.",
+      "Her er de tre viktigste postene du bør kjenne til når en spansk bolig selges.",
+    ],
+    sections: [
+      {
+        heading: "Gevinstskatt (skatt på fortjenesten)",
+        body: [
+          "Selger du med gevinst, beskattes fortjenesten – differansen mellom kjøps- og salgssum, justert for dokumenterte kostnader og investeringer. For ikke-residenter beregnes dette etter reglene for ikke-resident-skatt (IRNR). Ta vare på kvitteringer for kjøpsomkostninger og oppgraderinger, siden de kan redusere skattbar gevinst.",
+        ],
+      },
+      {
+        heading: "3 %-tilbaketrekket for ikke-residenter",
+        body: [
+          "Når en ikke-resident selger, holder kjøper normalt tilbake 3 % av salgssummen og betaler det inn til skattemyndighetene som forskudd på selgers gevinstskatt. Er den faktiske skatten lavere, kan du søke om å få mellomlegget tilbake. Dette er en vanlig kilde til misforståelser, så det bør håndteres av en fagperson.",
+        ],
+      },
+      {
+        heading: "Plusvalía municipal (kommunal verdiøkningsavgift)",
+        body: [
+          "I tillegg kommer plusvalía municipal – en kommunal avgift knyttet til verdiøkningen på selve tomten i eierperioden. Den beregnes lokalt og betales normalt av selger. Størrelsen avhenger av kommune, tomteverdi og hvor lenge du har eid.",
+        ],
+      },
+      {
+        heading: "Tenk salg allerede ved kjøp",
+        body: [
+          "Beliggenhet, standard og etterspørsel påvirker ikke bare bruk og utleie, men også hvor lett boligen lar seg selge videre – og til hvilken pris. Å tenke videresalg allerede ved kjøp er en del av en klok investering.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Ta vare på dokumentasjon på kjøpsomkostninger og oppgraderinger – de kan redusere gevinstskatten.",
+      "Regn med plusvalía og 3 %-tilbaketrekket i salgskalkylen hvis du er ikke-resident.",
+      "Bruk en gestor eller advokat til å beregne og håndtere skattene ved salg.",
+      "Vurder videresalgspotensialet allerede når du kjøper.",
+    ],
+    faq: [
+      {
+        question: "Hva er 3 %-regelen i Spania?",
+        answer:
+          "Når en ikke-resident selger bolig, holder kjøper normalt tilbake 3 % av salgssummen og betaler det til skattemyndighetene som forskudd på selgers gevinstskatt. Er faktisk skatt lavere, kan mellomlegget kreves tilbake.",
+      },
+      {
+        question: "Hva er plusvalía municipal?",
+        answer:
+          "Det er en kommunal avgift på verdiøkningen av tomten i eierperioden, som normalt betales av selger. Den beregnes lokalt og avhenger av kommune, tomteverdi og eiertid.",
+      },
+      {
+        question: "Kan jeg redusere gevinstskatten?",
+        answer:
+          "Dokumenterte kjøpsomkostninger og verdiøkende oppgraderinger kan trekkes fra ved beregning av skattbar gevinst. Ta vare på kvitteringene, og la en fagperson gjøre beregningen.",
+      },
+    ],
+    cta: { label: "Ta en prat om langsiktig boligøkonomi", href: "/#kontakt" },
+  },
+  {
+    slug: "arv-gaveskatt-bolig-spania",
+    title: "Arv og gaveskatt på spansk bolig: dette bør du planlegge",
+    excerpt:
+      "Hva skjer med den spanske boligen ved arv eller gave? Om arve- og gaveskatt (ISD), regionale forskjeller, spansk testament og hvorfor planlegging lønner seg.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Kjøpsprosess",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/arv-gave.svg",
+    imageAlt: "Illustrasjon av arv, gaveskatt og generasjoner knyttet til bolig i Spania",
+    seoTitle: "Arv og gaveskatt på bolig i Spania | Guide for norske eiere",
+    seoDescription:
+      "Hvordan håndteres arv og gaveskatt på spansk bolig? Om arve- og gaveskatt (ISD), regionale forskjeller, spansk testament og planlegging for norske eiere.",
+    keywords: [
+      "arv bolig Spania",
+      "gaveskatt Spania",
+      "arveskatt Spania",
+      "spansk testament",
+      "ISD Spania bolig",
+    ],
+    intro: [
+      "Et boligkjøp i Spania er ofte et langsiktig eierskap som kan gå i arv. Da er det lurt å kjenne til hvordan arv og gave av spansk eiendom håndteres – helst før det blir aktuelt. Dette er generell informasjon; en spesialisert advokat/gestor bør vurdere din familiesituasjon.",
+      "Her er hovedpunktene norske eiere bør tenke gjennom.",
+    ],
+    sections: [
+      {
+        heading: "Arve- og gaveskatt (ISD)",
+        body: [
+          "Spania har en egen arve- og gaveskatt (Impuesto sobre Sucesiones y Donaciones, ISD) som kan gjelde når spansk eiendom går i arv eller gis som gave. Hvor mye som skal betales avhenger blant annet av slektskap, verdien og hvilken region eiendommen ligger i.",
+        ],
+      },
+      {
+        heading: "Store regionale forskjeller",
+        body: [
+          "ISD forvaltes regionalt, og fradrag og satser varierer mye mellom de autonome regionene. Comunidad Valenciana (der Costa Blanca ligger) har egne regler og bunnfradrag. Fordi forskjellene er store, bør beregningen alltid gjøres konkret av en fagperson.",
+        ],
+      },
+      {
+        heading: "Spansk testament",
+        body: [
+          "Mange med eiendom i Spania oppretter et eget spansk testament som dekker de spanske eiendelene. Det kan gjøre arveoppgjøret enklere, raskere og rimeligere for de etterlatte, og redusere risikoen for misforståelser mellom regelverk i to land. En advokat kan sette dette opp riktig.",
+        ],
+      },
+      {
+        heading: "Planlegg i tide",
+        body: [
+          "Arv og gave av eiendom over landegrenser kan bli komplisert hvis det ikke er tenkt gjennom på forhånd. Med god planlegging – gjerne med rådgivning på begge sider av grensen – unngår familien unødvendige kostnader og overraskelser.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Kartlegg hvordan boligen bør eies og gå i arv ut fra familiesituasjonen.",
+      "Vurder et eget spansk testament for de spanske eiendelene.",
+      "Få beregnet arve-/gaveskatt (ISD) konkret for din region og situasjon.",
+      "Søk rådgivning på både norsk og spansk side ved arveplanlegging.",
+    ],
+    faq: [
+      {
+        question: "Må det betales arveskatt på bolig i Spania?",
+        answer:
+          "Det kan påløpe spansk arve- og gaveskatt (ISD) når spansk eiendom går i arv eller gis som gave. Beløpet avhenger av slektskap, verdi og region. En fagperson bør beregne det konkret.",
+      },
+      {
+        question: "Bør jeg ha et spansk testament?",
+        answer:
+          "Mange eiere med bolig i Spania oppretter et eget spansk testament for de spanske eiendelene. Det kan gjøre arveoppgjøret enklere og rimeligere for de etterlatte. En advokat kan sette det opp riktig.",
+      },
+      {
+        question: "Er arveskatten lik i hele Spania?",
+        answer:
+          "Nei. Arve- og gaveskatten forvaltes regionalt, og fradrag og satser varierer mye mellom regionene. Derfor bør beregningen gjøres konkret for din situasjon og region.",
+      },
+    ],
+    cta: { label: "Snakk med oss om langsiktig eierskap i Spania", href: "/#kontakt" },
+  },
 ];
 
 export function getArticle(slug: string) {

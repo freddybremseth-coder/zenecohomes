@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { allArticles, articlePath } from "@/lib/magazine";
+import { allArticles, articlePath, getMagazineArticle } from "@/lib/magazine";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const booksUrl = "https://books.freddybremseth.com";
@@ -27,6 +27,9 @@ const articleCovers: Record<string, string> = {
   "innlandet-finca-olivengard-spania": "/assets/magasin-covers/innlandet-livsstil.svg",
   "flytte-til-spania-pensjonist": "/assets/magasin-covers/pensjon-flytte.svg",
   "energieffektive-nybygg-spania": "/assets/magasin-covers/energi-baerekraft.svg",
+  "juridiske-fallgruver-boligkjop-spania": "/assets/magasin-covers/juridisk.svg",
+  "skatt-ved-salg-bolig-spania": "/assets/magasin-covers/skatt-salg.svg",
+  "arv-gaveskatt-bolig-spania": "/assets/magasin-covers/arv-gave.svg",
 };
 
 const bookGuides = [
@@ -112,6 +115,12 @@ function getArticleCover(slug: string) {
   return articleCovers[slug] || "/assets/magasin-covers/magasin-standard.svg";
 }
 
+/** Kanonisk lenke for en artikkel-slug: silo-sti (/guide, /kjopsprosess) når kjent, ellers /magasin. */
+function hrefForSlug(slug: string): string {
+  const article = getMagazineArticle(slug);
+  return article ? articlePath(article) : `/magasin/${slug}`;
+}
+
 export const metadata = {
   title: "Magasin | Guider om boligkjøp i Spania",
   description:
@@ -170,7 +179,7 @@ export default async function MagazinePage() {
                 <h2>{article.title}</h2>
                 <p>{article.summary}</p>
                 <div className="magazine-actions">
-                  <Link className="text-button" href={`/magasin/${article.slug}`}>
+                  <Link className="text-button" href={hrefForSlug(article.slug)}>
                     Les guide <ArrowRight size={16} />
                   </Link>
                 </div>

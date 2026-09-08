@@ -1,0 +1,29 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Juridiske fallgruver ved boligkjøp">
+  <defs>
+    <linearGradient id="jBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6ecf1"/><stop offset="1" stop-color="#eff3f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#jBg)"/>
+  <circle cx="1000" cy="180" r="70" fill="#c5a059" opacity="0.5"/>
+  <!-- scales of justice -->
+  <g stroke="#2f4b5c" stroke-width="10" fill="none" stroke-linecap="round">
+    <path d="M600 180 V560"/><path d="M420 240 H780"/>
+  </g>
+  <circle cx="600" cy="180" r="16" fill="#c5a059"/>
+  <rect x="540" y="560" width="120" height="30" rx="8" fill="#2f4b5c"/>
+  <rect x="500" y="588" width="200" height="24" rx="10" fill="#2f4b5c"/>
+  <!-- left pan -->
+  <g stroke="#8aa0ad" stroke-width="5" fill="none"><path d="M420 240 L370 360"/><path d="M420 240 L470 360"/></g>
+  <path d="M356 360 a64 34 0 0 0 128 0 Z" fill="#c5a059"/>
+  <!-- right pan -->
+  <g stroke="#8aa0ad" stroke-width="5" fill="none"><path d="M780 240 L730 360"/><path d="M780 240 L830 360"/></g>
+  <path d="M716 360 a64 34 0 0 0 128 0 Z" fill="#2f5d7a"/>
+  <!-- warning doc -->
+  <g transform="rotate(8 960 520)">
+    <rect x="860" y="420" width="200" height="240" rx="12" fill="#ffffff" stroke="#cdd9e1" stroke-width="4"/>
+    <path d="M960 470 l40 78 h-80 Z" fill="none" stroke="#c5a059" stroke-width="8" stroke-linejoin="round"/>
+    <line x1="960" y1="498" x2="960" y2="522" stroke="#c5a059" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="960" cy="540" r="5" fill="#c5a059"/>
+  </g>
+</svg>

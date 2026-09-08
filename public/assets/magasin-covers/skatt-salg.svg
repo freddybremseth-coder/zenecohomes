@@ -1,0 +1,25 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skatt ved salg av bolig">
+  <rect width="1200" height="760" fill="#eef3ef"/>
+  <circle cx="250" cy="190" r="66" fill="#bfe0cf" opacity="0.7"/>
+  <!-- house with SOLD tag -->
+  <g>
+    <path d="M230 380 L440 230 L650 380 Z" fill="#c5a059"/>
+    <rect x="285" y="380" width="310" height="280" fill="#ffffff" stroke="#d6cdbb" stroke-width="4"/>
+    <rect x="340" y="450" width="90" height="90" rx="6" fill="#bcd6cb"/>
+    <rect x="450" y="450" width="90" height="90" rx="6" fill="#bcd6cb"/>
+    <rect x="395" y="560" width="100" height="100" fill="#2f5d7a"/>
+  </g>
+  <!-- tag -->
+  <g transform="rotate(-12 560 300)">
+    <path d="M560 250 L700 250 L760 310 L620 310 Z" fill="#2f5d7a"/>
+    <circle cx="588" cy="280" r="12" fill="#ffffff"/>
+  </g>
+  <!-- percent + outgoing coins -->
+  <g transform="translate(880 300)">
+    <circle cx="0" cy="0" r="130" fill="#16222b"/>
+    <text x="0" y="44" text-anchor="middle" fill="#c5a059" font-family="Georgia, serif" font-size="140" font-weight="700">%</text>
+  </g>
+  <g fill="#c5a059"><ellipse cx="820" cy="640" rx="66" ry="20"/><ellipse cx="820" cy="614" rx="66" ry="20" fill="#d8b673"/></g>
+  <path d="M760 600 L700 540 L640 570" fill="none" stroke="#2e7d5b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M640 570 l6 -34 l34 14 Z" fill="#2e7d5b"/>
+</svg>

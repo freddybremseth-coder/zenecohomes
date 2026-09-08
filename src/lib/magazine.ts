@@ -242,6 +242,9 @@ const SILO_BY_SLUG: Record<string, Silo> = {
   "innlandet-finca-olivengard-spania": "guide",
   "flytte-til-spania-pensjonist": "guide",
   "energieffektive-nybygg-spania": "guide",
+  "juridiske-fallgruver-boligkjop-spania": "kjopsprosess",
+  "skatt-ved-salg-bolig-spania": "kjopsprosess",
+  "arv-gaveskatt-bolig-spania": "kjopsprosess",
 };
 
 export const SILO_META: Record<Silo, { label: string; title: string; href: string; intro: string }> = {
