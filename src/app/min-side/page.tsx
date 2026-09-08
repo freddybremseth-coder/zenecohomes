@@ -3,6 +3,7 @@ import { FileText, Heart, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
+import { PortalSignedOutOnly } from "@/components/PortalSignedOutOnly";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -45,48 +46,50 @@ export default function PortalPage() {
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
 
-      <section className="page-hero compact-hero">
-        <p className="eyebrow">Min side</p>
-        <h1>Din boligreise – samlet på ett sted</h1>
-        <p>
-          Når du samarbeider med Zen Eco Homes får du din egen side med boligforslag, dokumenter,
-          meldinger og oppfølging – trygt og ryddig.
-        </p>
-      </section>
-
-      <section className="section">
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: 18,
-            marginBottom: 30,
-          }}
-        >
-          {benefits.map((item) => (
-            <article className="info-card" key={item.title}>
-              <item.icon />
-              <div>
-                <h2>{item.title}</h2>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div id="portal-login">
-          <PortalMagicLinkLogin />
-        </div>
-
-        <div style={{ maxWidth: 760, margin: "24px auto 0", textAlign: "center" }}>
-          <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-            Tilgang aktiveres personlig for kunder hos Zen Eco Homes. Vi oppretter ikke offentlige kontoer automatisk.
+      <PortalSignedOutOnly>
+        <section className="page-hero compact-hero">
+          <p className="eyebrow">Min side</p>
+          <h1>Din boligreise – samlet på ett sted</h1>
+          <p>
+            Når du samarbeider med Zen Eco Homes får du din egen side med boligforslag, dokumenter,
+            meldinger og oppfølging – trygt og ryddig.
           </p>
-          <Link className="text-button" href="/#kontakt">
-            <ShieldCheck size={17} /> Trenger du tilgang? Kontakt oss
-          </Link>
-        </div>
-      </section>
+        </section>
+
+        <section className="section">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: 18,
+              marginBottom: 30,
+            }}
+          >
+            {benefits.map((item) => (
+              <article className="info-card" key={item.title}>
+                <item.icon />
+                <div>
+                  <h2>{item.title}</h2>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div id="portal-login">
+            <PortalMagicLinkLogin />
+          </div>
+
+          <div style={{ maxWidth: 760, margin: "24px auto 0", textAlign: "center" }}>
+            <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
+              Tilgang aktiveres personlig for kunder hos Zen Eco Homes. Vi oppretter ikke offentlige kontoer automatisk.
+            </p>
+            <Link className="text-button" href="/#kontakt">
+              <ShieldCheck size={17} /> Trenger du tilgang? Kontakt oss
+            </Link>
+          </div>
+        </section>
+      </PortalSignedOutOnly>
 
       <section style={{ padding: "1rem 1rem 0" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
