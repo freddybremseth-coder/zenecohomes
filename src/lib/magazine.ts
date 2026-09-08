@@ -10,7 +10,7 @@ export const extraArticles: Article[] = [
     updated: "2026-05-10",
     category: "Rådgivning",
     readingTime: "7 min lesing",
-    image: "/assets/magasin/god-eiendomsradgiver.svg",
+    image: "/assets/magasin-covers/radgiver.svg",
     imageAlt: "Illustrasjon av norsk eiendomsrådgiver som hjelper boligkjøper i Spania",
     seoTitle: "Hvorfor en god eiendomsrådgiver er viktig ved boligkjøp i Spania",
     seoDescription:
@@ -123,7 +123,7 @@ export const extraArticles: Article[] = [
     updated: "2026-05-10",
     category: "Marked",
     readingTime: "8 min lesing",
-    image: "/assets/magasin/idealista-finn-boligportaler.svg",
+    image: "/assets/magasin-covers/boligportaler.svg",
     imageAlt: "Illustrasjon av boligportaler, annonser og markedsoversikt for eiendom i Spania",
     seoTitle: "Hvorfor Idealista og Finn.no ikke alltid viser riktig boligmarked i Spania",
     seoDescription:

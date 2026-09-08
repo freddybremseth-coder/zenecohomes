@@ -62,7 +62,7 @@ export const articles: Article[] = [
     updated: "2026-05-10",
     category: "Områdeguide",
     readingTime: "9 min lesing",
-    image: "/assets/magasin/omradeguide-spania.svg",
+    image: "/assets/magasin-covers/omradevalg.svg",
     imageAlt: "Illustrasjon av spanske boligområder med kyst, fjell, by og øyer",
     seoTitle: "Områdeguide for boligkjøp i Spania | Costa Blanca, Costa del Sol og Valencia",
     seoDescription:
@@ -159,7 +159,7 @@ export const articles: Article[] = [
     updated: "2026-05-10",
     category: "Tomt og nybygg",
     readingTime: "10 min lesing",
-    image: "/assets/magasin/tomtekjop-bygging-spania.svg",
+    image: "/assets/magasin-covers/tomt-bygg.svg",
     imageAlt: "Illustrasjon av tomt, moderne bolig, tegninger og bygging i Spania",
     seoTitle: "Tomtekjøp og bygging i Spania | Guide for nordmenn",
     seoDescription:
@@ -268,7 +268,7 @@ export const articles: Article[] = [
     updated: "2026-05-10",
     category: "Marked",
     readingTime: "8 min lesing",
-    image: "/assets/magasin/kjope-na-eller-vente.svg",
+    image: "/assets/magasin-covers/kjope-na.svg",
     imageAlt: "Illustrasjon av spansk boligmarked med vekt mellom å kjøpe nå og vente",
     seoTitle: "Kjøpe bolig i Spania nå eller vente? Markedsguide for nordmenn",
     seoDescription:
@@ -362,7 +362,7 @@ export const articles: Article[] = [
     updated: "2026-05-10",
     category: "Kjøpsprosess",
     readingTime: "9 min lesing",
-    image: "/assets/magasin/finansiering-nie-notar.svg",
+    image: "/assets/magasin-covers/finansiering.svg",
     imageAlt: "Illustrasjon av finansiering, dokumenter, NIE, bank og notar ved boligkjøp i Spania",
     seoTitle: "Finansiering, notar og NIE ved boligkjøp i Spania",
     seoDescription:
@@ -459,7 +459,7 @@ export const articles: Article[] = [
     updated: "2026-05-10",
     category: "Kjøpsprosess",
     readingTime: "10 min lesing",
-    image: "/assets/magasin/kjopsprosess-spania.svg",
+    image: "/assets/magasin-covers/kjopsprosess.svg",
     imageAlt: "Illustrasjon av kjøpsprosessen for bolig i Spania fra søk til nøkkeloverlevering",
     seoTitle: "Kjøpsprosess for bolig i Spania | Steg-for-steg for nordmenn",
     seoDescription:
@@ -571,7 +571,7 @@ export const articles: Article[] = [
     updated: "2026-09-07",
     category: "Kjøpsprosess",
     readingTime: "8 min lesing",
-    image: "/assets/magasin/finansiering-nie-notar.svg",
+    image: "/assets/magasin-covers/finansiering.svg",
     imageAlt: "Illustrasjon av kostnader, skatter og gebyrer ved boligkjøp i Spania",
     seoTitle: "Omkostninger ved kjøp av nybygg i Spania | Komplett guide (2026/2027)",
     seoDescription:
@@ -706,7 +706,7 @@ export const articles: Article[] = [
     updated: "2026-09-07",
     category: "Kjøpsprosess",
     readingTime: "7 min lesing",
-    image: "/assets/magasin/kjopsprosess-spania.svg",
+    image: "/assets/magasin-covers/kjopsprosess.svg",
     imageAlt: "Illustrasjon av sikret betaling og bankgaranti ved nybygg i Spania",
     seoTitle: "Bankgaranti ved nybygg i Spania | Ley 57/1968 forklart (2026/2027)",
     seoDescription:
@@ -814,7 +814,7 @@ export const articles: Article[] = [
     updated: "2026-09-07",
     category: "Områdeguide",
     readingTime: "7 min lesing",
-    image: "/assets/magasin/omradeguide-spania.svg",
+    image: "/assets/magasin-covers/omradevalg.svg",
     imageAlt: "Illustrasjon av Finestrat med fjell, kyst og moderne nybygg på Costa Blanca Nord",
     seoTitle: "Nybygg og villa i Finestrat | Norsk rådgiverguide | Zen Eco Homes",
     seoDescription:
