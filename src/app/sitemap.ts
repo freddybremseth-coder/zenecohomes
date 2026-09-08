@@ -71,6 +71,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/de/ueber-freddy",
     "/en/about-freddy",
     "/es/sobre-freddy",
+    "/booking",
     "/min-side",
     "/de/min-side",
     "/en/min-side",
