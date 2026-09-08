@@ -48,8 +48,12 @@ export function SiteHeader({
 
   return (
     <header className={headerClass}>
-      <Link className="brand" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
-        Zen<span>Eco</span>Homes
+      <Link className="brand brand-2027" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
+        <span className="brand-monogram" aria-hidden="true">ZE</span>
+        <span className="brand-copy">
+          <strong>Zen Eco</strong>
+          <small>Homes · Costa Blanca</small>
+        </span>
       </Link>
       <button
         aria-controls="site-navigation"
