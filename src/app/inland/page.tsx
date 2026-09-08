@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Check, Home, Leaf, MapPin, ShieldCheck, Sun, TreeDeciduous, Zap } from "lucide-react";
+import { ArrowRight, Check, Leaf, MapPin, ShieldCheck, Sun, Zap } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -87,123 +87,73 @@ export default async function InlandPage() {
   };
 
   return (
-    <main className="inland-theme">
+    <main className="inland-theme inland-journal">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
 
       <section className="hero inland-hero">
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Biar · Villena · Sax · Pinoso · Aspe · Novelda</p>
-          <h1>Mer plass til en moderne bolig</h1>
+          <p className="eyebrow">Alicante Inland · 38°37′ N</p>
+          <h1>Et annet Spania, litt lenger inn</h1>
           <p className="hero-copy">
-            Innlandet kan gi større tomter, mer natur og mer privatliv enn kysten. Vi fokuserer først og fremst på
-            tomt, moderne villa og nybygg – og hjelper deg å avklare område og grunnleggende forutsetninger før du binder deg.
+            Større tomter, roligere omgivelser og moderne villaer mellom vinmarker, fjell og levende småbyer. Vi starter med området – og med hva som faktisk kan bygges og fungere i hverdagen.
           </p>
           <div className="hero-actions">
-            <a className="contact-button" href="#eiendommer">Se aktuelle muligheter <ArrowRight size={18} /></a>
-            <Link className="text-button light" href="/tomter">Se tomter</Link>
+            <a className="contact-button" href="#steder">Utforsk områdene <ArrowRight size={18} /></a>
+            <a className="text-button light" href="#eiendommer">Se Aspe / Pinoso</a>
             <Link className="text-button light" href="/booking">Snakk med Freddy</Link>
           </div>
         </div>
       </section>
 
-      <section className="trust-band inland-trust">
-        <div>
-          <strong>Moderne nybygg først</strong>
-          <span>Tomt, villa og moderne byggeprosjekter er hovedretningen.</span>
+      <section className="inland-intro" id="steder">
+        <div className="inland-intro-copy">
+          <p className="eyebrow">Inland Journal</p>
+          <h2>Innlandet er ikke ett marked</h2>
+          <p>
+            Biar og Banyeres gir fjell og kjøligere netter. Villena og Sax gir byservice og effektiv transport. Pinoso og Aspe har et mer etablert marked for moderne villaer og tomt. Velg stedet før du velger huset.
+          </p>
         </div>
-        <div>
-          <strong>Lokal erfaring</strong>
-          <span>Freddy bor i Benidorm; familien har oliveneiendom i Biar.</span>
-        </div>
-        <div>
-          <strong>Kontroller før kjøp</strong>
-          <span>Regulering, vann, strøm, adkomst og totalbudsjett må avklares.</span>
-        </div>
+        <nav className="inland-index" aria-label="Områder i innlandet">
+          {inlandTowns.map((town, index) => (
+            <a href={`#${town.slug}`} key={town.slug}>
+              <strong>{town.name}</strong>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+            </a>
+          ))}
+        </nav>
       </section>
 
-      <section className="section proof-section">
-        <div className="section-heading">
-          <p className="eyebrow">Hvem passer innlandet for?</p>
-          <h2>Når plass og hverdagsliv betyr mer enn gangavstand til stranden</h2>
-          <p>
-            Innlandet er ikke et billigere alternativ til kysten for alle. Det er et annet valg: mer tomt og natur,
-            mer bilbruk og større ansvar for å forstå infrastrukturen rundt eiendommen.
-          </p>
-        </div>
-        <div className="proof-grid">
-          <article><strong><TreeDeciduous size={22} /></strong><h3>Mer plass</h3><p>Større tomt, hage, basseng, uteområder og bedre avstand til naboer.</p></article>
-          <article><strong><Home size={22} /></strong><h3>Bygg etter behov</h3><p>Moderne planløsning, energieffektivitet og materialvalg kan planlegges fra starten.</p></article>
-          <article><strong><MapPin size={22} /></strong><h3>Mer spansk hverdag</h3><p>Helårsbyer og landsbyer hvor hverdagen i mindre grad styres av turistsesongen.</p></article>
-        </div>
-      </section>
-
-      <section className="section split">
-        <div>
-          <p className="eyebrow">Før du kjøper tomt</p>
-          <h2>Et fint bilde er ikke nok</h2>
-          <p>
-            Før en tomt eller et byggeprosjekt vurderes seriøst, bør du vite hva som faktisk kan bygges og hvilke
-            kostnader som kommer før selve huset.
-          </p>
-          <div className="check-list">
-            {[
-              "Regulering, byggbarhet og kommunale rammer",
-              "Lovlig og praktisk adkomst",
-              "Vann, strøm og avløpsløsning",
-              "Grenser, servitutter og dokumentasjon",
-              "Arkitekt, lisens, grunnarbeid og realistisk buffer",
-            ].map((item) => <span key={item}><Check size={18} /> {item}</span>)}
-          </div>
-          <p>
-            Zen Eco Homes hjelper deg å samle informasjonen og koordinere neste steg. Juridiske og tekniske vurderinger
-            skal gjøres av de kvalifiserte fagpersonene som er ansvarlige for hvert område.
-          </p>
-        </div>
-        <div className="feature-panel">
-          <div><ShieldCheck /> Dokumentasjon før reservasjon</div>
-          <div><Zap /> Strøm og teknisk løsning</div>
-          <div><Sun /> Solenergi og energieffektivitet</div>
-          <div><Leaf /> Mer plass og natur</div>
-        </div>
-      </section>
-
-      <section className="section area-profile-grid">
-        <div className="section-heading">
-          <p className="eyebrow">Velg område først</p>
-          <h2>Innlandet består av ulike markeder</h2>
-          <p>
-            Biar, Villena, Sax, Pinoso og Hondón-dalene gir forskjellige avstander, landskap og hverdagsliv. Start med
-            området, ikke med første tomt du finner.
-          </p>
-        </div>
-        {inlandTowns.map((town) => (
-          <article className="area-profile-card" key={town.slug}>
-            <div style={{ backgroundImage: `url(${town.photo})` }} />
-            <section>
-              <span>{town.eyebrow}</span>
+      <section className="inland-places" aria-label="Områdeprofiler">
+        {inlandTowns.map((town, index) => (
+          <article className="inland-place" id={town.slug} key={town.slug}>
+            <div className="inland-place-image" style={{ backgroundImage: `url(${town.photo})` }} role="img" aria-label={town.name} />
+            <div className="inland-place-copy">
+              <div className="inland-place-meta">
+                <span className="inland-place-number">{String(index + 1).padStart(2, "0")}</span>
+                <span>{town.eyebrow}</span>
+              </div>
               <h2>{town.name}</h2>
               <p>{town.intro}</p>
               <Link className="text-button area-property-link" href={`/inland/${town.slug}`}>
                 <MapPin size={17} /> Utforsk {town.name}
               </Link>
-            </section>
+            </div>
           </article>
         ))}
       </section>
 
-      <section className="section" id="eiendommer">
+      <section className="inland-selection" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">Kuratert innlandsutvalg</p>
-          <h2>Aktuelle moderne boliger fra Aspe og Pinoso</h2>
+          <p className="eyebrow">ZenEco Inland Selection</p>
+          <h2>Moderne boliger fra Aspe og Pinoso</h2>
           <p>
-            For innlandssidene viser vi nå bare det relevante utvalget fra Aspe og Pinoso. Dette er moderne villaer,
-            nybygg og andre passende innlandsprodukter – ikke leiligheter eller tilfeldige objekter fra Costa Blanca sør.
+            Dette er den kuraterte innlandspoolen vi bruker på områdesidene: relevante moderne villaer, nybygg og passende innlandsprodukter fra Aspe og Pinoso – ikke tilfeldige kystleiligheter.
           </p>
         </div>
         {properties.length > 0 ? (
-          <div className="property-grid">
+          <div className="property-grid editorial-property-grid">
             {properties.slice(0, 6).map((property, index) => (
               <PropertyCard key={property.id || property.ref || index} property={property} priority={index < 3} />
             ))}
@@ -218,16 +168,42 @@ export default async function InlandPage() {
         </div>
       </section>
 
-      <section className="section proof-section">
-        <div className="section-heading">
-          <p className="eyebrow">Freddy og Biar</p>
-          <h2>Praktisk erfaring fra innlandet – uten å late som det er det samme som kysten</h2>
-          <p>
-            Freddy bor i Benidorm. Familien har samtidig en oliveneiendom i Biar med rundt 1.500 trær. Arbeidet med
-            eiendommen har gitt praktisk erfaring med blant annet land, vann, adkomst og forskjellene mellom kyst- og innlandsliv.
-          </p>
+      <section className="inland-context">
+        <div>
+          <p className="eyebrow">Før tomtekjøp</p>
+          <h2>Arkitekturen begynner under bakken</h2>
         </div>
-        <div className="center-action">
+        <div>
+          <p>
+            Før et byggeprosjekt vurderes seriøst, bør regulering, adkomst, vann, strøm, avløp, grenser og totalbudsjett være forstått. En vakker tomt er ikke nødvendigvis en byggbar tomt.
+          </p>
+          <div className="check-list">
+            {[
+              "Regulering, byggbarhet og kommunale rammer",
+              "Lovlig og praktisk adkomst",
+              "Vann, strøm og avløpsløsning",
+              "Grenser, servitutter og dokumentasjon",
+              "Arkitekt, lisens, grunnarbeid og realistisk buffer",
+            ].map((item) => <span key={item}><Check size={18} /> {item}</span>)}
+          </div>
+          <div className="feature-panel">
+            <div><ShieldCheck /> Dokumentasjon før reservasjon</div>
+            <div><Zap /> Teknisk infrastruktur</div>
+            <div><Sun /> Energieffektivitet og sol</div>
+            <div><Leaf /> Plass, natur og privatliv</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="inland-context">
+        <div>
+          <p className="eyebrow">Freddy · Benidorm / Biar</p>
+          <h2>Kysten som base. Innlandet som erfaring.</h2>
+        </div>
+        <div>
+          <p>
+            Freddy bor i Benidorm. Familien har samtidig en oliveneiendom i Biar med rundt 1.500 trær. Det gir praktisk erfaring med land, vann, adkomst og forskjellen mellom et hus som fungerer på ferie og et sted som fungerer i hverdagen.
+          </p>
           <Link className="text-button" href="/om-freddy">Les mer om Freddy <ArrowRight size={16} /></Link>
         </div>
       </section>
@@ -235,7 +211,7 @@ export default async function InlandPage() {
       <section className="section proof-section">
         <div className="section-heading">
           <p className="eyebrow">Vanlige spørsmål</p>
-          <h2>Før du bestemmer deg for innlandet</h2>
+          <h2>Før du velger innlandet</h2>
         </div>
         <div className="proof-grid inland-faq">
           {faq.map((item) => (
@@ -249,8 +225,7 @@ export default async function InlandPage() {
           <p className="eyebrow">Neste steg</p>
           <h2>Fortell oss hvordan du ønsker å bo</h2>
           <p>
-            Tomt og moderne villa, roligere helårsbolig eller mer plass til familie og natur? Vi starter med området og
-            totalbudsjettet før vi ser på konkrete alternativer.
+            Tomt og moderne villa, roligere helårsbolig eller mer plass til familie og natur? Vi starter med området og totalbudsjettet før vi ser på konkrete alternativer.
           </p>
         </div>
         <ContactForm source={INLAND_BRAND.leadSource} />
