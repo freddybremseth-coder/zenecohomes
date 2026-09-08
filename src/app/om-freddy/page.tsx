@@ -8,14 +8,23 @@ import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Om Freddy Bremseth | Norsk, uavhengig boligrådgiver på Costa Blanca",
+  title: "Om Freddy Bremseth | Norsk eiendomsrådgiver på Costa Blanca",
   description:
-    "Møt Freddy Bremseth – norsk, uavhengig boligrådgiver bosatt på Costa Blanca. Trygt boligkjøp i Spania på norsk, fra første samtale til utlevert nøkkel.",
-  alternates: { canonical: "/om-freddy" },
+    "Møt Freddy Bremseth – norsk eiendomsrådgiver bosatt i Benidorm. Erfaring med Costa Blanca, utleie, områdevalg, moderne nybygg og effektiv planlegging av boligkjøp i Spania.",
+  alternates: {
+    canonical: "/om-freddy",
+    languages: {
+      "nb-NO": "https://www.zenecohomes.com/om-freddy",
+      en: "https://www.zenecohomes.com/en/about-freddy",
+      "de-DE": "https://www.zenecohomes.com/de/ueber-freddy",
+      "es-ES": "https://www.zenecohomes.com/es/sobre-freddy",
+      "x-default": "https://www.zenecohomes.com/om-freddy",
+    },
+  },
   openGraph: {
     title: "Om Freddy Bremseth | Zen Eco Homes",
     description:
-      "Norsk, uavhengig boligrådgiver på Costa Blanca. Trygt boligkjøp i Spania – på norsk, fra visning til nøkkel.",
+      "Norsk eiendomsrådgiver på Costa Blanca. Rådgivning med kjøperens behov i sentrum – fra områdevalg og prosjektvurdering til visning og neste steg.",
     url: "https://www.zenecohomes.com/om-freddy",
     type: "profile",
     images: [{ url: "https://www.zenecohomes.com/assets/freddy-bremseth.jpg", alt: "Freddy Bremseth" }],
@@ -26,7 +35,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Freddy Bremseth",
-  jobTitle: "Uavhengig boligrådgiver",
+  jobTitle: "Eiendomsrådgiver",
   worksFor: { "@type": "Organization", name: "Zen Eco Homes", url: "https://www.zenecohomes.com" },
   address: { "@type": "PostalAddress", addressLocality: "Benidorm", addressRegion: "Alicante", addressCountry: "ES" },
   knowsLanguage: ["no", "en", "es"],
@@ -53,10 +62,10 @@ export default function OmFreddyPage() {
           />
         </div>
         <div className="meet-freddy-body">
-          <p className="eyebrow">Om oss</p>
-          <h1>En uavhengig norsk stemme på Costa Blanca</h1>
+          <p className="eyebrow">Om Freddy</p>
+          <h1>En norsk eiendomsrådgiver med kjøperens behov i sentrum</h1>
           <blockquote className="meet-freddy-quote">
-            «Jeg sier like ofte nei til et prosjekt som ja. Holder ikke beliggenheten eller papirene mål,
+            «Jeg sier like ofte nei til et prosjekt som ja. Holder ikke beliggenheten eller informasjonen mål,
             skal du få vite det – for det er verdiene dine vi snakker om, ikke en rask handel.»
           </blockquote>
         </div>
@@ -66,7 +75,8 @@ export default function OmFreddyPage() {
         <article className="om-freddy-bio">
           <p>
             Jeg heter Freddy Bremseth, og jeg hjelper nordmenn med å finne og kjøpe bolig i Spania på en
-            tryggere, mer oversiktlig og effektiv måte.
+            tryggere, mer oversiktlig og effektiv måte. Gjennom Zen Eco Homes er hovedfokuset moderne nybygg,
+            moderne villaer og leiligheter, prosjekter og tomter på Costa Blanca og i utvalgte innlandsområder.
           </p>
           <p>
             For meg handler eiendomsrådgivning om langt mer enn å finne en bolig på en portal og avtale en
@@ -157,24 +167,28 @@ export default function OmFreddyPage() {
             En bolighandel starter for meg ikke med «hvilken bolig skal jeg selge deg?», men med «hva prøver du
             egentlig å finne – og hvorfor?». Skal boligen være feriebolig, permanent bolig, investering,
             utleiebolig – eller en kombinasjon? Hvor ofte skal den brukes? Hvor viktig er sjøen, roen,
-            flyplassen? Nybygg eller brukt? Hva er totalbudsjettet – ikke bare kjøpesummen? Først når vi
-            forstår dette, gir det mening å begynne å lete.
+            flyplassen? Hva er totalbudsjettet – ikke bare kjøpesummen? Først når vi forstår dette, gir det
+            mening å begynne å lete.
+          </p>
+          <p>
+            Nybygg og moderne boliger er hovedfokuset i Zen Eco Homes. Hvis en bruktbolig likevel er klart bedre
+            for behovene dine, lar jeg heller den bli en del av vurderingen enn å presse deg mot feil prosjekt.
           </p>
 
           <h3>Jeg ser etter mer enn boligannonsen</h3>
           <ul>
             <li>Definere behov og budsjett, og velge og sammenligne aktuelle områder</li>
-            <li>Finne boliger og prosjekter, og kontakte meglere, utbyggere og selgere</li>
+            <li>Finne moderne boliger og prosjekter, og kontakte meglere, utbyggere og selgere</li>
             <li>Innhente manglende informasjon og sammenligne pris og verdi</li>
             <li>Forberede og organisere effektive visningsdager</li>
-            <li>Forstå kostnader og betalingsplaner, og vurdere nybygg mot bruktbolig</li>
+            <li>Forstå kostnader, betalingsplaner og hva som faktisk er inkludert i et prosjekt</li>
             <li>Vurdere utleiepotensial ut fra boligtype og beliggenhet</li>
             <li>Følge deg videre gjennom hele kjøpsprosessen</li>
           </ul>
           <p>
             Ved nybygg kan arbeidet også omfatte gjennomgang av planløsninger, tilvalg, betalingsbetingelser og
             dialog med utbygger. Gjennom Zen Eco Homes og samarbeid med blant annet Soleada.no får kundene
-            samtidig tilgang til et bredt marked av boliger.
+            samtidig tilgang til et bredt marked av moderne boliger og prosjekter.
           </p>
 
           <h2>Utleie må vurderes realistisk</h2>
@@ -210,14 +224,9 @@ export default function OmFreddyPage() {
           </p>
 
           <div className="hero-actions" style={{ marginTop: 8 }}>
-            <a
-              className="contact-button"
-              href="https://www.freddybremseth.com/foredrag-og-radgivning.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <CalendarClock size={18} /> Book 15-minutters prat med Freddy
-            </a>
+            <Link className="contact-button" href="/booking">
+              <CalendarClock size={18} /> Be om en 15-minutters boligprat
+            </Link>
             <Link className="text-button" href="/#kontakt">
               <MessageCircle size={16} /> Eller send en melding
             </Link>
@@ -230,20 +239,15 @@ export default function OmFreddyPage() {
       <section className="contact-section" id="kontakt-om">
         <div>
           <p className="eyebrow">Neste steg</p>
-          <h2>Book en 15-minutters uforpliktende prat</h2>
+          <h2>Be om en 15-minutters uforpliktende boligprat</h2>
           <p>
-            Vi går gjennom budsjett, områder og fallgruver før du bestiller flybilletter. Uforpliktende, på
-            norsk, og helt gratis.
+            Vi går gjennom budsjett, områder og hva du bør avklare før du bestiller flybilletter. Uforpliktende,
+            på norsk, og uten at du sendes ut av Zen Eco Homes.
           </p>
         </div>
-        <a
-          className="contact-button"
-          href="https://www.freddybremseth.com/foredrag-og-radgivning.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <CalendarClock size={18} /> Book en prat med Freddy
-        </a>
+        <Link className="contact-button" href="/booking">
+          <CalendarClock size={18} /> Be om en prat med Freddy
+        </Link>
       </section>
       <Footer />
     </main>

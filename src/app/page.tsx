@@ -21,6 +21,9 @@ import { CARE_URL, homeHreflang, homeLanguageLinks } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "Moderne nybygg i Spania | Norsk eiendomsrådgivning | Zen Eco Homes",
+  description:
+    "Finn og sammenlign moderne nybygg, villaer, leiligheter og prosjekter på Costa Blanca. Norsk eiendomsrådgivning med kjøperens behov i sentrum.",
   alternates: { canonical: "/", languages: homeHreflang() },
 };
 
@@ -64,11 +67,12 @@ export default async function Home() {
         </video>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Norsk, uavhengig rådgivning · Nybygg i Spania</p>
-          <h1>Kjøp bolig i Spania trygt</h1>
+          <p className="eyebrow">Norsk eiendomsrådgivning · Moderne nybygg på Costa Blanca</p>
+          <h1>Kjøp moderne bolig i Spania trygt</h1>
           <p className="hero-copy">
-            Med norsk, uavhengig rådgivning fra første søk til overtakelse. Vi hjelper deg å vurdere område,
-            prosjekt, pris, risiko og neste steg før du reserverer.
+            Vi hjelper deg å velge riktig område, sammenligne moderne nybygg og forstå pris, kostnader, risiko og
+            neste steg før du reserverer. Hvis en bruktbolig faktisk passer behovene dine bedre, hjelper vi deg å
+            vurdere den også – uten at det er vårt hovedfokus.
           </p>
           <form className="search-card" action="/eiendommer">
             <input name="q" placeholder="Hvor vil du bo? Altea, Finestrat, Polop..." />
@@ -83,25 +87,25 @@ export default async function Home() {
             </button>
           </form>
           <div className="hero-secondary">
-            <a href="#boligmatch">Prøv Boligmatchen (2 min)</a>
+            <a href="#boligmatch">Start Boligmatchen (2 min)</a>
             <span>eller</span>
-            <a href="#kontakt">Ta en uforpliktende rådgivningsprat</a>
+            <a href="#kontakt">Book en uforpliktende boligprat</a>
           </div>
         </div>
       </section>
 
       <section className="trust-band">
         <div>
-          <strong>Uavhengig rådgivning</strong>
-          <span>Vi hjelper deg å sammenligne boliger, områder og utbyggere</span>
+          <strong>Rådgivning med kjøperens behov i sentrum</strong>
+          <span>Vi sammenligner områder, boliger, prosjekter og utbyggere før du bestemmer deg</span>
         </div>
         <div>
           <strong>Norsk oppfølging</strong>
-          <span>Én trygg prosess med dialog, dokumenter og shortlist</span>
+          <span>Én trygg prosess med dialog, dokumenter og personlig shortlist</span>
         </div>
         <div>
-          <strong>Boliger fra hele Costa Blanca</strong>
-          <span>Databasen oppdateres løpende med regioner og områdevalg</span>
+          <strong>Moderne boliger på Costa Blanca</strong>
+          <span>Hovedfokus på nybygg, moderne villaer og leiligheter – kyst og utvalgte innlandsområder</span>
         </div>
       </section>
 
@@ -146,19 +150,20 @@ export default async function Home() {
 
       <section className="section proof-section">
         <div className="section-heading">
-          <p className="eyebrow">Kjøpe bolig i Spania med norsk rådgiver</p>
-          <h2>Riktig område, riktig bolig og riktig prosess</h2>
+          <p className="eyebrow">Kjøpe moderne bolig i Spania med norsk rådgiver</p>
+          <h2>Riktig område, riktig prosjekt og riktig prosess</h2>
           <p>
-            Zen Eco Homes hjelper nordmenn med å finne bolig, nybygg, tomt eller villa i Spania. Vi fokuserer
-            spesielt på Costa Blanca, Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og innlandsområder med
-            store tomter og moderne boliger.
+            Zen Eco Homes fokuserer først og fremst på moderne nybygg, villaer, leiligheter og tomter på Costa
+            Blanca, Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og utvalgte innlandsområder. Bruktbolig er
+            ikke hovedproduktet vårt, men vi lar heller ikke en god kunde gå videre til feil bolig bare fordi den
+            riktige løsningen ikke er nybygg.
           </p>
         </div>
         <div className="proof-grid">
           <article>
             <strong>Boliger</strong>
             <h3>Nybygg og moderne boliger</h3>
-            <p>Se villaer, leiligheter, rekkehus og prosjekter i utvalgte områder.</p>
+            <p>Se villaer, leiligheter, rekkehus og moderne prosjekter i utvalgte områder.</p>
             <Link className="text-button" href="/eiendommer">
               Se boliger <ArrowRight size={16} />
             </Link>
@@ -173,7 +178,7 @@ export default async function Home() {
           </article>
           <article>
             <strong>Rådgivning</strong>
-            <h3>En rådgiver som jobber for deg</h3>
+            <h3>Beslutningsstøtte før salg</h3>
             <p>God rådgivning kan spare deg for feilkjøp, tid, stress og unødvendige kostnader.</p>
             <Link className="text-button" href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">
               Hvorfor rådgiver er viktig <ArrowRight size={16} />
@@ -189,8 +194,8 @@ export default async function Home() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Utvalgte boliger</p>
-          <h2>Aktuelle nybygg og prosjekter</h2>
-          <p>Et kuratert utvalg fra vår egen boligdatabase. Når nye prosjekter kommer inn, følger nettsiden etter.</p>
+          <h2>Aktuelle nybygg og moderne prosjekter</h2>
+          <p>Et kuratert utvalg fra boligdatabasen vår, med hovedvekt på moderne boliger og nybygg.</p>
         </div>
         <div className="property-grid">
           {properties.map((property, index) => (
@@ -217,8 +222,8 @@ export default async function Home() {
         <div className="eco-grid">
           <div>
             <Zap />
-            <strong>Energiklasse A/B</strong>
-            <span>Moderne boliger leveres med høy energistandard – langt bedre enn eldre bygningsmasse.</span>
+            <strong>Høy energistandard</strong>
+            <span>Mange moderne nybygg leveres med energiklasse A eller B og vesentlig bedre energiytelse enn eldre bygningsmasse.</span>
           </div>
           <div>
             <Snowflake />
@@ -227,8 +232,8 @@ export default async function Home() {
           </div>
           <div>
             <Sun />
-            <strong>Solceller og lav strømkostnad</strong>
-            <span>Klargjort for solceller, som kutter strømregningen i et av Europas mest solrike områder.</span>
+            <strong>Solceller og lavere energibruk</strong>
+            <span>Mange prosjekter leveres med eller kan klargjøres for solceller, avhengig av prosjekt og spesifikasjon.</span>
           </div>
           <div>
             <ShieldCheck />
@@ -243,10 +248,10 @@ export default async function Home() {
       <section className="section split">
         <div>
           <p className="eyebrow">Trygg kjøpsreise</p>
-          <h2>Bygget for nordmenn som vil kjøpe nybygg i Spania</h2>
+          <h2>Bygget for nordmenn som vil kjøpe moderne nybygg i Spania</h2>
           <p>
-            Siden kombinerer et stilrent førsteinntrykk med en praktisk kundereise: boligsøk, match, kundeportal og
-            personlig oppfølging fra rådgiverne dine.
+            Zen Eco Homes kombinerer boligsøk, områdevalg, prosjektvurdering, boligmatch og kundeportal med
+            personlig oppfølging gjennom kjøpsprosessen.
           </p>
           <div className="check-list">
             {["Prosjektutvalg og rådgivning", "Dokumenter og meldinger på Min Side", "Personlig oppfølging hele veien"].map(
@@ -269,33 +274,33 @@ export default async function Home() {
             <Sparkles /> Boliger valgt etter dine behov
           </div>
           <div>
-            <Building2 /> Nybygg og prosjekter
+            <Building2 /> Nybygg og moderne prosjekter
           </div>
         </div>
       </section>
 
       <section className="section proof-section">
         <div className="section-heading">
-          <p className="eyebrow">Hvorfor Zeneco</p>
+          <p className="eyebrow">Hvorfor Zen Eco Homes</p>
           <h2>En roligere og mer strukturert vei til bolig i Spania</h2>
           <p>
             Mange kjøpere møter et uoversiktlig marked med like prospekter, ulike meglere og lite norsk oppfølging.
-            Zeneco samler områdevalg, boligmatch og dialog i én ryddig prosess.
+            Zen Eco Homes samler områdevalg, boligmatch og dialog i én ryddig prosess.
           </p>
         </div>
         <div className="proof-grid">
           <article>
             <strong>01</strong>
             <h3>Område først</h3>
-            <p>Vi hjelper deg å sortere Costa Blanca Nord, Costa Blanca Sør og Costa Calida før du forelsker deg i feil bolig.</p>
+            <p>Vi hjelper deg å sortere Costa Blanca Nord, Costa Blanca Sør og Costa Cálida før du forelsker deg i feil bolig.</p>
             <Link className="text-button" href="/omrader">
               Sammenlign områder <ArrowRight size={16} />
             </Link>
           </article>
           <article>
             <strong>02</strong>
-            <h3>Nybygg og prosjekter</h3>
-            <p>Fokus på moderne boliger, energieffektive løsninger, lavere vedlikehold og tryggere overtakelse.</p>
+            <h3>Nybygg og moderne prosjekter</h3>
+            <p>Fokus på moderne boliger, energieffektive løsninger, lavere vedlikehold og tydelige spesifikasjoner.</p>
             <Link className="text-button" href="/guide/kjop-bolig-i-spania-na-eller-vente">
               Kjøpe nå eller vente? <ArrowRight size={16} />
             </Link>
@@ -316,9 +321,8 @@ export default async function Home() {
           <p className="eyebrow">Nye tjenester</p>
           <h2>Mer enn kjøp – vi følger deg hele veien</h2>
           <p>
-            Zen Eco Homes handler ikke bare om selve kjøpet. Vi hjelper deg å finne drømmen i innlandet, og vi
-            passer på boligen din når du ikke er der. To nye tjenester som gjør eierskapet i Spania enklere og
-            tryggere.
+            Zen Eco Homes handler ikke bare om selve kjøpet. Vi hjelper deg å finne den rette moderne boligen eller
+            tomten i innlandet, og vi passer på boligen din når du ikke er der.
           </p>
         </div>
         <div className="proof-grid">
@@ -326,8 +330,8 @@ export default async function Home() {
             <strong>Innlandet</strong>
             <h3>Mer plass, natur og ro</h3>
             <p>
-              Større tomter, finca-eiendommer og nybygg i innlandet rundt Pinoso, Aspe og Novelda – ofte til en
-              lavere pris per kvadratmeter enn ved kysten. Vi sjekker vann, strøm, adkomst og regulering før du binder deg.
+              Større tomter, moderne villaer og nybygg i innlandet rundt Pinoso, Aspe og Novelda – ofte til en
+              lavere pris per kvadratmeter enn ved kysten. Vi legger vekt på vann, strøm, adkomst og regulering før du binder deg.
             </p>
             <Link className="text-button" href="/inland">
               Utforsk innlandet <ArrowRight size={16} />
@@ -351,9 +355,9 @@ export default async function Home() {
 
       <section className="contact-section" id="kontakt">
         <div>
-          <p className="eyebrow">Klar for en prat?</p>
+          <p className="eyebrow">Klar for neste steg?</p>
           <h2>Fortell oss hva du ser etter</h2>
-          <p>Vi hjelper deg med område, budsjett, prosjekter og neste steg i kjøpsprosessen.</p>
+          <p>Vi hjelper deg med område, budsjett, moderne nybygg, prosjekter og neste steg i kjøpsprosessen.</p>
         </div>
         <ContactForm source="zenecohomes-home" />
       </section>

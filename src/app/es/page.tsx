@@ -13,13 +13,13 @@ import { seoLandingPagesES } from "@/lib/seoLandingPages.es";
 const BASE = "https://www.zenecohomes.com";
 
 export const metadata: Metadata = {
-  title: "Comprar vivienda en España | Asesor Costa Blanca",
+  title: "Obra nueva y vivienda moderna en España | Costa Blanca",
   description:
-    "Zen Eco Homes ayuda a compradores en la Costa Blanca a comparar zonas, obra nueva, villas, apartamentos y terrenos con asesoramiento antes de reservar.",
+    "Compara obra nueva, villas modernas, apartamentos y terrenos en la Costa Blanca con asesoramiento centrado en tus necesidades antes de reservar.",
   alternates: { canonical: "/es", languages: homeHreflang() },
   openGraph: {
-    title: "Comprar vivienda en España | Zen Eco Homes",
-    description: "Asesoramiento inmobiliario y propiedades en la Costa Blanca. Primero la decisión; después, la vivienda.",
+    title: "Vivienda moderna en España | Zen Eco Homes",
+    description: "Obra nueva, vivienda moderna y asesoramiento inmobiliario en la Costa Blanca. Primero la decisión; después, la vivienda.",
     url: `${BASE}/es`,
     locale: ogLocale.es,
     type: "website",
@@ -47,10 +47,12 @@ export default async function SpanishHome() {
         </video>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Asesoramiento inmobiliario · Costa Blanca</p>
-          <h1>Compra vivienda en España con más claridad</h1>
+          <p className="eyebrow">Obra nueva y vivienda moderna · Costa Blanca</p>
+          <h1>Compra la vivienda moderna adecuada en España</h1>
           <p className="hero-copy">
-            Primero entendemos cómo quieres vivir, qué presupuesto tienes y qué zonas encajan. Después reducimos el mercado a las propiedades que realmente merece la pena valorar.
+            Nuestro foco principal es la obra nueva, villas modernas, apartamentos y terrenos. Primero entendemos cómo quieres vivir,
+            qué presupuesto tienes y qué zonas encajan; después reducimos el mercado a las opciones que realmente merece la pena valorar.
+            Si una vivienda usada encaja claramente mejor contigo, también podemos ayudarte a evaluarla sin convertirla en nuestro producto principal.
           </p>
           <form className="search-card" action="/es/propiedades">
             <input name="q" placeholder="¿Dónde quieres vivir? Altea, Finestrat, Polop…" />
@@ -71,9 +73,9 @@ export default async function SpanishHome() {
       </section>
 
       <section className="trust-band">
-        <div><strong>Asesoramiento antes que venta</strong><span>Comparamos zonas, propiedades y proyectos antes de decidir.</span></div>
-        <div><strong>Vive y trabaja en España</strong><span>Freddy está en Benidorm y conoce tanto la costa como el interior.</span></div>
-        <div><strong>Propiedades de toda la Costa Blanca</strong><span>La base de viviendas se actualiza continuamente.</span></div>
+        <div><strong>Asesoramiento antes que venta</strong><span>Comparamos zonas, viviendas y proyectos antes de decidir.</span></div>
+        <div><strong>Obra nueva como especialidad</strong><span>Villas, apartamentos y proyectos modernos en la costa y zonas seleccionadas del interior.</span></div>
+        <div><strong>Freddy vive en España</strong><span>Base en Benidorm y experiencia práctica tanto en la costa como en el interior.</span></div>
       </section>
 
       <section className="section proof-section" id="vivienda-match">
@@ -99,12 +101,12 @@ export default async function SpanishHome() {
           <p className="eyebrow">Por qué Zen Eco Homes</p>
           <h2>No necesitas 1.500 anuncios. Necesitas las opciones correctas.</h2>
           <p>
-            Los portales sirven para descubrir propiedades. Nuestro trabajo empieza cuando hay que comparar ubicación, precio, costes, promotor, documentación y alternativas antes de entregar una reserva.
+            Los portales sirven para descubrir propiedades. Nuestro trabajo empieza cuando hay que comparar ubicación, precio, costes, promotor, memoria de calidades y alternativas antes de entregar una reserva.
           </p>
         </div>
         <div className="proof-grid">
           <article><strong>01</strong><h3>Primero tus necesidades</h3><p>Uso de la vivienda, presupuesto, estilo de vida, zona y horizonte temporal.</p></article>
-          <article><strong>02</strong><h3>Después comparamos</h3><p>Descartamos lo que no encaja y contrastamos opciones similares antes de una visita.</p></article>
+          <article><strong>02</strong><h3>Después comparamos</h3><p>Descartamos lo que no encaja y contrastamos proyectos y opciones similares antes de una visita.</p></article>
           <article><strong>03</strong><h3>Proceso ordenado</h3><p>Precio, disponibilidad, planos, costes, abogado, pagos y siguientes pasos.</p></article>
         </div>
       </section>
@@ -112,8 +114,8 @@ export default async function SpanishHome() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Propiedades seleccionadas</p>
-          <h2>Viviendas y proyectos disponibles</h2>
-          <p>Una muestra de la base de propiedades. Puedes filtrar por zona, presupuesto, dormitorios y estilo de vida.</p>
+          <h2>Obra nueva y proyectos modernos</h2>
+          <p>Una muestra de la base de propiedades, con foco principal en vivienda moderna. Puedes filtrar por zona, presupuesto, dormitorios y estilo de vida.</p>
         </div>
         <div className="property-grid">
           {properties.map((property, index) => (
@@ -141,7 +143,7 @@ export default async function SpanishHome() {
           <div><MapPin /> Benidorm · Costa Blanca</div>
           <div><ShieldCheck /> Asesoramiento antes que venta</div>
           <div><Sparkles /> Selección según tus necesidades</div>
-          <div><Building2 /> Obra nueva, vivienda y terrenos</div>
+          <div><Building2 /> Obra nueva, vivienda moderna y terrenos</div>
         </div>
       </section>
 
@@ -175,11 +177,11 @@ export default async function SpanishHome() {
         <div className="section-heading">
           <p className="eyebrow">Más que la compra</p>
           <h2>Interior y cuidado de tu vivienda</h2>
-          <p>También te ayudamos a valorar una vida con más espacio en el interior y a organizar el cuidado de la vivienda cuando no estás en España.</p>
+          <p>También te ayudamos a valorar terrenos y vivienda moderna con más espacio en el interior y a organizar el cuidado de la vivienda cuando no estás en España.</p>
         </div>
         <div className="proof-grid">
           <article>
-            <strong><Leaf size={22} /></strong><h3>Vivir en el interior</h3><p>Terrenos, fincas y viviendas con más espacio en Biar, Villena, Pinoso y otras zonas del interior.</p>
+            <strong><Leaf size={22} /></strong><h3>Vivir en el interior</h3><p>Terrenos, villas modernas y proyectos con más espacio en Biar, Villena, Pinoso y otras zonas del interior.</p>
             <Link className="text-button" href="/es/interior">Descubrir el interior <ArrowRight size={16} /></Link>
           </article>
           <article>
