@@ -15,43 +15,25 @@ import "./inland-town-2027.css";
 import "./assessment-2027.css";
 import "./gallery-2027.css";
 import "./chatbot-2027.css";
+import "./areas-2027.css";
 
-const zenecoSans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const zenecoDisplay = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
+const zenecoSans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const zenecoDisplay = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zenecohomes.com"),
-  title: {
-    default: "Zen Eco Homes | Moderne nybygg i Spania",
-    template: "%s | Zen Eco Homes",
-  },
-  description:
-    "Norsk eiendomsrådgivning for moderne nybygg, villaer, leiligheter og tomter på Costa Blanca, Costa Blanca Sør, Costa Cálida og utvalgte innlandsområder.",
-  alternates: {
-    canonical: "/",
-  },
+  title: { default: "Zen Eco Homes | Moderne nybygg i Spania", template: "%s | Zen Eco Homes" },
+  description: "Norsk eiendomsrådgivning for moderne nybygg, villaer, leiligheter og tomter på Costa Blanca, Costa Blanca Sør, Costa Cálida og utvalgte innlandsområder.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Zen Eco Homes | Moderne nybygg i Spania",
-    description:
-      "Finn og sammenlign moderne nybygg på Costa Blanca og Costa Cálida med områdeguider, kjøperfokus og en strukturert kjøpsreise.",
+    description: "Finn og sammenlign moderne nybygg på Costa Blanca og Costa Cálida med områdeguider, kjøperfokus og en strukturert kjøpsreise.",
     url: "https://www.zenecohomes.com",
     siteName: "Zen Eco Homes",
     locale: "nb_NO",
     type: "website",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -75,47 +57,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "@id": "https://www.zenecohomes.com/#organization",
         name: "Zen Eco Homes",
         url: "https://www.zenecohomes.com",
-        description:
-          "Eiendomsrådgivning for moderne nybygg, villaer, leiligheter, tomter og eiendomsprosjekter i Spania, med særlig fokus på Costa Blanca og Costa Cálida.",
+        description: "Eiendomsrådgivning for moderne nybygg, villaer, leiligheter, tomter og eiendomsprosjekter i Spania, med særlig fokus på Costa Blanca og Costa Cálida.",
         telephone: "+4796009965",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Benidorm",
-          addressRegion: "Alicante / Costa Blanca",
-          addressCountry: "ES",
-        },
+        address: { "@type": "PostalAddress", addressLocality: "Benidorm", addressRegion: "Alicante / Costa Blanca", addressCountry: "ES" },
         contactPoint: [
-          {
-            "@type": "ContactPoint",
-            telephone: "+4796009965",
-            contactType: "sales",
-            areaServed: ["NO", "ES"],
-            availableLanguage: ["Norwegian", "English", "Spanish"],
-          },
-          {
-            "@type": "ContactPoint",
-            telephone: "+34624297325",
-            contactType: "sales",
-            areaServed: ["ES", "NO"],
-            availableLanguage: ["Spanish", "English", "Norwegian"],
-          },
+          { "@type": "ContactPoint", telephone: "+4796009965", contactType: "sales", areaServed: ["NO", "ES"], availableLanguage: ["Norwegian", "English", "Spanish"] },
+          { "@type": "ContactPoint", telephone: "+34624297325", contactType: "sales", areaServed: ["ES", "NO"], availableLanguage: ["Spanish", "English", "Norwegian"] },
         ],
         areaServed: ["Benidorm", "Biar", "Costa Blanca", "Costa Blanca Nord", "Costa Blanca Sør", "Costa Cálida", "Alicante", "Spania"],
-        knowsAbout: [
-          "Boligkjøp i Spania",
-          "Moderne nybygg i Spania",
-          "Costa Blanca",
-          "Costa Blanca Nord",
-          "Tomtekjøp i Spania",
-          "Kjøpsprosess i Spania",
-          "Eiendomsrådgivning for nordmenn",
-        ],
-        founder: {
-          "@type": "Person",
-          name: "Freddy Bremseth",
-          url: "https://www.zenecohomes.com/om-freddy",
-          knowsAbout: ["Eiendom i Spania", "Rådgivning", "Salg", "Digitale systemer"],
-        },
+        knowsAbout: ["Boligkjøp i Spania", "Moderne nybygg i Spania", "Costa Blanca", "Costa Blanca Nord", "Tomtekjøp i Spania", "Kjøpsprosess i Spania", "Eiendomsrådgivning for nordmenn"],
+        founder: { "@type": "Person", name: "Freddy Bremseth", url: "https://www.zenecohomes.com/om-freddy", knowsAbout: ["Eiendom i Spania", "Rådgivning", "Salg", "Digitale systemer"] },
         sameAs: ["https://www.freddybremseth.com"],
       },
     ],
@@ -124,19 +75,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="no" className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         {children}
-        <Script
-          src="https://appointment.chatgenius.pro/embed.js"
-          strategy="afterInteractive"
-          data-brand="zen"
-          data-config-url="https://realtyflow.chatgenius.pro/api/public/booking-config?brand_id=zeneco"
-        />
+        <Script src="https://appointment.chatgenius.pro/embed.js" strategy="afterInteractive" data-brand="zen" data-config-url="https://realtyflow.chatgenius.pro/api/public/booking-config?brand_id=zeneco" />
         <ZenecoChatbot />
         <RemasterPlayer />
       </body>
