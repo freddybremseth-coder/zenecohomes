@@ -4673,3 +4673,60 @@ footer {
     gap: 40px;
   }
 }
+
+/* ==========================================================================
+   ZenEco Design 2027 — magasin (redaksjonelt index)
+   Kantløse, avrundede guide-kort med serif-titler, rolig heving og bilde-zoom.
+   ========================================================================== */
+.magazine-grid {
+  gap: 34px;
+}
+.magazine-card {
+  border: none;
+  border-radius: var(--radius-2027);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.5s var(--ease-2027),
+    box-shadow 0.5s var(--ease-2027);
+}
+.magazine-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 44px 100px -34px rgba(22, 34, 43, 0.4);
+}
+.magazine-card .magazine-cover-image {
+  transition: transform 0.7s var(--ease-2027);
+}
+.magazine-card:hover .magazine-cover-image {
+  transform: scale(1.04);
+}
+.magazine-body {
+  padding: 30px 30px 32px;
+}
+.magazine-body h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-size: 1.6rem;
+  line-height: 1.14;
+}
+.magazine-actions {
+  border-top: 1px solid rgba(22, 34, 43, 0.07);
+}
+.magazine-actions .text-button {
+  position: relative;
+}
+.magazine-actions .text-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-2027);
+}
+.magazine-actions .text-button:hover::after {
+  transform: scaleX(1);
+}
