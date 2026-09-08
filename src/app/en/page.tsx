@@ -9,7 +9,7 @@ import { localSeoLandingPagesEN } from "@/lib/localSeoLandingPages.en";
 import { CARE_URL, homeHreflang, homeLanguageLinks, ogLocale } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
-const BOOKING = "/en#kontakt";
+const BOOKING = "/en/booking";
 
 export const metadata: Metadata = {
   title: "Modern New Build Property in Spain | Costa Blanca Advisor",
@@ -39,11 +39,14 @@ export default function EnglishHome() {
           clearly fits you better, we can still help you assess it rather than pushing the wrong new-build option.
         </p>
         <div className="hero-actions">
-          <Link className="contact-button" href={BOOKING}>
-            Book a property consultation <ArrowRight size={18} />
+          <Link className="contact-button" href="/en/areas">
+            Choose your area <ArrowRight size={18} />
           </Link>
           <Link className="text-button light" href="/en/properties">
             Browse modern properties
+          </Link>
+          <Link className="text-button light" href={BOOKING}>
+            Talk to Freddy
           </Link>
         </div>
       </section>
