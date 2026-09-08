@@ -1,4 +1,5 @@
-import { PropertyDetailView, PropertyNotFoundView } from "@/components/PropertyDetailView";
+import { PropertyNotFoundView } from "@/components/PropertyDetailView";
+import { TrackedPropertyDetailView } from "@/components/TrackedPropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
 import {
   formatPriceForLocale,
@@ -46,5 +47,5 @@ export default async function GermanPropertyPage({ params }: { params: Promise<{
 
   if (!property) return <PropertyNotFoundView locale="de" />;
 
-  return <PropertyDetailView property={property} locale="de" />;
+  return <TrackedPropertyDetailView property={property} locale="de" />;
 }
