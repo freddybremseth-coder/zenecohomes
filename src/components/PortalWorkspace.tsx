@@ -6,59 +6,22 @@ import {
   ArrowRight,
   Building2,
   Calculator,
-  CheckCircle2,
   FileText,
   Heart,
-  KeyRound,
-  LayoutDashboard,
   LockKeyhole,
   LogOut,
-  Mail,
-  MapPin,
   MessageSquareText,
-  Search,
   SlidersHorizontal,
   UserRound,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-browser";
 
-const buyerSteps = [
-  { label: "Behov og budsjett", status: "Klar" },
-  { label: "Områdevalg", status: "Pågår" },
-  { label: "Boligmatch", status: "Neste" },
-  { label: "Reservasjon", status: "Ikke startet" },
-];
-
-// Ingen demo-boliger: favoritter kommer kun fra kundens egne lagrede boliger (localStorage).
-type SavedProperty = { ref: string; title: string; location: string; price: string; href: string };
-const savedProperties: SavedProperty[] = [];
-
-type PortalProperty = {
-  id?: string;
-  ref?: string;
-  external_id?: string;
-  title?: string;
-  title_no?: string;
-  location?: string;
-  town?: string;
-  price?: number;
-  bedrooms?: number;
-  bathrooms?: number;
-  built_area?: number;
-  area?: number;
-  property_type?: string;
-  type?: string;
-  pool?: boolean;
-};
-
-type PortalPlot = {
-  id?: string;
-  plot_number?: string;
-  location?: string;
-  municipality?: string;
-  area?: number;
-  price?: number;
-  zoning?: string;
+type SavedProperty = {
+  ref: string;
+  title: string;
+  location: string;
+  price: string;
+  href: string;
 };
 
 type PortalDocument = {
@@ -124,21 +87,300 @@ const initialPreferences: Preferences = {
   notes: "",
 };
 
-function normalize(value?: string) {
-  return (value || "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase();
+type PortalStrings = {
+  sidebarTitle: string;
+  sidebarDesc: string;
+  portalLabel: string;
+  loggedIn: string;
+  topHeading: string;
+  signOut: string;
+  preferencesTitle: string;
+  budgetFrom: string;
+  budgetTo: string;
+  region: string;
+  allRegions: string;
+  area: string;
+  areaPlaceholder: string;
+  propertyType: string;
+  allTypes: string;
+  apartment: string;
+  townhouse: string;
+  lifestyle: string;
+  open: string;
+  pool: string;
+  sea: string;
+  golf: string;
+  bedrooms: string;
+  bathrooms: string;
+  timeline: string;
+  notSelected: string;
+  readyNow: string;
+  withinThreeMonths: string;
+  sixToTwelveMonths: string;
+  later: string;
+  wantsPlots: string;
+  plotAreaFrom: string;
+  plotPriceTo: string;
+  notes: string;
+  notesPlaceholder: string;
+  savePreferences: string;
+  savingPreferences: string;
+  preferencesSaved: string;
+  preferencesError: string;
+  favoritesTitle: string;
+  favoritesEmpty: string;
+  compare: string;
+  documentsTitle: string;
+  documentsEmpty: string;
+  readMore: string;
+  readLess: string;
+  calculatorTitle: string;
+  propertyPrice: string;
+  equity: string;
+  years: string;
+  spainRate: string;
+  norwayRate: string;
+  purchaseCosts: string;
+  totalBudget: string;
+  estimatedLoan: string;
+  monthlySpainNorway: string;
+  rateNote: string;
+  messagesTitle: string;
+  messagesEmpty: string;
+  messagePlaceholder: string;
+  attachmentPlaceholder: string;
+  sendMessage: string;
+  sendingMessage: string;
+  messageSent: string;
+  messageError: string;
+  you: string;
+};
+
+const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
+  no: {
+    sidebarTitle: "Min side",
+    sidebarDesc: "Boligønsker, favoritter, dokumenter, kalkyler og dialog samlet på ett sted.",
+    portalLabel: "Kundeportal",
+    loggedIn: "Innlogget",
+    topHeading: "Din boligreise i Spania",
+    signOut: "Logg ut",
+    preferencesTitle: "Mine boligønsker",
+    budgetFrom: "Budsjett fra",
+    budgetTo: "Budsjett til",
+    region: "Region",
+    allRegions: "Alle regioner",
+    area: "Område/sted",
+    areaPlaceholder: "Calpe, Altea, Torrevieja...",
+    propertyType: "Boligtype",
+    allTypes: "Alle typer",
+    apartment: "Leilighet",
+    townhouse: "Rekkehus",
+    lifestyle: "Livsstil",
+    open: "Åpen",
+    pool: "Basseng",
+    sea: "Nær sjø / havutsikt",
+    golf: "Golf",
+    bedrooms: "Soverom",
+    bathrooms: "Bad",
+    timeline: "Tidslinje",
+    notSelected: "Ikke valgt",
+    readyNow: "Klar nå",
+    withinThreeMonths: "Innen 3 mnd",
+    sixToTwelveMonths: "6–12 mnd",
+    later: "Senere",
+    wantsPlots: "Jeg vurderer også tomt",
+    plotAreaFrom: "Tomteareal fra",
+    plotPriceTo: "Tomtepris til",
+    notes: "Notat",
+    notesPlaceholder: "Fortell om beliggenhet, utsikt, avstand til strand/golf, overtakelse eller andre ønsker.",
+    savePreferences: "Lagre ønskene mine",
+    savingPreferences: "Lagrer…",
+    preferencesSaved: "Ønskene er lagret. Freddy får beskjed om oppdateringen.",
+    preferencesError: "Kunne ikke lagre ønskene akkurat nå.",
+    favoritesTitle: "Favoritter",
+    favoritesEmpty: "Du har ikke lagret noen favoritter ennå.",
+    compare: "Sammenlign boliger",
+    documentsTitle: "Dokumenter",
+    documentsEmpty: "Ingen dokumenter er delt med deg ennå.",
+    readMore: "Les mer",
+    readLess: "Vis mindre",
+    calculatorTitle: "Kjøpskalkulator",
+    propertyPrice: "Boligpris EUR",
+    equity: "Egenkapital EUR",
+    years: "År",
+    spainRate: "Spania %",
+    norwayRate: "Norge %",
+    purchaseCosts: "Ca. skatt og kostnader",
+    totalBudget: "Total kjøpsramme",
+    estimatedLoan: "Estimert lån",
+    monthlySpainNorway: "Mnd. Spania / Norge",
+    rateNote: "Renter og kjøpskostnader er veiledende og kan variere.",
+    messagesTitle: "Meldinger og neste steg",
+    messagesEmpty: "Ingen meldinger eller avtalte neste steg er registrert ennå.",
+    messagePlaceholder: "Skriv en melding til Freddy / Zen Eco Homes...",
+    attachmentPlaceholder: "Vedlegg/lenke, f.eks. PDF eller delt dokument",
+    sendMessage: "Send melding",
+    sendingMessage: "Sender…",
+    messageSent: "Meldingen er sendt.",
+    messageError: "Kunne ikke sende meldingen.",
+    you: "Du",
+  },
+  en: {
+    sidebarTitle: "My account",
+    sidebarDesc: "Preferences, favourites, documents, calculations and dialogue in one place.",
+    portalLabel: "Customer portal",
+    loggedIn: "Signed in",
+    topHeading: "Your property journey in Spain",
+    signOut: "Sign out",
+    preferencesTitle: "My property preferences",
+    budgetFrom: "Budget from",
+    budgetTo: "Budget to",
+    region: "Region",
+    allRegions: "All regions",
+    area: "Area/location",
+    areaPlaceholder: "Calpe, Altea, Torrevieja...",
+    propertyType: "Property type",
+    allTypes: "All types",
+    apartment: "Apartment",
+    townhouse: "Townhouse",
+    lifestyle: "Lifestyle",
+    open: "Open",
+    pool: "Pool",
+    sea: "Near the sea / sea view",
+    golf: "Golf",
+    bedrooms: "Bedrooms",
+    bathrooms: "Bathrooms",
+    timeline: "Timeline",
+    notSelected: "Not selected",
+    readyNow: "Ready now",
+    withinThreeMonths: "Within 3 months",
+    sixToTwelveMonths: "6–12 months",
+    later: "Later",
+    wantsPlots: "I am also considering a plot",
+    plotAreaFrom: "Plot area from",
+    plotPriceTo: "Plot price to",
+    notes: "Notes",
+    notesPlaceholder: "Tell us about location, views, distance to beach/golf, completion timing or other preferences.",
+    savePreferences: "Save my preferences",
+    savingPreferences: "Saving…",
+    preferencesSaved: "Your preferences are saved. Freddy is notified about the update.",
+    preferencesError: "Could not save your preferences right now.",
+    favoritesTitle: "Favourites",
+    favoritesEmpty: "You have not saved any favourites yet.",
+    compare: "Compare properties",
+    documentsTitle: "Documents",
+    documentsEmpty: "No documents have been shared with you yet.",
+    readMore: "Read more",
+    readLess: "Show less",
+    calculatorTitle: "Purchase calculator",
+    propertyPrice: "Property price EUR",
+    equity: "Equity EUR",
+    years: "Years",
+    spainRate: "Spain %",
+    norwayRate: "Norway %",
+    purchaseCosts: "Approx. taxes and costs",
+    totalBudget: "Total purchase budget",
+    estimatedLoan: "Estimated loan",
+    monthlySpainNorway: "Monthly Spain / Norway",
+    rateNote: "Rates and purchase costs are indicative and may vary.",
+    messagesTitle: "Messages and next steps",
+    messagesEmpty: "No messages or agreed next steps have been registered yet.",
+    messagePlaceholder: "Write a message to Freddy / Zen Eco Homes...",
+    attachmentPlaceholder: "Attachment/link, e.g. PDF or shared document",
+    sendMessage: "Send message",
+    sendingMessage: "Sending…",
+    messageSent: "Your message has been sent.",
+    messageError: "Could not send the message.",
+    you: "You",
+  },
+  de: {
+    sidebarTitle: "Mein Bereich",
+    sidebarDesc: "Wünsche, Favoriten, Dokumente, Berechnungen und Dialog an einem Ort.",
+    portalLabel: "Kundenportal",
+    loggedIn: "Angemeldet",
+    topHeading: "Ihre Immobilienreise in Spanien",
+    signOut: "Abmelden",
+    preferencesTitle: "Meine Immobilienwünsche",
+    budgetFrom: "Budget von",
+    budgetTo: "Budget bis",
+    region: "Region",
+    allRegions: "Alle Regionen",
+    area: "Gebiet/Ort",
+    areaPlaceholder: "Calpe, Altea, Torrevieja...",
+    propertyType: "Immobilientyp",
+    allTypes: "Alle Typen",
+    apartment: "Wohnung",
+    townhouse: "Reihenhaus",
+    lifestyle: "Lebensstil",
+    open: "Offen",
+    pool: "Pool",
+    sea: "Meeresnähe / Meerblick",
+    golf: "Golf",
+    bedrooms: "Schlafzimmer",
+    bathrooms: "Bäder",
+    timeline: "Zeitrahmen",
+    notSelected: "Nicht ausgewählt",
+    readyNow: "Jetzt bereit",
+    withinThreeMonths: "Innerhalb 3 Monate",
+    sixToTwelveMonths: "6–12 Monate",
+    later: "Später",
+    wantsPlots: "Ich erwäge auch ein Grundstück",
+    plotAreaFrom: "Grundstücksfläche ab",
+    plotPriceTo: "Grundstückspreis bis",
+    notes: "Notiz",
+    notesPlaceholder: "Beschreiben Sie Lage, Aussicht, Entfernung zu Strand/Golf, Übergabe oder andere Wünsche.",
+    savePreferences: "Meine Wünsche speichern",
+    savingPreferences: "Wird gespeichert…",
+    preferencesSaved: "Ihre Wünsche wurden gespeichert. Freddy wird über die Aktualisierung informiert.",
+    preferencesError: "Ihre Wünsche konnten gerade nicht gespeichert werden.",
+    favoritesTitle: "Favoriten",
+    favoritesEmpty: "Sie haben noch keine Favoriten gespeichert.",
+    compare: "Immobilien vergleichen",
+    documentsTitle: "Dokumente",
+    documentsEmpty: "Es wurden noch keine Dokumente mit Ihnen geteilt.",
+    readMore: "Mehr lesen",
+    readLess: "Weniger anzeigen",
+    calculatorTitle: "Kaufrechner",
+    propertyPrice: "Immobilienpreis EUR",
+    equity: "Eigenkapital EUR",
+    years: "Jahre",
+    spainRate: "Spanien %",
+    norwayRate: "Norwegen %",
+    purchaseCosts: "Ca. Steuern und Kosten",
+    totalBudget: "Gesamter Kaufrahmen",
+    estimatedLoan: "Geschätztes Darlehen",
+    monthlySpainNorway: "Monatlich Spanien / Norwegen",
+    rateNote: "Zinsen und Kaufkosten sind Richtwerte und können variieren.",
+    messagesTitle: "Nachrichten und nächste Schritte",
+    messagesEmpty: "Noch keine Nachrichten oder vereinbarten nächsten Schritte.",
+    messagePlaceholder: "Nachricht an Freddy / Zen Eco Homes schreiben...",
+    attachmentPlaceholder: "Anhang/Link, z. B. PDF oder geteiltes Dokument",
+    sendMessage: "Nachricht senden",
+    sendingMessage: "Wird gesendet…",
+    messageSent: "Die Nachricht wurde gesendet.",
+    messageError: "Die Nachricht konnte nicht gesendet werden.",
+    you: "Sie",
+  },
+};
+
+function formatEuro(value: number | undefined, locale: Locale) {
+  if (value === undefined || Number.isNaN(value)) return "–";
+  const numberLocale = locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : "nb-NO";
+  return new Intl.NumberFormat(numberLocale, {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+  }).format(value);
 }
 
-function formatEuro(value?: number) {
-  if (!value) return "Pris på forespørsel";
-  return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
-}
-
-function formatNok(value?: number) {
-  if (!value) return "NOK 0";
-  return new Intl.NumberFormat("nb-NO", { style: "currency", currency: "NOK", maximumFractionDigits: 0 }).format(value);
+function formatNok(value: number | undefined, locale: Locale) {
+  if (value === undefined || Number.isNaN(value)) return "–";
+  const numberLocale = locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : "nb-NO";
+  return new Intl.NumberFormat(numberLocale, {
+    style: "currency",
+    currency: "NOK",
+    maximumFractionDigits: 0,
+  }).format(value);
 }
 
 function calculateMonthlyPayment(principal: number, annualRate: number, years: number) {
@@ -148,159 +390,11 @@ function calculateMonthlyPayment(principal: number, annualRate: number, years: n
   return (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
 }
 
-function propertyRef(property: PortalProperty) {
-  return property.ref || property.external_id || property.id || "";
-}
-
-function propertyTitle(property: PortalProperty) {
-  return property.title_no || property.title || "Nybygg i Spania";
-}
-
-function propertyArea(property: PortalProperty) {
-  return property.built_area || property.area || 0;
-}
-
-function plotRef(plot: PortalPlot) {
-  return plot.plot_number || plot.id || "Tomt";
-}
-
-function regionMatches(haystack: string, region: string) {
-  if (!region) return true;
-  const terms: Record<string, string[]> = {
-    "costa blanca nord": ["costa blanca nord", "costa blanca north", "altea", "albir", "calpe", "finestrat", "denia", "javea", "moraira", "polop"],
-    "costa blanca sør": ["costa blanca sør", "costa blanca sor", "costa blanca south", "torrevieja", "orihuela", "ciudad quesada", "guardamar", "alicante", "la zenia"],
-    "costa calida": ["costa calida", "costa cálida", "murcia", "san pedro", "los alcazares", "la manga", "cartagena", "altaona"],
-  };
-  const normalizedRegion = normalize(region);
-  return (terms[normalizedRegion] || [region]).some((term) => haystack.includes(normalize(term)));
-}
-
-type PortalStrings = {
-  sidebarTitle: string;
-  sidebarDesc: string;
-  portalLabel: string;
-  adminNote: string;
-  loggedIn: string;
-  topHeading: string;
-  signOut: string;
-  connecting: string;
-  accessTitle: string;
-  email: string;
-  emailPh: string;
-  password: string;
-  passwordPh: string;
-  login: string;
-  loginSuccess: string;
-  loginError: string;
-  missingConfig: string;
-  requestTitle: string;
-  name: string;
-  namePh: string;
-  phone: string;
-  message: string;
-  messagePh: string;
-  requestSubmit: string;
-  requestSent: string;
-  requestError: string;
-};
-
-const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
-  no: {
-    sidebarTitle: "Min side",
-    sidebarDesc: "Samle boligmatch, dokumenter, meldinger og neste steg i kjøpsreisen.",
-    portalLabel: "Kundeportal",
-    adminNote: "Admin håndteres internt",
-    loggedIn: "Innlogget",
-    topHeading: "Din kjøpsreise i Spania",
-    signOut: "Logg ut",
-    connecting: "Kobler til portalen",
-    accessTitle: "Har du fått tilgang?",
-    email: "E-post",
-    emailPh: "din@epost.no",
-    password: "Passord",
-    passwordPh: "Midlertidig eller eget passord",
-    login: "Logg inn",
-    loginSuccess: "Du er logget inn.",
-    loginError: "Kunne ikke logge inn. Kontroller e-post og passord.",
-    missingConfig: "Supabase-nøkler mangler i Zeneco-prosjektet.",
-    requestTitle: "Be om innlogging",
-    name: "Navn",
-    namePh: "Ditt navn",
-    phone: "Telefon",
-    message: "Melding",
-    messagePh: "Kort om hva du trenger tilgang til",
-    requestSubmit: "Send innloggingsforespørsel",
-    requestSent: "Forespørselen er sendt til rådgiverne våre.",
-    requestError: "Kunne ikke sende akkurat nå. Prøv igjen.",
-  },
-  de: {
-    sidebarTitle: "Mein Bereich",
-    sidebarDesc: "Immobilien-Auswahl, Dokumente, Nachrichten und nächste Schritte Ihrer Kaufreise an einem Ort.",
-    portalLabel: "Kundenportal",
-    adminNote: "Admin wird intern verwaltet",
-    loggedIn: "Angemeldet",
-    topHeading: "Ihre Kaufreise in Spanien",
-    signOut: "Abmelden",
-    connecting: "Verbindung zum Portal",
-    accessTitle: "Haben Sie bereits Zugang?",
-    email: "E-Mail",
-    emailPh: "ihre@email.de",
-    password: "Passwort",
-    passwordPh: "Temporäres oder eigenes Passwort",
-    login: "Anmelden",
-    loginSuccess: "Sie sind angemeldet.",
-    loginError: "Anmeldung fehlgeschlagen. Bitte E-Mail und Passwort prüfen.",
-    missingConfig: "Supabase-Schlüssel fehlen im Zeneco-Projekt.",
-    requestTitle: "Zugang anfordern",
-    name: "Name",
-    namePh: "Ihr Name",
-    phone: "Telefon",
-    message: "Nachricht",
-    messagePh: "Kurz, wozu Sie Zugang brauchen",
-    requestSubmit: "Zugang anfordern",
-    requestSent: "Ihre Anfrage wurde an unsere Berater gesendet.",
-    requestError: "Senden gerade nicht möglich. Bitte erneut versuchen.",
-  },
-  en: {
-    sidebarTitle: "My account",
-    sidebarDesc: "Property matches, documents, messages and your next steps in one place.",
-    portalLabel: "Customer portal",
-    adminNote: "Admin is handled internally",
-    loggedIn: "Logged in",
-    topHeading: "Your buying journey in Spain",
-    signOut: "Sign out",
-    connecting: "Connecting to the portal",
-    accessTitle: "Have you been given access?",
-    email: "Email",
-    emailPh: "you@email.com",
-    password: "Password",
-    passwordPh: "Temporary or your own password",
-    login: "Log in",
-    loginSuccess: "You are logged in.",
-    loginError: "Could not log in. Please check your email and password.",
-    missingConfig: "Supabase keys are missing in the Zeneco project.",
-    requestTitle: "Request access",
-    name: "Name",
-    namePh: "Your name",
-    phone: "Phone",
-    message: "Message",
-    messagePh: "Briefly, what you need access to",
-    requestSubmit: "Send access request",
-    requestSent: "Your request has been sent to our advisers.",
-    requestError: "Could not send right now. Please try again.",
-  },
-};
-
 export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   const p = PORTAL_STRINGS[locale];
-  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
-  const [newPassword, setNewPassword] = useState("");
-  const [mustChangePassword, setMustChangePassword] = useState(false);
-  const [passwordStatus, setPasswordStatus] = useState<"idle" | "saved" | "error">("idle");
+  const [authReady, setAuthReady] = useState(false);
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
-  const [favorites, setFavorites] = useState(savedProperties);
-  const [properties, setProperties] = useState<PortalProperty[]>([]);
-  const [plots, setPlots] = useState<PortalPlot[]>([]);
+  const [favorites, setFavorites] = useState<SavedProperty[]>([]);
   const [documents, setDocuments] = useState<PortalDocument[]>([]);
   const [messages, setMessages] = useState<PortalMessage[]>([]);
   const [messageText, setMessageText] = useState("");
@@ -309,8 +403,8 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   const [expandedDocument, setExpandedDocument] = useState<string | null>(null);
   const [financeRates, setFinanceRates] = useState<FinanceRates | null>(null);
   const [calculator, setCalculator] = useState({
-    price: "450000",
-    ownCapital: "150000",
+    price: "",
+    ownCapital: "",
     years: "25",
     spainRate: "",
     norwayRate: "",
@@ -320,8 +414,12 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
 
   useEffect(() => {
     function loadFavorites() {
-      const stored = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]") as typeof savedProperties;
-      setFavorites(stored.length ? stored : savedProperties);
+      try {
+        const stored = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]");
+        setFavorites(Array.isArray(stored) ? stored : []);
+      } catch {
+        setFavorites([]);
+      }
     }
 
     loadFavorites();
@@ -330,16 +428,19 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   }, []);
 
   useEffect(() => {
-    if (!supabase) return;
+    if (!supabase) {
+      setAuthReady(true);
+      return;
+    }
 
     supabase.auth.getUser().then(({ data }) => {
       setSessionEmail(data.user?.email || null);
-      setMustChangePassword(Boolean(data.user?.user_metadata?.must_change_password));
+      setAuthReady(true);
     });
 
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
       setSessionEmail(session?.user?.email || null);
-      setMustChangePassword(Boolean(session?.user?.user_metadata?.must_change_password));
+      setAuthReady(true);
     });
 
     return () => data.subscription.unsubscribe();
@@ -347,13 +448,14 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
 
   useEffect(() => {
     if (!sessionEmail) return;
-    fetch("/api/portal/catalog")
-      .then((res) => res.json())
-      .then((data) => {
-        setProperties(Array.isArray(data.properties) ? data.properties : []);
-        setPlots(Array.isArray(data.plots) ? data.plots : []);
-      })
-      .catch(() => {});
+    try {
+      const stored = JSON.parse(localStorage.getItem(`zeneco:portal-preferences:${sessionEmail}`) || "null");
+      if (stored && typeof stored === "object") {
+        setPreferences((current) => ({ ...current, ...stored }));
+      }
+    } catch {
+      // CRM remains the authoritative destination even if local convenience state is unavailable.
+    }
   }, [sessionEmail]);
 
   useEffect(() => {
@@ -364,6 +466,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
       if (!token) return;
       fetch("/api/portal/documents", {
         headers: { Authorization: `Bearer ${token}` },
+        cache: "no-store",
       })
         .then((res) => res.json())
         .then((data) => setDocuments(Array.isArray(data.documents) ? data.documents : []))
@@ -379,6 +482,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
       if (!token) return;
       fetch("/api/portal/messages", {
         headers: { Authorization: `Bearer ${token}` },
+        cache: "no-store",
       })
         .then((res) => res.json())
         .then((data) => setMessages(Array.isArray(data.messages) ? data.messages : []))
@@ -391,56 +495,14 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
       .then((res) => res.json())
       .then((data) => {
         setFinanceRates(data);
-        setCalculator((prev) => ({
-          ...prev,
-          spainRate: prev.spainRate || String(Math.round(Number(data.loanAssumptions?.spainRate || 0.0425) * 10000) / 100),
-          norwayRate: prev.norwayRate || String(Math.round(Number(data.loanAssumptions?.norwayRate || 0.055) * 10000) / 100),
+        setCalculator((current) => ({
+          ...current,
+          spainRate: current.spainRate || String(Math.round(Number(data.loanAssumptions?.spainRate || 0.0425) * 10000) / 100),
+          norwayRate: current.norwayRate || String(Math.round(Number(data.loanAssumptions?.norwayRate || 0.055) * 10000) / 100),
         }));
       })
       .catch(() => {});
   }, []);
-
-  const filteredProperties = properties
-    .filter((property) => {
-      const haystack = normalize(
-        [
-          propertyTitle(property),
-          property.location,
-          property.town,
-          property.property_type,
-          property.type,
-          property.ref,
-          property.external_id,
-        ]
-          .filter(Boolean)
-          .join(" "),
-      );
-      const price = Number(property.price || 0);
-      return (
-        regionMatches(haystack, preferences.region) &&
-        (!preferences.area || haystack.includes(normalize(preferences.area))) &&
-        (!preferences.propertyType || haystack.includes(normalize(preferences.propertyType))) &&
-        (!preferences.budgetMin || price >= Number(preferences.budgetMin)) &&
-        (!preferences.budgetMax || price <= Number(preferences.budgetMax)) &&
-        (!preferences.bedrooms || Number(property.bedrooms || 0) >= Number(preferences.bedrooms)) &&
-        (!preferences.bathrooms || Number(property.bathrooms || 0) >= Number(preferences.bathrooms)) &&
-        (!preferences.lifestyle ||
-          (preferences.lifestyle === "pool" && property.pool) ||
-          haystack.includes(normalize(preferences.lifestyle)))
-      );
-    })
-    .slice(0, 6);
-
-  const filteredPlots = plots
-    .filter((plot) => {
-      const haystack = normalize([plotRef(plot), plot.location, plot.municipality, plot.zoning].filter(Boolean).join(" "));
-      return (
-        (!preferences.area || haystack.includes(normalize(preferences.area))) &&
-        (!preferences.minPlotArea || Number(plot.area || 0) >= Number(preferences.minPlotArea)) &&
-        (!preferences.maxPlotPrice || Number(plot.price || 0) <= Number(preferences.maxPlotPrice))
-      );
-    })
-    .slice(0, 6);
 
   const purchasePrice = Number(calculator.price || 0);
   const purchaseCostRate = financeRates?.purchaseCostRate ?? 0.135;
@@ -451,60 +513,15 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   const spainMonthly = calculateMonthlyPayment(loanAmount, Number(calculator.spainRate || 0) / 100, years);
   const norwayMonthly = calculateMonthlyPayment(loanAmount, Number(calculator.norwayRate || 0) / 100, years);
 
-  async function requestAccess(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
-    setStatus("idle");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...data,
-          source: "zenecohomes-customer-access",
-          request_type: "Kundeportal tilgang",
-          message: `Ber om tilgang til kundeportal. ${data.message || ""}`,
-        }),
-      });
-      if (!res.ok) throw new Error("Access request failed");
-      form.reset();
-      setStatus("sent");
-    } catch {
-      setStatus("error");
-    }
-  }
-
-  async function changePassword(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setPasswordStatus("idle");
-    if (!supabase || newPassword.length < 8) {
-      setPasswordStatus("error");
-      return;
-    }
-    const { data, error } = await supabase.auth.updateUser({
-      password: newPassword,
-      data: { must_change_password: false },
-    });
-    if (error) {
-      setPasswordStatus("error");
-      return;
-    }
-    setNewPassword("");
-    setMustChangePassword(Boolean(data.user?.user_metadata?.must_change_password));
-    setPasswordStatus("saved");
-  }
-
   async function signOut() {
     await supabase?.auth.signOut();
     setSessionEmail(null);
-    setMustChangePassword(false);
   }
 
   async function savePreferences(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!supabase) return;
+    if (!supabase || !sessionEmail) return;
+
     setSignalStatus("saving");
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
@@ -522,12 +539,22 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
       body: JSON.stringify({ preferences }),
     });
 
-    setSignalStatus(res.ok ? "saved" : "error");
+    if (res.ok) {
+      try {
+        localStorage.setItem(`zeneco:portal-preferences:${sessionEmail}`, JSON.stringify(preferences));
+      } catch {
+        // Saving to CRM succeeded; local persistence is only a convenience.
+      }
+      setSignalStatus("saved");
+    } else {
+      setSignalStatus("error");
+    }
   }
 
   async function sendPortalMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!supabase || (!messageText.trim() && !attachmentUrl.trim())) return;
+
     setMessageStatus("sending");
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
@@ -551,7 +578,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
 
     if (res.ok) {
       const data = await res.json();
-      setMessages((prev) => [...prev, data.message]);
+      if (data.message) setMessages((current) => [...current, data.message]);
       setMessageText("");
       setAttachmentUrl("");
       setMessageStatus("sent");
@@ -560,9 +587,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
     }
   }
 
-  // Pre-login håndteres av selve Min side-siden (magic-link + fordeler). Portalen
-  // viser kun det innloggede dashbordet – ingen passord-skjema, admin eller demo.
-  if (!sessionEmail) return null;
+  if (!authReady || !sessionEmail) return null;
 
   return (
     <section className="portal-shell">
@@ -584,7 +609,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
       <div className="portal-main">
         <div className="portal-topline">
           <div>
-            <p className="eyebrow">{sessionEmail ? p.loggedIn : p.portalLabel}</p>
+            <p className="eyebrow">{p.loggedIn}</p>
             <h2>{p.topHeading}</h2>
           </div>
           <button className="portal-session-button" onClick={signOut} type="button">
@@ -593,296 +618,190 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
         </div>
 
         <div className="portal-grid">
-          {mustChangePassword && (
-            <article className="portal-panel access-panel wide-panel">
-              <div className="panel-title">
-                <KeyRound size={20} />
-                <h3>Sett nytt passord</h3>
-              </div>
-              <form onSubmit={changePassword}>
-                <label>
-                  Nytt passord
-                  <input
-                    minLength={8}
-                    onChange={(event) => setNewPassword(event.target.value)}
-                    placeholder="Minst 8 tegn"
-                    required
-                    type="password"
-                    value={newPassword}
-                  />
-                </label>
-                <button type="submit">Lagre nytt passord</button>
-                {passwordStatus === "saved" && <p className="form-success">Passordet er oppdatert.</p>}
-                {passwordStatus === "error" && <p className="form-error">Kunne ikke lagre passordet.</p>}
-              </form>
-            </article>
-          )}
-
-          {sessionEmail && (
-            <article className="portal-panel wide-panel portal-search-panel">
-              <div className="panel-title">
-                <SlidersHorizontal size={20} />
-                <h3>Mine boligønsker</h3>
-              </div>
-              <form className="portal-preferences" onSubmit={savePreferences}>
-                <div className="form-grid">
-                  <label>
-                    Budsjett fra
-                    <input
-                      inputMode="numeric"
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, budgetMin: event.target.value }))}
-                      placeholder="250000"
-                      value={preferences.budgetMin}
-                    />
-                  </label>
-                  <label>
-                    Budsjett til
-                    <input
-                      inputMode="numeric"
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, budgetMax: event.target.value }))}
-                      placeholder="650000"
-                      value={preferences.budgetMax}
-                    />
-                  </label>
-                </div>
-                <div className="form-grid">
-                  <label>
-                    Region
-                    <select
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, region: event.target.value }))}
-                      value={preferences.region}
-                    >
-                      <option value="">Alle regioner</option>
-                      <option>Costa Blanca Nord</option>
-                      <option>Costa Blanca Sør</option>
-                      <option>Costa Calida</option>
-                    </select>
-                  </label>
-                  <label>
-                    Område/sted
-                    <input
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, area: event.target.value }))}
-                      placeholder="Calpe, Altea, Torrevieja..."
-                      value={preferences.area}
-                    />
-                  </label>
-                </div>
-                <div className="form-grid">
-                  <label>
-                    Boligtype
-                    <select
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, propertyType: event.target.value }))}
-                      value={preferences.propertyType}
-                    >
-                      <option value="">Alle typer</option>
-                      <option>Villa</option>
-                      <option>Leilighet</option>
-                      <option>Rekkehus</option>
-                      <option>Penthouse</option>
-                    </select>
-                  </label>
-                  <label>
-                    Livsstil
-                    <select
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, lifestyle: event.target.value }))}
-                      value={preferences.lifestyle}
-                    >
-                      <option value="">Åpen</option>
-                      <option value="pool">Basseng</option>
-                      <option value="sea">Nær sjø / havutsikt</option>
-                      <option value="golf">Golf</option>
-                    </select>
-                  </label>
-                </div>
-                <div className="form-grid compact-fields">
-                  <label>
-                    Soverom
-                    <input
-                      min="0"
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, bedrooms: event.target.value }))}
-                      type="number"
-                      value={preferences.bedrooms}
-                    />
-                  </label>
-                  <label>
-                    Bad
-                    <input
-                      min="0"
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, bathrooms: event.target.value }))}
-                      type="number"
-                      value={preferences.bathrooms}
-                    />
-                  </label>
-                  <label>
-                    Tidslinje
-                    <select
-                      onChange={(event) => setPreferences((prev) => ({ ...prev, timeline: event.target.value }))}
-                      value={preferences.timeline}
-                    >
-                      <option value="">Ikke valgt</option>
-                      <option>Klar nå</option>
-                      <option>Innen 3 mnd</option>
-                      <option>6-12 mnd</option>
-                      <option>Senere</option>
-                    </select>
-                  </label>
-                </div>
-                <label className="portal-checkbox">
-                  <input
-                    checked={preferences.wantsPlots}
-                    onChange={(event) => setPreferences((prev) => ({ ...prev, wantsPlots: event.target.checked }))}
-                    type="checkbox"
-                  />
-                  Jeg vurderer også tomt
-                </label>
-                {preferences.wantsPlots && (
-                  <div className="form-grid">
-                    <label>
-                      Tomteareal fra
-                      <input
-                        inputMode="numeric"
-                        onChange={(event) => setPreferences((prev) => ({ ...prev, minPlotArea: event.target.value }))}
-                        placeholder="1000"
-                        value={preferences.minPlotArea}
-                      />
-                    </label>
-                    <label>
-                      Tomtepris til
-                      <input
-                        inputMode="numeric"
-                        onChange={(event) => setPreferences((prev) => ({ ...prev, maxPlotPrice: event.target.value }))}
-                        placeholder="75000"
-                        value={preferences.maxPlotPrice}
-                      />
-                    </label>
-                  </div>
-                )}
-                <label>
-                  Notat
-                  <textarea
-                    onChange={(event) => setPreferences((prev) => ({ ...prev, notes: event.target.value }))}
-                    placeholder="Fortell om beliggenhet, utsikt, avstand til strand/golf, overtakelse eller andre ønsker."
-                    value={preferences.notes}
-                  />
-                </label>
-                <button disabled={signalStatus === "saving"} type="submit">
-                  {signalStatus === "saving" ? "Lagrer..." : "Lagre ønskene mine"}
-                </button>
-                {signalStatus === "saved" && <p className="form-success">Ønskene er lagret. Freddy får dette som kjøpssignal.</p>}
-                {signalStatus === "error" && <p className="form-error">Kunne ikke lagre ønskene akkurat nå.</p>}
-              </form>
-
-              <div className="portal-results">
-                <div>
-                  <div className="panel-title small-title">
-                    <Search size={18} />
-                    <h3>Boliger som matcher</h3>
-                  </div>
-                  <ul className="portal-match-list">
-                    {filteredProperties.map((property) => (
-                      <li key={propertyRef(property)}>
-                        <Building2 size={17} />
-                        <a href={`/eiendommer/${encodeURIComponent(propertyRef(property))}`}>
-                          <span>{propertyTitle(property)}</span>
-                          <small>
-                            {property.location || property.town || "Spania"} · {formatEuro(property.price)} ·{" "}
-                            {property.bedrooms || 0} sov · {property.bathrooms || 0} bad · {propertyArea(property).toLocaleString("nb-NO")} m²
-                          </small>
-                        </a>
-                      </li>
-                    ))}
-                    {!filteredProperties.length && <li>Ingen boliger matcher filtrene akkurat nå.</li>}
-                  </ul>
-                </div>
-                <div>
-                  <div className="panel-title small-title">
-                    <MapPin size={18} />
-                    <h3>Tomter som matcher</h3>
-                  </div>
-                  <ul className="portal-match-list">
-                    {filteredPlots.map((plot) => (
-                      <li key={plotRef(plot)}>
-                        <MapPin size={17} />
-                        <a href="/tomter">
-                          <span>{plotRef(plot)}</span>
-                          <small>
-                            {plot.municipality || plot.location || "Spania"} · {formatEuro(plot.price)} ·{" "}
-                            {Number(plot.area || 0).toLocaleString("nb-NO")} m²
-                          </small>
-                        </a>
-                      </li>
-                    ))}
-                    {!filteredPlots.length && <li>Ingen tomter matcher filtrene akkurat nå.</li>}
-                  </ul>
-                </div>
-              </div>
-            </article>
-          )}
-
-          {!sessionEmail && (
-            <article className="portal-panel access-panel">
+          <article className="portal-panel wide-panel portal-search-panel">
             <div className="panel-title">
-              <KeyRound size={20} />
-              <h3>{p.requestTitle}</h3>
+              <SlidersHorizontal size={20} />
+              <h3>{p.preferencesTitle}</h3>
             </div>
-            <form onSubmit={requestAccess}>
-              <label>
-                {p.name}
-                <input name="name" required placeholder={p.namePh} />
+            <form className="portal-preferences" onSubmit={savePreferences}>
+              <div className="form-grid">
+                <label>
+                  {p.budgetFrom}
+                  <input
+                    inputMode="numeric"
+                    onChange={(event) => setPreferences((current) => ({ ...current, budgetMin: event.target.value }))}
+                    placeholder="250000"
+                    value={preferences.budgetMin}
+                  />
+                </label>
+                <label>
+                  {p.budgetTo}
+                  <input
+                    inputMode="numeric"
+                    onChange={(event) => setPreferences((current) => ({ ...current, budgetMax: event.target.value }))}
+                    placeholder="650000"
+                    value={preferences.budgetMax}
+                  />
+                </label>
+              </div>
+
+              <div className="form-grid">
+                <label>
+                  {p.region}
+                  <select
+                    onChange={(event) => setPreferences((current) => ({ ...current, region: event.target.value }))}
+                    value={preferences.region}
+                  >
+                    <option value="">{p.allRegions}</option>
+                    <option>Costa Blanca Nord</option>
+                    <option>Costa Blanca Sør</option>
+                    <option>Costa Cálida</option>
+                  </select>
+                </label>
+                <label>
+                  {p.area}
+                  <input
+                    onChange={(event) => setPreferences((current) => ({ ...current, area: event.target.value }))}
+                    placeholder={p.areaPlaceholder}
+                    value={preferences.area}
+                  />
+                </label>
+              </div>
+
+              <div className="form-grid">
+                <label>
+                  {p.propertyType}
+                  <select
+                    onChange={(event) => setPreferences((current) => ({ ...current, propertyType: event.target.value }))}
+                    value={preferences.propertyType}
+                  >
+                    <option value="">{p.allTypes}</option>
+                    <option>Villa</option>
+                    <option>{p.apartment}</option>
+                    <option>{p.townhouse}</option>
+                    <option>Penthouse</option>
+                  </select>
+                </label>
+                <label>
+                  {p.lifestyle}
+                  <select
+                    onChange={(event) => setPreferences((current) => ({ ...current, lifestyle: event.target.value }))}
+                    value={preferences.lifestyle}
+                  >
+                    <option value="">{p.open}</option>
+                    <option value="pool">{p.pool}</option>
+                    <option value="sea">{p.sea}</option>
+                    <option value="golf">{p.golf}</option>
+                  </select>
+                </label>
+              </div>
+
+              <div className="form-grid compact-fields">
+                <label>
+                  {p.bedrooms}
+                  <input
+                    min="0"
+                    onChange={(event) => setPreferences((current) => ({ ...current, bedrooms: event.target.value }))}
+                    type="number"
+                    value={preferences.bedrooms}
+                  />
+                </label>
+                <label>
+                  {p.bathrooms}
+                  <input
+                    min="0"
+                    onChange={(event) => setPreferences((current) => ({ ...current, bathrooms: event.target.value }))}
+                    type="number"
+                    value={preferences.bathrooms}
+                  />
+                </label>
+                <label>
+                  {p.timeline}
+                  <select
+                    onChange={(event) => setPreferences((current) => ({ ...current, timeline: event.target.value }))}
+                    value={preferences.timeline}
+                  >
+                    <option value="">{p.notSelected}</option>
+                    <option>{p.readyNow}</option>
+                    <option>{p.withinThreeMonths}</option>
+                    <option>{p.sixToTwelveMonths}</option>
+                    <option>{p.later}</option>
+                  </select>
+                </label>
+              </div>
+
+              <label className="portal-checkbox">
+                <input
+                  checked={preferences.wantsPlots}
+                  onChange={(event) => setPreferences((current) => ({ ...current, wantsPlots: event.target.checked }))}
+                  type="checkbox"
+                />
+                {p.wantsPlots}
               </label>
+
+              {preferences.wantsPlots && (
+                <div className="form-grid">
+                  <label>
+                    {p.plotAreaFrom}
+                    <input
+                      inputMode="numeric"
+                      onChange={(event) => setPreferences((current) => ({ ...current, minPlotArea: event.target.value }))}
+                      placeholder="1000"
+                      value={preferences.minPlotArea}
+                    />
+                  </label>
+                  <label>
+                    {p.plotPriceTo}
+                    <input
+                      inputMode="numeric"
+                      onChange={(event) => setPreferences((current) => ({ ...current, maxPlotPrice: event.target.value }))}
+                      placeholder="75000"
+                      value={preferences.maxPlotPrice}
+                    />
+                  </label>
+                </div>
+              )}
+
               <label>
-                {p.email}
-                <input name="email" required type="email" placeholder={p.emailPh} />
+                {p.notes}
+                <textarea
+                  onChange={(event) => setPreferences((current) => ({ ...current, notes: event.target.value }))}
+                  placeholder={p.notesPlaceholder}
+                  value={preferences.notes}
+                />
               </label>
-              <label>
-                {p.phone}
-                <input name="phone" placeholder="+34..." />
-              </label>
-              <label>
-                {p.message}
-                <textarea name="message" placeholder={p.messagePh} />
-              </label>
-              <button type="submit">{p.requestSubmit}</button>
-              {status === "sent" && <p className="form-success">{p.requestSent}</p>}
-              {status === "error" && <p className="form-error">{p.requestError}</p>}
+
+              <button disabled={signalStatus === "saving"} type="submit">
+                {signalStatus === "saving" ? p.savingPreferences : p.savePreferences}
+              </button>
+              {signalStatus === "saved" && <p className="form-success">{p.preferencesSaved}</p>}
+              {signalStatus === "error" && <p className="form-error">{p.preferencesError}</p>}
             </form>
-          </article>
-          )}
-
-          <article className="portal-panel">
-            <div className="panel-title">
-              <CheckCircle2 size={20} />
-              <h3>Kjøperstatus</h3>
-            </div>
-            <div className="buyer-steps">
-              {buyerSteps.map((step) => (
-                <div key={step.label}>
-                  <span>{step.label}</span>
-                  <strong>{step.status}</strong>
-                </div>
-              ))}
-            </div>
           </article>
 
           <article className="portal-panel">
             <div className="panel-title">
               <Heart size={20} />
-              <h3>Favoritter</h3>
+              <h3>{p.favoritesTitle}</h3>
             </div>
-            <ul className="portal-list">
-              {favorites.map((property) => (
-                <li key={property.ref}>
-                  <Building2 size={17} />
-                  <a href={property.href}>
-                    <span>{property.title}</span>
-                    <small>{property.location} · {property.price}</small>
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {favorites.length ? (
+              <ul className="portal-list">
+                {favorites.map((property) => (
+                  <li key={property.ref}>
+                    <Building2 size={17} />
+                    <a href={property.href}>
+                      <span>{property.title}</span>
+                      <small>{property.location} · {property.price}</small>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="message-empty">{p.favoritesEmpty}</p>
+            )}
             {favorites.length > 1 && (
               <a className="text-button" href="/sammenlign">
-                Sammenlign boliger <ArrowRight size={15} />
+                {p.compare} <ArrowRight size={15} />
               </a>
             )}
           </article>
@@ -890,106 +809,108 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
           <article className="portal-panel">
             <div className="panel-title">
               <FileText size={20} />
-              <h3>Dokumenter</h3>
+              <h3>{p.documentsTitle}</h3>
             </div>
-            <ul className="portal-list">
-              {(sessionEmail && documents.length ? documents : [
-                { id: "demo-guide", type: "guide", title: "Kjøpsguide og sjekkliste", summary: "Logg inn for personlige rapporter og dokumenter." },
-                { id: "demo-costs", type: "guide", title: "Kostnader og finansiering", summary: "Kalkyle for skatt, kjøpskostnader og lån." },
-              ]).map((document) => (
-                <li key={document.id} className="portal-document-item">
-                  <FileText size={17} />
-                  <div>
-                    <span>{document.title}</span>
-                    {document.summary && <small>{document.summary}</small>}
-                    {document.content && expandedDocument === document.id && (
-                      <p className="portal-document-content">{document.content}</p>
-                    )}
-                    {document.content && (
-                      <button
-                        className="text-button"
-                        type="button"
-                        onClick={() => setExpandedDocument(expandedDocument === document.id ? null : document.id)}
-                      >
-                        {expandedDocument === document.id ? "Vis mindre" : "Les mer"}
-                      </button>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
+            {documents.length ? (
+              <ul className="portal-list">
+                {documents.map((document) => (
+                  <li key={document.id} className="portal-document-item">
+                    <FileText size={17} />
+                    <div>
+                      <span>{document.title}</span>
+                      {document.summary && <small>{document.summary}</small>}
+                      {document.content && expandedDocument === document.id && (
+                        <p className="portal-document-content">{document.content}</p>
+                      )}
+                      {document.content && (
+                        <button
+                          className="text-button"
+                          type="button"
+                          onClick={() => setExpandedDocument(expandedDocument === document.id ? null : document.id)}
+                        >
+                          {expandedDocument === document.id ? p.readLess : p.readMore}
+                        </button>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="message-empty">{p.documentsEmpty}</p>
+            )}
           </article>
 
           <article className="portal-panel">
             <div className="panel-title">
               <Calculator size={20} />
-              <h3>Kjøpskalkulator</h3>
+              <h3>{p.calculatorTitle}</h3>
             </div>
             <div className="portal-calculator">
               <label>
-                Boligpris EUR
+                {p.propertyPrice}
                 <input
                   inputMode="numeric"
-                  onChange={(event) => setCalculator((prev) => ({ ...prev, price: event.target.value }))}
+                  onChange={(event) => setCalculator((current) => ({ ...current, price: event.target.value }))}
+                  placeholder="450000"
                   value={calculator.price}
                 />
               </label>
               <label>
-                Egenkapital EUR
+                {p.equity}
                 <input
                   inputMode="numeric"
-                  onChange={(event) => setCalculator((prev) => ({ ...prev, ownCapital: event.target.value }))}
+                  onChange={(event) => setCalculator((current) => ({ ...current, ownCapital: event.target.value }))}
+                  placeholder="150000"
                   value={calculator.ownCapital}
                 />
               </label>
               <div className="form-grid compact-fields">
                 <label>
-                  År
+                  {p.years}
                   <input
                     inputMode="numeric"
-                    onChange={(event) => setCalculator((prev) => ({ ...prev, years: event.target.value }))}
+                    onChange={(event) => setCalculator((current) => ({ ...current, years: event.target.value }))}
                     value={calculator.years}
                   />
                 </label>
                 <label>
-                  Spania %
+                  {p.spainRate}
                   <input
                     inputMode="decimal"
-                    onChange={(event) => setCalculator((prev) => ({ ...prev, spainRate: event.target.value }))}
+                    onChange={(event) => setCalculator((current) => ({ ...current, spainRate: event.target.value }))}
                     value={calculator.spainRate}
                   />
                 </label>
                 <label>
-                  Norge %
+                  {p.norwayRate}
                   <input
                     inputMode="decimal"
-                    onChange={(event) => setCalculator((prev) => ({ ...prev, norwayRate: event.target.value }))}
+                    onChange={(event) => setCalculator((current) => ({ ...current, norwayRate: event.target.value }))}
                     value={calculator.norwayRate}
                   />
                 </label>
               </div>
               <div className="calculator-results">
                 <div>
-                  <small>Ca. skatt og kostnader</small>
-                  <strong>{formatEuro(purchaseCosts)}</strong>
+                  <small>{p.purchaseCosts}</small>
+                  <strong>{formatEuro(purchaseCosts, locale)}</strong>
                 </div>
                 <div>
-                  <small>Total kjøpsramme</small>
-                  <strong>{formatEuro(totalPrice)}</strong>
-                  <span>{formatNok(totalPrice * (financeRates?.eurNok || 0))}</span>
+                  <small>{p.totalBudget}</small>
+                  <strong>{formatEuro(totalPrice, locale)}</strong>
+                  <span>{formatNok(totalPrice * (financeRates?.eurNok || 0), locale)}</span>
                 </div>
                 <div>
-                  <small>Estimert lån</small>
-                  <strong>{formatEuro(loanAmount)}</strong>
+                  <small>{p.estimatedLoan}</small>
+                  <strong>{formatEuro(loanAmount, locale)}</strong>
                 </div>
                 <div>
-                  <small>Mnd. Spania / Norge</small>
-                  <strong>{formatEuro(spainMonthly)} / {formatEuro(norwayMonthly)}</strong>
+                  <small>{p.monthlySpainNorway}</small>
+                  <strong>{formatEuro(spainMonthly, locale)} / {formatEuro(norwayMonthly, locale)}</strong>
                 </div>
               </div>
               <p className="calculator-note">
-                Kurs {financeRates?.eurNok?.toFixed(4) || "--"} fra {financeRates?.exchangeSource || "valutakilde"}.
-                Renter er veiledende og kan justeres.
+                {financeRates?.eurNok ? `EUR/NOK ${financeRates.eurNok.toFixed(4)} · ` : ""}{p.rateNote}
               </p>
             </div>
           </article>
@@ -997,50 +918,49 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
           <article className="portal-panel wide-panel">
             <div className="panel-title">
               <MessageSquareText size={20} />
-              <h3>Meldinger og oppfølging</h3>
+              <h3>{p.messagesTitle}</h3>
             </div>
-            {sessionEmail ? (
-              <div className="portal-message-box">
-                <div className="portal-message-thread">
-                  {messages.length ? messages.map((message) => (
-                    <div key={message.id} className={`portal-message ${message.sender_type === "customer" ? "from-customer" : "from-admin"}`}>
-                      <small>{message.sender_type === "customer" ? "Du" : message.sender_name || "Zen Eco Homes"} · {new Date(message.created_at).toLocaleString("nb-NO")}</small>
-                      <p>{message.body}</p>
-                      {message.attachments?.map((attachment, index) => attachment.url ? (
-                        <a key={index} href={attachment.url} rel="noopener noreferrer" target="_blank">
-                          {attachment.name || attachment.url}
-                        </a>
-                      ) : null)}
-                    </div>
-                  )) : (
-                    <p className="message-empty">Ingen meldinger ennå. Send spørsmål, dokumenter eller lenker direkte her.</p>
-                  )}
-                </div>
-                <form className="portal-message-form" onSubmit={sendPortalMessage}>
-                  <textarea
-                    onChange={(event) => setMessageText(event.target.value)}
-                    placeholder="Skriv en melding til Freddy / Zen Eco Homes..."
-                    value={messageText}
-                  />
-                  <input
-                    onChange={(event) => setAttachmentUrl(event.target.value)}
-                    placeholder="Vedlegg/lenke, f.eks. PDF eller delt dokument"
-                    type="url"
-                    value={attachmentUrl}
-                  />
-                  <button disabled={messageStatus === "sending"} type="submit">
-                    {messageStatus === "sending" ? "Sender..." : "Send melding"}
-                  </button>
-                  {messageStatus === "sent" && <p className="form-success">Meldingen er sendt.</p>}
-                  {messageStatus === "error" && <p className="form-error">Kunne ikke sende meldingen.</p>}
-                </form>
+            <div className="portal-message-box">
+              <div className="portal-message-thread">
+                {messages.length ? messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`portal-message ${message.sender_type === "customer" ? "from-customer" : "from-admin"}`}
+                  >
+                    <small>
+                      {message.sender_type === "customer" ? p.you : message.sender_name || "Zen Eco Homes"} · {new Date(message.created_at).toLocaleString(locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : "nb-NO")}
+                    </small>
+                    <p>{message.body}</p>
+                    {message.attachments?.map((attachment, index) => attachment.url ? (
+                      <a key={`${message.id}-${index}`} href={attachment.url} rel="noopener noreferrer" target="_blank">
+                        {attachment.name || attachment.url}
+                      </a>
+                    ) : null)}
+                  </div>
+                )) : (
+                  <p className="message-empty">{p.messagesEmpty}</p>
+                )}
               </div>
-            ) : (
-              <div className="message-preview">
-                <Mail size={19} />
-                <p>Logg inn for direkte meldinger, svar og vedlegg.</p>
-              </div>
-            )}
+
+              <form className="portal-message-form" onSubmit={sendPortalMessage}>
+                <textarea
+                  onChange={(event) => setMessageText(event.target.value)}
+                  placeholder={p.messagePlaceholder}
+                  value={messageText}
+                />
+                <input
+                  onChange={(event) => setAttachmentUrl(event.target.value)}
+                  placeholder={p.attachmentPlaceholder}
+                  type="url"
+                  value={attachmentUrl}
+                />
+                <button disabled={messageStatus === "sending"} type="submit">
+                  {messageStatus === "sending" ? p.sendingMessage : p.sendMessage}
+                </button>
+                {messageStatus === "sent" && <p className="form-success">{p.messageSent}</p>}
+                {messageStatus === "error" && <p className="form-error">{p.messageError}</p>}
+              </form>
+            </div>
           </article>
         </div>
       </div>
