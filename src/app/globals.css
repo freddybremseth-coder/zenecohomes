@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@600;700&display=swap");
 
 :root {
   --dark: #16222b;
@@ -4960,4 +4960,63 @@ footer {
 .article-table th,
 .article-table td {
   border-bottom-color: rgba(22, 34, 43, 0.08);
+}
+
+/* ==========================================================================
+   ZenEco Design 2027 — Om Freddy + skjemaer
+   Ekte Fraunces-italic i sitater, rolige serif-mellomtitler og moderne felter.
+   ========================================================================== */
+.meet-freddy-quote {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.42;
+  border-left-width: 2px;
+  padding-left: 20px;
+}
+.om-freddy-bio h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin-top: 40px;
+}
+.om-freddy-bio h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: 1.22rem;
+}
+.om-freddy-sign {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--dark);
+  border-top: 1px solid rgba(22, 34, 43, 0.1);
+  padding-top: 22px;
+  margin-top: 30px;
+}
+
+/* Skjemafelter: moderne, avrundet, roligere etiketter */
+.lead-form label {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  border-radius: 12px;
+  border-color: #e0e4ea;
+  padding: 14px 16px;
+  transition: border-color 0.3s var(--ease-2027), box-shadow 0.3s var(--ease-2027);
+}
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.16);
+}
+.submit-button {
+  border-radius: 12px;
+  letter-spacing: 0.06em;
 }
