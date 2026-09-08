@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LockKeyhole } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
+import { PortalJourneyStatus } from "@/components/PortalJourneyStatus";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -19,6 +20,7 @@ export const metadata = {
       "x-default": `${BASE}/min-side`,
       "de-DE": `${BASE}/de/min-side`,
       en: `${BASE}/en/min-side`,
+      "es-ES": `${BASE}/es/mi-area`,
     },
   },
 };
@@ -45,6 +47,7 @@ export default function GermanPortalPage() {
       </section>
       <section style={{ padding: "1rem 1rem 0" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+          <PortalJourneyStatus locale="de" />
           <PersonalizedPortalMatches locale="de" />
         </div>
       </section>
