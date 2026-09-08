@@ -56,7 +56,7 @@ export default function GermanAboutFreddyPage() {
           </div>
         </article>
       </section>
-      <Testimonials />
+      <Testimonials locale="de" />
       <Footer locale="de" />
     </main>
   );
