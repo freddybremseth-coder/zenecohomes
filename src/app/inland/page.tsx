@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, Check, Leaf, MapPin, ShieldCheck, Sun, Zap } from "lucide-react";
+import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
+import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { INLAND_BRAND, inlandTowns } from "@/lib/inland";
 import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
@@ -66,6 +68,20 @@ function displayTownIntro(town: (typeof inlandTowns)[number]) {
 
 export default async function InlandPage() {
   const properties = await getInlandShowcaseProperties();
+  const mapLocations: AreaExplorerLocation[] = inlandTowns.flatMap((town) => {
+    const coordinates = getAreaMapCoordinate(town.name);
+    if (!coordinates) return [];
+    return [{
+      id: town.slug,
+      name: town.name,
+      ...coordinates,
+      region: "Alicante Inland",
+      description: displayTownIntro(town),
+      image: town.photo,
+      href: `/inland/${town.slug}`,
+      propertyHref: "#eiendommer",
+    }];
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -135,6 +151,12 @@ export default async function InlandPage() {
           ))}
         </nav>
       </section>
+
+      <AreaExplorerMap
+        locations={mapLocations}
+        label="Se innlandsstedene på kartet"
+        intro="Trykk på et sted for å forstå beliggenheten og få en kort forklaring. Derfra kan du åpne stedsiden eller gå direkte til de moderne boligmodellene fra Aspe og Pinoso."
+      />
 
       <section className="inland-places" aria-label="Områdeprofiler">
         {inlandTowns.map((town, index) => (
