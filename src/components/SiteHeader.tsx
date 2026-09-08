@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navLinks, withLocale, type SiteLocale } from "@/lib/i18n";
 
 type LanguageLink = { locale: SiteLocale; href: string; current: boolean };
@@ -16,6 +16,17 @@ export function SiteHeader({
 } = {}) {
   const links = navLinks(locale);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [hasHero, setHasHero] = useState(false);
+
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 24);
+    setHasHero(Boolean(document.querySelector("main > section.hero, main > section.image-hero")));
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
   const openLabel =
     locale === "de" ? "Menü öffnen" : locale === "en" ? "Open menu" : locale === "es" ? "Abrir menú" : "Åpne meny";
   const closeLabel =
@@ -27,8 +38,16 @@ export function SiteHeader({
           ? "Cerrar menú"
           : "Lukk meny";
 
+  const headerClass = [
+    "site-header",
+    hasHero && !scrolled && !menuOpen ? "over-hero" : "",
+    scrolled || menuOpen ? "is-scrolled" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <header className="site-header">
+    <header className={headerClass}>
       <Link className="brand" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
         Zen<span>Eco</span>Homes
       </Link>
