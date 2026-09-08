@@ -3,6 +3,7 @@ import Script from "next/script";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
 import { RemasterPlayer } from "@/components/RemasterPlayer";
 import "./globals.css";
+import "./accessibility.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zenecohomes.com"),
