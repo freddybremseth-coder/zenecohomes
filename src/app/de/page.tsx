@@ -9,7 +9,7 @@ import { localSeoLandingPagesDE } from "@/lib/localSeoLandingPages.de";
 import { CARE_URL, homeHreflang, homeLanguageLinks, ogLocale } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
-const BOOKING = "/de#kontakt";
+const BOOKING = "/de/termin";
 
 export const metadata: Metadata = {
   title: "Moderner Neubau in Spanien | Costa Blanca Beratung",
@@ -41,11 +41,14 @@ export default function GermanHome() {
           persönliche Beratung bieten wir auf Englisch, Norwegisch und Spanisch.
         </p>
         <div className="hero-actions">
-          <Link className="contact-button" href={BOOKING}>
-            Immobiliengespräch buchen <ArrowRight size={18} />
+          <Link className="contact-button" href="/de/regionen">
+            Region auswählen <ArrowRight size={18} />
           </Link>
           <Link className="text-button light" href="/de/immobilien">
             Moderne Immobilien ansehen
+          </Link>
+          <Link className="text-button light" href={BOOKING}>
+            Mit Freddy sprechen
           </Link>
         </div>
       </section>
