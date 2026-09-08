@@ -1,0 +1,100 @@
+.inland-town-page .town-hero {
+  min-height: min(860px, 92svh);
+}
+
+.inland-town-page .town-hero .hero-content {
+  max-width: 1180px;
+}
+
+.inland-town-page .town-hero h1 {
+  max-width: 9ch;
+  font-size: clamp(4rem, 9vw, 8rem);
+}
+
+.inland-town-story {
+  width: min(1220px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(82px, 10vw, 150px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(42px, 8vw, 120px);
+  border-bottom: 1px solid var(--ze-line);
+}
+
+.inland-town-story-heading h2 {
+  max-width: 10ch;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(3rem, 5.4vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: .98;
+}
+
+.inland-town-story-body > p {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.9;
+}
+
+.inland-town-highlights {
+  margin-top: 42px;
+  border-top: 1px solid var(--ze-line);
+}
+
+.inland-town-highlights span {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--ze-line);
+  color: var(--ze-ink);
+  font-weight: 650;
+}
+
+.inland-town-highlights svg {
+  color: var(--ze-travertine);
+  flex: 0 0 auto;
+}
+
+.inland-town-more {
+  width: min(1220px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(80px, 9vw, 130px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(42px, 8vw, 110px);
+  border-top: 1px solid var(--ze-line);
+}
+
+.inland-town-more h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.inland-town-page .inland-selection {
+  border-top: 0;
+}
+
+@media (max-width: 900px) {
+  .inland-town-story,
+  .inland-town-more {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .inland-town-story,
+  .inland-town-more {
+    width: calc(100% - 32px);
+  }
+
+  .inland-town-page .town-hero h1 {
+    font-size: clamp(3.4rem, 17vw, 5.2rem);
+  }
+}
