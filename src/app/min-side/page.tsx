@@ -2,11 +2,11 @@ import Link from "next/link";
 import { FileText, Heart, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
-import { PortalJourneyStatus } from "@/components/PortalJourneyStatus";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
 import { PortalSignedOutOnly } from "@/components/PortalSignedOutOnly";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedPortalJourneyStatus } from "@/components/TrackedPortalJourneyStatus";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 const benefits = [
@@ -94,7 +94,7 @@ export default function PortalPage() {
 
       <section style={{ padding: "1rem 1rem 0" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
-          <PortalJourneyStatus />
+          <TrackedPortalJourneyStatus />
           <PersonalizedPortalMatches locale="no" />
         </div>
       </section>
