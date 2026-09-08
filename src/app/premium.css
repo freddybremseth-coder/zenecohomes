@@ -1,0 +1,232 @@
+/* ZenEco Design 2027 — premium property + area presentation */
+
+/* Property detail: let imagery lead and keep the commercial panel calm. */
+.property-detail-hero {
+  min-height: clamp(620px, 78vh, 920px);
+  background: var(--ze-ink);
+}
+
+.property-detail-hero img {
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.detail-layout {
+  width: min(1320px, calc(100% - 64px));
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+  gap: clamp(42px, 6vw, 88px);
+  align-items: start;
+}
+
+.detail-facts {
+  gap: 0;
+  border-top: 1px solid var(--ze-line);
+  border-bottom: 1px solid var(--ze-line);
+}
+
+.detail-facts span {
+  min-height: 86px;
+  padding: 18px 20px;
+  border: 0;
+  border-right: 1px solid var(--ze-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.detail-facts span:last-child {
+  border-right: 0;
+}
+
+.sticky-card {
+  top: 104px;
+  padding: clamp(28px, 3vw, 38px);
+  border: 1px solid rgba(23, 32, 39, 0.09);
+  border-radius: var(--ze-radius-lg);
+  background: rgba(252, 251, 248, 0.96);
+  box-shadow: 0 28px 80px -42px rgba(23, 32, 39, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.sticky-card h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 2.6vw, 2.55rem);
+  line-height: 1.04;
+}
+
+.property-info-list {
+  gap: 12px;
+  margin-block: 24px;
+}
+
+.gallery-grid {
+  gap: clamp(10px, 1.2vw, 18px);
+}
+
+.gallery-grid button,
+.gallery-grid div {
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--ze-radius-md);
+  background: var(--ze-ink);
+}
+
+.gallery-grid button:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-grid img {
+  transition: transform 0.7s var(--ze-ease), filter 0.7s var(--ze-ease);
+}
+
+.gallery-grid button:hover img {
+  transform: scale(1.025);
+  filter: saturate(1.03);
+}
+
+/* Area pages: editorial reportage rather than a dashboard of equal boxes. */
+.region-landing-grid {
+  width: min(1280px, calc(100% - 64px));
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: clamp(48px, 7vw, 100px);
+  align-items: start;
+}
+
+.region-landing-grid > article {
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.region-landing-grid > aside {
+  padding: 30px 0 30px 28px;
+  border-left: 1px solid var(--ze-line);
+  background: transparent;
+  box-shadow: none;
+}
+
+.region-landing-grid > aside strong {
+  display: block;
+  margin-top: 22px;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.area-profile-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(20px, 2.2vw, 32px);
+}
+
+.area-profile-grid > .section-heading {
+  grid-column: 1 / -1;
+}
+
+.area-profile-card {
+  grid-column: span 6;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.area-profile-card:nth-of-type(3n + 2) {
+  grid-column: span 7;
+}
+
+.area-profile-card:nth-of-type(3n + 3) {
+  grid-column: span 5;
+}
+
+.area-profile-card > div {
+  min-height: clamp(300px, 38vw, 560px);
+  border-radius: var(--ze-radius-lg);
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.8s var(--ze-ease);
+}
+
+.area-profile-card:hover > div {
+  transform: scale(1.012);
+}
+
+.area-profile-card > section {
+  padding: 24px 4px 18px;
+}
+
+.area-profile-card > section h2 {
+  margin: 8px 0 12px;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.98;
+}
+
+.area-profile-card > section p {
+  max-width: 58ch;
+  line-height: 1.75;
+}
+
+@media (max-width: 980px) {
+  .detail-layout,
+  .region-landing-grid {
+    width: min(100% - 40px, 900px);
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sticky-card {
+    position: static;
+  }
+
+  .region-landing-grid > aside {
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--ze-line);
+  }
+
+  .area-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-profile-card,
+  .area-profile-card:nth-of-type(3n + 2),
+  .area-profile-card:nth-of-type(3n + 3) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .property-detail-hero {
+    min-height: 72svh;
+  }
+
+  .detail-layout,
+  .region-landing-grid {
+    width: min(100% - 28px, 680px);
+  }
+
+  .detail-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-facts span {
+    min-height: 74px;
+    border-bottom: 1px solid var(--ze-line);
+  }
+
+  .gallery-grid button:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .area-profile-card > div {
+    min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-grid img,
+  .area-profile-card > div {
+    transition: none !important;
+  }
+}
