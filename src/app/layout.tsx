@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Fraunces, Inter } from "next/font/google";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
 import { RemasterPlayer } from "@/components/RemasterPlayer";
+import "leaflet/dist/leaflet.css";
 import "./globals.css";
 import "./accessibility.css";
 import "./quality.css";
@@ -17,6 +18,7 @@ import "./gallery-2027.css";
 import "./chatbot-2027.css";
 import "./areas-2027.css";
 import "./mobile-critical.css";
+import "./area-map-2027.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],
