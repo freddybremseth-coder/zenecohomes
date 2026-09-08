@@ -66,14 +66,14 @@ export function PropertyCard({
             priority={priority}
           />
         ) : null}
-        <span>{type}</span>
+        <span className="property-type-chip">{type}</span>
+        <div className="property-price-tag">
+          <strong>{formatPriceForLocale(property.price, locale)}</strong>
+          {pricePerM2 && <span>{pricePerM2} €/m²</span>}
+        </div>
       </div>
       <div className="property-body">
         <h3>{heading}</h3>
-        <div className="property-price-row">
-          <strong>{formatPriceForLocale(property.price, locale)}</strong>
-          {pricePerM2 && <span className="price-per-m2">{pricePerM2} €/m²</span>}
-        </div>
         {facts.length > 0 && (
           <div className="facts">
             {facts.map((fact) => (
