@@ -1,0 +1,319 @@
+/* ZenEco Design 2027 — mobile and small-screen polish */
+
+@media (max-width: 900px) {
+  .site-header {
+    min-height: 72px;
+    padding-inline: 18px;
+  }
+
+  .brand-lockup {
+    gap: 9px;
+  }
+
+  .brand-monogram {
+    width: 34px;
+    height: 34px;
+    font-size: 0.78rem;
+  }
+
+  .nav.open {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 22px 20px 40px;
+    background: rgba(252, 251, 248, 0.985);
+    color: var(--ze-ink);
+    border-top: 1px solid var(--ze-line);
+    backdrop-filter: blur(24px);
+    overflow-y: auto;
+  }
+
+  .nav.open > a {
+    min-height: 52px;
+    width: 100%;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(23, 32, 39, 0.08);
+    color: var(--ze-ink);
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+  }
+
+  .nav.open .nav-cta {
+    margin-top: 14px;
+    justify-content: center;
+    border: 1px solid var(--ze-ink);
+    background: var(--ze-ink);
+    color: var(--ze-white);
+  }
+
+  .language-switcher {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--ze-line);
+  }
+
+  .hero-content {
+    width: min(100% - 36px, 760px);
+    padding-bottom: max(46px, 7svh);
+  }
+
+  .hero h1 {
+    max-width: 12ch;
+    font-size: clamp(2.9rem, 10vw, 5.2rem);
+  }
+
+  .hero-copy {
+    max-width: 54ch;
+    margin: 20px 0 28px;
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .hero-editorial-meta {
+    margin-top: 30px;
+    padding-top: 14px;
+  }
+
+  .section {
+    width: min(100% - 36px, 760px);
+    padding-block: 72px;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .section-heading h2,
+  .section h2,
+  .contact-section h2 {
+    font-size: clamp(2.1rem, 7vw, 3.5rem);
+  }
+
+  .property-grid,
+  .magazine-grid,
+  .proof-grid,
+  .eco-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .property-card {
+    min-width: 0;
+  }
+
+  .property-image {
+    min-height: 280px;
+  }
+
+  .sticky-card .contact-button,
+  .sticky-card .submit-button,
+  .contact-section .contact-button,
+  .lead-form .submit-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    min-height: 68px;
+  }
+
+  .nav.open {
+    top: 68px;
+  }
+
+  .brand-wordmark small {
+    display: none;
+  }
+
+  .brand-wordmark strong {
+    font-size: 1.02rem;
+  }
+
+  .hero {
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .hero-content {
+    width: min(100% - 28px, 620px);
+    padding-top: 126px;
+  }
+
+  .hero h1 {
+    max-width: 11ch;
+    font-size: clamp(2.65rem, 13vw, 4.2rem);
+    line-height: 0.98;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .contact-button,
+  .hero-actions .text-button {
+    width: 100%;
+    min-height: 50px;
+    justify-content: center;
+  }
+
+  .hero-editorial-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+  }
+
+  .hero-editorial-meta span:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .trust-band {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-band div {
+    padding: 22px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--ze-line);
+  }
+
+  .section {
+    width: min(100% - 28px, 620px);
+    padding-block: 58px;
+  }
+
+  .property-grid,
+  .magazine-grid,
+  .proof-grid,
+  .eco-grid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .property-image {
+    min-height: 64vw;
+    max-height: 420px;
+  }
+
+  .property-body {
+    padding: 20px 18px 22px;
+  }
+
+  .property-body h3 {
+    font-size: 1.38rem;
+  }
+
+  .detail-layout {
+    width: min(100% - 24px, 620px);
+  }
+
+  .detail-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-facts span {
+    padding: 14px 12px;
+    font-size: 0.88rem;
+  }
+
+  .sticky-card {
+    padding: 24px 20px;
+    border-radius: var(--ze-radius-md);
+  }
+
+  .gallery-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-grid button,
+  .gallery-grid button:first-child {
+    flex: 0 0 86%;
+    min-height: 66vw;
+    max-height: 430px;
+    scroll-snap-align: start;
+  }
+
+  .area-profile-card > div {
+    min-height: 72vw;
+    max-height: 460px;
+  }
+
+  .area-profile-card > section h2 {
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+  }
+
+  .contact-section {
+    padding-inline: 18px;
+  }
+
+  .lead-form {
+    gap: 14px;
+  }
+
+  .lead-form input,
+  .lead-form select,
+  .lead-form textarea {
+    min-height: 50px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .site-header {
+    padding-inline: 14px;
+  }
+
+  .brand-monogram {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-wordmark strong {
+    font-size: 0.95rem;
+  }
+
+  .hero-content,
+  .section,
+  .detail-layout,
+  .region-landing-grid {
+    width: calc(100% - 22px);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.45rem, 13vw, 3.6rem);
+  }
+
+  .hero-copy {
+    font-size: 0.98rem;
+  }
+
+  .detail-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-grid {
+    scroll-behavior: auto;
+  }
+}
