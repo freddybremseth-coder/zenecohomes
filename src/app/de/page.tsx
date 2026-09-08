@@ -12,13 +12,13 @@ const BASE = "https://www.zenecohomes.com";
 const BOOKING = "/de#kontakt";
 
 export const metadata: Metadata = {
-  title: "Immobilie in Spanien kaufen | Costa Blanca Berater",
+  title: "Moderner Neubau in Spanien | Costa Blanca Beratung",
   description:
-    "Neubau, Villen und Grundstücke an der Costa Blanca – mit unabhängiger Beratung (Englisch, Norwegisch, Spanisch). Region, Budget, Kaufprozess, NIE und Anwalt sicher koordiniert.",
+    "Moderne Neubauten, Villen, Apartments und Grundstücke an der Costa Blanca mit käuferorientierter Beratung. Regionen, Projekte, Kosten und Kaufprozess vor der Reservierung vergleichen.",
   alternates: { canonical: "/de", languages: homeHreflang() },
   openGraph: {
-    title: "Immobilie in Spanien kaufen | Zen Eco Homes",
-    description: "Neubau und Immobilien an der Costa Blanca mit unabhängiger Beratung.",
+    title: "Moderne Immobilien in Spanien | Zen Eco Homes",
+    description: "Moderne Neubauten und käuferorientierte Immobilienberatung an der Costa Blanca.",
     url: `${BASE}/de`,
     locale: ogLocale.de,
     type: "website",
@@ -31,19 +31,21 @@ export default function GermanHome() {
       <SiteHeader locale="de" languageLinks={homeLanguageLinks("de")} />
 
       <section className="page-hero compact-hero image-hero">
-        <p className="eyebrow">Immobilien an der Costa Blanca</p>
-        <h1>Sicher eine Immobilie in Spanien kaufen</h1>
+        <p className="eyebrow">Moderne Immobilien an der Costa Blanca</p>
+        <h1>Die richtige moderne Immobilie in Spanien kaufen</h1>
         <p>
-          Zen Eco Homes begleitet internationale Käufer beim Kauf von Neubauten, Villen und Grundstücken an
-          der Costa Blanca – unabhängig, von der Region bis zur Schlüsselübergabe. Diese Website ist auf
-          Deutsch verfügbar; die persönliche Beratung bieten wir auf Englisch, Norwegisch und Spanisch.
+          Zen Eco Homes konzentriert sich vor allem auf moderne Neubauten, Villen, Apartments und Grundstücke an der
+          Costa Blanca. Im Mittelpunkt stehen Ihre Bedürfnisse: Region, Projekt, Preis, Gesamtkosten, Risiken und der
+          nächste Schritt vor einer Reservierung. Wenn eine Bestandsimmobilie klar besser passt, helfen wir trotzdem
+          bei der Bewertung, statt das falsche Neubauprojekt zu empfehlen. Diese Website ist auf Deutsch verfügbar;
+          persönliche Beratung bieten wir auf Englisch, Norwegisch und Spanisch.
         </p>
         <div className="hero-actions">
           <Link className="contact-button" href={BOOKING}>
-            Beratungsgespräch buchen <ArrowRight size={18} />
+            Immobiliengespräch buchen <ArrowRight size={18} />
           </Link>
           <Link className="text-button light" href="/de/immobilien">
-            Immobilien ansehen
+            Moderne Immobilien ansehen
           </Link>
         </div>
       </section>
@@ -51,8 +53,13 @@ export default function GermanHome() {
       <section className="section">
         <p className="eyebrow">Wobei wir helfen</p>
         <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
-          Themen für Käufer in Spanien
+          Entscheidungen vor Inseraten
         </h2>
+        <p style={{ color: "var(--muted)", maxWidth: 760, lineHeight: 1.7 }}>
+          Wir helfen Ihnen, Region und Projekttyp einzugrenzen, bevor Sie Zeit in Besichtigungen investieren. Unser
+          Schwerpunkt liegt auf modernem Neubau und zeitgemäßen Immobilien; Bestand ist eine praktische Alternative,
+          wenn er objektiv besser zu Ihren Anforderungen passt.
+        </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 18, marginTop: 18 }}>
           {seoLandingPagesDE.map((page) => (
             <Link
@@ -79,7 +86,7 @@ export default function GermanHome() {
       <section className="section">
         <p className="eyebrow">Regionen</p>
         <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
-          Beliebte Lagen an der Costa Blanca
+          Erst die Region, dann die Immobilie
         </h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
           {localSeoLandingPagesDE.map((page) => (
@@ -92,16 +99,19 @@ export default function GermanHome() {
             </Link>
           ))}
         </div>
+        <div style={{ marginTop: 22 }}>
+          <Link className="text-button" href="/de/regionen">Nord, Süd, Costa Cálida und Hinterland vergleichen <ArrowRight size={15} /></Link>
+        </div>
       </section>
 
       <section className="section">
-        <p className="eyebrow">Neue Services</p>
+        <p className="eyebrow">Nach dem Kauf</p>
         <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
-          Mehr als der Kauf – wir begleiten Sie den ganzen Weg
+          Immobilie, Hinterland und Betreuung
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 640, lineHeight: 1.7 }}>
-          Bei Zen Eco Homes geht es nicht nur um den Kauf. Wir finden für Sie den Traum im Hinterland und kümmern
-          uns um Ihre Immobilie, wenn Sie nicht da sind – zwei neue Services für sicheres Eigentum in Spanien.
+          Zen Eco Homes konzentriert sich auf moderne Immobilienkäufe. Die Reise kann aber auch Grundstücke,
+          Projekte im Hinterland und praktische Betreuung nach dem Kauf umfassen.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 18, marginTop: 18 }}>
           <Link
@@ -110,8 +120,8 @@ export default function GermanHome() {
           >
             <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>Inland</strong>
             <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>
-              Größere Grundstücke, Fincas und Neubauten rund um Pinoso, Aspe und Novelda – oft zu niedrigeren
-              Quadratmeterpreisen als an der Küste. Wir prüfen Wasser, Strom, Zufahrt und Einstufung.
+              Größere Grundstücke, moderne Villen und Neubauoptionen rund um Pinoso, Aspe und Novelda. Wasser,
+              Strom, Zufahrt und Planungsstatus sollten vor einer Bindung geklärt werden.
             </p>
             <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
               Hinterland entdecken <ArrowRight size={15} />
@@ -141,8 +151,8 @@ export default function GermanHome() {
           Erzählen Sie uns, wonach Sie suchen
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 620, lineHeight: 1.7 }}>
-          Wir melden uns persönlich – unabhängig und ohne Verpflichtung. Die Beratung erfolgt auf Englisch,
-          Norwegisch oder Spanisch.
+          Wir melden uns persönlich und helfen Ihnen, Region, Projekt und nächsten Schritt zu vergleichen – ohne Verpflichtung.
+          Die persönliche Beratung erfolgt auf Englisch, Norwegisch oder Spanisch.
         </p>
         <div style={{ maxWidth: 760, marginTop: 18 }}>
           <ContactForm locale="de" variant="compact" />
