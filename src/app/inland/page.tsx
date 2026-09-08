@@ -44,6 +44,10 @@ const faq = [
     a: "Ja. Vi prioriterer tomter, moderne villaer og nybygg som kan gi mer forutsigbar standard og energieffektivitet. Dersom en eksisterende landeiendom er klart bedre for behovet ditt, kan vi også hjelpe deg å vurdere den.",
   },
   {
+    q: "Kan boligene fra Aspe og Pinoso bygges andre steder i innlandet?",
+    a: "De viser moderne villaer, planløsninger og byggeløsninger som også kan være aktuelle i andre innlandsområder. Om en tilsvarende bolig faktisk kan bygges på en bestemt tomt, avhenger alltid av regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og prosjektets totalbudsjett.",
+  },
+  {
     q: "Hva må kontrolleres før jeg kjøper tomt?",
     a: "Regulering og byggbarhet, lovlig adkomst, vann, strøm, avløpsløsning, servitutter, grenser og realistisk totalbudsjett bør avklares før kjøp. Juridiske og tekniske kontroller skal utføres av kvalifiserte fagpersoner.",
   },
@@ -108,7 +112,7 @@ export default async function InlandPage() {
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="#steder">Utforsk områdene <ArrowRight size={18} /></a>
-            <a className="text-button light" href="#eiendommer">Se Aspe / Pinoso</a>
+            <a className="text-button light" href="#eiendommer">Se moderne boligmodeller</a>
             <Link className="text-button light" href="/booking">Snakk med Freddy</Link>
           </div>
         </div>
@@ -154,14 +158,17 @@ export default async function InlandPage() {
       <section className="inland-selection" id="eiendommer">
         <div className="section-heading">
           <p className="eyebrow">ZenEco Inland Selection</p>
-          <h2>Moderne boliger fra Aspe og Pinoso</h2>
+          <h2>Moderne boliger fra Aspe og Pinoso – inspirasjon for hele innlandet</h2>
           <p>
-            Dette er den kuraterte innlandspoolen vi bruker på områdesidene: relevante moderne villaer, nybygg og passende innlandsprodukter fra Aspe og Pinoso – ikke tilfeldige kystleiligheter.
+            Her viser vi hele vårt relevante utvalg av moderne villaer og nybygg fra Aspe og Pinoso. Boligene ligger i Aspe og Pinoso i dag, men de viser arkitektur, planløsninger og byggeløsninger som også kan være aktuelle å utvikle eller bygge i andre innlandsområder rundt Alicante.
+          </p>
+          <p>
+            Hva som faktisk kan bygges på en bestemt tomt må alltid vurderes konkret ut fra regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totalbudsjett. Vi bruker derfor disse boligene som referanser og modeller – ikke som en påstand om at samme prosjekt kan settes opp hvor som helst.
           </p>
         </div>
         {properties.length > 0 ? (
           <div className="property-grid editorial-property-grid">
-            {properties.slice(0, 6).map((property, index) => (
+            {properties.map((property, index) => (
               <PropertyCard key={property.id || property.ref || index} property={property} priority={index < 3} />
             ))}
           </div>
@@ -171,7 +178,7 @@ export default async function InlandPage() {
           </div>
         )}
         <div className="center-action">
-          <Link className="contact-button" href="/eiendommer?region=innlandet">Se alle innlandsmuligheter <ArrowRight size={18} /></Link>
+          <Link className="contact-button" href="/booking">Spør hvilke boligtyper som kan passe på din tomt <ArrowRight size={18} /></Link>
         </div>
       </section>
 
