@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Fraunces, Inter } from "next/font/google";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
 import { RemasterPlayer } from "@/components/RemasterPlayer";
 import "./globals.css";
 import "./accessibility.css";
 import "./quality.css";
+import "./design-system.css";
+
+const zenecoSans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const zenecoDisplay = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zenecohomes.com"),
@@ -100,7 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="no">
+    <html lang="no" className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
       <body>
         <script
           type="application/ld+json"
