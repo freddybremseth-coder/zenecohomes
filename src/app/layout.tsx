@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [{ url: "/icon.svg?v=20260908-2", type: "image/svg+xml" }],
+    shortcut: "/icon.svg?v=20260908-2",
+  },
   openGraph: {
     title: "Zen Eco Homes | Moderne nybygg i Spania",
     description:
