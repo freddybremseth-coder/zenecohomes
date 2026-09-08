@@ -1,0 +1,231 @@
+.area-explorer-map-section {
+  width: min(1280px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 26px 0 120px;
+}
+
+.area-explorer-map-heading {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.area-explorer-map-heading h2 {
+  margin: 10px 0 14px;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.3rem, 4.4vw, 4.7rem);
+  font-weight: 520;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.area-explorer-map-heading > p:last-child {
+  max-width: 640px;
+  margin: 0;
+  color: var(--ze-muted, #69747c);
+  line-height: 1.75;
+}
+
+.area-explorer-map-shell {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 32, 39, 0.12);
+  border-radius: 26px;
+  background: #e8e3d9;
+  box-shadow: 0 24px 70px rgba(23, 32, 39, 0.12);
+}
+
+.area-explorer-map-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.area-explorer-map-card {
+  position: absolute;
+  z-index: 500;
+  left: 26px;
+  bottom: 26px;
+  width: min(390px, calc(100% - 52px));
+  overflow: hidden;
+  border: 1px solid rgba(23, 32, 39, 0.12);
+  border-radius: 20px;
+  background: rgba(252, 251, 248, 0.97);
+  box-shadow: 0 24px 70px rgba(23, 32, 39, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.area-explorer-map-card img {
+  width: 100%;
+  height: 150px;
+  display: block;
+  object-fit: cover;
+}
+
+.area-explorer-map-card > div {
+  padding: 20px 22px 22px;
+}
+
+.area-explorer-map-card span {
+  color: #9a8358;
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.area-explorer-map-card h3 {
+  margin: 7px 0 10px;
+  color: var(--ze-ink, #172027);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2rem;
+  font-weight: 520;
+  line-height: 1;
+}
+
+.area-explorer-map-card p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ze-muted, #69747c);
+  line-height: 1.58;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.area-explorer-map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 17px;
+}
+
+.area-explorer-map-actions a {
+  color: var(--ze-ink, #172027);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-bottom: 1px solid #c6a76d;
+  padding-bottom: 3px;
+}
+
+.area-explorer-map-list {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 14px 2px 4px;
+  scrollbar-width: thin;
+}
+
+.area-explorer-map-list button {
+  flex: 0 0 auto;
+  min-height: 38px;
+  border: 1px solid rgba(23, 32, 39, 0.13);
+  border-radius: 999px;
+  padding: 0 14px;
+  background: transparent;
+  color: var(--ze-ink, #172027);
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+
+.area-explorer-map-list button.active,
+.area-explorer-map-list button:hover {
+  border-color: var(--ze-ink, #172027);
+  background: var(--ze-ink, #172027);
+  color: #fff;
+}
+
+.zeneco-map-marker-wrap {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.zeneco-map-marker {
+  position: relative;
+  width: 28px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50% 50% 50% 6px;
+  background: #172027;
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  box-shadow: 0 7px 18px rgba(23, 32, 39, 0.3);
+  transform: rotate(-45deg);
+}
+
+.zeneco-map-marker span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c6a76d;
+}
+
+.leaflet-tooltip {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: rgba(23, 32, 39, 0.92);
+  color: #fff;
+  box-shadow: none;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 650;
+}
+
+.leaflet-tooltip::before {
+  border-top-color: rgba(23, 32, 39, 0.92) !important;
+}
+
+.leaflet-control-zoom a {
+  color: #172027 !important;
+}
+
+@media (max-width: 760px) {
+  .area-explorer-map-section {
+    width: calc(100% - 28px);
+    padding-bottom: 84px;
+  }
+
+  .area-explorer-map-shell {
+    min-height: 610px;
+    border-radius: 20px;
+  }
+
+  .area-explorer-map-card {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    border-radius: 16px;
+  }
+
+  .area-explorer-map-card img {
+    height: 115px;
+  }
+
+  .area-explorer-map-card > div {
+    padding: 15px 17px 17px;
+  }
+
+  .area-explorer-map-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .area-explorer-map-card p {
+    font-size: 0.88rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .area-explorer-map-list {
+    padding-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .area-explorer-map-list,
+  .leaflet-zoom-animated,
+  .leaflet-pan-anim .leaflet-tile {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
