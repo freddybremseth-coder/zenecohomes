@@ -3,22 +3,24 @@ import Script from "next/script";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
 import { RemasterPlayer } from "@/components/RemasterPlayer";
 import "./globals.css";
+import "./accessibility.css";
+import "./quality.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zenecohomes.com"),
   title: {
-    default: "Zen Eco Homes | Nybygg i Spania",
+    default: "Zen Eco Homes | Moderne nybygg i Spania",
     template: "%s | Zen Eco Homes",
   },
   description:
-    "Norsk rådgiver for moderne nybygg, energieffektive boliger og trygge kjøp på Costa Blanca, Costa Blanca Sør og Costa Calida.",
+    "Norsk eiendomsrådgivning for moderne nybygg, villaer, leiligheter og tomter på Costa Blanca, Costa Blanca Sør, Costa Cálida og utvalgte innlandsområder.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Zen Eco Homes | Nybygg i Spania",
+    title: "Zen Eco Homes | Moderne nybygg i Spania",
     description:
-      "Finn moderne nybygg på Costa Blanca og Costa Calida med norsk rådgivning, områdeguider og trygg kjøpsreise.",
+      "Finn og sammenlign moderne nybygg på Costa Blanca og Costa Cálida med områdeguider, kjøperfokus og en strukturert kjøpsreise.",
     url: "https://www.zenecohomes.com",
     siteName: "Zen Eco Homes",
     locale: "nb_NO",
@@ -52,11 +54,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         name: "Zen Eco Homes",
         url: "https://www.zenecohomes.com",
         description:
-          "Norsk rådgiver for boligkjøp, nybygg, tomter og eiendomsprosjekter i Spania, med særlig fokus på Costa Blanca og Costa Cálida.",
+          "Eiendomsrådgivning for moderne nybygg, villaer, leiligheter, tomter og eiendomsprosjekter i Spania, med særlig fokus på Costa Blanca og Costa Cálida.",
         telephone: "+4796009965",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Biar",
+          addressLocality: "Benidorm",
           addressRegion: "Alicante / Costa Blanca",
           addressCountry: "ES",
         },
@@ -66,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             telephone: "+4796009965",
             contactType: "sales",
             areaServed: ["NO", "ES"],
-            availableLanguage: ["Norwegian", "English", "German", "Spanish"],
+            availableLanguage: ["Norwegian", "English", "Spanish"],
           },
           {
             "@type": "ContactPoint",
@@ -76,10 +78,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             availableLanguage: ["Spanish", "English", "Norwegian"],
           },
         ],
-        areaServed: ["Biar", "Benidorm", "Costa Blanca", "Costa Blanca Nord", "Costa Blanca Sør", "Costa Cálida", "Alicante", "Spania"],
+        areaServed: ["Benidorm", "Biar", "Costa Blanca", "Costa Blanca Nord", "Costa Blanca Sør", "Costa Cálida", "Alicante", "Spania"],
         knowsAbout: [
           "Boligkjøp i Spania",
-          "Nybygg i Spania",
+          "Moderne nybygg i Spania",
           "Costa Blanca",
           "Costa Blanca Nord",
           "Tomtekjøp i Spania",
@@ -89,8 +91,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         founder: {
           "@type": "Person",
           name: "Freddy Bremseth",
-          url: "https://www.freddybremseth.com",
-          knowsAbout: ["Eiendom i Spania", "Rådgivning", "Salg", "AI og digital strategi"],
+          url: "https://www.zenecohomes.com/om-freddy",
+          knowsAbout: ["Eiendom i Spania", "Rådgivning", "Salg", "Digitale systemer"],
         },
         sameAs: ["https://www.freddybremseth.com"],
       },
