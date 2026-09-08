@@ -1,0 +1,66 @@
+/* Small QA overrides kept separate from the visual design system. */
+
+.testimonial-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.testimonial-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 2px 0 14px;
+  color: var(--gold);
+}
+
+.testimonial-rating svg {
+  fill: currentColor;
+}
+
+.testimonial-rating span {
+  margin-left: 5px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .nav.open {
+    max-height: calc(100dvh - 74px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .nav.open a,
+  .language-switcher a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .language-switcher {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand {
+    font-size: 21px;
+    letter-spacing: 1.3px;
+  }
+
+  .site-header {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
