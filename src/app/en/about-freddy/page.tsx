@@ -51,7 +51,7 @@ export default function EnglishAboutFreddyPage() {
           <h2>Advice first. Property second.</h2>
           <p>My starting point is not “what can I sell you?” but “where will you actually be happy, and what kind of property fits the way you want to live?” That means comparing areas, total costs, specifications, access, rental considerations and practical use before narrowing the market to a short list.</p>
           <div className="hero-actions" style={{ marginTop: 24 }}>
-            <Link className="contact-button" href="/en#kontakt"><MessageCircle size={18} /> Talk to Freddy</Link>
+            <Link className="contact-button" href="/en/booking"><MessageCircle size={18} /> Talk to Freddy</Link>
             <Link className="text-button" href="/en/areas">Compare areas <ArrowRight size={16} /></Link>
           </div>
         </article>

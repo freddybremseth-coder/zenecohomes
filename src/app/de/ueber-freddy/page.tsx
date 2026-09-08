@@ -51,7 +51,7 @@ export default function GermanAboutFreddyPage() {
           <h2>Beratung zuerst. Immobilie danach.</h2>
           <p>Meine Ausgangsfrage lautet nicht „Was kann ich Ihnen verkaufen?“, sondern „Wo werden Sie sich wirklich wohlfühlen und welche Immobilie passt zu Ihrem Leben?“ Deshalb vergleichen wir Region, Gesamtkosten, Ausstattung, Wege, mögliche Vermietung und tatsächliche Nutzung, bevor wir den Markt auf eine kurze Auswahl reduzieren.</p>
           <div className="hero-actions" style={{ marginTop: 24 }}>
-            <Link className="contact-button" href="/de#kontakt"><MessageCircle size={18} /> Mit Freddy sprechen</Link>
+            <Link className="contact-button" href="/de/termin"><MessageCircle size={18} /> Mit Freddy sprechen</Link>
             <Link className="text-button" href="/de/regionen">Regionen vergleichen <ArrowRight size={16} /></Link>
           </div>
         </article>
