@@ -6,7 +6,7 @@ import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { INLAND_BRAND, getInlandTown, inlandTowns } from "@/lib/inland";
-import { getInlandProperties } from "@/lib/inlandFeed";
+import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
 
 export function generateStaticParams() {
   return inlandTowns.map((town) => ({ sted: town.slug }));
@@ -41,7 +41,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
     );
   }
 
-  const properties = await getInlandProperties(town.matchTerms);
+  const properties = await getInlandShowcaseProperties();
   const otherTowns = inlandTowns.filter((item) => item.slug !== town.slug).slice(0, 4);
 
   return (
@@ -58,7 +58,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           <p className="hero-copy">{town.intro}</p>
           <div className="portal-actions">
             <a className="contact-button" href="#eiendommer">
-              Se eiendommer her <ArrowRight size={18} />
+              Se aktuelle innlandsboliger <ArrowRight size={18} />
             </a>
             <a className="text-button light" href="#kontakt">
               Spør oss om {town.name}
@@ -84,19 +84,20 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         </article>
         <aside>
           <strong>{properties.length}</strong>
-          <span>aktuelle eiendommer i og rundt {town.name}</span>
-          <strong>Biar</strong>
-          <span>rådgiveren din bor selv i innlandet</span>
+          <span>kuraterte moderne innlandsboliger fra Aspe og Pinoso</span>
+          <strong>Benidorm + Biar</strong>
+          <span>Freddy bor i Benidorm; familien har oliveneiendom i Biar</span>
         </aside>
       </section>
 
       <section className="section" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">Bygg din bolig</p>
-          <h2>Boliger du kan bygge i {town.name}</h2>
+          <p className="eyebrow">Kuratert innlandsutvalg</p>
+          <h2>Aktuelle moderne boliger fra Aspe og Pinoso</h2>
           <p>
-            Boligene under er byggemodeller som passer {town.name} og innlandet ellers. De kan settes opp på din
-            egen tomt – og vi hjelper deg å finne riktig tomt i området du ønsker.
+            Disse boligene ligger i dagens relevante innlandsutvalg i Aspe og Pinoso. De vises på alle områdesidene som
+            eksempler på moderne villaer og nybygg som passer innlandsstrategien. Vi viser ikke tilfeldige leiligheter eller
+            objekter fra Costa Blanca sør her, og vi påstår heller ikke at en Aspe-bolig fysisk ligger i {town.name}.
           </p>
         </div>
         {properties.length > 0 ? (
@@ -108,20 +109,15 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         ) : (
           <div className="section-heading">
             <p>
-              Ingen publiserte eiendommer i {town.name} akkurat nå – men vi vet ofte om eiendommer før de
-              annonseres. <a href="#kontakt">Fortell oss hva du ser etter</a>, så varsler vi deg først.
+              Ingen aktuelle Aspe/Pinoso-objekter akkurat nå. <a href="#kontakt">Fortell oss hva du ser etter</a>, så starter vi med område, tomt og riktig boligtype.
             </p>
           </div>
         )}
         <div className="center-action">
           <Link className="text-button" href="/eiendommer?region=innlandet">
-            Se alle innlandseiendommer <ArrowRight size={18} />
+            Se alle innlandsmuligheter <ArrowRight size={18} />
           </Link>
         </div>
-        <p className="area-disclaimer">
-          Prisene inkluderer en beregnet tomtekostnad (fra 50 000–85 000 euro). Endelig tomtepris regnes ut fra
-          tomten du velger, og avklares tydelig med deg før avtale.
-        </p>
       </section>
 
       <section className="section area-profile-grid">
@@ -148,7 +144,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         <div>
           <p className="eyebrow">Neste steg</p>
           <h2>Nysgjerrig på {town.name}?</h2>
-          <p>Fortell oss hva du ser etter, så deler vi ærlige vurderinger, aktuelle eiendommer og det du bør vite om området.</p>
+          <p>Fortell oss hva du ser etter, så deler vi ærlige vurderinger, aktuelle muligheter og det du bør vite om området.</p>
         </div>
         <ContactForm source={`${INLAND_BRAND.leadSource}-${town.slug}`} />
       </section>
