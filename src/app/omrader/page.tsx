@@ -1,5 +1,7 @@
+import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { areaMatchesRegion, getAreaProfiles, regions } from "@/lib/realtyflow";
 
@@ -19,12 +21,39 @@ export const metadata = {
 
 export const dynamic = "force-dynamic";
 
+function areaAnchor(name: string, slug?: string | null) {
+  const base = slug || name;
+  return `area-${base
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}`;
+}
+
 export default async function AreasPage() {
   const profiles = await getAreaProfiles();
   const groupedProfiles = regions.map((region) => ({
     ...region,
     profiles: profiles.filter((profile) => areaMatchesRegion(profile, region.key)),
   }));
+
+  const mapLocations: AreaExplorerLocation[] = groupedProfiles.flatMap((group) =>
+    group.profiles.flatMap((profile) => {
+      const coordinates = getAreaMapCoordinate(profile.name);
+      if (!coordinates) return [];
+      return [{
+        id: `${group.key}-${profile.id || profile.slug || profile.name}`,
+        name: profile.name,
+        ...coordinates,
+        region: profile.region || group.label,
+        description: profile.hero_blurb || profile.description || group.description,
+        image: profile.photo_url || "/assets/areas.jpg",
+        href: `#${areaAnchor(profile.name, profile.slug)}`,
+        propertyHref: `/eiendommer?region=${group.key}&area=${encodeURIComponent(profile.name)}`,
+      }];
+    }),
+  );
 
   return (
     <main className="areas-2027-page">
@@ -61,6 +90,12 @@ export default async function AreasPage() {
         </p>
       </section>
 
+      <AreaExplorerMap
+        locations={mapLocations}
+        label="Se hvor områdene faktisk ligger"
+        intro="Navnet alene sier ofte lite. Trykk på en markør for en kort forklaring, og gå videre til områdehistorien eller boligene hvis stedet virker interessant."
+      />
+
       {groupedProfiles.map((group, groupIndex) => (
         <section className="areas-2027-region" id={group.key} key={group.key}>
           <header className="areas-2027-region-header">
@@ -81,7 +116,11 @@ export default async function AreasPage() {
               group.profiles.map((profile, index) => {
                 const image = profile.photo_url || "/assets/areas.jpg";
                 return (
-                  <article className={`areas-2027-story${index % 2 ? " reverse" : ""}`} key={profile.id || profile.slug || profile.name}>
+                  <article
+                    className={`areas-2027-story${index % 2 ? " reverse" : ""}`}
+                    id={areaAnchor(profile.name, profile.slug)}
+                    key={profile.id || profile.slug || profile.name}
+                  >
                     <div className="areas-2027-story-image">
                       <img src={image} alt={profile.name} loading={groupIndex === 0 && index < 2 ? "eager" : "lazy"} />
                     </div>
