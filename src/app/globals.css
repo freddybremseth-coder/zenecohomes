@@ -4730,3 +4730,147 @@ footer {
 .magazine-actions .text-button:hover::after {
   transform: scaleX(1);
 }
+
+/* ==========================================================================
+   ZenEco Design 2027 — forside-seksjoner (finpuss)
+   Roligere tillitsbånd, kantløse premium-kort, serif-overskrifter og
+   diskret heving på tvers av «Hvilket Spania», «Hvorfor Zen Eco», Eco og
+   kundesitater.
+   ========================================================================== */
+
+/* Tillitsbånd: hårfine skiller, ingen tung bunnkant */
+.trust-band {
+  border-bottom: 1px solid rgba(22, 34, 43, 0.07);
+}
+.trust-band div {
+  border-right: 1px solid rgba(22, 34, 43, 0.06);
+}
+.trust-band strong {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: 1.15rem;
+}
+
+/* «Hvilket Spania passer deg?» — premium områdekort */
+.area-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 38px;
+}
+.area-choice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 32px 28px 26px;
+  background: white;
+  border-radius: var(--radius-2027);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.5s var(--ease-2027),
+    box-shadow 0.5s var(--ease-2027);
+}
+.area-choice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 44px 100px -34px rgba(22, 34, 43, 0.4);
+}
+.area-choice-card > span {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.area-choice-card h3 {
+  margin: 8px 0 8px;
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--dark);
+}
+.area-choice-card p {
+  margin: 0 0 4px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+.area-choice-card .text-button {
+  margin-top: auto;
+  padding-top: 16px;
+}
+@media (max-width: 1040px) {
+  .area-choice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .area-choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* «Hvorfor Zen Eco» / «Etter kjøpet» — kantløse trinnkort med serif-tall */
+.proof-grid {
+  gap: 24px;
+}
+.proof-grid article {
+  border: none;
+  border-radius: var(--radius-2027);
+  box-shadow: var(--shadow-soft);
+  padding: 34px 32px;
+  transition:
+    transform 0.5s var(--ease-2027),
+    box-shadow 0.5s var(--ease-2027);
+}
+.proof-grid article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 44px 100px -34px rgba(22, 34, 43, 0.4);
+}
+.proof-grid strong {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.7rem;
+  letter-spacing: 0;
+  color: var(--gold);
+}
+.proof-grid h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-size: 1.35rem;
+}
+
+/* Eco-kort: hårfin kant + diskret heving */
+.eco-grid > div {
+  border: 1px solid rgba(22, 34, 43, 0.07);
+  border-radius: var(--radius-2027);
+  box-shadow: 0 12px 40px rgba(22, 34, 43, 0.05);
+  transition:
+    transform 0.5s var(--ease-2027),
+    box-shadow 0.5s var(--ease-2027);
+}
+.eco-grid > div:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Kundesitater: kantløst, serif-sitat, mykt lys */
+.testimonial-card {
+  border: none;
+  border-radius: var(--radius-2027);
+  box-shadow: var(--shadow-soft);
+  padding: 32px 28px 26px;
+}
+.testimonial-card blockquote {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.22rem;
+  line-height: 1.5;
+}
+.testimonial-card figcaption {
+  border-top: 1px solid rgba(22, 34, 43, 0.07);
+}
