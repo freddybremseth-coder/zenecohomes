@@ -7,7 +7,7 @@ import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { INLAND_BRAND, inlandTowns } from "@/lib/inland";
-import { getInlandProperties } from "@/lib/inlandFeed";
+import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
 
 export const metadata: Metadata = {
   title: "Innlandet i Alicante | Tomt og moderne nybygg",
@@ -54,7 +54,7 @@ const faq = [
 ];
 
 export default async function InlandPage() {
-  const properties = await getInlandProperties();
+  const properties = await getInlandShowcaseProperties();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -195,11 +195,11 @@ export default async function InlandPage() {
 
       <section className="section" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">Aktuelle muligheter</p>
-          <h2>Moderne boliger og prosjekter i innlandet</h2>
+          <p className="eyebrow">Kuratert innlandsutvalg</p>
+          <h2>Aktuelle moderne boliger fra Aspe og Pinoso</h2>
           <p>
-            Utvalget under kommer fra den løpende boligbasen. Vi vurderer først og fremst moderne nybygg og tomt.
-            Eksisterende boliger kan være relevante når de tydelig passer behovet bedre.
+            For innlandssidene viser vi nå bare det relevante utvalget fra Aspe og Pinoso. Dette er moderne villaer,
+            nybygg og andre passende innlandsprodukter – ikke leiligheter eller tilfeldige objekter fra Costa Blanca sør.
           </p>
         </div>
         {properties.length > 0 ? (
@@ -210,7 +210,7 @@ export default async function InlandPage() {
           </div>
         ) : (
           <div className="section-heading">
-            <p>Ingen aktuelle publiserte innlandsobjekter akkurat nå. Fortell oss hva du ønsker, så kan vi starte med område og tomt.</p>
+            <p>Ingen aktuelle Aspe/Pinoso-objekter akkurat nå. Fortell oss hva du ønsker, så kan vi starte med område og tomt.</p>
           </div>
         )}
         <div className="center-action">
