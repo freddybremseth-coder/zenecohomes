@@ -1,0 +1,23 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spansk bankkonto og valutaveksling">
+  <rect width="1200" height="760" fill="#eef4ee"/>
+  <circle cx="250" cy="190" r="66" fill="#bfe0cf" opacity="0.7"/>
+  <!-- bank building -->
+  <g fill="#2f5d7a">
+    <path d="M180 340 L400 240 L620 340 Z"/>
+    <rect x="200" y="360" width="400" height="30"/>
+    <rect x="220" y="400" width="40" height="220"/><rect x="300" y="400" width="40" height="220"/><rect x="380" y="400" width="40" height="220"/><rect x="460" y="400" width="40" height="220"/><rect x="540" y="400" width="40" height="220"/>
+    <rect x="180" y="630" width="440" height="34"/>
+  </g>
+  <circle cx="400" cy="300" r="16" fill="#c5a059"/>
+  <!-- exchange coins EUR / NOK with arrows -->
+  <g transform="translate(830 300)">
+    <circle cx="-70" cy="0" r="86" fill="#c5a059"/>
+    <text x="-70" y="30" text-anchor="middle" fill="#16222b" font-family="Georgia, serif" font-size="86" font-weight="700">€</text>
+    <circle cx="150" cy="0" r="86" fill="#3a976e"/>
+    <text x="150" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="70" font-weight="800">kr</text>
+    <g stroke="#16222b" stroke-width="8" fill="none" stroke-linecap="round">
+      <path d="M10 -40 q30 -34 60 0"/><path d="M70 -40 l6 -22 l-24 8"/>
+      <path d="M70 40 q-30 34 -60 0"/><path d="M10 40 l-6 22 l24 -8"/>
+    </g>
+  </g>
+</svg>

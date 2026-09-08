@@ -30,6 +30,9 @@ const articleCovers: Record<string, string> = {
   "juridiske-fallgruver-boligkjop-spania": "/assets/magasin-covers/juridisk.svg",
   "skatt-ved-salg-bolig-spania": "/assets/magasin-covers/skatt-salg.svg",
   "arv-gaveskatt-bolig-spania": "/assets/magasin-covers/arv-gave.svg",
+  "nie-skattenummer-spania": "/assets/magasin-covers/nie-skattenummer.svg",
+  "spansk-bankkonto-valutaveksling": "/assets/magasin-covers/bankkonto-valuta.svg",
+  "boliglan-spansk-bank-nordmenn": "/assets/magasin-covers/boliglan-bank.svg",
 };
 
 const bookGuides = [

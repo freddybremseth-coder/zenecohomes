@@ -1557,6 +1557,252 @@ export const articles: Article[] = [
     ],
     cta: { label: "Snakk med oss om langsiktig eierskap i Spania", href: "/#kontakt" },
   },
+  {
+    slug: "nie-skattenummer-spania",
+    title: "NIE og spansk skattenummer steg for steg",
+    excerpt:
+      "NIE er utlendingens identifikasjonsnummer og nødvendig for å kjøpe bolig i Spania. Slik skaffer du det – og hva det brukes til.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Kjøpsprosess",
+    readingTime: "6 min lesing",
+    image: "/assets/magasin-covers/nie-skattenummer.svg",
+    imageAlt: "Illustrasjon av NIE-kort og spansk skattenummer",
+    seoTitle: "NIE i Spania steg for steg | Utlendingens skattenummer forklart",
+    seoDescription:
+      "Hva er NIE, og hvordan skaffer du det? Steg-for-steg-guide til det spanske identifikasjons- og skattenummeret du trenger for å kjøpe bolig i Spania.",
+    keywords: [
+      "NIE Spania",
+      "spansk skattenummer",
+      "NIE nummer bolig Spania",
+      "hvordan få NIE",
+      "identifikasjonsnummer Spania",
+    ],
+    intro: [
+      "NIE (Número de Identificación de Extranjero) er utlendingens identifikasjonsnummer i Spania. Du trenger det for eiendomskjøp, bankkonto, skatt, forsikring, strøm/vann og de fleste offentlige prosesser. Uten NIE kommer du ikke i mål med et boligkjøp.",
+      "Denne guiden forklarer hva NIE er, hvordan du skaffer det, og hva du bør tenke på. Dette er generell informasjon; en advokat eller gestor kan ordne NIE for deg, også via fullmakt.",
+    ],
+    sections: [
+      {
+        heading: "Hva NIE er – og ikke er",
+        body: [
+          "NIE er et personlig identifikasjonsnummer for utlendinger, ikke det samme som å være bosatt (resident) i Spania. Du kan ha NIE uten å bo der. Nummeret følger deg og brukes hver gang du skal identifisere deg mot spanske myndigheter, bank eller ved kontrakter.",
+        ],
+      },
+      {
+        heading: "Slik skaffer du NIE",
+        body: [
+          "NIE søkes normalt hos spansk politi/utlendingskontor i Spania, eller via spansk konsulat/ambassade i utlandet. Mange kjøpere lar advokaten eller en gestor ordne det – ofte via en fullmakt (poder), slik at du slipper å være til stede selv.",
+        ],
+        bullets: [
+          "Via advokat/gestor i Spania (ofte med fullmakt) – enklest for de fleste kjøpere.",
+          "Personlig oppmøte hos politi/utlendingskontor i Spania (timebestilling).",
+          "Via spansk konsulat/ambassade før avreise.",
+          "Ha gyldig pass og nødvendige skjema klare; kravene kan variere.",
+        ],
+      },
+      {
+        heading: "Hva du bruker NIE til",
+        body: [
+          "NIE er nøkkelen til det praktiske rundt boligen. Du trenger det til å signere skjøtet hos notar, åpne bankkonto, tegne forsikring, sette opp strøm og vann, og levere skatt. Skaff det tidlig, så det ikke blir en flaskehals når boligen skal overtas.",
+        ],
+      },
+      {
+        heading: "Vanlige feil",
+        body: [
+          "Den vanligste feilen er å vente for lenge. NIE kan ta tid å få, og uten det stopper både bankkonto og signering opp. Start prosessen så snart et kjøp begynner å bli aktuelt – gjerne parallelt med at advokaten kobles på.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Start NIE-prosessen tidlig, gjerne når du begynner å se konkret på bolig.",
+      "Avklar med advokat/gestor om de kan ordne NIE via fullmakt.",
+      "Ha gyldig pass og nødvendige dokumenter klare.",
+      "Bruk NIE til bankkonto, forsikring, strøm/vann og signering.",
+    ],
+    faq: [
+      {
+        question: "Hva er NIE?",
+        answer:
+          "NIE (Número de Identificación de Extranjero) er utlendingens identifikasjonsnummer i Spania, og er nødvendig for eiendomskjøp, bank, skatt, forsikring og de fleste offentlige prosesser.",
+      },
+      {
+        question: "Må jeg møte opp personlig for å få NIE?",
+        answer:
+          "Ikke nødvendigvis. Mange kjøpere lar advokat eller gestor ordne NIE i Spania via en fullmakt (poder). Alternativt kan du søke personlig hos politi/utlendingskontor eller via spansk konsulat.",
+      },
+      {
+        question: "Betyr NIE at jeg er bosatt i Spania?",
+        answer:
+          "Nei. NIE er kun et identifikasjonsnummer. Du kan ha NIE uten å være skattemessig bosatt (resident) i Spania.",
+      },
+    ],
+    cta: { label: "Les mer om finansiering, notar og NIE", href: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania" },
+  },
+  {
+    slug: "spansk-bankkonto-valutaveksling",
+    title: "Spansk bankkonto og valutaveksling for boligkjøpere",
+    excerpt:
+      "Trenger du spansk bankkonto for å kjøpe? Slik fungerer konto, betaling av kjøpesummen og hvordan du håndterer veksling fra kroner til euro klokt.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Kjøpsprosess",
+    readingTime: "6 min lesing",
+    image: "/assets/magasin-covers/bankkonto-valuta.svg",
+    imageAlt: "Illustrasjon av spansk bank og valutaveksling mellom euro og kroner",
+    seoTitle: "Spansk bankkonto og valutaveksling | Guide for norske boligkjøpere",
+    seoDescription:
+      "Trenger du spansk bankkonto for å kjøpe bolig i Spania? Om konto, betaling av kjøpesummen og smart valutaveksling fra kroner til euro for nordmenn.",
+    keywords: [
+      "spansk bankkonto",
+      "valutaveksling euro kroner",
+      "betale bolig Spania",
+      "bank Spania nordmenn",
+      "overføre penger Spania",
+    ],
+    intro: [
+      "Et boligkjøp i Spania betales i euro, og de fleste kjøpere trenger en spansk bankkonto for å håndtere kjøpesummen, notarutbetaling og løpende regninger som strøm, vann og fellesutgifter. Samtidig er valutaveksling fra kroner til euro en kostnad det er verdt å tenke gjennom.",
+      "Denne guiden forklarer hvorfor du normalt trenger konto, og hvordan du håndterer veksling klokt. Dette er generell informasjon, ikke finansiell rådgivning.",
+    ],
+    sections: [
+      {
+        heading: "Hvorfor spansk bankkonto?",
+        body: [
+          "En spansk konto gjør det enklere å betale kjøpesummen og de løpende kostnadene. Strøm, vann, IBI og fellesutgifter trekkes normalt automatisk fra en spansk konto. For å åpne konto trenger du vanligvis NIE og pass.",
+        ],
+      },
+      {
+        heading: "Betaling av kjøpesummen",
+        body: [
+          "Ved overtakelse hos notar betales resten av kjøpesummen, ofte med banksjekk eller bekreftet overføring. Pengene må være tilgjengelige på riktig konto i tide. Snakk med banken og advokaten om hvordan betalingen skal skje, slik at alt er klart på signeringsdagen.",
+        ],
+      },
+      {
+        heading: "Smart valutaveksling",
+        body: [
+          "Vekslingskurs og gebyrer varierer mye mellom aktører. På store beløp som en bolig kan forskjellen bli betydelig. Vurder alternativer og sammenlign totalkostnaden – ikke bare den oppgitte kursen, men også gebyrer og påslag.",
+        ],
+        bullets: [
+          "Sammenlign totalkostnad (kurs + gebyrer), ikke bare kursen.",
+          "Store engangsbeløp kan gi bedre betingelser enn mange småoverføringer.",
+          "Planlegg vekslingen i tide – ikke i siste liten før signering.",
+          "Behold dokumentasjon på overføringer (viktig for skatt og hvitvaskingskontroll).",
+        ],
+      },
+      {
+        heading: "Dokumentasjon og opprinnelse",
+        body: [
+          "Spanske banker og notar er underlagt hvitvaskingsregler. Vær forberedt på å dokumentere hvor pengene kommer fra (salg av bolig, sparing, lån). God dokumentasjon gjør prosessen smidig og unngår forsinkelser.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Skaff NIE, som du trenger for å åpne spansk bankkonto.",
+      "Åpne konto tidlig nok til å håndtere betaling og regninger.",
+      "Sammenlign valutaaktører på totalkostnad før du veksler store beløp.",
+      "Ta vare på dokumentasjon på pengenes opprinnelse.",
+    ],
+    faq: [
+      {
+        question: "Må jeg ha spansk bankkonto for å kjøpe bolig i Spania?",
+        answer:
+          "Det er sterkt anbefalt og i praksis nødvendig for de fleste. Kjøpesum, notarutbetaling og løpende regninger (strøm, vann, IBI, fellesutgifter) håndteres enklest fra en spansk konto. Du trenger normalt NIE og pass for å åpne den.",
+      },
+      {
+        question: "Hvordan veksler jeg smartest fra kroner til euro?",
+        answer:
+          "Sammenlign totalkostnaden – kurs pluss gebyrer og påslag – mellom ulike aktører. På store beløp som en bolig kan forskjellen bli betydelig. Planlegg vekslingen i god tid.",
+      },
+      {
+        question: "Må jeg dokumentere hvor pengene kommer fra?",
+        answer:
+          "Ja. Spanske banker og notar følger hvitvaskingsregler, så du bør kunne dokumentere pengenes opprinnelse (salg, sparing, lån). Det gjør prosessen raskere og unngår forsinkelser.",
+      },
+    ],
+    cta: { label: "Ta en prat om budsjett og betaling", href: "/#kontakt" },
+  },
+  {
+    slug: "boliglan-spansk-bank-nordmenn",
+    title: "Boliglån i spansk bank for nordmenn: slik fungerer det",
+    excerpt:
+      "Kan nordmenn få boliglån i Spania? Om belåningsgrad for ikke-residenter, hva banken ser på, takst og kostnadene ved å låne til bolig i Spania.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Kjøpsprosess",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/boliglan-bank.svg",
+    imageAlt: "Illustrasjon av bolig og spansk bank med boliglån",
+    seoTitle: "Boliglån i spansk bank for nordmenn | Belåning, takst og kostnader",
+    seoDescription:
+      "Kan nordmenn få boliglån i Spania? Guide til belåningsgrad for ikke-residenter, hva banken vurderer, takst og de vanligste lånekostnadene.",
+    keywords: [
+      "boliglån Spania nordmenn",
+      "lån bolig Spania",
+      "belåningsgrad ikke-resident Spania",
+      "spansk bank boliglån",
+      "finansiering bolig Spania",
+    ],
+    intro: [
+      "Mange nordmenn finansierer boligen i Spania helt eller delvis med lån. Spanske banker gir ofte lån til utenlandske kjøpere, men vilkårene skiller seg fra norske. Det lønner seg å forstå rammene før du regner på budsjettet.",
+      "Denne guiden gir en oversikt over hvordan boliglån i spansk bank fungerer for ikke-residenter. Dette er generell informasjon, ikke finansiell rådgivning – vilkår avhenger av bank, inntekt og profil.",
+    ],
+    sections: [
+      {
+        heading: "Belåningsgrad for ikke-residenter",
+        body: [
+          "For ikke-residenter gir spanske banker typisk lån på rundt 60–70 % av verdivurderingen (den laveste av takst og kjøpesum). Det betyr at du normalt må stille med 30–40 % egenkapital, i tillegg til kjøpsomkostningene på om lag 12–14 %.",
+        ],
+      },
+      {
+        heading: "Hva banken ser på",
+        body: [
+          "Banken vurderer betjeningsevne, inntekt, eksisterende gjeld og din generelle økonomiske profil. Du må regne med å dokumentere inntekt, skatt og formue. Stabil inntekt og lav gjeldsgrad styrker søknaden.",
+        ],
+        bullets: [
+          "Inntekt og betjeningsevne (ofte et tak på hvor stor andel av inntekten som kan gå til lån).",
+          "Eksisterende gjeld og forpliktelser.",
+          "Dokumentasjon: lønn/pensjon, selvangivelse, kontoutskrifter.",
+          "NIE og spansk bankkonto er en forutsetning.",
+        ],
+      },
+      {
+        heading: "Takst (tasación)",
+        body: [
+          "Banken krever en offisiell takst (tasación) av eiendommen, som du normalt betaler for (ofte noen hundre euro). Lånet beregnes ut fra den laveste av takstverdi og kjøpesum, så en lav takst kan redusere hvor mye du får låne.",
+        ],
+      },
+      {
+        heading: "Kostnader og vilkår",
+        body: [
+          "Siden boliglånsreformen i 2019 dekker banken de fleste avgiftene knyttet til opprettelsen av pantet. Som låntaker dekker du normalt takst og et eventuelt etableringsgebyr. Renten kan være fast eller flytende – vurder forutsigbarhet mot fleksibilitet, og sammenlign tilbud fra flere banker.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Avklar egenkapital: regn med 30–40 % pluss 12–14 % i omkostninger.",
+      "Skaff NIE og spansk bankkonto tidlig.",
+      "Innhent lånetilbud fra flere banker og sammenlign rente og gebyrer.",
+      "Husk at takst kan påvirke hvor mye du får låne.",
+    ],
+    faq: [
+      {
+        question: "Kan nordmenn få boliglån i spansk bank?",
+        answer:
+          "Ja, spanske banker gir ofte lån til utenlandske kjøpere. For ikke-residenter er belåningen typisk rundt 60–70 % av verdivurderingen, så du må normalt stille med 30–40 % egenkapital pluss omkostninger.",
+      },
+      {
+        question: "Hvor mye egenkapital trenger jeg?",
+        answer:
+          "Regn med 30–40 % egenkapital på selve boligen for ikke-residenter, i tillegg til kjøpsomkostningene på om lag 12–14 %. Nøyaktig belåning avhenger av bank, inntekt og takst.",
+      },
+      {
+        question: "Hvilke kostnader har et spansk boliglån?",
+        answer:
+          "Etter reformen i 2019 dekker banken de fleste avgiftene ved opprettelsen av pantet. Du dekker normalt takst (tasación) og et eventuelt etableringsgebyr. Renten kan være fast eller flytende.",
+      },
+    ],
+    cta: { label: "Les mer om omkostninger ved kjøp", href: "/kjopsprosess/omkostninger-nybygg-spania" },
+  },
 ];
 
 export function getArticle(slug: string) {

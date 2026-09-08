@@ -1,0 +1,29 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NIE og spansk skattenummer">
+  <defs>
+    <linearGradient id="nBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dfeaf1"/><stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#nBg)"/>
+  <circle cx="990" cy="180" r="66" fill="#c5a059" opacity="0.5"/>
+  <!-- ID card -->
+  <g transform="rotate(-5 470 400)">
+    <rect x="210" y="230" width="520" height="330" rx="22" fill="#ffffff" stroke="#cdd9e1" stroke-width="4"/>
+    <rect x="210" y="230" width="520" height="70" rx="22" fill="#2f5d7a"/>
+    <rect x="210" y="284" width="520" height="16" fill="#2f5d7a"/>
+    <!-- photo -->
+    <rect x="250" y="330" width="150" height="180" rx="10" fill="#dbe6ec"/>
+    <circle cx="325" cy="400" r="42" fill="#a9c0cd"/>
+    <path d="M262 510 C262 440 388 440 388 510 Z" fill="#a9c0cd"/>
+    <!-- lines -->
+    <g stroke="#b9c8d2" stroke-width="14" stroke-linecap="round"><path d="M440 360 H690"/><path d="M440 410 H660"/></g>
+    <!-- NIE number -->
+    <rect x="440" y="450" width="250" height="60" rx="8" fill="#eef2c9"/>
+    <text x="452" y="494" fill="#2f5d7a" font-family="Courier New, monospace" font-size="40" font-weight="700">X-0000000</text>
+  </g>
+  <!-- stamp -->
+  <g transform="translate(830 540)">
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#c5a059" stroke-width="8"/>
+    <path d="M-28 0 l18 18 l40 -44" fill="none" stroke="#c5a059" stroke-width="9" stroke-linecap="round"/>
+  </g>
+</svg>
