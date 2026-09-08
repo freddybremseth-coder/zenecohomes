@@ -4399,3 +4399,111 @@ footer {
   top: 0;
   color: #c7cdd2;
 }
+
+/* ════════════ ZenEco Design 2027 — boligside (detalj) ════════════ */
+
+/* Cinematisk hero */
+.property-detail-hero {
+  min-height: 76vh;
+  padding-bottom: clamp(52px, 8vh, 92px);
+}
+.property-detail-hero::before {
+  background:
+    linear-gradient(90deg, rgba(15, 24, 31, 0.66) 0%, rgba(15, 24, 31, 0.3) 46%, rgba(15, 24, 31, 0.06) 100%),
+    linear-gradient(0deg, rgba(15, 24, 31, 0.74) 0%, rgba(15, 24, 31, 0) 44%);
+}
+.property-detail-hero h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+}
+.property-detail-hero .eyebrow {
+  color: rgba(255, 255, 255, 0.85);
+}
+.property-detail-hero .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  margin-right: 12px;
+  vertical-align: middle;
+  background: var(--gold);
+}
+.property-detail-hero strong {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-top: 6px;
+}
+.property-detail-hero .hero-actions a[href="#kontakt"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #16222b;
+  border-radius: 999px;
+  padding: 0 28px;
+  min-height: 54px;
+  backdrop-filter: none;
+  transition: transform 0.4s var(--ease-2027), background 0.3s ease;
+}
+.property-detail-hero .hero-actions a[href="#kontakt"]:hover {
+  background: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+.property-detail-hero .favorite-button {
+  border-radius: 999px;
+  min-height: 54px;
+  padding: 0 24px;
+}
+
+/* Fakta: rene, luftige kort uten harde rammer */
+.detail-facts {
+  gap: 14px;
+}
+.detail-facts span {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px -24px rgba(22, 34, 43, 0.45);
+  font-weight: 700;
+}
+
+/* Innholdspaneler: mykere, mer luft, magasin-typografi */
+.rich-text,
+.area-context {
+  border: 1px solid rgba(22, 34, 43, 0.06);
+  border-radius: var(--radius-2027);
+}
+.rich-text {
+  padding: clamp(28px, 4vw, 46px);
+  box-shadow: 0 22px 60px -36px rgba(22, 34, 43, 0.28);
+}
+.decision-grid article {
+  border-radius: var(--radius-2027);
+}
+.rich-text h2,
+.decision-grid h2,
+.area-context h2,
+.sticky-card h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Sticky salgskort: premium */
+.sticky-card {
+  border: 1px solid rgba(22, 34, 43, 0.06);
+  border-radius: var(--radius-2027);
+  box-shadow: var(--shadow-soft);
+  padding: 30px;
+}
+
+/* Kart: dempet, moderne */
+.property-map iframe {
+  border-radius: var(--radius-2027);
+  filter: grayscale(0.4) contrast(0.94);
+  transition: filter 0.5s var(--ease-2027);
+}
+.property-map iframe:hover {
+  filter: grayscale(0) contrast(1);
+}
