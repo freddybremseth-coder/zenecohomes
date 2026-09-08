@@ -12,6 +12,7 @@ import "./premium.css";
 import "./mobile-2027.css";
 import "./inland-2027.css";
 import "./inland-town-2027.css";
+import "./assessment-2027.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],
