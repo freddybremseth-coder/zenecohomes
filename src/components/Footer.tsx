@@ -24,21 +24,20 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Eiendomsrådgiver Spania", href: "/eiendomsradgiver-spania" },
     { label: "Tomt i Spania", href: "/tomt-i-spania" },
     { label: "Om Freddy", href: "/om-freddy" },
-    { label: "freddybremseth.com", href: "https://www.freddybremseth.com", external: true },
   ],
   de: [
     { label: "Immobilien", href: "/de/immobilien" },
     { label: "Neubau Costa Blanca", href: "/de/neubau-costa-blanca" },
     { label: "Immobilienberater Spanien", href: "/de/immobilienberater-spanien" },
     { label: "Inland", href: "/de/inland" },
-    { label: "Über Freddy", href: "https://www.freddybremseth.com", external: true },
+    { label: "Über Freddy", href: "/de/ueber-freddy" },
   ],
   en: [
     { label: "Properties", href: "/en/properties" },
     { label: "New build Costa Blanca", href: "/en/new-build-costa-blanca" },
     { label: "Property advisor Spain", href: "/en/property-advisor-spain" },
     { label: "Inland", href: "/en/inland" },
-    { label: "About Freddy", href: "https://www.freddybremseth.com", external: true },
+    { label: "About Freddy", href: "/en/about-freddy" },
   ],
   es: [
     { label: "Propiedades", href: "/es/propiedades" },
