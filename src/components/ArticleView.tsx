@@ -78,8 +78,8 @@ export function ArticleView({ article }: { article: Article }) {
             width: "100%",
             maxHeight: 460,
             objectFit: "cover",
-            border: "1px solid var(--line)",
-            boxShadow: "var(--shadow)",
+            borderRadius: "var(--radius-2027)",
+            boxShadow: "var(--shadow-soft)",
             background: "white",
           }}
         />
@@ -96,9 +96,9 @@ export function ArticleView({ article }: { article: Article }) {
           <article
             style={{
               background: "white",
-              border: "1px solid var(--line)",
+              borderRadius: "var(--radius-2027)",
               padding: "clamp(26px, 5vw, 58px)",
-              boxShadow: "0 10px 32px rgba(22, 34, 43, 0.06)",
+              boxShadow: "var(--shadow-soft)",
             }}
           >
             {article.intro.map((paragraph) => (
@@ -112,7 +112,9 @@ export function ArticleView({ article }: { article: Article }) {
                 <h2
                   style={{
                     color: "var(--dark)",
-                    fontFamily: "\"Playfair Display\", serif",
+                    fontFamily: "var(--display)",
+                    fontWeight: 500,
+                    letterSpacing: "-0.018em",
                     fontSize: "clamp(1.8rem, 3vw, 2.7rem)",
                     lineHeight: 1.12,
                     margin: "0 0 16px",
@@ -158,9 +160,9 @@ export function ArticleView({ article }: { article: Article }) {
               </section>
             ))}
 
-            <section style={{ marginTop: 46, padding: 28, background: "var(--sage)", border: "1px solid var(--line)" }}>
+            <section style={{ marginTop: 46, padding: "clamp(26px, 4vw, 38px)", background: "var(--sage)", borderRadius: "var(--radius-2027)" }}>
               <p className="eyebrow">Anbefalte neste steg</p>
-              <h2 style={{ color: "var(--dark)", fontFamily: "\"Playfair Display\", serif", marginTop: 0 }}>
+              <h2 style={{ color: "var(--dark)", fontFamily: "var(--display)", fontWeight: 500, letterSpacing: "-0.015em", marginTop: 0 }}>
                 Slik gar du videre
               </h2>
               <ol style={{ display: "grid", gap: 10, paddingLeft: 20, lineHeight: 1.75 }}>
@@ -177,13 +179,13 @@ export function ArticleView({ article }: { article: Article }) {
 
             <section style={{ marginTop: 46 }}>
               <p className="eyebrow">Vanlige sporsmal</p>
-              <h2 style={{ color: "var(--dark)", fontFamily: "\"Playfair Display\", serif", marginTop: 0 }}>
+              <h2 style={{ color: "var(--dark)", fontFamily: "var(--display)", fontWeight: 500, letterSpacing: "-0.015em", marginTop: 0 }}>
                 FAQ
               </h2>
               <div style={{ display: "grid", gap: 14 }}>
                 {article.faq.map((item) => (
-                  <details key={item.question} style={{ border: "1px solid var(--line)", padding: 18, background: "#fbfbf7" }}>
-                    <summary style={{ cursor: "pointer", color: "var(--dark)", fontWeight: 900 }}>{item.question}</summary>
+                  <details key={item.question} style={{ border: "1px solid rgba(22, 34, 43, 0.08)", borderRadius: 14, padding: "18px 22px", background: "#fbfbf7" }}>
+                    <summary style={{ cursor: "pointer", color: "var(--dark)", fontWeight: 700 }}>{item.question}</summary>
                     <p style={{ color: "var(--muted)", lineHeight: 1.75 }}>{item.answer}</p>
                   </details>
                 ))}
@@ -194,7 +196,7 @@ export function ArticleView({ article }: { article: Article }) {
           <aside className="feature-panel" style={{ position: "sticky", top: 110 }}>
             <div style={{ display: "block" }}>
               <p className="eyebrow">Trenger du hjelp?</p>
-              <h3 style={{ margin: "0 0 12px", color: "var(--dark)", fontSize: "1.45rem" }}>
+              <h3 style={{ margin: "0 0 12px", color: "var(--dark)", fontFamily: "var(--display)", fontWeight: 500, letterSpacing: "-0.015em", fontSize: "1.5rem" }}>
                 Fa en personlig vurdering
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>

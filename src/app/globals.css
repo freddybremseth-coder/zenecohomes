@@ -4933,3 +4933,31 @@ footer {
   font-weight: 500;
   letter-spacing: -0.015em;
 }
+
+/* ==========================================================================
+   ZenEco Design 2027 — silo/guide-artikler (ArticleView)
+   Mykt sidepanel, avrundet tabell og rolig gull-typografi.
+   ========================================================================== */
+.feature-panel {
+  border: none;
+  border-radius: var(--radius-2027);
+  box-shadow: var(--shadow-soft);
+  padding: 32px;
+}
+.feature-panel > div {
+  border-radius: 14px;
+  font-weight: 600;
+}
+.article-table {
+  border-radius: var(--radius-2027);
+  overflow: hidden;
+}
+.article-table thead th {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-bottom: 1.5px solid rgba(197, 165, 114, 0.4);
+}
+.article-table th,
+.article-table td {
+  border-bottom-color: rgba(22, 34, 43, 0.08);
+}
