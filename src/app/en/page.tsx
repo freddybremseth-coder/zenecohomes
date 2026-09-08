@@ -53,7 +53,7 @@ export default function EnglishHome() {
 
       <section className="section">
         <p className="eyebrow">How we help</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Decisions before listings
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 760, lineHeight: 1.7 }}>
@@ -85,7 +85,7 @@ export default function EnglishHome() {
 
       <section className="section">
         <p className="eyebrow">Areas</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Choose the area before the property
         </h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
@@ -106,7 +106,7 @@ export default function EnglishHome() {
 
       <section className="section">
         <p className="eyebrow">Beyond the purchase</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Property, inland opportunities and aftercare
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 640, lineHeight: 1.7 }}>
@@ -147,7 +147,7 @@ export default function EnglishHome() {
 
       <section className="section" id="kontakt">
         <p className="eyebrow">Contact</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Tell us what you are looking for
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 620, lineHeight: 1.7 }}>
