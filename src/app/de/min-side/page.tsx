@@ -2,10 +2,10 @@ import Link from "next/link";
 import { LockKeyhole } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
-import { PortalJourneyStatus } from "@/components/PortalJourneyStatus";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedPortalJourneyStatus } from "@/components/TrackedPortalJourneyStatus";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
@@ -47,7 +47,7 @@ export default function GermanPortalPage() {
       </section>
       <section style={{ padding: "1rem 1rem 0" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
-          <PortalJourneyStatus locale="de" />
+          <TrackedPortalJourneyStatus locale="de" />
           <PersonalizedPortalMatches locale="de" />
         </div>
       </section>
