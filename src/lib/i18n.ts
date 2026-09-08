@@ -156,11 +156,12 @@ export function navLinks(locale: SiteLocale): NavLink[] {
     return [
       { label: "Immobilien", href: "/de/immobilien" },
       { label: "Inland", href: "/de/inland" },
-      { label: "Neubau", href: "/de/neubau-costa-blanca" },
-      { label: "Beratung", href: "/de/immobilienberater-spanien" },
+      { label: "Grundstücke", href: "/de/grundstueck-in-spanien" },
+      { label: "Regionen", href: "/de/regionen" },
+      { label: "Kaufprozess", href: "/de/kaufprozess" },
+      { label: "Ratgeber", href: "/de/ratgeber" },
       { label: "Keyholding", href: CARE_URL, external: true },
-      { label: "Kontakt", href: "/de#kontakt" },
-      { label: "Über Freddy", href: "https://www.freddybremseth.com", external: true },
+      { label: "Über Freddy", href: "/de/ueber-freddy" },
       { label: "Mein Bereich", href: "/de/min-side", cta: true },
     ];
   }
@@ -168,11 +169,12 @@ export function navLinks(locale: SiteLocale): NavLink[] {
     return [
       { label: "Properties", href: "/en/properties" },
       { label: "Inland", href: "/en/inland" },
-      { label: "New build", href: "/en/new-build-costa-blanca" },
-      { label: "Advice", href: "/en/property-advisor-spain" },
+      { label: "Plots", href: "/en/plot-of-land-in-spain" },
+      { label: "Areas", href: "/en/areas" },
+      { label: "Buying process", href: "/en/buying-process" },
+      { label: "Guides", href: "/en/guides" },
       { label: "Keyholding", href: CARE_URL, external: true },
-      { label: "Contact", href: "/en#kontakt" },
-      { label: "About Freddy", href: "https://www.freddybremseth.com", external: true },
+      { label: "About Freddy", href: "/en/about-freddy" },
       { label: "My account", href: "/en/min-side", cta: true },
     ];
   }
