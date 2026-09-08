@@ -138,7 +138,7 @@ export default function SpanishAboutFreddyPage() {
 
       <section className="section" id="contacto">
         <p className="eyebrow">Contacto</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>¿Estás pensando en comprar en España?</h2>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>¿Estás pensando en comprar en España?</h2>
         <p style={{ color: "var(--muted)", maxWidth: 680, lineHeight: 1.7 }}>Cuéntame brevemente tu situación y tus prioridades. Podemos empezar por comparar zonas antes de hablar de una vivienda concreta.</p>
         <div style={{ maxWidth: 760, marginTop: 18 }}><SpanishContactForm source="about-freddy-es" /></div>
       </section>
