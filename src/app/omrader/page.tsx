@@ -1,17 +1,13 @@
-import { MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { areas } from "@/lib/content";
 import { areaMatchesRegion, getAreaProfiles, regions } from "@/lib/realtyflow";
 
 export const metadata = {
   title: "Områder i Spania for boligkjøp | Costa Blanca, Costa Cálida og Alicante",
   description:
-    "Finn riktig område for boligkjøp i Spania. Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida, Altea, Calpe, Finestrat, Polop og flere populære områder.",
-  alternates: {
-    canonical: "/omrader",
-  },
+    "Finn riktig område for boligkjøp i Spania. Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og utvalgte områder før du velger bolig.",
+  alternates: { canonical: "/omrader" },
   openGraph: {
     title: "Områder i Spania for boligkjøp | Zen Eco Homes",
     description:
@@ -29,132 +25,108 @@ export default async function AreasPage() {
     ...region,
     profiles: profiles.filter((profile) => areaMatchesRegion(profile, region.key)),
   }));
-  const ungroupedProfiles = profiles.filter(
-    (profile) => !regions.some((region) => areaMatchesRegion(profile, region.key)),
-  );
 
   return (
-    <main>
+    <main className="areas-2027-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <section className="page-hero compact-hero image-hero">
-        <p className="eyebrow">Områder i Spania</p>
-        <h1>Finn riktig område før du velger bolig</h1>
-        <p>
-          Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og utvalgte byer før du bestemmer deg for
-          bolig, nybygg, tomt eller investering i Spania.
-        </p>
-      </section>
-      <section className="region-strip">
-        {regions.map((region) => (
-          <a href={`#${region.key}`} key={region.key}>
-            <strong>{region.label}</strong>
-            <span>{region.description}</span>
-          </a>
-        ))}
-      </section>
-      <section className="section area-intro">
-        <div className="section-heading">
-          <p className="eyebrow">Områdevalg</p>
-          <h2>Velg område før du forelsker deg i boligen</h2>
+
+      <section className="areas-2027-hero">
+        <div className="areas-2027-hero-image" aria-hidden="true" />
+        <div className="areas-2027-hero-overlay" />
+        <div className="areas-2027-hero-copy">
+          <p className="eyebrow">ZenEco Area Journal</p>
+          <h1>Velg området før du velger boligen</h1>
           <p>
-            Riktig beliggenhet påvirker hverdagsliv, videresalg, utleie, prisnivå, service og hvor godt boligen
-            fungerer utenom høysesong.
+            Costa Blanca er ikke ett marked. Landskap, prisnivå, service, internasjonalt miljø og hverdagsliv endrer
+            seg merkbart fra nord til sør og videre inn i landet. Start med stedet som passer livet du vil ha.
           </p>
         </div>
       </section>
-      {groupedProfiles.map((group) => (
-        <section className="section area-profile-grid region-area-section" id={group.key} key={group.key}>
-          <div className="section-heading region-heading">
+
+      <nav className="areas-2027-index" aria-label="Regioner">
+        {groupedProfiles.map((group, index) => (
+          <a href={`#${group.key}`} key={group.key}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{group.label}</strong>
+          </a>
+        ))}
+      </nav>
+
+      <section className="areas-2027-intro section">
+        <p className="eyebrow">Områdevalg</p>
+        <h2>En flott bolig i feil område blir sjelden et godt kjøp.</h2>
+        <p>
+          Se først på hvordan du ønsker å bruke boligen: helårsbolig, ferie, vinterbase, investering eller fremtidig
+          flytting. Deretter gir det mening å sammenligne konkrete prosjekter og boliger.
+        </p>
+      </section>
+
+      {groupedProfiles.map((group, groupIndex) => (
+        <section className="areas-2027-region" id={group.key} key={group.key}>
+          <header className="areas-2027-region-header">
             <div>
-              <p className="eyebrow">Områder</p>
+              <span>{String(groupIndex + 1).padStart(2, "0")}</span>
+              <p className="eyebrow">Region</p>
               <h2>{group.label}</h2>
               <p>{group.description}</p>
             </div>
-            <div className="region-heading-actions">
-              <a className="text-button" href={`/omrader/${group.key}`}>
-                Les regionguide
-              </a>
-              <a className="text-button" href={`/eiendommer?region=${group.key}`}>
-                Se boliger i {group.label}
-              </a>
+            <div className="areas-2027-region-actions">
+              <a className="text-button" href={`/omrader/${group.key}`}>Les regionguide</a>
+              <a className="text-button" href={`/eiendommer?region=${group.key}`}>Se boliger i regionen</a>
             </div>
-          </div>
-          {group.profiles.length > 0 ? (
-            group.profiles.map((profile) => (
-              <article
-                className={`area-profile-card${profile.photo_url ? "" : " no-photo"}`}
-                key={profile.id || profile.slug || profile.name}
-              >
-                {profile.photo_url && <div style={{ backgroundImage: `url(${profile.photo_url})` }} />}
-                <section>
-                  <span>{profile.region || profile.country || "Spania"}</span>
-                  <h2>{profile.name}</h2>
-                  {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
-                  {profile.description && <p>{profile.description}</p>}
-                  {Array.isArray(profile.highlights) && profile.highlights.length > 0 && (
-                    <ul>
-                      {profile.highlights.slice(0, 5).map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
-                      ))}
-                    </ul>
-                  )}
-                  <a
-                    className="text-button area-property-link"
-                    href={`/eiendommer?region=${group.key}&area=${encodeURIComponent(profile.name)}`}
-                  >
-                    Se boliger i {profile.name}
-                  </a>
-                </section>
-              </article>
-            ))
-          ) : (
-            <article className="info-card muted-card">
-              <MapPin />
-              <div>
-                <h2>Ingen publiserte områder ennå</h2>
-                <p>Når vi merker et område for nettsiden, dukker det opp her automatisk.</p>
+          </header>
+
+          <div className="areas-2027-journal">
+            {group.profiles.length > 0 ? (
+              group.profiles.map((profile, index) => {
+                const image = profile.photo_url || "/assets/areas.jpg";
+                return (
+                  <article className={`areas-2027-story${index % 2 ? " reverse" : ""}`} key={profile.id || profile.slug || profile.name}>
+                    <div className="areas-2027-story-image">
+                      <img src={image} alt={profile.name} loading={groupIndex === 0 && index < 2 ? "eager" : "lazy"} />
+                    </div>
+                    <div className="areas-2027-story-copy">
+                      <span className="areas-2027-story-number">{String(index + 1).padStart(2, "0")}</span>
+                      <p className="eyebrow">{profile.region || group.label}</p>
+                      <h3>{profile.name}</h3>
+                      {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
+                      {profile.description && <p>{profile.description}</p>}
+                      {Array.isArray(profile.highlights) && profile.highlights.length > 0 && (
+                        <ul>
+                          {profile.highlights.slice(0, 4).map((highlight) => <li key={highlight}>{highlight}</li>)}
+                        </ul>
+                      )}
+                      <div className="areas-2027-story-actions">
+                        <a className="text-button" href={`/eiendommer?region=${group.key}&area=${encodeURIComponent(profile.name)}`}>
+                          Se boliger i {profile.name}
+                        </a>
+                        <a className="text-button subtle" href={`/omrader/${group.key}`}>
+                          Utforsk regionen
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })
+            ) : (
+              <div className="areas-2027-empty">
+                <p>Vi bygger ut områdeprofilene for denne regionen. Regionguiden og boligene er allerede tilgjengelige.</p>
+                <a className="text-button" href={`/omrader/${group.key}`}>Les regionguide</a>
               </div>
-            </article>
-          )}
+            )}
+          </div>
         </section>
       ))}
-      {ungroupedProfiles.length > 0 && (
-        <section className="section area-profile-grid region-area-section">
-          <div className="section-heading">
-            <p className="eyebrow">Flere områder</p>
-            <h2>Ikke sortert i region ennå</h2>
-          </div>
-          {ungroupedProfiles.map((profile) => (
-            <article
-              className={`area-profile-card${profile.photo_url ? "" : " no-photo"}`}
-              key={profile.id || profile.slug || profile.name}
-            >
-              {profile.photo_url && <div style={{ backgroundImage: `url(${profile.photo_url})` }} />}
-              <section>
-                <span>{profile.region || profile.country || "Spania"}</span>
-                <h2>{profile.name}</h2>
-                {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
-                {profile.description && <p>{profile.description}</p>}
-                <a className="text-button area-property-link" href={`/eiendommer?area=${encodeURIComponent(profile.name)}`}>
-                  Se boliger i {profile.name}
-                </a>
-              </section>
-            </article>
-          ))}
-        </section>
-      )}
-      <section className="section card-list">
-        {areas.map((area) => (
-          <article className="info-card" key={area.name}>
-            <MapPin />
-            <div>
-              <h2>{area.name}</h2>
-              <strong>{area.places}</strong>
-              <p>{area.text}</p>
-            </div>
-          </article>
-        ))}
+
+      <section className="areas-2027-closing section">
+        <p className="eyebrow">Usikker på hvor du passer best?</p>
+        <h2>Beskriv hverdagen du vil ha. Så snevrer vi inn områdene før vi ser på boliger.</h2>
+        <div>
+          <a className="contact-button" href="/#boligmatch">Start Boligmatchen</a>
+          <a className="text-button" href="/booking">Book en prat</a>
+        </div>
       </section>
+
       <Footer />
     </main>
   );

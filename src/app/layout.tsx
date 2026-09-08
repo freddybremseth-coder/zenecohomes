@@ -15,6 +15,7 @@ import "./inland-town-2027.css";
 import "./assessment-2027.css";
 import "./gallery-2027.css";
 import "./chatbot-2027.css";
+import "./areas-2027.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],
