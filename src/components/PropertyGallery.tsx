@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Images, X } from "lucide-react";
 
-/** Bildegalleri med fullskjerm-lightbox (klikk, piltaster, swipe-vennlig). */
+/** Premium filmstrip + full-screen lightbox for property imagery. */
 export function PropertyGallery({ images, title }: { images: string[]; title: string }) {
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
@@ -28,26 +28,50 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
     };
   }, [open, close, step]);
 
-  // Thumbnails: alle bortsett fra hovedbildet (index 0), men lightbox browser hele settet.
-  const thumbs = images.slice(1, 13);
+  if (images.length <= 1) return null;
+
+  // Main image is rendered above the gallery. Keep the filmstrip editorial and calm.
+  const thumbs = images.slice(1, 7);
 
   return (
     <>
-      <div className="gallery-grid">
-        {thumbs.map((image, i) => (
-          <button
-            key={image}
-            type="button"
-            className="gallery-thumb"
-            style={{ backgroundImage: `url(${image})` }}
-            onClick={() => setOpen(i + 1)}
-            aria-label={`${title} – bilde ${i + 2}`}
-          />
-        ))}
-      </div>
+      <section className="property-filmstrip" aria-label={`Bilder av ${title}`}>
+        <div className="property-filmstrip-head">
+          <div>
+            <span className="property-filmstrip-kicker">Galleri</span>
+            <strong>{images.length} bilder</strong>
+          </div>
+          <button type="button" className="property-gallery-all" onClick={() => setOpen(0)}>
+            <Images size={17} /> Se alle bilder
+          </button>
+        </div>
+
+        <div className="gallery-grid gallery-filmstrip">
+          {thumbs.map((image, i) => {
+            const imageIndex = i + 1;
+            const isLastVisible = i === thumbs.length - 1;
+            const remaining = images.length - (imageIndex + 1);
+            return (
+              <button
+                key={`${image}-${imageIndex}`}
+                type="button"
+                className="gallery-thumb gallery-thumb-2027"
+                style={{ backgroundImage: `url(${image})` }}
+                onClick={() => setOpen(imageIndex)}
+                aria-label={`${title} – bilde ${imageIndex + 1}`}
+              >
+                <span className="gallery-thumb-index">{String(imageIndex + 1).padStart(2, "0")}</span>
+                {isLastVisible && remaining > 0 && (
+                  <span className="gallery-thumb-more">+{remaining} bilder</span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </section>
 
       {open !== null && (
-        <div className="lightbox" role="dialog" aria-modal="true" onClick={close}>
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label={`Galleri – ${title}`} onClick={close}>
           <button className="lightbox-close" type="button" onClick={close} aria-label="Lukk">
             <X />
           </button>
@@ -59,7 +83,7 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
                 e.stopPropagation();
                 step(-1);
               }}
-              aria-label="Forrige"
+              aria-label="Forrige bilde"
             >
               <ChevronLeft />
             </button>
@@ -79,7 +103,7 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
                 e.stopPropagation();
                 step(1);
               }}
-              aria-label="Neste"
+              aria-label="Neste bilde"
             >
               <ChevronRight />
             </button>

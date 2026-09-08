@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Images, X } from "lucide-react";
 
 export function SpanishPropertyGallery({ images, title }: { images: string[]; title: string }) {
   const [open, setOpen] = useState<number | null>(null);
@@ -27,22 +27,47 @@ export function SpanishPropertyGallery({ images, title }: { images: string[]; ti
     };
   }, [open, close, step]);
 
-  const thumbs = images.slice(1, 13);
+  if (images.length <= 1) return null;
+
+  const thumbs = images.slice(1, 7);
 
   return (
     <>
-      <div className="gallery-grid">
-        {thumbs.map((image, index) => (
-          <button
-            key={`${image}-${index}`}
-            type="button"
-            className="gallery-thumb"
-            style={{ backgroundImage: `url(${image})` }}
-            onClick={() => setOpen(index + 1)}
-            aria-label={`${title} – imagen ${index + 2}`}
-          />
-        ))}
-      </div>
+      <section className="property-filmstrip" aria-label={`Imágenes de ${title}`}>
+        <div className="property-filmstrip-head">
+          <div>
+            <span className="property-filmstrip-kicker">Galería</span>
+            <strong>{images.length} imágenes</strong>
+          </div>
+          <button type="button" className="property-gallery-all" onClick={() => setOpen(0)}>
+            <Images size={17} /> Ver todas las imágenes
+          </button>
+        </div>
+
+        <div className="gallery-grid gallery-filmstrip">
+          {thumbs.map((image, index) => {
+            const imageIndex = index + 1;
+            const isLastVisible = index === thumbs.length - 1;
+            const remaining = images.length - (imageIndex + 1);
+            return (
+              <button
+                key={`${image}-${imageIndex}`}
+                type="button"
+                className="gallery-thumb gallery-thumb-2027"
+                style={{ backgroundImage: `url(${image})` }}
+                onClick={() => setOpen(imageIndex)}
+                aria-label={`${title} – imagen ${imageIndex + 1}`}
+              >
+                <span className="gallery-thumb-index">{String(imageIndex + 1).padStart(2, "0")}</span>
+                {isLastVisible && remaining > 0 && (
+                  <span className="gallery-thumb-more">+{remaining} imágenes</span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
       {open !== null && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Galería de imágenes" onClick={close}>
           <button className="lightbox-close" type="button" onClick={close} aria-label="Cerrar">
