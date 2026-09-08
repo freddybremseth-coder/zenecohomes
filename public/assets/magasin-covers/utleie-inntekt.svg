@@ -1,0 +1,20 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Utleie og inntektspotensial">
+  <rect width="1200" height="760" fill="#eaf3ef"/>
+  <circle cx="1000" cy="180" r="70" fill="#bfe0cf" opacity="0.7"/>
+  <!-- house -->
+  <g>
+    <path d="M250 360 L470 210 L690 360 Z" fill="#c5a059"/>
+    <rect x="300" y="360" width="340" height="300" fill="#ffffff" stroke="#d6cdbb" stroke-width="4"/>
+    <rect x="360" y="430" width="90" height="90" rx="6" fill="#bcd6cb"/>
+    <rect x="490" y="430" width="90" height="90" rx="6" fill="#bcd6cb"/>
+    <rect x="415" y="560" width="110" height="100" fill="#2f5d7a"/>
+  </g>
+  <!-- percent / return arrow -->
+  <g transform="translate(720 300)">
+    <circle cx="0" cy="0" r="140" fill="#16222b"/>
+    <text x="0" y="46" text-anchor="middle" fill="#c5a059" font-family="Georgia, serif" font-size="150" font-weight="700">%</text>
+  </g>
+  <g fill="#4bb083"><ellipse cx="820" cy="640" rx="70" ry="22"/><ellipse cx="820" cy="612" rx="70" ry="22" fill="#5bbf90"/></g>
+  <path d="M900 640 L980 560 L1050 600 L1130 500" fill="none" stroke="#c5a059" stroke-width="9" stroke-linecap="round"/>
+  <path d="M1130 500 l-40 4 l20 34 Z" fill="#c5a059"/>
+</svg>

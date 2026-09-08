@@ -895,6 +895,425 @@ export const articles: Article[] = [
     ],
     cta: { label: "Se aktuelle boliger i Finestrat", href: "/eiendommer?q=finestrat" },
   },
+  {
+    slug: "utleie-inntektspotensial-bolig-spania",
+    title: "Utleie av bolig i Spania: kan boligen tjene penger?",
+    excerpt:
+      "Skal boligen også leies ut? Slik vurderer du realistisk utleiepotensial, turistlisens, sesong, kostnader og hva som faktisk avgjør leieinntekten.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Guide",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/utleie-inntekt.svg",
+    imageAlt: "Illustrasjon av utleiebolig, avkastning og inntektspotensial i Spania",
+    seoTitle: "Utleie av bolig i Spania | Inntektspotensial og turistlisens",
+    seoDescription:
+      "Kan boligen din i Spania leies ut med god inntekt? Guide til utleiepotensial, turistlisens, sesong, kostnader og realistisk avkastning for norske kjøpere.",
+    keywords: [
+      "utleie bolig Spania",
+      "turistlisens Spania",
+      "leieinntekt Costa Blanca",
+      "korttidsutleie Spania",
+      "investering bolig Spania",
+    ],
+    intro: [
+      "Mange nordmenn tenker: «Vi skal bruke boligen selv, men kanskje leie den ut litt.» Da er det viktig å vurdere utleiepotensialet før du kjøper – ikke etterpå. To boliger som ser nesten like ut kan ha svært ulik leieverdi.",
+      "Denne guiden hjelper deg å tenke realistisk rundt inntekt: hva som faktisk driver etterspørselen, hvilke regler som gjelder for turistutleie, og hvordan du regner på reell avkastning etter kostnader.",
+    ],
+    sections: [
+      {
+        heading: "Hva avgjør leieinntekten – egentlig?",
+        body: [
+          "Beliggenhet slår ofte antall kvadratmeter. Gangavstand til strand, service og restauranter kan bety mer for belegget enn et ekstra soverom. En terrasse med sol kan være viktigere enn utsikten.",
+        ],
+        bullets: [
+          "Beliggenhet: gangavstand til strand, service og transport.",
+          "Sesong: kysten har lang sesong, men vinterbelegget varierer sterkt mellom områder.",
+          "Boligtype og standard: basseng, aircondition og god uteplass hever både pris og belegg.",
+          "Kapasitet: antall soverom og senger påvirker døgnpris og målgruppe.",
+          "Presentasjon: gode bilder, riktig prising og rask respons avgjør belegget.",
+        ],
+      },
+      {
+        heading: "Turistlisens og regler",
+        body: [
+          "Korttids-/turistutleie i Spania er regulert regionalt, og i Comunidad Valenciana kreves normalt en turistlisens (registrering) for lovlig korttidsutleie. Reglene endres over tid og kan variere med kommune og sameie (comunidad).",
+          "Sjekk alltid om boligen kan få lisens, og om sameiets vedtekter tillater turistutleie, før du baserer kjøpet på utleieinntekt. Din advokat kan avklare dette konkret.",
+        ],
+      },
+      {
+        heading: "Regn på reell avkastning",
+        body: [
+          "Brutto leieinntekt er ikke det samme som det du sitter igjen med. Trekk fra fellesutgifter, forsikring, strøm/vann, vedlikehold, rengjøring, forvaltning/administrasjon og skatt før du vurderer avkastningen.",
+        ],
+        bullets: [
+          "Legg inn realistisk belegg – ikke full sesong hele året.",
+          "Husk skatt på leieinntekt (også for ikke-residenter).",
+          "Ta med forvaltning/nøkkelhåndtering hvis du ikke er der selv.",
+          "Sett av til vedlikehold og perioder uten leietakere.",
+        ],
+      },
+      {
+        heading: "Eget bruk vs. utleie – en ærlig avveining",
+        body: [
+          "En bolig som er perfekt for deg er ikke nødvendigvis den markedet helst vil leie. Vil du bruke den mye selv i høysesongen, mister du nettopp de ukene som gir best inntekt. Bestem deg for hva som er viktigst – bruk eller inntekt – før du velger bolig og område.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Avklar om utleie er et krav, et pluss eller uaktuelt – det styrer bolig- og områdevalg.",
+      "Sjekk turistlisens og sameiets vedtekter før du reserverer.",
+      "Sett opp et realistisk regnestykke med belegg, kostnader og skatt.",
+      "Vurder forvaltning/nøkkelhåndtering hvis du ikke bor der fast.",
+    ],
+    faq: [
+      {
+        question: "Må jeg ha turistlisens for å leie ut i Spania?",
+        answer:
+          "For korttids-/turistutleie kreves normalt en turistlisens i Comunidad Valenciana, og reglene varierer med region, kommune og sameie. Sjekk alltid at boligen kan få lisens og at vedtektene tillater det før du baserer kjøpet på utleie.",
+      },
+      {
+        question: "Hvor mye kan jeg realistisk tjene på utleie?",
+        answer:
+          "Det avhenger av beliggenhet, standard, sesong og belegg. Regn på netto etter fellesutgifter, drift, forvaltning og skatt – ikke bare brutto døgnpris. Vi hjelper deg gjerne med et realistisk estimat for en konkret bolig.",
+      },
+      {
+        question: "Bør jeg velge bolig ut fra eget bruk eller utleie?",
+        answer:
+          "Det bør avklares før kjøp. Skal utleie være en viktig del av regnestykket, bør beliggenhet og målgruppe styre valget. Skal du mest bruke den selv, kan andre hensyn veie tyngre.",
+      },
+    ],
+    cta: { label: "Prøv Boligmatchen – finn en bolig som passer bruken din", href: "/#boligmatch" },
+  },
+  {
+    slug: "lopende-kostnader-eie-bolig-spania",
+    title: "Løpende kostnader ved å eie bolig i Spania",
+    excerpt:
+      "Hva koster det å eie bolig i Spania hvert år? Oversikt over IBI, fellesutgifter, forsikring, strøm og vann, og den årlige skatten for ikke-residenter.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Kjøpsprosess",
+    readingTime: "6 min lesing",
+    image: "/assets/magasin-covers/kostnader-eie.svg",
+    imageAlt: "Illustrasjon av løpende kostnader og regninger ved å eie bolig i Spania",
+    seoTitle: "Løpende kostnader ved å eie bolig i Spania | IBI, comunidad og skatt",
+    seoDescription:
+      "Hva koster det årlig å eie bolig i Spania? Oversikt over IBI, fellesutgifter (comunidad), forsikring, strøm, vann og ikke-resident-skatt for norske eiere.",
+    keywords: [
+      "løpende kostnader bolig Spania",
+      "IBI eiendomsskatt Spania",
+      "comunidad fellesutgifter Spania",
+      "ikke-resident skatt Spania",
+      "eie bolig Spania kostnader",
+    ],
+    intro: [
+      "Selve kjøpet er én ting – men hva koster det å eie boligen år etter år? De løpende kostnadene er som regel overkommelige, men det lønner seg å kjenne dem før du kjøper, så budsjettet holder.",
+      "Her er de vanligste faste utgiftene en norsk boligeier i Spania må regne med.",
+    ],
+    sections: [
+      {
+        heading: "De faste årlige kostnadene",
+        body: [
+          "De fleste utgiftene er forutsigbare og betales årlig eller månedlig. Størrelsen avhenger av bolig, kommune og om boligen ligger i en urbanisasjon med fellesanlegg.",
+        ],
+        table: {
+          caption: "Typiske størrelsesordener. Faktiske beløp varierer med bolig og kommune.",
+          headers: ["Kostnad", "Hva er det?", "Hvor ofte"],
+          rows: [
+            ["IBI", "Kommunal eiendomsskatt, basert på ligningsverdi (valor catastral)", "Årlig"],
+            ["Comunidad", "Fellesutgifter i urbanisasjon/sameie (basseng, uteområder, heis)", "Månedlig/kvartalsvis"],
+            ["Forsikring", "Innbo og bygning", "Årlig"],
+            ["Strøm og vann", "Forbruk + faste abonnementsledd", "Månedlig/annenhver måned"],
+            ["Basura", "Kommunal renovasjonsavgift", "Årlig/halvårlig"],
+            ["Ikke-resident-skatt", "Årlig skatt for utenlandske eiere som ikke bor i Spania", "Årlig"],
+          ],
+        },
+      },
+      {
+        heading: "IBI og ligningsverdi",
+        body: [
+          "IBI (Impuesto sobre Bienes Inmuebles) er den kommunale eiendomsskatten og beregnes ut fra boligens ligningsverdi (valor catastral), ikke markedsverdien. Satsen settes lokalt, så to like boliger i ulike kommuner kan ha forskjellig IBI.",
+        ],
+      },
+      {
+        heading: "Årlig skatt for ikke-residenter",
+        body: [
+          "Eier du bolig i Spania uten å være skattemessig bosatt der, skal du normalt levere en årlig ikke-resident-skattemelding. Bruker du boligen selv, beregnes en beskatning av en sjablongmessig «egen bruk»-verdi; leier du ut, beskattes leieinntekten. En gestor eller advokat kan håndtere dette for deg.",
+        ],
+      },
+      {
+        heading: "Slik unngår du overraskelser",
+        body: [
+          "Be om dokumentasjon på faktiske løpende kostnader for den konkrete boligen før du kjøper – særlig fellesutgiftene (comunidad), som varierer mye mellom urbanisasjoner. Da vet du hva helåret faktisk koster.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Be om siste års IBI, comunidad og strøm/vann for den konkrete boligen.",
+      "Sett opp et årsbudsjett før du reserverer.",
+      "Avklar ikke-resident-skatten og hvem som skal håndtere den for deg.",
+      "Vurder forsikring og eventuell nøkkelhåndtering hvis boligen står tom deler av året.",
+    ],
+    faq: [
+      {
+        question: "Hva er IBI i Spania?",
+        answer:
+          "IBI er den kommunale eiendomsskatten, beregnet ut fra boligens ligningsverdi (valor catastral) og en lokal sats. Den betales årlig og varierer mellom kommuner.",
+      },
+      {
+        question: "Må jeg betale skatt i Spania selv om jeg ikke bor der?",
+        answer:
+          "Ja. Utenlandske eiere som ikke er skattemessig bosatt i Spania leverer normalt en årlig ikke-resident-skattemelding – enten for egen bruk eller for leieinntekt. En gestor eller advokat kan ordne dette.",
+      },
+      {
+        question: "Hvor høye er fellesutgiftene (comunidad)?",
+        answer:
+          "Det varierer sterkt med urbanisasjonen og hvilke fellesanlegg som finnes (basseng, heis, uteområder, vakthold). Be alltid om faktiske tall for den konkrete boligen før kjøp.",
+      },
+    ],
+    cta: { label: "Se boliger med tydelige kostnadsoversikter", href: "/eiendommer" },
+  },
+  {
+    slug: "innlandet-finca-olivengard-spania",
+    title: "Innlandet i Spania: finca, olivengård og livet bort fra kysten",
+    excerpt:
+      "Mer plass, natur og ro for pengene. Slik er livet i innlandet rundt Biar, Pinoso og Villena – og hva du bør sjekke ved tomt, finca og landeiendom.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Områdeguide",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/innlandet-livsstil.svg",
+    imageAlt: "Illustrasjon av finca, olivengård og innlandslandskap i Alicante-provinsen",
+    seoTitle: "Innlandet i Spania | Finca, olivengård og landlig liv på Costa Blanca",
+    seoDescription:
+      "Vurderer du innlandet i Spania? Om livet rundt Biar, Pinoso og Villena, og hva du bør sjekke ved tomt, finca, vann, strøm og lovlighet før kjøp.",
+    keywords: [
+      "finca Spania",
+      "olivengård Spania",
+      "innlandet Costa Blanca",
+      "landeiendom Spania",
+      "bolig Pinoso Biar",
+    ],
+    intro: [
+      "For mange handler drømmen om Spania om sol og strand. Men stadig flere nordmenn oppdager innlandet: mer plass, natur og ro – ofte til lavere pris per kvadratmeter enn ved kysten. Rundt Biar, Pinoso, Villena og Sax finner du alt fra moderne nybygg til fincaer med oliventrær.",
+      "Innlandet gir en annen livsstil enn kysten. Denne guiden forklarer hva du får, og hva du bør kontrollere før du kjøper landeiendom.",
+    ],
+    sections: [
+      {
+        heading: "Hvorfor velge innlandet?",
+        body: [
+          "Innlandet passer for deg som prioriterer plass, natur og et mer tradisjonelt spansk nabolag fremfor strandnærhet. Du får ofte større tomt, ro og lavere kommunale avgifter – og kysten er gjerne under en time unna.",
+        ],
+        bullets: [
+          "Mer bolig og tomt for pengene enn ved kysten.",
+          "Ro, natur og et autentisk spansk hverdagsliv.",
+          "Kort vei til kyst og flyplass fra mange innlandsbyer.",
+          "Mulighet for finca, oliventrær og selvbergingsliv.",
+        ],
+      },
+      {
+        heading: "Bil er en forutsetning",
+        body: [
+          "I innlandet bør du regne bil som en nødvendighet. Til gjengjeld får du en helårsbolig med ro og plass du sjelden finner på kysten. Vurder avstand til lege, butikk, skole og flyplass ut fra hvordan du faktisk skal bruke boligen.",
+        ],
+      },
+      {
+        heading: "Dette må sjekkes ved tomt og finca",
+        body: [
+          "Landeiendom krever grundigere kontroll enn en leilighet i en urbanisasjon. Lovlighet, vann, strøm og adkomst er avgjørende – og noe en uavhengig advokat må gjennomgå før du signerer.",
+        ],
+        bullets: [
+          "Er bygningene lovlig registrert, og finnes nødvendige tillatelser?",
+          "Vann: kommunalt, brønn eller tank – og er det dokumentert?",
+          "Strøm: tilkobling eller solcelle/generator?",
+          "Adkomst og veirett til eiendommen.",
+          "Hva kan bygges/utvides på tomten (regulering)?",
+        ],
+      },
+      {
+        heading: "Olivengård og selvbergingsliv",
+        body: [
+          "Mange innlandseiendommer kommer med oliventrær eller mandeltrær. Det kan gi både en fin livsstil og litt egenproduksjon, men krever stell. Vurder hvor mye arbeid du ønsker – en oliveneiendom er like mye en livsstil som en bolig.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bestem hvor mye plass, ro og natur du prioriterer kontra strandnærhet.",
+      "Sjekk lovlighet, vann, strøm og adkomst før du reserverer landeiendom.",
+      "Vurder avstand til service, lege og flyplass ut fra hverdagen din.",
+      "La en uavhengig advokat kontrollere dokumentasjon og tillatelser.",
+    ],
+    faq: [
+      {
+        question: "Er det trygt å kjøpe finca i innlandet?",
+        answer:
+          "Ja, forutsatt grundig kontroll. Landeiendom krever ekstra sjekk av lovlighet, vann, strøm, adkomst og tillatelser. En uavhengig spansk advokat bør gjennomgå alt før du signerer.",
+      },
+      {
+        question: "Hvilke innlandsområder er populære blant nordmenn?",
+        answer:
+          "Rundt Alicante-provinsen er Biar, Pinoso, Villena og Sax blant de mest aktuelle – med kort vei til kysten, god plass og lavere priser per kvadratmeter enn strandsonen.",
+      },
+      {
+        question: "Trenger jeg bil i innlandet?",
+        answer:
+          "I praksis ja. Kollektivtilbudet er begrenset, så bil er som regel en forutsetning for hverdagen i innlandet.",
+      },
+    ],
+    cta: { label: "Utforsk boliger og tomter i innlandet", href: "/inland" },
+  },
+  {
+    slug: "flytte-til-spania-pensjonist",
+    title: "Flytte til Spania som pensjonist: residens, skatt og hverdag",
+    excerpt:
+      "Drømmer du om pensjonisttilværelsen i solen? Om residens og opphold, helsetjenester, skatt, og hva som skiller ferie fra å bo fast i Spania.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Guide",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/pensjon-flytte.svg",
+    imageAlt: "Illustrasjon av pensjonistliv og flytting til Spania med sol og palmer",
+    seoTitle: "Flytte til Spania som pensjonist | Residens, skatt og hverdag",
+    seoDescription:
+      "Vurderer du å bo fast i Spania som pensjonist? Guide til residens og opphold, helsetjenester, skatt og hva som skiller ferie fra å bosette seg.",
+    keywords: [
+      "flytte til Spania pensjonist",
+      "bo fast i Spania",
+      "residens Spania",
+      "skatt pensjonist Spania",
+      "pensjonistliv Costa Blanca",
+    ],
+    intro: [
+      "Å feriere i Spania er én ting – å bo der fast er noe annet. For mange pensjonister er Spania likevel en fantastisk mulighet: mildt klima, lavere levekostnader og et etablert skandinavisk miljø langs kysten.",
+      "Denne guiden gir oversikt over det praktiske rundt å bosette seg: opphold og residens, helse, skatt og hva du bør tenke gjennom før du tar steget fra feriebolig til fast bosted.",
+    ],
+    sections: [
+      {
+        heading: "Ferie eller fast bosetting?",
+        body: [
+          "Så lenge du bruker boligen som feriebolig, er det praktiske enklere. Vil du bo fast, må du forholde deg til opphold, folkeregistrering (empadronamiento), helsetjenester og skattemessig bosted. Det er lurt å avklare ambisjonsnivået tidlig, for det påvirker både boligvalg og økonomi.",
+        ],
+      },
+      {
+        heading: "Opphold og residens",
+        body: [
+          "Reglene for opphold avhenger av statsborgerskap og hvor lenge du skal være i Spania. Skal du oppholde deg lenge/fast, må oppholdet formaliseres. NIE (utlendingens identifikasjonsnummer) trenger du uansett for eiendom, bank og skatt. En gestor eller advokat kan veilede ut fra din situasjon.",
+        ],
+      },
+      {
+        heading: "Helse og hverdag",
+        body: [
+          "Vurder tilgang til lege, sykehus og apotek der du vurderer å bo. Mange kombinerer offentlig og privat helsetjeneste. Tenk også gjennom det praktiske: bil, avstander, sosialt miljø, språk og hva du skal fylle hverdagen med utenfor feriemodus.",
+        ],
+      },
+      {
+        heading: "Skatt ved fast bosted",
+        body: [
+          "Blir du skattemessig bosatt i Spania, endrer skattebildet seg sammenlignet med å være ikke-resident. Dette bør planlegges med fagfolk, gjerne med rådgivning på begge sider av grensen, slik at du unngår overraskelser. Vi anbefaler alltid egen skatte-/juridisk rådgivning før en permanent flytting.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bestem om boligen skal være feriebolig eller fast bosted – det styrer mye.",
+      "Skaff NIE og avklar oppholdsformalitetene for din situasjon.",
+      "Kartlegg helsetjenester og hverdagslogistikk i området.",
+      "Få skatte- og juridisk rådgivning før en permanent flytting.",
+    ],
+    faq: [
+      {
+        question: "Kan jeg bo fast i Spania som norsk pensjonist?",
+        answer:
+          "Mange gjør det. Du må formalisere oppholdet, skaffe NIE, og forholde deg til helsetjenester og skattemessig bosted. Regler avhenger av din situasjon, så egen rådgivning anbefales.",
+      },
+      {
+        question: "Trenger jeg NIE for å bo i Spania?",
+        answer:
+          "Ja. NIE er utlendingens identifikasjonsnummer og er nødvendig for eiendom, bank, skatt og de fleste offentlige prosesser – både for feriebolig og fast bosted.",
+      },
+      {
+        question: "Hvordan påvirker fast bosetting skatten min?",
+        answer:
+          "Blir du skattemessig bosatt i Spania, endres skattebildet fra å være ikke-resident. Dette bør planlegges med skatte-/juridisk rådgiver før flytting for å unngå uheldige overraskelser.",
+      },
+    ],
+    cta: { label: "Ta en uforpliktende prat om flytteplanene dine", href: "/#kontakt" },
+  },
+  {
+    slug: "energieffektive-nybygg-spania",
+    title: "Energieffektive nybygg i Spania: energiklasse, isolasjon og solceller",
+    excerpt:
+      "Hvorfor moderne nybygg slår eldre boliger på komfort og strømregning. Om energiklasse, isolasjon mot vinter og sommer, solceller og hva du bør sjekke.",
+    date: "2026-09-08",
+    updated: "2026-09-08",
+    category: "Guide",
+    readingTime: "6 min lesing",
+    image: "/assets/magasin-covers/energi-baerekraft.svg",
+    imageAlt: "Illustrasjon av energieffektivt nybygg med solceller og sol i Spania",
+    seoTitle: "Energieffektive nybygg i Spania | Energiklasse, isolasjon og solceller",
+    seoDescription:
+      "Hvorfor er moderne nybygg i Spania mer komfortable og billigere i drift? Guide til energiklasse, isolasjon, solceller og hva du bør sjekke før kjøp.",
+    keywords: [
+      "energieffektive nybygg Spania",
+      "energiklasse bolig Spania",
+      "isolasjon nybygg Spania",
+      "solceller Spania bolig",
+      "energimerking Spania",
+    ],
+    intro: [
+      "En vanlig overraskelse for nordmenn er hvor kaldt og trekkfullt et eldre spansk hus kan være om vinteren – og hvor varmt om sommeren. Moderne nybygg er en helt annen historie: bygget for lavere energibruk, bedre inneklima og lavere strømregning.",
+      "Denne guiden forklarer hva «energieffektivt» faktisk betyr i praksis, og hva du bør se etter når du vurderer et nybygg.",
+    ],
+    sections: [
+      {
+        heading: "Energiklasse og energiattest",
+        body: [
+          "Alle boliger som selges eller leies ut i Spania skal ha en energiattest (certificado energético) med en energiklasse fra A til G. Moderne nybygg ligger normalt høyt (A/B), mens eldre boliger ofte ligger lavere. Be alltid om energiattesten, så vet du den faktiske energibruken.",
+        ],
+      },
+      {
+        heading: "Isolasjon – vinter og sommer",
+        body: [
+          "God isolasjon i vegger, tak og vinduer holder på varmen om vinteren og kjølig inne om sommeren. Det gir jevnere temperatur, bedre komfort og lavere kostnad til oppvarming og kjøling. Dette er ofte den største praktiske forskjellen mellom nytt og gammelt.",
+        ],
+      },
+      {
+        heading: "Solceller og lav strømkostnad",
+        body: [
+          "Costa Blanca er et av Europas mest solrike områder, og mange nybygg leveres klargjort for – eller med – solceller. Det kan kutte strømregningen betydelig, særlig for aircondition om sommeren. Sjekk om boligen har eller kan få solcelleanlegg.",
+        ],
+      },
+      {
+        heading: "Godt rustet for strengere krav",
+        body: [
+          "Energikravene i EU skjerpes gradvis. Energieffektive boliger står tryggere for framtiden – både for komfort, drift og videresalg. Et moderne, godt isolert nybygg med høy energiklasse er en trygg investering i så måte.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Be om energiattesten (certificado energético) og se energiklassen.",
+      "Sjekk isolasjon i vegger, tak og vinduer – ikke bare estetikk.",
+      "Avklar om boligen har eller kan få solceller.",
+      "Vurder energibruk som en del av totaløkonomien, ikke bare kjøpesummen.",
+    ],
+    faq: [
+      {
+        question: "Hva betyr energiklassen på en spansk bolig?",
+        answer:
+          "Energiklassen (A–G) står i boligens energiattest og angir hvor energieffektiv boligen er. Moderne nybygg ligger ofte på A/B, eldre boliger lavere. Be om attesten for å kjenne den faktiske energibruken.",
+      },
+      {
+        question: "Er nybygg virkelig billigere i drift enn eldre boliger?",
+        answer:
+          "Som regel ja. Bedre isolasjon og høyere energiklasse gir jevnere temperatur og lavere kostnad til oppvarming og kjøling. Solceller kan redusere strømregningen ytterligere.",
+      },
+      {
+        question: "Bør jeg velge bolig med solceller?",
+        answer:
+          "I et solrikt område som Costa Blanca kan solceller kutte strømregningen merkbart, spesielt for aircondition om sommeren. Sjekk om boligen har eller er klargjort for solcelleanlegg.",
+      },
+    ],
+    cta: { label: "Se energieffektive nybygg", href: "/eiendommer?type=villa" },
+  },
 ];
 
 export function getArticle(slug: string) {

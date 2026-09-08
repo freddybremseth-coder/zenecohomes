@@ -1,0 +1,23 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Løpende kostnader ved å eie bolig">
+  <rect width="1200" height="760" fill="#f3efe6"/>
+  <circle cx="230" cy="190" r="66" fill="#e6d3a6" opacity="0.7"/>
+  <!-- calculator -->
+  <g>
+    <rect x="140" y="240" width="330" height="440" rx="22" fill="#16222b"/>
+    <rect x="176" y="284" width="258" height="90" rx="10" fill="#3a976e"/>
+    <g fill="#3a4b57">
+      <rect x="176" y="404" width="70" height="60" rx="8"/><rect x="270" y="404" width="70" height="60" rx="8"/><rect x="364" y="404" width="70" height="60" rx="8"/>
+      <rect x="176" y="484" width="70" height="60" rx="8"/><rect x="270" y="484" width="70" height="60" rx="8"/><rect x="364" y="484" width="70" height="60" rx="8"/>
+      <rect x="176" y="564" width="164" height="60" rx="8"/><rect x="364" y="564" width="70" height="60" rx="8" fill="#c5a059"/>
+    </g>
+  </g>
+  <!-- recurring bills stack -->
+  <g transform="rotate(6 760 420)">
+    <rect x="620" y="260" width="380" height="120" rx="12" fill="#ffffff" stroke="#ddd3c2" stroke-width="4"/>
+    <rect x="620" y="320" width="380" height="120" rx="12" fill="#ffffff" stroke="#ddd3c2" stroke-width="4"/>
+    <rect x="620" y="380" width="380" height="140" rx="12" fill="#ffffff" stroke="#ddd3c2" stroke-width="4"/>
+    <g stroke="#c9bda6" stroke-width="12" stroke-linecap="round"><path d="M660 430 H840"/><path d="M660 470 H780"/></g>
+    <circle cx="940" cy="450" r="34" fill="none" stroke="#c5a059" stroke-width="7"/>
+    <text x="940" y="466" text-anchor="middle" fill="#c5a059" font-family="Georgia, serif" font-size="40" font-weight="700">€</text>
+  </g>
+</svg>

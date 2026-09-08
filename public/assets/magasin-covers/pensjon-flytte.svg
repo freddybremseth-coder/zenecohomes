@@ -1,0 +1,26 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flytte til Spania og pensjonistliv">
+  <defs>
+    <linearGradient id="pBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe6bd"/><stop offset="0.55" stop-color="#ffd9a6"/><stop offset="1" stop-color="#f7ead2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#pBg)"/>
+  <circle cx="900" cy="230" r="120" fill="#f4a95e" opacity="0.9"/>
+  <circle cx="900" cy="230" r="120" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.4"/>
+  <path d="M0 560 C240 520 520 570 760 540 C960 514 1080 548 1200 520 V760 H0 Z" fill="#e2b878"/>
+  <path d="M0 620 C240 590 520 636 760 606 C960 582 1080 614 1200 586 V760 H0 Z" fill="#1c6d87"/>
+  <!-- palm -->
+  <g transform="translate(300 560)">
+    <path d="M0 0 C-10 -120 -6 -200 6 -250" fill="none" stroke="#6d5a3e" stroke-width="16" stroke-linecap="round"/>
+    <g stroke="#4f7a4a" stroke-width="14" fill="none" stroke-linecap="round">
+      <path d="M6 -250 q-90 -20 -150 -60"/><path d="M6 -250 q90 -20 150 -60"/><path d="M6 -250 q-60 -70 -80 -140"/><path d="M6 -250 q60 -70 80 -140"/><path d="M6 -250 q10 -80 0 -150"/>
+    </g>
+  </g>
+  <!-- suitcase -->
+  <g transform="translate(600 470)">
+    <rect x="0" y="60" width="220" height="150" rx="18" fill="#b9744e"/>
+    <rect x="0" y="60" width="220" height="150" rx="18" fill="none" stroke="#8f5a3a" stroke-width="5"/>
+    <rect x="78" y="30" width="64" height="40" rx="10" fill="none" stroke="#8f5a3a" stroke-width="10"/>
+    <line x1="110" y1="60" x2="110" y2="210" stroke="#8f5a3a" stroke-width="6"/>
+  </g>
+</svg>

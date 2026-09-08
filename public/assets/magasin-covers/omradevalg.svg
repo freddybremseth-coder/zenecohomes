@@ -1,37 +1,24 @@
-<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Omradevalg i Spania</title>
-  <desc id="desc">Redaksjonelt cover med kyst, fjell og by for Zen Eco Homes magasin.</desc>
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kystlandskap på Costa Blanca">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8fd0e8"/>
-      <stop offset="0.55" stop-color="#d8eef3"/>
-      <stop offset="1" stop-color="#f4ead7"/>
+    <linearGradient id="oSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9dcec"/><stop offset="0.6" stop-color="#dcf0f4"/><stop offset="1" stop-color="#f6ecd9"/>
     </linearGradient>
-    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#1c6d87"/>
-      <stop offset="1" stop-color="#57bfd0"/>
+    <linearGradient id="oSea" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1c6d87"/><stop offset="1" stop-color="#5cc3d3"/>
     </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#16222b" flood-opacity="0.22"/>
-    </filter>
   </defs>
-  <rect width="1200" height="760" fill="url(#sky)"/>
-  <path d="M0 410 C180 330 245 350 405 275 C560 205 675 285 835 210 C960 154 1060 190 1200 130 V760 H0 Z" fill="#6f8791" opacity="0.9"/>
-  <path d="M0 462 C210 390 390 442 590 390 C800 336 980 354 1200 300 V760 H0 Z" fill="#9bb5a3"/>
-  <path d="M0 520 C175 484 350 520 540 496 C760 466 930 502 1200 432 V760 H0 Z" fill="url(#sea)"/>
-  <path d="M0 608 C190 580 420 626 620 594 C830 560 1010 606 1200 562 V760 H0 Z" fill="#f5dfad"/>
-  <g filter="url(#softShadow)">
-    <rect x="72" y="80" width="456" height="290" rx="10" fill="#16222b" opacity="0.92"/>
-    <text x="112" y="140" fill="#c5a059" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="5">ZEN ECO HOMES</text>
-    <text x="112" y="218" fill="#ffffff" font-family="Georgia, serif" font-size="74" font-weight="700">Omradevalg</text>
-    <text x="112" y="272" fill="#edf3ef" font-family="Arial, sans-serif" font-size="30" font-weight="700">Costa Blanca, Valencia</text>
-    <text x="112" y="314" fill="#edf3ef" font-family="Arial, sans-serif" font-size="30" font-weight="700">og oyene forklart</text>
+  <rect width="1200" height="760" fill="url(#oSky)"/>
+  <circle cx="960" cy="180" r="70" fill="#f2c86b" opacity="0.9"/>
+  <path d="M0 300 C160 250 300 210 470 260 C650 312 760 250 940 210 C1050 186 1130 210 1200 190 V520 H0 Z" fill="#7d94a0" opacity="0.85"/>
+  <path d="M0 380 C200 330 380 380 600 350 C820 320 1000 360 1200 320 V560 H0 Z" fill="#a7c1af"/>
+  <path d="M0 470 C180 440 360 476 560 456 C780 434 980 470 1200 420 V760 H0 Z" fill="url(#oSea)"/>
+  <g fill="#ffffff" opacity="0.95">
+    <rect x="150" y="392" width="46" height="70" rx="3"/><rect x="210" y="410" width="40" height="52" rx="3"/>
+    <rect x="268" y="380" width="52" height="82" rx="3"/><rect x="336" y="404" width="40" height="58" rx="3"/>
   </g>
-  <g fill="#ffffff" opacity="0.92">
-    <rect x="760" y="398" width="62" height="92"/>
-    <rect x="842" y="348" width="78" height="142"/>
-    <rect x="942" y="380" width="70" height="110"/>
-    <rect x="1032" y="322" width="92" height="168"/>
+  <path d="M150 392 l23 -26 l23 26 Z M268 380 l26 -30 l26 30 Z" fill="#d98b6a"/>
+  <path d="M0 560 C220 528 470 578 690 546 C900 516 1030 560 1200 520 V760 H0 Z" fill="#efd7a4"/>
+  <g stroke="#6b8f5a" stroke-width="7" fill="none" opacity="0.85">
+    <path d="M1030 560 q-14 -46 0 -92"/><path d="M1090 560 q10 -40 0 -80"/>
   </g>
-  <circle cx="1022" cy="142" r="54" fill="#c5a059" opacity="0.86"/>
 </svg>

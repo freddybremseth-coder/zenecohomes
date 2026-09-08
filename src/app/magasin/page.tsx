@@ -19,6 +19,14 @@ const articleCovers: Record<string, string> = {
   "kjopsprosess-bolig-i-spania": "/assets/magasin-covers/kjopsprosess.svg",
   "hvorfor-god-eiendomsradgiver-er-viktig": "/assets/magasin-covers/radgiver.svg",
   "idealista-finn-ikke-alltid-til-a-stole-pa": "/assets/magasin-covers/boligportaler.svg",
+  "omkostninger-nybygg-spania": "/assets/magasin-covers/finansiering.svg",
+  "bankgaranti-nybygg-spania": "/assets/magasin-covers/kjopsprosess.svg",
+  "nybygg-finestrat-omradeguide": "/assets/magasin-covers/omradevalg.svg",
+  "utleie-inntektspotensial-bolig-spania": "/assets/magasin-covers/utleie-inntekt.svg",
+  "lopende-kostnader-eie-bolig-spania": "/assets/magasin-covers/kostnader-eie.svg",
+  "innlandet-finca-olivengard-spania": "/assets/magasin-covers/innlandet-livsstil.svg",
+  "flytte-til-spania-pensjonist": "/assets/magasin-covers/pensjon-flytte.svg",
+  "energieffektive-nybygg-spania": "/assets/magasin-covers/energi-baerekraft.svg",
 };
 
 const bookGuides = [
@@ -105,7 +113,7 @@ function getArticleCover(slug: string) {
 }
 
 export const metadata = {
-  title: "Magasin | Guider om boligkjop i Spania",
+  title: "Magasin | Guider om boligkjøp i Spania",
   description:
     "Praktiske guider for nordmenn som vurderer bolig, tomt, nybygg, finansiering og kjøpsprosess i Spania.",
   alternates: {
@@ -114,7 +122,7 @@ export const metadata = {
   openGraph: {
     title: "Magasin | Zen Eco Homes",
     description:
-      "Guider om omradevalg, tomtekjop, finansiering, NIE og trygg kjopsprosess i Spania.",
+      "Guider om områdevalg, tomtekjøp, finansiering, NIE og trygg kjøpsprosess i Spania.",
     url: "https://www.zenecohomes.com/magasin",
     type: "website",
   },
@@ -130,19 +138,19 @@ export default async function MagazinePage() {
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Magasin</p>
-        <h1>Guider for tryggere boligkjop i Spania</h1>
+        <h1>Guider for tryggere boligkjøp i Spania</h1>
         <p>
-          Omrader, tomter, finansiering, NIE, notar og kjopsprosess forklart for nordmenn som vil ta gode
-          beslutninger for de reserverer bolig.
+          Områder, tomter, finansiering, NIE, notar og kjøpsprosess forklart for nordmenn som vil ta gode
+          beslutninger før de reserverer bolig.
         </p>
       </section>
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">SEO og radgivning</p>
-          <h2>Start med kunnskap for du velger bolig</h2>
+          <p className="eyebrow">Kunnskap og rådgivning</p>
+          <h2>Start med kunnskap før du velger bolig</h2>
           <p>
-            Disse guidene er bygget for a svare pa sporsmalene nordmenn faktisk soker etter nar de vurderer
+            Disse guidene er bygget for å svare på spørsmålene nordmenn faktisk søker etter når de vurderer
             bolig i Spania.
           </p>
         </div>

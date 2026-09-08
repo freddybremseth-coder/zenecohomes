@@ -1,19 +1,26 @@
-<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">God radgiver</title>
-  <desc id="desc">Cover om radgiver og trygg boligreise.</desc>
-  <rect width="1200" height="760" fill="#dfece8"/>
-  <path d="M0 395 C230 330 430 390 610 320 C810 242 975 280 1200 210 V760 H0 Z" fill="#88a093"/>
-  <path d="M0 540 C210 500 460 565 690 508 C900 456 1030 496 1200 462 V760 H0 Z" fill="#dfc98f"/>
-  <g transform="translate(760 260)">
-    <circle cx="64" cy="44" r="44" fill="#16222b"/>
-    <rect x="18" y="104" width="92" height="150" rx="46" fill="#16222b"/>
-    <circle cx="226" cy="44" r="44" fill="#c5a059"/>
-    <rect x="180" y="104" width="92" height="150" rx="46" fill="#c5a059"/>
-    <path d="M118 164 C150 135 164 135 194 164" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Uavhengig rådgiver">
+  <defs>
+    <linearGradient id="rBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dce8f1"/><stop offset="1" stop-color="#eef4f8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#rBg)"/>
+  <circle cx="1000" cy="180" r="66" fill="#c5a059" opacity="0.55"/>
+  <!-- advisor figure -->
+  <g>
+    <circle cx="420" cy="300" r="96" fill="#2f5d7a"/>
+    <path d="M270 620 C270 470 570 470 570 620 Z" fill="#2f5d7a"/>
+    <path d="M420 470 l0 150" stroke="#24485f" stroke-width="6"/>
   </g>
-  <rect x="72" y="86" width="520" height="312" rx="10" fill="#16222b" opacity="0.94"/>
-  <text x="112" y="146" fill="#c5a059" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="5">RADGIVNING</text>
-  <text x="112" y="230" fill="#ffffff" font-family="Georgia, serif" font-size="76" font-weight="700">God</text>
-  <text x="112" y="310" fill="#ffffff" font-family="Georgia, serif" font-size="76" font-weight="700">radgiver</text>
-  <text x="112" y="354" fill="#edf3ef" font-family="Arial, sans-serif" font-size="28" font-weight="700">Din trygghet i Spania</text>
+  <!-- speech / checklist bubble -->
+  <g>
+    <rect x="640" y="250" width="360" height="250" rx="20" fill="#ffffff" stroke="#cdd9e3" stroke-width="4"/>
+    <path d="M700 500 l0 60 l60 -60 Z" fill="#ffffff"/>
+    <g stroke="#c5a059" stroke-width="8" stroke-linecap="round" fill="none">
+      <path d="M690 320 l16 16 l30 -34"/><path d="M690 400 l16 16 l30 -34"/>
+    </g>
+    <g stroke="#9fb3c2" stroke-width="10" stroke-linecap="round">
+      <path d="M760 328 H950"/><path d="M760 408 H930"/>
+    </g>
+  </g>
 </svg>

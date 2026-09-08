@@ -237,6 +237,11 @@ const SILO_BY_SLUG: Record<string, Silo> = {
   "guide-tomtekjop-bygging-i-spania": "guide",
   "kjop-bolig-i-spania-na-eller-vente": "guide",
   "nybygg-finestrat-omradeguide": "guide",
+  "utleie-inntektspotensial-bolig-spania": "guide",
+  "lopende-kostnader-eie-bolig-spania": "kjopsprosess",
+  "innlandet-finca-olivengard-spania": "guide",
+  "flytte-til-spania-pensjonist": "guide",
+  "energieffektive-nybygg-spania": "guide",
 };
 
 export const SILO_META: Record<Silo, { label: string; title: string; href: string; intro: string }> = {
