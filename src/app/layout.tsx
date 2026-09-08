@@ -9,6 +9,7 @@ import "./quality.css";
 import "./design-system.css";
 import "./signature.css";
 import "./premium.css";
+import "./mobile-2027.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],
