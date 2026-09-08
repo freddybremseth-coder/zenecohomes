@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { SpanishPropertyDetailView, SpanishPropertyNotFoundView } from "@/components/es/SpanishPropertyDetailView";
+import { SpanishPropertyNotFoundView } from "@/components/es/SpanishPropertyDetailView";
+import { TrackedSpanishPropertyDetailView } from "@/components/es/TrackedSpanishPropertyDetailView";
 import { getProperties, getProperty, getPropertyRef } from "@/lib/realtyflow";
 import {
   getSpanishPropertyHeading,
@@ -51,5 +52,5 @@ export default async function SpanishPropertyPage({ params }: { params: Promise<
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
   if (!property) return <SpanishPropertyNotFoundView />;
-  return <SpanishPropertyDetailView property={property} />;
+  return <TrackedSpanishPropertyDetailView property={property} />;
 }
