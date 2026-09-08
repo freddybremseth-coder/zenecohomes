@@ -45,7 +45,6 @@ h3,
   font-family: var(--display);
 }
 
-/* One button language: calm, architectural, title case. */
 .contact-button,
 .submit-button,
 .search-card button,
@@ -80,12 +79,10 @@ h3,
   text-transform: none;
 }
 
-/* Gold/travertine is an accent, not the material of every CTA. */
 .eyebrow {
   color: var(--ze-travertine);
 }
 
-/* Header: transparent over cinematic hero, limestone glass after scroll / on content pages. */
 .site-header {
   min-height: 78px;
   padding-inline: clamp(20px, 4vw, 54px);
@@ -141,7 +138,27 @@ h3,
   letter-spacing: 0.08em;
 }
 
-/* Keep images as heroes and reduce UI-card feeling. */
+/* ZenEco signature: architectural/editorial metadata rather than more badges. */
+.hero-editorial-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-items: center;
+  margin-top: clamp(28px, 5vh, 54px);
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero-editorial-meta span:first-child {
+  color: rgba(255, 255, 255, 0.92);
+  margin-right: auto;
+}
+
 .property-card,
 .magazine-card,
 .area-choice-card,
@@ -170,6 +187,62 @@ h3,
   border-radius: var(--ze-radius-md) var(--ze-radius-md) 0 0;
 }
 
+/* Homepage property selection should feel curated, not like a portal grid. */
+.editorial-property-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+  align-items: stretch;
+}
+
+.editorial-property-grid > * {
+  grid-column: span 4;
+}
+
+.editorial-property-grid > :first-child,
+.editorial-property-grid > :nth-child(6) {
+  grid-column: span 8;
+}
+
+.editorial-property-grid > :first-child .property-image,
+.editorial-property-grid > :nth-child(6) .property-image {
+  min-height: clamp(330px, 40vw, 520px);
+}
+
+.editorial-property-grid > :nth-child(2),
+.editorial-property-grid > :nth-child(3),
+.editorial-property-grid > :nth-child(4),
+.editorial-property-grid > :nth-child(5) {
+  grid-column: span 4;
+}
+
+/* Area choice reads as an editorial spread instead of four equal dashboard cards. */
+.editorial-area-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 30px);
+}
+
+.editorial-area-grid > :nth-child(1),
+.editorial-area-grid > :nth-child(4) {
+  grid-column: span 7;
+}
+
+.editorial-area-grid > :nth-child(2),
+.editorial-area-grid > :nth-child(3) {
+  grid-column: span 5;
+}
+
+.editorial-area-grid .area-choice-card {
+  min-height: clamp(260px, 28vw, 390px);
+  justify-content: flex-end;
+  padding: clamp(26px, 4vw, 46px);
+  background: var(--ze-white);
+}
+
+.editorial-area-grid .area-choice-card h3 {
+  font-size: clamp(1.9rem, 3vw, 3.2rem);
+  line-height: 1.02;
+}
+
 .lead-form input,
 .lead-form select,
 .lead-form textarea,
@@ -187,6 +260,53 @@ h3,
 .search-card select:focus {
   border-color: var(--ze-travertine);
   box-shadow: 0 0 0 3px rgba(198, 167, 109, 0.16);
+}
+
+@media (max-width: 900px) {
+  .editorial-property-grid,
+  .editorial-area-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .editorial-property-grid > *,
+  .editorial-property-grid > :first-child,
+  .editorial-property-grid > :nth-child(6),
+  .editorial-area-grid > :nth-child(1),
+  .editorial-area-grid > :nth-child(2),
+  .editorial-area-grid > :nth-child(3),
+  .editorial-area-grid > :nth-child(4) {
+    grid-column: auto;
+  }
+
+  .editorial-property-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  .hero-editorial-meta span:first-child {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .editorial-property-grid,
+  .editorial-area-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-property-grid > *,
+  .editorial-property-grid > :first-child {
+    grid-column: auto;
+  }
+
+  .hero-editorial-meta {
+    gap: 8px 14px;
+    font-size: 0.66rem;
+  }
+
+  .editorial-area-grid .area-choice-card {
+    min-height: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
