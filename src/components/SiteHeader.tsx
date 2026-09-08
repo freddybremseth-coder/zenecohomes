@@ -27,6 +27,25 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", update);
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.body.classList.add("ze-mobile-menu-open");
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.body.classList.remove("ze-mobile-menu-open");
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [menuOpen]);
+
   const openLabel =
     locale === "de" ? "Menü öffnen" : locale === "en" ? "Open menu" : locale === "es" ? "Abrir menú" : "Åpne meny";
   const closeLabel =
@@ -40,6 +59,7 @@ export function SiteHeader({
 
   const headerClass = [
     "site-header",
+    menuOpen ? "menu-open" : "",
     hasHero && !scrolled && !menuOpen ? "over-hero" : "",
     scrolled || menuOpen ? "is-scrolled" : "",
   ]
