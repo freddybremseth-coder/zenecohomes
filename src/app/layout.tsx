@@ -4,6 +4,7 @@ import { ZenecoChatbot } from "@/components/ZenecoChatbot";
 import { RemasterPlayer } from "@/components/RemasterPlayer";
 import "./globals.css";
 import "./accessibility.css";
+import "./quality.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zenecohomes.com"),
