@@ -55,7 +55,7 @@ export default function GermanHome() {
 
       <section className="section">
         <p className="eyebrow">Wobei wir helfen</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Entscheidungen vor Inseraten
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 760, lineHeight: 1.7 }}>
@@ -88,7 +88,7 @@ export default function GermanHome() {
 
       <section className="section">
         <p className="eyebrow">Regionen</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Erst die Region, dann die Immobilie
         </h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
@@ -109,7 +109,7 @@ export default function GermanHome() {
 
       <section className="section">
         <p className="eyebrow">Nach dem Kauf</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Immobilie, Hinterland und Betreuung
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 640, lineHeight: 1.7 }}>
@@ -150,7 +150,7 @@ export default function GermanHome() {
 
       <section className="section" id="kontakt">
         <p className="eyebrow">Kontakt</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>
           Erzählen Sie uns, wonach Sie suchen
         </h2>
         <p style={{ color: "var(--muted)", maxWidth: 620, lineHeight: 1.7 }}>

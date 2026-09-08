@@ -111,6 +111,13 @@ export default async function Home() {
               Book en prat
             </Link>
           </div>
+          <div className="hero-editorial-meta" aria-label="Zen Eco Homes områder">
+            <span>38°32′ N · Costa Blanca</span>
+            <span>North</span>
+            <span>South</span>
+            <span>Inland</span>
+            <span>Cálida</span>
+          </div>
         </div>
       </section>
 
@@ -140,7 +147,7 @@ export default async function Home() {
             markedet før du bruker tid på enkeltprosjekter.
           </p>
         </div>
-        <div className="area-choice-grid">
+        <div className="area-choice-grid editorial-area-grid">
           {areaChoices.map((area) => (
             <article className="area-choice-card" key={area.label}>
               <span>{area.places}</span>
@@ -164,16 +171,15 @@ export default async function Home() {
 
       <BuyerMatchQuiz />
 
-      <section className="section">
+      <section className="section zeneco-selection">
         <div className="section-heading">
-          <p className="eyebrow">Utvalgte boliger</p>
+          <p className="eyebrow">ZenEco Selection</p>
           <h2>Aktuelle nybygg og moderne prosjekter</h2>
           <p>
-            Et utvalg fra boligdatabasen vår. Bruk søket for hele markedet, eller la Boligmatchen hjelpe deg å
-            snevre inn valget.
+            Et redaksjonelt utsnitt fra boligdatabasen vår akkurat nå. Bruk søket for hele markedet, eller la Boligmatchen hjelpe deg å snevre inn valget.
           </p>
         </div>
-        <div className="property-grid">
+        <div className="property-grid editorial-property-grid">
           {properties.map((property, index) => (
             <PropertyCard key={property.id || property.ref || index} property={property} priority={index < 3} />
           ))}

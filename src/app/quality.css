@@ -20,8 +20,8 @@
   margin-left: 5px;
   color: var(--muted);
   font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -39,14 +39,14 @@
   padding: 28px;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 12px 34px rgba(22, 34, 43, 0.06);
+  border-radius: var(--ze-radius-md, 16px);
+  box-shadow: var(--ze-shadow-soft, 0 24px 70px -34px rgba(23, 32, 39, 0.32));
 }
 
 .area-choice-card > span {
   color: var(--gold-dark);
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 .area-choice-card h3 {
   margin: 12px 0 10px;
   color: var(--dark);
-  font-family: "Playfair Display", serif;
+  font-family: var(--display);
   font-size: 1.5rem;
 }
 
@@ -66,8 +66,9 @@
   line-height: 1.7;
 }
 
+/* Preserve the editorial, left-aligned Design 2027 hero. */
 .hero .hero-actions {
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 18px;
 }
@@ -117,7 +118,7 @@
 
   .hero .hero-actions {
     width: min(420px, 100%);
-    margin-inline: auto;
+    margin-inline: 0;
     align-items: stretch;
   }
 
@@ -130,8 +131,8 @@
 
 @media (max-width: 430px) {
   .brand {
-    font-size: 21px;
-    letter-spacing: 1.3px;
+    font-size: 1rem;
+    letter-spacing: 0.09em;
   }
 
   .site-header {

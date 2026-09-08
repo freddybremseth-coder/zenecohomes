@@ -149,7 +149,7 @@ export default async function SpanishHome() {
 
       <section className="section">
         <p className="eyebrow">Guías para comprar mejor</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>Antes de reservar, entiende el mercado</h2>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>Antes de reservar, entiende el mercado</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 18, marginTop: 18 }}>
           {seoLandingPagesES.map((page) => (
             <Link key={page.slug} href={`/es/${page.slug}`} style={{ display: "block", background: "white", border: "1px solid var(--line)", padding: 22, boxShadow: "0 8px 24px rgba(22,34,43,0.05)" }}>
@@ -163,7 +163,7 @@ export default async function SpanishHome() {
 
       <section className="section">
         <p className="eyebrow">Zonas</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>Conoce mejor dónde quieres vivir</h2>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>Conoce mejor dónde quieres vivir</h2>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
           {localSeoLandingPagesES.map((page) => (
             <Link key={page.slug} href={`/es/${page.slug}`} style={{ border: "1px solid var(--line)", padding: "10px 16px", color: "var(--dark)", fontWeight: 700, background: "white" }}>
@@ -193,7 +193,7 @@ export default async function SpanishHome() {
 
       <section className="section" id="contacto">
         <p className="eyebrow">Contacto</p>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', color: "var(--dark)", marginTop: 0 }}>Cuéntanos qué estás buscando</h2>
+        <h2 style={{ fontFamily: "var(--display)", color: "var(--dark)", marginTop: 0 }}>Cuéntanos qué estás buscando</h2>
         <p style={{ color: "var(--muted)", maxWidth: 680, lineHeight: 1.7 }}>
           Puedes escribir en español, noruego o inglés. Cuanto mejor entendamos tu uso, presupuesto y prioridades, menos viviendas tendrás que revisar.
         </p>

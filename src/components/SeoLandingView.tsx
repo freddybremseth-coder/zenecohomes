@@ -88,7 +88,7 @@ export function SeoLandingView({ page, locale, eq }: Props) {
                 <h2
                   style={{
                     color: "var(--dark)",
-                    fontFamily: '"Playfair Display", serif',
+                    fontFamily: "var(--display)",
                     fontSize: "clamp(1.9rem, 3vw, 2.8rem)",
                     lineHeight: 1.12,
                     margin: "0 0 16px",
@@ -113,7 +113,7 @@ export function SeoLandingView({ page, locale, eq }: Props) {
 
             <section style={{ marginTop: 20 }}>
               <p className="eyebrow">{t.faqEyebrow}</p>
-              <h2 style={{ color: "var(--dark)", fontFamily: '"Playfair Display", serif', marginTop: 0 }}>
+              <h2 style={{ color: "var(--dark)", fontFamily: "var(--display)", marginTop: 0 }}>
                 {t.faqHeading}
               </h2>
               <div style={{ display: "grid", gap: 14 }}>
