@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FileText, Heart, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
-import { PortalJourneyStatus } from "@/components/PortalJourneyStatus";
 import { PortalSignedOutOnly } from "@/components/PortalSignedOutOnly";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedPortalJourneyStatus } from "@/components/TrackedPortalJourneyStatus";
 import { SpanishPortalLogin } from "@/components/es/SpanishPortalLogin";
 import { homeLanguageLinks } from "@/lib/i18n";
 
@@ -64,7 +64,7 @@ export default function SpanishPortalPage() {
 
       <section style={{ padding: "1rem 1rem 0" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
-          <PortalJourneyStatus locale="es" />
+          <TrackedPortalJourneyStatus locale="es" />
         </div>
       </section>
 
