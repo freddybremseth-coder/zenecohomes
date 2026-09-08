@@ -4,7 +4,7 @@ const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.c
 
 export async function GET(request: Request) {
   const authorization = request.headers.get("authorization") || "";
-  const res = await fetch(`${REALTYFLOW_BASE}/api/portal/journey-status`, {
+  const res = await fetch(`${REALTYFLOW_BASE}/api/portal/messages/journey-status`, {
     headers: { Authorization: authorization },
     cache: "no-store",
   });
