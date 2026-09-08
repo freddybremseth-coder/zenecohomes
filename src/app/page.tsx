@@ -271,7 +271,7 @@ export default async function Home() {
         <ContactForm source="zenecohomes-home" />
       </section>
 
-      <Footer />
+      <Footer showCta={false} />
     </main>
   );
 }

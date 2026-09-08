@@ -100,23 +100,31 @@ const MUSIC: Record<SiteLocale, string> = {
   es: "Re-Master Freddy",
 };
 
-export function Footer({ locale = "no" }: { locale?: SiteLocale } = {}) {
+export function Footer({
+  locale = "no",
+  showCta = true,
+}: {
+  locale?: SiteLocale;
+  showCta?: boolean;
+} = {}) {
   const links = LINKS[locale];
   const cta = CTA[locale];
 
   return (
     <footer className="site-footer-2027">
-      <div className="footer-2027-cta">
-        <div>
-          <p className="eyebrow">{cta.eyebrow}</p>
-          <h2>{cta.title}</h2>
-          <p>{cta.body}</p>
+      {showCta && (
+        <div className="footer-2027-cta">
+          <div>
+            <p className="eyebrow">{cta.eyebrow}</p>
+            <h2>{cta.title}</h2>
+            <p>{cta.body}</p>
+          </div>
+          <div className="footer-2027-actions">
+            <Link className="footer-primary" href={cta.primaryHref}>{cta.primary}</Link>
+            <Link className="footer-secondary" href={cta.secondaryHref}>{cta.secondary} →</Link>
+          </div>
         </div>
-        <div className="footer-2027-actions">
-          <Link className="footer-primary" href={cta.primaryHref}>{cta.primary}</Link>
-          <Link className="footer-secondary" href={cta.secondaryHref}>{cta.secondary} →</Link>
-        </div>
-      </div>
+      )}
 
       <div className="footer-2027-main">
         <div className="footer-2027-brand">
