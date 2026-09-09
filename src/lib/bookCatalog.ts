@@ -6,6 +6,7 @@ export type PublishedGuide = {
   title: string;
   language: string;
   coverImageUrl: string | null;
+  excerpt: string | null;
 };
 
 type GuideRow = {
@@ -13,6 +14,7 @@ type GuideRow = {
   title: string;
   language: string | null;
   cover_image_url: string | null;
+  excerpt: string | null;
 };
 
 function normalize(value: string) {
@@ -65,7 +67,7 @@ export async function getPublishedGuides(): Promise<PublishedGuide[]> {
 
   const { data, error } = await supabase
     .from("book_titles")
-    .select("slug,title,language,cover_image_url")
+    .select("slug,title,language,cover_image_url,excerpt")
     .eq("series_id", seriesId)
     .eq("status", "published");
 
@@ -76,6 +78,7 @@ export async function getPublishedGuides(): Promise<PublishedGuide[]> {
     title: row.title,
     language: row.language || "no",
     coverImageUrl: row.cover_image_url,
+    excerpt: row.excerpt?.trim() || null,
   }));
   cacheExpiresAt = now + 5 * 60 * 1000;
   return cachedGuides;
