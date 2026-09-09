@@ -1,0 +1,268 @@
+/* Production layout hardening — area cards, property search and advisor chat.
+   Imported last so these targeted fixes win over legacy/global rules without
+   changing the rest of the 2027 design system. */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* --------------------------------------------------------------------------
+   Region area cards
+   The region page now contains long-form guide excerpts, so the old masonry
+   half-width cards are too narrow. Use one editorial row per place instead.
+   -------------------------------------------------------------------------- */
+.region-area-section {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: clamp(52px, 6vw, 82px) !important;
+  align-items: start;
+}
+
+.region-area-section > .section-heading {
+  grid-column: 1 / -1 !important;
+  margin-bottom: 0;
+}
+
+.region-area-section .area-profile-card,
+.region-area-section .area-profile-card:nth-of-type(3n + 2),
+.region-area-section .area-profile-card:nth-of-type(3n + 3) {
+  grid-column: 1 / -1 !important;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(30px, 4vw, 64px);
+  align-items: start;
+  overflow: visible;
+}
+
+.region-area-section .area-profile-card > div {
+  width: 100%;
+  min-height: 0 !important;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.region-area-section .area-profile-card > section {
+  min-width: 0;
+  padding: 4px 0 18px;
+}
+
+.region-area-section .area-profile-card > section h2 {
+  margin: 7px 0 13px;
+  font-size: clamp(2.35rem, 3.6vw, 3.9rem);
+  line-height: 0.98;
+}
+
+.region-area-section .area-profile-card > section > strong {
+  display: block;
+  max-width: 46ch;
+  margin-bottom: 16px;
+  line-height: 1.55;
+}
+
+.region-area-section .area-profile-card > section p {
+  max-width: none !important;
+  margin-top: 0;
+  line-height: 1.76;
+  overflow-wrap: anywhere;
+}
+
+.region-area-section .area-guide-reading {
+  max-width: 70ch;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(23, 32, 39, 0.13);
+}
+
+.region-area-section .area-guide-reading .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: var(--gold, #c5a059);
+}
+
+.region-area-section .area-guide-reading > p:not(.eyebrow) {
+  margin-bottom: 13px;
+  color: var(--muted, #667583);
+}
+
+.region-area-section .area-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   Property search
+   Keep all controls inside the white search card. Desktop uses a stable two
+   column shell with the seven filters in their own responsive grid.
+   -------------------------------------------------------------------------- */
+.page-search {
+  width: min(1220px, 100%) !important;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.page-search > input,
+.page-search select,
+.page-search button,
+.page-search .search-more-fields {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.page-search > input:not([type="hidden"]),
+.page-search select,
+.page-search button {
+  width: 100%;
+}
+
+@media (min-width: 721px) {
+  .page-search {
+    display: grid !important;
+    grid-template-columns: minmax(220px, 1.35fr) minmax(0, 5fr) !important;
+    grid-template-rows: auto auto;
+    gap: 12px !important;
+    align-items: stretch;
+    padding: 14px !important;
+  }
+
+  .page-search > input[name="q"] {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .page-search > button[type="submit"] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .page-search .search-more-btn {
+    display: none !important;
+  }
+
+  .page-search .search-more-fields {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    align-content: stretch;
+  }
+
+  .page-search .search-more-fields select {
+    min-height: 54px;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1120px) {
+  .page-search {
+    grid-template-columns: minmax(200px, 1fr) minmax(0, 2.8fr) !important;
+  }
+
+  .page-search .search-more-fields {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Advisor chat
+   Legacy .chatbot-toggle sets a fixed 58px width. The 2027 trigger contains a
+   text label, so explicitly release that width and keep the whole widget in
+   the viewport.
+   -------------------------------------------------------------------------- */
+@media (min-width: 641px) {
+  .chatbot-2027.chatbot-shell {
+    left: auto !important;
+    right: max(16px, env(safe-area-inset-right)) !important;
+    bottom: max(16px, env(safe-area-inset-bottom)) !important;
+    max-width: calc(100vw - 32px);
+  }
+}
+
+.chatbot-2027 .chatbot-toggle {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: calc(100vw - 32px) !important;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.chatbot-2027 .chatbot-toggle span {
+  min-width: 0;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chatbot-2027 .chatbot-panel {
+  max-width: calc(100vw - 32px);
+}
+
+@media (max-width: 980px) {
+  .region-area-section .area-profile-card,
+  .region-area-section .area-profile-card:nth-of-type(3n + 2),
+  .region-area-section .area-profile-card:nth-of-type(3n + 3) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .region-area-section .area-profile-card > div {
+    aspect-ratio: 16 / 10;
+  }
+
+  .region-area-section .area-profile-card > section {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-search {
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .page-search > input:not([type="hidden"]),
+  .page-search select,
+  .page-search button,
+  .page-search .search-more-btn {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .chatbot-2027.chatbot-shell {
+    left: 12px !important;
+    right: 12px !important;
+    max-width: none;
+  }
+
+  .chatbot-2027 .chatbot-toggle {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .chatbot-2027 .chatbot-toggle {
+    width: 52px !important;
+    min-width: 52px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    justify-content: center;
+  }
+
+  .chatbot-2027 .chatbot-toggle span {
+    display: none;
+  }
+}
