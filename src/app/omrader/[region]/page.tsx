@@ -103,16 +103,6 @@ const regionFaq: Record<RegionKey, { q: string; a: string }[]> = {
   ],
 };
 
-function areaAnchor(name: string, slug?: string | null) {
-  const base = slug || name;
-  return `area-${base
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")}`;
-}
-
 export function generateStaticParams() {
   return regions.map((region) => ({ region: region.key }));
 }
@@ -231,9 +221,6 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
                   <div className="area-guide-actions">
                     <a className="text-button area-property-link" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
                       <MapPin size={17} /> Se boliger i {profile.name}
-                    </a>
-                    <a className="text-button" href={`/omrader#${areaAnchor(profile.name, profile.slug)}`}>
-                      Les mer om {profile.name}
                     </a>
                   </div>
                 </section>
