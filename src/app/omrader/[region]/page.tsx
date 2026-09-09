@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, MapPin, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
-import { homeLanguageLinks } from "@/lib/i18n";
+import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
 import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
-import { MeetFreddy } from "@/components/MeetFreddy";
+import { homeLanguageLinks } from "@/lib/i18n";
 import {
   areaMatchesRegion,
   getAreaProfiles,
@@ -101,6 +102,16 @@ const regionFaq: Record<RegionKey, { q: string; a: string }[]> = {
     },
   ],
 };
+
+function areaAnchor(name: string, slug?: string | null) {
+  const base = slug || name;
+  return `area-${base
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}`;
+}
 
 export function generateStaticParams() {
   return regions.map((region) => ({ region: region.key }));
@@ -197,21 +208,38 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
           <div className="section-heading">
             <p className="eyebrow">Steder</p>
             <h2>Områder i {selected.label}</h2>
+            <p>Les om stedet her først. Der vi har en Let Me Guide You-bok, viser vi også et utdrag fra selve områdeguiden.</p>
           </div>
-          {regionProfiles.slice(0, 6).map((profile) => (
-            <article className={`area-profile-card${profile.photo_url ? "" : " no-photo"}`} key={profile.id || profile.name}>
-              {profile.photo_url && <div style={{ backgroundImage: `url(${profile.photo_url})` }} />}
-              <section>
-                <span>{profile.region || selected.label}</span>
-                <h2>{profile.name}</h2>
-                {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
-                {profile.description && <p>{profile.description}</p>}
-                <a className="text-button area-property-link" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
-                  <MapPin size={17} /> Se boliger i {profile.name}
-                </a>
-              </section>
-            </article>
-          ))}
+          {regionProfiles.slice(0, 6).map((profile) => {
+            const image = areaPresentationImage(profile, properties);
+            const book = placeBookForArea(profile.name);
+            const excerpt = areaExcerpt(profile.name);
+            return (
+              <article className="area-profile-card" key={profile.id || profile.name}>
+                <div style={{ backgroundImage: `url(${image})` }} />
+                <section>
+                  <span>{profile.region || selected.label}</span>
+                  <h2>{profile.name}</h2>
+                  {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
+                  {profile.description && <p>{profile.description}</p>}
+                  {book && excerpt.length > 0 && (
+                    <div className="area-guide-reading">
+                      <p className="eyebrow"><BookOpen size={14} /> Fra Let Me Guide You: {book.title}</p>
+                      {excerpt.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </div>
+                  )}
+                  <div className="area-guide-actions">
+                    <a className="text-button area-property-link" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
+                      <MapPin size={17} /> Se boliger i {profile.name}
+                    </a>
+                    <a className="text-button" href={`/omrader#${areaAnchor(profile.name, profile.slug)}`}>
+                      Les mer om {profile.name}
+                    </a>
+                  </div>
+                </section>
+              </article>
+            );
+          })}
         </section>
       )}
 
@@ -240,57 +268,11 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
             </p>
             <h2>«{generalGuideBook.title}»</h2>
             <p>{generalGuideBook.blurb}</p>
-            <a
-              className="contact-button"
-              href={bookUrl(generalGuideBook.slug)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Kjøp e-bok – 5 € <ArrowRight size={18} />
-            </a>
+            <p>Hele boken finner du som videre lesning nederst på siden.</p>
           </div>
         </section>
       )}
 
-      {regionBooks.length > 0 && (
-        <section className="book-showcase">
-          <div className="book-showcase-inner">
-            <div className="book-showcase-heading">
-              <p className="eyebrow">
-                <BookOpen size={16} /> Områdebøker
-              </p>
-              <h2>Les deg opp på {selected.label} før du kjøper</h2>
-              <p>
-                Freddy har skrevet egne lokalguider for flere av byene her – om hverdagsliv, nabolag, kostnader og
-                hva hvert sted faktisk er. E-bøker til 5 euro på books.freddybremseth.com.
-              </p>
-            </div>
-            <div className="book-grid">
-              {regionBooks.map((book) => (
-                <a
-                  className="book-card"
-                  href={bookUrl(book.slug)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={book.slug}
-                >
-                  <div className="book-cover-wrap">
-                    <Image src={book.cover} alt={`Bokomslag: ${book.title}`} fill sizes="(max-width: 900px) 88vw, 330px" />
-                  </div>
-                  <div className="book-card-body">
-                    <span>
-                      <BookOpen size={14} /> {book.town}
-                    </span>
-                    <h3>{book.title}</h3>
-                    <p>{book.blurb}</p>
-                    <strong>Kjøpes for 5 euro</strong>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
       {faqJsonLd && (
         <section className="section proof-section">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
@@ -308,7 +290,66 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
           </div>
         </section>
       )}
+
       <MeetFreddy />
+
+      {(regionBooks.length > 0 || region === "innlandet") && (
+        <section className="book-showcase region-book-links-end">
+          <div className="book-showcase-inner">
+            <div className="book-showcase-heading">
+              <p className="eyebrow">
+                <BookOpen size={16} /> Videre lesning · helt til slutt
+              </p>
+              <h2>Vil du lese hele guiden?</h2>
+              <p>
+                Du har nå fått områdeinnholdet på Zen Eco Homes. Her, helt nederst, kan du gå videre til hele boken dersom du ønsker mer dybde.
+              </p>
+            </div>
+            <div className="book-grid">
+              {region === "innlandet" && (
+                <a
+                  className="book-card"
+                  href={bookUrl(generalGuideBook.slug)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="book-cover-wrap">
+                    <Image src={generalGuideBook.cover} alt={`Bokomslag: ${generalGuideBook.title}`} fill sizes="(max-width: 900px) 88vw, 330px" />
+                  </div>
+                  <div className="book-card-body">
+                    <span><BookOpen size={14} /> Costa Blanca</span>
+                    <h3>{generalGuideBook.title}</h3>
+                    <p>{generalGuideBook.blurb}</p>
+                    <strong>Les hele boken på books.freddybremseth.com</strong>
+                  </div>
+                </a>
+              )}
+              {regionBooks.map((book) => (
+                <a
+                  className="book-card"
+                  href={bookUrl(book.slug)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={book.slug}
+                >
+                  <div className="book-cover-wrap">
+                    <Image src={book.cover} alt={`Bokomslag: ${book.title}`} fill sizes="(max-width: 900px) 88vw, 330px" />
+                  </div>
+                  <div className="book-card-body">
+                    <span>
+                      <BookOpen size={14} /> {book.town}
+                    </span>
+                    <h3>{book.title}</h3>
+                    <p>{book.blurb}</p>
+                    <strong>Les hele guiden på books.freddybremseth.com</strong>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <Footer />
     </main>
   );
