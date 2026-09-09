@@ -19,6 +19,7 @@ import "./chatbot-2027.css";
 import "./areas-2027.css";
 import "./mobile-critical.css";
 import "./area-map-2027.css";
+import "./book-excerpts.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],

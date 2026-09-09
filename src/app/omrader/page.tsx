@@ -1,4 +1,5 @@
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
+import { BookExcerpt } from "@/components/BookExcerpt";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
@@ -135,6 +136,7 @@ export default async function AreasPage() {
                           {profile.highlights.slice(0, 4).map((highlight) => <li key={highlight}>{highlight}</li>)}
                         </ul>
                       )}
+                      <BookExcerpt place={profile.name} regionKey={group.key} />
                       <div className="areas-2027-story-actions">
                         <a className="text-button" href={`/eiendommer?region=${group.key}&area=${encodeURIComponent(profile.name)}`}>
                           Se boliger i {profile.name}
