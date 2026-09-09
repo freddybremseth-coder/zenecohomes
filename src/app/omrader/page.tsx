@@ -1,9 +1,11 @@
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
 import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
+import { bookUrl, type PlaceBook } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { areaMatchesRegion, getAreaProfiles, regions } from "@/lib/realtyflow";
+import { areaMatchesRegion, getAreaProfiles, getProperties, regions } from "@/lib/realtyflow";
 
 export const metadata = {
   title: "Områder i Spania for boligkjøp | Costa Blanca, Costa Cálida og Alicante",
@@ -32,7 +34,7 @@ function areaAnchor(name: string, slug?: string | null) {
 }
 
 export default async function AreasPage() {
-  const profiles = await getAreaProfiles();
+  const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties()]);
   const groupedProfiles = regions.map((region) => ({
     ...region,
     profiles: profiles.filter((profile) => areaMatchesRegion(profile, region.key)),
@@ -48,12 +50,17 @@ export default async function AreasPage() {
         ...coordinates,
         region: profile.region || group.label,
         description: profile.hero_blurb || profile.description || group.description,
-        image: profile.photo_url || "/assets/areas.jpg",
+        image: areaPresentationImage(profile, properties),
         href: `#${areaAnchor(profile.name, profile.slug)}`,
         propertyHref: `/eiendommer?region=${group.key}&area=${encodeURIComponent(profile.name)}`,
       }];
     }),
   );
+
+  const guideBooks = profiles
+    .map((profile) => placeBookForArea(profile.name))
+    .filter((book): book is PlaceBook => Boolean(book))
+    .filter((book, index, books) => books.findIndex((item) => item.slug === book.slug) === index);
 
   return (
     <main className="areas-2027-page">
@@ -86,7 +93,9 @@ export default async function AreasPage() {
         <h2>En flott bolig i feil område blir sjelden et godt kjøp.</h2>
         <p>
           Se først på hvordan du ønsker å bruke boligen: helårsbolig, ferie, vinterbase, investering eller fremtidig
-          flytting. Deretter gir det mening å sammenligne konkrete prosjekter og boliger.
+          flytting. Deretter gir det mening å sammenligne konkrete prosjekter og boliger. For områdene der Freddy har
+          skrevet en Let Me Guide You-bok, har vi også tatt inn redigerte utdrag fra selve guiden slik at du kan lese
+          deg opp her før du går videre.
         </p>
       </section>
 
@@ -114,7 +123,9 @@ export default async function AreasPage() {
           <div className="areas-2027-journal">
             {group.profiles.length > 0 ? (
               group.profiles.map((profile, index) => {
-                const image = profile.photo_url || "/assets/areas.jpg";
+                const image = areaPresentationImage(profile, properties);
+                const book = placeBookForArea(profile.name);
+                const excerpt = areaExcerpt(profile.name);
                 return (
                   <article
                     className={`areas-2027-story${index % 2 ? " reverse" : ""}`}
@@ -135,6 +146,14 @@ export default async function AreasPage() {
                           {profile.highlights.slice(0, 4).map((highlight) => <li key={highlight}>{highlight}</li>)}
                         </ul>
                       )}
+
+                      {book && excerpt.length > 0 && (
+                        <div className="areas-2027-book-excerpt">
+                          <p className="eyebrow">Fra Let Me Guide You: {book.title}</p>
+                          {excerpt.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                        </div>
+                      )}
+
                       <div className="areas-2027-story-actions">
                         <a className="text-button" href={`/eiendommer?region=${group.key}&area=${encodeURIComponent(profile.name)}`}>
                           Se boliger i {profile.name}
@@ -165,6 +184,29 @@ export default async function AreasPage() {
           <a className="text-button" href="/booking">Book en prat</a>
         </div>
       </section>
+
+      {guideBooks.length > 0 && (
+        <section className="areas-2027-books-end section">
+          <p className="eyebrow">Videre lesning · helt til slutt</p>
+          <h2>Vil du gå dypere inn i et område?</h2>
+          <p>
+            Områdeinnholdet over kan leses her på ZenEco Homes. Først når du er ferdig med området, kan du gå videre
+            til hele Let Me Guide You-boken.
+          </p>
+          <div className="areas-2027-books-end-grid">
+            {guideBooks.map((book) => (
+              <a href={bookUrl(book.slug)} target="_blank" rel="noopener noreferrer" key={book.slug}>
+                <img src={book.cover} alt={`Bokomslag: ${book.title}`} loading="lazy" />
+                <span>
+                  <small>Let Me Guide You</small>
+                  <strong>{book.title}</strong>
+                  <em>Les hele guiden på books.freddybremseth.com</em>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       <Footer />
     </main>
