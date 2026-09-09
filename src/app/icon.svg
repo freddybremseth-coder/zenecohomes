@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Zen Eco Homes">
-  <rect width="64" height="64" rx="10" fill="#F3F0E9"/>
-  <rect x="3.5" y="3.5" width="57" height="57" rx="7" fill="none" stroke="#172027" stroke-opacity="0.16"/>
-  <text x="32" y="38" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-weight="700" letter-spacing="0" fill="#172027">ZE</text>
-  <path d="M10 46H54" stroke="#C6A76D" stroke-width="2.6" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="9" fill="#F3F0E9"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="7.5" fill="none" stroke="#172027" stroke-opacity="0.28" stroke-width="2"/>
+  <text x="31.5" y="42.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" letter-spacing="-2.5" fill="#172027">ZE</text>
+  <path d="M10 49H54" stroke="#C6A76D" stroke-width="2.8" stroke-linecap="round"/>
 </svg>
