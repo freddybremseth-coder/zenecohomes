@@ -147,7 +147,23 @@
   transition: transform 0.8s var(--ze-ease);
 }
 
-.area-profile-card:hover > div {
+/* RealtyFlow area profiles occasionally arrive without photo_url. Keep the
+   editorial card visual in that case instead of collapsing to a text-only card. */
+.area-profile-card.no-photo::before {
+  content: "";
+  display: block;
+  min-height: clamp(300px, 38vw, 560px);
+  border-radius: var(--ze-radius-lg);
+  background-image:
+    linear-gradient(180deg, rgba(23, 32, 39, 0.02), rgba(23, 32, 39, 0.12)),
+    url("/assets/areas.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.8s var(--ze-ease);
+}
+
+.area-profile-card:hover > div,
+.area-profile-card.no-photo:hover::before {
   transform: scale(1.012);
 }
 
@@ -219,14 +235,16 @@
     grid-row: auto;
   }
 
-  .area-profile-card > div {
+  .area-profile-card > div,
+  .area-profile-card.no-photo::before {
     min-height: 280px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .gallery-grid img,
-  .area-profile-card > div {
+  .area-profile-card > div,
+  .area-profile-card.no-photo::before {
     transition: none !important;
   }
 }
