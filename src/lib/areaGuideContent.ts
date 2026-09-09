@@ -1,4 +1,5 @@
 import { placeBooks, type PlaceBook } from "@/lib/books";
+import { getEditorialAreaImage } from "@/lib/areaVisuals";
 import {
   getPrimaryImage,
   getPropertyTown,
@@ -97,12 +98,16 @@ export function areaExcerpt(areaName: string): string[] {
 
 /**
  * Bildeprioritet:
- * 1. RealtyFlows godkjente områdebilde.
- * 2. Et faktisk publisert boligbilde fra samme sted.
- * 3. Det unike omslaget til stedsguiden.
- * 4. Generisk områdefoto kun som siste sikkerhetsnett.
+ * 1. Redaksjonelt stedsspesifikt bilde som forklarer området visuelt.
+ * 2. RealtyFlows godkjente områdebilde.
+ * 3. Et faktisk publisert boligbilde fra samme sted som siste dynamiske fallback.
+ * 4. Det unike omslaget til stedsguiden.
+ * 5. Generisk områdefoto kun som siste sikkerhetsnett.
  */
 export function areaPresentationImage(profile: AreaProfile, properties: Property[]): string {
+  const editorialImage = getEditorialAreaImage(profile.name);
+  if (editorialImage) return editorialImage;
+
   if (profile.photo_url) return profile.photo_url;
 
   const book = placeBookForArea(profile.name);
