@@ -1,11 +1,14 @@
-import { bookUrl, generalGuideBook, placeBooks } from "@/lib/books";
+import { bookUrl, generalGuideBook } from "@/lib/books";
+import { getPublishedGuideForPlace } from "@/lib/bookCatalog";
 
 export type BookExcerpt = {
   place: string;
-  sourceTitle: string;
-  sourceUrl: string;
-  sourceType: "local" | "general";
+  excerptSourceTitle: string;
+  excerptSourceType: "local" | "general";
   excerpt: string;
+  guideTitle: string;
+  guideUrl: string;
+  guideIsLocal: boolean;
 };
 
 function normalize(value: string) {
@@ -24,7 +27,7 @@ const generalExcerptByPlace: Record<string, string> = {
   altea:
     "Det er lett å forstå Altea visuelt. Den gamle byen ligger høyt, med hvite fasader, smale gater og kirken som et tydelig kjennetegn over Middelhavet. Nettopp derfor trenger Altea en ekstra disiplinert boligvurdering. Et sted som er svært lett å forelske seg i, kan få oss til å slutte å stille praktiske spørsmål. Det som gjør gamlebyen vakker, er også det som gjør den mindre enkel: bakker, trapper og parkering. Ikke vurder bakken på vei ned. Gå opp igjen.",
   finestrat:
-    "Finestrat er ikke ett sted. Det finnes den historiske landsbyen under Puig Campana. Det finnes La Cala ved sjøen. Og mellom dem ligger et nyere Finestrat som har blitt et av de mest aktive områdene for moderne boligbygging på Costa Blanca Nord. Nye leiligheter, nye villaer, lukkede boligområder, golf i nærheten, shopping og utsikt mot Benidorm og Middelhavet. For boligkjøperen skaper dette både muligheter og forvirring. En adresse kan si Finestrat, men hverdagen kan være fullstendig forskjellig avhengig av hvilken del av kommunen du faktisk velger.",
+    "Finestrat er ikke ett sted. Det finnes den historiske landsbyen under Puig Campana, La Cala ved sjøen og et nyere Finestrat med moderne boligbygging mellom landsbyen, Benidorm og kysten. Nye leiligheter, villaer, golf, shopping og utsikt kan ligge under samme kommunenavn. For boligkjøperen skaper dette både muligheter og forvirring. En adresse kan si Finestrat, men hverdagen kan være fullstendig forskjellig avhengig av hvilken del av kommunen du faktisk velger.",
   "la nucia":
     "La Nucía ligger tett på kystens system uten at Middelhavet organiserer hver gate. Livet blir mer boligpreget, mer hverdagslig og litt mer innland. For en fastboende kan sportsfasiliteter, skoler, supermarkeder, plass, parkering og veiforbindelser bety mer enn å kunne gå rett ut på stranden. Fordelen for mange er at du ikke velger bort kysten. Benidorm og Altea er fortsatt nære, men hjemmet kan føles tydelig fjernet fra strandøkonomien.",
   polop:
@@ -48,35 +51,32 @@ const regionFallbacks: Record<string, string> = {
     "Costa Blanca er ikke ett sted. På overraskende korte avstander endres terreng, bystruktur, strandliv, bilbehov og hverdagsrytme. En bolig kan være vakker og likevel ligge i feil versjon av kysten for deg. Derfor starter et godt boligvalg med hvordan du vil leve – ikke med hvilken boligannonse som ser best ut.",
 };
 
-const localExcerptByPlace: Record<string, string> = {
-  finestrat:
-    "Klokken ni om morgenen kan du stå i en smal gate i gamle Finestrat og nesten ikke høre noe som forteller deg at Middelhavet ligger i nærheten. Du setter deg i bilen, kjører nedover og hele det visuelle språket endres: rundkjøringer, nye boligprosjekter, moderne villaer, shopping og Benidorms skyline. Fortsetter du videre ned, strammer bebyggelsen seg til igjen og plutselig står du på sanden ved La Cala. Samme kommune. Tre helt forskjellige morgener. Det er det første en boligkjøper må forstå om Finestrat.",
-};
-
-export function bookExcerptForPlace(placeName: string, regionKey?: string): BookExcerpt {
+export async function bookExcerptForPlace(placeName: string, regionKey?: string): Promise<BookExcerpt> {
   const key = normalize(placeName);
-  const localBook = placeBooks.find((book) =>
-    book.matchTerms.some((term) => key.includes(normalize(term)) || normalize(term).includes(key)),
-  );
-  const localExcerpt = localExcerptByPlace[key];
+  const localGuide = await getPublishedGuideForPlace(placeName, "no");
+  const fallbackExcerpt =
+    generalExcerptByPlace[key] ||
+    (regionKey?.includes("innland") || regionKey === "inland" ? regionFallbacks.inland : regionFallbacks.coast);
 
-  if (localBook && localExcerpt) {
+  if (localGuide?.excerpt) {
     return {
       place: placeName,
-      sourceTitle: localBook.title,
-      sourceUrl: bookUrl(localBook.slug),
-      sourceType: "local",
-      excerpt: localExcerpt,
+      excerptSourceTitle: localGuide.title,
+      excerptSourceType: "local",
+      excerpt: localGuide.excerpt,
+      guideTitle: localGuide.title,
+      guideUrl: bookUrl(localGuide.slug),
+      guideIsLocal: true,
     };
   }
 
   return {
     place: placeName,
-    sourceTitle: generalGuideBook.title,
-    sourceUrl: bookUrl(generalGuideBook.slug),
-    sourceType: "general",
-    excerpt:
-      generalExcerptByPlace[key] ||
-      (regionKey?.includes("innland") || regionKey === "inland" ? regionFallbacks.inland : regionFallbacks.coast),
+    excerptSourceTitle: generalGuideBook.title,
+    excerptSourceType: "general",
+    excerpt: fallbackExcerpt,
+    guideTitle: localGuide?.title || generalGuideBook.title,
+    guideUrl: localGuide ? bookUrl(localGuide.slug) : bookUrl(generalGuideBook.slug),
+    guideIsLocal: Boolean(localGuide),
   };
 }
