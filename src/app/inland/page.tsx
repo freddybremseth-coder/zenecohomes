@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, Check, Leaf, MapPin, ShieldCheck, Sun, Zap } from "lucide-react";
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
+import { BookExcerpt } from "@/components/BookExcerpt";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -169,6 +170,7 @@ export default async function InlandPage() {
               </div>
               <h2>{town.name}</h2>
               <p>{displayTownIntro(town)}</p>
+              <BookExcerpt place={town.name} regionKey="inland" />
               <Link className="text-button area-property-link" href={`/inland/${town.slug}`}>
                 <MapPin size={17} /> Utforsk {town.name}
               </Link>
