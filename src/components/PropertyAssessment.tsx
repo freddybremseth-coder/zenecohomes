@@ -1,4 +1,5 @@
 import { ShieldCheck } from "lucide-react";
+import { PropertyConversionStory } from "@/components/PropertyConversionStory";
 import type { Locale } from "@/lib/i18n";
 import { getPropertyArea, getPropertyRef, type Property } from "@/lib/realtyflow";
 import { FLAGSHIP_HEADING, getFlagshipAssessment } from "@/lib/flagshipAssessments";
@@ -214,15 +215,21 @@ export function PropertyAssessment({
   typeLabel: string;
 }) {
   const labels = LABELS[locale];
+  const conversionStory = (
+    <PropertyConversionStory property={property} locale={locale} town={town} typeLabel={typeLabel} />
+  );
 
   const flagship = getFlagshipAssessment(getPropertyRef(property), locale);
   if (flagship) {
     return (
-      <aside className="property-assessment flagship assessment-2027">
-        <p className="eyebrow"><ShieldCheck size={15} /> {FLAGSHIP_HEADING[locale]}</p>
-        <p className="assessment-kicker">{labels.manualNote}</p>
-        <p>{flagship}</p>
-      </aside>
+      <>
+        {conversionStory}
+        <aside className="property-assessment flagship assessment-2027">
+          <p className="eyebrow"><ShieldCheck size={15} /> {FLAGSHIP_HEADING[locale]}</p>
+          <p className="assessment-kicker">{labels.manualNote}</p>
+          <p>{flagship}</p>
+        </aside>
+      </>
     );
   }
 
@@ -237,30 +244,33 @@ export function PropertyAssessment({
   const checkParts = [TYPE_CHECK[bucket][locale], localInsight || regionInsight].filter(Boolean);
 
   return (
-    <aside className="property-assessment assessment-2027">
-      <div className="assessment-head">
-        <p className="eyebrow"><ShieldCheck size={15} /> {labels.heading}</p>
-        <span>{labels.firstAssessment}</span>
-      </div>
+    <>
+      {conversionStory}
+      <aside className="property-assessment assessment-2027">
+        <div className="assessment-head">
+          <p className="eyebrow"><ShieldCheck size={15} /> {labels.heading}</p>
+          <span>{labels.firstAssessment}</span>
+        </div>
 
-      {facts.length > 0 && (
+        {facts.length > 0 && (
+          <section className="assessment-block">
+            <h3>{labels.basis}</h3>
+            <div className="assessment-facts">
+              {facts.map((fact) => <span key={fact}>{fact}</span>)}
+            </div>
+          </section>
+        )}
+
         <section className="assessment-block">
-          <h3>{labels.basis}</h3>
-          <div className="assessment-facts">
-            {facts.map((fact) => <span key={fact}>{fact}</span>)}
-          </div>
+          <h3>{labels.check}</h3>
+          <p>{checkParts.join(". ")}.</p>
         </section>
-      )}
 
-      <section className="assessment-block">
-        <h3>{labels.check}</h3>
-        <p>{checkParts.join(". ")}.</p>
-      </section>
-
-      <section className="assessment-block assessment-verdict">
-        <h3>{labels.view}</h3>
-        <p>{conclusion}</p>
-      </section>
-    </aside>
+        <section className="assessment-block assessment-verdict">
+          <h3>{labels.view}</h3>
+          <p>{conclusion}</p>
+        </section>
+      </aside>
+    </>
   );
 }
