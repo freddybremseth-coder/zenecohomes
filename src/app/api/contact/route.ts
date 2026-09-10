@@ -1,5 +1,33 @@
 import { NextResponse } from "next/server";
 import { sendLead } from "@/lib/realtyflow";
+import { getSupabaseAdmin } from "@/lib/supabase-admin";
+
+async function recordPropertyLead(body: Record<string, unknown>) {
+  const propertyRef = body.property_ref ? String(body.property_ref).trim() : "";
+  if (!propertyRef) return;
+  const supabase = getSupabaseAdmin();
+  if (!supabase) return;
+
+  const occurredAt = new Date().toISOString();
+  const { error } = await supabase.from("marketing_events").insert({
+    event_type: "property_lead_submit",
+    brand_id: "zeneco",
+    content_id: `property:${propertyRef}`,
+    channel: "website",
+    genome: { copy_version: "conversion-v1" },
+    metrics: { count: 1 },
+    correlation_id: `zeneco:property_lead_submit:${propertyRef}:${Date.now()}`,
+    occurred_at: occurredAt,
+    metadata: {
+      property_ref: propertyRef,
+      copy_version: "conversion-v1",
+      source: body.source ? String(body.source) : "zenecohomes-next",
+      request_type: body.request_type ? String(body.request_type) : null,
+      measurement: "property_conversion_funnel",
+    },
+  });
+  if (error) console.warn("[contact] property lead metric skipped:", error.message);
+}
 
 export async function POST(request: Request) {
   try {
@@ -29,6 +57,7 @@ export async function POST(request: Request) {
       request_type: body.request_type ? String(body.request_type) : undefined,
     });
 
+    await recordPropertyLead(body).catch(() => undefined);
     return NextResponse.json({ ok: true });
   } catch (error) {
     return NextResponse.json(
