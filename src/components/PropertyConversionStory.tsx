@@ -1,7 +1,11 @@
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import {
+  PropertyConversionCta,
+  PropertyConversionViewTracker,
+} from "@/components/PropertyConversionTracking";
 import type { Locale } from "@/lib/i18n";
 import { getPropertyConversionContent } from "@/lib/propertyConversion";
-import type { Property } from "@/lib/realtyflow";
+import { getPropertyRef, type Property } from "@/lib/realtyflow";
 import styles from "./PropertyConversionStory.module.css";
 
 const COPY: Record<Locale, {
@@ -47,9 +51,12 @@ export function PropertyConversionStory({
 }) {
   const copy = COPY[locale];
   const content = getPropertyConversionContent(property, locale, town, typeLabel);
+  const propertyRef = getPropertyRef(property);
+  const copySource = content.generated ? "realtyflow" as const : "fallback" as const;
 
   return (
-    <section className={styles.story} data-conversion-copy={content.generated ? "realtyflow" : "fallback"}>
+    <section className={styles.story} data-conversion-copy={copySource}>
+      <PropertyConversionViewTracker propertyRef={propertyRef} copySource={copySource} />
       <p className={styles.eyebrow}>{copy.eyebrow}</p>
       <h2>{copy.heading}</h2>
       <p className={styles.lead}>{content.sellingIntro}</p>
@@ -81,9 +88,12 @@ export function PropertyConversionStory({
       </div>
 
       <div className={styles.ctaRow}>
-        <a className={styles.cta} href="#kontakt" data-property-conversion-cta="conversion-v1">
-          {copy.cta} <ArrowRight size={17} aria-hidden="true" />
-        </a>
+        <PropertyConversionCta
+          className={styles.cta}
+          label={copy.cta}
+          propertyRef={propertyRef}
+          copySource={copySource}
+        />
         <p>{content.ctaReason}</p>
       </div>
     </section>
