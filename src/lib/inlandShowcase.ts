@@ -10,12 +10,16 @@ const SHOWCASE_TOWNS = new Set(["aspe", "pinoso"]);
 const APARTMENT_TYPES = new Set(["leilighet", "toppleilighet", "studioleilighet"]);
 
 /**
- * Kuratert innlandsutvalg brukt på /inland og alle stedssidene.
+ * Kuratert modellutvalg brukt på /inland og alle stedssidene.
  *
- * ZenEco profilerer moderne villa/nybygg/tomt i innlandet. Dagens relevante
- * boligpool kommer fra Aspe og Pinoso. Vi filtrerer derfor eksplisitt på disse
- * byene og fjerner leilighetsprodukter, slik at grove feed-regioner fra sør ikke
- * kan lekke inn på innlandssidene.
+ * Aspe og Pinoso er bevisst valgt som dagens konkrete katalog for moderne
+ * villaer og nybygg fordi prosjektene der er godt presentert i datakildene.
+ * Utvalget er IKKE en geografisk begrensning på hvor ZenEco kan utvikle et
+ * prosjekt. På stedsidene brukes disse objektene som boligmodeller/referanser;
+ * kundereisen er område -> riktig tomt -> kvalitetssikring -> boligmodell.
+ *
+ * Vi filtrerer samtidig bort leilighetsprodukter og grove feed-treff fra andre
+ * regioner, slik at modellkatalogen holder seg relevant for tomt + villa/nybygg.
  */
 export function isInlandShowcaseProperty(property: Property): boolean {
   const town = normalizeSearchText(getPropertyTown(property) || property.town || property.location || "");
