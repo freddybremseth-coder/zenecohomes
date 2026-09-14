@@ -4,9 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Inland – property and plots in the Spanish interior | Pinoso, Aspe, Novelda",
+  title: "Inland Alicante & Murcia | Plots, fincas and modern new-build villas",
   description:
-    "Explore the Costa Blanca interior: larger plots, finca properties, new builds and peace and quiet around Pinoso, Aspe and Novelda. English-speaking advice on water, power, access and a safe buying process.",
+    "Explore inland Alicante and Murcia: Biar, Busot, Villena, Hondón, Pinoso, Aspe, Novelda, Jumilla and more. Choose the area first; Zen Eco Homes helps find a suitable plot and the right modern home model.",
   alternates: {
     canonical: "/en/inland",
     languages: {
@@ -14,12 +14,13 @@ export const metadata = {
       "x-default": "https://www.zenecohomes.com/inland",
       "de-DE": "https://www.zenecohomes.com/de/inland",
       en: "https://www.zenecohomes.com/en/inland",
+      "es-ES": "https://www.zenecohomes.com/es/interior",
     },
   },
   openGraph: {
-    title: "Inland in Spain | Zen Eco Homes",
+    title: "Inland Alicante & Murcia | Zen Eco Homes",
     description:
-      "Property, plots and fincas in the Costa Blanca interior. More space, nature and lower price per square metre – with trusted English-speaking advice.",
+      "Choose your inland area first. We help find a suitable plot and assess which modern villa model can be built there.",
     url: "https://www.zenecohomes.com/en/inland",
     type: "website",
   },
@@ -28,38 +29,50 @@ export const metadata = {
 const highlights = [
   {
     icon: Ruler,
-    title: "More space for your money",
-    text: "Larger plots and a lower price per square metre than on the coast. Room for a pool, garden, guest house or growing your own.",
+    title: "Area first, plot second, home third",
+    text: "Start with the place you actually want to live. We then look for a suitable plot and assess which modern home model fits the planning rules, site and budget.",
   },
   {
     icon: Sprout,
-    title: "Peace, nature and self-sufficiency",
-    text: "Vineyards, almond trees and open landscapes. Perfect for a calmer everyday life and a more self-sufficient lifestyle.",
+    title: "Coast-near, mountain or wine country",
+    text: "Busot keeps the coast close; Biar and Banyeres bring mountain character; Pinoso, Hondón and Jumilla offer a stronger wine-country and rural feel.",
   },
   {
     icon: Droplets,
-    title: "Water, power and access",
-    text: "We check the water source (mains, water community, well or tank), electricity connection and legally documented access before you commit.",
+    title: "Water, power, access and ground conditions",
+    text: "A plot is only interesting when the practical fundamentals work. Water, electricity, legal access, planning status and ground conditions must be checked for the specific site.",
   },
   {
     icon: ShieldCheck,
-    title: "Safe zoning",
-    text: "Rústico, urbano or urbanizable? We clarify what you can actually build and which permits are required.",
+    title: "Buildability before the dream",
+    text: "A villa model is inspiration, not permission to build anywhere. Planning, permitted footprint, setbacks, services and total project cost must be verified before committing to a plot.",
   },
 ];
 
 const areas = [
   {
+    name: "Busot",
+    text: "Mountain-village character near Alicante and the coast. Useful for buyers who want more space and quiet without moving deep inland.",
+  },
+  {
+    name: "Biar",
+    text: "Historic mountain town with olive and almond landscapes, a stronger sense of seasons and a direct family connection through our olive property in the area.",
+  },
+  {
+    name: "Villena",
+    text: "A larger inland town with broad services and a high-speed rail station. Villena AV connects to Alicante in around 20 minutes by train and Madrid in a little over two hours; the station is outside the town centre.",
+  },
+  {
+    name: "Hondón de las Nieves",
+    text: "Village life among vineyards, almond and olive trees, with a long-established international-owner environment and practical links towards Aspe, Elche and the coast.",
+  },
+  {
     name: "Pinoso",
-    text: "Known for wine, salt and rural finca properties. Large plots, good building potential and a welcoming community.",
+    text: "Wine country with a strong market for plots, country homes and modern villas. A useful reference area for the home models we show, but not the only place where a suitable model may be built.",
   },
   {
-    name: "Aspe",
-    text: "Lush interior with grapes and olives, a short drive to Alicante and the airport. More amenities combined with rural calm.",
-  },
-  {
-    name: "Novelda",
-    text: "Historic town with marble industry and modernist architecture. A great base for plots, new builds and larger properties.",
+    name: "Jumilla",
+    text: "A deeper inland option in the Region of Murcia, with Monastrell, bodegas, a self-contained town and open countryside for buyers who want a stronger inland identity.",
   },
 ];
 
@@ -68,19 +81,19 @@ export default function EnglishInlandPage() {
     <main lang="en">
       <SiteHeader locale="en" languageLinks={homeLanguageLinks("en")} />
       <section className="page-hero compact-hero image-hero">
-        <p className="eyebrow">New service · The Spanish interior</p>
-        <h1>Inland – property, plots and fincas in the interior</h1>
+        <p className="eyebrow">Alicante & Murcia Inland</p>
+        <h1>Choose the area first. Then we find the plot and the right home.</h1>
         <p>
-          Want more space, nature and quiet than on the coast? In the interior around Pinoso, Aspe and Novelda you
-          will find larger plots, finca properties and new builds at a lower price per square metre – with trusted
-          English-speaking advice all the way.
+          Modern villas shown in Aspe and Pinoso are examples and home models — not a geographical restriction.
+          If you prefer Busot, Biar, Villena, Hondón, Jumilla or another suitable inland area, our job is to help
+          find the right plot there and assess which model can be built or adapted to it.
         </p>
         <div className="hero-actions">
           <a className="contact-button" href="/tomter">
-            View plots inland
+            View inland plots
           </a>
           <a className="text-button light" href="/en#kontakt">
-            Talk to an advisor
+            Tell us where you want to live
           </a>
         </div>
       </section>
@@ -99,11 +112,11 @@ export default function EnglishInlandPage() {
 
       <section className="section area-intro">
         <div className="section-heading">
-          <p className="eyebrow">Popular inland areas</p>
-          <h2>Where in the interior suits you?</h2>
+          <p className="eyebrow">Different ways to live inland</p>
+          <h2>Which inland area fits your everyday life?</h2>
           <p>
-            The interior often gives you more land, nature and lower prices – but water, power, access and zoning
-            vary a lot from property to property. We help you compare.
+            Inland is not one market. Distance to the coast and airports, climate, services, plot types and planning
+            conditions vary considerably. We start with how you want to live and compare locations from there.
           </p>
         </div>
       </section>
@@ -120,17 +133,29 @@ export default function EnglishInlandPage() {
         ))}
       </section>
 
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Modern new-build villas</p>
+          <h2>The model can move. The plot has to work.</h2>
+          <p>
+            The Aspe and Pinoso homes give you concrete architecture, layouts, specifications and budget references.
+            When you prefer another area, we use those models as a starting point and look for a plot where planning,
+            permitted build size, access, water, electricity, terrain and the total project budget make the project viable.
+          </p>
+        </div>
+      </section>
+
       <section className="section area-intro">
         <div className="section-heading">
           <p className="eyebrow">Next step</p>
-          <h2>Coast or interior – we help you choose right</h2>
+          <h2>Tell us the lifestyle and location — not just the house</h2>
           <p>
-            The coast gives easier rentals, the beach and more amenities. The interior gives more land, quiet and
-            nature. The choice should be driven by lifestyle and how you will actually use the home.
+            We can compare coast-near inland, mountain towns, wine country and deeper rural areas before choosing a
+            property. That prevents the available listing from deciding where you live.
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="/en/properties">
-              <Home size={18} /> Browse properties
+              <Home size={18} /> Browse current homes and models
             </a>
             <a className="text-button light" href="/en#kontakt">
               Get in touch

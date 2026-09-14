@@ -4,9 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Inland – Immobilie und Grundstück im Landesinneren Spaniens | Pinoso, Aspe, Novelda",
+  title: "Hinterland Alicante & Murcia | Grundstücke, Fincas und moderne Neubauvillen",
   description:
-    "Entdecken Sie das Hinterland der Costa Blanca: größere Grundstücke, Fincas, Neubauten und Ruhe rund um Pinoso, Aspe und Novelda. Beratung auf Englisch, Norwegisch und Spanisch zu Wasser, Strom, Zufahrt und sicherem Kaufprozess.",
+    "Entdecken Sie das Hinterland von Alicante und Murcia: Biar, Busot, Villena, Hondón, Pinoso, Aspe, Novelda, Jumilla und weitere Orte. Zuerst die Lage, dann das passende Grundstück und das Hausmodell.",
   alternates: {
     canonical: "/de/inland",
     languages: {
@@ -14,12 +14,13 @@ export const metadata = {
       "x-default": "https://www.zenecohomes.com/inland",
       "de-DE": "https://www.zenecohomes.com/de/inland",
       en: "https://www.zenecohomes.com/en/inland",
+      "es-ES": "https://www.zenecohomes.com/es/interior",
     },
   },
   openGraph: {
-    title: "Inland in Spanien | Zen Eco Homes",
+    title: "Hinterland Alicante & Murcia | Zen Eco Homes",
     description:
-      "Immobilie, Grundstück und Finca im Hinterland der Costa Blanca. Mehr Platz, Natur und niedrigere Quadratmeterpreise – mit sicherer Beratung auf Englisch, Norwegisch und Spanisch.",
+      "Zuerst wählen Sie die Lage. Wir helfen bei der Suche nach einem geeigneten Grundstück und prüfen, welches moderne Villenmodell dort realisierbar ist.",
     url: "https://www.zenecohomes.com/de/inland",
     type: "website",
   },
@@ -28,38 +29,50 @@ export const metadata = {
 const highlights = [
   {
     icon: Ruler,
-    title: "Mehr Platz fürs Geld",
-    text: "Größere Grundstücke und niedrigere Quadratmeterpreise als an der Küste. Raum für Pool, Garten, Gästehaus oder Anbau.",
+    title: "Zuerst die Lage, dann Grundstück und Haus",
+    text: "Beginnen Sie mit dem Ort, an dem Sie wirklich leben möchten. Danach suchen wir ein geeignetes Grundstück und prüfen, welches moderne Hausmodell zu Baurecht, Grundstück und Budget passt.",
   },
   {
     icon: Sprout,
-    title: "Ruhe, Natur und Selbstversorgung",
-    text: "Weinberge, Mandelbäume und offene Landschaften. Ideal für einen ruhigeren Alltag und einen selbstversorgenden Lebensstil.",
+    title: "Küstennah, Berge oder Weinland",
+    text: "Busot hält die Küste nah, Biar und Banyeres bieten Bergcharakter, während Pinoso, Hondón und Jumilla stärker von Weinland und ländlicher Umgebung geprägt sind.",
   },
   {
     icon: Droplets,
-    title: "Wasser, Strom und Zufahrt",
-    text: "Wir prüfen die Wasserquelle (kommunales Netz, Wassergemeinschaft, Brunnen oder Tank), den Stromanschluss und die rechtlich gesicherte Zufahrt – bevor Sie sich binden.",
+    title: "Wasser, Strom, Zufahrt und Boden",
+    text: "Ein Grundstück ist erst interessant, wenn die praktischen Grundlagen funktionieren. Wasser, Strom, rechtliche Zufahrt, Planungsstatus und Bodenverhältnisse müssen für das konkrete Grundstück geprüft werden.",
   },
   {
     icon: ShieldCheck,
-    title: "Sichere Einstufung",
-    text: "Rústico, urbano oder urbanizable? Wir klären, was Sie tatsächlich bauen dürfen und welche Genehmigungen nötig sind.",
+    title: "Bebaubarkeit vor Wunschbild",
+    text: "Ein Villenmodell ist Inspiration, aber keine Baugenehmigung für jeden Ort. Baufenster, Abstände, Anschlüsse, Genehmigungen und Gesamtbudget müssen vor dem Grundstückskauf geklärt werden.",
   },
 ];
 
 const areas = [
   {
+    name: "Busot",
+    text: "Bergdorfcharakter nahe Alicante und Küste. Interessant für Käufer, die mehr Ruhe und Platz suchen, ohne tief ins Hinterland zu ziehen.",
+  },
+  {
+    name: "Biar",
+    text: "Historische Bergstadt zwischen Oliven- und Mandellandschaft mit deutlicheren Jahreszeiten. Unsere Familie hat hier eine Olivenimmobilie, daher kennen wir das Gebiet auch aus eigener Erfahrung.",
+  },
+  {
+    name: "Villena",
+    text: "Größere Stadt im Hinterland mit breitem Serviceangebot und Hochgeschwindigkeitsbahnhof. Villena AV verbindet Alicante in rund 20 Minuten und Madrid in etwas über zwei Stunden; der Bahnhof liegt außerhalb des Zentrums.",
+  },
+  {
+    name: "Hondón de las Nieves",
+    text: "Dorfleben zwischen Weinbergen, Mandel- und Olivenbäumen, mit etabliertem internationalem Umfeld und praktischer Verbindung Richtung Aspe, Elche und Küste.",
+  },
+  {
     name: "Pinoso",
-    text: "Bekannt für Wein, Salz und ländliche Fincas. Große Grundstücke, gute Baumöglichkeiten und eine angenehme Gemeinde.",
+    text: "Weinland mit Markt für Grundstücke, Landhäuser und moderne Villen. Ein wichtiges Referenzgebiet für die gezeigten Hausmodelle, aber nicht der einzige Ort, an dem ein geeignetes Modell gebaut werden kann.",
   },
   {
-    name: "Aspe",
-    text: "Grünes Hinterland mit Trauben und Oliven, kurze Wege nach Alicante und zum Flughafen. Mehr Infrastruktur bei ländlicher Ruhe.",
-  },
-  {
-    name: "Novelda",
-    text: "Historische Stadt mit Marmorindustrie und Jugendstil-Architektur. Guter Ausgangspunkt für Grundstück, Neubau und größere Immobilien.",
+    name: "Jumilla",
+    text: "Ein tieferes Inlandziel in der Region Murcia mit Monastrell, Bodegas, eigenständiger Stadt und offener Landschaft für Käufer, die eine ausgeprägte Inlandidentität suchen.",
   },
 ];
 
@@ -68,19 +81,19 @@ export default function GermanInlandPage() {
     <main lang="de">
       <SiteHeader locale="de" languageLinks={homeLanguageLinks("de")} />
       <section className="page-hero compact-hero image-hero">
-        <p className="eyebrow">Neuer Service · Hinterland Spaniens</p>
-        <h1>Inland – Immobilie, Grundstück und Finca im Hinterland</h1>
+        <p className="eyebrow">Alicante & Murcia Inland</p>
+        <h1>Zuerst die Lage wählen. Dann finden wir Grundstück und Haus.</h1>
         <p>
-          Sie möchten mehr Platz, Natur und Ruhe als an der Küste? Im Hinterland rund um Pinoso, Aspe und Novelda
-          finden Sie größere Grundstücke, Fincas und Neubauten zu niedrigeren Quadratmeterpreisen – mit sicherer
-          Beratung auf Englisch, Norwegisch und Spanisch, den ganzen Weg.
+          Die modernen Villen, die wir in Aspe und Pinoso zeigen, sind Beispiele und Hausmodelle — keine geografische
+          Begrenzung. Wenn Sie Busot, Biar, Villena, Hondón, Jumilla oder ein anderes geeignetes Inlandgebiet bevorzugen,
+          suchen wir dort das passende Grundstück und prüfen, welches Modell gebaut oder angepasst werden kann.
         </p>
         <div className="hero-actions">
           <a className="contact-button" href="/tomter">
-            Grundstücke ansehen
+            Grundstücke im Inland ansehen
           </a>
           <a className="text-button light" href="/de#kontakt">
-            Mit einem Berater sprechen
+            Wunschgebiet nennen
           </a>
         </div>
       </section>
@@ -99,11 +112,11 @@ export default function GermanInlandPage() {
 
       <section className="section area-intro">
         <div className="section-heading">
-          <p className="eyebrow">Beliebte Lagen im Hinterland</p>
-          <h2>Wo im Hinterland passt zu Ihnen?</h2>
+          <p className="eyebrow">Unterschiedliche Inland-Lebensstile</p>
+          <h2>Welche Lage passt zu Ihrem Alltag?</h2>
           <p>
-            Das Hinterland bietet oft mehr Grundstück, Natur und niedrigere Preise – aber Wasser, Strom, Zufahrt und
-            Einstufung variieren stark von Objekt zu Objekt. Wir helfen Ihnen beim Vergleich.
+            Das Hinterland ist kein einheitlicher Markt. Entfernung zu Küste und Flughäfen, Klima, Service, Grundstücksarten
+            und Baurecht unterscheiden sich deutlich. Deshalb beginnen wir mit Ihrem gewünschten Alltag und vergleichen danach die Orte.
           </p>
         </div>
       </section>
@@ -120,17 +133,29 @@ export default function GermanInlandPage() {
         ))}
       </section>
 
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Moderne Neubauvillen</p>
+          <h2>Das Hausmodell kann wechseln. Das Grundstück muss passen.</h2>
+          <p>
+            Die Projekte in Aspe und Pinoso liefern konkrete Architektur-, Grundriss-, Ausstattungs- und Budgetbeispiele.
+            Für ein anderes Wunschgebiet nutzen wir diese als Ausgangspunkt und suchen ein Grundstück, auf dem Baurecht,
+            zulässige Größe, Zufahrt, Wasser, Strom, Gelände und Gesamtbudget das Projekt tatsächlich ermöglichen.
+          </p>
+        </div>
+      </section>
+
       <section className="section area-intro">
         <div className="section-heading">
           <p className="eyebrow">Nächster Schritt</p>
-          <h2>Küste oder Hinterland – wir helfen bei der richtigen Wahl</h2>
+          <h2>Nennen Sie Lebensstil und Lage — nicht nur das Haus</h2>
           <p>
-            Die Küste bietet einfachere Vermietung, Strand und mehr Infrastruktur. Das Hinterland bietet mehr
-            Grundstück, Ruhe und Natur. Die Wahl sollte sich nach Lebensstil und Nutzung richten.
+            Wir können küstennahes Inland, Bergorte, Weinland und tiefere ländliche Gebiete vergleichen, bevor wir ein Objekt wählen.
+            So entscheidet nicht das zufällig verfügbare Angebot darüber, wo Sie leben.
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="/de/immobilien">
-              <Home size={18} /> Immobilien ansehen
+              <Home size={18} /> Aktuelle Immobilien und Modelle
             </a>
             <a className="text-button light" href="/de#kontakt">
               Kontakt aufnehmen
