@@ -196,7 +196,12 @@ export default async function InlandPage() {
         {properties.length > 0 ? (
           <div className="property-grid editorial-property-grid">
             {properties.map((property, index) => (
-              <PropertyCard key={property.id || property.ref || index} property={property} priority={index < 3} />
+              <PropertyCard
+                key={property.id || property.ref || index}
+                property={property}
+                priority={index < 3}
+                contextLabel="Boligmodell – kan bygges på annen egnet tomt"
+              />
             ))}
           </div>
         ) : (
