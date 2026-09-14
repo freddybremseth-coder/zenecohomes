@@ -26,19 +26,21 @@ export type InlandTown = {
   region?: "Alicante" | "Murcia";
 };
 
+// Konkrete reisetider er omtrentlige og skal jevnlig verifiseres mot oppdaterte
+// rute-/transportkilder. Trafikk, rutetilbud og avgang kan endre faktisk reisetid.
 export const inlandTowns: InlandTown[] = [
   {
     slug: "biar",
     name: "Biar",
     title: "Bolig og finca i Biar",
-    eyebrow: "Middelalderlandsby · 650 moh",
+    eyebrow: "Middelalderlandsby · ca. 700 moh",
     intro:
       "Biar er en av de best bevarte middelalderlandsbyene i Alicante-provinsen – smale gater, et borgtårn fra 1100-tallet over hustakene, og et levende landsbyliv hele året. Familien har en oliveneiendom i Biar, så området er også en del av vår egen hverdag.",
     body: [
       "Landsbyen ligger ved foten av Serra de Mariola, med fjelluft, oliven- og mandellunder og et klima som er merkbart friskere enn kysten om sommeren. Rundt landsbyen finner du fincaer og gårder med store tomter, og i selve landsbyen tradisjonelle landsbyhus med mye sjel.",
-      "Biar har det som gjør en innlandslandsby levedyktig: skole, helsetilbud, butikker, restauranter og et sterkt lokalmiljø med fester og tradisjoner. Alicante og flyplassen når du på under en time.",
+      "Biar har det som gjør en innlandslandsby levedyktig: skole, helsetilbud, butikker, restauranter og et sterkt lokalmiljø med fester og tradisjoner. Alicante-Elche flyplass når du normalt på under en time med bil.",
     ],
-    highlights: ["Borg fra 1100-tallet og bevart gamleby", "Fincaer og gårder med store tomter", "Ca. 45–55 min til Alicante flyplass"],
+    highlights: ["Borg fra 1100-tallet og bevart gamleby", "Fincaer og gårder med store tomter", "Under en time med bil til Alicante-Elche flyplass"],
     matchTerms: ["biar"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Pueblo_y_castillo_de_Biar%2C_Alicante.jpg/960px-Pueblo_y_castillo_de_Biar%2C_Alicante.jpg",
@@ -47,14 +49,14 @@ export const inlandTowns: InlandTown[] = [
     slug: "villena",
     name: "Villena",
     title: "Bolig i Villena",
-    eyebrow: "By med borg, vin og AVE-tog",
+    eyebrow: "By med borg, vin og høyhastighetstog",
     intro:
-      "Villena er innlandets 'hovedstad' – en historisk by med borgen Castillo de la Atalaya, egen stasjon på høyhastighetslinjen og alt av byservice, omgitt av vinmarker og landbruksland.",
+      "Villena er et viktig bysentrum i innlandet – en historisk by med borgen Castillo de la Atalaya, egen stasjon på høyhastighetslinjen og et bredt servicetilbud, omgitt av vinmarker og landbruksland.",
     body: [
-      "Her får du byliv i spansk format: handlegater, marked, restauranter, sykehus og skoler – og likevel er du minutter unna åpne landskap med fincaer og gårder til priser langt under kysten.",
-      "AVE-stasjonen gjør Villena unik i innlandet: Madrid og Alicante på rundt 20–40 minutters togtur gjør byen praktisk både for helårsboende og for deg som pendler til og fra Norge.",
+      "Her får du byliv i spansk format: handlegater, marked, restauranter, helsetjenester og skoler – og likevel er du minutter unna åpne landskap med fincaer og gårder til priser langt under kysten.",
+      "Høyhastighetsstasjonen Villena AV gir tog til Alicante-Terminal på rundt 20 minutter og Madrid på litt over to timer. Stasjonen ligger omtrent seks kilometer utenfor sentrum, så faktisk dør-til-dør-reisetid blir lengre enn selve togtiden.",
     ],
-    highlights: ["Full byservice og sykehus", "AVE-stasjon – Alicante på ca. 20 min", "Vinområde med lange tradisjoner"],
+    highlights: ["Full byservice og helsetjenester", "Villena AV – Alicante ca. 20 min, Madrid litt over 2 timer", "Vinområde med lange tradisjoner"],
     matchTerms: ["villena"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sierra_de_la_Villa._Villena._Castillo_de_la_Atalaya_1.jpg/960px-Sierra_de_la_Villa._Villena._Castillo_de_la_Atalaya_1.jpg",
@@ -81,12 +83,12 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig i Castalla",
     eyebrow: "Foia de Castalla · fjell og fincaer",
     intro:
-      "Castalla ligger i en vid dal omkranset av fjell, med borgen på haugen midt i byen – og med noe av den korteste kjøreveien til Alicante av alle innlandsområdene.",
+      "Castalla ligger i en vid dal omkranset av fjell, med borgen på haugen midt i byen og gode veiforbindelser sørover mot Alicante.",
     body: [
-      "Dalen (Foia de Castalla) rommer også Ibi, Onil og Tibi, og har et variert tilbud av landsbyhus, villaer i urbanisasjoner og fincaer. Området har solid lokal økonomi og infrastruktur, og motorveien tar deg til Alicante på rundt en halvtime.",
-      "For deg som vil ha fjellnatur rett utenfor døren – Maigmó og Sierra del Menejador – og samtidig rask vei til kysten, er Castalla-dalen et av de mest praktiske valgene i innlandet.",
+      "Dalen (Foia de Castalla) rommer også Ibi, Onil og Tibi, og har et variert tilbud av landsbyhus, villaer i urbanisasjoner og fincaer. Området har solid lokal økonomi og infrastruktur, og Alicante-Elche flyplass ligger rundt en halvtimes kjøring unna under normale forhold.",
+      "For deg som vil ha fjellnatur rett utenfor døren – Maigmó, Xorret de Catí og fjellene rundt Foia de Castalla – og samtidig rask vei mot Alicante og kysten, er Castalla-dalen et praktisk valg i innlandet.",
     ],
-    highlights: ["Ca. 30–40 min til Alicante", "Borg, gamleby og ekte landsbyliv", "Fjellnatur og kjøligere somre"],
+    highlights: ["Ca. 30–35 min med bil til Alicante-Elche flyplass", "Borg, gamleby og ekte landsbyliv", "Fjellnatur og kjøligere innlandsklima"],
     matchTerms: ["castalla", "onil", "ibi", "tibi"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Castillo_de_Castalla_visto_de_lejos_03.jpg/960px-Castillo_de_Castalla_visto_de_lejos_03.jpg",
@@ -95,14 +97,14 @@ export const inlandTowns: InlandTown[] = [
     slug: "banyeres-de-mariola",
     name: "Banyeres de Mariola",
     title: "Bolig i Banyeres de Mariola",
-    eyebrow: "Provinsens høyestliggende landsby",
+    eyebrow: "Fjellandsby · over 800 moh",
     intro:
-      "Banyeres de Mariola ligger på over 800 meter, inne i naturparken Serra de Mariola – frisk fjelluft, elven Vinalopós kilder og en landsby med borg, historie og sterke tradisjoner.",
+      "Banyeres de Mariola ligger på over 800 meter ved Serra de Mariola – med frisk fjelluft, Vinalopó-elvens kilder i området og en landsby med borg, historie og sterke tradisjoner.",
     body: [
-      "Dette er valget for deg som vil ha fjell-Spania på ordentlig: kastanje- og furuskog, turstier rett fra døren, kalde vinternetter med peiskos og somre der du sover godt uten aircondition.",
-      "Landsbyen har butikker, skole og et aktivt foreningsliv, og du når både Alcoy, Villena og Ontinyent på under en halvtime.",
+      "Dette er valget for deg som vil ha fjell-Spania på ordentlig: skog, turstier, tydeligere vinter og svalere netter enn ved kysten gjennom deler av året.",
+      "Landsbyen har butikker, skole og et aktivt foreningsliv, med veiforbindelser videre til Alcoy, Villena og Ontinyent.",
     ],
-    highlights: ["Inne i naturparken Serra de Mariola", "Kjølige somre – over 800 moh", "Levende landsby med full service"],
+    highlights: ["Ved Serra de Mariola", "Over 800 moh", "Levende landsby med lokale tjenester"],
     matchTerms: ["banyeres", "bañeres", "beneixama", "camp de mirra", "canada", "cañada"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Banyeres._Castell_1.JPG/960px-Banyeres._Castell_1.JPG",
@@ -128,12 +130,12 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig og finca i Pinoso",
     eyebrow: "Vin, marmor og godt liv",
     intro:
-      "Pinoso (El Pinós) er innlandets mest kjente adresse blant utenlandske kjøpere – en velstående vin- og marmorby med ry for god mat, godt vann og noen av Spanias beste Monastrell-viner.",
+      "Pinoso (El Pinós) er et kjent innlandsområde blant utenlandske kjøpere – en vin- og marmorby med sterk lokal matkultur og lange tradisjoner for Monastrell-vin.",
     body: [
       "Byen er kjent for arroz con conejo y caracoles, vinkooperativet og et rikt tilbud av fincaer og landsteder i alle prisklasser rundt landsbyene Ubeda, Lel, Encebras og Casas del Pino.",
-      "Pinoso har et etablert internasjonalt miljø med gode håndverkere, meglere og servicetilbud vant til utenlandske eiere – en myk start på innlandslivet, med Alicante og Murcia cirka 45–60 minutter unna.",
+      "Pinoso har et etablert internasjonalt miljø og servicetilbud vant til utenlandske eiere. Kommunen oppgir Alicante-Elche flyplass til rundt 61 km og ca. 45 minutter med bil, mens Murcia by ligger omtrent 50–55 minutter unna med bil under normale forhold.",
     ],
-    highlights: ["Stort utvalg fincaer og landsteder", "Etablert internasjonalt miljø", "Vinlandskap og sterk lokal økonomi"],
+    highlights: ["Stort utvalg fincaer og landsteder", "Alicante-Elche flyplass ca. 45 min med bil", "Vinlandskap og sterk lokal økonomi"],
     matchTerms: ["pinoso", "el pinos", "el pinós", "ubeda", "encebras"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Pinoso-_Torre_del_Reloj.jpg/960px-Pinoso-_Torre_del_Reloj.jpg",
@@ -144,7 +146,7 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig og finca i Jumilla",
     eyebrow: "Murcia · Monastrell, bodegas og fjell",
     intro:
-      "Jumilla ligger i Altiplano nord i Murcia-regionen og er et av Spanias tydeligste vinområder. Byen, borgen og landskapet rundt er tett knyttet til Monastrell, bodegas, lokal gastronomi og et tørt, åpent innland med sterk egen identitet.",
+      "Jumilla ligger i Altiplano nord i Murcia-regionen og er et veletablert vinområde. Byen, borgen og landskapet rundt er tett knyttet til Monastrell, bodegas, lokal gastronomi og et tørt, åpent innland med sterk egen identitet.",
     body: [
       "Dette er et større og mer selvstendig innlandssentrum enn mange av landsbyene i Alicante. Du får handel, restauranter, kultur og daglige tjenester i byen, mens vinmarker og landlige eiendommer begynner kort vei utenfor sentrum.",
       "Jumilla passer spesielt godt for deg som liker vinland, store horisonter og et mer utpreget innlandsklima. Sierra de Santa Ana sør for byen gir turterreng og natur, og Ruta del Vino gjør lokale bodegas og mattradisjoner til en naturlig del av hverdagen.",
@@ -163,10 +165,10 @@ export const inlandTowns: InlandTown[] = [
     intro:
       "Monóvar er en klassisk spansk vinby – hjembyen til forfatteren Azorín – med bodegas, mandel- og vinmarker og et stort omland av fincaer mellom byen og grensen mot Murcia.",
     body: [
-      "Byen har alt av daglig service og ligger bare 10–15 minutter fra Elda/Petrer og motorveien. Til Alicante og flyplassen kjører du på rundt 35–45 minutter – blant det korteste du finner for et ekte finca-område.",
-      "Rundt Monóvar og nabolandsbyene La Romana, Algueña og Salinas ligger noen av innlandets mest prisgunstige landsteder, ofte med vinmark, mandeltrær og romslige tomter.",
+      "Byen har alt av daglig service og ligger rundt 10–15 minutter fra Elda/Petrer med bil. Monóvar kommune oppgir Alicante-Elche flyplass som nærmeste flyplass, omtrent 42 km unna.",
+      "Rundt Monóvar og nabolandsbyene La Romana, Algueña og Salinas ligger mange landsteder, ofte med vinmark, mandeltrær og romslige tomter.",
     ],
-    highlights: ["Ca. 35–45 min til flyplassen", "Vinmarker og prisgunstige fincaer", "Ekte spansk byliv uten turisme"],
+    highlights: ["Ca. 42 km til Alicante-Elche flyplass", "Vinmarker og fincaer", "Ekte spansk byliv uten masseturisme"],
     matchTerms: ["monovar", "monóvar", "alguena", "algueña", "salinas"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Monovar.Ermita_de_Santa_B%C3%A1rbara.jpg/960px-Monovar.Ermita_de_Santa_B%C3%A1rbara.jpg",
@@ -177,12 +179,12 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig i Hondón-dalene",
     eyebrow: "Hondón de las Nieves & de los Frailes",
     intro:
-      "Hondón-dalene er innlandets mest etablerte 'expat-daler' – to landsbyer i et vakkert vinlandskap 30 minutter fra kysten, med et stort utvalg villaer og fincaer bygget for helårsliv.",
+      "Hondón-dalene består av to landsbyområder i et vakkert vinlandskap og er godt kjent blant internasjonale boligkjøpere som ønsker villa, finca og helårsliv i innlandet.",
     body: [
-      "Her finner du et modent marked med mange ferdig oppgraderte eiendommer: villaer med basseng, lovlige fincaer med all dokumentasjon på plass, og et servicetilbud som er vant til utenlandske eiere.",
-      "Dalene ligger perfekt til for deg som vil ha innlandsprisene og roen, men strand i Alicante eller Elche-området på en drøy halvtime.",
+      "Her finner du et modent marked med villaer, fincaer og landsteder i ulike aldre og standarder. Som ellers i innlandet må regulering, registrering, vann, strøm, adkomst og øvrig dokumentasjon kontrolleres konkret for hver eiendom.",
+      "Kysten er fortsatt innen praktisk kjøreavstand: fra Hondón de las Nieves er det rundt 35 minutter med bil til Santa Pola under normale forhold. Fra andre deler av dalene varierer reisetiden.",
     ],
-    highlights: ["Ca. 30–40 min til kysten", "Modent marked, mange villaer med basseng", "Vinlandskap og rolige landsbyer"],
+    highlights: ["Hondón de las Nieves–Santa Pola ca. 35 min med bil", "Etablert marked med villaer og fincaer", "Vinlandskap og rolige landsbyer"],
     matchTerms: ["hondon", "hondón", "la canalosa"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg/960px-Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg",
@@ -217,12 +219,12 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig og finca i Aspe",
     eyebrow: "Bordruer og nybygg · Vinalopó",
     intro:
-      "Aspe ligger i Vinalopó-dalen, kjent for de innpakkede bordruene (uva embolsada), et livlig sentrum rundt Basílica del Socorro og noe av den korteste veien til flyplassen av alle innlandsområdene. Et voksende område med både tradisjonelle fincaer og moderne nybygg.",
+      "Aspe ligger i Vinalopó-dalen, kjent for de innpakkede bordruene (uva embolsada), et livlig sentrum rundt Basílica del Socorro og god forbindelse til Alicante-Elche flyplass. Et voksende område med både tradisjonelle fincaer og moderne nybygg.",
     body: [
       "Aspe er en ekte spansk arbeidsby som lever hele året – med marked, butikker, skoler og helsetilbud – omgitt av druemarker, oliven og mandeltrær. Rundt byen finner du casas de campo og fincaer med romslige tomter, og de siste årene har det kommet et godt tilbud av nybygde villaer med basseng.",
-      "Beliggenheten er noe av det sterkeste: Alicante flyplass, Elche og motorveien nås på 20–30 minutter, og både kysten ved Santa Pola og innlandsroen i Hondón-dalene ligger like ved. Det gjør Aspe til et praktisk valg for deg som vil ha plass og pris uten å gi slipp på nærheten til alt.",
+      "Beliggenheten er noe av det sterkeste: Alicante-Elche flyplass ligger rundt 28 km vei unna og omtrent 20–25 minutter med bil under normale forhold. Elche, motorveien, Santa Pola-kysten og Hondón-dalene ligger også innen praktisk rekkevidde.",
     ],
-    highlights: ["Ca. 20–30 min til Alicante flyplass", "Nybygde villaer og finca-tomter", "Levende by med druer, oliven og mandel"],
+    highlights: ["Ca. 28 km til Alicante-Elche flyplass", "Nybygde villaer og finca-tomter", "Levende by med druer, oliven og mandel"],
     matchTerms: ["aspe"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Basilica_de_Aspe.JPG/960px-Basilica_de_Aspe.JPG",
@@ -233,12 +235,12 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig i Novelda",
     eyebrow: "Modernisme, marmor og safran",
     intro:
-      "Novelda er en velstående vin- og industriby kjent for marmor, safran og krydder – og for enestående modernistisk arkitektur, kronet av det Gaudí-inspirerte Santuario de Santa María Magdalena på åsen over byen.",
+      "Novelda er en vin- og industriby kjent for marmor, safran og krydder – og for modernistisk arkitektur, kronet av Santuario de Santa María Magdalena på åsen over byen.",
     body: [
-      "Sentrum har full byservice, praktbygg fra modernismen og et rikt kulturliv, mens omlandet mot Monóvar, Aspe og La Romana byr på vinmarker, mandeltrær og fincaer i alle prisklasser. For deg som vil ha en by med sjel og historie – ikke bare en soveby – er Novelda et av innlandets mest komplette valg.",
-      "Byen ligger midt i Vinalopó med motorvei til Alicante og flyplassen på rundt 30 minutter, og med Elda/Petrer, Monóvar og Pinoso som nære naboer. Godt utgangspunkt både for helårsliv og for deg som pendler til og fra Norge.",
+      "Sentrum har full byservice, praktbygg fra modernismen og et rikt kulturliv, mens omlandet mot Monóvar, Aspe og La Romana byr på vinmarker, mandeltrær og fincaer i alle prisklasser. For deg som vil ha en by med sjel og historie – ikke bare en soveby – er Novelda et komplett innlandsalternativ.",
+      "Byen ligger midt i Vinalopó med gode veiforbindelser. Alicante-Elche flyplass ligger rundt 29 km vei unna og omtrent 20 minutter med bil under normale forhold, mens Elda/Petrer, Monóvar og Aspe ligger i nærområdet.",
     ],
-    highlights: ["Full byservice og rikt kulturliv", "Gaudí-inspirert santuario og modernisme", "Ca. 30 min til Alicante flyplass"],
+    highlights: ["Full byservice og rikt kulturliv", "Santuario og modernistisk arkitektur", "Ca. 29 km til Alicante-Elche flyplass"],
     matchTerms: ["novelda"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Santuario_Novelda.jpg/960px-Santuario_Novelda.jpg",
@@ -249,12 +251,12 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig og finca i La Romana",
     eyebrow: "Stille vindal mellom Pinoso og Novelda",
     intro:
-      "La Romana er en liten, rolig landsby omgitt av vinmarker og mandeltrær, midt mellom Pinoso, Novelda og Monóvar. Et etablert favorittområde for utenlandske kjøpere som vil ha ekte finca-ro uten å være langt fra service.",
+      "La Romana er en liten, rolig landsby omgitt av vinmarker og mandeltrær, mellom Pinoso, Novelda og Monóvar. Området er kjent blant utenlandske kjøpere som ønsker finca-ro uten å være langt fra daglig service.",
     body: [
-      "Her handler livet om det landlige: druemarker, olivenlunder og casas de campo med brønner, uthus og romslige tomter – ofte til priser godt under de mer kjente nabolandsbyene. Landsbyen selv har det daglige du trenger, og et hyggelig, uturistisk lokalmiljø.",
-      "Til tross for roen er du bare 10–15 minutter fra Novelda og Pinoso, og rundt 35–45 minutter fra Alicante flyplass. La Romana passer deg som vil ha innlandslivet på sitt mest autentiske, med naboer, natur og god plass.",
+      "Her handler livet om det landlige: druemarker, olivenlunder og casas de campo med brønner, uthus og romslige tomter. Landsbyen selv har det daglige du trenger og et uturistisk lokalmiljø.",
+      "Til tross for roen er Novelda omtrent 13 km og rundt 14 minutter unna med bil. Alicante-Elche flyplass ligger rundt 39 km vei unna og omtrent 34 minutter med bil under normale forhold.",
     ],
-    highlights: ["Prisgunstige fincaer og landsteder", "Vinmarker og mandeltrær rundt landsbyen", "Rolig, uturistisk lokalmiljø"],
+    highlights: ["Novelda ca. 13 km unna", "Alicante-Elche flyplass ca. 34 min med bil", "Vinmarker og landlig lokalmiljø"],
     matchTerms: ["la romana", "romana"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/La_Romana_Sunrise.jpg/960px-La_Romana_Sunrise.jpg",
@@ -263,14 +265,14 @@ export const inlandTowns: InlandTown[] = [
     slug: "monforte-del-cid",
     name: "Monforte del Cid",
     title: "Bolig i Monforte del Cid",
-    eyebrow: "Vin og golf · minutter fra flyplassen",
+    eyebrow: "Vin og golf · nær flyplassen",
     intro:
-      "Monforte del Cid ligger blant vinmarker i Vinalopó, bare et kvarter fra Alicante flyplass, med golfbanen Font del Llop og et voksende tilbud av nybygg, villaer og fincaer. Kombinasjonen av landlig ro og topp beliggenhet gjør byen stadig mer ettertraktet.",
+      "Monforte del Cid ligger blant vinmarker i Vinalopó, med kort kjørevei til Alicante-Elche flyplass, golfbanen Font del Llop og et voksende tilbud av nybygg, villaer og fincaer. Kombinasjonen av landlig ro og god beliggenhet gjør området interessant for både helårs- og deltidsboende.",
     body: [
-      "Byen har et hyggelig historisk sentrum med den gamle morería-bydelen, alt av daglig service, og et omland av druemarker og landsteder. Rundt golfresortet Font del Llop finner du moderne villaer og bungalower, mens du utenfor byen fortsatt finner klassiske fincaer med plass og tomt.",
-      "Det som virkelig skiller Monforte ut er nærheten: Alicante flyplass på cirka 15 minutter, motorvei til både kysten og innlandet, og Elche, Novelda og Aspe som nære naboer. Ideelt for deg som vil ha innlandsro og enkel reise til og fra Norge i samme pakke.",
+      "Byen har et hyggelig historisk sentrum med den gamle morería-bydelen, daglige tjenester og et omland av druemarker og landsteder. Rundt golfresortet Font del Llop finner du moderne villaer og bungalower, mens du utenfor byen fortsatt finner klassiske fincaer med plass og tomt.",
+      "Det som virkelig skiller Monforte ut er nærheten: Alicante-Elche flyplass ligger rundt 25 km vei unna og omtrent 15–20 minutter med bil under normale forhold. Motorveien gir enkel forbindelse videre mot både kysten og innlandet, med Elche, Novelda og Aspe som nære naboer.",
     ],
-    highlights: ["Ca. 15 min til Alicante flyplass", "Golf (Font del Llop) og moderne nybygg", "Vinmarker, morería og ekte byliv"],
+    highlights: ["Ca. 25 km til Alicante-Elche flyplass", "Golf (Font del Llop) og moderne nybygg", "Vinmarker, morería og ekte byliv"],
     matchTerms: ["monforte", "monforte del cid"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Vi%C3%B1edos_en_Monforte_del_Cid.jpg/960px-Vi%C3%B1edos_en_Monforte_del_Cid.jpg",
