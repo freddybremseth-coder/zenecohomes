@@ -33,7 +33,7 @@ const localPageEN = ({
     {
       heading: `Why consider property in ${place}?`,
       body: [
-        `${place} is one of the areas many international buyers consider when they want a secure base in Spain. Look beyond price and photos: daily life, distance to services, sun exposure, resale, access to beach or nature, and how the place works outside high season matter just as much.`,
+        `When considering ${place}, look beyond price and photos: daily life, distance to services, sun exposure, resale, access to beach or nature, and how the place works outside high season matter just as much.`,
         angle,
       ],
       bullets: highlights,
@@ -70,11 +70,11 @@ const localPageEN = ({
     },
     {
       question: `Are there new builds in ${place}?`,
-      answer: `Yes, there are often new builds or newer projects in or around ${place}, but availability and price change quickly. Always confirm status before planning a viewing or reservation.`,
+      answer: `New builds or newer projects may be available in or around ${place}, but availability and price change. Always confirm current status before planning a viewing or reservation.`,
     },
     {
       question: `Do I need an advisor when buying in ${place}?`,
-      answer: `It is recommended. An advisor can help you assess real market value, compare alternatives, understand the buying process and coordinate next steps with local parties.`,
+      answer: `Advisory support can help you compare alternatives, understand the buying process and coordinate next steps with local parties. Legal review should be carried out by a qualified lawyer before binding agreements.`,
     },
   ],
   related: [
@@ -90,12 +90,12 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
     place: "Altea",
     area: "Costa Blanca North",
     angle:
-      "Altea is especially appealing to buyers who want beautiful surroundings, a whitewashed old town, a marina, views, restaurants and a more upmarket feel. It combines quality of life and calm with short distances to Albir, Benidorm, Calpe and Alicante airport.",
+      "Altea is especially appealing to buyers who want beautiful surroundings, a whitewashed old town, a marina, views and restaurants. It combines a calmer residential feel with practical access to Albir, Benidorm, Calpe and Alicante-Elche airport.",
     highlights: [
       "For buyers who value beautiful surroundings, views and quality.",
-      "Short distances to Albir, Calpe, Benidorm and services.",
+      "Practical access to Albir, Calpe, Benidorm and services.",
       "Suited to modern apartments, villas and view projects.",
-      "A good choice for year-round use and long-term ownership.",
+      "Can work for year-round or holiday use depending on the micro-location.",
     ],
     filterHref: "/en/properties?region=costa-blanca-nord&area=Altea",
     extraBody:
@@ -106,11 +106,11 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
     place: "Albir",
     area: "Costa Blanca North",
     angle:
-      "Albir is popular because it is compact, practical, largely flat, close to the beach and well served with restaurants, shops and services. It suits buyers who want an easy daily life without relying on a car all the time.",
+      "Albir is a compact, practical coastal area that is relatively flat across much of the centre, close to the beach and well served with restaurants, shops and services. It can suit buyers who want an easy daily life with less reliance on a car.",
     highlights: [
-      "Popular with international buyers.",
-      "Flat, practical centre with short walks to beach and services.",
-      "Near Altea, Benidorm, Alfaz del Pi and Alicante airport.",
+      "Compact coastal area with beach, restaurants and daily services.",
+      "Relatively flat and practical centre in much of the area.",
+      "Near Altea, Benidorm and Alfaz del Pi.",
       "Suited to apartments, holiday and year-round use.",
     ],
     filterHref: "/en/properties?region=costa-blanca-nord&area=Albir",
@@ -122,11 +122,11 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
     place: "Calpe",
     area: "Costa Blanca North",
     angle:
-      "Calpe combines beach, town life, a marina, restaurants and the famous Peñón de Ifach landmark. It suits buyers who want a distinct coastal town with strong services — with apartment, penthouse or villa options.",
+      "Calpe combines beach, town life, a marina, restaurants and the Peñón de Ifach landmark. It suits buyers who want a distinct coastal town with services and a choice of apartments, penthouses and villas.",
     highlights: [
-      "Strong coastal profile with beaches, marina and town life.",
+      "Coastal profile with beaches, marina and town life.",
       "Suited to apartments, penthouses, villas and holiday homes.",
-      "Good services and a clear summer season.",
+      "Broad services and a clear summer season.",
       "For buyers who want beachside living with urban comfort.",
     ],
     filterHref: "/en/properties?region=costa-blanca-nord&area=Calpe",
@@ -138,12 +138,12 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
     place: "Finestrat",
     area: "Costa Blanca North",
     angle:
-      "Finestrat is one of the most active areas for modern new build on the Costa Blanca North. Many projects combine views, modern architecture, proximity to Benidorm, shopping, golf and short distances to beaches such as Cala de Finestrat.",
+      "Finestrat has a substantial presence of modern new-build development on the Costa Blanca North. Many projects combine contemporary architecture with access to Benidorm, shopping, golf and beaches such as Cala de Finestrat; views and actual journey times vary by micro-location.",
     highlights: [
       "Many modern new builds, villas and apartment projects.",
       "Near Benidorm, shopping centres, golf and beach.",
-      "For buyers who want views and a modern standard.",
-      "A strong area to consider for new build and investment.",
+      "For buyers who want a modern standard and potential views.",
+      "Compare micro-location, build phase and total price between projects.",
     ],
     filterHref: "/en/properties?region=costa-blanca-nord&area=Finestrat",
     extraBody:
@@ -154,12 +154,12 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
     place: "Polop",
     area: "Costa Blanca North",
     angle:
-      "Polop suits buyers who want calmer surroundings, mountain views and more property for the money than in the most established coastal towns — while staying within practical reach of Altea, La Nucía, Benidorm and the coast.",
+      "Polop suits buyers who want calmer surroundings, mountain views and the possibility of more space around the home than in denser coastal areas, while remaining within practical driving reach of Altea, La Nucía, Benidorm and the coast.",
     highlights: [
       "Calmer area with mountains, nature and views.",
-      "Often more property for the budget than right on the coast.",
+      "Options for villas, townhouses and larger outdoor areas in less dense surroundings.",
       "Suited to villas, townhouses and new-build projects.",
-      "Good for year-round use and buyers who want more space.",
+      "Can suit buyers who want more space and do not need the beach within walking distance.",
     ],
     filterHref: "/en/properties?region=costa-blanca-nord&area=Polop",
     extraBody:
@@ -168,12 +168,12 @@ export const localSeoLandingPagesEN: SeoLandingPage[] = [
   localPageEN({
     slug: "property-in-pinoso",
     place: "Pinoso",
-    area: "Costa Blanca inland",
+    area: "Alicante inland",
     angle:
       "Pinoso appeals to buyers who want a large plot, calmer surroundings, nature, vineyards and the option to build or buy a modern home with more space. It is especially suited to a more rural, independent lifestyle in Spain.",
     highlights: [
       "Suited to large plots, villas, fincas and modern new build.",
-      "More space and calm than many coastal areas.",
+      "Potential for more space and privacy than in denser coastal areas.",
       "For buyers who want nature, privacy and a long-term lifestyle.",
       "Check water, electricity, access, zoning and building permits.",
     ],

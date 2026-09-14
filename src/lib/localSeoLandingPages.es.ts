@@ -30,7 +30,7 @@ const localPageES = ({
     {
       heading: `¿Por qué considerar una vivienda en ${place}?`,
       body: [
-        `${place} es una de las zonas que muchos compradores valoran cuando buscan una base en España. Conviene mirar más allá del precio y las fotos: vida diaria, distancia a servicios, orientación solar, reventa, acceso a playa o naturaleza y funcionamiento fuera de temporada son factores importantes.`,
+        `Al valorar ${place}, conviene mirar más allá del precio y las fotos: vida diaria, distancia a servicios, orientación solar, reventa, acceso a playa o naturaleza y funcionamiento fuera de temporada son factores importantes.`,
         angle,
       ],
       bullets: highlights,
@@ -67,11 +67,11 @@ const localPageES = ({
     },
     {
       question: `¿Hay obra nueva en ${place}?`,
-      answer: `Suele haber obra nueva o proyectos recientes en ${place} o sus alrededores, aunque precio y disponibilidad cambian con rapidez. Conviene confirmar el estado real antes de planificar una visita o reserva.`,
+      answer: `Puede haber obra nueva o proyectos recientes en ${place} o sus alrededores, pero precio y disponibilidad cambian. Conviene confirmar el estado actual antes de planificar una visita o reserva.`,
     },
     {
       question: `¿Necesito asesoramiento para comprar en ${place}?`,
-      answer: "Puede ser muy útil para comparar alternativas, entender el proceso de compra, ordenar costes y coordinar los siguientes pasos con los profesionales locales adecuados.",
+      answer: "El asesoramiento puede ser útil para comparar alternativas, entender el proceso de compra y coordinar los siguientes pasos. La revisión jurídica de contratos y documentación debe realizarla un abogado cualificado antes de asumir compromisos vinculantes.",
     },
   ],
   related: [
@@ -87,12 +87,12 @@ export const localSeoLandingPagesES: SeoLandingPage[] = [
     place: "Altea",
     area: "Costa Blanca Norte",
     angle:
-      "Altea atrae especialmente a quienes valoran paisaje, casco antiguo, puerto deportivo, vistas y un ambiente residencial cuidado. Combina tranquilidad con distancias razonables a Albir, Benidorm, Calpe y el aeropuerto de Alicante-Elche.",
+      "Altea atrae especialmente a quienes valoran paisaje, casco antiguo, puerto deportivo, vistas y restauración. Combina tranquilidad con una conexión práctica a Albir, Benidorm, Calpe y el aeropuerto de Alicante-Elche.",
     highlights: [
       "Entorno atractivo, vistas y carácter mediterráneo.",
-      "Cerca de Albir, Calpe, Benidorm y servicios durante todo el año.",
+      "Conexión práctica con Albir, Calpe, Benidorm y servicios.",
       "Oferta de apartamentos modernos, villas y proyectos con vistas.",
-      "Adecuada para uso habitual, largas estancias y segunda residencia.",
+      "Puede funcionar para uso habitual o segunda residencia según la micro-ubicación.",
     ],
     filterHref: "/es/propiedades?region=costa-blanca-nord&area=Altea",
     extraBody:
@@ -103,12 +103,12 @@ export const localSeoLandingPagesES: SeoLandingPage[] = [
     place: "Albir",
     area: "Costa Blanca Norte",
     angle:
-      "Albir es popular por ser compacto, práctico y relativamente llano, con playa, restaurantes, comercios y servicios a poca distancia. Encaja bien con quien quiere una vida cotidiana sencilla sin depender siempre del coche.",
+      "Albir es una zona costera compacta y práctica, relativamente llana en buena parte del centro, con playa, restaurantes, comercios y servicios a poca distancia. Puede encajar con quien quiere una vida cotidiana sencilla y menor dependencia del coche.",
     highlights: [
-      "Zona consolidada y popular entre compradores internacionales.",
-      "Centro práctico y bastante llano, cerca de playa y servicios.",
-      "Próximo a Altea, Benidorm, l'Alfàs del Pi y el aeropuerto.",
-      "Buena opción para apartamentos, vacaciones y uso durante todo el año.",
+      "Zona costera compacta con playa, restauración y servicios diarios.",
+      "Centro práctico y bastante llano en buena parte del área.",
+      "Próximo a Altea, Benidorm y l'Alfàs del Pi.",
+      "Adecuado para apartamentos, vacaciones y uso durante todo el año.",
     ],
     filterHref: "/es/propiedades?region=costa-blanca-nord&area=Albir",
     extraBody:
@@ -135,12 +135,12 @@ export const localSeoLandingPagesES: SeoLandingPage[] = [
     place: "Finestrat",
     area: "Costa Blanca Norte",
     angle:
-      "Finestrat es una de las zonas con mayor actividad de obra nueva moderna en la Costa Blanca Norte. Muchas promociones combinan vistas, arquitectura actual, cercanía a Benidorm, centros comerciales, golf y playas como Cala de Finestrat.",
+      "Finestrat tiene una presencia importante de obra nueva moderna en la Costa Blanca Norte. Muchas promociones combinan arquitectura actual con acceso a Benidorm, centros comerciales, golf y playas como Cala de Finestrat; las vistas y los tiempos reales de desplazamiento varían según la micro-ubicación.",
     highlights: [
       "Numerosas promociones modernas, villas y apartamentos.",
       "Cerca de Benidorm, centros comerciales, golf y playa.",
-      "Adecuada para quien prioriza vistas y estándar moderno.",
-      "Zona relevante para comparar obra nueva e inversión.",
+      "Adecuada para quien prioriza estándar moderno y posibilidades de vistas.",
+      "Conviene comparar micro-ubicación, fase de obra y precio total.",
     ],
     filterHref: "/es/propiedades?region=costa-blanca-nord&area=Finestrat",
     extraBody:
@@ -151,12 +151,12 @@ export const localSeoLandingPagesES: SeoLandingPage[] = [
     place: "Polop",
     area: "Costa Blanca Norte",
     angle:
-      "Polop puede interesar a quien busca un entorno más tranquilo, vistas de montaña y más espacio que en las localidades costeras más consolidadas, manteniendo distancias prácticas a La Nucía, Altea, Benidorm y la costa.",
+      "Polop puede interesar a quien busca un entorno más tranquilo, vistas de montaña y la posibilidad de disponer de más espacio exterior que en zonas costeras más densas, manteniendo una distancia práctica en coche a La Nucía, Altea, Benidorm y la costa.",
     highlights: [
       "Entorno tranquilo con montaña, naturaleza y vistas.",
-      "En algunos segmentos ofrece más espacio por el presupuesto.",
+      "Opciones de villas, adosados y mayor espacio exterior en entornos menos densos.",
       "Villas, adosados y promociones de obra nueva.",
-      "Interesante para uso durante todo el año y familias que buscan más espacio.",
+      "Interesante para quien busca más espacio y no necesita la playa a pie.",
     ],
     filterHref: "/es/propiedades?region=costa-blanca-nord&area=Polop",
     extraBody:
@@ -170,7 +170,7 @@ export const localSeoLandingPagesES: SeoLandingPage[] = [
       "Pinoso atrae a quienes buscan parcela grande, tranquilidad, viñedos y la posibilidad de construir o comprar una vivienda moderna con más espacio. Encaja especialmente con un estilo de vida rural y más independiente.",
     highlights: [
       "Parcelas grandes, villas, fincas y construcción de vivienda nueva.",
-      "Más espacio y tranquilidad que en muchas zonas costeras.",
+      "Posibilidad de más espacio y privacidad que en zonas costeras más densas.",
       "Adecuado para naturaleza, privacidad y residencia a largo plazo.",
       "Es esencial comprobar agua, electricidad, acceso, suelo y permisos.",
     ],

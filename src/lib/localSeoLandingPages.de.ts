@@ -33,7 +33,7 @@ const localPageDE = ({
     {
       heading: `Warum eine Immobilie in ${place}?`,
       body: [
-        `${place} ist eine der Lagen, die viele internationale Käufer erwägen, wenn sie eine sichere Basis in Spanien suchen. Bewerten Sie mehr als Preis und Fotos: Alltag, Entfernung zu Diensten, Sonnenlage, Wiederverkauf, Strand- oder Naturnähe und wie der Ort außerhalb der Hochsaison funktioniert, sind mindestens ebenso wichtig.`,
+        `Wenn Sie ${place} prüfen, sollten Sie mehr als Preis und Fotos bewerten: Alltag, Entfernung zu Diensten, Sonnenlage, Wiederverkauf, Strand- oder Naturnähe und die Nutzung außerhalb der Hochsaison sind ebenso wichtig.`,
         angle,
       ],
       bullets: highlights,
@@ -70,11 +70,11 @@ const localPageDE = ({
     },
     {
       question: `Gibt es Neubauten in ${place}?`,
-      answer: `Ja, in oder um ${place} gibt es oft Neubauten oder neuere Projekte, aber Verfügbarkeit und Preis ändern sich schnell. Lassen Sie den Status immer bestätigen, bevor Sie eine Besichtigung oder Reservierung planen.`,
+      answer: `In oder um ${place} können Neubauten oder neuere Projekte verfügbar sein; Verfügbarkeit und Preis ändern sich. Lassen Sie den aktuellen Status immer bestätigen, bevor Sie eine Besichtigung oder Reservierung planen.`,
     },
     {
       question: `Brauche ich einen Berater beim Kauf in ${place}?`,
-      answer: `Es ist empfehlenswert. Ein Berater hilft, den realen Marktwert einzuschätzen, Alternativen zu vergleichen, den Kaufprozess zu verstehen und die nächsten Schritte mit lokalen Akteuren zu koordinieren.`,
+      answer: `Beratung kann helfen, Alternativen zu vergleichen, den Kaufprozess zu verstehen und nächste Schritte mit lokalen Akteuren zu koordinieren. Die rechtliche Prüfung sollte vor verbindlichen Vereinbarungen durch einen qualifizierten Anwalt erfolgen.`,
     },
   ],
   related: [
@@ -90,12 +90,12 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
     place: "Altea",
     area: "Costa Blanca Nord",
     angle:
-      "Altea ist besonders interessant für Käufer, die schöne Umgebung, weiß getünchte Altstadt, Marina, Ausblick, Restaurants und ein gehobeneres Flair suchen. Die Lage verbindet Lebensqualität und Ruhe mit kurzen Wegen nach Albir, Benidorm, Calpe und zum Flughafen Alicante.",
+      "Altea ist besonders interessant für Käufer, die schöne Umgebung, weiß getünchte Altstadt, Marina, Ausblick und Restaurants suchen. Die Lage verbindet Ruhe mit einer praktischen Verbindung nach Albir, Benidorm, Calpe und zum Flughafen Alicante-Elche.",
     highlights: [
       "Für Käufer, die schöne Umgebung, Ausblick und Qualität schätzen.",
-      "Kurze Wege nach Albir, Calpe, Benidorm und zu Diensten.",
+      "Praktische Verbindung nach Albir, Calpe, Benidorm und zu Diensten.",
       "Geeignet für moderne Wohnungen, Villen und Projekte mit Aussicht.",
-      "Gute Wahl für Ganzjahresnutzung und langfristigen Besitz.",
+      "Je nach Mikrolage für Ganzjahres- oder Feriennutzung geeignet.",
     ],
     filterHref: "/de/immobilien?region=costa-blanca-nord&area=Altea",
     extraBody:
@@ -106,11 +106,11 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
     place: "Albir",
     area: "Costa Blanca Nord",
     angle:
-      "Albir ist beliebt, weil der Ort übersichtlich, praktisch, in großen Teilen flach, strandnah ist und ein gutes Angebot an Restaurants, Geschäften und Diensten hat. Ideal für Käufer, die einen einfachen Alltag ohne ständige Autofahrten wünschen.",
+      "Albir ist ein kompakter und praktischer Küstenort, dessen Zentrum in großen Teilen relativ flach ist. Strand, Restaurants, Geschäfte und Dienste liegen nah beieinander. Das kann für Käufer passen, die im Alltag weniger vom Auto abhängig sein möchten.",
     highlights: [
-      "Beliebt bei internationalen Käufern.",
-      "Flaches, praktisches Zentrum mit kurzen Wegen zu Strand und Diensten.",
-      "Nah an Altea, Benidorm, Alfaz del Pi und Flughafen Alicante.",
+      "Kompakter Küstenort mit Strand, Restaurants und täglichen Diensten.",
+      "In großen Teilen flaches und praktisches Zentrum.",
+      "Nah an Altea, Benidorm und Alfaz del Pi.",
       "Geeignet für Wohnungen, Ferien- und Ganzjahresnutzung.",
     ],
     filterHref: "/de/immobilien?region=costa-blanca-nord&area=Albir",
@@ -122,11 +122,11 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
     place: "Calpe",
     area: "Costa Blanca Nord",
     angle:
-      "Calpe verbindet Strand, Stadtleben, Marina, Restaurants und das bekannte Wahrzeichen Peñón de Ifach. Ideal für Käufer, die eine ausgeprägte Küstenstadt mit gutem Serviceangebot wünschen – mit Wohnung, Penthouse oder Villa.",
+      "Calpe verbindet Strand, Stadtleben, Marina, Restaurants und das Wahrzeichen Peñón de Ifach. Der Ort kann für Käufer passen, die eine ausgeprägte Küstenstadt mit Serviceangebot und Auswahl zwischen Wohnung, Penthouse und Villa suchen.",
     highlights: [
-      "Starkes Küstenprofil mit Stränden, Marina und Stadtleben.",
+      "Küstenprofil mit Stränden, Marina und Stadtleben.",
       "Für Wohnungen, Penthäuser, Villen und Ferienimmobilien.",
-      "Gutes Serviceangebot und ausgeprägte Sommersaison.",
+      "Breites Serviceangebot und ausgeprägte Sommersaison.",
       "Für Käufer, die strandnahes Leben und urbanen Komfort suchen.",
     ],
     filterHref: "/de/immobilien?region=costa-blanca-nord&area=Calpe",
@@ -138,12 +138,12 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
     place: "Finestrat",
     area: "Costa Blanca Nord",
     angle:
-      "Finestrat ist eine der aktivsten Lagen für modernen Neubau an der Costa Blanca Nord. Viele Projekte verbinden Ausblick, moderne Architektur, Nähe zu Benidorm, Shopping, Golf und kurze Wege zu Stränden wie der Cala de Finestrat.",
+      "Finestrat weist einen bedeutenden Anteil moderner Neubauprojekte an der Costa Blanca Nord auf. Viele Projekte verbinden zeitgemäße Architektur mit Zugang zu Benidorm, Shopping, Golf und Stränden wie der Cala de Finestrat; Aussicht und tatsächliche Fahrzeiten hängen von der Mikrolage ab.",
     highlights: [
       "Viele moderne Neubauten, Villen und Wohnprojekte.",
       "Nah an Benidorm, Einkaufszentren, Golf und Strand.",
-      "Für Käufer, die Ausblick und modernen Standard suchen.",
-      "Gute Lage für Neubau und Kapitalanlage.",
+      "Für Käufer, die modernen Standard und mögliche Aussicht suchen.",
+      "Mikrolage, Bauphase und Gesamtpreis zwischen Projekten vergleichen.",
     ],
     filterHref: "/de/immobilien?region=costa-blanca-nord&area=Finestrat",
     extraBody:
@@ -154,12 +154,12 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
     place: "Polop",
     area: "Costa Blanca Nord",
     angle:
-      "Polop eignet sich für Käufer, die ruhigere Umgebung, Bergblick und mehr Immobilie fürs Geld suchen als in den etabliertesten Küstenstädten – und dabei in praktischer Reichweite zu Altea, La Nucía, Benidorm und der Küste bleiben.",
+      "Polop eignet sich für Käufer, die ruhigere Umgebung, Bergblick und die Möglichkeit für mehr Außenfläche als in dichter bebauten Küstenlagen suchen, während Altea, La Nucía, Benidorm und die Küste mit dem Auto praktisch erreichbar bleiben.",
     highlights: [
       "Ruhigere Lage mit Bergen, Natur und Ausblick.",
-      "Oft mehr Immobilie fürs Budget als direkt an der Küste.",
+      "Optionen für Villen, Reihenhäuser und größere Außenflächen in weniger dichter Umgebung.",
       "Für Villen, Reihenhäuser und Neubauprojekte.",
-      "Gut für Ganzjahresnutzung und mehr Platz.",
+      "Für Käufer, die mehr Platz wünschen und den Strand nicht fußläufig brauchen.",
     ],
     filterHref: "/de/immobilien?region=costa-blanca-nord&area=Polop",
     extraBody:
@@ -168,12 +168,12 @@ export const localSeoLandingPagesDE: SeoLandingPage[] = [
   localPageDE({
     slug: "immobilie-pinoso",
     place: "Pinoso",
-    area: "im Hinterland der Costa Blanca",
+    area: "im Hinterland von Alicante",
     angle:
-      "Pinoso ist interessant für Käufer, die ein großes Grundstück, ruhige Umgebung, Natur, Weinberge und die Möglichkeit suchen, eine moderne Immobilie mit mehr Platz zu bauen oder zu kaufen. Ideal für einen ländlicheren, unabhängigeren Lebensstil in Spanien.",
+      "Pinoso ist interessant für Käufer, die ein großes Grundstück, ruhige Umgebung, Natur, Weinberge und die Möglichkeit suchen, eine moderne Immobilie mit mehr Platz zu bauen oder zu kaufen. Es passt besonders zu einem ländlicheren, unabhängigeren Lebensstil in Spanien.",
     highlights: [
       "Für große Grundstücke, Villen, Fincas und modernen Neubau.",
-      "Mehr Platz und Ruhe als in vielen Küstenorten.",
+      "Möglichkeit für mehr Platz und Privatsphäre als in dichter bebauten Küstenlagen.",
       "Für Käufer, die Natur, Privatsphäre und langfristigen Lebensstil suchen.",
       "Wasser, Strom, Zufahrt, Bebauungsrecht und Baulizenz unbedingt prüfen.",
     ],
