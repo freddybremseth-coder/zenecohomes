@@ -14,7 +14,7 @@ import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
 export const metadata: Metadata = {
   title: "Innlandet i Alicante og Murcia | Tomt og moderne nybygg",
   description:
-    "Utforsk tomter, moderne villaer og landliv rundt Biar, Busot, Villena, Pinoso, Hondón de las Nieves og Jumilla. Sammenlign område, regulering, vann, strøm og totalbudsjett før kjøp.",
+    "Velg hvor du vil bo i innlandet i Alicante og Murcia. Vi finner og kvalitetssikrer riktig tomt, og bruker moderne villaer og nybygg som boligmodeller for prosjektet ditt.",
   alternates: {
     canonical: "/inland",
     languages: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Innlandet i Alicante og Murcia | Moderne bolig og tomt",
     description:
-      "Mer plass og natur – med tomter, moderne villaer, fincaer og levende småbyer i utvalgte innlandsområder i Alicante og Murcia.",
+      "Velg området først. Vi finner riktig tomt og matcher den med en moderne boligmodell som kan gjennomføres innen lokale rammer og totalbudsjett.",
     url: "https://www.zenecohomes.com/inland",
     siteName: "Zen Eco Homes",
     locale: "nb_NO",
@@ -43,11 +43,11 @@ const faq = [
   },
   {
     q: "Er tomt og nybygg hovedfokuset deres i innlandet?",
-    a: "Ja. Vi prioriterer tomter, moderne villaer og nybygg som kan gi mer forutsigbar standard og energieffektivitet. Dersom en eksisterende landeiendom er klart bedre for behovet ditt, kan vi også hjelpe deg å vurdere den.",
+    a: "Ja. Vår jobb er først å hjelpe deg å velge riktig område og deretter finne en tomt som faktisk fungerer for prosjektet. Når tomten er kvalitetssikret, matcher vi den med en moderne boligmodell og et realistisk totalbudsjett.",
   },
   {
-    q: "Kan boligene fra Aspe og Pinoso bygges andre steder i innlandet?",
-    a: "De viser moderne villaer, planløsninger og byggeløsninger som også kan være aktuelle i andre innlandsområder. Om en tilsvarende bolig faktisk kan bygges på en bestemt tomt, avhenger alltid av regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og prosjektets totalbudsjett.",
+    q: "Kan boligmodellene fra Aspe og Pinoso bygges i de andre innlandsområdene?",
+    a: "Ja. Boligene vi viser fra Aspe og Pinoso er først og fremst konkrete boligmodeller og forslag – ikke en begrensning på hvor du må bo. Moderne nyboliger kan utvikles i alle områdene vi presenterer når vi finner en tomt der regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og øvrige krav tillater prosjektet. Vår oppgave er å finne og kvalitetssikre den riktige tomten i området du ønsker.",
   },
   {
     q: "Hva må kontrolleres før jeg kjøper tomt?",
@@ -92,7 +92,7 @@ export default async function InlandPage() {
         name: INLAND_BRAND.name,
         url: "https://www.zenecohomes.com/inland",
         description:
-          "Zen Eco Homes hjelper kjøpere å vurdere tomter, moderne villaer, fincaer og nybygg i utvalgte innlandsområder i Alicante og Murcia.",
+          "Zen Eco Homes hjelper kjøpere å velge innlandsområde, finne og kvalitetssikre riktig tomt og utvikle moderne villa eller nybygg i Alicante og Murcia.",
         parentOrganization: { "@id": "https://www.zenecohomes.com/#organization" },
         areaServed: inlandTowns.map((town) => town.name),
         founder: {
@@ -124,7 +124,7 @@ export default async function InlandPage() {
           <p className="eyebrow">Alicante & Murcia Inland</p>
           <h1>Et annet Spania, litt lenger inn</h1>
           <p className="hero-copy">
-            Større tomter, roligere omgivelser og moderne villaer mellom vinmarker, fjell og levende småbyer. Vi starter med området – og med hva som faktisk kan bygges og fungere i hverdagen.
+            Du velger området og hvordan du vil leve. Vi finner og kvalitetssikrer riktig tomt. Deretter velger og tilpasser vi en moderne boligmodell som passer stedet, regelverket og budsjettet ditt.
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="#steder">Utforsk områdene <ArrowRight size={18} /></a>
@@ -139,7 +139,7 @@ export default async function InlandPage() {
           <p className="eyebrow">Inland Journal</p>
           <h2>Innlandet er ikke ett marked</h2>
           <p>
-            Biar og Banyeres gir fjell og kjøligere netter. Busot gir fjellandsby med kysten fortsatt nær. Villena og Sax gir byservice og effektiv transport. Pinoso og Hondón gir vinland, villaer og større tomter, mens Jumilla tar deg enda dypere inn i Monastrell-landet i Murcia. Velg stedet før du velger huset.
+            Biar og Banyeres gir fjell og kjøligere netter. Busot gir fjellandsby med kysten fortsatt nær. Villena og Sax gir byservice og effektiv transport. Pinoso og Hondón gir vinland, villaer og større tomter, mens Jumilla tar deg enda dypere inn i Monastrell-landet i Murcia. Velg stedet først. Boligmodellen kommer etterpå.
           </p>
         </div>
         <nav className="inland-index" aria-label="Områder i innlandet">
@@ -155,7 +155,7 @@ export default async function InlandPage() {
       <AreaExplorerMap
         locations={mapLocations}
         label="Se innlandsstedene på kartet"
-        intro="Trykk på et sted for å forstå beliggenheten og få en kort forklaring. Derfra kan du åpne stedsiden eller gå direkte til de moderne boligmodellene fra Aspe og Pinoso."
+        intro="Velg først stedet du liker. Boligmodellene fra Aspe og Pinoso som vises lenger ned er forslag og referanser – de er ikke bundet til disse to stedene. Vi kan bruke samme type moderne nybygg i andre innlandsområder når vi finner en egnet og byggbar tomt."
       />
 
       <section className="inland-places" aria-label="Områdeprofiler">
@@ -179,14 +179,19 @@ export default async function InlandPage() {
 
       <section className="inland-selection" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">ZenEco Inland Selection</p>
-          <h2>Moderne boliger fra Aspe og Pinoso – inspirasjon for hele innlandet</h2>
+          <p className="eyebrow">Boligmodeller · ikke stedbundne objekter</p>
+          <h2>Velg området først. Vi finner tomten. Boligen kommer etterpå.</h2>
           <p>
-            Her viser vi hele vårt relevante utvalg av moderne villaer og nybygg fra Aspe og Pinoso. Boligene ligger i Aspe og Pinoso i dag, men de viser arkitektur, planløsninger og byggeløsninger som også kan være aktuelle å utvikle eller bygge i andre innlandsområder i Alicante og Murcia.
+            Villaene og nybyggene du ser under er konkrete modeller og forslag vi i dag har godt presentert gjennom prosjekter i Aspe og Pinoso. Det betyr ikke at du må kjøpe eller bygge i Aspe eller Pinoso. De viser hva slags moderne bolig, planløsning, arkitektur og standard vi kan ta utgangspunkt i når vi planlegger prosjektet ditt.
           </p>
           <p>
-            Hva som faktisk kan bygges på en bestemt tomt må alltid vurderes konkret ut fra regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totalbudsjett. Vi bruker derfor disse boligene som referanser og modeller – ikke som en påstand om at samme prosjekt kan settes opp hvor som helst.
+            Ønsker du å bo i Busot, Biar, Villena, Sax, Hondón de las Nieves, Jumilla eller et av de andre områdene, starter vi der. Vi leter etter en tomt som passer ønsket ditt og kvalitetssikrer regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totaløkonomi. Når riktig tomt er funnet, matcher og tilpasser vi boligmodellen til tomten og de lokale rammene.
           </p>
+          <div className="feature-panel">
+            <div><MapPin /> 1. Velg området du vil bo i</div>
+            <div><ShieldCheck /> 2. Vi finner og kvalitetssikrer riktig tomt</div>
+            <div><Check /> 3. Vi matcher og tilpasser boligmodellen</div>
+          </div>
         </div>
         {properties.length > 0 ? (
           <div className="property-grid editorial-property-grid">
@@ -196,11 +201,11 @@ export default async function InlandPage() {
           </div>
         ) : (
           <div className="section-heading">
-            <p>Ingen aktuelle Aspe/Pinoso-objekter akkurat nå. Fortell oss hva du ønsker, så kan vi starte med område og tomt.</p>
+            <p>Boligmodellene er ikke tilgjengelige akkurat nå. Fortell oss hvor du ønsker å bo og hva du ønsker å bygge, så starter vi med å finne riktig tomt.</p>
           </div>
         )}
         <div className="center-action">
-          <Link className="contact-button" href="/booking">Spør hvilke boligtyper som kan passe på din tomt <ArrowRight size={18} /></Link>
+          <Link className="contact-button" href="/booking">Finn riktig tomt og boligmodell <ArrowRight size={18} /></Link>
         </div>
       </section>
 
@@ -211,7 +216,7 @@ export default async function InlandPage() {
         </div>
         <div>
           <p>
-            Før et byggeprosjekt vurderes seriøst, bør regulering, adkomst, vann, strøm, avløp, grenser og totalbudsjett være forstått. En vakker tomt er ikke nødvendigvis en byggbar tomt.
+            Før et byggeprosjekt vurderes seriøst, bør regulering, adkomst, vann, strøm, avløp, grenser og totalbudsjett være forstått. En vakker tomt er ikke nødvendigvis en byggbar tomt – derfor er tomtearbeidet selve nøkkelen til å kunne bygge boligen du ønsker i området du har valgt.
           </p>
           <div className="check-list">
             {[
@@ -259,9 +264,9 @@ export default async function InlandPage() {
       <section className="contact-section" id="kontakt">
         <div>
           <p className="eyebrow">Neste steg</p>
-          <h2>Fortell oss hvordan du ønsker å bo</h2>
+          <h2>Fortell oss hvor og hvordan du ønsker å bo</h2>
           <p>
-            Tomt og moderne villa, roligere helårsbolig eller mer plass til familie og natur? Vi starter med området og totalbudsjettet før vi ser på konkrete alternativer.
+            Vi starter med området du ønsker. Deretter finner og kvalitetssikrer vi tomten, før vi vurderer hvilken moderne boligmodell som passer tomten, regelverket og totalbudsjettet best.
           </p>
         </div>
         <ContactForm source={INLAND_BRAND.leadSource} />
