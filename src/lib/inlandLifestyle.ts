@@ -61,6 +61,17 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
     ],
     suits: "Passer særlig for naturelskere, aktive kjøpere og helårsboende som ønsker kjøligere klima og tydelig landsbyidentitet.",
   },
+  busot: {
+    title: "Fjellfølelse uten å gi slipp på kysten",
+    lead:
+      "Busot passer for deg som liker tanken på en roligere landsbyhverdag, men som fortsatt vil kunne bruke El Campello, Alicante og strendene som en naturlig del av livet.",
+    paragraphs: [
+      "Du våkner med fjellene nærmere enn strandpromenaden, men trenger ikke velge bort sjøen. Busot ligger i overgangssonen der Cabeçó d'Or, småveier og åpent landskap møter kysten bare noen kilometer unna. Det gir en helt annen romfølelse enn i de tetteste ferieområdene.",
+      "Hverdagen kan være enkel: lokale ærender i landsbyen, tur eller sykkel i fjellet, og middag eller strandtur ved kysten senere på dagen. Det er nettopp denne fleksibiliteten som gjør Busot interessant – du får mer stillhet rundt boligen uten å gjøre avstand til et prosjekt i seg selv.",
+      "For boligkjøpere betyr det ofte at uteområdet blir viktigere. Hage, terrasse, basseng og utsikt kan få større plass i beslutningen, samtidig som du beholder nærheten til flyplass, Alicante og kystservice.",
+    ],
+    suits: "Passer særlig for kjøpere som ønsker villa eller landsted med mer ro og plass, men fortsatt vil ha kort vei til kysten.",
+  },
   pinoso: {
     title: "Plass til å leve – ikke bare plass til å bo",
     lead:
@@ -71,6 +82,17 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
       "For mange er dette selve forskjellen fra kysten: du bytter strand utenfor døren mot plass, privatliv og frihet rundt boligen. Hvis du faktisk bruker uteområdet hver dag, kan det være et bedre bytte enn det høres ut som på papiret.",
     ],
     suits: "Passer særlig for kjøpere som ønsker moderne villa på stor tomt, finca, privatliv og et etablert helårsmarked.",
+  },
+  jumilla: {
+    title: "Et liv bygget rundt vinland, plass og en ordentlig by",
+    lead:
+      "Jumilla passer for deg som vil lenger inn i Spania og ønsker et sted med sterk lokal identitet, full byservice og et landskap der vinmarkene faktisk preger hverdagen.",
+    paragraphs: [
+      "Her er vin ikke pynt i markedsføringen, men en del av områdets økonomi, mattradisjoner og rytme gjennom året. Bodegas, Monastrell og Ruta del Vino gjør det lett å bruke området aktivt – enten du er interessert i vin eller bare liker den kulturen som vokser rundt den.",
+      "Byen er stor nok til at du ikke er avhengig av en annen by for alt. Samtidig åpner landskapet seg raskt utenfor sentrum, med større avstander, mer himmel og en tydelig følelse av å bo på landet når du velger en eiendom utenfor byen.",
+      "Jumilla er et mer kompromissløst innlandsvalg enn Busot eller Aspe. Du er lenger fra kystlivet, men får til gjengjeld et område der plass, vinland, natur og lokal identitet er selve hovedproduktet.",
+    ],
+    suits: "Passer særlig for vin- og matinteresserte, helårsboende og kjøpere som ønsker finca, større tomt eller et tydelig innlandsliv i Murcia.",
   },
   monovar: {
     title: "Vinby, hverdagsliv og landlig frihet",
@@ -93,6 +115,17 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
       "Dette kan være et godt kompromiss for deg som liker tanken på innlandet, men som ikke vil for langt bort fra kysten. Du får større rom rundt deg og en roligere hverdag, samtidig som strand og flyplass fortsatt kan være en naturlig del av livet.",
     ],
     suits: "Passer særlig for kjøpere som ønsker villa med basseng, landlig utsikt og et etablert internasjonalt miljø.",
+  },
+  "hondon-de-las-nieves": {
+    title: "Landsbyliv midt i vinmarkene – med et etablert internasjonalt miljø rundt",
+    lead:
+      "Hondón de las Nieves, eller El Fondó de les Neus, passer for deg som vil ha den landlige Hondón-følelsen, men ønsker å forstå én konkret landsby og dens hverdag – ikke bare dalen som et stort område.",
+    paragraphs: [
+      "Her er vinmarker, mandeltrær og oliven det visuelle bakteppet i hverdagen. Sentrum er lite nok til å være oversiktlig, men stort nok til at du har kommunale tjenester og et lokalt liv å forholde deg til gjennom året.",
+      "Utenfor sentrum blir eiendommene mer spredt, og uteplassen får en annen rolle enn på kysten. Terrasse, basseng, utsikt, gjester og hage kan bli viktigere enn gangavstand til strand – fordi det er nettopp roen og plassen du kjøper deg inn i.",
+      "Området passer også godt for dem som vil ha en mykere overgang til innlandet. Du får tydelig landsby- og landliv, men er fortsatt i Medio Vinalopó med praktisk forbindelse mot Aspe, Elche-området og videre mot kysten.",
+    ],
+    suits: "Passer særlig for kjøpere som ønsker villa eller finca i vinlandskap, roligere helårsliv og et område som allerede er kjent blant utenlandske eiere.",
   },
   aspe: {
     title: "Innlandsfølelse med svært praktisk beliggenhet",
