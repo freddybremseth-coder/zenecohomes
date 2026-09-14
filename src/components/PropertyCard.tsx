@@ -30,11 +30,13 @@ export function PropertyCard({
   priority = false,
   locale = "no",
   detailBasePath = "/eiendommer",
+  contextLabel,
 }: {
   property: Property;
   priority?: boolean;
   locale?: PropertyLocale;
   detailBasePath?: string;
+  contextLabel?: string;
 }) {
   const href = `${detailBasePath}/${encodeURIComponent(getPropertyRef(property))}`;
   const title = getLocalizedPropertyTitle(property, locale);
@@ -73,6 +75,7 @@ export function PropertyCard({
         </div>
       </div>
       <div className="property-body">
+        {contextLabel ? <p>{contextLabel}</p> : null}
         <h3>{heading}</h3>
         {facts.length > 0 && (
           <div className="facts">

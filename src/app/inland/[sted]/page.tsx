@@ -121,7 +121,12 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         {properties.length > 0 ? (
           <div className="property-grid editorial-property-grid">
             {properties.map((property, index) => (
-              <PropertyCard key={property.id || property.ref || index} property={property} priority={index < 3} />
+              <PropertyCard
+                key={property.id || property.ref || index}
+                property={property}
+                priority={index < 3}
+                contextLabel={`Boligmodell – kan bygges på egnet tomt i ${town.name}`}
+              />
             ))}
           </div>
         ) : (
