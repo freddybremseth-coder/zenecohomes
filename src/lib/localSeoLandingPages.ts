@@ -30,7 +30,7 @@ const localPage = ({
     {
       heading: `Hvorfor vurdere bolig i ${place}?`,
       body: [
-        `${place} er et av områdene mange norske boligkjøpere vurderer når de ønsker en trygg base i Spania. Området bør vurderes ut fra mer enn pris og bilder: hverdagsliv, avstand til service, solforhold, fremtidig videresalg, tilgang til strand eller natur og hvordan stedet fungerer utenom høysesong er minst like viktig.`,
+        `Når du vurderer ${place}, bør området vurderes ut fra mer enn pris og bilder: hverdagsliv, avstand til service, solforhold, fremtidig videresalg, tilgang til strand eller natur og hvordan stedet fungerer utenom høysesong er minst like viktig.`,
         angle,
       ],
       bullets: highlights,
@@ -67,11 +67,11 @@ const localPage = ({
     },
     {
       question: `Finnes det nybygg i ${place}?`,
-      answer: `Ja, det finnes ofte nybygg eller nyere prosjekter i eller rundt ${place}, men tilgjengelighet og pris endrer seg raskt. Få alltid bekreftet status før du planlegger visning eller reservasjon.`,
+      answer: `Det finnes nybygg eller nyere prosjekter i eller rundt flere av områdene vi dekker, men tilgjengelighet og pris endrer seg. Få alltid bekreftet aktuell status i ${place} før du planlegger visning eller reservasjon.`,
     },
     {
       question: `Trenger jeg rådgiver når jeg kjøper bolig i ${place}?`,
-      answer: `Det anbefales. En rådgiver kan hjelpe deg å vurdere reell markedsverdi, sammenligne alternativer, forstå kjøpsprosessen og koordinere neste steg med lokale aktører.`,
+      answer: `Rådgivning kan hjelpe deg å sammenligne alternativer, forstå kjøpsprosessen og koordinere neste steg med lokale aktører. Juridisk kontroll bør utføres av kvalifisert advokat før bindende avtaler.`,
     },
   ],
   related: [
@@ -87,12 +87,12 @@ export const localSeoLandingPages: SeoLandingPage[] = [
     place: "Altea",
     area: "Costa Blanca Nord",
     angle:
-      "Altea er spesielt interessant for kjøpere som ønsker vakre omgivelser, hvitkalket gamleby, marina, utsikt, restauranter og et mer eksklusivt preg enn mange klassiske feriesteder. Området passer godt for deg som vil kombinere livskvalitet, ro og kort vei til Albir, Benidorm, Calpe og Alicante-flyplassen.",
+      "Altea er spesielt interessant for kjøpere som ønsker vakre omgivelser, hvitkalket gamleby, marina, utsikt og restauranter. Området kan passe godt for deg som vil kombinere livskvalitet og ro med praktisk forbindelse til Albir, Benidorm, Calpe og Alicante-Elche flyplass.",
     highlights: [
       "Passer for kjøpere som ønsker vakre omgivelser, utsikt og kvalitetsfølelse.",
-      "Kort vei til Albir, Calpe, Benidorm og flere serviceområder.",
+      "Praktisk forbindelse til Albir, Calpe, Benidorm og flere serviceområder.",
       "Aktuelt for moderne leiligheter, villaer og utsiktsprosjekter.",
-      "Godt valg for helårsbruk, livsstil og langsiktig eie.",
+      "Kan fungere både for helårsbruk og feriebruk, avhengig av mikrobeliggenhet.",
     ],
     filterHref: "/eiendommer?region=costa-blanca-nord&area=Altea",
     extraBody:
@@ -103,12 +103,12 @@ export const localSeoLandingPages: SeoLandingPage[] = [
     place: "Albir",
     area: "Costa Blanca Nord",
     angle:
-      "Albir er populært blant nordmenn fordi området er oversiktlig, praktisk, flatt i store deler, nært stranden og har godt utvalg av restauranter, butikker og tjenester. Det kan passe godt for kjøpere som ønsker enkel hverdag uten å være avhengig av bil hele tiden.",
+      "Albir er et kompakt og praktisk kystområde som er relativt flatt i store deler av sentrum, nært stranden og har et godt utvalg av restauranter, butikker og tjenester. Det kan passe godt for kjøpere som ønsker en enkel hverdag med mindre behov for bil.",
     highlights: [
-      "Populært område for nordmenn og internasjonale kjøpere.",
-      "Flatt og praktisk sentrum med kort vei til strand og service.",
-      "Nær Altea, Benidorm, Alfaz del Pi og Alicante-flyplassen.",
-      "Passer for leiligheter, feriebolig og helårsbruk.",
+      "Kompakt kystområde med strand, restauranter og daglige tjenester.",
+      "Flatt og praktisk sentrum i store deler av området.",
+      "Nær Altea, Benidorm og Alfaz del Pi.",
+      "Aktuelt for leiligheter, feriebolig og helårsbruk.",
     ],
     filterHref: "/eiendommer?region=costa-blanca-nord&area=Albir",
     extraBody:
@@ -119,11 +119,11 @@ export const localSeoLandingPages: SeoLandingPage[] = [
     place: "Calpe",
     area: "Costa Blanca Nord",
     angle:
-      "Calpe kombinerer strand, byliv, marina, restauranter og det kjente Peñón de Ifach-landemerket. Området passer for deg som ønsker en tydelig kystby med godt servicetilbud, ferieprofil og mulighet for både leilighet, penthouse og villa.",
+      "Calpe kombinerer strand, byliv, marina, restauranter og det kjente Peñón de Ifach-landemerket. Området passer for deg som ønsker en tydelig kystby med servicetilbud og mulighet for både leilighet, penthouse og villa.",
     highlights: [
-      "Sterk kystprofil med strender, marina og byliv.",
+      "Tydelig kystprofil med strender, marina og byliv.",
       "Aktuelt for leiligheter, penthouse, villaer og ferieboliger.",
-      "Godt servicetilbud og tydelig sommersesong.",
+      "Bredt servicetilbud og tydelig sommersesong.",
       "Passer kjøpere som ønsker strandnært liv og urban komfort.",
     ],
     filterHref: "/eiendommer?region=costa-blanca-nord&area=Calpe",
@@ -135,12 +135,12 @@ export const localSeoLandingPages: SeoLandingPage[] = [
     place: "Finestrat",
     area: "Costa Blanca Nord",
     angle:
-      "Finestrat er et av de mest aktive områdene for moderne nybygg på Costa Blanca Nord. Mange prosjekter kombinerer utsikt, moderne arkitektur, nærhet til Benidorm, shopping, golf og kort vei til strender som Cala de Finestrat.",
+      "Finestrat har et stort innslag av moderne nybygg på Costa Blanca Nord. Mange prosjekter kombinerer moderne arkitektur med nærhet til Benidorm, shopping, golf og strender som Cala de Finestrat; utsikt og faktisk reisevei varierer mellom mikrobeliggenhetene.",
     highlights: [
       "Mange moderne nybygg, villaer og leilighetsprosjekter.",
       "Nær Benidorm, kjøpesentre, golf og strand.",
-      "Aktuelt for kjøpere som ønsker utsikt og moderne standard.",
-      "Godt område å vurdere for nybygg og investering.",
+      "Aktuelt for kjøpere som ønsker moderne standard og utsiktsmuligheter.",
+      "Sammenlign mikrobeliggenhet, byggefase og totalpris mellom prosjektene.",
     ],
     filterHref: "/eiendommer?region=costa-blanca-nord&area=Finestrat",
     extraBody:
@@ -151,12 +151,12 @@ export const localSeoLandingPages: SeoLandingPage[] = [
     place: "Polop",
     area: "Costa Blanca Nord",
     angle:
-      "Polop passer for kjøpere som ønsker roligere omgivelser, fjellutsikt og mer bolig for pengene enn i de mest etablerte kystbyene. Samtidig er du fortsatt innen praktisk avstand til Altea, La Nucía, Benidorm og kysten.",
+      "Polop passer for kjøpere som ønsker roligere omgivelser, fjellutsikt og mulighet for mer plass rundt boligen enn i tettere kystområder. Samtidig er Altea, La Nucía, Benidorm og kysten innen praktisk kjøreavstand.",
     highlights: [
       "Roligere område med fjell, natur og utsikt.",
-      "Ofte mer bolig for budsjettet enn helt nede ved kysten.",
+      "Mulighet for villa, rekkehus og større uteareal i mindre tettbygde omgivelser.",
       "Aktuelt for villaer, rekkehus og nybyggprosjekter.",
-      "Passer godt for helårsbruk og kjøpere som ønsker mer plass.",
+      "Passer kjøpere som ønsker mer plass og ikke trenger strand i gangavstand.",
     ],
     filterHref: "/eiendommer?region=costa-blanca-nord&area=Polop",
     extraBody:
@@ -165,12 +165,12 @@ export const localSeoLandingPages: SeoLandingPage[] = [
   localPage({
     slug: "bolig-i-pinoso",
     place: "Pinoso",
-    area: "innlandet på Costa Blanca",
+    area: "innlandet i Alicante",
     angle:
       "Pinoso er interessant for kjøpere som ønsker stor tomt, roligere omgivelser, natur, vinmarker og mulighet for å bygge eller kjøpe moderne bolig med mer plass. Området passer spesielt godt for deg som ønsker en mer landlig og selvstendig livsstil i Spania.",
     highlights: [
       "Aktuelt for store tomter, villaer, finca og moderne nybygg.",
-      "Mer plass og ro enn i mange kystområder.",
+      "Mulighet for mer plass og privatliv enn i tettere kystområder.",
       "Passer kjøpere som ønsker natur, privatliv og langsiktig livsstil.",
       "Viktig å kontrollere vann, strøm, adkomst, regulering og byggetillatelse.",
     ],
