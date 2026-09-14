@@ -64,8 +64,8 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           <h1>{town.name}</h1>
           <p className="hero-copy">{intro}</p>
           <div className="hero-actions">
-            <a className="contact-button" href="#eiendommer">Se moderne boligmodeller <ArrowRight size={18} /></a>
-            <a className="text-button light" href="#kontakt">Spør om {town.name}</a>
+            <a className="contact-button" href="#eiendommer">Se boligmodeller som kan bygges her <ArrowRight size={18} /></a>
+            <a className="text-button light" href="#kontakt">Finn tomt i {town.name}</a>
             <Link className="text-button light" href="/inland">Til alle områder</Link>
           </div>
         </div>
@@ -104,14 +104,19 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
 
       <section className="inland-selection" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">ZenEco Inland Selection</p>
-          <h2>Moderne boliger fra Aspe og Pinoso – modeller som kan inspirere i {town.name}</h2>
+          <p className="eyebrow">Boligmodeller · Aspe og Pinoso er bare utgangspunkt</p>
+          <h2>Vil du bo i {town.name}? Vi finner tomten – så bygger vi riktig bolig der.</h2>
           <p>
-            Vi viser hele det relevante utvalget av moderne villaer og nybygg fra Aspe og Pinoso. Boligene ligger ikke i {town.name}, men de viser arkitektur, planløsninger og byggeløsninger som også kan være aktuelle å utvikle eller bygge i og rundt {town.name} og andre innlandsområder.
+            Villaene og nybyggene du ser under er konkrete boligmodeller og forslag som i dag er godt presentert gjennom prosjekter i Aspe og Pinoso. De er ikke en beskjed om at du må bo der. De viser arkitektur, planløsninger, standard og prisnivå vi kan bruke som utgangspunkt for et prosjekt i {town.name}.
           </p>
           <p>
-            Om en tilsvarende bolig faktisk kan bygges på en konkret tomt må alltid vurderes ut fra regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totalbudsjett. Derfor bruker vi disse som referanser og boligmodeller – ikke som en garanti for at samme prosjekt kan bygges på enhver tomt.
+            Vår oppgave er først å finne den riktige tomten i og rundt {town.name}. Når tomten er funnet, kontrollerer vi regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totaløkonomi. Deretter matcher og tilpasser vi boligmodellen til tomten og de lokale kravene. Moderne nybolig kan dermed utvikles også her når vi finner en tomt som tillater prosjektet.
           </p>
+          <div className="inland-town-highlights">
+            <span><MapPin size={17} /> 1. Du velger {town.name}</span>
+            <span><ShieldCheck size={17} /> 2. Vi finner og kvalitetssikrer riktig tomt</span>
+            <span><ShieldCheck size={17} /> 3. Boligmodellen tilpasses tomten, regelverket og budsjettet</span>
+          </div>
         </div>
         {properties.length > 0 ? (
           <div className="property-grid editorial-property-grid">
@@ -121,11 +126,11 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           </div>
         ) : (
           <div className="section-heading">
-            <p>Ingen aktuelle Aspe/Pinoso-objekter akkurat nå. Fortell oss hva du ser etter, så starter vi med område, tomt og riktig boligtype.</p>
+            <p>Boligmodellene er ikke tilgjengelige akkurat nå. Fortell oss hva du ønsker å bygge i {town.name}, så starter vi med å finne riktig tomt.</p>
           </div>
         )}
         <div className="center-action">
-          <Link className="contact-button" href="/booking">Spør hva som kan bygges i {town.name} <ArrowRight size={18} /></Link>
+          <Link className="contact-button" href="/booking">Finn tomt og boligmodell i {town.name} <ArrowRight size={18} /></Link>
         </div>
       </section>
 
@@ -147,14 +152,14 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
       <section className="inland-context">
         <div>
           <p className="eyebrow">ZenEco perspective</p>
-          <h2>Område først. Bolig etterpå.</h2>
+          <h2>Område først. Tomt nummer to. Bolig nummer tre.</h2>
         </div>
         <div>
           <p>
-            Et innlandskjøp handler like mye om avstander, lokalt hverdagsliv, vann, adkomst og tomt som om huset. Vi hjelper deg å sammenligne {town.name} med andre relevante områder før du bestemmer deg, og deretter finne en boligmodell som passer tomten og prosjektet.
+            Et godt innlandsprosjekt starter ikke med en tilfeldig boligannonse. Først velger vi området og hverdagen du ønsker. Deretter finner vi en tomt i {town.name} som faktisk tåler prosjektet juridisk, teknisk og økonomisk. Først da låser vi boligmodell, plassering og løsninger.
           </p>
           <Link className="text-button area-property-link" href="/booking">
-            <MapPin size={17} /> Snakk med Freddy om {town.name}
+            <MapPin size={17} /> Snakk med Freddy om tomt i {town.name}
           </Link>
         </div>
       </section>
@@ -162,8 +167,8 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
       <section className="contact-section" id="kontakt">
         <div>
           <p className="eyebrow">Neste steg</p>
-          <h2>Nysgjerrig på {town.name}?</h2>
-          <p>Fortell oss hva du ser etter, så kan vi vurdere område, tomt og hvilke moderne boligtyper som kan være aktuelle.</p>
+          <h2>Vil du bygge moderne bolig i {town.name}?</h2>
+          <p>Fortell oss hvordan du vil bo og omtrent hvilket budsjett du har. Vi starter med å finne og kvalitetssikre riktig tomt, og bruker deretter boligmodellene som forslag til hva prosjektet kan bli.</p>
         </div>
         <ContactForm source={`${INLAND_BRAND.leadSource}-${town.slug}`} />
       </section>
