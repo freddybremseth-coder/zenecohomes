@@ -6,6 +6,7 @@ import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { INLAND_BRAND, getInlandTown, inlandTowns } from "@/lib/inland";
+import { getInlandLifestyleStory } from "@/lib/inlandLifestyle";
 import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
 
 export function generateStaticParams() {
@@ -49,6 +50,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
   const properties = await getInlandShowcaseProperties();
   const otherTowns = inlandTowns.filter((item) => item.slug !== town.slug).slice(0, 6);
   const intro = displayTownIntro(town);
+  const lifestyle = getInlandLifestyleStory(town.slug);
 
   return (
     <main className="inland-theme inland-journal inland-town-page">
@@ -82,6 +84,22 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           </div>
         </div>
       </section>
+
+      {lifestyle ? (
+        <section className="inland-town-story inland-town-lifestyle">
+          <div className="inland-town-story-heading">
+            <p className="eyebrow">Livet i {town.name}</p>
+            <h2>{lifestyle.title}</h2>
+            <p>{lifestyle.lead}</p>
+          </div>
+          <div className="inland-town-story-body">
+            {lifestyle.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <div className="inland-town-highlights">
+              <span><ShieldCheck size={17} /> {lifestyle.suits}</span>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="inland-selection" id="eiendommer">
         <div className="section-heading">
