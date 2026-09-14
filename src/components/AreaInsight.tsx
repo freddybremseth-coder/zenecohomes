@@ -5,24 +5,24 @@ type Fact = { airport: string; coast: string; life: string; climate: string };
 
 const DATA: Record<string, Record<Locale, Fact>> = {
   "costa-blanca-nord": {
-    no: { airport: "45–75 min til Alicante flyplass", coast: "Ved og nær Middelhavet", life: "Etablerte helårsområder", climate: "Mildt middelhavsklima" },
-    de: { airport: "45–75 Min. zum Flughafen Alicante", coast: "Am und nahe dem Mittelmeer", life: "Etablierte Ganzjahresorte", climate: "Mildes Mittelmeerklima" },
-    en: { airport: "45–75 min to Alicante airport", coast: "On and near the Mediterranean", life: "Established year-round areas", climate: "Mild Mediterranean climate" },
+    no: { airport: "Ca. 40–70 min til Alicante-Elche flyplass", coast: "Ved og nær Middelhavet", life: "Etablerte helårsområder", climate: "Mildt middelhavsklima" },
+    de: { airport: "Ca. 40–70 Min. zum Flughafen Alicante-Elche", coast: "Am und nahe dem Mittelmeer", life: "Etablierte Ganzjahresorte", climate: "Mildes Mittelmeerklima" },
+    en: { airport: "About 40–70 min to Alicante-Elche airport", coast: "On and near the Mediterranean", life: "Established year-round areas", climate: "Mild Mediterranean climate" },
   },
   "costa-blanca-sor": {
-    no: { airport: "30–45 min til Alicante flyplass", coast: "Nær strender og saltlaguner", life: "Store helårsmiljøer", climate: "Blant Europas mildeste vintre" },
-    de: { airport: "30–45 Min. zum Flughafen Alicante", coast: "Nahe Stränden und Salzlagunen", life: "Große Ganzjahres-Communities", climate: "Mildeste Winter Europas" },
-    en: { airport: "30–45 min to Alicante airport", coast: "Near beaches and salt lagoons", life: "Large year-round communities", climate: "Among Europe's mildest winters" },
+    no: { airport: "Ca. 15–50 min til Alicante-Elche flyplass", coast: "Nær strender og saltlaguner", life: "Store helårsmiljøer", climate: "Mildt vinterklima" },
+    de: { airport: "Ca. 15–50 Min. zum Flughafen Alicante-Elche", coast: "Nahe Stränden und Salzlagunen", life: "Große Ganzjahres-Communities", climate: "Mildes Winterklima" },
+    en: { airport: "About 15–50 min to Alicante-Elche airport", coast: "Near beaches and salt lagoons", life: "Large year-round communities", climate: "Mild winter climate" },
   },
   "costa-calida": {
-    no: { airport: "Murcia (Corvera) i nærheten", coast: "Mar Menor og Middelhavet", life: "Roligere kystbyer", climate: "Varmt, tørt klima" },
-    de: { airport: "Flughafen Murcia (Corvera) nah", coast: "Mar Menor und Mittelmeer", life: "Ruhigere Küstenstädte", climate: "Warmes, trockenes Klima" },
-    en: { airport: "Murcia (Corvera) airport nearby", coast: "Mar Menor and Mediterranean", life: "Quieter coastal towns", climate: "Warm, dry climate" },
+    no: { airport: "Murcia (Corvera) – avstand varierer", coast: "Mar Menor og Middelhavet", life: "Roligere kystbyer", climate: "Varmt, tørt klima" },
+    de: { airport: "Murcia (Corvera) – Entfernung je nach Ort", coast: "Mar Menor und Mittelmeer", life: "Ruhigere Küstenstädte", climate: "Warmes, trockenes Klima" },
+    en: { airport: "Murcia (Corvera) – distance varies by area", coast: "Mar Menor and Mediterranean", life: "Quieter coastal towns", climate: "Warm, dry climate" },
   },
   innlandet: {
-    no: { airport: "30–60 min til Alicante flyplass", coast: "Kysten under en time unna", life: "Landsbyer som lever hele året", climate: "Friskere enn kysten, kjøligere netter" },
-    de: { airport: "30–60 Min. zum Flughafen Alicante", coast: "Küste in unter einer Stunde", life: "Ganzjährig lebendige Dörfer", climate: "Frischer als die Küste, kühlere Nächte" },
-    en: { airport: "30–60 min to Alicante airport", coast: "Coast under an hour away", life: "Villages alive all year", climate: "Fresher than the coast, cooler nights" },
+    no: { airport: "Flyplassavstand varierer etter område", coast: "Kystavstand varierer etter område", life: "Mange levende helårssamfunn", climate: "Mer utpreget innlandsklima" },
+    de: { airport: "Flughafenentfernung je nach Gebiet", coast: "Entfernung zur Küste je nach Gebiet", life: "Viele lebendige Ganzjahresorte", climate: "Ausgeprägteres Inlandklima" },
+    en: { airport: "Airport distance varies by area", coast: "Coast distance varies by area", life: "Many active year-round communities", climate: "More pronounced inland climate" },
   },
 };
 

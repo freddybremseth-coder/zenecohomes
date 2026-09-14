@@ -22,25 +22,25 @@ const regionCopy: Record<RegionKey, { title: string; intro: string; proof: strin
     title: "Nybygg på Costa Blanca Nord",
     intro:
       "Costa Blanca Nord passer for deg som vil kombinere fjell, hav, etablerte byer og en mer eksklusiv helårsprofil. Her finner du Altea, Albir, Calpe, Finestrat, Polop, Moraira, Javea og Denia.",
-    proof: ["Sterke områder for helårsbruk", "Kort vei til Alicante og Valencia", "Mange moderne villa- og leilighetsprosjekter"],
+    proof: ["Sterke områder for helårsbruk", "God forbindelse til Alicante og Valencia", "Mange moderne villa- og leilighetsprosjekter"],
   },
   "costa-blanca-sor": {
     title: "Nybygg på Costa Blanca Sør",
     intro:
-      "Costa Blanca Sør har stort utvalg, lavere inngangspriser og mange områder som passer for strandliv, golf og enkel hverdag. Her finner du blant annet Torrevieja, Orihuela Costa, Guardamar, Ciudad Quesada og Santa Pola.",
-    proof: ["Stort utvalg av nybygg", "Mange golf- og strandnære prosjekter", "Praktisk avstand til Alicante flyplass"],
+      "Costa Blanca Sør har et stort og variert boligtilbud og mange områder som passer for strandliv, golf og enkel hverdag. Her finner du blant annet Torrevieja, Orihuela Costa, Guardamar, Ciudad Quesada og Santa Pola.",
+    proof: ["Stort utvalg av nybygg", "Mange golf- og strandnære prosjekter", "Praktisk forbindelse til Alicante-Elche flyplass"],
   },
   "costa-calida": {
     title: "Nybygg på Costa Calida",
     intro:
-      "Costa Calida og Murcia-regionen passer for deg som ønsker nye prosjekter, golfresorter, roligere omgivelser og ofte mer bolig for pengene. Områdene rundt Los Alcazares, San Pedro del Pinatar, La Manga og Altaona er særlig aktuelle.",
-    proof: ["Ofte mer bolig for budsjettet", "Golf, laguner og roligere kystbyer", "Spennende vekstområde for nybygg"],
+      "Costa Calida og Murcia-regionen passer for deg som ønsker nye prosjekter, golfresorter, roligere omgivelser og et annet alternativ til Costa Blanca. Områdene rundt Los Alcazares, San Pedro del Pinatar, La Manga og Altaona er særlig aktuelle.",
+    proof: ["Bredt utvalg av nybygg og golfprosjekter", "Mar Menor, Middelhavet og roligere kystbyer", "Murcia-regionen som alternativ til Costa Blanca"],
   },
   innlandet: {
-    title: "Bolig i innlandet på Costa Blanca",
+    title: "Bolig i innlandet i Alicante og Murcia",
     intro:
-      "Innlandet passer for deg som vil ha ekte spanske landsbyer, store tomter, fincaer og mer eiendom for pengene – med kysten under en time unna. Her finner du Biar, Villena, Sax, Castalla, Pinoso, Monóvar og Hondón-dalene.",
-    proof: ["Fincaer, landsbyhus og store tomter", "Levende, helårsåpne spanske landsbyer", "Rådgiver som selv bor i Biar"],
+      "Innlandet passer for deg som vil ha spanske landsbyer og byer, større tomter, fincaer og moderne villaer med mer plass rundt boligen. Avstanden til kyst og flyplass varierer betydelig etter område. Her finner du blant annet Biar, Busot, Villena, Sax, Castalla, Pinoso, Hondón de las Nieves, Aspe, Novelda og Jumilla.",
+    proof: ["Fincaer, landsbyhus, tomter og moderne villaer", "Mange levende helårssamfunn", "Lokal erfaring gjennom familiens oliveneiendom i Biar"],
   },
 };
 
@@ -48,57 +48,57 @@ const regionFaq: Record<RegionKey, { q: string; a: string }[]> = {
   "costa-blanca-nord": [
     {
       q: "Hvor langt er det til flyplassen fra Costa Blanca Nord?",
-      a: "De nordlige byene som Altea, Calpe og Dénia ligger typisk 45–75 minutter fra Alicante flyplass. Dénia og Jávea har i tillegg Valencia flyplass innen rekkevidde.",
+      a: "Det varierer med sted. Med bil er Altea rundt 44 minutter, Calpe rundt 52 minutter og Dénia rundt 1 time og 7 minutter fra Alicante-Elche flyplass under normale forhold. Dénia og Jávea kan også ha Valencia flyplass som et alternativ.",
     },
     {
       q: "Kan man bo på Costa Blanca Nord hele året?",
-      a: "Ja. Dette er etablerte helårsområder med full service, sykehus, skoler og et levende lokalmiljø også utenom turistsesongen.",
+      a: "Ja. Mange av byene er etablerte helårssamfunn med butikker, skoler, helsetjenester og lokalt næringsliv også utenom turistsesongen. Servicenivået varierer mellom kommunene.",
     },
     {
       q: "Er Costa Blanca Nord dyrere enn Costa Blanca Sør?",
-      a: "Generelt ja. De nordlige byene har ofte høyere kvadratmeterpris og en mer eksklusiv profil, men også mer variert natur med fjell og bukter.",
+      a: "Det finnes ikke én prisforskjell som gjelder hele nord og sør. Pris påvirkes av by, nabolag, utsikt, nybyggstandard, tomt og avstand til sjøen. Vi sammenligner derfor konkrete områder og boliger fremfor å bruke én regionpris.",
     },
   ],
   "costa-blanca-sor": [
     {
       q: "Hvorfor velge Costa Blanca Sør?",
-      a: "Sør har stort utvalg av nybygg, lavere inngangspriser, flate og lettgåtte områder, mange golfbaner og store internasjonale miljøer.",
+      a: "Sør har et stort utvalg av nybygg, mange golfbaner, lange strender og store internasjonale miljøer. Pris og standard varierer betydelig mellom de enkelte områdene og prosjektene.",
     },
     {
       q: "Hvor nær er flyplassen fra Costa Blanca Sør?",
-      a: "Mange sørlige områder som Torrevieja, Orihuela Costa og Guardamar ligger rundt 30–45 minutter fra Alicante flyplass.",
+      a: "Avstanden varierer mye: Santa Pola er rundt 13 minutter med bil fra Alicante-Elche flyplass, Guardamar rundt 29 minutter, Torrevieja rundt 41 minutter og Orihuela Costa rundt 49 minutter under normale forhold.",
     },
     {
       q: "Passer Costa Blanca Sør for helårsbruk?",
-      a: "Ja, med store etablerte utlendingsmiljøer og full service. Enkelte rene ferieurbanisasjoner er likevel roligere om vinteren.",
+      a: "Ja, mange steder har store etablerte helårsmiljøer og god service. Enkelte rene ferieurbanisasjoner er likevel betydelig roligere utenfor høysesongen, så vi vurderer det konkrete området.",
     },
   ],
   "costa-calida": [
     {
       q: "Hva kjennetegner Costa Cálida?",
-      a: "Murcia-kysten med den varme Mar Menor-lagunen, golfresorter og ofte mer bolig for pengene. Roligere og mindre turistpreget enn Costa Blanca.",
+      a: "Murcia-kysten omfatter blant annet Mar Menor, Middelhavskyst, golfresorter og både ferieområder og helårssamfunn. Karakteren varierer mye mellom La Manga, San Pedro del Pinatar, Los Alcázares og områdene lenger inn i regionen.",
     },
     {
       q: "Hvilken flyplass bruker man på Costa Cálida?",
-      a: "Murcia (Corvera) flyplass ligger nærmest, mens Alicante flyplass også er innen rekkevidde fra de nordlige delene.",
+      a: "Región de Murcia International Airport (Corvera) betjener Murcia-regionen. Alicante-Elche flyplass kan også være praktisk fra deler av den nordlige Costa Cálida; hvilken som er best avhenger av det konkrete stedet og flytilbudet.",
     },
     {
       q: "Er Costa Cálida rimeligere enn Costa Blanca?",
-      a: "Ofte ja. Inngangsprisene er gjerne lavere, særlig på nybygg i golfresortene rundt Los Alcázares og San Pedro del Pinatar.",
+      a: "Ikke nødvendigvis. Pris avhenger av sted, prosjekt, boligtype, kvalitet og tilbud i markedet. Vi sammenligner konkrete alternativer i stedet for å anta at én hel region alltid er billigere enn en annen.",
     },
   ],
   innlandet: [
     {
       q: "Hvor langt er innlandet fra kysten og flyplassen?",
-      a: "De fleste innlandsområdene ligger 30–60 minutter fra Alicante flyplass og under en time fra strendene.",
+      a: "Det varierer betydelig. Flere områder i Alicante-provinsen ligger omtrent 20–60 minutter fra Alicante-Elche flyplass, mens dypere innlandsområder ligger lenger unna. Jumilla ligger for eksempel rundt 1 time og 15 minutter med bil fra Alicante-Elche flyplass og rundt 1 time og 4 minutter fra Murcia (Corvera). Kystavstanden varierer tilsvarende.",
     },
     {
       q: "Hva får jeg for pengene i innlandet kontra kysten?",
-      a: "Ofte betydelig mer tomt og bolig per krone – finca, landsbyhus eller gård med plass, gjerne til lavere pris per kvadratmeter enn tilsvarende ved kysten.",
+      a: "Innlandet gir ofte mulighet til å vurdere større tomter, fincaer, landsbyhus og moderne villaer på egen tomt. Men pris og byggekostnad må vurderes konkret sammen med tomt, regulering, vann, strøm, adkomst og grunnforhold.",
     },
     {
       q: "Er innlandslandsbyene levende hele året?",
-      a: "Ja. De lever av landbruk, industri og lokalt næringsliv – ikke av turisme – så skoler, helsetilbud og butikker holder åpent hele året.",
+      a: "Mange innlandsbyer har et lokalt helårsliv basert på landbruk, industri, handel og tjenester, men størrelse og servicetilbud varierer. Derfor vurderer vi skole, helsetjenester, butikker og transport for det konkrete stedet kunden vurderer.",
     },
   ],
 };
