@@ -4,10 +4,10 @@
 
 export const INLAND_BRAND = {
   name: "ZenEco Inland",
-  tagline: "Fincaer, landsbyhus og det ekte Spania – en time fra kysten",
+  tagline: "Fincaer, landsbyhus og det ekte Spania – mellom kyst, fjell og vinland",
   // Kort beskrivelse brukt i metadata og strukturerte data.
   description:
-    "Norsk rådgiver for kjøp av finca, landsbyhus, gård og tomt i innlandet på Costa Blanca – Biar, Villena, Sax, Castalla, Pinoso, Monóvar og Hondón-dalene.",
+    "Norsk rådgiver for kjøp av finca, landsbyhus, gård og tomt i innlandet i Alicante og Murcia – Biar, Busot, Villena, Sax, Pinoso, Hondón de las Nieves, Jumilla og flere områder.",
   leadSource: "zeneco-inland",
 };
 
@@ -22,6 +22,8 @@ export type InlandTown = {
   /** Søkeord som matcher eiendommer i RealtyFlow/feed mot dette stedet. */
   matchTerms: string[];
   photo: string;
+  /** Murcia settes eksplisitt; øvrige steder ligger i Alicante-provinsen. */
+  region?: "Alicante" | "Murcia";
 };
 
 export const inlandTowns: InlandTown[] = [
@@ -31,7 +33,7 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig og finca i Biar",
     eyebrow: "Middelalderlandsby · 650 moh",
     intro:
-      "Biar er en av de best bevarte middelalderlandsbyene i Alicante-provinsen – smale gater, et borgtårn fra 1100-tallet over hustakene, og et levende landsbyliv hele året. Det er her Freddy selv bor og driver olivengård.",
+      "Biar er en av de best bevarte middelalderlandsbyene i Alicante-provinsen – smale gater, et borgtårn fra 1100-tallet over hustakene, og et levende landsbyliv hele året. Familien har en oliveneiendom i Biar, så området er også en del av vår egen hverdag.",
     body: [
       "Landsbyen ligger ved foten av Serra de Mariola, med fjelluft, oliven- og mandellunder og et klima som er merkbart friskere enn kysten om sommeren. Rundt landsbyen finner du fincaer og gårder med store tomter, og i selve landsbyen tradisjonelle landsbyhus med mye sjel.",
       "Biar har det som gjør en innlandslandsby levedyktig: skole, helsetilbud, butikker, restauranter og et sterkt lokalmiljø med fester og tradisjoner. Alicante og flyplassen når du på under en time.",
@@ -106,6 +108,21 @@ export const inlandTowns: InlandTown[] = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Banyeres._Castell_1.JPG/960px-Banyeres._Castell_1.JPG",
   },
   {
+    slug: "busot",
+    name: "Busot",
+    title: "Bolig og finca i Busot",
+    eyebrow: "Cabeçó d'Or · fjell bare kilometer fra kysten",
+    intro:
+      "Busot er et av de mest interessante overgangsområdene mellom kyst og innland: en liten fjellandsby nord for Alicante, ved Cabeçó d'Or og de kjente Cuevas del Canelobre, men samtidig bare rundt sju kilometer fra kysten.",
+    body: [
+      "Her kan du bo med fjell, åpent landskap og landsbyfølelse rundt deg, samtidig som El Campello, Alicante og kystlivet fortsatt er lett tilgjengelig. Det gjør Busot interessant for kjøpere som liker innlandsroen, men ikke ønsker å flytte langt bort fra sjøen.",
+      "Kommunen har skole, lege, lokale tjenester og et aktivt landsbyliv. Rundt sentrum og i områdene ned mot kysten finner du villaer, landsteder og tomter med mer luft rundt seg enn i de tetteste kystområdene.",
+    ],
+    highlights: ["Ca. 7 km fra kysten", "Cabeçó d'Or og Cuevas del Canelobre", "Ca. 19 km nord for Alicante"],
+    matchTerms: ["busot", "busott"],
+    photo: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Busot_001.jpg",
+  },
+  {
     slug: "pinoso",
     name: "Pinoso",
     title: "Bolig og finca i Pinoso",
@@ -120,6 +137,23 @@ export const inlandTowns: InlandTown[] = [
     matchTerms: ["pinoso", "el pinos", "el pinós", "ubeda", "encebras"],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Pinoso-_Torre_del_Reloj.jpg/960px-Pinoso-_Torre_del_Reloj.jpg",
+  },
+  {
+    slug: "jumilla",
+    name: "Jumilla",
+    title: "Bolig og finca i Jumilla",
+    eyebrow: "Murcia · Monastrell, bodegas og fjell",
+    intro:
+      "Jumilla ligger i Altiplano nord i Murcia-regionen og er et av Spanias tydeligste vinområder. Byen, borgen og landskapet rundt er tett knyttet til Monastrell, bodegas, lokal gastronomi og et tørt, åpent innland med sterk egen identitet.",
+    body: [
+      "Dette er et større og mer selvstendig innlandssentrum enn mange av landsbyene i Alicante. Du får handel, restauranter, kultur og daglige tjenester i byen, mens vinmarker og landlige eiendommer begynner kort vei utenfor sentrum.",
+      "Jumilla passer spesielt godt for deg som liker vinland, store horisonter og et mer utpreget innlandsklima. Sierra de Santa Ana sør for byen gir turterreng og natur, og Ruta del Vino gjør lokale bodegas og mattradisjoner til en naturlig del av hverdagen.",
+    ],
+    highlights: ["DOP Jumilla og Monastrell", "Historisk sentrum og Castillo de Jumilla", "Sierra de Santa Ana og vinruter"],
+    matchTerms: ["jumilla", "jumella"],
+    photo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Castillo_de_Jumilla.jpg/1024px-Castillo_de_Jumilla.jpg",
+    region: "Murcia",
   },
   {
     slug: "monovar",
@@ -150,6 +184,30 @@ export const inlandTowns: InlandTown[] = [
     ],
     highlights: ["Ca. 30–40 min til kysten", "Modent marked, mange villaer med basseng", "Vinlandskap og rolige landsbyer"],
     matchTerms: ["hondon", "hondón", "la canalosa"],
+    photo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg/960px-Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg",
+  },
+  {
+    slug: "hondon-de-las-nieves",
+    name: "Hondón de las Nieves",
+    title: "Bolig og finca i Hondón de las Nieves",
+    eyebrow: "El Fondó de les Neus · vinmarker og Sierra de Crevillent",
+    intro:
+      "Hondón de las Nieves – på valenciansk El Fondó de les Neus – ligger i Medio Vinalopó, beskyttet av Sierra de Crevillent og omgitt av vinmarker, mandeltrær og oliven. Det er en egen landsbyprofil innenfor de større Hondón-dalene.",
+    body: [
+      "Landsbyen gir en rolig, lokal hverdag med sentrum, kommunale tjenester og La Canalosa i samme kommune, mens landskapet rundt er åpent og landlig. Her er det lett å forstå hvorfor området tiltrekker kjøpere som ønsker større uteplass og mindre tetthet enn ved kysten.",
+      "Samtidig er dette et godt sted å vurdere hvis du vil ha innlandsfølelse uten å gå helt ut til de dypeste delene av Alicante-provinsen. Vinlandskapet, åsene og landsbylivet gir karakter, mens Aspe, Elche-området og kysten fortsatt ligger innen praktisk rekkevidde.",
+    ],
+    highlights: ["Også kjent som El Fondó de les Neus", "Vinmarker, mandel- og oliventrær", "Ved Sierra de Crevillent"],
+    matchTerms: [
+      "hondon de las nieves",
+      "hondón de las nieves",
+      "el fondo de les neus",
+      "el fondó de les neus",
+      "fondo de les neus",
+      "fondó de les neus",
+      "la canalosa",
+    ],
     photo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg/960px-Hond%C3%B3n_de_las_Nieves_-_Plaza_de_la_Villa_y_Ayuntamiento.jpg",
   },

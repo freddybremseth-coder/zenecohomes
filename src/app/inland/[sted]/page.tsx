@@ -23,8 +23,9 @@ function displayTownIntro(town: (typeof inlandTowns)[number]) {
 export async function generateMetadata({ params }: { params: Promise<{ sted: string }> }) {
   const { sted } = await params;
   const town = getInlandTown(sted);
+  const region = town?.region || "Alicante";
   return {
-    title: town ? `${town.name} | Innlandet i Alicante | Zen Eco Homes` : "Innlandet",
+    title: town ? `${town.name} | Innlandet i ${region} | Zen Eco Homes` : "Innlandet",
     description: town ? displayTownIntro(town) : INLAND_BRAND.description,
     alternates: { canonical: `/inland/${sted}` },
   };

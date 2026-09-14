@@ -12,9 +12,9 @@ import { INLAND_BRAND, inlandTowns } from "@/lib/inland";
 import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
 
 export const metadata: Metadata = {
-  title: "Innlandet i Alicante | Tomt og moderne nybygg",
+  title: "Innlandet i Alicante og Murcia | Tomt og moderne nybygg",
   description:
-    "Utforsk tomter, moderne villaer og nybygg i innlandet rundt Biar, Villena, Sax, Pinoso, Aspe og Novelda. Sammenlign område, regulering, vann, strøm og totalbudsjett før kjøp.",
+    "Utforsk tomter, moderne villaer og landliv rundt Biar, Busot, Villena, Pinoso, Hondón de las Nieves og Jumilla. Sammenlign område, regulering, vann, strøm og totalbudsjett før kjøp.",
   alternates: {
     canonical: "/inland",
     languages: {
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Innlandet i Alicante | Moderne bolig og tomt",
+    title: "Innlandet i Alicante og Murcia | Moderne bolig og tomt",
     description:
-      "Mer plass og natur – med hovedfokus på tomt, moderne villa og nybygg i utvalgte innlandsområder i Alicante.",
+      "Mer plass og natur – med tomter, moderne villaer, fincaer og levende småbyer i utvalgte innlandsområder i Alicante og Murcia.",
     url: "https://www.zenecohomes.com/inland",
     siteName: "Zen Eco Homes",
     locale: "nb_NO",
@@ -75,7 +75,7 @@ export default async function InlandPage() {
       id: town.slug,
       name: town.name,
       ...coordinates,
-      region: "Alicante Inland",
+      region: town.region === "Murcia" ? "Murcia Inland" : "Alicante Inland",
       description: displayTownIntro(town),
       image: town.photo,
       href: `/inland/${town.slug}`,
@@ -92,7 +92,7 @@ export default async function InlandPage() {
         name: INLAND_BRAND.name,
         url: "https://www.zenecohomes.com/inland",
         description:
-          "Zen Eco Homes hjelper kjøpere å vurdere tomter, moderne villaer og nybygg i utvalgte innlandsområder i Alicante.",
+          "Zen Eco Homes hjelper kjøpere å vurdere tomter, moderne villaer, fincaer og nybygg i utvalgte innlandsområder i Alicante og Murcia.",
         parentOrganization: { "@id": "https://www.zenecohomes.com/#organization" },
         areaServed: inlandTowns.map((town) => town.name),
         founder: {
@@ -121,7 +121,7 @@ export default async function InlandPage() {
       <section className="hero inland-hero">
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Alicante Inland · 38°37′ N</p>
+          <p className="eyebrow">Alicante & Murcia Inland</p>
           <h1>Et annet Spania, litt lenger inn</h1>
           <p className="hero-copy">
             Større tomter, roligere omgivelser og moderne villaer mellom vinmarker, fjell og levende småbyer. Vi starter med området – og med hva som faktisk kan bygges og fungere i hverdagen.
@@ -139,7 +139,7 @@ export default async function InlandPage() {
           <p className="eyebrow">Inland Journal</p>
           <h2>Innlandet er ikke ett marked</h2>
           <p>
-            Biar og Banyeres gir fjell og kjøligere netter. Villena og Sax gir byservice og effektiv transport. Pinoso og Aspe har et mer etablert marked for moderne villaer og tomt. Velg stedet før du velger huset.
+            Biar og Banyeres gir fjell og kjøligere netter. Busot gir fjellandsby med kysten fortsatt nær. Villena og Sax gir byservice og effektiv transport. Pinoso og Hondón gir vinland, villaer og større tomter, mens Jumilla tar deg enda dypere inn i Monastrell-landet i Murcia. Velg stedet før du velger huset.
           </p>
         </div>
         <nav className="inland-index" aria-label="Områder i innlandet">
@@ -182,7 +182,7 @@ export default async function InlandPage() {
           <p className="eyebrow">ZenEco Inland Selection</p>
           <h2>Moderne boliger fra Aspe og Pinoso – inspirasjon for hele innlandet</h2>
           <p>
-            Her viser vi hele vårt relevante utvalg av moderne villaer og nybygg fra Aspe og Pinoso. Boligene ligger i Aspe og Pinoso i dag, men de viser arkitektur, planløsninger og byggeløsninger som også kan være aktuelle å utvikle eller bygge i andre innlandsområder rundt Alicante.
+            Her viser vi hele vårt relevante utvalg av moderne villaer og nybygg fra Aspe og Pinoso. Boligene ligger i Aspe og Pinoso i dag, men de viser arkitektur, planløsninger og byggeløsninger som også kan være aktuelle å utvikle eller bygge i andre innlandsområder i Alicante og Murcia.
           </p>
           <p>
             Hva som faktisk kan bygges på en bestemt tomt må alltid vurderes konkret ut fra regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totalbudsjett. Vi bruker derfor disse boligene som referanser og modeller – ikke som en påstand om at samme prosjekt kan settes opp hvor som helst.
