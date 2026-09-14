@@ -5,18 +5,18 @@ import { ArrowRight, CheckCircle2, Send } from "lucide-react";
 
 const areaAdvice: Record<string, { title: string; text: string; href: string }> = {
   "Costa Blanca Nord": {
-    title: "Costa Blanca Nord passer ofte best",
-    text: "Du prioriterer kvalitet, utsikt, helårsservice og sterke områder som Altea, Calpe, Finestrat, Polop og Moraira.",
+    title: "Costa Blanca Nord kan passe godt",
+    text: "Du prioriterer kvalitet, utsikt, helårsservice og områder som Altea, Calpe, Finestrat, Polop og Moraira.",
     href: "/eiendommer?region=costa-blanca-nord",
   },
   "Costa Blanca Sør": {
-    title: "Costa Blanca Sør kan gi mest verdi",
-    text: "Du får ofte flere nybygg, kort vei til strand, golf og flyplass, og et bredere utvalg i lavere prisklasser.",
+    title: "Costa Blanca Sør kan passe godt",
+    text: "Du får et stort utvalg av nybygg og mange områder med nærhet til strand og golf. Flyplassavstanden varierer tydelig mellom steder som Santa Pola, Guardamar, Torrevieja og Orihuela Costa.",
     href: "/eiendommer?region=costa-blanca-sor",
   },
   "Costa Calida": {
     title: "Costa Calida bør vurderes",
-    text: "Dette passer godt hvis du vil ha roligere områder, moderne prosjekter, golf, natur og ofte mer bolig for pengene.",
+    text: "Dette kan passe godt hvis du vil sammenligne roligere kystområder, moderne prosjekter, golf, natur og Murcia-regionen som alternativ til Costa Blanca.",
     href: "/eiendommer?region=costa-calida",
   },
   "Usikker": {
@@ -41,12 +41,12 @@ const dreamAdvice: Record<string, { title: string; text: string; href: string }>
   },
   "Innland og mer plass": {
     title: "Innlandet passer deg",
-    text: "Mer plass, natur og ro – tomt, finca eller villa i innlandet rundt Biar, Pinoso, Aspe og Novelda, med kysten under en time unna.",
+    text: "Mer plass, natur og ro – tomt, finca eller villa i innlandet rundt Biar, Pinoso, Aspe, Novelda og andre områder. Avstanden til kyst og flyplass varierer betydelig, så vi vurderer ønsket reisevei konkret.",
     href: "/inland",
   },
   "Investering / utleie": {
     title: "Vi vurderer utleiepotensialet først",
-    text: "Vi ser på beliggenhet, etterspørsel, sesong og videresalg – ikke bare kvadratmeter. Beliggenhet og gangavstand betyr ofte mer enn størrelsen for leieinntekten.",
+    text: "Vi ser på beliggenhet, etterspørsel, sesong, gangavstand, boligtype og videresalg – ikke bare kvadratmeter. Utleiepotensialet må vurderes samlet for den konkrete boligen og området.",
     href: "/eiendommer",
   },
 };
