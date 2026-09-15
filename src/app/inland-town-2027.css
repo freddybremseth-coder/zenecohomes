@@ -16,9 +16,14 @@
   margin: 0 auto;
   padding: clamp(82px, 10vw, 150px) 0;
   display: grid;
-  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-  gap: clamp(42px, 8vw, 120px);
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(42px, 6vw, 92px);
   border-bottom: 1px solid var(--ze-line);
+}
+
+.inland-town-story-heading,
+.inland-town-story-body {
+  min-width: 0;
 }
 
 .inland-town-story-heading h2 {
@@ -29,6 +34,13 @@
   font-weight: 500;
   letter-spacing: -.035em;
   line-height: .98;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.inland-town-lifestyle .inland-town-story-heading h2 {
+  max-width: 12ch;
+  font-size: clamp(2.8rem, 4.6vw, 4.8rem);
 }
 
 .inland-town-story-body > p {
@@ -86,6 +98,11 @@
   .inland-town-more {
     grid-template-columns: 1fr;
   }
+
+  .inland-town-story-heading h2,
+  .inland-town-lifestyle .inland-town-story-heading h2 {
+    max-width: 14ch;
+  }
 }
 
 @media (max-width: 620px) {
@@ -96,5 +113,11 @@
 
   .inland-town-page .town-hero h1 {
     font-size: clamp(3.4rem, 17vw, 5.2rem);
+  }
+
+  .inland-town-story-heading h2,
+  .inland-town-lifestyle .inland-town-story-heading h2 {
+    max-width: 100%;
+    font-size: clamp(2.6rem, 12vw, 4rem);
   }
 }
