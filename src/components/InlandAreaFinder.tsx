@@ -324,8 +324,10 @@ const copy: Record<InlandFinderLocale, FinderCopy> = {
   },
 };
 
-function townHref(locale: InlandFinderLocale, town: TownLink) {
-  if (locale === "no") return `/inland/${town.slug}`;
+function townHref(locale: InlandFinderLocale, town: TownLink, intent?: GroupKey) {
+  if (locale === "no") {
+    return intent ? `/inland/${town.slug}?intent=${intent}` : `/inland/${town.slug}`;
+  }
 
   const query = encodeURIComponent(town.name);
   if (locale === "en") return `/en/properties?q=${query}`;
@@ -356,7 +358,7 @@ export function InlandAreaFinder({ locale = "no" }: { locale?: InlandFinderLocal
                 <p>{profile.text}</p>
                 <div className="inland-profile-links" aria-label={`${text.ariaPrefix} ${profile.title}`}>
                   {group.towns.map((town) => (
-                    <Link href={townHref(locale, town)} key={town.slug}>
+                    <Link href={townHref(locale, town, group.key)} key={town.slug}>
                       {town.name} <ArrowRight size={14} />
                     </Link>
                   ))}

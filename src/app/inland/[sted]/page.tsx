@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, MapPin, ShieldCheck } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { InlandContactForm } from "@/components/InlandContactForm";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -205,7 +205,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           <h2>Vil du finne bolig eller bygge moderne i {town.name}?</h2>
           <p>Fortell oss hvordan du vil bo og omtrent hvilket budsjett du har. Vi sjekker lokale boliger først. Hvis riktig bolig ikke finnes, kan vi gå videre med tomt og vurdere hvilke boligmodeller som faktisk lar seg gjennomføre der.</p>
         </div>
-        <ContactForm source={`${INLAND_BRAND.leadSource}-${town.slug}`} />
+        <InlandContactForm source={`${INLAND_BRAND.leadSource}-${town.slug}`} />
       </section>
 
       <Footer />
