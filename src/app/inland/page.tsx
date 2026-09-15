@@ -4,6 +4,7 @@ import { ArrowRight, Check, Leaf, MapPin, ShieldCheck, Sun, Zap } from "lucide-r
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { InlandAreaFinder } from "@/components/InlandAreaFinder";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
@@ -127,8 +128,8 @@ export default async function InlandPage() {
             Du velger området og hvordan du vil leve. Vi finner og kvalitetssikrer riktig tomt. Deretter velger og tilpasser vi en moderne boligmodell som passer stedet, regelverket og budsjettet ditt.
           </p>
           <div className="hero-actions">
-            <a className="contact-button" href="#steder">Utforsk områdene <ArrowRight size={18} /></a>
-            <a className="text-button light" href="#eiendommer">Se moderne boligmodeller</a>
+            <a className="contact-button" href="#finn-omrade">Finn ditt innlandsområde <ArrowRight size={18} /></a>
+            <a className="text-button light" href="#steder">Se alle områder</a>
             <Link className="text-button light" href="/booking">Snakk med Freddy</Link>
           </div>
         </div>
@@ -151,6 +152,8 @@ export default async function InlandPage() {
           ))}
         </nav>
       </section>
+
+      <InlandAreaFinder />
 
       <AreaExplorerMap
         locations={mapLocations}
