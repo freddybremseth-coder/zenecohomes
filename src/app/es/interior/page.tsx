@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Droplets, Home, MapPin, Ruler, ShieldCheck, Sprout } from "lucide-react";
+import { Droplets, MapPin, Ruler, ShieldCheck, Sprout } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { InlandAreaFinder } from "@/components/InlandAreaFinder";
 import { SiteHeader } from "@/components/SiteHeader";
