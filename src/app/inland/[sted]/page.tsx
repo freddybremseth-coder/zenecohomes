@@ -9,6 +9,8 @@ import { INLAND_BRAND, getInlandTown, inlandTowns } from "@/lib/inland";
 import { getInlandLifestyleStory } from "@/lib/inlandLifestyle";
 import { getInlandShowcaseProperties, getInlandTownProperties } from "@/lib/inlandShowcase";
 
+const INLAND_INTENTS = new Set(["coast", "mountain", "city", "wine", "deep"]);
+
 export function generateStaticParams() {
   return inlandTowns.map((town) => ({ sted: town.slug }));
 }
@@ -18,6 +20,10 @@ function displayTownIntro(town: (typeof inlandTowns)[number]) {
     return "Biar er en av de best bevarte middelalderlandsbyene i Alicante-provinsen – med borg, smale gater og levende landsbyliv hele året. Freddy bor i Benidorm, mens familien har en oliveneiendom i Biar med rundt 1.500 trær.";
   }
   return town.intro;
+}
+
+function getInlandIntent(value?: string) {
+  return value && INLAND_INTENTS.has(value) ? value : null;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ sted: string }> }) {
@@ -31,9 +37,17 @@ export async function generateMetadata({ params }: { params: Promise<{ sted: str
   };
 }
 
-export default async function InlandTownPage({ params }: { params: Promise<{ sted: string }> }) {
+export default async function InlandTownPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ sted: string }>;
+  searchParams: Promise<{ intent?: string }>;
+}) {
   const { sted } = await params;
+  const query = await searchParams;
   const town = getInlandTown(sted);
+  const inlandIntent = getInlandIntent(query.intent);
 
   if (!town) {
     return (
@@ -54,6 +68,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
   const otherTowns = inlandTowns.filter((item) => item.slug !== town.slug).slice(0, 6);
   const intro = displayTownIntro(town);
   const lifestyle = getInlandLifestyleStory(town.slug);
+  const requestType = inlandIntent ? `inland-profile-${inlandIntent}` : "inland-town";
 
   return (
     <main className="inland-theme inland-journal inland-town-page">
@@ -205,7 +220,10 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           <h2>Vil du finne bolig eller bygge moderne i {town.name}?</h2>
           <p>Fortell oss hvordan du vil bo og omtrent hvilket budsjett du har. Vi sjekker lokale boliger først. Hvis riktig bolig ikke finnes, kan vi gå videre med tomt og vurdere hvilke boligmodeller som faktisk lar seg gjennomføre der.</p>
         </div>
-        <ContactForm source={`${INLAND_BRAND.leadSource}-${town.slug}`} />
+        <ContactForm
+          source={`${INLAND_BRAND.leadSource}-${town.slug}`}
+          requestType={requestType}
+        />
       </section>
 
       <Footer />
