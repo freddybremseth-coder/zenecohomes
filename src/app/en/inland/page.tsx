@@ -1,5 +1,6 @@
 import { Home, MapPin, Sprout, Droplets, Ruler, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { InlandAreaFinder } from "@/components/InlandAreaFinder";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
@@ -89,8 +90,8 @@ export default function EnglishInlandPage() {
           find the right plot there and assess which model can be built or adapted to it.
         </p>
         <div className="hero-actions">
-          <a className="contact-button" href="/tomter">
-            View inland plots
+          <a className="contact-button" href="#finn-omrade">
+            Find your inland area
           </a>
           <a className="text-button light" href="/en#kontakt">
             Tell us where you want to live
@@ -120,6 +121,8 @@ export default function EnglishInlandPage() {
           </p>
         </div>
       </section>
+
+      <InlandAreaFinder locale="en" />
 
       <section className="section card-list">
         {areas.map((area) => (
