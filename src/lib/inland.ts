@@ -53,7 +53,7 @@ export const inlandTowns: InlandTown[] = [
     intro:
       "Villena er et viktig bysentrum i innlandet – en historisk by med borgen Castillo de la Atalaya, egen stasjon på høyhastighetslinjen og et bredt servicetilbud, omgitt av vinmarker og landbruksland.",
     body: [
-      "Her får du byliv i spansk format: handlegater, marked, restauranter, helsetjenester og skoler – og likevel er du minutter unna åpne landskap med fincaer og gårder til priser langt under kysten.",
+      "Her får du byliv i spansk format: handlegater, marked, restauranter, helsetjenester og skoler – og likevel er du minutter unna åpne landskap med fincaer, gårder og andre landlige eiendommer.",
       "Høyhastighetsstasjonen Villena AV gir tog til Alicante-Terminal på rundt 20 minutter og Madrid på litt over to timer. Stasjonen ligger omtrent seks kilometer utenfor sentrum, så faktisk dør-til-dør-reisetid blir lengre enn selve togtiden.",
     ],
     highlights: ["Full byservice og helsetjenester", "Villena AV – Alicante ca. 20 min, Madrid litt over 2 timer", "Vinområde med lange tradisjoner"],
@@ -67,7 +67,7 @@ export const inlandTowns: InlandTown[] = [
     title: "Bolig i Sax",
     eyebrow: "Borgen på klippen · Vinalopó-dalen",
     intro:
-      "Sax kjenner du igjen på mils avstand: borgen ligger på en smal klipperygg rett over byen. Under den finner du en arbeidsom, ekte spansk småby i Vinalopó-dalen med gode priser på både byhus og fincaer.",
+      "Sax kjenner du igjen på mils avstand: borgen ligger på en smal klipperygg rett over byen. Under den finner du en arbeidsom, ekte spansk småby i Vinalopó-dalen med både byhus, villaer og fincaer i og rundt kommunen.",
     body: [
       "Sax ligger praktisk til langs A-31 mellom Alicante og Villena, med togstasjon og kort vei til både Elda/Petrer og Villena. Det gjør byen til et godt utgangspunkt for deg som vil ha innlandsliv uten å gi slipp på hverdagslogistikken.",
       "Rundt byen ligger jordbruksland og casas de campo, ofte med etablerte hager, brønner og uthus – eiendomstyper som nesten ikke finnes på kysten lenger.",

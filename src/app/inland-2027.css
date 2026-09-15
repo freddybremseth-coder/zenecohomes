@@ -80,6 +80,167 @@
   letter-spacing: .12em;
 }
 
+.inland-area-finder,
+.inland-comparison {
+  width: min(1380px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.inland-area-finder {
+  padding: clamp(72px, 8vw, 112px) 0;
+  border-top: 1px solid var(--ze-line);
+}
+
+.inland-area-finder-heading,
+.inland-comparison-heading {
+  max-width: 860px;
+}
+
+.inland-area-finder-heading h2,
+.inland-comparison-heading h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1;
+}
+
+.inland-area-finder-heading > p:last-child,
+.inland-comparison-heading > p:last-child {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.inland-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 46px;
+}
+
+.inland-profile-card {
+  display: flex;
+  min-height: 330px;
+  flex-direction: column;
+  padding: 30px;
+  background: var(--ze-white);
+  border: 1px solid var(--ze-line);
+  box-shadow: var(--ze-shadow-soft);
+}
+
+.inland-profile-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  border: 1px solid var(--ze-line);
+  border-radius: 50%;
+  color: var(--ze-sea);
+  background: var(--ze-paper);
+}
+
+.inland-profile-card h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 520;
+  line-height: 1.05;
+}
+
+.inland-profile-card p {
+  margin: 18px 0 26px;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.inland-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.inland-profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 11px;
+  border: 1px solid var(--ze-line);
+  color: var(--ze-ink);
+  font-size: .84rem;
+  font-weight: 700;
+  transition: color .2s var(--ze-ease), border-color .2s var(--ze-ease), background .2s var(--ze-ease);
+}
+
+.inland-profile-links a:hover {
+  color: var(--ze-sea);
+  border-color: var(--ze-sea);
+  background: var(--ze-paper);
+}
+
+.inland-area-finder-note {
+  max-width: 900px;
+  margin: 28px 0 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--ze-travertine);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.inland-comparison {
+  padding: 0 0 clamp(78px, 9vw, 126px);
+}
+
+.inland-comparison-scroll {
+  margin-top: 42px;
+  overflow-x: auto;
+  border: 1px solid var(--ze-line);
+  background: var(--ze-white);
+}
+
+.inland-comparison-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.inland-comparison-table th,
+.inland-comparison-table td {
+  padding: 20px 22px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--ze-line);
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.inland-comparison-table thead th {
+  color: var(--ze-ink);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: var(--ze-paper);
+}
+
+.inland-comparison-table tbody th {
+  width: 22%;
+  color: var(--ze-ink);
+  font-family: var(--display);
+  font-size: 1.16rem;
+  font-weight: 600;
+}
+
+.inland-comparison-table tbody tr:last-child th,
+.inland-comparison-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .inland-places {
   width: min(1380px, calc(100% - 48px));
   margin: 0 auto;
@@ -204,6 +365,10 @@
     grid-template-columns: 1fr;
   }
 
+  .inland-profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .inland-place,
   .inland-place:nth-child(even) {
     grid-template-columns: 1fr;
@@ -221,6 +386,8 @@
 
 @media (max-width: 620px) {
   .inland-intro,
+  .inland-area-finder,
+  .inland-comparison,
   .inland-places,
   .inland-selection,
   .inland-context {
@@ -236,6 +403,23 @@
     padding-left: 0;
     padding-right: 0;
     border-left: 0;
+  }
+
+  .inland-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inland-profile-card {
+    min-height: 0;
+    padding: 26px 22px;
+  }
+
+  .inland-profile-card h3 {
+    font-size: 1.75rem;
+  }
+
+  .inland-comparison-scroll {
+    margin-right: -16px;
   }
 
   .inland-place {
@@ -256,7 +440,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .inland-index a {
+  .inland-index a,
+  .inland-profile-links a {
     transition: none;
   }
 }
