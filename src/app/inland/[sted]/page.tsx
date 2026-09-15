@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { INLAND_BRAND, getInlandTown, inlandTowns } from "@/lib/inland";
 import { getInlandLifestyleStory } from "@/lib/inlandLifestyle";
-import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
+import { getInlandShowcaseProperties, getInlandTownProperties } from "@/lib/inlandShowcase";
 
 export function generateStaticParams() {
   return inlandTowns.map((town) => ({ sted: town.slug }));
@@ -48,7 +48,9 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
     );
   }
 
-  const properties = await getInlandShowcaseProperties();
+  const localProperties = await getInlandTownProperties(town.matchTerms);
+  const hasLocalProperties = localProperties.length > 0;
+  const properties = hasLocalProperties ? localProperties : await getInlandShowcaseProperties();
   const otherTowns = inlandTowns.filter((item) => item.slug !== town.slug).slice(0, 6);
   const intro = displayTownIntro(town);
   const lifestyle = getInlandLifestyleStory(town.slug);
@@ -64,7 +66,9 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           <h1>{town.name}</h1>
           <p className="hero-copy">{intro}</p>
           <div className="hero-actions">
-            <a className="contact-button" href="#eiendommer">Se boligmodeller som kan bygges her <ArrowRight size={18} /></a>
+            <a className="contact-button" href="#eiendommer">
+              {hasLocalProperties ? `Se aktuelle boliger i ${town.name}` : "Se boligmodeller og inspirasjon"} <ArrowRight size={18} />
+            </a>
             <a className="text-button light" href="#kontakt">Finn tomt i {town.name}</a>
             <Link className="text-button light" href="/inland">Til alle områder</Link>
           </div>
@@ -104,19 +108,39 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
 
       <section className="inland-selection" id="eiendommer">
         <div className="section-heading">
-          <p className="eyebrow">Boligmodeller · Aspe og Pinoso er bare utgangspunkt</p>
-          <h2>Vil du bo i {town.name}? Vi finner tomten – så bygger vi riktig bolig der.</h2>
-          <p>
-            Villaene og nybyggene du ser under er konkrete boligmodeller og forslag som i dag er godt presentert gjennom prosjekter i Aspe og Pinoso. De er ikke en beskjed om at du må bo der. De viser arkitektur, planløsninger, standard og prisnivå vi kan bruke som utgangspunkt for et prosjekt i {town.name}.
-          </p>
-          <p>
-            Vår oppgave er først å finne den riktige tomten i og rundt {town.name}. Når tomten er funnet, kontrollerer vi regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totaløkonomi. Deretter matcher og tilpasser vi boligmodellen til tomten og de lokale kravene. Moderne nybolig kan dermed utvikles også her når vi finner en tomt som tillater prosjektet.
-          </p>
-          <div className="inland-town-highlights">
-            <span><MapPin size={17} /> 1. Du velger {town.name}</span>
-            <span><ShieldCheck size={17} /> 2. Vi finner og kvalitetssikrer riktig tomt</span>
-            <span><ShieldCheck size={17} /> 3. Boligmodellen tilpasses tomten, regelverket og budsjettet</span>
-          </div>
+          {hasLocalProperties ? (
+            <>
+              <p className="eyebrow">Aktuelle boliger · lokale treff</p>
+              <h2>Boliger i og rundt {town.name}</h2>
+              <p>
+                Disse boligene matcher {town.name} eller nærliggende stedsnavn som er registrert for området i datakildene våre. Tilgjengelighet, pris og prosjektdetaljer kan endres, så vi bekrefter status før visning eller reservasjon.
+              </p>
+              <p>
+                Finner du ikke riktig bolig blant treffene, stopper ikke søket her. Vi kan også finne egnet tomt i området og vurdere en moderne boligmodell mot regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totalbudsjett.
+              </p>
+              <div className="inland-town-highlights">
+                <span><MapPin size={17} /> Lokale treff prioriteres først</span>
+                <span><ShieldCheck size={17} /> Status og dokumentasjon bekreftes før neste steg</span>
+                <span><ShieldCheck size={17} /> Tomt + ny bolig er et alternativ når ferdig bolig ikke passer</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="eyebrow">Modeller og inspirasjon · ikke lokale annonser</p>
+              <h2>Ingen lokale treff akkurat nå – se hva et prosjekt i {town.name} kan ta utgangspunkt i.</h2>
+              <p>
+                Vi har ikke et egnet lokalt boligtreff i {town.name} i datakildene akkurat nå. Villaene og nybyggene under er derfor modeller og referanser fra Aspe og Pinoso. De ligger ikke nødvendigvis i {town.name}, og de skal ikke leses som lokale boligannonser.
+              </p>
+              <p>
+                Hvis du vil bo i {town.name}, starter vi med å finne riktig tomt. Deretter må regulering, byggbarhet, adkomst, vann, strøm, grunnforhold og totaløkonomi kontrolleres før vi kan si om en bestemt boligmodell kan brukes eller tilpasses på tomten.
+              </p>
+              <div className="inland-town-highlights">
+                <span><MapPin size={17} /> 1. Du velger {town.name}</span>
+                <span><ShieldCheck size={17} /> 2. Vi finner og kvalitetssikrer riktig tomt</span>
+                <span><ShieldCheck size={17} /> 3. Mulig boligmodell vurderes mot tomten, regelverket og budsjettet</span>
+              </div>
+            </>
+          )}
         </div>
         {properties.length > 0 ? (
           <div className="property-grid editorial-property-grid">
@@ -125,17 +149,23 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
                 key={property.id || property.ref || index}
                 property={property}
                 priority={index < 3}
-                contextLabel={`Boligmodell – kan bygges på egnet tomt i ${town.name}`}
+                contextLabel={
+                  hasLocalProperties
+                    ? `Aktuelt treff i eller rundt ${town.name}`
+                    : `Inspirasjon fra Aspe/Pinoso – mulighet i ${town.name} må verifiseres`
+                }
               />
             ))}
           </div>
         ) : (
           <div className="section-heading">
-            <p>Boligmodellene er ikke tilgjengelige akkurat nå. Fortell oss hva du ønsker å bygge i {town.name}, så starter vi med å finne riktig tomt.</p>
+            <p>Vi har ingen egnede boliger eller modellreferanser å vise akkurat nå. Fortell oss hva du ønsker i {town.name}, så starter vi med området og finner neste mulighet.</p>
           </div>
         )}
         <div className="center-action">
-          <Link className="contact-button" href="/booking">Finn tomt og boligmodell i {town.name} <ArrowRight size={18} /></Link>
+          <Link className="contact-button" href="/booking">
+            {hasLocalProperties ? `Snakk med Freddy om bolig eller tomt i ${town.name}` : `Finn tomt og boligmulighet i ${town.name}`} <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 
@@ -172,8 +202,8 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
       <section className="contact-section" id="kontakt">
         <div>
           <p className="eyebrow">Neste steg</p>
-          <h2>Vil du bygge moderne bolig i {town.name}?</h2>
-          <p>Fortell oss hvordan du vil bo og omtrent hvilket budsjett du har. Vi starter med å finne og kvalitetssikre riktig tomt, og bruker deretter boligmodellene som forslag til hva prosjektet kan bli.</p>
+          <h2>Vil du finne bolig eller bygge moderne i {town.name}?</h2>
+          <p>Fortell oss hvordan du vil bo og omtrent hvilket budsjett du har. Vi sjekker lokale boliger først. Hvis riktig bolig ikke finnes, kan vi gå videre med tomt og vurdere hvilke boligmodeller som faktisk lar seg gjennomføre der.</p>
         </div>
         <ContactForm source={`${INLAND_BRAND.leadSource}-${town.slug}`} />
       </section>
