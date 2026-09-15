@@ -158,7 +158,7 @@ export default function OmFreddyPage() {
             Det finnes ikke ett område som er riktig for alle. Noen passer perfekt i Benidorm. Andre trives
             bedre i Villajoyosa, Finestrat, Albir, Altea eller Polop. Noen ønsker Torrevieja, Guardamar eller
             Ciudad Quesada. Og for noen gir innlandet rundt Biar, Villena eller Sax mer plass, natur og
-            livskvalitet for pengene. Mitt utgangspunkt er derfor ikke «hvor har jeg en bolig å selge?», men
+            en annen type hverdagsliv. Mitt utgangspunkt er derfor ikke «hvor har jeg en bolig å selge?», men
             <strong> «hvor tror jeg du faktisk vil trives?»</strong>
           </p>
 
@@ -194,10 +194,10 @@ export default function OmFreddyPage() {
           <h2>Utleie må vurderes realistisk</h2>
           <p>
             Mange sier: «Vi skal bruke boligen selv, men kanskje leie den ut litt.» To boliger som ser nesten
-            like ut kan ha svært forskjellig utleiepotensial. Beliggenheten kan være viktigere enn
-            kvadratmeterne, gangavstand viktigere enn utsikten, terrassen viktigere enn et ekstra rom. Er
-            utleie en del av regnestykket, bør det med i vurderingen før kjøpet – ikke etterpå. Min erfaring fra
-            drift og utleie gjør at jeg kan hjelpe deg å stille de spørsmålene tidlig.
+            like ut kan ha svært forskjellig utleiepotensial. Beliggenhet, gangavstand, terrasse, utsikt,
+            planløsning og boligtype kan påvirke etterspørselen på ulike måter. Er utleie en del av regnestykket,
+            bør det med i vurderingen før kjøpet – ikke etterpå. Min erfaring fra drift og utleie gjør at jeg kan
+            hjelpe deg å stille de spørsmålene tidlig.
           </p>
 
           <h2>En god rådgiver skal også kunne si nei</h2>
