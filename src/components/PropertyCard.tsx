@@ -71,7 +71,26 @@ export function PropertyCard({
         <span className="property-type-chip">{type}</span>
         <div className="property-price-tag">
           <strong>{formatPriceForLocale(property.price, locale)}</strong>
-          {pricePerM2 && <span>{pricePerM2} €/m²</span>}
+          {pricePerM2 ? (
+            <small
+              className="property-price-per-m2"
+              style={{
+                display: "block",
+                width: "fit-content",
+                marginTop: 4,
+                padding: "4px 8px",
+                borderRadius: 3,
+                background: "rgba(22, 34, 43, 0.82)",
+                color: "#fff",
+                fontSize: 12,
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: "0.04em",
+              }}
+            >
+              {pricePerM2} €/m²
+            </small>
+          ) : null}
         </div>
       </div>
       <div className="property-body">
