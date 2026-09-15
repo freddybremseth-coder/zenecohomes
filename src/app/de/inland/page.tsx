@@ -1,5 +1,6 @@
 import { Home, MapPin, Sprout, Droplets, Ruler, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { InlandAreaFinder } from "@/components/InlandAreaFinder";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
@@ -89,8 +90,8 @@ export default function GermanInlandPage() {
           suchen wir dort das passende Grundstück und prüfen, welches Modell gebaut oder angepasst werden kann.
         </p>
         <div className="hero-actions">
-          <a className="contact-button" href="/tomter">
-            Grundstücke im Inland ansehen
+          <a className="contact-button" href="#finn-omrade">
+            Passendes Inlandgebiet finden
           </a>
           <a className="text-button light" href="/de#kontakt">
             Wunschgebiet nennen
@@ -120,6 +121,8 @@ export default function GermanInlandPage() {
           </p>
         </div>
       </section>
+
+      <InlandAreaFinder locale="de" />
 
       <section className="section card-list">
         {areas.map((area) => (
