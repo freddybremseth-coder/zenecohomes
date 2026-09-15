@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Droplets, Home, MapPin, Ruler, ShieldCheck, Sprout } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { InlandAreaFinder } from "@/components/InlandAreaFinder";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
@@ -93,7 +94,7 @@ export default function SpanishInlandPage() {
           la parcela correcta y valorar qué modelo puede construirse o adaptarse.
         </p>
         <div className="hero-actions">
-          <Link className="contact-button" href="/es/propiedades?region=innlandet"><Home size={18} /> Ver viviendas y modelos</Link>
+          <Link className="contact-button" href="#finn-omrade">Encuentra tu zona del interior</Link>
           <Link className="text-button light" href="/es#contacto">Cuéntanos dónde quieres vivir</Link>
         </div>
       </section>
@@ -117,6 +118,8 @@ export default function SpanishInlandPage() {
           </p>
         </div>
       </section>
+
+      <InlandAreaFinder locale="es" />
 
       <section className="section card-list">
         {areas.map((area) => (
