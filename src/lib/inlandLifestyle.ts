@@ -13,18 +13,18 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
     paragraphs: [
       "Tenk deg en vanlig tirsdag der du handler i landsbyen, tar en kaffe på torget og er hjemme igjen på få minutter – med fjell, olivenlunder og åpne landskap rundt deg. Her er ikke livet organisert rundt turistsesongen. Landsbyen fungerer hele året, og nettopp det er en stor del av tiltrekningen.",
       "Utenfor sentrum endrer følelsen seg raskt. Her kan du få større tomt, mer privatliv, utsikt og mulighet til å ha hage, oliventrær, verksted eller gjester uten at alt ligger tett. Samtidig er du nær nok Villena og hovedveiene til at hverdagen ikke føles isolert.",
-      "Biar er særlig interessant for kjøpere som liker et mer ekte spansk miljø og som setter pris på tydelige årstider, friskere netter og en roligere rytme. Det er mindre strandliv – men langt mer rom for å skape ditt eget sted.",
+      "Biar er særlig interessant for kjøpere som liker et mer lokalt spansk miljø og som setter pris på tydelige årstider, friskere netter og en roligere rytme. Det er mindre strandliv – men langt mer rom for å skape ditt eget sted.",
     ],
     suits: "Passer særlig for helårsboende, naturelskere, familier og kjøpere som ønsker finca, gård eller landsbyhus med karakter.",
   },
   villena: {
-    title: "Innlandsliv uten å gi avkall på byens bekvemmeligheter",
+    title: "Innlandsliv med byens tilbud tett på",
     lead:
-      "Villena er et godt valg for deg som liker tanken på mer plass og lavere prisnivå, men som fortsatt vil ha butikker, restauranter, helse, skole og transport tett på.",
+      "Villena er et godt valg for deg som ønsker mer plass, men fortsatt vil ha butikker, restauranter, helsetjenester, skoler og transport innen rekkevidde.",
     paragraphs: [
       "Hverdagen her er mer urban enn i de små landsbyene rundt. Du kan bo sentralt og gå til det meste, eller velge en eiendom i utkanten og fortsatt ha byen få minutter unna. Det gir en fleksibilitet mange innlandskjøpere først oppdager når de faktisk besøker området.",
       "Rundt byen åpner landskapet seg med vinmarker, jordbruk og større eiendommer. Det betyr at du kan kombinere byservice med finca-følelse i samme område – uten å måtte kjøre lange avstander for hver eneste praktiske ting.",
-      "Villena passer derfor godt for kjøpere som vil ha et mer selvstendig spansk liv, men som ikke ønsker å føle at de har flyttet langt ut på landet. Det er en base du kan bruke både fast, deler av året eller som utgangspunkt for et større område mellom Alicante og innlandet.",
+      "Villena passer derfor godt for kjøpere som vil ha et mer selvstendig spansk liv, men som ikke ønsker å føle at de har flyttet langt ut på landet. Det er en base du kan bruke som fast bosted, deler av året eller som utgangspunkt for et større område mellom Alicante og innlandet.",
     ],
     suits: "Passer særlig for helårsboende, familier og kjøpere som vil kombinere byservice med større bolig eller tomt.",
   },
@@ -44,7 +44,7 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
     lead:
       "Castalla gir en tydelig følelse av å være i innlandet, men uten at avstanden til Alicante og kysten blir stor nok til å dominere hverdagen.",
     paragraphs: [
-      "Dette er et område der naturen faktisk blir en del av hverdagen. Fjellene ligger rundt dalen, turmulighetene er nærme, og temperaturene kan oppleves behagelig annerledes enn helt nede ved kysten. For mange er nettopp det en fordel gjennom de varmeste månedene.",
+      "Dette er et område der naturen faktisk blir en del av hverdagen. Fjellene ligger rundt dalen, turmulighetene er nærme, og klimaet oppleves annerledes enn helt nede ved kysten. For mange er nettopp det en fordel gjennom de varmeste månedene.",
       "Boligmarkedet er variert: landsbyhus, villaer i etablerte områder og fincaer med større tomter. Det gjør Castalla interessant både for deg som vil ha et enkelt, praktisk hjem og for deg som drømmer om mer plass og et prosjekt over tid.",
       "Det sterke kortet er balansen. Du kan ha rolige omgivelser og fjell rett utenfor døren, samtidig som Alicante fortsatt er en realistisk del av livet ditt – for flyplass, shopping, restaurantbesøk eller stranddager.",
     ],
@@ -67,7 +67,7 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
       "Busot passer for deg som liker tanken på en roligere landsbyhverdag, men som fortsatt vil kunne bruke El Campello, Alicante og strendene som en naturlig del av livet.",
     paragraphs: [
       "Du våkner med fjellene nærmere enn strandpromenaden, men trenger ikke velge bort sjøen. Busot ligger i overgangssonen der Cabeçó d'Or, småveier og åpent landskap møter kysten bare noen kilometer unna. Det gir en helt annen romfølelse enn i de tetteste ferieområdene.",
-      "Hverdagen kan være enkel: lokale ærender i landsbyen, tur eller sykkel i fjellet, og middag eller strandtur ved kysten senere på dagen. Det er nettopp denne fleksibiliteten som gjør Busot interessant – du får mer stillhet rundt boligen uten å gjøre avstand til et prosjekt i seg selv.",
+      "Hverdagen kan være enkel: lokale ærender i landsbyen, tur eller sykkel i fjellet, og middag eller strandtur ved kysten senere på dagen. Det er nettopp denne fleksibiliteten som gjør Busot interessant – du får mer stillhet rundt boligen uten at avstandene blir et eget prosjekt.",
       "For boligkjøpere betyr det ofte at uteområdet blir viktigere. Hage, terrasse, basseng og utsikt kan få større plass i beslutningen, samtidig som du beholder nærheten til flyplass, Alicante og kystservice.",
     ],
     suits: "Passer særlig for kjøpere som ønsker villa eller landsted med mer ro og plass, men fortsatt vil ha kort vei til kysten.",
@@ -75,7 +75,7 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
   pinoso: {
     title: "Plass til å leve – ikke bare plass til å bo",
     lead:
-      "Pinoso er et av de enkleste innlandsområdene å forestille seg et nytt liv i: større tomter, moderne villaer, vinlandskap og en by som fungerer hele året.",
+      "Pinoso gjør det lett å se for seg et nytt liv i innlandet: større tomter, moderne villaer, vinlandskap og en by som fungerer hele året.",
     paragraphs: [
       "Mange kommer hit fordi de ønsker mer enn selve huset. De vil ha basseng uten innsyn, utekjøkken, plass til familie på besøk, hunder, hage eller bare følelsen av å kunne åpne døren og se landskap i stedet for nabobalkongen.",
       "Pinoso har samtidig nok service til at hverdagen fungerer. Du kan handle lokalt, spise godt, bruke håndverkere som kjenner denne typen eiendommer og bo i et område der utenlandske kjøpere allerede er en naturlig del av markedet – uten at byen mister sin spanske karakter.",
@@ -84,22 +84,22 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
     suits: "Passer særlig for kjøpere som ønsker moderne villa på stor tomt, finca, privatliv og et etablert helårsmarked.",
   },
   jumilla: {
-    title: "Et liv bygget rundt vinland, plass og en ordentlig by",
+    title: "Vinland, plass og en by som fungerer hele året",
     lead:
-      "Jumilla passer for deg som vil lenger inn i Spania og ønsker et sted med sterk lokal identitet, full byservice og et landskap der vinmarkene faktisk preger hverdagen.",
+      "Jumilla passer for deg som vil lenger inn i Spania og ønsker et sted med sterk lokal identitet, et bredt servicetilbud og et landskap der vinmarkene faktisk preger hverdagen.",
     paragraphs: [
       "Her er vin ikke pynt i markedsføringen, men en del av områdets økonomi, mattradisjoner og rytme gjennom året. Bodegas, Monastrell og Ruta del Vino gjør det lett å bruke området aktivt – enten du er interessert i vin eller bare liker den kulturen som vokser rundt den.",
       "Byen er stor nok til at du ikke er avhengig av en annen by for alt. Samtidig åpner landskapet seg raskt utenfor sentrum, med større avstander, mer himmel og en tydelig følelse av å bo på landet når du velger en eiendom utenfor byen.",
-      "Jumilla er et mer kompromissløst innlandsvalg enn Busot eller Aspe. Du er lenger fra kystlivet, men får til gjengjeld et område der plass, vinland, natur og lokal identitet er selve hovedproduktet.",
+      "Jumilla er et tydeligere innlandsvalg enn Busot eller Aspe. Du er lenger fra kystlivet, men får til gjengjeld et område der plass, vinland, natur og lokal identitet er en naturlig del av hverdagen.",
     ],
     suits: "Passer særlig for vin- og matinteresserte, helårsboende og kjøpere som ønsker finca, større tomt eller et tydelig innlandsliv i Murcia.",
   },
   monovar: {
     title: "Vinby, hverdagsliv og landlig frihet",
     lead:
-      "Monóvar passer for deg som vil bo i et ekte spansk bymiljø, men ha finca-landskap og større eiendommer rett utenfor byen.",
+      "Monóvar passer for deg som vil bo i et lokalt spansk bymiljø, men ha finca-landskap og større eiendommer rett utenfor byen.",
     paragraphs: [
-      "I sentrum får du den typen hverdag mange flytter til Spania for: lokale butikker, kaféer, restauranter og et byliv som ikke forsvinner når sommersesongen er over. Det er mindre polert enn de mest internasjonale kyststedene – og for mange nettopp derfor mer interessant.",
+      "I sentrum får du den typen hverdag mange flytter til Spania for: lokale butikker, kaféer, restauranter og et byliv som ikke forsvinner når sommersesongen er over. Byen er mindre preget av internasjonal turisme enn mange kyststeder – og for mange er nettopp det en del av tiltrekningen.",
       "Kjører du noen minutter ut, endrer alt seg. Vinmarker, mandeltrær og landsteder gir muligheten til å bo med langt mer plass uten å miste nærheten til service. Det passer godt for deg som vil ha en eiendom som også rommer hobbyer, dyr, verksted eller gjester.",
       "Monóvar fungerer særlig godt for kjøpere som vil ha det landlige uten å bli avhengig av lange kjøreturer. Du får ro hjemme og fortsatt et levende sentrum i nærheten.",
     ],
@@ -110,16 +110,16 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
     lead:
       "Hondón-dalene er et godt valg for deg som vil ha mer natur, større bolig og roligere omgivelser, men som fortsatt ønsker et område vant til internasjonale eiere.",
     paragraphs: [
-      "Dalene har en åpen, grønnere følelse med vinmarker, åser og boligområder spredt mellom landsbyene. Mange eiendommer er laget for nettopp det livet utenlandske kjøpere ser etter: terrasse, basseng, gjesterom, parkering og god uteplass.",
+      "Dalene har en åpen, grønnere følelse med vinmarker, åser og boligområder spredt mellom landsbyene. Mange eiendommer er utformet for et liv med terrasse, basseng, gjesterom, parkering og god uteplass.",
       "Det etablerte internasjonale miljøet gjør overgangen enklere. Du kan leve mer landlig uten å føle at du må forstå alt alene fra første dag, samtidig som landsbyene fortsatt har sitt lokale spanske preg.",
       "Dette kan være et godt kompromiss for deg som liker tanken på innlandet, men som ikke vil for langt bort fra kysten. Du får større rom rundt deg og en roligere hverdag, samtidig som strand og flyplass fortsatt kan være en naturlig del av livet.",
     ],
     suits: "Passer særlig for kjøpere som ønsker villa med basseng, landlig utsikt og et etablert internasjonalt miljø.",
   },
   "hondon-de-las-nieves": {
-    title: "Landsbyliv midt i vinmarkene – med et etablert internasjonalt miljø rundt",
+    title: "Landsbyliv midt i vinmarkene",
     lead:
-      "Hondón de las Nieves, eller El Fondó de les Neus, passer for deg som vil ha den landlige Hondón-følelsen, men ønsker å forstå én konkret landsby og dens hverdag – ikke bare dalen som et stort område.",
+      "Hondón de las Nieves, eller El Fondó de les Neus, passer for deg som vil ha den landlige Hondón-følelsen og samtidig et område som allerede er kjent blant internasjonale boligeiere.",
     paragraphs: [
       "Her er vinmarker, mandeltrær og oliven det visuelle bakteppet i hverdagen. Sentrum er lite nok til å være oversiktlig, men stort nok til at du har kommunale tjenester og et lokalt liv å forholde deg til gjennom året.",
       "Utenfor sentrum blir eiendommene mer spredt, og uteplassen får en annen rolle enn på kysten. Terrasse, basseng, utsikt, gjester og hage kan bli viktigere enn gangavstand til strand – fordi det er nettopp roen og plassen du kjøper deg inn i.",
@@ -133,7 +133,7 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
       "Aspe passer for deg som ønsker mer plass og ro, men som samtidig vil ha Alicante, Elche og flyplassen så nær at de fortsatt føles som en del av hverdagen.",
     paragraphs: [
       "Byen lever hele året og har den praktiske infrastrukturen som gjør det enkelt å bo fast. Samtidig ligger jordbruksområdene tett på, så du trenger ikke langt ut før du får utsikt, større tomter og et helt annet tempo.",
-      "Det er nettopp denne kombinasjonen som gjør Aspe interessant for moderne nybygg. Du kan få den arkitekturen mange forbinder med kystprosjekter, men med mer plass rundt huset og mindre press på tomtestørrelsen.",
+      "Det er nettopp denne kombinasjonen som gjør Aspe interessant for moderne nybygg. Du kan kombinere moderne arkitektur med større utearealer og en mer åpen beliggenhet enn i mange tettbygde kystområder.",
       "For kjøpere som reiser ofte til Norge eller ønsker enkel tilgang til Alicante-området, kan Aspe være et av de mest praktiske innlandsvalgene. Du får mye av roen – uten å gi avkall på tilgjengeligheten.",
     ],
     suits: "Passer særlig for moderne nybygg, helårsboende og kjøpere som prioriterer kort vei til flyplass og byservice.",
@@ -156,12 +156,12 @@ export const inlandLifestyleStories: Record<string, InlandLifestyleStory> = {
     paragraphs: [
       "Her er tempoet lavere. Landskapet med vinmarker, mandeltrær og småveier gjør at hverdagen oppleves mer landlig allerede få minutter utenfor sentrum. Det er et sted der uteplassen og tomten ofte blir like viktig som selve huset.",
       "For mange handler kjøpet her om frihet: færre naboer tett på, plass til gjester, dyr, hage eller et lite prosjekt – og muligheten til å bruke dagen mer ute enn inne. Samtidig har du Novelda, Monóvar og Pinoso nær nok til større innkjøp og tjenester.",
-      "La Romana er ikke for deg som vil ha et stort internasjonalt miljø rundt hjørnet. Det er nettopp roen og den mindre turistpregede hverdagen som er produktet her.",
+      "La Romana er ikke for deg som vil ha et stort internasjonalt miljø rundt hjørnet. Det er nettopp roen og den mindre turistpregede hverdagen som gjør området interessant.",
     ],
     suits: "Passer særlig for kjøpere som prioriterer ro, tomt, privatliv og et autentisk landlig miljø.",
   },
   "monforte-del-cid": {
-    title: "Landlig preg, golf og flyplassen nesten rundt hjørnet",
+    title: "Landlig preg, golf og kort vei til flyplassen",
     lead:
       "Monforte del Cid er et sterkt valg for deg som vil bo roligere og mer åpent, men som ikke ønsker å bruke mye tid på transport til flyplass, Alicante eller Elche.",
     paragraphs: [
