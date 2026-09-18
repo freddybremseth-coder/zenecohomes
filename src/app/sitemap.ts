@@ -74,10 +74,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/de/termin",
     "/en/booking",
     "/es/cita",
-    "/min-side",
-    "/de/min-side",
-    "/en/min-side",
-    "/es/mi-area",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     changeFrequency:
