@@ -221,6 +221,7 @@ export default function OmFreddyPage() {
           <p className="om-freddy-sign">
             Rådgivning først. Boligen etterpå.
             <br />— Freddy Bremseth, Zen Eco Homes
+            <br /><a href="https://www.freddybremseth.com/" target="_blank" rel="noopener noreferrer">Se Freddy Bremseths samlede profil, bøker og prosjekter</a>
           </p>
 
           <div className="hero-actions" style={{ marginTop: 8 }}>
