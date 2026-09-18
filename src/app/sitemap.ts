@@ -18,7 +18,6 @@ const baseUrl = "https://www.zenecohomes.com";
 const allSeoPages = [...seoLandingPages, ...localSeoLandingPages];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
   const cmsPosts = await fetchPublishedPosts("magasin");
   const articlePaths = Array.from(
     new Set([
@@ -81,7 +80,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/es/mi-area",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: now,
     changeFrequency:
       isArticleRoute(route) ||
       route === "/eiendommer" ||
@@ -111,7 +109,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const propertyRoutes = propertyRefs.flatMap((ref) =>
     (["no", "de", "en", "es"] as const).map((locale) => ({
       url: `${baseUrl}${getPropertyDetailPath(ref, locale)}`,
-      lastModified: now,
       changeFrequency: "daily" as const,
       priority: 0.7,
     })),
