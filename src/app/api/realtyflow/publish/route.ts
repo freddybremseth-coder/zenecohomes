@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { revalidatePath } from "next/cache";
+import { submitIndexNow } from "@/lib/indexnow";
 
 function cleanString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -121,6 +123,15 @@ export async function POST(request: NextRequest) {
   }
 
   const url = `${destinationPath.replace(/\/$/, "")}/${slug}`;
+  revalidatePath(destinationPath);
+  revalidatePath(url);
+  revalidatePath("/sitemap.xml");
+
+  const indexNow =
+    status === "published"
+      ? await submitIndexNow([`https://www.zenecohomes.com${url}`])
+      : { ok: true, submitted: 0, status: 204, urlList: [] as string[] };
+
   return NextResponse.json({
     success: true,
     id: data.id,
@@ -129,6 +140,7 @@ export async function POST(request: NextRequest) {
     url,
     external_url: url,
     published_at: data.published_at,
+    indexNow,
   });
 }
 
@@ -152,7 +164,7 @@ export async function DELETE(request: NextRequest) {
   const brandId = cleanString(payload?.brand?.id) || "zeneco";
   const slug = slugify(cleanString(payload?.content?.slug) || cleanString(payload?.content?.title));
 
-  let query = supabase.from("website_posts").delete();
+  let query = supabase.from("website_posts").delete().select("slug, destination_path");
   if (sourceId) {
     query = query
       .eq("source_system", sourceSystem)
@@ -165,10 +177,30 @@ export async function DELETE(request: NextRequest) {
       .eq("slug", slug);
   }
 
-  const { error } = await query;
+  const { data, error } = await query;
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true, deleted: true, slug });
+  const deletedUrls = (data || [])
+    .map((row) => {
+      const deletedSlug = cleanString(row.slug);
+      const deletedPath = cleanPath(cleanString(row.destination_path) || `/${destinationId}`);
+      return deletedSlug ? `${deletedPath.replace(/\/$/, "")}/${deletedSlug}` : "";
+    })
+    .filter(Boolean);
+
+  if (!deletedUrls.length && slug) {
+    deletedUrls.push(`${cleanPath(cleanString(destination.path) || `/${destinationId}`).replace(/\/$/, "")}/${slug}`);
+  }
+
+  for (const url of deletedUrls) revalidatePath(url);
+  revalidatePath(cleanPath(cleanString(destination.path) || `/${destinationId}`));
+  revalidatePath("/sitemap.xml");
+
+  const indexNow = deletedUrls.length
+    ? await submitIndexNow(deletedUrls.map((url) => `https://www.zenecohomes.com${url}`))
+    : { ok: true, submitted: 0, status: 204, urlList: [] as string[] };
+
+  return NextResponse.json({ success: true, deleted: true, slug, deletedUrls, indexNow });
 }
