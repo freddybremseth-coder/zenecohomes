@@ -1,4 +1,4 @@
-import { PropertyNotFoundView } from "@/components/PropertyDetailView";
+import { notFound } from "next/navigation";
 import { TrackedPropertyDetailView } from "@/components/TrackedPropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
 import {
@@ -18,7 +18,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
-  const ref = property ? getPropertyRef(property) : decodeURIComponent(id);
+  if (!property) return { title: "Property unavailable", robots: { index: false, follow: false } };
+  const ref = getPropertyRef(property);
   const title = property ? `${getLocalizedPropertyTitle(property, "de")} | Immobilie in Spanien` : "Immobilie in Spanien";
   const description = property
     ? `${formatPriceForLocale(property.price, "de")} · ${property.location || property.town || "Spanien"} · ${getLocalizedPropertyType(property, "de")}. Fordern Sie Exposé, Verfügbarkeit und Beratung von Zen Eco Homes an.`
@@ -45,7 +46,7 @@ export default async function GermanPropertyPage({ params }: { params: Promise<{
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
 
-  if (!property) return <PropertyNotFoundView locale="de" />;
+  if (!property) notFound();
 
   return <TrackedPropertyDetailView property={property} locale="de" />;
 }
