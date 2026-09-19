@@ -1,5 +1,5 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { SpanishPropertyNotFoundView } from "@/components/es/SpanishPropertyDetailView";
 import { TrackedSpanishPropertyDetailView } from "@/components/es/TrackedSpanishPropertyDetailView";
 import { getProperties, getProperty, getPropertyRef } from "@/lib/realtyflow";
 import {
@@ -18,7 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const decoded = decodeURIComponent(id);
   const property = await getProperty(decoded);
-  const ref = property ? getPropertyRef(property) : decoded;
+  if (!property) return { title: "Propiedad no disponible", robots: { index: false, follow: false } };
+  const ref = getPropertyRef(property);
   const title = property ? `${getSpanishPropertyHeading(property)} | Zen Eco Homes` : "Vivienda en España | Zen Eco Homes";
   const description = property
     ? getSpanishPropertySeoDescription(property)
@@ -51,6 +52,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function SpanishPropertyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
-  if (!property) return <SpanishPropertyNotFoundView />;
+  if (!property) notFound();
   return <TrackedSpanishPropertyDetailView property={property} />;
 }
