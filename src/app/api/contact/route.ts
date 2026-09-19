@@ -3,6 +3,17 @@ import { getInlandTown } from "@/lib/inland";
 import { sendLead } from "@/lib/realtyflow";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
+function publicLeadSourcePage(value: unknown): string | undefined {
+  if (typeof value !== "string" || value.length > 700) return undefined;
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return undefined;
+    if (!["www.zenecohomes.com", "zenecohomes.com"].includes(url.hostname.toLowerCase())) return undefined;
+    if (url.pathname.length > 300) return undefined;
+    return "https://www.zenecohomes.com" + url.pathname;
+  } catch { return undefined; }
+}
+
 function getInlandLeadContext(body: Record<string, unknown>) {
   const source = body.source ? String(body.source).trim() : "";
   const prefix = "zeneco-inland-";
@@ -78,6 +89,7 @@ export async function POST(request: Request) {
       property_ref: body.property_ref ? String(body.property_ref) : undefined,
       property_title: body.property_title ? String(body.property_title) : undefined,
       request_type: requestType,
+      page_url: publicLeadSourcePage(body.page_url),
     });
 
     await recordPropertyLead(body).catch(() => undefined);
