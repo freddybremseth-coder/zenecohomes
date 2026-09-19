@@ -1,4 +1,4 @@
-import { PropertyNotFoundView } from "@/components/PropertyDetailView";
+import { notFound } from "next/navigation";
 import { TrackedPropertyDetailView } from "@/components/TrackedPropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
 import {
@@ -40,7 +40,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
-  const ref = property ? getPropertyRef(property) : decodeURIComponent(id);
+  if (!property) return { title: "Property unavailable", robots: { index: false, follow: false } };
+  const ref = getPropertyRef(property);
   const town = property ? getPropertyTown(property) || property.location || "Spania" : "Spania";
   const propType = property ? getLocalizedPropertyType(property, "no") : "Bolig";
   const cleanTitle = property
@@ -92,7 +93,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
 
-  if (!property) return <PropertyNotFoundView locale="no" />;
+  if (!property) notFound();
 
   return <TrackedPropertyDetailView property={property} locale="no" />;
 }
