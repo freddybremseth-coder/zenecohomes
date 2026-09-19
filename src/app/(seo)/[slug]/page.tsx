@@ -3,10 +3,14 @@ import { notFound } from "next/navigation";
 import { SeoLandingView } from "@/components/SeoLandingView";
 import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
 import { getSeoLandingPage, seoLandingPages } from "@/lib/seoLandingPages";
+import { readZenEcoSeoOverride } from "@/lib/seo-public-overrides";
 import { findEquivalentBySlug, ogLocale, seoHreflang } from "@/lib/i18n";
 
 const BASE = "https://www.zenecohomes.com";
 const allSeoPages = [...seoLandingPages, ...localSeoLandingPages];
+// Next.js refreshes the public metadata after a small approved change or rollback.
+// Canonical, hreflang, content and CTAs still come from the unchanged page model.
+export const revalidate = 300;
 
 function getLandingPage(slug: string) {
   return getSeoLandingPage(slug) || localSeoLandingPages.find((page) => page.slug === slug);
@@ -29,17 +33,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const eq = findEquivalentBySlug("no", slug);
+  const approved = await readZenEcoSeoOverride(slug);
+  const seoTitle = approved?.seo_title || page.seoTitle;
+  const seoDescription = approved?.seo_description || page.seoDescription;
 
   return {
-    title: page.seoTitle,
-    description: page.seoDescription,
+    title: seoTitle,
+    description: seoDescription,
     alternates: {
       canonical: `/${page.slug}`,
       languages: eq ? seoHreflang(eq) : undefined,
     },
     openGraph: {
-      title: page.seoTitle,
-      description: page.seoDescription,
+      title: seoTitle,
+      description: seoDescription,
       url: `${BASE}/${page.slug}`,
       locale: ogLocale.no,
       type: "website",
