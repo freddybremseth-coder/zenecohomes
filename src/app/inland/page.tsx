@@ -253,7 +253,12 @@ export default async function InlandPage() {
           <p>
             Freddy bor i Benidorm. Familien har samtidig en oliveneiendom i Biar med rundt 1.500 trær. Det gir praktisk erfaring med land, vann, adkomst og forskjellen mellom et hus som fungerer på ferie og et sted som fungerer i hverdagen.
           </p>
-          <Link className="text-button" href="/om-freddy">Les mer om Freddy <ArrowRight size={16} /></Link>
+          <div className="hero-actions">
+            <Link className="text-button" href="/om-freddy">Les mer om Freddy <ArrowRight size={16} /></Link>
+            <a className="text-button" href="https://www.pinosoecolife.com/bolig-i-pinoso" target="_blank" rel="noopener noreferrer">
+              Spesialguide: bolig og tomt i Pinoso <ArrowRight size={16} />
+            </a>
+          </div>
         </div>
       </section>
 

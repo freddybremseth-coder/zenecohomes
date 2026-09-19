@@ -836,7 +836,7 @@ export function areaMatchesRegion(profile: AreaProfile, region?: string) {
 export async function getProperties(limit?: number): Promise<Property[]> {
   try {
     const res = await fetch(`${REALTYFLOW_BASE}/api/properties`, {
-      cache: "no-store",
+      next: { revalidate: 60 },
       headers: { Accept: "application/json" },
     });
     if (!res.ok) return fallbackProperties.slice(0, limit);

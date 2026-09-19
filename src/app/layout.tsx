@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Fraunces, Inter } from "next/font/google";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
 import { RemasterPlayer } from "@/components/RemasterPlayer";
+import { SearchDiscoveryTracker } from "@/components/SearchDiscoveryTracker";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
 import "./accessibility.css";
@@ -121,8 +122,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ],
         founder: {
           "@type": "Person",
+          "@id": "https://www.freddybremseth.com/#person",
           name: "Freddy Bremseth",
-          url: "https://www.zenecohomes.com/om-freddy",
+          url: "https://www.freddybremseth.com/",
           knowsAbout: ["Eiendom i Spania", "Rådgivning", "Salg", "Digitale systemer"],
         },
         sameAs: ["https://www.freddybremseth.com"],
@@ -148,6 +150,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <ZenecoChatbot />
         <RemasterPlayer />
+        <SearchDiscoveryTracker />
       </body>
     </html>
   );
