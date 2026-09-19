@@ -198,6 +198,7 @@ export function ContactForm({
         property_ref: propertyRef,
         property_title: propertyTitle,
         request_type: requestType,
+        page_url: window.location.origin + window.location.pathname,
       }),
     });
     if (res.ok) {
