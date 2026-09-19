@@ -98,6 +98,8 @@ export type Property = {
   pool?: boolean;
   energy_rating?: string;
   status?: string;
+  updated_at?: string | null;
+  updatedAt?: string | null;
   region?: string;
   show_on_website?: boolean | null;
   website_visible?: boolean | null;

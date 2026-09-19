@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
 import { allArticles, articlePath } from "@/lib/magazine";
-import { getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
+import { fallbackProperties, getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
 import { inlandTowns } from "@/lib/inland";
 import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
@@ -98,17 +98,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             : 0.8,
   }));
 
-  const properties = await getProperties(100);
-  const propertyRefs = properties
-    .map((property) => getPropertyRef(property))
-    .filter(Boolean);
-  const propertyRoutes = propertyRefs.flatMap((ref) =>
-    (["no", "de", "en", "es"] as const).map((locale) => ({
+  // Enumerate all real visible inventory. A previous cap of 100 silently
+  // omitted valid property pages. Never sitemap sample properties when the
+  // upstream RealtyFlow feed is unavailable.
+  const fallbackIds = new Set(fallbackProperties.map((property) => property.id));
+  const properties = (await getProperties(0)).filter(
+    (property) => !fallbackIds.has(property.id),
+  );
+  const uniqueProperties = new Map<string, (typeof properties)[number]>();
+  for (const property of properties) {
+    const reference = getPropertyRef(property);
+    if (reference) uniqueProperties.set(reference, property);
+  }
+  const propertyRoutes = Array.from(uniqueProperties.entries()).flatMap(([ref, property]) => {
+    const date = property.updated_at || property.updatedAt;
+    const modified = date && Number.isFinite(Date.parse(date)) ? new Date(date) : null;
+    return (["no", "de", "en", "es"] as const).map((locale) => ({
       url: `${baseUrl}${getPropertyDetailPath(ref, locale)}`,
+      ...(modified ? { lastModified: modified } : {}),
       changeFrequency: "daily" as const,
       priority: 0.7,
-    })),
-  );
+    }));
+  });
 
   return [...staticRoutes, ...propertyRoutes];
 }
