@@ -38,7 +38,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const seoDescription = approved?.seo_description || page.seoDescription;
 
   return {
-    title: seoTitle,
+    // A metadata override has an already length-checked, full search title.
+    // Do not append the root layout title template to it.
+    title: approved ? { absolute: seoTitle } : page.seoTitle,
     description: seoDescription,
     alternates: {
       canonical: `/${page.slug}`,
