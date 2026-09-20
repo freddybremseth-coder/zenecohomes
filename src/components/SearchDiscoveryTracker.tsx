@@ -17,8 +17,8 @@ export function SearchDiscoveryTracker() {
 
     const path = window.location.pathname;
     // Avoid analytics on private pages or accidental personal-data URL paths.
-    if (path.length > 220 || /[@\\x00-\\x1f]/.test(path) ||
-        /^\\/(?:api|admin|auth|login|account|konto|dashboard|portal|checkout)(?:\\/|$)/i.test(path)) return;
+    if (path.length > 220 || /[@\x00-\x1f]/.test(path) ||
+        /^\/(?:api|admin|auth|login|account|konto|dashboard|portal|checkout)(?:\/|$)/i.test(path)) return;
 
     const storageKey = `zeneco:search-discovery:${path}:${safeReferrer.source}`;
     try {
