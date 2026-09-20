@@ -1,0 +1,30 @@
+name: Search discovery attribution safety
+on:
+  pull_request:
+    paths:
+      - 'src/lib/seo-referrer.ts'
+      - 'src/components/SearchDiscoveryTracker.tsx'
+      - 'tests/seo-referrer.test.mjs'
+      - '.github/workflows/search-discovery-validation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/lib/seo-referrer.ts'
+      - 'src/components/SearchDiscoveryTracker.tsx'
+      - 'tests/seo-referrer.test.mjs'
+      - '.github/workflows/search-discovery-validation.yml'
+jobs:
+  privacy-and-source-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reject spoofed origins and leaked search queries
+        run: node --experimental-strip-types --test tests/seo-referrer.test.mjs
+      - name: Install locked application dependencies
+        run: npm ci
+      - name: Check TypeScript integration
+        run: npx tsc --noEmit
