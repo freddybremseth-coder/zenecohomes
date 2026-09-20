@@ -8,12 +8,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/auth/", "/api/portal/", "/min-side"],
+        // Allow the public sign-in pages to be crawled so their noindex
+        // meta directives can be seen. Auth and API resources stay blocked.
+        disallow: ["/auth/", "/api/portal/"],
       },
       {
         userAgent: "OAI-SearchBot",
         allow: "/",
-        disallow: ["/auth/", "/api/portal/", "/min-side"],
+        // Allow the public sign-in pages to be crawled so their noindex
+        // meta directives can be seen. Auth and API resources stay blocked.
+        disallow: ["/auth/", "/api/portal/"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

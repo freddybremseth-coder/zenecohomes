@@ -13,6 +13,8 @@ const BASE = "https://www.zenecohomes.com";
 export const metadata = {
   title: "Mein Bereich",
   description: "Kundenportal für Immobilien-Auswahl, Dokumente, Nachrichten und Begleitung bei Zen Eco Homes.",
+  // Client account pages should not compete with public property guides in Search.
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "/de/min-side",
     languages: {
