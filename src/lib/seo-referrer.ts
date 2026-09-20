@@ -5,12 +5,12 @@
  * This mirrors the collector's exact allowlist in realtyflow-pro.
  */
 const SEARCH_HOSTS: ReadonlyArray<readonly [RegExp, string]> = [
-  [/(^|\.)google\.(?:com|[a-z]{2}|com\.[a-z]{2}|co\.[a-z]{2})$/i, "google_search"],
+  [/^gemini\.google\.com$/i, "google_gemini"],
   [/(^|\.)bing\.com$/i, "bing_search"],
   [/(^|\.)chatgpt\.com$/i, "chatgpt"],
   [/^copilot\.microsoft\.com$/i, "microsoft_copilot"],
   [/(^|\.)perplexity\.ai$/i, "perplexity"],
-  [/^gemini\.google\.com$/i, "google_gemini"],
+  [/(^|\.)google\.(?:com|[a-z]{2}|com\.[a-z]{2}|co\.[a-z]{2})$/i, "google_search"],
   [/^search\.brave\.com$/i, "brave_search"],
   [/(^|\.)duckduckgo\.com$/i, "duckduckgo"],
 ];
