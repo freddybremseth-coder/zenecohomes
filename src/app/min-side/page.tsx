@@ -30,6 +30,8 @@ const benefits = [
 export const metadata = {
   title: "Min side",
   description: "Kundeportal for boligmatch, dokumenter, meldinger og oppfølging hos Zen Eco Homes.",
+  // Client account pages should not compete with public property guides in Search.
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "/min-side",
     languages: {
