@@ -13,6 +13,8 @@ const BASE = "https://www.zenecohomes.com";
 export const metadata: Metadata = {
   title: "Mi área | Zen Eco Homes",
   description: "Acceso personal a tu proceso de compra con Zen Eco Homes: viviendas, documentos, mensajes y próximos pasos en un solo lugar.",
+  // Client account pages should not compete with public property guides in Search.
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "/es/mi-area",
     languages: {
