@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { connection } from "next/server";
 import { ArrowRight, Building2, Home, Leaf, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -35,7 +36,13 @@ const matchOptions = [
 ];
 
 export default async function SpanishHome() {
-  const properties = (await getProperties()).slice(0, 6);
+  await connection();
+  const pool = [...(await getProperties(0, "zeneco"))];
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  const properties = pool.slice(0, 6);
 
   return (
     <main lang="es">

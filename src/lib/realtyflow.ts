@@ -835,9 +835,11 @@ export function areaMatchesRegion(profile: AreaProfile, region?: string) {
   );
 }
 
-export async function getProperties(limit?: number): Promise<Property[]> {
+export async function getProperties(limit?: number, brandId?: string): Promise<Property[]> {
   try {
-    const res = await fetch(`${REALTYFLOW_BASE}/api/properties`, {
+    const propertyUrl = new URL("/api/properties", REALTYFLOW_BASE);
+    if (brandId) propertyUrl.searchParams.set("brandId", brandId);
+    const res = await fetch(propertyUrl.toString(), {
       next: { revalidate: 60 },
       headers: { Accept: "application/json" },
     });
