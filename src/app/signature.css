@@ -14,6 +14,28 @@
   color: inherit;
 }
 
+.brand-logo-image {
+  display: block;
+  width: clamp(188px, 18vw, 278px);
+  height: auto;
+  object-fit: contain;
+}
+
+.site-header.over-hero .brand-logo-image {
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: rgba(248, 246, 241, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 29, 39, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.site-header.is-scrolled .brand-logo-image,
+.site-header:not(.over-hero) .brand-logo-image {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 .brand-monogram {
   position: relative;
   display: grid;
@@ -289,17 +311,11 @@
 
 @media (max-width: 520px) {
   .brand-2027 {
-    gap: 9px;
+    gap: 0;
   }
 
-  .brand-monogram {
-    width: 34px;
-    height: 34px;
-    font-size: 0.66rem;
-  }
-
-  .brand-copy strong {
-    font-size: 0.98rem;
+  .brand-logo-image {
+    width: 176px;
   }
 
   .footer-2027-actions,

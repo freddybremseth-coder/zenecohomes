@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -69,11 +70,14 @@ export function SiteHeader({
   return (
     <header className={headerClass}>
       <Link className="brand brand-2027" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
-        <span className="brand-monogram" aria-hidden="true">ZE</span>
-        <span className="brand-copy">
-          <strong>Zen Eco</strong>
-          <small>Homes · Costa Blanca</small>
-        </span>
+        <Image
+          className="brand-logo-image"
+          src="/assets/logoZEH.png?v=20260925"
+          alt="Zen Eco Homes"
+          width={600}
+          height={200}
+          priority
+        />
       </Link>
       <button
         aria-controls="site-navigation"
