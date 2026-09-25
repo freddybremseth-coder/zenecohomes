@@ -17,7 +17,7 @@ if (session_status() === PHP_SESSION_NONE) { session_start(); }
 <body>
 
 <header class="zen-header">
-    <a href="index.php" class="logo" aria-label="Zen Eco Homes"><img src="assets/logoZEH.png?v=20260925" alt="Zen Eco Homes" style="display:block;width:min(280px,42vw);height:auto;"></a>
+    <a href="index.php" class="logo" aria-label="Zen Eco Homes"><img src="assets/logoZEH.png?v=20260925-approved" alt="Zen Eco Homes" style="display:block;width:min(280px,42vw);height:auto;"></a>
     
     <nav class="nav-links">
         <a href="eiendommer.php">Boliger</a>
