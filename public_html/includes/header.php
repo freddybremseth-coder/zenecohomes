@@ -10,12 +10,14 @@ if (session_status() === PHP_SESSION_NONE) { session_start(); }
     <meta name="description" content="Trygg bolighandel i Spania. Vi hjelper deg med nybygg, tomter og kjøpsprosessen på Costa Blanca.">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=20260925">
+    <link rel="apple-touch-icon" href="assets/favicon.png?v=20260925">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="zen-header">
-    <a href="index.php" class="logo">Zen<span>Eco</span>Homes</a>
+    <a href="index.php" class="logo" aria-label="Zen Eco Homes"><img src="assets/logoZEH.png?v=20260925" alt="Zen Eco Homes" style="display:block;width:min(280px,42vw);height:auto;"></a>
     
     <nav class="nav-links">
         <a href="eiendommer.php">Boliger</a>
