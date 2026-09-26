@@ -267,6 +267,37 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Zen Corporate Homes</p>
+          <h2>Bolig i Spania som ansatt- eller medlemsfordel</h2>
+          <p>
+            For bedrifter, foreninger og organisasjoner kan vi bygge en egen kjøpsreise rundt felles bruk:
+            boligvalg, beslutningsgrunnlag, drift og praktisk oppfølging på Costa Blanca.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article>
+            <strong>B2B</strong>
+            <h3>Bedriftshytte for ansatte</h3>
+            <p>En moderne leilighet eller villa med planlagt bruk, tydelig fordeling og lokal oppfølging.</p>
+          </article>
+          <article>
+            <strong>Medlemmer</strong>
+            <h3>Bolig for foreninger og organisasjoner</h3>
+            <p>En egen modell for organisasjoner som ønsker å gi medlemmene tilgang til bolig i Spania.</p>
+          </article>
+          <article>
+            <strong>Calculator</strong>
+            <h3>Se et konkret regneeksempel</h3>
+            <p>Test kjøpesum, antall brukere, planlagte bruksuker og estimert årlig drift.</p>
+            <Link className="text-button" href="/bedriftshytte-spania">
+              Utforsk Zen Corporate Homes <ArrowRight size={16} />
+            </Link>
+          </article>
+        </div>
+      </section>
+
       <GuideDownload />
 
       <section className="contact-section" id="kontakt">
