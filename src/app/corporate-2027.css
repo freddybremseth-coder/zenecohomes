@@ -474,3 +474,11 @@
   .corporate-lead-form { padding: 24px; border-radius: 22px; }
   .corporate-hero-inner h1 { font-size: clamp(2.65rem, 14vw, 4.3rem); }
 }
+
+
+.corporate-form-privacy {
+  margin: 2px 0 0;
+  color: #7a858a;
+  font-size: .78rem;
+  line-height: 1.55;
+}
