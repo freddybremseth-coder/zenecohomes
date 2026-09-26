@@ -46,12 +46,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: [
-      { url: "/icon.png?v=20260925", type: "image/png", sizes: "256x256" },
-      { url: "/assets/social-profile-zeneco.png?v=20260925", type: "image/png", sizes: "256x256" },
-    ],
-    shortcut: "/icon.png?v=20260925",
-    apple: "/assets/social-profile-zeneco.png?v=20260925",
+    icon: [{ url: "/assets/zeneco-mark.svg?v=20260926-3", type: "image/svg+xml" }],
+    shortcut: "/assets/zeneco-mark.svg?v=20260926-3",
+    apple: "/assets/zeneco-mark.svg?v=20260926-3",
   },
   openGraph: {
     title: "Zen Eco Homes | Moderne nybygg i Spania",
