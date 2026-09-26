@@ -284,7 +284,7 @@ export default function CorporateHomesPage() {
           </p>
         </div>
         <div className="corporate-article-grid">
-          {corporateArticles.map((article) => (
+          {corporateArticles.slice(0, 6).map((article) => (
             <article className="corporate-article-card" key={article.slug}>
               <span>{article.readingTime}</span>
               <h3>{article.title}</h3>
@@ -294,6 +294,11 @@ export default function CorporateHomesPage() {
               </Link>
             </article>
           ))}
+        </div>
+        <div className="center-action corporate-knowledge-action">
+          <Link className="contact-button" href="/bedriftshytte-spania/guider">
+            Se alle Corporate-guider <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 
