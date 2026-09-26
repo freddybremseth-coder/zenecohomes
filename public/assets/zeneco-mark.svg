@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 220" role="img" aria-label="Zen Eco Homes">
+  <circle cx="160" cy="60" r="52" fill="#D4A84D"/>
+  <path d="M28 152 C80 126 124 118 176 126 C211 132 236 139 260 152" fill="none" stroke="#0B4F59" stroke-width="12" stroke-linecap="round"/>
+  <path d="M68 140 L68 80 L128 48 L196 73 L196 143" fill="#F8F6F1" stroke="#0B4F59" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M128 48 L128 139 M196 73 L228 85 L228 148" fill="none" stroke="#0B4F59" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="155" y="86" width="19" height="53" fill="#0B4F59"/>
+  <path d="M37 143 C38 115 47 88 60 65 C75 91 80 117 79 143" fill="#315E64"/>
+  <path d="M18 151 C48 139 74 138 100 145" fill="none" stroke="#315E64" stroke-width="8" stroke-linecap="round"/>
+</svg>
