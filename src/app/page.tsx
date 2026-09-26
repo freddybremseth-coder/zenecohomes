@@ -288,11 +288,11 @@ export default async function Home() {
             <p>En egen modell for organisasjoner som ønsker å gi medlemmene tilgang til bolig i Spania.</p>
           </article>
           <article>
-            <strong>Calculator</strong>
+            <strong>Kalkulator</strong>
             <h3>Se et konkret regneeksempel</h3>
             <p>Test kjøpesum, antall brukere, planlagte bruksuker og estimert årlig drift.</p>
             <Link className="text-button" href="/bedriftshytte-spania">
-              Utforsk Zen Corporate Homes <ArrowRight size={16} />
+              Se Zen Corporate Homes <ArrowRight size={16} />
             </Link>
           </article>
         </div>
