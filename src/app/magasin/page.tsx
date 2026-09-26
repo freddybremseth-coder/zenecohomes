@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { allArticles, articlePath, getMagazineArticle } from "@/lib/magazine";
+import { allArticles, articlePath, articleSilo, getMagazineArticle } from "@/lib/magazine";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const booksUrl = "https://books.freddybremseth.com";
@@ -143,7 +143,7 @@ export const metadata = {
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
   const cmsSlugs = new Set(cmsArticles.map((article) => article.slug));
-  const fallbackArticles = allArticles.filter((article) => !cmsSlugs.has(article.slug));
+  const fallbackArticles = allArticles.filter((article) => !cmsSlugs.has(article.slug) && articleSilo(article) !== "corporate");
 
   return (
     <main>
