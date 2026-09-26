@@ -93,12 +93,6 @@ const CTA: Record<SiteLocale, { eyebrow: string; title: string; body: string; pr
   },
 };
 
-const MUSIC: Record<SiteLocale, string> = {
-  no: "Re-Master Freddy",
-  de: "Re-Master Freddy",
-  en: "Re-Master Freddy",
-  es: "Re-Master Freddy",
-};
 
 export function Footer({
   locale = "no",
@@ -129,10 +123,9 @@ export function Footer({
       <div className="footer-2027-main">
         <div className="footer-2027-brand">
           <Link className="footer-wordmark" href={locale === "no" ? "/" : `/${locale}`} aria-label="Zen Eco Homes">
-            <span className="footer-monogram" aria-hidden="true">ZE</span>
             <span>
-              <strong>Zen Eco</strong>
-              <small>Homes · Costa Blanca</small>
+              <strong>Zen Eco Homes</strong>
+              <small>Costa Blanca</small>
             </span>
           </Link>
           <p>{TAGLINE[locale]}</p>
@@ -153,7 +146,6 @@ export function Footer({
       <div className="footer-2027-bottom">
         <span>© {new Date().getFullYear()} Zen Eco Homes</span>
         <span>Benidorm · Costa Blanca</span>
-        <a href="https://remaster.freddybremseth.com" target="_blank" rel="noopener noreferrer">♫ {MUSIC[locale]}</a>
       </div>
     </footer>
   );
