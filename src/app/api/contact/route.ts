@@ -59,6 +59,40 @@ async function recordPropertyLead(body: Record<string, unknown>) {
   if (error) console.warn("[contact] property lead metric skipped:", error.message);
 }
 
+async function recordCorporateLead(body: Record<string, unknown>) {
+  const requestType = body.request_type ? String(body.request_type).trim() : "";
+  const source = body.source ? String(body.source).trim() : "";
+  const isCorporate = requestType === "corporate-home" || source.includes("corporate");
+  if (!isCorporate) return;
+
+  const supabase = getSupabaseAdmin();
+  if (!supabase) return;
+
+  const occurredAt = new Date().toISOString();
+  const { error } = await supabase.from("marketing_events").insert({
+    event_type: "corporate_lead_submit",
+    brand_id: "zeneco",
+    content_id: "corporate-homes",
+    channel: "website",
+    genome: { copy_version: "corporate-v1" },
+    metrics: { count: 1 },
+    correlation_id: `zeneco:corporate_lead_submit:${Date.now()}`,
+    occurred_at: occurredAt,
+    metadata: {
+      copy_version: "corporate-v1",
+      source: source || "zeneco-corporate-homes",
+      request_type: requestType || "corporate-home",
+      page_url: publicLeadSourcePage(body.page_url) || null,
+      utm_source: body.utm_source ? String(body.utm_source).slice(0, 80) : null,
+      utm_medium: body.utm_medium ? String(body.utm_medium).slice(0, 80) : null,
+      utm_campaign: body.utm_campaign ? String(body.utm_campaign).slice(0, 120) : null,
+      utm_content: body.utm_content ? String(body.utm_content).slice(0, 160) : null,
+      measurement: "corporate_conversion_funnel",
+    },
+  });
+  if (error) console.warn("[contact] corporate lead metric skipped:", error.message);
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
@@ -96,7 +130,10 @@ export async function POST(request: Request) {
       utm_content: body.utm_content ? String(body.utm_content).slice(0, 160) : undefined,
     });
 
-    await recordPropertyLead(body).catch(() => undefined);
+    await Promise.all([
+      recordPropertyLead(body).catch(() => undefined),
+      recordCorporateLead(body).catch(() => undefined),
+    ]);
     return NextResponse.json({ ok: true });
   } catch (error) {
     return NextResponse.json(
