@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Fraunces, Inter } from "next/font/google";
 import { ZenecoChatbot } from "@/components/ZenecoChatbot";
-import { RemasterPlayer } from "@/components/RemasterPlayer";
 import { SearchDiscoveryTracker } from "@/components/SearchDiscoveryTracker";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
@@ -153,7 +152,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-config-url="https://realtyflow.chatgenius.pro/api/public/booking-config?brand_id=zeneco"
         />
         <ZenecoChatbot />
-        <RemasterPlayer />
         <SearchDiscoveryTracker />
       </body>
     </html>
