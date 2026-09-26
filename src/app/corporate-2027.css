@@ -543,3 +543,19 @@
   .corporate-article-grid { grid-template-columns: 1fr; }
   .corporate-article-card { min-height: auto; }
 }
+
+
+.corporate-knowledge-action {
+  margin-top: 34px;
+}
+
+.corporate-guide-group {
+  padding-top: 64px;
+  padding-bottom: 18px;
+}
+
+.corporate-guides-cta {
+  width: min(100% - 40px, 1180px);
+  margin: 52px auto 0;
+  padding-bottom: 96px;
+}
