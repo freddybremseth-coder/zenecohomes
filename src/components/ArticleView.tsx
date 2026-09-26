@@ -22,8 +22,10 @@ export function ArticleView({ article }: { article: Article }) {
     datePublished: article.date,
     dateModified: article.updated,
     about: article.keywords,
-    mentions: ["Boligkjop i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsradgivning"],
-    author: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
+    mentions: isCorporate
+      ? ["Bedriftshytte i Spania", "Firmabolig", "Costa Blanca", "Ansattgode"]
+      : ["Boligkjøp i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsrådgivning"],
+    author: { "@type": "Organization", name: isCorporate ? "Zen Corporate Homes" : "Zen Eco Homes", url: BASE },
     publisher: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
     mainEntityOfPage: `${BASE}${canonicalPath}`,
   };
