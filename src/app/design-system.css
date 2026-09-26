@@ -93,7 +93,7 @@ h3,
 }
 
 .site-header.over-hero {
-  background: linear-gradient(180deg, rgba(10, 18, 23, 0.5), rgba(10, 18, 23, 0));
+  background: linear-gradient(180deg, rgba(5, 24, 28, 0.82) 0%, rgba(5, 24, 28, 0.42) 58%, rgba(5, 24, 28, 0) 100%);
   border-bottom-color: transparent;
   backdrop-filter: none;
 }
