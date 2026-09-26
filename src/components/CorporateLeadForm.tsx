@@ -28,6 +28,7 @@ export function CorporateLeadForm() {
     ].join("\n");
 
     try {
+      const params = new URLSearchParams(window.location.search);
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,6 +45,10 @@ export function CorporateLeadForm() {
           request_type: "corporate-home",
           message,
           page_url: window.location.origin + window.location.pathname,
+          utm_source: params.get("utm_source"),
+          utm_medium: params.get("utm_medium"),
+          utm_campaign: params.get("utm_campaign"),
+          utm_content: params.get("utm_content"),
         }),
       });
 
