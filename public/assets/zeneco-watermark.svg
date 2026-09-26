@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 210" role="img" aria-label="Zen Eco Homes">
+<defs><filter id="s" x="-10%" y="-20%" width="120%" height="150%"><feGaussianBlur stdDeviation="2.2" result="b"/><feFlood flood-color="#062f34" flood-opacity=".8"/><feComposite in2="b" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<g filter="url(#s)">
+  <g transform="translate(14 18) scale(.78)">
+    <circle cx="160" cy="60" r="52" fill="#D4A84D"/>
+    <path d="M28 152 C80 126 124 118 176 126 C211 132 236 139 260 152" fill="none" stroke="#F8F6F1" stroke-width="12" stroke-linecap="round"/>
+    <path d="M68 140 L68 80 L128 48 L196 73 L196 143" fill="none" stroke="#F8F6F1" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M128 48 L128 139 M196 73 L228 85 L228 148" fill="none" stroke="#F8F6F1" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="155" y="86" width="19" height="53" fill="#F8F6F1"/>
+  </g>
+  <text x="250" y="113" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" fill="#F8F6F1" stroke="#062F34" stroke-width="3" paint-order="stroke">Zen Eco Homes</text>
+  <text x="254" y="157" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#D4A84D" stroke="#062F34" stroke-width="2" paint-order="stroke" letter-spacing="7">COSTA BLANCA</text>
+</g>
+</svg>
