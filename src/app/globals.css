@@ -177,7 +177,8 @@ select {
 }
 
 .hero-content .eyebrow {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 .hero-content .eyebrow::before {
   content: "";
@@ -219,9 +220,10 @@ select {
 .hero-copy {
   width: min(620px, 100%);
   margin: 26px 0 38px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.96);
   font-size: clamp(1.05rem, 1.5vw, 1.3rem);
   line-height: 1.7;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
 }
 
 .search-card {
