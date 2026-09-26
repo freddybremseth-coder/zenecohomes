@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ]),
   );
   const isArticleRoute = (route: string) =>
-    route.startsWith("/magasin/") || route.startsWith("/kjopsprosess/") || route.startsWith("/guide/");
+    route.startsWith("/magasin/") || route.startsWith("/kjopsprosess/") || route.startsWith("/guide/") || route.startsWith("/bedriftshytte-spania/");
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
@@ -39,6 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/es/propiedades",
     "/tomter",
     "/bedriftshytte-spania",
+    "/bedriftshytte-spania/guider",
     "/inland",
     "/de/inland",
     "/en/inland",

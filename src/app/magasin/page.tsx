@@ -5,7 +5,8 @@ import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { allArticles, articlePath, getMagazineArticle } from "@/lib/magazine";
+import { allArticles, articlePath, articleSilo, getMagazineArticle } from "@/lib/magazine";
+import { corporateArticles } from "@/lib/corporate-content";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const booksUrl = "https://books.freddybremseth.com";
@@ -143,7 +144,7 @@ export const metadata = {
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
   const cmsSlugs = new Set(cmsArticles.map((article) => article.slug));
-  const fallbackArticles = allArticles.filter((article) => !cmsSlugs.has(article.slug));
+  const fallbackArticles = allArticles.filter((article) => !cmsSlugs.has(article.slug) && articleSilo(article) !== "corporate");
 
   return (
     <main>
@@ -216,6 +217,44 @@ export default async function MagazinePage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">Zen Corporate Homes</p>
+          <h2>Guider for norske bedrifter og organisasjoner</h2>
+          <p>
+            Bedriftshytte, firmabolig, booking, drift, skatt, medlemsmodeller og beslutningsgrunnlag samlet på ett sted.
+          </p>
+        </div>
+        <div className="magazine-grid">
+          {corporateArticles.map((article) => (
+            <article className="magazine-card" key={article.slug}>
+              <Image
+                className="magazine-cover-image"
+                src={getArticleCover(article.slug)}
+                alt={article.imageAlt}
+                width={1200}
+                height={760}
+              />
+              <div className="magazine-body">
+                <p className="magazine-meta">Zen Corporate Homes · {article.readingTime}</p>
+                <h2>{article.title}</h2>
+                <p>{article.excerpt}</p>
+                <div className="magazine-actions">
+                  <Link className="text-button" href={articlePath(article)}>
+                    Les artikkel <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="center-action" style={{ marginTop: 32 }}>
+          <Link className="contact-button" href="/bedriftshytte-spania/guider">
+            Se Corporate-kunnskapssenter <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 

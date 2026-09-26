@@ -1,4 +1,5 @@
 import { articles as baseArticles, type Article } from "./content";
+import { corporateArticles } from "./corporate-content";
 
 export const extraArticles: Article[] = [
   {
@@ -219,13 +220,13 @@ export const extraArticles: Article[] = [
   },
 ];
 
-export const allArticles: Article[] = [...baseArticles, ...extraArticles];
+export const allArticles: Article[] = [...baseArticles, ...extraArticles, ...corporateArticles];
 
 export function getMagazineArticle(slug: string) {
   return allArticles.find((article) => article.slug === slug);
 }
 
-export type Silo = "kjopsprosess" | "guide";
+export type Silo = "kjopsprosess" | "guide" | "corporate";
 
 /** Slug → silo. Styrer URL-struktur og tematisk gruppering; resten blir /magasin. */
 const SILO_BY_SLUG: Record<string, Silo> = {
@@ -257,6 +258,12 @@ export const SILO_META: Record<Silo, { label: string; title: string; href: strin
     href: "/kjopsprosess",
     intro:
       "Alt du trenger å forstå før du kjøper: omkostninger og skatt, bankgaranti, finansiering, NIE, notar og selve prosessen fra reservasjon til overtakelse.",
+  },
+  corporate: {
+    label: "Zen Corporate Homes",
+    title: "Kunnskap om bedriftshytte i Spania",
+    href: "/bedriftshytte-spania",
+    intro: "Praktiske guider for norske bedrifter og organisasjoner som vurderer bedriftshytte, firmabolig eller medlemsbolig på Costa Blanca.",
   },
   guide: {
     label: "Guide",

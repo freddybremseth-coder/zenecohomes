@@ -10,7 +10,8 @@ export function ArticleView({ article }: { article: Article }) {
   const silo = articleSilo(article);
   const hub = silo ? SILO_META[silo] : { label: "Magasin", href: "/magasin" };
   const canonicalPath = articlePath(article);
-  const relatedArticles = allArticles.filter((item) => item.slug !== article.slug).slice(0, 3);
+  const relatedArticles = allArticles.filter((item) => item.slug !== article.slug && articleSilo(item) === silo).slice(0, 3);
+  const isCorporate = silo === "corporate";
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -21,8 +22,10 @@ export function ArticleView({ article }: { article: Article }) {
     datePublished: article.date,
     dateModified: article.updated,
     about: article.keywords,
-    mentions: ["Boligkjop i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsradgivning"],
-    author: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
+    mentions: isCorporate
+      ? ["Bedriftshytte i Spania", "Firmabolig", "Costa Blanca", "Ansattgode"]
+      : ["Boligkjøp i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsrådgivning"],
+    author: { "@type": "Organization", name: isCorporate ? "Zen Corporate Homes" : "Zen Eco Homes", url: BASE },
     publisher: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
     mainEntityOfPage: `${BASE}${canonicalPath}`,
   };
@@ -163,7 +166,7 @@ export function ArticleView({ article }: { article: Article }) {
             <section style={{ marginTop: 46, padding: "clamp(26px, 4vw, 38px)", background: "var(--sage)", borderRadius: "var(--radius-2027)" }}>
               <p className="eyebrow">Anbefalte neste steg</p>
               <h2 style={{ color: "var(--dark)", fontFamily: "var(--display)", fontWeight: 500, letterSpacing: "-0.015em", marginTop: 0 }}>
-                Slik gar du videre
+                Slik går du videre
               </h2>
               <ol style={{ display: "grid", gap: 10, paddingLeft: 20, lineHeight: 1.75 }}>
                 {article.nextSteps.map((step) => (
@@ -178,7 +181,7 @@ export function ArticleView({ article }: { article: Article }) {
             </section>
 
             <section style={{ marginTop: 46 }}>
-              <p className="eyebrow">Vanlige sporsmal</p>
+              <p className="eyebrow">Vanlige spørsmål</p>
               <h2 style={{ color: "var(--dark)", fontFamily: "var(--display)", fontWeight: 500, letterSpacing: "-0.015em", marginTop: 0 }}>
                 FAQ
               </h2>
@@ -197,13 +200,15 @@ export function ArticleView({ article }: { article: Article }) {
             <div style={{ display: "block" }}>
               <p className="eyebrow">Trenger du hjelp?</p>
               <h3 style={{ margin: "0 0 12px", color: "var(--dark)", fontFamily: "var(--display)", fontWeight: 500, letterSpacing: "-0.015em", fontSize: "1.5rem" }}>
-                Fa en personlig vurdering
+                Få en personlig vurdering
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-                Vi hjelper deg a vurdere omrade, budsjett, boligtype, risiko og neste steg for du reserverer.
+                {isCorporate
+                  ? "Vi hjelper virksomheten å vurdere modell, budsjett, område, boligtype, drift og neste steg."
+                  : "Vi hjelper deg å vurdere område, budsjett, boligtype, risiko og neste steg før du reserverer."}
               </p>
-              <Link className="contact-button" href="/#kontakt" style={{ marginTop: 12 }}>
-                Kontakt Zen Eco Homes <ArrowRight size={17} />
+              <Link className="contact-button" href={isCorporate ? "/bedriftshytte-spania#bedriftsvurdering" : "/#kontakt"} style={{ marginTop: 12 }}>
+                {isCorporate ? "Be om bedriftsvurdering" : "Kontakt Zen Eco Homes"} <ArrowRight size={17} />
               </Link>
             </div>
             <div style={{ display: "block" }}>
