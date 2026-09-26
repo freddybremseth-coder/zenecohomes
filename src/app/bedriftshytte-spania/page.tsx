@@ -16,6 +16,7 @@ import { CorporateLeadForm } from "@/components/CorporateLeadForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { CARE_URL } from "@/lib/i18n";
+import { corporateArticles } from "@/lib/corporate-content";
 
 export const metadata: Metadata = {
   title: "Bedriftshytte i Spania | Firmabolig for ansatte og medlemmer | Zen Corporate Homes",
@@ -270,6 +271,29 @@ export default function CorporateHomesPage() {
           <div><Users /><strong>Bruk og booking</strong><span>Hvem som skal bruke boligen, kapasitet og prinsipper for rettferdig fordeling.</span></div>
           <div><Building2 /><strong>Relevant boligshortlist</strong><span>Et begrenset utvalg som passer budsjett, kapasitet, område og faktisk bruk.</span></div>
           <div><KeyRound /><strong>Lokal drift</strong><span>Plan for nøkkelhold, tilsyn, rengjøring og praktisk oppfølging etter overtakelsen.</span></div>
+        </div>
+      </section>
+
+      <section className="section corporate-knowledge" id="kunnskap">
+        <div className="section-heading">
+          <p className="eyebrow">Kunnskap for ledelse og HR</p>
+          <h2>Alt dere bør vurdere før en bedriftshytte i Spania</h2>
+          <p>
+            Vi har samlet praktiske guider om økonomi, bruk, booking, drift, områdevalg og beslutningsgrunnlag.
+            Artiklene er skrevet for norske bedrifter, foreninger og organisasjoner.
+          </p>
+        </div>
+        <div className="corporate-article-grid">
+          {corporateArticles.map((article) => (
+            <article className="corporate-article-card" key={article.slug}>
+              <span>{article.readingTime}</span>
+              <h3>{article.title}</h3>
+              <p>{article.excerpt}</p>
+              <Link className="text-button" href={`/bedriftshytte-spania/${article.slug}`}>
+                Les artikkelen <ArrowRight size={16} />
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
