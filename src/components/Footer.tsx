@@ -123,10 +123,7 @@ export function Footer({
       <div className="footer-2027-main">
         <div className="footer-2027-brand">
           <Link className="footer-wordmark" href={locale === "no" ? "/" : `/${locale}`} aria-label="Zen Eco Homes">
-            <span>
-              <strong>Zen Eco Homes</strong>
-              <small>Costa Blanca</small>
-            </span>
+            <img src="/assets/zeneco-header-light.svg?v=20260926-3" alt="Zen Eco Homes" width={900} height={190} />
           </Link>
           <p>{TAGLINE[locale]}</p>
           <small>{SUBLINE[locale]}</small>
