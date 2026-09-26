@@ -188,6 +188,7 @@ export function ContactForm({
   async function submitForm(form: HTMLFormElement) {
     setStatus("sending");
     const data = Object.fromEntries(new FormData(form).entries());
+    const params = new URLSearchParams(window.location.search);
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -198,7 +199,11 @@ export function ContactForm({
         property_ref: propertyRef,
         property_title: propertyTitle,
         request_type: requestType,
-        page_url: window.location.origin + window.location.pathname,
+        page_url: window.location.href,
+        utm_source: params.get("utm_source"),
+        utm_medium: params.get("utm_medium"),
+        utm_campaign: params.get("utm_campaign"),
+        utm_content: params.get("utm_content"),
       }),
     });
     if (res.ok) {
