@@ -40,8 +40,8 @@ export function CorporateLeadForm() {
           preferred_area: "Costa Blanca / åpen for forslag",
           budget: data.budget,
           timeline: data.timeline,
-          purchase_goal: "Bedriftshytte / medlemsbolig i Spania",
-          next_step: "B2B avklaringssamtale",
+          purchase_goal: "Bedriftshytte / firmabolig / medlemsbolig i Spania",
+          next_step: "Kostnadsfri bedriftsvurdering",
           request_type: "corporate-home",
           message,
           page_url: window.location.origin + window.location.pathname,
@@ -122,10 +122,10 @@ export function CorporateLeadForm() {
       <div className="corporate-form-grid">
         <label>
           Modell
-          <select name="model" defaultValue="Bedriftshytte for ansatte">
-            <option>Bedriftshytte for ansatte</option>
-            <option>Medlemsbolig for organisasjon</option>
-            <option>Felles løsning for flere bedrifter</option>
+          <select name="model" defaultValue="Ansattbolig / bedriftshytte">
+            <option>Ansattbolig / bedriftshytte</option>
+            <option>Medlemsbolig for forening eller organisasjon</option>
+            <option>Delt bedriftsbolig for flere virksomheter</option>
             <option>Vil ha forslag</option>
           </select>
         </label>
@@ -151,11 +151,15 @@ export function CorporateLeadForm() {
 
       <button className="submit-button" disabled={status === "sending"}>
         <Send size={18} />
-        {status === "sending" ? "Sender …" : "Be om bedriftsvurdering"}
+        {status === "sending" ? "Sender …" : "Be om kostnadsfri bedriftsvurdering"}
       </button>
 
+      <p className="corporate-form-privacy">
+        Opplysningene brukes kun til å vurdere henvendelsen og følge opp deres interesse for Zen Corporate Homes.
+      </p>
+
       {status === "sent" && (
-        <p className="form-success">Takk. Vi har mottatt forespørselen og tar kontakt for en kort behovsavklaring.</p>
+        <p className="form-success">Takk. Vi har mottatt forespørselen. Vi tar kontakt for en kort og uforpliktende behovsavklaring.</p>
       )}
       {status === "error" && (
         <p className="form-error">Noe gikk galt. Prøv igjen, eller bruk booking-knappen på siden.</p>
