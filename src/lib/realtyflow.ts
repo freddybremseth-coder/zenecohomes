@@ -168,6 +168,10 @@ export type LeadPayload = {
   property_title?: string;
   request_type?: string;
   page_url?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
 };
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
@@ -903,8 +907,20 @@ export async function getProperty(id: string): Promise<Property | null> {
   );
 }
 
+export function parseLeadBudgetEstimate(value?: string) {
+  const raw = String(value || "").trim();
+  if (!raw) return 0;
+  const matches = raw.replace(/\u00a0/g, " ").match(/\d[\d\s.,]*/g) || [];
+  const values = matches
+    .map((chunk) => Number(chunk.replace(/[\s.]/g, "").replace(",", ".")))
+    .filter((number) => Number.isFinite(number) && number > 0);
+  if (!values.length) return 0;
+  if (values.length === 1) return Math.round(values[0]);
+  return Math.round((Math.min(...values) + Math.max(...values)) / 2);
+}
+
 export async function sendLead(payload: LeadPayload) {
-  const pipelineValue = payload.budget ? Number(String(payload.budget).replace(/[^0-9]/g, "")) || 0 : 0;
+  const pipelineValue = parseLeadBudgetEstimate(payload.budget);
   const propertyInterest = [payload.property_ref, payload.property_title].filter(Boolean).join(" - ");
   const notes = [
     payload.request_type ? `Forespørsel: ${payload.request_type}` : "",
@@ -946,6 +962,10 @@ export async function sendLead(payload: LeadPayload) {
       property_title: payload.property_title || null,
       request_type: payload.request_type || null,
       source: payload.source || "zenecohomes-next",
+      utm_source: payload.utm_source || null,
+      utm_medium: payload.utm_medium || null,
+      utm_campaign: payload.utm_campaign || null,
+      utm_content: payload.utm_content || null,
       notes,
       pipeline_status: "NEW",
       pipeline_value: pipelineValue,
