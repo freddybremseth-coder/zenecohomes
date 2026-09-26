@@ -90,6 +90,10 @@ export async function POST(request: Request) {
       property_title: body.property_title ? String(body.property_title) : undefined,
       request_type: requestType,
       page_url: publicLeadSourcePage(body.page_url),
+      utm_source: body.utm_source ? String(body.utm_source).slice(0, 80) : undefined,
+      utm_medium: body.utm_medium ? String(body.utm_medium).slice(0, 80) : undefined,
+      utm_campaign: body.utm_campaign ? String(body.utm_campaign).slice(0, 120) : undefined,
+      utm_content: body.utm_content ? String(body.utm_content).slice(0, 160) : undefined,
     });
 
     await recordPropertyLead(body).catch(() => undefined);
