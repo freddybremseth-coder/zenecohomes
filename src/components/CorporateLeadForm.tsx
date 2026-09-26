@@ -44,7 +44,7 @@ export function CorporateLeadForm() {
           next_step: "Kostnadsfri bedriftsvurdering",
           request_type: "corporate-home",
           message,
-          page_url: window.location.origin + window.location.pathname,
+          page_url: window.location.href,
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
