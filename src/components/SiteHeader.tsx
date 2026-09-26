@@ -71,7 +71,7 @@ export function SiteHeader({
       <Link className="brand brand-2027" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
         <img
           className="brand-logo-image"
-          src="/api/brand-assets/zeneco-logo?v=20260926"
+          src="/assets/zeneco-logo.svg?v=20260926-2"
           alt="Zen Eco Homes"
           width={600}
           height={200}
