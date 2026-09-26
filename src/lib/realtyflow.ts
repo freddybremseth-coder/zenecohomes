@@ -167,6 +167,11 @@ export type LeadPayload = {
   property_ref?: string;
   property_title?: string;
   request_type?: string;
+  organization_name?: string;
+  organization_type?: string;
+  contact_role?: string;
+  user_count?: string;
+  corporate_model?: string;
   page_url?: string;
   utm_source?: string;
   utm_medium?: string;
@@ -961,6 +966,11 @@ export async function sendLead(payload: LeadPayload) {
       property_ref: payload.property_ref || null,
       property_title: payload.property_title || null,
       request_type: payload.request_type || null,
+      organization_name: payload.organization_name || null,
+      organization_type: payload.organization_type || null,
+      contact_role: payload.contact_role || null,
+      user_count: payload.user_count || null,
+      corporate_model: payload.corporate_model || null,
       source: payload.source || "zenecohomes-next",
       utm_source: payload.utm_source || null,
       utm_medium: payload.utm_medium || null,
