@@ -18,9 +18,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { CARE_URL } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Bedriftshytte i Spania | Bolig for ansatte og medlemmer",
+  title: "Bedriftshytte i Spania | Firmabolig for ansatte og medlemmer | Zen Corporate Homes",
   description:
-    "Zen Corporate Homes hjelper bedrifter, foreninger og organisasjoner med å finne, kjøpe og følge opp bolig på Costa Blanca for ansatte eller medlemmer.",
+    "Zen Corporate Homes hjelper norske bedrifter, foreninger og organisasjoner med å vurdere, finne, kjøpe og følge opp bedriftshytte eller firmabolig på Costa Blanca." ,
   keywords: [
     "bedriftshytte Spania",
     "firmahytte Spania",
@@ -42,28 +42,28 @@ export const metadata: Metadata = {
 const products = [
   {
     icon: BriefcaseBusiness,
-    label: "Employee Home",
+    label: "Ansattbolig",
     title: "Bedriftshytte for ansatte",
     text: "En leilighet eller villa som bedriften stiller til disposisjon etter tydelige regler og en rettferdig bookingmodell.",
     fit: "Typisk aktuelt for bedrifter med en bred brukergruppe.",
   },
   {
     icon: Building2,
-    label: "Corporate Villa",
+    label: "Bedriftsvilla",
     title: "Større bolig for flere brukere",
     text: "For virksomheter som ønsker mer kapasitet, flere soverom og en bolig som kan fungere gjennom store deler av året.",
     fit: "Egnet når bruk, kapasitet og langsiktig eierskap veier tyngre enn lavest mulig inngangspris.",
   },
   {
     icon: Handshake,
-    label: "Shared Corporate Home",
+    label: "Delt bedriftsbolig",
     title: "Felles løsning for flere bedrifter",
     text: "Vi kan utrede bolig og praktisk modell for flere mindre virksomheter som ønsker å dele en løsning.",
     fit: "Eierstruktur, booking og skatt må avklares konkret før kjøp.",
   },
   {
     icon: Users,
-    label: "Member Home",
+    label: "Medlemsbolig",
     title: "Medlemsbolig for foreninger",
     text: "En bolig organisasjonen kan gjøre tilgjengelig for medlemmer gjennom booking, trekning eller annen fordelingsmodell.",
     fit: "Medlemsordninger må vurderes separat fra skattereglene for bedriftshytter til ansatte.",
@@ -121,14 +121,14 @@ export default function CorporateHomesPage() {
         <div className="corporate-hero-shade" />
         <div className="corporate-hero-inner">
           <p className="eyebrow">Zen Corporate Homes · Costa Blanca</p>
-          <h1>Gi ansatte eller medlemmer et sted i Spania</h1>
+          <h1>En bedriftshytte i Spania som faktisk blir brukt</h1>
           <p>
             Vi hjelper bedrifter, foreninger og organisasjoner med å finne, kjøpe og følge opp en moderne bolig
             som kan brukes av mange — med en strukturert modell for boligvalg, økonomi, drift og booking.
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="#bedriftsvurdering">
-              Få en bedriftsvurdering <ArrowRight size={18} />
+              Få en kostnadsfri bedriftsvurdering <ArrowRight size={18} />
             </a>
             <a className="text-button light" href="#kalkulator">
               Beregn et eksempel
@@ -144,8 +144,8 @@ export default function CorporateHomesPage() {
 
       <section className="corporate-intro">
         <div>
-          <p className="eyebrow">Et annet ansattgode</p>
-          <h2>Fra norsk firmahytte til en moderne bolig på Costa Blanca</h2>
+          <p className="eyebrow">Et varig ansatt- eller medlemsfordel</p>
+          <h2>Fra tradisjonell firmahytte til en moderne bolig på Costa Blanca</h2>
         </div>
         <p>
           En bedriftshytte trenger ikke ligge på fjellet. For riktig virksomhet kan en bolig i Spania være både
@@ -154,11 +154,28 @@ export default function CorporateHomesPage() {
         </p>
       </section>
 
+      <section className="section corporate-decision">
+        <div className="section-heading">
+          <p className="eyebrow">Hva kan boligen brukes til?</p>
+          <h2>Én eiendom kan dekke flere behov gjennom året</h2>
+          <p>
+            Bruken bør være planlagt før kjøpet. Det gjør det lettere å velge riktig størrelse, beliggenhet,
+            driftsnivå og bookingmodell.
+          </p>
+        </div>
+        <div className="corporate-decision-grid">
+          <div><BriefcaseBusiness /><strong>Ansattgode</strong><span>Ferieopphold eller lengre opphold som fordeles etter tydelige interne regler.</span></div>
+          <div><Users /><strong>Ledelse og team</strong><span>Ledersamlinger, strategidager, onboarding eller mindre teamopphold.</span></div>
+          <div><Handshake /><strong>Kunder og samarbeid</strong><span>Representasjon eller arbeidsopphold når virksomhetens rådgivere har avklart riktig bruk.</span></div>
+          <div><Building2 /><strong>Medlemsfordel</strong><span>For foreninger og organisasjoner som ønsker en konkret, langsiktig medlemsfordel.</span></div>
+        </div>
+      </section>
+
       <section className="section corporate-products">
         <div className="section-heading">
-          <p className="eyebrow">Fire modeller</p>
-          <h2>Velg struktur etter hvem boligen skal være for</h2>
-          <p>Vi starter med brukergruppen og beslutningsmodellen, og finner deretter bolig som passer.</p>
+          <p className="eyebrow">Fire norske bedriftsmodeller</p>
+          <h2>Velg modellen etter hvem som skal bruke boligen</h2>
+          <p>Ansatte, ledelse, flere samarbeidende bedrifter eller medlemmer krever ulike løsninger. Vi avklarer bruken først og matcher deretter riktig bolig.</p>
         </div>
         <div className="corporate-product-grid">
           {products.map((product) => {
@@ -178,8 +195,8 @@ export default function CorporateHomesPage() {
 
       <section className="corporate-calculator-section" id="kalkulator">
         <div className="corporate-section-copy">
-          <p className="eyebrow">Corporate Home Calculator</p>
-          <h2>Gjør investeringen forståelig for ledelsen</h2>
+          <p className="eyebrow">Bedriftshytte-kalkulator</p>
+          <h2>Gjør tallene forståelige før dere tar neste steg</h2>
           <p>
             Juster kjøpesum, antall brukere og forventet drift. Kalkulatoren er ikke et investerings- eller
             skatteregnestykke, men gir et enkelt første bilde før vi lager et mer komplett beslutningsgrunnlag.
@@ -190,8 +207,8 @@ export default function CorporateHomesPage() {
 
       <section className="section corporate-process">
         <div className="section-heading">
-          <p className="eyebrow">Fra idé til bruk</p>
-          <h2>Én prosess fra styrebordet til nøkkelen i Spania</h2>
+          <p className="eyebrow">Slik foregår det</p>
+          <h2>Fra første vurdering til boligen er klar for bruk</h2>
         </div>
         <div className="corporate-process-grid">
           {process.map(([number, title, text]) => (
@@ -249,14 +266,14 @@ export default function CorporateHomesPage() {
 
       <section className="section corporate-decision">
         <div className="section-heading">
-          <p className="eyebrow">Beslutningsgrunnlag</p>
-          <h2>Vi kan gjøre mer enn å sende boligannonser</h2>
+          <p className="eyebrow">Bedriftsvurderingen</p>
+          <h2>Dere får et konkret grunnlag for å ta stilling til ideen</h2>
         </div>
         <div className="corporate-decision-grid">
-          <div><LineChart /><strong>Økonomi</strong><span>Kjøpesum, drift, bruk og sammenlignbare alternativer.</span></div>
-          <div><Users /><strong>Brukermodell</strong><span>Ansatte, medlemmer, kapasitet og prinsipper for fordeling.</span></div>
-          <div><Building2 /><strong>Boligmatch</strong><span>Shortlist basert på mål, ikke tusen tilfeldige objekter.</span></div>
-          <div><KeyRound /><strong>Drift</strong><span>Praktisk oppfølging etter overtakelsen.</span></div>
+          <div><LineChart /><strong>Økonomisk oversikt</strong><span>Aktuell kjøpesum, forventet drift, bruksuker og sammenlignbare alternativer.</span></div>
+          <div><Users /><strong>Bruk og booking</strong><span>Hvem som skal bruke boligen, kapasitet og prinsipper for rettferdig fordeling.</span></div>
+          <div><Building2 /><strong>Relevant boligshortlist</strong><span>Et begrenset utvalg som passer budsjett, kapasitet, område og faktisk bruk.</span></div>
+          <div><KeyRound /><strong>Lokal drift</strong><span>Plan for nøkkelhold, tilsyn, rengjøring og praktisk oppfølging etter overtakelsen.</span></div>
         </div>
       </section>
 
@@ -278,17 +295,17 @@ export default function CorporateHomesPage() {
       <section className="corporate-contact" id="bedriftsvurdering">
         <div className="corporate-contact-copy">
           <p className="eyebrow">Neste steg</p>
-          <h2>Få en konkret vurdering for deres bedrift eller organisasjon</h2>
+          <h2>Få en kostnadsfri første vurdering for deres bedrift eller organisasjon</h2>
           <p>
             Fortell oss hvor mange som skal kunne bruke boligen, omtrent hvilket budsjett dere vurderer og hva
             dere ønsker å oppnå. Vi kan deretter lage en første modell og en relevant shortlist.
           </p>
           <div className="corporate-contact-note">
             <BriefcaseBusiness size={20} />
-            <span>Henvendelser her merkes som B2B-leads i Zen Eco Homes-flyten.</span>
+            <span>Ingen forpliktelse og ingen generell boligspam. Vi bruker opplysningene til å vurdere om konseptet passer deres virksomhet.</span>
           </div>
           <Link className="text-button" href="/booking">
-            Eller book en samtale direkte <ArrowRight size={16} />
+            Book heller en kort samtale <ArrowRight size={16} />
           </Link>
         </div>
         <CorporateLeadForm />
