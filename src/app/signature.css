@@ -16,29 +16,33 @@
 
 .brand-logo-image {
   display: block;
-  width: clamp(220px, 24vw, 310px);
-  max-width: calc(100vw - 116px);
+  width: clamp(220px, 18vw, 292px);
+  max-width: calc(100vw - 128px);
   height: auto;
   object-fit: contain;
 }
 
-.site-header.over-hero .brand-logo-image {
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
-  filter: brightness(0) invert(1) drop-shadow(0 3px 14px rgba(0, 0, 0, 0.38));
-  opacity: 0.98;
+.brand-logo-light {
+  display: none;
 }
 
-.site-header.is-scrolled .brand-logo-image,
-.site-header:not(.over-hero) .brand-logo-image {
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  filter: none;
-  opacity: 1;
+.site-header.over-hero .brand-logo-dark {
+  display: none;
+}
+
+.site-header.over-hero .brand-logo-light {
+  display: block;
+  filter: drop-shadow(0 3px 14px rgba(0, 0, 0, 0.42));
+}
+
+.site-header.is-scrolled .brand-logo-dark,
+.site-header:not(.over-hero) .brand-logo-dark {
+  display: block;
+}
+
+.site-header.is-scrolled .brand-logo-light,
+.site-header:not(.over-hero) .brand-logo-light {
+  display: none;
 }
 
 .brand-monogram {
@@ -188,9 +192,14 @@
 .footer-wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   width: fit-content;
   color: white;
+}
+
+.footer-wordmark img {
+  display: block;
+  width: min(280px, 72vw);
+  height: auto;
 }
 
 .footer-monogram {
@@ -320,8 +329,8 @@
   }
 
   .brand-logo-image {
-    width: min(250px, calc(100vw - 108px));
-    max-width: calc(100vw - 108px);
+    width: min(232px, calc(100vw - 110px));
+    max-width: calc(100vw - 110px);
   }
 
   .footer-2027-actions,
