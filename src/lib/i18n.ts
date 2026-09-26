@@ -196,6 +196,7 @@ export function navLinks(locale: SiteLocale): NavLink[] {
     { label: "Innlandet", href: "/inland" },
     { label: "Tomter", href: "/tomter" },
     { label: "Områder", href: "/omrader" },
+    { label: "Bedrift", href: "/bedriftshytte-spania" },
     { label: "Keyholding", href: CARE_URL, external: true },
     { label: "Kjøpsprosess", href: "/kjopsprosessen" },
     { label: "Magasin", href: "/magasin" },
