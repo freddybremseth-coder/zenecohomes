@@ -70,11 +70,20 @@ export function SiteHeader({
     <header className={headerClass}>
       <Link className="brand brand-2027" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
         <img
-          className="brand-logo-image"
-          src="/assets/zeneco-logo.svg?v=20260926-2"
+          className="brand-logo-image brand-logo-dark"
+          src="/assets/zeneco-header-dark.svg?v=20260926-3"
           alt="Zen Eco Homes"
-          width={600}
-          height={200}
+          width={900}
+          height={190}
+          decoding="async"
+        />
+        <img
+          className="brand-logo-image brand-logo-light"
+          src="/assets/zeneco-header-light.svg?v=20260926-3"
+          alt=""
+          aria-hidden="true"
+          width={900}
+          height={190}
           decoding="async"
         />
       </Link>
