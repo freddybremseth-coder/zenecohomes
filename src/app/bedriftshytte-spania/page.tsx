@@ -123,8 +123,7 @@ export default function CorporateHomesPage() {
           <p className="eyebrow">Zen Corporate Homes · Costa Blanca</p>
           <h1>En bedriftshytte i Spania som faktisk blir brukt</h1>
           <p>
-            Vi hjelper bedrifter, foreninger og organisasjoner med å finne, kjøpe og følge opp en moderne bolig
-            som kan brukes av mange — med en strukturert modell for boligvalg, økonomi, drift og booking.
+            Vi hjelper norske bedrifter, foreninger og organisasjoner med å vurdere, finne, kjøpe og følge opp en moderne bolig på Costa Blanca — med en tydelig modell for bruk, økonomi, booking og lokal drift.
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="#bedriftsvurdering">
@@ -148,9 +147,7 @@ export default function CorporateHomesPage() {
           <h2>Fra tradisjonell firmahytte til en moderne bolig på Costa Blanca</h2>
         </div>
         <p>
-          En bedriftshytte trenger ikke ligge på fjellet. For riktig virksomhet kan en bolig i Spania være både
-          et langsiktig eiendomsvalg og et konkret gode som ansatte faktisk kan bruke. Zen Eco Homes bygger
-          løsningen rundt brukerne først — ikke rundt en tilfeldig boligannonse.
+          En bedriftshytte trenger ikke ligge på fjellet. For riktig virksomhet kan en bolig i Spania være et konkret ansattgode, et sted for ledersamlinger og et langsiktig eiendomsvalg. Vi starter med hvem som skal bruke boligen, hvordan den skal fordeles og hva virksomheten ønsker å oppnå — deretter finner vi eiendommen.
         </p>
       </section>
 
@@ -198,8 +195,7 @@ export default function CorporateHomesPage() {
           <p className="eyebrow">Bedriftshytte-kalkulator</p>
           <h2>Gjør tallene forståelige før dere tar neste steg</h2>
           <p>
-            Juster kjøpesum, antall brukere og forventet drift. Kalkulatoren er ikke et investerings- eller
-            skatteregnestykke, men gir et enkelt første bilde før vi lager et mer komplett beslutningsgrunnlag.
+            Juster kjøpesum, antall brukere, planlagte bruksuker og forventet drift. Kalkulatoren er ikke et investerings-, skatte- eller regnskapsregnestykke, men gir et enkelt første bilde som kan brukes i den interne vurderingen.
           </p>
         </div>
         <CorporateHomeCalculator />
@@ -297,8 +293,7 @@ export default function CorporateHomesPage() {
           <p className="eyebrow">Neste steg</p>
           <h2>Få en kostnadsfri første vurdering for deres bedrift eller organisasjon</h2>
           <p>
-            Fortell oss hvor mange som skal kunne bruke boligen, omtrent hvilket budsjett dere vurderer og hva
-            dere ønsker å oppnå. Vi kan deretter lage en første modell og en relevant shortlist.
+            Fortell oss hvor mange som skal kunne bruke boligen, hvilket budsjett dere vurderer og hva dere ønsker å oppnå. Vi går gjennom behovet og kan deretter foreslå en egnet modell, aktuelle områder og et første utvalg boliger.
           </p>
           <div className="corporate-contact-note">
             <BriefcaseBusiness size={20} />
