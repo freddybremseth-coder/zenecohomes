@@ -172,6 +172,8 @@ export type LeadPayload = {
   contact_role?: string;
   user_count?: string;
   corporate_model?: string;
+  partner_type?: string;
+  partnership_interest?: string;
   page_url?: string;
   utm_source?: string;
   utm_medium?: string;
@@ -941,6 +943,8 @@ export async function sendLead(payload: LeadPayload) {
     payload.financing_status ? `Finansiering: ${payload.financing_status}` : "",
     payload.spain_experience ? `Spania-erfaring: ${payload.spain_experience}` : "",
     payload.next_step ? `Ønsket neste steg: ${payload.next_step}` : "",
+    payload.partner_type ? `Partnertype: ${payload.partner_type}` : "",
+    payload.partnership_interest ? `Partnersamarbeid: ${payload.partnership_interest}` : "",
   ]
     .filter(Boolean)
     .join("\n");
@@ -971,6 +975,8 @@ export async function sendLead(payload: LeadPayload) {
       contact_role: payload.contact_role || null,
       user_count: payload.user_count || null,
       corporate_model: payload.corporate_model || null,
+      partner_type: payload.partner_type || null,
+      partnership_interest: payload.partnership_interest || null,
       source: payload.source || "zenecohomes-next",
       utm_source: payload.utm_source || null,
       utm_medium: payload.utm_medium || null,
