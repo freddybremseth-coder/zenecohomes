@@ -64,15 +64,20 @@ for (const file of sourceFiles) {
 
 for (const file of pageFiles) {
   const content = read(file);
-  const start = content.indexOf("export const metadata");
+  const staticStart = content.indexOf("export const metadata");
+  const dynamicStart = content.indexOf("export async function generateMetadata");
+  const start = staticStart >= 0 ? staticStart : dynamicStart;
+
   if (start < 0) {
-    errors.push(`${file}: missing static metadata export`);
+    errors.push(`${file}: missing metadata export/generator`);
     continue;
   }
 
-  const block = content.slice(start, start + 2400);
+  // Read enough of the metadata block/function to capture title + description,
+  // while ignoring unrelated card/content objects later in the file.
+  const block = content.slice(start, start + 3200);
   const title = block.match(/title:\s*"([^"]+)"/)?.[1];
-  const description = block.match(/description:\s*"([^"]+)"/)?.[1];
+  const description = block.match(/description:\s*\n?\s*"([^"]+)"/)?.[1];
 
   if (!title) errors.push(`${file}: could not read metadata title`);
   else checkRange(file, "metadata title", title, 50, 60);
