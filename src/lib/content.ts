@@ -694,7 +694,7 @@ export const articles: Article[] = [
           "Det finnes ikke én betalingsmodell som gjelder alle aktører og alle salg. Avklar skriftlig hvem som betaler megler-/rådgiverhonorar i den konkrete handelen, og avtal separat honorar og oppdrag med din uavhengige advokat.",
       },
     ],
-    cta: { label: "Prøv Boligmatchen – finn prosjekter som passer budsjettet", href: "/#boligmatch" },
+    cta: { label: "Prøv Boligmatchen – finn prosjekter som passer budsjettet", href: "/eiendommer#boligmatch" },
   },
   {
     slug: "bankgaranti-nybygg-spania",
@@ -802,7 +802,7 @@ export const articles: Article[] = [
           "Lovverket stiller krav til hvordan relevante forskuddsbetalinger håndteres i de tilfellene reglene gjelder. Be advokaten kontrollere at kontoen du skal betale til er korrekt for prosjektet og betalingsformålet.",
       },
     ],
-    cta: { label: "Bruk Boligmatchen for å finne aktuelle nybyggprosjekter", href: "/#boligmatch" },
+    cta: { label: "Bruk Boligmatchen for å finne aktuelle nybyggprosjekter", href: "/eiendommer#boligmatch" },
   },
   {
     slug: "nybygg-finestrat-omradeguide",
@@ -982,7 +982,7 @@ export const articles: Article[] = [
           "Det bør avklares før kjøp. Skal utleie være en viktig del av regnestykket, må lovlighet, målgruppe og etterspørsel inngå i område- og boligvalget. Skal du mest bruke boligen selv, kan andre hensyn veie tyngre.",
       },
     ],
-    cta: { label: "Prøv Boligmatchen – finn en bolig som passer bruken din", href: "/#boligmatch" },
+    cta: { label: "Prøv Boligmatchen – finn en bolig som passer bruken din", href: "/eiendommer#boligmatch" },
   },
   {
     slug: "lopende-kostnader-eie-bolig-spania",
