@@ -5,11 +5,20 @@ import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
-import { findEquivalentBySlug, homeLanguageLinks, seoHreflang } from "@/lib/i18n";
+import { findEquivalentBySlug, seoHreflang, siteLocales, withLocale } from "@/lib/i18n";
 import { getLocalizedPropertyType, getProperties } from "@/lib/realtyflow";
 import { readZenEcoSeoOverride } from "@/lib/seo-public-overrides";
 
 const pillarEq = findEquivalentBySlug("no", "guide/kjope-bolig-i-spania");
+const pillarLanguageLinks = pillarEq
+  ? siteLocales
+      .filter((locale) => pillarEq[locale])
+      .map((locale) => ({
+        locale,
+        href: withLocale(locale, `/${pillarEq[locale]}`),
+        current: locale === "no",
+      }))
+  : undefined;
 
 export async function generateMetadata(): Promise<Metadata> {
   const approved = await readZenEcoSeoOverride("guide/kjope-bolig-i-spania");
@@ -74,7 +83,7 @@ export default async function BuyInSpainGuidePage() {
 
   return (
     <main className="cornerstone-guide">
-      <SiteHeader languageLinks={homeLanguageLinks("no")} />
+      <SiteHeader languageLinks={pillarLanguageLinks} />
 
       <section className="page-hero compact-hero image-hero cornerstone-hero">
         <div className="cornerstone-hero-layout">
