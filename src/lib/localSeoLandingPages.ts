@@ -76,7 +76,7 @@ const localPage = ({
   ],
   related: [
     { label: "Bolig i Spania", href: "/bolig-i-spania" },
-    { label: "Nybygg Costa Blanca", href: "/nybygg-costa-blanca" },
+    { label: "Nybygg Costa Blanca", href: "/guide/nybygg-i-spania" },
     { label: "Områdeguide for eiendomskjøp i Spania", href: "/guide/omradeguide-eiendomskjop-i-spania" },
   ],
 });
