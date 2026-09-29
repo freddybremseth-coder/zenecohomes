@@ -11,7 +11,7 @@ const page: SeoLandingPage = {
     "Få hjelp til å velge område, sammenligne moderne nybygg og prosjekter, forstå totalpris og planlegge neste steg før du reserverer. Zen Eco Homes har hovedfokus på moderne boliger, men vurderer også andre alternativer når de passer kunden bedre.",
   seoTitle: "Eiendomsrådgiver Spania | Norsk rådgivning ved boligkjøp",
   seoDescription:
-    "Norsk eiendomsrådgiver i Spania. Få hjelp med områdevalg, moderne nybygg, prosjektvurdering, kostnader, visninger og trygg kjøpsprosess.",
+    "Norsk eiendomsrådgiver i Spania. Få hjelp med områdevalg, moderne nybygg, prosjektvurdering, kostnader, visninger og trygg kjøpsprosess fra start.",
   primaryCta: { label: "Be om en boligprat", href: "/booking" },
   secondaryCta: { label: "Sammenlign områder", href: "/omrader" },
   sections: [
