@@ -53,3 +53,27 @@
     outline: 3px solid Highlight;
   }
 }
+
+
+.skip-link {
+  position: fixed;
+  z-index: 20000;
+  top: 10px;
+  left: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172027;
+  font-weight: 800;
+  text-decoration: underline;
+  transform: translateY(-160%);
+  transition: transform 120ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+#main-content:focus {
+  outline: none;
+}
