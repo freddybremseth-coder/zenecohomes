@@ -12,11 +12,14 @@ type Props = {
   locale: SiteLocale;
   /** Ekvivalens-rad for hreflang/språkbytter (uten locale-prefiks). */
   eq?: SeoEquivalent;
+  /** Override public canonical path when a landing page is mounted inside a content silo. */
+  canonicalPath?: string;
 };
 
-export function SeoLandingView({ page, locale, eq }: Props) {
+export function SeoLandingView({ page, locale, eq, canonicalPath }: Props) {
   const t = ui[locale];
-  const selfUrl = `${BASE}${withLocale(locale, `/${page.slug}`)}`;
+  const selfPath = canonicalPath || withLocale(locale, `/${page.slug}`);
+  const selfUrl = `${BASE}${selfPath}`;
 
   const faqJsonLd = {
     "@context": "https://schema.org",
