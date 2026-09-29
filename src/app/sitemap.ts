@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 
 import { areaSlug } from "@/lib/areaRoutes";
-import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
 import { allArticles, articlePath } from "@/lib/magazine";
 import { areaMatchesRegion, fallbackProperties, getAreaProfiles, getProperties, getPropertyRef, regions, type RegionKey } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
@@ -16,7 +15,16 @@ import { getPropertyDetailPath } from "@/lib/propertyRouting";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const baseUrl = "https://www.zenecohomes.com";
-const allSeoPages = [...seoLandingPages, ...localSeoLandingPages];
+const RETIRED_SEO_SLUGS = new Set([
+  "bolig-i-spania",
+  "nybygg-i-spania",
+  "nybygg-costa-blanca",
+  "tomt-i-spania",
+]);
+
+// Kun canonical 200-sider skal ligge i sitemap. Lokale /bolig-i-* sider
+// er konsolidert til /omrader/... via 301 og skal ikke sendes til Google som egne URL-er.
+const allSeoPages = seoLandingPages.filter((page) => !RETIRED_SEO_SLUGS.has(page.slug));
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [cmsPosts, areaProfiles] = await Promise.all([
