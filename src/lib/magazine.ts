@@ -241,7 +241,7 @@ const SILO_BY_SLUG: Record<string, Silo> = {
   "utleie-inntektspotensial-bolig-spania": "guide",
   "lopende-kostnader-eie-bolig-spania": "guide",
   "innlandet-finca-olivengard-spania": "guide",
-  "flytte-til-spania-pensjonist": "guide",
+  "flytte-til-spania-som-pensjonist": "guide",
   "energieffektive-nybygg-spania": "guide",
   "juridiske-fallgruver-boligkjop-spania": "guide",
   "skatt-ved-salg-bolig-spania": "guide",
