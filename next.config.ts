@@ -86,6 +86,8 @@ const nextConfig: NextConfig = {
       { source: "/hvorfor-god-eiendomsradgiver-er-viktig", destination: "/magasin/hvorfor-god-eiendomsradgiver-er-viktig", permanent: true },
       { source: "/idealista-finn-ikke-alltid-til-a-stole-pa", destination: "/magasin/idealista-finn-ikke-alltid-til-a-stole-pa", permanent: true },
       { source: "/guide/omradeguide", destination: "/guide/omradeguide-eiendomskjop-i-spania", permanent: true },
+      { source: "/guide/flytte-til-spania-som-pensjonist", destination: "/guide/flytte-til-spania-pensjonist", permanent: true },
+      { source: "/flytte-til-spania-som-pensjonist", destination: "/guide/flytte-til-spania-pensjonist", permanent: true },
       { source: "/nybygg-costa-blanca", destination: "/guide/nybygg-i-spania", permanent: true },
       { source: "/nybygg-i-spania", destination: "/guide/nybygg-i-spania", permanent: true },
       { source: "/om-freddy", destination: "/om-oss/freddy", permanent: true },
