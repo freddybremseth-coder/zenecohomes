@@ -130,6 +130,21 @@ for (const slug of guideSlugs) {
   }
 }
 
+const booking = "src/app/booking/page.tsx";
+requireText(booking, 'params.type === "infomote"', "info-meeting interest flow");
+requireText(booking, 'variant="simple"', "low-friction booking form");
+requireText("src/components/ContactForm.tsx", '"full" | "compact" | "simple"', "simple contact-form variant");
+
+const llms = "public/llms.txt";
+for (const text of [
+  "[Kjøpe bolig i Spania]",
+  "[Nybygg i Spania]",
+  "[Alle guider]",
+  "[Visningstur]",
+]) {
+  requireText(llms, text, "machine-readable guide hierarchy");
+}
+
 const footer = "src/components/Footer.tsx";
 if (read(footer).includes("<form")) {
   errors.push(`${footer}: footer must not contain contact/booking forms`);
@@ -141,6 +156,8 @@ for (const text of [
   'title: "Kontakt"',
   'href="/personvern"',
   'href="/informasjonskapsler"',
+  "instagram.com/zenecohomesspain",
+  "youtube.com/@ZenEcoHomes",
 ]) {
   requireText(footer, text, "footer/trust structure");
 }
