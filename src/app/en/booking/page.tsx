@@ -7,9 +7,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Talk to Freddy | Property advice in Spain",
-  description:
-    "Request a short conversation with Freddy about area, budget, modern new builds and the buying process on the Costa Blanca.",
+  title: "Property Advice in Spain | Talk to Freddy Bremseth | Zen Eco",
+  description: "Book a no-obligation property call about Spain with Freddy Bremseth. Discuss area, budget, property search, new builds and the right next steps.",
   alternates: { canonical: "/en/booking" },
 };
 
