@@ -1159,7 +1159,7 @@ export const articles: Article[] = [
           "For mange fincaer og mindre steder er bil svært praktisk eller nødvendig, men behovet varierer. Sjekk den konkrete eiendommens avstand til service og kollektivtransport før du bestemmer deg.",
       },
     ],
-    cta: { label: "Utforsk boliger og tomter i innlandet", href: "/inland" },
+    cta: { label: "Utforsk boliger og tomter i innlandet", href: "/omrader/innlandet" },
   },
   {
     slug: "flytte-til-spania-pensjonist",
