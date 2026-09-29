@@ -6,6 +6,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
+import { areaSlug } from "@/lib/areaRoutes";
 import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
@@ -243,6 +244,9 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
                     </div>
                   )}
                   <div className="area-guide-actions">
+                    <Link className="text-button" href={`/omrader/${region}/${areaSlug(profile.name)}`}>
+                      Les områdeguide <ArrowRight size={16} />
+                    </Link>
                     <a className="text-button area-property-link" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
                       <MapPin size={17} /> Se boliger i {profile.name}
                     </a>
