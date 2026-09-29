@@ -162,7 +162,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
     );
   }
 
-  const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties()]);
+  const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties(0, "zeneco")]);
   const regionProfiles = profiles.filter((profile) => areaMatchesRegion(profile, region));
   const regionProperties = properties.filter((property) => propertyMatchesRegion(property, region));
   const regionBooks = booksForRegion(region);
@@ -295,12 +295,12 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
             <p className="eyebrow">Vanlige spørsmål</p>
             <h2>{selected.label} – spørsmål og svar</h2>
           </div>
-          <div className="proof-grid inland-faq">
-            {regionFaqItems.map((item) => (
-              <article key={item.q}>
-                <h3>{item.q}</h3>
+          <div className="faq-accordion region-faq-accordion">
+            {regionFaqItems.map((item, index) => (
+              <details key={item.q} open={index === 0}>
+                <summary>{item.q}</summary>
                 <p>{item.a}</p>
-              </article>
+              </details>
             ))}
           </div>
         </section>
