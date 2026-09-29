@@ -7,9 +7,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Book boligprat med Freddy | Zen Eco Homes",
+  title: "Book boligprat om Spania | Råd fra Freddy Bremseth",
   description:
-    "Be om en kort, uforpliktende boligprat med Freddy Bremseth om område, budsjett, moderne nybygg og neste steg ved boligkjøp i Spania.",
+    "Book en uforpliktende boligprat om Spania med Freddy Bremseth. Få råd om område, budsjett, boligsøk, nybygg og neste steg i kjøpsprosessen i dag.",
   alternates: { canonical: "/booking" },
 };
 
