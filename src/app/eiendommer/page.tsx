@@ -83,7 +83,7 @@ export default async function PropertiesPage({
   const minSize = Number(params.minSize || 0);
   const lifestyle = params.lifestyle || "";
   const currentPage = Math.max(1, Number(params.page || 1) || 1);
-  const pageSize = 24;
+  const pageSize = 12;
   const properties = await getProperties();
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
@@ -249,7 +249,7 @@ export default async function PropertiesPage({
         </div>
         <div className="property-grid">
           {visibleProperties.map((property, index) => (
-            <PropertyCard key={property.id || property.ref || index} property={property} />
+            <PropertyCard key={property.id || property.ref || index} property={property} priority={index < 3} />
           ))}
         </div>
         {totalPages > 1 && (
