@@ -135,7 +135,7 @@ export const metadata = {
   openGraph: {
     title: "Magasin | Zen Eco Homes",
     description:
-      "Guider om områdevalg, tomtekjøp, finansiering, NIE og trygg kjøpsprosess i Spania.",
+      "Markedsoppdateringer, lokale nyheter, boligprisutvikling og redaksjonelle artikler om bolig og hverdagsliv i Spania.",
     url: "https://www.zenecohomes.com/magasin",
     type: "website",
   },
@@ -143,33 +143,55 @@ export const metadata = {
 
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
-  const cmsSlugs = new Set(cmsArticles.map((article) => article.slug));
-  const fallbackArticles = allArticles.filter((article) => !cmsSlugs.has(article.slug) && articleSilo(article) !== "corporate");
+  const magazineCmsArticles = cmsArticles.filter((article) => {
+    const known = getMagazineArticle(article.slug);
+    return !known || !articleSilo(known);
+  });
+  const cmsSlugs = new Set(magazineCmsArticles.map((article) => article.slug));
+  const fallbackArticles = allArticles.filter(
+    (article) => !cmsSlugs.has(article.slug) && !articleSilo(article),
+  );
 
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Magasin</p>
-        <h1>Guider for tryggere boligkjøp i Spania</h1>
+        <h1>Magasin om boligmarkedet og livet i Spania</h1>
         <p>
-          Områder, tomter, finansiering, NIE, notar og kjøpsprosess forklart for nordmenn som vil ta gode
-          beslutninger før de reserverer bolig.
+          Markedsoppdateringer, boligprisutvikling, lokale nyheter, livet i Spania og redaksjonelt innhold
+          som gir mer kontekst rundt områdene og markedet.
         </p>
       </section>
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Kunnskap og rådgivning</p>
-          <h2>Start med kunnskap før du velger bolig</h2>
+          <p className="eyebrow">Ser du etter kjøperguider?</p>
+          <h2>SEO-guidene ligger samlet under Guide</h2>
           <p>
-            Disse guidene er bygget for å svare på spørsmålene nordmenn faktisk søker etter når de vurderer
-            bolig i Spania.
+            Vi har ikke fjernet artiklene. De søkeorienterte guidene om kjøp, NIE, bank, juridikk, kostnader,
+            tomt og nybygg ligger samlet i en tydelig guide-hub, mens Magasin brukes til redaksjonelt innhold.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article><h3>Kjøpe bolig i Spania</h3><p>Hjørnesteinsguiden til hele kjøpsreisen.</p><Link className="text-button" href="/guide/kjope-bolig-i-spania">Les guiden <ArrowRight size={16}/></Link></article>
+          <article><h3>Alle guider</h3><p>Se hele biblioteket med områdevalg, NIE, bank, kostnader, juridikk og nybygg.</p><Link className="text-button" href="/guide">Se guide-huben <ArrowRight size={16}/></Link></article>
+          <article><h3>Kjøpsprosessen</h3><p>Se hvordan Zen Eco Homes jobber fra behov til overtakelse og oppfølging.</p><Link className="text-button" href="/kjopsprosessen">Se prosessen <ArrowRight size={16}/></Link></article>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">Magasin</p>
+          <h2>Markedsoppdateringer, lokale nyheter og livet i Spania</h2>
+          <p>
+            Her publiserer vi innhold som støtter område- og markedskunnskap: prisutvikling, lokale endringer,
+            nye prosjekter, hverdagsliv og andre redaksjonelle saker.
           </p>
         </div>
 
         <div className="magazine-grid">
-          {cmsArticles.map((article) => (
+          {magazineCmsArticles.map((article) => (
             <article className="magazine-card" key={article.slug}>
               <Image
                 className="magazine-cover-image"
