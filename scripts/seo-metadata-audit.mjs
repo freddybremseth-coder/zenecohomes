@@ -5,6 +5,7 @@ const root = process.cwd();
 
 const sourceFiles = [
   "src/lib/content.ts",
+  "src/lib/magazine.ts",
   "src/lib/seoLandingPages.ts",
   "src/lib/localSeoLandingPages.ts",
   "src/lib/corporate-content.ts",
