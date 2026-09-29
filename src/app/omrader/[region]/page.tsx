@@ -209,6 +209,12 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
               </span>
             ))}
           </div>
+          <p>
+            Er du fortsatt usikker på hvilken del av Spania som passer best, kan du bruke vår{" "}
+            <Link href="/guide/omradeguide-eiendomskjop-i-spania">områdeguide for boligkjøp i Spania</Link>.
+            Når området er valgt, forklarer <Link href="/guide/kjope-bolig-i-spania">hovedguiden for boligkjøp i Spania</Link>{" "}
+            resten av veien fra boligsøk til overtakelse.
+          </p>
         </article>
         <aside>
           <strong>{regionProperties.length}</strong>
