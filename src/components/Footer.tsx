@@ -24,7 +24,7 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
     { label: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor" },
     { label: "Costa Cálida", href: "/omrader/costa-calida" },
-    { label: "Innlandet", href: "/inland" },
+    { label: "Innlandet", href: "/omrader/innlandet" },
     { label: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
     { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
     { label: "Visningstur", href: "/visningstur" },
