@@ -176,7 +176,7 @@ export function ContactForm({
   propertyTitle,
   requestType = "general",
   locale = "no",
-  variant = "full",
+  variant = "simple",
 }: ContactFormProps) {
   const t = T[locale];
   const leadSource = source || `zenecohomes-${locale}`;
