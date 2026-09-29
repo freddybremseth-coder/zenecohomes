@@ -1095,7 +1095,7 @@ export const extraArticles: Article[] = [
     readingTime: "8 min lesing",
     image: "/assets/magasin-covers/kostnader-eie.svg",
     imageAlt: "Årsbudsjett og løpende kostnader for feriebolig i Spania",
-    seoTitle: "Hva koster feriebolig i Spania å eie per år?",
+    seoTitle: "Hva koster det å eie feriebolig i Spania hvert år?",
     seoDescription:
       "IBI, felleskostnader, forsikring, strøm, vann, internett, skatt og vedlikehold. Slik lager norske kjøpere et realistisk årsbudsjett før boligkjøpet.",
     keywords: [
@@ -1199,7 +1199,7 @@ export const extraArticles: Article[] = [
     readingTime: "9 min lesing",
     image: "/assets/magasin-covers/juridisk.svg",
     imageAlt: "Kontrollpunkter før nordmenn kjøper bolig i Spania",
-    seoTitle: "7 dyre feil nordmenn gjør ved boligkjøp i Spania",
+    seoTitle: "7 dyre feil nordmenn gjør når de kjøper bolig i Spania",
     seoDescription:
       "Unngå feil område, feil totalbudsjett, utdaterte annonser, svak juridisk kontroll og dårlig videresalg. Syv konkrete råd før du kjøper bolig i Spania.",
     keywords: [
