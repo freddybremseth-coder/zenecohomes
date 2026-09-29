@@ -7,7 +7,13 @@ const sourceFiles = [
   "src/lib/content.ts",
   "src/lib/magazine.ts",
   "src/lib/seoLandingPages.ts",
+  "src/lib/seoLandingPages.en.ts",
+  "src/lib/seoLandingPages.de.ts",
+  "src/lib/seoLandingPages.es.ts",
   "src/lib/localSeoLandingPages.ts",
+  "src/lib/localSeoLandingPages.en.ts",
+  "src/lib/localSeoLandingPages.de.ts",
+  "src/lib/localSeoLandingPages.es.ts",
   "src/lib/corporate-content.ts",
 ];
 
