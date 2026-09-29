@@ -8,9 +8,8 @@ import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Über Freddy Bremseth | Immobilienberater an der Costa Blanca",
-  description:
-    "Lernen Sie Freddy Bremseth kennen: norwegischer Immobilienberater mit Wohnsitz in Benidorm und praktischer Erfahrung mit Costa Blanca, Vermietung, Käuferberatung und Besichtigungsplanung.",
+  title: "Freddy Bremseth | Immobilienberater an der Costa Blanca",
+  description: "Lernen Sie Freddy Bremseth kennen, einen norwegischen Immobilienberater an der Costa Blanca. Erfahren Sie mehr über Regionen, Suche, Besichtigungen und Kauf.",
   alternates: {
     canonical: "/de/ueber-freddy",
     languages: {

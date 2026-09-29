@@ -1,3 +1,5 @@
+import { areaProfileSlug } from "@/lib/areaRoutes";
+
 /** RealtyFlows redaksjonelle norske tekst-objekt (fra property-editorial-pipelinen). */
 export type EditorialNo = {
   headline_no?: string;
@@ -421,6 +423,34 @@ export const regions: Array<{ key: RegionKey; label: string; description: string
     ],
   },
 ];
+
+/**
+ * Stabilt SEO-minimum for områdehierarkiet.
+ * RealtyFlow-profiler kan berike/overstyre disse, men de viktigste URL-ene
+ * skal ikke forsvinne dersom area-profile API-et er tomt eller midlertidig utilgjengelig.
+ */
+const STATIC_AREA_PROFILES: AreaProfile[] = [
+  { name: "Polop", slug: "polop", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Polop på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Polop før du velger bolig.", is_public: true, published: true },
+  { name: "Altea", slug: "altea", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Altea på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Altea før du velger bolig.", is_public: true, published: true },
+  { name: "Albir", slug: "albir", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Albir på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Albir før du velger bolig.", is_public: true, published: true },
+  { name: "Calpe", slug: "calpe", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Calpe på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Calpe før du velger bolig.", is_public: true, published: true },
+  { name: "Finestrat", slug: "finestrat", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Finestrat på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Finestrat før du velger bolig.", is_public: true, published: true },
+  { name: "Benidorm", slug: "benidorm", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Benidorm på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Benidorm før du velger bolig.", is_public: true, published: true },
+  { name: "Villajoyosa", slug: "villajoyosa", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Villajoyosa på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Villajoyosa før du velger bolig.", is_public: true, published: true },
+  { name: "Dénia", slug: "denia", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Dénia på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Dénia før du velger bolig.", is_public: true, published: true },
+  { name: "Moraira", slug: "moraira", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Moraira på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Moraira før du velger bolig.", is_public: true, published: true },
+  { name: "Jávea", slug: "javea", region: "Costa Blanca Nord", hero_blurb: "Områdeguide og boliger i Jávea på Costa Blanca Nord.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Jávea før du velger bolig.", is_public: true, published: true },
+  { name: "Torrevieja", slug: "torrevieja", region: "Costa Blanca Sør", hero_blurb: "Områdeguide og boliger i Torrevieja på Costa Blanca Sør.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Torrevieja før du velger bolig.", is_public: true, published: true },
+  { name: "Guardamar del Segura", slug: "guardamar", region: "Costa Blanca Sør", hero_blurb: "Områdeguide og boliger i Guardamar på Costa Blanca Sør.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Guardamar før du velger bolig.", is_public: true, published: true },
+  { name: "Ciudad Quesada", slug: "ciudad-quesada", region: "Costa Blanca Sør", hero_blurb: "Områdeguide og boliger i Ciudad Quesada på Costa Blanca Sør.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Ciudad Quesada før du velger bolig.", is_public: true, published: true },
+  { name: "Orihuela Costa", slug: "orihuela-costa", region: "Costa Blanca Sør", hero_blurb: "Områdeguide og boliger i Orihuela Costa på Costa Blanca Sør.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Orihuela Costa før du velger bolig.", is_public: true, published: true },
+  { name: "Santa Pola", slug: "santa-pola", region: "Costa Blanca Sør", hero_blurb: "Områdeguide og boliger i Santa Pola på Costa Blanca Sør.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Santa Pola før du velger bolig.", is_public: true, published: true },
+  { name: "San Pedro del Pinatar", slug: "san-pedro-del-pinatar", region: "Costa Cálida", hero_blurb: "Områdeguide og boliger i San Pedro del Pinatar på Costa Cálida.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i San Pedro del Pinatar før du velger bolig.", is_public: true, published: true },
+  { name: "San Javier", slug: "san-javier", region: "Costa Cálida", hero_blurb: "Områdeguide og boliger i San Javier på Costa Cálida.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i San Javier før du velger bolig.", is_public: true, published: true },
+  { name: "Los Alcázares", slug: "los-alcazares", region: "Costa Cálida", hero_blurb: "Områdeguide og boliger i Los Alcázares på Costa Cálida.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i Los Alcázares før du velger bolig.", is_public: true, published: true },
+  { name: "La Manga", slug: "la-manga", region: "Costa Cálida", hero_blurb: "Områdeguide og boliger i La Manga på Costa Cálida.", description: "Sammenlign boligtyper, beliggenhet og hverdagsliv i La Manga før du velger bolig.", is_public: true, published: true },
+];
+
 
 const defaultTitle: Record<PropertyLocale, string> = {
   no: "Nybygg i Spania",
@@ -866,15 +896,29 @@ export async function getProperties(limit?: number, brandId?: string): Promise<P
 }
 
 export async function getAreaProfiles(): Promise<AreaProfile[]> {
+  const mergeWithStatic = (profiles: AreaProfile[], hidden: AreaProfile[]) => {
+    const merged = new Map<string, AreaProfile>();
+    for (const profile of STATIC_AREA_PROFILES) {
+      merged.set(areaProfileSlug(profile), profile);
+    }
+    for (const profile of profiles) {
+      const key = areaProfileSlug(profile);
+      if (!key) continue;
+      merged.set(key, { ...merged.get(key), ...profile });
+    }
+    for (const profile of hidden) merged.delete(areaProfileSlug(profile));
+    return [...merged.values()];
+  };
+
   try {
     const res = await fetch(`${REALTYFLOW_BASE}/api/area-profiles?brandId=zeneco&public=1`, {
-      cache: "no-store",
+      next: { revalidate: 3600 },
       headers: { Accept: "application/json" },
     });
-    if (!res.ok) return [];
+    if (!res.ok) return STATIC_AREA_PROFILES;
     const data = await res.json();
     const profiles = Array.isArray(data.profiles) ? (data.profiles as AreaProfile[]) : [];
-    return profiles.filter((profile) => {
+    const visible = profiles.filter((profile) => {
       const visibilityFields = [
         profile.show_on_website,
         profile.website_visible,
@@ -883,8 +927,9 @@ export async function getAreaProfiles(): Promise<AreaProfile[]> {
       ].filter((value) => typeof value === "boolean");
       return visibilityFields.length ? visibilityFields.some(Boolean) : true;
     });
+    return mergeWithStatic(visible, profiles.filter(profile => !visible.includes(profile)));
   } catch {
-    return [];
+    return STATIC_AREA_PROFILES;
   }
 }
 

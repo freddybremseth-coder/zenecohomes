@@ -8,21 +8,38 @@ import {
   getPropertyTown,
   getLocalizedPropertyTitle,
   getLocalizedPropertyType,
+  normalizeSearchText,
   type Property,
   type PropertyLocale,
 } from "@/lib/realtyflow";
 
 const NUM_LOCALE: Record<PropertyLocale, string> = { no: "nb-NO", de: "de-DE", en: "en-GB" };
 
-function capitalize(value: string) {
-  return value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
-}
-
 // Gjør ropende STORE-BOKSTAV-marketingtitler om til lesbar setningsform.
 function toReadable(value: string) {
   return value && value === value.toUpperCase()
     ? value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
     : value;
+}
+
+function getModelName(property: Property) {
+  const value = (property as Property & { model_name?: unknown }).model_name;
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function getDisplayHeading(property: Property, locale: PropertyLocale) {
+  const localizedTitle = toReadable(getLocalizedPropertyTitle(property, locale));
+  const modelName = getModelName(property);
+  const town = getPropertyTown(property);
+
+  let heading = localizedTitle;
+  if (modelName && !normalizeSearchText(heading).includes(normalizeSearchText(modelName))) {
+    heading = `${modelName} – ${heading}`;
+  }
+  if (town && !normalizeSearchText(heading).includes(normalizeSearchText(town))) {
+    heading = `${heading} – ${town}`;
+  }
+  return heading;
 }
 
 export function PropertyCard({
@@ -39,12 +56,9 @@ export function PropertyCard({
   contextLabel?: string;
 }) {
   const href = `${detailBasePath}/${encodeURIComponent(getPropertyRef(property))}`;
-  const title = getLocalizedPropertyTitle(property, locale);
   const image = getPrimaryImage(property);
   const type = getLocalizedPropertyType(property, locale);
-  const town = getPropertyTown(property);
-  // Ryddig, spesifikk overskrift ("Villa i Finestrat") i stedet for lange, like marketingtitler.
-  const heading = town ? `${capitalize(type)} ${locale === "no" ? "i" : "in"} ${town}` : toReadable(title);
+  const heading = getDisplayHeading(property, locale);
   const area = getPropertyArea(property);
   const pricePerM2 =
     property.price && area ? new Intl.NumberFormat(NUM_LOCALE[locale]).format(Math.round(property.price / area)) : null;

@@ -7,9 +7,8 @@ import { SpanishContactForm } from "@/components/es/SpanishContactForm";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Habla con Freddy | Asesoramiento inmobiliario en España",
-  description:
-    "Solicita una breve conversación sobre zona, presupuesto, obra nueva moderna y proceso de compra en la Costa Blanca.",
+  title: "Asesoramiento inmobiliario en España | Habla con Freddy",
+  description: "Solicita una conversación sin compromiso sobre vivienda en España con Freddy Bremseth. Aclara zona, presupuesto, búsqueda, obra nueva y próximos pasos.",
   alternates: { canonical: "/es/cita" },
 };
 

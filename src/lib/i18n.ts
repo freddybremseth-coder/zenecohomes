@@ -50,7 +50,7 @@ export const ui: Record<
     contactCta: "Kontakt oss",
     relatedHeading: "Relaterte sider",
     home: "Forside",
-    contactHref: "/#kontakt",
+    contactHref: "/booking",
   },
   de: {
     faqEyebrow: "Häufige Fragen",
@@ -97,23 +97,22 @@ export const ui: Record<
 export type SeoEquivalent = { no: string; de?: string; en?: string; es?: string };
 
 export const seoEquivalents: SeoEquivalent[] = [
-  { no: "bolig-i-spania", de: "immobilie-in-spanien", en: "property-in-spain", es: "vivienda-en-espana" },
-  { no: "nybygg-i-spania", de: "neubau-in-spanien", en: "new-build-in-spain", es: "obra-nueva-en-espana" },
-  { no: "nybygg-costa-blanca", de: "neubau-costa-blanca", en: "new-build-costa-blanca", es: "obra-nueva-costa-blanca" },
+  { no: "guide/kjope-bolig-i-spania", de: "immobilie-in-spanien", en: "property-in-spain", es: "vivienda-en-espana" },
+  { no: "guide/nybygg-i-spania", de: "neubau-in-spanien", en: "new-build-in-spain", es: "obra-nueva-en-espana" },
   {
     no: "eiendomsradgiver-spania",
     de: "immobilienberater-spanien",
     en: "property-advisor-spain",
     es: "asesor-inmobiliario-espana",
   },
-  { no: "tomt-i-spania", de: "grundstueck-in-spanien", en: "plot-of-land-in-spain", es: "terreno-en-espana" },
+  { no: "omrader/innlandet/tomter", de: "grundstueck-in-spanien", en: "plot-of-land-in-spain", es: "terreno-en-espana" },
   // Områdesider (long-tail)
-  { no: "bolig-i-altea", de: "immobilie-altea", en: "property-in-altea", es: "vivienda-en-altea" },
-  { no: "bolig-i-albir", de: "immobilie-albir", en: "property-in-albir", es: "vivienda-en-albir" },
-  { no: "bolig-i-calpe", de: "immobilie-calpe", en: "property-in-calpe", es: "vivienda-en-calpe" },
-  { no: "bolig-i-finestrat", de: "immobilie-finestrat", en: "property-in-finestrat", es: "vivienda-en-finestrat" },
-  { no: "bolig-i-polop", de: "immobilie-polop", en: "property-in-polop", es: "vivienda-en-polop" },
-  { no: "bolig-i-pinoso", de: "immobilie-pinoso", en: "property-in-pinoso", es: "vivienda-en-pinoso" },
+  { no: "omrader/costa-blanca-nord/altea", de: "immobilie-altea", en: "property-in-altea", es: "vivienda-en-altea" },
+  { no: "omrader/costa-blanca-nord/albir", de: "immobilie-albir", en: "property-in-albir", es: "vivienda-en-albir" },
+  { no: "omrader/costa-blanca-nord/calpe", de: "immobilie-calpe", en: "property-in-calpe", es: "vivienda-en-calpe" },
+  { no: "omrader/costa-blanca-nord/finestrat", de: "immobilie-finestrat", en: "property-in-finestrat", es: "vivienda-en-finestrat" },
+  { no: "omrader/costa-blanca-nord/polop", de: "immobilie-polop", en: "property-in-polop", es: "vivienda-en-polop" },
+  { no: "omrader/innlandet/pinoso", de: "immobilie-pinoso", en: "property-in-pinoso", es: "vivienda-en-pinoso" },
 ];
 
 const BASE = "https://www.zenecohomes.com";

@@ -9,6 +9,32 @@ import {
 
 const BASE = "https://www.zenecohomes.com";
 
+function fitSeoTitle(value: string) {
+  const clean = value.replace(/\s+/g, " ").trim();
+  if (clean.length >= 50 && clean.length <= 60) return clean;
+  const candidates = [
+    `${clean} | España`,
+    `${clean} | Zen Eco Homes`,
+    `${clean} | Vivienda en España`,
+    `${clean} | Vivienda en España | Zen Eco Homes`,
+  ];
+  const fitted = candidates.find((candidate) => candidate.length >= 50 && candidate.length <= 60);
+  if (fitted) return fitted;
+  const fallback = candidates[candidates.length - 1];
+  return fallback.length <= 60 ? fallback : fallback.slice(0, 60).replace(/\s+\S*$/, "").trim();
+}
+
+function fitMetaDescription(value: string) {
+  let clean = value.replace(/\s+/g, " ").trim();
+  if (clean.length < 140) {
+    clean += " Consulta precio, datos clave, ubicación y qué conviene revisar antes de visitar o reservar con Zen Eco Homes.";
+  }
+  if (clean.length > 160) {
+    clean = `${clean.slice(0, 157).replace(/\s+\S*$/, "").trim()}…`;
+  }
+  return clean;
+}
+
 export async function generateStaticParams() {
   const properties = await getProperties(30, "zeneco");
   return properties.map((property) => ({ id: encodeURIComponent(getPropertyRef(property)) }));
@@ -19,15 +45,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const decoded = decodeURIComponent(id);
   const property = await getProperty(decoded);
   const ref = property ? getPropertyRef(property) : decoded;
-  const title = property ? `${getSpanishPropertyHeading(property)} | Zen Eco Homes` : "Vivienda en España | Zen Eco Homes";
-  const description = property
+  const rawTitle = property ? `${getSpanishPropertyHeading(property)} | Zen Eco Homes` : "Vivienda en España | Zen Eco Homes";
+  const title = fitSeoTitle(rawTitle);
+  const rawDescription = property
     ? getSpanishPropertySeoDescription(property)
     : "Propiedad en venta en España con información y asesoramiento de Zen Eco Homes.";
+  const description = fitMetaDescription(rawDescription);
   const path = `/es/propiedades/${encodeURIComponent(ref)}`;
 
   return {
     title,
     description,
+    robots: property ? undefined : { index: false, follow: true },
     alternates: {
       canonical: path,
       languages: {

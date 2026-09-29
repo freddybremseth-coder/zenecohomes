@@ -4,7 +4,9 @@
   --ze-white: #fcfbf8;
   --ze-sea: #315e64;
   --ze-sage: #7b8877;
+  --ze-sage-text: #657160;
   --ze-travertine: #c6a76d;
+  --ze-accent-text: #806436;
   --ze-line: rgba(23, 32, 39, 0.12);
   --ze-radius-sm: 10px;
   --ze-radius-md: 16px;
@@ -17,7 +19,8 @@
   --dark: var(--ze-ink);
   --paper: var(--ze-paper);
   --gold: var(--ze-travertine);
-  --gold-dark: #a98d5a;
+  --gold-dark: #745a2f;
+  --muted: #596976;
 }
 
 body {
@@ -74,13 +77,21 @@ h3,
 }
 
 .text-button {
+  color: var(--ze-accent-text);
   font-weight: 700;
   letter-spacing: 0.01em;
   text-transform: none;
 }
 
 .eyebrow {
-  color: var(--ze-travertine);
+  color: var(--ze-accent-text);
+}
+
+.property-body p,
+.magazine-body .magazine-meta,
+.proof-grid strong,
+.property-filmstrip-kicker {
+  color: var(--ze-accent-text);
 }
 
 .site-header {
@@ -136,6 +147,12 @@ h3,
   font-size: 0.76rem;
   font-weight: 650;
   letter-spacing: 0.08em;
+}
+
+.site-header:not(.over-hero) .nav-cta,
+.site-header.is-scrolled .nav-cta {
+  border-color: var(--ze-accent-text);
+  color: var(--ze-accent-text);
 }
 
 /* ZenEco signature: architectural/editorial metadata rather than more badges. */
@@ -319,4 +336,12 @@ h3,
   .area-choice-card {
     transition: none !important;
   }
+}
+
+/* Dark image heroes need a light accent; the dark accent is for paper backgrounds. */
+.hero .eyebrow,
+.page-hero .eyebrow,
+.hero .eyebrow a,
+.page-hero .eyebrow a {
+  color: #f0d3a0;
 }

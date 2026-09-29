@@ -26,7 +26,7 @@ const articleCovers: Record<string, string> = {
   "utleie-inntektspotensial-bolig-spania": "/assets/magasin-covers/utleie-inntekt.svg",
   "lopende-kostnader-eie-bolig-spania": "/assets/magasin-covers/kostnader-eie.svg",
   "innlandet-finca-olivengard-spania": "/assets/magasin-covers/innlandet-livsstil.svg",
-  "flytte-til-spania-pensjonist": "/assets/magasin-covers/pensjon-flytte.svg",
+  "flytte-til-spania-som-pensjonist": "/assets/magasin-covers/pensjon-flytte.svg",
   "energieffektive-nybygg-spania": "/assets/magasin-covers/energi-baerekraft.svg",
   "juridiske-fallgruver-boligkjop-spania": "/assets/magasin-covers/juridisk.svg",
   "skatt-ved-salg-bolig-spania": "/assets/magasin-covers/skatt-salg.svg",

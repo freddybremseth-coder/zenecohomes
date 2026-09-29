@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navLinks, withLocale, type SiteLocale } from "@/lib/i18n";
 
 type LanguageLink = { locale: SiteLocale; href: string; current: boolean };
@@ -14,6 +14,7 @@ export function SiteHeader({
   locale?: SiteLocale;
   languageLinks?: LanguageLink[];
 } = {}) {
+  const headerRef = useRef<HTMLElement>(null);
   const links = navLinks(locale);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -66,8 +67,20 @@ export function SiteHeader({
     .filter(Boolean)
     .join(" ");
 
+  const skipLabel = { no: "Hopp til hovedinnhold", en: "Skip to main content", de: "Zum Hauptinhalt", es: "Saltar al contenido principal" }[locale];
+  const navLabel = { no: "Hovednavigasjon", en: "Main navigation", de: "Hauptnavigation", es: "Navegación principal" }[locale];
+
   return (
-    <header className={headerClass}>
+    <header ref={headerRef} className={headerClass}>
+      <a className="skip-link" href="#main-content" onClick={(event) => {
+        const target = headerRef.current?.parentElement?.querySelector<HTMLElement>("section");
+        if (target) {
+          event.preventDefault();
+          target.tabIndex = -1;
+          target.focus();
+          target.scrollIntoView({ block: "start" });
+        }
+      }}>{skipLabel}</a>
       <Link className="brand brand-2027" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
         <img
           className="brand-logo-image brand-logo-dark"
@@ -98,7 +111,7 @@ export function SiteHeader({
       >
         {menuOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
-      <nav className={`nav${menuOpen ? " open" : ""}`} id="site-navigation">
+      <nav aria-label={navLabel} className={`nav${menuOpen ? " open" : ""}`} id="site-navigation">
         {links.map((link) =>
           link.children?.length ? (
             <div className="nav-dropdown" key={link.href}>

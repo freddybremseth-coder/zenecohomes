@@ -6,9 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Wo an der Costa Blanca kaufen? | Regionen im Vergleich",
-  description:
-    "Vergleichen Sie Costa Blanca Nord, Costa Blanca Süd, Costa Cálida und das Hinterland von Alicante, bevor Sie eine Immobilie auswählen.",
+  title: "Costa Blanca Regionen | Immobilien kaufen | Zen Eco Homes",
+  description: "Costa Blanca Regionen vergleichen: Nord, Süd, Costa Cálida und Inland. Entdecken Sie Orte, Immobilien und praktische Unterschiede vor dem Kauf.",
   alternates: { canonical: "/de/regionen" },
 };
 

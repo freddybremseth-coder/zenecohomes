@@ -5,9 +5,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Hinterland Alicante & Murcia | Grundstücke, Fincas und moderne Neubauvillen",
-  description:
-    "Entdecken Sie das Hinterland von Alicante und Murcia: Biar, Busot, Villena, Hondón, Pinoso, Aspe, Novelda, Jumilla und weitere Orte. Zuerst die Lage, dann das passende Grundstück und das Hausmodell.",
+  title: "Hinterland Alicante und Murcia | Grundstücke und Neubau",
+  description: "Entdecken Sie das Hinterland von Alicante und Murcia. Vergleichen Sie Orte, Grundstücke, Fincas und Hausmodelle, bevor Sie Ihre Immobilie auswählen.",
   alternates: {
     canonical: "/de/inland",
     languages: {

@@ -23,7 +23,7 @@ const localPage = ({
   hero: `Bolig i ${place} for norske kjøpere`,
   description: `${place} passer for deg som vurderer bolig, nybygg eller investering på ${area}. Zen Eco Homes hjelper deg å vurdere område, prisnivå, livsstil, tilgjengelighet og trygg kjøpsprosess før reservasjon.`,
   seoTitle: `Bolig i ${place} | Nybygg og eiendom på ${area}`,
-  seoDescription: `Vurderer du bolig i ${place}? Les om område, nybygg, prisnivå, livsstil og trygg kjøpsprosess med norsk rådgiver i Spania.`,
+  seoDescription: `Vurderer du bolig i ${place}? Les om område, nybygg, prisnivå, livsstil, beliggenhet og kjøpsprosess, og få norsk rådgivning før du bestiller visning.`,
   primaryCta: { label: `Se boliger i ${place}`, href: filterHref },
   secondaryCta: { label: "Sammenlign områder", href: "/omrader" },
   sections: [
@@ -75,8 +75,8 @@ const localPage = ({
     },
   ],
   related: [
-    { label: "Bolig i Spania", href: "/bolig-i-spania" },
-    { label: "Nybygg Costa Blanca", href: "/nybygg-costa-blanca" },
+    { label: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+    { label: "Nybygg i Spania", href: "/guide/nybygg-i-spania" },
     { label: "Områdeguide for eiendomskjøp i Spania", href: "/guide/omradeguide-eiendomskjop-i-spania" },
   ],
 });

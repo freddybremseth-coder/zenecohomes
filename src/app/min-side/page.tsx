@@ -87,7 +87,7 @@ export default function PortalPage() {
             <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
               Tilgang aktiveres personlig for kunder hos Zen Eco Homes. Vi oppretter ikke offentlige kontoer automatisk.
             </p>
-            <Link className="text-button" href="/#kontakt">
+            <Link className="text-button" href="/booking">
               <ShieldCheck size={17} /> Trenger du tilgang? Kontakt oss
             </Link>
           </div>

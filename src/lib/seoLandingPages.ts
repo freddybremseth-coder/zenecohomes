@@ -209,7 +209,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     seoTitle: "Eiendomsrådgiver i Spania | Norsk hjelp ved boligkjøp",
     seoDescription:
       "Eiendomsrådgiver i Spania: få norsk hjelp med områdevalg, boligsøk, prisvurdering, forhandling, advokat og trygg kjøpsprosess fra første samtale.",
-    primaryCta: { label: "Kontakt rådgiver", href: "/#kontakt" },
+    primaryCta: { label: "Kontakt rådgiver", href: "/booking" },
     secondaryCta: { label: "Hvorfor rådgiver er viktig", href: "/magasin/hvorfor-god-eiendomsradgiver-er-viktig" },
     sections: [
       {

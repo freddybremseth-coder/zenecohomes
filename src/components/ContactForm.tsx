@@ -237,27 +237,27 @@ export function ContactForm({
         <div className="form-grid">
           <label>
             {t.name}
-            <input name="name" required placeholder={t.namePh} />
+            <input name="name" autoComplete="name" required placeholder={t.namePh} />
           </label>
           <label>
             {t.phone}
-            <input name="phone" required placeholder="+34..." />
+            <input name="phone" type="tel" autoComplete="tel" required placeholder="+34..." />
           </label>
         </div>
         <label>
           {t.email}
-          <input name="email" type="email" required placeholder={t.emailPh} />
+          <input name="email" autoComplete="email" type="email" required placeholder={t.emailPh} />
         </label>
         <label>
           {t.message}
           <textarea name="message" rows={5} placeholder={t.messagePh} />
         </label>
-        <button className="submit-button" disabled={status === "sending"}>
+        <button className="submit-button" type="submit" disabled={status === "sending"}>
           <Send size={18} />
           {status === "sending" ? t.sending : t.submit}
         </button>
-        {status === "sent" && <p className="form-success">{t.success}</p>}
-        {status === "error" && <p className="form-error">{t.error}</p>}
+        {status === "sent" && <p className="form-success" role="status" aria-live="polite">{t.success}</p>}
+        {status === "error" && <p className="form-error" role="alert">{t.error}</p>}
       </form>
     );
   }
@@ -269,16 +269,16 @@ export function ContactForm({
         <div className="form-grid">
           <label>
             {t.name}
-            <input name="name" required placeholder={t.namePh} />
+            <input name="name" autoComplete="name" required placeholder={t.namePh} />
           </label>
           <label>
             {t.phone}
-            <input name="phone" placeholder="+34..." />
+            <input name="phone" autoComplete="tel" inputMode="tel" placeholder="+34..." />
           </label>
         </div>
         <label>
           {t.email}
-          <input name="email" type="email" required placeholder={t.emailPh} />
+          <input name="email" autoComplete="email" type="email" required placeholder={t.emailPh} />
         </label>
         {!propertyRef && (
           <div className="form-grid">
@@ -304,12 +304,12 @@ export function ContactForm({
             placeholder={propertyTitle ? t.messagePhProp(propertyTitle) : t.messagePh}
           />
         </label>
-        <button className="submit-button" disabled={status === "sending"}>
+        <button className="submit-button" disabled={status === "sending"} type="submit">
           <Send size={18} />
           {status === "sending" ? t.sending : t.submit}
         </button>
-        {status === "sent" && <p className="form-success">{t.success}</p>}
-        {status === "error" && <p className="form-error">{t.error}</p>}
+        {status === "sent" && <p className="form-success" role="status" aria-live="polite">{t.success}</p>}
+        {status === "error" && <p className="form-error" role="alert">{t.error}</p>}
       </form>
     );
   }
@@ -318,8 +318,8 @@ export function ContactForm({
   return (
     <form className="lead-form" ref={formRef} onSubmit={onSubmit}>
       <div className="form-steps">
-        <span className={step === 1 ? "active" : ""}>{t.step1}</span>
-        <span className={step === 2 ? "active" : ""}>{t.step2}</span>
+        <span className={step === 1 ? "active" : ""} aria-current={step === 1 ? "step" : undefined}>{t.step1}</span>
+        <span className={step === 2 ? "active" : ""} aria-current={step === 2 ? "step" : undefined}>{t.step2}</span>
       </div>
 
       <div hidden={step !== 1}>
@@ -327,16 +327,16 @@ export function ContactForm({
         <div className="form-grid">
           <label>
             {t.name}
-            <input name="name" required placeholder={t.namePh} />
+            <input name="name" autoComplete="name" required placeholder={t.namePh} />
           </label>
           <label>
             {t.phone}
-            <input name="phone" placeholder="+34..." />
+            <input name="phone" autoComplete="tel" inputMode="tel" placeholder="+34..." />
           </label>
         </div>
         <label>
           {t.email}
-          <input name="email" type="email" required placeholder={t.emailPh} />
+          <input name="email" autoComplete="email" type="email" required placeholder={t.emailPh} />
         </label>
         <label>
           {t.purchaseGoal}
@@ -441,8 +441,8 @@ export function ContactForm({
         </div>
       </div>
 
-      {status === "sent" && <p className="form-success">{t.success}</p>}
-      {status === "error" && <p className="form-error">{t.error}</p>}
+      {status === "sent" && <p className="form-success" role="status" aria-live="polite">{t.success}</p>}
+      {status === "error" && <p className="form-error" role="alert">{t.error}</p>}
     </form>
   );
 }

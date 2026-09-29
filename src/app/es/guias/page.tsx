@@ -9,8 +9,7 @@ import { seoLandingPagesES } from "@/lib/seoLandingPages.es";
 
 export const metadata: Metadata = {
   title: "Guías para comprar vivienda en España | Zen Eco Homes",
-  description:
-    "Guías en español sobre compra de vivienda, obra nueva, terrenos, zonas de la Costa Blanca y asesoramiento inmobiliario antes de reservar.",
+  description: "Guías para comprar vivienda en España sobre zonas, obra nueva, terrenos, financiación, NIE, aspectos legales, costes y pasos antes de reservar.",
   alternates: { canonical: "/es/guias" },
 };
 

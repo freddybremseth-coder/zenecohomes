@@ -6,7 +6,6 @@ import { GuideDownload } from "@/components/GuideDownload";
 import { MeetFreddy } from "@/components/MeetFreddy";
 import { Testimonials } from "@/components/Testimonials";
 import { PropertyExplorer } from "@/components/PropertyExplorer";
-import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -92,7 +91,7 @@ export default async function Home() {
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
 
       <section id="top" className="hero">
-        <Image className="hero-video" src="/assets/areas.jpg" alt="Costa Blanca med moderne boliger, kyst og fjell" fill priority sizes="100vw" />
+        <Image className="hero-video" src="/assets/areas.jpg" alt="Costa Blanca med moderne boliger, kyst og fjell" fill priority quality={70} sizes="100vw" />
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="eyebrow">Norsk eiendomsrådgivning · Moderne nybygg på Costa Blanca</p>
@@ -300,7 +299,7 @@ export default async function Home() {
           <h2>Fortell oss hvordan du ønsker å bo</h2>
           <p>Vi starter med område, bruk og budsjett og hjelper deg videre til de riktige moderne boligene.</p>
         </div>
-        <ContactForm source="zenecohomes-home" />
+        <Link className="contact-button" href="/booking">Book en uforpliktende boligprat <ArrowRight size={18} /></Link>
       </section>
 
       <Footer showCta={false} />

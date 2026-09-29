@@ -6,9 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Where to buy on the Costa Blanca | Areas guide",
-  description:
-    "Compare Costa Blanca North, Costa Blanca South, Costa Cálida and inland Alicante before choosing a property. Lifestyle, services, use and property type.",
+  title: "Costa Blanca Areas | Where to Buy Property | Zen Eco Homes",
+  description: "Compare Costa Blanca North, South, Costa Cálida and inland areas before buying property in Spain. Explore local guides, homes and practical differences.",
   alternates: { canonical: "/en/areas" },
 };
 

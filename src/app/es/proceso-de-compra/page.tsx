@@ -6,9 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Proceso de compra de vivienda en España | Guía paso a paso",
-  description:
-    "Cómo comprar vivienda en España: presupuesto, NIE, abogado, reserva, comprobaciones, contrato, pagos, notaría y entrega de llaves.",
+  title: "Comprar vivienda en España | Proceso | Zen Eco Homes",
+  description: "Comprar vivienda en España paso a paso: necesidades, búsqueda, visitas, reserva, abogado, NIE, notaría, entrega y seguimiento después de la compra.",
   alternates: { canonical: "/es/proceso-de-compra" },
 };
 

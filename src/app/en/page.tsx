@@ -12,9 +12,8 @@ const BASE = "https://www.zenecohomes.com";
 const BOOKING = "/en/booking";
 
 export const metadata: Metadata = {
-  title: "Modern New Build Property in Spain | Costa Blanca Advisor",
-  description:
-    "Modern new builds, villas, apartments and plots on the Costa Blanca with buyer-focused English-speaking advice. Compare areas, projects, costs and the buying process before you reserve.",
+  title: "New Build Property in Spain | Costa Blanca | Zen Eco Homes",
+  description: "Find modern new build property in Spain with advice on Costa Blanca areas, projects, prices, developers, payment plans and the property buying process.",
   alternates: { canonical: "/en", languages: homeHreflang() },
   openGraph: {
     title: "Modern Property in Spain | Zen Eco Homes",

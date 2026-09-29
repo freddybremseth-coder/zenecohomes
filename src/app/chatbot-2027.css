@@ -2,7 +2,7 @@
   --chat-ink: var(--ze-ink, #172027);
   --chat-paper: var(--ze-limestone, #f3f0e9);
   --chat-accent: var(--ze-travertine, #c6a76d);
-  --chat-muted: rgba(23, 32, 39, 0.62);
+  --chat-muted: rgba(23, 32, 39, 0.66);
 }
 
 .chatbot-2027 .chatbot-panel {
@@ -197,7 +197,7 @@
 }
 
 .chatbot-input-2027 input::placeholder {
-  color: rgba(23, 32, 39, 0.43);
+  color: rgba(23, 32, 39, 0.66);
 }
 
 .chatbot-input-2027 > button {

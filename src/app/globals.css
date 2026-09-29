@@ -168,12 +168,15 @@ select {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.04em;
-  opacity: 0.55;
+  opacity: 0.72;
   text-transform: uppercase;
 }
 
 .language-switcher a[aria-current="true"] {
   opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .hero {
