@@ -24,9 +24,14 @@ export async function generateMetadata({ params }: { params: Promise<{ sted: str
   const { sted } = await params;
   const town = getInlandTown(sted);
   const region = town?.region || "Alicante";
+  const rawTitle = town ? `${town.name} | Bolig og tomt i innlandet i ${region} | 2026` : "Innlandet i Spania | Zen Eco Homes";
+  const title = rawTitle.length > 60 ? rawTitle.replace(/\s+\|\s+2026$/, "") : rawTitle;
+  const description = town
+    ? `${town.name} i ${region}: vurder bolig, tomt og nybygg i innlandet. Les om området, livsstil, avstander og hva du bør kontrollere før boligkjøp i Spania.`
+    : INLAND_BRAND.description;
   return {
-    title: town ? `${town.name} | Innlandet i ${region} | Zen Eco Homes` : "Innlandet",
-    description: town ? displayTownIntro(town) : INLAND_BRAND.description,
+    title,
+    description,
     alternates: { canonical: `/omrader/innlandet/${sted}` },
   };
 }
