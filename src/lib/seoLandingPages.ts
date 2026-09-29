@@ -267,7 +267,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     seoTitle: "Tomt i Spania | Kjøpe tomt og bygge moderne bolig trygt",
     seoDescription:
       "Tomt i Spania: få hjelp til å vurdere byggbarhet, regulering, vann, strøm, adkomst, arkitekt, kostnader og trygg prosess før du kjøper og bygger.",
-    primaryCta: { label: "Se tomter", href: "/tomter" },
+    primaryCta: { label: "Se tomter", href: "/omrader/innlandet/tomter" },
     secondaryCta: { label: "Les tomteguiden", href: "/guide/guide-tomtekjop-bygging-i-spania" },
     sections: [
       {
@@ -313,7 +313,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     related: [
       { label: "Guide til tomtekjøp og bygging i Spania", href: "/guide/guide-tomtekjop-bygging-i-spania" },
-      { label: "Se tomter", href: "/tomter" },
+      { label: "Se tomter", href: "/omrader/innlandet/tomter" },
       { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
     ],
   },
