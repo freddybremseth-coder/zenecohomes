@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Personvernerklæring | Zen Eco Homes",
+  title: { absolute: "Personvern og personopplysninger | Zen Eco Homes Spania" },
   description:
     "Les hvordan Zen Eco Homes behandler personopplysninger når du bruker nettstedet, sender inn boligforespørsel, bestiller rådgivning eller bruker våre digitale tjenester.",
   alternates: { canonical: "/personvern" },
