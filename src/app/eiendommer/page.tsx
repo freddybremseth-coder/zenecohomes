@@ -25,7 +25,7 @@ export async function generateMetadata({
   const params = await searchParams;
   // Filtrerte/søkte varianter (?region=…, ?type=…, ?q=… osv.) skal ikke indekseres –
   // det sparer crawl-budsjett og hindrer duplikat. Bar /eiendommer forblir indekserbar.
-  const isFiltered = ["q", "type", "region", "area", "minPrice", "maxPrice", "bedrooms", "bathrooms", "minSize", "lifestyle"].some(
+  const isFiltered = ["q", "type", "region", "area", "minPrice", "maxPrice", "bedrooms", "bathrooms", "minSize", "lifestyle", "page"].some(
     (key) => Boolean(params[key]),
   );
 
