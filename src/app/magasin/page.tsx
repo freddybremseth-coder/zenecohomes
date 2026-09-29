@@ -54,6 +54,8 @@ const articleCovers: Record<string, string> = {
   "costa-blanca-nord-under-300000-tre-kjop": "/assets/magasin-covers/kjope-na.svg",
   "600000-euro-benidorm-polop-finestrat": "/assets/magasin-covers/omradevalg.svg",
   "finestrat-430000-leilighet-eller-bungalow": "/assets/magasin-covers/omradet-for-boligen.svg",
+  "finestrat-rundt-700000-114-155-314-m2": "/assets/magasin-covers/omradet-for-boligen.svg",
+  "finestrat-735000-vs-735950": "/assets/magasin-covers/kjope-na.svg",
 };
 
 const bookGuides = [

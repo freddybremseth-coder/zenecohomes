@@ -673,6 +673,22 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     ]},
   ],
 
+  "finestrat-rundt-700000-114-155-314-m2": [
+    { headingIncludes: "N9835", links: [{ label: "Åpne N9835", href: "/eiendommer/N9835" }] },
+    { headingIncludes: "N8313", links: [{ label: "Åpne N8313", href: "/eiendommer/N8313" }] },
+    { headingIncludes: "N8058", links: [{ label: "Åpne N8058", href: "/eiendommer/N8058" }] },
+    { headingIncludes: "€/m²", links: [
+      { label: "Nybygg i Finestrat – kjøperguide", href: "/guide/nybygg-finestrat-omradeguide" },
+    ]},
+  ],
+  "finestrat-735000-vs-735950": [
+    { headingIncludes: "SP1296", links: [{ label: "Åpne SP1296", href: "/eiendommer/SP1296" }] },
+    { headingIncludes: "N9834", links: [{ label: "Åpne N9834", href: "/eiendommer/N9834" }] },
+    { headingIncludes: "forklaringen", links: [
+      { label: "Slik vurderer du en bolig for videresalg", href: "/magasin/bolig-som-er-lett-a-selge-igjen-spania" },
+    ]},
+  ],
+
 };
 
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
