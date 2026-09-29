@@ -50,7 +50,7 @@ export const ui: Record<
     contactCta: "Kontakt oss",
     relatedHeading: "Relaterte sider",
     home: "Forside",
-    contactHref: "/#kontakt",
+    contactHref: "/booking",
   },
   de: {
     faqEyebrow: "Häufige Fragen",
