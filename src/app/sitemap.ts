@@ -129,7 +129,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // omitted valid property pages. Never sitemap sample properties when the
   // upstream RealtyFlow feed is unavailable.
   const fallbackIds = new Set(fallbackProperties.map((property) => property.id));
-  const properties = (await getProperties(0)).filter(
+  const properties = (await getProperties(0, "zeneco")).filter(
     (property) => !fallbackIds.has(property.id),
   );
   const uniqueProperties = new Map<string, (typeof properties)[number]>();
