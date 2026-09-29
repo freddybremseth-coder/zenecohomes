@@ -633,6 +633,46 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     ]},
   ],
 
+  "costa-blanca-nord-under-300000-tre-kjop": [
+    { headingIncludes: "SP0674", links: [
+      { label: "Åpne SP0674", href: "/eiendommer/SP0674" },
+    ]},
+    { headingIncludes: "N9860", links: [
+      { label: "Åpne N9860", href: "/eiendommer/N9860" },
+    ]},
+    { headingIncludes: "N6149", links: [
+      { label: "Åpne N6149", href: "/eiendommer/N6149" },
+    ]},
+    { headingIncludes: "undersøkt", links: [
+      { label: "7 dyre feil før boligkjøp", href: "/magasin/7-dyre-feil-nordmenn-bolig-spania" },
+    ]},
+  ],
+  "600000-euro-benidorm-polop-finestrat": [
+    { headingIncludes: "N9095", links: [
+      { label: "Åpne N9095", href: "/eiendommer/N9095" },
+      { label: "Områdeguide Benidorm", href: "/omrader/costa-blanca-nord/benidorm" },
+    ]},
+    { headingIncludes: "N8511", links: [
+      { label: "Åpne N8511", href: "/eiendommer/N8511" },
+      { label: "Områdeguide Polop", href: "/omrader/costa-blanca-nord/polop" },
+    ]},
+    { headingIncludes: "SP1617", links: [
+      { label: "Åpne SP1617", href: "/eiendommer/SP1617" },
+      { label: "Områdeguide Finestrat", href: "/omrader/costa-blanca-nord/finestrat" },
+    ]},
+  ],
+  "finestrat-430000-leilighet-eller-bungalow": [
+    { headingIncludes: "SP1663", links: [
+      { label: "Åpne SP1663", href: "/eiendommer/SP1663" },
+    ]},
+    { headingIncludes: "N8643", links: [
+      { label: "Åpne N8643", href: "/eiendommer/N8643" },
+    ]},
+    { headingIncludes: "side ved side", links: [
+      { label: "Nybygg i Finestrat – kjøperguide", href: "/guide/nybygg-finestrat-omradeguide" },
+    ]},
+  ],
+
 };
 
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
