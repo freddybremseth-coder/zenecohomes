@@ -6,8 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Freddy Bremseth | Eiendomsrådgiver i Spania",
-  description: "Møt Freddy Bremseth, norsk eiendomsrådgiver på Costa Blanca. Les om rådgivningen, områdefokuset og hvordan Zen Eco Homes hjelper boligkjøpere.",
+  title: "Freddy Bremseth | Norsk rådgiver for bolig i Spania",
+  description: "Møt Freddy Bremseth, norsk eiendomsrådgiver på Costa Blanca. Les om områdekunnskap, boligsøk, visning, kjøpsprosess og boligkjøp i Spania nå.",
   alternates: { canonical: "/om-oss/freddy" },
 };
 

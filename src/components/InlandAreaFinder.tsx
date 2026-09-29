@@ -326,7 +326,7 @@ const copy: Record<InlandFinderLocale, FinderCopy> = {
 
 function townHref(locale: InlandFinderLocale, town: TownLink, intent?: GroupKey) {
   if (locale === "no") {
-    return intent ? `/inland/${town.slug}?intent=${intent}` : `/inland/${town.slug}`;
+    return intent ? `/omrader/innlandet/${town.slug}?intent=${intent}` : `/omrader/innlandet/${town.slug}`;
   }
 
   const query = encodeURIComponent(town.name);

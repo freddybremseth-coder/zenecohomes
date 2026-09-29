@@ -25,17 +25,17 @@ type PlotWithCatastro = LandPlot & {
 };
 
 export const metadata = {
-  title: "Tomter til salgs i Spania | Bygg moderne bolig på Costa Blanca",
+  title: "Tomter i Spania | Kjøpe tomt og bygge moderne bolig",
   description:
-    "Finn tomter og byggeprosjekter i Spania. Vi hjelper deg å vurdere regulering, vann, strøm, adkomst, arkitekt og trygg kjøpsprosess.",
+    "Tomter i Spania: se aktuelle tomter og få hjelp til å vurdere regulering, byggbarhet, vann, strøm, adkomst, arkitekt og trygg kjøpsprosess i Spania.",
   alternates: {
-    canonical: "/tomter",
+    canonical: "/omrader/innlandet/tomter",
   },
   openGraph: {
     title: "Tomter til salgs i Spania | Zen Eco Homes",
     description:
       "Utforsk tomter på Costa Blanca og i Spania med kart, regulering, pris, størrelse og norsk rådgivning før kjøp.",
-    url: "https://www.zenecohomes.com/tomter",
+    url: "https://www.zenecohomes.com/omrader/innlandet/tomter",
     type: "website",
   },
 };
@@ -160,7 +160,7 @@ export default async function PlotsPage({
           Utforsk tomter med størrelse, pris, regulering, vann, strøm og beliggenhet. Kartet er utvidet med Catastro-lag,
           parcelgrenser og direkte Catastro-lenker der referansen finnes.
         </p>
-        <form className="search-card page-search plots-search" action="/tomter">
+        <form className="search-card page-search plots-search" action="/omrader/innlandet/tomter">
           <input name="q" defaultValue={params.q || ""} placeholder="Søk sted, ref, Catastro, polígono eller parcela" />
           <select name="minArea" defaultValue={params.minArea || ""}>
             <option value="">Areal fra</option>

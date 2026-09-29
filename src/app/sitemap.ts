@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 
+import { areaSlug } from "@/lib/areaRoutes";
 import { localSeoLandingPages } from "@/lib/localSeoLandingPages";
 import { allArticles, articlePath } from "@/lib/magazine";
-import { fallbackProperties, getProperties, getPropertyRef, regions } from "@/lib/realtyflow";
+import { areaMatchesRegion, fallbackProperties, getAreaProfiles, getProperties, getPropertyRef, regions, type RegionKey } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
 import { inlandTowns } from "@/lib/inland";
 import { seoLandingPagesDE } from "@/lib/seoLandingPages.de";
@@ -18,15 +19,32 @@ const baseUrl = "https://www.zenecohomes.com";
 const allSeoPages = [...seoLandingPages, ...localSeoLandingPages];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const cmsPosts = await fetchPublishedPosts("magasin");
+  const [cmsPosts, areaProfiles] = await Promise.all([
+    fetchPublishedPosts("magasin"),
+    getAreaProfiles(),
+  ]);
+  const retiredArticleSlugs = new Set(["kjopsprosess-bolig-i-spania"]);
   const articlePaths = Array.from(
     new Set([
-      ...allArticles.map((article) => articlePath(article)),
-      ...cmsPosts.map((post) => `/magasin/${post.slug}`),
+      ...allArticles
+        .filter((article) => !retiredArticleSlugs.has(article.slug))
+        .map((article) => articlePath(article)),
+      ...cmsPosts
+        .filter((post) => !retiredArticleSlugs.has(post.slug))
+        .map((post) => {
+          const known = allArticles.find((article) => article.slug === post.slug);
+          return known ? articlePath(known) : `/magasin/${post.slug}`;
+        }),
     ]),
   );
+  const nestedAreaPaths = (regions.map((region) => region.key).filter((key) => key !== "innlandet") as RegionKey[])
+    .flatMap((region) =>
+      areaProfiles
+        .filter((profile) => areaMatchesRegion(profile, region))
+        .map((profile) => `/omrader/${region}/${areaSlug(profile.name)}`),
+    );
   const isArticleRoute = (route: string) =>
-    route.startsWith("/magasin/") || route.startsWith("/kjopsprosess/") || route.startsWith("/guide/") || route.startsWith("/bedriftshytte-spania/");
+    route.startsWith("/magasin/") || route.startsWith("/guide/") || route.startsWith("/bedriftshytte-spania/");
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
@@ -37,10 +55,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/de/immobilien",
     "/en/properties",
     "/es/propiedades",
-    "/tomter",
+    "/omrader/innlandet/tomter",
     "/bedriftshytte-spania",
     "/bedriftshytte-spania/guider",
-    "/inland",
     "/de/inland",
     "/en/inland",
     "/es/interior",
@@ -60,10 +77,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/kundeomtaler",
     "/om-oss",
     "/om-oss/freddy",
+    "/om-oss/andrea",
     "/personvern",
     "/informasjonskapsler",
     ...regions.map((region) => `/omrader/${region.key}`),
-    ...inlandTowns.map((town) => `/inland/${town.slug}`),
+    ...nestedAreaPaths,
+    ...inlandTowns.map((town) => `/omrader/innlandet/${town.slug}`),
     ...allSeoPages.map((page) => `/${page.slug}`),
     ...seoLandingPagesDE.map((page) => `/de/${page.slug}`),
     ...localSeoLandingPagesDE.map((page) => `/de/${page.slug}`),
@@ -72,11 +91,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...seoLandingPagesES.map((page) => `/es/${page.slug}`),
     ...localSeoLandingPagesES.map((page) => `/es/${page.slug}`),
     "/kjopsprosessen",
-    "/kjopsprosess",
     "/guide",
     "/magasin",
     ...articlePaths,
-    "/om-freddy",
     "/de/ueber-freddy",
     "/en/about-freddy",
     "/es/sobre-freddy",

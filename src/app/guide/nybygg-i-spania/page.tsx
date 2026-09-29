@@ -5,8 +5,8 @@ import { getSeoLandingPage } from "@/lib/seoLandingPages";
 const page = getSeoLandingPage("nybygg-i-spania")!;
 
 export const metadata: Metadata = {
-  title: "Nybygg i Spania | Guide til trygt boligkjøp",
-  description: "Nybygg i Spania: vurder område, utbygger, betalingsplan, garantier, kostnader og overtakelse før du reserverer bolig.",
+  title: "Nybygg i Spania | Guide for tryggere boligkjøp i 2026",
+  description: "Nybygg i Spania: vurder område, utbygger, betalingsplan, garantier, kostnader og overtakelse før du reserverer bolig eller prosjekt i Spania.",
   alternates: { canonical: "/guide/nybygg-i-spania" },
 };
 

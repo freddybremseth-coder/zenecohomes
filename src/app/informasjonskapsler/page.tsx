@@ -4,8 +4,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Informasjonskapsler | Zen Eco Homes",
-  description: "Informasjon om informasjonskapsler og sporingsteknologier på Zen Eco Homes, formål, analyse, booking og hvordan du kan styre valgene dine.",
+  title: "Informasjonskapsler | Cookies og sporing hos Zen Eco Homes",
+  description: "Les hvilke informasjonskapsler og sporingsteknologier Zen Eco Homes kan bruke, hvorfor de brukes, og hvordan du kan styre eller slette valgene dine.",
   alternates: { canonical: "/informasjonskapsler" },
 };
 

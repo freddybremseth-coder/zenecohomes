@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SaveSearchButton } from "@/components/SaveSearchButton";
@@ -25,14 +26,14 @@ export async function generateMetadata({
   const params = await searchParams;
   // Filtrerte/søkte varianter (?region=…, ?type=…, ?q=… osv.) skal ikke indekseres –
   // det sparer crawl-budsjett og hindrer duplikat. Bar /eiendommer forblir indekserbar.
-  const isFiltered = ["q", "type", "region", "area", "minPrice", "maxPrice", "bedrooms", "bathrooms", "minSize", "lifestyle"].some(
+  const isFiltered = ["q", "type", "region", "area", "minPrice", "maxPrice", "bedrooms", "bathrooms", "minSize", "lifestyle", "page"].some(
     (key) => Boolean(params[key]),
   );
 
   return {
-    title: "Boliger til salgs i Spania | Nybygg på Costa Blanca og Costa Cálida",
+    title: "Boliger til salgs i Spania | Costa Blanca og Cálida",
     description:
-      "Se moderne boliger, villaer, leiligheter og nybygg i Spania. Zen Eco Homes hjelper nordmenn med trygg kjøpsprosess på Costa Blanca og Costa Cálida.",
+      "Se boliger til salgs i Spania: villaer, leiligheter og nybygg på Costa Blanca og Costa Cálida, med norsk rådgivning om område og kjøpsprosess.",
     ...(isFiltered ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: "/eiendommer",
@@ -256,6 +257,7 @@ export default async function PropertiesPage({
           </nav>
         )}
       </section>
+      <BuyerMatchQuiz />
       <Footer />
     </main>
   );

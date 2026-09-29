@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/es/interior",
     languages: {
-      "nb-NO": `${BASE}/inland`,
-      "x-default": `${BASE}/inland`,
+      "nb-NO": `${BASE}/omrader/innlandet`,
+      "x-default": `${BASE}/omrader/innlandet`,
       "de-DE": `${BASE}/de/inland`,
       en: `${BASE}/en/inland`,
       "es-ES": `${BASE}/es/interior`,

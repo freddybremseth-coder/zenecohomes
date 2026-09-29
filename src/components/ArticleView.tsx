@@ -25,7 +25,10 @@ export function ArticleView({ article }: { article: Article }) {
     mentions: isCorporate
       ? ["Bedriftshytte i Spania", "Firmabolig", "Costa Blanca", "Ansattgode"]
       : ["Boligkjøp i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsrådgivning"],
-    author: { "@type": "Organization", name: isCorporate ? "Zen Corporate Homes" : "Zen Eco Homes", url: BASE },
+    author:
+      silo === "guide"
+        ? { "@type": "Person", name: "Freddy Bremseth", url: `${BASE}/om-oss/freddy` }
+        : { "@type": "Organization", name: isCorporate ? "Zen Corporate Homes" : "Zen Eco Homes", url: BASE },
     publisher: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
     mainEntityOfPage: `${BASE}${canonicalPath}`,
   };
@@ -64,8 +67,13 @@ export function ArticleView({ article }: { article: Article }) {
         <h1>{article.title}</h1>
         <p>{article.excerpt}</p>
         <div className="hero-actions">
+          {silo === "guide" && (
+            <Link className="text-button light" href="/om-oss/freddy">
+              Av Freddy Bremseth
+            </Link>
+          )}
           <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-            <CalendarDays size={17} /> {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
+            <CalendarDays size={17} /> Sist oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
           </span>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
             <Clock size={17} /> {article.readingTime}
@@ -232,7 +240,7 @@ export function ArticleView({ article }: { article: Article }) {
 export function buildArticleMetadata(article: Article) {
   const canonicalPath = articleBasePath(article) + `/${article.slug}`;
   return {
-    title: article.seoTitle,
+    title: { absolute: article.seoTitle },
     description: article.seoDescription,
     keywords: article.keywords,
     alternates: { canonical: canonicalPath },

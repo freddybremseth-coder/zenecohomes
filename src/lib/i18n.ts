@@ -146,7 +146,7 @@ export function homeHreflang(): Record<string, string> {
   };
 }
 
-export type NavLink = { label: string; href: string; external?: boolean; cta?: boolean };
+export type NavLink = { label: string; href: string; external?: boolean; cta?: boolean; children?: NavLink[] };
 
 /** Keyholding / property care ligger på eget subdomene (care.zenecohomes.com). */
 export const CARE_URL = "https://care.zenecohomes.com";
@@ -194,7 +194,17 @@ export function navLinks(locale: SiteLocale): NavLink[] {
   return [
     { label: "Boliger", href: "/eiendommer" },
     { label: "Områder", href: "/omrader" },
-    { label: "Kjøpe bolig", href: "/guide/kjope-bolig-i-spania" },
+    {
+      label: "Kjøpe bolig",
+      href: "/guide/kjope-bolig-i-spania",
+      children: [
+        { label: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+        { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
+        { label: "Visningstur", href: "/visningstur" },
+        { label: "Alle guider", href: "/guide" },
+        { label: "Magasin", href: "/magasin" },
+      ],
+    },
     { label: "Om oss", href: "/om-oss" },
     { label: "Kundeomtaler", href: "/kundeomtaler" },
     { label: "Få rådgivning", href: "/booking", cta: true },

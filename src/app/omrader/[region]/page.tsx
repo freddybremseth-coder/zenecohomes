@@ -6,6 +6,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
+import { areaSlug } from "@/lib/areaRoutes";
 import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
@@ -41,6 +42,29 @@ const regionCopy: Record<RegionKey, { title: string; intro: string; proof: strin
     intro:
       "Innlandet passer for deg som vil ha spanske landsbyer og byer, større tomter, fincaer og moderne villaer med mer plass rundt boligen. Avstanden til kyst og flyplass varierer betydelig etter område. Her finner du blant annet Biar, Busot, Villena, Sax, Castalla, Pinoso, Hondón de las Nieves, Aspe, Novelda og Jumilla.",
     proof: ["Fincaer, landsbyhus, tomter og moderne villaer", "Mange levende helårssamfunn", "Lokal erfaring gjennom familiens oliveneiendom i Biar"],
+  },
+};
+
+const regionSeo: Record<RegionKey, { title: string; description: string }> = {
+  "costa-blanca-nord": {
+    title: "Costa Blanca Nord | Nybygg og boliger | Zen Eco Homes",
+    description:
+      "Costa Blanca Nord: sammenlign Altea, Albir, Calpe, Finestrat, Polop, Moraira, Jávea og Dénia. Se nybygg, boliger og råd før et trygt boligkjøp i Spania.",
+  },
+  "costa-blanca-sor": {
+    title: "Costa Blanca Sør | Nybygg og boliger | Zen Eco Homes",
+    description:
+      "Costa Blanca Sør: sammenlign Torrevieja, Guardamar, Ciudad Quesada, Orihuela Costa og Santa Pola. Se nybygg, boliger og råd før kjøp i Spania.",
+  },
+  "costa-calida": {
+    title: "Costa Cálida Spania | Nybygg og boliger | Zen Eco Homes",
+    description:
+      "Costa Cálida: sammenlign Los Alcázares, San Pedro del Pinatar, La Manga og Murcia-områder. Se nybygg, boliger og råd før et trygt boligkjøp i Spania.",
+  },
+  innlandet: {
+    title: "Innlandet i Spania | Tomter og boliger | Zen Eco Homes",
+    description:
+      "Innlandet i Spania: sammenlign Pinoso, Biar, Aspe, Villena og andre områder. Se tomter, moderne boliger og råd om bygging og trygg kjøpsprosess.",
   },
 };
 
@@ -110,9 +134,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ region: RegionKey }> }) {
   const { region } = await params;
   const copy = regionCopy[region];
+  const seo = regionSeo[region];
   return {
-    title: copy?.title || "Område",
-    description: copy?.intro || "Finn nybygg og områder i Spania med Zen Eco Homes.",
+    title: seo?.title || copy?.title || "Område i Spania | Zen Eco Homes",
+    description: seo?.description || copy?.intro || "Finn nybygg og områder i Spania med Zen Eco Homes.",
     alternates: {
       canonical: `/omrader/${region}`,
     },
@@ -219,6 +244,9 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
                     </div>
                   )}
                   <div className="area-guide-actions">
+                    <Link className="text-button" href={`/omrader/${region}/${areaSlug(profile.name)}`}>
+                      Les områdeguide <ArrowRight size={16} />
+                    </Link>
                     <a className="text-button area-property-link" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
                       <MapPin size={17} /> Se boliger i {profile.name}
                     </a>

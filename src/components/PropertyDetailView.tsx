@@ -107,7 +107,7 @@ const T: Record<Locale, DetailText> = {
       "Avstand til strand, service, flyplass og helårsaktivitet.",
     ],
     processLink: "Les kjøpsprosessen",
-    processHref: "/kjopsprosess/kjopsprosess-bolig-i-spania",
+    processHref: "/guide/kjope-bolig-i-spania",
     costsTitle: "Estimert kjøpskostnad",
     costsBody:
       "I Spania bør du normalt beregne ca. 13,5% ekstra til skatt, notar, register, advokat og øvrige kostnader.",
@@ -116,7 +116,7 @@ const T: Record<Locale, DetailText> = {
     total: "Estimert total",
     clarify: "Avklares",
     financingLink: "Finansiering, notar og NIE",
-    financingHref: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania",
+    financingHref: "/guide/finansiering-notar-nie-boligkjop-spania",
     rentalTitle: "Passer den for utleie?",
     rentalBody:
       "Vi vurderer beliggenhet, turistlisens, felleskostnader, sesong, målgruppe og konkurranse før du baserer kjøpet på forventet leieinntekt.",
@@ -339,7 +339,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
   const localePrefix = locale === "no" ? "" : `/${locale}`;
   const areaPageHref =
     areaRegionKey === "innlandet"
-      ? `${localePrefix}/inland`
+      ? locale === "no" ? "/omrader/innlandet" : `${localePrefix}/inland`
       : areaRegionKey
         ? `/omrader/${areaRegionKey}`
         : "/omrader";

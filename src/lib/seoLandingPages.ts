@@ -21,9 +21,9 @@ export const seoLandingPages: SeoLandingPage[] = [
     hero: "Kjøp bolig i Spania med norsk rådgiver",
     description:
       "Finn riktig bolig, område og kjøpsprosess før du reserverer. Zen Eco Homes hjelper nordmenn med trygg vurdering av nybygg, villaer, leiligheter, tomter og prosjekter i Spania.",
-    seoTitle: "Bolig i Spania | Kjøp trygt med norsk rådgiver",
+    seoTitle: "Bolig i Spania | Norsk rådgivning for trygt boligkjøp",
     seoDescription:
-      "Vurderer du bolig i Spania? Få hjelp med områdevalg, nybygg, villa, leilighet, finansiering, NIE, advokat og trygg kjøpsprosess.",
+      "Bolig i Spania: få norsk rådgivning om områdevalg, nybygg, villa, leilighet, finansiering, NIE, advokat og en trygg kjøpsprosess fra start til slutt.",
     primaryCta: { label: "Se boliger til salgs", href: "/eiendommer" },
     secondaryCta: { label: "Les kjøpsprosessen", href: "/kjopsprosessen" },
     sections: [
@@ -71,8 +71,8 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     related: [
       { label: "Områdeguide for eiendomskjøp i Spania", href: "/guide/omradeguide-eiendomskjop-i-spania" },
-      { label: "Kjøpsprosess for bolig i Spania", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
-      { label: "Finansiering, notar og NIE", href: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania" },
+      { label: "Kjøpsprosess for bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+      { label: "Finansiering, notar og NIE", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
     ],
   },
   {
@@ -82,9 +82,9 @@ export const seoLandingPages: SeoLandingPage[] = [
     hero: "Nybygg i Spania med moderne standard og trygg prosess",
     description:
       "Utforsk moderne nybygg i Spania. Vi hjelper deg å vurdere utbygger, kvalitet, beliggenhet, betalingsplan, inkluderte leveranser og risiko før reservasjon.",
-    seoTitle: "Nybygg i Spania | Moderne boliger med norsk rådgivning",
+    seoTitle: "Nybygg i Spania | Moderne bolig med norsk rådgivning",
     seoDescription:
-      "Se nybygg i Spania og få hjelp til å vurdere prosjekter, utbygger, betalingsplan, område, pris og trygg kjøpsprosess.",
+      "Nybygg i Spania: få hjelp til å vurdere prosjekt, utbygger, betalingsplan, område, pris, garantier og trygg kjøpsprosess før du reserverer bolig.",
     primaryCta: { label: "Se nybygg og boliger", href: "/eiendommer" },
     secondaryCta: { label: "Kjøpe nå eller vente?", href: "/guide/kjop-bolig-i-spania-na-eller-vente" },
     sections: [
@@ -132,7 +132,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     related: [
       { label: "Bør man kjøpe bolig i Spania nå, eller vente?", href: "/guide/kjop-bolig-i-spania-na-eller-vente" },
-      { label: "Kjøpsprosess for bolig i Spania", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
+      { label: "Kjøpsprosess for bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
       { label: "Boliger til salgs", href: "/eiendommer" },
     ],
   },
@@ -143,9 +143,9 @@ export const seoLandingPages: SeoLandingPage[] = [
     hero: "Nybygg på Costa Blanca for norske boligkjøpere",
     description:
       "Costa Blanca har et stort utvalg nybygg, villaer, leiligheter og prosjekter. Vi hjelper deg å sammenligne kyst, innland, prisnivå og livsstil før kjøp.",
-    seoTitle: "Nybygg Costa Blanca | Boliger og prosjekter i Spania",
+    seoTitle: "Nybygg Costa Blanca | Boliger med norsk rådgivning",
     seoDescription:
-      "Finn nybygg på Costa Blanca. Sammenlign Costa Blanca Nord og Sør, områder, prisnivå, boliger og trygg kjøpsprosess med norsk rådgiver.",
+      "Nybygg på Costa Blanca: sammenlign nord og sør, områder, prisnivå, boliger og prosjekter med norsk rådgivning gjennom hele kjøpsprosessen i Spania.",
     primaryCta: { label: "Se boliger på Costa Blanca", href: "/eiendommer?region=costa-blanca-nord" },
     secondaryCta: { label: "Sammenlign områder", href: "/omrader" },
     sections: [
@@ -203,9 +203,9 @@ export const seoLandingPages: SeoLandingPage[] = [
     hero: "Eiendomsrådgiver i Spania for norske kjøpere",
     description:
       "Få hjelp av norsk rådgiver når du vurderer bolig, nybygg, tomt eller investering i Spania. Vi hjelper deg å sammenligne områder, priser, risiko og neste steg.",
-    seoTitle: "Eiendomsrådgiver Spania | Norsk rådgivning ved boligkjøp",
+    seoTitle: "Eiendomsrådgiver i Spania | Norsk hjelp ved boligkjøp",
     seoDescription:
-      "Trenger du eiendomsrådgiver i Spania? Få norsk hjelp med områdevalg, boligsøk, prisvurdering, forhandling, advokat og trygg kjøpsprosess.",
+      "Eiendomsrådgiver i Spania: få norsk hjelp med områdevalg, boligsøk, prisvurdering, forhandling, advokat og trygg kjøpsprosess fra første samtale.",
     primaryCta: { label: "Kontakt rådgiver", href: "/#kontakt" },
     secondaryCta: { label: "Hvorfor rådgiver er viktig", href: "/magasin/hvorfor-god-eiendomsradgiver-er-viktig" },
     sections: [
@@ -264,10 +264,10 @@ export const seoLandingPages: SeoLandingPage[] = [
     hero: "Kjøpe tomt i Spania og bygge moderne bolig",
     description:
       "Vurderer du tomt i Spania? Vi hjelper deg å kontrollere regulering, byggbarhet, vann, strøm, adkomst, arkitekt, budsjett og kjøpsprosess.",
-    seoTitle: "Tomt i Spania | Kjøpe tomt og bygge hus trygt",
+    seoTitle: "Tomt i Spania | Kjøpe tomt og bygge moderne bolig trygt",
     seoDescription:
-      "Kjøpe tomt i Spania? Få hjelp til å vurdere byggbarhet, regulering, vann, strøm, adkomst, arkitekt, kostnader og trygg prosess.",
-    primaryCta: { label: "Se tomter", href: "/tomter" },
+      "Tomt i Spania: få hjelp til å vurdere byggbarhet, regulering, vann, strøm, adkomst, arkitekt, kostnader og trygg prosess før du kjøper og bygger.",
+    primaryCta: { label: "Se tomter", href: "/omrader/innlandet/tomter" },
     secondaryCta: { label: "Les tomteguiden", href: "/guide/guide-tomtekjop-bygging-i-spania" },
     sections: [
       {
@@ -313,7 +313,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     related: [
       { label: "Guide til tomtekjøp og bygging i Spania", href: "/guide/guide-tomtekjop-bygging-i-spania" },
-      { label: "Se tomter", href: "/tomter" },
+      { label: "Se tomter", href: "/omrader/innlandet/tomter" },
       { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
     ],
   },
