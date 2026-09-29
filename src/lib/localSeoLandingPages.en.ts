@@ -25,7 +25,7 @@ const localPageEN = ({
   eyebrow: `${area} · area guide`,
   hero: `Buy property in ${place}`,
   description: `${place} is worth considering if you are looking at property, a new build or an investment on the ${area}. Zen Eco Homes helps you assess area, price level, lifestyle, access and a safe buying process before you reserve.`,
-  seoTitle: `Property in ${place} | New Build & Advice`,
+  seoTitle: `Property for Sale in ${place} | New Builds & Buyer Advice`,
   seoDescription: `Considering property in ${place}? Read about the area, new builds, price level, lifestyle and a safe buying process with an advisor in Spain.`,
   primaryCta: { label: `See properties in ${place}`, href: filterHref },
   secondaryCta: { label: "Compare areas", href: "/omrader" },
