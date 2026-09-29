@@ -100,6 +100,194 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   ],
 };
 
+type ContextualLink = { label: string; href: string };
+type ContextualLinkRule = { headingIncludes: string; links: ContextualLink[] };
+
+/**
+ * Kontekstuelle internlenker for guide-siloen.
+ * De ligger i selve relevante avsnittet, ikke bare i en generell "relatert"-boks,
+ * slik at både leseren og søkemotoren får et tydelig tematisk forhold mellom sidene.
+ */
+const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
+  "omradeguide-eiendomskjop-i-spania": [
+    {
+      headingIncludes: "Costa Blanca",
+      links: [
+        { label: "Sammenlign alle områder på Costa Blanca", href: "/omrader" },
+        { label: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
+        { label: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor" },
+      ],
+    },
+  ],
+  "guide-tomtekjop-bygging-i-spania": [
+    {
+      headingIncludes: "Regulering, vann, strøm",
+      links: [
+        { label: "Tomter i innlandet", href: "/omrader/innlandet/tomter" },
+        { label: "Innlandsområdene", href: "/omrader/innlandet" },
+      ],
+    },
+    {
+      headingIncludes: "due diligence",
+      links: [
+        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+      ],
+    },
+  ],
+  "finansiering-notar-nie-boligkjop-spania": [
+    {
+      headingIncludes: "Finansieringsvalg",
+      links: [
+        { label: "Boliglån i Spania: bank, belåning og takst", href: "/guide/boliglan-spansk-bank-nordmenn" },
+      ],
+    },
+    {
+      headingIncludes: "NIE, bankkonto og notar",
+      links: [
+        { label: "NIE i Spania – steg for steg", href: "/guide/nie-skattenummer-spania" },
+        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+      ],
+    },
+  ],
+  "omkostninger-nybygg-spania": [
+    {
+      headingIncludes: "Rask oversikt",
+      links: [
+        { label: "Løpende kostnader ved å eie bolig i Spania", href: "/guide/lopende-kostnader-eie-bolig-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Juridisk bistand",
+      links: [
+        { label: "Bankgaranti ved nybygg", href: "/guide/bankgaranti-nybygg-spania" },
+        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+      ],
+    },
+    {
+      headingIncludes: "spansk boliglån",
+      links: [
+        { label: "Boliglån i Spania", href: "/guide/boliglan-spansk-bank-nordmenn" },
+      ],
+    },
+  ],
+  "bankgaranti-nybygg-spania": [
+    {
+      headingIncludes: "Hva er garantien",
+      links: [
+        { label: "Komplett guide til nybygg i Spania", href: "/guide/nybygg-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Hva du må sjekke",
+      links: [
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+      ],
+    },
+  ],
+  "lopende-kostnader-eie-bolig-spania": [
+    {
+      headingIncludes: "De vanligste løpende kostnadene",
+      links: [
+        { label: "Omkostninger ved selve kjøpet av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+      ],
+    },
+  ],
+  "juridiske-fallgruver-boligkjop-spania": [
+    {
+      headingIncludes: "Megler, notar",
+      links: [
+        { label: "Slik fungerer hele kjøpsprosessen", href: "/kjopsprosessen" },
+      ],
+    },
+    {
+      headingIncludes: "Reservasjon",
+      links: [
+        { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
+      ],
+    },
+  ],
+  "nie-skattenummer-spania": [
+    {
+      headingIncludes: "Hva NIE er",
+      links: [
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Hva du bruker NIE",
+      links: [
+        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+      ],
+    },
+  ],
+  "spansk-bankkonto-valutaveksling": [
+    {
+      headingIncludes: "Hvorfor mange bruker",
+      links: [
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Valutaveksling",
+      links: [
+        { label: "Boliglån i Spania", href: "/guide/boliglan-spansk-bank-nordmenn" },
+      ],
+    },
+  ],
+  "boliglan-spansk-bank-nordmenn": [
+    {
+      headingIncludes: "Hva banken ser på",
+      links: [
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+      ],
+    },
+    {
+      headingIncludes: "Kostnader og vilkår",
+      links: [
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+      ],
+    },
+  ],
+  "energieffektive-nybygg-spania": [
+    {
+      headingIncludes: "Energiklasse",
+      links: [
+        { label: "Komplett guide til nybygg i Spania", href: "/guide/nybygg-i-spania" },
+      ],
+    },
+  ],
+  "utleie-inntektspotensial-bolig-spania": [
+    {
+      headingIncludes: "Regn på reelt nettoresultat",
+      links: [
+        { label: "Løpende kostnader ved å eie bolig i Spania", href: "/guide/lopende-kostnader-eie-bolig-spania" },
+      ],
+    },
+  ],
+  "flytte-til-spania-pensjonist": [
+    {
+      headingIncludes: "Ferie eller fast bosetting",
+      links: [
+        { label: "Sammenlign områder før du velger bolig", href: "/omrader" },
+      ],
+    },
+    {
+      headingIncludes: "Skatt ved fast bosted",
+      links: [
+        { label: "Løpende kostnader ved å eie bolig i Spania", href: "/guide/lopende-kostnader-eie-bolig-spania" },
+      ],
+    },
+  ],
+};
+
+function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
+  return (CONTEXTUAL_GUIDE_LINKS[slug] || [])
+    .filter((rule) => heading.toLowerCase().includes(rule.headingIncludes.toLowerCase()))
+    .flatMap((rule) => rule.links);
+}
+
 function resolveRelatedArticles(article: Article, silo: ReturnType<typeof articleSilo>) {
   const curatedSlugs = silo === "guide" ? RELATED_GUIDE_SLUGS[article.slug] || [] : [];
   const curated = curatedSlugs
@@ -195,49 +383,68 @@ export function ArticleView({ article }: { article: Article }) {
         <div className="article-layout">
           <article className="article-main">
             <div className="article-intro">
+              {silo === "guide" && (
+                <p className="article-cluster-link">
+                  Denne artikkelen er en del av{" "}
+                  <Link href="/guide/kjope-bolig-i-spania">vår komplette guide til å kjøpe bolig i Spania</Link>.
+                </p>
+              )}
               {article.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
-            {article.sections.map((section) => (
-              <section className="article-section" key={section.heading}>
-                <h2>{section.heading}</h2>
-                {section.body?.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-                {section.bullets && (
-                  <ul className="article-bullets">
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                )}
-                {section.table && (
-                  <div className="article-table-wrap">
-                    <table className="article-table">
-                      <thead>
-                        <tr>
-                          {section.table.headers.map((h) => (
-                            <th key={h}>{h}</th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {section.table.rows.map((row, ri) => (
-                          <tr key={ri}>
-                            {row.map((cell, ci) => (
-                              <td key={ci}>{cell}</td>
+            {article.sections.map((section) => {
+              const contextualLinks = silo === "guide" ? contextualLinksFor(article.slug, section.heading) : [];
+              return (
+                <section className="article-section" key={section.heading}>
+                  <h2>{section.heading}</h2>
+                  {section.body?.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                  {section.bullets && (
+                    <ul className="article-bullets">
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {section.table && (
+                    <div className="article-table-wrap">
+                      <table className="article-table">
+                        <thead>
+                          <tr>
+                            {section.table.headers.map((h) => (
+                              <th key={h}>{h}</th>
                             ))}
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                    {section.table.caption && <p className="article-table-caption">{section.table.caption}</p>}
-                  </div>
-                )}
-              </section>
-            ))}
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row, ri) => (
+                            <tr key={ri}>
+                              {row.map((cell, ci) => (
+                                <td key={ci}>{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {section.table.caption && <p className="article-table-caption">{section.table.caption}</p>}
+                    </div>
+                  )}
+                  {contextualLinks.length > 0 && (
+                    <nav className="article-context-links" aria-label={`Relaterte guider til ${section.heading}`}>
+                      <span>Les også</span>
+                      {contextualLinks.map((link) => (
+                        <Link href={link.href} key={link.href}>
+                          {link.label} <ArrowRight size={14} />
+                        </Link>
+                      ))}
+                    </nav>
+                  )}
+                </section>
+              );
+            })}
 
             <section className="article-next-steps">
               <p className="eyebrow">Anbefalte neste steg</p>
