@@ -6,8 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Om Zen Eco Homes | Eiendomsrådgivning i Spania",
-  description: "Bli kjent med Zen Eco Homes og hvordan vi jobber med boligkjøpere i Spania: områdevalg, shortlist, visning, kjøpsprosess og oppfølging.",
+  title: "Om Zen Eco Homes | Norsk eiendomsrådgivning i Spania",
+  description: "Bli kjent med Zen Eco Homes og hvordan vi hjelper boligkjøpere med områdevalg, shortlist, visning, kjøpsprosess, overtakelse og oppfølging i Spania.",
   alternates: { canonical: "/om-oss" },
 };
 
