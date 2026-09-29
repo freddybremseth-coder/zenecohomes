@@ -180,6 +180,25 @@ export default async function MagazinePage() {
         </div>
       </section>
 
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Redaksjonelle temaer</p>
+          <h2>Dette finner du i Magasin</h2>
+          <p>
+            Magasin bygger bredde og aktualitet rundt boligmarkedet og hverdagen i Spania, mens de
+            søkeorienterte kjøperguidene ligger samlet under Guide.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article><h3>Markedsoppdateringer</h3><p>Endringer i tilbud, etterspørsel, kjøperinteresse og andre signaler fra boligmarkedet.</p></article>
+          <article><h3>Boligprisutvikling</h3><p>Redaksjonelle oppdateringer om priser og utvikling i relevante deler av Spania.</p></article>
+          <article><h3>Lokale nyheter</h3><p>Endringer i områder, infrastruktur, prosjekter og forhold som kan være relevante for boligkjøpere.</p></article>
+          <article><h3>Livet i Spania</h3><p>Hverdagsliv, sesonger, praktiske valg og erfaringer som gir mer kontekst enn en boligannonse.</p></article>
+          <article><h3>Nyheter fra Costa Blanca</h3><p>Lokale utviklingstrekk fra Costa Blanca Nord og Sør som kan påvirke områdene og markedet.</p></article>
+          <article><h3>Redaksjonelt</h3><p>Intervjuer, analyser og andre artikler som støtter nettstedets område- og markedskunnskap.</p></article>
+        </div>
+      </section>
+
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Magasin</p>
