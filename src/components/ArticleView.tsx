@@ -465,6 +465,83 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
   ],
+  "nybygg-eller-bruktbolig-costa-blanca": [
+    {
+      headingIncludes: "Nybygg",
+      links: [
+        { label: "Komplett guide til nybygg i Spania", href: "/guide/nybygg-i-spania" },
+        { label: "Se nybygg og moderne boliger", href: "/eiendommer" },
+      ],
+    },
+    {
+      headingIncludes: "Bruktbolig",
+      links: [
+        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Pris",
+      links: [
+        { label: "Hva får du for 4, 6, 8 og 10 millioner?", href: "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca" },
+      ],
+    },
+  ],
+  "eurokurs-boligbudsjett-spania-nordmenn": [
+    {
+      headingIncludes: "€500.000",
+      links: [
+        { label: "Slik lager du totalbudsjettet", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
+      ],
+    },
+    {
+      headingIncludes: "finansiering",
+      links: [
+        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+        { label: "Bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+      ],
+    },
+  ],
+  "hva-koster-feriebolig-spania-i-aret": [
+    {
+      headingIncludes: "årsbudsjettet",
+      links: [
+        { label: "Komplett guide til løpende eierkostnader", href: "/guide/lopende-kostnader-eie-bolig-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Villa og leilighet",
+      links: [
+        { label: "Sammenlign områder og boligtyper", href: "/omrader/costa-blanca-nord" },
+      ],
+    },
+  ],
+  "7-dyre-feil-nordmenn-bolig-spania": [
+    {
+      headingIncludes: "velger bolig",
+      links: [
+        { label: "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
+      ],
+    },
+    {
+      headingIncludes: "totalramme",
+      links: [
+        { label: "Slik lager du et realistisk totalbudsjett", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
+      ],
+    },
+    {
+      headingIncludes: "boligportaler",
+      links: [
+        { label: "Hvorfor Idealista og Finn ikke alltid er fasit", href: "/magasin/idealista-finn-ikke-alltid-til-a-stole-pa" },
+      ],
+    },
+    {
+      headingIncludes: "valuta",
+      links: [
+        { label: "Slik påvirker eurokursen budsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
+      ],
+    },
+  ],
+
 };
 
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
