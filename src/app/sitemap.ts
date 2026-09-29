@@ -60,6 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/kundeomtaler",
     "/om-oss",
     "/om-oss/freddy",
+    "/om-oss/andrea",
     "/personvern",
     "/informasjonskapsler",
     ...regions.map((region) => `/omrader/${region.key}`),
