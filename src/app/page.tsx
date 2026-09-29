@@ -56,10 +56,9 @@ const areaChoices = [
 
 export default async function Home() {
   const regionKeys = regions.map((r) => r.key);
-  const allProps = await getProperties(0, "zeneco");
-  // Behold forsiden cachebar/ISR-vennlig. RealtyFlow-feeden er allerede
-  // revalidert hvert 60. sekund; tilfeldig sortering tvang tidligere dynamisk render.
-  const properties = allProps.slice(0, 6);
+  // Forsiden trenger bare seks kort. La RealtyFlow begrense responsen server-side
+  // i stedet for å hente hele katalogen og kutte den lokalt.
+  const properties = await getProperties(6, "zeneco");
   const withRegions = allProps.map((p) => ({
     p,
     rk: regionKeys.filter((k) => propertyMatchesRegion(p, k)),
