@@ -47,7 +47,7 @@ export default function BookingPage() {
         <aside className="booking-form-panel">
           <p className="eyebrow">Forespør samtale</p>
           <h2>Fortell kort hva du vurderer</h2>
-          <ContactForm source="zenecohomes-booking" />
+          <ContactForm source="zenecohomes-booking" requestType="booking" variant="simple" />
         </aside>
       </section>
       <Footer />
