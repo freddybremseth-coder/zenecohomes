@@ -64,9 +64,9 @@ export const articles: Article[] = [
     readingTime: "9 min lesing",
     image: "/assets/magasin-covers/omradevalg.svg",
     imageAlt: "Illustrasjon av spanske boligområder med kyst, fjell, by og øyer",
-    seoTitle: "Områdeguide for boligkjøp i Spania | Costa Blanca, Costa del Sol og Valencia",
+    seoTitle: "Områdeguide Spania | Costa Blanca, Sol og Valencia",
     seoDescription:
-      "Finn riktig område for boligkjøp i Spania. Guide for nordmenn som vurderer Costa Blanca, Costa del Sol, Valencia eller Kanariøyene.",
+      "Finn riktig område for boligkjøp i Spania. Sammenlign Costa Blanca, Costa del Sol og Valencia med råd om livsstil, prisnivå og kjøpsprosess.",
     keywords: ["boligkjøp i Spania", "områdeguide Spania", "Costa Blanca bolig", "Costa del Sol bolig", "Valencia eiendom"],
     intro: [
       "Det viktigste valget ved boligkjøp i Spania er ofte ikke selve boligen, men området. To boliger til samme pris kan gi helt ulike hverdager, kostnader og muligheter for utleie, skole, golf, strandliv eller roligere helårsbruk.",
@@ -163,7 +163,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av tomt, moderne bolig, tegninger og bygging i Spania",
     seoTitle: "Tomtekjøp og bygging i Spania | Guide for nordmenn",
     seoDescription:
-      "Slik kjøper du tomt og bygger bolig i Spania. Les om regulering, vann, strøm, adkomst, byggetillatelse, arkitekt og kostnader.",
+      "Slik kjøper du tomt og bygger bolig i Spania. Les om regulering, vann, strøm, adkomst, byggetillatelse, arkitekt, kostnader og trygg kontroll før kjøp.",
     keywords: ["tomt i Spania", "bygge hus i Spania", "kjøpe tomt Costa Blanca", "byggelisens Spania", "nybygg Spania"],
     intro: [
       "Å kjøpe tomt og bygge bolig i Spania kan gi deg akkurat den boligen og livsstilen du ønsker. Samtidig er prosessen mer kompleks enn et vanlig boligkjøp, fordi du må kontrollere regulering, byggbarhet, infrastruktur, kostnader og lokale krav før du forplikter deg.",
@@ -270,7 +270,7 @@ export const articles: Article[] = [
     readingTime: "8 min lesing",
     image: "/assets/magasin-covers/kjope-na.svg",
     imageAlt: "Illustrasjon av spansk boligmarked med vekt mellom å kjøpe nå og vente",
-    seoTitle: "Kjøpe bolig i Spania nå eller vente? Beslutningsguide for nordmenn",
+    seoTitle: "Kjøpe bolig i Spania nå eller vente? | Guide for 2026",
     seoDescription:
       "Bør du kjøpe bolig i Spania nå eller vente? Vurder budsjett, finansiering, tidshorisont, område, valuta og konkrete boliger før du bestemmer deg.",
     keywords: ["kjøpe bolig i Spania nå", "spansk boligmarked", "boligpriser Spania", "investere i bolig Spania"],
@@ -363,9 +363,9 @@ export const articles: Article[] = [
     readingTime: "9 min lesing",
     image: "/assets/magasin-covers/finansiering.svg",
     imageAlt: "Illustrasjon av finansiering, dokumenter, NIE, bank og notar ved boligkjøp i Spania",
-    seoTitle: "Finansiering, notar og NIE ved boligkjøp i Spania",
+    seoTitle: "Finansiering, notar og NIE ved boligkjøp i Spania | Råd",
     seoDescription:
-      "Slik fungerer finansiering, NIE, notar, bankkonto og betalingsflyt når nordmenn kjøper bolig i Spania.",
+      "Slik fungerer finansiering, NIE, notar, bankkonto og betalingsflyt når nordmenn kjøper bolig i Spania, fra forberedelse til signering og overtakelse.",
     keywords: ["NIE Spania", "finansiering bolig Spania", "notar Spania", "kjøpskostnader Spania", "spansk bankkonto"],
     intro: [
       "Når du kjøper bolig i Spania, må finansiering, dokumentasjon og juridisk overdragelse planlegges tidlig. For norske kjøpere handler dette ofte om valget mellom lån i Norge, lån i Spania eller egenkapital.",
@@ -462,7 +462,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av kjøpsprosessen for bolig i Spania fra søk til nøkkeloverlevering",
     seoTitle: "Kjøpsprosess for bolig i Spania | Steg-for-steg for nordmenn",
     seoDescription:
-      "Forstå kjøpsprosessen i Spania: boligsøk, megler, tilbud, reservasjonskontrakt, advokat, notar, kostnader og overtakelse.",
+      "Forstå kjøpsprosessen i Spania: boligsøk, megler, tilbud, reservasjon, advokat, notar, kostnader og overtakelse, med råd for norske kjøpere.",
     keywords: ["kjøpsprosess Spania", "kjøpe bolig i Spania", "reservasjonskontrakt Spania", "advokat boligkjøp Spania"],
     intro: [
       "Å kjøpe bolig i Spania som nordmann er annerledes enn å kjøpe bolig i Norge. Meglersystemet, reservasjonsavtaler, advokatrollen, notar og betalingsflyt fungerer på en annen måte.",
@@ -574,7 +574,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av kostnader, skatter og gebyrer ved boligkjøp i Spania",
     seoTitle: "Omkostninger ved kjøp av nybygg i Spania | Guide 2026",
     seoDescription:
-      "Hva kommer i tillegg til prisen på nybygg i Spania? Oversikt over 10 % IVA på ordinære nye boliger, regional AJD og øvrige kjøpskostnader.",
+      "Hva kommer i tillegg til prisen på nybygg i Spania? Se 10 % IVA på ordinære nye boliger, regional AJD, notar, registrering og andre kjøpskostnader.",
     keywords: [
       "omkostninger boligkjøp Spania nybygg",
       "skatt nybygg Spania",
@@ -815,7 +815,7 @@ export const articles: Article[] = [
     readingTime: "7 min lesing",
     image: "/assets/magasin-covers/omradevalg.svg",
     imageAlt: "Illustrasjon av Finestrat med fjell, kyst og moderne nybygg på Costa Blanca Nord",
-    seoTitle: "Nybygg og villa i Finestrat | Norsk rådgiverguide | Zen Eco Homes",
+    seoTitle: "Nybygg i Finestrat, Spania | Villa og norsk rådgivning",
     seoDescription:
       "Vurderer du nybygg i Finestrat? Les om solforhold, mikrobeliggenheter som Sierra Cortina og Balcón de Finestrat og hva du bør kontrollere før kjøp.",
     keywords: [
@@ -995,9 +995,9 @@ export const articles: Article[] = [
     readingTime: "6 min lesing",
     image: "/assets/magasin-covers/kostnader-eie.svg",
     imageAlt: "Illustrasjon av løpende kostnader og regninger ved å eie bolig i Spania",
-    seoTitle: "Løpende kostnader ved å eie bolig i Spania | IBI, comunidad og skatt",
+    seoTitle: "Kostnader ved bolig i Spania | IBI, comunidad og skatt",
     seoDescription:
-      "Hva koster det årlig å eie bolig i Spania? Oversikt over IBI, fellesutgifter, forsikring, strøm, vann og skatteforhold for norske eiere.",
+      "Hva koster det årlig å eie bolig i Spania? Se IBI, fellesutgifter, forsikring, strøm, vann og skatteforhold som norske boligeiere bør planlegge for.",
     keywords: [
       "løpende kostnader bolig Spania",
       "IBI eiendomsskatt Spania",
@@ -1085,7 +1085,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av finca, olivengård og innlandslandskap i Alicante-provinsen",
     seoTitle: "Innlandet i Alicante og Murcia | Finca, tomt og landlig liv",
     seoDescription:
-      "Vurderer du innlandet i Alicante eller Murcia? Om livet rundt blant annet Biar, Pinoso, Villena og Jumilla, og hva du bør sjekke ved tomt, finca, vann, strøm og lovlighet før kjøp.",
+      "Vurderer du innlandet i Alicante eller Murcia? Les om Biar, Pinoso, Villena og Jumilla, og hva du bør sjekke ved tomt, finca, vann, strøm og lovlighet.",
     keywords: [
       "finca Spania",
       "olivengård Spania",
@@ -1174,7 +1174,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av pensjonistliv og flytting til Spania med sol og palmer",
     seoTitle: "Flytte til Spania som pensjonist | Opphold, skatt og hverdag",
     seoDescription:
-      "Vurderer du å bo fast i Spania som pensjonist? Guide til opphold, helsetjenester, skatt og hva som skiller ferie fra å bosette seg.",
+      "Vurderer du å bo fast i Spania som pensjonist? Les om opphold, helsetjenester, skatt, økonomi og hva som skiller ferieopphold fra å bosette seg fast.",
     keywords: [
       "flytte til Spania pensjonist",
       "bo fast i Spania",
@@ -1248,9 +1248,9 @@ export const articles: Article[] = [
     readingTime: "6 min lesing",
     image: "/assets/magasin-covers/energi-baerekraft.svg",
     imageAlt: "Illustrasjon av energieffektivt nybygg med solceller og sol i Spania",
-    seoTitle: "Energieffektive nybygg i Spania | Energiklasse, isolasjon og solceller",
+    seoTitle: "Energieffektive nybygg i Spania | Isolasjon og solceller",
     seoDescription:
-      "Sammenlign energiklasse, isolasjon, solceller og forventet energibruk når du vurderer nybygg eller eksisterende bolig i Spania.",
+      "Sammenlign energiklasse, isolasjon, solceller og forventet energibruk når du vurderer nybygg eller eksisterende bolig i Spania før du reserverer.",
     keywords: [
       "energieffektive nybygg Spania",
       "energiklasse bolig Spania",
@@ -1324,7 +1324,7 @@ export const articles: Article[] = [
     readingTime: "8 min lesing",
     image: "/assets/magasin-covers/juridisk.svg",
     imageAlt: "Illustrasjon av juridiske fallgruver og kontroll ved boligkjøp i Spania",
-    seoTitle: "Juridiske fallgruver ved boligkjøp i Spania | Sjekkliste for kjøpere",
+    seoTitle: "Juridiske fallgruver ved boligkjøp i Spania | Guide",
     seoDescription:
       "Dette bør kontrolleres ved boligkjøp i Spania: heftelser, registreringsavvik, tilbygg, tillatelser og kontraktsvilkår. Guide for norske kjøpere.",
     keywords: [
@@ -1415,9 +1415,9 @@ export const articles: Article[] = [
     readingTime: "7 min lesing",
     image: "/assets/magasin-covers/skatt-salg.svg",
     imageAlt: "Illustrasjon av skatt og kostnader ved salg av bolig i Spania",
-    seoTitle: "Skatt ved salg av bolig i Spania | Gevinstskatt, plusvalía og 3 %-regelen",
+    seoTitle: "Skatt ved salg av bolig i Spania | Gevinst og plusvalía",
     seoDescription:
-      "Hva kan utløses av skatt ved salg av bolig i Spania? Guide til gevinstskatt, kommunal plusvalía og 3 %-tilbaketrekket for ikke-residenter.",
+      "Hva kan utløses av skatt ved salg av bolig i Spania? Les om gevinstskatt, kommunal plusvalía og 3 %-tilbaketrekket for ikke-residenter ved salg.",
     keywords: [
       "skatt salg bolig Spania",
       "gevinstskatt Spania",
@@ -1493,7 +1493,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av arv, gaveskatt og generasjoner knyttet til bolig i Spania",
     seoTitle: "Arv og gaveskatt på bolig i Spania | Guide for norske eiere",
     seoDescription:
-      "Hvordan håndteres arv og gave av spansk bolig? Om ISD, regionale forskjeller, testament og behovet for konkret rådgivning for norske eiere.",
+      "Hvordan håndteres arv og gave av spansk bolig? Les om ISD, regionale forskjeller, testament og behovet for konkret rådgivning for norske eiere i Spania.",
     keywords: [
       "arv bolig Spania",
       "gaveskatt Spania",
@@ -1567,7 +1567,7 @@ export const articles: Article[] = [
     readingTime: "6 min lesing",
     image: "/assets/magasin-covers/nie-skattenummer.svg",
     imageAlt: "Illustrasjon av NIE og spansk identifikasjonsnummer",
-    seoTitle: "NIE i Spania steg for steg | Utlendingens identifikasjonsnummer forklart",
+    seoTitle: "NIE i Spania | Slik søker du steg for steg | Guide 2026",
     seoDescription:
       "Hva er NIE, og hvordan skaffer du det? Guide til identifikasjonsnummeret utlendinger bruker ved blant annet eiendom, skatt og administrative prosesser i Spania.",
     keywords: [
@@ -1649,7 +1649,7 @@ export const articles: Article[] = [
     readingTime: "6 min lesing",
     image: "/assets/magasin-covers/bankkonto-valuta.svg",
     imageAlt: "Illustrasjon av spansk bank og valutaveksling mellom euro og kroner",
-    seoTitle: "Spansk bankkonto og valutaveksling | Guide for norske boligkjøpere",
+    seoTitle: "Spansk bankkonto og valuta | Guide for boligkjøpere",
     seoDescription:
       "Trenger du spansk bankkonto for boligkjøp i Spania? Om betalingsflyt, dokumentasjon og hvordan du sammenligner valutaveksling fra kroner til euro.",
     keywords: [
@@ -1731,9 +1731,9 @@ export const articles: Article[] = [
     readingTime: "7 min lesing",
     image: "/assets/magasin-covers/boliglan-bank.svg",
     imageAlt: "Illustrasjon av bolig og spansk bank med boliglån",
-    seoTitle: "Boliglån i spansk bank for nordmenn | Belåning, takst og kostnader",
+    seoTitle: "Boliglån i Spania | Bank, belåning, takst og kostnader",
     seoDescription:
-      "Kan nordmenn få boliglån i Spania? Guide til bankens vurdering, belåningsgrad, takst og de vanligste lånekostnadene.",
+      "Kan nordmenn få boliglån i Spania? Les om bankens vurdering, belåningsgrad, takst, dokumentasjon, renter og de vanligste kostnadene ved spansk boliglån.",
     keywords: [
       "boliglån Spania nordmenn",
       "lån bolig Spania",
