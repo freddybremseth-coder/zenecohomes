@@ -21,7 +21,7 @@ const day = [
 
 export default function ViewingTripPage() {
   return (
-    <main>
+    <main className="viewing-trip-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
 
       <section className="page-hero compact-hero">
@@ -38,34 +38,38 @@ export default function ViewingTripPage() {
         </div>
       </section>
 
-      <section className="section split">
+      <section className="section viewing-prep">
         <div>
           <p className="eyebrow">Før reisen</p>
           <h2>Slik forbereder vi visningsturen</h2>
-          <div className="check-list">
-            <span><CheckCircle2 size={18}/> Behov, boligbruk og totalbudsjett avklares.</span>
-            <span><CheckCircle2 size={18}/> Områder snevres inn før konkrete boliger velges.</span>
-            <span><CheckCircle2 size={18}/> Pris og tilgjengelighet sjekkes på nytt før visningsdagen.</span>
-            <span><CheckCircle2 size={18}/> Relevante utviklere og meglere koordineres i én plan.</span>
-            <span><CheckCircle2 size={18}/> Vi legger inn luft til å oppleve området – ikke bare kjøre mellom dører.</span>
+          <p className="viewing-lead">
+            Målet er ikke å fylle kalenderen. Målet er at boligene du ser skal være relevante nok til at du faktisk kan sammenligne dem.
+          </p>
+          <div className="viewing-prep-list">
+            <article><CheckCircle2 size={18}/><div><h3>Behov og totalbudsjett først</h3><p>Vi avklarer hvordan boligen skal brukes, økonomisk ramme og hva som er viktigst for deg.</p></div></article>
+            <article><CheckCircle2 size={18}/><div><h3>Området snevres inn</h3><p>Vi reduserer geografi før vi velger objekter, slik at visningsdagen ikke brukes på store transportetapper.</p></div></article>
+            <article><CheckCircle2 size={18}/><div><h3>Tilgjengelighet bekreftes</h3><p>Pris og tilgjengelighet sjekkes på nytt så nær visningsdagen som mulig.</p></div></article>
+            <article><CheckCircle2 size={18}/><div><h3>Én koordinert plan</h3><p>Relevante utviklere og meglere samles i én kjøreplan, med nok tid mellom stoppene.</p></div></article>
           </div>
         </div>
-        <div>
+        <aside className="viewing-duration">
           <p className="eyebrow"><Clock size={14}/> Hvor lenge?</p>
           <h2>Planlegg gjerne 2–3 dager i området</h2>
           <p>
-            Når det er praktisk anbefaler vi å ha mer enn én dag tilgjengelig. Én eller to konsentrerte
-            visningsdager gir rom til å sammenligne boliger, mens resten av oppholdet kan brukes til å teste
-            strand, sentrum, kjøretider, restauranter og hverdagsservice.
+            Én eller to konsentrerte visningsdager gir rom til å sammenligne boliger. Resten av oppholdet kan brukes til å teste området i praksis.
           </p>
+          <div className="viewing-duration-points">
+            <span>Strand, sentrum og servicetilbud</span>
+            <span>Kjøretider og hverdagslogistikk</span>
+            <span>Hvordan området føles utenfor selve visningen</span>
+          </div>
           <p>
-            Har du allerede valgt område og en svært kort shortlist, kan turen være kortere. Er du fortsatt
-            usikker på region, er det ofte smartere å bruke mer tid på områdevalg enn på antall visninger.
+            Har du allerede valgt område og en svært kort shortlist, kan turen være kortere.
           </p>
           <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
             Les områdeguiden <ArrowRight size={16}/>
           </Link>
-        </div>
+        </aside>
       </section>
 
       <section className="section proof-section">
@@ -74,18 +78,17 @@ export default function ViewingTripPage() {
           <h2>Fra område til oppsummering</h2>
           <p>Planen tilpasses kunden, men en god dag har en tydelig rekkefølge og nok tid til å tenke mellom visningene.</p>
         </div>
-        <div className="proof-grid">
+        <div className="viewing-day-timeline">
           {day.map(([title, text], index) => (
             <article key={title}>
-              <strong>{String(index + 1).padStart(2, "0")}</strong>
-              <h3>{title}</h3>
-              <p>{text}</p>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div><h3>{title}</h3><p>{text}</p></div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section split">
+      <section className="section split viewing-evaluation">
         <div>
           <p className="eyebrow">Hva ser vi etter?</p>
           <h2>Boligen er bare én del av vurderingen</h2>
@@ -97,7 +100,7 @@ export default function ViewingTripPage() {
             Les komplett kjøperguide <ArrowRight size={16}/>
           </Link>
         </div>
-        <div>
+        <aside className="viewing-after">
           <p className="eyebrow">Etter visningen</p>
           <h2>Ingen reservasjon før viktige spørsmål er avklart</h2>
           <p>
@@ -105,10 +108,11 @@ export default function ViewingTripPage() {
             og andre forhold som må undersøkes. Deretter går saken videre i den strukturerte
             <Link href="/kjopsprosessen"> kjøpsprosessen</Link>.
           </p>
-        </div>
+          <Link className="text-button" href="/kjopsprosessen">Se hele kjøpsprosessen <ArrowRight size={16}/></Link>
+        </aside>
       </section>
 
-      <section className="section">
+      <section className="section viewing-shortlist">
         <div className="section-heading">
           <p className="eyebrow">Før du bestiller fly</p>
           <h2>Gjør shortlisten så god som mulig hjemmefra</h2>
