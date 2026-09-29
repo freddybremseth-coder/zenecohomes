@@ -10,9 +10,9 @@ import { articlePath, articlesInSilo, SILO_META } from "@/lib/magazine";
 const silo = SILO_META.guide;
 
 export const metadata = {
-  title: "Guider og områdeinnsikt | Bolig i Spania",
+  title: { absolute: "Guider til boligkjøp i Spania | Råd fra Zen Eco Homes" },
   description:
-    "Områdeguider og livsstilsinnsikt for boligkjøp i Spania: hvor du bør kjøpe, kyst vs. innland, tomt og bygging, og når det lønner seg å slå til.",
+    "Guider til boligkjøp i Spania om kjøpsprosess, nybygg, finansiering, områdevalg, kostnader og juridiske forhold – skrevet for norske kjøpere.",
   alternates: { canonical: "/guide" },
   openGraph: {
     title: "Guider og områdeinnsikt | Zen Eco Homes",
@@ -31,8 +31,24 @@ export default function GuideHub() {
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Guide</p>
-        <h1>{silo.title}</h1>
-        <p>{silo.intro}</p>
+        <h1>Guider til boligkjøp i Spania</h1>\n        <p>Start med den komplette kjøperguiden, og bruk temaguidene når du trenger mer dybde om område, nybygg, finansiering, kostnader eller juridiske spørsmål.</p>
+      </section>
+
+      <section className="section" style={{ paddingBottom: 18 }}>
+        <div className="proof-grid">
+          <article>
+            <strong>Pillar guide</strong>
+            <h2>Kjøpe bolig i Spania (2026)</h2>
+            <p>Hele kjøperreisen samlet på ett sted – fra område og boligsøk til juridisk kontroll, notar og overtakelse.</p>
+            <Link className="text-button" href="/guide/kjope-bolig-i-spania">Les hovedguiden <ArrowRight size={16} /></Link>
+          </article>
+          <article>
+            <strong>Nybygg</strong>
+            <h2>Nybygg i Spania</h2>
+            <p>Slik vurderer du prosjekt, utbygger, betalingsplan, leveranse, område og risiko før reservasjon.</p>
+            <Link className="text-button" href="/guide/nybygg-i-spania">Les nybyggguiden <ArrowRight size={16} /></Link>
+          </article>
+        </div>
       </section>
 
       <section className="section">
