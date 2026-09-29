@@ -7,7 +7,7 @@ import { getSeoLandingPage } from "@/lib/seoLandingPages";
 const PAGE_SLUG = "nybygg-i-spania";
 
 export const metadata: Metadata = {
-  title: "Nybygg i Spania | Moderne bolig med norsk rådgivning",
+  title: { absolute: "Nybygg i Spania | Moderne bolig med norsk rådgivning" },
   description:
     "Se nybygg i Spania og få hjelp til å vurdere prosjekt, utbygger, betalingsplan, område, pris, leveranse og trygg kjøpsprosess før reservasjon.",
   alternates: { canonical: "/guide/nybygg-i-spania" },
