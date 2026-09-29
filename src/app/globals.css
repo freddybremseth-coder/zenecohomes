@@ -5067,3 +5067,35 @@ footer {
   border-radius: 12px;
   letter-spacing: 0.06em;
 }
+
+
+/* Long-form guide tables: scroll safely on mobile without hiding content. */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  background: white;
+}
+
+.table-wrap th,
+.table-wrap td {
+  padding: 15px 16px;
+  border-bottom: 1px solid rgba(22, 34, 43, 0.1);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.table-wrap th {
+  color: var(--dark);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
