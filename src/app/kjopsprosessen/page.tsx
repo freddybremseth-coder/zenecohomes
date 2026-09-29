@@ -80,6 +80,8 @@ export default function BuyingProcessPage() {
           kontrakt, notar og overtakelse.
         </p>
         <div className="hero-actions">
+          <Link className="text-button light" href="/eiendommer">Se boliger</Link>
+          <Link className="text-button light" href="/visningstur">Visningstur</Link>
           <Link className="text-button light" href="/guide/kjope-bolig-i-spania">
             Les komplett guide <ArrowRight size={17} />
           </Link>
@@ -112,6 +114,29 @@ export default function BuyingProcessPage() {
           </div>
         </div>
       </section>
+      <section className="section split">
+        <div>
+          <p className="eyebrow">Etter overtakelsen</p>
+          <h2>Prosessen stopper ikke hos notar</h2>
+          <p>
+            Etter kjøpet kommer nøkler, leverandører, praktiske spørsmål, tilsyn og andre oppgaver som kan være
+            vanskeligere når du ikke er i Spania hele tiden. Derfor er oppfølging etter kjøpet en del av modellen vår.
+          </p>
+          <a className="text-button" href="https://care.zenecohomes.com" target="_blank" rel="noopener noreferrer">
+            Se Zen Eco Homes Care <ArrowRight size={16} />
+          </a>
+        </div>
+        <div>
+          <p className="eyebrow">Vil du forstå hele kjøpsreisen?</p>
+          <h2>Bruk guidene som fordypning</h2>
+          <p>
+            Kjøpsprosessen viser hvordan vi jobber. Guide-huben går dypere i temaene som NIE, bank, juridikk,
+            omkostninger, tomt, nybygg og skatt.
+          </p>
+          <Link className="contact-button" href="/guide">Se alle guider</Link>
+        </div>
+      </section>
+
       <section className="section proof-section">
         <div className="section-heading">
           <p className="eyebrow">Unngå vanlige feil</p>
