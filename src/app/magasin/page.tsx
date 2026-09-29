@@ -47,6 +47,10 @@ const articleCovers: Record<string, string> = {
   "leilighet-eller-villa-costa-blanca": "/assets/magasin-covers/omradevalg.svg",
   "bolig-som-er-lett-a-selge-igjen-spania": "/assets/magasin-covers/radgiver.svg",
   "bolig-under-bygging-eller-ferdig-spania": "/assets/magasin-covers/kjopsprosess.svg",
+  "costa-blanca-nord-500000-euro-hva-kjope-na": "/assets/areas.jpg",
+  "benidorm-villa-456000-vs-516000": "/assets/magasin-covers/omradet-for-boligen.svg",
+  "finestrat-villa-650000-700000-735000": "/assets/magasin-covers/omradevalg.svg",
+  "villajoyosa-275000-vs-375000": "/assets/magasin-covers/kjope-na.svg",
 };
 
 const bookGuides = [
