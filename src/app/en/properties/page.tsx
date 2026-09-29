@@ -24,9 +24,8 @@ function getEnglishRegionLabel(region?: string) {
 }
 
 export const metadata = {
-  title: "Properties for Sale in Spain | New Builds on the Costa Blanca",
-  description:
-    "Search villas, apartments, townhouses and modern new builds in Spain. Zen Eco Homes helps international buyers with English-speaking advice.",
+  title: "Property for Sale in Spain | Costa Blanca | Zen Eco Homes",
+  description: "Property for sale in Spain: new builds, villas and apartments on the Costa Blanca and Costa Cálida, with advice on areas and the buying process.",
   alternates: {
     canonical: "/en/properties",
     languages: {
