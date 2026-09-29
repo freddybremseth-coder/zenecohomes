@@ -1478,7 +1478,7 @@ export const articles: Article[] = [
           "Ja, hvilke beløp som kan inngå i skattemessig beregning følger gjeldende regler. Ta vare på fakturaer og la kvalifisert rådgiver beregne salget konkret.",
       },
     ],
-    cta: { label: "Ta en prat om langsiktig boligøkonomi", href: "/#kontakt" },
+    cta: { label: "Ta en prat om langsiktig boligøkonomi", href: "/booking" },
   },
   {
     slug: "arv-gaveskatt-bolig-spania",
@@ -1554,7 +1554,7 @@ export const articles: Article[] = [
           "Nei. Regionale regler og fordeler kan gi store forskjeller, og regelverket kan endres. Bruk oppdaterte regler for den aktuelle regionen og situasjonen.",
       },
     ],
-    cta: { label: "Snakk med oss om hvem som kan hjelpe med langsiktig eierskap", href: "/#kontakt" },
+    cta: { label: "Snakk med oss om hvem som kan hjelpe med langsiktig eierskap", href: "/booking" },
   },
   {
     slug: "nie-skattenummer-spania",
@@ -1718,7 +1718,7 @@ export const articles: Article[] = [
           "Du bør være forberedt på det. Banker og andre relevante aktører kan kreve dokumentasjon på midlenes opprinnelse som ledd i hvitvaskingskontroll.",
       },
     ],
-    cta: { label: "Ta en prat om budsjett og betaling", href: "/#kontakt" },
+    cta: { label: "Ta en prat om budsjett og betaling", href: "/booking" },
   },
   {
     slug: "boliglan-spansk-bank-nordmenn",
