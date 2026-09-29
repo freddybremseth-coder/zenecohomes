@@ -950,9 +950,9 @@ export async function getLandPlots(): Promise<LandPlot[]> {
 }
 
 export async function getProperty(id: string, brandId = "zeneco"): Promise<Property | null> {
-  try {
+  const read = async (lookup: "ref" | "id") => {
     const propertyUrl = new URL("/api/properties", REALTYFLOW_BASE);
-    propertyUrl.searchParams.set("ref", id);
+    propertyUrl.searchParams.set(lookup, id);
     if (brandId) propertyUrl.searchParams.set("brandId", brandId);
     const res = await fetch(propertyUrl.toString(), {
       next: { revalidate: 60 },
@@ -960,7 +960,22 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
     });
     if (res.status === 404) return null;
     if (!res.ok) return null;
-    return (await res.json()) as Property;
+    const data = await res.json();
+
+    // Backward-compatible during the RealtyFlow rollout: older API versions
+    // ignore ref= and return the catalogue array. Find the requested property
+    // locally until every production instance serves direct lookup.
+    if (Array.isArray(data)) {
+      return (
+        (data as Property[]).find((property) => property.id === id || getPropertyRef(property) === id) ||
+        null
+      );
+    }
+    return data as Property;
+  };
+
+  try {
+    return (await read("ref")) || (await read("id"));
   } catch {
     return null;
   }
