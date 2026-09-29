@@ -106,7 +106,7 @@ function propertyCard(property: Property, locale: Locale): string {
   return `
     <table role="presentation" width="100%" style="border-collapse:collapse;margin:0 0 14px;border:1px solid rgba(22,34,43,0.1);border-radius:12px;overflow:hidden;">
       <tr>
-        ${image ? `<td width="140" style="padding:0;"><a href="${href}"><img src="${image}" alt="" width="140" style="display:block;width:140px;height:110px;object-fit:cover;"></a></td>` : ""}
+        ${image ? `<td width="140" style="padding:0;"><a href="${href}"><img src="${image}" alt="${title.replace(/"/g, "&quot;")}" width="140" style="display:block;width:140px;height:110px;object-fit:cover;"></a></td>` : ""}
         <td style="padding:12px 14px;vertical-align:top;">
           <a href="${href}" style="color:${INK};text-decoration:none;font-weight:700;font-size:15px;">${title}</a>
           <div style="color:${MUTED};font-size:13px;margin:4px 0 6px;">${meta}</div>
