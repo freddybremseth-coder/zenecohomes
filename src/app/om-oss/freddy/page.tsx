@@ -10,7 +10,7 @@ import { homeLanguageLinks } from "@/lib/i18n";
 export const metadata = {
   title: "Freddy Bremseth | Norsk rådgiver for bolig i Spania",
   description:
-    "Møt Freddy Bremseth, norsk eiendomsrådgiver på Costa Blanca. Les om områdekunnskap, boligsøk, visning, kjøpsprosess og boligkjøp i Spania."
+    "Møt Freddy Bremseth, norsk eiendomsrådgiver på Costa Blanca. Les om områdekunnskap, boligsøk, visning, kjøpsprosess og boligkjøp i Spania.",
   alternates: {
     canonical: "/om-oss/freddy",
     languages: {
