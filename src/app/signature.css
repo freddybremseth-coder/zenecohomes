@@ -615,3 +615,210 @@
 .guide-contact-section .hero-actions {
   flex-shrink: 0;
 }
+
+
+/* Cornerstone buyer guide: clear editorial rhythm for long-form reading. */
+.cornerstone-hero {
+  min-height: 610px;
+  padding-top: 142px;
+  padding-bottom: 76px;
+}
+
+.cornerstone-hero-layout {
+  width: min(1220px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(330px, 0.8fr);
+  gap: clamp(42px, 7vw, 90px);
+  align-items: end;
+}
+
+.cornerstone-hero-copy {
+  max-width: 780px;
+}
+
+.cornerstone-hero-copy h1 {
+  max-width: 12ch;
+}
+
+.cornerstone-hero-copy > p:not(.eyebrow) {
+  max-width: 690px;
+  margin: 24px 0 30px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+  line-height: 1.72;
+}
+
+.cornerstone-hero-copy .eyebrow a {
+  color: inherit;
+  border-bottom: 1px solid rgba(239, 205, 145, 0.45);
+}
+
+.cornerstone-hero-panel {
+  padding: clamp(26px, 3vw, 38px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(9, 32, 36, 0.76);
+  box-shadow: 0 28px 74px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.cornerstone-hero-panel h2 {
+  margin: 0 0 18px;
+  color: white;
+  font-size: clamp(1.9rem, 2.4vw, 2.6rem);
+  line-height: 1.06;
+}
+
+.cornerstone-hero-panel ul {
+  display: grid;
+  gap: 0;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.cornerstone-hero-panel li {
+  position: relative;
+  padding: 11px 0 11px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.5;
+}
+
+.cornerstone-hero-panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--ze-travertine);
+}
+
+.cornerstone-index {
+  position: sticky;
+  top: 72px;
+  z-index: 40;
+  background: rgba(252, 251, 248, 0.96);
+  backdrop-filter: blur(16px);
+}
+
+.cornerstone-guide .cornerstone-section {
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.cornerstone-guide .section-heading {
+  width: min(780px, 100%);
+  margin-left: 0;
+  text-align: left;
+}
+
+.cornerstone-guide .section-heading h2 {
+  max-width: 15ch;
+}
+
+.cornerstone-guide .section-heading > p:not(.eyebrow) {
+  max-width: 720px;
+}
+
+.cornerstone-guide .proof-grid article {
+  border-color: rgba(23, 32, 39, 0.08);
+  box-shadow: 0 18px 48px -34px rgba(23, 32, 39, 0.38);
+}
+
+.cornerstone-guide #kort-svar .proof-grid article {
+  position: relative;
+  padding-top: 34px;
+  overflow: hidden;
+}
+
+.cornerstone-guide #kort-svar .proof-grid article::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ze-travertine), transparent);
+  opacity: 0.55;
+}
+
+.cornerstone-preflight {
+  position: relative;
+  gap: clamp(34px, 6vw, 80px);
+}
+
+.cornerstone-preflight > div:last-child {
+  align-self: start;
+  padding: clamp(28px, 3vw, 38px);
+  background: rgba(235, 239, 232, 0.74);
+  border: 1px solid rgba(23, 32, 39, 0.08);
+}
+
+.cornerstone-guide .check-list {
+  margin-block: 24px 28px;
+}
+
+.cornerstone-guide .check-list span {
+  align-items: flex-start;
+  line-height: 1.62;
+}
+
+.cornerstone-guide .check-list a,
+.cornerstone-guide .split a:not(.contact-button):not(.text-button),
+.cornerstone-guide .section-heading a {
+  color: var(--ze-sea);
+  text-decoration: underline;
+  text-decoration-color: rgba(8, 74, 78, 0.25);
+  text-underline-offset: 3px;
+}
+
+.cornerstone-guide #boligtype .split {
+  margin-top: 34px;
+}
+
+.cornerstone-guide #boligtype .split > div,
+.cornerstone-experience > div {
+  padding: clamp(28px, 3vw, 38px);
+  background: var(--ze-white);
+  border: 1px solid var(--ze-line);
+  box-shadow: var(--ze-shadow-soft);
+}
+
+.cornerstone-guide #boligtype .split h3,
+.cornerstone-experience h2 {
+  margin-top: 0;
+}
+
+.cornerstone-guide #boligsok,
+.cornerstone-guide #vanlige-feil {
+  position: relative;
+}
+
+.cornerstone-guide #boligsok::before,
+.cornerstone-guide #vanlige-feil::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  background: rgba(244, 240, 231, 0.46);
+}
+
+.cornerstone-guide #kostnader .table-wrap {
+  box-shadow: var(--ze-shadow-soft);
+  border: 1px solid var(--ze-line);
+}
+
+.cornerstone-guide #kostnader .table-wrap table {
+  margin: 0;
+}
+
+.cornerstone-guide #faq .proof-grid article {
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.76);
+}
