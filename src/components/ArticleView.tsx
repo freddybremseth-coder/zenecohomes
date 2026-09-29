@@ -5,12 +5,124 @@ import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } fro
 
 const BASE = "https://www.zenecohomes.com";
 
+const RETIRED_ARTICLE_SLUGS = new Set(["kjopsprosess-bolig-i-spania"]);
+
+const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
+  "omradeguide-eiendomskjop-i-spania": [
+    "nybygg-finestrat-omradeguide",
+    "innlandet-finca-olivengard-spania",
+    "flytte-til-spania-pensjonist",
+  ],
+  "guide-tomtekjop-bygging-i-spania": [
+    "innlandet-finca-olivengard-spania",
+    "juridiske-fallgruver-boligkjop-spania",
+    "omradeguide-eiendomskjop-i-spania",
+  ],
+  "kjop-bolig-i-spania-na-eller-vente": [
+    "omradeguide-eiendomskjop-i-spania",
+    "finansiering-notar-nie-boligkjop-spania",
+    "juridiske-fallgruver-boligkjop-spania",
+  ],
+  "finansiering-notar-nie-boligkjop-spania": [
+    "nie-skattenummer-spania",
+    "boliglan-spansk-bank-nordmenn",
+    "spansk-bankkonto-valutaveksling",
+  ],
+  "omkostninger-nybygg-spania": [
+    "lopende-kostnader-eie-bolig-spania",
+    "bankgaranti-nybygg-spania",
+    "finansiering-notar-nie-boligkjop-spania",
+  ],
+  "bankgaranti-nybygg-spania": [
+    "omkostninger-nybygg-spania",
+    "juridiske-fallgruver-boligkjop-spania",
+    "finansiering-notar-nie-boligkjop-spania",
+  ],
+  "nybygg-finestrat-omradeguide": [
+    "omradeguide-eiendomskjop-i-spania",
+    "bankgaranti-nybygg-spania",
+    "omkostninger-nybygg-spania",
+  ],
+  "utleie-inntektspotensial-bolig-spania": [
+    "lopende-kostnader-eie-bolig-spania",
+    "omradeguide-eiendomskjop-i-spania",
+    "skatt-ved-salg-bolig-spania",
+  ],
+  "lopende-kostnader-eie-bolig-spania": [
+    "omkostninger-nybygg-spania",
+    "utleie-inntektspotensial-bolig-spania",
+    "flytte-til-spania-pensjonist",
+  ],
+  "innlandet-finca-olivengard-spania": [
+    "guide-tomtekjop-bygging-i-spania",
+    "omradeguide-eiendomskjop-i-spania",
+    "juridiske-fallgruver-boligkjop-spania",
+  ],
+  "flytte-til-spania-pensjonist": [
+    "omradeguide-eiendomskjop-i-spania",
+    "lopende-kostnader-eie-bolig-spania",
+    "spansk-bankkonto-valutaveksling",
+  ],
+  "energieffektive-nybygg-spania": [
+    "bankgaranti-nybygg-spania",
+    "omkostninger-nybygg-spania",
+    "omradeguide-eiendomskjop-i-spania",
+  ],
+  "juridiske-fallgruver-boligkjop-spania": [
+    "bankgaranti-nybygg-spania",
+    "finansiering-notar-nie-boligkjop-spania",
+    "nie-skattenummer-spania",
+  ],
+  "skatt-ved-salg-bolig-spania": [
+    "arv-gaveskatt-bolig-spania",
+    "lopende-kostnader-eie-bolig-spania",
+    "finansiering-notar-nie-boligkjop-spania",
+  ],
+  "arv-gaveskatt-bolig-spania": [
+    "skatt-ved-salg-bolig-spania",
+    "lopende-kostnader-eie-bolig-spania",
+    "juridiske-fallgruver-boligkjop-spania",
+  ],
+  "nie-skattenummer-spania": [
+    "finansiering-notar-nie-boligkjop-spania",
+    "spansk-bankkonto-valutaveksling",
+    "juridiske-fallgruver-boligkjop-spania",
+  ],
+  "spansk-bankkonto-valutaveksling": [
+    "finansiering-notar-nie-boligkjop-spania",
+    "boliglan-spansk-bank-nordmenn",
+    "nie-skattenummer-spania",
+  ],
+  "boliglan-spansk-bank-nordmenn": [
+    "finansiering-notar-nie-boligkjop-spania",
+    "spansk-bankkonto-valutaveksling",
+    "omkostninger-nybygg-spania",
+  ],
+};
+
+function resolveRelatedArticles(article: Article, silo: ReturnType<typeof articleSilo>) {
+  const curatedSlugs = silo === "guide" ? RELATED_GUIDE_SLUGS[article.slug] || [] : [];
+  const curated = curatedSlugs
+    .map((slug) => allArticles.find((item) => item.slug === slug))
+    .filter((item): item is Article => Boolean(item) && !RETIRED_ARTICLE_SLUGS.has(item.slug));
+
+  const fallback = allArticles.filter(
+    (item) =>
+      item.slug !== article.slug &&
+      !RETIRED_ARTICLE_SLUGS.has(item.slug) &&
+      articleSilo(item) === silo &&
+      !curated.some((curatedItem) => curatedItem.slug === item.slug),
+  );
+
+  return [...curated, ...fallback].slice(0, 3);
+}
+
 /** Delt artikkelvisning for /magasin, /kjopsprosess og /guide. Silo-bevisst. */
 export function ArticleView({ article }: { article: Article }) {
   const silo = articleSilo(article);
   const hub = silo ? SILO_META[silo] : { label: "Magasin", href: "/magasin" };
   const canonicalPath = articlePath(article);
-  const relatedArticles = allArticles.filter((item) => item.slug !== article.slug && articleSilo(item) === silo).slice(0, 3);
+  const relatedArticles = resolveRelatedArticles(article, silo);
   const isCorporate = silo === "corporate";
 
   const articleJsonLd = {
@@ -170,11 +282,16 @@ export function ArticleView({ article }: { article: Article }) {
               </Link>
             </section>
 
-            {relatedArticles.length > 0 && (
+            {(silo === "guide" || relatedArticles.length > 0) && (
               <section className="article-related">
                 <p className="eyebrow">Les videre</p>
-                <h3>Relaterte guider</h3>
+                <h3>{silo === "guide" ? "Hovedguide og relaterte guider" : "Relaterte artikler"}</h3>
                 <nav>
+                  {silo === "guide" && (
+                    <Link href="/guide/kjope-bolig-i-spania">
+                      <span>Kjøpe bolig i Spania – komplett hovedguide</span><ArrowRight size={15} />
+                    </Link>
+                  )}
                   {relatedArticles.map((item) => (
                     <Link key={item.slug} href={articlePath(item)}>
                       <span>{item.title}</span><ArrowRight size={15} />
