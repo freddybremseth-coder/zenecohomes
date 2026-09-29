@@ -34,6 +34,10 @@ const articleCovers: Record<string, string> = {
   "nie-skattenummer-spania": "/assets/magasin-covers/nie-skattenummer.svg",
   "spansk-bankkonto-valutaveksling": "/assets/magasin-covers/bankkonto-valuta.svg",
   "boliglan-spansk-bank-nordmenn": "/assets/magasin-covers/boliglan-bank.svg",
+  "hva-far-du-for-4-6-8-10-millioner-costa-blanca": "/assets/magasin-covers/finansiering.svg",
+  "bolig-500000-euro-totalbudsjett-spania": "/assets/magasin-covers/finansiering.svg",
+  "lan-i-norge-eller-spania-boligkjop": "/assets/magasin-covers/boliglan-bank.svg",
+  "albir-finestrat-villajoyosa-benidorm-hvor-kjope": "/assets/magasin-covers/omradevalg.svg",
 };
 
 const bookGuides = [
