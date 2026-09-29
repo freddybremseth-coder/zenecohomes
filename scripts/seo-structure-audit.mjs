@@ -33,6 +33,15 @@ for (const href of cornerstoneLinks) {
   requireText(cornerstone, `href="${href}"`, "Erlend cornerstone internal link");
 }
 
+const editorialArticle = "src/lib/magazine.ts";
+requireText(editorialArticle, 'slug: "det-du-ikke-ser-i-boligannonsen"', "area-first editorial article");
+requireText(editorialArticle, 'author: { name: "Freddy Bremseth", href: "/om-oss/freddy" }', "linked Freddy author on editorial article");
+const articleViewForEditorial = "src/components/ArticleView.tsx";
+requireText(articleViewForEditorial, '"det-du-ikke-ser-i-boligannonsen": [', "contextual internal-link rules for area-first article");
+for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/visningstur", "/eiendommer"]) {
+  requireText(articleViewForEditorial, `href: "${href}"`, "editorial article internal link");
+}
+
 const properties = "src/app/eiendommer/page.tsx";
 for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen", "/visningstur"]) {
   requireText(properties, `href="${href}"`, "property-list internal link");
