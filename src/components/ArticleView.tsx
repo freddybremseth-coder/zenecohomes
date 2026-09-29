@@ -280,6 +280,73 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
   ],
+  "kjop-bolig-i-spania-na-eller-vente": [
+    {
+      headingIncludes: "Markedet må vurderes lokalt",
+      links: [
+        { label: "Områdeguide for boligkjøp i Spania", href: "/guide/omradeguide-eiendomskjop-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Hva kan endre regnestykket",
+      links: [
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+      ],
+    },
+  ],
+  "nybygg-finestrat-omradeguide": [
+    {
+      headingIncludes: "Hvorfor vurdere Finestrat",
+      links: [
+        { label: "Områdeguide for Finestrat", href: "/omrader/costa-blanca-nord/finestrat" },
+        { label: "Se boliger i Finestrat", href: "/eiendommer?region=costa-blanca-nord&area=Finestrat" },
+      ],
+    },
+    {
+      headingIncludes: "Pris og hva som er inkludert",
+      links: [
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+      ],
+    },
+  ],
+  "innlandet-finca-olivengard-spania": [
+    {
+      headingIncludes: "Hvorfor velge innlandet",
+      links: [
+        { label: "Utforsk innlandsområdene", href: "/omrader/innlandet" },
+      ],
+    },
+    {
+      headingIncludes: "Dette må sjekkes ved tomt og finca",
+      links: [
+        { label: "Se tomter i innlandet", href: "/omrader/innlandet/tomter" },
+        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+      ],
+    },
+  ],
+  "skatt-ved-salg-bolig-spania": [
+    {
+      headingIncludes: "Tenk på et framtidig salg",
+      links: [
+        { label: "Løpende kostnader ved å eie bolig i Spania", href: "/guide/lopende-kostnader-eie-bolig-spania" },
+        { label: "Arv og gaveskatt for bolig i Spania", href: "/guide/arv-gaveskatt-bolig-spania" },
+      ],
+    },
+  ],
+  "arv-gaveskatt-bolig-spania": [
+    {
+      headingIncludes: "Testament og grensekryssende arv",
+      links: [
+        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Planlegg i tide",
+      links: [
+        { label: "Skatt ved salg av bolig i Spania", href: "/guide/skatt-ved-salg-bolig-spania" },
+      ],
+    },
+  ],
 };
 
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
