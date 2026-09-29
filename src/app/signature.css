@@ -1600,3 +1600,114 @@
     padding: 24px 20px;
   }
 }
+
+
+/* Areas hub — compare regions first, then explore books and properties. */
+.areas-page .editorial-area-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(42px, 7vw, 90px);
+  margin-top: 0;
+  border-top: 1px solid rgba(23, 32, 39, 0.12);
+}
+
+.areas-page .area-choice-card {
+  min-height: 270px;
+  padding: 28px 0 30px;
+  gap: 0;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(23, 32, 39, 0.12);
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.areas-page .area-choice-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.area-choice-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.area-choice-number {
+  flex: 0 0 auto;
+  color: var(--ze-travertine);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.area-choice-places {
+  color: var(--ze-muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.areas-page .area-choice-card h2 {
+  max-width: 14ch;
+  margin: 0 0 12px;
+  color: var(--ze-ink);
+  font-family: var(--display);
+  font-size: clamp(1.85rem, 2.6vw, 2.65rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.areas-page .area-choice-card > p {
+  max-width: 54ch;
+  margin: 0 0 18px;
+  color: var(--ze-muted);
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.areas-page .area-choice-card .text-button {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.area-decision {
+  align-items: stretch;
+}
+
+.area-decision > div:first-child {
+  padding: 10px 0;
+}
+
+.area-decision > div:last-child {
+  padding: clamp(30px, 3vw, 40px);
+  background: var(--ze-ink);
+  color: white;
+}
+
+.area-decision > div:last-child h2 {
+  color: white;
+}
+
+.area-decision > div:last-child p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.area-decision > div:last-child .contact-button {
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
+}
+
+@media (max-width: 760px) {
+  .areas-page .editorial-area-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .areas-page .area-choice-card {
+    min-height: 0;
+  }
+
+  .area-choice-meta {
+    align-items: flex-start;
+  }
+}
