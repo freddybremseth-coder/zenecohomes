@@ -208,12 +208,14 @@ export function Footer({
       </div>
 
       <div className="footer-2027-bottom">
-        <span>© {new Date().getFullYear()} Zen Eco Homes · Benidorm · Costa Blanca</span>
+        <span className="footer-2027-copyright">© {new Date().getFullYear()} Zen Eco Homes</span>
+        <span className="footer-2027-location">Benidorm · Costa Blanca</span>
         {locale === "no" ? (
-          <span>
-            <Link href="/personvern">Personvern</Link> · <Link href="/informasjonskapsler">Informasjonskapsler</Link>
+          <span className="footer-2027-legal">
+            <Link href="/personvern">Personvern</Link>
+            <Link href="/informasjonskapsler">Informasjonskapsler</Link>
           </span>
-        ) : <span>{SUBLINE[locale]}</span>}
+        ) : <span className="footer-2027-legal">{SUBLINE[locale]}</span>}
       </div>
     </footer>
   );
