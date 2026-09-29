@@ -1619,6 +1619,400 @@ export const extraArticles: Article[] = [
       { question: "Er forskuddsbetaling på nybygg trygt?", answer: "Betalinger skal håndteres med korrekt juridisk sikkerhet og dokumentasjon. Bruk uavhengig advokat til å kontrollere kontrakt og garantier for det konkrete prosjektet." },
     ],
     cta: { label: "Les om bankgaranti ved nybygg", href: "/guide/bankgaranti-nybygg-spania" },
+  },
+  {
+    slug: "costa-blanca-nord-500000-euro-hva-kjope-na",
+    title: "Rundt €500.000 på Costa Blanca Nord – hva kan du faktisk kjøpe akkurat nå?",
+    excerpt:
+      "Samme budsjett kan kjøpe svært forskjellige boliger. Vi bruker konkrete Zen-objekter i Benidorm og Villajoyosa for å vise hva rundt 500.000 euro betyr i praksis.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Marked akkurat nå",
+    readingTime: "8 min lesing",
+    image: "/assets/areas.jpg",
+    imageAlt: "Costa Blanca Nord med boligområder langs kysten",
+    seoTitle: "Rundt €500.000 på Costa Blanca Nord – hva kjøper du nå?",
+    seoDescription:
+      "Se konkrete Zen-boliger rundt 500.000 euro i Benidorm og Villajoyosa, hva budsjettet kjøper og hvilke forskjeller du bør vurdere før visning.",
+    keywords: [
+      "bolig 500000 euro Costa Blanca",
+      "bolig Benidorm pris",
+      "bolig Villajoyosa pris",
+      "Costa Blanca Nord boligbudsjett",
+      "bolig Spania akkurat nå",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Dette er et markedsøyeblikksbilde basert på boliger som lå publisert i Zen-katalogen 29. september 2026. Pris og tilgjengelighet kan endres raskt og må alltid bekreftes før reservasjon.",
+      "Poenget er ikke å kåre én vinner. Poenget er å vise hvor mye boligtype, område og tomt endrer hva et budsjett på rundt 500.000 euro faktisk kjøper.",
+    ],
+    sections: [
+      {
+        heading: "Benidorm: €456.000 gir 3 soverom, 140 m² og 801 m² tomt",
+        body: [
+          "Ref. N9098 lå publisert til 456.000 euro med 3 soverom, 2 bad, 140 m² bolig og 801 m² tomt. Oppgitt energiklasse er B og den publiserte kvadratmeterprisen er omtrent 3.257 euro.",
+          "Det interessante her er ikke bare at dette er en villa under 500.000 euro. Det er kombinasjonen av boligflate og stor tomt. For en kjøper som vil ha familieplass og privat uteareal er dette en helt annen type kjøp enn en kystleilighet.",
+        ],
+      },
+      {
+        heading: "Benidorm: €516.000 gir ett ekstra soverom og mer boligflate",
+        body: [
+          "Ref. N9096 lå publisert til 516.000 euro med 4 soverom, 3 bad, 155 m² bolig og samme oppgitte tomtestørrelse på 801 m². Kvadratmeterprisen var rundt 3.329 euro.",
+          "Forskjellen mot N9098 er bare rundt 60.000 euro, mens du får ett ekstra soverom, ett ekstra bad og 15 m² mer bolig. For en familie eller kjøper som ofte har gjester kan akkurat den oppgraderingen være mer verdifull enn å bruke samme beløp på en dyrere mikrobeliggenhet.",
+        ],
+      },
+      {
+        heading: "Villajoyosa: €375.000 kjøper mindre areal, men en annen type hverdag",
+        body: [
+          "Ref. N9203 lå publisert til 375.000 euro med 2 soverom, 2 bad, 81 m², basseng og oppgitt uteareal/tomt på 35 m². Kvadratmeterprisen var rundt 4.630 euro.",
+          "På papiret får du klart mindre areal enn i Benidorm-villaene. Men dette er nettopp grunnen til at kvadratmeter alene ikke bør styre valget. En leilighet kan gi enklere drift, fellesanlegg og en beliggenhet som passer bedre for feriebruk.",
+        ],
+      },
+      {
+        heading: "Hva viser disse tre boligene om et €500.000-budsjett?",
+        table: {
+          headers: ["Bolig", "Pris", "Soverom", "Areal", "Tomt/uteareal", "Ca. €/m²"],
+          rows: [
+            ["Benidorm N9098", "€456.000", "3", "140 m²", "801 m²", "€3.257"],
+            ["Benidorm N9096", "€516.000", "4", "155 m²", "801 m²", "€3.329"],
+            ["Villajoyosa N9203", "€375.000", "2", "81 m²", "35 m²", "€4.630"],
+          ],
+          caption:
+            "Publiserte Zen-data 29. september 2026. Pris og tilgjengelighet må bekreftes før reservasjon.",
+        },
+      },
+      {
+        heading: "Det viktigste spørsmålet er hva du vil kjøpe med budsjettet",
+        body: [
+          "Vil du bruke pengene på størst mulig bolig og tomt, eller på en enklere feriebolig nær den hverdagen du ønsker? Begge valg kan være gode, men de løser forskjellige behov.",
+          "Derfor bør en shortlist på 500.000 euro ikke bare være «alle boliger under 500.000». Den bør inneholde 3–5 boliger som representerer forskjellige måter å bruke budsjettet på.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bestem om 500.000 euro er kjøpesum eller totalramme inkludert kostnader.",
+      "Velg om plass, gangavstand eller enkel drift er viktigst.",
+      "Sammenlign konkrete boliger i minst to områder.",
+      "Bekreft oppdatert pris og tilgjengelighet før visning eller reservasjon.",
+    ],
+    faq: [
+      {
+        question: "Kan jeg få villa på Costa Blanca Nord rundt €500.000?",
+        answer:
+          "Ja, konkrete Zen-objekter publisert 29. september 2026 viser villaalternativer rundt dette nivået, blant annet i Benidorm. Tilgjengelighet og pris må bekreftes når du skal kjøpe.",
+      },
+      {
+        question: "Hvorfor er en mindre leilighet dyrere per kvadratmeter?",
+        answer:
+          "Kvadratmeterprisen påvirkes av blant annet mikrobeliggenhet, prosjekt, fellesanlegg, standard, uteareal og knapphet. Den bør brukes som ett sammenligningspunkt, ikke som hele beslutningen.",
+      },
+      {
+        question: "Bør jeg sette makspris til €500.000 hvis totalbudsjettet er €500.000?",
+        answer:
+          "Nei, ikke uten å regne inn skatter, gebyrer, juridisk bistand og eventuelle andre kostnader. Start med totalrammen og regn bakover til maksimal kjøpesum.",
+      },
+    ],
+    cta: { label: "Se boliger på Costa Blanca Nord", href: "/eiendommer?region=costa-blanca-nord" },
+  },
+  {
+    slug: "benidorm-villa-456000-vs-516000",
+    title: "Benidorm: €456.000 mot €516.000 – hva kjøper de ekstra €60.000?",
+    excerpt:
+      "To konkrete villaer med samme oppgitte tomtestørrelse gjør sammenligningen uvanlig tydelig: ett ekstra soverom, ett ekstra bad og mer boligflate for rundt 60.000 euro.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Marked akkurat nå",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/omradet-for-boligen.svg",
+    imageAlt: "Sammenligning av to villaer i Benidorm",
+    seoTitle: "Benidorm: villa til €456.000 eller €516.000 – forskjellen",
+    seoDescription:
+      "To konkrete villaer i Benidorm viser hva 60.000 euro ekstra gir i soverom, areal, bad og total kjøpskostnad. Vi sammenligner før du velger nå.",
+    keywords: [
+      "villa Benidorm 500000 euro",
+      "bolig Benidorm pris",
+      "N9098",
+      "N9096",
+      "villa Costa Blanca Nord",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Dette er et markedsøyeblikksbilde fra Zen-katalogen 29. september 2026. Begge objektene må kontrolleres for oppdatert pris, tilgjengelighet, leveranse og eksakt beliggenhet før reservasjon.",
+      "Sammenligningen er interessant fordi begge har oppgitt tomt på 801 m². Da blir det lettere å se hva prisforskjellen faktisk kjøper i selve boligen.",
+    ],
+    sections: [
+      {
+        heading: "N9098 til €456.000: 3 soverom, 2 bad og 140 m²",
+        body: [
+          "Den rimeligste av de to har 3 soverom, 2 bad og 140 m². Med pris på 456.000 euro gir det en oppgitt kvadratmeterpris på omtrent 3.257 euro.",
+          "Zen-siden viser et orienterende totalnivå på cirka 501.600–519.840 euro når et generelt intervall for kjøpskostnader legges til. Den endelige kostnaden må beregnes for den konkrete transaksjonen.",
+        ],
+      },
+      {
+        heading: "N9096 til €516.000: 4 soverom, 3 bad og 155 m²",
+        body: [
+          "For 60.000 euro mer får du ett ekstra soverom, ett ekstra bad og 15 m² ekstra boligflate. Kvadratmeterprisen ligger omtrent på samme nivå, rundt 3.329 euro.",
+          "Det er viktig: merkostnaden ser ikke først og fremst ut som en kraftig høyere pris per kvadratmeter. Den kjøper mer funksjon og areal.",
+        ],
+      },
+      {
+        heading: "Hva får du for de ekstra €60.000?",
+        table: {
+          headers: ["", "N9098", "N9096", "Forskjell"],
+          rows: [
+            ["Pris", "€456.000", "€516.000", "+€60.000"],
+            ["Soverom", "3", "4", "+1"],
+            ["Bad", "2", "3", "+1"],
+            ["Boligareal", "140 m²", "155 m²", "+15 m²"],
+            ["Tomt", "801 m²", "801 m²", "Samme oppgitt størrelse"],
+            ["Ca. €/m²", "€3.257", "€3.329", "+€72/m²"],
+          ],
+          caption:
+            "Basert på publiserte Zen-data 29. september 2026. Sammenligningen sier ikke noe om utsikt, orientering, leveranse eller mikrobeliggenhet – disse må kontrolleres.",
+        },
+      },
+      {
+        heading: "Når ville vi valgt den rimeligste?",
+        body: [
+          "Hvis tre soverom er nok og du heller vil beholde 60.000 euro til kjøpskostnader, møblering, finansiering eller buffer, er N9098 et logisk utgangspunkt.",
+          "Et ekstra rom du sjelden bruker er ikke automatisk verdt mer enn økonomisk fleksibilitet.",
+        ],
+      },
+      {
+        heading: "Når kan den dyrere være det bedre kjøpet?",
+        body: [
+          "Hvis boligen skal brukes av større familie, mange gjester eller som fremtidig helårsbolig, kan fire soverom og tre bad ha stor praktisk verdi. Det kan også gjøre boligen relevant for en bredere kjøpergruppe senere.",
+          "Men før vi konkluderer ville vi sammenlignet orientering, utsikt, nøyaktig plassering på prosjektet og hva som faktisk er inkludert. To boliger med nesten samme pris per kvadratmeter kan fortsatt være svært forskjellige kjøp.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bekreft om begge referansene fortsatt er tilgjengelige.",
+      "Be om plantegninger og komplett leveransebeskrivelse for begge.",
+      "Sammenlign orientering, utsikt og plassering – ikke bare areal.",
+      "Regn merkostnaden inn i totalbudsjettet før du velger.",
+    ],
+    faq: [
+      {
+        question: "Er N9096 automatisk et bedre kjøp fordi den er større?",
+        answer:
+          "Nei. Den gir mer plass og funksjon, men riktig valg avhenger av bruk, beliggenhet, orientering, leveranse og om du faktisk trenger det ekstra rommet.",
+      },
+      {
+        question: "Er forskjellen i kvadratmeterpris stor?",
+        answer:
+          "Nei i de publiserte tallene: omtrent 3.257 mot 3.329 euro per m². Det gjør det ekstra viktig å undersøke kvaliteter som ikke synes i arealtallet.",
+      },
+      {
+        question: "Er kjøpskostnaden inkludert i prisene?",
+        answer:
+          "Nei. De oppgitte prisene er kjøpesum. Skatter og øvrige transaksjonskostnader kommer i tillegg og må beregnes konkret.",
+      },
+    ],
+    cta: { label: "Se Benidorm-boliger", href: "/eiendommer?region=costa-blanca-nord&area=Benidorm" },
+  },
+  {
+    slug: "finestrat-villa-650000-700000-735000",
+    title: "Finestrat: €650.000, €700.000 eller €735.000 – hva er egentlig forskjellen?",
+    excerpt:
+      "Tre 3-soveromsvillaer viser hvorfor pris alene er et dårlig filter i Finestrat. Areal, tomt, bad og dokumenterte data varierer kraftig selv innenfor €85.000.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Marked akkurat nå",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/omradevalg.svg",
+    imageAlt: "Moderne villaer i Finestrat sammenlignet etter pris",
+    seoTitle: "Finestrat: villa til €650k, €700k eller €735k – hva får du?",
+    seoDescription:
+      "Tre konkrete Finestrat-villaer viser hvordan budsjettet flytter seg fra 650.000 til 735.000 euro, og hva du bør kontrollere før du betaler mer.",
+    keywords: [
+      "villa Finestrat pris",
+      "Finestrat 650000 euro",
+      "Finestrat 700000 euro",
+      "Finestrat 735000 euro",
+      "nybygg Finestrat",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Dette er et øyeblikksbilde fra Zen-katalogen 29. september 2026. Pris og tilgjengelighet må bekreftes før reservasjon.",
+      "Alle tre alternativene har 3 soverom og energiklasse B, men der slutter likheten. Det er et godt eksempel på hvorfor «vis meg villaer mellom 650.000 og 750.000 euro» bare er starten på analysen.",
+    ],
+    sections: [
+      {
+        heading: "N9010 til €650.000: lavest pris, men færre publiserte nøkkeltall",
+        body: [
+          "N9010 ligger publisert til 650.000 euro med 3 soverom og 2 bad. Zen-katalogen har ikke samme mengde areal- og tomtedata på denne oppføringen som på de to andre.",
+          "Det gjør ikke boligen dårligere. Det betyr bare at vi ikke ville sammenlignet den seriøst før plantegning, areal, tomt, basseng, orientering og leveranse er bekreftet.",
+        ],
+      },
+      {
+        heading: "N8313 til €700.000: 314 m² bolig og 271 m² tomt",
+        body: [
+          "N8313 ligger publisert med 3 soverom, 3 bad, 314 m² bolig, 271 m² tomt og basseng. Oppgitt kvadratmeterpris er omtrent 2.229 euro.",
+          "Det er et uvanlig lavt €/m²-tall sammenlignet med mange moderne kystvillaer. Derfor ville vi kontrollert hva de 314 m² faktisk består av: hovedetasje, kjeller, garasje, overbygde arealer eller annen registrert flate.",
+        ],
+      },
+      {
+        heading: "SP1296 til €735.000: 202 m² bolig, 421 m² tomt og basseng",
+        body: [
+          "SP1296 ligger publisert med 3 soverom, 2 bad, 202 m² bolig, 421 m² tomt og basseng. Oppgitt kvadratmeterpris er omtrent 3.639 euro.",
+          "Du betaler 35.000 euro mer enn for N8313, men får mindre oppgitt boligflate og større tomt. Det viser hvor lite mening det gir å anta at høyere pris automatisk betyr større hus.",
+        ],
+      },
+      {
+        heading: "Tre villaer – tre helt forskjellige regnestykker",
+        table: {
+          headers: ["Ref.", "Pris", "Sov./bad", "Bolig", "Tomt", "Basseng", "Ca. €/m²"],
+          rows: [
+            ["N9010", "€650.000", "3 / 2", "Ikke oppgitt i sammendrag", "Ikke oppgitt", "Må bekreftes", "—"],
+            ["N8313", "€700.000", "3 / 3", "314 m²", "271 m²", "Ja", "€2.229"],
+            ["SP1296", "€735.000", "3 / 2", "202 m²", "421 m²", "Ja", "€3.639"],
+          ],
+          caption:
+            "Publiserte Zen-data 29. september 2026. Arealdefinisjon, inkludert leveranse, orientering og tilgjengelighet må kontrolleres før konklusjon.",
+        },
+      },
+      {
+        heading: "Dette ville vi kontrollert før vi betalte €35.000–€85.000 mer",
+        bullets: [
+          "Eksakt mikrobeliggenhet og høyde i Finestrat.",
+          "Utsikt og om fremtidig bygging kan påvirke den.",
+          "Hva registrert boligareal faktisk består av.",
+          "Tomtens brukbarhet, sol, vind og privatliv.",
+          "Om basseng, hage, hvitevarer, belysning og klima inngår.",
+          "Betalingsplan og forventet levering.",
+        ],
+      },
+      {
+        heading: "Konklusjonen er ikke «kjøp den billigste»",
+        body: [
+          "N9010 kan være best dersom beliggenheten og leveransen er riktig. N8313 kan være sterk hvis de 314 m² er areal du faktisk får verdi av. SP1296 kan være bedre dersom større tomt, planløsning og plassering passer livet ditt bedre.",
+          "Det riktige valget kommer først når de tre sammenlignes på samme datagrunnlag.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Be om komplette plantegninger for alle aktuelle referanser.",
+      "Normaliser areal: bolig, kjeller, garasje, terrasse og tomt må skilles.",
+      "Sammenlign hva som inngår i leveransen.",
+      "Se boligene eller prosjektene i samme visningsrunde før du velger.",
+    ],
+    faq: [
+      {
+        question: "Hvorfor kan en dyrere Finestrat-villa ha mindre boligflate?",
+        answer:
+          "Pris påvirkes av mer enn areal: tomt, utsikt, mikrobeliggenhet, prosjekt, standard, fase og hva som inngår. Dessuten må arealdefinisjonen kontrolleres.",
+      },
+      {
+        question: "Er lav €/m² alltid et godt tegn?",
+        answer:
+          "Nei. Først må du vite hva arealet består av og om arealene har samme verdi i praksis. Kjeller, garasje og hovedoppholdsrom bør ikke sammenlignes ukritisk.",
+      },
+      {
+        question: "Kan prisene endre seg?",
+        answer:
+          "Ja. Dette er et datert markedsøyeblikksbilde. Pris, enhet og tilgjengelighet skal bekreftes før reservasjon.",
+      },
+    ],
+    cta: { label: "Se boliger i Finestrat", href: "/eiendommer?region=costa-blanca-nord&area=Finestrat" },
+  },
+  {
+    slug: "villajoyosa-275000-vs-375000",
+    title: "Villajoyosa: €275.000 mot €375.000 – hva kjøper de ekstra €100.000?",
+    excerpt:
+      "To 2-soveromsleiligheter med nesten samme boligflate har 100.000 euro i prisforskjell. Det viser hvorfor areal alene ikke forklarer boligprisen.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Marked akkurat nå",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/kjope-na.svg",
+    imageAlt: "Leiligheter i Villajoyosa sammenlignet etter pris",
+    seoTitle: "Villajoyosa: €275.000 eller €375.000 – hva får du ekstra?",
+    seoDescription:
+      "To konkrete leiligheter i Villajoyosa viser hva 100.000 euro ekstra faktisk kjøper, og hvorfor størrelse alene ikke forklarer prisforskjellen.",
+    keywords: [
+      "leilighet Villajoyosa pris",
+      "Villajoyosa 275000 euro",
+      "Villajoyosa 375000 euro",
+      "N9860",
+      "N9203",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Dette er et markedsøyeblikksbilde fra Zen-katalogen 29. september 2026. Pris og tilgjengelighet må bekreftes før reservasjon.",
+      "Sammenligningen er spesielt nyttig fordi boligene har nesten samme oppgitte innvendige areal: 82 m² mot 81 m². Likevel er prisforskjellen 100.000 euro.",
+    ],
+    sections: [
+      {
+        heading: "N9860 til €275.000: 2 soverom, 2 bad og 82 m²",
+        body: [
+          "N9860 ligger publisert til 275.000 euro med 2 soverom, 2 bad og 82 m². Oppgitt energiklasse er B, og kvadratmeterprisen er rundt 3.354 euro.",
+          "På den publiserte oppføringen er basseng ikke oppgitt som nøkkeldata. Det betyr ikke nødvendigvis at prosjektet ikke har det; det betyr at vi ikke skal anta det før leveransen er bekreftet.",
+        ],
+      },
+      {
+        heading: "N9203 til €375.000: 2 soverom, 2 bad, 81 m² og basseng",
+        body: [
+          "N9203 ligger publisert til 375.000 euro med 2 soverom, 2 bad, 81 m², basseng og 35 m² oppgitt uteareal/tomt. Kvadratmeterprisen er rundt 4.630 euro.",
+          "Du betaler altså 100.000 euro mer uten å få større innvendig bolig. Merprisen må derfor forklares av andre kvaliteter: prosjekt, uteareal, basseng, orientering, beliggenhet, standard eller leveranse.",
+        ],
+      },
+      {
+        heading: "Forskjellen i ett enkelt bilde",
+        table: {
+          headers: ["", "N9860", "N9203", "Forskjell"],
+          rows: [
+            ["Pris", "€275.000", "€375.000", "+€100.000"],
+            ["Soverom", "2", "2", "Lik"],
+            ["Bad", "2", "2", "Lik"],
+            ["Boligareal", "82 m²", "81 m²", "Nesten lik"],
+            ["Basseng oppgitt", "Ikke i sammendrag", "Ja", "Må kontrolleres"],
+            ["Uteareal/tomt", "Ikke oppgitt", "35 m²", "Forskjell i data"],
+            ["Ca. €/m²", "€3.354", "€4.630", "+€1.276/m²"],
+          ],
+          caption:
+            "Publiserte Zen-data 29. september 2026. Prisforskjellen må vurderes mot faktisk beliggenhet, orientering, leveranse og prosjektkvalitet.",
+        },
+      },
+      {
+        heading: "Dette er akkurat når du ikke skal bruke €/m² som fasit",
+        body: [
+          "Hvis N9203 ligger vesentlig bedre, har bedre uteareal, bedre sol, sterkere fellesanlegg eller høyere leveransestandard, kan den høyere kvadratmeterprisen være rasjonell.",
+          "Hvis forskjellene i praksis er små, blir N9860 langt mer interessant. Derfor må vi finne årsaken til prisgapet før vi diskuterer hvilken bolig som er «best».",
+        ],
+      },
+      {
+        heading: "De €100.000 kan også brukes et annet sted",
+        body: [
+          "Et prisgap på 100.000 euro kan finansiere kjøpskostnader, møblering og en betydelig likviditetsreserve – eller løfte deg til en helt annen boligtype i et annet område.",
+          "Det er derfor nyttig å spørre: får jeg mer verdi av å oppgradere innen samme prosjekt/område, eller av å bruke differansen på en annen kvalitet?",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bekreft eksakt tilgjengelig enhet for begge referansene.",
+      "Be om plantegning, orientering og leveransebeskrivelse.",
+      "Sammenlign uteareal, sol, parkering og fellesanlegg.",
+      "Avgjør om €100.000-merprisen løser et behov du faktisk har.",
+    ],
+    faq: [
+      {
+        question: "Hvorfor er N9203 så mye dyrere når arealet er nesten likt?",
+        answer:
+          "Publiserte data viser blant annet basseng og uteareal på N9203, men hele prisforskjellen kan ikke forklares uten å sammenligne mikrobeliggenhet, orientering, leveranse og prosjekt.",
+      },
+      {
+        question: "Er N9860 derfor et bedre kjøp?",
+        answer:
+          "Ikke nødvendigvis. Den er klart rimeligere, men vi må først kontrollere hva som inngår og hvordan boligen faktisk ligger. Pris alene avgjør ikke kvaliteten.",
+      },
+      {
+        question: "Hvor ofte bør slike priser oppdateres?",
+        answer:
+          "Markedssammenligninger bør behandles som daterte øyeblikksbilder. Før visning eller reservasjon bør pris og tilgjengelighet alltid bekreftes på nytt.",
+      },
+    ],
+    cta: { label: "Se boliger i Villajoyosa", href: "/eiendommer?region=costa-blanca-nord&area=Villajoyosa" },
   }
 ];
 
