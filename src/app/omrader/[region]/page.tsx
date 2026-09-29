@@ -44,6 +44,29 @@ const regionCopy: Record<RegionKey, { title: string; intro: string; proof: strin
   },
 };
 
+const regionSeo: Record<RegionKey, { title: string; description: string }> = {
+  "costa-blanca-nord": {
+    title: "Costa Blanca Nord | Nybygg og boliger | Zen Eco Homes",
+    description:
+      "Costa Blanca Nord: sammenlign Altea, Albir, Calpe, Finestrat, Polop, Moraira, Jávea og Dénia. Se nybygg, boliger og råd før et trygt boligkjøp i Spania.",
+  },
+  "costa-blanca-sor": {
+    title: "Costa Blanca Sør | Nybygg og boliger | Zen Eco Homes",
+    description:
+      "Costa Blanca Sør: sammenlign Torrevieja, Guardamar, Ciudad Quesada, Orihuela Costa og Santa Pola. Se nybygg, boliger og råd før kjøp i Spania.",
+  },
+  "costa-calida": {
+    title: "Costa Cálida Spania | Nybygg og boliger | Zen Eco Homes",
+    description:
+      "Costa Cálida: sammenlign Los Alcázares, San Pedro del Pinatar, La Manga og Murcia-områder. Se nybygg, boliger og råd før et trygt boligkjøp i Spania.",
+  },
+  innlandet: {
+    title: "Innlandet i Spania | Tomter og boliger | Zen Eco Homes",
+    description:
+      "Innlandet i Spania: sammenlign Pinoso, Biar, Aspe, Villena og andre områder. Se tomter, moderne boliger og råd om bygging og trygg kjøpsprosess.",
+  },
+};
+
 const regionFaq: Record<RegionKey, { q: string; a: string }[]> = {
   "costa-blanca-nord": [
     {
@@ -110,9 +133,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ region: RegionKey }> }) {
   const { region } = await params;
   const copy = regionCopy[region];
+  const seo = regionSeo[region];
   return {
-    title: copy?.title || "Område",
-    description: copy?.intro || "Finn nybygg og områder i Spania med Zen Eco Homes.",
+    title: seo?.title || copy?.title || "Område i Spania | Zen Eco Homes",
+    description: seo?.description || copy?.intro || "Finn nybygg og områder i Spania med Zen Eco Homes.",
     alternates: {
       canonical: `/omrader/${region}`,
     },
