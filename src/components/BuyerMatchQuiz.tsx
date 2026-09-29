@@ -42,7 +42,7 @@ const dreamAdvice: Record<string, { title: string; text: string; href: string }>
   "Innland og mer plass": {
     title: "Innlandet passer deg",
     text: "Mer plass, natur og ro – tomt, finca eller villa i innlandet rundt Biar, Pinoso, Aspe, Novelda og andre områder. Avstanden til kyst og flyplass varierer betydelig, så vi vurderer ønsket reisevei konkret.",
-    href: "/inland",
+    href: "/omrader/innlandet",
   },
   "Investering / utleie": {
     title: "Vi vurderer utleiepotensialet først",
