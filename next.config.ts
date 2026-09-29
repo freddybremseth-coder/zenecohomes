@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
     const siloRedirects = [
       ["omkostninger-nybygg-spania", "guide"],
       ["bankgaranti-nybygg-spania", "guide"],
-      ["kjopsprosess-bolig-i-spania", "guide"],
       ["finansiering-notar-nie-boligkjop-spania", "guide"],
       ["omradeguide-eiendomskjop-i-spania", "guide"],
       ["guide-tomtekjop-bygging-i-spania", "guide"],
