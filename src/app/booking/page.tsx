@@ -51,10 +51,19 @@ export default async function BookingPage({
           </p>
           <Link className="text-button" href="/om-oss/freddy"><ArrowLeft size={16} /> Les mer om Freddy</Link>
         </div>
-        <aside className="booking-form-panel">
-          <p className="eyebrow">Forespør samtale</p>
-          <h2>Fortell kort hva du vurderer</h2>
-          <ContactForm source="zenecohomes-booking" requestType="booking" variant="simple" />
+        <aside className="booking-form-panel" id="foresporsel">
+          <p className="eyebrow">{infoMeeting ? "Interesse for infomøte" : "Forespør samtale"}</p>
+          <h2>{infoMeeting ? "Få beskjed når neste infomøte er satt" : "Fortell kort hva du vurderer"}</h2>
+          {infoMeeting && (
+            <p className="booking-note">
+              Send inn kontaktinformasjonen din. Vi registrerer dette som interesse for neste digitale infomøte om boligkjøp i Spania.
+            </p>
+          )}
+          <ContactForm
+            source={infoMeeting ? "zenecohomes-infomote" : "zenecohomes-booking"}
+            requestType={infoMeeting ? "infomote" : "booking"}
+            variant="simple"
+          />
         </aside>
       </section>
 
