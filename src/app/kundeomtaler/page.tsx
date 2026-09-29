@@ -8,9 +8,9 @@ import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Kundeomtaler | Erfaringer med Zen Eco Homes i Spania",
+  title: { absolute: "Kundeomtaler | Erfaringer med Zen Eco Homes i Spania" },
   description:
-    "Les kundeomtaler og erfaringer fra boligkjøpere Freddy Bremseth har hjulpet med rådgivning, områdevalg, visninger og boligkjøp i Spania.",
+    "Les kundeomtaler og erfaringer fra boligkjøpere Freddy Bremseth har hjulpet med rådgivning, områdevalg, visninger og boligkjøp i Spania på en trygg måte.",
   alternates: { canonical: "/kundeomtaler" },
 };
 
