@@ -123,12 +123,14 @@ export default async function BuyInSpainGuidePage() {
             visninger, og går deretter gjennom juridisk kontroll, finansiering, kontrakt, notar og overtakelse.
           </p>
         </div>
-        <div className="proof-grid">
+        <div className="journey-overview">
           {steps.map(([title, text], index) => (
             <article key={title}>
-              <strong>{String(index + 1).padStart(2, "0")}</strong>
-              <h3>{title}</h3>
-              <p>{text}</p>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
             </article>
           ))}
         </div>
