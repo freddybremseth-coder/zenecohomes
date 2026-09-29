@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function AboutPage() {
         </article>
       </div>
     </section>
+    <Testimonials heading="Hva kundene sier om oss" />
     <Footer />
   </main>;
 }
