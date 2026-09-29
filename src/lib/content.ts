@@ -1809,10 +1809,15 @@ export function getArticle(slug: string) {
 }
 
 export const processSteps = [
-  "Behov og budsjett avklares i en innledende samtale.",
-  "Vi matcher deg med aktuelle prosjekter og områder.",
-  "Du får strukturert oversikt, dokumenter og anbefalinger.",
-  "Visninger planlegges fysisk eller digitalt.",
-  "Advokat, bank, NIE og kontrakt koordineres med relevante fagpersoner.",
-  "Overtakelse og oppfølging gjøres ryddig etter kjøpet.",
+  "Behovskartlegging – hvordan skal boligen brukes, og hva er totalbudsjettet?",
+  "Områdevalg – vi sammenligner steder før vi velger konkrete boliger.",
+  "Boligsøk – aktuelle prosjekter og boliger snevres inn til en relevant shortlist.",
+  "Visning og visningstur – bolig, område og praktiske forhold vurderes sammen.",
+  "Bud eller reservasjon – vilkår, beløp og forutsetninger avklares før du binder deg.",
+  "Advokat og juridiske undersøkelser – relevante fagpersoner kontrollerer dokumentasjon og eiendommen.",
+  "NIE, bank og finansiering – praktiske og økonomiske forutsetninger klargjøres.",
+  "Kontrakt – kjøpeavtalen gjennomgås og signeres etter nødvendige kontroller.",
+  "Notar – skjøtet signeres og kjøpet sluttføres.",
+  "Overtakelse – nøkler, praktiske forhold og registrering følges opp.",
+  "Oppfølging etter kjøpet – videre hjelp og Zen Eco Homes Care ved behov.",
 ];
