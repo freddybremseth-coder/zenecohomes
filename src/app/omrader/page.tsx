@@ -7,7 +7,7 @@ import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Områder i Spania | Costa Blanca, Cálida og innlandet",
-  description: "Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og innlandet før du velger bolig i Spania. Se områdeguider og aktuelle boliger.",
+  description: "Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og innlandet før boligkjøp i Spania. Se områdeguider, boliger og praktiske forskjeller.",
   alternates: { canonical: "/omrader" },
 };
 
