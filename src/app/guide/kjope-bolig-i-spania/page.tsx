@@ -7,15 +7,22 @@ import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { findEquivalentBySlug, homeLanguageLinks, seoHreflang } from "@/lib/i18n";
 import { getLocalizedPropertyType, getProperties } from "@/lib/realtyflow";
+import { readZenEcoSeoOverride } from "@/lib/seo-public-overrides";
 
 const pillarEq = findEquivalentBySlug("no", "guide/kjope-bolig-i-spania");
 
-export const metadata: Metadata = {
-  title: "Kjøpe bolig i Spania (2026): Guide og mine erfaringer",
-  description:
-    "Kjøpe bolig i Spania? Få en oppdatert guide til områdevalg, kostnader, NIE, finansiering, visning, juridisk kontroll, notar og trygg overtakelse.",
-  alternates: { canonical: "/guide/kjope-bolig-i-spania", languages: pillarEq ? seoHreflang(pillarEq) : undefined },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const approved = await readZenEcoSeoOverride("guide/kjope-bolig-i-spania");
+  const title = approved?.seo_title || "Kjøpe bolig i Spania (2026): Guide og mine erfaringer";
+  const description =
+    approved?.seo_description ||
+    "Kjøpe bolig i Spania? Få en oppdatert guide til områdevalg, kostnader, NIE, finansiering, visning, juridisk kontroll, notar og trygg overtakelse.";
+  return {
+    title: { absolute: title },
+    description,
+    alternates: { canonical: "/guide/kjope-bolig-i-spania", languages: pillarEq ? seoHreflang(pillarEq) : undefined },
+  };
+}
 
 const steps = [
   ["Avklar behov, budsjett og område", "Tenk gjennom hvordan boligen skal brukes, totalbudsjettet og hvilket område som passer hverdagen du ser for deg."],
