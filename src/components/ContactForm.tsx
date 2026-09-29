@@ -295,16 +295,16 @@ export function ContactForm({
         <div className="form-grid">
           <label>
             {t.name}
-            <input name="name" required placeholder={t.namePh} />
+            <input name="name" autoComplete="name" required placeholder={t.namePh} />
           </label>
           <label>
             {t.phone}
-            <input name="phone" placeholder="+34..." />
+            <input name="phone" autoComplete="tel" inputMode="tel" placeholder="+34..." />
           </label>
         </div>
         <label>
           {t.email}
-          <input name="email" type="email" required placeholder={t.emailPh} />
+          <input name="email" autoComplete="email" type="email" required placeholder={t.emailPh} />
         </label>
         <label>
           {t.purchaseGoal}
@@ -409,8 +409,8 @@ export function ContactForm({
         </div>
       </div>
 
-      {status === "sent" && <p className="form-success">{t.success}</p>}
-      {status === "error" && <p className="form-error">{t.error}</p>}
+      {status === "sent" && <p className="form-success" role="status" aria-live="polite">{t.success}</p>}
+      {status === "error" && <p className="form-error" role="alert">{t.error}</p>}
     </form>
   );
 }
