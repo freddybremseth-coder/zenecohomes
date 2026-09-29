@@ -726,6 +726,11 @@ export function ArticleView({ article }: { article: Article }) {
   const relatedArticles = resolveRelatedArticles(article, silo);
   const isCorporate = silo === "corporate";
   const isCurrentMarketArticle = article.category === "Marked akkurat nå";
+  const currentMarketMaxAgeDays = 45;
+  const currentMarketAgeDays = isCurrentMarketArticle
+    ? Math.floor((Date.now() - new Date(article.updated).getTime()) / 86_400_000)
+    : 0;
+  const isStaleMarketSnapshot = isCurrentMarketArticle && currentMarketAgeDays > currentMarketMaxAgeDays;
   const personalAuthor =
     article.author ||
     (silo === "guide" ? { name: "Freddy Bremseth", href: "/om-oss/freddy" } : null);
@@ -810,8 +815,15 @@ export function ArticleView({ article }: { article: Article }) {
             <div className="article-intro">
               {isCurrentMarketArticle && (
                 <div className="market-snapshot-note">
-                  <strong>Markedsøyeblikksbilde · {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}</strong>
-                  <span>Objektene er brukt som konkrete sammenligningseksempler. Pris, tilgjengelighet, leveranse og enhet må bekreftes på nytt før visning eller reservasjon.</span>
+                  <strong>
+                    {isStaleMarketSnapshot ? "Historisk markedsøyeblikksbilde" : "Markedsøyeblikksbilde"} ·{" "}
+                    {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
+                  </strong>
+                  <span>
+                    {isStaleMarketSnapshot
+                      ? "Denne sammenligningen er eldre enn 45 dager og vises som historikk. Pris, tilgjengelighet og prosjektstatus kan ha endret seg vesentlig; bruk lenkene som referanse og be om dagens alternativer."
+                      : "Objektene er brukt som konkrete sammenligningseksempler. Pris, tilgjengelighet, leveranse og enhet må bekreftes på nytt før visning eller reservasjon."}
+                  </span>
                 </div>
               )}
               {silo === "guide" && (

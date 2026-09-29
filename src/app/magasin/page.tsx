@@ -173,8 +173,12 @@ export default async function MagazinePage() {
   const fallbackArticles = allArticles.filter(
     (article) => !cmsSlugs.has(article.slug) && !articleSilo(article),
   );
-  const currentMarketArticles = fallbackArticles.filter((article) => article.category === "Marked akkurat nå");
-  const evergreenFallbackArticles = fallbackArticles.filter((article) => article.category !== "Marked akkurat nå");
+  const currentMarketMaxAgeDays = 45;
+  const marketAgeDays = (date: string) => Math.floor((Date.now() - new Date(date).getTime()) / 86_400_000);
+  const isFreshMarketArticle = (article: (typeof fallbackArticles)[number]) =>
+    article.category === "Marked akkurat nå" && marketAgeDays(article.updated) <= currentMarketMaxAgeDays;
+  const currentMarketArticles = fallbackArticles.filter(isFreshMarketArticle);
+  const evergreenFallbackArticles = fallbackArticles.filter((article) => !isFreshMarketArticle(article));
 
   return (
     <main className="magazine-page">
@@ -308,7 +312,9 @@ export default async function MagazinePage() {
               />
               <div className="magazine-body">
                 <p className="magazine-meta">
-                  {article.category} · {new Intl.DateTimeFormat("nb-NO").format(new Date(article.date))}
+                  {article.category === "Marked akkurat nå"
+                    ? "Tidligere markedsøyeblikksbilde"
+                    : article.category} · {new Intl.DateTimeFormat("nb-NO").format(new Date(article.date))}
                 </p>
                 <h2>{article.title}</h2>
                 <p>{article.excerpt}</p>
