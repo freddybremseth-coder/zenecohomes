@@ -2264,3 +2264,128 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Andrea profile — clear role, calm hierarchy, useful internal paths. */
+.andrea-profile-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(46px, 7vw, 92px);
+  align-items: start;
+}
+
+.andrea-profile-intro > div h2 {
+  max-width: 13ch;
+  margin: 0 0 20px;
+}
+
+.andrea-profile-intro > div > p:not(.eyebrow) {
+  max-width: 64ch;
+  color: var(--ze-muted);
+  line-height: 1.72;
+}
+
+.andrea-focus-panel {
+  padding: clamp(28px, 3vw, 38px);
+  background: var(--ze-ink);
+  color: white;
+}
+
+.andrea-focus-panel > div {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.andrea-focus-panel span {
+  color: var(--ze-travertine);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.andrea-focus-panel p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+}
+
+.andrea-work-section {
+  border-top: 1px solid rgba(23, 32, 39, 0.08);
+}
+
+.andrea-work-section .section-heading {
+  margin-left: 0;
+  text-align: left;
+}
+
+.andrea-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 clamp(28px, 5vw, 64px);
+  border-top: 1px solid rgba(23, 32, 39, 0.12);
+}
+
+.andrea-work-grid article {
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 0 30px;
+  border-bottom: 1px solid rgba(23, 32, 39, 0.12);
+}
+
+.andrea-work-grid article > span {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--ze-travertine);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.andrea-work-grid h3 {
+  margin: 0 0 12px;
+  color: var(--ze-ink);
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.andrea-work-grid p {
+  margin: 0 0 18px;
+  color: var(--ze-muted);
+  line-height: 1.68;
+}
+
+.andrea-work-grid .text-button {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .andrea-profile-intro {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .andrea-focus-panel {
+    max-width: 680px;
+  }
+
+  .andrea-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .andrea-work-grid article {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .andrea-focus-panel {
+    padding: 24px 20px;
+  }
+}
