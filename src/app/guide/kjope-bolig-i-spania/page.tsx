@@ -143,40 +143,61 @@ export default async function BuyInSpainGuidePage() {
         <div>
           <p className="eyebrow">Før boligjakten</p>
           <h2>Viktig før du begynner å se på bolig i Spania</h2>
-          <div className="check-list">
-            <span>
-              <CheckCircle2 size={18} />
-              <strong>Markedet fungerer annerledes enn i Norge.</strong> Flere aktører kan markedsføre samme bolig,
-              og oppfølgingen varierer. Les hvorfor en{" "}
-              <Link href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">god eiendomsrådgiver er viktig</Link>.
-            </span>
-            <span>
-              <CheckCircle2 size={18} />
-              <strong>Kjøpesummen er ikke totalkostnaden.</strong> Skatter, avgifter, notar, registrering,
-              juridisk bistand og eventuelle lånekostnader må inn i totalbudsjettet.
-            </span>
-            <span>
-              <CheckCircle2 size={18} />
-              <strong>Velg område før du velger bolig.</strong> Kyst, by og innland gir svært ulike hverdager,
-              reiseveier og prisbilder.
-            </span>
+          <div className="preflight-list">
+            <article className="preflight-item">
+              <CheckCircle2 size={19} />
+              <div>
+                <h3>Markedet fungerer annerledes enn i Norge</h3>
+                <p>
+                  Flere aktører kan markedsføre samme bolig, og tilgjengelighet og oppfølging kan variere.
+                  Derfor er det viktig å ha én tydelig plan og noen som kan kontrollere hva som faktisk er aktuelt.
+                  Les mer om hvorfor en{" "}
+                  <Link href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">god eiendomsrådgiver er viktig</Link>.
+                </p>
+              </div>
+            </article>
+            <article className="preflight-item">
+              <CheckCircle2 size={19} />
+              <div>
+                <h3>Kjøpesummen er ikke totalkostnaden</h3>
+                <p>
+                  Skatter og avgifter, notar, registrering, juridisk bistand og eventuelle kostnader til bank,
+                  finansiering og valuta må inn i totalbudsjettet før du vurderer hva du har råd til.
+                </p>
+              </div>
+            </article>
+            <article className="preflight-item">
+              <CheckCircle2 size={19} />
+              <div>
+                <h3>Velg område før du velger bolig</h3>
+                <p>
+                  Kyst, by og innland gir svært ulike hverdager, reiseveier og prisbilder. En attraktiv bolig
+                  kompenserer sjelden for et område som ikke passer måten du faktisk vil bruke boligen på.
+                </p>
+              </div>
+            </article>
           </div>
-          <p>
-            Bruk vår{" "}
+          <p className="preflight-next">
+            Start gjerne med vår{" "}
             <Link href="/guide/omradeguide-eiendomskjop-i-spania">områdeguide for boligkjøp i Spania</Link>{" "}
-            og <Link href="/omrader">områdeoversikten</Link> til å sammenligne regionene før du begynner
-            å lagre enkeltboliger.
+            og <Link href="/omrader">områdeoversikten</Link>. Da blir det enklere å sammenligne regionene før
+            du lagrer konkrete boliger.
           </p>
         </div>
-        <div>
+        <aside className="preflight-match">
           <p className="eyebrow">Boligmatch</p>
           <h2>Start med hvordan boligen skal brukes</h2>
           <p>
-            Feriebolig, fast bolig, utleie og tomt/bygging gir forskjellige prioriteringer. Boligmatch hjelper oss
-            å snevre inn område, budsjett, boligtype og de kravene som faktisk betyr noe for deg.
+            Feriebolig, fast bolig, utleie og tomt/bygging gir forskjellige prioriteringer. Boligmatch hjelper
+            oss å snevre inn markedet før du bruker tid på boliger som ikke passer.
           </p>
+          <div className="preflight-match-points" aria-label="Dette avklarer Boligmatch">
+            <span>Område og ønsket hverdagsliv</span>
+            <span>Totalbudsjett og boligtype</span>
+            <span>Must-have, nice-to-have og dealbreakers</span>
+          </div>
           <Link className="contact-button" href="#boligmatch">Start boligmatch</Link>
-        </div>
+        </aside>
       </section>
 
       <section className="section cornerstone-section" id="boligtype">
