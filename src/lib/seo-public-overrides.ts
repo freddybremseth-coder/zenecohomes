@@ -10,6 +10,8 @@ import { createClient } from "@supabase/supabase-js";
 const SEO_PILOT_SLUGS = new Set([
   "bolig-i-spania", "nybygg-i-spania", "nybygg-costa-blanca",
   "eiendomsradgiver-spania",
+  "guide/kjope-bolig-i-spania",
+  "guide/nybygg-i-spania",
 ]);
 
 export type PublicSeoOverride = { seo_title: string; seo_description: string };
@@ -35,8 +37,8 @@ export async function readZenEcoSeoOverride(slug: string): Promise<PublicSeoOver
     }
     if (typeof data.seo_title !== "string" ||
         typeof data.seo_description !== "string" ||
-        data.seo_title.length < 22 || data.seo_title.length > 65 ||
-        data.seo_description.length < 70 || data.seo_description.length > 160) return null;
+        data.seo_title.length < 50 || data.seo_title.length > 60 ||
+        data.seo_description.length < 140 || data.seo_description.length > 160) return null;
     return { seo_title: data.seo_title, seo_description: data.seo_description };
   } catch {
     return null; // Preserve original static metadata if network / Supabase fails.
