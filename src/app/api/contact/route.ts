@@ -128,6 +128,8 @@ export async function POST(request: Request) {
       contact_role: body.contact_role ? String(body.contact_role).slice(0, 160) : undefined,
       user_count: body.user_count ? String(body.user_count).slice(0, 40) : undefined,
       corporate_model: body.corporate_model ? String(body.corporate_model).slice(0, 180) : undefined,
+      partner_type: body.partner_type ? String(body.partner_type).slice(0, 80) : undefined,
+      partnership_interest: body.partnership_interest ? String(body.partnership_interest).slice(0, 240) : undefined,
       page_url: publicLeadSourcePage(body.page_url),
       utm_source: body.utm_source ? String(body.utm_source).slice(0, 80) : undefined,
       utm_medium: body.utm_medium ? String(body.utm_medium).slice(0, 80) : undefined,
