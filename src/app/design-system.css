@@ -148,6 +148,12 @@ h3,
   letter-spacing: 0.08em;
 }
 
+.site-header:not(.over-hero) .nav-cta,
+.site-header.is-scrolled .nav-cta {
+  border-color: var(--ze-accent-text);
+  color: var(--ze-accent-text);
+}
+
 /* ZenEco signature: architectural/editorial metadata rather than more badges. */
 .hero-editorial-meta {
   display: flex;
