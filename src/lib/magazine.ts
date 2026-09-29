@@ -558,7 +558,7 @@ export const extraArticles: Article[] = [
     readingTime: "7 min lesing",
     image: "/assets/magasin-covers/finansiering.svg",
     imageAlt: "Regnestykke for total kostnad ved boligkjøp i Spania",
-    seoTitle: "Hva koster en bolig til €500.000 i Spania totalt?",
+    seoTitle: "Hva koster en bolig til €500.000 i Spania totalt nå?",
     seoDescription:
       "En bolig til 500.000 euro koster mer enn kjøpesummen. Se hvordan skatter, gebyrer, juridisk hjelp, finansiering og valuta påvirker totalbudsjettet.",
     keywords: [
@@ -657,7 +657,7 @@ export const extraArticles: Article[] = [
     readingTime: "8 min lesing",
     image: "/assets/magasin-covers/boliglan-bank.svg",
     imageAlt: "Sammenligning av norsk og spansk finansiering ved boligkjøp i Spania",
-    seoTitle: "Lån i Norge eller Spania ved boligkjøp? Dette bør du sammenligne",
+    seoTitle: "Lån i Norge eller Spania ved boligkjøp – hva bør du vite?",
     seoDescription:
       "Skal du finansiere bolig i Spania med lån i Norge eller spansk bank? Sammenlign rente, sikkerhet, valuta, egenkapital, løpetid og kontantbehov.",
     keywords: [
@@ -757,7 +757,7 @@ export const extraArticles: Article[] = [
     readingTime: "9 min lesing",
     image: "/assets/magasin-covers/omradevalg.svg",
     imageAlt: "Kystområdene Albir, Finestrat, Villajoyosa og Benidorm på Costa Blanca",
-    seoTitle: "Albir, Finestrat, Villajoyosa eller Benidorm – hvor kjøpe bolig?",
+    seoTitle: "Albir, Finestrat, Villajoyosa eller Benidorm – hvor kjøpe?",
     seoDescription:
       "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm før boligkjøp. Se forskjeller i boligtyper, hverdag, gangavstand, prispress og hvem områdene passer for.",
     keywords: [
