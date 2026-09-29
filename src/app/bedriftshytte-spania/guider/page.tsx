@@ -10,7 +10,7 @@ import { homeLanguageLinks } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Guider om bedriftshytte i Spania | Zen Corporate Homes",
   description:
-    "Norske guider om bedriftshytte, firmabolig, booking, drift, skatt, medlemsbolig og beslutningsgrunnlag for bedrifter og organisasjoner.",
+    "Norske guider om bedriftshytte, firmabolig, booking, drift, skatt, medlemsbolig og beslutningsgrunnlag for bedrifter og organisasjoner i Spania.",
   alternates: { canonical: "/bedriftshytte-spania/guider" },
 };
 
