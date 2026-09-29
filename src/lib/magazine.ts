@@ -285,6 +285,9 @@ export function articleBasePath(article: Article): string {
 }
 
 export function articlePath(article: Article): string {
+  if (article.slug === "kjopsprosess-bolig-i-spania") {
+    return "/guide/kjope-bolig-i-spania";
+  }
   return `${articleBasePath(article)}/${article.slug}`;
 }
 
