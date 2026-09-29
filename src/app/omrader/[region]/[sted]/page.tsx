@@ -7,7 +7,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
-import { areaSlug } from "@/lib/areaRoutes";
+import { areaProfileSlug, areaSlug } from "@/lib/areaRoutes";
 import { bookUrl } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
@@ -44,7 +44,7 @@ async function getProfile(region: RegionKey, sted: string) {
   const profiles = await getAreaProfiles();
   return profiles.find((profile) =>
     areaMatchesRegion(profile, region)
-    && (areaSlug(profile.name) === sted || areaSlug(profile.slug || "") === sted)
+    && (areaProfileSlug(profile) === sted || areaSlug(profile.name) === sted)
   ) || null;
 }
 
@@ -53,7 +53,7 @@ export async function generateStaticParams() {
   return (["costa-blanca-nord", "costa-blanca-sor", "costa-calida"] as RegionKey[]).flatMap((region) =>
     profiles
       .filter((profile) => areaMatchesRegion(profile, region))
-      .map((profile) => ({ region, sted: areaSlug(profile.name) }))
+      .map((profile) => ({ region, sted: areaProfileSlug(profile) }))
   );
 }
 
