@@ -116,7 +116,7 @@ const T: Record<Locale, DetailText> = {
     total: "Estimert total",
     clarify: "Avklares",
     financingLink: "Finansiering, notar og NIE",
-    financingHref: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania",
+    financingHref: "/guide/finansiering-notar-nie-boligkjop-spania",
     rentalTitle: "Passer den for utleie?",
     rentalBody:
       "Vi vurderer beliggenhet, turistlisens, felleskostnader, sesong, målgruppe og konkurranse før du baserer kjøpet på forventet leieinntekt.",
