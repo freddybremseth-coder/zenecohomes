@@ -25,7 +25,7 @@ const localPageDE = ({
   eyebrow: `${area} · Regionsguide`,
   hero: `Immobilie in ${place} kaufen`,
   description: `${place} ist interessant, wenn Sie eine Immobilie, einen Neubau oder eine Kapitalanlage an der ${area} erwägen. Zen Eco Homes hilft Ihnen, Lage, Preisniveau, Lebensstil, Erreichbarkeit und einen sicheren Kaufprozess zu bewerten – bevor Sie reservieren.`,
-  seoTitle: `Immobilie in ${place} kaufen | Neubau & Beratung`,
+  seoTitle: `Immobilie in ${place} kaufen | Neubau & Beratung Spanien`,
   seoDescription: `Sie überlegen eine Immobilie in ${place}? Lesen Sie über Lage, Neubau, Preisniveau, Lebensstil und sicheren Kaufprozess mit Beratung in Spanien.`,
   primaryCta: { label: `Immobilien in ${place} ansehen`, href: filterHref },
   secondaryCta: { label: "Regionen vergleichen", href: "/omrader" },
