@@ -24,9 +24,8 @@ const regionLabels: Record<string, string> = {
 };
 
 export const metadata: Metadata = {
-  title: "Propiedades en venta en España | Costa Blanca",
-  description:
-    "Busca villas, apartamentos, adosados y obra nueva en la Costa Blanca. Filtra por zona, precio, dormitorios y estilo de vida con asesoramiento de Zen Eco Homes.",
+  title: "Viviendas en venta en España | Costa Blanca | Zen Eco Homes",
+  description: "Viviendas en venta en España: obra nueva, villas y apartamentos en Costa Blanca y Costa Cálida, con asesoramiento sobre zonas y proceso de compra.",
   alternates: {
     canonical: "/es/propiedades",
     languages: {
