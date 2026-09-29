@@ -34,7 +34,7 @@ const guideGroups = [
       "kjop-bolig-i-spania-na-eller-vente",
       "nybygg-finestrat-omradeguide",
       "innlandet-finca-olivengard-spania",
-      "flytte-til-spania-pensjonist",
+      "flytte-til-spania-som-pensjonist",
       "guide-tomtekjop-bygging-i-spania",
     ],
   },
