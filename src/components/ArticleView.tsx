@@ -312,6 +312,9 @@ export function ArticleView({ article }: { article: Article }) {
   const canonicalPath = articlePath(article);
   const relatedArticles = resolveRelatedArticles(article, silo);
   const isCorporate = silo === "corporate";
+  const personalAuthor =
+    article.author ||
+    (silo === "guide" ? { name: "Freddy Bremseth", href: "/om-oss/freddy" } : null);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -325,10 +328,13 @@ export function ArticleView({ article }: { article: Article }) {
     mentions: isCorporate
       ? ["Bedriftshytte i Spania", "Firmabolig", "Costa Blanca", "Ansattgode"]
       : ["Boligkjøp i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsrådgivning"],
-    author:
-      silo === "guide"
-        ? { "@type": "Person", name: "Freddy Bremseth", url: `${BASE}/om-oss/freddy` }
-        : { "@type": "Organization", name: isCorporate ? "Zen Corporate Homes" : "Zen Eco Homes", url: BASE },
+    author: personalAuthor
+      ? {
+          "@type": "Person",
+          name: personalAuthor.name,
+          ...(personalAuthor.href ? { url: `${BASE}${personalAuthor.href}` } : {}),
+        }
+      : { "@type": "Organization", name: isCorporate ? "Zen Corporate Homes" : "Zen Eco Homes", url: BASE },
     publisher: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
     mainEntityOfPage: `${BASE}${canonicalPath}`,
   };
@@ -367,12 +373,17 @@ export function ArticleView({ article }: { article: Article }) {
         <h1>{article.title}</h1>
         <p>{article.excerpt}</p>
         <div className="article-hero-meta">
-          {silo === "guide" && (
-            <Link href="/om-oss/freddy">
-              Av Freddy Bremseth
-            </Link>
+          {personalAuthor && (
+            personalAuthor.href ? (
+              <Link href={personalAuthor.href}>Av {personalAuthor.name}</Link>
+            ) : (
+              <span>Av {personalAuthor.name}</span>
+            )
           )}
-          <span><CalendarDays size={16} /> Sist oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}</span>
+          <span><CalendarDays size={16} /> Publisert {new Intl.DateTimeFormat("nb-NO").format(new Date(article.date))}</span>
+          {article.updated !== article.date && (
+            <span>Sist oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}</span>
+          )}
           <span><Clock size={16} /> {article.readingTime}</span>
         </div>
       </section>
