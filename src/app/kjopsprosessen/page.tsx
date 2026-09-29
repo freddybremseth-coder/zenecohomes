@@ -69,7 +69,7 @@ export default function BuyingProcessPage() {
   };
 
   return (
-    <main>
+    <main className="buying-process-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="page-hero compact-hero">
@@ -99,22 +99,18 @@ export default function BuyingProcessPage() {
             </div>
           ))}
         </div>
-        <div className="feature-panel">
+        <aside className="process-trust-panel">
+          <p className="eyebrow">Slik jobber vi</p>
+          <h2>Én tydelig prosess fra første spørsmål til overtakelse</h2>
           <div>
-            <CheckCircle2 /> Strukturert prosess
+            <span><CheckCircle2 size={18} /> Strukturert fremdrift</span>
+            <span><CheckCircle2 size={18} /> Dokumenter og neste steg samlet</span>
+            <span><CheckCircle2 size={18} /> Rådgivning på norsk</span>
+            <span><CheckCircle2 size={18} /> Personlig oppfølging underveis</span>
           </div>
-          <div>
-            <CheckCircle2 /> Dokumenter samlet
-          </div>
-          <div>
-            <CheckCircle2 /> Rådgivning på norsk
-          </div>
-          <div>
-            <CheckCircle2 /> Personlig oppfølging
-          </div>
-        </div>
+        </aside>
       </section>
-      <section className="section split">
+      <section className="section split process-after">
         <div>
           <p className="eyebrow">Etter overtakelsen</p>
           <h2>Prosessen stopper ikke hos notar</h2>
@@ -179,12 +175,12 @@ export default function BuyingProcessPage() {
           <h2>Kjøpsprosessen i Spania – spørsmål og svar</h2>
           <p>De vanligste spørsmålene nordmenn stiller om NIE, kostnader, finansiering og prosessen.</p>
         </div>
-        <div className="proof-grid inland-faq">
-          {faq.map((item) => (
-            <article key={item.q}>
-              <h3>{item.q}</h3>
+        <div className="faq-accordion buying-process-faq">
+          {faq.map((item, index) => (
+            <details key={item.q} open={index === 0}>
+              <summary>{item.q}</summary>
               <p>{item.a}</p>
-            </article>
+            </details>
           ))}
         </div>
       </section>

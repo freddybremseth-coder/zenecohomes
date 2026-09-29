@@ -51,7 +51,7 @@ const areaChoices = [
     label: "Costa Cálida",
     places: "San Pedro · San Javier · Los Alcázares · La Manga · Murcia",
     description: "Et alternativ sør for Alicante med nybygg, golf, kyst og ofte et annet prisnivå enn Costa Blanca.",
-    href: "/eiendommer?region=costa-calida",
+    href: "/omrader/costa-calida",
   },
 ];
 
@@ -212,7 +212,7 @@ export default async function Home() {
             <strong>02</strong>
             <h3>Moderne nybygg i fokus</h3>
             <p>Vi sammenligner prosjekt, beliggenhet, pris, kvaliteter, betalingsplan og alternativer.</p>
-            <Link className="text-button" href="/nybygg-costa-blanca">Se nybygg-guiden <ArrowRight size={16} /></Link>
+            <Link className="text-button" href="/guide/nybygg-i-spania">Se nybygg-guiden <ArrowRight size={16} /></Link>
           </article>
           <article>
             <strong>03</strong>

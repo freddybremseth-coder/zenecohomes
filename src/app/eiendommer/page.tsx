@@ -127,7 +127,7 @@ export default async function PropertiesPage({
   };
 
   return (
-    <main>
+    <main className="properties-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero search-hero">
         <p className="eyebrow">Boligsøk i Spania</p>
@@ -212,21 +212,24 @@ export default async function PropertiesPage({
           <button type="submit">Søk</button>
         </form>
       </section>
-      <section className="section">
-        <div className="section-heading">
-          <p className="eyebrow">Bolig til salgs i Spania</p>
-          <h2>Hus, leiligheter og nybygg til salgs i Spania</h2>
-          <p>
-            Her finner du et oppdatert utvalg boliger til salgs i Spania, med hovedvekt på Costa Blanca,
-            Costa Cálida og utvalgte innlandsområder. Start gjerne med område og budsjett, og bruk Boligmatch
-            eller rådgivning hvis du vil ha en kortere og mer relevant shortlist.
-          </p>
-          <div className="hero-actions">
-            <Link className="text-button" href="/omrader">Sammenlign områder</Link>
-            <Link className="text-button" href="/guide/kjope-bolig-i-spania">Guide: kjøpe bolig i Spania</Link>
-            <Link className="text-button" href="/kjopsprosessen">Se kjøpsprosessen</Link>
-            <Link className="text-button" href="/visningstur">Planlegg visningstur</Link>
+      <section className="section property-results-section">
+        <div className="property-intro">
+          <div>
+            <p className="eyebrow">Bolig til salgs i Spania</p>
+            <h2>Finn riktig bolig – ikke bare flest mulig treff</h2>
+            <p>
+              Her finner du hus, leiligheter og nybygg til salgs i Spania, med hovedvekt på Costa Blanca,
+              Costa Cálida og utvalgte innlandsområder. Bruk filtrene til å snevre inn markedet, men vurder
+              alltid område, totalbudsjett og hvordan boligen skal brukes før du forelsker deg i ett objekt.
+            </p>
           </div>
+          <aside className="property-intro-links">
+            <p className="eyebrow">Nyttige neste steg</p>
+            <Link href="/omrader">Sammenlign områder <span>→</span></Link>
+            <Link href="/guide/kjope-bolig-i-spania">Guide: kjøpe bolig i Spania <span>→</span></Link>
+            <Link href="/kjopsprosessen">Se kjøpsprosessen <span>→</span></Link>
+            <Link href="/visningstur">Planlegg visningstur <span>→</span></Link>
+          </aside>
         </div>
         <div className="list-heading">
           <div>

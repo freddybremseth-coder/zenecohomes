@@ -21,7 +21,7 @@ const groups = [
 ];
 
 export default function AreasPage() {
-  return <main>
+  return <main className="areas-page">
     <SiteHeader languageLinks={homeLanguageLinks("no")} />
     <section className="page-hero compact-hero">
       <p className="eyebrow">Områdeguide</p>
@@ -30,8 +30,13 @@ export default function AreasPage() {
     </section>
     <section className="section">
       <div className="area-choice-grid editorial-area-grid">
-        {groups.map(group => <article className="area-choice-card" key={group.title}>
-          <span>{group.places}</span><h2>{group.title}</h2><p>{group.text}</p>
+        {groups.map((group, index) => <article className="area-choice-card" key={group.title}>
+          <div className="area-choice-meta">
+            <span className="area-choice-number">{String(index + 1).padStart(2, "0")}</span>
+            <span className="area-choice-places">{group.places}</span>
+          </div>
+          <h2>{group.title}</h2>
+          <p>{group.text}</p>
           <Link className="text-button" href={group.href}>Utforsk regionen <ArrowRight size={16}/></Link>
         </article>)}
       </div>
@@ -62,7 +67,7 @@ export default function AreasPage() {
       </div>
     </section>
 
-    <section className="section split">
+    <section className="section split area-decision">
       <div><p className="eyebrow">Sammenlign før du bestemmer deg</p><h2>Hva bør du vurdere?</h2><p>Se på reisevei, helårsservice, klima, strand, skole, utleie, prisnivå og hvordan området fungerer utenfor høysesongen.</p><Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">Les områdeguiden <ArrowRight size={16}/></Link></div>
       <div><p className="eyebrow">Boliger</p><h2>Klar for å se konkrete alternativer?</h2><p>Gå videre til boligoversikten når du har snevret inn region eller område.</p><Link className="contact-button" href="/eiendommer">Se boliger</Link></div>
     </section>
