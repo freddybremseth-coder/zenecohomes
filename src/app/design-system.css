@@ -5,6 +5,7 @@
   --ze-sea: #315e64;
   --ze-sage: #7b8877;
   --ze-travertine: #c6a76d;
+  --ze-accent-text: #806436;
   --ze-line: rgba(23, 32, 39, 0.12);
   --ze-radius-sm: 10px;
   --ze-radius-md: 16px;
@@ -16,8 +17,9 @@
   --sans: var(--font-sans), Arial, sans-serif;
   --dark: var(--ze-ink);
   --paper: var(--ze-paper);
-  --gold: var(--ze-travertine);
-  --gold-dark: #a98d5a;
+  --gold: var(--ze-accent-text);
+  --gold-dark: #745a2f;
+  --muted: #596976;
 }
 
 body {
@@ -80,7 +82,7 @@ h3,
 }
 
 .eyebrow {
-  color: var(--ze-travertine);
+  color: var(--ze-accent-text);
 }
 
 .site-header {
