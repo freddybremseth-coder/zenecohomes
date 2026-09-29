@@ -66,6 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/omrader/innlandet/tomter",
     "/bedriftshytte-spania",
     "/bedriftshytte-spania/guider",
+    "/bedriftshytte-spania/partnere",
     "/de/inland",
     "/en/inland",
     "/es/interior",
