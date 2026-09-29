@@ -131,8 +131,11 @@ export const seoLandingPages: SeoLandingPage[] = [
       },
     ],
     related: [
+      { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
+      { label: "Bankgaranti ved nybygg i Spania", href: "/guide/bankgaranti-nybygg-spania" },
+      { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+      { label: "Energieffektive nybygg i Spania", href: "/guide/energieffektive-nybygg-spania" },
       { label: "Bør man kjøpe bolig i Spania nå, eller vente?", href: "/guide/kjop-bolig-i-spania-na-eller-vente" },
-      { label: "Kjøpsprosess for bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
       { label: "Boliger til salgs", href: "/eiendommer" },
     ],
   },
@@ -206,7 +209,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     seoTitle: "Eiendomsrådgiver i Spania | Norsk hjelp ved boligkjøp",
     seoDescription:
       "Eiendomsrådgiver i Spania: få norsk hjelp med områdevalg, boligsøk, prisvurdering, forhandling, advokat og trygg kjøpsprosess fra første samtale.",
-    primaryCta: { label: "Kontakt rådgiver", href: "/#kontakt" },
+    primaryCta: { label: "Kontakt rådgiver", href: "/booking" },
     secondaryCta: { label: "Hvorfor rådgiver er viktig", href: "/magasin/hvorfor-god-eiendomsradgiver-er-viktig" },
     sections: [
       {
