@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.zenecohomes.com"),
   title: {
     default: "Zen Eco Homes | Moderne nybygg i Spania",
-    template: "%s | Zen Eco Homes",
+    template: "%s",
   },
   description:
     "Norsk eiendomsrådgivning for moderne nybygg, villaer, leiligheter og tomter på Costa Blanca, Costa Blanca Sør, Costa Cálida og utvalgte innlandsområder.",
