@@ -39,6 +39,34 @@ const nextConfig: NextConfig = {
       permanent: true,
     }));
 
+    // Tidligere guideinnhold har ligget under /kjopsprosess. Fang hele den gamle
+    // flaten, ikke bare URL-ene vi tilfeldigvis kjenner fra Search Console.
+    const legacyKjopsprosessSlugs = [
+      "omradeguide-eiendomskjop-i-spania",
+      "guide-tomtekjop-bygging-i-spania",
+      "kjop-bolig-i-spania-na-eller-vente",
+      "finansiering-notar-nie-boligkjop-spania",
+      "omkostninger-nybygg-spania",
+      "bankgaranti-nybygg-spania",
+      "nybygg-finestrat-omradeguide",
+      "utleie-inntektspotensial-bolig-spania",
+      "lopende-kostnader-eie-bolig-spania",
+      "innlandet-finca-olivengard-spania",
+      "flytte-til-spania-pensjonist",
+      "energieffektive-nybygg-spania",
+      "juridiske-fallgruver-boligkjop-spania",
+      "skatt-ved-salg-bolig-spania",
+      "arv-gaveskatt-bolig-spania",
+      "nie-skattenummer-spania",
+      "spansk-bankkonto-valutaveksling",
+      "boliglan-spansk-bank-nordmenn",
+    ];
+    const legacyKjopsprosessRedirects = legacyKjopsprosessSlugs.map((slug) => ({
+      source: `/kjopsprosess/${slug}`,
+      destination: `/guide/${slug}`,
+      permanent: true,
+    }));
+
     return [
       {
         source: "/:path*",
@@ -54,13 +82,6 @@ const nextConfig: NextConfig = {
       { source: "/kjopsprosess", destination: "/kjopsprosessen", permanent: true },
       { source: "/guide/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
       { source: "/magasin/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
-      { source: "/kjopsprosess/lopende-kostnader-eie-bolig-spania", destination: "/guide/lopende-kostnader-eie-bolig-spania", permanent: true },
-      { source: "/kjopsprosess/juridiske-fallgruver-boligkjop-spania", destination: "/guide/juridiske-fallgruver-boligkjop-spania", permanent: true },
-      { source: "/kjopsprosess/skatt-ved-salg-bolig-spania", destination: "/guide/skatt-ved-salg-bolig-spania", permanent: true },
-      { source: "/kjopsprosess/arv-gaveskatt-bolig-spania", destination: "/guide/arv-gaveskatt-bolig-spania", permanent: true },
-      { source: "/kjopsprosess/nie-skattenummer-spania", destination: "/guide/nie-skattenummer-spania", permanent: true },
-      { source: "/kjopsprosess/spansk-bankkonto-valutaveksling", destination: "/guide/spansk-bankkonto-valutaveksling", permanent: true },
-      { source: "/kjopsprosess/boliglan-spansk-bank-nordmenn", destination: "/guide/boliglan-spansk-bank-nordmenn", permanent: true },
       { source: "/juridiske-fallgruver-boligkjop-spania", destination: "/guide/juridiske-fallgruver-boligkjop-spania", permanent: true },
       { source: "/nie-skattenummer-spania", destination: "/guide/nie-skattenummer-spania", permanent: true },
       { source: "/hvorfor-god-eiendomsradgiver-er-viktig", destination: "/magasin/hvorfor-god-eiendomsradgiver-er-viktig", permanent: true },
@@ -75,9 +96,8 @@ const nextConfig: NextConfig = {
       { source: "/inland/:sted", destination: "/omrader/innlandet/:sted", permanent: true },
       { source: "/tomter", destination: "/omrader/innlandet/tomter", permanent: true },
       { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
-      { source: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania", destination: "/guide/finansiering-notar-nie-boligkjop-spania", permanent: true },
-      { source: "/kjopsprosess/omkostninger-nybygg-spania", destination: "/guide/omkostninger-nybygg-spania", permanent: true },
-      { source: "/kjopsprosess/bankgaranti-nybygg-spania", destination: "/guide/bankgaranti-nybygg-spania", permanent: true },
+      { source: "/guide/flytte-til-spania-som-pensjonist", destination: "/guide/flytte-til-spania-pensjonist", permanent: true },
+      ...legacyKjopsprosessRedirects,
       ...siloRedirects,
     ];
   },
