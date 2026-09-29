@@ -437,6 +437,437 @@ export const extraArticles: Article[] = [
       },
     ],
   },
+  {
+    slug: "hva-far-du-for-4-6-8-10-millioner-costa-blanca",
+    title: "Hva får du for 4, 6, 8 og 10 millioner kroner på Costa Blanca?",
+    excerpt:
+      "Fire millioner kroner og ti millioner kroner gir svært ulike muligheter på Costa Blanca. Vi oversetter norske budsjetter til euro og viser hva prisnivået betyr i praksis.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Budsjett og marked",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/finansiering.svg",
+    imageAlt: "Costa Blanca-boliger sammenlignet etter budsjett i norske kroner",
+    seoTitle: "Hva får du for 4, 6, 8 og 10 millioner på Costa Blanca?",
+    seoDescription:
+      "Se hva norske budsjetter på 4, 6, 8 og 10 millioner kroner tilsvarer i euro og hvilke boligtyper og områder som kan være aktuelle på Costa Blanca.",
+    keywords: [
+      "bolig Costa Blanca pris",
+      "bolig Spania 4 millioner",
+      "bolig Spania 6 millioner",
+      "bolig Spania 8 millioner",
+      "bolig Spania 10 millioner",
+      "Costa Blanca budsjett",
+      "bolig i Spania norske kroner",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Mange norske kjøpere tenker naturlig nok i kroner, mens boligmarkedet i Spania prises i euro. Det første steget er derfor å oversette budsjettet til euro og deretter se hva som faktisk finnes i de områdene du vurderer.",
+      "Med en EUR/NOK-kurs rundt 10,87 den 29. september 2026 tilsvarer 4 millioner kroner omtrent 368.000 euro, 6 millioner omtrent 552.000 euro, 8 millioner omtrent 736.000 euro og 10 millioner omtrent 920.000 euro. Dette er kjøpesum før skatter, gebyrer og øvrige kostnader.",
+      "Eksemplene nedenfor er et øyeblikksbilde. Tilgjengelighet og priser endres fort, så poenget er ikke å love en bestemt bolig til et bestemt budsjett, men å vise hvordan mulighetsrommet endrer seg.",
+    ],
+    sections: [
+      {
+        heading: "Rundt 4 millioner kroner: leilighet og inngang til nybyggmarkedet",
+        body: [
+          "Et budsjett på rundt 4 millioner kroner tilsvarer cirka 368.000 euro før kjøpskostnader. I Zen Eco Homes-databasen i slutten av september lå det blant annet boliger i Villajoyosa rundt 275.000–360.000 euro, avhengig av størrelse, prosjekt og beliggenhet.",
+          "I dette budsjettet blir prioriteringene tydelige. Du kan finne moderne leiligheter og enkelte gode innganger til nybygg, men nærhet til strand, havutsikt, antall soverom og stor terrasse kan raskt presse prisen opp.",
+        ],
+        bullets: [
+          "Typisk sterkest for leiligheter fremfor frittliggende villa.",
+          "Villajoyosa kan gi flere alternativer enn de dyreste delene av Albir og Altea.",
+          "Vurder totalbudsjettet, ikke bare annonsert kjøpesum.",
+          "Prioriter område og bruk før du filtrerer på flest mulig kvadratmeter.",
+        ],
+      },
+      {
+        heading: "Rundt 6 millioner kroner: langt større valgfrihet",
+        body: [
+          "Seks millioner kroner tilsvarer omtrent 552.000 euro med samme valutakurs. Her åpner markedet seg betydelig, både for større leiligheter og enkelte villaalternativer.",
+          "Som eksempel lå det i slutten av september villaer i Benidorm-området fra litt over 500.000 euro. Det betyr ikke at alle slike boliger vil passe en norsk kjøper, men det illustrerer hvordan boligtype og plass endrer seg når budsjettet går fra rundt 350.000 til over 500.000 euro.",
+        ],
+        bullets: [
+          "Flere alternativer med tre soverom.",
+          "Større mulighet for parkering, uteareal og bedre fellesanlegg.",
+          "Enkelte villaer kommer innenfor rekkevidde.",
+          "Du kan i større grad velge mellom beliggenhet og boligstørrelse i stedet for å måtte gi avkall på begge.",
+        ],
+      },
+      {
+        heading: "Rundt 8 millioner kroner: villa blir et reelt hovedalternativ",
+        body: [
+          "Åtte millioner kroner tilsvarer cirka 736.000 euro. I Finestrat fantes det ved utgangen av september flere villaer rundt 700.000–735.000 euro, blant annet boliger med tre soverom, basseng og egne uteområder.",
+          "På dette nivået er det ikke lenger bare spørsmålet om du har råd til en villa. Det viktigere spørsmålet er hvilken type villa du vil ha: større tomt, bedre utsikt, mer gangavstand, nyere prosjekt eller lavere driftsbehov.",
+        ],
+      },
+      {
+        heading: "Rundt 10 millioner kroner: mer kvalitet, men fortsatt store forskjeller",
+        body: [
+          "Ti millioner kroner tilsvarer omtrent 920.000 euro før kjøpskostnader. Budsjettet gir tilgang til et bredt utvalg moderne villaer og bedre plasserte leiligheter, men det betyr ikke at alle områder tilbyr det samme.",
+          "I Finestrat lå det samtidig flere villaer i området 745.000–805.000 euro. Det gir rom til å vurdere både selve boligen og tillegg som møblering, oppgraderinger eller høyere kjøpskostnader. I mer etablerte og knappe kystområder kan det samme budsjettet kjøpe mindre areal, men en beliggenhet som enkelte kjøpere verdsetter høyere.",
+        ],
+      },
+      {
+        heading: "Den viktigste forskjellen er ikke antall millioner, men hva du prioriterer",
+        body: [
+          "To kjøpere med samme budsjett kan ende med helt forskjellige boliger. Den ene velger en mindre leilighet med gangavstand til strand og restauranter. Den andre velger villa med basseng og utsikt, men aksepterer bil i hverdagen.",
+          "Derfor bruker vi budsjettet som et filter, ikke som selve strategien. Før vi lager shortlist bør vi vite om boligen er feriebolig, fremtidig helårsbolig, familiebase eller et sted som også skal fungere godt ved videresalg.",
+        ],
+      },
+      {
+        heading: "Husk kjøpskostnadene før du setter makspris",
+        body: [
+          "Hvis 6 millioner kroner er hele kapitalrammen din, bør du normalt ikke filtrere boliger helt opp mot 6 millioner i ren kjøpesum. Skatter, notar, register, juridisk bistand og andre kostnader kommer i tillegg, og nivået avhenger blant annet av om du kjøper nybygg eller bruktbolig.",
+          "Det er derfor bedre å starte med et totalbudsjett og regne bakover til en realistisk maksimal kjøpesum.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bestem om beløpet i norske kroner er maksimal kjøpesum eller totalramme inkludert kostnader.",
+      "Velg to eller tre områder som passer hverdagen du ønsker.",
+      "Sammenlign boliger i samme prisklasse på tvers av områdene.",
+      "Be om en shortlist med oppdatert tilgjengelighet før du bestiller visning.",
+    ],
+    faq: [
+      {
+        question: "Hvor mye er 4 millioner kroner i euro?",
+        answer:
+          "Med en illustrativ kurs på rundt 10,87 kroner per euro 29. september 2026 tilsvarer 4 millioner kroner omtrent 368.000 euro. Valutakursen endres løpende.",
+      },
+      {
+        question: "Kan jeg kjøpe villa på Costa Blanca for 6 millioner kroner?",
+        answer:
+          "Det kan være mulig i enkelte områder og prosjekter, men boligtype, beliggenhet og tilgjengelighet varierer. I slutten av september 2026 fantes det blant annet villaalternativer i Benidorm-området litt over 500.000 euro.",
+      },
+      {
+        question: "Bør jeg regne budsjettet i NOK eller euro?",
+        answer:
+          "Bruk begge. Tenk totaløkonomien din i norske kroner, men sett en tydelig kjøpsramme i euro slik at du kan sammenligne boliger og kostnader på samme grunnlag.",
+      },
+    ],
+    cta: { label: "Se boliger til salgs", href: "/eiendommer" },
+  },
+  {
+    slug: "bolig-500000-euro-totalbudsjett-spania",
+    title: "En bolig til €500.000 koster ikke €500.000 – slik bør du lage totalbudsjettet",
+    excerpt:
+      "Kjøpesummen er bare én del av regnestykket. Vi bruker en bolig til 500.000 euro som eksempel og viser hvordan norske kjøpere bør tenke totalbudsjett.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Kjøpsøkonomi",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/finansiering.svg",
+    imageAlt: "Regnestykke for total kostnad ved boligkjøp i Spania",
+    seoTitle: "Hva koster en bolig til €500.000 i Spania totalt nå?",
+    seoDescription:
+      "En bolig til 500.000 euro koster mer enn kjøpesummen. Se hvordan skatter, gebyrer, juridisk hjelp, finansiering og valuta påvirker totalbudsjettet.",
+    keywords: [
+      "kostnader boligkjøp Spania",
+      "500000 euro bolig Spania",
+      "omkostninger bolig Spania",
+      "totalbudsjett bolig Spania",
+      "kjøpe bolig Spania kostnader",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Det er lett å finne en bolig til 500.000 euro og tenke at dette er budsjettet man trenger. I praksis må en kjøper skille mellom kjøpesum, kjøpskostnader, finansiering, valuta og kostnader etter overtakelse.",
+      "Det viktigste er ikke å bruke én standardprosent ukritisk, men å lage et konkret regnestykke for den aktuelle boligen. Nybygg og bruktbolig beskattes forskjellig, og juridiske, tekniske og bankrelaterte kostnader kan variere.",
+    ],
+    sections: [
+      {
+        heading: "Kjøpesummen er bare startpunktet",
+        body: [
+          "På en bolig til 500.000 euro er selve kjøpesummen den største posten, men den er ikke den eneste. Skatt ved kjøpet, notar, register og juridisk bistand må inn i totalen. Ved finansiering kommer også bankens kostnader og krav inn i vurderingen.",
+          "Zen Eco Homes viser på boligsidene et bredt orienteringsintervall for tilleggskostnader, men den endelige beregningen må gjøres for den konkrete transaksjonen og kjøperens situasjon.",
+        ],
+      },
+      {
+        heading: "Nybygg og bruktbolig må regnes forskjellig",
+        body: [
+          "Ved nybygg er blant annet merverdiavgift og regional dokumentavgift sentrale poster. Ved bruktbolig er det i stedet overføringsskatt som normalt er den største skatteposten. Reglene og satsene kan endres, og derfor bør den juridiske rådgiveren bekrefte det konkrete regnestykket før reservasjon eller kontrakt.",
+          "Det betyr at to boliger med samme pris på 500.000 euro kan få ulik total kostnad.",
+        ],
+      },
+      {
+        heading: "Valutakursen kan flytte totalen mer enn mange gebyrer",
+        body: [
+          "For en norsk kjøper med kapital i kroner er EUR/NOK en del av kjøpesummen. Ved en kurs rundt 10,87 koster 500.000 euro omtrent 5,44 millioner kroner før øvrige kostnader.",
+          "Hvis euroen i stedet koster 11,50 kroner, blir den samme kjøpesummen 5,75 millioner kroner. Forskjellen er over 300.000 kroner uten at selgeren har endret prisen.",
+        ],
+      },
+      {
+        heading: "Finansiering påvirker hvor mye egenkapital du faktisk trenger",
+        body: [
+          "Hvis deler av kjøpet finansieres med lån, må du skille mellom kjøpesum, egenkapital og kostnader som banken ikke nødvendigvis finansierer. Spanske banker vurderer blant annet inntekt, gjeld, alder, bostedsstatus og takst.",
+          "En norsk finansieringsløsning kan gi andre fordeler og ulemper. Poenget er at lånerammen ikke bør vurderes isolert fra valuta og kontantbehov ved kjøpet.",
+        ],
+      },
+      {
+        heading: "Et totalbudsjett må også dekke tiden etter overtakelse",
+        body: [
+          "Møbler, hvitevarer, strømavtale, internett, forsikring, felleskostnader, lokal eiendomsskatt og vedlikehold kommer etter at nøklene er overtatt. Nybygg kan også ha tilvalg som ikke inngår i grunnprisen.",
+          "For en feriebolig kan det være smart å sette av en egen reserve til oppstart og første driftsår i stedet for å bruke all tilgjengelig kapital på maksimal kjøpesum.",
+        ],
+      },
+      {
+        heading: "Slik ville jeg satt opp regnestykket",
+        bullets: [
+          "1. Maksimal totalramme i norske kroner.",
+          "2. Valutakurs og ønsket sikkerhetsmargin.",
+          "3. Realistisk maksimal kjøpesum i euro.",
+          "4. Kjøpsskatt og transaksjonskostnader for den konkrete boligtypen.",
+          "5. Finansieringskostnader og nødvendig egenkapital.",
+          "6. Møblering, tilvalg og reserve etter overtakelse.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Sett totalrammen før du bestemmer maksimal boligpris.",
+      "Skill mellom nybygg og bruktbolig i kostnadsberegningen.",
+      "La advokat og bank bekrefte konkrete tall før reservasjon.",
+      "Behold en likviditetsreserve etter overtakelsen.",
+    ],
+    faq: [
+      {
+        question: "Hvor mye bør jeg legge til boligprisen i Spania?",
+        answer:
+          "Det finnes ikke én prosent som passer alle kjøp. Nybygg og bruktbolig har ulike skatter, og kostnader til notar, register, advokat og eventuell bank kommer i tillegg. Lag et konkret regnestykke før reservasjon.",
+      },
+      {
+        question: "Hvor mye er 500.000 euro i norske kroner?",
+        answer:
+          "Ved en kurs rundt 10,87 kroner per euro tilsvarer 500.000 euro omtrent 5,44 millioner kroner. Valutakursen endres løpende.",
+      },
+      {
+        question: "Bør jeg bruke hele budsjettet på kjøpesummen?",
+        answer:
+          "Normalt bør du ha rom for skatter, gebyrer, juridisk bistand og kostnader etter overtakelsen. Maksimal kjøpesum bør derfor ligge under maksimal totalramme.",
+      },
+    ],
+    cta: { label: "Se komplett kjøperguide", href: "/guide/kjope-bolig-i-spania" },
+  },
+  {
+    slug: "lan-i-norge-eller-spania-boligkjop",
+    title: "Lån i Norge eller Spania når du kjøper bolig – hva bør du sammenligne?",
+    excerpt:
+      "Norsk sikkerhet, spansk boliglån, renter, valuta og egenkapital påvirker kjøpet på ulike måter. Her er regnestykket norske kjøpere bør gjøre før de velger finansiering.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Finansiering",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/boliglan-bank.svg",
+    imageAlt: "Sammenligning av norsk og spansk finansiering ved boligkjøp i Spania",
+    seoTitle: "Lån i Norge eller Spania ved boligkjøp – hva bør du vite?",
+    seoDescription:
+      "Skal du finansiere bolig i Spania med lån i Norge eller spansk bank? Sammenlign rente, sikkerhet, valuta, egenkapital, løpetid og kontantbehov.",
+    keywords: [
+      "lån i Norge eller Spania",
+      "finansiere bolig i Spania",
+      "spansk boliglån nordmann",
+      "lån til bolig i Spania",
+      "boliglån Spania rente",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "For mange norske kjøpere er finansieringen mer komplisert enn selve boligvalget. Noen kan øke lån med sikkerhet i norsk bolig, andre søker spansk boliglån, og enkelte kombinerer egenkapital og finansiering i begge land.",
+      "Det finnes ikke én løsning som alltid er best. En korrekt sammenligning må se på rente, løpetid, sikkerhet, belåningsgrad, valutarisiko, etableringskostnader og hvor mye kontanter du trenger ved kjøpet.",
+    ],
+    sections: [
+      {
+        heading: "Lån i Norge: enkelt å forstå, men ikke automatisk billigst",
+        body: [
+          "Har du ledig sikkerhet i norsk bolig kan det være praktisk å finansiere hele eller deler av Spania-kjøpet i Norge. Du kjenner banken, lånet er i samme valuta som eventuell norsk inntekt, og oppgjøret i Spania kan gjennomføres med høy egenkapital.",
+          "Ulempen er at norsk rente kan være høyere enn finansieringsalternativer i euro, og du øker samtidig belåningen på eiendommen i Norge. Rentekostnad og risiko må derfor vurderes for hele husholdningen, ikke bare Spania-boligen.",
+        ],
+      },
+      {
+        heading: "Lån i Spania: sikkerheten ligger i boligen du kjøper",
+        body: [
+          "Et spansk boliglån bruker normalt den spanske boligen som sikkerhet. For en norsk kjøper kan det være attraktivt fordi finansieringen kobles direkte til eiendommen i Spania.",
+          "Banken vurderer økonomi, dokumentasjon og verdi på boligen, og ikke-residenter kan møte andre krav til belåningsgrad enn personer som er fast bosatt i Spania. Derfor bør låneramme avklares før du legger opp boligjakten rundt et bestemt prisnivå.",
+        ],
+      },
+      {
+        heading: "Valuta er den skjulte forskjellen mellom løsningene",
+        body: [
+          "Har du inntekt og formue i norske kroner, men lån og bolig i euro, får du en valutakomponent i privatøkonomien. En sterkere krone gjør eurobetalinger billigere i NOK, mens en svakere krone gjør dem dyrere.",
+          "Et lån i Norge kan redusere valutarisikoen på selve lånebetalingen hvis inntekten også er i kroner, men du må fortsatt kjøpe euro til boligen. Et lån i Spania reduserer behovet for å veksle hele kjøpesummen med én gang, men gir i stedet løpende euroforpliktelser.",
+        ],
+      },
+      {
+        heading: "Renten alene forteller ikke hvilken løsning som er best",
+        body: [
+          "En rente som er noen tideler lavere kan se attraktiv ut, men totalen påvirkes også av etableringskostnader, krav til forsikringer eller andre bankprodukter, løpetid og hvor mye egenkapital som bindes.",
+          "Sammenlign effektiv kostnad og kontantstrøm over flere år, ikke bare første måneds rente.",
+        ],
+      },
+      {
+        heading: "Hva bør du sammenligne før du bestemmer deg?",
+        bullets: [
+          "Effektiv rente og om den er fast eller flytende.",
+          "Hvor mye banken faktisk vil finansiere av kjøpesummen eller taksten.",
+          "Hvor mye egenkapital og kontanter du må ha tilgjengelig ved kjøpet.",
+          "Valutaen på inntekten din og valutaen på lånet.",
+          "Løpetid og månedlig betaling.",
+          "Kostnader ved etablering, forsikring og eventuelle tilleggstjenester.",
+          "Hva som skjer med økonomien dersom EUR/NOK eller rentene beveger seg tydelig.",
+        ],
+      },
+      {
+        heading: "Min anbefalte arbeidsrekkefølge",
+        body: [
+          "Avklar først hva du komfortabelt kan bruke på bolig totalt. Deretter innhenter du et realistisk norsk finansieringsalternativ og et realistisk spansk alternativ. Først da sammenligner du boligbudsjettet i euro.",
+          "På denne måten unngår du å forelske deg i boliger basert på en låneramme som senere viser seg å være for optimistisk.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Be norsk bank beregne faktisk kostnad ved ønsket ekstra finansiering.",
+      "Be en spansk bank eller finansieringspartner vurdere mulig låneramme.",
+      "Sammenlign kontantbehov, rente, valuta og løpetid.",
+      "Sett maksimal kjøpesum i euro etter at finansieringen er realistisk avklart.",
+    ],
+    faq: [
+      {
+        question: "Kan nordmenn få boliglån i Spania?",
+        answer:
+          "Ja. Spanske banker tilbyr boliglån til utenlandske kjøpere, men krav til dokumentasjon, belåningsgrad og vilkår varierer mellom banker og kundens økonomiske profil.",
+      },
+      {
+        question: "Er det billigere å låne i Spania enn i Norge?",
+        answer:
+          "Ikke nødvendigvis. Du må sammenligne effektiv rente, løpetid, etableringskostnader, krav til egenkapital og valutarisiko på samme tidspunkt.",
+      },
+      {
+        question: "Bør jeg få finansiering på plass før jeg ser på boliger?",
+        answer:
+          "Det er en klar fordel å kjenne en realistisk finansieringsramme før du snevrer inn boligjakten, særlig hvis lånet utgjør en betydelig del av kjøpesummen.",
+      },
+    ],
+    cta: { label: "Les guiden om spansk boliglån", href: "/guide/boliglan-spansk-bank-nordmenn" },
+  },
+  {
+    slug: "albir-finestrat-villajoyosa-benidorm-hvor-kjope",
+    title: "Albir, Finestrat, Villajoyosa eller Benidorm – hvor bør du kjøpe?",
+    excerpt:
+      "Fire populære områder nord på Costa Blanca gir svært forskjellige hverdager. Vi sammenligner Albir, Finestrat, Villajoyosa og Benidorm ut fra boligtype, beliggenhet og livsstil.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Områder",
+    readingTime: "9 min lesing",
+    image: "/assets/magasin-covers/omradevalg.svg",
+    imageAlt: "Kystområdene Albir, Finestrat, Villajoyosa og Benidorm på Costa Blanca",
+    seoTitle: "Albir, Finestrat, Villajoyosa eller Benidorm – hvor kjøpe?",
+    seoDescription:
+      "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm før boligkjøp. Se forskjeller i boligtyper, hverdag, gangavstand, prispress og hvem områdene passer for.",
+    keywords: [
+      "Albir eller Finestrat",
+      "Villajoyosa eller Benidorm",
+      "hvor kjøpe Costa Blanca",
+      "bolig Albir",
+      "bolig Finestrat",
+      "bolig Villajoyosa",
+      "bolig Benidorm",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Albir, Finestrat, Villajoyosa og Benidorm ligger relativt nær hverandre, men de gir fire ganske forskjellige måter å bo på. Derfor er dette først og fremst et livsstilsvalg – og deretter et boligvalg.",
+      "For norske kjøpere er det lett å sammenligne annonsepris og antall kvadratmeter. Men avstand til strand, behov for bil, helårsservice, terreng, boligtype og hvor mye nybygg som finnes kan ha større betydning for hvor fornøyd du blir.",
+    ],
+    sections: [
+      {
+        heading: "Albir: kompakt, etablert og lett å bruke i hverdagen",
+        body: [
+          "Albir tiltrekker mange som ønsker et oversiktlig område med strandpromenade, restauranter, butikker og et etablert internasjonalt miljø. For kjøpere som vil kunne gå mye i hverdagen er det en tydelig styrke.",
+          "Samtidig er tilgangen på helt nytt boligtilbud mer begrenset enn i store utviklingsområder. Det kan gjøre gode boliger knappe, og du betaler ofte mye for riktig beliggenhet.",
+        ],
+        bullets: [
+          "Passer for: kjøpere som prioriterer gangavstand og etablert nærmiljø.",
+          "Styrke: kompakt hverdag og kort vei mellom strand og service.",
+          "Vurder: mindre nybyggtilbud og høy pris på attraktive beliggenheter.",
+        ],
+      },
+      {
+        heading: "Finestrat: moderne nybygg, utsikt og mer plass",
+        body: [
+          "Finestrat har et stort og variert nybyggmarked, særlig i områdene mellom fjellet, kjøpesentrene og Benidorm. Her finner du både leilighetsprosjekter og moderne villaer med basseng og utsikt.",
+          "Til gjengjeld er mange boligområder mer bilorienterte enn Albir og sentrale deler av Benidorm. Det er derfor viktig å kontrollere de reelle avstandene, ikke bare kilometer på kartet.",
+        ],
+        bullets: [
+          "Passer for: kjøpere som ønsker moderne bolig og større utvalg av nybygg.",
+          "Styrke: villaer, nyere prosjekter, utsikt og god tilgang til handel.",
+          "Vurder: bilbehov, høydeforskjeller og hvilken del av Finestrat boligen faktisk ligger i.",
+        ],
+      },
+      {
+        heading: "Villajoyosa: strandby med stadig større boliginteresse",
+        body: [
+          "Villajoyosa kombinerer en tydelig spansk byidentitet med strand, havn og voksende boligtilbud. Det finnes både eldre byboliger og nyere prosjekter langs kysten.",
+          "For kjøpere som ønsker et sted som føles mindre som et rendyrket ferieområde kan Villajoyosa være interessant. Samtidig varierer de ulike delene av kommunen mye når det gjelder gangavstand og service.",
+        ],
+        bullets: [
+          "Passer for: kjøpere som ønsker kystby, strand og mer lokal byfølelse.",
+          "Styrke: flere prispunkter og ulike typer boligmiljø.",
+          "Vurder: stor forskjell mellom sentrum, strandnære prosjekter og ytre deler av kommunen.",
+        ],
+      },
+      {
+        heading: "Benidorm: mest by, mest service og svært ulike delmarkeder",
+        body: [
+          "Benidorm er langt mer enn høyhus og feriehoteller. Poniente, Levante, sentrum og boligområdene rundt byen gir svært forskjellige opplevelser.",
+          "Byen har et nivå av helårsservice som få andre steder på Costa Blanca kan matche. Det er attraktivt for kjøpere som vil ha restauranter, strand, kollektivtransport og byliv tett på. Samtidig må den konkrete mikrobeliggenheten vurderes nøye fordi støy, trafikk og turisttrykk varierer mye.",
+        ],
+        bullets: [
+          "Passer for: kjøpere som ønsker by, strand og mye helårsservice.",
+          "Styrke: bredt tilbud av aktiviteter og tjenester.",
+          "Vurder: velg delområde nøye; Benidorm er ikke ett homogent marked.",
+        ],
+      },
+      {
+        heading: "Samme budsjett gir fire forskjellige kjøp",
+        body: [
+          "I Albir kan en kjøper akseptere mindre bolig for å få gangavstand og et etablert miljø. I Finestrat kan samme budsjett i større grad brukes på nyere bolig, utsikt eller villa. I Villajoyosa kan prisen gi en annen balanse mellom kyst, by og areal. I Benidorm varierer regnestykket kraftig mellom Poniente, sentrum og områdene rundt.",
+          "Derfor bør du ikke starte med spørsmålet «hvor får jeg flest kvadratmeter?». Start med spørsmålet «hvilken hverdag vil jeg kjøpe?».",
+        ],
+      },
+      {
+        heading: "En enkel måte å velge område på",
+        table: {
+          headers: ["Hvis du prioriterer", "Se først på"],
+          rows: [
+            ["Gangavstand, etablert miljø og roligere kysthverdag", "Albir"],
+            ["Moderne nybygg, villa og utsikt", "Finestrat"],
+            ["Spansk kystby, strand og flere prispunkter", "Villajoyosa"],
+            ["Byliv, strand, transport og helårsservice", "Benidorm"],
+          ],
+        },
+      },
+    ],
+    nextSteps: [
+      "Velg de to områdene som best passer hverdagen du ønsker.",
+      "Sammenlign faktiske boliger i samme budsjett i begge områdene.",
+      "Kontroller gangavstand, stigning, trafikk og service på stedet.",
+      "Bruk visningsturen til å velge område før du velger endelig bolig.",
+    ],
+    faq: [
+      {
+        question: "Er Albir dyrere enn Finestrat?",
+        answer:
+          "Prisnivået varierer med boligtype og mikrobeliggenhet. Albir har et mer begrenset tilbud av nytt, mens Finestrat har mange moderne prosjekter. Sammenlign konkrete boliger fremfor bare kommunegjennomsnitt.",
+      },
+      {
+        question: "Er Villajoyosa et godt alternativ til Benidorm?",
+        answer:
+          "For kjøpere som ønsker strand og byliv, men en annen lokal karakter enn Benidorm, kan Villajoyosa være et relevant alternativ. Hvilket som passer best avhenger av ønsket hverdag og den konkrete boligen.",
+      },
+      {
+        question: "Hvilket område passer best uten bil?",
+        answer:
+          "Sentrale deler av Albir og Benidorm kan være praktiske for en hverdag med mye til fots. I Finestrat er bil oftere viktig, mens Villajoyosa avhenger sterkt av hvilken del av kommunen boligen ligger i.",
+      },
+    ],
+    cta: { label: "Sammenlign områder på Costa Blanca", href: "/omrader/costa-blanca-nord" },
+  }
 ];
 
 export const allArticles: Article[] = [...baseArticles, ...extraArticles, ...corporateArticles];
