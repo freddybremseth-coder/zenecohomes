@@ -193,15 +193,11 @@ export function navLinks(locale: SiteLocale): NavLink[] {
   }
   return [
     { label: "Boliger", href: "/eiendommer" },
-    { label: "Innlandet", href: "/inland" },
-    { label: "Tomter", href: "/tomter" },
     { label: "Områder", href: "/omrader" },
-    { label: "Bedrift", href: "/bedriftshytte-spania" },
-    { label: "Keyholding", href: CARE_URL, external: true },
-    { label: "Kjøpsprosess", href: "/kjopsprosessen" },
-    { label: "Magasin", href: "/magasin" },
-    { label: "Om Freddy", href: "/om-freddy" },
-    { label: "Min side", href: "/min-side", cta: true },
+    { label: "Kjøpe bolig", href: "/guide/kjope-bolig-i-spania" },
+    { label: "Om oss", href: "/om-oss" },
+    { label: "Kundeomtaler", href: "/kundeomtaler" },
+    { label: "Få rådgivning", href: "/booking", cta: true },
   ];
 }
 
