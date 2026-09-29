@@ -167,7 +167,7 @@ export default async function MagazinePage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Ser du etter kjøperguider?</p>
-          <h2>SEO-guidene ligger samlet under Guide</h2>
+          <h2>Kjøperguidene ligger samlet under Guide</h2>
           <p>
             Vi har ikke fjernet artiklene. De søkeorienterte guidene om kjøp, NIE, bank, juridikk, kostnader,
             tomt og nybygg ligger samlet i en tydelig guide-hub, mens Magasin brukes til redaksjonelt innhold.
