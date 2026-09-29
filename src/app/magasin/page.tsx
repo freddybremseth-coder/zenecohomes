@@ -13,7 +13,6 @@ const booksUrl = "https://books.freddybremseth.com";
 const bookUrl = (slug: string) => `${booksUrl}/book/${slug}`;
 
 const articleCovers: Record<string, string> = {
-  "boligmarkedet-costa-blanca-hosten-2026": "/assets/areas.jpg",
   "omradeguide-eiendomskjop-i-spania": "/assets/magasin-covers/omradevalg.svg",
   "guide-tomtekjop-bygging-i-spania": "/assets/magasin-covers/tomt-bygg.svg",
   "kjop-bolig-i-spania-na-eller-vente": "/assets/magasin-covers/kjope-na.svg",
@@ -35,10 +34,6 @@ const articleCovers: Record<string, string> = {
   "nie-skattenummer-spania": "/assets/magasin-covers/nie-skattenummer.svg",
   "spansk-bankkonto-valutaveksling": "/assets/magasin-covers/bankkonto-valuta.svg",
   "boliglan-spansk-bank-nordmenn": "/assets/magasin-covers/boliglan-bank.svg",
-  "hva-far-du-for-4-6-8-10-millioner-costa-blanca": "/assets/magasin-covers/finansiering.svg",
-  "bolig-500000-euro-totalbudsjett-spania": "/assets/magasin-covers/finansiering.svg",
-  "lan-i-norge-eller-spania-boligkjop": "/assets/magasin-covers/boliglan-bank.svg",
-  "albir-finestrat-villajoyosa-benidorm-hvor-kjope": "/assets/magasin-covers/omradevalg.svg",
 };
 
 const bookGuides = [
