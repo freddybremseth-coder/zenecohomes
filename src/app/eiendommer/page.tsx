@@ -57,7 +57,7 @@ export async function generateMetadata({
   const isPaginated = Number(params.page || 1) > 1;
 
   return {
-    title: "Boliger til salgs i Spania | Hus, villa og leilighet",
+    title: { absolute: "Boliger til salgs i Spania | Hus, villa og leilighet" },
     description:
       "Boliger til salgs i Spania: se hus, villaer, leiligheter og nybygg på Costa Blanca og Costa Cálida. Filtrer markedet og få norsk kjøpsrådgivning.",
     ...(isFiltered || isPaginated ? { robots: { index: false, follow: true } } : {}),
