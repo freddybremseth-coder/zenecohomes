@@ -64,7 +64,7 @@ export default async function BuyInSpainGuidePage() {
   const featuredApartments = apartments.length ? apartments : inventory.slice(3, 6);
 
   return (
-    <main>
+    <main className="buyer-guide-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
 
       <section className="page-hero compact-hero">
@@ -84,7 +84,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section buyer-guide-overview">
         <div className="section-heading">
           <p className="eyebrow">Kort svar først</p>
           <h2>Hvordan kjøpe feriebolig i Spania?</h2>
@@ -93,7 +93,7 @@ export default async function BuyInSpainGuidePage() {
             visninger, og går deretter gjennom juridisk kontroll, finansiering, kontrakt, notar og overtakelse.
           </p>
         </div>
-        <div className="proof-grid">
+        <div className="proof-grid buyer-guide-steps">
           {steps.map(([title, text], index) => (
             <article key={title}>
               <strong>{String(index + 1).padStart(2, "0")}</strong>
