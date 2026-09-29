@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
 import { ArrowRight, Leaf, ShieldCheck, Snowflake, Sun, Zap } from "lucide-react";
@@ -96,9 +97,7 @@ export default async function Home() {
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
 
       <section id="top" className="hero">
-        <video className="hero-video" autoPlay muted loop playsInline poster="/assets/areas.jpg">
-          <source src="/assets/hero-video.mp4" type="video/mp4" />
-        </video>
+        <Image className="hero-video" src="/assets/areas.jpg" alt="" fill priority sizes="100vw" />
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="eyebrow">Norsk eiendomsrådgivning · Moderne nybygg på Costa Blanca</p>
