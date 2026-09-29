@@ -100,7 +100,26 @@ export function SiteHeader({
       </button>
       <nav className={`nav${menuOpen ? " open" : ""}`} id="site-navigation">
         {links.map((link) =>
-          link.external ? (
+          link.children?.length ? (
+            <div className="nav-dropdown" key={link.href}>
+              <Link className="nav-dropdown-trigger" href={link.href} onClick={() => setMenuOpen(false)}>
+                {link.label}
+              </Link>
+              <div className="nav-submenu" aria-label={`${link.label} undermeny`}>
+                {link.children.map((child) =>
+                  child.external ? (
+                    <a key={child.href} href={child.href} onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer">
+                      {child.label}
+                    </a>
+                  ) : (
+                    <Link key={child.href} href={child.href} onClick={() => setMenuOpen(false)}>
+                      {child.label}
+                    </Link>
+                  ),
+                )}
+              </div>
+            </div>
+          ) : link.external ? (
             <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} target="_blank" rel="noopener noreferrer">
               {link.label}
             </a>
