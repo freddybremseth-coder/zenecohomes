@@ -15,12 +15,12 @@ import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
 export const metadata: Metadata = {
   title: "Innlandet i Alicante og Murcia | Tomt og moderne nybygg",
   description:
-    "Velg hvor du vil bo i innlandet i Alicante og Murcia. Vi finner og kvalitetssikrer riktig tomt, og bruker moderne villaer og nybygg som boligmodeller for prosjektet ditt.",
+    "Innlandet i Spania: sammenlign Pinoso, Biar, Aspe, Villena og andre områder. Se tomter, boligmodeller og råd om bygging og trygg kjøpsprosess.",
   alternates: {
-    canonical: "/inland",
+    canonical: "/omrader/innlandet",
     languages: {
-      "nb-NO": "https://www.zenecohomes.com/inland",
-      "x-default": "https://www.zenecohomes.com/inland",
+      "nb-NO": "https://www.zenecohomes.com/omrader/innlandet",
+      "x-default": "https://www.zenecohomes.com/omrader/innlandet",
       "de-DE": "https://www.zenecohomes.com/de/inland",
       en: "https://www.zenecohomes.com/en/inland",
       "es-ES": "https://www.zenecohomes.com/es/interior",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Innlandet i Alicante og Murcia | Moderne bolig og tomt",
     description:
       "Velg området først. Vi finner riktig tomt og matcher den med en moderne boligmodell som kan gjennomføres innen lokale rammer og totalbudsjett.",
-    url: "https://www.zenecohomes.com/inland",
+    url: "https://www.zenecohomes.com/omrader/innlandet",
     siteName: "Zen Eco Homes",
     locale: "nb_NO",
     type: "website",
@@ -79,7 +79,7 @@ export default async function InlandPage() {
       region: town.region === "Murcia" ? "Murcia Inland" : "Alicante Inland",
       description: displayTownIntro(town),
       image: town.photo,
-      href: `/inland/${town.slug}`,
+      href: `/omrader/innlandet/${town.slug}`,
       propertyHref: "#eiendommer",
     }];
   });
@@ -89,9 +89,9 @@ export default async function InlandPage() {
     "@graph": [
       {
         "@type": ["RealEstateAgent", "LocalBusiness"],
-        "@id": "https://www.zenecohomes.com/inland#agent",
+        "@id": "https://www.zenecohomes.com/omrader/innlandet#agent",
         name: INLAND_BRAND.name,
-        url: "https://www.zenecohomes.com/inland",
+        url: "https://www.zenecohomes.com/omrader/innlandet",
         description:
           "Zen Eco Homes hjelper kjøpere å velge innlandsområde, finne og kvalitetssikre riktig tomt og utvikle moderne villa eller nybygg i Alicante og Murcia.",
         parentOrganization: { "@id": "https://www.zenecohomes.com/#organization" },
@@ -172,7 +172,7 @@ export default async function InlandPage() {
               </div>
               <h2>{town.name}</h2>
               <p>{displayTownIntro(town)}</p>
-              <Link className="text-button area-property-link" href={`/inland/${town.slug}`}>
+              <Link className="text-button area-property-link" href={`/omrader/innlandet/${town.slug}`}>
                 <MapPin size={17} /> Utforsk {town.name}
               </Link>
             </div>
