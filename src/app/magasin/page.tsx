@@ -39,6 +39,10 @@ const articleCovers: Record<string, string> = {
   "bolig-500000-euro-totalbudsjett-spania": "/assets/magasin-covers/finansiering.svg",
   "lan-i-norge-eller-spania-boligkjop": "/assets/magasin-covers/boliglan-bank.svg",
   "albir-finestrat-villajoyosa-benidorm-hvor-kjope": "/assets/magasin-covers/omradevalg.svg",
+  "nybygg-eller-bruktbolig-costa-blanca": "/assets/magasin-covers/omradet-for-boligen.svg",
+  "eurokurs-boligbudsjett-spania-nordmenn": "/assets/magasin-covers/bankkonto-valuta.svg",
+  "hva-koster-feriebolig-spania-i-aret": "/assets/magasin-covers/kostnader-eie.svg",
+  "7-dyre-feil-nordmenn-bolig-spania": "/assets/magasin-covers/juridisk.svg",
 };
 
 const bookGuides = [
