@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { SiteLocale } from "@/lib/i18n";
 
 type FooterLink = { label: string; href: string; external?: boolean };
+type FooterGroup = { title: string; links: FooterLink[] };
 
 const TAGLINE: Record<SiteLocale, string> = {
   no: "Norsk eiendomsrådgiver på Costa Blanca · Rådgivning først. Boligen etterpå.",
@@ -16,6 +17,53 @@ const SUBLINE: Record<SiteLocale, string> = {
   en: "Modern new builds · Costa Blanca · Costa Cálida · Inland",
   es: "Obra nueva moderna · Costa Blanca · Costa Cálida · Interior",
 };
+
+const NORWEGIAN_GROUPS: FooterGroup[] = [
+  {
+    title: "Boliger og områder",
+    links: [
+      { label: "Boliger til salgs", href: "/eiendommer" },
+      { label: "Områder", href: "/omrader" },
+      { label: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
+      { label: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor" },
+      { label: "Costa Cálida", href: "/omrader/costa-calida" },
+      { label: "Innlandet", href: "/omrader/innlandet" },
+      { label: "Tomter", href: "/omrader/innlandet/tomter" },
+    ],
+  },
+  {
+    title: "Kjøpe bolig",
+    links: [
+      { label: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+      { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
+      { label: "Visningstur", href: "/visningstur" },
+      { label: "Guider", href: "/guide" },
+      { label: "Book rådgivning", href: "/booking" },
+    ],
+  },
+  {
+    title: "Om Zen Eco Homes",
+    links: [
+      { label: "Om oss", href: "/om-oss" },
+      { label: "Freddy", href: "/om-oss/freddy" },
+      { label: "Andrea", href: "/om-oss/andrea" },
+      { label: "Kundeomtaler", href: "/kundeomtaler" },
+      { label: "Magasin", href: "/magasin" },
+      { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
+      { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
+    ],
+  },
+  {
+    title: "Kontakt",
+    links: [
+      { label: "Booking", href: "/booking" },
+      { label: "+47 960 09 965", href: "tel:+4796009965", external: true },
+      { label: "freddy@zenecohomes.com", href: "mailto:freddy@zenecohomes.com", external: true },
+      { label: "Benidorm, Spania", href: "/om-oss" },
+      { label: "Min side", href: "/min-side" },
+    ],
+  },
+];
 
 const LINKS: Record<SiteLocale, FooterLink[]> = {
   no: [
@@ -105,6 +153,7 @@ export function Footer({
   showCta?: boolean;
 } = {}) {
   const links = LINKS[locale];
+  const groups = locale === "no" ? NORWEGIAN_GROUPS : [{ title: SUBLINE[locale], links }];
   const cta = CTA[locale];
 
   return (
@@ -133,13 +182,26 @@ export function Footer({
         </div>
 
         <nav className="footer-2027-nav" aria-label="Footer">
-          {links.map((link) =>
-            link.external ? (
-              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
-            ) : (
-              <Link key={link.href} href={link.href}>{link.label}</Link>
-            ),
-          )}
+          {groups.map((group) => (
+            <div className="footer-2027-group" key={group.title}>
+              <h3>{group.title}</h3>
+              <div>
+                {group.links.map((link) =>
+                  link.external ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link key={link.href} href={link.href}>{link.label}</Link>
+                  ),
+                )}
+              </div>
+            </div>
+          ))}
         </nav>
       </div>
 
