@@ -13,7 +13,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/booking" },
 };
 
-export default function BookingPage() {
+export default async function BookingPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ type?: string }>;
+}) {
+  const params = await searchParams;
+  const infoMeeting = params.type === "infomote";
+
   return (
     <main className="booking-page">
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
@@ -49,6 +56,19 @@ export default function BookingPage() {
           <h2>Fortell kort hva du vurderer</h2>
           <ContactForm source="zenecohomes-booking" requestType="booking" variant="simple" />
         </aside>
+      </section>
+
+      <section className="contact-section booking-info-meeting">
+        <div>
+          <p className="eyebrow">Digitalt infomøte</p>
+          <h2>Vil du få beskjed om neste infomøte om boligkjøp i Spania?</h2>
+          <p>
+            Vi publiserer dato når neste møte er satt. Meld interesse nå, så bruker vi samme enkle kontaktskjema uten å opprette et ekstra skjema på siden.
+          </p>
+        </div>
+        <Link className="contact-button" href="/booking?type=infomote#foresporsel">
+          Meld interesse
+        </Link>
       </section>
       <Footer />
     </main>
