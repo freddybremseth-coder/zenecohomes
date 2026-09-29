@@ -41,7 +41,7 @@ export default function BookingPage() {
             Send inn kontaktinformasjonen din og skriv gjerne når det passer best å bli kontaktet. Dette er foreløpig
             en forespørsel om samtale, ikke en automatisk kalenderbooking.
           </p>
-          <Link className="text-button" href="/om-freddy"><ArrowLeft size={16} /> Les mer om Freddy</Link>
+          <Link className="text-button" href="/om-oss/freddy"><ArrowLeft size={16} /> Les mer om Freddy</Link>
         </div>
         <div>
           <ContactForm source="zenecohomes-booking" />
