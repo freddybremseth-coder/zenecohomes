@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "seo:audit": "node scripts/seo-metadata-audit.mjs",
+    "seo:audit": "node scripts/seo-metadata-audit.mjs && node scripts/seo-structure-audit.mjs",
     "build": "npm run seo:audit && next build",
     "start": "next start",
     "lint": "next lint"
