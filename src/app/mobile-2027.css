@@ -52,6 +52,44 @@
     color: var(--ze-white);
   }
 
+  .nav.open .nav-dropdown {
+    display: grid;
+    width: 100%;
+    align-items: stretch;
+    border-bottom: 1px solid rgba(23, 32, 39, 0.08);
+  }
+
+  .nav.open .nav-dropdown-trigger {
+    min-height: 52px;
+    width: 100%;
+    color: var(--ze-ink);
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+  }
+
+  .nav.open .nav-submenu {
+    position: static;
+    display: grid;
+    min-width: 0;
+    padding: 0 0 12px 14px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav.open .nav-submenu a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    color: var(--ze-ink);
+    font-size: 0.82rem;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
   .language-switcher {
     margin-top: 18px;
     padding-top: 14px;
