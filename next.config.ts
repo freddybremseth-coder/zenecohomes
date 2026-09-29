@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/guide/kjopsprosess-bolig-i-spania",
+        destination: "/guide/kjope-bolig-i-spania",
+        permanent: true,
+      },
+      {
         source: "/magasin/kjopsprosess-bolig-i-spania",
         destination: "/guide/kjope-bolig-i-spania",
         permanent: true,
