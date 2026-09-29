@@ -26,6 +26,19 @@ const COPY: Record<SiteLocale, TestimonialCopy> = {
     ratingLabel: (rating) => `${rating} av 5 stjerner`,
     testimonials: [
       {
+        quote: "Freddy is probably the best agent we have ever worked with.",
+        name: "Amanda & Terry",
+        context: "Amanda · Headmistress and proprietor, English International School",
+        source: "customer",
+      },
+      {
+        quote:
+          "Jeg er veldig fornøyd med det jeg fikk presentert og hans kunnskap på området. Selv om jeg ikke har bestemt meg enda om å kjøpe noe, har han mine beste anbefalinger om innsikten og forståelsen av prosessen.",
+        name: "Arild Østrem",
+        context: "Tilbakemelding etter informasjonsmøte om boligkjøp i Spania · tidligere rådgiverarbeid · januar 2025",
+        source: "customer",
+      },
+      {
         quote:
           "Vi vil spesielt takke Freddy for hans vennlighet, tålmodighet og engasjement. Han passet alltid på oss og gjorde alt så mye enklere.",
         name: "Sonia & Alberto",
@@ -60,6 +73,19 @@ const COPY: Record<SiteLocale, TestimonialCopy> = {
       "Genuine feedback from people Freddy has helped. The wording below is translated for this English page; public reviews remain clearly labelled with source and context.",
     ratingLabel: (rating) => `${rating} out of 5 stars`,
     testimonials: [
+      {
+        quote: "Freddy is probably the best agent we have ever worked with.",
+        name: "Amanda & Terry",
+        context: "Amanda · Headmistress and proprietor, English International School",
+        source: "customer",
+      },
+      {
+        quote:
+          "I was very pleased with what was presented and with Freddy's knowledge of the subject. Even though I have not yet decided whether to buy, he has my strongest recommendation for his insight and understanding of the process.",
+        name: "Arild Østrem",
+        context: "Translated from Norwegian feedback · property-buying information meeting · earlier advisory work · January 2025",
+        source: "customer",
+      },
       {
         quote:
           "We especially want to thank Freddy for his kindness, patience and commitment. He always looked after us and made everything so much easier.",
@@ -96,6 +122,19 @@ const COPY: Record<SiteLocale, TestimonialCopy> = {
     ratingLabel: (rating) => `${rating} von 5 Sternen`,
     testimonials: [
       {
+        quote: "Freddy is probably the best agent we have ever worked with.",
+        name: "Amanda & Terry",
+        context: "Amanda · Headmistress and proprietor, English International School · Originalzitat auf Englisch",
+        source: "customer",
+      },
+      {
+        quote:
+          "Ich war mit den vermittelten Informationen und Freddys Fachwissen sehr zufrieden. Obwohl ich mich noch nicht für einen Kauf entschieden habe, kann ich seine Kenntnis und sein Verständnis des Prozesses sehr empfehlen.",
+        name: "Arild Østrem",
+        context: "Übersetzung einer norwegischen Rückmeldung · Informationsveranstaltung zum Immobilienkauf · frühere Beratung · Januar 2025",
+        source: "customer",
+      },
+      {
         quote:
           "Wir möchten Freddy besonders für seine Freundlichkeit, Geduld und sein Engagement danken. Er hat sich immer um uns gekümmert und alles deutlich einfacher gemacht.",
         name: "Sonia & Alberto",
@@ -130,6 +169,19 @@ const COPY: Record<SiteLocale, TestimonialCopy> = {
       "Comentarios reales de personas a las que Freddy ha ayudado. Los textos están traducidos para esta página; las reseñas públicas mantienen claramente indicada su fuente y contexto.",
     ratingLabel: (rating) => `${rating} de 5 estrellas`,
     testimonials: [
+      {
+        quote: "Freddy is probably the best agent we have ever worked with.",
+        name: "Amanda & Terry",
+        context: "Amanda · Headmistress and proprietor, English International School · Testimonio original en inglés",
+        source: "customer",
+      },
+      {
+        quote:
+          "Quedé muy satisfecho con la información presentada y con los conocimientos de Freddy. Aunque todavía no he decidido si comprar, tiene mi mejor recomendación por su conocimiento y comprensión del proceso.",
+        name: "Arild Østrem",
+        context: "Traducción de un comentario en noruego · reunión informativa sobre compra de vivienda · asesoramiento anterior · enero de 2025",
+        source: "customer",
+      },
       {
         quote:
           "Queremos agradecer especialmente a Freddy su amabilidad, paciencia y dedicación. Siempre estuvo pendiente de nosotros e hizo que todo fuera mucho más fácil.",
