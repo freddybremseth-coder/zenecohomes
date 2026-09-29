@@ -19,38 +19,41 @@ const SUBLINE: Record<SiteLocale, string> = {
 
 const LINKS: Record<SiteLocale, FooterLink[]> = {
   no: [
-    { label: "Boliger", href: "/eiendommer" },
+    { label: "Boliger til salgs", href: "/eiendommer" },
     { label: "Områder", href: "/omrader" },
+    { label: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
+    { label: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor" },
+    { label: "Costa Cálida", href: "/omrader/costa-calida" },
     { label: "Innlandet", href: "/inland" },
-    { label: "Tomter", href: "/tomter" },
-    { label: "Kjøpsprosess", href: "/kjopsprosessen" },
+    { label: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+    { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
+    { label: "Visningstur", href: "/visningstur" },
+    { label: "Guider", href: "/guide" },
+    { label: "Book rådgivning", href: "/booking" },
+    { label: "Om oss", href: "/om-oss" },
+    { label: "Freddy", href: "/om-oss/freddy" },
+    { label: "Kundeomtaler", href: "/kundeomtaler" },
     { label: "Magasin", href: "/magasin" },
-    { label: "Om Freddy", href: "/om-freddy" },
+    { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
+    { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
   ],
   de: [
     { label: "Immobilien", href: "/de/immobilien" },
     { label: "Regionen", href: "/de/regionen" },
-    { label: "Inland", href: "/de/inland" },
     { label: "Kaufprozess", href: "/de/kaufprozess" },
     { label: "Ratgeber", href: "/de/ratgeber" },
-    { label: "Über Freddy", href: "/de/ueber-freddy" },
   ],
   en: [
     { label: "Properties", href: "/en/properties" },
     { label: "Areas", href: "/en/areas" },
-    { label: "Inland", href: "/en/inland" },
     { label: "Buying process", href: "/en/buying-process" },
     { label: "Guides", href: "/en/guides" },
-    { label: "About Freddy", href: "/en/about-freddy" },
   ],
   es: [
     { label: "Propiedades", href: "/es/propiedades" },
     { label: "Zonas", href: "/es/zonas" },
-    { label: "Interior", href: "/es/interior" },
-    { label: "Terrenos", href: "/es/terreno-en-espana" },
     { label: "Proceso de compra", href: "/es/proceso-de-compra" },
     { label: "Guías", href: "/es/guias" },
-    { label: "Sobre Freddy", href: "/es/sobre-freddy" },
   ],
 };
 
@@ -141,8 +144,12 @@ export function Footer({
       </div>
 
       <div className="footer-2027-bottom">
-        <span>© {new Date().getFullYear()} Zen Eco Homes</span>
-        <span>Benidorm · Costa Blanca</span>
+        <span>© {new Date().getFullYear()} Zen Eco Homes · Benidorm · Costa Blanca</span>
+        {locale === "no" ? (
+          <span>
+            <Link href="/personvern">Personvern</Link> · <Link href="/informasjonskapsler">Informasjonskapsler</Link>
+          </span>
+        ) : <span>{SUBLINE[locale]}</span>}
       </div>
     </footer>
   );
