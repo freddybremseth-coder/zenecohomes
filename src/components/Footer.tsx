@@ -60,6 +60,7 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "+47 960 09 965", href: "tel:+4796009965", external: true },
       { label: "freddy@zenecohomes.com", href: "mailto:freddy@zenecohomes.com", external: true },
       { label: "Benidorm, Spania", href: "/om-oss" },
+      { label: "YouTube · Zen Eco Homes", href: "https://www.youtube.com/@ZenEcoHomes", external: true },
       { label: "Min side", href: "/min-side" },
     ],
   },
