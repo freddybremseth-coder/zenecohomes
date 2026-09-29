@@ -14,7 +14,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     hero: "Immobilie in Spanien kaufen – mit norwegischer Beratung",
     description:
       "Finden Sie die richtige Region, den passenden Immobilientyp und einen sicheren Ablauf, bevor Sie reservieren. Zen Eco Homes begleitet internationale Käufer beim Kauf von Neubauten, Villen, Wohnungen und Grundstücken an der Costa Blanca.",
-    seoTitle: "Immobilie in Spanien kaufen | Sicher mit Beratung",
+    seoTitle: "Immobilie in Spanien kaufen | Sicher mit Beratung vor Ort",
     seoDescription:
       "Sie überlegen, eine Immobilie in Spanien zu kaufen? Wir helfen bei Regionswahl, Neubau, Villa, Wohnung, Finanzierung, NIE, Anwalt und sicherem Kaufprozess.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
@@ -134,7 +134,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     hero: "Immobilienberater für Spanien – unabhängig an Ihrer Seite",
     description:
       "Ein Berater, der auf Ihrer Seite steht: Wir helfen Ihnen, den Markt zu verstehen, Optionen zu vergleichen und den Prozess mit Maklern, Bauträgern, Bank und Anwalt zu koordinieren – an der Costa Blanca.",
-    seoTitle: "Immobilienberater Spanien | Beratung beim Kauf",
+    seoTitle: "Immobilienberater Spanien | Beratung beim Immobilienkauf",
     seoDescription:
       "Unabhängiger Immobilienberater für Spanien: Marktüberblick, Regionswahl, Objektvergleich, Kaufprozess, NIE, Anwalt und Finanzierung an der Costa Blanca.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
@@ -194,9 +194,9 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     hero: "Neubau in Spanien kaufen – modern, effizient, sicher",
     description:
       "Neubauwohnungen, Villen und Projekte in Spanien mit hoher Energieeffizienz und moderner Ausstattung. Wir begleiten Sie von der Auswahl über Zahlungsplan und Bankgarantie bis zur Übergabe.",
-    seoTitle: "Neubau in Spanien kaufen | Moderne Immobilien",
+    seoTitle: "Neubau in Spanien kaufen | Moderne Immobilien sicher",
     seoDescription:
-      "Neubau in Spanien: moderne, energieeffiziente Wohnungen und Villen. Beratung zu Lage, Bauträger, Zahlungsplan, Bankgarantie und Übergabe – sicher und verständlich.",
+      "Neubau in Spanien: moderne Wohnungen und Villen. Beratung zu Lage, Bauträger, Zahlungsplan, Bankgarantie, Kosten und sicherer Übergabe vor Ort.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
     secondaryCta: { label: "Immobilien ansehen", href: "/de/immobilien" },
     sections: [
@@ -254,7 +254,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     hero: "Grundstück in Spanien kaufen und Haus bauen",
     description:
       "Ein eigenes Grundstück an der Costa Blanca und ein Haus nach Ihren Wünschen – mit Begleitung bei Bebaubarkeit, Lizenzen, Bauträgerwahl und sicherem Kaufprozess.",
-    seoTitle: "Grundstück in Spanien kaufen | Bauen mit Beratung",
+    seoTitle: "Grundstück in Spanien kaufen | Bauen mit Beratung vor Ort",
     seoDescription:
       "Grundstück in Spanien kaufen und bauen: Prüfung von Bebaubarkeit, Lizenzen und Lage, Auswahl von Bauträger und Architekt sowie ein sicherer Kaufprozess.",
     primaryCta: { label: "Beratungsgespräch buchen", href: BOOKING },
