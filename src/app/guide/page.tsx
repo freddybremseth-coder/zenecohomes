@@ -24,7 +24,7 @@ export const metadata = {
 };
 
 export default function GuideHub() {
-  const articles = articlesInSilo("guide");
+  const articles = articlesInSilo("guide").filter((article) => article.slug !== "kjopsprosess-bolig-i-spania");
 
   return (
     <main>
@@ -37,11 +37,39 @@ export default function GuideHub() {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Områder og livsstil</p>
-          <h2>Velg riktig område og boligtype med trygghet</h2>
+          <p className="eyebrow">Start her</p>
+          <h2>De viktigste guidene for boligkjøp i Spania</h2>
           <p>
-            Guidene hjelper deg å sortere områder, boligtyper og timing ut fra livsstil, budsjett og
-            hvordan du faktisk skal bruke boligen.
+            Hjørnesteinsguiden forklarer hele kjøpsreisen. Derfra kan du gå videre til egne guider om
+            nybygg, finansiering, kostnader, NIE, juridikk, tomt og områdevalg.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article>
+            <h3>Kjøpe bolig i Spania (2026)</h3>
+            <p>Komplett guide til boligtype, område, visning, juridisk kontroll, NIE, finansiering, kostnader og overtakelse.</p>
+            <Link className="text-button" href="/guide/kjope-bolig-i-spania">Les hovedguiden <ArrowRight size={16} /></Link>
+          </article>
+          <article>
+            <h3>Nybygg i Spania</h3>
+            <p>Utbygger, betalingsplan, bankgaranti, kostnader, levering og det du bør kontrollere før reservasjon.</p>
+            <Link className="text-button" href="/guide/nybygg-i-spania">Les nybyggguiden <ArrowRight size={16} /></Link>
+          </article>
+          <article>
+            <h3>Slik jobber vi</h3>
+            <p>Kjøpsprosessen som egen trust-side, fra behovskartlegging og områdevalg til overtakelse og Zen Eco Homes Care.</p>
+            <Link className="text-button" href="/kjopsprosessen">Se kjøpsprosessen <ArrowRight size={16} /></Link>
+          </article>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">Alle guider</p>
+          <h2>Hele kunnskapsbiblioteket – ingenting gjemt bort</h2>
+          <p>
+            Her ligger alle søkeorienterte guider samlet: områdevalg, finansiering, NIE, juridikk, bank,
+            kostnader, skatt, nybygg, tomt, energi, utleie og livet som boligeier i Spania.
           </p>
         </div>
 
