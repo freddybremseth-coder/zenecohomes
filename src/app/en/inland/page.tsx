@@ -11,8 +11,8 @@ export const metadata = {
   alternates: {
     canonical: "/en/inland",
     languages: {
-      "nb-NO": "https://www.zenecohomes.com/inland",
-      "x-default": "https://www.zenecohomes.com/inland",
+      "nb-NO": "https://www.zenecohomes.com/omrader/innlandet",
+      "x-default": "https://www.zenecohomes.com/omrader/innlandet",
       "de-DE": "https://www.zenecohomes.com/de/inland",
       en: "https://www.zenecohomes.com/en/inland",
       "es-ES": "https://www.zenecohomes.com/es/interior",
