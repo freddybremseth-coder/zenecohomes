@@ -1514,3 +1514,89 @@
     gap: 24px;
   }
 }
+
+
+/* Property listing — useful orientation before the inventory grid. */
+.property-results-section {
+  padding-top: 82px;
+}
+
+.property-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(44px, 7vw, 92px);
+  align-items: start;
+  margin-bottom: 58px;
+}
+
+.property-intro > div h2 {
+  max-width: 13ch;
+  margin: 0 0 20px;
+}
+
+.property-intro > div > p:not(.eyebrow) {
+  max-width: 66ch;
+  margin: 0;
+  color: var(--ze-muted);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.property-intro-links {
+  display: grid;
+  align-content: start;
+  padding: clamp(26px, 3vw, 36px);
+  background: rgba(244, 240, 231, 0.58);
+  border: 1px solid var(--ze-line);
+}
+
+.property-intro-links .eyebrow {
+  margin-bottom: 12px;
+}
+
+.property-intro-links > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(23, 32, 39, 0.1);
+  color: var(--ze-ink);
+  font-size: 0.94rem;
+  font-weight: 650;
+}
+
+.property-intro-links > a span {
+  color: var(--ze-travertine);
+  font-size: 1.05rem;
+}
+
+.properties-page .list-heading {
+  padding-top: 26px;
+  border-top: 1px solid rgba(23, 32, 39, 0.1);
+}
+
+@media (max-width: 900px) {
+  .property-intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .property-intro-links {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 640px) {
+  .property-results-section {
+    padding-top: 58px;
+  }
+
+  .property-intro {
+    margin-bottom: 42px;
+  }
+
+  .property-intro-links {
+    padding: 24px 20px;
+  }
+}
