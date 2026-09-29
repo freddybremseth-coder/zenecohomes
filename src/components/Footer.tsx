@@ -61,6 +61,8 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "freddy@zenecohomes.com", href: "mailto:freddy@zenecohomes.com", external: true },
       { label: "Benidorm, Spania", href: "/om-oss" },
       { label: "Min side", href: "/min-side" },
+      { label: "Instagram · @zenecohomesspain", href: "https://www.instagram.com/zenecohomesspain/", external: true },
+      { label: "YouTube · @ZenEcoHomes", href: "https://www.youtube.com/@ZenEcoHomes", external: true },
     ],
   },
 ];
