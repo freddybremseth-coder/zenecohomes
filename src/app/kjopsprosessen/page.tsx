@@ -80,10 +80,10 @@ export default function BuyingProcessPage() {
           kontrakt, notar og overtakelse.
         </p>
         <div className="hero-actions">
-          <Link className="text-button light" href="/kjopsprosess/kjopsprosess-bolig-i-spania">
+          <Link className="text-button light" href="/guide/kjope-bolig-i-spania">
             Les komplett guide <ArrowRight size={17} />
           </Link>
-          <Link className="text-button light" href="/kjopsprosess/finansiering-notar-nie-boligkjop-spania">
+          <Link className="text-button light" href="/guide/finansiering-notar-nie-boligkjop-spania">
             Finansiering, notar og NIE
           </Link>
         </div>
