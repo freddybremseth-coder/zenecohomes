@@ -1800,7 +1800,7 @@ export const articles: Article[] = [
           "Etter Ley 5/2019 bæres taksten av låntaker, mens långiver blant annet dekker gestoría, notarhonorar for låneskjøtet og registrering av pantesikkerheten. Rente, eventuelle gebyrer og øvrige vilkår fremgår av bankens tilbud.",
       },
     ],
-    cta: { label: "Les mer om omkostninger ved kjøp", href: "/kjopsprosess/omkostninger-nybygg-spania" },
+    cta: { label: "Les mer om omkostninger ved kjøp", href: "/guide/omkostninger-nybygg-spania" },
   },
 ];
 
