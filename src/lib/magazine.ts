@@ -232,32 +232,32 @@ export type Silo = "kjopsprosess" | "guide" | "corporate";
 const SILO_BY_SLUG: Record<string, Silo> = {
   "omkostninger-nybygg-spania": "guide",
   "bankgaranti-nybygg-spania": "guide",
-  "kjopsprosess-bolig-i-spania": "kjopsprosess",
+  "kjopsprosess-bolig-i-spania": "guide",
   "finansiering-notar-nie-boligkjop-spania": "guide",
   "omradeguide-eiendomskjop-i-spania": "guide",
   "guide-tomtekjop-bygging-i-spania": "guide",
   "kjop-bolig-i-spania-na-eller-vente": "guide",
   "nybygg-finestrat-omradeguide": "guide",
   "utleie-inntektspotensial-bolig-spania": "guide",
-  "lopende-kostnader-eie-bolig-spania": "kjopsprosess",
+  "lopende-kostnader-eie-bolig-spania": "guide",
   "innlandet-finca-olivengard-spania": "guide",
   "flytte-til-spania-pensjonist": "guide",
   "energieffektive-nybygg-spania": "guide",
-  "juridiske-fallgruver-boligkjop-spania": "kjopsprosess",
-  "skatt-ved-salg-bolig-spania": "kjopsprosess",
-  "arv-gaveskatt-bolig-spania": "kjopsprosess",
-  "nie-skattenummer-spania": "kjopsprosess",
-  "spansk-bankkonto-valutaveksling": "kjopsprosess",
-  "boliglan-spansk-bank-nordmenn": "kjopsprosess",
+  "juridiske-fallgruver-boligkjop-spania": "guide",
+  "skatt-ved-salg-bolig-spania": "guide",
+  "arv-gaveskatt-bolig-spania": "guide",
+  "nie-skattenummer-spania": "guide",
+  "spansk-bankkonto-valutaveksling": "guide",
+  "boliglan-spansk-bank-nordmenn": "guide",
 };
 
 export const SILO_META: Record<Silo, { label: string; title: string; href: string; intro: string }> = {
   kjopsprosess: {
     label: "Kjøpsprosess",
     title: "Kjøpsprosessen i Spania",
-    href: "/kjopsprosess",
+    href: "/kjopsprosessen",
     intro:
-      "Alt du trenger å forstå før du kjøper: omkostninger og skatt, bankgaranti, finansiering, NIE, notar og selve prosessen fra reservasjon til overtakelse.",
+      "Slik jobber Zen Eco Homes fra behovskartlegging til visning, kjøp, overtakelse og oppfølging.",
   },
   corporate: {
     label: "Zen Corporate Homes",
