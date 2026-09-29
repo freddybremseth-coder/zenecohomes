@@ -45,7 +45,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: "Boliger til salgs i Spania | Zen Eco Homes",
+      title: "Boliger til salgs i Spania | Costa Blanca og Cálida",
       description:
         "Søk blant nybygg, villaer og leiligheter på Costa Blanca Nord, Costa Blanca Sør og Costa Cálida med norsk rådgivning.",
       url: "https://www.zenecohomes.com/eiendommer",
