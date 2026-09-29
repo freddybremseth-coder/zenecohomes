@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, Clock, UserRound } from "lucide-react";
 import type { Article } from "@/lib/content";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
 
@@ -25,7 +26,9 @@ export function ArticleView({ article }: { article: Article }) {
     mentions: isCorporate
       ? ["Bedriftshytte i Spania", "Firmabolig", "Costa Blanca", "Ansattgode"]
       : ["Boligkjøp i Spania", "Costa Blanca", "Nybygg i Spania", "Eiendomsrådgivning"],
-    author: { "@type": "Organization", name: isCorporate ? "Zen Corporate Homes" : "Zen Eco Homes", url: BASE },
+    author: isCorporate
+      ? { "@type": "Organization", name: "Zen Corporate Homes", url: `${BASE}/bedriftshytte-spania` }
+      : { "@type": "Person", name: "Freddy Bremseth", url: `${BASE}/om-oss/freddy` },
     publisher: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
     mainEntityOfPage: `${BASE}${canonicalPath}`,
   };
@@ -64,8 +67,13 @@ export function ArticleView({ article }: { article: Article }) {
         <h1>{article.title}</h1>
         <p>{article.excerpt}</p>
         <div className="hero-actions">
+          {!isCorporate && (
+            <Link className="text-button light" href="/om-oss/freddy">
+              <UserRound size={17} /> Freddy Bremseth
+            </Link>
+          )}
           <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-            <CalendarDays size={17} /> {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
+            <CalendarDays size={17} /> Oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
           </span>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
             <Clock size={17} /> {article.readingTime}
@@ -74,11 +82,15 @@ export function ArticleView({ article }: { article: Article }) {
       </section>
 
       <section className="section" style={{ paddingTop: 46 }}>
-        <img
+        <Image
           src={article.image}
           alt={article.imageAlt}
+          width={1600}
+          height={900}
+          sizes="(max-width: 900px) 100vw, 1200px"
           style={{
             width: "100%",
+            height: "auto",
             maxHeight: 460,
             objectFit: "cover",
             borderRadius: "var(--radius-2027)",
