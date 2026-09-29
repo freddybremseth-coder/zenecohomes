@@ -14,9 +14,9 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     hero: "Buy property in Spain with an independent advisor",
     description:
       "Find the right area, property type and buying process before you reserve. Zen Eco Homes helps international buyers assess new builds, villas, apartments and plots on the Costa Blanca.",
-    seoTitle: "Buy Property in Spain | Safely, with an Advisor",
+    seoTitle: "Buy Property in Spain | Costa Blanca | Zen Eco Homes",
     seoDescription:
-      "Thinking of buying property in Spain? Get help with area selection, new builds, villas, apartments, financing, NIE, lawyer and a safe buying process on the Costa Blanca.",
+      "Buy property in Spain with advice on areas, new builds, villas, apartments, financing, NIE, legal checks and the buying process on the Costa Blanca.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
     secondaryCta: { label: "Browse properties", href: "/en/properties" },
     sections: [
@@ -74,7 +74,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     hero: "Buy a new build in Spain – modern, efficient, secure",
     description:
       "New-build apartments, villas and projects across Spain with high energy efficiency and modern specifications. We guide you from selection through payment plan and bank guarantee to handover.",
-    seoTitle: "New Build in Spain | Modern Properties",
+    seoTitle: "New Build in Spain | Modern Property | Zen Eco Homes",
     seoDescription:
       "New build in Spain: modern, energy-efficient apartments and villas. Advice on location, developer, payment plan, bank guarantee and handover — clear and secure.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
@@ -134,7 +134,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     hero: "New build on the Costa Blanca – modern, energy-efficient homes",
     description:
       "Modern new-build apartments, villas and projects on the Costa Blanca — with strong energy efficiency, considered design and secure guidance from selection to handover.",
-    seoTitle: "New Build Costa Blanca | Modern Property in Spain",
+    seoTitle: "New Build Costa Blanca | Modern Property | Zen Eco Homes",
     seoDescription:
       "New build on the Costa Blanca: modern apartments, villas and projects with high energy efficiency. Advice on location, developer, payment plan and handover.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
@@ -194,7 +194,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     hero: "Property advisor for Spain – independent, on your side",
     description:
       "An advisor on your side: we help you understand the market, compare options and coordinate the process with agents, developers, bank and lawyer — on the Costa Blanca.",
-    seoTitle: "Property Advisor Spain | Guidance When Buying",
+    seoTitle: "Property Advisor Spain | Costa Blanca | Zen Eco Homes",
     seoDescription:
       "Independent property advisor for Spain: market overview, area selection, comparing options, the buying process, NIE, lawyer and financing on the Costa Blanca.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
@@ -254,9 +254,9 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     hero: "Buy a plot of land in Spain and build your home",
     description:
       "Your own plot on the Costa Blanca and a home built to your wishes — with guidance on buildability, licences, choosing a builder and a safe buying process.",
-    seoTitle: "Buy Land in Spain | Build with Guidance",
+    seoTitle: "Buy Land in Spain | Building Plots | Zen Eco Homes",
     seoDescription:
-      "Buy a plot of land in Spain and build: checks on buildability, licences and location, choosing builder and architect, and a safe buying process on the Costa Blanca.",
+      "Buy land in Spain and build with checks on planning, licences, location, utilities and access, plus guidance on builders and the buying process.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
     secondaryCta: { label: "Browse plots", href: "/en/properties" },
     sections: [
