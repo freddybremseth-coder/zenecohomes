@@ -252,14 +252,14 @@ export default async function BuyPropertySpainGuide() {
             Bruk kvalifisert juridisk rådgiver til å kontrollere eierskap, heftelser, tillatelser og relevante
             dokumenter før kjøpet blir endelig.
           </p>
-          <p><Link className="text-button" href="/kjopsprosess/juridiske-fallgruver-boligkjop-spania">Les om juridiske fallgruver <ArrowRight size={16} /></Link></p>
+          <p><Link className="text-button" href="/guide/juridiske-fallgruver-boligkjop-spania">Les om juridiske fallgruver <ArrowRight size={16} /></Link></p>
 
           <h3>Skaff NIE og avklar finansiering</h3>
           <p>
             NIE er et sentralt identifikasjonsnummer i den spanske kjøpsprosessen. Finansiering og bankforhold
             bør avklares tidlig nok til at de ikke stopper reservasjon, kontrakt eller sluttføring.
           </p>
-          <p><Link className="text-button" href="/kjopsprosess/nie-skattenummer-spania">Les om NIE-nummer <ArrowRight size={16} /></Link></p>
+          <p><Link className="text-button" href="/guide/nie-skattenummer-spania">Les om NIE-nummer <ArrowRight size={16} /></Link></p>
 
           <h3>Reservasjon, kontrakt, notar og overtakelse</h3>
           <p>
