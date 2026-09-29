@@ -1162,7 +1162,7 @@ export const articles: Article[] = [
     cta: { label: "Utforsk boliger og tomter i innlandet", href: "/omrader/innlandet" },
   },
   {
-    slug: "flytte-til-spania-pensjonist",
+    slug: "flytte-til-spania-som-pensjonist",
     title: "Flytte til Spania som pensjonist: opphold, skatt og hverdag",
     excerpt:
       "Drømmer du om pensjonisttilværelsen i solen? Om oppholdsregler, helsetjenester, skatt og hva som skiller ferie fra å bo fast i Spania.",
