@@ -161,7 +161,9 @@ export default async function AreaTownPage({
           <h2>Boliger i {profile.name}</h2>
           <p>
             Utvalget under hentes fra den publiserte boligbasen. Bruk hele boligoversikten for flere filtre,
-            eller kontakt oss dersom du vil at vi skal koordinere en kort shortlist.
+            eller kontakt oss dersom du vil at vi skal koordinere en kort shortlist. Før du reserverer kan du også
+            bruke <Link href="/guide/kjope-bolig-i-spania">hovedguiden for å kjøpe bolig i Spania</Link> for å
+            kontrollere kjøpssteg, kostnader, NIE, finansiering og juridisk oppfølging.
           </p>
         </div>
         {localProperties.length ? (
