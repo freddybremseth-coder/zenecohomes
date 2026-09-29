@@ -339,7 +339,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
   const localePrefix = locale === "no" ? "" : `/${locale}`;
   const areaPageHref =
     areaRegionKey === "innlandet"
-      ? `${localePrefix}/inland`
+      ? locale === "no" ? "/omrader/innlandet" : `${localePrefix}/inland`
       : areaRegionKey
         ? `/omrader/${areaRegionKey}`
         : "/omrader";
