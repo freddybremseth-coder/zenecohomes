@@ -153,7 +153,7 @@ export default async function MagazinePage() {
   );
 
   return (
-    <main>
+    <main className="magazine-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Magasin</p>
@@ -164,20 +164,20 @@ export default async function MagazinePage() {
         </p>
       </section>
 
-      <section className="section">
-        <div className="section-heading">
+      <section className="section magazine-guide-bridge">
+        <div>
           <p className="eyebrow">Ser du etter kjøperguider?</p>
           <h2>Kjøperguidene ligger samlet under Guide</h2>
           <p>
-            Vi har ikke fjernet artiklene. De søkeorienterte guidene om kjøp, NIE, bank, juridikk, kostnader,
-            tomt og nybygg ligger samlet i en tydelig guide-hub, mens Magasin brukes til redaksjonelt innhold.
+            De søkeorienterte guidene om kjøp, NIE, bank, juridikk, kostnader, tomt og nybygg ligger samlet
+            under Guide. Magasin brukes til markedsoppdateringer, lokale nyheter og redaksjonelt innhold.
           </p>
         </div>
-        <div className="proof-grid">
-          <article><h3>Kjøpe bolig i Spania</h3><p>Hjørnesteinsguiden til hele kjøpsreisen.</p><Link className="text-button" href="/guide/kjope-bolig-i-spania">Les guiden <ArrowRight size={16}/></Link></article>
-          <article><h3>Alle guider</h3><p>Se hele biblioteket med områdevalg, NIE, bank, kostnader, juridikk og nybygg.</p><Link className="text-button" href="/guide">Se guide-huben <ArrowRight size={16}/></Link></article>
-          <article><h3>Kjøpsprosessen</h3><p>Se hvordan Zen Eco Homes jobber fra behov til overtakelse og oppfølging.</p><Link className="text-button" href="/kjopsprosessen">Se prosessen <ArrowRight size={16}/></Link></article>
-        </div>
+        <nav aria-label="Viktige kjøperguider">
+          <Link href="/guide/kjope-bolig-i-spania"><span>01</span><div><strong>Kjøpe bolig i Spania</strong><small>Hjørnesteinsguiden til hele kjøpsreisen</small></div><ArrowRight size={16}/></Link>
+          <Link href="/guide"><span>02</span><div><strong>Alle guider</strong><small>NIE, bank, juridikk, kostnader, område og nybygg</small></div><ArrowRight size={16}/></Link>
+          <Link href="/kjopsprosessen"><span>03</span><div><strong>Kjøpsprosessen</strong><small>Slik jobber Zen Eco Homes fra behov til oppfølging</small></div><ArrowRight size={16}/></Link>
+        </nav>
       </section>
 
       <section className="section proof-section">
@@ -189,13 +189,13 @@ export default async function MagazinePage() {
             søkeorienterte kjøperguidene ligger samlet under Guide.
           </p>
         </div>
-        <div className="proof-grid">
-          <article><h3>Markedsoppdateringer</h3><p>Endringer i tilbud, etterspørsel, kjøperinteresse og andre signaler fra boligmarkedet.</p></article>
-          <article><h3>Boligprisutvikling</h3><p>Redaksjonelle oppdateringer om priser og utvikling i relevante deler av Spania.</p></article>
-          <article><h3>Lokale nyheter</h3><p>Endringer i områder, infrastruktur, prosjekter og forhold som kan være relevante for boligkjøpere.</p></article>
-          <article><h3>Livet i Spania</h3><p>Hverdagsliv, sesonger, praktiske valg og erfaringer som gir mer kontekst enn en boligannonse.</p></article>
-          <article><h3>Nyheter fra Costa Blanca</h3><p>Lokale utviklingstrekk fra Costa Blanca Nord og Sør som kan påvirke områdene og markedet.</p></article>
-          <article><h3>Redaksjonelt</h3><p>Intervjuer, analyser og andre artikler som støtter nettstedets område- og markedskunnskap.</p></article>
+        <div className="magazine-topic-list">
+          <article><span>01</span><div><h3>Markedsoppdateringer</h3><p>Endringer i tilbud, etterspørsel, kjøperinteresse og andre signaler fra boligmarkedet.</p></div></article>
+          <article><span>02</span><div><h3>Boligprisutvikling</h3><p>Redaksjonelle oppdateringer om priser og utvikling i relevante deler av Spania.</p></div></article>
+          <article><span>03</span><div><h3>Lokale nyheter</h3><p>Endringer i områder, infrastruktur, prosjekter og forhold som kan være relevante for boligkjøpere.</p></div></article>
+          <article><span>04</span><div><h3>Livet i Spania</h3><p>Hverdagsliv, sesonger, praktiske valg og erfaringer som gir mer kontekst enn en boligannonse.</p></div></article>
+          <article><span>05</span><div><h3>Nyheter fra Costa Blanca</h3><p>Lokale utviklingstrekk fra Costa Blanca Nord og Sør som kan påvirke områdene og markedet.</p></div></article>
+          <article><span>06</span><div><h3>Redaksjonelt</h3><p>Intervjuer, analyser og andre artikler som støtter nettstedets område- og markedskunnskap.</p></div></article>
         </div>
       </section>
 
@@ -225,7 +225,7 @@ export default async function MagazinePage() {
                 <p>{article.summary}</p>
                 <div className="magazine-actions">
                   <Link className="text-button" href={hrefForSlug(article.slug)}>
-                    Les guide <ArrowRight size={16} />
+                    Les artikkel <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
@@ -341,13 +341,13 @@ export default async function MagazinePage() {
 
       <section className="contact-section" id="kontakt">
         <div>
-          <p className="eyebrow">Vil du ha hjelp til a velge riktig?</p>
-          <h2>Fa en personlig omrade- og kjopsvurdering</h2>
+          <p className="eyebrow">Vil du ha hjelp til å velge riktig?</p>
+          <h2>Få en personlig område- og kjøpsvurdering</h2>
           <p>
-            Vi kan hjelpe deg a sortere omrader, budsjett, risiko og neste steg for du bruker tid pa visninger.
+            Vi kan hjelpe deg å sortere områder, budsjett, risiko og neste steg før du bruker tid på visninger.
           </p>
         </div>
-        <Link className="contact-button" href="/#kontakt">
+        <Link className="contact-button" href="/booking">
           Kontakt oss <ArrowRight size={18} />
         </Link>
       </section>
