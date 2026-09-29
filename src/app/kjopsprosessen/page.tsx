@@ -14,7 +14,7 @@ export const metadata = {
     canonical: "/kjopsprosessen",
   },
   openGraph: {
-    title: "Kjøpsprosess for bolig i Spania | Zen Eco Homes",
+    title: "Kjøpsprosessen i Spania | Fra boligsøk til overtakelse",
     description:
       "Få oversikt over prosessen fra første boligsøk til overtakelse med norsk rådgivning og trygg struktur.",
     url: "https://www.zenecohomes.com/kjopsprosessen",
