@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/es/sobre-freddy",
     languages: {
-      "nb-NO": `${BASE}/om-freddy`,
-      "x-default": `${BASE}/om-freddy`,
+      "nb-NO": `${BASE}/om-oss/freddy`,
+      "x-default": `${BASE}/om-oss/freddy`,
       "es-ES": `${BASE}/es/sobre-freddy`,
     },
   },
