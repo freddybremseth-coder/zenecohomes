@@ -69,6 +69,8 @@ const nextConfig: NextConfig = {
       { source: "/nybygg-costa-blanca", destination: "/guide/nybygg-i-spania", permanent: true },
       { source: "/nybygg-i-spania", destination: "/guide/nybygg-i-spania", permanent: true },
       { source: "/om-freddy", destination: "/om-oss/freddy", permanent: true },
+      { source: "/om-oss/om-freddy", destination: "/om-oss/freddy", permanent: true },
+      { source: "/om-oss/om-andrea", destination: "/om-oss/andrea", permanent: true },
       { source: "/inland", destination: "/omrader/innlandet", permanent: true },
       { source: "/inland/:sted", destination: "/omrader/innlandet/:sted", permanent: true },
       { source: "/tomter", destination: "/omrader/innlandet/tomter", permanent: true },
