@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       : `${propType} i ${town}`
     : "Bolig i Spania";
 
-  const title = pickSeoText(property?.meta_title_no, 65) || pickSeoText(property?.title_no, 65) || cleanTitle;
+  const title = pickSeoText(property?.meta_title_no, 60) || pickSeoText(property?.title_no, 60) || cleanTitle;
   const editorialMeta =
     property && property.editorial_no_approved !== false
       ? buildEditorialDescription(property.editorial_no).replace(/\s+/g, " ").trim()
