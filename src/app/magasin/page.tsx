@@ -47,6 +47,10 @@ const articleCovers: Record<string, string> = {
   "leilighet-eller-villa-costa-blanca": "/assets/magasin-covers/omradevalg.svg",
   "bolig-som-er-lett-a-selge-igjen-spania": "/assets/magasin-covers/radgiver.svg",
   "bolig-under-bygging-eller-ferdig-spania": "/assets/magasin-covers/kjopsprosess.svg",
+  "costa-blanca-nord-500000-euro-hva-kjope-na": "/assets/areas.jpg",
+  "benidorm-villa-456000-vs-516000": "/assets/magasin-covers/omradet-for-boligen.svg",
+  "finestrat-villa-650000-700000-735000": "/assets/magasin-covers/omradevalg.svg",
+  "villajoyosa-275000-vs-375000": "/assets/magasin-covers/kjope-na.svg",
 };
 
 const bookGuides = [
@@ -164,6 +168,8 @@ export default async function MagazinePage() {
   const fallbackArticles = allArticles.filter(
     (article) => !cmsSlugs.has(article.slug) && !articleSilo(article),
   );
+  const currentMarketArticles = fallbackArticles.filter((article) => article.category === "Marked akkurat nå");
+  const evergreenFallbackArticles = fallbackArticles.filter((article) => article.category !== "Marked akkurat nå");
 
   return (
     <main className="magazine-page">
@@ -212,6 +218,47 @@ export default async function MagazinePage() {
         </div>
       </section>
 
+      {currentMarketArticles.length > 0 && (
+        <section className="section">
+          <div className="section-heading">
+            <p className="eyebrow">Marked akkurat nå</p>
+            <h2>Konkrete boliger. Konkrete priser. Bedre beslutninger.</h2>
+            <p>
+              Daterte sammenligninger fra boliger som faktisk ligger i Zen-katalogen. Vi bruker dem til å vise
+              hva budsjettet kjøper akkurat nå – og hva som må kontrolleres før du bestemmer deg.
+            </p>
+          </div>
+          <div className="magazine-grid">
+            {currentMarketArticles.map((article) => (
+              <article className="magazine-card" key={article.slug}>
+                <Image
+                  className="magazine-cover-image"
+                  src={getArticleCover(article.slug)}
+                  alt={article.imageAlt}
+                  width={1200}
+                  height={760}
+                />
+                <div className="magazine-body">
+                  <p className="magazine-meta">
+                    Marked akkurat nå · {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
+                  </p>
+                  <h2>{article.title}</h2>
+                  <p>{article.excerpt}</p>
+                  <div className="magazine-actions">
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                      <Clock size={15} /> {article.readingTime}
+                    </span>
+                    <Link className="text-button" href={articlePath(article)}>
+                      Se sammenligningen <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Magasin</p>
@@ -245,7 +292,7 @@ export default async function MagazinePage() {
             </article>
           ))}
 
-          {fallbackArticles.map((article) => (
+          {evergreenFallbackArticles.map((article) => (
             <article className="magazine-card" key={article.slug}>
               <Image
                 className="magazine-cover-image"

@@ -2780,3 +2780,25 @@
     flex-wrap: wrap;
   }
 }
+
+
+.market-snapshot-note {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 28px;
+  padding: 18px 20px;
+  border: 1px solid rgba(22, 34, 43, 0.12);
+  border-left: 4px solid #c5a059;
+  border-radius: 14px;
+  background: #f8f5ee;
+  color: #26343d;
+}
+
+.market-snapshot-note strong {
+  color: #16222b;
+  font-size: 0.94rem;
+}
+
+.market-snapshot-note span {
+  line-height: 1.6;
+}

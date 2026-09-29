@@ -578,6 +578,61 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     ]},
   ],
 
+  "costa-blanca-nord-500000-euro-hva-kjope-na": [
+    { headingIncludes: "€456.000", links: [
+      { label: "Se N9098", href: "/eiendommer/N9098" },
+      { label: "Se Benidorm-området", href: "/omrader/costa-blanca-nord/benidorm" },
+    ]},
+    { headingIncludes: "€516.000", links: [
+      { label: "Se N9096", href: "/eiendommer/N9096" },
+    ]},
+    { headingIncludes: "€375.000", links: [
+      { label: "Se N9203", href: "/eiendommer/N9203" },
+      { label: "Se Villajoyosa-området", href: "/omrader/costa-blanca-nord/villajoyosa" },
+    ]},
+    { headingIncludes: "budsjettet", links: [
+      { label: "Hva får du for 4, 6, 8 og 10 millioner?", href: "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca" },
+      { label: "Slik lager du totalbudsjettet", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
+    ]},
+  ],
+  "benidorm-villa-456000-vs-516000": [
+    { headingIncludes: "N9098", links: [
+      { label: "Åpne N9098", href: "/eiendommer/N9098" },
+    ]},
+    { headingIncludes: "N9096", links: [
+      { label: "Åpne N9096", href: "/eiendommer/N9096" },
+    ]},
+    { headingIncludes: "dyrere", links: [
+      { label: "Slik vurderer du videresalg", href: "/magasin/bolig-som-er-lett-a-selge-igjen-spania" },
+    ]},
+  ],
+  "finestrat-villa-650000-700000-735000": [
+    { headingIncludes: "N9010", links: [
+      { label: "Åpne N9010", href: "/eiendommer/N9010" },
+    ]},
+    { headingIncludes: "N8313", links: [
+      { label: "Åpne N8313", href: "/eiendommer/N8313" },
+    ]},
+    { headingIncludes: "SP1296", links: [
+      { label: "Åpne SP1296", href: "/eiendommer/SP1296" },
+    ]},
+    { headingIncludes: "kontrollert", links: [
+      { label: "Områdeguide Finestrat", href: "/omrader/costa-blanca-nord/finestrat" },
+      { label: "Nybygg i Finestrat – kjøperguide", href: "/guide/nybygg-finestrat-omradeguide" },
+    ]},
+  ],
+  "villajoyosa-275000-vs-375000": [
+    { headingIncludes: "N9860", links: [
+      { label: "Åpne N9860", href: "/eiendommer/N9860" },
+    ]},
+    { headingIncludes: "N9203", links: [
+      { label: "Åpne N9203", href: "/eiendommer/N9203" },
+    ]},
+    { headingIncludes: "€100.000", links: [
+      { label: "Sammenlign Villajoyosa med Benidorm, Finestrat og Albir", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
+    ]},
+  ],
+
 };
 
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
@@ -614,6 +669,7 @@ export function ArticleView({ article }: { article: Article }) {
   const canonicalPath = articlePath(article);
   const relatedArticles = resolveRelatedArticles(article, silo);
   const isCorporate = silo === "corporate";
+  const isCurrentMarketArticle = article.category === "Marked akkurat nå";
   const personalAuthor =
     article.author ||
     (silo === "guide" ? { name: "Freddy Bremseth", href: "/om-oss/freddy" } : null);
@@ -696,6 +752,12 @@ export function ArticleView({ article }: { article: Article }) {
         <div className="article-layout">
           <article className="article-main">
             <div className="article-intro">
+              {isCurrentMarketArticle && (
+                <div className="market-snapshot-note">
+                  <strong>Markedsøyeblikksbilde · {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}</strong>
+                  <span>Objektene er brukt som konkrete sammenligningseksempler. Pris, tilgjengelighet, leveranse og enhet må bekreftes på nytt før visning eller reservasjon.</span>
+                </div>
+              )}
               {silo === "guide" && (
                 <p className="article-cluster-link">
                   Denne artikkelen er en del av{" "}
