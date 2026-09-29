@@ -359,7 +359,7 @@ function resolveRelatedArticles(article: Article, silo: ReturnType<typeof articl
   const curatedSlugs = silo === "guide" ? RELATED_GUIDE_SLUGS[article.slug] || [] : [];
   const curated = curatedSlugs
     .map((slug) => allArticles.find((item) => item.slug === slug))
-    .filter((item): item is Article => Boolean(item) && !RETIRED_ARTICLE_SLUGS.has(item.slug));
+    .filter((item): item is Article => item !== undefined && !RETIRED_ARTICLE_SLUGS.has(item.slug));
 
   const fallback = allArticles.filter(
     (item) =>
