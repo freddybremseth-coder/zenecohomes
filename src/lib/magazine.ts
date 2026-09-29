@@ -3,6 +3,124 @@ import { corporateArticles } from "./corporate-content";
 
 export const extraArticles: Article[] = [
   {
+    slug: "boligmarkedet-costa-blanca-hosten-2026",
+    title: "Boligmarkedet på Costa Blanca høsten 2026: Prisene stiger – men kronen hjelper norske kjøpere",
+    excerpt:
+      "Prisene i Spania stiger fortsatt, men utviklingen varierer mye lokalt. Her ser vi på Costa Blanca, utenlandske kjøpere, renter og hva kronekursen betyr for norske kjøpere.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Marked",
+    readingTime: "8 min lesing",
+    image: "/assets/areas.jpg",
+    imageAlt: "Boliger og kystlandskap på Costa Blanca i Spania",
+    seoTitle: "Boligmarkedet på Costa Blanca høsten 2026: priser og krone",
+    seoDescription:
+      "Prisene i Spania stiger fortsatt. Se utviklingen på Costa Blanca, hvem som kjøper, rentene i euro og Norge og hva sterkere krone betyr for norske kjøpere.",
+    keywords: [
+      "boligmarked Costa Blanca 2026",
+      "boligpriser Spania",
+      "boligpriser Benidorm",
+      "boligpriser Finestrat",
+      "boligpriser Villajoyosa",
+      "norsk krone euro bolig Spania",
+      "rente Spania bolig",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Det spanske boligmarkedet går inn i høsten 2026 med fortsatt høy prisvekst, samtidig som bildet er mer sammensatt lokalt enn de nasjonale overskriftene kan gi inntrykk av. For norske kjøpere er det dessuten ikke bare boligprisen i euro som teller. Renter og kronekurs påvirker den reelle kostnaden betydelig.",
+      "Tallene nedenfor bør derfor leses som markedsindikatorer, ikke som en prisliste for den enkelte bolig. Beliggenhet, standard, utsikt, byggeår, prosjektfase og mikroområde kan gi store utslag innen samme kommune.",
+    ],
+    sections: [
+      {
+        heading: "Spanske boligpriser fortsetter opp",
+        body: [
+          "Det offisielle boligprisindekset fra INE viste en årsvekst på 12,2 prosent i andre kvartal 2026. Bruktboliger steg 12,9 prosent, mens nybygg steg 7,4 prosent. Fra første til andre kvartal steg den samlede indeksen 3,4 prosent.",
+          "Det betyr ikke at alle områder eller boligtyper har hatt samme utvikling. For en kjøper på Costa Blanca er lokale prisdata langt mer nyttige når budsjettet skal vurderes.",
+        ],
+      },
+      {
+        heading: "Store forskjeller på Costa Blanca",
+        body: [
+          "Idealistas prisstatistikk for august 2026 viser tydelige forskjeller mellom kommunene. Benidorm lå på rundt 3.807 euro per kvadratmeter, opp 12,6 prosent fra året før. Villajoyosa lå på 3.072 euro, opp 12,2 prosent. Alfaz del Pi lå på 3.128 euro, opp 11,2 prosent.",
+          "Finestrat lå på 3.328 euro per kvadratmeter, med 3,8 prosent årsvekst, mens Altea lå på 3.486 euro og 2,5 prosent årsvekst. Det viser hvorfor en generell påstand om at «Costa Blanca stiger med X prosent» blir for grov.",
+        ],
+        bullets: [
+          "Benidorm: ca. €3.807/m² · +12,6 % siste år.",
+          "Finestrat: ca. €3.328/m² · +3,8 % siste år.",
+          "Villajoyosa: ca. €3.072/m² · +12,2 % siste år.",
+          "Altea: ca. €3.486/m² · +2,5 % siste år.",
+          "Alfaz del Pi: ca. €3.128/m² · +11,2 % siste år.",
+        ],
+      },
+      {
+        heading: "Hvem kjøper?",
+        body: [
+          "Alicante-provinsen er fortsatt et av de spanske markedene med høyest andel utenlandske boligkjøpere. Det bidrar til at etterspørselen i mange kystområder ikke bare styres av spansk økonomi eller norske kjøpere.",
+          "For nordmenn betyr det at konkurransen om attraktive boliger ofte kommer fra flere europeiske markeder samtidig. Det er særlig relevant for nybygg, boliger nær sjøen og eiendommer med gode kvaliteter som skiller seg ut.",
+        ],
+      },
+      {
+        heading: "Euro-renten har også gått opp",
+        body: [
+          "Den europeiske sentralbanken hevet i september sine tre styringsrenter med 0,25 prosentpoeng. Innskuddsrenten ble satt til 2,50 prosent fra 16. september 2026.",
+          "For boligkjøpere som finansierer i euro betyr det at lånekostnaden fortsatt må regnes nøye på. Den faktiske boliglånsrenten avhenger av bank, belåningsgrad, kundens økonomi og om lånet er fast eller flytende.",
+        ],
+      },
+      {
+        heading: "Norges Bank: styringsrenten er 4,50 prosent",
+        body: [
+          "Norges Bank hevet styringsrenten fra 4,25 til 4,50 prosent i september. For nordmenn som finansierer kjøpet gjennom norsk økonomi eller vurderer hvor mye kapital som skal bindes i Spania, er dette en viktig del av regnestykket.",
+          "Høyere norsk rente kan dempe kjøpekraften, men samtidig har kronekursen utviklet seg gunstigere for norske eurokjøpere enn på de svakeste nivåene.",
+        ],
+      },
+      {
+        heading: "Kronekursen kan bety hundretusener",
+        body: [
+          "For en norsk kjøper er valutakursen i praksis en del av boligprisen. Når én euro blir billigere målt i kroner, faller den norske kostnaden selv om boligprisen i euro står stille.",
+          "Som illustrasjon: en endring fra rundt 11,79 til 10,87 kroner per euro reduserer kronebeløpet på et kjøp til 500.000 euro med omtrent 460.000 kroner. På 700.000 euro er forskjellen rundt 640.000 kroner. Valuta kan derfor være like viktig som noen prosent prisendring på selve boligen.",
+        ],
+      },
+      {
+        heading: "Hva betyr dette for en kjøper høsten 2026?",
+        body: [
+          "Markedet er ikke et sted der én konklusjon passer alle. Prisene er høye og har steget kraftig i flere områder, men lokale forskjeller er store. Samtidig kan en sterkere norsk krone delvis kompensere for prisveksten for kjøpere som kommer med norske kroner.",
+          "Det viktigste er derfor å regne på den konkrete boligen i både euro og kroner, sammenligne med relevante alternativer i samme mikroområde og kontrollere at pris, tilgjengelighet og prosjektfase faktisk er oppdatert.",
+        ],
+        bullets: [
+          "Sammenlign lokale priser, ikke bare nasjonale gjennomsnitt.",
+          "Regn totalbudsjettet både i euro og norske kroner.",
+          "Legg inn rente, kjøpskostnader og eventuell valutarisiko.",
+          "Kontroller reell tilgjengelighet før du planlegger visning.",
+          "Vurder området og videresalgsmarkedet sammen med selve boligen.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Se boliger som faktisk er tilgjengelige nå.",
+      "Sammenlign Benidorm, Finestrat, Villajoyosa, Altea og Alfaz del Pi ut fra ditt budsjett.",
+      "Regn kjøpesummen i både euro og NOK før du bestemmer prisrammen.",
+      "Book en boligprat hvis du ønsker en konkret shortlist basert på område, bruk og budsjett.",
+    ],
+    faq: [
+      {
+        question: "Stiger boligprisene fortsatt i Spania i 2026?",
+        answer:
+          "Ja. INEs boligprisindeks viste 12,2 prosent årsvekst i andre kvartal 2026, men lokale markeder utvikler seg ulikt og bør vurderes separat.",
+      },
+      {
+        question: "Er Costa Blanca like dyrt overalt?",
+        answer:
+          "Nei. Prisnivå og årsvekst varierer betydelig mellom kommuner og mikroområder. Benidorm, Finestrat, Villajoyosa, Altea og Alfaz del Pi viser tydelig forskjellige nivåer og vekstrater.",
+      },
+      {
+        question: "Hvor viktig er kronekursen ved boligkjøp i Spania?",
+        answer:
+          "Svært viktig for kjøpere med norsk kapital. Selv en moderat endring i EUR/NOK kan flytte den reelle kjøpesummen med flere hundre tusen kroner på en bolig til 500.000–700.000 euro.",
+      },
+    ],
+    cta: { label: "Se boliger til salgs", href: "/eiendommer" },
+  },
+  {
     slug: "det-du-ikke-ser-i-boligannonsen",
     title: "Det du ikke ser i boligannonsen – derfor starter jeg med området",
     excerpt:
