@@ -10,9 +10,8 @@ import { homeLanguageLinks } from "@/lib/i18n";
 const BASE = "https://www.zenecohomes.com";
 
 export const metadata: Metadata = {
-  title: "Sobre Freddy Bremseth | Asesor inmobiliario Costa Blanca",
-  description:
-    "Conoce a Freddy Bremseth, asesor inmobiliario de Zen Eco Homes, residente en Benidorm y dedicado a ayudar a compradores a entender zonas, propiedades y proceso de compra en la Costa Blanca.",
+  title: "Freddy Bremseth | Asesor inmobiliario Costa Blanca",
+  description: "Conoce a Freddy Bremseth, asesor inmobiliario noruego en Costa Blanca. Descubre su enfoque sobre zonas, búsqueda de vivienda, visitas y compra en España.",
   alternates: {
     canonical: "/es/sobre-freddy",
     languages: {

@@ -283,7 +283,7 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 24px;
-  color: var(--ze-sage);
+  color: var(--ze-sage-text, #657160);
   font-size: .72rem;
   font-weight: 750;
   letter-spacing: .14em;

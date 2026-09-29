@@ -6,8 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Ratgeber für den Immobilienkauf in Spanien | Zen Eco Homes",
-  description: "Praktische deutschsprachige Ratgeber zu Regionen, Neubau, Grundstücken, Kosten und Kaufprozess in Spanien.",
+  title: "Ratgeber Immobilienkauf Spanien | Guides | Zen Eco Homes",
+  description: "Ratgeber zum Immobilienkauf in Spanien: Regionen, Neubau, Grundstücke, Finanzierung, NIE, Recht, Kosten und praktische Schritte vor der Reservierung.",
   alternates: { canonical: "/de/ratgeber" },
 };
 

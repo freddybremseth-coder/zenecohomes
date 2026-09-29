@@ -10,6 +10,32 @@ import {
   getPropertyRef,
 } from "@/lib/realtyflow";
 
+function fitSeoTitle(value: string) {
+  const clean = value.replace(/\s+/g, " ").trim();
+  if (clean.length >= 50 && clean.length <= 60) return clean;
+  const candidates = [
+    `${clean} | Spain`,
+    `${clean} | Zen Eco Homes`,
+    `${clean} | Property in Spain`,
+    `${clean} | Property in Spain | Zen Eco Homes`,
+  ];
+  const fitted = candidates.find((candidate) => candidate.length >= 50 && candidate.length <= 60);
+  if (fitted) return fitted;
+  const fallback = candidates[candidates.length - 1];
+  return fallback.length <= 60 ? fallback : fallback.slice(0, 60).replace(/\s+\S*$/, "").trim();
+}
+
+function fitMetaDescription(value: string) {
+  let clean = value.replace(/\s+/g, " ").trim();
+  if (clean.length < 140) {
+    clean += " See price, key facts, location and what to verify before viewing or reserving with Zen Eco Homes.";
+  }
+  if (clean.length > 160) {
+    clean = `${clean.slice(0, 157).replace(/\s+\S*$/, "").trim()}…`;
+  }
+  return clean;
+}
+
 export async function generateStaticParams() {
   const properties = await getProperties(30, "zeneco");
   return properties.map((property) => ({ id: encodeURIComponent(getPropertyRef(property)) }));
@@ -19,14 +45,17 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
   const ref = property ? getPropertyRef(property) : decodeURIComponent(id);
-  const title = property ? `${getLocalizedPropertyTitle(property, "en")} | Property in Spain` : "Property in Spain";
-  const description = property
+  const rawTitle = property ? `${getLocalizedPropertyTitle(property, "en")} | Property in Spain` : "Property in Spain";
+  const title = fitSeoTitle(rawTitle);
+  const rawDescription = property
     ? `${formatPriceForLocale(property.price, "en")} · ${property.location || property.town || "Spain"} · ${getLocalizedPropertyType(property, "en")}. Request brochure, availability and advice from Zen Eco Homes.`
     : "Property for sale in Spain with Zen Eco Homes.";
+  const description = fitMetaDescription(rawDescription);
 
   return {
     title,
     description,
+    robots: property ? undefined : { index: false, follow: true },
     alternates: {
       canonical: getPropertyDetailPath(ref, "en"),
       languages: propertyHreflang(ref),

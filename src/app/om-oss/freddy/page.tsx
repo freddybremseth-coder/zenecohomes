@@ -10,7 +10,7 @@ import { homeLanguageLinks } from "@/lib/i18n";
 export const metadata = {
   title: "Freddy Bremseth | Norsk rådgiver for bolig i Spania",
   description:
-    "Møt Freddy Bremseth, norsk eiendomsrådgiver på Costa Blanca. Les om områdekunnskap, boligsøk, visning, kjøpsprosess og boligkjøp i Spania i dag.",
+    "Møt Freddy Bremseth, norsk eiendomsrådgiver på Costa Blanca. Les om områdevalg, boligsøk, visning, kjøpsprosess og hans erfaring med bolig i Spania.",
   alternates: {
     canonical: "/om-oss/freddy",
     languages: {
@@ -228,9 +228,9 @@ export default function FreddyPage() {
             <Link className="contact-button" href="/booking">
               <CalendarClock size={18} /> Be om en 15-minutters boligprat
             </Link>
-            <Link className="text-button" href="/#kontakt">
-              <MessageCircle size={16} /> Eller send en melding
-            </Link>
+            <a className="text-button" href="mailto:freddy@zenecohomes.com">
+              <MessageCircle size={16} /> Send e-post
+            </a>
           </div>
         </article>
       </section>

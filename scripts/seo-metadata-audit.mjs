@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { loadTsModule } from "./load-ts-module.mjs";
 
 const root = process.cwd();
 
@@ -39,6 +40,16 @@ const pageFiles = [
   "src/app/tomter/page.tsx",
 ];
 
+for (const locale of ["de", "en", "es"]) {
+  const folder = path.join(root, "src/app", locale);
+  for (const item of fs.readdirSync(folder, { withFileTypes: true })) {
+    const file = item.isDirectory() ? `src/app/${locale}/${item.name}/page.tsx` : `src/app/${locale}/${item.name}`;
+    if (!file.endsWith("page.tsx") || !fs.existsSync(file)) continue;
+    const source = fs.readFileSync(file, "utf8");
+    if (source.includes("export const metadata") && !source.includes("index: false")) pageFiles.push(file);
+  }
+}
+
 const errors = [];
 
 function read(file) {
@@ -56,15 +67,16 @@ function checkRange(file, kind, value, min, max) {
   }
 }
 
+let dataCount = 0;
 for (const file of sourceFiles) {
-  const content = read(file);
-
-  for (const match of content.matchAll(/seoTitle:\s*"([^"]+)"/g)) {
-    checkRange(file, "seoTitle", match[1], 50, 60);
-  }
-
-  for (const match of content.matchAll(/seoDescription:\s*"([^"]+)"/g)) {
-    checkRange(file, "seoDescription", match[1], 140, 160);
+  const exports = loadTsModule(file);
+  for (const records of Object.values(exports).filter(Array.isArray)) {
+    for (const record of records) {
+      if (!record || typeof record !== "object" || !("seoTitle" in record)) continue;
+      dataCount++;
+      checkRange(`${file} (${record.slug})`, "seoTitle", record.seoTitle, 50, 60);
+      checkRange(`${file} (${record.slug})`, "seoDescription", record.seoDescription, 140, 160);
+    }
   }
 }
 
@@ -103,4 +115,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("SEO metadata audit passed: titles 50-60 chars and descriptions 140-160 chars.");
+console.log(`SEO metadata audit passed: ${dataCount} data records and ${pageFiles.length} pages; titles 50-60 chars, descriptions 140-160 chars.`);

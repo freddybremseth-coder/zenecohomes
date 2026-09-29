@@ -22,8 +22,8 @@ const localPageES = ({
   eyebrow: `${area} · guía de zona`,
   hero: `Comprar vivienda en ${place}`,
   description: `${place} puede ser una buena opción si buscas vivienda, obra nueva o inversión en ${area}. Zen Eco Homes te ayuda a valorar ubicación, precio, estilo de vida, accesos y el proceso de compra antes de reservar.`,
-  seoTitle: `Vivienda en ${place} | Propiedades y asesoramiento`,
-  seoDescription: `¿Buscas vivienda en ${place}? Conoce la zona, obra nueva, estilo de vida y proceso de compra con asesoramiento inmobiliario en España.`,
+  seoTitle: `Vivienda en ${place} | Propiedades y asesoría en España`,
+  seoDescription: `¿Buscas vivienda en ${place}? Conoce la zona, obra nueva, precios, estilo de vida, ubicación y proceso de compra con asesoramiento inmobiliario en España.`,
   primaryCta: { label: `Ver viviendas en ${place}`, href: filterHref },
   secondaryCta: { label: "Ver todas las propiedades", href: "/es/propiedades" },
   sections: [

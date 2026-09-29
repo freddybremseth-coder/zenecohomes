@@ -5,14 +5,17 @@ import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
-import { homeLanguageLinks } from "@/lib/i18n";
+import { findEquivalentBySlug, seoHreflang, siteLocales, withLocale } from "@/lib/i18n";
 import { getLocalizedPropertyType, getProperties } from "@/lib/realtyflow";
+
+const eq = findEquivalentBySlug("no", "guide/kjope-bolig-i-spania");
+const languageLinks = eq ? siteLocales.filter(locale => eq[locale]).map(locale => ({ locale, href: withLocale(locale, `/${eq[locale]}`), current: locale === "no" })) : undefined;
 
 export const metadata: Metadata = {
   title: "Kjøpe bolig i Spania (2026): Guide og mine erfaringer",
   description:
     "Kjøpe bolig i Spania? Få en oppdatert guide til områdevalg, kostnader, NIE, finansiering, visning, juridisk kontroll, notar og trygg overtakelse.",
-  alternates: { canonical: "/guide/kjope-bolig-i-spania" },
+  alternates: { canonical: "/guide/kjope-bolig-i-spania", languages: eq ? seoHreflang(eq) : undefined },
 };
 
 const steps = [
@@ -65,7 +68,7 @@ export default async function BuyInSpainGuidePage() {
 
   return (
     <main className="cornerstone-guide">
-      <SiteHeader languageLinks={homeLanguageLinks("no")} />
+      <SiteHeader languageLinks={languageLinks} />
 
       <section className="page-hero compact-hero image-hero cornerstone-hero">
         <div className="cornerstone-hero-layout">

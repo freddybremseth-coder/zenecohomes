@@ -696,7 +696,7 @@ export const articles: Article[] = [
           "Det finnes ikke én betalingsmodell som gjelder alle aktører og alle salg. Avklar skriftlig hvem som betaler megler-/rådgiverhonorar i den konkrete handelen, og avtal separat honorar og oppdrag med din uavhengige advokat.",
       },
     ],
-    cta: { label: "Prøv Boligmatchen – finn prosjekter som passer budsjettet", href: "/#boligmatch" },
+    cta: { label: "Prøv Boligmatchen – finn prosjekter som passer budsjettet", href: "/eiendommer#boligmatch" },
   },
   {
     slug: "bankgaranti-nybygg-spania",
@@ -804,7 +804,7 @@ export const articles: Article[] = [
           "Lovverket stiller krav til hvordan relevante forskuddsbetalinger håndteres i de tilfellene reglene gjelder. Be advokaten kontrollere at kontoen du skal betale til er korrekt for prosjektet og betalingsformålet.",
       },
     ],
-    cta: { label: "Bruk Boligmatchen for å finne aktuelle nybyggprosjekter", href: "/#boligmatch" },
+    cta: { label: "Bruk Boligmatchen for å finne aktuelle nybyggprosjekter", href: "/eiendommer#boligmatch" },
   },
   {
     slug: "nybygg-finestrat-omradeguide",
@@ -984,7 +984,7 @@ export const articles: Article[] = [
           "Det bør avklares før kjøp. Skal utleie være en viktig del av regnestykket, må lovlighet, målgruppe og etterspørsel inngå i område- og boligvalget. Skal du mest bruke boligen selv, kan andre hensyn veie tyngre.",
       },
     ],
-    cta: { label: "Prøv Boligmatchen – finn en bolig som passer bruken din", href: "/#boligmatch" },
+    cta: { label: "Prøv Boligmatchen – finn en bolig som passer bruken din", href: "/eiendommer#boligmatch" },
   },
   {
     slug: "lopende-kostnader-eie-bolig-spania",
@@ -1237,7 +1237,7 @@ export const articles: Article[] = [
           "Det avhenger av hvor du blir skattemessig bosatt og hvilke inntekter og eiendeler du har. Dette bør planlegges med kvalifisert skatte-/juridisk rådgiver før flytting.",
       },
     ],
-    cta: { label: "Ta en uforpliktende prat om bolig og område", href: "/#kontakt" },
+    cta: { label: "Ta en uforpliktende prat om bolig og område", href: "/booking" },
   },
   {
     slug: "energieffektive-nybygg-spania",
@@ -1480,7 +1480,7 @@ export const articles: Article[] = [
           "Ja, hvilke beløp som kan inngå i skattemessig beregning følger gjeldende regler. Ta vare på fakturaer og la kvalifisert rådgiver beregne salget konkret.",
       },
     ],
-    cta: { label: "Ta en prat om langsiktig boligøkonomi", href: "/#kontakt" },
+    cta: { label: "Ta en prat om langsiktig boligøkonomi", href: "/booking" },
   },
   {
     slug: "arv-gaveskatt-bolig-spania",
@@ -1556,7 +1556,7 @@ export const articles: Article[] = [
           "Nei. Regionale regler og fordeler kan gi store forskjeller, og regelverket kan endres. Bruk oppdaterte regler for den aktuelle regionen og situasjonen.",
       },
     ],
-    cta: { label: "Snakk med oss om hvem som kan hjelpe med langsiktig eierskap", href: "/#kontakt" },
+    cta: { label: "Snakk med oss om hvem som kan hjelpe med langsiktig eierskap", href: "/booking" },
   },
   {
     slug: "nie-skattenummer-spania",
@@ -1720,7 +1720,7 @@ export const articles: Article[] = [
           "Du bør være forberedt på det. Banker og andre relevante aktører kan kreve dokumentasjon på midlenes opprinnelse som ledd i hvitvaskingskontroll.",
       },
     ],
-    cta: { label: "Ta en prat om budsjett og betaling", href: "/#kontakt" },
+    cta: { label: "Ta en prat om budsjett og betaling", href: "/booking" },
   },
   {
     slug: "boliglan-spansk-bank-nordmenn",

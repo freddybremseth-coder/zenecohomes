@@ -14,7 +14,7 @@ export const metadata = {
     "Les guider om boligkjøp i Spania, områdevalg, nybygg, tomt, kostnader, finansiering, NIE og praktiske steg før du reserverer bolig i Spania.",
   alternates: { canonical: "/guide" },
   openGraph: {
-    title: "Guider om boligkjøp i Spania | Zen Eco Homes",
+    title: "Guider om boligkjøp i Spania | Råd fra Zen Eco Homes",
     description:
       "Praktiske guider om områdevalg, boligtype, nybygg, finansiering, NIE, juridikk og kostnader ved boligkjøp i Spania.",
     url: "https://www.zenecohomes.com/guide",
@@ -34,7 +34,7 @@ const guideGroups = [
       "kjop-bolig-i-spania-na-eller-vente",
       "nybygg-finestrat-omradeguide",
       "innlandet-finca-olivengard-spania",
-      "flytte-til-spania-pensjonist",
+      "flytte-til-spania-som-pensjonist",
       "guide-tomtekjop-bygging-i-spania",
     ],
   },

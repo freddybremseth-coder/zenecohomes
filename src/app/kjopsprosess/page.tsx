@@ -87,7 +87,7 @@ export default function KjopsprosessHub() {
             tryggheten er på plass før du reserverer.
           </p>
         </div>
-        <Link className="contact-button" href="/#kontakt">
+        <Link className="contact-button" href="/booking">
           Kontakt oss <ArrowRight size={18} />
         </Link>
       </section>

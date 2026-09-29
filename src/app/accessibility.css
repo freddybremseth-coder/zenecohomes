@@ -20,3 +20,60 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* WCAG 2.2 keyboard focus: always visible on interactive controls. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid #315e64;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.site-header.over-hero :where(a, button):focus-visible,
+.page-hero :where(a, button):focus-visible,
+.hero :where(a, button):focus-visible,
+.site-footer-2027 :where(a, button):focus-visible,
+.contact-section :where(a, button):focus-visible {
+  outline-color: #ffffff;
+  box-shadow: 0 0 0 5px rgba(23, 32, 39, 0.72);
+}
+
+/* Do not rely on colour alone for inline links in long-form content. */
+.article-body a,
+.guide-article a,
+.rich-text a,
+.om-freddy-bio a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+@media (forced-colors: active) {
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid Highlight;
+  }
+}
+
+
+.skip-link {
+  position: fixed;
+  z-index: 20000;
+  top: 10px;
+  left: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #172027;
+  font-weight: 800;
+  text-decoration: underline;
+  transform: translateY(-160%);
+  transition: transform 120ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+#main-content:focus {
+  outline: none;
+}

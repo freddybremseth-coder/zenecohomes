@@ -5,9 +5,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Inland Alicante & Murcia | Plots, fincas and modern new-build villas",
-  description:
-    "Explore inland Alicante and Murcia: Biar, Busot, Villena, Hondón, Pinoso, Aspe, Novelda, Jumilla and more. Choose the area first; Zen Eco Homes helps find a suitable plot and the right modern home model.",
+  title: "Inland Alicante and Murcia | Plots, Fincas and New Builds",
+  description: "Explore inland Alicante and Murcia. Compare towns, plots, fincas and modern home models, with practical guidance on choosing the right area in Spain.",
   alternates: {
     canonical: "/en/inland",
     languages: {

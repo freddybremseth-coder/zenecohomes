@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { parseLeadBudgetEstimate } from "../src/lib/realtyflow.ts";
+import { loadTsModule } from "../scripts/load-ts-module.mjs";
+const { parseLeadBudgetEstimate } = loadTsModule("src/lib/realtyflow.ts");
 
 test("Corporate lead budget ranges use midpoint instead of concatenated digits", () => {
   assert.equal(parseLeadBudgetEstimate("€300 000–€500 000"), 400000);

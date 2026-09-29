@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarDays } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import type { SeoLandingPage } from "@/lib/seoLandingPages";
@@ -12,9 +12,11 @@ type Props = {
   locale: SiteLocale;
   /** Ekvivalens-rad for hreflang/språkbytter (uten locale-prefiks). */
   eq?: SeoEquivalent;
+  /** Brukes kun når SEO-landingssiden også er en redaksjonell /guide-side. */
+  guideMeta?: { author: string; authorHref: string; updated: string };
 };
 
-export function SeoLandingView({ page, locale, eq }: Props) {
+export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
   const t = ui[locale];
   const selfUrl = `${BASE}${withLocale(locale, `/${page.slug}`)}`;
 
@@ -49,11 +51,34 @@ export function SeoLandingView({ page, locale, eq }: Props) {
       <SiteHeader locale={locale} languageLinks={languageLinks} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {guideMeta && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: page.hero,
+              description: page.seoDescription,
+              dateModified: guideMeta.updated,
+              author: { "@type": "Person", name: guideMeta.author, url: `${BASE}${guideMeta.authorHref}` },
+              publisher: { "@type": "Organization", name: "Zen Eco Homes", url: BASE },
+              mainEntityOfPage: selfUrl,
+            }),
+          }}
+        />
+      )}
 
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">{page.eyebrow}</p>
         <h1>{page.hero}</h1>
         <p>{page.description}</p>
+        {guideMeta && (
+          <div className="article-hero-meta">
+            <Link href={guideMeta.authorHref}>Av {guideMeta.author}</Link>
+            <span><CalendarDays size={16} /> Sist oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(guideMeta.updated))}</span>
+          </div>
+        )}
         <div className="hero-actions">
           <Link className="contact-button" href={page.primaryCta.href}>
             {page.primaryCta.label} <ArrowRight size={18} />

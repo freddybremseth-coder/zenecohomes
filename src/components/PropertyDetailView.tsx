@@ -126,7 +126,7 @@ const T: Record<Locale, DetailText> = {
     includedBody:
       "Be om komplett tilbud, så sjekker vi hvitevarer, belysning, basseng, hage, parkering, møbler, klima, solcellevalg og eventuelle tillegg.",
     newBuildLink: "Les om nybygg",
-    newBuildHref: "/nybygg-i-spania",
+    newBuildHref: "/guide/nybygg-i-spania",
     nextStepsTitle: "Neste steg",
     nextSteps: [
       "Vi sjekker oppdatert tilgjengelighet, pris og betalingsplan.",

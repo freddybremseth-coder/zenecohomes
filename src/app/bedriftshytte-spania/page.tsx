@@ -19,9 +19,9 @@ import { CARE_URL } from "@/lib/i18n";
 import { corporateArticles } from "@/lib/corporate-content";
 
 export const metadata: Metadata = {
-  title: "Bedriftshytte i Spania | Firmabolig | Zen Corporate Homes",
+  title: "Bedriftshytte i Spania | Zen Corporate Homes for bedrifter",
   description:
-    "Zen Corporate Homes hjelper norske bedrifter og organisasjoner med å vurdere, finne og kjøpe bedriftshytte eller firmabolig på Costa Blanca i Spania.",
+    "Bedriftshytte i Spania for norske bedrifter og organisasjoner. Få hjelp med modell, boligvalg, kjøp, drift og lokal oppfølging på Costa Blanca." ,
   keywords: [
     "bedriftshytte Spania",
     "firmahytte Spania",

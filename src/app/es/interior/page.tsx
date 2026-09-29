@@ -9,9 +9,8 @@ import { homeLanguageLinks } from "@/lib/i18n";
 const BASE = "https://www.zenecohomes.com";
 
 export const metadata: Metadata = {
-  title: "Interior de Alicante y Murcia | Terrenos, fincas y villas de obra nueva",
-  description:
-    "Descubre el interior de Alicante y Murcia: Biar, Busot, Villena, Hondón, Pinoso, Aspe, Novelda, Jumilla y más. Primero elegimos la zona; después buscamos el terreno adecuado y la vivienda moderna que pueda construirse allí.",
+  title: "Interior de Alicante y Murcia | Terrenos y obra nueva",
+  description: "Descubre el interior de Alicante y Murcia. Compara pueblos, terrenos, fincas y modelos de vivienda antes de elegir la zona y planificar tu compra.",
   alternates: {
     canonical: "/es/interior",
     languages: {

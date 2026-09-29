@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound, permanentRedirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, MapPin } from "lucide-react";
@@ -7,7 +8,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
-import { areaSlug } from "@/lib/areaRoutes";
+import { areaProfileSlug, areaSlug } from "@/lib/areaRoutes";
 import { bookUrl } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
@@ -44,7 +45,7 @@ async function getProfile(region: RegionKey, sted: string) {
   const profiles = await getAreaProfiles();
   return profiles.find((profile) =>
     areaMatchesRegion(profile, region)
-    && (areaSlug(profile.name) === sted || areaSlug(profile.slug || "") === sted)
+    && (areaProfileSlug(profile) === sted || areaSlug(profile.name) === sted || areaSlug(profile.slug || "") === sted)
   ) || null;
 }
 
@@ -53,7 +54,7 @@ export async function generateStaticParams() {
   return (["costa-blanca-nord", "costa-blanca-sor", "costa-calida"] as RegionKey[]).flatMap((region) =>
     profiles
       .filter((profile) => areaMatchesRegion(profile, region))
-      .map((profile) => ({ region, sted: areaSlug(profile.name) }))
+      .map((profile) => ({ region, sted: areaProfileSlug(profile) }))
   );
 }
 
@@ -64,11 +65,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { region, sted } = await params;
   const profile = await getProfile(region, sted);
-  if (!profile) return { title: "Område i Spania | Zen Eco Homes" };
+  if (!profile) notFound();
   return {
     title: exactTitle(profile.name),
     description: exactDescription(profile.name),
-    alternates: { canonical: `/omrader/${region}/${sted}` },
+    alternates: { canonical: `/omrader/${region}/${areaProfileSlug(profile)}` },
   };
 }
 
@@ -81,18 +82,9 @@ export default async function AreaTownPage({
   const profile = await getProfile(region, sted);
   const selectedRegion = regions.find((item) => item.key === region);
 
-  if (!profile || !selectedRegion) {
-    return (
-      <main>
-        <SiteHeader languageLinks={homeLanguageLinks("no")} />
-        <section className="page-hero compact-hero">
-          <h1>Området ble ikke funnet</h1>
-          <Link className="text-button light" href="/omrader">Til områder</Link>
-        </section>
-        <Footer />
-      </main>
-    );
-  }
+  if (!profile || !selectedRegion) notFound();
+  const canonicalSlug = areaProfileSlug(profile);
+  if (sted !== canonicalSlug) permanentRedirect(`/omrader/${region}/${canonicalSlug}`);
 
   const properties = await getProperties(0, "zeneco");
   const localProperties = properties.filter((property) => propertyMatchesArea(property, profile.name)).slice(0, 6);
@@ -161,7 +153,9 @@ export default async function AreaTownPage({
           <h2>Boliger i {profile.name}</h2>
           <p>
             Utvalget under hentes fra den publiserte boligbasen. Bruk hele boligoversikten for flere filtre,
-            eller kontakt oss dersom du vil at vi skal koordinere en kort shortlist.
+            eller kontakt oss dersom du vil at vi skal koordinere en kort shortlist. Før du reserverer kan du også
+            bruke <Link href="/guide/kjope-bolig-i-spania">hovedguiden for å kjøpe bolig i Spania</Link> for å
+            kontrollere kjøpssteg, kostnader, NIE, finansiering og juridisk oppfølging.
           </p>
         </div>
         {localProperties.length ? (

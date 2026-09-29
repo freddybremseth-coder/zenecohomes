@@ -1,5 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import ts from "typescript";
+const configSource = fs.readFileSync("next.config.ts", "utf8").replaceAll("import.meta.dirname", "process.cwd()");
+const configJs = ts.transpileModule(configSource, { compilerOptions: { module: ts.ModuleKind.ESNext } }).outputText;
+const { default: loadedConfig } = await import(`data:text/javascript;base64,${Buffer.from(configJs).toString("base64")}`);
+const redirects = await loadedConfig.redirects();
+const hasRedirect = (source, destination) => redirects.some(r => r.source === source && r.destination === destination && r.permanent);
 
 const root = process.cwd();
 const errors = [];
@@ -91,7 +97,7 @@ const literalRedirects = [
   ["/guide/flytte-til-spania-pensjonist", "/guide/flytte-til-spania-som-pensjonist"],
 ];
 for (const [source, destination] of literalRedirects) {
-  if (!config.includes(`source: "${source}"`) || !config.includes(`destination: "${destination}"`)) {
+  if (!hasRedirect(source, destination)) {
     errors.push(`${nextConfig}: missing redirect ${source} -> ${destination}`);
   }
 }
@@ -103,7 +109,7 @@ for (const slug of [
 ]) {
   const source = `/kjopsprosess/${slug}`;
   const destination = `/guide/${slug}`;
-  if (!config.includes(`source: "${source}"`) || !config.includes(`destination: "${destination}"`)) {
+  if (!hasRedirect(source, destination)) {
     errors.push(`${nextConfig}: missing legacy redirect ${source} -> ${destination}`);
   }
 }

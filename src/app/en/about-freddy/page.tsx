@@ -8,9 +8,8 @@ import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "About Freddy Bremseth | Property advisor on the Costa Blanca",
-  description:
-    "Meet Freddy Bremseth, Norwegian property advisor based in Benidorm. Practical experience with Costa Blanca property, rentals, buyer guidance and viewing planning.",
+  title: "Freddy Bremseth | Property Advisor in Spain | Costa Blanca",
+  description: "Meet Freddy Bremseth, a Norwegian property advisor on the Costa Blanca. Learn about area selection, property search, viewings and buying in Spain.",
   alternates: {
     canonical: "/en/about-freddy",
     languages: {

@@ -8,6 +8,8 @@ type CorporateDraft = {
   title: string;
   excerpt: string;
   keywords: string[];
+  seoTitle?: string;
+  seoDescription?: string;
   intro: string[];
   sections: { heading: string; body: string[]; bullets?: string[] }[];
   faq: { question: string; answer: string }[];
@@ -22,8 +24,8 @@ function makeArticle(draft: CorporateDraft): Article {
     readingTime: "6–8 min lesing",
     image: cover,
     imageAlt: `Zen Corporate Homes guide: ${draft.title}`,
-    seoTitle: `${draft.title} | Zen Corporate Homes`,
-    seoDescription: draft.excerpt,
+    seoTitle: draft.seoTitle || `${draft.title} | Zen Corporate Homes`,
+    seoDescription: draft.seoDescription || draft.excerpt,
     nextSteps: [
       "Avklar hvem som skal kunne bruke boligen og hva virksomheten ønsker å oppnå.",
       "Sett et realistisk totalbudsjett for kjøp, drift og lokal oppfølging.",
@@ -57,8 +59,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "bedriftshytte-mot-hotell-og-leie",
+    seoTitle: "Bedriftshytte eller hotell og leie? Sammenlign kostnader",
     title: "Bedriftshytte mot hotell og leie: hva bør bedriften sammenligne?",
     excerpt: "En praktisk måte å sammenligne eierskap av firmabolig med løpende hotell- og leiekostnader uten å gjøre forenklede avkastningsløfter.",
+    seoDescription: "En praktisk måte å sammenligne eierskap av firmabolig med løpende hotell- og leiekostnader uten å gjøre forenklede avkastningsløfter. Les guiden.",
     keywords: ["bedriftshytte kostnad", "firmabolig eller hotell", "bedrift bolig Spania kostnad"],
     intro: ["Hotell og korttidsleie er fleksibelt og krever ingen kapitalbinding. Eierskap gir på sin side kontroll over en bestemt bolig og gjør det mulig å planlegge bruk over flere år.", "En god sammenligning handler derfor ikke bare om pris per natt. Den bør se på bruksmønster, kapital, drift, fleksibilitet, restverdi og hvor mye administrasjon virksomheten ønsker."],
     sections: [
@@ -74,6 +78,7 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+    seoTitle: "Bedriftseid bolig i Spania | Bruk og rammer for ansatte",
     title: "Kan ansatte bruke en bedriftseid bolig i Spania?",
     excerpt: "Hva norske virksomheter bør vite om disposisjonsrett, likebehandling, dokumentasjon og rådgivning når ansatte skal bruke firmabolig i Spania.",
     keywords: ["ansatte bedriftshytte Spania", "skatt bedriftshytte utlandet", "firmabolig ansatte"],
@@ -91,8 +96,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca",
+    seoTitle: "Firmabolig på Costa Blanca | Fem bruksområder for bedrifter",
     title: "Fem måter en bedrift kan bruke en bolig på Costa Blanca",
     excerpt: "Fra ansattgode til ledersamlinger: fem praktiske bruksscenarier som kan inngå i vurderingen av en firmabolig i Spania.",
+    seoDescription: "Fra ansattgode til ledersamlinger: fem praktiske bruksscenarier som kan inngå i vurderingen av en firmabolig i Spania. Les guiden for norske bedrifter.",
     keywords: ["firmabolig Costa Blanca", "bedriftshytte bruk", "corporate retreat Spania"],
     intro: ["En firmabolig trenger ikke ha bare ett formål. Den samme eiendommen kan dekke flere behov gjennom året, så lenge virksomheten har tydelige regler og riktig rådgivning.", "Her er fem vanlige bruksscenarier som kan være relevante når boligtype og beliggenhet skal velges."],
     sections: [
@@ -108,8 +115,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "hvilken-bolig-passer-som-bedriftshytte",
+    seoTitle: "Bedriftshytte i Spania | Velg riktig boligtype og kapasitet",
     title: "Hvilken bolig passer best som bedriftshytte?",
     excerpt: "Leilighet, rekkehus eller villa? Slik vurderer bedriften kapasitet, drift, beliggenhet og bruk før den velger eiendom.",
+    seoDescription: "Leilighet, rekkehus eller villa? Slik vurderer bedriften kapasitet, drift, beliggenhet og bruk før den velger eiendom. Les guiden for norske bedrifter.",
     keywords: ["beste bedriftshytte Spania", "firmabolig leilighet villa", "bedriftsvilla Costa Blanca"],
     intro: ["Den flotteste boligen er ikke nødvendigvis den beste bedriftshytten. Når mange skal bruke samme eiendom blir enkel drift, robuste materialer og praktisk beliggenhet ofte viktigere enn særpreg.", "Boligen bør velges ut fra faktisk bruk og administrasjon, ikke bare bilder og utsikt."],
     sections: [
@@ -125,8 +134,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "alicante-eller-valencia-flyplass-bedriftshytte",
+    seoTitle: "Bedriftshytte i Spania | Alicante eller Valencia flyplass?",
     title: "Alicante eller Valencia flyplass – hva fungerer best for en bedriftshytte?",
     excerpt: "Flytilgang påvirker hvor mye en firmabolig faktisk blir brukt. Slik bør norske bedrifter vurdere reisetid, rutetilbud og beliggenhet.",
+    seoDescription: "Flytilgang påvirker hvor mye en firmabolig faktisk blir brukt. Slik bør norske bedrifter vurdere reisetid, rutetilbud og beliggenhet. Les guiden.",
     keywords: ["bedriftshytte Alicante flyplass", "firmabolig Valencia flyplass", "Costa Blanca flytilgang"],
     intro: ["Når mange ansatte skal bruke samme bolig, blir reisefriksjon viktig. En bolig som krever lang og komplisert transport etter flyreisen kan få lavere faktisk bruk enn en litt mindre spektakulær bolig med enklere logistikk.", "Alicante-Elche og Valencia gir tilgang til ulike deler av regionen. Ruteprogrammer varierer gjennom året, så beslutningen bør bygge på aktuell flytilgang for virksomhetens ansatte."],
     sections: [
@@ -144,6 +155,7 @@ const drafts: CorporateDraft[] = [
     slug: "bedriftsvilla-eller-ansattleilighet",
     title: "Bedriftsvilla eller ansattleilighet?",
     excerpt: "To ulike modeller for firmabolig i Spania – med forskjellige styrker når det gjelder kapasitet, drift, privatliv og kostnader.",
+    seoDescription: "To ulike modeller for firmabolig i Spania – med forskjellige styrker når det gjelder kapasitet, drift, privatliv og kostnader. Les guiden for norske bedrifter.",
     keywords: ["bedriftsvilla Spania", "ansattleilighet Spania", "firmahytte villa leilighet"],
     intro: ["En leilighet og en villa kan koste omtrent det samme i ulike deler av Costa Blanca, men de gir svært forskjellig bruk. Derfor bør virksomheten velge modell før den forelsker seg i en konkret eiendom.", "Det viktigste er å matche boligtypen med hvor mange som skal bruke den og hvor mye administrasjon virksomheten vil håndtere."],
     sections: [
@@ -159,8 +171,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "bedriftshytte-for-25-ansatte",
+    seoTitle: "Bedriftshytte for 25 ansatte | Kapasitet, bruk og budsjett",
     title: "Bedriftshytte for 25 ansatte: hvordan kan modellen se ut?",
     excerpt: "Et eksempel på hvordan en mindre norsk bedrift kan tenke rundt kapasitet, booking, budsjett og boligtype på Costa Blanca.",
+    seoDescription: "Et eksempel på hvordan en mindre norsk bedrift kan tenke rundt kapasitet, booking, budsjett og boligtype på Costa Blanca. Les guiden for norske bedrifter.",
     keywords: ["bedriftshytte 25 ansatte", "firmahytte liten bedrift", "bedriftsbolig SMB"],
     intro: ["For en bedrift med rundt 25 ansatte er det mulig å lage en oversiktlig ordning, men den må ha nok tilgjengelighet til at fordelen oppleves reell for hele brukergruppen.", "Dette er et planleggingseksempel, ikke en skattemessig konklusjon. Den konkrete ordningen bør vurderes av virksomhetens rådgivere."],
     sections: [
@@ -176,8 +190,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "bedriftshytte-for-100-ansatte",
+    seoTitle: "Bedriftshytte for 100 ansatte | Kapasitet og bookingregler",
     title: "Bedriftshytte for 100 ansatte: kapasitet, booking og forventninger",
     excerpt: "Større brukergruppe krever tydelig bookingmodell og realistiske forventninger. Slik kan en bedrift med rundt 100 ansatte planlegge.",
+    seoDescription: "Større brukergruppe krever tydelig bookingmodell og realistiske forventninger. Slik kan en bedrift med rundt 100 ansatte planlegge. Les guiden.",
     keywords: ["bedriftshytte 100 ansatte", "firmahytte stor bedrift", "booking bedriftshytte"],
     intro: ["Når brukergruppen nærmer seg 100 ansatte, blir spørsmålet mindre om alle kan få den samme uken og mer om ordningen oppleves rettferdig over tid.", "Boligen må være enkel å drifte og systemet for booking bør være forståelig uten mye manuell administrasjon."],
     sections: [
@@ -193,8 +209,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "medlemsbolig-i-spania-for-foreninger",
+    seoTitle: "Medlemsbolig i Spania | Foreninger og organisasjoner",
     title: "Medlemsbolig i Spania for foreninger og organisasjoner",
     excerpt: "Hvordan en forening kan vurdere en felles bolig på Costa Blanca som medlemsfordel – og hvorfor modellen bør holdes adskilt fra reglene for ansattes bedriftshytte.",
+    seoDescription: "Hvordan en forening kan vurdere en felles bolig på Costa Blanca som medlemsfordel. Skill medlemsbruk fra reglene for ansattes bedriftshytte.",
     keywords: ["medlemsbolig Spania", "forening bolig Costa Blanca", "medlemsfordel Spania"],
     intro: ["Foreninger og medlemsorganisasjoner kan ha andre mål enn arbeidsgivere. En bolig kan være en synlig medlemsfordel, men organisasjonen må vurdere vedtekter, økonomi, bruksregler og skatteforhold etter sin egen struktur.", "Reglene for bedriftshytte i arbeidsforhold kan ikke uten videre overføres til medlemsbruk."],
     sections: [
@@ -210,8 +228,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "drifte-bedriftshytte-i-spania-fra-norge",
+    seoTitle: "Drifte bedriftshytte i Spania fra Norge | Lokal oppfølging",
     title: "Slik drifter dere en bedriftshytte i Spania fra Norge",
     excerpt: "Nøkkelhold, tilsyn, rengjøring, vedlikehold og brukerskifter: dette bør være på plass før de første ansatte reiser.",
+    seoDescription: "Nøkkelhold, tilsyn, rengjøring, vedlikehold og brukerskifter: dette bør være på plass før de første ansatte reiser. Les guiden for norske bedrifter.",
     keywords: ["drift bedriftshytte Spania", "keyholding firmabolig", "property care Costa Blanca"],
     intro: ["En bedriftshytte med mange brukere har et annet driftsbehov enn en privat feriebolig. Det må være klart hvem som kontrollerer boligen mellom opphold, håndterer nøkler og reagerer ved feil.", "God drift bør planlegges samtidig som boligen kjøpes."],
     sections: [
@@ -227,8 +247,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "nybygg-eller-bruktbolig-som-bedriftshytte",
+    seoTitle: "Bedriftshytte i Spania | Velge nybygg eller bruktbolig?",
     title: "Nybygg eller bruktbolig som bedriftshytte?",
     excerpt: "Fordeler og ulemper ved nybygg og bruktbolig når kjøperen er en virksomhet med mange fremtidige brukere.",
+    seoDescription: "Fordeler og ulemper ved nybygg og bruktbolig når kjøperen er en virksomhet med mange fremtidige brukere. Les vår guide for bedrifter i Spania.",
     keywords: ["nybygg bedriftshytte", "bruktbolig firmabolig", "bedrift kjøpe bolig Spania"],
     intro: ["Nybygg og bruktbolig løser ulike behov. For en bedrift bør valget vurderes ut fra leveringstid, vedlikehold, totalbudsjett, beliggenhet og hvor raskt ordningen skal tas i bruk.", "Det finnes ikke én riktig kategori for alle virksomheter."],
     sections: [
@@ -244,8 +266,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte",
+    seoTitle: "Drift av bedriftshytte | Vedlikehold, nøkler og rengjøring",
     title: "Vedlikehold, nøkkelhold og rengjøring av bedriftshytte",
     excerpt: "En praktisk driftsplan for bedrifter som vil at boligen i Spania skal være klar hver gang en ny ansatt ankommer.",
+    seoDescription: "En praktisk driftsplan for bedrifter som vil at boligen i Spania skal være klar hver gang en ny ansatt ankommer. Les guiden for norske bedrifter.",
     keywords: ["vedlikehold bedriftshytte", "rengjøring firmabolig", "nøkkelhold Spania"],
     intro: ["En god brukeropplevelse skapes ikke bare av selve boligen. Den skapes av at nøkkelen virker, boligen er ren, klimaanlegget fungerer og noen lokalt kan hjelpe når noe skjer.", "Disse rutinene bør inn i budsjett og ansvarsmatrise fra første dag."],
     sections: [
@@ -261,8 +285,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "hvor-mange-kan-dele-en-bedriftshytte",
+    seoTitle: "Dele bedriftshytte | Hvor mange ansatte passer boligen for?",
     title: "Hvor mange ansatte kan realistisk dele én bedriftshytte?",
     excerpt: "Tilgjengelige uker, høysesong og bookingregler avgjør hvor stor brukergruppe én firmabolig kan fungere for.",
+    seoDescription: "Tilgjengelige uker, høysesong og bookingregler avgjør hvor stor brukergruppe én firmabolig kan fungere for. Les guiden for norske bedrifter.",
     keywords: ["hvor mange dele bedriftshytte", "booking firmahytte", "kapasitet bedriftshytte"],
     intro: ["Det finnes ingen magisk størrelse på brukergruppen. Én bolig kan være attraktiv for 20 ansatte eller inngå som ett av flere goder i en virksomhet med flere hundre.", "Det viktige er å regne på tilgjengelige uker og forventninger."],
     sections: [
@@ -278,8 +304,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "costa-blanca-nord-eller-sor-bedriftshytte",
+    seoTitle: "Bedriftshytte på Costa Blanca | Sammenlign nord og sør",
     title: "Costa Blanca Nord eller Sør for bedriftshytte?",
     excerpt: "Sammenlign nord og sør ut fra flytilgang, boligtyper, helårsservice, landskap, prisnivå og praktisk bruk.",
+    seoDescription: "Sammenlign nord og sør ut fra flytilgang, boligtyper, helårsservice, landskap, prisnivå og praktisk bruk. Les vår guide for bedrifter i Spania.",
     keywords: ["Costa Blanca Nord bedriftshytte", "Costa Blanca Sør firmabolig", "hvor kjøpe bedriftshytte Spania"],
     intro: ["Costa Blanca er ikke ett homogent område. Nord og sør har ulikt landskap, boligtilbud og lokal karakter.", "For en bedrift bør valget styres av brukernes behov, tilgjengelige boliger og total logistikk – ikke av generelle forestillinger om hvilken del som er best."],
     sections: [
@@ -295,8 +323,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "fem-feil-ved-kjop-av-bedriftshytte-i-spania",
+    seoTitle: "Kjøpe bedriftshytte i Spania | Fem feil dere bør unngå",
     title: "Fem feil bedrifter bør unngå ved kjøp av bedriftshytte i Spania",
     excerpt: "De vanligste strategiske feilene skjer før visningen: uklar bruk, svakt budsjett, feil boligtype og manglende plan for skatt og drift.",
+    seoDescription: "De vanligste strategiske feilene skjer før visningen: uklar bruk, svakt budsjett, feil boligtype og manglende plan for skatt og drift. Les guiden.",
     keywords: ["feil bedriftshytte Spania", "kjøpe firmabolig Spania", "bedrift bolig fallgruver"],
     intro: ["Et bedriftskjøp bør være mer strukturert enn et privat impulskjøp. Når mange brukere, et styre eller en ledelse skal leve med beslutningen i flere år, blir forarbeidet avgjørende.", "Her er fem feil som er enkle å forebygge."],
     sections: [
@@ -312,6 +342,7 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "kjop-av-bolig-gjennom-selskap-i-spania",
+    seoTitle: "Kjøpe bolig gjennom selskap i Spania | Viktige avklaringer",
     title: "Kjøp av bolig gjennom selskap i Spania: spørsmål dere må avklare",
     excerpt: "Eierstruktur, bruk, skatt, regnskap og spansk kjøpsprosess må vurderes før en virksomhet kjøper bolig. Her er spørsmålene ledelsen bør ta med til rådgiverne.",
     keywords: ["selskap kjøpe bolig Spania", "AS kjøpe bolig Spania", "firmabolig eierskap Spania"],
@@ -329,8 +360,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "rettferdig-bookingsystem-for-bedriftshytte",
+    seoTitle: "Booking av bedriftshytte | Fordel populære uker rettferdig",
     title: "Slik lager dere et rettferdig bookingsystem for bedriftshytten",
     excerpt: "Trekning, rotasjon, poeng og venteliste: praktiske modeller for å fordele populære uker mellom ansatte eller medlemmer.",
+    seoDescription: "Trekning, rotasjon, poeng og venteliste: praktiske modeller for å fordele populære uker mellom ansatte eller medlemmer. Les guiden for norske bedrifter.",
     keywords: ["booking bedriftshytte", "firmahytte bookingsystem", "rettferdig fordeling bedriftshytte"],
     intro: ["Selv en svært attraktiv bedriftshytte kan skape misnøye hvis de samme personene får de beste ukene hvert år. Bookingmodellen er derfor en del av selve produktet.", "Reglene bør være enkle nok til å forstå og robuste nok til å fungere når etterspørselen er høy."],
     sections: [
@@ -346,6 +379,7 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "bedriftshytte-som-langsiktig-ansattgode",
+    seoTitle: "Bedriftshytte som ansattgode | Langsiktig bruk og verdi",
     title: "Bedriftshytte som langsiktig ansattgode",
     excerpt: "Hvorfor en fysisk, delbar eiendel kan oppleves annerledes enn kortvarige personalfordeler – og hvordan bedriften bør måle om ordningen faktisk skaper verdi.",
     keywords: ["ansattgode bedriftshytte", "employee benefit Spania", "firmabolig personalgode"],
@@ -363,8 +397,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "corporate-home-assessment-bedriftsvurdering",
+    seoTitle: "Bedriftsvurdering av firmabolig | Zen Corporate Homes",
     title: "Hva inngår i en bedriftsvurdering fra Zen Corporate Homes?",
     excerpt: "Slik gjør vi en tidlig idé om bedriftshytte om til et konkret beslutningsgrunnlag med modell, område, budsjett og boligshortlist.",
+    seoDescription: "Slik gjør vi en tidlig idé om bedriftshytte om til et konkret beslutningsgrunnlag med modell, område, budsjett og boligshortlist. Les guiden.",
     keywords: ["bedriftsvurdering bedriftshytte", "Zen Corporate Homes", "firmabolig vurdering"],
     intro: ["Før virksomheten bruker tid på visninger bør ledelsen vite hva den faktisk ser etter. Derfor starter Zen Corporate Homes med en kostnadsfri første bedriftsvurdering.", "Vurderingen er ikke en juridisk eller skattemessig rapport. Den gjør eiendomsdelen konkret nok til at virksomheten kan avgjøre om ideen er verdt å utvikle videre."],
     sections: [
@@ -380,6 +416,7 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "firmabolig-for-ledersamlinger-og-team",
+    seoTitle: "Firmabolig i Spania | For ledersamlinger og mindre team",
     title: "Firmabolig for ledersamlinger og mindre team",
     excerpt: "Når en bolig også skal brukes til ledelse eller teamarbeid, bør arbeidsplass, internett, fellesarealer og skille mellom jobb og fritid vurderes tidlig.",
     keywords: ["ledersamling Spania bolig", "team retreat Costa Blanca", "firmabolig ledelse"],
@@ -397,6 +434,7 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "delt-bedriftshytte-for-flere-virksomheter",
+    seoTitle: "Delt bedriftshytte | Felles bolig for flere virksomheter",
     title: "Delt bedriftshytte for flere virksomheter",
     excerpt: "Kan flere mindre bedrifter dele en firmabolig i Spania? Modellen kan være interessant, men krever ekstra tydelighet om eierskap, booking og ansvar.",
     keywords: ["delt bedriftshytte", "flere bedrifter firmahytte", "shared corporate home Spania"],
@@ -414,8 +452,10 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "slik-presenterer-du-bedriftshytte-for-styret",
+    seoTitle: "Bedriftshytte | Lag et beslutningsgrunnlag for styret",
     title: "Slik presenterer du en bedriftshytte for styret eller ledelsen",
     excerpt: "Et godt beslutningsnotat bør være kort, tallfestet og balansert. Her er strukturen som gjør ideen enklere å vurdere internt.",
+    seoDescription: "Et godt beslutningsnotat bør være kort, tallfestet og balansert. Her er strukturen som gjør ideen enklere å vurdere internt. Les guiden for norske bedrifter.",
     keywords: ["business case bedriftshytte", "styre bedriftshytte Spania", "beslutningsgrunnlag firmabolig"],
     intro: ["En bedriftshytte bør ikke selges inn internt med solbilder og entusiasme alene. Ledelsen trenger et beslutningsgrunnlag som viser mål, kostnader, risiko, alternativer og neste steg.", "Jo mer nøkternt dokumentet er, desto enklere er det å ta ideen seriøst."],
     sections: [

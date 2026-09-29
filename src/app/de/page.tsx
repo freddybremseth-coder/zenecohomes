@@ -12,9 +12,8 @@ const BASE = "https://www.zenecohomes.com";
 const BOOKING = "/de/termin";
 
 export const metadata: Metadata = {
-  title: "Moderner Neubau in Spanien | Costa Blanca Beratung",
-  description:
-    "Moderne Neubauten, Villen, Apartments und Grundstücke an der Costa Blanca mit käuferorientierter Beratung. Regionen, Projekte, Kosten und Kaufprozess vor der Reservierung vergleichen.",
+  title: "Neubau in Spanien | Costa Blanca Beratung | Zen Eco Homes",
+  description: "Moderner Neubau in Spanien mit Beratung zur Costa Blanca. Vergleichen Sie Regionen, Projekte, Preise, Bauträger, Zahlungsplan und Kaufprozess.",
   alternates: { canonical: "/de", languages: homeHreflang() },
   openGraph: {
     title: "Moderne Immobilien in Spanien | Zen Eco Homes",
