@@ -28,7 +28,7 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor" },
       { label: "Costa Cálida", href: "/omrader/costa-calida" },
       { label: "Innlandet", href: "/omrader/innlandet" },
-      { label: "Tomter", href: "/omrader/innlandet/tomter" },
+      { label: "Tomter og bygging", href: "/omrader/innlandet/tomter" },
     ],
   },
   {
@@ -38,15 +38,15 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
       { label: "Visningstur", href: "/visningstur" },
       { label: "Guider", href: "/guide" },
-      { label: "Book rådgivning", href: "/booking" },
+      { label: "Book boligprat", href: "/booking" },
     ],
   },
   {
     title: "Om Zen Eco Homes",
     links: [
       { label: "Om oss", href: "/om-oss" },
-      { label: "Freddy", href: "/om-oss/freddy" },
-      { label: "Andrea", href: "/om-oss/andrea" },
+      { label: "Freddy Bremseth", href: "/om-oss/freddy" },
+      { label: "Andrea Thorsnes Karlsen", href: "/om-oss/andrea" },
       { label: "Kundeomtaler", href: "/kundeomtaler" },
       { label: "Magasin", href: "/magasin" },
       { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
@@ -110,9 +110,9 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
 const CTA: Record<SiteLocale, { eyebrow: string; title: string; body: string; primary: string; primaryHref: string; secondary: string; secondaryHref: string }> = {
   no: {
     eyebrow: "Neste steg",
-    title: "Finn boligen som passer livet du vil ha i Spania.",
-    body: "Start med område, bruk og budsjett. Så finner vi boligene som faktisk er verdt tiden din.",
-    primary: "Book boligprat",
+    title: "Vil du ha hjelp til å finne riktig bolig?",
+    body: "Start med en kort boligprat, eller gå rett til boligene.",
+    primary: "Book en kort boligprat",
     primaryHref: "/booking",
     secondary: "Se boliger",
     secondaryHref: "/eiendommer",
