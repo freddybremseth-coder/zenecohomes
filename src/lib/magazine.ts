@@ -1296,6 +1296,329 @@ export const extraArticles: Article[] = [
       },
     ],
     cta: { label: "Se hvordan kjøpsprosessen fungerer", href: "/kjopsprosessen" },
+  },
+  {
+    slug: "havutsikt-eller-gangavstand-costa-blanca",
+    title: "Havutsikt eller gangavstand – hva er mest verdt når du kjøper på Costa Blanca?",
+    excerpt:
+      "Havutsikt ser fantastisk ut på visning, mens gangavstand merkes hver dag. Vi sammenligner hva de to kvalitetene faktisk betyr for bruk, pris og videresalg.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Boligvalg",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/omradet-for-boligen.svg",
+    imageAlt: "Havutsikt og gangavstand som boligvalg på Costa Blanca",
+    seoTitle: "Havutsikt eller gangavstand på Costa Blanca – hva velger du?",
+    seoDescription:
+      "Havutsikt eller gangavstand til strand og restauranter? Se hvordan valget påvirker hverdagen, pris, bilbehov og videresalg på Costa Blanca nå.",
+    keywords: ["havutsikt Costa Blanca","gangavstand strand Spania","bolig beliggenhet Costa Blanca","boligkjøp Spania beliggenhet"],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Havutsikt er en av de sterkeste følelsene på en visning. Gangavstand er en av de sterkeste kvalitetene etter at du har flyttet inn. Når budsjettet ikke gir begge deler, må du velge hva som faktisk betyr mest.",
+      "Det riktige valget avhenger av hvordan boligen skal brukes. En feriebolig med fantastisk utsikt kan være perfekt hvis du likevel kjører mye. For en kjøper som vil sette fra seg bilen og leve til fots, kan 800 meter flat vei til sentrum være mer verdt enn panoramautsikt fra en bratt åsside.",
+    ],
+    sections: [
+      {
+        heading: "Havutsikt koster – men all havutsikt er ikke lik",
+        body: [
+          "Frontlinje, åpen panoramautsikt og et lite blått felt mellom to bygg er tre helt forskjellige kvaliteter. Før du betaler premium bør du forstå hva som faktisk kan beholdes.",
+          "Sjekk regulering og mulige fremtidige bygg foran boligen. En utsikt som er avhengig av en ubebygd tomt bør ikke verdsettes som en permanent kvalitet uten kontroll.",
+        ],
+      },
+      {
+        heading: "Gangavstand handler om mer enn antall meter",
+        body: [
+          "Én kilometer på flat promenade og én kilometer opp en bratt bakke er ikke det samme. Fortau, belysning, kryssing av trafikkerte veier og sommervarme påvirker om avstanden faktisk brukes til fots.",
+          "Test ruten selv. Hvis du allerede på visning tar bilen til restauranten, er boligen sannsynligvis ikke en reell gangavstandsbolig.",
+        ],
+      },
+      {
+        heading: "Feriebruk og helårsbruk gir forskjellige svar",
+        body: [
+          "Bruker du boligen tre–fire intensive ferieuker i året, kan utsikt og terrasse ha enorm verdi. Skal du bo der flere måneder, blir dagligvare, helsetjenester, kollektivtransport og en enkel hverdag viktigere.",
+          "Jo mer boligen brukes, desto mer ville jeg vektlagt friksjonen i hverdagen.",
+        ],
+      },
+      {
+        heading: "Videresalg: begge kvaliteter kan være sterke – men målgruppen er forskjellig",
+        body: [
+          "God havutsikt er lett å forstå i en annonse og kan skille boligen fra andre. Reell gangavstand gjør boligen aktuell for flere aldersgrupper og kjøpere som ikke ønsker å være avhengige av bil.",
+          "Den sterkeste kombinasjonen er naturligvis begge deler. Hvis budsjettet tvinger frem et valg, bør du tenke på hvem som sannsynligvis vil kjøpe boligen etter deg.",
+        ],
+      },
+      {
+        heading: "Min praktiske beslutningsregel",
+        table: {
+          headers: ["Hvis dette beskriver deg", "Prioriter"],
+          rows: [
+            ["Du vil gå til strand, butikk og restaurant nesten hver dag", "Gangavstand"],
+            ["Terrassen er hovedrommet ditt i ferien", "God og varig utsikt"],
+            ["Du vil klare deg uten bil store deler av oppholdet", "Gangavstand"],
+            ["Du aksepterer bil og ønsker ro, høyde og utsikt", "Havutsikt"],
+            ["Boligen skal fungere for mange typer fremtidige kjøpere", "God adkomst + reell nærhet til service"],
+          ],
+        },
+      },
+    ],
+    nextSteps: [
+      "Gå den faktiske ruten fra boligen til strand og service.",
+      "Kontroller hva som kan bygges foran utsikten.",
+      "Vurder boligen ut fra normal hverdag, ikke bare første visningsinntrykk.",
+      "Sammenlign to boliger med samme budsjett og forskjellige beliggenhetskvaliteter.",
+    ],
+    faq: [
+      { question: "Er havutsikt verdt å betale ekstra for?", answer: "Det kan være det hvis utsikten er god, varig og viktig for hvordan du bruker boligen. Men den bør sammenlignes mot andre kvaliteter du gir avkall på, som gangavstand, areal og adkomst." },
+      { question: "Hva regnes som gangavstand?", answer: "Det finnes ingen universell grense. Terreng, fortau, varme og trafikk betyr minst like mye som meter. Test ruten selv før kjøp." },
+      { question: "Hva er best for videresalg?", answer: "Både varig havutsikt og god gangavstand kan være sterke kvaliteter. Det viktigste er at kvaliteten er reell, lett å forstå og passer en bred nok kjøpergruppe." },
+    ],
+    cta: { label: "Sammenlign områder på Costa Blanca", href: "/omrader/costa-blanca-nord" },
+  },
+  {
+    slug: "leilighet-eller-villa-costa-blanca",
+    title: "Leilighet eller villa på Costa Blanca – hva passer livet du faktisk skal leve?",
+    excerpt:
+      "Villa gir frihet og privatliv. Leilighet kan gi enklere drift og bedre beliggenhet. Det riktige valget handler mer om bruk enn om prestisje.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Boligvalg",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/omradevalg.svg",
+    imageAlt: "Leilighet og villa på Costa Blanca sammenlignet",
+    seoTitle: "Leilighet eller villa på Costa Blanca – hva passer best?",
+    seoDescription:
+      "Sammenlign leilighet og villa på Costa Blanca ut fra vedlikehold, privatliv, beliggenhet, kostnader, feriebruk, bilbehov og videresalg før du kjøper.",
+    keywords: ["leilighet eller villa Costa Blanca","villa Spania","leilighet Spania","feriebolig Costa Blanca"],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Mange norske kjøpere begynner med drømmen om villa. Andre vil ha en leilighet som kan låses og forlates. Ingen av delene er automatisk riktig.",
+      "Spør hvor mye av tiden du faktisk skal være i boligen, hvor mye vedlikehold du vil eie alene og om beliggenhet er viktigere enn privat tomt.",
+    ],
+    sections: [
+      {
+        heading: "Villa: du kjøper kontroll og privatliv",
+        body: [
+          "Egen tomt, privat basseng, mer uteplass og færre naboer tett på er reelle kvaliteter. For familier eller lengre opphold kan en villa gi en helt annen livsfølelse.",
+          "Men alt som er ditt, er også ditt ansvar. Basseng, hage, fasade, tekniske installasjoner og sikkerhet må håndteres selv eller gjennom lokale tjenester.",
+        ],
+      },
+      {
+        heading: "Leilighet: du deler kostnader og forenkler driften",
+        body: [
+          "En god leilighet kan være svært effektiv som feriebolig: heis, parkering, fellesbasseng og et sameie som håndterer store deler av fellesvedlikeholdet.",
+          "Til gjengjeld må du forholde deg til comunidad, regler, naboer og beslutninger som tas i fellesskap.",
+        ],
+      },
+      {
+        heading: "Samme budsjett kan kjøpe bedre beliggenhet i leilighet",
+        body: [
+          "En villa krever mer tomt og ligger derfor ofte lenger fra de mest kompakte kystsentrene. Med samme budsjett kan en leilighet gi kortere vei til strand, restauranter og service.",
+          "Hvis du verdsetter å leve til fots, kan dette være viktigere enn å ha eget basseng.",
+        ],
+      },
+      {
+        heading: "Hvor mye av året står boligen tom?",
+        body: [
+          "En villa som står tom store deler av året trenger tilsyn. En leilighet i et godt organisert bygg kan være enklere å forlate mellom opphold.",
+          "Det betyr ikke at leilighet er vedlikeholdsfri, men ansvarsbildet er ofte enklere for en eier som bor i Norge.",
+        ],
+      },
+      {
+        heading: "Sammenlign slik",
+        table: {
+          headers: ["Prioritet", "Ofte sterkest"],
+          rows: [
+            ["Privatliv og eget uteområde", "Villa"],
+            ["Enkel feriebruk og mindre eget utvendig vedlikehold", "Leilighet"],
+            ["Gangavstand i etablerte kystområder", "Leilighet"],
+            ["Basseng og uteplass helt for deg selv", "Villa"],
+            ["Lås og reis", "Leilighet"],
+            ["Større familie og lange opphold", "Villa eller stor leilighet"],
+          ],
+        },
+      },
+      {
+        heading: "Ikke la boligtypen bli viktigere enn området",
+        body: [
+          "En villa på feil sted er fortsatt feil bolig. En leilighet med perfekt beliggenhet kan gi mer bruk og større glede enn en større eiendom du alltid må kjøre fra.",
+          "Velg derfor først hverdagen og området, og la boligtypen være en konsekvens av det.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Bestem hvor mye privat uteareal du faktisk trenger.",
+      "Sammenlign årlig drift for én konkret villa og én konkret leilighet.",
+      "Vurder hvor lenge boligen står tom mellom opphold.",
+      "Test om ønsket område realistisk tilbyr boligtypen innen budsjettet.",
+    ],
+    faq: [
+      { question: "Er villa dyrere å eie enn leilighet?", answer: "Ikke alltid, men villaen har flere kostnader du håndterer direkte. Leiligheten har ofte comunidad. Sammenlign faktiske årsbudsjett på konkrete boliger." },
+      { question: "Er leilighet enklere som feriebolig?", answer: "For mange er den det fordi fellesarealer og bygningsdrift deles. Men sameiets økonomi og regler må fortsatt vurderes." },
+      { question: "Hva er best for langtidsopphold?", answer: "Det avhenger av plassbehov og hverdag. En romslig leilighet i riktig område kan fungere bedre enn en villa med stor bilavhengighet, og omvendt." },
+    ],
+    cta: { label: "Se boliger til salgs", href: "/eiendommer" },
+  },
+  {
+    slug: "bolig-som-er-lett-a-selge-igjen-spania",
+    title: "Kjøp boligen du vil ha – men ikke glem den dagen du skal selge",
+    excerpt:
+      "Du kan planlegge å eie boligen i 20 år og likevel måtte selge tidligere. Vi ser på hvilke kvaliteter som gjør en bolig lettere å forstå og kjøpe for neste eier.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Videresalg",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/radgiver.svg",
+    imageAlt: "Boligvalg i Spania med tanke på fremtidig videresalg",
+    seoTitle: "Slik kjøper du bolig i Spania som blir lettere å selge",
+    seoDescription:
+      "Beliggenhet, sol, parkering, planløsning, uteareal og adkomst påvirker videresalg. Slik vurderer du neste kjøper før du selv kjøper bolig i Spania.",
+    keywords: ["videresalg bolig Spania","selge bolig Costa Blanca","bolig investering Spania","velge bolig Costa Blanca"],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Det er din bolig og den skal først og fremst passe deg. Men det er fornuftig å stille ett ekstra spørsmål før kjøp: Hvem vil forstå verdien av denne boligen den dagen jeg skal selge?",
+      "Videresalg handler ikke om å spå prisutviklingen. Det handler om å unngå unødvendige begrensninger i kjøpergruppen.",
+    ],
+    sections: [
+      {
+        heading: "Mikrobeliggenhet slår postnummer",
+        body: [
+          "To boliger i samme kommune kan ha helt forskjellig etterspørsel. Solforhold, støy, adkomst, avstand til service og hva som ligger rett rundt eiendommen betyr ofte mer enn kommunenavnet.",
+          "Vurder den konkrete gaten og bygningen, ikke bare området på kartet.",
+        ],
+      },
+      {
+        heading: "Planløsning må fungere uten forklaring",
+        body: [
+          "En bolig med store døde arealer, gjennomgangsrom eller veldig spesielle løsninger kan være riktig for én kjøper og vanskelig for mange andre.",
+          "En enkel, logisk planløsning med brukbare soverom, god stue og direkte forbindelse til uteareal er lettere å forstå.",
+        ],
+      },
+      {
+        heading: "Parkering blir viktigere når beliggenheten krever bil",
+        body: [
+          "I bilorienterte områder bør parkering behandles som en del av boligen, ikke som en detalj. Manglende plass eller vanskelig adkomst kan begrense kjøpergruppen betydelig.",
+          "I svært sentrale områder kan andre kvaliteter veie opp, men også der er sikker parkering ofte attraktivt.",
+        ],
+      },
+      {
+        heading: "Sol og uteareal må være brukbart – ikke bare stort",
+        body: [
+          "En 100 m² terrasse er lite verdt dersom den er utsatt for sterk vind, mangler privatliv eller får feil sol for bruken din. Et mindre uteareal med god orientering kan fungere langt bedre.",
+          "Se hvordan solen faller på boligen i den årstiden du faktisk skal bruke den mest.",
+        ],
+      },
+      {
+        heading: "Unngå å betale premium for noe neste kjøper ikke ser verdien av",
+        body: [
+          "Dyre spesialtilvalg kan være fantastiske for deg, men de kommer ikke nødvendigvis tilbake krone for krone ved salg. Betal for dem fordi du ønsker dem, ikke fordi du antar at de er en investering.",
+          "Varig beliggenhet, god standard og praktisk funksjon er enklere for markedet å verdsette.",
+        ],
+      },
+      {
+        heading: "Fem kvaliteter jeg ville kontrollert ekstra",
+        bullets: [
+          "God og dokumenterbar mikrobeliggenhet.",
+          "Enkel adkomst og parkering der bil er nødvendig.",
+          "Planløsning som fungerer for flere typer kjøpere.",
+          "Sol, terrasse og uteareal som faktisk kan brukes.",
+          "Ingen åpenbare fremtidige problemer med utsikt, støy eller store vedlikeholdsbehov.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Se på boligen med øynene til en fremtidig kjøper i ti minutter.",
+      "Sammenlign mikrobeliggenheten med tre konkurrerende boliger.",
+      "Kontroller planlagt bygging og forhold rundt eiendommen.",
+      "Skill personlige tilvalg fra varige kvaliteter.",
+    ],
+    faq: [
+      { question: "Hvilke boliger er lettest å selge på Costa Blanca?", answer: "Det finnes ingen garanti, men boliger med forståelig beliggenhet, god adkomst, brukbar planløsning, sol og relevante utearealer har kvaliteter mange kjøpere kan verdsette." },
+      { question: "Bør jeg kjøpe bare med videresalg i tankene?", answer: "Nei. Boligen skal passe deg. Poenget er å unngå unødvendige svakheter som kan gjøre salget vanskeligere senere." },
+      { question: "Er havutsikt viktig for videresalg?", answer: "God og varig havutsikt kan være attraktivt, men den må vurderes sammen med pris, adkomst, gangavstand og andre kvaliteter." },
+    ],
+    cta: { label: "Se hvordan vi vurderer boliger", href: "/eiendomsradgiver-spania" },
+  },
+  {
+    slug: "bolig-under-bygging-eller-ferdig-spania",
+    title: "Kjøpe bolig under bygging eller vente på noe ferdig – hva er smartest for deg?",
+    excerpt:
+      "Tidlig i et prosjekt kan du få bedre utvalg. Ferdig bolig gir deg mer sikkerhet om det du faktisk kjøper. Vi sammenligner de to valgene uten salgspress.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Nybygg",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/kjopsprosess.svg",
+    imageAlt: "Nybygg under bygging og ferdig bolig i Spania",
+    seoTitle: "Under bygging eller ferdig bolig i Spania – hva passer?",
+    seoDescription:
+      "Sammenlign bolig under bygging og ferdig nybygg i Spania. Se forskjeller i utvalg, betaling, leveringstid, visning, risiko og hvor raskt du kan bruke boligen.",
+    keywords: ["bolig under bygging Spania","ferdig nybygg Spania","kjøpe off plan Spania","nybygg Costa Blanca"],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Når et nytt prosjekt lanseres, er argumentet ofte at de beste enhetene går først. Det kan være riktig. Men det betyr ikke at alle bør kjøpe tidlig.",
+      "Kjøp under bygging gir større valg og tid til å planlegge. Ferdig bolig gir langt bedre mulighet til å se utsikt, lys, omgivelser og faktisk sluttresultat før du bestemmer deg.",
+    ],
+    sections: [
+      {
+        heading: "Tidlig kjøp: størst utvalg er den reelle fordelen",
+        body: [
+          "I første fase kan du ofte velge mellom flere etasjer, orienteringer og planløsninger. Dersom prosjektet er riktig, kan dette være viktigere enn en eventuell prisforskjell.",
+          "Men du kjøper mer på tegning. Visualiseringer viser intensjonen, ikke hvordan det faktisk føles å stå på terrassen.",
+        ],
+      },
+      {
+        heading: "Ferdig bolig: du kan kontrollere mer med egne øyne",
+        body: [
+          "Når boligen er ferdig kan du vurdere utsikt, innsyn, sol, støy, materialfølelse, fellesområder og hvordan området har utviklet seg.",
+          "Ulempen er at de mest attraktive enhetene kan være solgt, og valgmulighetene kan være mindre.",
+        ],
+      },
+      {
+        heading: "Betalingsplanen må passe økonomien din",
+        body: [
+          "Bolig under bygging innebærer normalt betalinger i flere trinn. Det påvirker valuta, likviditet og finansiering. Be om hele betalingsplanen før du vurderer om kjøpet passer.",
+          "En ferdig bolig kan kreve at en større del av oppgjøret skjer raskere, men perioden med usikker fremtidig valutakostnad blir kortere.",
+        ],
+      },
+      {
+        heading: "Bankgaranti er ikke en detalj",
+        body: [
+          "Ved forskuddsbetaling på nybygg skal du forstå hvordan innbetalingene er sikret og hvilke dokumenter som gjelder. Dette er et juridisk kontrollpunkt, ikke markedsføring.",
+          "Bruk uavhengig advokat til å kontrollere kontrakt, garantier og prosjektets dokumentasjon før større betalinger.",
+        ],
+      },
+      {
+        heading: "Leveringstid bør styres av livet ditt, ikke av salgsfasen",
+        body: [
+          "Hvis du trenger bolig til neste vinter, hjelper det lite at et prosjekt er perfekt dersom levering er to år frem. Hvis du først skal flytte om tre år, kan tidlig kjøp derimot passe svært godt.",
+          "Start med din tidslinje før du lar prosjektets salgsplan bestemme.",
+        ],
+      },
+      {
+        heading: "En enkel sammenligning",
+        table: {
+          headers: ["Du prioriterer", "Se først på"],
+          rows: [
+            ["Størst valg av etasje og orientering", "Tidlig fase"],
+            ["Se den faktiske utsikten før kjøp", "Ferdig bolig"],
+            ["Bruke boligen snart", "Ferdig eller nær ferdigstillelse"],
+            ["Planlegge tilvalg over tid", "Under bygging"],
+            ["Minst mulig usikkerhet om sluttresultatet", "Ferdig bolig"],
+          ],
+        },
+      },
+    ],
+    nextSteps: [
+      "Match prosjektets levering mot din egen tidslinje.",
+      "Be om betalingsplan og garantidokumentasjon.",
+      "Sammenlign tidligfase-enheten med ferdige alternativer i samme budsjett.",
+      "Ikke reserver før juridisk kontroll og finansieringsplan er forstått.",
+    ],
+    faq: [
+      { question: "Er det billigere å kjøpe nybygg tidlig?", answer: "Noen prosjekter endrer priser mellom faser, men det er ikke en garanti. Den sikreste fordelen ved tidlig kjøp er ofte større valg av enheter." },
+      { question: "Hva er fordelen med ferdig nybygg?", answer: "Du kan se den faktiske boligen, utsikten, solforholdene og fellesområdene før kjøp, og du slipper lang ventetid." },
+      { question: "Er forskuddsbetaling på nybygg trygt?", answer: "Betalinger skal håndteres med korrekt juridisk sikkerhet og dokumentasjon. Bruk uavhengig advokat til å kontrollere kontrakt og garantier for det konkrete prosjektet." },
+    ],
+    cta: { label: "Les om bankgaranti ved nybygg", href: "/guide/bankgaranti-nybygg-spania" },
   }
 ];
 

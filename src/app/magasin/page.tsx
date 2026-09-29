@@ -43,6 +43,10 @@ const articleCovers: Record<string, string> = {
   "eurokurs-boligbudsjett-spania-nordmenn": "/assets/magasin-covers/bankkonto-valuta.svg",
   "hva-koster-feriebolig-spania-i-aret": "/assets/magasin-covers/kostnader-eie.svg",
   "7-dyre-feil-nordmenn-bolig-spania": "/assets/magasin-covers/juridisk.svg",
+  "havutsikt-eller-gangavstand-costa-blanca": "/assets/magasin-covers/omradet-for-boligen.svg",
+  "leilighet-eller-villa-costa-blanca": "/assets/magasin-covers/omradevalg.svg",
+  "bolig-som-er-lett-a-selge-igjen-spania": "/assets/magasin-covers/radgiver.svg",
+  "bolig-under-bygging-eller-ferdig-spania": "/assets/magasin-covers/kjopsprosess.svg",
 };
 
 const bookGuides = [
