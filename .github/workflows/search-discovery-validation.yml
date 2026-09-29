@@ -28,3 +28,5 @@ jobs:
         run: npm ci
       - name: Check TypeScript integration
         run: npx tsc --noEmit
+      - name: Diagnostic full build
+        run: npm run build
