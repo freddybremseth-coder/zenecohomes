@@ -320,39 +320,61 @@ export default async function BuyInSpainGuidePage() {
             mens guidene under går dypere i hvert tema.
           </p>
         </div>
-        <div className="proof-grid">
-          <article>
-            <h3>Visningstur</h3>
-            <p>Bruk turen til å sammenligne både boliger og områder, ikke til å se flest mulig objekter.</p>
-            <Link className="text-button" href="/visningstur">Slik fungerer visningstur <ArrowRight size={16} /></Link>
-          </article>
-          <article>
-            <h3>Få eiendommen juridisk kontrollert</h3>
-            <p>Eierskap, heftelser, tillatelser og kontraktsgrunnlag bør kontrolleres før du binder deg.</p>
-            <Link className="text-button" href="/guide/juridiske-fallgruver-boligkjop-spania">Les om juridiske fallgruver <ArrowRight size={16} /></Link>
-          </article>
-          <article>
-            <h3>Skaff NIE og avklar finansiering</h3>
-            <p>NIE, bank, låneramme og dokumentasjon bør avklares tidlig slik at praktiske forhold ikke stopper kjøpet.</p>
-            <Link className="text-button" href="/guide/nie-skattenummer-spania">Guide til NIE-nummer <ArrowRight size={16} /></Link>
-          </article>
-          <article>
-            <h3>Reservasjon og depositum</h3>
-            <p>Forstå hva reservasjonen innebærer, hva som betales og hvilke forutsetninger som gjelder før du signerer.</p>
-          </article>
-          <article>
-            <h3>Signering hos notar</h3>
-            <p>Ved sluttføringen signeres skjøtet og den avtalte betalingen gjennomføres i tråd med kjøpsopplegget.</p>
-          </article>
-          <article>
-            <h3>Registrering og overtakelse</h3>
-            <p>Etter notaren følger registrering, praktisk overtakelse, nøkler, abonnementer og videre oppfølging.</p>
-          </article>
-        </div>
-        <div className="hero-actions" style={{ marginTop: 28 }}>
-          <Link className="text-button" href="/guide/finansiering-notar-nie-boligkjop-spania">Finansiering, notar og NIE</Link>
-          <Link className="text-button" href="/guide/boliglan-spansk-bank-nordmenn">Boliglån i Spania</Link>
-          <Link className="text-button" href="/guide/spansk-bankkonto-valutaveksling">Bankkonto og valuta</Link>
+        <div className="process-editorial">
+          <div className="process-timeline">
+            <article className="process-row">
+              <span>01</span>
+              <div>
+                <h3>Visningstur</h3>
+                <p>Bruk turen til å sammenligne både boliger og områder, ikke til å se flest mulig objekter.</p>
+                <Link href="/visningstur">Slik fungerer visningstur <ArrowRight size={15} /></Link>
+              </div>
+            </article>
+            <article className="process-row">
+              <span>02</span>
+              <div>
+                <h3>Juridisk kontroll</h3>
+                <p>Eierskap, heftelser, tillatelser og kontraktsgrunnlag bør kontrolleres før du binder deg.</p>
+                <Link href="/guide/juridiske-fallgruver-boligkjop-spania">Les om juridiske fallgruver <ArrowRight size={15} /></Link>
+              </div>
+            </article>
+            <article className="process-row">
+              <span>03</span>
+              <div>
+                <h3>NIE, bank og finansiering</h3>
+                <p>Avklar NIE, låneramme, bank og dokumentasjon tidlig slik at praktiske forhold ikke stopper kjøpet.</p>
+                <Link href="/guide/nie-skattenummer-spania">Guide til NIE-nummer <ArrowRight size={15} /></Link>
+              </div>
+            </article>
+            <article className="process-row">
+              <span>04</span>
+              <div>
+                <h3>Reservasjon og kjøpekontrakt</h3>
+                <p>Forstå hva reservasjonen innebærer, hva som betales og hvilke forutsetninger som gjelder før du signerer.</p>
+              </div>
+            </article>
+            <article className="process-row">
+              <span>05</span>
+              <div>
+                <h3>Notar og sluttoppgjør</h3>
+                <p>Ved sluttføringen signeres skjøtet og den avtalte betalingen gjennomføres i tråd med kjøpsopplegget.</p>
+              </div>
+            </article>
+            <article className="process-row">
+              <span>06</span>
+              <div>
+                <h3>Overtakelse og tiden etterpå</h3>
+                <p>Etter notaren følger registrering, nøkler, abonnementer og praktisk oppfølging av den nye boligen.</p>
+              </div>
+            </article>
+          </div>
+          <aside className="process-deeper">
+            <p className="eyebrow">Gå dypere</p>
+            <h3>Tre guider det er smart å lese før du reserverer</h3>
+            <Link href="/guide/finansiering-notar-nie-boligkjop-spania">Finansiering, notar og NIE <ArrowRight size={15} /></Link>
+            <Link href="/guide/boliglan-spansk-bank-nordmenn">Boliglån i Spania <ArrowRight size={15} /></Link>
+            <Link href="/guide/spansk-bankkonto-valutaveksling">Bankkonto og valuta <ArrowRight size={15} /></Link>
+          </aside>
         </div>
       </section>
 
@@ -364,6 +386,23 @@ export default async function BuyInSpainGuidePage() {
             Regn med mer enn annonseprisen. Hvilke kostnader som gjelder avhenger blant annet av om boligen er
             ny eller brukt, regionen, finansieringen og hvilke fagpersoner som brukes.
           </p>
+        </div>
+        <div className="cost-framing">
+          <div>
+            <span>1</span>
+            <h3>Boligen</h3>
+            <p>Kjøpesum, hva som følger med og eventuell betalingsplan.</p>
+          </div>
+          <div>
+            <span>2</span>
+            <h3>Selve kjøpet</h3>
+            <p>Skatter og avgifter, notar, registrering og juridisk bistand.</p>
+          </div>
+          <div>
+            <span>3</span>
+            <h3>Tiden etterpå</h3>
+            <p>Felleskostnader, lokale avgifter, forsikring, strøm, vann og vedlikehold.</p>
+          </div>
         </div>
         <div className="table-wrap">
           <table>
@@ -391,13 +430,13 @@ export default async function BuyInSpainGuidePage() {
           <p className="eyebrow">Erfaring</p>
           <h2>Vanlige feil mange gjør når de kjøper spansk bolig</h2>
         </div>
-        <div className="proof-grid">
-          <article><h3>Boligen velges før området</h3><p>Et fint objekt løser ikke feil reisevei, feil hverdagsliv eller et område du ikke trives i utenfor ferien.</p></article>
-          <article><h3>Totalbudsjettet blir for lavt</h3><p>Kjøpere ser på pris i annonsen, men glemmer kostnader rundt kjøpet, møbler, drift og eventuelle oppgraderinger.</p></article>
-          <article><h3>Portaler brukes som fasit</h3><p>Tilgjengelighet og pris bør bekreftes før du reiser eller bygger hele beslutningen på én annonse.</p></article>
-          <article><h3>Reservasjon skjer for tidlig</h3><p>Ikke la tidspress erstatte dokumentkontroll, avklaringer og forståelse av hva du faktisk signerer.</p></article>
-          <article><h3>For mange meglere kontaktes samtidig</h3><p>Det kan gi duplikater, telefonpress og en fragmentert prosess. Én tydelig rådgiver kan koordinere bedre.</p></article>
-          <article><h3>Oppfølging etter kjøpet glemmes</h3><p>Overtakelse, nøkler, leverandører og praktiske spørsmål fortsetter etter notar. Planlegg også tiden etter signering.</p></article>
+        <div className="mistake-list">
+          <article><span>01</span><div><h3>Boligen velges før området</h3><p>Et fint objekt løser ikke feil reisevei, feil hverdagsliv eller et område du ikke trives i utenfor ferien.</p></div></article>
+          <article><span>02</span><div><h3>Totalbudsjettet blir for lavt</h3><p>Kjøpere ser på pris i annonsen, men glemmer kostnader rundt kjøpet, møbler, drift og eventuelle oppgraderinger.</p></div></article>
+          <article><span>03</span><div><h3>Portaler brukes som fasit</h3><p>Tilgjengelighet og pris bør bekreftes før du reiser eller bygger hele beslutningen på én annonse.</p></div></article>
+          <article><span>04</span><div><h3>Reservasjon skjer for tidlig</h3><p>Ikke la tidspress erstatte dokumentkontroll, avklaringer og forståelse av hva du faktisk signerer.</p></div></article>
+          <article><span>05</span><div><h3>For mange meglere kontaktes samtidig</h3><p>Det kan gi duplikater, telefonpress og en fragmentert prosess. Én tydelig rådgiver kan koordinere bedre.</p></div></article>
+          <article><span>06</span><div><h3>Oppfølging etter kjøpet glemmes</h3><p>Overtakelse, nøkler, leverandører og praktiske spørsmål fortsetter etter notar. Planlegg også tiden etter signering.</p></div></article>
         </div>
       </section>
 
@@ -439,12 +478,12 @@ export default async function BuyInSpainGuidePage() {
           <p className="eyebrow">Vanlige spørsmål</p>
           <h2>Kjøpe bolig i Spania – FAQ</h2>
         </div>
-        <div className="proof-grid">
-          {faq.map((item) => (
-            <article key={item.q}>
-              <h3>{item.q}</h3>
+        <div className="faq-accordion">
+          {faq.map((item, index) => (
+            <details key={item.q} open={index === 0}>
+              <summary>{item.q}</summary>
               <p>{item.a}</p>
-            </article>
+            </details>
           ))}
         </div>
       </section>
