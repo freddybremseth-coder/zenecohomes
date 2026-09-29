@@ -15,7 +15,7 @@ export default function ReviewsPage() {
   return <main><SiteHeader languageLinks={homeLanguageLinks("no")} />
     <section className="page-hero compact-hero"><p className="eyebrow">Kundeomtaler</p><h1>Erfaringer fra boligkjøpere</h1><p>Troverdighet bygges best gjennom faktiske kundereiser. Her samler vi omtaler og etter hvert mer detaljerte kundecaser.</p></section>
     <section className="section"><Testimonials /></section>
-    <section className="contact-section"><div><h2>Vil du vite hvordan vi kan hjelpe deg?</h2><p>Start med en kort, uforpliktende behovsavklaring.</p></div><Link className="contact-button" href="/booking">Få rådgivning</Link></section>
+    <section className="section split"><div><p className="eyebrow">Slik jobber vi</p><h2>Se hva som ligger bak oppfølgingen</h2><p>Kundeomtaler gir én del av bildet. På Om oss og Kjøpsprosessen kan du se hvem du jobber med og hvordan vi følger kjøpsreisen.</p><div className="hero-actions"><Link className="text-button" href="/om-oss">Om Zen Eco Homes</Link><Link className="text-button" href="/kjopsprosessen">Se kjøpsprosessen</Link></div></div><div><p className="eyebrow">Neste steg</p><h2>Vil du vite hvordan vi kan hjelpe deg?</h2><p>Start med en kort, uforpliktende behovsavklaring.</p><Link className="contact-button" href="/booking">Få rådgivning</Link></div></section>
     <Footer />
   </main>;
 }
