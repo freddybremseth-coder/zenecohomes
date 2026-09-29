@@ -59,7 +59,7 @@ export default async function Home() {
   const regionKeys = regions.map((r) => r.key);
   // Begrens datasettet som serialiseres til forsiden. Dette gjør siden cachebar
   // og reduserer både serverarbeid og klient-payload uten å endre boligsøket.
-  const allProps = await getProperties(120, "zeneco");
+  const allProps = await getProperties(60, "zeneco");
   const properties = allProps.slice(0, 6);
   const withRegions = allProps.map((p) => ({
     p,
