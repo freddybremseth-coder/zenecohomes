@@ -6,9 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Property buying guides for Spain | Zen Eco Homes",
-  description:
-    "Practical English guides for buying modern property in Spain: areas, new build, plots, costs and the buying process.",
+  title: "Spain Property Buying Guides | Advice | Zen Eco Homes",
+  description: "Property buying guides for Spain covering areas, new builds, plots, financing, NIE, legal checks, costs and practical steps before you reserve a home.",
   alternates: { canonical: "/en/guides" },
 };
 
