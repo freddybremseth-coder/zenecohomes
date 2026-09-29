@@ -44,6 +44,13 @@ const nextConfig: NextConfig = {
         destination: "https://www.zenecohomes.com/:path*",
         permanent: true,
       },
+      { source: "/nybygg-costa-blanca", destination: "/guide/nybygg-i-spania", permanent: true },
+      { source: "/nybygg-i-spania", destination: "/guide/nybygg-i-spania", permanent: true },
+      { source: "/om-freddy", destination: "/om-oss/freddy", permanent: true },
+      { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
+      { source: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania", destination: "/guide/finansiering-notar-nie-boligkjop-spania", permanent: true },
+      { source: "/kjopsprosess/omkostninger-nybygg-spania", destination: "/guide/omkostninger-nybygg-spania", permanent: true },
+      { source: "/kjopsprosess/bankgaranti-nybygg-spania", destination: "/guide/bankgaranti-nybygg-spania", permanent: true },
       ...siloRedirects,
     ];
   },
