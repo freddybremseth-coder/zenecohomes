@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { areaSlug } from "@/lib/areaRoutes";
+import { areaProfileSlug } from "@/lib/areaRoutes";
 import { allArticles, articlePath } from "@/lib/magazine";
 import { areaMatchesRegion, fallbackProperties, getAreaProfiles, getProperties, getPropertyRef, regions, type RegionKey } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .flatMap((region) =>
       areaProfiles
         .filter((profile) => areaMatchesRegion(profile, region))
-        .map((profile) => `/omrader/${region}/${areaSlug(profile.name)}`),
+        .map((profile) => `/omrader/${region}/${areaProfileSlug(profile)}`),
     );
   const isArticleRoute = (route: string) =>
     route.startsWith("/magasin/") || route.startsWith("/guide/") || route.startsWith("/bedriftshytte-spania/");
