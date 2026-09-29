@@ -126,9 +126,9 @@ function hrefForSlug(slug: string): string {
 }
 
 export const metadata = {
-  title: "Magasin | Guider om boligkjøp i Spania",
+  title: { absolute: "Boligmagasin fra Spania | Marked og livet på Costa Blanca" },
   description:
-    "Praktiske guider for nordmenn som vurderer bolig, tomt, nybygg, finansiering og kjøpsprosess i Spania.",
+    "Boligmagasin fra Spania med markedsoppdateringer, lokale nyheter, boligprisutvikling og redaksjonelle saker om livet på Costa Blanca og i Spania.",
   alternates: {
     canonical: "/magasin",
   },
@@ -144,27 +144,26 @@ export const metadata = {
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
   const cmsSlugs = new Set(cmsArticles.map((article) => article.slug));
-  const fallbackArticles = allArticles.filter((article) => !cmsSlugs.has(article.slug) && articleSilo(article) !== "corporate");
+  const fallbackArticles = allArticles.filter((article) => !cmsSlugs.has(article.slug) && !articleSilo(article));
 
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Magasin</p>
-        <h1>Guider for tryggere boligkjøp i Spania</h1>
+        <h1>Marked, boligpriser og livet i Spania</h1>
         <p>
-          Områder, tomter, finansiering, NIE, notar og kjøpsprosess forklart for nordmenn som vil ta gode
-          beslutninger før de reserverer bolig.
+          Redaksjonelle saker, markedsoppdateringer, lokale nyheter og innsikt i hverdagen på Costa Blanca og
+          i Spania. De søkeorienterte kjøperguidene finner du i Guide-seksjonen.
         </p>
       </section>
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Kunnskap og rådgivning</p>
-          <h2>Start med kunnskap før du velger bolig</h2>
+          <p className="eyebrow">Redaksjonelt</p>\n          <h2>Følg markedet og livet rundt boligen</h2>
           <p>
-            Disse guidene er bygget for å svare på spørsmålene nordmenn faktisk søker etter når de vurderer
-            bolig i Spania.
+            Magasinet støtter kjøperguidene med ferskere markedskontekst, lokale saker og innhold om hvordan
+            områdene faktisk utvikler seg og fungerer i hverdagen.
           </p>
         </div>
 
