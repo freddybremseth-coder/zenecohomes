@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SaveSearchButton } from "@/components/SaveSearchButton";
@@ -256,6 +257,7 @@ export default async function PropertiesPage({
           </nav>
         )}
       </section>
+      <BuyerMatchQuiz />
       <Footer />
     </main>
   );
