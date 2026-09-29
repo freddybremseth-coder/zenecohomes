@@ -148,7 +148,7 @@ export default function BuyingProcessPage() {
             <h3>Ikke stol blindt på portaler</h3>
             <p>Gamle annonser og duplikater kan gi feil bilde av markedet.</p>
             <Link className="text-button" href="/magasin/idealista-finn-ikke-alltid-til-a-stole-pa">
-              Les mer <ArrowRight size={16} />
+              Hvorfor portaler kan gi feil bilde <ArrowRight size={16} />
             </Link>
           </article>
           <article>
