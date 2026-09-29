@@ -64,27 +64,57 @@ export default async function BuyInSpainGuidePage() {
   const featuredApartments = apartments.length ? apartments : inventory.slice(3, 6);
 
   return (
-    <main>
+    <main className="cornerstone-guide">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
 
-      <section className="page-hero compact-hero">
-        <p className="eyebrow">
-          Guide · <Link href="/om-oss/freddy">Freddy Bremseth</Link> · Oppdatert 29. september 2026
-        </p>
-        <h1>Kjøpe bolig i Spania (2026) – dette må du vite</h1>
-        <p>
-          Å kjøpe bolig i Spania er enklere når du kjenner rekkefølgen, kostnadene og hva som må kontrolleres.
-          Jeg har fulgt kjøpsprosessen fra begge sider, både som rådgiver og privat kjøper, og denne guiden samler
-          det jeg mener du bør avklare før du reserverer hus, leilighet, villa eller nybygg.
-        </p>
-        <div className="hero-actions">
-          <Link className="contact-button" href="/eiendommer">Se boliger til salgs <ArrowRight size={17} /></Link>
-          <Link className="text-button light" href="/booking">Book rådgivning</Link>
-          <Link className="text-button light" href="/om-oss/freddy">Om forfatteren</Link>
+      <section className="page-hero compact-hero image-hero cornerstone-hero">
+        <div className="cornerstone-hero-layout">
+          <div className="cornerstone-hero-copy">
+            <p className="eyebrow">
+              Guide · <Link href="/om-oss/freddy">Freddy Bremseth</Link> · Oppdatert 29. september 2026
+            </p>
+            <h1>Kjøpe bolig i Spania (2026) – dette må du vite</h1>
+            <p>
+              Å kjøpe bolig i Spania er enklere når du kjenner rekkefølgen, kostnadene og hva som må kontrolleres.
+              Jeg har fulgt kjøpsprosessen både som rådgiver og privat kjøper. Her får du en praktisk vei fra
+              de første valgene til notar, overtakelse og tiden etter kjøpet.
+            </p>
+            <div className="hero-actions">
+              <Link className="contact-button" href="/eiendommer">Se boliger til salgs <ArrowRight size={17} /></Link>
+              <Link className="text-button light" href="/booking">Book rådgivning</Link>
+            </div>
+          </div>
+
+          <aside className="cornerstone-hero-panel" aria-label="Kort om guiden">
+            <p className="eyebrow">Praktisk kjøperguide</p>
+            <h2>Dette får du svar på</h2>
+            <ul>
+              <li>Hvordan du velger område og boligtype</li>
+              <li>Hva du bør kontrollere før reservasjon</li>
+              <li>NIE, finansiering, bank og notar</li>
+              <li>Hvilke kostnader du må planlegge for</li>
+              <li>Vanlige feil – og hvordan du unngår dem</li>
+            </ul>
+            <Link className="text-button light" href="/om-oss/freddy">Om forfatteren <ArrowRight size={15} /></Link>
+          </aside>
         </div>
       </section>
 
-      <section className="section">
+      <nav className="guide-index-band cornerstone-index" aria-label="Innhold i guiden">
+        <div>
+          <span>På denne siden:</span>
+          <a href="#kort-svar">Kort svar</a>
+          <a href="#for-boligjakten">Før boligjakten</a>
+          <a href="#boligtype">Boligtype</a>
+          <a href="#boligsok">Boligsøk</a>
+          <a href="#kjopsprosess">Kjøpsprosessen</a>
+          <a href="#kostnader">Kostnader</a>
+          <a href="#vanlige-feil">Vanlige feil</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </nav>
+
+      <section className="section cornerstone-section" id="kort-svar">
         <div className="section-heading">
           <p className="eyebrow">Kort svar først</p>
           <h2>Hvordan kjøpe feriebolig i Spania?</h2>
@@ -109,7 +139,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section split">
+      <section className="section split cornerstone-section cornerstone-preflight" id="for-boligjakten">
         <div>
           <p className="eyebrow">Før boligjakten</p>
           <h2>Viktig før du begynner å se på bolig i Spania</h2>
@@ -134,7 +164,7 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Bruk vår{" "}
             <Link href="/guide/omradeguide-eiendomskjop-i-spania">områdeguide for boligkjøp i Spania</Link>{" "}
-            og den synlige <Link href="/omrader">områdehuben</Link> til å sammenligne regionene før du begynner
+            og <Link href="/omrader">områdeoversikten</Link> til å sammenligne regionene før du begynner
             å lagre enkeltboliger.
           </p>
         </div>
@@ -149,7 +179,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section cornerstone-section" id="boligtype">
         <div className="section-heading">
           <p className="eyebrow">Boligtype</p>
           <h2>Hus, leilighet eller villa – hva passer deg?</h2>
@@ -227,7 +257,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section proof-section">
+      <section className="section proof-section cornerstone-section" id="boligsok">
         <div className="section-heading">
           <p className="eyebrow">Boligsøk</p>
           <h2>Slik finner du boliger i Spania</h2>
@@ -259,7 +289,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section cornerstone-section" id="kjopsprosess">
         <div className="section-heading">
           <p className="eyebrow">Kjøpsprosessen</p>
           <h2>Nødvendige steg når du kjøper eiendom i Spania</h2>
@@ -305,7 +335,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section cornerstone-section" id="kostnader">
         <div className="section-heading">
           <p className="eyebrow">Totalbudsjett</p>
           <h2>Hva koster det å kjøpe hus eller leilighet i Spania?</h2>
@@ -335,7 +365,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section proof-section">
+      <section className="section proof-section cornerstone-section" id="vanlige-feil">
         <div className="section-heading">
           <p className="eyebrow">Erfaring</p>
           <h2>Vanlige feil mange gjør når de kjøper spansk bolig</h2>
@@ -350,7 +380,7 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <section className="section split">
+      <section className="section split cornerstone-section cornerstone-experience" id="erfaringer">
         <div>
           <p className="eyebrow">Mine erfaringer</p>
           <h2>Å kjøpe bolig i Spania handler om mer enn boligen</h2>
@@ -383,7 +413,7 @@ export default async function BuyInSpainGuidePage() {
 
       <BuyerMatchQuiz />
 
-      <section className="section">
+      <section className="section cornerstone-section" id="faq">
         <div className="section-heading">
           <p className="eyebrow">Vanlige spørsmål</p>
           <h2>Kjøpe bolig i Spania – FAQ</h2>
