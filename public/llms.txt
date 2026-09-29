@@ -13,8 +13,12 @@ Nettstedsspråk: norsk (/), tysk (/de), engelsk (/en), spansk (/es). Personlig r
 - [Alle områder](https://www.zenecohomes.com/omrader): Sammenlign regioner og velg riktig område før bolig.
 
 ## Guider og kjøpshjelp
-- [Magasin](https://www.zenecohomes.com/magasin): Praktiske guider om områdevalg, tomtekjøp, finansiering, NIE, notar og kjøpsprosess i Spania.
-- [Kjøpsprosessen](https://www.zenecohomes.com/kjopsprosessen): Slik kjøper du bolig i Spania steg for steg.
+- [Kjøpe bolig i Spania](https://www.zenecohomes.com/guide/kjope-bolig-i-spania): Hovedguide til områdevalg, boligtype, visning, juridisk kontroll, NIE, finansiering, kostnader, notar og overtakelse.
+- [Nybygg i Spania](https://www.zenecohomes.com/guide/nybygg-i-spania): Guide til utbygger, betalingsplan, bankgaranti, kostnader, levering og kontrollpunkter før reservasjon.
+- [Alle guider](https://www.zenecohomes.com/guide): Søkeorienterte guider om nybygg, områdevalg, tomt, finansiering, NIE, juridikk, kostnader, skatt og eierskap.
+- [Magasin](https://www.zenecohomes.com/magasin): Markedsoppdateringer, lokale nyheter, boligprisutvikling og redaksjonelt innhold om livet og boligmarkedet i Spania.
+- [Kjøpsprosessen](https://www.zenecohomes.com/kjopsprosessen): Slik jobber Zen Eco Homes fra behovskartlegging til visning, kjøp, overtakelse og oppfølging.
+- [Visningstur](https://www.zenecohomes.com/visningstur): Slik planlegges en målrettet visningstur til Spania.
 - [Book en boligprat](https://www.zenecohomes.com/booking): Start med område, bruk, budsjett og hva du ønsker å oppnå.
 
 ## Om rådgiveren

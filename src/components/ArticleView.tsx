@@ -349,8 +349,31 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
 };
 
+const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
+  "det-du-ikke-ser-i-boligannonsen": [
+    {
+      headingIncludes: "hverdagen ikke passer",
+      links: [
+        { label: "Sammenlign områdene før du velger bolig", href: "/omrader" },
+        { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "færre og bedre visninger",
+      links: [
+        { label: "Slik planlegger vi en visningstur", href: "/visningstur" },
+        { label: "Se boliger til salgs i Spania", href: "/eiendommer" },
+      ],
+    },
+  ],
+};
+
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
-  return (CONTEXTUAL_GUIDE_LINKS[slug] || [])
+  const rules = [
+    ...(CONTEXTUAL_GUIDE_LINKS[slug] || []),
+    ...(CONTEXTUAL_MAGAZINE_LINKS[slug] || []),
+  ];
+  return rules
     .filter((rule) => heading.toLowerCase().includes(rule.headingIncludes.toLowerCase()))
     .flatMap((rule) => rule.links);
 }
@@ -473,7 +496,7 @@ export function ArticleView({ article }: { article: Article }) {
             </div>
 
             {article.sections.map((section) => {
-              const contextualLinks = silo === "guide" ? contextualLinksFor(article.slug, section.heading) : [];
+              const contextualLinks = contextualLinksFor(article.slug, section.heading);
               return (
                 <section className="article-section" key={section.heading}>
                   <h2>{section.heading}</h2>

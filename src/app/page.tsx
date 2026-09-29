@@ -92,7 +92,7 @@ export default async function Home() {
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
 
       <section id="top" className="hero">
-        <Image className="hero-video" src="/assets/areas.jpg" alt="" fill priority sizes="100vw" />
+        <Image className="hero-video" src="/assets/areas.jpg" alt="Costa Blanca med moderne boliger, kyst og fjell" fill priority sizes="100vw" />
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="eyebrow">Norsk eiendomsrådgivning · Moderne nybygg på Costa Blanca</p>
