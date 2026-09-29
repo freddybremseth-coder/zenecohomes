@@ -337,3 +337,11 @@ h3,
     transition: none !important;
   }
 }
+
+/* Dark image heroes need a light accent; the dark accent is for paper backgrounds. */
+.hero .eyebrow,
+.page-hero .eyebrow,
+.hero .eyebrow a,
+.page-hero .eyebrow a {
+  color: #f0d3a0;
+}

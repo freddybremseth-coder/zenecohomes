@@ -2615,3 +2615,8 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* Put the requested simple contact form before explanatory copy on mobile. */
+@media (max-width: 760px) {
+  .booking-form-panel { order: -1; }
+}
