@@ -26,6 +26,10 @@ const pageFiles = [
   "src/app/informasjonskapsler/page.tsx",
   "src/app/guide/kjope-bolig-i-spania/page.tsx",
   "src/app/guide/nybygg-i-spania/page.tsx",
+  "src/app/bedriftshytte-spania/page.tsx",
+  "src/app/bedriftshytte-spania/guider/page.tsx",
+  "src/app/inland/page.tsx",
+  "src/app/tomter/page.tsx",
 ];
 
 const errors = [];
