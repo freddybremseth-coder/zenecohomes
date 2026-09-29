@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, CalendarClock, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CalendarClock, CheckCircle2, MapPinned, Users } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -26,7 +26,35 @@ export default function BookingPage() {
         </p>
       </section>
 
-      <section className="section split">
+      <section className="section booking-choice-section">
+        <div className="section-heading">
+          <p className="eyebrow">Velg hva du trenger</p>
+          <h2>Tre enkle måter å starte på</h2>
+          <p>Du trenger ikke fylle ut mer enn nødvendig. Velg inngangen som passer situasjonen din best.</p>
+        </div>
+        <div className="proof-grid booking-choice-grid">
+          <article>
+            <CalendarClock size={22} aria-hidden="true" />
+            <h3>15-minutters boligprat</h3>
+            <p>For deg som vil avklare område, budsjett og neste steg før du bruker tid på konkrete boliger.</p>
+            <a className="text-button" href="#boligprat">Start her</a>
+          </article>
+          <article>
+            <MapPinned size={22} aria-hidden="true" />
+            <h3>Planlegge visningstur</h3>
+            <p>For deg som allerede vet omtrent når du kommer til Spania og vil bygge en relevant shortlist før reisen.</p>
+            <Link className="text-button" href="/visningstur">Se hvordan visningstur fungerer</Link>
+          </article>
+          <article>
+            <Users size={22} aria-hidden="true" />
+            <h3>Informasjonsmøte</h3>
+            <p>Meld interesse for neste informasjonsmøte om boligkjøp i Spania. Når dato er satt, får du informasjon.</p>
+            <a className="text-button" href="#infomote">Meld interesse</a>
+          </article>
+        </div>
+      </section>
+
+      <section className="section split" id="boligprat">
         <div>
           <p className="eyebrow">Hva vi kan avklare</p>
           <h2>Få et bedre utgangspunkt før du bestiller visningstur</h2>
@@ -45,6 +73,22 @@ export default function BookingPage() {
         </div>
         <div>
           <ContactForm source="zenecohomes-booking" />
+        </div>
+      </section>
+      <section className="section split booking-info-meeting" id="infomote">
+        <div>
+          <p className="eyebrow">Informasjonsmøte</p>
+          <h2>Meld interesse for neste møte</h2>
+          <p>
+            Vi bruker informasjonsmøtene til å gå gjennom områder, kostnader, kjøpsprosess, nybygg og vanlige
+            fallgruver. Det er ingen fast dato publisert akkurat nå, så dette er en interesseliste – ikke en bekreftet booking.
+          </p>
+          <p>
+            Når et møte er satt opp får de som står på listen informasjon om tidspunkt, format og tema.
+          </p>
+        </div>
+        <div>
+          <ContactForm source="zenecohomes-info-meeting" requestType="Interesse for informasjonsmøte" variant="compact" />
         </div>
       </section>
       <Footer />
