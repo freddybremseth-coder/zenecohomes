@@ -6,7 +6,6 @@ import { GuideDownload } from "@/components/GuideDownload";
 import { MeetFreddy } from "@/components/MeetFreddy";
 import { Testimonials } from "@/components/Testimonials";
 import { PropertyExplorer } from "@/components/PropertyExplorer";
-import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -294,16 +293,7 @@ export default async function Home() {
 
       <GuideDownload />
 
-      <section className="contact-section" id="kontakt">
-        <div>
-          <p className="eyebrow">Klar for neste steg?</p>
-          <h2>Fortell oss hvordan du ønsker å bo</h2>
-          <p>Vi starter med område, bruk og budsjett og hjelper deg videre til de riktige moderne boligene.</p>
-        </div>
-        <ContactForm source="zenecohomes-home" />
-      </section>
-
-      <Footer showCta={false} />
+      <Footer />
     </main>
   );
 }
