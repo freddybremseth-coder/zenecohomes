@@ -7,9 +7,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Mit Freddy sprechen | Immobilienberatung Spanien",
-  description:
-    "Fragen Sie ein kurzes Gespräch zu Region, Budget, modernem Neubau und Kaufprozess an der Costa Blanca an.",
+  title: "Immobilienberatung Spanien | Gespräch mit Freddy Bremseth",
+  description: "Buchen Sie ein unverbindliches Gespräch über Immobilien in Spanien mit Freddy Bremseth. Klären Sie Region, Budget, Immobiliensuche und nächste Schritte.",
   alternates: { canonical: "/de/termin" },
 };
 
