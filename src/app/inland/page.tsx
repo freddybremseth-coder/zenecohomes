@@ -267,9 +267,12 @@ export default async function InlandPage() {
           <p className="eyebrow">Vanlige spørsmål</p>
           <h2>Før du velger innlandet</h2>
         </div>
-        <div className="proof-grid inland-faq">
-          {faq.map((item) => (
-            <article key={item.q}><h3>{item.q}</h3><p>{item.a}</p></article>
+        <div className="faq-accordion region-faq-accordion">
+          {faq.map((item, index) => (
+            <details key={item.q} open={index === 0}>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
           ))}
         </div>
       </section>
