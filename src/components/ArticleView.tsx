@@ -223,7 +223,7 @@ export function ArticleView({ article }: { article: Article }) {
               <strong>Relaterte guider</strong>
               <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
                 {relatedArticles.map((item) => (
-                  <Link key={item.slug} href={articlePath(item)} style={{ color: "var(--gold)", lineHeight: 1.45 }}>
+                  <Link key={item.slug} href={articlePath(item)} style={{ color: "var(--gold-dark)", lineHeight: 1.45 }}>
                     {item.title}
                   </Link>
                 ))}
