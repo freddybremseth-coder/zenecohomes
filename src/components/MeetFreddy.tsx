@@ -22,7 +22,7 @@ export function MeetFreddy() {
           og driver familiens olivengård i Biar. Han kjenner markedet fra Valencia til La Manga og hjelper deg
           med områdevalg, boligjakt, effektive visninger, kjøpsprosess og utleievurdering.
         </p>
-        <Link className="text-button" href="/om-freddy">
+        <Link className="text-button" href="/om-oss/freddy">
           Bli bedre kjent med Freddy <ArrowRight size={16} />
         </Link>
       </div>
