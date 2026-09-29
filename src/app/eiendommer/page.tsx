@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SaveSearchButton } from "@/components/SaveSearchButton";
@@ -66,6 +67,7 @@ export default async function PropertiesPage({
     bathrooms?: string;
     minSize?: string;
     lifestyle?: string;
+    page?: string;
   }>;
 }) {
   const params = await searchParams;
@@ -79,6 +81,8 @@ export default async function PropertiesPage({
   const minBathrooms = Number(params.bathrooms || 0);
   const minSize = Number(params.minSize || 0);
   const lifestyle = params.lifestyle || "";
+  const currentPage = Math.max(1, Number(params.page || 1) || 1);
+  const pageSize = 24;
   const properties = await getProperties();
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
@@ -108,6 +112,18 @@ export default async function PropertiesPage({
     );
   });
   const locationLabel = area || getRegionLabel(region);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const safePage = Math.min(currentPage, totalPages);
+  const visibleProperties = filtered.slice((safePage - 1) * pageSize, safePage * pageSize);
+  const pageHref = (page: number) => {
+    const query = new URLSearchParams();
+    for (const [key, value] of Object.entries(params)) {
+      if (value && key !== "page") query.set(key, value);
+    }
+    if (page > 1) query.set("page", String(page));
+    const qs = query.toString();
+    return qs ? `/eiendommer?${qs}` : "/eiendommer";
+  };
 
   return (
     <main>
@@ -196,6 +212,21 @@ export default async function PropertiesPage({
         </form>
       </section>
       <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">Bolig til salgs i Spania</p>
+          <h2>Hus, leiligheter og nybygg til salgs i Spania</h2>
+          <p>
+            Her finner du et oppdatert utvalg boliger til salgs i Spania, med hovedvekt på Costa Blanca,
+            Costa Cálida og utvalgte innlandsområder. Start gjerne med område og budsjett, og bruk Boligmatch
+            eller rådgivning hvis du vil ha en kortere og mer relevant shortlist.
+          </p>
+          <div className="hero-actions">
+            <Link className="text-button" href="/omrader">Sammenlign områder</Link>
+            <Link className="text-button" href="/guide/kjope-bolig-i-spania">Guide: kjøpe bolig i Spania</Link>
+            <Link className="text-button" href="/kjopsprosessen">Se kjøpsprosessen</Link>
+            <Link className="text-button" href="/visningstur">Planlegg visningstur</Link>
+          </div>
+        </div>
         <div className="list-heading">
           <div>
             <h2>{filtered.length} boliger{area ? ` i ${area}` : ""}</h2>
@@ -213,10 +244,17 @@ export default async function PropertiesPage({
           />
         </div>
         <div className="property-grid">
-          {filtered.map((property, index) => (
+          {visibleProperties.map((property, index) => (
             <PropertyCard key={property.id || property.ref || index} property={property} />
           ))}
         </div>
+        {totalPages > 1 && (
+          <nav className="hero-actions" aria-label="Sider" style={{ justifyContent: "center", marginTop: 32 }}>
+            {safePage > 1 && <Link className="text-button" href={pageHref(safePage - 1)}>← Forrige</Link>}
+            <span>Side {safePage} av {totalPages}</span>
+            {safePage < totalPages && <Link className="text-button" href={pageHref(safePage + 1)}>Neste →</Link>}
+          </nav>
+        )}
       </section>
       <Footer />
     </main>
