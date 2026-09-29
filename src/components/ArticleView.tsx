@@ -11,7 +11,7 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   "omradeguide-eiendomskjop-i-spania": [
     "nybygg-finestrat-omradeguide",
     "innlandet-finca-olivengard-spania",
-    "flytte-til-spania-pensjonist",
+    "flytte-til-spania-som-pensjonist",
   ],
   "guide-tomtekjop-bygging-i-spania": [
     "innlandet-finca-olivengard-spania",
@@ -51,14 +51,14 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   "lopende-kostnader-eie-bolig-spania": [
     "omkostninger-nybygg-spania",
     "utleie-inntektspotensial-bolig-spania",
-    "flytte-til-spania-pensjonist",
+    "flytte-til-spania-som-pensjonist",
   ],
   "innlandet-finca-olivengard-spania": [
     "guide-tomtekjop-bygging-i-spania",
     "omradeguide-eiendomskjop-i-spania",
     "juridiske-fallgruver-boligkjop-spania",
   ],
-  "flytte-til-spania-pensjonist": [
+  "flytte-til-spania-som-pensjonist": [
     "omradeguide-eiendomskjop-i-spania",
     "lopende-kostnader-eie-bolig-spania",
     "spansk-bankkonto-valutaveksling",
@@ -266,7 +266,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
   ],
-  "flytte-til-spania-pensjonist": [
+  "flytte-til-spania-som-pensjonist": [
     {
       headingIncludes: "Ferie eller fast bosetting",
       links: [
