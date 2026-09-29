@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import type { SiteLocale } from "@/lib/i18n";
+import { CARE_URL, type SiteLocale } from "@/lib/i18n";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
@@ -18,15 +19,7 @@ const SUBLINE: Record<SiteLocale, string> = {
 };
 
 const LINKS: Record<SiteLocale, FooterLink[]> = {
-  no: [
-    { label: "Boliger", href: "/eiendommer" },
-    { label: "Områder", href: "/omrader" },
-    { label: "Innlandet", href: "/inland" },
-    { label: "Tomter", href: "/tomter" },
-    { label: "Kjøpsprosess", href: "/kjopsprosessen" },
-    { label: "Magasin", href: "/magasin" },
-    { label: "Om Freddy", href: "/om-freddy" },
-  ],
+  no: [],
   de: [
     { label: "Immobilien", href: "/de/immobilien" },
     { label: "Regionen", href: "/de/regionen" },
@@ -47,12 +40,56 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Propiedades", href: "/es/propiedades" },
     { label: "Zonas", href: "/es/zonas" },
     { label: "Interior", href: "/es/interior" },
-    { label: "Terrenos", href: "/es/terreno-en-espana" },
     { label: "Proceso de compra", href: "/es/proceso-de-compra" },
     { label: "Guías", href: "/es/guias" },
     { label: "Sobre Freddy", href: "/es/sobre-freddy" },
   ],
 };
+
+const NORWEGIAN_GROUPS: Array<{ title: string; links: FooterLink[] }> = [
+  {
+    title: "Boliger og områder",
+    links: [
+      { label: "Boliger til salgs", href: "/eiendommer" },
+      { label: "Områder", href: "/omrader" },
+      { label: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
+      { label: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor" },
+      { label: "Costa Cálida", href: "/omrader/costa-calida" },
+      { label: "Innlandet", href: "/omrader/innlandet" },
+    ],
+  },
+  {
+    title: "Kjøpe bolig",
+    links: [
+      { label: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+      { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
+      { label: "Visningstur", href: "/visningstur" },
+      { label: "Guider", href: "/guide" },
+      { label: "Book rådgivning", href: "/booking" },
+    ],
+  },
+  {
+    title: "Om Zen Eco Homes",
+    links: [
+      { label: "Om oss", href: "/om-oss" },
+      { label: "Freddy", href: "/om-oss/freddy" },
+      { label: "Kundeomtaler", href: "/kundeomtaler" },
+      { label: "Magasin", href: "/magasin" },
+      { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
+      { label: "Zen Eco Homes Care", href: CARE_URL, external: true },
+    ],
+  },
+  {
+    title: "Kontakt",
+    links: [
+      { label: "Booking", href: "/booking" },
+      { label: "freddy@zenecohomes.com", href: "mailto:freddy@zenecohomes.com", external: true },
+      { label: "+47 960 09 965", href: "tel:+4796009965", external: true },
+      { label: "Benidorm, Alicante, Spania", href: "/om-oss" },
+      { label: "Min side", href: "/min-side" },
+    ],
+  },
+];
 
 const CTA: Record<SiteLocale, { eyebrow: string; title: string; body: string; primary: string; primaryHref: string; secondary: string; secondaryHref: string }> = {
   no: {
@@ -93,10 +130,19 @@ const CTA: Record<SiteLocale, { eyebrow: string; title: string; body: string; pr
   },
 };
 
+function FooterLinkItem({ link }: { link: FooterLink }) {
+  return link.external ? (
+    <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+      {link.label}
+    </a>
+  ) : (
+    <Link href={link.href}>{link.label}</Link>
+  );
+}
 
 export function Footer({
   locale = "no",
-  showCta = true,
+  showCta = false,
 }: {
   locale?: SiteLocale;
   showCta?: boolean;
@@ -123,26 +169,48 @@ export function Footer({
       <div className="footer-2027-main">
         <div className="footer-2027-brand">
           <Link className="footer-wordmark" href={locale === "no" ? "/" : `/${locale}`} aria-label="Zen Eco Homes">
-            <img src="/assets/zeneco-header-light.svg?v=20260926-3" alt="Zen Eco Homes" width={900} height={190} />
+            <Image src="/assets/zeneco-header-light.svg" alt="Zen Eco Homes" width={300} height={64} />
           </Link>
           <p>{TAGLINE[locale]}</p>
           <small>{SUBLINE[locale]}</small>
         </div>
 
-        <nav className="footer-2027-nav" aria-label="Footer">
-          {links.map((link) =>
-            link.external ? (
-              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
-            ) : (
-              <Link key={link.href} href={link.href}>{link.label}</Link>
-            ),
-          )}
-        </nav>
+        {locale === "no" ? (
+          <div
+            className="footer-2027-nav"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+              gap: "28px 34px",
+              alignItems: "start",
+            }}
+          >
+            {NORWEGIAN_GROUPS.map((group) => (
+              <nav key={group.title} aria-label={group.title} style={{ display: "grid", gap: 10 }}>
+                <strong style={{ color: "white", fontSize: "0.85rem", letterSpacing: ".08em", textTransform: "uppercase" }}>
+                  {group.title}
+                </strong>
+                {group.links.map((link) => <FooterLinkItem key={link.href} link={link} />)}
+              </nav>
+            ))}
+          </div>
+        ) : (
+          <nav className="footer-2027-nav" aria-label="Footer">
+            {links.map((link) => <FooterLinkItem key={link.href} link={link} />)}
+          </nav>
+        )}
       </div>
 
       <div className="footer-2027-bottom">
-        <span>© {new Date().getFullYear()} Zen Eco Homes</span>
-        <span>Benidorm · Costa Blanca</span>
+        <span>© {new Date().getFullYear()} Zen Eco Homes · Benidorm, Alicante, Spania</span>
+        {locale === "no" ? (
+          <span style={{ display: "inline-flex", gap: 14, flexWrap: "wrap" }}>
+            <Link href="/personvern">Personvern</Link>
+            <Link href="/informasjonskapsler">Informasjonskapsler</Link>
+          </span>
+        ) : (
+          <span>Zen Eco Homes</span>
+        )}
       </div>
     </footer>
   );
