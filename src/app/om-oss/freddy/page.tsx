@@ -228,9 +228,9 @@ export default function FreddyPage() {
             <Link className="contact-button" href="/booking">
               <CalendarClock size={18} /> Be om en 15-minutters boligprat
             </Link>
-            <Link className="text-button" href="/#kontakt">
-              <MessageCircle size={16} /> Eller send en melding
-            </Link>
+            <a className="text-button" href="mailto:freddy@zenecohomes.com">
+              <MessageCircle size={16} /> Send e-post
+            </a>
           </div>
         </article>
       </section>
