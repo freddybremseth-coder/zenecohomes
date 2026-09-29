@@ -15,7 +15,8 @@ import { getPropertyDetailPath } from "@/lib/propertyRouting";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
 const baseUrl = "https://www.zenecohomes.com";
-const allSeoPages = [...seoLandingPages, ...localSeoLandingPages];
+const redirectedSeoSlugs = new Set(["nybygg-i-spania", "nybygg-costa-blanca"]);
+const allSeoPages = [...seoLandingPages, ...localSeoLandingPages].filter((page) => !redirectedSeoSlugs.has(page.slug));
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const cmsPosts = await fetchPublishedPosts("magasin");
@@ -64,7 +65,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...seoLandingPagesES.map((page) => `/es/${page.slug}`),
     ...localSeoLandingPagesES.map((page) => `/es/${page.slug}`),
     "/kjopsprosessen",
-    "/kjopsprosess",
     "/guide",
     "/magasin",
     ...articlePaths,
@@ -130,5 +130,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
   });
 
-  return [...staticRoutes, ...propertyRoutes];
+  const uniqueRoutes = new Map(staticRoutes.map((route) => [route.url, route]));
+  return [...uniqueRoutes.values(), ...propertyRoutes];
 }
