@@ -18,10 +18,10 @@ const nextConfig: NextConfig = {
     // Artikler som er flyttet fra /magasin til innholdssiloer. Holdes i synk med
     // SILO_BY_SLUG i src/lib/magazine.ts. 301 for å bevare SEO-verdi.
     const siloRedirects = [
-      ["omkostninger-nybygg-spania", "kjopsprosess"],
-      ["bankgaranti-nybygg-spania", "kjopsprosess"],
+      ["omkostninger-nybygg-spania", "guide"],
+      ["bankgaranti-nybygg-spania", "guide"],
       ["kjopsprosess-bolig-i-spania", "kjopsprosess"],
-      ["finansiering-notar-nie-boligkjop-spania", "kjopsprosess"],
+      ["finansiering-notar-nie-boligkjop-spania", "guide"],
       ["omradeguide-eiendomskjop-i-spania", "guide"],
       ["guide-tomtekjop-bygging-i-spania", "guide"],
       ["kjop-bolig-i-spania-na-eller-vente", "guide"],
