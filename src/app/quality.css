@@ -140,3 +140,113 @@
     padding-right: 18px;
   }
 }
+
+
+/* Cornerstone buyer guide: editorial hierarchy, readable measure and calmer cards. */
+.buyer-guide-page .section-heading {
+  max-width: 760px;
+}
+
+.buyer-guide-page .section-heading > p:not(.eyebrow) {
+  max-width: 66ch;
+  margin-inline: auto;
+}
+
+.buyer-guide-steps {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.buyer-guide-steps article {
+  grid-column: span 4;
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  padding: clamp(24px, 2.5vw, 34px);
+  border: 1px solid rgba(23, 32, 39, 0.09);
+  border-radius: 18px;
+  background: var(--ze-white);
+  box-shadow: 0 18px 48px -34px rgba(23, 32, 39, 0.38);
+}
+
+.buyer-guide-steps article:nth-child(1),
+.buyer-guide-steps article:nth-child(2),
+.buyer-guide-steps article:nth-child(3) {
+  grid-column: span 4;
+}
+
+.buyer-guide-steps article:nth-child(4),
+.buyer-guide-steps article:nth-child(5),
+.buyer-guide-steps article:nth-child(6),
+.buyer-guide-steps article:nth-child(7) {
+  grid-column: span 3;
+  min-height: 235px;
+}
+
+.buyer-guide-steps strong {
+  color: var(--gold-dark);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+}
+
+.buyer-guide-steps h3 {
+  max-width: 18ch;
+  margin: 18px 0 12px;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.12;
+}
+
+.buyer-guide-steps p {
+  max-width: 42ch;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.buyer-guide-page .proof-grid article .text-button {
+  margin-top: auto;
+  padding-top: 20px;
+  line-height: 1.35;
+}
+
+.buyer-guide-page .split > div > p,
+.buyer-guide-page .split > div > .check-list {
+  max-width: 62ch;
+}
+
+.buyer-guide-page .check-list span {
+  align-items: flex-start;
+  line-height: 1.65;
+}
+
+.buyer-guide-page .check-list svg {
+  flex: 0 0 auto;
+  margin-top: 0.2em;
+}
+
+@media (max-width: 1040px) {
+  .buyer-guide-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .buyer-guide-steps article,
+  .buyer-guide-steps article:nth-child(n) {
+    grid-column: auto;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .buyer-guide-steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .buyer-guide-steps article {
+    padding: 22px 20px;
+  }
+
+  .buyer-guide-page .section-heading > p:not(.eyebrow) {
+    margin-inline: 0;
+  }
+}
