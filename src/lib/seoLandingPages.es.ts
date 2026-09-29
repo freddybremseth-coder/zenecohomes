@@ -130,9 +130,9 @@ export const seoLandingPagesES: SeoLandingPage[] = [
     hero: "Obra nueva en la Costa Blanca con asesoramiento antes de reservar",
     description:
       "Villas, apartamentos y proyectos modernos en Costa Blanca Norte y Sur. Comparamos ubicación, precio, promotor, calidades, costes y alternativas antes de que tomes una decisión.",
-    seoTitle: "Obra nueva Costa Blanca | Villas y apartamentos",
+    seoTitle: "Obra nueva Costa Blanca | Villas y apartamentos modernos",
     seoDescription:
-      "Obra nueva en Costa Blanca: villas, apartamentos y promociones modernas. Asesoramiento sobre zona, promotor, pagos, calidades y entrega.",
+      "Obra nueva en Costa Blanca: villas, apartamentos y promociones modernas. Asesoramiento sobre zona, promotor, pagos, calidades, costes y entrega.",
     primaryCta: { label: "Hablar con un asesor", href: BOOKING },
     secondaryCta: { label: "Ver obra nueva", href: "/es/propiedades" },
     sections: [
@@ -190,7 +190,7 @@ export const seoLandingPagesES: SeoLandingPage[] = [
     hero: "Un asesor inmobiliario para ordenar tu compra en España",
     description:
       "Zen Eco Homes te ayuda a definir necesidades, comparar zonas y propiedades, entender costes y coordinar la compra con los profesionales adecuados.",
-    seoTitle: "Asesor inmobiliario en España | Costa Blanca",
+    seoTitle: "Asesor inmobiliario en España | Compra en Costa Blanca",
     seoDescription:
       "Asesoramiento inmobiliario en España para compradores: zona, presupuesto, propiedades, costes, NIE, abogado, financiación y coordinación en Costa Blanca.",
     primaryCta: { label: "Reservar una conversación", href: BOOKING },
