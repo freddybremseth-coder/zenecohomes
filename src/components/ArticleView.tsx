@@ -98,6 +98,26 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
     "spansk-bankkonto-valutaveksling",
     "omkostninger-nybygg-spania",
   ],
+  "hva-far-du-for-4-6-8-10-millioner-costa-blanca": [
+    "boligmarkedet-costa-blanca-hosten-2026",
+    "spansk-bankkonto-valutaveksling",
+    "omradeguide-eiendomskjop-i-spania",
+  ],
+  "bolig-500000-euro-totalbudsjett-spania": [
+    "omkostninger-nybygg-spania",
+    "lopende-kostnader-eie-bolig-spania",
+    "finansiering-notar-nie-boligkjop-spania",
+  ],
+  "lan-i-norge-eller-spania-boligkjop": [
+    "boliglan-spansk-bank-nordmenn",
+    "spansk-bankkonto-valutaveksling",
+    "finansiering-notar-nie-boligkjop-spania",
+  ],
+  "albir-finestrat-villajoyosa-benidorm-hvor-kjope": [
+    "omradeguide-eiendomskjop-i-spania",
+    "nybygg-finestrat-omradeguide",
+    "hva-far-du-for-4-6-8-10-millioner-costa-blanca",
+  ],
 };
 
 type ContextualLink = { label: string; href: string };
@@ -363,6 +383,105 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       links: [
         { label: "Slik planlegger vi en visningstur", href: "/visningstur" },
         { label: "Se boliger til salgs i Spania", href: "/eiendommer" },
+      ],
+    },
+  ],
+  "hva-far-du-for-4-6-8-10-millioner-costa-blanca": [
+    {
+      headingIncludes: "4 millioner",
+      links: [
+        { label: "Se Costa Blanca Nord opptil €370.000", href: "/eiendommer?region=costa-blanca-nord&maxPrice=370000" },
+        { label: "Valuta og bankkonto ved boligkjøp", href: "/guide/spansk-bankkonto-valutaveksling" },
+      ],
+    },
+    {
+      headingIncludes: "6 millioner",
+      links: [
+        { label: "Se boliger opptil €550.000", href: "/eiendommer?region=costa-blanca-nord&maxPrice=550000" },
+      ],
+    },
+    {
+      headingIncludes: "8 millioner",
+      links: [
+        { label: "Se boliger opptil €740.000", href: "/eiendommer?region=costa-blanca-nord&maxPrice=740000" },
+        { label: "Nybygg i Finestrat", href: "/guide/nybygg-finestrat-omradeguide" },
+      ],
+    },
+    {
+      headingIncludes: "kjøpskostnadene",
+      links: [
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Slik utvikler markedet seg nå", href: "/magasin/boligmarkedet-costa-blanca-hosten-2026" },
+      ],
+    },
+  ],
+  "bolig-500000-euro-totalbudsjett-spania": [
+    {
+      headingIncludes: "Kjøpesummen er bare",
+      links: [
+        { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
+        { label: "Omkostninger ved nybygg", href: "/guide/omkostninger-nybygg-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Valutakursen",
+      links: [
+        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+      ],
+    },
+    {
+      headingIncludes: "tiden etter overtakelse",
+      links: [
+        { label: "Løpende kostnader ved å eie bolig", href: "/guide/lopende-kostnader-eie-bolig-spania" },
+      ],
+    },
+  ],
+  "lan-i-norge-eller-spania-boligkjop": [
+    {
+      headingIncludes: "Lån i Spania",
+      links: [
+        { label: "Boliglån i spansk bank for nordmenn", href: "/guide/boliglan-spansk-bank-nordmenn" },
+      ],
+    },
+    {
+      headingIncludes: "Valuta",
+      links: [
+        { label: "Bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+        { label: "Siste markedsoppdatering", href: "/magasin/boligmarkedet-costa-blanca-hosten-2026" },
+      ],
+    },
+    {
+      headingIncludes: "arbeidsrekkefølge",
+      links: [
+        { label: "Finansiering, notar og NIE", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+      ],
+    },
+  ],
+  "albir-finestrat-villajoyosa-benidorm-hvor-kjope": [
+    {
+      headingIncludes: "Albir",
+      links: [
+        { label: "Områdeguide Albir", href: "/omrader/costa-blanca-nord/albir" },
+        { label: "Se boliger i Albir", href: "/eiendommer?region=costa-blanca-nord&area=Albir" },
+      ],
+    },
+    {
+      headingIncludes: "Finestrat",
+      links: [
+        { label: "Områdeguide Finestrat", href: "/omrader/costa-blanca-nord/finestrat" },
+        { label: "Se boliger i Finestrat", href: "/eiendommer?region=costa-blanca-nord&area=Finestrat" },
+      ],
+    },
+    {
+      headingIncludes: "Villajoyosa",
+      links: [
+        { label: "Se boliger i Villajoyosa", href: "/eiendommer?region=costa-blanca-nord&area=Villajoyosa" },
+      ],
+    },
+    {
+      headingIncludes: "Benidorm",
+      links: [
+        { label: "Se boliger i Benidorm", href: "/eiendommer?region=costa-blanca-nord&area=Benidorm" },
       ],
     },
   ],
