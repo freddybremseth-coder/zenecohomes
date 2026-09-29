@@ -375,3 +375,243 @@
     transform: none;
   }
 }
+
+
+/* Guide hub: editorial knowledge center, not a generic card archive. */
+.guide-hub-hero {
+  min-height: 560px;
+  padding-top: 138px;
+  padding-bottom: 72px;
+}
+
+.guide-hero-layout {
+  width: min(1220px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: clamp(42px, 7vw, 94px);
+  align-items: end;
+}
+
+.guide-hero-copy {
+  max-width: 760px;
+}
+
+.guide-hero-copy h1 {
+  max-width: 11ch;
+}
+
+.guide-hero-copy > p:not(.eyebrow) {
+  max-width: 650px;
+  margin: 24px 0 30px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.05rem, 1.5vw, 1.24rem);
+  line-height: 1.72;
+}
+
+.guide-hero-panel {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(26px, 3vw, 38px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(9, 32, 36, 0.74);
+  box-shadow: 0 28px 74px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.guide-hero-panel h2 {
+  margin: 0 0 20px;
+  color: white;
+  font-size: clamp(1.9rem, 2.5vw, 2.7rem);
+  line-height: 1.05;
+}
+
+.guide-hero-panel nav {
+  display: grid;
+}
+
+.guide-hero-panel nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 48px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.94rem;
+  font-weight: 650;
+  transition: color 180ms ease, padding-left 180ms ease;
+}
+
+.guide-hero-panel nav a:hover {
+  padding-left: 6px;
+  color: white;
+}
+
+.guide-start-section {
+  padding-top: 86px;
+  padding-bottom: 82px;
+}
+
+.guide-section-heading {
+  width: min(780px, 100%);
+  text-align: left;
+  margin-left: 0;
+}
+
+.guide-section-heading h2 {
+  max-width: 13ch;
+}
+
+.guide-start-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 20px;
+}
+
+.guide-start-card {
+  display: flex;
+  min-height: 285px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(26px, 3vw, 38px);
+  border: 1px solid var(--ze-line);
+  background: var(--ze-white);
+  box-shadow: var(--ze-shadow-soft);
+}
+
+.guide-start-card-primary {
+  background:
+    linear-gradient(145deg, rgba(8, 45, 48, 0.97), rgba(12, 62, 65, 0.92)),
+    var(--ze-sea);
+}
+
+.guide-start-card > span {
+  margin-bottom: 28px;
+  color: var(--ze-travertine);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.guide-start-card h3 {
+  margin: 0 0 14px;
+  color: var(--ze-ink);
+  font-size: clamp(1.55rem, 2vw, 2.15rem);
+  line-height: 1.08;
+}
+
+.guide-start-card p {
+  margin: 0 0 28px;
+  color: var(--ze-muted);
+  line-height: 1.72;
+}
+
+.guide-start-card .text-button {
+  margin-top: auto;
+}
+
+.guide-start-card-primary h3,
+.guide-start-card-primary p {
+  color: white;
+}
+
+.guide-start-card-primary p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.guide-start-card-primary .text-button {
+  color: #f0d39c;
+}
+
+.guide-index-band {
+  width: 100%;
+  border-top: 1px solid var(--ze-line);
+  border-bottom: 1px solid var(--ze-line);
+  background: rgba(244, 240, 231, 0.58);
+}
+
+.guide-index-band > div {
+  width: min(1220px, calc(100% - 48px));
+  min-height: 74px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 26px;
+}
+
+.guide-index-band span {
+  color: var(--ze-muted);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.guide-index-band a {
+  color: var(--ze-ink);
+  font-size: 0.92rem;
+  font-weight: 650;
+  border-bottom: 1px solid transparent;
+}
+
+.guide-index-band a:hover {
+  border-bottom-color: var(--ze-travertine);
+}
+
+.guide-topic-section {
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.guide-topic-section + .guide-topic-section {
+  border-top: 1px solid rgba(23, 32, 39, 0.07);
+}
+
+.guide-library-grid {
+  align-items: stretch;
+}
+
+.guide-library-card .magazine-cover-image {
+  height: 230px;
+}
+
+.guide-library-card .magazine-body {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+}
+
+.guide-library-card .magazine-body h3 {
+  margin: 8px 0 12px;
+  color: var(--ze-ink);
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.guide-library-card .magazine-body > p:not(.magazine-meta) {
+  color: var(--ze-muted);
+  line-height: 1.68;
+}
+
+.guide-library-card .magazine-actions {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.guide-reading-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ze-muted);
+  font-size: 0.82rem;
+}
+
+.guide-contact-section .hero-actions {
+  flex-shrink: 0;
+}
