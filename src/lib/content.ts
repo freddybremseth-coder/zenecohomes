@@ -1235,7 +1235,7 @@ export const articles: Article[] = [
           "Det avhenger av hvor du blir skattemessig bosatt og hvilke inntekter og eiendeler du har. Dette bør planlegges med kvalifisert skatte-/juridisk rådgiver før flytting.",
       },
     ],
-    cta: { label: "Ta en uforpliktende prat om bolig og område", href: "/#kontakt" },
+    cta: { label: "Ta en uforpliktende prat om bolig og område", href: "/booking" },
   },
   {
     slug: "energieffektive-nybygg-spania",
