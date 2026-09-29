@@ -32,6 +32,36 @@ function truncateMeta(value: string): string {
   return value.length > 160 ? `${value.slice(0, 157).replace(/\s+\S*$/, "").trim()}…` : value;
 }
 
+function fitSeoTitle(value: string): string {
+  const clean = value.replace(/\s+/g, " ").trim();
+  if (clean.length >= 50 && clean.length <= 60) return clean;
+
+  const candidates = [
+    `${clean} | Spania`,
+    `${clean} | Zen Eco Homes`,
+    `${clean} | Bolig i Spania`,
+    `${clean} | Bolig i Spania | Zen Eco Homes`,
+    `${clean} til salgs | Bolig i Spania | Zen Eco Homes`,
+  ];
+  const fitted = candidates.find((candidate) => candidate.length >= 50 && candidate.length <= 60);
+  if (fitted) return fitted;
+
+  const fallback = candidates[candidates.length - 1];
+  if (fallback.length <= 60) return fallback;
+  return fallback.slice(0, 60).replace(/\s+\S*$/, "").trim();
+}
+
+function fitMetaDescription(value: string, fallback: string): string {
+  let clean = (value || fallback).replace(/\s+/g, " ").trim();
+  if (clean.length < 140) {
+    clean += " Se pris, nøkkelfakta, område og hva som bør kontrolleres før visning og kjøp med Zen Eco Homes.";
+  }
+  if (clean.length < 140) {
+    clean += " Få norsk rådgivning før du reserverer.";
+  }
+  return truncateMeta(clean);
+}
+
 export async function generateStaticParams() {
   const properties = await getProperties(30);
   return properties.map((property) => ({ id: encodeURIComponent(getPropertyRef(property)) }));
@@ -49,20 +79,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       : `${propType} i ${town}`
     : "Bolig i Spania";
 
-  const title = pickSeoText(property?.meta_title_no, 60) || pickSeoText(property?.title_no, 60) || cleanTitle;
+  const sourceTitle = pickSeoText(property?.meta_title_no, 60) || pickSeoText(property?.title_no, 60) || cleanTitle;
+  const title = fitSeoTitle(sourceTitle);
   const editorialMeta =
     property && property.editorial_no_approved !== false
       ? buildEditorialDescription(property.editorial_no).replace(/\s+/g, " ").trim()
       : "";
   const metaDescNo = pickSeoText(property?.meta_description_no);
   const descNo = pickSeoText(property?.description_no);
-  const description =
-    metaDescNo ||
-    truncateMeta(editorialMeta) ||
-    truncateMeta(descNo) ||
-    (property
-      ? `${propType}${property.bedrooms ? ` med ${property.bedrooms} soverom` : ""} i ${town}. ${formatPriceForLocale(property.price, "no")} – se pris, estimert kjøpskostnad, hva som bør kontrolleres og Zen Eco Homes' vurdering.`
-      : "Bolig til salgs i Spania hos Zen Eco Homes.");
+  const fallbackDescription = property
+    ? `${propType}${property.bedrooms ? ` med ${property.bedrooms} soverom` : ""} i ${town}. ${formatPriceForLocale(property.price, "no")} – se pris, estimert kjøpskostnad, hva som bør kontrolleres og Zen Eco Homes' vurdering.`
+    : "Bolig til salgs i Spania hos Zen Eco Homes.";
+  const description = fitMetaDescription(metaDescNo || editorialMeta || descNo, fallbackDescription);
   const ogImage = `https://www.zenecohomes.com/eiendommer/${encodeURIComponent(ref)}/og`;
 
   return {
