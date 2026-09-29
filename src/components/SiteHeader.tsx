@@ -21,6 +21,11 @@ export function SiteHeader({
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 24);
+    const main = document.querySelector("main");
+    if (main) {
+      if (!main.id) main.id = "main-content";
+      if (!main.hasAttribute("tabindex")) main.setAttribute("tabindex", "-1");
+    }
     setHasHero(Boolean(document.querySelector("main > section.hero, main > section.image-hero")));
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -66,8 +71,12 @@ export function SiteHeader({
     .filter(Boolean)
     .join(" ");
 
+  const skipLabel = locale === "de" ? "Zum Hauptinhalt" : locale === "en" ? "Skip to main content" : locale === "es" ? "Saltar al contenido principal" : "Hopp til hovedinnhold";
+  const navLabel = locale === "de" ? "Hauptnavigation" : locale === "en" ? "Main navigation" : locale === "es" ? "Navegación principal" : "Hovednavigasjon";
+
   return (
     <header className={headerClass}>
+      <a className="skip-link" href="#main-content">{skipLabel}</a>
       <Link className="brand brand-2027" href={withLocale(locale, "/")} aria-label="Zen Eco Homes">
         <img
           className="brand-logo-image brand-logo-dark"
@@ -98,7 +107,7 @@ export function SiteHeader({
       >
         {menuOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
-      <nav className={`nav${menuOpen ? " open" : ""}`} id="site-navigation">
+      <nav aria-label={navLabel} className={`nav${menuOpen ? " open" : ""}`} id="site-navigation">
         {links.map((link) =>
           link.children?.length ? (
             <div className="nav-dropdown" key={link.href}>
