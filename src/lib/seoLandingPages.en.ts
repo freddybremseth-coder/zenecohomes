@@ -74,7 +74,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     hero: "Buy a new build in Spain – modern, efficient, secure",
     description:
       "New-build apartments, villas and projects across Spain with high energy efficiency and modern specifications. We guide you from selection through payment plan and bank guarantee to handover.",
-    seoTitle: "New Build in Spain | Modern Properties",
+    seoTitle: "New Build in Spain | Modern Homes & Buyer Guidance",
     seoDescription:
       "New build in Spain: modern, energy-efficient apartments and villas. Advice on location, developer, payment plan, bank guarantee and handover — clear and secure.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
@@ -254,7 +254,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     hero: "Buy a plot of land in Spain and build your home",
     description:
       "Your own plot on the Costa Blanca and a home built to your wishes — with guidance on buildability, licences, choosing a builder and a safe buying process.",
-    seoTitle: "Buy Land in Spain | Build with Guidance",
+    seoTitle: "Buy Land in Spain | Plots, Building & Buyer Guidance",
     seoDescription:
       "Buy a plot of land in Spain and build: checks on buildability, licences and location, choosing builder and architect, and a safe buying process on the Costa Blanca.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
