@@ -11,7 +11,7 @@ type ContactFormProps = {
   requestType?: string;
   locale?: Locale;
   /** "full" = alle felt (varm norsk trafikk). "compact" = 5 felt (kald DE/EN-trafikk). */
-  variant?: "full" | "compact";
+  variant?: "full" | "compact" | "simple";
 };
 
 type Strings = {
@@ -228,6 +228,38 @@ export function ContactForm({
     if (name && !name.reportValidity()) return;
     if (email && !email.reportValidity()) return;
     setStep(2);
+  }
+
+  // Enkel bookingvariant: lav terskel for første kontakt. Detaljer kan samles inn senere.
+  if (variant === "simple") {
+    return (
+      <form className="lead-form" ref={formRef} onSubmit={onSubmit}>
+        <div className="form-grid">
+          <label>
+            {t.name}
+            <input name="name" required placeholder={t.namePh} />
+          </label>
+          <label>
+            {t.phone}
+            <input name="phone" required placeholder="+34..." />
+          </label>
+        </div>
+        <label>
+          {t.email}
+          <input name="email" type="email" required placeholder={t.emailPh} />
+        </label>
+        <label>
+          {t.message}
+          <textarea name="message" rows={5} placeholder={t.messagePh} />
+        </label>
+        <button className="submit-button" disabled={status === "sending"}>
+          <Send size={18} />
+          {status === "sending" ? t.sending : t.submit}
+        </button>
+        {status === "sent" && <p className="form-success">{t.success}</p>}
+        {status === "error" && <p className="form-error">{t.error}</p>}
+      </form>
+    );
   }
 
   // Kompakt variant (kald DE/EN-trafikk og boligsider): kort ett-trinns skjema.
