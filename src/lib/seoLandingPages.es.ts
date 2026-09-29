@@ -190,7 +190,7 @@ export const seoLandingPagesES: SeoLandingPage[] = [
     hero: "Un asesor inmobiliario para ordenar tu compra en España",
     description:
       "Zen Eco Homes te ayuda a definir necesidades, comparar zonas y propiedades, entender costes y coordinar la compra con los profesionales adecuados.",
-    seoTitle: "Asesor inmobiliario en España | Costa Blanca",
+    seoTitle: "Asesor inmobiliario en España | Costa Blanca y Alicante",
     seoDescription:
       "Asesoramiento inmobiliario en España para compradores: zona, presupuesto, propiedades, costes, NIE, abogado, financiación y coordinación en Costa Blanca.",
     primaryCta: { label: "Reservar una conversación", href: BOOKING },
