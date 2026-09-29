@@ -15,7 +15,7 @@ const groups = [
   { title: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord", places: "Altea · Albir · Calpe · Finestrat · Benidorm · Villajoyosa · Dénia · Moraira", text: "Kyst, helårsbyer, fjell og moderne boligprosjekter nord for Alicante." },
   { title: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor", places: "Guardamar · Torrevieja · Ciudad Quesada · Orihuela Costa · Santa Pola", text: "Stort boligmarked med strand, golf og mange internasjonale områder." },
   { title: "Costa Cálida", href: "/omrader/costa-calida", places: "San Pedro · San Javier · Los Alcázares · La Manga · Murcia", text: "Et alternativ sør for Alicante med kyst, golf og et annet prisbilde." },
-  { title: "Innlandet", href: "/inland", places: "Pinoso · Aspe · Biar · Villena · La Romana · Novelda", text: "Mer plass, større tomter og mulighet for moderne villa eller byggeprosjekt." },
+  { title: "Innlandet", href: "/omrader/innlandet", places: "Pinoso · Aspe · Biar · Villena · La Romana · Novelda", text: "Mer plass, større tomter og mulighet for moderne villa eller byggeprosjekt." },
 ];
 
 export default function AreasPage() {
