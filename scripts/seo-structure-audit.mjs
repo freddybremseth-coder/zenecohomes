@@ -38,6 +38,29 @@ for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen"
   requireText(properties, `href="${href}"`, "property-list internal link");
 }
 requireText(properties, "<BuyerMatchQuiz", "Boligmatch on /eiendommer");
+requireText(properties, "const pageSize = 24;", "24-item property pagination for CRO/performance");
+
+const home = read("src/app/page.tsx");
+if (home.includes("<video")) {
+  errors.push("src/app/page.tsx: autoplay/video hero returned; use optimized image hero for LCP/performance");
+}
+requireText("src/app/page.tsx", 'className="hero-video"', "optimized homepage hero asset");
+
+const nav = "src/lib/i18n.ts";
+for (const text of [
+  'label: "Kjøpe bolig"',
+  'label: "Kjøpsprosessen"',
+  'label: "Visningstur"',
+  'label: "Alle guider"',
+  'label: "Magasin"',
+]) {
+  requireText(nav, text, "Kjøpe bolig navigation structure");
+}
+
+const magazinePage = "src/app/magasin/page.tsx";
+requireText(magazinePage, "!articleSilo(article)", "Magazine editorial-only fallback separation");
+const guidePage = "src/app/guide/page.tsx";
+requireText(guidePage, 'articlesInSilo("guide")', "Guide silo article collection");
 
 const nextConfig = "next.config.ts";
 const config = read(nextConfig);
@@ -93,6 +116,9 @@ for (const slug of guideSlugs) {
 }
 
 const footer = "src/components/Footer.tsx";
+if (read(footer).includes("<form")) {
+  errors.push(`${footer}: footer must not contain contact/booking forms`);
+}
 for (const text of [
   'title: "Boliger og områder"',
   'title: "Kjøpe bolig"',
