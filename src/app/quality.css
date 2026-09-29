@@ -250,3 +250,23 @@
     margin-inline: 0;
   }
 }
+
+
+.booking-choice-grid article {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.booking-choice-grid article > svg {
+  color: var(--gold-dark);
+}
+
+.booking-choice-grid .text-button {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.booking-info-meeting {
+  align-items: start;
+}
