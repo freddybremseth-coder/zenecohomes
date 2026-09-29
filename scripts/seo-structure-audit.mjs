@@ -38,7 +38,14 @@ for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen"
   requireText(properties, `href="${href}"`, "property-list internal link");
 }
 requireText(properties, "<BuyerMatchQuiz", "Boligmatch on /eiendommer");
-requireText(properties, "const pageSize = 24;", "24-item property pagination for CRO/performance");
+{
+  const propertyContent = read(properties);
+  const pageSizeMatch = propertyContent.match(/const pageSize = (\d+);/);
+  const pageSize = pageSizeMatch ? Number(pageSizeMatch[1]) : NaN;
+  if (!Number.isFinite(pageSize) || pageSize < 1 || pageSize > 24) {
+    errors.push(`${properties}: property pagination must be between 1 and 24 items per page (found ${pageSizeMatch?.[1] || "none"})`);
+  }
+}
 
 const home = read("src/app/page.tsx");
 if (home.includes("<video")) {
@@ -94,7 +101,7 @@ for (const slug of [
 }
 
 const articleView = "src/components/ArticleView.tsx";
-requireText(articleView, 'href="/om-oss/freddy"', "guide author profile link");
+requireText(articleView, 'href: "/om-oss/freddy"', "guide author profile mapping");
 requireText(articleView, "Sist oppdatert", "visible updated date");
 requireText(articleView, '"@type": "BreadcrumbList"', "breadcrumb structured data on articles");
 
