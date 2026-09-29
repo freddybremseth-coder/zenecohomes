@@ -162,7 +162,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
     );
   }
 
-  const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties()]);
+  const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties(0, "zeneco")]);
   const regionProfiles = profiles.filter((profile) => areaMatchesRegion(profile, region));
   const regionProperties = properties.filter((property) => propertyMatchesRegion(property, region));
   const regionBooks = booksForRegion(region);
