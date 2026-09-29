@@ -7,9 +7,9 @@ import { homeLanguageLinks } from "@/lib/i18n";
 import { processSteps } from "@/lib/content";
 
 export const metadata = {
-  title: "Kjøpsprosess for bolig i Spania | Trygg guide for nordmenn",
+  title: "Kjøpsprosessen i Spania | Fra boligsøk til overtakelse",
   description:
-    "Slik fungerer kjøpsprosessen i Spania: behov, finansiering, NIE, visning, reservasjon, advokat, notar, kontrakt og overtakelse.",
+    "Se hele kjøpsprosessen for bolig i Spania, fra behov og boligsøk til visning, reservasjon, advokat, NIE, notar, overtakelse og videre oppfølging.",
   alternates: {
     canonical: "/kjopsprosessen",
   },
