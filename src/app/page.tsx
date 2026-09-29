@@ -23,9 +23,9 @@ import { CARE_URL, homeHreflang, homeLanguageLinks } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Moderne nybygg i Spania | Norsk eiendomsrådgivning | Zen Eco Homes",
+  title: "Nybygg i Spania | Norsk rådgivning på Costa Blanca",
   description:
-    "Finn og sammenlign moderne nybygg, villaer, leiligheter og prosjekter på Costa Blanca. Norsk eiendomsrådgivning med kjøperens behov i sentrum.",
+    "Finn moderne nybygg i Spania og få norsk rådgivning om områder, prosjekter, pris, utbygger, betalingsplan og trygg kjøpsprosess på Costa Blanca.",
   alternates: { canonical: "/", languages: homeHreflang() },
 };
 
