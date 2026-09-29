@@ -13,9 +13,9 @@ export const extraArticles: Article[] = [
     readingTime: "7 min lesing",
     image: "/assets/magasin-covers/radgiver.svg",
     imageAlt: "Illustrasjon av norsk eiendomsrådgiver som hjelper boligkjøper i Spania",
-    seoTitle: "Hvorfor en god eiendomsrådgiver er viktig ved boligkjøp i Spania",
+    seoTitle: "Eiendomsrådgiver i Spania | Slik velger du riktig hjelp",
     seoDescription:
-      "Velg riktig eiendomsrådgiver i Spania. Les hvordan en god rådgiver kan hjelpe med pris, forhandling, markedskunnskap og trygg kjøpsprosess.",
+      "Velg riktig eiendomsrådgiver i Spania. Les hvordan en god rådgiver kan hjelpe med område, pris, forhandling, markedskunnskap og trygg kjøpsprosess.",
     keywords: [
       "eiendomsrådgiver Spania",
       "boligkjøp Spania rådgiver",
@@ -126,7 +126,7 @@ export const extraArticles: Article[] = [
     readingTime: "8 min lesing",
     image: "/assets/magasin-covers/boligportaler.svg",
     imageAlt: "Illustrasjon av boligportaler, annonser og markedsoversikt for eiendom i Spania",
-    seoTitle: "Hvorfor Idealista og Finn.no ikke alltid viser riktig boligmarked i Spania",
+    seoTitle: "Idealista og Finn.no i Spania | Dette bør du sjekke",
     seoDescription:
       "Idealista og Finn.no kan være nyttige, men annonser i Spania kan være utdaterte, dupliserte eller misvisende. Slik får du et bedre markedsbilde.",
     keywords: [
