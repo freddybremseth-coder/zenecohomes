@@ -9,7 +9,7 @@ import { homeLanguageLinks } from "@/lib/i18n";
 import { getLocalizedPropertyType, getProperties } from "@/lib/realtyflow";
 
 export const metadata: Metadata = {
-  title: "Kjøpe bolig i Spania (2026) | Guide med erfaringer",
+  title: "Kjøpe bolig i Spania (2026): Guide og mine erfaringer",
   description:
     "Kjøpe bolig i Spania? Få en oppdatert guide til områdevalg, kostnader, NIE, finansiering, visning, juridisk kontroll, notar og trygg overtakelse.",
   alternates: { canonical: "/guide/kjope-bolig-i-spania" },
