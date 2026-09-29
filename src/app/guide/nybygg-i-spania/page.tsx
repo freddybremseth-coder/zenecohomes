@@ -17,5 +17,5 @@ export default function NewBuildSpainGuide() {
   const page = getSeoLandingPage(PAGE_SLUG);
   if (!page) notFound();
 
-  return <SeoLandingView page={page} locale="no" />;
+  return <SeoLandingView page={page} locale="no" canonicalPath="/guide/nybygg-i-spania" />;
 }
