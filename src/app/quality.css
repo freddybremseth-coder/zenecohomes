@@ -270,3 +270,21 @@
 .booking-info-meeting {
   align-items: start;
 }
+
+
+/* Shared information cards: keep text rhythm consistent and CTAs aligned. */
+.proof-grid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.proof-grid article > .text-button,
+.proof-grid article > a.text-button {
+  margin-top: auto;
+  padding-top: 18px;
+  align-self: flex-start;
+}
+
+.proof-grid article > p {
+  max-width: 48ch;
+}
