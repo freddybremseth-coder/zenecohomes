@@ -32,6 +32,8 @@ export type Article = {
   cta?: { label: string; href: string };
   /** Innholdssilo for URL-struktur og tematisk gruppering. Uten verdi = /magasin. */
   silo?: "kjopsprosess" | "guide" | "corporate";
+  /** Valgfri personlig byline. Uten verdi brukes standardforfatter for siloen. */
+  author?: { name: string; href?: string };
 };
 
 export const areas = [
