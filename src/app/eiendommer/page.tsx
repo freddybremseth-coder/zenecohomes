@@ -84,7 +84,7 @@ export default async function PropertiesPage({
   const lifestyle = params.lifestyle || "";
   const currentPage = Math.max(1, Number(params.page || 1) || 1);
   const pageSize = 24;
-  const properties = await getProperties();
+  const properties = await getProperties(0, "zeneco");
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
     const matchesQuery = q ? haystack.includes(q) : true;
