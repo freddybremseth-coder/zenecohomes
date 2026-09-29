@@ -302,6 +302,22 @@ export default function CorporateHomesPage() {
         </div>
       </section>
 
+      <section className="corporate-intro">
+        <div>
+          <p className="eyebrow">For rådgivere og organisasjoner</p>
+          <h2>Har dere kunder eller medlemmer som kan være aktuelle?</h2>
+        </div>
+        <div>
+          <p>
+            Zen Corporate Homes har en egen partnerkanal for norske regnskapsmiljøer, advokatfirmaer,
+            HR-/rekrutteringsselskaper, bedriftsrådgivere og nærings- eller medlemsorganisasjoner.
+          </p>
+          <Link className="text-button" href="/bedriftshytte-spania/partnere">
+            Se partnerprogrammet <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
       <section className="section corporate-faq">
         <div className="section-heading">
           <p className="eyebrow">Vanlige spørsmål</p>
