@@ -26,6 +26,31 @@ function formatDate(value?: string | null) {
   }).format(new Date(value));
 }
 
+function fitCmsSeoTitle(value: string) {
+  const clean = value.replace(/\s+/g, " ").trim();
+  const candidates = [
+    clean,
+    `${clean} | Zen Eco Homes`,
+    `${clean} | Bolig i Spania`,
+    `${clean} | Spania | Zen Eco Homes`,
+  ];
+  const fitted = candidates.find((candidate) => candidate.length >= 50 && candidate.length <= 60);
+  if (fitted) return fitted;
+  const fallback = candidates.find((candidate) => candidate.length > 60) || candidates[candidates.length - 1];
+  return fallback.length > 60 ? fallback.slice(0, 60).replace(/\s+\S*$/, "").trim() : fallback;
+}
+
+function fitCmsSeoDescription(value: string | null | undefined, title: string) {
+  let clean = (value || `Les ${title} i Zen Eco Homes Magasin.`).replace(/\s+/g, " ").trim();
+  if (clean.length < 140) {
+    clean += " Få relevant innsikt om boligmarkedet, områdene og livet i Spania før du tar neste beslutning.";
+  }
+  if (clean.length > 160) {
+    clean = `${clean.slice(0, 157).replace(/\s+\S*$/, "").trim()}…`;
+  }
+  return clean;
+}
+
 export async function generateStaticParams() {
   const cmsPosts = await fetchPublishedPosts("magasin");
   // Siloede artikler bor på /kjopsprosess eller /guide (og 301-redirectes fra /magasin).
@@ -44,15 +69,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const cmsPost = await fetchPublishedPost("magasin", slug);
 
   if (cmsPost) {
+    const seoTitle = fitCmsSeoTitle(cmsPost.title);
+    const seoDescription = fitCmsSeoDescription(cmsPost.summary, cmsPost.title);
     return {
-      title: { absolute: `${cmsPost.title} | Zen Eco Homes` },
-      description: cmsPost.summary || "Guider og innsikt fra Zen Eco Homes.",
+      title: { absolute: seoTitle },
+      description: seoDescription,
       alternates: {
         canonical: `/magasin/${cmsPost.slug}`,
       },
       openGraph: {
         title: cmsPost.title,
-        description: cmsPost.summary || "Guider og innsikt fra Zen Eco Homes.",
+        description: seoDescription,
         url: `https://www.zenecohomes.com/magasin/${cmsPost.slug}`,
         type: "article",
         publishedTime: cmsPost.published_at || cmsPost.created_at,
