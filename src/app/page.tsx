@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { connection } from "next/server";
 import { ArrowRight, Leaf, ShieldCheck, Snowflake, Sun, Zap } from "lucide-react";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { GuideDownload } from "@/components/GuideDownload";
@@ -57,15 +56,11 @@ const areaChoices = [
 ];
 
 export default async function Home() {
-  await connection();
   const regionKeys = regions.map((r) => r.key);
   const allProps = await getProperties(0, "zeneco");
-  const shuffled = [...allProps];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  const properties = shuffled.slice(0, 6);
+  // Behold forsiden cachebar/ISR-vennlig. RealtyFlow-feeden er allerede
+  // revalidert hvert 60. sekund; tilfeldig sortering tvang tidligere dynamisk render.
+  const properties = allProps.slice(0, 6);
   const withRegions = allProps.map((p) => ({
     p,
     rk: regionKeys.filter((k) => propertyMatchesRegion(p, k)),
@@ -78,7 +73,7 @@ export default async function Home() {
     regionKeys: rk,
   }));
 
-  const explorerCards = withRegions.slice(0, 48).map(({ p, rk }) => ({
+  const explorerCards = withRegions.slice(0, 24).map(({ p, rk }) => ({
     ref: getPropertyRef(p),
     title: p.title,
     price: p.price,
