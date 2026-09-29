@@ -241,7 +241,7 @@ export function ContactForm({
           </label>
           <label>
             {t.phone}
-            <input name="phone" placeholder="+34..." />
+            <input name="phone" required placeholder="+34..." />
           </label>
         </div>
         <label>
