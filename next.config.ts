@@ -105,7 +105,6 @@ const nextConfig: NextConfig = {
       { source: "/inland/:sted", destination: "/omrader/innlandet/:sted", permanent: true },
       { source: "/tomter", destination: "/omrader/innlandet/tomter", permanent: true },
       { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
-      { source: "/guide/flytte-til-spania-som-pensjonist", destination: "/guide/flytte-til-spania-pensjonist", permanent: true },
       ...legacyKjopsprosessRedirects,
       ...siloRedirects,
     ];
