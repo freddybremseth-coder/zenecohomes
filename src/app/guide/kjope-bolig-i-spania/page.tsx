@@ -14,7 +14,7 @@ const PUBLISHED = "2026-09-29";
 const UPDATED = "2026-09-29";
 
 export const metadata: Metadata = {
-  title: "Kjøpe bolig i Spania (2026) | Guide og erfaringer",
+  title: { absolute: "Kjøpe bolig i Spania (2026) | Guide og erfaringer" },
   description:
     "Skal du kjøpe bolig eller leilighet i Spania? Se kjøpsprosessen steg for steg, hva du bør avklare før visning og hvordan Zen Eco Homes kan hjelpe.",
   alternates: { canonical: "/guide/kjope-bolig-i-spania" },
