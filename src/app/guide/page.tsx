@@ -24,7 +24,7 @@ export const metadata = {
 };
 
 export default function GuideHub() {
-  const articles = articlesInSilo("guide");
+  const articles = articlesInSilo("guide").filter((article) => article.slug !== "kjopsprosess-bolig-i-spania");
 
   return (
     <main>
