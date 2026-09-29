@@ -1402,7 +1402,7 @@ export const articles: Article[] = [
           "Det avhenger av avtalen og situasjonen. Derfor bør konsekvensene ved tilbaketrekning, forbehold og tilbakebetaling være forstått før du betaler.",
       },
     ],
-    cta: { label: "Les mer om en trygg kjøpsprosess", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
+    cta: { label: "Les mer om en trygg kjøpsprosess", href: "/guide/kjope-bolig-i-spania" },
   },
   {
     slug: "skatt-ved-salg-bolig-spania",
@@ -1636,7 +1636,7 @@ export const articles: Article[] = [
           "Nei. NIE er et identifikasjonsnummer og er ikke i seg selv bevis på oppholdsregistrering eller skattemessig bosted.",
       },
     ],
-    cta: { label: "Les mer om finansiering, notar og NIE", href: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania" },
+    cta: { label: "Les mer om finansiering, notar og NIE", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
   },
   {
     slug: "spansk-bankkonto-valutaveksling",
