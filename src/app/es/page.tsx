@@ -162,7 +162,7 @@ export default async function SpanishHome() {
             <Link key={page.slug} href={`/es/${page.slug}`} style={{ display: "block", background: "white", border: "1px solid var(--line)", padding: 22, boxShadow: "0 8px 24px rgba(22,34,43,0.05)" }}>
               <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>{page.title}</strong>
               <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>{page.seoDescription}</p>
-              <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>Leer más <ArrowRight size={15} /></span>
+              <span style={{ color: "var(--gold-dark)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>Leer más <ArrowRight size={15} /></span>
             </Link>
           ))}
         </div>
