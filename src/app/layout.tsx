@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import { ZenecoChatbot } from "@/components/ZenecoChatbot";
+import { LazyZenecoChatbot } from "@/components/LazyZenecoChatbot";
 import { SearchDiscoveryTracker } from "@/components/SearchDiscoveryTracker";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
@@ -142,7 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         {children}
-        <ZenecoChatbot />
+        <LazyZenecoChatbot />
         <SearchDiscoveryTracker />
       </body>
     </html>
