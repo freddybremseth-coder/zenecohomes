@@ -25,7 +25,10 @@ export async function generateMetadata({ params }: { params: Promise<{ sted: str
   const town = getInlandTown(sted);
   const region = town?.region || "Alicante";
   const rawTitle = town ? `${town.name} | Bolig og tomt i innlandet i ${region} | 2026` : "Innlandet i Spania | Zen Eco Homes";
-  const title = rawTitle.length > 60 ? rawTitle.replace(/\s+\|\s+2026$/, "") : rawTitle;
+  let title = rawTitle.length > 60 ? rawTitle.replace(/\s+\|\s+2026$/, "") : rawTitle;
+  if (town && title.length < 50) {
+    title = `${town.name} i Spania | Bolig og tomt i ${region} | Zen Eco Homes`;
+  }
   const description = town
     ? `${town.name} i ${region}: vurder bolig, tomt og nybygg i innlandet. Les om området, livsstil, avstander og hva du bør kontrollere før boligkjøp i Spania.`
     : INLAND_BRAND.description;
