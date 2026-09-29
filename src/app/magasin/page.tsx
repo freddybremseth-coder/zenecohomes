@@ -51,6 +51,9 @@ const articleCovers: Record<string, string> = {
   "benidorm-villa-456000-vs-516000": "/assets/magasin-covers/omradet-for-boligen.svg",
   "finestrat-villa-650000-700000-735000": "/assets/magasin-covers/omradevalg.svg",
   "villajoyosa-275000-vs-375000": "/assets/magasin-covers/kjope-na.svg",
+  "costa-blanca-nord-under-300000-tre-kjop": "/assets/magasin-covers/kjope-na.svg",
+  "600000-euro-benidorm-polop-finestrat": "/assets/magasin-covers/omradevalg.svg",
+  "finestrat-430000-leilighet-eller-bungalow": "/assets/magasin-covers/omradet-for-boligen.svg",
 };
 
 const bookGuides = [
