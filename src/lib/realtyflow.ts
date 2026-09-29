@@ -896,10 +896,10 @@ export async function getAreaProfiles(): Promise<AreaProfile[]> {
   const mergeWithStatic = (profiles: AreaProfile[]) => {
     const merged = new Map<string, AreaProfile>();
     for (const profile of STATIC_AREA_PROFILES) {
-      merged.set(normalizeSearchText(profile.name), profile);
+      merged.set(normalizeSearchText(profile.slug || profile.name), profile);
     }
     for (const profile of profiles) {
-      const key = normalizeSearchText(profile.name || profile.slug || "");
+      const key = normalizeSearchText(profile.slug || profile.name || "");
       if (!key) continue;
       merged.set(key, { ...merged.get(key), ...profile });
     }
