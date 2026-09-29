@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Visningstur til Spania | Planlegg med Zen Eco Homes",
+  title: { absolute: "Visningstur til Spania | Planlegg med Zen Eco Homes" },
   description:
     "Planlegg visningstur til Spania med en målrettet shortlist. Vi avklarer område, budsjett og behov, bekrefter boliger og organiserer effektive visninger.",
   alternates: { canonical: "/visningstur" },
