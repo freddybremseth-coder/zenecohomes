@@ -6,8 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Immobilienkauf in Spanien | Kaufprozess Schritt für Schritt",
-  description: "Praktischer Überblick vom Bedarf und der Auswahl bis Reservierung, Prüfung, Vertrag, Notar und Übergabe.",
+  title: "Immobilienkauf in Spanien | Kaufprozess | Zen Eco Homes",
+  description: "Immobilienkauf in Spanien Schritt für Schritt: Bedarf, Suche, Besichtigung, Reservierung, Anwalt, NIE, Notar, Übergabe und weitere Betreuung.",
   alternates: { canonical: "/de/kaufprozess" },
 };
 
