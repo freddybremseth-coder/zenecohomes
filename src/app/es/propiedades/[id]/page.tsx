@@ -10,7 +10,7 @@ import {
 const BASE = "https://www.zenecohomes.com";
 
 export async function generateStaticParams() {
-  const properties = await getProperties(30);
+  const properties = await getProperties(30, "zeneco");
   return properties.map((property) => ({ id: encodeURIComponent(getPropertyRef(property)) }));
 }
 
