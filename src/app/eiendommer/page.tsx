@@ -30,9 +30,9 @@ export async function generateMetadata({
   );
 
   return {
-    title: "Boliger til salgs i Spania | Nybygg på Costa Blanca og Costa Cálida",
+    title: "Boliger til salgs i Spania | Costa Blanca og Cálida",
     description:
-      "Se moderne boliger, villaer, leiligheter og nybygg i Spania. Zen Eco Homes hjelper nordmenn med trygg kjøpsprosess på Costa Blanca og Costa Cálida.",
+      "Se boliger til salgs i Spania: villaer, leiligheter og nybygg på Costa Blanca og Costa Cálida, med norsk rådgivning om område og kjøpsprosess.",
     ...(isFiltered ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: "/eiendommer",
