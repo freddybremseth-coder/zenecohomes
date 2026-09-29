@@ -10,9 +10,9 @@ import { articlePath, articlesInSilo, SILO_META } from "@/lib/magazine";
 const silo = SILO_META.guide;
 
 export const metadata = {
-  title: "Guider og områdeinnsikt | Bolig i Spania",
+  title: "Guider om boligkjøp i Spania | Råd fra Zen Eco Homes",
   description:
-    "Områdeguider og livsstilsinnsikt for boligkjøp i Spania: hvor du bør kjøpe, kyst vs. innland, tomt og bygging, og når det lønner seg å slå til.",
+    "Les guider om boligkjøp i Spania, områdevalg, nybygg, tomt, kostnader, finansiering, NIE og praktiske steg før du reserverer bolig i Spania.",
   alternates: { canonical: "/guide" },
   openGraph: {
     title: "Guider og områdeinnsikt | Zen Eco Homes",
