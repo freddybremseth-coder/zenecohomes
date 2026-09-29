@@ -232,7 +232,7 @@ export function ArticleView({ article }: { article: Article }) {
 export function buildArticleMetadata(article: Article) {
   const canonicalPath = articleBasePath(article) + `/${article.slug}`;
   return {
-    title: article.seoTitle,
+    title: { absolute: article.seoTitle },
     description: article.seoDescription,
     keywords: article.keywords,
     alternates: { canonical: canonicalPath },
