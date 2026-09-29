@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "realtyflow.chatgenius.pro" },
       { protocol: "https", hostname: "*.apinmo.com" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
+      { protocol: "https", hostname: "books.freddybremseth.com" },
     ],
   },
   async redirects() {
