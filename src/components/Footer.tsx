@@ -62,6 +62,7 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "Benidorm, Spania", href: "/om-oss" },
       { label: "YouTube · Zen Eco Homes", href: "https://www.youtube.com/@ZenEcoHomes", external: true },
       { label: "Min side", href: "/min-side" },
+      { label: "YouTube", href: "https://www.youtube.com/@ZenEcoHomes", external: true },
     ],
   },
 ];
