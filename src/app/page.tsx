@@ -56,9 +56,10 @@ const areaChoices = [
 
 export default async function Home() {
   const regionKeys = regions.map((r) => r.key);
-  // Forsiden trenger bare seks kort. La RealtyFlow begrense responsen server-side
-  // i stedet for å hente hele katalogen og kutte den lokalt.
-  const properties = await getProperties(6, "zeneco");
+  // Forsiden viser seks hovedkort og bruker opptil 24 boliger i utforskeren.
+  // Begrens RealtyFlow-responsen server-side i stedet for å hente hele katalogen.
+  const allProps = await getProperties(24, "zeneco");
+  const properties = allProps.slice(0, 6);
   const withRegions = allProps.map((p) => ({
     p,
     rk: regionKeys.filter((k) => propertyMatchesRegion(p, k)),
