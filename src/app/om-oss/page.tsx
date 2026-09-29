@@ -7,7 +7,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Om Zen Eco Homes | Norsk eiendomsrådgivning i Spania",
+  title: { absolute: "Om Zen Eco Homes | Norsk eiendomsrådgivning i Spania" },
   description:
     "Bli kjent med Zen Eco Homes og hvordan vi hjelper norske boligkjøpere i Spania med områdevalg, boligsøk, visninger, kjøpsprosess og oppfølging.",
   alternates: { canonical: "/om-oss" },
