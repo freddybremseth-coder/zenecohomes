@@ -1711,3 +1711,68 @@
     align-items: flex-start;
   }
 }
+
+
+/* Buying process — trust page should feel structured, not card-heavy. */
+.buying-process-page .section.split:first-of-type {
+  align-items: start;
+}
+
+.process-trust-panel {
+  align-self: start;
+  padding: clamp(30px, 3vw, 40px);
+  background: var(--ze-ink);
+  color: white;
+}
+
+.process-trust-panel h2 {
+  max-width: 12ch;
+  margin: 6px 0 24px;
+  color: white;
+}
+
+.process-trust-panel > div {
+  display: grid;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.process-trust-panel span {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+}
+
+.process-trust-panel svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--ze-travertine);
+}
+
+.process-after {
+  align-items: stretch;
+}
+
+.process-after > div:first-child {
+  padding: 10px 0;
+}
+
+.process-after > div:last-child {
+  padding: clamp(30px, 3vw, 40px);
+  background: rgba(235, 239, 232, 0.72);
+  border: 1px solid rgba(23, 32, 39, 0.08);
+}
+
+.buying-process-faq {
+  width: min(960px, 100%);
+}
+
+@media (max-width: 640px) {
+  .process-trust-panel,
+  .process-after > div:last-child {
+    padding: 26px 22px;
+  }
+}
