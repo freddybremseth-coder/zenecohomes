@@ -1310,7 +1310,7 @@ export const extraArticles: Article[] = [
     imageAlt: "Havutsikt og gangavstand som boligvalg på Costa Blanca",
     seoTitle: "Havutsikt eller gangavstand på Costa Blanca – hva velger du?",
     seoDescription:
-      "Havutsikt eller gangavstand til strand og restauranter? Se hvordan valget påvirker hverdagen, pris, bilbehov og videresalg på Costa Blanca.",
+      "Havutsikt eller gangavstand til strand og restauranter? Se hvordan valget påvirker hverdagen, pris, bilbehov og videresalg på Costa Blanca nå.",
     keywords: ["havutsikt Costa Blanca","gangavstand strand Spania","bolig beliggenhet Costa Blanca","boligkjøp Spania beliggenhet"],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
@@ -1386,7 +1386,7 @@ export const extraArticles: Article[] = [
     imageAlt: "Leilighet og villa på Costa Blanca sammenlignet",
     seoTitle: "Leilighet eller villa på Costa Blanca – hva passer best?",
     seoDescription:
-      "Sammenlign leilighet og villa på Costa Blanca ut fra vedlikehold, privatliv, beliggenhet, kostnader, feriebruk og videresalg.",
+      "Sammenlign leilighet og villa på Costa Blanca ut fra vedlikehold, privatliv, beliggenhet, kostnader, feriebruk, bilbehov og videresalg før du kjøper.",
     keywords: ["leilighet eller villa Costa Blanca","villa Spania","leilighet Spania","feriebolig Costa Blanca"],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
