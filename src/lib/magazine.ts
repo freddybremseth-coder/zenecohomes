@@ -2312,6 +2312,198 @@ export const extraArticles: Article[] = [
       },
     ],
     cta: { label: "Se boliger i Finestrat", href: "/eiendommer?region=costa-blanca-nord&area=Finestrat" },
+  },
+  {
+    slug: "finestrat-rundt-700000-114-155-314-m2",
+    title: "Tre Finestrat-villaer rundt €700.000 – samme prisnivå, helt forskjellige tall",
+    excerpt:
+      "€690.950, €700.000 og €709.900 er et svært smalt prisintervall. Likevel varierer publisert boligflate fra 114 til 314 m² og tomtene fra 271 til 598 m².",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Marked akkurat nå",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/omradet-for-boligen.svg",
+    imageAlt: "Tre moderne Finestrat-villaer sammenlignet rundt 700.000 euro",
+    seoTitle: "Finestrat rundt €700k: 114, 155 eller 314 m² bolig?",
+    seoDescription:
+      "Tre konkrete Finestrat-villaer innenfor under 20.000 euro i pris viser enorme forskjeller i oppgitt bolig- og tomteareal. Slik bør tallene kontrolleres.",
+    keywords: [
+      "Finestrat villa 700000 euro",
+      "N9835",
+      "N8313",
+      "N8058",
+      "villa Finestrat sammenligning",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Dette er et markedsøyeblikksbilde basert på Zen-objekter publisert 29. september 2026. Pris, tilgjengelighet, eksakt enhet og leveranse må bekreftes før reservasjon.",
+      "Når tre villaer ligger innenfor 18.950 euro i pris, men oppgitt boligflate varierer med 200 m², er riktig spørsmål ikke hvilken som er billigst per kvadratmeter. Riktig spørsmål er hva arealtallene faktisk består av.",
+    ],
+    sections: [
+      {
+        heading: "N9835: €690.950 – 114 m² bolig og 521 m² tomt",
+        body: [
+          "N9835 er publisert med 3 soverom, 2 bad, 114 m² bolig, 521 m² tomt, basseng og energiklasse B. Oppgitt kvadratmeterpris er rundt 6.061 euro.",
+          "Dette er den minste boligen av de tre, men har betydelig mer tomt enn N8313. For en kjøper som prioriterer uteareal fremfor innvendige kvadratmeter kan det være relevant.",
+        ],
+      },
+      {
+        heading: "N8313: €700.000 – 314 m² bolig og 271 m² tomt",
+        body: [
+          "N8313 er publisert med 3 soverom, 3 bad, 314 m² bolig, 271 m² tomt og basseng. Oppgitt kvadratmeterpris er rundt 2.229 euro.",
+          "314 m² på en 271 m² tomt er et tallsett vi ville undersøkt ekstra nøye. Vi vil vite hvor mye som er hovedoppholdsrom, kjeller, garasje, overbygde arealer eller annen registrert flate før vi sammenligner det direkte med de andre.",
+        ],
+      },
+      {
+        heading: "N8058: €709.900 – 155 m² bolig og 598 m² tomt",
+        body: [
+          "N8058 er publisert med 3 soverom, 3 bad, 155 m² bolig, 598 m² tomt, basseng og energiklasse B. Oppgitt kvadratmeterpris er omtrent 4.580 euro.",
+          "Dette alternativet ligger midt mellom de to andre på boligflate og har den største tomten. For mange kjøpere kan akkurat balansen mellom hus og uteareal være mer relevant enn lavest mulig €/m².",
+        ],
+      },
+      {
+        heading: "Tre priser innenfor €18.950 – men tre forskjellige boliger",
+        table: {
+          headers: ["Ref.", "Pris", "Sov./bad", "Bolig", "Tomt", "Basseng", "Ca. €/m²"],
+          rows: [
+            ["N9835", "€690.950", "3 / 2", "114 m²", "521 m²", "Ja", "€6.061"],
+            ["N8313", "€700.000", "3 / 3", "314 m²", "271 m²", "Ja", "€2.229"],
+            ["N8058", "€709.900", "3 / 3", "155 m²", "598 m²", "Ja", "€4.580"],
+          ],
+          caption:
+            "Publiserte Zen-data 29. september 2026. Arealdefinisjon, plantegning, orientering, leveranse og mikrobeliggenhet må kontrolleres før direkte sammenligning.",
+        },
+      },
+      {
+        heading: "Dette er hvorfor vi ikke sorterer boliglisten etter €/m² alene",
+        body: [
+          "Kvadratmeterpris blir misvisende hvis arealene ikke er sammenlignbare. 100 m² hovedetasje, 100 m² kjeller og 100 m² terrasse har ikke automatisk samme verdi for kjøperen.",
+          "Før vi vurderer hvilken av disse tre som gir mest verdi, ville vi normalisert arealene, sett plantegningene og kontrollert nøyaktig plassering i Finestrat.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Be om plantegning og arealspesifikasjon for alle tre.",
+      "Skill hovedbolig, kjeller, garasje, terrasse og øvrige arealer.",
+      "Sammenlign tomtens brukbarhet, ikke bare størrelsen.",
+      "Vurder orientering, utsikt og mikrobeliggenhet før €/m².",
+    ],
+    faq: [
+      {
+        question: "Er N8313 klart best fordi den har lavest €/m²?",
+        answer:
+          "Ikke uten videre. Den publiserte boligflaten er svært stor i forhold til tomten, så vi ville først kontrollert hva arealet består av og hvordan det kan brukes.",
+      },
+      {
+        question: "Hvorfor er N9835 så mye dyrere per kvadratmeter?",
+        answer:
+          "Pris påvirkes av mer enn boligflate. Tomt, mikrobeliggenhet, prosjekt, standard og hva som inngår kan forklare forskjeller. Tallene må normaliseres før konklusjon.",
+      },
+      {
+        question: "Kan disse prisene endres?",
+        answer:
+          "Ja. Dette er et datert markedsøyeblikksbilde. Pris og tilgjengelighet må alltid bekreftes på nytt før visning eller reservasjon.",
+      },
+    ],
+    cta: { label: "Se villaer i Finestrat", href: "/eiendommer?region=costa-blanca-nord&area=Finestrat&type=Villa" },
+  },
+  {
+    slug: "finestrat-735000-vs-735950",
+    title: "€735.000 mot €735.950 i Finestrat – nesten samme pris, 74 m² forskjell i boligflate",
+    excerpt:
+      "To 3-soveromsvillaer med basseng og energiklasse B har bare €950 i prisforskjell. Likevel er publisert boligflate 202 mot 128 m².",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Marked akkurat nå",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/kjope-na.svg",
+    imageAlt: "To Finestrat-villaer til nesten samme pris sammenlignet",
+    seoTitle: "Finestrat €735k: 202 m² eller 128 m² – nesten samme pris",
+    seoDescription:
+      "To Finestrat-villaer til €735.000 og €735.950 har samme soverom, bad, basseng og energiklasse, men 74 m² forskjell i oppgitt boligflate på papiret.",
+    keywords: [
+      "Finestrat 735000 euro",
+      "SP1296",
+      "N9834",
+      "villa Finestrat pris",
+      "Finestrat villa sammenligning",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Dette er et markedsøyeblikksbilde fra Zen-katalogen 29. september 2026. Pris, tilgjengelighet, konkret enhet og leveranse må bekreftes før reservasjon.",
+      "Denne sammenligningen er særlig interessant fordi så mye er likt: 3 soverom, 2 bad, basseng, energiklasse B og nesten identisk pris. Likevel skiller den publiserte boligflaten 74 m².",
+    ],
+    sections: [
+      {
+        heading: "SP1296: €735.000 – 202 m² bolig og 421 m² tomt",
+        body: [
+          "SP1296 er publisert med 3 soverom, 2 bad, 202 m² bolig, 421 m² tomt og basseng. Oppgitt kvadratmeterpris er rundt 3.639 euro.",
+          "Zen-siden viser et orienterende totalnivå på cirka 808.500–837.900 euro når et generelt intervall for kjøpskostnader legges til.",
+        ],
+      },
+      {
+        heading: "N9834: €735.950 – 128 m² bolig og 457 m² tomt",
+        body: [
+          "N9834 er publisert med 3 soverom, 2 bad, 128 m² bolig, 457 m² tomt og basseng. Oppgitt kvadratmeterpris er rundt 5.750 euro.",
+          "Prisen er bare 950 euro høyere, mens den oppgitte boligflaten er 74 m² mindre. Tomten er til gjengjeld 36 m² større.",
+        ],
+      },
+      {
+        heading: "Hva er faktisk likt – og hva er forskjellig?",
+        table: {
+          headers: ["", "SP1296", "N9834", "Forskjell"],
+          rows: [
+            ["Pris", "€735.000", "€735.950", "+€950"],
+            ["Soverom / bad", "3 / 2", "3 / 2", "Lik"],
+            ["Boligareal", "202 m²", "128 m²", "SP1296 +74 m²"],
+            ["Tomt", "421 m²", "457 m²", "N9834 +36 m²"],
+            ["Basseng", "Ja", "Ja", "Lik"],
+            ["Energiklasse", "B", "B", "Lik"],
+            ["Ca. €/m²", "€3.639", "€5.750", "Stor forskjell"],
+          ],
+          caption:
+            "Publiserte Zen-data 29. september 2026. Tallene er et utgangspunkt; plantegning, arealdefinisjon, utsikt, orientering og leveranse må sammenlignes.",
+        },
+      },
+      {
+        heading: "Når pris, soverom og energiklasse er like, må vi lete etter forklaringen andre steder",
+        body: [
+          "Hvis de 202 m² i SP1296 er sammenlignbare med de 128 m² i N9834, ser SP1296 svært sterk ut på areal per euro. Men vi bør ikke anta at alle registrerte kvadratmeter har samme funksjon eller verdi.",
+          "N9834 kan ligge bedre, ha bedre planløsning, utsikt, sol, leveranse eller mer brukbar tomt. Det er nettopp disse forskjellene vi ville undersøkt før vi kalte den ene billig eller dyr.",
+        ],
+      },
+      {
+        heading: "Dette er den beste typen sammenligning før visning",
+        body: [
+          "Når prisene er nesten like, tvinges analysen bort fra budsjettet og over på kvalitetene som faktisk skiller boligene. Det gjør shortlistingen bedre.",
+          "I stedet for å se ti villaer rundt €735.000 ville vi startet med disse to, normalisert dataene og sett om forskjellene er reelle nok til å prioritere én først.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Hent plantegning og arealspesifikasjon for begge referansene.",
+      "Sammenlign orientering, utsikt, tomt og privatliv.",
+      "Kontroller hva som følger med i leveransen.",
+      "Se begge på samme dag hvis begge fortsatt er tilgjengelige.",
+    ],
+    faq: [
+      {
+        question: "Betyr 74 m² mer at SP1296 er det beste kjøpet?",
+        answer:
+          "Ikke nødvendigvis. Først må vi bekrefte at arealene er definert likt og sammenligne beliggenhet, planløsning, utsikt, standard og leveranse.",
+      },
+      {
+        question: "Hvor stor er prisforskjellen?",
+        answer:
+          "Bare 950 euro i de publiserte prisene: €735.000 mot €735.950.",
+      },
+      {
+        question: "Hvorfor er €/m² så forskjellig?",
+        answer:
+          "Fordi oppgitt boligflate er svært forskjellig mens prisene er nesten identiske. Det er et signal om at vi bør undersøke både arealdefinisjon og andre kvaliteter før vi bruker €/m² som verdiindikator.",
+      },
+    ],
+    cta: { label: "Se Finestrat-boliger", href: "/eiendommer?region=costa-blanca-nord&area=Finestrat" },
   }
 ];
 
