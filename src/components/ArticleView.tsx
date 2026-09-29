@@ -542,6 +542,42 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     },
   ],
 
+  "havutsikt-eller-gangavstand-costa-blanca": [
+    { headingIncludes: "gangavstand", links: [
+      { label: "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
+    ]},
+    { headingIncludes: "Videresalg", links: [
+      { label: "Slik velger du en bolig som blir lettere å selge", href: "/magasin/bolig-som-er-lett-a-selge-igjen-spania" },
+    ]},
+  ],
+  "leilighet-eller-villa-costa-blanca": [
+    { headingIncludes: "står boligen tom", links: [
+      { label: "Slik lager du et realistisk årsbudsjett", href: "/magasin/hva-koster-feriebolig-spania-i-aret" },
+    ]},
+    { headingIncludes: "området", links: [
+      { label: "Se områdeguidene", href: "/omrader/costa-blanca-nord" },
+    ]},
+  ],
+  "bolig-som-er-lett-a-selge-igjen-spania": [
+    { headingIncludes: "Mikrobeliggenhet", links: [
+      { label: "Havutsikt eller gangavstand?", href: "/magasin/havutsikt-eller-gangavstand-costa-blanca" },
+    ]},
+    { headingIncludes: "kvaliteter", links: [
+      { label: "Nybygg eller bruktbolig?", href: "/magasin/nybygg-eller-bruktbolig-costa-blanca" },
+    ]},
+  ],
+  "bolig-under-bygging-eller-ferdig-spania": [
+    { headingIncludes: "Betalingsplanen", links: [
+      { label: "Slik påvirker eurokursen boligbudsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
+    ]},
+    { headingIncludes: "Bankgaranti", links: [
+      { label: "Komplett guide til bankgaranti ved nybygg", href: "/guide/bankgaranti-nybygg-spania" },
+    ]},
+    { headingIncludes: "Leveringstid", links: [
+      { label: "Komplett guide til nybygg i Spania", href: "/guide/nybygg-i-spania" },
+    ]},
+  ],
+
 };
 
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
