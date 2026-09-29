@@ -71,8 +71,8 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     related: [
       { label: "Områdeguide for eiendomskjøp i Spania", href: "/guide/omradeguide-eiendomskjop-i-spania" },
-      { label: "Kjøpsprosess for bolig i Spania", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
-      { label: "Finansiering, notar og NIE", href: "/kjopsprosess/finansiering-notar-nie-boligkjop-spania" },
+      { label: "Kjøpsprosess for bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+      { label: "Finansiering, notar og NIE", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
     ],
   },
   {
@@ -132,7 +132,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     related: [
       { label: "Bør man kjøpe bolig i Spania nå, eller vente?", href: "/guide/kjop-bolig-i-spania-na-eller-vente" },
-      { label: "Kjøpsprosess for bolig i Spania", href: "/kjopsprosess/kjopsprosess-bolig-i-spania" },
+      { label: "Kjøpsprosess for bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
       { label: "Boliger til salgs", href: "/eiendommer" },
     ],
   },
