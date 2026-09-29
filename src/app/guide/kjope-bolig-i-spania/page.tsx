@@ -5,14 +5,16 @@ import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
-import { homeLanguageLinks } from "@/lib/i18n";
+import { findEquivalentBySlug, homeLanguageLinks, seoHreflang } from "@/lib/i18n";
 import { getLocalizedPropertyType, getProperties } from "@/lib/realtyflow";
+
+const pillarEq = findEquivalentBySlug("no", "guide/kjope-bolig-i-spania");
 
 export const metadata: Metadata = {
   title: "Kjøpe bolig i Spania (2026): Guide og mine erfaringer",
   description:
     "Kjøpe bolig i Spania? Få en oppdatert guide til områdevalg, kostnader, NIE, finansiering, visning, juridisk kontroll, notar og trygg overtakelse.",
-  alternates: { canonical: "/guide/kjope-bolig-i-spania" },
+  alternates: { canonical: "/guide/kjope-bolig-i-spania", languages: pillarEq ? seoHreflang(pillarEq) : undefined },
 };
 
 const steps = [
