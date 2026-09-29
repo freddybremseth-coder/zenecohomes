@@ -6,7 +6,7 @@ Nettstedsspråk: norsk (/), tysk (/de), engelsk (/en), spansk (/es). Personlig r
 
 ## Boliger og områder
 - [Moderne boliger og nybygg](https://www.zenecohomes.com/eiendommer): Moderne nybygg, villaer, leiligheter og prosjekter på Costa Blanca og Costa Cálida, filtrerbart på region.
-- [Innlandet](https://www.zenecohomes.com/inland): Tomter, moderne villaer, byggeprosjekter og utvalgte landeiendommer i Biar, Villena, Sax, Castalla, Pinoso, Monóvar, Aspe, Novelda og nærliggende områder.
+- [Innlandet](https://www.zenecohomes.com/omrader/innlandet): Tomter, moderne villaer, byggeprosjekter og utvalgte landeiendommer i Biar, Villena, Sax, Castalla, Pinoso, Monóvar, Aspe, Novelda og nærliggende områder.
 - [Costa Blanca Nord](https://www.zenecohomes.com/omrader/costa-blanca-nord): Altea, Albir, Calpe, Finestrat, Polop, La Nucía, Dénia, Moraira og Benidorm.
 - [Costa Blanca Sør](https://www.zenecohomes.com/omrader/costa-blanca-sor): Torrevieja, Orihuela Costa, Guardamar, Ciudad Quesada og Santa Pola.
 - [Costa Cálida](https://www.zenecohomes.com/omrader/costa-calida): Murcia-kysten, golfområder og moderne boligprosjekter.
@@ -18,5 +18,5 @@ Nettstedsspråk: norsk (/), tysk (/de), engelsk (/en), spansk (/es). Personlig r
 - [Book en boligprat](https://www.zenecohomes.com/booking): Start med område, bruk, budsjett og hva du ønsker å oppnå.
 
 ## Om rådgiveren
-- [Freddy Bremseth](https://www.zenecohomes.com/om-freddy): Eiendomsrådgiver bosatt i Benidorm med erfaring fra Costa Blanca, boligkjøp, utleie, kjøperveiledning og planlegging av visninger.
+- [Freddy Bremseth](https://www.zenecohomes.com/om-oss/freddy): Eiendomsrådgiver bosatt i Benidorm med erfaring fra Costa Blanca, boligkjøp, utleie, kjøperveiledning og planlegging av visninger.
 - [Guidebøker](https://books.freddybremseth.com): "Let Me Guide You"-serien – lokale bøker om Altea, Calpe, Finestrat, Benidorm, Dénia m.fl., og "Costa Blanca — North, South or Inland?".
