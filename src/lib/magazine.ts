@@ -867,6 +867,435 @@ export const extraArticles: Article[] = [
       },
     ],
     cta: { label: "Sammenlign områder på Costa Blanca", href: "/omrader/costa-blanca-nord" },
+  },
+  {
+    slug: "nybygg-eller-bruktbolig-costa-blanca",
+    title: "Nybygg eller bruktbolig på Costa Blanca – hva passer faktisk best for deg?",
+    excerpt:
+      "Nybygg er ikke automatisk best, og bruktbolig er ikke automatisk billigst. Vi sammenligner valgene ut fra beliggenhet, vedlikehold, leveringstid, risiko og hvordan boligen skal brukes.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Boligvalg",
+    readingTime: "9 min lesing",
+    image: "/assets/magasin-covers/omradet-for-boligen.svg",
+    imageAlt: "Moderne nybygg og etablert boligmiljø på Costa Blanca",
+    seoTitle: "Nybygg eller bruktbolig på Costa Blanca – hva passer best?",
+    seoDescription:
+      "Sammenlign nybygg og bruktbolig på Costa Blanca. Se forskjeller i beliggenhet, kostnader, vedlikehold, risiko, leveringstid og videresalg før du velger.",
+    keywords: [
+      "nybygg eller bruktbolig Spania",
+      "nybygg Costa Blanca",
+      "bruktbolig Costa Blanca",
+      "kjøpe bolig Spania",
+      "boligvalg Costa Blanca",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Mange starter boligjakten med et standpunkt: «Vi vil bare ha nybygg» eller «Vi vil ha mest mulig bolig for pengene og ser derfor brukt». Begge utgangspunktene kan bli for enkle.",
+      "Det riktige valget avhenger av hva du vil oppnå. Zen Eco Homes har hovedfokus på moderne nybygg og moderne boliger, men hvis en bruktbolig tydelig gir deg bedre beliggenhet, bedre økonomi eller en hverdag som passer bedre, bør den vurderes.",
+      "Spørsmålet er derfor ikke hvilken kategori som er best. Spørsmålet er hvilken bolig som løser behovet ditt med færrest dårlige kompromisser.",
+    ],
+    sections: [
+      {
+        heading: "Nybygg: du kjøper forutsigbarhet – men ikke alltid den beste beliggenheten",
+        body: [
+          "Den store styrken ved nybygg er at du vet mer om standarden du overtar. Moderne tekniske løsninger, nyere energikrav, mindre vedlikeholdsbehov og en tydelig leveransebeskrivelse gjør hverdagen enklere for mange som bor deler av året i Norge.",
+          "Ulempen er at de beste etablerte kystområdene ofte har lite ledig tomt. Nybygg kan derfor ligge høyere i terrenget, lenger fra sentrum eller i områder som fortsatt er under utvikling. En flott bolig er ikke nødvendigvis riktig dersom du egentlig ønsket å gå til strand og restauranter.",
+        ],
+        bullets: [
+          "Sterkt valg når lavt vedlikehold og moderne standard betyr mye.",
+          "Sjekk nøyaktig hva som inngår i prisen og hva som er tilvalg.",
+          "Kontroller reelle avstander og høydeforskjeller, ikke bare kartet.",
+          "Ved bolig under bygging må betalingsplan, bankgaranti og levering vurderes.",
+        ],
+      },
+      {
+        heading: "Bruktbolig: du kan kjøpe beliggenheten nybygg ikke kan gjenskape",
+        body: [
+          "Bruktboligens største fordel er ofte ikke prisen, men beliggenheten. I etablerte områder kan du kjøpe gangavstand, modne grøntområder, et ferdig nabolag og en plassering som det ikke lenger er mulig å bygge mye nytt på.",
+          "Til gjengjeld kjøper du også boligens historie. Teknisk tilstand, tidligere ombygginger, fukt, elektrisk anlegg, fellesøkonomi og juridisk dokumentasjon må kontrolleres grundigere.",
+        ],
+        bullets: [
+          "Sterkt valg når mikrobeliggenheten er viktigere enn å være førstegangseier.",
+          "Se på dokumentert tilstand, ikke bare nye overflater og styling.",
+          "Be om faktiske felleskostnader og tilgjengelig informasjon om sameiet.",
+          "Bruk uavhengig juridisk kontroll før du binder deg.",
+        ],
+      },
+      {
+        heading: "Pris: brukt er ikke automatisk billigere",
+        body: [
+          "Det er lett å sammenligne kvadratmeterpris og konkludere. Det kan bli feil. En bruktbolig kan kreve nytt kjøkken, bad, vinduer, klimaanlegg eller større arbeid kort tid etter overtakelse. Et nybygg kan på sin side ha kostnader til møbler, belysning, solskjerming og tilvalg.",
+          "Sammenlign derfor totalen for de første tre til fem årene, ikke bare kjøpesummen på kontraktsdagen.",
+        ],
+      },
+      {
+        heading: "Tid: skal du bruke boligen nå eller kan du vente?",
+        body: [
+          "En ferdig bruktbolig kan normalt tas i bruk langt raskere enn et prosjekt som fortsatt bygges. For kjøpere som vil ha bolig til kommende vinter eller sommer kan leveringstid alene avgjøre valget.",
+          "Kjøper du tidlig i et nybyggprosjekt, får du ofte større utvalg av etasje, orientering og planløsning. Men du må akseptere byggeperioden og at omgivelsene kan være uferdige en stund.",
+        ],
+      },
+      {
+        heading: "Videresalg: det er beliggenhet og brukbarhet som må tåle tid",
+        body: [
+          "Ny og blank standard er attraktiv ved kjøp, men alle nybygg blir bruktboliger. Når du senere skal selge, konkurrerer boligen på beliggenhet, planløsning, sol, parkering, uteareal, utsikt og hvor lett hverdagen fungerer.",
+          "Det er derfor bedre å kjøpe en bolig som mange kan forstå verdien av enn å betale maksimalt for detaljer som bare betyr mye for deg.",
+        ],
+      },
+      {
+        heading: "En enkel beslutningsregel",
+        table: {
+          headers: ["Hvis du prioriterer", "Se først på"],
+          rows: [
+            ["Lavt vedlikehold, moderne standard og energieffektivitet", "Nybygg"],
+            ["Etablert område og best mulig gangavstand", "Bruktbolig og ferdige nybygg"],
+            ["Ta boligen i bruk raskt", "Ferdig bolig"],
+            ["Størst mulig valg av planløsning og orientering", "Tidlig fase nybygg"],
+            ["Unik mikrobeliggenhet som ikke kan bygges på nytt", "Bruktbolig"],
+          ],
+        },
+      },
+    ],
+    nextSteps: [
+      "Definer først hvordan boligen faktisk skal brukes.",
+      "Sammenlign én god bruktbolig og ett godt nybygg i samme totalbudsjett.",
+      "Regn inn oppgraderinger, tilvalg og vedlikehold før du sammenligner pris.",
+      "Velg beliggenhet før du lar nyhetsfølelsen avgjøre.",
+    ],
+    faq: [
+      {
+        question: "Er nybygg tryggere enn bruktbolig i Spania?",
+        answer:
+          "Nybygg gir ofte mer forutsigbar teknisk standard, men krever kontroll av utbygger, kontrakt, bankgaranti og levering. Bruktbolig krever grundigere kontroll av eksisterende teknisk og juridisk tilstand. Begge bør undersøkes før kjøp.",
+      },
+      {
+        question: "Er bruktbolig alltid billigere enn nybygg?",
+        answer:
+          "Nei. Kjøpesummen kan være lavere, men oppussing og vedlikehold kan endre totalregnestykket. Sammenlign total kostnad og beliggenhet, ikke bare pris per kvadratmeter.",
+      },
+      {
+        question: "Selger Zen Eco Homes bruktboliger?",
+        answer:
+          "Hovedfokuset er moderne nybygg og moderne boliger. Når en bruktbolig tydelig passer kundens behov bedre, kan den også vurderes.",
+      },
+    ],
+    cta: { label: "Se nybygg og boliger", href: "/eiendommer" },
+  },
+  {
+    slug: "eurokurs-boligbudsjett-spania-nordmenn",
+    title: "Eurokursen kan flytte boligbudsjettet med hundretusener – slik bør norske kjøpere tenke",
+    excerpt:
+      "En bolig kan koste nøyaktig det samme i euro og likevel bli flere hundre tusen kroner dyrere eller billigere. Her viser vi hvordan valutakursen påvirker et norsk boligbudsjett.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Valuta og økonomi",
+    readingTime: "7 min lesing",
+    image: "/assets/magasin-covers/bankkonto-valuta.svg",
+    imageAlt: "Euro og norske kroner ved boligkjøp i Spania",
+    seoTitle: "Eurokurs og bolig i Spania – slik påvirkes norske kjøpere",
+    seoDescription:
+      "Se hvordan EUR/NOK påvirker kjøpesummen på bolig i Spania. Eksempler for 350.000, 500.000 og 750.000 euro viser hvorfor valuta må inn i budsjettet.",
+    keywords: [
+      "eurokurs bolig Spania",
+      "EUR NOK bolig Spania",
+      "norsk krone Costa Blanca",
+      "valuta boligkjøp Spania",
+      "kjøpe euro bolig Spania",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "For en norsk kjøper finnes det to priser på boligen: prisen i euro og prisen i norske kroner. Selgeren forholder seg til den første. Privatøkonomien din påvirkes av den andre.",
+      "Den 29. september 2026 lå EUR/NOK rundt 10,87. Ved inngangen til året kostet euroen rundt 11,79 kroner. Det viser hvor mye kjøpekraften kan flytte seg uten at en eneste bolig i Spania endrer pris.",
+      "Dette er ikke et argument for å spekulere i valuta. Det er et argument for å bygge valutarisiko inn i beslutningen.",
+    ],
+    sections: [
+      {
+        heading: "En bolig til €500.000 er ikke et fast kronebeløp",
+        body: [
+          "Ved EUR/NOK 10,87 er 500.000 euro omtrent 5,44 millioner kroner. Ved kurs 11,50 er samme bolig 5,75 millioner kroner. Ved kurs 12,00 er den 6 millioner kroner.",
+          "Forskjellen mellom kurs 10,87 og 12,00 er rundt 565.000 kroner. Boligen, utsikten og kontrakten er identisk. Bare valutaen har endret seg.",
+        ],
+      },
+      {
+        heading: "Slik slår ulike kurser ut",
+        table: {
+          headers: ["Boligpris", "EUR/NOK 10,50", "EUR/NOK 10,87", "EUR/NOK 11,50", "EUR/NOK 12,00"],
+          rows: [
+            ["€350.000", "3,68 mill. kr", "3,80 mill. kr", "4,03 mill. kr", "4,20 mill. kr"],
+            ["€500.000", "5,25 mill. kr", "5,44 mill. kr", "5,75 mill. kr", "6,00 mill. kr"],
+            ["€750.000", "7,88 mill. kr", "8,15 mill. kr", "8,63 mill. kr", "9,00 mill. kr"],
+          ],
+        },
+      },
+      {
+        heading: "Ikke bruk dagens kurs som om den er garantert på overtakelsesdagen",
+        body: [
+          "Nybygg kan ha betalinger fordelt over mange måneder. Også ved bruktbolig går det tid mellom boligjakt, reservasjon og sluttoppgjør. Hvis kapitalen står i norske kroner, kan kronebeløpet endre seg i perioden.",
+          "En enkel sikkerhetsmargin i budsjettet kan være mer verdifull enn å presse maksimal kjøpesum helt opp til grensen.",
+        ],
+      },
+      {
+        heading: "Delbetalinger gjør valutaplanlegging viktigere",
+        body: [
+          "Ved nybygg betales kjøpesummen ofte i flere trinn. Det betyr at du ikke bare har én valutakurs å forholde deg til. Hver betaling kan få en annen kronekostnad.",
+          "Be om betalingsplanen tidlig. Da kan du se hvor store eurobeløp som forfaller og når, og planlegge likviditeten i stedet for å reagere når fakturaen kommer.",
+        ],
+      },
+      {
+        heading: "Valuta og finansiering må ses sammen",
+        body: [
+          "Har du lån i Norge og inntekt i kroner, påvirker norsk rente finansieringen. Har du spansk lån, får du løpende betalinger i euro. Har du stor egenkapital i NOK, påvirker tidspunktet for veksling hvor mye kapital som går med.",
+          "Derfor bør finansieringsvalg og valutaplan være ett regnestykke, ikke to separate beslutninger.",
+        ],
+      },
+      {
+        heading: "Det vi ikke anbefaler",
+        bullets: [
+          "Å basere boligkjøpet på en spådom om hvor euroen skal stå om seks måneder.",
+          "Å bruke absolutt maksimal kjøpesum uten valutamargin.",
+          "Å overse fremtidige delbetalinger fordi første reservasjon er liten.",
+          "Å sammenligne norsk og spansk finansiering uten å ta med valutaen på gjelden.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Sett maksimal boligpris både i euro og norske kroner.",
+      "Test budsjettet på minst én svakere kronekurs enn dagens.",
+      "Be om hele betalingsplanen før du reserverer nybygg.",
+      "Sammenlign valuta og finansiering i samme regneark.",
+    ],
+    faq: [
+      {
+        question: "Bør jeg vente på en bedre eurokurs før jeg kjøper?",
+        answer:
+          "Ingen vet sikkert hvor EUR/NOK står senere. En bedre metode er å teste om kjøpet fortsatt er komfortabelt ved flere kurser og kjøpe når bolig, økonomi og tidspunkt passer samlet.",
+      },
+      {
+        question: "Hvor mye betyr 50 øre på eurokursen?",
+        answer:
+          "På 500.000 euro betyr 0,50 kroner per euro 250.000 kroner i forskjell. På 750.000 euro er forskjellen 375.000 kroner.",
+      },
+      {
+        question: "Er valutakurs viktig også med spansk lån?",
+        answer:
+          "Ja, dersom inntekten og egenkapitalen din hovedsakelig er i norske kroner. Du reduserer behovet for å veksle hele kjøpesummen, men får løpende euroforpliktelser.",
+      },
+    ],
+    cta: { label: "Les om bankkonto og valuta", href: "/guide/spansk-bankkonto-valutaveksling" },
+  },
+  {
+    slug: "hva-koster-feriebolig-spania-i-aret",
+    title: "Hva koster ferieboligen i Spania å eie i året? Slik får du et realistisk svar før kjøp",
+    excerpt:
+      "Det finnes ikke én riktig årspris for å eie bolig i Spania. Men du kan få et svært godt svar før du kjøper hvis du ber om de riktige tallene.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Eierøkonomi",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/kostnader-eie.svg",
+    imageAlt: "Årsbudsjett og løpende kostnader for feriebolig i Spania",
+    seoTitle: "Hva koster det å eie feriebolig i Spania hvert år?",
+    seoDescription:
+      "IBI, felleskostnader, forsikring, strøm, vann, internett, skatt og vedlikehold. Slik lager norske kjøpere et realistisk årsbudsjett før boligkjøpet.",
+    keywords: [
+      "kostnader eie bolig Spania",
+      "feriebolig Spania kostnader",
+      "IBI Spania",
+      "felleskostnader bolig Spania",
+      "årsbudsjett bolig Costa Blanca",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Spørsmålet «hva koster en bolig i Spania å eie i året?» får ofte et for enkelt svar. Det finnes ingen standardprosent som passer en leilighet i Albir, en villa i Finestrat og en bolig med store fellesanlegg i Benidorm.",
+      "Den gode nyheten er at mye av årsbudsjettet kan dokumenteres før kjøp. Be om faktiske kostnader på den konkrete boligen i stedet for å nøye deg med et generelt anslag.",
+    ],
+    sections: [
+      {
+        heading: "Start med kostnadene som allerede finnes",
+        body: [
+          "På en bruktbolig bør du be om siste IBI-kvittering, faktiske comunidad- eller felleskostnader og informasjon om eventuelle ekstraordinære innbetalinger i sameiet. Da slipper du å gjette på flere av de største faste postene.",
+          "På nybygg bør utbygger eller administrator kunne gi et forventet nivå for felleskostnader, men det er et estimat frem til sameiet faktisk er etablert og driften har historikk.",
+        ],
+      },
+      {
+        heading: "Dette skal inn i årsbudsjettet",
+        table: {
+          headers: ["Post", "Hva du bør kontrollere før kjøp"],
+          rows: [
+            ["IBI / kommunal eiendomsskatt", "Be om konkret kvittering eller estimat for boligen"],
+            ["Comunidad / felleskostnader", "Måneds- eller kvartalsbeløp og hva som inngår"],
+            ["Forsikring", "Hent tilbud for boligtypen og bruken din"],
+            ["Strøm og vann", "Fastledd, forbruk og om boligen står tom i perioder"],
+            ["Internett / alarm", "Avtaler du faktisk ønsker å beholde"],
+            ["Ikke-resident skatt", "Få beregning etter eier- og skattesituasjonen din"],
+            ["Vedlikehold", "Boligtype, basseng, hage, klima og alder"],
+            ["Property care / nøkkelhold", "Relevant hvis du bor mye av året i Norge"],
+          ],
+        },
+      },
+      {
+        heading: "En billig comunidad kan være dyr hvis anlegget er dårlig",
+        body: [
+          "Lav felleskostnad er ikke alltid et kvalitetsstempel. Et sameie med basseng, heiser, store grøntområder og fellesbygg må finansiere vedlikeholdet på en eller annen måte.",
+          "Det viktige er om økonomien er sunn, hva som faktisk inngår og om større arbeider er planlagt. Et svært lavt løpende beløp kan bli mindre interessant hvis store ekstraordinære innbetalinger kommer senere.",
+        ],
+      },
+      {
+        heading: "Villa og leilighet har forskjellige kostnadsprofiler",
+        body: [
+          "En leilighet deler mange kostnader med resten av sameiet. En villa kan ha lavere eller ingen comunidad, men du betaler selv for basseng, hage, fasade, tekniske installasjoner og alt annet som tilhører eiendommen.",
+          "Derfor bør du ikke konkludere med at villa er billigere å eie bare fordi felleskostnaden er lav.",
+        ],
+      },
+      {
+        heading: "Boligen står tom – kostnadene gjør ikke det",
+        body: [
+          "Mange norske eiere bruker boligen noen måneder i året. IBI, forsikring, deler av strøm- og vannregningen, internett, felleskostnader og tilsyn fortsetter likevel.",
+          "Det er derfor bedre å beregne kostnad per år enn kostnad per måned du faktisk oppholder deg i Spania.",
+        ],
+      },
+      {
+        heading: "Be om årsbudsjettet før du forelsker deg i fellesanlegget",
+        body: [
+          "Store bassengområder, spa, treningsrom, vakthold og omfattende beplantning kan være fantastisk. Men de har en pris. Det er ikke et argument mot slike prosjekter – bare et argument for å vite hva du kjøper.",
+          "Hvis to boliger koster omtrent det samme, kan forskjellen i årlige kostnader påvirke hvilket kjøp som passer best over tid.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Be om konkret IBI og comunidad for boligen du vurderer.",
+      "Hent forsikring og eventuelle care-tjenester inn i samme regnestykke.",
+      "Skill mellom faste kostnader og forbruksavhengige kostnader.",
+      "Sett av en vedlikeholdsreserve som passer boligtypen.",
+    ],
+    faq: [
+      {
+        question: "Hva er de vanligste løpende kostnadene ved bolig i Spania?",
+        answer:
+          "Typisk IBI, felleskostnader der det finnes sameie, forsikring, strøm, vann, internett, relevant skatt og vedlikehold. Villa med basseng og hage har ofte flere kostnader eieren håndterer direkte.",
+      },
+      {
+        question: "Kan jeg vite felleskostnadene før jeg kjøper?",
+        answer:
+          "På etablerte boliger bør faktiske kostnader kunne dokumenteres. På helt nye prosjekter er beløpet normalt et estimat til sameiet har reell driftshistorikk.",
+      },
+      {
+        question: "Er det dyrt å eie feriebolig som står tom?",
+        answer:
+          "Flere kostnader løper uansett bruk. Derfor bør du regne på helårsbudsjettet, ikke bare månedene du planlegger å oppholde deg i boligen.",
+      },
+    ],
+    cta: { label: "Se komplett guide til løpende kostnader", href: "/guide/lopende-kostnader-eie-bolig-spania" },
+  },
+  {
+    slug: "7-dyre-feil-nordmenn-bolig-spania",
+    title: "7 dyre feil nordmenn gjør før de kjøper bolig i Spania",
+    excerpt:
+      "De dyreste feilene skjer ofte før kontrakten signeres: feil område, feil budsjett, feil boligfilter eller for lite kontroll. Her er syv feil det er fullt mulig å unngå.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Kjøpsråd",
+    readingTime: "9 min lesing",
+    image: "/assets/magasin-covers/juridisk.svg",
+    imageAlt: "Kontrollpunkter før nordmenn kjøper bolig i Spania",
+    seoTitle: "7 dyre feil nordmenn gjør når de kjøper bolig i Spania",
+    seoDescription:
+      "Unngå feil område, feil totalbudsjett, utdaterte annonser, svak juridisk kontroll og dårlig videresalg. Syv konkrete råd før du kjøper bolig i Spania.",
+    keywords: [
+      "feil boligkjøp Spania",
+      "kjøpe bolig Spania råd",
+      "nordmenn bolig Spania",
+      "unngå feil Costa Blanca",
+      "boligkjøp Spania sjekkliste",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "De fleste som kjøper bolig i Spania bruker mye tid på å finne den riktige boligen. Jeg ville brukt mer tid på å unngå den gale beslutningen.",
+      "De dyreste feilene handler sjelden om hvilken farge kjøkkenet har. De handler om område, totaløkonomi, dokumentasjon, finansiering og om boligen fortsatt fungerer når feriefølelsen har lagt seg.",
+    ],
+    sections: [
+      {
+        heading: "1. Du velger bolig før du har valgt hverdagen",
+        body: [
+          "En flott bolig kan ligge på feil sted. Hvis du egentlig vil gå til restauranter, strand og butikker, hjelper det lite at villaen har større terrasse dersom bilen må brukes til alt.",
+          "Start med hvordan en vanlig tirsdag skal se ut. Deretter velger du område og til slutt bolig.",
+        ],
+      },
+      {
+        heading: "2. Du bruker maksimal totalramme som maksimal kjøpesum",
+        body: [
+          "Har du seks millioner kroner tilgjengelig totalt, kan du ikke uten videre kjøpe en bolig til seks millioner. Skatter, juridisk bistand, register, finansiering, møblering og andre kostnader kommer i tillegg.",
+          "Sett totalrammen først og regn bakover til maksimal kjøpesum.",
+        ],
+      },
+      {
+        heading: "3. Du tror alle annonser er reelle og oppdaterte",
+        body: [
+          "Boligportaler kan inneholde duplikater, objekter som er reservert og priser eller tilgjengelighet som ikke lenger gjelder. Ti annonser betyr derfor ikke nødvendigvis ti boliger du faktisk kan kjøpe.",
+          "Bekreft tilgjengelighet før du bygger hele visningsturen rundt en annonse.",
+        ],
+      },
+      {
+        heading: "4. Du reserverer før finansiering og kontroll er forstått",
+        body: [
+          "Reservasjon føles som et lite steg fordi beløpet ofte er langt lavere enn kjøpesummen. Juridisk og økonomisk kan det likevel være et viktig punkt.",
+          "Forstå vilkårene, betalingsplanen, finansieringen og hva som skal kontrolleres før du binder deg.",
+        ],
+      },
+      {
+        heading: "5. Du ser på utsikten og glemmer mikrobeliggenheten",
+        body: [
+          "Havutsikt selger. Men støy, vind, ettermiddagssol, bratt adkomst, planlagt bygging foran boligen eller 20 minutter til fots opp en bakke påvirker bruken hver eneste dag.",
+          "Gå området. Test avstanden. Se boligen på riktig tidspunkt av dagen.",
+        ],
+      },
+      {
+        heading: "6. Du undervurderer valuta og renter",
+        body: [
+          "En bevegelse på 50 øre i EUR/NOK betyr 250.000 kroner på en kjøpesum på 500.000 euro. Finansiering kan samtidig endre seg mens du leter.",
+          "Boligbudsjettet bør tåle både valutabevegelse og renteendring uten at resten av privatøkonomien blir presset.",
+        ],
+      },
+      {
+        heading: "7. Du kjøper som om du aldri skal selge",
+        body: [
+          "Du kan planlegge å eie boligen lenge og likevel få behov for å selge tidligere. Liv, økonomi og familie endrer seg.",
+          "Spør derfor hvem som kan kjøpe boligen etter deg. God planløsning, parkering, sol, brukbart uteareal, god adkomst og attraktiv beliggenhet er kvaliteter flere kjøpere forstår.",
+        ],
+      },
+      {
+        heading: "Den røde tråden: ikke la boligen bestemme strategien",
+        body: [
+          "Boligjakten blir enklere når rekkefølgen er riktig: bruk og hverdag, område, totalbudsjett, finansiering, boligtype, konkrete boliger og kontroll før reservasjon.",
+          "Da bruker du mindre tid på irrelevante objekter og får et bedre grunnlag for å si både ja og nei.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Skriv ned de fem viktigste kravene før du åpner boligportalen.",
+      "Skill totalbudsjett fra maksimal kjøpesum.",
+      "Bekreft tilgjengelighet før visningsturen planlegges.",
+      "La juridisk og økonomisk kontroll være en del av kjøpsplanen fra starten.",
+    ],
+    faq: [
+      {
+        question: "Hva er den vanligste feilen ved boligkjøp i Spania?",
+        answer:
+          "En av de mest grunnleggende er å starte med selve boligen før område, bruk og totaløkonomi er avklart. Det gjør det lett å velge en flott bolig som passer dårlig i hverdagen.",
+      },
+      {
+        question: "Kan jeg stole på boligportaler i Spania?",
+        answer:
+          "De er nyttige til å forstå markedet, men annonser kan være dupliserte eller utdaterte. Tilgjengelighet bør bekreftes før du planlegger visning eller tar en pris som fasit.",
+      },
+      {
+        question: "Hva bør være klart før jeg reserverer?",
+        answer:
+          "Du bør forstå reservasjonens vilkår, totalbudsjett, finansieringsramme, betalingsplan og hvilken juridisk kontroll som skal gjennomføres.",
+      },
+    ],
+    cta: { label: "Se hvordan kjøpsprosessen fungerer", href: "/kjopsprosessen" },
   }
 ];
 
