@@ -8,7 +8,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Om Freddy Bremseth | Norsk eiendomsrådgiver på Costa Blanca",
+  title: { absolute: "Om Freddy Bremseth | Norsk eiendomsrådgiver på Costa Blanca" },
   description:
     "Møt Freddy Bremseth – norsk eiendomsrådgiver bosatt i Benidorm. Erfaring med Costa Blanca, utleie, områdevalg, moderne nybygg og effektiv planlegging av boligkjøp i Spania.",
   alternates: {
