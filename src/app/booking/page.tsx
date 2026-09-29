@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function BookingPage() {
   return (
-    <main>
+    <main className="booking-page">
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow"><CalendarClock size={15} /> 15-minutters boligprat</p>
@@ -26,26 +26,29 @@ export default function BookingPage() {
         </p>
       </section>
 
-      <section className="section split">
+      <section className="section booking-layout">
         <div>
           <p className="eyebrow">Hva vi kan avklare</p>
           <h2>Få et bedre utgangspunkt før du bestiller visningstur</h2>
-          <div className="check-list">
-            <span><CheckCircle2 size={18} /> Hvilke områder som passer hvordan du vil bruke boligen</span>
-            <span><CheckCircle2 size={18} /> Realistisk totalbudsjett – ikke bare annonseprisen</span>
-            <span><CheckCircle2 size={18} /> Moderne nybygg, villa, leilighet eller tomt</span>
-            <span><CheckCircle2 size={18} /> Hvilke spørsmål som bør avklares før reservasjon</span>
-            <span><CheckCircle2 size={18} /> Hvordan en effektiv visningsdag kan bygges opp</span>
+          <p className="booking-lead">
+            Samtalen brukes til å rydde i de viktigste valgene først. Du trenger ikke ha bestemt område eller bolig før du tar kontakt.
+          </p>
+          <div className="booking-agenda">
+            <article><CheckCircle2 size={18}/><div><h3>Område og bruk</h3><p>Hvilke områder som passer feriebruk, fast bolig, utleie eller mer plass.</p></div></article>
+            <article><CheckCircle2 size={18}/><div><h3>Totalbudsjett</h3><p>En realistisk ramme som tar høyde for mer enn bare annonseprisen.</p></div></article>
+            <article><CheckCircle2 size={18}/><div><h3>Boligtype</h3><p>Nybygg, villa, leilighet, rekkehus eller tomt – og hvilke kompromisser som følger med.</p></div></article>
+            <article><CheckCircle2 size={18}/><div><h3>Neste steg</h3><p>Hva som bør avklares før reservasjon, og hvordan en god visningsplan kan bygges opp.</p></div></article>
           </div>
-          <p style={{ color: "var(--muted)", lineHeight: 1.8, marginTop: 24 }}>
-            Send inn kontaktinformasjonen din og skriv gjerne når det passer best å bli kontaktet. Dette er foreløpig
-            en forespørsel om samtale, ikke en automatisk kalenderbooking.
+          <p className="booking-note">
+            Send inn kontaktinformasjonen din og skriv gjerne når det passer best å bli kontaktet. Dette er en forespørsel om samtale, ikke en automatisk kalenderbooking.
           </p>
           <Link className="text-button" href="/om-oss/freddy"><ArrowLeft size={16} /> Les mer om Freddy</Link>
         </div>
-        <div>
+        <aside className="booking-form-panel">
+          <p className="eyebrow">Forespør samtale</p>
+          <h2>Fortell kort hva du vurderer</h2>
           <ContactForm source="zenecohomes-booking" />
-        </div>
+        </aside>
       </section>
       <Footer />
     </main>
