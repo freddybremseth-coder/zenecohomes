@@ -76,13 +76,18 @@ for (const file of pageFiles) {
   // Read enough of the metadata block/function to capture title + description,
   // while ignoring unrelated card/content objects later in the file.
   const block = content.slice(start, start + 3200);
-  const title = block.match(/title:\s*"([^"]+)"/)?.[1];
-  const description = block.match(/description:\s*\n?\s*"([^"]+)"/)?.[1];
+  const directTitle = block.match(/title:\s*"([^"]+)"/)?.[1];
+  const fallbackTitle = block.match(/const title\s*=\s*[\s\S]*?\|\|\s*"([^"]+)"/)?.[1];
+  const title = directTitle || fallbackTitle;
 
-  if (!title) errors.push(`${file}: could not read metadata title`);
+  const directDescription = block.match(/description:\s*\n?\s*"([^"]+)"/)?.[1];
+  const fallbackDescription = block.match(/const description\s*=\s*[\s\S]*?\|\|\s*\n?\s*"([^"]+)"/)?.[1];
+  const description = directDescription || fallbackDescription;
+
+  if (!title) errors.push(`${file}: could not read metadata title/fallback`);
   else checkRange(file, "metadata title", title, 50, 60);
 
-  if (!description) errors.push(`${file}: could not read metadata description`);
+  if (!description) errors.push(`${file}: could not read metadata description/fallback`);
   else checkRange(file, "metadata description", description, 140, 160);
 }
 
