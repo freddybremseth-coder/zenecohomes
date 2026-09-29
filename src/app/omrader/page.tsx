@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { bookUrl, placeBooks } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -34,6 +36,32 @@ export default function AreasPage() {
         </article>)}
       </div>
     </section>
+    <section className="section">
+      <div className="section-heading">
+        <p className="eyebrow">Let Me Guide You</p>
+        <h2>Områdebøker – les deg opp før du velger sted</h2>
+        <p>
+          Områdebøkene hører hjemme sammen med områdene. De gir mer dybde om hverdagsliv, nabolag og lokale forskjeller
+          og kompletterer de kortere nettsidene.
+        </p>
+      </div>
+      <div className="book-grid">
+        {placeBooks.map((book) => (
+          <a className="book-card" href={bookUrl(book.slug)} target="_blank" rel="noopener noreferrer" key={book.slug}>
+            <div className="book-cover-wrap">
+              <Image src={book.cover} alt={`Områdebok om ${book.title}`} fill sizes="(max-width: 700px) 80vw, 260px" />
+            </div>
+            <div className="book-card-body">
+              <span><BookOpen size={14} /> Områdeguide</span>
+              <h3>{book.title}</h3>
+              <p>{book.blurb}</p>
+              <strong>Les mer om boken</strong>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <section className="section split">
       <div><p className="eyebrow">Sammenlign før du bestemmer deg</p><h2>Hva bør du vurdere?</h2><p>Se på reisevei, helårsservice, klima, strand, skole, utleie, prisnivå og hvordan området fungerer utenfor høysesongen.</p><Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">Les områdeguiden <ArrowRight size={16}/></Link></div>
       <div><p className="eyebrow">Boliger</p><h2>Klar for å se konkrete alternativer?</h2><p>Gå videre til boligoversikten når du har snevret inn region eller område.</p><Link className="contact-button" href="/eiendommer">Se boliger</Link></div>
