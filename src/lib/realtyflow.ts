@@ -878,6 +878,8 @@ export async function getProperties(limit?: number, brandId?: string): Promise<P
   try {
     const propertyUrl = new URL("/api/properties", REALTYFLOW_BASE);
     if (brandId) propertyUrl.searchParams.set("brandId", brandId);
+    propertyUrl.searchParams.set("view", "summary");
+    if (limit && limit > 0) propertyUrl.searchParams.set("limit", String(limit));
     const res = await fetch(propertyUrl.toString(), {
       next: { revalidate: 60 },
       headers: { Accept: "application/json" },
@@ -947,14 +949,36 @@ export async function getLandPlots(): Promise<LandPlot[]> {
   }
 }
 
-export async function getProperty(id: string): Promise<Property | null> {
-  const properties = await getProperties();
-  return (
-    properties.find((property) => {
-      const ref = getPropertyRef(property);
-      return property.id === id || ref === id;
-    }) || null
-  );
+export async function getProperty(id: string, brandId = "zeneco"): Promise<Property | null> {
+  const read = async (lookup: "ref" | "id") => {
+    const propertyUrl = new URL("/api/properties", REALTYFLOW_BASE);
+    propertyUrl.searchParams.set(lookup, id);
+    if (brandId) propertyUrl.searchParams.set("brandId", brandId);
+    const res = await fetch(propertyUrl.toString(), {
+      next: { revalidate: 60 },
+      headers: { Accept: "application/json" },
+    });
+    if (res.status === 404) return null;
+    if (!res.ok) return null;
+    const data = await res.json();
+
+    // Backward-compatible during the RealtyFlow rollout: older API versions
+    // ignore ref= and return the catalogue array. Find the requested property
+    // locally until every production instance serves direct lookup.
+    if (Array.isArray(data)) {
+      return (
+        (data as Property[]).find((property) => property.id === id || getPropertyRef(property) === id) ||
+        null
+      );
+    }
+    return data as Property;
+  };
+
+  try {
+    return (await read("ref")) || (await read("id"));
+  } catch {
+    return null;
+  }
 }
 
 export function parseLeadBudgetEstimate(value?: string) {
