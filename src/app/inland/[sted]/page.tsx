@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ sted: str
   return {
     title: town ? `${town.name} | Innlandet i ${region} | Zen Eco Homes` : "Innlandet",
     description: town ? displayTownIntro(town) : INLAND_BRAND.description,
-    alternates: { canonical: `/inland/${sted}` },
+    alternates: { canonical: `/omrader/innlandet/${sted}` },
   };
 }
 
@@ -41,7 +41,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         <SiteHeader languageLinks={homeLanguageLinks("no")} />
         <section className="page-hero compact-hero">
           <h1>Området ble ikke funnet</h1>
-          <Link className="text-button light" href="/inland">Til innlandet</Link>
+          <Link className="text-button light" href="/omrader/innlandet">Til innlandet</Link>
         </section>
         <Footer />
       </main>
@@ -70,7 +70,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
               {hasLocalProperties ? `Se aktuelle boliger i ${town.name}` : "Se boligmodeller og inspirasjon"} <ArrowRight size={18} />
             </a>
             <a className="text-button light" href="#kontakt">Finn tomt i {town.name}</a>
-            <Link className="text-button light" href="/inland">Til alle områder</Link>
+            <Link className="text-button light" href="/omrader/innlandet">Til alle områder</Link>
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         </div>
         <nav className="inland-index" aria-label="Flere områder i innlandet">
           {otherTowns.map((item, index) => (
-            <Link href={`/inland/${item.slug}`} key={item.slug}>
+            <Link href={`/omrader/innlandet/${item.slug}`} key={item.slug}>
               <strong>{item.name}</strong>
               <span>{String(index + 1).padStart(2, "0")}</span>
             </Link>
