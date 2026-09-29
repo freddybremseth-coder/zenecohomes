@@ -6,8 +6,8 @@ import { Testimonials } from "@/components/Testimonials";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Kundeomtaler | Zen Eco Homes",
-  description: "Les kundeomtaler og erfaringer med Zen Eco Homes. Se hvordan vi jobber med områdevalg, boligsøk, visning og oppfølging ved boligkjøp i Spania.",
+  title: "Kundeomtaler | Erfaringer med Zen Eco Homes i Spania",
+  description: "Les kundeomtaler og erfaringer med Zen Eco Homes. Se hvordan boligkjøpere opplever rådgivning, områdevalg, boligsøk, visning og oppfølging i Spania.",
   alternates: { canonical: "/kundeomtaler" },
 };
 
