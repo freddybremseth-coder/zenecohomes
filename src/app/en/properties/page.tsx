@@ -71,7 +71,7 @@ export default async function EnglishPropertiesPage({
   const minBedrooms = Number(params.bedrooms || 0);
   const minBathrooms = Number(params.bathrooms || 0);
   const lifestyle = params.lifestyle || "";
-  const properties = await getProperties();
+  const properties = await getProperties(0, "zeneco");
   const filtered = properties.filter((property) => {
     const haystack = getPropertySearchText(property);
     const matchesQuery = q ? haystack.includes(q) : true;
