@@ -167,7 +167,7 @@ export default async function MagazinePage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Ser du etter kjøperguider?</p>
-          <h2>SEO-guidene ligger samlet under Guide</h2>
+          <h2>Kjøperguidene ligger samlet under Guide</h2>
           <p>
             Vi har ikke fjernet artiklene. De søkeorienterte guidene om kjøp, NIE, bank, juridikk, kostnader,
             tomt og nybygg ligger samlet i en tydelig guide-hub, mens Magasin brukes til redaksjonelt innhold.
@@ -177,6 +177,25 @@ export default async function MagazinePage() {
           <article><h3>Kjøpe bolig i Spania</h3><p>Hjørnesteinsguiden til hele kjøpsreisen.</p><Link className="text-button" href="/guide/kjope-bolig-i-spania">Les guiden <ArrowRight size={16}/></Link></article>
           <article><h3>Alle guider</h3><p>Se hele biblioteket med områdevalg, NIE, bank, kostnader, juridikk og nybygg.</p><Link className="text-button" href="/guide">Se guide-huben <ArrowRight size={16}/></Link></article>
           <article><h3>Kjøpsprosessen</h3><p>Se hvordan Zen Eco Homes jobber fra behov til overtakelse og oppfølging.</p><Link className="text-button" href="/kjopsprosessen">Se prosessen <ArrowRight size={16}/></Link></article>
+        </div>
+      </section>
+
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Redaksjonelle temaer</p>
+          <h2>Dette finner du i Magasin</h2>
+          <p>
+            Magasin bygger bredde og aktualitet rundt boligmarkedet og hverdagen i Spania, mens de
+            søkeorienterte kjøperguidene ligger samlet under Guide.
+          </p>
+        </div>
+        <div className="proof-grid">
+          <article><h3>Markedsoppdateringer</h3><p>Endringer i tilbud, etterspørsel, kjøperinteresse og andre signaler fra boligmarkedet.</p></article>
+          <article><h3>Boligprisutvikling</h3><p>Redaksjonelle oppdateringer om priser og utvikling i relevante deler av Spania.</p></article>
+          <article><h3>Lokale nyheter</h3><p>Endringer i områder, infrastruktur, prosjekter og forhold som kan være relevante for boligkjøpere.</p></article>
+          <article><h3>Livet i Spania</h3><p>Hverdagsliv, sesonger, praktiske valg og erfaringer som gir mer kontekst enn en boligannonse.</p></article>
+          <article><h3>Nyheter fra Costa Blanca</h3><p>Lokale utviklingstrekk fra Costa Blanca Nord og Sør som kan påvirke områdene og markedet.</p></article>
+          <article><h3>Redaksjonelt</h3><p>Intervjuer, analyser og andre artikler som støtter nettstedets område- og markedskunnskap.</p></article>
         </div>
       </section>
 

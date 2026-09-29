@@ -60,7 +60,7 @@ const page: SeoLandingPage = {
     },
   ],
   related: [
-    { label: "Om Freddy Bremseth", href: "/om-freddy" },
+    { label: "Om Freddy Bremseth", href: "/om-oss/freddy" },
     { label: "Sammenlign områder", href: "/omrader" },
     { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
     { label: "Se moderne boliger", href: "/eiendommer" },

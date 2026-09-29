@@ -267,10 +267,10 @@ export const SILO_META: Record<Silo, { label: string; title: string; href: strin
   },
   guide: {
     label: "Guide",
-    title: "Guider og områdeinnsikt",
+    title: "Guider om boligkjøp i Spania",
     href: "/guide",
     intro:
-      "Områdeguider, livsstil og tryggere valg: hvor du bør kjøpe, kyst vs. innland, tomt og bygging, og når det lønner seg å slå til.",
+      "Alle søkeorienterte guider samlet på ett sted: kjøpe bolig i Spania, områdevalg, nybygg, tomt, finansiering, NIE, juridikk, kostnader, skatt og praktiske steg i kjøpsreisen.",
   },
 };
 

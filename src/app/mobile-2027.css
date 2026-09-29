@@ -362,3 +362,175 @@
     scroll-behavior: auto;
   }
 }
+
+
+@media (max-width: 980px) {
+  .guide-hub-hero {
+    min-height: 0;
+    padding-top: 128px;
+    padding-bottom: 60px;
+  }
+
+  .guide-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .guide-hero-copy h1 {
+    max-width: 12ch;
+  }
+
+  .guide-hero-panel {
+    max-width: 680px;
+    min-height: 0;
+  }
+
+  .guide-start-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .guide-start-card-primary {
+    grid-column: 1 / -1;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 640px) {
+  .guide-hub-hero {
+    padding-top: 108px;
+    padding-bottom: 42px;
+  }
+
+  .guide-hero-copy > p:not(.eyebrow) {
+    margin: 18px 0 24px;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .guide-hero-panel {
+    padding: 24px 20px;
+  }
+
+  .guide-hero-panel h2 {
+    font-size: 2rem;
+  }
+
+  .guide-hero-panel nav a {
+    min-height: 46px;
+    font-size: 0.9rem;
+  }
+
+  .guide-start-section,
+  .guide-topic-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .guide-start-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-start-card-primary {
+    grid-column: auto;
+  }
+
+  .guide-start-card {
+    min-height: 0;
+    padding: 26px 22px;
+  }
+
+  .guide-start-card > span {
+    margin-bottom: 20px;
+  }
+
+  .guide-index-band > div {
+    width: min(100% - 28px, 620px);
+    min-height: 0;
+    padding: 20px 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .guide-index-band span {
+    margin-bottom: 2px;
+  }
+
+  .guide-library-card .magazine-cover-image {
+    height: 210px;
+  }
+
+  .guide-library-card .magazine-body {
+    min-height: 0;
+  }
+
+  .guide-contact-section {
+    align-items: stretch;
+  }
+
+  .guide-contact-section .hero-actions {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 980px) {
+  .cornerstone-hero {
+    min-height: 0;
+    padding-top: 128px;
+    padding-bottom: 58px;
+  }
+
+  .cornerstone-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .cornerstone-hero-panel {
+    max-width: 720px;
+  }
+
+  .cornerstone-index {
+    top: 68px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cornerstone-hero {
+    padding-top: 108px;
+    padding-bottom: 42px;
+  }
+
+  .cornerstone-hero-copy > p:not(.eyebrow) {
+    margin: 18px 0 24px;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .cornerstone-hero-panel {
+    padding: 24px 20px;
+  }
+
+  .cornerstone-hero-panel h2 {
+    font-size: 2rem;
+  }
+
+  .cornerstone-index {
+    position: static;
+  }
+
+  .cornerstone-guide .cornerstone-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .cornerstone-preflight > div:last-child,
+  .cornerstone-guide #boligtype .split > div,
+  .cornerstone-experience > div {
+    padding: 24px 20px;
+  }
+
+  .cornerstone-guide #kort-svar .proof-grid article::after {
+    left: 22px;
+    right: 22px;
+  }
+}

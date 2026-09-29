@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/en/about-freddy",
     languages: {
-      "nb-NO": "https://www.zenecohomes.com/om-freddy",
+      "nb-NO": "https://www.zenecohomes.com/om-oss/freddy",
       en: "https://www.zenecohomes.com/en/about-freddy",
       "de-DE": "https://www.zenecohomes.com/de/ueber-freddy",
       "es-ES": "https://www.zenecohomes.com/es/sobre-freddy",
-      "x-default": "https://www.zenecohomes.com/om-freddy",
+      "x-default": "https://www.zenecohomes.com/om-oss/freddy",
     },
   },
 };
