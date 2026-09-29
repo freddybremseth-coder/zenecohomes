@@ -50,6 +50,16 @@ const nextConfig: NextConfig = {
         destination: "/guide/bankgaranti-nybygg-spania",
         permanent: true,
       },
+      {
+        source: "/kjopsprosess",
+        destination: "/kjopsprosessen",
+        permanent: true,
+      },
+      {
+        source: "/kjopsprosess/:slug",
+        destination: "/guide/:slug",
+        permanent: true,
+      },
     ];
 
     // Artikler som er flyttet fra /magasin til innholdssiloer. Holdes i synk med
@@ -57,7 +67,7 @@ const nextConfig: NextConfig = {
     const siloRedirects = [
       ["omkostninger-nybygg-spania", "guide"],
       ["bankgaranti-nybygg-spania", "guide"],
-      ["kjopsprosess-bolig-i-spania", "kjopsprosess"],
+      ["kjopsprosess-bolig-i-spania", "guide"],
       ["finansiering-notar-nie-boligkjop-spania", "guide"],
       ["omradeguide-eiendomskjop-i-spania", "guide"],
       ["guide-tomtekjop-bygging-i-spania", "guide"],
