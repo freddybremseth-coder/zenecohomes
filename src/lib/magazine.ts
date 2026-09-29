@@ -3,6 +3,107 @@ import { corporateArticles } from "./corporate-content";
 
 export const extraArticles: Article[] = [
   {
+    slug: "det-du-ikke-ser-i-boligannonsen",
+    title: "Det du ikke ser i boligannonsen – derfor starter jeg med området",
+    excerpt:
+      "Fine bilder kan vise boligen, men sjelden hverdagen rundt den. Freddy Bremseth forklarer hva han ser etter før en bolig havner på kundens shortlist.",
+    date: "2026-09-29",
+    updated: "2026-09-29",
+    category: "Rådgivning",
+    readingTime: "6 min lesing",
+    image: "/assets/magasin-covers/omradet-for-boligen.svg",
+    imageAlt: "Illustrasjon av moderne bolig mellom by, fjell og Middelhavet på Costa Blanca",
+    seoTitle: "Bolig i Spania: området avgjør mer enn selve boligen",
+    seoDescription:
+      "En boligannonse viser rom og utsikt, men ikke hvordan hverdagen fungerer. Freddy Bremseth forklarer hva han vurderer i området før en visning i Spania.",
+    keywords: [
+      "bolig i Spania",
+      "områdevalg Costa Blanca",
+      "kjøpe bolig Spania",
+      "visning Spania",
+      "eiendomsrådgiver Spania",
+    ],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Når noen sender meg en boligannonse og spør «hva synes du om denne?», starter jeg sjelden med kjøkkenet, bassenget eller antall kvadratmeter. Først prøver jeg å forstå stedet rundt boligen. Det er nemlig området du skal leve i – boligen er bare én del av hverdagen.",
+      "En annonse er laget for å vise boligen fra sin beste side. Det er helt naturlig. Men bilder forteller lite om hvordan det føles å hente kaffe en tirsdag i januar, hvor mye du bruker bilen, hvordan solen treffer terrassen, hva du hører når vinduene er åpne, eller om området fungerer like godt utenfor høysesongen.",
+    ],
+    sections: [
+      {
+        heading: "En flott bolig kan være feil hvis hverdagen ikke passer",
+        body: [
+          "Jeg har sett mange boliger som fungerer godt på bilder, men dårligere når vi setter dem inn i kundens faktiske liv. Noen ønsker å gå til strand og restauranter. Andre vil ha ro, privatliv og stor tomt. En familie kan prioritere skole og aktiviteter, mens et par som skal bruke boligen fire måneder i året kanskje legger mest vekt på enkel reisevei og lite vedlikehold.",
+          "Derfor begynner jeg med bruk: Hvordan skal boligen brukes, hvor ofte skal dere være der, og hva vil dere faktisk gjøre i løpet av en vanlig uke? Når det er tydelig, blir det mye enklere å sile bort boliger som er fine, men feil.",
+        ],
+        bullets: [
+          "Gangavstand eller bilavhengighet.",
+          "Helårsservice, restauranter og dagligvare.",
+          "Støy, trafikk og aktivitet gjennom året.",
+          "Sol, høyde, vind og orientering.",
+          "Avstand til flyplass, strand, skole eller familie.",
+        ],
+      },
+      {
+        heading: "Kartet viser avstand – ikke nødvendigvis hvordan turen oppleves",
+        body: [
+          "Fem kilometer kan være en enkel kjøretur eller en upraktisk hverdag. En bolig kan ligge nær sjøen målt i luftlinje, men likevel kreve bil på grunn av høydeforskjeller, motorvei eller manglende fortau. Det samme gjelder skoler, butikker og sentrum.",
+          "Når jeg vurderer et område prøver jeg derfor å tenke i reelle hverdagsruter, ikke bare kilometer. Det er en av grunnene til at områdevalg bør komme før en lang liste med visninger.",
+        ],
+      },
+      {
+        heading: "Det som ikke står i annonsen er ofte det viktigste å undersøke",
+        body: [
+          "Annonsen forteller gjerne om soverom, basseng, utsikt og materialvalg. Den sier sjeldnere noe om hvordan området endrer seg mellom sommer og vinter, planlagt utbygging i nærheten, trafikkmønster, parkering eller hvor lett boligen kan bli å selge igjen.",
+          "Det betyr ikke at noe er galt. Poenget er bare at beslutningen blir bedre når vi fyller inn informasjonen som ikke får plass i salgspresentasjonen.",
+        ],
+        bullets: [
+          "Hva ligger rett utenfor kameraets utsnitt?",
+          "Hvordan fungerer området utenom feriesesongen?",
+          "Hva må du bruke bil til hver dag?",
+          "Er utsikten eller privatlivet sårbart for fremtidig utbygging?",
+          "Passer boligtypen til markedet dersom du en dag skal selge?",
+        ],
+      },
+      {
+        heading: "Derfor ønsker jeg færre og bedre visninger",
+        body: [
+          "En visningstur bør ikke bli en maraton med flest mulig boliger. Når vi har sortert område, bruk og budsjett først, kan vi konsentrere oss om et mindre antall alternativer som faktisk har en reell sjanse til å passe.",
+          "Det gir også bedre sammenligning. Etter femten tilfeldige boliger flyter inntrykkene lett sammen. Etter noen få godt valgte alternativer er det mye enklere å se hva du liker, hvilke kompromisser du kan leve med og hva som bør undersøkes videre.",
+        ],
+      },
+      {
+        heading: "Boligen kommer etter at retningen er riktig",
+        body: [
+          "Jeg er selvsagt opptatt av selve boligen: planløsning, kvalitet, pris, leveranse, dokumentasjon og hva du faktisk får for pengene. Men den vurderingen blir mer presis når vi allerede vet at stedet passer.",
+          "For meg er dette kjernen i rådgivningen hos Zen Eco Homes: område først, deretter bolig. Ikke fordi boligen er mindre viktig, men fordi den riktige boligen i feil område fortsatt kan bli et feil kjøp.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Sammenlign områdene før du lager en lang boligliste.",
+      "Skriv ned hva som må fungere i en vanlig uke, ikke bare på ferie.",
+      "Velg noen få boliger som representerer reelle alternativer.",
+      "Bruk visningen til å vurdere både boligen og hverdagen rundt den.",
+    ],
+    faq: [
+      {
+        question: "Bør jeg velge område før jeg velger bolig i Spania?",
+        answer:
+          "Som regel er det en god arbeidsrekkefølge. Når du først vet hvilken hverdag, avstand og type område du ønsker, blir det lettere å sammenligne boliger som faktisk passer behovene dine.",
+      },
+      {
+        question: "Hvor mange boliger bør jeg se på en visningstur?",
+        answer:
+          "Det finnes ikke ett riktig antall, men kvaliteten på utvalget er viktigere enn mengden. En kort shortlist med relevante boliger gjør det ofte enklere å sammenligne og ta gode beslutninger.",
+      },
+      {
+        question: "Hva bør jeg undersøke rundt selve boligen?",
+        answer:
+          "Se blant annet på reelle avstander, adkomst, støy, sol og orientering, service gjennom året, parkering, nærliggende utbygging og hvordan området passer måten du skal bruke boligen på.",
+      },
+    ],
+    cta: { label: "Sammenlign områder før du velger bolig", href: "/omrader" },
+  },  {
     slug: "hvorfor-god-eiendomsradgiver-er-viktig",
     title: "Hvorfor er en god eiendomsrådgiver viktig?",
     excerpt:
