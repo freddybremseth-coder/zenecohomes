@@ -36,10 +36,7 @@ const zenecoDisplay = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zenecohomes.com"),
-  title: {
-    default: "Zen Eco Homes | Moderne nybygg i Spania",
-    template: "%s | Zen Eco Homes",
-  },
+  title: "Zen Eco Homes | Moderne nybygg i Spania",
   description:
     "Norsk eiendomsrådgivning for moderne nybygg, villaer, leiligheter og tomter på Costa Blanca, Costa Blanca Sør, Costa Cálida og utvalgte innlandsområder.",
   alternates: {
