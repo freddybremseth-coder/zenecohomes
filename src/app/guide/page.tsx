@@ -102,7 +102,7 @@ function GuideCard({ article }: { article: Article }) {
 export default function GuideHub() {
   const articles = articlesInSilo("guide").filter((article) => article.slug !== "kjopsprosess-bolig-i-spania");
   const bySlug = new Map(articles.map((article) => [article.slug, article]));
-  const groupedSlugs = new Set(guideGroups.flatMap((group) => [...group.slugs]));
+  const groupedSlugs = new Set<string>(guideGroups.flatMap((group) => [...group.slugs]));
   const otherArticles = articles.filter((article) => !groupedSlugs.has(article.slug));
 
   return (
