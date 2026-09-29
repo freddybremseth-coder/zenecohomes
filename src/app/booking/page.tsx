@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Book boligprat med Freddy | Zen Eco Homes",
+  title: { absolute: "Book boligprat om bolig i Spania | Zen Eco Homes" },
   description:
     "Be om en kort, uforpliktende boligprat med Freddy Bremseth om område, budsjett, moderne nybygg og neste steg ved boligkjøp i Spania.",
   alternates: { canonical: "/booking" },
@@ -41,7 +41,7 @@ export default function BookingPage() {
             Send inn kontaktinformasjonen din og skriv gjerne når det passer best å bli kontaktet. Dette er foreløpig
             en forespørsel om samtale, ikke en automatisk kalenderbooking.
           </p>
-          <Link className="text-button" href="/om-freddy"><ArrowLeft size={16} /> Les mer om Freddy</Link>
+          <Link className="text-button" href="/om-oss/freddy"><ArrowLeft size={16} /> Les mer om Freddy</Link>
         </div>
         <div>
           <ContactForm source="zenecohomes-booking" />
