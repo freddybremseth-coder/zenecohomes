@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (cmsPost) {
     return {
-      title: `${cmsPost.title} | Zen Eco Homes`,
+      title: { absolute: `${cmsPost.title} | Zen Eco Homes` },
       description: cmsPost.summary || "Guider og innsikt fra Zen Eco Homes.",
       alternates: {
         canonical: `/magasin/${cmsPost.slug}`,
