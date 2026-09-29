@@ -7,8 +7,8 @@ import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Kjøpe bolig i Spania (2026): Guide og erfaringer",
-  description: "Skal du kjøpe bolig i Spania? Se kjøpsprosessen, kostnader, NIE, finansiering, boligtyper, visning og råd før du reserverer.",
+  title: "Kjøpe bolig i Spania (2026) | Guide med erfaringer",
+  description: "Kjøpe bolig i Spania? Få en oppdatert guide til områdevalg, kostnader, NIE, finansiering, visning, juridisk kontroll, notar og trygg overtakelse.",
   alternates: { canonical: "/guide/kjope-bolig-i-spania" },
 };
 
