@@ -45,7 +45,7 @@ const areaChoices = [
     label: "Innlandet",
     places: "Biar · Villena · Sax · Pinoso · Aspe · Novelda",
     description: "Mer plass, større tomter, natur og mulighet for moderne villa eller eget byggeprosjekt.",
-    href: "/inland",
+    href: "/omrader/innlandet",
   },
   {
     label: "Costa Cálida",
