@@ -13,6 +13,7 @@ const booksUrl = "https://books.freddybremseth.com";
 const bookUrl = (slug: string) => `${booksUrl}/book/${slug}`;
 
 const articleCovers: Record<string, string> = {
+  "boligmarkedet-costa-blanca-hosten-2026": "/assets/areas.jpg",
   "omradeguide-eiendomskjop-i-spania": "/assets/magasin-covers/omradevalg.svg",
   "guide-tomtekjop-bygging-i-spania": "/assets/magasin-covers/tomt-bygg.svg",
   "kjop-bolig-i-spania-na-eller-vente": "/assets/magasin-covers/kjope-na.svg",
