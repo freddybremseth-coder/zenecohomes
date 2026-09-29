@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { connection } from "next/server";
 import { ArrowRight, Leaf, ShieldCheck, Snowflake, Sun, Zap } from "lucide-react";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { GuideDownload } from "@/components/GuideDownload";
@@ -22,9 +22,9 @@ import { CARE_URL, homeHreflang, homeLanguageLinks } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Moderne nybygg i Spania | Norsk eiendomsrådgivning | Zen Eco Homes",
+  title: "Nybygg i Spania | Norsk rådgivning | Zen Eco Homes",
   description:
-    "Finn og sammenlign moderne nybygg, villaer, leiligheter og prosjekter på Costa Blanca. Norsk eiendomsrådgivning med kjøperens behov i sentrum.",
+    "Nybygg i Spania med norsk rådgivning. Sammenlign villaer, leiligheter, områder og prosjekter på Costa Blanca før du bestiller visning eller reserverer.",
   alternates: { canonical: "/", languages: homeHreflang() },
 };
 
@@ -45,7 +45,7 @@ const areaChoices = [
     label: "Innlandet",
     places: "Biar · Villena · Sax · Pinoso · Aspe · Novelda",
     description: "Mer plass, større tomter, natur og mulighet for moderne villa eller eget byggeprosjekt.",
-    href: "/inland",
+    href: "/omrader/innlandet",
   },
   {
     label: "Costa Cálida",
@@ -56,15 +56,11 @@ const areaChoices = [
 ];
 
 export default async function Home() {
-  await connection();
   const regionKeys = regions.map((r) => r.key);
-  const allProps = await getProperties(0, "zeneco");
-  const shuffled = [...allProps];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  const properties = shuffled.slice(0, 6);
+  // Begrens datasettet som serialiseres til forsiden. Dette gjør siden cachebar
+  // og reduserer både serverarbeid og klient-payload uten å endre boligsøket.
+  const allProps = await getProperties(120, "zeneco");
+  const properties = allProps.slice(0, 6);
   const withRegions = allProps.map((p) => ({
     p,
     rk: regionKeys.filter((k) => propertyMatchesRegion(p, k)),
@@ -96,9 +92,14 @@ export default async function Home() {
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
 
       <section id="top" className="hero">
-        <video className="hero-video" autoPlay muted loop playsInline poster="/assets/areas.jpg">
-          <source src="/assets/hero-video.mp4" type="video/mp4" />
-        </video>
+        <Image
+          className="hero-video"
+          src="/assets/areas.jpg"
+          alt="Moderne boliger på Costa Blanca i Spania"
+          fill
+          sizes="100vw"
+          priority
+        />
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="eyebrow">Norsk eiendomsrådgivning · Moderne nybygg på Costa Blanca</p>
@@ -218,7 +219,7 @@ export default async function Home() {
             <strong>02</strong>
             <h3>Moderne nybygg i fokus</h3>
             <p>Vi sammenligner prosjekt, beliggenhet, pris, kvaliteter, betalingsplan og alternativer.</p>
-            <Link className="text-button" href="/nybygg-costa-blanca">Se nybygg-guiden <ArrowRight size={16} /></Link>
+            <Link className="text-button" href="/guide/nybygg-i-spania">Se nybygg-guiden <ArrowRight size={16} /></Link>
           </article>
           <article>
             <strong>03</strong>
