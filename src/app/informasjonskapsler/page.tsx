@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Informasjonskapsler og sporing | Zen Eco Homes",
+  title: { absolute: "Informasjonskapsler og sporing | Zen Eco Homes Spania" },
   description:
     "Se hvilke lagrings- og måleteknologier Zen Eco Homes bruker, hva de gjør og hvordan nettstedets begrensede søketrafikkmåling er utformet.",
   alternates: { canonical: "/informasjonskapsler" },
