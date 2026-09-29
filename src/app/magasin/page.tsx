@@ -126,9 +126,9 @@ function hrefForSlug(slug: string): string {
 }
 
 export const metadata = {
-  title: "Magasin | Guider om boligkjøp i Spania",
+  title: "Magasin om bolig og livet i Spania | Zen Eco Homes",
   description:
-    "Praktiske guider for nordmenn som vurderer bolig, tomt, nybygg, finansiering og kjøpsprosess i Spania.",
+    "Les markedsoppdateringer, lokale nyheter og artikler om boligmarkedet, områdene, prisutvikling og hverdagslivet i Spania fra Zen Eco Homes i dag.",
   alternates: {
     canonical: "/magasin",
   },
