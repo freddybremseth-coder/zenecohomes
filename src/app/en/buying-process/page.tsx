@@ -6,9 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Buying property in Spain | Step-by-step guide",
-  description:
-    "A practical overview of buying property in Spain, from needs and shortlist to reservation, legal checks, contract, notary and handover.",
+  title: "Buying Property in Spain | Buying Process | Zen Eco Homes",
+  description: "Buying property in Spain step by step: needs, search, viewings, reservation, lawyer, NIE, notary, handover and practical follow-up after purchase.",
   alternates: { canonical: "/en/buying-process" },
 };
 
