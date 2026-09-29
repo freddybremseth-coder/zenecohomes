@@ -140,7 +140,7 @@ export function SeoLandingView({ page, locale, eq }: Props) {
               <strong>{t.relatedHeading}</strong>
               <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
                 {page.related.map((item) => (
-                  <Link key={item.href} href={item.href} style={{ color: "var(--gold)", lineHeight: 1.45 }}>
+                  <Link key={item.href} href={item.href} style={{ color: "var(--gold-dark)", lineHeight: 1.45 }}>
                     {item.label}
                   </Link>
                 ))}
