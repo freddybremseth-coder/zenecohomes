@@ -87,7 +87,7 @@ export function PortalSelectedAreas() {
     const areaText = String(preferences.area || "");
     const regionText = normalize(preferences.region);
     const tokens = areaText
-      .split(/[,;/\n]+/)
+      .split(/[,;\/\n]+/)
       .map((item) => normalize(item))
       .filter(Boolean);
 
