@@ -49,7 +49,7 @@ export default function AboutPage() {
             bakgrunn fra salg, teknologi, web, foto og kommunikasjon.
           </p>
           <p>
-            Utdannings- og fagbakgrunnen omfatter BI, IT Akademiet, EDB-skolen, Google, WEB Academy og
+            Utdannings- og fagbakgrunnen omfatter BI, IT Akademiet, EDB-skolen, Google, Ecademy og
             Selgerskolen, i tillegg til ett år foto og ett år mediedesign ved Idefagskolen. Den bredden bruker
             han til å gjøre komplekse valg enklere å forstå og til å gi kundene et bedre beslutningsgrunnlag.
           </p>
