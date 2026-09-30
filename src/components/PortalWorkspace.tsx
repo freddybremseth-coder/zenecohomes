@@ -345,6 +345,8 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     compare: "Immobilien vergleichen",
     documentsTitle: "Dokumente",
     documentsEmpty: "Es wurden noch keine Dokumente mit Ihnen geteilt.",
+    guidesTitle: "Ratgeber passend zu Ihrer Immobiliensuche",
+    guidesIntro: "Wir zeigen Ratgeber passend zu Ihren gespeicherten Regionen und Wünschen.",
     readMore: "Mehr lesen",
     readLess: "Weniger anzeigen",
     calculatorTitle: "Kaufrechner",
