@@ -5102,3 +5102,52 @@ footer {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+
+/* Freddy profile CTA — scoped contrast on light background */
+.freddy-profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.freddy-profile-actions .contact-button {
+  background: var(--dark);
+  color: #fff;
+  border: 1px solid var(--dark);
+  box-shadow: none;
+}
+
+.freddy-profile-actions .contact-button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #16222b;
+}
+
+.freddy-profile-actions .text-button {
+  min-height: 54px;
+  padding: 0 22px;
+  border: 1px solid rgba(22, 34, 43, 0.22);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--dark);
+}
+
+.freddy-profile-actions .text-button:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .freddy-profile-actions {
+    align-items: stretch;
+  }
+
+  .freddy-profile-actions .contact-button,
+  .freddy-profile-actions .text-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
