@@ -9,6 +9,8 @@ import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
 import { TrackedPortalJourneyStatus } from "@/components/TrackedPortalJourneyStatus";
 import { PortalSinceLast } from "@/components/PortalSinceLast";
+import { PortalCriteriaConfirmation } from "@/components/PortalCriteriaConfirmation";
+import { PortalSelectedAreas } from "@/components/PortalSelectedAreas";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 const benefits = [
@@ -97,8 +99,10 @@ export default function PortalPage() {
       <section className="min-side-signed-in-top">
         <div className="min-side-signed-in-inner">
           <PortalSinceLast locale="no" />
+          <PortalCriteriaConfirmation />
           <TrackedPortalJourneyStatus />
           <PersonalizedPortalMatches locale="no" />
+          <PortalSelectedAreas />
         </div>
       </section>
 
