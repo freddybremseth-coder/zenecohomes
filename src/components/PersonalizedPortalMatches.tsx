@@ -10,6 +10,7 @@ type MatchProperty = {
   ref?: string;
   title?: string;
   location?: string;
+  area?: string;
   price?: number;
   bedrooms?: number;
   bathrooms?: number;
@@ -243,7 +244,7 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
     const typeNeedle = searchType.trim().toLowerCase();
 
     return properties
-      .filter((property) => !areaNeedle || String(property.location || "").toLowerCase().includes(areaNeedle) || String(property.title || "").toLowerCase().includes(areaNeedle))
+      .filter((property) => !areaNeedle || String(property.location || "").toLowerCase().includes(areaNeedle) || String(property.area || "").toLowerCase().includes(areaNeedle) || String(property.title || "").toLowerCase().includes(areaNeedle))
       .filter((property) => !maxPrice || !property.price || Number(property.price) <= maxPrice)
       .filter((property) => !minBedrooms || Number(property.bedrooms || 0) >= minBedrooms)
       .filter((property) => !typeNeedle || String(property.property_type || "").toLowerCase().includes(typeNeedle))
