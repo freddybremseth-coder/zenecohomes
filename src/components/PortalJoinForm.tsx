@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { ArrowRight, Loader2, Mail, UserRoundPlus } from "lucide-react";
+import { ArrowRight, Loader2, Mail, Phone, UserRoundPlus } from "lucide-react";
 
 export function PortalJoinForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -32,13 +32,18 @@ export function PortalJoinForm() {
 
   return (
     <section className="portal-join-card" aria-labelledby="portal-join-title">
-      <div>
-        <p className="eyebrow">Ny kunde</p>
-        <h2 id="portal-join-title">Opprett Min side</h2>
-        <p>
-          Få boligforslag, søkekriterier, favoritter, guider, dokumenter og meldinger samlet på ett sted.
-          Etter innsending får du en e-post med en sikker aktiveringslenke.
-        </p>
+      <div className="portal-card-heading">
+        <div className="portal-card-icon portal-card-icon-gold" aria-hidden="true">
+          <UserRoundPlus size={22} />
+        </div>
+        <div>
+          <p className="eyebrow">Ny kunde</p>
+          <h2 id="portal-join-title">Opprett Min side</h2>
+          <p className="portal-card-intro">
+            Få boligforslag, søkekriterier, favoritter, guider, dokumenter og meldinger samlet på ett sted.
+            Etter innsending får du en e-post med en sikker aktiveringslenke.
+          </p>
+        </div>
       </div>
 
       {status === "sent" ? (
@@ -64,9 +69,12 @@ export function PortalJoinForm() {
           </label>
           <label>
             Telefon <span>(valgfritt)</span>
-            <input name="phone" type="tel" autoComplete="tel" placeholder="+47 ..." />
+            <div className="portal-input-wrap">
+              <Phone size={17} />
+              <input name="phone" type="tel" autoComplete="tel" placeholder="+47 ..." />
+            </div>
           </label>
-          <button className="contact-button" type="submit" disabled={status === "sending"}>
+          <button className="portal-create-button" type="submit" disabled={status === "sending"}>
             {status === "sending" ? <Loader2 size={18} className="spin" /> : <ArrowRight size={18} />}
             {status === "sending" ? "Sender…" : "Opprett Min side"}
           </button>
