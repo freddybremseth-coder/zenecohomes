@@ -627,6 +627,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
       } catch {
         // Saving to CRM succeeded; local persistence is only a convenience.
       }
+      window.dispatchEvent(new CustomEvent("zeneco:portal-preferences-updated", { detail: preferences }));
       setSignalStatus("saved");
     } else {
       setSignalStatus("error");
