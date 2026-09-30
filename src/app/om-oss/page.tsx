@@ -43,7 +43,16 @@ export default function AboutPage() {
         <article>
           <span>Eiendomsrådgivning</span>
           <h3>Freddy Bremseth</h3>
-          <p>Eiendomsrådgiver med base på Costa Blanca og fokus på nordmenn som kjøper bolig i Spania.</p>
+          <p>
+            Freddy er eiendomsrådgiver med base på Costa Blanca og hjelper nordmenn med å finne riktig
+            område, bolig og vei gjennom kjøpsprosessen i Spania. Han kombinerer lokal markedskunnskap med
+            bakgrunn fra salg, teknologi, web, foto og kommunikasjon.
+          </p>
+          <p>
+            Utdannings- og fagbakgrunnen omfatter BI, IT Akademiet, EDB-skolen, Google, WEB Academy og
+            Selgerskolen, i tillegg til ett år foto og ett år mediedesign ved Idefagskolen. Den bredden bruker
+            han til å gjøre komplekse valg enklere å forstå og til å gi kundene et bedre beslutningsgrunnlag.
+          </p>
           <Link className="text-button" href="/om-oss/freddy">Les om Freddy <ArrowRight size={16}/></Link>
         </article>
         <article>
