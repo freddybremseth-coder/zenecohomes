@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Building2, CheckCircle2, Loader2, RefreshCw, Sparkles, ThumbsDown, ThumbsUp } from "lucide-react";
+import { Building2, CheckCircle2, Loader2, RefreshCw, ThumbsDown, ThumbsUp } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase-browser";
 
