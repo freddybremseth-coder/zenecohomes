@@ -612,6 +612,19 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   }, [sessionEmail]);
 
   useEffect(() => {
+    const onAskAboutProperty = (event: Event) => {
+      const detail = (event as CustomEvent<{ ref?: string; title?: string }>).detail || {};
+      const ref = detail.ref ? ` (${detail.ref})` : "";
+      const title = detail.title || "denne boligen";
+      setMessageText(`Hei, jeg vil gjerne vite mer om ${title}${ref}.`);
+      setMessageStatus("idle");
+    };
+
+    window.addEventListener("zeneco:portal-ask-about-property", onAskAboutProperty);
+    return () => window.removeEventListener("zeneco:portal-ask-about-property", onAskAboutProperty);
+  }, []);
+
+  useEffect(() => {
     if (!sessionEmail || !supabase) return;
 
     supabase.auth.getSession().then(({ data }) => {
