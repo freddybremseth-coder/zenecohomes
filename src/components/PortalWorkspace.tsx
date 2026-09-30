@@ -129,8 +129,6 @@ type PortalStrings = {
   savingPreferences: string;
   preferencesSaved: string;
   preferencesError: string;
-  alertsLabel: string;
-  alertsHelp: string;
   favoritesTitle: string;
   favoritesEmpty: string;
   compare: string;
@@ -203,8 +201,6 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     savingPreferences: "Lagrer…",
     preferencesSaved: "Ønskene er lagret. Freddy får beskjed om oppdateringen.",
     preferencesError: "Kunne ikke lagre ønskene akkurat nå.",
-    alertsLabel: "Gi meg beskjed når nye boliger matcher",
-    alertsHelp: "Zen Eco Homes kan sende deg relevante nye boliger basert på disse kriteriene.",
     favoritesTitle: "Favoritter",
     favoritesEmpty: "Du har ikke lagret noen favoritter ennå.",
     compare: "Sammenlign boliger",
@@ -275,8 +271,6 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     savingPreferences: "Saving…",
     preferencesSaved: "Your preferences are saved. Freddy is notified about the update.",
     preferencesError: "Could not save your preferences right now.",
-    alertsLabel: "Notify me when new properties match",
-    alertsHelp: "Zen Eco Homes can send relevant new properties based on these criteria.",
     favoritesTitle: "Favourites",
     favoritesEmpty: "You have not saved any favourites yet.",
     compare: "Compare properties",
@@ -347,8 +341,6 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     savingPreferences: "Wird gespeichert…",
     preferencesSaved: "Ihre Wünsche wurden gespeichert. Freddy wird über die Aktualisierung informiert.",
     preferencesError: "Ihre Wünsche konnten gerade nicht gespeichert werden.",
-    alertsLabel: "Benachrichtigen, wenn neue Immobilien passen",
-    alertsHelp: "Zen Eco Homes kann passende neue Immobilien anhand dieser Kriterien senden.",
     favoritesTitle: "Favoriten",
     favoritesEmpty: "Sie haben noch keine Favoriten gespeichert.",
     compare: "Immobilien vergleichen",
@@ -458,7 +450,6 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   });
   const [preferences, setPreferences] = useState<Preferences>(initialPreferences);
   const [signalStatus, setSignalStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
-  const [alertsEnabled, setAlertsEnabled] = useState(true);
 
   useEffect(() => {
     function loadFavorites() {
@@ -498,71 +489,9 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
     if (!sessionEmail || !supabase) return;
 
     let cancelled = false;
-
-    async function loadPortalFavorites() {
-      const { data } = await supabase.auth.getSession();
-      const token = data.session?.access_token;
-      if (!token) return;
-
-      try {
-        const res = await fetch("/api/portal/favorites", {
-          headers: { Authorization: `Bearer ${token}` },
-          cache: "no-store",
-        });
-        const body = await res.json().catch(() => ({}));
-        if (!res.ok || !Array.isArray(body.favorites) || cancelled) return;
-
-        const remoteFavorites: SavedProperty[] = body.favorites.map((property: any) => ({
-          ref: String(property.ref || property.id || ""),
-          title: String(property.title || property.ref || "Bolig"),
-          location: String(property.location || ""),
-          price: property.price ? formatEuro(Number(property.price), locale) : "",
-          href: locale === "en"
-            ? `/en/properties/${encodeURIComponent(property.ref || property.id)}`
-            : locale === "de"
-              ? `/de/immobilien/${encodeURIComponent(property.ref || property.id)}`
-              : `/eiendommer/${encodeURIComponent(property.ref || property.id)}`,
-        }));
-
-        setFavorites(remoteFavorites);
-        try {
-          localStorage.setItem("zeneco:favorites", JSON.stringify(remoteFavorites));
-        } catch {
-          // Server copy remains authoritative.
-        }
-      } catch {
-        // Keep local favorites if server sync is unavailable.
-      }
-    }
-
-    void loadPortalFavorites();
-    window.addEventListener("zeneco:portal-favorites-updated", loadPortalFavorites);
-    return () => {
-      cancelled = true;
-      window.removeEventListener("zeneco:portal-favorites-updated", loadPortalFavorites);
-    };
-  }, [sessionEmail, locale]);
-
-  useEffect(() => {
-    if (!sessionEmail || !supabase) return;
-
-    let cancelled = false;
     supabase.auth.getSession().then(async ({ data }) => {
       const token = data.session?.access_token;
       if (!token) return;
-
-      try {
-        const savedSearchRes = await fetch("/api/portal/saved-search", {
-          headers: { Authorization: `Bearer ${token}` },
-          cache: "no-store",
-        });
-        const savedSearchBody = await savedSearchRes.json().catch(() => ({}));
-        if (!cancelled && savedSearchBody?.search) {
-          setAlertsEnabled(savedSearchBody.search.alerts_enabled !== false);
-        }
-      } catch {
-        // Alert preference defaults to enabled.
-      }
 
       try {
         const res = await fetch("/api/portal/preferences", {
@@ -697,30 +626,16 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
       return;
     }
 
-    const [res, savedSearchRes] = await Promise.all([
-      fetch("/api/portal/preferences", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ preferences }),
-      }),
-      fetch("/api/portal/saved-search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          name: "Mitt boligsøk",
-          criteria: preferences,
-          alertsEnabled,
-        }),
-      }),
-    ]);
+    const res = await fetch("/api/portal/preferences", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ preferences }),
+    });
 
-    if (res.ok && savedSearchRes.ok) {
+    if (res.ok) {
       try {
         localStorage.setItem(`zeneco:portal-preferences:${sessionEmail}`, JSON.stringify(preferences));
       } catch {
@@ -951,18 +866,6 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
                   placeholder={p.notesPlaceholder}
                   value={preferences.notes}
                 />
-              </label>
-
-              <label className="portal-alert-toggle">
-                <input
-                  checked={alertsEnabled}
-                  onChange={(event) => setAlertsEnabled(event.target.checked)}
-                  type="checkbox"
-                />
-                <span>
-                  <strong>{p.alertsLabel}</strong>
-                  <small>{p.alertsHelp}</small>
-                </span>
               </label>
 
               <button disabled={signalStatus === "saving"} type="submit">
