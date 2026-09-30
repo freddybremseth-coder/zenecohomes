@@ -119,7 +119,14 @@ export default async function ArticlePage({ params }: PageProps) {
                 className="mb-10 aspect-[16/9] w-full rounded-2xl object-cover"
               />
             ) : null}
-            <MarkdownArticle markdown={cmsPost.markdown} />
+            <MarkdownArticle
+              markdown={cmsPost.markdown}
+              attributionSlug={
+                cmsPost.tags.includes("marked-akkurat-na") || cmsPost.tags.includes("nexus-editorial-signal")
+                  ? cmsPost.slug
+                  : undefined
+              }
+            />
           </div>
         </section>
         <Footer />
