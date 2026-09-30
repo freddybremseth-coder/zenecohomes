@@ -49,8 +49,17 @@ export default function AboutPage() {
         <article>
           <span>Kunder · Markedsføring · SEO</span>
           <h3>Andrea Thorsnes Karlsen</h3>
-          <p>Jobber med kunder, markedsføring, SEO og utvikling av Zen Eco Homes og Pinoso EcoLife.</p>
-          <Link className="text-button" href="/om-oss/andrea">Les om Andrea <ArrowRight size={16}/></Link>
+          <p>
+            Andrea arbeider med kundeoppfølging, markedsføring, SEO, nettside og innhold. Målet er at
+            boligkjøpere skal finne riktig informasjon tidligere og få en enklere vei fra research til
+            rådgivning.
+          </p>
+          <p>
+            Hun kombinerer egen erfaring som boligkjøper i Spania med bakgrunn fra forretningsutvikling,
+            kundereise og digital synlighet – og hjelper kundene med å forstå områder, sortere muligheter og
+            finne et tydelig neste steg.
+          </p>
+          <Link className="text-button" href="/om-oss/andrea">Les Andreas historie <ArrowRight size={16}/></Link>
         </article>
       </div>
     </section>
