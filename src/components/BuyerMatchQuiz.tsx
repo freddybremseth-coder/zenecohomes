@@ -51,10 +51,53 @@ const dreamAdvice: Record<string, { title: string; text: string; href: string }>
   },
 };
 
+
+const regionKeys: Record<string, string> = {
+  "Costa Blanca Nord": "costa-blanca-nord",
+  "Costa Blanca Sør": "costa-blanca-sor",
+  "Costa Calida": "costa-calida",
+};
+
+function parseBudget(value?: string) {
+  if (!value) return 0;
+  const normalized = value.trim().toLowerCase().replace(",", ".");
+  const compact = normalized.replace(/\s+/g, "");
+  const kMatch = compact.match(/([\d.]+)k\b/);
+  if (kMatch) return Math.round(Number(kMatch[1]) * 1000);
+  const mMatch = compact.match(/([\d.]+)m\b/);
+  if (mMatch) return Math.round(Number(mMatch[1]) * 1000000);
+  const digits = compact.replace(/[^\d]/g, "");
+  const parsed = Number(digits);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function lifestyleFilter(value?: string) {
+  if (value === "Golf og resort") return "golf";
+  if (value === "Strand og restauranter") return "sea";
+  return "";
+}
+
+function buildMatchHref(data: Record<string, string>) {
+  const query = new URLSearchParams();
+  const region = regionKeys[data.preferred_area || ""];
+  const budget = parseBudget(data.budget);
+  const bedrooms = Number(data.bedrooms || 0);
+  const lifestyle = lifestyleFilter(data.lifestyle);
+
+  if (region) query.set("region", region);
+  if (budget > 0) query.set("maxPrice", String(budget));
+  if (bedrooms > 0) query.set("bedrooms", String(bedrooms));
+  if (lifestyle) query.set("lifestyle", lifestyle);
+  query.set("match", "quiz");
+
+  return `/eiendommer?${query.toString()}#boliger`;
+}
+
 export function BuyerMatchQuiz() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [resultArea, setResultArea] = useState("Usikker");
   const [resultDream, setResultDream] = useState("Usikker");
+  const [matchHref, setMatchHref] = useState("/eiendommer");
 
   const result = useMemo(
     () => dreamAdvice[resultDream] || areaAdvice[resultArea] || areaAdvice.Usikker,
@@ -70,6 +113,8 @@ export function BuyerMatchQuiz() {
     const preferredArea = data.preferred_area || "Usikker";
     setResultArea(preferredArea);
     setResultDream(data.dream || "Usikker");
+    const filteredHref = buildMatchHref(data);
+    setMatchHref(filteredHref);
 
     const message = [
       `Boligmatch-quiz: ${data.dream || "Ikke valgt"}`,
@@ -97,6 +142,7 @@ export function BuyerMatchQuiz() {
 
     if (res.ok) {
       setStatus("sent");
+      window.location.assign(filteredHref);
     } else {
       setStatus("error");
     }
@@ -219,8 +265,8 @@ export function BuyerMatchQuiz() {
           <p className="eyebrow">Foreløpig anbefaling</p>
           <h3>{result.title}</h3>
           <p>{result.text}</p>
-          <a className="text-button" href={result.href}>
-            Se aktuelle boliger <ArrowRight size={18} />
+          <a className="text-button" href={matchHref === "/eiendommer" ? result.href : matchHref}>
+            Se boligene som matcher <ArrowRight size={18} />
           </a>
         </aside>
       </div>
