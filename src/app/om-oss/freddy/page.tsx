@@ -250,7 +250,7 @@ export default function FreddyPage() {
             <br /><a href="https://www.freddybremseth.com/" target="_blank" rel="noopener noreferrer">Se Freddy Bremseths samlede profil, bøker og prosjekter</a>
           </p>
 
-          <div className="hero-actions" style={{ marginTop: 8 }}>
+          <div className="hero-actions freddy-profile-actions">
             <Link className="contact-button" href="/booking">
               <CalendarClock size={18} /> Be om en 15-minutters boligprat
             </Link>
