@@ -959,7 +959,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
             </form>
           </article>
 
-          <article className="portal-panel">
+          <article className="portal-panel" id="portal-favorites">
             <div className="panel-title">
               <Heart size={20} />
               <h3>{p.favoritesTitle}</h3>
@@ -986,7 +986,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
             )}
           </article>
 
-          <article className="portal-panel">
+          <article className="portal-panel" id="portal-documents">
             <div className="panel-title">
               <FileText size={20} />
               <h3>{p.documentsTitle}</h3>
@@ -1113,7 +1113,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
             </div>
           </article>
 
-          <article className="portal-panel wide-panel">
+          <article className="portal-panel wide-panel" id="portal-messages">
             <div className="panel-title">
               <MessageSquareText size={20} />
               <h3>{p.messagesTitle}</h3>
