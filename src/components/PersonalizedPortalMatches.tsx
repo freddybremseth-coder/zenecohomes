@@ -287,7 +287,7 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
   if (!sessionReady || !signedIn) return null;
 
   return (
-    <article className="portal-properties-focus">
+    <article className="portal-properties-focus" id="portal-properties">
       <div className="portal-properties-heading">
         <div>
           <p className="eyebrow">{t.eyebrow}</p>
