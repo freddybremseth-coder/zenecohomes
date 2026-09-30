@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
 import type { Article } from "@/lib/content";
+import { withArticleAttribution } from "@/lib/article-attribution";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
 
 const BASE = "https://www.zenecohomes.com";
@@ -879,7 +880,7 @@ export function ArticleView({ article }: { article: Article }) {
                     <nav className="article-context-links" aria-label={`Relaterte guider til ${section.heading}`}>
                       <span>Les også</span>
                       {contextualLinks.map((link) => (
-                        <Link href={link.href} key={link.href}>
+                        <Link href={withArticleAttribution(link.href, article.slug, isCurrentMarketArticle)} key={link.href}>
                           {link.label} <ArrowRight size={14} />
                         </Link>
                       ))}
@@ -898,7 +899,7 @@ export function ArticleView({ article }: { article: Article }) {
                 ))}
               </ol>
               {article.cta && (
-                <Link className="contact-button" href={article.cta.href}>
+                <Link className="contact-button" href={withArticleAttribution(article.cta.href, article.slug, isCurrentMarketArticle)}>
                   {article.cta.label} <ArrowRight size={17} />
                 </Link>
               )}
@@ -927,7 +928,7 @@ export function ArticleView({ article }: { article: Article }) {
                   ? "Vi hjelper virksomheten å vurdere modell, budsjett, område, boligtype, drift og neste steg."
                   : "Vi hjelper deg å vurdere område, budsjett, boligtype, risiko og neste steg før du reserverer."}
               </p>
-              <Link className="contact-button" href={isCorporate ? "/bedriftshytte-spania#bedriftsvurdering" : "/booking"}>
+              <Link className="contact-button" href={isCorporate ? "/bedriftshytte-spania#bedriftsvurdering" : withArticleAttribution("/booking", article.slug, isCurrentMarketArticle)}>
                 {isCorporate ? "Be om bedriftsvurdering" : "Få rådgivning"} <ArrowRight size={17} />
               </Link>
             </section>
