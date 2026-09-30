@@ -164,6 +164,12 @@ export type LeadPayload = {
   financing_status?: string;
   spain_experience?: string;
   next_step?: string;
+  dream?: string;
+  goal?: string;
+  priority?: string;
+  lifestyle?: string;
+  airport?: string;
+  rental?: string;
   message?: string;
   source?: string;
   property_ref?: string;
