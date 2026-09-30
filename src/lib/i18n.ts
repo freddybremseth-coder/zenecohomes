@@ -206,6 +206,7 @@ export function navLinks(locale: SiteLocale): NavLink[] {
     },
     { label: "Om oss", href: "/om-oss" },
     { label: "Kundeomtaler", href: "/kundeomtaler" },
+    { label: "Min side", href: "/min-side" },
     { label: "Få rådgivning", href: "/booking", cta: true },
   ];
 }
