@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Heart } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Heart } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 
 type Favorite = {
@@ -19,14 +20,15 @@ type Favorite = {
   type?: string;
 };
 
-const labels: Record<Locale, { saved: string; save: string }> = {
-  no: { saved: "Lagret", save: "Lagre favoritt" },
-  de: { saved: "Gespeichert", save: "Favorit speichern" },
-  en: { saved: "Saved", save: "Save favourite" },
+const labels: Record<Locale, { saved: string; save: string; offer: string; portal: string }> = {
+  no: { saved: "Lagret", save: "Lagre favoritt", offer: "Vil du samle favoritter og boligmatch på Min side?", portal: "Åpne / opprett Min side" },
+  de: { saved: "Gespeichert", save: "Favorit speichern", offer: "Favoriten und passende Immobilien in Mein Bereich sammeln?", portal: "Mein Bereich öffnen" },
+  en: { saved: "Saved", save: "Save favourite", offer: "Keep favourites and property matches in My account?", portal: "Open / create My account" },
 };
 
 export function FavoriteButton({ favorite, locale = "no" }: { favorite: Favorite; locale?: Locale }) {
   const [saved, setSaved] = useState(false);
+  const [showPortalOffer, setShowPortalOffer] = useState(false);
   const text = labels[locale];
 
   useEffect(() => {
@@ -40,13 +42,27 @@ export function FavoriteButton({ favorite, locale = "no" }: { favorite: Favorite
       ? favorites.filter((item) => item.ref !== favorite.ref)
       : [favorite, ...favorites.filter((item) => item.ref !== favorite.ref)].slice(0, 20);
     localStorage.setItem("zeneco:favorites", JSON.stringify(next));
-    setSaved(!saved);
+    const nextSaved = !saved;
+    setSaved(nextSaved);
+    setShowPortalOffer(nextSaved);
     window.dispatchEvent(new Event("zeneco:favorites-updated"));
   }
 
+  const portalHref = locale === "en" ? "/en/min-side?from=favorite" : locale === "de" ? "/de/min-side?from=favorite" : "/min-side?from=favorite";
+
   return (
-    <button className={`favorite-button${saved ? " active" : ""}`} type="button" onClick={toggleFavorite}>
-      <Heart size={17} /> {saved ? text.saved : text.save}
-    </button>
+    <div className="favorite-action-wrap">
+      <button className={`favorite-button${saved ? " active" : ""}`} type="button" onClick={toggleFavorite}>
+        <Heart size={17} /> {saved ? text.saved : text.save}
+      </button>
+      {showPortalOffer && saved && (
+        <div className="favorite-portal-offer" role="status">
+          <span>{text.offer}</span>
+          <Link href={portalHref}>
+            {text.portal} <ArrowRight size={15} />
+          </Link>
+        </div>
+      )}
+    </div>
   );
 }
