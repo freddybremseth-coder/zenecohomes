@@ -59,6 +59,7 @@ const strings = {
     bedroom: "sov",
     bathroom: "bad",
     feedbackError: "Kunne ikke lagre tilbakemeldingen akkurat nå.",
+    askAdvisor: "Spør rådgiver om denne",
   },
   en: {
     eyebrow: "Your personal property list",
@@ -85,6 +86,7 @@ const strings = {
     bedroom: "beds",
     bathroom: "baths",
     feedbackError: "Could not save your feedback right now.",
+    askAdvisor: "Ask your adviser about this",
   },
   de: {
     eyebrow: "Ihre persönliche Immobilienliste",
@@ -111,6 +113,7 @@ const strings = {
     bedroom: "Schlafz.",
     bathroom: "Bäder",
     feedbackError: "Ihre Rückmeldung konnte gerade nicht gespeichert werden.",
+    askAdvisor: "Berater zu dieser Immobilie fragen",
   },
 } as const;
 
@@ -250,6 +253,17 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
       .filter((property) => !typeNeedle || String(property.property_type || "").toLowerCase().includes(typeNeedle))
       .slice(0, 12);
   }, [properties, searchArea, searchMaxPrice, searchBedrooms, searchType]);
+
+  function askAdvisor(property: MatchProperty) {
+    const detail = {
+      ref: property.ref || property.id,
+      title: property.title || property.ref || property.id,
+    };
+    window.dispatchEvent(new CustomEvent("zeneco:portal-ask-about-property", { detail }));
+    window.setTimeout(() => {
+      document.getElementById("portal-messages")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  }
 
   async function sendFeedback(propertyId: string, action: "interested" | "not_for_me") {
     if (!supabase) return;
@@ -396,6 +410,9 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
                     </button>
                     <button type="button" disabled={state?.status === "saving"} onClick={() => void sendFeedback(property.id, "not_for_me")}>
                       {state?.status === "saving" && state.action === "not_for_me" ? <Loader2 size={14} className="spin" /> : <ThumbsDown size={14} />} {t.notForMe}
+                    </button>
+                    <button type="button" onClick={() => askAdvisor(property)}>
+                      {t.askAdvisor}
                     </button>
                   </div>
                   {state?.status === "saved" && <p className="form-success">{state.action === "interested" ? t.savedInterested : t.savedNo}</p>}
