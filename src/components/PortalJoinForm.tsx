@@ -26,8 +26,20 @@ export function PortalJoinForm() {
       }),
     });
 
-    setStatus(res.ok ? "sent" : "error");
-    if (res.ok) form.reset();
+    if (res.ok) {
+      const email = String(data.email || "").trim().toLowerCase();
+      if (email) {
+        await fetch("/api/portal/magic-link", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, locale: "no" }),
+        }).catch(() => null);
+      }
+      setStatus("sent");
+      form.reset();
+    } else {
+      setStatus("error");
+    }
   }
 
   return (
@@ -49,7 +61,7 @@ export function PortalJoinForm() {
       {status === "sent" ? (
         <div className="form-success">
           <strong>Sjekk e-posten din.</strong>
-          <p>Vi har sendt bekreftelse og tilbud om å aktivere Min side.</p>
+          <p>Vi har sendt en sikker e-postlenke slik at du kan åpne Min side med en gang.</p>
         </div>
       ) : (
         <form onSubmit={submit} className="portal-join-form">
