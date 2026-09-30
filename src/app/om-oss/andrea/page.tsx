@@ -6,8 +6,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Andrea Thorsnes Karlsen | Zen Eco Homes og bolig i Spania",
-  description: "Møt Andrea Thorsnes Karlsen i Zen Eco Homes. Hun jobber med kunder, markedsføring, SEO og utvikling av tydeligere informasjon for boligkjøpere i Spania.",
+  title: "Andrea Thorsnes Karlsen | Fra drøm til virkelighet | Zen Eco Homes",
+  description:
+    "Møt Andrea Thorsnes Karlsen i Zen Eco Homes. Les om familiens flytting til Aspe, hennes egen erfaring som boligkjøper i Spania og hvordan hun hjelper norske kunder.",
   alternates: { canonical: "/om-oss/andrea" },
 };
 
@@ -15,73 +16,264 @@ export default function AndreaPage() {
   return (
     <main className="andrea-profile-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
+
       <section className="page-hero compact-hero">
         <p className="eyebrow">Andrea Thorsnes Karlsen · Zen Eco Homes</p>
-        <h1>Kunder, markedsføring og bedre boligvalg</h1>
+        <h1>Fra drøm til virkelighet</h1>
         <p>
-          Andrea arbeider med kundeoppfølging, markedsføring, SEO og utvikling av Zen Eco Homes.
-          Målet er at kunder skal finne riktig informasjon tidligere og få en enklere vei fra research til rådgivning.
+          Andrea kjenner boligkjøpet i Spania fra begge sider – både som rådgiver og som kjøper som selv
+          har valgt å flytte familien fra Norge til Costa Blanca.
         </p>
         <div className="hero-actions">
-          <Link className="contact-button" href="/booking">Få rådgivning <ArrowRight size={17} /></Link>
-          <Link className="text-button light" href="/guide">Se alle guider</Link>
-        </div>
-      </section>
-      <section className="section andrea-profile-intro">
-        <div>
-          <p className="eyebrow">Kundereisen</p>
-          <h2>Fra spørsmål til et tydelig neste steg</h2>
-          <p>
-            Arbeidet omfatter innhold, søkesynlighet, kundeinformasjon og oppfølging, slik at boligkjøpere
-            lettere kan forstå områder, alternativer og prosessen før de bruker tid på konkrete visninger.
-          </p>
-          <p>
-            Målet er at informasjonen kunden møter på nettsiden, i guidene og i dialogen skal henge sammen –
-            slik at det blir enklere å vite hva som er relevant nå, og hva som bør gjøres videre.
-          </p>
-          <Link className="text-button" href="/kjopsprosessen">
-            Se hvordan Zen Eco Homes jobber <ArrowRight size={16} />
+          <Link className="contact-button" href="/booking">
+            Få rådgivning <ArrowRight size={17} />
+          </Link>
+          <Link className="text-button light" href="/om-oss">
+            Møt teamet
           </Link>
         </div>
-        <aside className="andrea-focus-panel">
-          <p className="eyebrow">Fokusområder</p>
-          <div><span>01</span><p>Kundeinformasjon og oppfølging</p></div>
-          <div><span>02</span><p>Markedsføring og innhold</p></div>
-          <div><span>03</span><p>SEO og søkesynlighet</p></div>
-          <div><span>04</span><p>Sammenheng mellom nettside, guider og kundedialog</p></div>
-        </aside>
       </section>
 
-      <section className="section andrea-work-section">
-        <div className="section-heading">
-          <p className="eyebrow">Zen Eco Homes</p>
-          <h2>Digital synlighet skal gjøre boligvalget enklere</h2>
-          <p>
-            God markedsføring handler ikke bare om å bli funnet. Den skal hjelpe kjøperen å forstå området,
-            sammenligne alternativer og komme til en bedre forberedt samtale.
-          </p>
+      <article className="section andrea-story">
+        <blockquote>
+          «Jeg har alltid sagt at den dagen jeg blir pensjonist, skal jeg bo i Spania. Lite visste jeg at jeg
+          skulle få muligheten til å flytte dit allerede som 32-åring.»
+        </blockquote>
+
+        <p>
+          Jeg heter Andrea Thorsnes Karlsen, er 32 år og kommer fra Trondheim. Sammen med mannen min og våre
+          tre barn har vi kjøpt tomt og hus i Aspe på Costa Blanca – og snart går flyttelasset fra Norge til
+          Spania.
+        </p>
+
+        <p>
+          For meg har Spania vært en drøm i mange år. De siste syv årene har vi tilbrakt mye tid i San Javier,
+          hvor svigerforeldrene mine har feriehus. Etter hvert begynte tanken på et liv i Spania å bli mer enn
+          bare en drøm. Vi ønsket oss en varmere hverdag, mer tid utendørs og et liv hvor familien kunne være
+          mer sammen.
+        </p>
+
+        <p>
+          Da vi begynte å se etter et sted å bo fast, ble det tydelig at vi måtte tenke annerledes enn om vi
+          bare skulle kjøpe feriebolig. Vi har tre barn i barnehagealder, og for oss var det viktig å finne et
+          sted hvor vi kunne etablere oss over tid – med gode utemuligheter, nærhet til sentrum, aktiviteter
+          gjennom hele året og et lokalmiljø med fastboende familier.
+        </p>
+
+        <p>Valget falt på Aspe.</p>
+
+        <p>
+          Her får vi nærheten til Alicante og Elche, kort vei til flyplassen og rundt 30 minutter til stranden
+          – samtidig som vi får et roligere liv i en mindre spansk by. Tomten vår ligger litt utenfor byen, med
+          utsikt over vingårder og olivenlunder og gode turmuligheter rett i nærheten. Det er akkurat denne
+          kombinasjonen vi falt for.
+        </p>
+
+        <h2>Jeg vet hvordan det er å være kjøper</h2>
+
+        <p>
+          Vår egen boligprosess var overraskende enkel. Freddy var vår eiendomsrådgiver, og han tok seg tid til
+          å forstå hva vi faktisk var ute etter. Det var også han som anbefalte oss å se nærmere på Aspe.
+        </p>
+
+        <p>
+          Det gjorde inntrykk på meg hvor mye en god rådgiver kan bety når man skal kjøpe bolig i et annet
+          land.
+        </p>
+
+        <p>
+          Som kjøper har jeg samtidig fått kjenne på at ting fungerer annerledes i Spania enn i Norge.
+          Prosessene kan ta tid, og man må være forberedt på at ikke alt skjer like raskt som vi nordmenn
+          kanskje er vant til. Samtidig oppdaget jeg hvor utrolig mange muligheter som faktisk finnes.
+        </p>
+
+        <p>
+          Jeg ble spesielt overrasket over muligheten til å kjøpe et helt nytt hus, velge tomt selv og få et
+          moderne hjem tilpasset egne ønsker – til en pris som for oss var langt mer interessant enn vi hadde
+          forventet.
+        </p>
+
+        <p>
+          Denne erfaringen tar jeg med meg inn i arbeidet med kundene våre. Etter å ha gått gjennom hele
+          prosessen selv, vet jeg også hva som er viktig når man skal kjøpe bolig i Spania:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Se boligkjøpet fra kundens perspektiv</strong> – jeg vet hvilke spørsmål, tanker og
+            usikkerheter som kan dukke opp når man skal kjøpe bolig i et annet land.
+          </li>
+          <li>
+            <strong>Forstå hva som faktisk er viktig for kunden</strong> – jeg vet at boligjakten handler om
+            mer enn selve huset, og at område, hverdagsliv, skole, natur og beliggenhet kan være avgjørende.
+          </li>
+          <li>
+            <strong>Kjenne områdene fra et kjøpers perspektiv</strong> – jeg har selv gått gjennom prosessen
+            med å undersøke ulike områder og finne ut hvor vi ønsket å etablere oss.
+          </li>
+          <li>
+            <strong>Være tilgjengelig og følge opp underveis</strong> – jeg vet hvor viktig det er å få svar,
+            vite hva som skjer og ha noen som følger deg gjennom hele prosessen.
+          </li>
+          <li>
+            <strong>Hjelpe med å sortere mulighetene</strong> – det finnes mange boliger og muligheter i
+            Spania, og jeg ønsker å gjøre det enklere å finne frem til det som passer akkurat deg og din
+            situasjon.
+          </li>
+        </ul>
+
+        <h2>Fra forretningsutvikling til eiendom i Spania</h2>
+
+        <p>
+          Før jeg begynte i Zen Eco Homes jobbet jeg som forretningsutvikler i Homely Boligalarm, hvor jeg
+          hadde ansvar for blant annet markedsføring, nettside, innhold, sosiale medier, kundereise og
+          kundeoppfølging, i tillegg til å være FG-fagansvarlig i Homely.
+        </p>
+
+        <p>
+          Jeg er utdannet ingeniør innen fornybar energi og har en mastergrad i entreprenørskap og innovasjon.
+        </p>
+
+        <p>
+          Jeg liker å forstå hvordan ting henger sammen, finne informasjon, se muligheter og ikke minst gjøre
+          kompliserte ting litt enklere.
+        </p>
+
+        <p>Det er mye av dette jeg nå tar med meg inn i Zen Eco Homes.</p>
+
+        <p>
+          Jeg jobber blant annet med markedsføring, SEO, nettside, innhold og sosiale medier. Samtidig følger
+          jeg opp norske kunder og hjelper dem med å finne ut hva de faktisk trenger – enten de drømmer om
+          feriebolig, ønsker å flytte permanent til Spania, skal kjøpe sin første bolig her eller ønsker å
+          bygge et nytt hus.
+        </p>
+
+        <p>
+          Jeg er også opptatt av hvordan vi kan utvikle Zen Eco Homes videre, finne nye muligheter og hele
+          tiden gjøre kundeopplevelsen bedre.
+        </p>
+
+        <h2>En god kundereise starter lenge før visningen</h2>
+
+        <p>
+          For meg handler ikke en god kundeopplevelse bare om hva som skjer når kunden møter en
+          eiendomsrådgiver.
+        </p>
+
+        <p>Den starter lenge før.</p>
+
+        <p>
+          Når du begynner å drømme om bolig i Spania, har du ofte hundre spørsmål. Hvor bør vi bo? Hvordan er
+          området? Hva koster det egentlig? Hvordan fungerer boligkjøp i Spania? Hva er forskjellen på å kjøpe
+          nytt og brukt? Hvordan er det å flytte med barn? Og hvordan vet man egentlig om man ser på riktig
+          bolig?
+        </p>
+
+        <p>
+          Jeg ønsker at Zen Eco Homes skal være et sted hvor du kan finne svar på mange av disse spørsmålene
+          allerede før du tar kontakt.
+        </p>
+
+        <p>
+          Deretter ønsker jeg å være en trygg og tilgjengelig person i dialogen videre – en som lytter, finner
+          informasjon, stiller spørsmål og hjelper deg å sortere mulighetene.
+        </p>
+
+        <p>
+          Målet er at kunden skal få en god opplevelse hele veien, fra de første søkene på nettet til
+          drømmeboligen står klar til overtakelse.
+        </p>
+
+        <h2>Hvorfor Spania?</h2>
+
+        <p>
+          Det er vanskelig å peke på én enkelt grunn til at jeg ønsker å flytte til Spania. For meg handler det
+          om summen av de små tingene som til sammen gir en helt annen hverdag.
+        </p>
+
+        <p>
+          Jeg er nok først og fremst klar for litt mer sol og varme. Etter mange år med kalde vintre, hustrige
+          høster og vårdager som ikke helt klarer å bestemme seg for om de skal være vår eller vinter, kjenner
+          jeg at jeg ønsker en hverdag hvor det er lettere å være ute – nesten uansett årstid.
+        </p>
+
+        <p>
+          Jeg ser for meg de små øyeblikkene jeg gleder meg aller mest til. Å våkne om morgenen, lage en kopp
+          kaffe og åpne døren ut til terrassen. Kjenne solen og varmen, og kunne starte dagen ute i lette
+          sommerklær.
+        </p>
+
+        <p>
+          Jeg gleder meg til å ha frokost ute, tilbringe varme ettermiddager ved bassenget og dra på stranden
+          når vi har lyst. Jeg gleder meg til lange turer, sykkelturer med familien og til å kunne spise middag
+          ute på terrassen en helt vanlig hverdag.
+        </p>
+
+        <p>
+          Og kanskje aller mest gleder jeg meg til å se barna løpe rundt og leke i hagen, bruke mer tid ute og
+          få en hverdag hvor naturen og utelivet blir en større del av familielivet.
+        </p>
+
+        <p>
+          For meg handler derfor ikke drømmen om Spania bare om å ha ferie oftere. Jeg ønsker å skape en
+          hverdag med mer tid sammen, mindre stress, god mat, mer uteliv og en følelse av frihet.
+        </p>
+
+        <p>Det er det gode livet i Spania jeg ser for meg.</p>
+
+        <h2>Et liv med mer tid ute</h2>
+
+        <p>
+          Jeg er gift og har tre barn i barnehagealder. På fritiden liker jeg blant annet trening, turer og
+          kreative prosjekter. Jeg har alltid likt å holde på med ulike DIY-prosjekter, og for tiden holder jeg
+          også på å lære meg å sy klær.
+        </p>
+
+        <p>
+          I Spania ser jeg mest frem til å kunne bruke mer av tiden vår ute. Bade, gå turer, sykle, utforske
+          nye steder, spise gode måltider sammen og bare nyte dagene.
+        </p>
+
+        <p>
+          Aspe passer godt til akkurat dette. Jeg liker den rolige atmosfæren, nærheten til naturen og ikke
+          minst utsikten over alle vingårdene og olivenlundene rundt byen.
+        </p>
+
+        <p>Det er kanskje litt symbolsk at jeg i mange år har sagt at jeg en dag skulle bo i Spania.</p>
+
+        <p>Nå skjer det faktisk.</p>
+
+        <p>
+          Og noe av det fineste med å jobbe i Zen Eco Homes er at jeg får være med på å hjelpe andre med å
+          gjøre den samme drømmen til virkelighet.
+        </p>
+
+        <p className="andrea-story-highlight">
+          <strong>
+            Jeg vet hvor stort steget kan føles. Jeg har tatt det selv. Og jeg vet også hvor mye enklere det
+            blir når du har noen ved din side som lytter til dine ønsker, ivaretar dine interesser og følger
+            deg trygt gjennom hele prosessen.
+          </strong>
+        </p>
+
+        <p className="andrea-story-signature">— Andrea Thorsnes Karlsen, Zen Eco Homes</p>
+
+        <p>
+          Med vennlig hilsen
+          <br />
+          <strong>Andrea Thorsnes Karlsen</strong>
+        </p>
+
+        <div className="andrea-story-actions">
+          <Link className="contact-button" href="/booking">
+            Snakk med Andrea <ArrowRight size={17} />
+          </Link>
+          <Link className="text-button" href="/kjopsprosessen">
+            Se kjøpsprosessen <ArrowRight size={16} />
+          </Link>
         </div>
-        <div className="andrea-work-grid">
-          <article>
-            <span>Innhold</span>
-            <h3>Riktig informasjon på riktig sted</h3>
-            <p>Guider, områdesider og kundeinformasjon bygges slik at viktige spørsmål blir besvart før visningen.</p>
-            <Link className="text-button" href="/guide">Se guide-huben <ArrowRight size={16}/></Link>
-          </article>
-          <article>
-            <span>Områder</span>
-            <h3>Fra bred research til relevante valg</h3>
-            <p>Områdeinnholdet skal gjøre det enklere å sammenligne kyst, by og innland før kunden velger konkrete boliger.</p>
-            <Link className="text-button" href="/omrader">Sammenlign områder <ArrowRight size={16}/></Link>
-          </article>
-          <article>
-            <span>Kundeoppfølging</span>
-            <h3>En tydelig vei videre</h3>
-            <p>Kundekommunikasjonen skal henge sammen med det kunden allerede har lest og vurdert, slik at neste steg blir konkret.</p>
-            <Link className="text-button" href="/booking">Få rådgivning <ArrowRight size={16}/></Link>
-          </article>
-        </div>
-      </section>
+      </article>
+
       <Footer />
     </main>
   );
