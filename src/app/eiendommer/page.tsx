@@ -68,6 +68,7 @@ export default async function PropertiesPage({
     bathrooms?: string;
     minSize?: string;
     lifestyle?: string;
+    match?: string;
     page?: string;
   }>;
 }) {
@@ -82,6 +83,7 @@ export default async function PropertiesPage({
   const minBathrooms = Number(params.bathrooms || 0);
   const minSize = Number(params.minSize || 0);
   const lifestyle = params.lifestyle || "";
+  const isQuizMatch = params.match === "quiz";
   const currentPage = Math.max(1, Number(params.page || 1) || 1);
   const pageSize = 24;
   const properties = await getProperties(0, "zeneco");
@@ -212,7 +214,7 @@ export default async function PropertiesPage({
           <button type="submit">Søk</button>
         </form>
       </section>
-      <section className="section property-results-section">
+      <section className="section property-results-section" id="boliger">
         <div className="property-intro">
           <div>
             <p className="eyebrow">Bolig til salgs i Spania</p>
@@ -233,8 +235,19 @@ export default async function PropertiesPage({
         </div>
         <div className="list-heading">
           <div>
-            <h2>{filtered.length} boliger{area ? ` i ${area}` : ""}</h2>
-            <span>Viser nyeste og mest relevante først</span>
+            <p className="eyebrow">{isQuizMatch ? "Din boligmatch" : "Boliger"}</p>
+            <h2>
+              {filtered.length} {isQuizMatch ? "boliger matcher svarene dine" : `boliger${area ? ` i ${area}` : ""}`}
+            </h2>
+            <span>
+              {isQuizMatch
+                ? [
+                    maxPrice ? `maks €${maxPrice.toLocaleString("nb-NO")}` : "",
+                    minBedrooms ? `${minBedrooms}+ soverom` : "",
+                    locationLabel || "",
+                  ].filter(Boolean).join(" · ")
+                : "Viser nyeste og mest relevante først"}
+            </span>
           </div>
           <SaveSearchButton
             locale="no"
