@@ -3,12 +3,9 @@
 import { FormEvent, useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import {
-  ArrowRight,
-  Building2,
   BookOpen,
   Calculator,
   FileText,
-  Heart,
   LockKeyhole,
   LogOut,
   MessageSquareText,
@@ -17,14 +14,8 @@ import {
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-browser";
 import { PortalNewsletterCard } from "@/components/PortalNewsletterCard";
-
-type SavedProperty = {
-  ref: string;
-  title: string;
-  location: string;
-  price: string;
-  href: string;
-};
+import { PortalPropertyAlertsCard } from "@/components/PortalPropertyAlertsCard";
+import { PortalFavoritesCard } from "@/components/PortalFavoritesCard";
 
 type PortalDocument = {
   id: string;
@@ -433,7 +424,6 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   const p = PORTAL_STRINGS[locale];
   const [authReady, setAuthReady] = useState(false);
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
-  const [favorites, setFavorites] = useState<SavedProperty[]>([]);
   const [documents, setDocuments] = useState<PortalDocument[]>([]);
   const [messages, setMessages] = useState<PortalMessage[]>([]);
   const [messageText, setMessageText] = useState("");
@@ -450,21 +440,6 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   });
   const [preferences, setPreferences] = useState<Preferences>(initialPreferences);
   const [signalStatus, setSignalStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
-
-  useEffect(() => {
-    function loadFavorites() {
-      try {
-        const stored = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]");
-        setFavorites(Array.isArray(stored) ? stored : []);
-      } catch {
-        setFavorites([]);
-      }
-    }
-
-    loadFavorites();
-    window.addEventListener("zeneco:favorites-updated", loadFavorites);
-    return () => window.removeEventListener("zeneco:favorites-updated", loadFavorites);
-  }, []);
 
   useEffect(() => {
     if (!supabase) {
@@ -876,32 +851,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
             </form>
           </article>
 
-          <article className="portal-panel" id="portal-favorites">
-            <div className="panel-title">
-              <Heart size={20} />
-              <h3>{p.favoritesTitle}</h3>
-            </div>
-            {favorites.length ? (
-              <ul className="portal-list">
-                {favorites.map((property) => (
-                  <li key={property.ref}>
-                    <Building2 size={17} />
-                    <a href={property.href}>
-                      <span>{property.title}</span>
-                      <small>{property.location} · {property.price}</small>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="message-empty">{p.favoritesEmpty}</p>
-            )}
-            {favorites.length > 1 && (
-              <a className="text-button" href="/sammenlign">
-                {p.compare} <ArrowRight size={15} />
-              </a>
-            )}
-          </article>
+          <PortalFavoritesCard locale={locale} />
 
           <article className="portal-panel" id="portal-documents">
             <div className="panel-title">
@@ -954,6 +904,8 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
               ))}
             </ul>
           </article>
+
+          <PortalPropertyAlertsCard />
 
           <PortalNewsletterCard />
 
