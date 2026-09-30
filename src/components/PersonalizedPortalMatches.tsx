@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Building2, CheckCircle2, Loader2, RefreshCw, Sparkles, ThumbsDown, ThumbsUp } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase-browser";
@@ -20,6 +20,8 @@ type MatchProperty = {
   nexus_match_cautions?: string[];
   learning_confidence?: "high" | "medium" | "low";
   feedback_action?: "interested" | "not_for_me" | null;
+  primary_image?: string;
+  property_type?: string;
 };
 
 type CatalogPayload = {
@@ -39,8 +41,16 @@ const strings = {
     notForMe: "Ikke for meg",
     savedInterested: "Notert — Freddy får beskjed om at du er aktiv og interessert.",
     savedNo: "Notert — denne filtreres bort fra neste utvalg.",
-    empty: "Ingen personlige boligforslag er klare ennå. Oppdater boligønskene dine eller send Freddy en melding.",
+    empty: "Ingen boliger matcher søket akkurat nå. Juster kriteriene og prøv igjen.",
     refresh: "Oppdater boliglisten",
+    searchTitle: "Søk i boligene",
+    searchIntro: "Bruk søket selv om du ikke har favoritter ennå. Resultatene filtreres direkte i Min side.",
+    area: "Område",
+    maxPrice: "Makspris",
+    bedrooms: "Min. soverom",
+    propertyType: "Boligtype",
+    allTypes: "Alle typer",
+    clear: "Nullstill",
     reason: "Hvorfor denne passer",
     loading: "Laster boliglisten…",
     view: "Se boligen",
@@ -57,8 +67,16 @@ const strings = {
     notForMe: "Not for me",
     savedInterested: "Noted — Freddy is alerted that you are active and interested.",
     savedNo: "Noted — this property will be filtered from the next selection.",
-    empty: "No personal property suggestions are ready yet. Update your preferences or send Freddy a message.",
+    empty: "No properties match your search right now. Adjust the filters and try again.",
     refresh: "Refresh property list",
+    searchTitle: "Search properties",
+    searchIntro: "Use the search even if you have no favourites yet. Results are filtered directly in My account.",
+    area: "Area",
+    maxPrice: "Max price",
+    bedrooms: "Min. bedrooms",
+    propertyType: "Property type",
+    allTypes: "All types",
+    clear: "Reset",
     reason: "Why this fits",
     loading: "Loading your property list…",
     view: "View property",
@@ -75,8 +93,16 @@ const strings = {
     notForMe: "Nicht für mich",
     savedInterested: "Notiert — Freddy sieht, dass Sie aktiv und interessiert sind.",
     savedNo: "Notiert — diese Immobilie wird aus der nächsten Auswahl gefiltert.",
-    empty: "Noch keine persönlichen Vorschläge. Aktualisieren Sie Ihre Wünsche oder senden Sie Freddy eine Nachricht.",
+    empty: "Aktuell passen keine Immobilien zu Ihrer Suche. Passen Sie die Filter an.",
     refresh: "Immobilienliste aktualisieren",
+    searchTitle: "Immobilien suchen",
+    searchIntro: "Nutzen Sie die Suche auch ohne Favoriten. Die Ergebnisse werden direkt im Kundenbereich gefiltert.",
+    area: "Gebiet",
+    maxPrice: "Maximalpreis",
+    bedrooms: "Min. Schlafzimmer",
+    propertyType: "Immobilientyp",
+    allTypes: "Alle Typen",
+    clear: "Zurücksetzen",
     reason: "Warum passend",
     loading: "Immobilienliste wird geladen…",
     view: "Immobilie ansehen",
@@ -120,6 +146,10 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
   const [properties, setProperties] = useState<MatchProperty[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<Record<string, FeedbackState>>({});
+  const [searchArea, setSearchArea] = useState("");
+  const [searchMaxPrice, setSearchMaxPrice] = useState("");
+  const [searchBedrooms, setSearchBedrooms] = useState("");
+  const [searchType, setSearchType] = useState("");
 
   const load = useCallback(async () => {
     if (!supabase) {
@@ -148,7 +178,7 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
       });
       const body = (await res.json().catch(() => ({}))) as CatalogPayload & { error?: string };
       if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
-      setProperties(Array.isArray(body.properties) ? body.properties.slice(0, 8) : []);
+      setProperties(Array.isArray(body.properties) ? body.properties : []);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
       setProperties([]);
@@ -163,6 +193,20 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
     const { data } = supabase.auth.onAuthStateChange(() => void load());
     return () => data.subscription.unsubscribe();
   }, [load]);
+
+  const filteredProperties = useMemo(() => {
+    const areaNeedle = searchArea.trim().toLowerCase();
+    const maxPrice = Number(searchMaxPrice || 0);
+    const minBedrooms = Number(searchBedrooms || 0);
+    const typeNeedle = searchType.trim().toLowerCase();
+
+    return properties
+      .filter((property) => !areaNeedle || String(property.location || "").toLowerCase().includes(areaNeedle) || String(property.title || "").toLowerCase().includes(areaNeedle))
+      .filter((property) => !maxPrice || !property.price || Number(property.price) <= maxPrice)
+      .filter((property) => !minBedrooms || Number(property.bedrooms || 0) >= minBedrooms)
+      .filter((property) => !typeNeedle || String(property.property_type || "").toLowerCase().includes(typeNeedle))
+      .slice(0, 12);
+  }, [properties, searchArea, searchMaxPrice, searchBedrooms, searchType]);
 
   async function sendFeedback(propertyId: string, action: "interested" | "not_for_me") {
     if (!supabase) return;
@@ -200,83 +244,121 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
   if (!sessionReady || !signedIn) return null;
 
   return (
-    <article className="portal-panel wide-panel" style={{ marginBottom: 24 }}>
-      <div className="panel-title">
-        <Sparkles size={20} />
+    <article className="portal-properties-focus">
+      <div className="portal-properties-heading">
         <div>
-          <p className="eyebrow" style={{ marginBottom: 4 }}>{t.eyebrow}</p>
-          <h3>{t.title}</h3>
+          <p className="eyebrow">{t.eyebrow}</p>
+          <h2>{t.title}</h2>
+          <p>{t.intro}</p>
         </div>
+        <button className="portal-refresh-button" type="button" onClick={() => void load()}>
+          <RefreshCw size={16} /> {t.refresh}
+        </button>
       </div>
-      <p>{t.intro}</p>
+
+      <div className="portal-property-search">
+        <div>
+          <h3>{t.searchTitle}</h3>
+          <p>{t.searchIntro}</p>
+        </div>
+        <div className="portal-property-search-grid">
+          <label>
+            {t.area}
+            <input value={searchArea} onChange={(event) => setSearchArea(event.target.value)} placeholder="Altea, Benidorm, Finestrat..." />
+          </label>
+          <label>
+            {t.maxPrice}
+            <input inputMode="numeric" value={searchMaxPrice} onChange={(event) => setSearchMaxPrice(event.target.value)} placeholder="400000" />
+          </label>
+          <label>
+            {t.bedrooms}
+            <input min="0" type="number" value={searchBedrooms} onChange={(event) => setSearchBedrooms(event.target.value)} placeholder="3" />
+          </label>
+          <label>
+            {t.propertyType}
+            <select value={searchType} onChange={(event) => setSearchType(event.target.value)}>
+              <option value="">{t.allTypes}</option>
+              <option value="villa">Villa</option>
+              <option value="apartment">{locale === "de" ? "Wohnung" : locale === "en" ? "Apartment" : "Leilighet"}</option>
+              <option value="townhouse">{locale === "de" ? "Reihenhaus" : locale === "en" ? "Townhouse" : "Rekkehus"}</option>
+              <option value="penthouse">Penthouse</option>
+            </select>
+          </label>
+        </div>
+        {(searchArea || searchMaxPrice || searchBedrooms || searchType) && (
+          <button className="text-button" type="button" onClick={() => {
+            setSearchArea("");
+            setSearchMaxPrice("");
+            setSearchBedrooms("");
+            setSearchType("");
+          }}>{t.clear}</button>
+        )}
+      </div>
 
       {loading ? (
-        <p><Loader2 size={16} className="spin" /> {t.loading}</p>
+        <div className="portal-properties-state"><Loader2 size={18} className="spin" /> {t.loading}</div>
       ) : error ? (
-        <div>
+        <div className="portal-properties-state">
           <p className="form-error">{error}</p>
           <button type="button" onClick={() => void load()}><RefreshCw size={15} /> {t.refresh}</button>
         </div>
-      ) : properties.length === 0 ? (
-        <p>{t.empty}</p>
+      ) : filteredProperties.length === 0 ? (
+        <div className="portal-properties-state">
+          <Building2 size={22} />
+          <p>{t.empty}</p>
+          <a className="contact-button" href={locale === "en" ? "/en/properties" : locale === "de" ? "/de/immobilien" : "/eiendommer"}>
+            {locale === "en" ? "Browse all properties" : locale === "de" ? "Alle Immobilien ansehen" : "Se alle boliger"}
+          </a>
+        </div>
       ) : (
-        <div className="portal-match-list" style={{ display: "grid", gap: 14 }}>
-          {properties.map((property, index) => {
+        <div className="portal-property-cards">
+          {filteredProperties.map((property) => {
             const state = feedback[property.id];
             const label = property.nexus_match_label
               ? matchLabels[locale][property.nexus_match_label]
-              : locale === "en"
-                ? "Match"
-                : locale === "de"
-                  ? "Übereinstimmung"
-                  : "Match";
-
+              : "Match";
             return (
-              <div
-                key={property.id}
-                style={{ border: "1px solid rgba(16,42,50,.14)", borderRadius: 16, padding: 16, background: "#fff" }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "flex-start", flexWrap: "wrap" }}>
-                  <div style={{ display: "flex", gap: 10, minWidth: 0 }}>
-                    <Building2 size={18} />
-                    <div>
-                      <div style={{ fontWeight: 800 }}>{index + 1}. {property.ref || property.title || property.id}</div>
-                      <div style={{ marginTop: 4 }}>{property.title}</div>
-                      <small>
-                        {property.location || t.locationFallback} · {money(property.price, locale)} · {property.bedrooms || 0} {t.bedroom} · {property.bathrooms || 0} {t.bathroom}
-                      </small>
-                    </div>
+              <article className="portal-property-card" key={property.id}>
+                <a className="portal-property-image" href={propertyHref(locale, property)}>
+                  {property.primary_image ? (
+                    <img src={property.primary_image} alt={property.title || property.ref || "Bolig"} loading="lazy" />
+                  ) : (
+                    <span><Building2 size={28} /></span>
+                  )}
+                </a>
+                <div className="portal-property-card-body">
+                  <div className="portal-property-card-topline">
+                    <span>{label} · {property.nexus_match_score ?? "–"}/100</span>
+                    {property.ref && <small>{property.ref}</small>}
                   </div>
-                  <div style={{ fontWeight: 800 }}>{label} · {property.nexus_match_score ?? "–"}/100</div>
-                </div>
-
-                {(property.nexus_match_reasons || []).length > 0 && (
-                  <div style={{ marginTop: 10 }}>
-                    <small><strong>{t.reason}:</strong> {(property.nexus_match_reasons || []).slice(0, 2).join(" · ")}</small>
+                  <h3>{property.title || property.ref || property.id}</h3>
+                  <p>{property.location || t.locationFallback}</p>
+                  <strong>{money(property.price, locale)}</strong>
+                  <div className="portal-property-facts">
+                    <span>{property.bedrooms || 0} {t.bedroom}</span>
+                    <span>{property.bathrooms || 0} {t.bathroom}</span>
+                    {property.built_area ? <span>{property.built_area} m²</span> : null}
                   </div>
-                )}
-
-                <div style={{ marginTop: 12, display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-                  <a className="text-button" href={propertyHref(locale, property)}>{t.view}</a>
-                  <button type="button" disabled={state?.status === "saving"} onClick={() => void sendFeedback(property.id, "interested")}>
-                    {state?.status === "saving" && state.action === "interested"
-                      ? <Loader2 size={14} />
-                      : property.feedback_action === "interested"
-                        ? <CheckCircle2 size={14} />
-                        : <ThumbsUp size={14} />} {t.interested}
-                  </button>
-                  <button type="button" disabled={state?.status === "saving"} onClick={() => void sendFeedback(property.id, "not_for_me")}>
-                    {state?.status === "saving" && state.action === "not_for_me" ? <Loader2 size={14} /> : <ThumbsDown size={14} />} {t.notForMe}
-                  </button>
+                  {(property.nexus_match_reasons || []).length > 0 && (
+                    <small className="portal-property-reason"><strong>{t.reason}:</strong> {(property.nexus_match_reasons || []).slice(0, 2).join(" · ")}</small>
+                  )}
+                  <div className="portal-property-actions">
+                    <a className="text-button" href={propertyHref(locale, property)}>{t.view}</a>
+                    <button type="button" disabled={state?.status === "saving"} onClick={() => void sendFeedback(property.id, "interested")}>
+                      {state?.status === "saving" && state.action === "interested"
+                        ? <Loader2 size={14} className="spin" />
+                        : property.feedback_action === "interested"
+                          ? <CheckCircle2 size={14} />
+                          : <ThumbsUp size={14} />} {t.interested}
+                    </button>
+                    <button type="button" disabled={state?.status === "saving"} onClick={() => void sendFeedback(property.id, "not_for_me")}>
+                      {state?.status === "saving" && state.action === "not_for_me" ? <Loader2 size={14} className="spin" /> : <ThumbsDown size={14} />} {t.notForMe}
+                    </button>
+                  </div>
+                  {state?.status === "saved" && <p className="form-success">{state.action === "interested" ? t.savedInterested : t.savedNo}</p>}
+                  {state?.status === "error" && <p className="form-error">{t.feedbackError}</p>}
                 </div>
-
-                {state?.status === "saved" && (
-                  <p className="form-success" style={{ marginTop: 10 }}>
-                    {state.action === "interested" ? t.savedInterested : t.savedNo}
-                  </p>
-                )}
-                {state?.status === "error" && <p className="form-error" style={{ marginTop: 10 }}>{t.feedbackError}</p>}
-              </div>
+              </article>
             );
           })}
         </div>
