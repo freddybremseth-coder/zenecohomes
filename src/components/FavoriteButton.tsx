@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Heart } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
+import { supabase } from "@/lib/supabase-browser";
 
 type Favorite = {
   ref: string;
@@ -32,11 +33,51 @@ export function FavoriteButton({ favorite, locale = "no" }: { favorite: Favorite
   const text = labels[locale];
 
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]") as Favorite[];
-    setSaved(favorites.some((item) => item.ref === favorite.ref));
+    let cancelled = false;
+
+    async function syncFavoriteState() {
+      const favorites = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]") as Favorite[];
+      const localSaved = favorites.some((item) => item.ref === favorite.ref);
+      if (!cancelled) setSaved(localSaved);
+
+      if (!supabase) return;
+      const { data } = await supabase.auth.getSession();
+      const token = data.session?.access_token;
+      if (!token) return;
+
+      try {
+        const res = await fetch("/api/portal/favorites", {
+          headers: { Authorization: `Bearer ${token}` },
+          cache: "no-store",
+        });
+        const body = await res.json().catch(() => ({}));
+        const remoteSaved = Array.isArray(body.favorites)
+          ? body.favorites.some((item: { ref?: string }) => item.ref === favorite.ref)
+          : false;
+
+        if (localSaved && !remoteSaved) {
+          await fetch("/api/portal/favorites", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ ref: favorite.ref, source: "website_favorite" }),
+          });
+          if (!cancelled) setSaved(true);
+        } else if (!cancelled) {
+          setSaved(remoteSaved || localSaved);
+        }
+      } catch {
+        // Local favorites remain available if portal sync is temporarily unavailable.
+      }
+    }
+
+    void syncFavoriteState();
+    return () => { cancelled = true; };
   }, [favorite.ref]);
 
-  function toggleFavorite() {
+  async function toggleFavorite() {
     const favorites = JSON.parse(localStorage.getItem("zeneco:favorites") || "[]") as Favorite[];
     const next = saved
       ? favorites.filter((item) => item.ref !== favorite.ref)
@@ -46,13 +87,32 @@ export function FavoriteButton({ favorite, locale = "no" }: { favorite: Favorite
     setSaved(nextSaved);
     setShowPortalOffer(nextSaved);
     window.dispatchEvent(new Event("zeneco:favorites-updated"));
+
+    if (!supabase) return;
+    const { data } = await supabase.auth.getSession();
+    const token = data.session?.access_token;
+    if (!token) return;
+
+    try {
+      await fetch("/api/portal/favorites", {
+        method: nextSaved ? "POST" : "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ref: favorite.ref, source: "website_favorite" }),
+      });
+      window.dispatchEvent(new Event("zeneco:portal-favorites-updated"));
+    } catch {
+      // Optimistic local save remains; a later visit can resync it.
+    }
   }
 
   const portalHref = locale === "en" ? "/en/min-side?from=favorite" : locale === "de" ? "/de/min-side?from=favorite" : "/min-side?from=favorite";
 
   return (
     <div className="favorite-action-wrap">
-      <button className={`favorite-button${saved ? " active" : ""}`} type="button" onClick={toggleFavorite}>
+      <button className={`favorite-button${saved ? " active" : ""}`} type="button" onClick={() => void toggleFavorite()}>
         <Heart size={17} /> {saved ? text.saved : text.save}
       </button>
       {showPortalOffer && saved && (
