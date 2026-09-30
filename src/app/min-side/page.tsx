@@ -93,8 +93,8 @@ export default function PortalPage() {
         </section>
       </PortalSignedOutOnly>
 
-      <section style={{ padding: "1rem 1rem 0" }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+      <section className="min-side-signed-in-top">
+        <div className="min-side-signed-in-inner">
           <TrackedPortalJourneyStatus />
           <PersonalizedPortalMatches locale="no" />
         </div>
