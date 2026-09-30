@@ -6,9 +6,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Andrea Thorsnes Karlsen | Fra drøm til virkelighet | Zen Eco Homes",
+  title: "Andrea Thorsnes Karlsen | Zen Eco Homes på Costa Blanca",
   description:
-    "Møt Andrea Thorsnes Karlsen i Zen Eco Homes. Les om familiens flytting til Aspe, hennes egen erfaring som boligkjøper i Spania og hvordan hun hjelper norske kunder.",
+    "Møt Andrea Thorsnes Karlsen i Zen Eco Homes. Les om flyttingen til Aspe, erfaringen som boligkjøper i Spania og hvordan hun hjelper norske kunder.",
   alternates: { canonical: "/om-oss/andrea" },
 };
 
