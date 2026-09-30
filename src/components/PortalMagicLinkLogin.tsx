@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { KeyRound, Loader2, Mail, ShieldCheck } from "lucide-react";
+import { ArrowRight, KeyRound, Loader2, Mail, ShieldCheck } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase-browser";
 
@@ -89,86 +89,43 @@ export function PortalMagicLinkLogin({ locale = "no" }: { locale?: Locale }) {
   if (signedIn) return null;
 
   return (
-    <section
-      aria-labelledby="magic-link-title"
-      style={{
-        maxWidth: 760,
-        margin: "0 auto 1.5rem",
-        padding: "1.4rem",
-        border: "1px solid rgba(15, 23, 42, 0.12)",
-        borderRadius: 22,
-        background: "rgba(255,255,255,0.96)",
-        boxShadow: "0 18px 50px rgba(15,23,42,0.08)",
-      }}
-    >
-      <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-        <div
-          aria-hidden="true"
-          style={{
-            width: 42,
-            height: 42,
-            borderRadius: 14,
-            display: "grid",
-            placeItems: "center",
-            background: "#eef6f4",
-            flexShrink: 0,
-          }}
-        >
-          <KeyRound size={21} />
+    <section className="portal-login-card" aria-labelledby="magic-link-title">
+      <div className="portal-card-heading">
+        <div className="portal-card-icon" aria-hidden="true">
+          <KeyRound size={22} />
         </div>
-        <div style={{ flex: 1 }}>
-          <p className="eyebrow" style={{ marginTop: 0 }}>{t.eyebrow}</p>
-          <h2 id="magic-link-title" style={{ marginBottom: 8 }}>{t.title}</h2>
-          <p style={{ marginTop: 0, opacity: 0.78 }}>{t.intro}</p>
-
-          <form onSubmit={sendMagicLink} style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 18 }}>
-            <label style={{ flex: "1 1 280px" }}>
-              <span className="sr-only">E-mail</span>
-              <div style={{ position: "relative" }}>
-                <Mail
-                  size={18}
-                  style={{
-                    position: "absolute",
-                    left: 14,
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    opacity: 0.55,
-                  }}
-                />
-                <input
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  placeholder={t.placeholder}
-                  style={{
-                    width: "100%",
-                    minHeight: 48,
-                    borderRadius: 14,
-                    border: "1px solid rgba(15,23,42,0.18)",
-                    padding: "0 14px 0 44px",
-                    font: "inherit",
-                  }}
-                />
-              </div>
-            </label>
-            <button
-              className="contact-button"
-              type="submit"
-              disabled={status === "sending"}
-              style={{ minHeight: 48, border: 0, cursor: "pointer" }}
-            >
-              {status === "sending" ? <Loader2 size={18} className="spin" /> : <ShieldCheck size={18} />}
-              {status === "sending" ? t.sending : t.send}
-            </button>
-          </form>
-
-          {status === "sent" && <p role="status" style={{ marginBottom: 0, marginTop: 14 }}>{t.sent}</p>}
-          {status === "error" && <p role="alert" style={{ marginBottom: 0, marginTop: 14 }}>{t.error}</p>}
-          {status === "missing-config" && <p role="alert" style={{ marginBottom: 0, marginTop: 14 }}>{t.missing}</p>}
+        <div>
+          <p className="eyebrow">{t.eyebrow}</p>
+          <h2 id="magic-link-title">{t.title}</h2>
+          <p className="portal-card-intro">{t.intro}</p>
         </div>
       </div>
+
+      <form onSubmit={sendMagicLink} className="portal-login-form">
+        <label>
+          E-post
+          <div className="portal-input-wrap">
+            <Mail size={18} />
+            <input
+              type="email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder={t.placeholder}
+            />
+          </div>
+        </label>
+        <button className="portal-login-button" type="submit" disabled={status === "sending"}>
+          {status === "sending" ? <Loader2 size={18} className="spin" /> : <ShieldCheck size={18} />}
+          <span>{status === "sending" ? t.sending : t.send}</span>
+          {status !== "sending" && <ArrowRight size={18} />}
+        </button>
+      </form>
+
+      {status === "sent" && <p className="portal-status-message" role="status">{t.sent}</p>}
+      {status === "error" && <p className="portal-status-message error" role="alert">{t.error}</p>}
+      {status === "missing-config" && <p className="portal-status-message error" role="alert">{t.missing}</p>}
     </section>
   );
 }
