@@ -16,6 +16,7 @@ import {
   UserRound,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-browser";
+import { PortalNewsletterCard } from "@/components/PortalNewsletterCard";
 
 type SavedProperty = {
   ref: string;
@@ -799,7 +800,7 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
         </div>
 
         <div className="portal-grid">
-          <article className="portal-panel wide-panel portal-search-panel">
+          <article className="portal-panel wide-panel portal-search-panel" id="portal-preferences">
             <div className="panel-title">
               <SlidersHorizontal size={20} />
               <h3>{p.preferencesTitle}</h3>
@@ -1050,6 +1051,8 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
               ))}
             </ul>
           </article>
+
+          <PortalNewsletterCard />
 
           <article className="portal-panel">
             <div className="panel-title">
