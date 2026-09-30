@@ -447,15 +447,59 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
   }, []);
 
   useEffect(() => {
-    if (!sessionEmail) return;
-    try {
-      const stored = JSON.parse(localStorage.getItem(`zeneco:portal-preferences:${sessionEmail}`) || "null");
-      if (stored && typeof stored === "object") {
-        setPreferences((current) => ({ ...current, ...stored }));
+    if (!sessionEmail || !supabase) return;
+
+    let cancelled = false;
+    supabase.auth.getSession().then(async ({ data }) => {
+      const token = data.session?.access_token;
+      if (!token) return;
+
+      try {
+        const res = await fetch("/api/portal/preferences", {
+          headers: { Authorization: `Bearer ${token}` },
+          cache: "no-store",
+        });
+        const payload = await res.json().catch(() => ({}));
+        const remote = payload?.preferences && typeof payload.preferences === "object"
+          ? payload.preferences
+          : null;
+
+        if (!cancelled && remote) {
+          setPreferences((current) => ({
+            ...current,
+            budgetMin: remote.budgetMin ? String(remote.budgetMin) : current.budgetMin,
+            budgetMax: remote.budgetMax ? String(remote.budgetMax) : current.budgetMax,
+            region: remote.region ? String(remote.region) : current.region,
+            area: remote.area ? String(remote.area) : current.area,
+            propertyType: remote.propertyType ? String(remote.propertyType) : current.propertyType,
+            bedrooms: remote.bedrooms ? String(remote.bedrooms) : current.bedrooms,
+            bathrooms: remote.bathrooms ? String(remote.bathrooms) : current.bathrooms,
+            lifestyle: remote.lifestyle ? String(remote.lifestyle) : current.lifestyle,
+            timeline: remote.timeline ? String(remote.timeline) : current.timeline,
+            wantsPlots: Boolean(remote.wantsPlots ?? current.wantsPlots),
+            minPlotArea: remote.minPlotArea ? String(remote.minPlotArea) : current.minPlotArea,
+            maxPlotPrice: remote.maxPlotPrice ? String(remote.maxPlotPrice) : current.maxPlotPrice,
+            notes: remote.notes ? String(remote.notes) : current.notes,
+          }));
+          return;
+        }
+      } catch {
+        // Fall back to local convenience state below.
       }
-    } catch {
-      // CRM remains the authoritative destination even if local convenience state is unavailable.
-    }
+
+      try {
+        const stored = JSON.parse(localStorage.getItem(`zeneco:portal-preferences:${sessionEmail}`) || "null");
+        if (!cancelled && stored && typeof stored === "object") {
+          setPreferences((current) => ({ ...current, ...stored }));
+        }
+      } catch {
+        // CRM remains the authoritative destination even if local convenience state is unavailable.
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [sessionEmail]);
 
   useEffect(() => {
