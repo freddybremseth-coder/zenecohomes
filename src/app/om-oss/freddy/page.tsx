@@ -81,18 +81,42 @@ export default function FreddyPage() {
           <p>
             For meg handler eiendomsrådgivning om langt mer enn å finne en bolig på en portal og avtale en
             visning. En god rådgiver skal forstå menneskene han jobber med, markedet, områdene, prisnivået,
-            økonomien, utleiepotensialet og selve kjøpsprosessen – og hvordan det oppleves å sitte på den andre
-            siden, som kjøper i et fremmed land. Det vet jeg mye om, fordi jeg både har arbeidet med
-            boligmarkedet og selv vært gjennom prosessen.
+            økonomien, utleiepotensialet og selve kjøpsprosessen – men også kunne se hva som mangler av
+            informasjon, hvilke spørsmål som ennå ikke er besvart og hva som bør avklares før kunden tar en
+            stor beslutning. Det er nettopp denne kombinasjonen av eiendomserfaring, struktur og analyse jeg
+            ønsker å bruke for kundene mine.
           </p>
 
           <h2>En bred bakgrunn fra mennesker, salg, ledelse og teknologi</h2>
           <p>
             Før eiendom har jeg hatt et variert yrkesliv. I Norge drev jeg egen transportvirksomhet i 13 år,
             med ansatte og flere kjøretøy. Jeg har arbeidet med internasjonale flyselskaper på Gardermoen og
-            Fornebu, og senere innen teknologi og digitale løsninger som supportleder og Key Account Manager.
-            Jeg har også bakgrunn som fotograf. Fellesnevneren gjennom hele yrkeslivet har vært mennesker,
-            problemløsning, struktur og kommunikasjon – mye av det en god eiendomsrådgiver trenger.
+            Fornebu, og senere innen IT, teknologi og digitale løsninger som supportleder, Key Account Manager
+            og rådgiver i forprosjekter. Jeg har også bakgrunn som fotograf.
+          </p>
+          <p>
+            Utdannings- og fagbakgrunnen min omfatter blant annet BI, IT Akademiet, EDB-skolen, Google,
+            WEB Academy og Selgerskolen, i tillegg til ett år foto og ett år mediedesign ved Idefagskolen.
+            Jeg bruker ikke denne bredden for å gjøre en boligprosess mer komplisert – tvert imot. Den hjelper
+            meg å stille bedre spørsmål, strukturere mye informasjon og forklare alternativene på en måte som
+            gjør det enklere for kunden å ta en gjennomtenkt beslutning.
+          </p>
+
+          <h2>Fra kompliserte IT-forprosjekter til kompliserte boligvalg</h2>
+          <p>
+            I IT-bransjen arbeidet jeg blant annet med forprosjekter for større private og offentlige
+            virksomheter, organisasjoner og foreninger. Oppgaven var ofte å definere kompliserte nettsteder,
+            digitale løsninger og integrasjoner før utviklingen startet: Hva er det egentlige behovet? Hvilke
+            systemer må snakke sammen? Hvem sitter på riktig informasjon? Hva er krav, hva er antakelser, og
+            hvilke avklaringer må på plass før man går videre?
+          </p>
+          <p>
+            Den arbeidsmåten er svært relevant også i et boligkjøp i Spania. Et prosjekt kan se enkelt ut i en
+            annonse, men bak beslutningen ligger ofte områdevalg, økonomi, totalpris, dokumentasjon,
+            betalingsplaner, utbygger, advokat, bank, utleieregler, tidslinje og en rekke praktiske forhold.
+            Min rolle er ikke å være advokat, bank eller teknisk kontrollør, men å hjelpe kunden med å se
+            helheten, oppdage hva som mangler og sørge for at de riktige spørsmålene blir stilt til de riktige
+            fagpersonene før beslutningen tas.
           </p>
 
           <h2>Første periode i Spania – 3,5 år i Ciudad Quesada</h2>
@@ -177,13 +201,15 @@ export default function FreddyPage() {
 
           <h3>Jeg ser etter mer enn boligannonsen</h3>
           <ul>
-            <li>Definere behov og budsjett, og velge og sammenligne aktuelle områder</li>
-            <li>Finne moderne boliger og prosjekter, og kontakte meglere, utbyggere og selgere</li>
-            <li>Innhente manglende informasjon og sammenligne pris og verdi</li>
-            <li>Forberede og organisere effektive visningsdager</li>
-            <li>Forstå kostnader, betalingsplaner og hva som faktisk er inkludert i et prosjekt</li>
-            <li>Vurdere utleiepotensial ut fra boligtype og beliggenhet</li>
-            <li>Følge deg videre gjennom hele kjøpsprosessen</li>
+            <li>Definere behov, prioriteringer og totalbudsjett før vi begynner å lete</li>
+            <li>Velge og sammenligne områder ut fra hvordan boligen faktisk skal brukes</li>
+            <li>Finne boliger og prosjekter, og kontakte meglere, utbyggere og selgere</li>
+            <li>Skille mellom det vi vet, det vi tror og det som fortsatt må avklares</li>
+            <li>Innhente manglende informasjon og sammenligne pris, verdi og alternativer</li>
+            <li>Forstå kostnader, betalingsplaner, tilvalg og hva som faktisk er inkludert</li>
+            <li>Forberede effektive visningsdager slik at tiden brukes på de riktige boligene</li>
+            <li>Vurdere utleiepotensial realistisk ut fra boligtype, beliggenhet og bruk</li>
+            <li>Følge kunden videre og sørge for at de riktige fagpersonene kobles inn når det trengs</li>
           </ul>
           <p>
             Ved nybygg kan arbeidet også omfatte gjennomgang av planløsninger, tilvalg, betalingsbetingelser og
