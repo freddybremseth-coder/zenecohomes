@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileText, Heart, MessageSquareText, ShieldCheck } from "lucide-react";
+import { ArrowRight, FileText, Heart, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
@@ -31,7 +31,6 @@ const benefits = [
 export const metadata = {
   title: "Min side",
   description: "Kundeportal for boligmatch, dokumenter, meldinger og oppfølging hos Zen Eco Homes.",
-  // Client account pages should not compete with public property guides in Search.
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/min-side",
@@ -47,35 +46,31 @@ export const metadata = {
 
 export default function PortalPage() {
   return (
-    <main>
+    <main className="min-side-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
 
       <PortalSignedOutOnly>
-        <section className="page-hero compact-hero">
-          <p className="eyebrow">Min side</p>
-          <h1>Din boligreise – samlet på ett sted</h1>
-          <p>
-            Når du samarbeider med Zen Eco Homes får du din egen side med boligforslag, dokumenter,
-            meldinger og oppfølging – trygt og ryddig.
-          </p>
+        <section className="min-side-hero">
+          <div className="min-side-hero-inner">
+            <p className="eyebrow">Min side</p>
+            <h1>Min side</h1>
+            <span className="min-side-hero-rule" aria-hidden="true" />
+            <p className="min-side-hero-copy">
+              Alt du trenger på ett sted – fra boligforslag og dokumenter til meldinger og neste steg i kjøpsprosessen.
+            </p>
+          </div>
         </section>
 
-        <section className="section">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: 18,
-              marginBottom: 30,
-            }}
-          >
+        <section className="min-side-public-section">
+          <div className="min-side-benefits">
             {benefits.map((item) => (
-              <article className="info-card" key={item.title}>
-                <item.icon />
-                <div>
+              <article className="min-side-benefit-card" key={item.title}>
+                <div className="min-side-benefit-icon"><item.icon size={28} /></div>
+                <div className="min-side-benefit-copy">
                   <h2>{item.title}</h2>
                   <p>{item.text}</p>
                 </div>
+                <span className="min-side-benefit-arrow" aria-hidden="true"><ArrowRight size={18} /></span>
               </article>
             ))}
           </div>
@@ -87,9 +82,9 @@ export default function PortalPage() {
             <PortalJoinForm />
           </div>
 
-          <div style={{ maxWidth: 760, margin: "24px auto 0", textAlign: "center" }}>
-            <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-              Har du allerede tilgang, bruker du sikker innloggingslenke. Er du ny, kan du be om Min side her og aktivere den fra e-posten du mottar.
+          <div className="min-side-support">
+            <p>
+              Har du allerede tilgang, bruker du sikker innloggingslenke. Er du ny, kan du opprette Min side og aktivere den fra e-posten du mottar.
             </p>
             <Link className="text-button" href="/booking">
               <ShieldCheck size={17} /> Vil du heller snakke med oss først?
