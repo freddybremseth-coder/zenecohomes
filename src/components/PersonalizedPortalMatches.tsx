@@ -194,6 +194,48 @@ export function PersonalizedPortalMatches({ locale = "no" }: { locale?: Locale }
     return () => data.subscription.unsubscribe();
   }, [load]);
 
+  useEffect(() => {
+    if (!supabase || !signedIn) return;
+
+    let cancelled = false;
+
+    const applyPreferences = (preferences: Record<string, unknown>) => {
+      const area = String(preferences.area || preferences.region || "");
+      setSearchArea(area);
+      setSearchMaxPrice(preferences.budgetMax ? String(preferences.budgetMax) : "");
+      setSearchBedrooms(preferences.bedrooms ? String(preferences.bedrooms) : "");
+      setSearchType(preferences.propertyType ? String(preferences.propertyType) : "");
+    };
+
+    supabase.auth.getSession().then(async ({ data }) => {
+      const token = data.session?.access_token;
+      if (!token) return;
+      try {
+        const res = await fetch("/api/portal/preferences", {
+          headers: { Authorization: `Bearer ${token}` },
+          cache: "no-store",
+        });
+        const body = await res.json().catch(() => ({}));
+        if (!cancelled && body?.preferences && typeof body.preferences === "object") {
+          applyPreferences(body.preferences as Record<string, unknown>);
+        }
+      } catch {
+        // Search remains usable even when saved preferences cannot be loaded.
+      }
+    });
+
+    const onPreferencesUpdated = (event: Event) => {
+      const detail = (event as CustomEvent<Record<string, unknown>>).detail;
+      if (detail && typeof detail === "object") applyPreferences(detail);
+    };
+
+    window.addEventListener("zeneco:portal-preferences-updated", onPreferencesUpdated);
+    return () => {
+      cancelled = true;
+      window.removeEventListener("zeneco:portal-preferences-updated", onPreferencesUpdated);
+    };
+  }, [signedIn]);
+
   const filteredProperties = useMemo(() => {
     const areaNeedle = searchArea.trim().toLowerCase();
     const maxPrice = Number(searchMaxPrice || 0);
