@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/i18n";
 import {
   ArrowRight,
   Building2,
+  BookOpen,
   Calculator,
   FileText,
   Heart,
@@ -132,6 +133,8 @@ type PortalStrings = {
   compare: string;
   documentsTitle: string;
   documentsEmpty: string;
+  guidesTitle: string;
+  guidesIntro: string;
   readMore: string;
   readLess: string;
   calculatorTitle: string;
@@ -202,6 +205,8 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     compare: "Sammenlign boliger",
     documentsTitle: "Dokumenter",
     documentsEmpty: "Ingen dokumenter er delt med deg ennå.",
+    guidesTitle: "Guider som passer boligplanen din",
+    guidesIntro: "Vi viser guider ut fra områdene og valgene du har registrert.",
     readMore: "Les mer",
     readLess: "Vis mindre",
     calculatorTitle: "Kjøpskalkulator",
@@ -270,6 +275,8 @@ const PORTAL_STRINGS: Record<Locale, PortalStrings> = {
     compare: "Compare properties",
     documentsTitle: "Documents",
     documentsEmpty: "No documents have been shared with you yet.",
+    guidesTitle: "Guides for your property plan",
+    guidesIntro: "We show guides based on the areas and preferences you have saved.",
     readMore: "Read more",
     readLess: "Show less",
     calculatorTitle: "Purchase calculator",
@@ -388,6 +395,35 @@ function calculateMonthlyPayment(principal: number, annualRate: number, years: n
   const months = years * 12;
   const monthlyRate = annualRate / 12;
   return (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
+}
+
+function portalGuides(locale: Locale, preferences: Preferences) {
+  const base = locale === "en"
+    ? [
+        { title: "Buying property in Spain", href: "/en/guides" },
+        { title: "The buying process", href: "/en/buying-process" },
+      ]
+    : locale === "de"
+      ? [
+          { title: "Immobilienkauf in Spanien", href: "/de/ratgeber" },
+          { title: "Der Kaufprozess", href: "/de/kaufprozess" },
+        ]
+      : [
+          { title: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
+          { title: "Kjøpsprosessen", href: "/kjopsprosessen" },
+          { title: "Nybygg i Spania", href: "/guide/nybygg-i-spania" },
+        ];
+
+  if (locale !== "no") return base;
+
+  const region = preferences.region.toLowerCase();
+  const tailored = [...base];
+  if (region.includes("nord")) tailored.unshift({ title: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord" });
+  if (region.includes("sør")) tailored.unshift({ title: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor" });
+  if (region.includes("cálida") || region.includes("calida")) tailored.unshift({ title: "Costa Cálida", href: "/omrader/costa-calida" });
+  if (preferences.wantsPlots) tailored.unshift({ title: "Tomter og bygging", href: "/omrader/innlandet/tomter" });
+
+  return tailored.slice(0, 4);
 }
 
 export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
@@ -882,6 +918,24 @@ export function PortalWorkspace({ locale = "no" }: { locale?: Locale } = {}) {
             ) : (
               <p className="message-empty">{p.documentsEmpty}</p>
             )}
+          </article>
+
+          <article className="portal-panel">
+            <div className="panel-title">
+              <BookOpen size={20} />
+              <h3>{p.guidesTitle}</h3>
+            </div>
+            <p>{p.guidesIntro}</p>
+            <ul className="portal-list">
+              {portalGuides(locale, preferences).map((guide) => (
+                <li key={guide.href}>
+                  <BookOpen size={17} />
+                  <a href={guide.href}>
+                    <span>{guide.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </article>
 
           <article className="portal-panel">
