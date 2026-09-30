@@ -96,7 +96,7 @@ export default function FreddyPage() {
           </p>
           <p>
             Utdannings- og fagbakgrunnen min omfatter blant annet BI, IT Akademiet, EDB-skolen, Google,
-            WEB Academy og Selgerskolen, i tillegg til ett år foto og ett år mediedesign ved Idefagskolen.
+            Ecademy og Selgerskolen, i tillegg til ett år foto og ett år mediedesign ved Idefagskolen.
             Jeg bruker ikke denne bredden for å gjøre en boligprosess mer komplisert – tvert imot. Den hjelper
             meg å stille bedre spørsmål, strukturere mye informasjon og forklare alternativene på en måte som
             gjør det enklere for kunden å ta en gjennomtenkt beslutning.
