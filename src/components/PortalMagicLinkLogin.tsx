@@ -75,15 +75,13 @@ export function PortalMagicLinkLogin({ locale = "no" }: { locale?: Locale }) {
     if (!normalizedEmail) return;
 
     setStatus("sending");
-    const { error } = await supabase.auth.signInWithOtp({
-      email: normalizedEmail,
-      options: {
-        shouldCreateUser: false,
-        emailRedirectTo: `${window.location.origin}${t.path}`,
-      },
+    const res = await fetch("/api/portal/magic-link", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: normalizedEmail, locale }),
     });
 
-    setStatus(error ? "error" : "sent");
+    setStatus(res.ok ? "sent" : "error");
   }
 
   if (signedIn) return null;
