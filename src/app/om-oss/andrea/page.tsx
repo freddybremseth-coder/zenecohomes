@@ -258,12 +258,6 @@ export default function AndreaPage() {
 
         <p className="andrea-story-signature">— Andrea Thorsnes Karlsen, Zen Eco Homes</p>
 
-        <p>
-          Med vennlig hilsen
-          <br />
-          <strong>Andrea Thorsnes Karlsen</strong>
-        </p>
-
         <div className="andrea-story-actions">
           <Link className="contact-button" href="/booking">
             Snakk med Andrea <ArrowRight size={17} />
