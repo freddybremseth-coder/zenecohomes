@@ -3,6 +3,7 @@ import { FileText, Heart, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PersonalizedPortalMatches } from "@/components/PersonalizedPortalMatches";
 import { PortalMagicLinkLogin } from "@/components/PortalMagicLinkLogin";
+import { PortalJoinForm } from "@/components/PortalJoinForm";
 import { PortalSignedOutOnly } from "@/components/PortalSignedOutOnly";
 import { PortalWorkspace } from "@/components/PortalWorkspace";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -79,16 +80,19 @@ export default function PortalPage() {
             ))}
           </div>
 
-          <div id="portal-login">
-            <PortalMagicLinkLogin />
+          <div className="portal-access-grid">
+            <div id="portal-login">
+              <PortalMagicLinkLogin />
+            </div>
+            <PortalJoinForm />
           </div>
 
           <div style={{ maxWidth: 760, margin: "24px auto 0", textAlign: "center" }}>
             <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-              Tilgang aktiveres personlig for kunder hos Zen Eco Homes. Vi oppretter ikke offentlige kontoer automatisk.
+              Har du allerede tilgang, bruker du sikker innloggingslenke. Er du ny, kan du be om Min side her og aktivere den fra e-posten du mottar.
             </p>
             <Link className="text-button" href="/booking">
-              <ShieldCheck size={17} /> Trenger du tilgang? Kontakt oss
+              <ShieldCheck size={17} /> Vil du heller snakke med oss først?
             </Link>
           </div>
         </section>
