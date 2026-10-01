@@ -182,6 +182,7 @@ export type LeadPayload = {
   corporate_model?: string;
   partner_type?: string;
   partnership_interest?: string;
+  referral_partner_id?: string;
   page_url?: string;
   utm_source?: string;
   utm_medium?: string;
@@ -1052,6 +1053,7 @@ export async function sendLead(payload: LeadPayload) {
       corporate_model: payload.corporate_model || null,
       partner_type: payload.partner_type || null,
       partnership_interest: payload.partnership_interest || null,
+      referral_partner_id: payload.referral_partner_id || null,
       source: payload.source || "zenecohomes-next",
       utm_source: payload.utm_source || null,
       utm_medium: payload.utm_medium || null,

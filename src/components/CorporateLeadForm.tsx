@@ -54,6 +54,7 @@ export function CorporateLeadForm() {
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
           utm_content: params.get("utm_content"),
+          referral_partner_id: params.get("partner"),
         }),
       });
 
