@@ -140,7 +140,7 @@ for (const slug of guideSlugs) {
 // resolve under /bedriftshytte-spania, be unique, and have a legacy /magasin redirect.
 const corporateContent = read("src/lib/corporate-content.ts");
 const corporateRoute = "src/app/bedriftshytte-spania/[slug]/page.tsx";
-const corporateSlugs = [...corporateContent.matchAll(/slug:\\s*"([^"]+)"/g)].map((match) => match[1]);
+const corporateSlugs = [...corporateContent.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]);
 const duplicateCorporateSlugs = corporateSlugs.filter((slug, index) => corporateSlugs.indexOf(slug) !== index);
 
 if (duplicateCorporateSlugs.length) {
