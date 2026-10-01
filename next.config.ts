@@ -18,6 +18,37 @@ const nextConfig: NextConfig = {
   async redirects() {
     // Artikler som er flyttet fra /magasin til innholdssiloer. Holdes i synk med
     // SILO_BY_SLUG i src/lib/magazine.ts. 301 for å bevare SEO-verdi.
+    const corporateArticleSlugs = [
+      "hva-er-en-bedriftshytte-i-spania",
+      "bedriftshytte-mot-hotell-og-leie",
+      "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+      "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca",
+      "hvilken-bolig-passer-som-bedriftshytte",
+      "alicante-eller-valencia-flyplass-bedriftshytte",
+      "bedriftsvilla-eller-ansattleilighet",
+      "bedriftshytte-for-25-ansatte",
+      "bedriftshytte-for-100-ansatte",
+      "medlemsbolig-i-spania-for-foreninger",
+      "drifte-bedriftshytte-i-spania-fra-norge",
+      "nybygg-eller-bruktbolig-som-bedriftshytte",
+      "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte",
+      "hvor-mange-kan-dele-en-bedriftshytte",
+      "costa-blanca-nord-eller-sor-bedriftshytte",
+      "fem-feil-ved-kjop-av-bedriftshytte-i-spania",
+      "kjop-av-bolig-gjennom-selskap-i-spania",
+      "rettferdig-bookingsystem-for-bedriftshytte",
+      "bedriftshytte-som-langsiktig-ansattgode",
+      "corporate-home-assessment-bedriftsvurdering",
+      "firmabolig-for-ledersamlinger-og-team",
+      "delt-bedriftshytte-for-flere-virksomheter",
+      "slik-presenterer-du-bedriftshytte-for-styret",
+    ];
+    const corporateLegacyRedirects = corporateArticleSlugs.map((slug) => ({
+      source: `/magasin/${slug}`,
+      destination: `/bedriftshytte-spania/${slug}`,
+      permanent: true,
+    }));
+
     const siloRedirects = [
       ["omkostninger-nybygg-spania", "guide"],
       ["bankgaranti-nybygg-spania", "guide"],
@@ -115,6 +146,7 @@ const nextConfig: NextConfig = {
       { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
       ...legacyKjopsprosessRedirects,
       ...siloRedirects,
+      ...corporateLegacyRedirects,
     ];
   },
 };
