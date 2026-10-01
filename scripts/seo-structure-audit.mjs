@@ -136,6 +136,39 @@ for (const slug of guideSlugs) {
   }
 }
 
+// Corporate article routing integrity: every published Corporate article must
+// resolve under /bedriftshytte-spania, be unique, and have a legacy /magasin redirect.
+const corporateContent = read("src/lib/corporate-content.ts");
+const corporateRoute = "src/app/bedriftshytte-spania/[slug]/page.tsx";
+const corporateSlugs = [...corporateContent.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]);
+const duplicateCorporateSlugs = corporateSlugs.filter((slug, index) => corporateSlugs.indexOf(slug) !== index);
+
+if (duplicateCorporateSlugs.length) {
+  errors.push(`src/lib/corporate-content.ts: duplicate Corporate article slugs: ${[...new Set(duplicateCorporateSlugs)].join(", ")}`);
+}
+if (corporateSlugs.length < 23) {
+  errors.push(`src/lib/corporate-content.ts: expected at least 23 Corporate articles, found ${corporateSlugs.length}`);
+}
+for (const requiredSlug of [
+  "hva-er-en-bedriftshytte-i-spania",
+  "bedriftshytte-mot-hotell-og-leie",
+  "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+]) {
+  if (!corporateSlugs.includes(requiredSlug)) {
+    errors.push(`src/lib/corporate-content.ts: missing related Corporate article "${requiredSlug}"`);
+  }
+}
+requireText(corporateRoute, 'articlesInSilo("corporate")', "Corporate dynamic route static params");
+requireText(corporateRoute, 'articleSilo(article) !== "corporate"', "Corporate route silo guard");
+
+for (const slug of corporateSlugs) {
+  const source = `/magasin/${slug}`;
+  const destination = `/bedriftshytte-spania/${slug}`;
+  if (!hasRedirect(source, destination)) {
+    errors.push(`${nextConfig}: missing Corporate legacy redirect ${source} -> ${destination}`);
+  }
+}
+
 const booking = "src/app/booking/page.tsx";
 requireText(booking, 'params.type === "infomote"', "info-meeting interest flow");
 requireText(booking, 'variant="simple"', "low-friction booking form");
