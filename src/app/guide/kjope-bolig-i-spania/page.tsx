@@ -471,7 +471,7 @@ export default async function BuyInSpainGuidePage() {
           <div className="hero-actions">
             <Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link>
             <Link className="text-button" href="/kjopsprosessen">Se hvordan vi jobber</Link>
-            <a className="text-button" href="https://care.zenecohomes.com" target="_blank" rel="noopener noreferrer">Zen Eco Homes Care</a>
+            <a className="text-button" href="https://care.zenecohomes.com/boligtilsyn-costa-blanca/" target="_blank" rel="noopener noreferrer">Boligtilsyn og keyholding etter kjøpet</a>
           </div>
         </div>
       </section>
