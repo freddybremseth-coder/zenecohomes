@@ -9,7 +9,6 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { getProperties } from "@/lib/realtyflow";
 import { CARE_URL, homeHreflang, homeLanguageLinks } from "@/lib/i18n";
 import type { Metadata } from "next";
-import "./homepage-v1.css";
 
 export const metadata: Metadata = {
   title: "Bolig i Spania | Norsk rådgivning | Zen Eco Homes",
