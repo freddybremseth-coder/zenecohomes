@@ -1,76 +1,199 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
-import { bookUrl, placeBooks } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Områder i Spania | Costa Blanca, Cálida og innlandet",
-  description: "Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og innlandet før boligkjøp i Spania. Se områdeguider, boliger og praktiske forskjeller.",
+  description:
+    "Sammenlign Costa Blanca Nord, Costa Blanca Sør, Costa Cálida og innlandet før boligkjøp i Spania. Se områdeguider, boliger og praktiske forskjeller.",
   alternates: { canonical: "/omrader" },
 };
 
-const groups = [
-  { title: "Costa Blanca Nord", href: "/omrader/costa-blanca-nord", places: "Altea · Albir · Calpe · Finestrat · Benidorm · Villajoyosa · Dénia · Moraira", text: "Kyst, helårsbyer, fjell og moderne boligprosjekter nord for Alicante." },
-  { title: "Costa Blanca Sør", href: "/omrader/costa-blanca-sor", places: "Guardamar · Torrevieja · Ciudad Quesada · Orihuela Costa · Santa Pola", text: "Stort boligmarked med strand, golf og mange internasjonale områder." },
-  { title: "Costa Cálida", href: "/omrader/costa-calida", places: "San Pedro · San Javier · Los Alcázares · La Manga · Murcia", text: "Et alternativ sør for Alicante med kyst, golf og et annet prisbilde." },
-  { title: "Innlandet", href: "/omrader/innlandet", places: "Pinoso · Aspe · Biar · Villena · La Romana · Novelda", text: "Mer plass, større tomter og mulighet for moderne villa eller byggeprosjekt." },
+const regions = [
+  {
+    key: "costa-blanca-nord",
+    title: "Costa Blanca Nord",
+    image: "/assets/areas/costa-blanca-nord.jpg",
+    href: "/omrader/costa-blanca-nord",
+    propertyHref: "/eiendommer?region=costa-blanca-nord",
+    text:
+      "Costa Blanca Nord kombinerer fjell, hav og etablerte helårsbyer. Her finner du alt fra urbane leiligheter og moderne nybygg til villaområder i høyden. Regionen passer særlig godt for kjøpere som vil ha tydelige bymiljøer, gode servicetilbud og kort vei mellom strand, natur og hverdagsliv.",
+  },
+  {
+    key: "costa-blanca-sor",
+    title: "Costa Blanca Sør",
+    image: "/assets/areas/costa-blanca-sor.jpg",
+    href: "/omrader/costa-blanca-sor",
+    propertyHref: "/eiendommer?region=costa-blanca-sor",
+    text:
+      "Costa Blanca Sør har et stort og variert boligmarked med lange strender, golf, internasjonale bomiljøer og mange nyere boligprosjekter. Områdene rundt Guardamar, Torrevieja, Ciudad Quesada og Orihuela Costa gir ulike kombinasjoner av helårsliv, feriebolig og enkel tilgang til Alicante-Elche flyplass.",
+  },
+  {
+    key: "costa-calida",
+    title: "Costa Cálida",
+    image: "/assets/areas/costa-calida.jpg",
+    href: "/omrader/costa-calida",
+    propertyHref: "/eiendommer?region=costa-calida",
+    text:
+      "Costa Cálida ligger i Murcia-regionen og byr på både Mar Menor, Middelhavet, golf og roligere kystbyer. Regionen er aktuell for kjøpere som ønsker et alternativ til Costa Blanca, med områder som San Pedro del Pinatar, Los Alcázares og La Manga og et variert tilbud av nyere boliger.",
+  },
+  {
+    key: "innlandet",
+    title: "Innlandet",
+    image: "/assets/areas/innlandet.jpg",
+    href: "/omrader/innlandet",
+    propertyHref: "/eiendommer?region=innlandet",
+    text:
+      "Innlandet passer for deg som vil ha mer plass, større tomter og et roligere spansk hverdagsliv. Her kan du finne tradisjonelle landsbyhus, fincaer og tomter – og i mange områder også muligheten til å bygge en moderne bolig når tomt, regulering og tekniske forhold gjør det mulig.",
+  },
+];
+
+const mapLocations: AreaExplorerLocation[] = [
+  {
+    id: "costa-blanca-nord",
+    name: "Costa Blanca Nord",
+    lat: 38.62,
+    lng: -0.03,
+    region: "Costa Blanca",
+    description: "Nord for Alicante med fjell, hav og etablerte helårsbyer.",
+    href: "/omrader/costa-blanca-nord",
+    propertyHref: "/eiendommer?region=costa-blanca-nord",
+  },
+  {
+    id: "costa-blanca-sor",
+    name: "Costa Blanca Sør",
+    lat: 38.02,
+    lng: -0.69,
+    region: "Costa Blanca",
+    description: "Sør for Alicante med strender, golf og et stort internasjonalt boligmarked.",
+    href: "/omrader/costa-blanca-sor",
+    propertyHref: "/eiendommer?region=costa-blanca-sor",
+  },
+  {
+    id: "costa-calida",
+    name: "Costa Cálida",
+    lat: 37.77,
+    lng: -0.85,
+    region: "Murcia",
+    description: "Murcia-kysten med Mar Menor, Middelhavet og golfområder.",
+    href: "/omrader/costa-calida",
+    propertyHref: "/eiendommer?region=costa-calida",
+  },
+  {
+    id: "innlandet",
+    name: "Innlandet",
+    lat: 38.43,
+    lng: -0.89,
+    region: "Alicante og Murcia",
+    description: "Byer, landsbyer og landlige områder med mer plass og større tomter.",
+    href: "/omrader/innlandet",
+    propertyHref: "/eiendommer?region=innlandet",
+  },
 ];
 
 export default function AreasPage() {
-  return <main className="areas-page">
-    <SiteHeader languageLinks={homeLanguageLinks("no")} />
-    <section className="page-hero compact-hero">
-      <p className="eyebrow">Områdeguide</p>
-      <h1>Velg område før du velger bolig i Spania</h1>
-      <p>Kyst, by og innland gir svært ulike hverdager. Bruk denne siden som startpunkt og gå videre til region- og byguidene.</p>
-    </section>
-    <section className="section">
-      <div className="area-choice-grid editorial-area-grid">
-        {groups.map((group, index) => <article className="area-choice-card" key={group.title}>
-          <div className="area-choice-meta">
-            <span className="area-choice-number">{String(index + 1).padStart(2, "0")}</span>
-            <span className="area-choice-places">{group.places}</span>
-          </div>
-          <h2>{group.title}</h2>
-          <p>{group.text}</p>
-          <Link className="text-button" href={group.href}>Utforsk regionen <ArrowRight size={16}/></Link>
-        </article>)}
-      </div>
-    </section>
-    <section className="section">
-      <div className="section-heading">
-        <p className="eyebrow">Let Me Guide You</p>
-        <h2>Områdebøker – les deg opp før du velger sted</h2>
-        <p>
-          Områdebøkene hører hjemme sammen med områdene. De gir mer dybde om hverdagsliv, nabolag og lokale forskjeller
-          og kompletterer de kortere nettsidene.
-        </p>
-      </div>
-      <div className="book-grid">
-        {placeBooks.map((book) => (
-          <a className="book-card" href={bookUrl(book.slug)} target="_blank" rel="noopener noreferrer" key={book.slug}>
-            <div className="book-cover-wrap">
-              <Image src={book.cover} alt={`Områdebok om ${book.title}`} fill sizes="(max-width: 700px) 80vw, 260px" />
-            </div>
-            <div className="book-card-body">
-              <span><BookOpen size={14} /> Områdeguide</span>
-              <h3>{book.title}</h3>
-              <p>{book.blurb}</p>
-              <strong>Les mer om boken</strong>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.zenecohomes.com/omrader#collection",
+        url: "https://www.zenecohomes.com/omrader",
+        name: "Velg område før du velger bolig i Spania",
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: regions.map((region, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: region.title,
+            url: `https://www.zenecohomes.com${region.href}`,
+          })),
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Forside", item: "https://www.zenecohomes.com/" },
+          { "@type": "ListItem", position: 2, name: "Områder", item: "https://www.zenecohomes.com/omrader" },
+        ],
+      },
+    ],
+  };
 
-    <section className="section split area-decision">
-      <div><p className="eyebrow">Sammenlign før du bestemmer deg</p><h2>Hva bør du vurdere?</h2><p>Se på reisevei, helårsservice, klima, strand, skole, utleie, prisnivå og hvordan området fungerer utenfor høysesongen.</p><Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">Les områdeguiden <ArrowRight size={16}/></Link></div>
-      <div><p className="eyebrow">Boliger</p><h2>Klar for å se konkrete alternativer?</h2><p>Gå videre til boligoversikten når du har snevret inn region eller område.</p><Link className="contact-button" href="/eiendommer">Se boliger</Link></div>
-    </section>
-    <Footer />
-  </main>;
+  return (
+    <main className="areas-page areas-hub-v2">
+      <SiteHeader languageLinks={homeLanguageLinks("no")} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      <section className="page-hero compact-hero">
+        <p className="eyebrow">Områdeguide</p>
+        <h1>Velg område før du velger bolig i Spania</h1>
+        <p>
+          Riktig bolig starter med riktig sted. Sammenlign kyst, by og innland ut fra hverdagsliv, reisevei,
+          service, natur og hvordan du faktisk ønsker å bruke boligen.
+        </p>
+      </section>
+
+      <section className="section region-overview-list">
+        {regions.map((region) => (
+          <article className="region-overview-card" key={region.key}>
+            <div
+              className="region-overview-image"
+              style={{ backgroundImage: `url(${region.image})` }}
+              role="img"
+              aria-label={region.title}
+            />
+            <div className="region-overview-copy">
+              <h2>{region.title}</h2>
+              <p>{region.text}</p>
+              <div className="region-overview-actions">
+                <Link className="contact-button" href={region.href}>
+                  Utforsk {region.title} <ArrowRight size={17} />
+                </Link>
+                <Link className="text-button" href={region.propertyHref}>
+                  Se boliger i {region.title}
+                </Link>
+              </div>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <AreaExplorerMap
+        locations={mapLocations}
+        label="Se hvor regionene ligger"
+        intro="Kartet viser omtrent hvor de fire hovedområdene ligger i forhold til hverandre. Bruk det som orientering før du går videre til region- og byguidene."
+      />
+      <div className="center-action areas-guide-link">
+        <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
+          Les hele områdeguiden for boligkjøp i Spania <ArrowRight size={17} />
+        </Link>
+      </div>
+
+      <section className="section split area-decision">
+        <div>
+          <p className="eyebrow">Sammenlign før du bestemmer deg</p>
+          <h2>Hva bør du vurdere?</h2>
+          <p>
+            Se på reisevei, helårsservice, klima, strand, skole, utleie, prisnivå og hvordan området fungerer
+            utenfor høysesongen.
+          </p>
+          <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
+            Les områdeguiden <ArrowRight size={16} />
+          </Link>
+        </div>
+        <div>
+          <p className="eyebrow">Boliger</p>
+          <h2>Klar for å se konkrete alternativer?</h2>
+          <p>Gå videre til boligoversikten når du har snevret inn region eller område.</p>
+          <Link className="contact-button" href="/eiendommer">Se boliger</Link>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  );
 }
