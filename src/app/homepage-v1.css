@@ -1,0 +1,82 @@
+/* Homepage-only refinements; shared pages retain their existing layout. */
+.home-navigation .home-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.home-navigation .home-language-dropdown { position: relative; }
+.home-navigation .nav-submenu:not([hidden]),
+.home-navigation .home-language-links:not([hidden]) {
+  display: grid;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  background: var(--ze-white, #fcfbf8);
+  color: var(--ze-ink, #172027);
+}
+.home-navigation [hidden] { display: none !important; }
+.home-navigation .home-language-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 90px;
+  padding: 8px;
+  border: 1px solid var(--ze-line);
+  box-shadow: 0 14px 36px #17202720;
+}
+.home-navigation .home-language-links a { padding: 12px; color: var(--ze-ink); }
+.home-navigation .home-language-links a[aria-current] { font-weight: 800; text-decoration: underline; }
+.home-navigation .nav-submenu a { color: var(--ze-ink); }
+.home-navigation button:focus-visible,
+.home-carousel-controls button:focus-visible { outline: 2px solid var(--ze-travertine, #b49764); outline-offset: 4px; }
+.home-v1 .home-testimonial-carousel { max-width: 850px; margin-inline: auto; touch-action: pan-y; }
+.home-v1 .home-testimonial-slide { display: grid; min-height: 330px; }
+.home-v1 .testimonial-card { margin: 0; width: 100%; align-self: stretch; }
+.home-carousel-controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px; }
+.home-carousel-controls button { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--ze-line); background: transparent; color: var(--ze-ink); cursor: pointer; }
+.home-carousel-controls button:hover { background: var(--ze-sand, #eee8dc); }
+.home-v1 .home-process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.home-v1 .home-process-grid article { display: flex; flex-direction: column; min-width: 0; }
+.home-v1 .home-process-grid article .text-button { margin-top: auto; padding-top: 20px; }
+.home-advisor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.home-advisor-grid article { display: flex; flex-direction: column; border: 1px solid var(--ze-line); background: var(--ze-white, #fcfbf8); overflow: hidden; }
+.home-advisor-photo { width: 100%; height: 360px; object-fit: cover; object-position: center 25%; }
+.home-advisor-placeholder { display: grid; place-items: center; background: var(--ze-sand, #eee8dc); font-family: var(--font-display); font-size: 5rem; color: var(--ze-ink); }
+.home-advisor-body { padding: clamp(24px, 3vw, 40px); flex: 1; display: flex; flex-direction: column; }
+.home-advisor-body h3 { margin: 0 0 16px; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
+.home-advisor-body p { line-height: 1.7; margin: 0 0 24px; }
+.home-advisor-body .text-button { margin-top: auto; }
+@media (min-width: 901px) and (max-width: 1150px) {
+  .home-navigation { padding-inline: 22px; gap: 18px; }
+  .home-navigation .nav { gap: 14px; font-size: 0.68rem; letter-spacing: 0.03em; }
+  .home-navigation .brand { max-width: 230px; }
+}
+@media (max-width: 1000px) {
+  .home-v1 .home-process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .home-navigation .home-dropdown-trigger { min-height: 52px; width: 100%; justify-content: space-between; }
+  .home-navigation .home-language-dropdown { margin-top: 16px; }
+  .home-navigation .home-language-links { position: static; grid-template-columns: repeat(4, 1fr); box-shadow: none; }
+  .home-navigation .nav.open { max-height: calc(100dvh - 72px); }
+}
+@media (max-width: 640px) {
+  .home-v1 .home-process-grid, .home-advisor-grid { grid-template-columns: minmax(0, 1fr); }
+  .home-advisor-photo { height: 320px; }
+  .home-v1 .home-testimonial-slide { min-height: 390px; }
+}
+.home-v1 .home-property-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+@media (max-width: 1000px) {
+  .home-v1 .home-property-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .home-v1 .home-property-grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -102,6 +102,14 @@ for (const file of pageFiles) {
   const fallbackDescription = block.match(/const description\s*=\s*[\s\S]*?\|\|\s*\n?\s*"([^"]+)"/)?.[1];
   const description = directDescription || fallbackDescription;
 
+  // Homepage v1 has explicitly approved copy; validate it exactly instead of
+  // padding the wording to satisfy our general editorial length guideline.
+  if (file === "src/app/page.tsx") {
+    if (title !== "Bolig i Spania | Norsk rådgivning | Zen Eco Homes") errors.push(`${file}: homepage title differs from approved copy`);
+    if (description !== "Finn bolig i Spania med norsk rådgivning. Sammenlign områder, nybygg, villaer og leiligheter på Costa Blanca, Costa Cálida og i innlandet.") errors.push(`${file}: homepage description differs from approved copy`);
+    continue;
+  }
+
   if (!title) errors.push(`${file}: could not read metadata title/fallback`);
   else checkRange(file, "metadata title", title, 50, 60);
 
@@ -115,4 +123,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`SEO metadata audit passed: ${dataCount} data records and ${pageFiles.length} pages; titles 50-60 chars, descriptions 140-160 chars.`);
+console.log(`SEO metadata audit passed: ${dataCount} data records and ${pageFiles.length} pages; titles 50-60 chars, descriptions 140-160 chars; homepage uses approved exact copy.`);
