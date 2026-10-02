@@ -1,3 +1,4 @@
+import { EnergyBenefits } from "@/components/EnergyBenefits";
 import Link from "next/link";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { Footer } from "@/components/Footer";
@@ -274,6 +275,7 @@ export default async function PropertiesPage({
         )}
       </section>
       <BuyerMatchQuiz />
+      <EnergyBenefits />
       <Footer />
     </main>
   );

@@ -1,3 +1,4 @@
+import { TestimonialCarousel } from "./TestimonialCarousel";
 import { Quote, Star } from "lucide-react";
 import type { SiteLocale } from "@/lib/i18n";
 
@@ -214,12 +215,33 @@ const COPY: Record<SiteLocale, TestimonialCopy> = {
 
 export function Testimonials({
   heading,
+  carousel = false,
   locale = "no",
 }: {
   heading?: string;
+  carousel?: boolean;
   locale?: SiteLocale;
 }) {
   const copy = COPY[locale];
+
+  const cards = copy.testimonials.map((t) => (
+    <figure className="testimonial-card" key={`${t.name}-${t.source ?? "customer"}`}>
+      <Quote className="testimonial-mark" size={26} />
+      {t.source === "google" && t.rating ? (
+        <div className="testimonial-rating" aria-label={copy.ratingLabel(t.rating)}>
+          {Array.from({ length: t.rating }).map((_, index) => (
+            <Star key={index} size={15} aria-hidden="true" />
+          ))}
+          <span>Google</span>
+        </div>
+      ) : null}
+      <blockquote>«{t.quote}»</blockquote>
+      <figcaption>
+        <strong>{t.name}</strong>
+        {t.context ? <span>{t.context}</span> : null}
+      </figcaption>
+    </figure>
+  ));
 
   return (
     <section className="section testimonials">
@@ -228,26 +250,7 @@ export function Testimonials({
         <h2>{heading ?? copy.heading}</h2>
         <p>{copy.intro}</p>
       </div>
-      <div className="testimonial-grid">
-        {copy.testimonials.map((t) => (
-          <figure className="testimonial-card" key={`${t.name}-${t.source ?? "customer"}`}>
-            <Quote className="testimonial-mark" size={26} />
-            {t.source === "google" && t.rating ? (
-              <div className="testimonial-rating" aria-label={copy.ratingLabel(t.rating)}>
-                {Array.from({ length: t.rating }).map((_, index) => (
-                  <Star key={index} size={15} aria-hidden="true" />
-                ))}
-                <span>Google</span>
-              </div>
-            ) : null}
-            <blockquote>«{t.quote}»</blockquote>
-            <figcaption>
-              <strong>{t.name}</strong>
-              {t.context ? <span>{t.context}</span> : null}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      {carousel ? <TestimonialCarousel>{cards}</TestimonialCarousel> : <div className="testimonial-grid">{cards}</div>}
     </section>
   );
 }

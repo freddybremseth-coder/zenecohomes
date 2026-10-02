@@ -103,6 +103,7 @@ const nextConfig: NextConfig = {
     }));
 
     return [
+      { source: "/slik-hjelper-vi-deg", destination: "/kjopsprosessen", permanent: true },
       {
         source: "/:path*",
         has: [
