@@ -18,12 +18,11 @@ export function HomeAdvisors() {
         <article>
           <Image
             className="home-advisor-photo home-advisor-photo-andrea"
-            src="/assets/andrea-thorsnes-karlsen.svg"
+            src="/assets/andrea-thorsnes-karlsen.webp"
             alt="Andrea Thorsnes Karlsen"
             width={533}
             height={800}
             sizes="(max-width: 640px) 90vw, 40vw"
-            unoptimized
           />
           <div className="home-advisor-body">
             <h3>Andrea Thorsnes Karlsen</h3>
