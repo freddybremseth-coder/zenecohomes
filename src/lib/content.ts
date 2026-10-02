@@ -615,7 +615,7 @@ export const articles: Article[] = [
         ],
         bullets: [
           "Bekreft IVA-behandlingen for den konkrete boligen og selgeren.",
-          "Generell AJD i Comunitat Valenciana: 1,5 % for relevante notarielle dokumenter, med mulige sær-/reduserte satser i bestemte tilfeller.",
+          "Generell AJD i Comunitat Valenciana: 1,4 % fra 1. juni 2026 for relevante notarielle dokumenter, med mulige sær-/reduserte satser i bestemte tilfeller.",
           "Murcia: 1,5 % AJD for de nevnte IVA-pliktige, ikke-fritatte eiendomsoverføringene fra 25. juli 2025.",
           "Bruktboliger følger normalt ITP-reglene i stedet for IVA; i Murcia er den generelle ITP-satsen for fast eiendom 7,75 % fra 25. juli 2025. Andre regionale satser og reduksjoner må kontrolleres separat.",
         ],
