@@ -381,3 +381,28 @@ h3,
 .page-hero .eyebrow a {
   color: #f0d3a0;
 }
+
+/* Cross-brand entity network: visible, editorial navigation only. */
+.footer-2027-network{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.55rem 1rem;
+  padding:1rem clamp(1rem,4vw,3rem) 1.4rem;
+  border-top:1px solid color-mix(in srgb,currentColor 10%,transparent);
+  font-size:.72rem;
+  line-height:1.5;
+}
+.footer-2027-network span{
+  color:var(--accent,#b68a4a);
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.footer-2027-network a{
+  color:inherit;
+  opacity:.62;
+  text-decoration:none;
+}
+.footer-2027-network a:hover,
+.footer-2027-network a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}

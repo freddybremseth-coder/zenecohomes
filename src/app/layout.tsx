@@ -124,7 +124,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           url: "https://www.freddybremseth.com/",
           knowsAbout: ["Eiendom i Spania", "Rådgivning", "Salg", "Digitale systemer"],
         },
-        sameAs: ["https://www.freddybremseth.com"],
       },
     ],
   };

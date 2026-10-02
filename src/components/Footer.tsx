@@ -217,6 +217,17 @@ export function Footer({
           </span>
         ) : <span className="footer-2027-legal">{SUBLINE[locale]}</span>}
       </div>
+
+      <nav className="footer-2027-network" aria-label="Freddy Bremseth prosjektnettverk">
+        <span>Freddy Bremseth network</span>
+        <a href="https://www.freddybremseth.com/">FreddyBremseth.com</a>
+        <a href="https://www.pinosoecolife.com/">Pinoso Eco Life</a>
+        <a href="https://www.donaanna.com/">Doña Anna</a>
+        <a href="https://www.chatgenius.pro/">ChatGenius</a>
+        <a href="https://books.freddybremseth.com/">Books</a>
+        <a href="https://art.freddybremseth.com/">Art</a>
+        <a href="https://remaster.freddybremseth.com/">Re-Master Freddy</a>
+      </nav>
     </footer>
   );
 }
