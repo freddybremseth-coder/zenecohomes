@@ -125,6 +125,48 @@ async function recordCorporateLead(body: Record<string, unknown>) {
   if (error) console.warn("[contact] corporate lead metric skipped:", error.message);
 }
 
+async function recordCareLead(body: Record<string, unknown>) {
+  const requestType = body.request_type ? String(body.request_type).trim() : "";
+  const source = body.source ? String(body.source).trim() : "";
+  const allowedIntents = new Set([
+    "care-keyholding",
+    "care-boligtilsyn",
+    "care-nokkeloppbevaring",
+    "care-klargjoring",
+    "care-uvaer",
+  ]);
+  if (!source.startsWith("zeneco-care-") || !allowedIntents.has(requestType)) return;
+
+  const supabase = getSupabaseAdmin();
+  if (!supabase) return;
+
+  const intent = requestType.replace(/^care-/, "");
+  const occurredAt = new Date().toISOString();
+  const { error } = await supabase.from("marketing_events").insert({
+    event_type: "care_lead_submit",
+    brand_id: "zeneco",
+    content_id: `care:${intent}`,
+    channel: "website",
+    genome: { copy_version: "care-v1" },
+    metrics: { count: 1 },
+    correlation_id: `zeneco:care_lead_submit:${intent}:${Date.now()}`,
+    occurred_at: occurredAt,
+    metadata: {
+      copy_version: "care-v1",
+      service_intent: intent,
+      source,
+      request_type: requestType,
+      page_url: publicLeadSourcePage(body.page_url) || null,
+      utm_source: body.utm_source ? String(body.utm_source).slice(0, 80) : null,
+      utm_medium: body.utm_medium ? String(body.utm_medium).slice(0, 80) : null,
+      utm_campaign: body.utm_campaign ? String(body.utm_campaign).slice(0, 120) : null,
+      utm_content: body.utm_content ? String(body.utm_content).slice(0, 160) : null,
+      measurement: "care_conversion_funnel",
+    },
+  });
+  if (error) console.warn("[contact] care lead metric skipped:", error.message);
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
@@ -179,6 +221,7 @@ export async function POST(request: Request) {
     await Promise.all([
       recordPropertyLead(body).catch(() => undefined),
       recordCorporateLead(body).catch(() => undefined),
+      recordCareLead(body).catch(() => undefined),
     ]);
     return contactJson(request, { ok: true });
   } catch (error) {
