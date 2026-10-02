@@ -16,7 +16,15 @@ export function HomeAdvisors() {
           </div>
         </article>
         <article>
-          <div className="home-advisor-photo home-advisor-placeholder" role="img" aria-label="Andrea Thorsnes Karlsen – portrett kommer">ATK</div>
+          <Image
+            className="home-advisor-photo home-advisor-photo-andrea"
+            src="/assets/andrea-thorsnes-karlsen.svg"
+            alt="Andrea Thorsnes Karlsen"
+            width={533}
+            height={800}
+            sizes="(max-width: 640px) 90vw, 40vw"
+            unoptimized
+          />
           <div className="home-advisor-body">
             <h3>Andrea Thorsnes Karlsen</h3>
             <p>Andrea jobber med kundeoppfølging, markedsføring og tydelig informasjon, slik at veien fra research til rådgivning blir enklere.</p>
