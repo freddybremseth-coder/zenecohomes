@@ -20,6 +20,8 @@ import "./mobile-critical.css";
 import "./area-map-2027.css";
 import "./corporate-2027.css";
 import "./prod-layout-fixes.css";
+import "./homepage-v1.css";
+import "./properties-v2.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],
