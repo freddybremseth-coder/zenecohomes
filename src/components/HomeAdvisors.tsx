@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ANDREA_PORTRAIT_DATA_URI } from "@/lib/andreaPortrait";
 
 export function HomeAdvisors() {
   return (
@@ -16,13 +17,12 @@ export function HomeAdvisors() {
           </div>
         </article>
         <article>
-          <Image
+          <img
             className="home-advisor-photo home-advisor-photo-andrea"
-            src="/assets/andrea-thorsnes-karlsen.webp"
+            src={ANDREA_PORTRAIT_DATA_URI}
             alt="Andrea Thorsnes Karlsen"
             width={533}
             height={800}
-            sizes="(max-width: 640px) 90vw, 40vw"
           />
           <div className="home-advisor-body">
             <h3>Andrea Thorsnes Karlsen</h3>
