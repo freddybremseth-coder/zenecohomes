@@ -3,8 +3,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { Footer } from "@/components/Footer";
+import { areaPresentationImage } from "@/lib/areaGuideContent";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
+import { areaMatchesRegion, getAreaProfiles, getProperties, type RegionKey } from "@/lib/realtyflow";
 
 export const metadata: Metadata = {
   title: "Områder i Spania | Costa Blanca, Cálida og innlandet",
@@ -17,7 +19,6 @@ const regions = [
   {
     key: "costa-blanca-nord",
     title: "Costa Blanca Nord",
-    image: "/assets/areas/costa-blanca-nord.jpg",
     href: "/omrader/costa-blanca-nord",
     propertyHref: "/eiendommer?region=costa-blanca-nord",
     text:
@@ -26,7 +27,6 @@ const regions = [
   {
     key: "costa-blanca-sor",
     title: "Costa Blanca Sør",
-    image: "/assets/areas/costa-blanca-sor.jpg",
     href: "/omrader/costa-blanca-sor",
     propertyHref: "/eiendommer?region=costa-blanca-sor",
     text:
@@ -35,7 +35,6 @@ const regions = [
   {
     key: "costa-calida",
     title: "Costa Cálida",
-    image: "/assets/areas/costa-calida.jpg",
     href: "/omrader/costa-calida",
     propertyHref: "/eiendommer?region=costa-calida",
     text:
@@ -44,7 +43,6 @@ const regions = [
   {
     key: "innlandet",
     title: "Innlandet",
-    image: "/assets/areas/innlandet.jpg",
     href: "/omrader/innlandet",
     propertyHref: "/eiendommer?region=innlandet",
     text:
@@ -95,7 +93,14 @@ const mapLocations: AreaExplorerLocation[] = [
   },
 ];
 
-export default function AreasPage() {
+export default async function AreasPage() {
+  const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties(0, "zeneco")]);
+  const regionImages = Object.fromEntries(
+    regions.map((region) => {
+      const profile = profiles.find((item) => areaMatchesRegion(item, region.key as RegionKey));
+      return [region.key, profile ? areaPresentationImage(profile, properties) : "/assets/areas.jpg"];
+    }),
+  ) as Record<string, string>;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -143,7 +148,7 @@ export default function AreasPage() {
           <article className="region-overview-card" key={region.key}>
             <div
               className="region-overview-image"
-              style={{ backgroundImage: `url(${region.image})` }}
+              style={{ backgroundImage: `url(${regionImages[region.key]})` }}
               role="img"
               aria-label={region.title}
             />
