@@ -70,14 +70,26 @@ requireText("src/app/page.tsx", 'className="hero-video"', "optimized homepage he
 
 const nav = "src/lib/i18n.ts";
 for (const text of [
-  'label: "Kjøpe bolig"',
-  'label: "Kjøpsprosessen"',
+  'label: "Boliger"',
+  'label: "Områder"',
+  'label: "Bedrift"',
+  'label: "Om oss"',
+  'label: "Meny"',
+  'label: "Kundeomtaler"',
   'label: "Visningstur"',
-  'label: "Alle guider"',
+  'label: "Slik hjelper vi deg"',
+  'label: "Guide"',
   'label: "Magasin"',
+  'label: "Min side"',
+  'label: "Keyholding"',
+  'label: "Få rådgivning"',
 ]) {
-  requireText(nav, text, "Kjøpe bolig navigation structure");
+  requireText(nav, text, "approved Norwegian navigation structure");
 }
+
+requireText("src/components/SiteHeader.tsx", "<Breadcrumbs locale={locale}", "shared visible breadcrumbs");
+requireText(properties, '"@type": "CollectionPage"', "CollectionPage schema on /eiendommer");
+requireText(properties, '"@type": "BreadcrumbList"', "BreadcrumbList schema on /eiendommer");
 
 const magazinePage = "src/app/magasin/page.tsx";
 requireText(magazinePage, "!articleSilo(article)", "Magazine editorial-only fallback separation");

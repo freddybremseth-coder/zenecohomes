@@ -193,20 +193,21 @@ export function navLinks(locale: SiteLocale): NavLink[] {
   return [
     { label: "Boliger", href: "/eiendommer" },
     { label: "Områder", href: "/omrader" },
+    { label: "Bedrift", href: "/bedriftshytte-spania" },
+    { label: "Om oss", href: "/om-oss" },
     {
-      label: "Kjøpe bolig",
-      href: "/guide/kjope-bolig-i-spania",
+      label: "Meny",
+      href: "#",
       children: [
-        { label: "Kjøpe bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
-        { label: "Kjøpsprosessen", href: "/kjopsprosessen" },
+        { label: "Kundeomtaler", href: "/kundeomtaler" },
         { label: "Visningstur", href: "/visningstur" },
-        { label: "Alle guider", href: "/guide" },
+        { label: "Slik hjelper vi deg", href: "/slik-hjelper-vi-deg" },
+        { label: "Guide", href: "/guide" },
         { label: "Magasin", href: "/magasin" },
+        { label: "Min side", href: "/min-side" },
+        { label: "Keyholding", href: CARE_URL, external: true },
       ],
     },
-    { label: "Om oss", href: "/om-oss" },
-    { label: "Kundeomtaler", href: "/kundeomtaler" },
-    { label: "Min side", href: "/min-side" },
     { label: "Få rådgivning", href: "/booking", cta: true },
   ];
 }

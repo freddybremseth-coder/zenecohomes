@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState, type FocusEvent } from "react";
 import { navLinks, withLocale, type SiteLocale } from "@/lib/i18n";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 type LanguageLink = { locale: SiteLocale; href: string; current: boolean };
 
@@ -17,27 +18,13 @@ export function SiteHeader({
   languageLinks?: LanguageLink[];
 } = {}) {
   const headerRef = useRef<HTMLElement>(null);
-  const links = homepage ? [
-    { label: "Boliger", href: "/eiendommer" },
-    { label: "Områder", href: "/omrader" },
-    { label: "Bedrift", href: "/bedriftshytte-spania" },
-    { label: "Om oss", href: "/om-oss" },
-    { label: "Meny", href: "#", children: [
-      { label: "Kundeomtaler", href: "/kundeomtaler" },
-      { label: "Visningstur", href: "/visningstur" },
-      { label: "Slik hjelper vi deg", href: "/slik-hjelper-vi-deg" },
-      { label: "Guide", href: "/guide" },
-      { label: "Magasin", href: "/magasin" },
-      { label: "Min side", href: "/min-side" },
-      { label: "Keyholding", href: "https://care.zenecohomes.com", external: true },
-    ] },
-    { label: "Få rådgivning", href: "/booking", cta: true },
-  ] : navLinks(locale);
+  const compactNavigation = homepage || locale === "no";
+  const links = navLinks(locale);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState<"menu" | "language" | null>(null);
 
   useEffect(() => {
-    if (!homepage) return;
+    if (!compactNavigation) return;
     const dismiss = (event: PointerEvent) => {
       if (!headerRef.current?.contains(event.target as Node)) setDropdown(null);
     };
@@ -53,7 +40,7 @@ export function SiteHeader({
       document.removeEventListener("pointerdown", dismiss);
       document.removeEventListener("keydown", escape);
     };
-  }, [homepage]);
+  }, [compactNavigation]);
   const [scrolled, setScrolled] = useState(false);
   const [hasHero, setHasHero] = useState(false);
 
@@ -97,7 +84,7 @@ export function SiteHeader({
 
   const headerClass = [
     "site-header",
-    homepage ? "home-navigation" : "",
+    compactNavigation ? "home-navigation" : "",
     menuOpen ? "menu-open" : "",
     hasHero && !scrolled && !menuOpen ? "over-hero" : "",
     scrolled || menuOpen ? "is-scrolled" : "",
@@ -126,7 +113,8 @@ export function SiteHeader({
   ));
 
   return (
-    <header ref={headerRef} className={headerClass}>
+    <>
+      <header ref={headerRef} className={headerClass}>
       <a className="skip-link" href="#main-content" onClick={(event) => {
         const target = headerRef.current?.parentElement?.querySelector<HTMLElement>("section");
         if (target) {
@@ -170,12 +158,12 @@ export function SiteHeader({
         {links.map((link) =>
           link.children?.length ? (
             <div className="nav-dropdown" key={link.href} onBlur={closeDropdownOnBlur}>
-              {homepage ? (
+              {compactNavigation ? (
                 <button className="home-dropdown-trigger" type="button" aria-expanded={dropdown === "menu"} aria-controls="home-more-links" onClick={() => setDropdown(dropdown === "menu" ? null : "menu")}>{link.label} <span aria-hidden="true">⌄</span></button>
               ) : (
                 <Link className="nav-dropdown-trigger" href={link.href} onClick={closeMenus}>{link.label}</Link>
               )}
-              <div className="nav-submenu" id={homepage ? "home-more-links" : undefined} hidden={homepage ? dropdown !== "menu" : undefined} aria-label={`${link.label} undermeny`}>
+              <div className="nav-submenu" id={compactNavigation ? "home-more-links" : undefined} hidden={compactNavigation ? dropdown !== "menu" : undefined} aria-label={`${link.label} undermeny`}>
                 {link.children.map((child) =>
                   child.external ? (
                     <a key={child.href} href={child.href} onClick={closeMenus} target="_blank" rel="noopener noreferrer">
@@ -199,7 +187,7 @@ export function SiteHeader({
             </Link>
           ),
         )}
-        {languageLinks && languageLinks.length > 1 && (homepage ? (
+        {languageLinks && languageLinks.length > 1 && (compactNavigation ? (
           <div className="home-language-dropdown" onBlur={closeDropdownOnBlur}>
             <button type="button" className="home-dropdown-trigger" aria-label="Velg språk"
               aria-expanded={dropdown === "language"} aria-controls="home-language-links"
@@ -212,6 +200,8 @@ export function SiteHeader({
           </div>
         ) : <span className="language-switcher">{languageOptions}</span>)}
       </nav>
-    </header>
+      </header>
+      <Breadcrumbs locale={locale} />
+    </>
   );
 }

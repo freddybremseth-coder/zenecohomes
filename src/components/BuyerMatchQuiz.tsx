@@ -1,56 +1,59 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
-import { ArrowRight, CheckCircle2, Send } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Send } from "lucide-react";
 
-const areaAdvice: Record<string, { title: string; text: string; href: string }> = {
-  "Costa Blanca Nord": {
-    title: "Costa Blanca Nord kan passe godt",
-    text: "Du prioriterer kvalitet, utsikt, helårsservice og områder som Altea, Calpe, Finestrat, Polop og Moraira.",
-    href: "/eiendommer?region=costa-blanca-nord",
-  },
-  "Costa Blanca Sør": {
-    title: "Costa Blanca Sør kan passe godt",
-    text: "Du får et stort utvalg av nybygg og mange områder med nærhet til strand og golf. Flyplassavstanden varierer tydelig mellom steder som Santa Pola, Guardamar, Torrevieja og Orihuela Costa.",
-    href: "/eiendommer?region=costa-blanca-sor",
-  },
-  "Costa Calida": {
-    title: "Costa Calida bør vurderes",
-    text: "Dette kan passe godt hvis du vil sammenligne roligere kystområder, moderne prosjekter, golf, natur og Murcia-regionen som alternativ til Costa Blanca.",
-    href: "/eiendommer?region=costa-calida",
-  },
-  "Usikker": {
-    title: "Vi bør starte med områdevalget",
-    text: "Når du er usikker på område, er riktig første steg å sammenligne livsstil, reisevei, prisnivå og bruk gjennom året.",
-    href: "/omrader",
-  },
-};
+type Answers = Record<string, string>;
 
-// Det første, store valget: hva slags Spania-drøm ser kunden for seg?
-// Dette skiller kyst-, bolig-, innland- og investeringsløpene tidlig.
-const dreamAdvice: Record<string, { title: string; text: string; href: string }> = {
-  "Kystliv": {
-    title: "Kystliv passer deg",
-    text: "Vi ser mot strandnære byer med service, restauranter og enkel feriebruk – som Villajoyosa, Finestrat, Albir og Torrevieja-området.",
-    href: "/eiendommer",
+const steps = [
+  {
+    key: "dream",
+    title: "Hva slags Spania ser du for deg?",
+    options: ["Kystliv", "Rolig boligområde", "Innland og mer plass", "Investering / utleie", "Usikker"],
   },
-  "Rolig boligområde": {
-    title: "Et rolig helårsområde passer deg",
-    text: "Vi ser mot etablerte boligområder med hverdagsliv, service og god infrastruktur – gjerne litt tilbaketrukket fra de mest turistpregede strøkene.",
-    href: "/eiendommer",
+  {
+    key: "goal",
+    title: "Hva er hovedmålet med boligen?",
+    options: ["Feriebolig", "Pensjon / lengre opphold", "Investering og utleie", "Flytting til Spania", "Tomt og bygging"],
   },
-  "Innland og mer plass": {
-    title: "Innlandet passer deg",
-    text: "Mer plass, natur og ro – tomt, finca eller villa i innlandet rundt Biar, Pinoso, Aspe, Novelda og andre områder. Avstanden til kyst og flyplass varierer betydelig, så vi vurderer ønsket reisevei konkret.",
-    href: "/omrader/innlandet",
+  {
+    key: "preferred_area",
+    title: "Hvilket område vurderer du?",
+    options: ["Costa Blanca Nord", "Costa Blanca Sør", "Costa Calida", "Usikker"],
   },
-  "Investering / utleie": {
-    title: "Vi vurderer utleiepotensialet først",
-    text: "Vi ser på beliggenhet, etterspørsel, sesong, gangavstand, boligtype og videresalg – ikke bare kvadratmeter. Utleiepotensialet må vurderes samlet for den konkrete boligen og området.",
-    href: "/eiendommer",
+  {
+    key: "priority",
+    title: "Hva er viktigst for deg?",
+    options: ["Trygg kjøpsprosess", "Mest bolig for pengene", "Havutsikt og kvalitet", "Gangavstand til strand", "Rolig livsstil"],
   },
-};
-
+  {
+    key: "lifestyle",
+    title: "Hvilken livsstil passer best?",
+    options: ["Strand og restauranter", "Golf og resort", "Ro, natur og plass", "Helårsby med service"],
+  },
+  {
+    key: "budget",
+    title: "Hva er omtrent maksbudsjettet?",
+    options: ["300000", "400000", "500000", "750000", "1000000", "1500000"],
+    labels: ["€300 000", "€400 000", "€500 000", "€750 000", "€1 000 000", "€1 500 000+"],
+  },
+  {
+    key: "bedrooms",
+    title: "Hvor mange soverom trenger du minst?",
+    options: ["1", "2", "3", "4"],
+    labels: ["1+", "2+", "3+", "4+"],
+  },
+  {
+    key: "airport",
+    title: "Hvor viktig er kort vei til flyplass?",
+    options: ["Maks 45 min", "Maks 60 min", "Inntil 90 min er ok"],
+  },
+  {
+    key: "rental",
+    title: "Er utleie viktig?",
+    options: ["Viktig", "Ikke viktig", "Usikker"],
+  },
+] as const;
 
 const regionKeys: Record<string, string> = {
   "Costa Blanca Nord": "costa-blanca-nord",
@@ -58,29 +61,16 @@ const regionKeys: Record<string, string> = {
   "Costa Calida": "costa-calida",
 };
 
-function parseBudget(value?: string) {
-  if (!value) return 0;
-  const normalized = value.trim().toLowerCase().replace(",", ".");
-  const compact = normalized.replace(/\s+/g, "");
-  const kMatch = compact.match(/([\d.]+)k\b/);
-  if (kMatch) return Math.round(Number(kMatch[1]) * 1000);
-  const mMatch = compact.match(/([\d.]+)m\b/);
-  if (mMatch) return Math.round(Number(mMatch[1]) * 1000000);
-  const digits = compact.replace(/[^\d]/g, "");
-  const parsed = Number(digits);
-  return Number.isFinite(parsed) ? parsed : 0;
-}
-
 function lifestyleFilter(value?: string) {
   if (value === "Golf og resort") return "golf";
   if (value === "Strand og restauranter") return "sea";
   return "";
 }
 
-function buildMatchHref(data: Record<string, string>) {
+function buildMatchHref(data: Answers) {
   const query = new URLSearchParams();
   const region = regionKeys[data.preferred_area || ""];
-  const budget = parseBudget(data.budget);
+  const budget = Number(data.budget || 0);
   const bedrooms = Number(data.bedrooms || 0);
   const lifestyle = lifestyleFilter(data.lifestyle);
 
@@ -94,54 +84,60 @@ function buildMatchHref(data: Record<string, string>) {
 }
 
 export function BuyerMatchQuiz() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const [resultArea, setResultArea] = useState("Usikker");
-  const [resultDream, setResultDream] = useState("Usikker");
-  const [matchHref, setMatchHref] = useState("/eiendommer");
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState<Answers>({});
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+  const isContactStep = step === steps.length;
+  const progress = Math.round(((step + 1) / (steps.length + 1)) * 100);
+  const current = steps[step];
 
-  const result = useMemo(
-    () => dreamAdvice[resultDream] || areaAdvice[resultArea] || areaAdvice.Usikker,
-    [resultDream, resultArea],
+  const summary = useMemo(
+    () =>
+      [
+        answers.preferred_area,
+        answers.budget ? `maks €${Number(answers.budget).toLocaleString("nb-NO")}` : "",
+        answers.bedrooms ? `${answers.bedrooms}+ soverom` : "",
+      ].filter(Boolean).join(" · "),
+    [answers],
   );
+
+  function choose(key: string, value: string) {
+    setAnswers((prev) => ({ ...prev, [key]: value }));
+    window.setTimeout(() => setStep((prev) => Math.min(prev + 1, steps.length)), 120);
+  }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("sending");
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
-
-    const preferredArea = data.preferred_area || "Usikker";
-    setResultArea(preferredArea);
-    setResultDream(data.dream || "Usikker");
+    const contact = Object.fromEntries(new FormData(event.currentTarget).entries()) as Answers;
+    const data = { ...answers, ...contact };
     const filteredHref = buildMatchHref(data);
-    setMatchHref(filteredHref);
 
     const message = [
-      `Boligmatch-quiz: ${data.dream || "Ikke valgt"}`,
+      `Boligmatch: ${data.dream || "Ikke valgt"}`,
       `Mål: ${data.goal || "Ikke valgt"}`,
+      `Område: ${data.preferred_area || "Usikker"}`,
       `Viktigst: ${data.priority || "Ikke valgt"}`,
-      `Strand/golf/ro: ${data.lifestyle || "Ikke valgt"}`,
+      `Livsstil: ${data.lifestyle || "Ikke valgt"}`,
+      `Budsjett: ${data.budget || "Ikke oppgitt"}`,
+      `Soverom: ${data.bedrooms || "Ikke oppgitt"}`,
       `Flyplass: ${data.airport || "Ikke valgt"}`,
       `Utleie: ${data.rental || "Ikke valgt"}`,
-      data.message ? `Kommentar: ${data.message}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
+      data.comment ? `Kommentar: ${data.comment}` : "",
+    ].filter(Boolean).join("\n");
 
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...data,
-        preferred_area: preferredArea,
         message,
         source: "zenecohomes-buyer-match",
-        request_type: "Finn riktig område og bolig",
+        request_type: "Boligmatch",
       }),
     });
 
     if (res.ok) {
-      setStatus("sent");
       window.location.assign(filteredHref);
     } else {
       setStatus("error");
@@ -149,126 +145,77 @@ export function BuyerMatchQuiz() {
   }
 
   return (
-    <section className="section buyer-match" id="boligmatch">
+    <section className="section buyer-match buyer-match-steps" id="boligmatch">
       <div className="section-heading">
         <p className="eyebrow">Boligmatch</p>
-        <h2>Finn riktig område og boligtype på 2 minutter</h2>
-        <p>
-          Svar på noen få spørsmål, så får vi et bedre grunnlag for shortlist, oppfølging og anbefalte neste steg.
-        </p>
+        <h2>Finn boliger som passer deg</h2>
+        <p>Svar på ett spørsmål om gangen. Til slutt sender du e-postadressen din, så kan vi følge opp med aktuelle boliger.</p>
       </div>
-      <div className="quiz-layout">
-        <form className="quiz-form" onSubmit={onSubmit}>
-          <label className="quiz-dream">
-            Hva slags Spania ser du for deg?
-            <select name="dream" defaultValue="Usikker">
-              <option value="Kystliv">🌊 Kystliv – strand, restauranter og feriebruk</option>
-              <option value="Rolig boligområde">🏡 Rolig boligområde – helårsbolig og hverdagsliv</option>
-              <option value="Innland og mer plass">🌿 Innland og mer plass – tomt, natur, finca eller villa</option>
-              <option value="Investering / utleie">💰 Investering / utleie – avkastning og videresalg</option>
-              <option value="Usikker">❓ Usikker – hjelp meg å velge</option>
-            </select>
-          </label>
-          <div className="form-grid">
-            <label>
-              Hva er målet?
-              <select name="goal" defaultValue="Feriebolig">
-                <option>Feriebolig</option>
-                <option>Pensjon / lengre opphold</option>
-                <option>Investering og utleie</option>
-                <option>Flytting til Spania</option>
-                <option>Tomt og bygging</option>
-              </select>
-            </label>
-            <label>
-              Foretrukket område
-              <select name="preferred_area" defaultValue="Usikker">
-                <option>Costa Blanca Nord</option>
-                <option>Costa Blanca Sør</option>
-                <option>Costa Calida</option>
-                <option>Usikker</option>
-              </select>
-            </label>
-          </div>
-          <div className="form-grid">
-            <label>
-              Viktigst for deg
-              <select name="priority" defaultValue="Trygg kjøpsprosess">
-                <option>Trygg kjøpsprosess</option>
-                <option>Mest bolig for pengene</option>
-                <option>Havutsikt og kvalitet</option>
-                <option>Gangavstand til strand</option>
-                <option>Rolig livsstil</option>
-              </select>
-            </label>
-            <label>
-              Livsstil
-              <select name="lifestyle" defaultValue="Strand og restauranter">
-                <option>Strand og restauranter</option>
-                <option>Golf og resort</option>
-                <option>Ro, natur og plass</option>
-                <option>Helårsby med service</option>
-              </select>
-            </label>
-          </div>
-          <div className="form-grid">
-            <label>
-              Budsjett
-              <input name="budget" placeholder="f.eks 350 000 EUR" />
-            </label>
-            <label>
-              Soverom
-              <input name="bedrooms" min="1" type="number" placeholder="2" />
-            </label>
-          </div>
-          <div className="form-grid">
-            <label>
-              Flyplassavstand
-              <select name="airport" defaultValue="Maks 60 min">
-                <option>Maks 45 min</option>
-                <option>Maks 60 min</option>
-                <option>Inntil 90 min er ok</option>
-              </select>
-            </label>
-            <label>
-              Utleie
-              <select name="rental" defaultValue="Usikker">
-                <option>Viktig</option>
-                <option>Ikke viktig</option>
-                <option>Usikker</option>
-              </select>
-            </label>
-          </div>
-          <div className="form-grid">
-            <label>
-              Navn
-              <input name="name" required placeholder="Ditt navn" />
-            </label>
+
+      <div className="quiz-step-card">
+        <div className="quiz-progress" aria-label={`Steg ${step + 1} av ${steps.length + 1}`}>
+          <span style={{ width: `${progress}%` }} />
+        </div>
+
+        {!isContactStep && current ? (
+          <>
+            <p className="quiz-step-count">Steg {step + 1} av {steps.length + 1}</p>
+            <h3>{current.title}</h3>
+            <div className="quiz-choice-grid">
+              {current.options.map((option, index) => {
+                const label = "labels" in current && current.labels ? current.labels[index] : option;
+                const selected = answers[current.key] === option;
+                return (
+                  <button
+                    className={selected ? "quiz-choice selected" : "quiz-choice"}
+                    key={option}
+                    type="button"
+                    onClick={() => choose(current.key, option)}
+                  >
+                    {selected ? <Check size={18} /> : null}
+                    <span>{label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <form className="quiz-contact-step" onSubmit={onSubmit}>
+            <p className="quiz-step-count">Siste steg</p>
+            <h3>Hvor skal vi sende forslagene?</h3>
+            {summary ? <p className="quiz-summary">{summary}</p> : null}
             <label>
               E-post
-              <input name="email" required type="email" placeholder="din@epost.no" />
+              <input name="email" type="email" required autoComplete="email" placeholder="din@epost.no" />
             </label>
-          </div>
-          <label>
-            Kommentar
-            <textarea name="message" rows={4} placeholder="Skriv gjerne dato for Spania-tur, område du vurderer eller spesielle krav." />
-          </label>
-          <button className="submit-button" disabled={status === "sending"}>
-            <Send size={18} />
-            {status === "sending" ? "Sender..." : "Få anbefaling"}
-          </button>
-          {status === "sent" && <p className="form-success">Takk. Vi har mottatt svarene dine og viser en første anbefaling her.</p>}
-          {status === "error" && <p className="form-error">Noe gikk galt. Prøv igjen om litt.</p>}
-        </form>
-        <aside className="quiz-result">
-          <CheckCircle2 />
-          <p className="eyebrow">Foreløpig anbefaling</p>
-          <h3>{result.title}</h3>
-          <p>{result.text}</p>
-          <a className="text-button" href={matchHref === "/eiendommer" ? result.href : matchHref}>
-            Se boligene som matcher <ArrowRight size={18} />
-          </a>
-        </aside>
+            <label>
+              Kommentar
+              <textarea
+                name="comment"
+                rows={4}
+                placeholder="Skriv gjerne dato for Spania-tur, spesielle ønsker eller noe vi bør vite."
+              />
+            </label>
+            <button className="submit-button" disabled={status === "sending"} type="submit">
+              <Send size={18} />
+              {status === "sending" ? "Sender..." : "Send boligmatch"}
+            </button>
+            {status === "error" ? <p className="form-error">Noe gikk galt. Prøv igjen om litt.</p> : null}
+          </form>
+        )}
+
+        <div className="quiz-step-actions">
+          {step > 0 ? (
+            <button type="button" className="text-button" onClick={() => setStep((prev) => Math.max(0, prev - 1))}>
+              <ArrowLeft size={17} /> Tilbake
+            </button>
+          ) : <span />}
+          {!isContactStep && answers[current?.key || ""] ? (
+            <button type="button" className="text-button" onClick={() => setStep((prev) => Math.min(prev + 1, steps.length))}>
+              Neste <ArrowRight size={17} />
+            </button>
+          ) : null}
+        </div>
       </div>
     </section>
   );

@@ -97,8 +97,9 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
 
-    if (!body.name || !body.email) {
-      return NextResponse.json({ error: "Navn og e-post er påkrevd" }, { status: 400 });
+    const isBuyerMatch = body.source === "zenecohomes-buyer-match";
+    if (!body.email || (!body.name && !isBuyerMatch)) {
+      return NextResponse.json({ error: isBuyerMatch ? "E-post er påkrevd" : "Navn og e-post er påkrevd" }, { status: 400 });
     }
 
     const inlandContext = getInlandLeadContext(body);
@@ -106,7 +107,7 @@ export async function POST(request: Request) {
     const requestType = inlandContext?.requestType || (body.request_type ? String(body.request_type) : undefined);
 
     await sendLead({
-      name: String(body.name),
+      name: body.name ? String(body.name) : "Boligmatch",
       email: String(body.email),
       phone: body.phone ? String(body.phone) : undefined,
       preferred_area: preferredArea,
