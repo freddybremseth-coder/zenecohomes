@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
+import { ANDREA_PORTRAIT_DATA_URI } from "@/lib/andreaPortrait";
 
 export const metadata: Metadata = {
   title: "Andrea Thorsnes Karlsen | Zen Eco Homes på Costa Blanca",
@@ -37,13 +37,11 @@ export default function AndreaPage() {
             </div>
           </div>
           <figure className="andrea-profile-portrait">
-            <Image
-              src="/assets/andrea-thorsnes-karlsen.webp"
+            <img
+              src={ANDREA_PORTRAIT_DATA_URI}
               alt="Andrea Thorsnes Karlsen, rådgiver i Zen Eco Homes"
               width={533}
               height={800}
-              sizes="(max-width: 800px) 92vw, 420px"
-              priority
             />
           </figure>
         </div>
