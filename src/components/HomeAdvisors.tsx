@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ANDREA_PORTRAIT_DATA_URI } from "@/lib/andreaPortrait";
 
 export function HomeAdvisors() {
   return (
@@ -16,7 +17,13 @@ export function HomeAdvisors() {
           </div>
         </article>
         <article>
-          <div className="home-advisor-photo home-advisor-placeholder" role="img" aria-label="Andrea Thorsnes Karlsen – portrett kommer">ATK</div>
+          <img
+            className="home-advisor-photo home-advisor-photo-andrea"
+            src={ANDREA_PORTRAIT_DATA_URI}
+            alt="Andrea Thorsnes Karlsen"
+            width={533}
+            height={800}
+          />
           <div className="home-advisor-body">
             <h3>Andrea Thorsnes Karlsen</h3>
             <p>Andrea jobber med kundeoppfølging, markedsføring og tydelig informasjon, slik at veien fra research til rådgivning blir enklere.</p>

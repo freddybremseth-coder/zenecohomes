@@ -1,0 +1,59 @@
+/* Andrea portrait treatment: cropped for cards, full portrait on profile. */
+
+.home-advisor-photo-andrea {
+  object-position: center 26%;
+}
+
+.andrea-profile-hero {
+  padding-top: clamp(118px, 12vw, 156px);
+  padding-bottom: clamp(44px, 7vw, 82px);
+}
+
+.andrea-profile-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 440px);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.andrea-profile-hero-copy {
+  min-width: 0;
+}
+
+.andrea-profile-hero-copy > p:not(.eyebrow) {
+  max-width: 680px;
+}
+
+.andrea-profile-portrait {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(20, 31, 36, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.andrea-profile-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  .andrea-profile-hero {
+    padding-top: 108px;
+  }
+
+  .andrea-profile-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    width: min(92%, 620px);
+  }
+
+  .andrea-profile-portrait {
+    width: min(100%, 480px);
+    margin-inline: auto;
+  }
+}
