@@ -93,7 +93,7 @@ export function AreaExplorerMap({
             {selected.image && <img src={selected.image} alt={`${selected.name} – område på Costa Blanca`} loading="lazy" />}
             <div>
               <span>{selected.region || "Zen Eco Homes"}</span>
-              <h3>{selected.name}</h3>
+              <strong className="area-explorer-map-title">{selected.name}</strong>
               {selected.description && <p>{selected.description}</p>}
               <div className="area-explorer-map-actions">
                 <a href={selected.href}>Utforsk området</a>
