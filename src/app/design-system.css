@@ -76,6 +76,42 @@ h3,
   background: var(--ze-sea);
 }
 
+/* High-contrast primary actions on dark and image-backed surfaces. */
+.hero .contact-button,
+.page-hero .contact-button,
+.image-hero .contact-button,
+.contact-section .contact-button,
+.property-detail-hero .contact-button,
+.book-showcase .contact-button,
+.region-landing-grid aside .contact-button {
+  border: 1px solid var(--ze-travertine);
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
+}
+
+.hero .contact-button:hover,
+.page-hero .contact-button:hover,
+.image-hero .contact-button:hover,
+.contact-section .contact-button:hover,
+.property-detail-hero .contact-button:hover,
+.book-showcase .contact-button:hover,
+.region-landing-grid aside .contact-button:hover {
+  border-color: var(--ze-white);
+  background: var(--ze-white);
+  color: var(--ze-ink);
+}
+
+.hero .contact-button:focus-visible,
+.page-hero .contact-button:focus-visible,
+.image-hero .contact-button:focus-visible,
+.contact-section .contact-button:focus-visible,
+.property-detail-hero .contact-button:focus-visible,
+.book-showcase .contact-button:focus-visible,
+.region-landing-grid aside .contact-button:focus-visible {
+  outline: 3px solid var(--ze-white);
+  outline-offset: 3px;
+}
+
 .text-button {
   color: var(--ze-accent-text);
   font-weight: 700;
