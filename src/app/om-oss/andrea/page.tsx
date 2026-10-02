@@ -38,13 +38,12 @@ export default function AndreaPage() {
           </div>
           <figure className="andrea-profile-portrait">
             <Image
-              src="/assets/andrea-thorsnes-karlsen.svg"
+              src="/assets/andrea-thorsnes-karlsen.webp"
               alt="Andrea Thorsnes Karlsen, rådgiver i Zen Eco Homes"
               width={533}
               height={800}
               sizes="(max-width: 800px) 92vw, 420px"
               priority
-              unoptimized
             />
           </figure>
         </div>
