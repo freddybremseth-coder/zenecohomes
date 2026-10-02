@@ -3,14 +3,46 @@ import { getInlandTown } from "@/lib/inland";
 import { sendLead } from "@/lib/realtyflow";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
+const CARE_ORIGIN = "https://care.zenecohomes.com";
+
+function careCorsHeaders(request: Request): HeadersInit {
+  const origin = request.headers.get("origin");
+  if (origin !== CARE_ORIGIN) return {};
+  return {
+    "Access-Control-Allow-Origin": CARE_ORIGIN,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Vary": "Origin",
+  };
+}
+
+function contactJson(request: Request, body: unknown, init?: ResponseInit) {
+  return NextResponse.json(body, {
+    ...init,
+    headers: {
+      ...careCorsHeaders(request),
+      ...(init?.headers || {}),
+    },
+  });
+}
+
+export async function OPTIONS(request: Request) {
+  return new Response(null, {
+    status: 204,
+    headers: careCorsHeaders(request),
+  });
+}
+
 function publicLeadSourcePage(value: unknown): string | undefined {
   if (typeof value !== "string" || value.length > 700) return undefined;
   try {
     const url = new URL(value);
     if (url.protocol !== "https:" && url.protocol !== "http:") return undefined;
-    if (!["www.zenecohomes.com", "zenecohomes.com"].includes(url.hostname.toLowerCase())) return undefined;
+    const hostname = url.hostname.toLowerCase();
+    if (!["www.zenecohomes.com", "zenecohomes.com", "care.zenecohomes.com"].includes(hostname)) return undefined;
     if (url.pathname.length > 300) return undefined;
-    return "https://www.zenecohomes.com" + url.pathname;
+    const origin = hostname === "care.zenecohomes.com" ? CARE_ORIGIN : "https://www.zenecohomes.com";
+    return origin + url.pathname;
   } catch { return undefined; }
 }
 
@@ -99,7 +131,7 @@ export async function POST(request: Request) {
 
     const isBuyerMatch = body.source === "zenecohomes-buyer-match";
     if (!body.email || (!body.name && !isBuyerMatch)) {
-      return NextResponse.json({ error: isBuyerMatch ? "E-post er påkrevd" : "Navn og e-post er påkrevd" }, { status: 400 });
+      return contactJson(request, { error: isBuyerMatch ? "E-post er påkrevd" : "Navn og e-post er påkrevd" }, { status: 400 });
     }
 
     const inlandContext = getInlandLeadContext(body);
@@ -148,9 +180,10 @@ export async function POST(request: Request) {
       recordPropertyLead(body).catch(() => undefined),
       recordCorporateLead(body).catch(() => undefined),
     ]);
-    return NextResponse.json({ ok: true });
+    return contactJson(request, { ok: true });
   } catch (error) {
-    return NextResponse.json(
+    return contactJson(
+      request,
       { error: error instanceof Error ? error.message : "Kunne ikke sende forespørsel" },
       { status: 500 },
     );
