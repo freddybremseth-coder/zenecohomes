@@ -33,7 +33,7 @@ const faq = [
   },
   {
     q: "Hva koster det å kjøpe bolig i Spania – utover selve prisen?",
-    a: "Regn med om lag 11–14 % i omkostninger på toppen av kjøpesummen. På bruktbolig betaler du overføringsskatt (ITP), som i Valencia-regionen typisk er rundt 10 %, pluss notar, registrering og advokat. På nybygg betaler du 10 % IVA (moms) + 1,5 % stempelavgift (AJD) i tillegg til notar og registrering.",
+    a: "Regn med om lag 11–14 % i omkostninger på toppen av kjøpesummen, avhengig av boligtype og region. I Comunitat Valenciana er den generelle ITP-satsen på bruktbolig 9 % fra 1. juni 2026 (11 % når verdien overstiger 1 million euro), i tillegg til notar, registrering og advokat. På ordinære nybygg betaler du normalt 10 % IVA (moms) + 1,4 % AJD fra 1. juni 2026, i tillegg til notar og registrering.",
   },
   {
     q: "Kan nordmenn få boliglån i en spansk bank?",
@@ -41,7 +41,7 @@ const faq = [
   },
   {
     q: "Hva er forskjellen på nybygg og bruktbolig når det gjelder avgifter?",
-    a: "Nybygg (førstegangssalg fra utbygger) har 10 % IVA + 1,5 % AJD. Bruktbolig har overføringsskatt ITP i stedet (typisk rundt 10 % i Valencia-regionen). Nybygg selges ofte med betalingsplan underveis i byggeperioden.",
+    a: "Nybygg (førstegangssalg fra utbygger) har normalt 10 % IVA + 1,4 % AJD i Comunitat Valenciana fra 1. juni 2026. Bruktbolig har overføringsskatt ITP i stedet: den generelle satsen er 9 % fra 1. juni 2026, mens 11 % gjelder når verdien overstiger 1 million euro. Reduserte satser kan gjelde i enkelte tilfeller. Nybygg selges ofte med betalingsplan underveis i byggeperioden.",
   },
   {
     q: "Hvordan fungerer reservasjon og kontrakt?",
