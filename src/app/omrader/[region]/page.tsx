@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpen, MapPin, ShieldCheck } from "lucide-react";
+import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { Footer } from "@/components/Footer";
 import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
 import { areaProfileSlug } from "@/lib/areaRoutes";
+import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
 import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
@@ -20,19 +22,19 @@ import {
 
 const regionCopy: Record<RegionKey, { title: string; intro: string; proof: string[] }> = {
   "costa-blanca-nord": {
-    title: "Nybygg på Costa Blanca Nord",
+    title: "Costa Blanca Nord",
     intro:
       "Costa Blanca Nord passer for deg som vil kombinere fjell, hav, etablerte byer og en mer eksklusiv helårsprofil. Her finner du Altea, Albir, Calpe, Finestrat, Polop, Moraira, Javea og Denia.",
     proof: ["Sterke områder for helårsbruk", "God forbindelse til Alicante og Valencia", "Mange moderne villa- og leilighetsprosjekter"],
   },
   "costa-blanca-sor": {
-    title: "Nybygg på Costa Blanca Sør",
+    title: "Costa Blanca Sør",
     intro:
       "Costa Blanca Sør har et stort og variert boligtilbud og mange områder som passer for strandliv, golf og enkel hverdag. Her finner du blant annet Torrevieja, Orihuela Costa, Guardamar, Ciudad Quesada og Santa Pola.",
     proof: ["Stort utvalg av nybygg", "Mange golf- og strandnære prosjekter", "Praktisk forbindelse til Alicante-Elche flyplass"],
   },
   "costa-calida": {
-    title: "Nybygg på Costa Calida",
+    title: "Costa Cálida",
     intro:
       "Costa Calida og Murcia-regionen passer for deg som ønsker nye prosjekter, golfresorter, roligere omgivelser og et annet alternativ til Costa Blanca. Områdene rundt Los Alcazares, San Pedro del Pinatar, La Manga og Altaona er særlig aktuelle.",
     proof: ["Bredt utvalg av nybygg og golfprosjekter", "Mar Menor, Middelhavet og roligere kystbyer", "Murcia-regionen som alternativ til Costa Blanca"],
@@ -42,6 +44,75 @@ const regionCopy: Record<RegionKey, { title: string; intro: string; proof: strin
     intro:
       "Innlandet passer for deg som vil ha spanske landsbyer og byer, større tomter, fincaer og moderne villaer med mer plass rundt boligen. Avstanden til kyst og flyplass varierer betydelig etter område. Her finner du blant annet Biar, Busot, Villena, Sax, Castalla, Pinoso, Hondón de las Nieves, Aspe, Novelda og Jumilla.",
     proof: ["Fincaer, landsbyhus, tomter og moderne villaer", "Mange levende helårssamfunn", "Lokal erfaring gjennom familiens oliveneiendom i Biar"],
+  },
+};
+
+const regionEditorial: Partial<Record<RegionKey, { heading: string; intro: string; sections: { heading: string; body: string }[] }>> = {
+  "costa-blanca-nord": {
+    heading: "Kystbyer, fjell og helårsliv nord for Alicante",
+    intro:
+      "Costa Blanca Nord består av flere tydelige lokalsamfunn med store forskjeller i pris, terreng og hverdagsliv. Det viktigste er derfor ikke bare å velge nord, men å finne byen og nabolaget som passer måten du faktisk ønsker å bo på.",
+    sections: [
+      {
+        heading: "Mer enn strand og ferie",
+        body:
+          "Altea, Albir, Benidorm, Dénia og flere av de andre byene har et omfattende helårsliv med butikker, restauranter, helse- og servicetilbud. Det gjør regionen aktuell både for feriebolig, lengre opphold og permanent flytting.",
+      },
+      {
+        heading: "Terrenget påvirker boligvalget",
+        body:
+          "Fjell og åser gir mange boliger utsikt, men kan også bety brattere veier, mer bilbruk og større avstand til sentrum. En adresse med havutsikt kan derfor gi en helt annen hverdag enn en bolig i gangavstand til strand og butikker.",
+      },
+      {
+        heading: "Boligmarkedet varierer mye",
+        body:
+          "Du finner alt fra sentrale leiligheter til nye boligprosjekter og villaer i høyden. Pris og tilgjengelighet bør vurderes by for by og prosjekt for prosjekt, ikke som én gjennomsnittlig pris for hele Costa Blanca Nord.",
+      },
+    ],
+  },
+  "costa-blanca-sor": {
+    heading: "Strender, golf og et stort boligmarked sør for Alicante",
+    intro:
+      "Costa Blanca Sør har mange internasjonale boligområder og et bredt utvalg av både nye og etablerte boliger. Regionen er lett tilgjengelig fra Alicante-Elche flyplass, men forskjellen mellom en levende by og en ren ferieurbanisasjon kan være stor.",
+    sections: [
+      {
+        heading: "Mange ulike måter å bo på",
+        body:
+          "Guardamar og Santa Pola har tydelige bysentrum, mens Torrevieja er en større helårsby. Orihuela Costa og Ciudad Quesada består i større grad av boligområder og urbanisasjoner. Det påvirker gange, bilbruk og hvordan stedet oppleves utenfor høysesongen.",
+      },
+      {
+        heading: "Golf og strand er sterke drivere",
+        body:
+          "Regionen har lange strender, marinaer og flere kjente golfområder. For kjøpere som prioriterer enkel feriehverdag, utendørsliv og et stort internasjonalt miljø finnes det mange alternativer innen relativt korte avstander.",
+      },
+      {
+        heading: "Se på nabolaget – ikke bare kommunen",
+        body:
+          "Samme kommune kan romme svært forskjellige boligområder. Avstand til strand, butikker, skole, golf og helårsservice bør derfor vurderes konkret før du begynner å sammenligne selve boligene.",
+      },
+    ],
+  },
+  "costa-calida": {
+    heading: "Murcia-kysten, Mar Menor og et roligere alternativ",
+    intro:
+      "Costa Cálida ligger i Murcia-regionen sør for Costa Blanca. Her finner du både kystbyer ved Mar Menor, Middelhavsstrender og golfområder lenger inn. Regionen kan passe kjøpere som ønsker et annet tempo og vil sammenligne flere alternativer før de bestemmer seg.",
+    sections: [
+      {
+        heading: "Mar Menor gir området en egen karakter",
+        body:
+          "Los Alcázares, San Javier og San Pedro del Pinatar ligger rundt Mar Menor, mens La Manga skiller lagunen fra Middelhavet. Det gir andre typer strender, vannsport og bomiljøer enn mange steder på Costa Blanca.",
+      },
+      {
+        heading: "Flyplass og reisevei må vurderes konkret",
+        body:
+          "Región de Murcia International Airport er den regionale flyplassen, mens Alicante-Elche også kan være praktisk fra den nordlige delen av Costa Cálida. Flytilbud og faktisk kjøretid bør inngå i områdevalget.",
+      },
+      {
+        heading: "By, resort eller kystsamfunn",
+        body:
+          "Boligmarkedet spenner fra leiligheter i etablerte kystbyer til nyere prosjekter og golfresorter. Det er derfor viktig å skille mellom steder som lever hele året og områder som i større grad er bygget rundt ferie og resortliv.",
+      },
+    ],
   },
 };
 
@@ -163,26 +234,70 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
   }
 
   const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties(0, "zeneco")]);
-  const regionProfiles = profiles.filter((profile) => areaMatchesRegion(profile, region));
+  const regionProfiles = profiles
+    .filter((profile) => areaMatchesRegion(profile, region))
+    .sort((a, b) => a.name.localeCompare(b.name, "nb"));
   const regionProperties = properties.filter((property) => propertyMatchesRegion(property, region));
   const regionBooks = booksForRegion(region);
+  const editorial = regionEditorial[region];
+  const mapLocations: AreaExplorerLocation[] = regionProfiles.flatMap((profile) => {
+    const coordinates = getAreaMapCoordinate(profile.name);
+    if (!coordinates) return [];
+    return [{
+      id: areaProfileSlug(profile),
+      name: profile.name,
+      ...coordinates,
+      region: selected.label,
+      description: profile.hero_blurb || profile.description || `Les om ${profile.name} før du velger bolig.`,
+      image: areaPresentationImage(profile, properties),
+      href: `/omrader/${region}/${areaProfileSlug(profile)}`,
+      propertyHref: `/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`,
+    }];
+  });
   const regionFaqItems = regionFaq[region as RegionKey] || [];
-  const faqJsonLd =
-    regionFaqItems.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: regionFaqItems.map((item) => ({
-            "@type": "Question",
-            name: item.q,
-            acceptedAnswer: { "@type": "Answer", text: item.a },
+  const pageJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `https://www.zenecohomes.com/omrader/${region}#collection`,
+        url: `https://www.zenecohomes.com/omrader/${region}`,
+        name: copy.title,
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: regionProfiles.map((profile, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: profile.name,
+            url: `https://www.zenecohomes.com/omrader/${region}/${areaProfileSlug(profile)}`,
           })),
-        }
-      : null;
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Forside", item: "https://www.zenecohomes.com/" },
+          { "@type": "ListItem", position: 2, name: "Områder", item: "https://www.zenecohomes.com/omrader" },
+          { "@type": "ListItem", position: 3, name: copy.title, item: `https://www.zenecohomes.com/omrader/${region}` },
+        ],
+      },
+      ...(regionFaqItems.length
+        ? [{
+            "@type": "FAQPage",
+            mainEntity: regionFaqItems.map((item) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: { "@type": "Answer", text: item.a },
+            })),
+          }]
+        : []),
+    ],
+  };
 
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">Regionguide</p>
         <h1>{copy.title}</h1>
@@ -218,6 +333,32 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
         </aside>
       </section>
 
+      {editorial && (
+        <section className="section region-editorial">
+          <div className="section-heading">
+            <p className="eyebrow">Regionen i praksis</p>
+            <h2>{editorial.heading}</h2>
+            <p>{editorial.intro}</p>
+          </div>
+          <div className="region-editorial-grid">
+            {editorial.sections.map((item) => (
+              <article key={item.heading}>
+                <h3>{item.heading}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {mapLocations.length > 0 && (
+        <AreaExplorerMap
+          locations={mapLocations}
+          label={`Se stedene i ${selected.label} på kartet`}
+          intro="Kartet gjør det enklere å forstå avstander og beliggenhet før du går videre til den enkelte byguiden."
+        />
+      )}
+
       {regionProfiles.length > 0 && (
         <section className="section area-profile-grid region-area-section">
           <div className="section-heading">
@@ -225,7 +366,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
             <h2>Områder i {selected.label}</h2>
             <p>Les om stedet her først. Der vi har en Let Me Guide You-bok, viser vi også et utdrag fra selve områdeguiden.</p>
           </div>
-          {regionProfiles.slice(0, 6).map((profile) => {
+          {regionProfiles.map((profile) => {
             const image = areaPresentationImage(profile, properties);
             const book = placeBookForArea(profile.name);
             const excerpt = areaExcerpt(profile.name);
@@ -234,7 +375,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
                 <div style={{ backgroundImage: `url(${image})` }} />
                 <section>
                   <span>{profile.region || selected.label}</span>
-                  <h2>{profile.name}</h2>
+                  <h3>{profile.name}</h3>
                   {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
                   {profile.description && <p>{profile.description}</p>}
                   {book && excerpt.length > 0 && (
@@ -245,11 +386,16 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
                   )}
                   <div className="area-guide-actions">
                     <Link className="text-button" href={`/omrader/${region}/${areaProfileSlug(profile)}`}>
-                      Les områdeguide <ArrowRight size={16} />
+                      Les mer om {profile.name} <ArrowRight size={16} />
                     </Link>
                     <a className="text-button area-property-link" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
                       <MapPin size={17} /> Se boliger i {profile.name}
                     </a>
+                    {book && (
+                      <a className="text-button area-book-link" href={bookUrl(book.slug)} target="_blank" rel="noopener noreferrer">
+                        <BookOpen size={16} /> Les områdeboken om {profile.name}
+                      </a>
+                    )}
                   </div>
                 </section>
               </article>
@@ -288,9 +434,8 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
         </section>
       )}
 
-      {faqJsonLd && (
+      {regionFaqItems.length > 0 && (
         <section className="section proof-section">
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
           <div className="section-heading">
             <p className="eyebrow">Vanlige spørsmål</p>
             <h2>{selected.label} – spørsmål og svar</h2>

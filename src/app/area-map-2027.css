@@ -74,7 +74,7 @@
   text-transform: uppercase;
 }
 
-.area-explorer-map-card h3 {
+.area-explorer-map-title {
   margin: 7px 0 10px;
   color: var(--ze-ink, #172027);
   font-family: var(--font-display), Georgia, serif;
@@ -207,7 +207,7 @@
     padding: 15px 17px 17px;
   }
 
-  .area-explorer-map-card h3 {
+  .area-explorer-map-title {
     font-size: 1.55rem;
   }
 

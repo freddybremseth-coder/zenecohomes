@@ -90,10 +90,10 @@ export function AreaExplorerMap({
         <div className="area-explorer-map-canvas" ref={mapRef} />
         {selected && (
           <article className="area-explorer-map-card" aria-live="polite">
-            {selected.image && <img src={selected.image} alt={`${selected.name} – område på Costa Blanca`} loading="lazy" />}
+            {selected.image && <img src={selected.image} alt={`${selected.name} – område i Spania`} loading="lazy" />}
             <div>
               <span>{selected.region || "Zen Eco Homes"}</span>
-              <h3>{selected.name}</h3>
+              <strong className="area-explorer-map-title">{selected.name}</strong>
               {selected.description && <p>{selected.description}</p>}
               <div className="area-explorer-map-actions">
                 <a href={selected.href}>Utforsk området</a>

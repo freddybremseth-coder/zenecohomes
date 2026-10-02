@@ -69,7 +69,8 @@ function displayTownIntro(town: (typeof inlandTowns)[number]) {
 
 export default async function InlandPage() {
   const properties = await getInlandShowcaseProperties();
-  const mapLocations: AreaExplorerLocation[] = inlandTowns.flatMap((town) => {
+  const sortedTowns = [...inlandTowns].sort((a, b) => a.name.localeCompare(b.name, "nb"));
+  const mapLocations: AreaExplorerLocation[] = sortedTowns.flatMap((town) => {
     const coordinates = getAreaMapCoordinate(town.name);
     if (!coordinates) return [];
     return [{
@@ -125,7 +126,7 @@ export default async function InlandPage() {
           <p className="eyebrow">Alicante & Murcia Inland</p>
           <h1>Et annet Spania, litt lenger inn</h1>
           <p className="hero-copy">
-            Du velger området og hvordan du vil leve. Vi finner og kvalitetssikrer riktig tomt. Deretter velger og tilpasser vi en moderne boligmodell som passer stedet, regelverket og budsjettet ditt.
+            Innlandet gir et annet boligvalg enn kysten: mer plass, større tomter og flere rolige helårssamfunn. Du kan kjøpe en eksisterende bolig, eller i mange områder bygge en moderne villa på egen tomt når regulering og tekniske forhold tillater det. Vi hjelper deg å forstå begge mulighetene før du bestemmer deg.
           </p>
           <div className="hero-actions">
             <a className="contact-button" href="#finn-omrade">Finn ditt innlandsområde <ArrowRight size={18} /></a>
@@ -138,13 +139,13 @@ export default async function InlandPage() {
       <section className="inland-intro" id="steder">
         <div className="inland-intro-copy">
           <p className="eyebrow">Inland Journal</p>
-          <h2>Innlandet er ikke ett marked</h2>
+          <h2>Innlandet gir flere ulike måter å bo på</h2>
           <p>
-            Biar og Banyeres gir fjell og kjøligere netter. Busot gir fjellandsby med kysten fortsatt nær. Villena og Sax gir byservice og effektiv transport. Pinoso og Hondón gir vinland, villaer og større tomter, mens Jumilla tar deg enda dypere inn i Monastrell-landet i Murcia. Velg stedet først. Boligmodellen kommer etterpå.
+            Innlandet består av mange forskjellige byer og landsbyer. Noen ligger nær kysten og flyplassen, andre gir mer fjell, vinland eller større avstander. Du kan finne både eksisterende boliger, fincaer og tomter for nybygg. Start derfor med hverdagen du ønsker, og vurder boligtype og eventuell bygging etter at området er valgt.
           </p>
         </div>
         <nav className="inland-index" aria-label="Områder i innlandet">
-          {inlandTowns.map((town, index) => (
+          {sortedTowns.map((town, index) => (
             <a href={`#${town.slug}`} key={town.slug}>
               <strong>{town.name}</strong>
               <span>{String(index + 1).padStart(2, "0")}</span>
@@ -158,7 +159,7 @@ export default async function InlandPage() {
       <AreaExplorerMap
         locations={mapLocations}
         label="Se innlandsstedene på kartet"
-        intro="Velg først stedet du liker. Boligmodellene fra Aspe og Pinoso som vises lenger ned er forslag og referanser – de er ikke bundet til disse to stedene. Vi kan bruke samme type moderne nybygg i andre innlandsområder når vi finner en egnet og byggbar tomt."
+        intro="Kartet viser hvor innlandsstedene ligger i forhold til hverandre. Du kan kjøpe en eksisterende bolig, finne en finca eller vurdere tomt og nybygg. Muligheten for å bygge må alltid kontrolleres for den konkrete tomten."
       />
 
       <section className="inland-places" aria-label="Områdeprofiler">
@@ -170,7 +171,7 @@ export default async function InlandPage() {
                 <span className="inland-place-number">{String(index + 1).padStart(2, "0")}</span>
                 <span>{town.eyebrow}</span>
               </div>
-              <h2>{town.name}</h2>
+              <h3>{town.name}</h3>
               <p>{displayTownIntro(town)}</p>
               <Link className="text-button area-property-link" href={`/omrader/innlandet/${town.slug}`}>
                 <MapPin size={17} /> Utforsk {town.name}
