@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -17,20 +18,35 @@ export default function AndreaPage() {
     <main className="andrea-profile-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
 
-      <section className="page-hero compact-hero">
-        <p className="eyebrow">Andrea Thorsnes Karlsen · Zen Eco Homes</p>
-        <h1>Fra drøm til virkelighet</h1>
-        <p>
-          Andrea kjenner boligkjøpet i Spania fra begge sider – både som rådgiver og som kjøper som selv
-          har valgt å flytte familien fra Norge til Costa Blanca.
-        </p>
-        <div className="hero-actions">
-          <Link className="contact-button" href="/booking">
-            Få rådgivning <ArrowRight size={17} />
-          </Link>
-          <Link className="text-button light" href="/om-oss">
-            Møt teamet
-          </Link>
+      <section className="page-hero compact-hero andrea-profile-hero">
+        <div className="andrea-profile-hero-inner">
+          <div className="andrea-profile-hero-copy">
+            <p className="eyebrow">Andrea Thorsnes Karlsen · Zen Eco Homes</p>
+            <h1>Fra drøm til virkelighet</h1>
+            <p>
+              Andrea kjenner boligkjøpet i Spania fra begge sider – både som rådgiver og som kjøper som selv
+              har valgt å flytte familien fra Norge til Costa Blanca.
+            </p>
+            <div className="hero-actions">
+              <Link className="contact-button" href="/booking">
+                Få rådgivning <ArrowRight size={17} />
+              </Link>
+              <Link className="text-button light" href="/om-oss">
+                Møt teamet
+              </Link>
+            </div>
+          </div>
+          <figure className="andrea-profile-portrait">
+            <Image
+              src="/assets/andrea-thorsnes-karlsen.svg"
+              alt="Andrea Thorsnes Karlsen, rådgiver i Zen Eco Homes"
+              width={533}
+              height={800}
+              sizes="(max-width: 800px) 92vw, 420px"
+              priority
+              unoptimized
+            />
+          </figure>
         </div>
       </section>
 
