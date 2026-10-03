@@ -256,8 +256,11 @@ export default async function InlandPage() {
           </p>
           <div className="hero-actions">
             <Link className="text-button" href="/om-oss/freddy">Les mer om Freddy <ArrowRight size={16} /></Link>
-            <a className="text-button" href="https://www.pinosoecolife.com/bolig-i-pinoso" target="_blank" rel="noopener noreferrer">
-              Spesialguide: bolig og tomt i Pinoso <ArrowRight size={16} />
+            <a className="text-button" href="https://www.pinosoecolife.com/livet-i-innlandet?utm_source=zenecohomes&utm_medium=referral&utm_campaign=inland-crosslink" target="_blank" rel="noopener noreferrer">
+              Utforsk innlandet med Pinoso Eco Life <ArrowRight size={16} />
+            </a>
+            <a className="text-button" href="https://www.costablancatours.pro/turer/jumilla-vin/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=inland-experience" target="_blank" rel="noopener noreferrer">
+              Opplev vinlandet rundt Jumilla <ArrowRight size={16} />
             </a>
           </div>
         </div>

@@ -155,6 +155,44 @@ export default async function Home() {
         <div className="center-action"><Link className="contact-button" href="/booking">Kontakt oss <ArrowRight size={18} /></Link></div>
       </section>
 
+      <section className="section proof-section" aria-labelledby="opplev-costa-blanca-title">
+        <div className="section-heading">
+          <p className="eyebrow">Livet rundt boligen</p>
+          <h2 id="opplev-costa-blanca-title">Bli kjent med Costa Blanca før og etter boligkjøpet</h2>
+          <p>
+            Områdevalg handler også om hverdagen utenfor boligen. Costa Blanca Tours samler kuraterte opplevelser,
+            mat, kultur og dagsturer som gjør det enklere å forstå områdene du vurderer – og gir deg mer å oppleve
+            når boligen er på plass.
+          </p>
+        </div>
+        <div className="proof-grid home-process-grid">
+          <article>
+            <strong aria-hidden="true">01</strong>
+            <h3>Opplev området før du bestemmer deg</h3>
+            <p>Bruk en dag på steder, landskap og lokalmiljø som kan påvirke hvor du faktisk ønsker å bo.</p>
+            <a className="text-button" href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=buyer-owner-journey" target="_blank" rel="noopener noreferrer">
+              Utforsk Costa Blanca Tours <ArrowRight size={16} />
+            </a>
+          </article>
+          <article>
+            <strong aria-hidden="true">02</strong>
+            <h3>Mat, kultur og natur</h3>
+            <p>Oppdag mer enn boligannonser: lokale steder, småbyer, matopplevelser og utflukter på Costa Blanca.</p>
+            <a className="text-button" href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=buyer-owner-journey" target="_blank" rel="noopener noreferrer">
+              Se opplevelser <ArrowRight size={16} />
+            </a>
+          </article>
+          <article>
+            <strong aria-hidden="true">03</strong>
+            <h3>Når du allerede eier bolig</h3>
+            <p>Kombiner oppholdet med nye opplevelser og bruk Care når du trenger praktisk oppfølging mellom besøkene.</p>
+            <a className="text-button" href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=buyer-owner-journey" target="_blank" rel="noopener noreferrer">
+              Finn neste utflukt <ArrowRight size={16} />
+            </a>
+          </article>
+        </div>
+      </section>
+
       <HomeAdvisors />
 
       <section className="contact-section" id="kontakt">

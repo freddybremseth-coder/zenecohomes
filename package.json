@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "seo:audit": "node scripts/seo-metadata-audit.mjs && node scripts/seo-structure-audit.mjs",
+    "seo:audit": "node scripts/seo-metadata-audit.mjs && node scripts/seo-structure-audit.mjs && npm run ecosystem:audit",
     "build": "npm run seo:audit && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ecosystem:audit": "node scripts/ecosystem-link-audit.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.1",

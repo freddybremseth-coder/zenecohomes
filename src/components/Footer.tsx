@@ -50,7 +50,9 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "Kundeomtaler", href: "/kundeomtaler" },
       { label: "Magasin", href: "/magasin" },
       { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
-      { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
+      { label: "Zen Eco Homes Care · keyholding og boligtilsyn", href: "https://care.zenecohomes.com", external: true },
+      { label: "Costa Blanca Tours · opplevelser og dagsturer", href: "https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=footer-network", external: true },
+      { label: "Pinoso Eco Life · innlandet, tomter og nybygg", href: "https://www.pinosoecolife.com/", external: true },
     ],
   },
   {
@@ -86,6 +88,8 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Magasin", href: "/magasin" },
     { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
     { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
+    { label: "Costa Blanca Tours", href: "https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=footer-network", external: true },
+    { label: "Pinoso Eco Life", href: "https://www.pinosoecolife.com/", external: true },
   ],
   de: [
     { label: "Immobilien", href: "/de/immobilien" },
@@ -222,6 +226,8 @@ export function Footer({
         <span>Freddy Bremseth network</span>
         <a href="https://www.freddybremseth.com/">FreddyBremseth.com</a>
         <a href="https://www.pinosoecolife.com/">Pinoso Eco Life</a>
+        <a href="https://care.zenecohomes.com/">Zen Eco Homes Care</a>
+        <a href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=network">Costa Blanca Tours</a>
         <a href="https://www.donaanna.com/">Doña Anna</a>
         <a href="https://www.chatgenius.pro/">ChatGenius</a>
         <a href="https://books.freddybremseth.com/">Books</a>

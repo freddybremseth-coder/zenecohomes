@@ -4,12 +4,14 @@ import { sendLead } from "@/lib/realtyflow";
 import { getSupabaseAdmin } from "@/lib/supabase-admin";
 
 const CARE_ORIGIN = "https://care.zenecohomes.com";
+const TOURS_ORIGINS = new Set(["https://www.costablancatours.pro", "https://costablancatours.pro"]);
+const PUBLIC_FORM_ORIGINS = new Set([CARE_ORIGIN, ...TOURS_ORIGINS]);
 
 function careCorsHeaders(request: Request): HeadersInit {
   const origin = request.headers.get("origin");
-  if (origin !== CARE_ORIGIN) return {};
+  if (!origin || !PUBLIC_FORM_ORIGINS.has(origin)) return {};
   return {
-    "Access-Control-Allow-Origin": CARE_ORIGIN,
+    "Access-Control-Allow-Origin": origin,
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Vary": "Origin",
@@ -39,9 +41,14 @@ function publicLeadSourcePage(value: unknown): string | undefined {
     const url = new URL(value);
     if (url.protocol !== "https:" && url.protocol !== "http:") return undefined;
     const hostname = url.hostname.toLowerCase();
-    if (!["www.zenecohomes.com", "zenecohomes.com", "care.zenecohomes.com"].includes(hostname)) return undefined;
+    if (!["www.zenecohomes.com", "zenecohomes.com", "care.zenecohomes.com", "www.costablancatours.pro", "costablancatours.pro"].includes(hostname)) return undefined;
     if (url.pathname.length > 300) return undefined;
-    const origin = hostname === "care.zenecohomes.com" ? CARE_ORIGIN : "https://www.zenecohomes.com";
+    const origin =
+      hostname === "care.zenecohomes.com"
+        ? CARE_ORIGIN
+        : hostname === "www.costablancatours.pro" || hostname === "costablancatours.pro"
+          ? "https://www.costablancatours.pro"
+          : "https://www.zenecohomes.com";
     return origin + url.pathname;
   } catch { return undefined; }
 }

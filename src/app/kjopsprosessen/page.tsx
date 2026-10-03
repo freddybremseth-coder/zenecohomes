@@ -118,8 +118,11 @@ export default function BuyingProcessPage() {
             Etter kjøpet kommer nøkler, leverandører, praktiske spørsmål, tilsyn og andre oppgaver som kan være
             vanskeligere når du ikke er i Spania hele tiden. Derfor er oppfølging etter kjøpet en del av modellen vår.
           </p>
-          <a className="text-button" href="https://care.zenecohomes.com/boligtilsyn-costa-blanca/" target="_blank" rel="noopener noreferrer">
+          <a className="text-button" href="https://care.zenecohomes.com/boligtilsyn-costa-blanca/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=after-purchase-care" target="_blank" rel="noopener noreferrer">
             Se boligtilsyn og keyholding hos Zen Eco Homes Care <ArrowRight size={16} />
+          </a>
+          <a className="text-button" href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=after-purchase-experiences" target="_blank" rel="noopener noreferrer">
+            Opplev mer av Costa Blanca etter kjøpet <ArrowRight size={16} />
           </a>
         </div>
         <div>
