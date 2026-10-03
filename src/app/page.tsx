@@ -170,7 +170,7 @@ export default async function Home() {
             <strong aria-hidden="true">01</strong>
             <h3>Opplev området før du bestemmer deg</h3>
             <p>Bruk en dag på steder, landskap og lokalmiljø som kan påvirke hvor du faktisk ønsker å bo.</p>
-            <a className="text-button" href="https://www.costablancatours.pro/" target="_blank" rel="noopener noreferrer">
+            <a className="text-button" href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=buyer-owner-journey" target="_blank" rel="noopener noreferrer">
               Utforsk Costa Blanca Tours <ArrowRight size={16} />
             </a>
           </article>
@@ -178,7 +178,7 @@ export default async function Home() {
             <strong aria-hidden="true">02</strong>
             <h3>Mat, kultur og natur</h3>
             <p>Oppdag mer enn boligannonser: lokale steder, småbyer, matopplevelser og utflukter på Costa Blanca.</p>
-            <a className="text-button" href="https://www.costablancatours.pro/" target="_blank" rel="noopener noreferrer">
+            <a className="text-button" href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=buyer-owner-journey" target="_blank" rel="noopener noreferrer">
               Se opplevelser <ArrowRight size={16} />
             </a>
           </article>
@@ -186,7 +186,7 @@ export default async function Home() {
             <strong aria-hidden="true">03</strong>
             <h3>Når du allerede eier bolig</h3>
             <p>Kombiner oppholdet med nye opplevelser og bruk Care når du trenger praktisk oppfølging mellom besøkene.</p>
-            <a className="text-button" href="https://www.costablancatours.pro/" target="_blank" rel="noopener noreferrer">
+            <a className="text-button" href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=buyer-owner-journey" target="_blank" rel="noopener noreferrer">
               Finn neste utflukt <ArrowRight size={16} />
             </a>
           </article>
