@@ -125,6 +125,22 @@ async function recordCorporateLead(body: Record<string, unknown>) {
   if (error) console.warn("[contact] corporate lead metric skipped:", error.message);
 }
 
+const CARE_DISCOVERY_SOURCES = new Set([
+  "google_search",
+  "bing_search",
+  "chatgpt",
+  "google_gemini",
+  "microsoft_copilot",
+  "perplexity",
+  "brave_search",
+  "duckduckgo",
+]);
+
+function careDiscoverySource(body: Record<string, unknown>) {
+  const value = body.discovery_source ? String(body.discovery_source).trim() : "";
+  return CARE_DISCOVERY_SOURCES.has(value) ? value : null;
+}
+
 async function recordCareLead(body: Record<string, unknown>) {
   const requestType = body.request_type ? String(body.request_type).trim() : "";
   const source = body.source ? String(body.source).trim() : "";
@@ -162,6 +178,7 @@ async function recordCareLead(body: Record<string, unknown>) {
       utm_campaign: body.utm_campaign ? String(body.utm_campaign).slice(0, 120) : null,
       utm_content: body.utm_content ? String(body.utm_content).slice(0, 160) : null,
       measurement: "care_conversion_funnel",
+      discovery_source: careDiscoverySource(body),
     },
   });
   if (error) console.warn("[contact] care lead metric skipped:", error.message);
