@@ -69,6 +69,14 @@ export default function ViewingTripPage() {
           <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
             Les områdeguiden <ArrowRight size={16}/>
           </Link>
+          <a
+            className="text-button"
+            href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=viewing-trip-area-experience"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Opplev området med Costa Blanca Tours <ArrowRight size={16}/>
+          </a>
         </aside>
       </section>
 
