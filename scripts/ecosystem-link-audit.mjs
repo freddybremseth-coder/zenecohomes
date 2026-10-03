@@ -7,6 +7,8 @@ const checks = [
   ["src/app/visningstur/page.tsx", "costablancatours.pro"],
   ["src/app/inland/page.tsx", "pinosoecolife.com"],
   ["src/app/inland/page.tsx", "costablancatours.pro"],
+  ["src/app/kjopsprosessen/page.tsx", "care.zenecohomes.com"],
+  ["src/app/kjopsprosessen/page.tsx", "costablancatours.pro"],
 ];
 
 let failed = false;
