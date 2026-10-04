@@ -190,6 +190,8 @@ export type LeadPayload = {
 };
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
+const PROPERTY_CACHE_SECONDS = 300;
+const PROPERTY_FETCH_TIMEOUT_MS = 8000;
 
 export function normalizeSearchText(value: string) {
   return value
@@ -889,7 +891,8 @@ export async function getProperties(limit?: number, brandId?: string): Promise<P
     propertyUrl.searchParams.set("view", "summary");
     if (limit && limit > 0) propertyUrl.searchParams.set("limit", String(limit));
     const res = await fetch(propertyUrl.toString(), {
-      next: { revalidate: 60 },
+      next: { revalidate: PROPERTY_CACHE_SECONDS },
+      signal: AbortSignal.timeout(PROPERTY_FETCH_TIMEOUT_MS),
       headers: { Accept: "application/json" },
     });
     if (!res.ok) return fallbackProperties.slice(0, limit);
@@ -923,6 +926,7 @@ export async function getAreaProfiles(): Promise<AreaProfile[]> {
   try {
     const res = await fetch(`${REALTYFLOW_BASE}/api/area-profiles?brandId=zeneco&public=1`, {
       next: { revalidate: 3600 },
+      signal: AbortSignal.timeout(PROPERTY_FETCH_TIMEOUT_MS),
       headers: { Accept: "application/json" },
     });
     if (!res.ok) return STATIC_AREA_PROFILES;
@@ -958,12 +962,16 @@ export async function getLandPlots(): Promise<LandPlot[]> {
 }
 
 export async function getProperty(id: string, brandId = "zeneco"): Promise<Property | null> {
+  const normalizedId = String(id || "").trim();
+  if (!normalizedId || ["null", "undefined"].includes(normalizedId.toLowerCase())) return null;
+
   const read = async (lookup: "ref" | "id") => {
     const propertyUrl = new URL("/api/properties", REALTYFLOW_BASE);
-    propertyUrl.searchParams.set(lookup, id);
+    propertyUrl.searchParams.set(lookup, normalizedId);
     if (brandId) propertyUrl.searchParams.set("brandId", brandId);
     const res = await fetch(propertyUrl.toString(), {
-      next: { revalidate: 60 },
+      next: { revalidate: PROPERTY_CACHE_SECONDS },
+      signal: AbortSignal.timeout(PROPERTY_FETCH_TIMEOUT_MS),
       headers: { Accept: "application/json" },
     });
     if (res.status === 404) return null;
@@ -983,7 +991,8 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
   };
 
   try {
-    return (await read("ref")) || (await read("id"));
+    const looksLikeUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(normalizedId);
+    return await read(looksLikeUuid ? "id" : "ref");
   } catch {
     return null;
   }

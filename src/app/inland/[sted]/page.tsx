@@ -9,6 +9,8 @@ import { INLAND_BRAND, getInlandTown, inlandTowns } from "@/lib/inland";
 import { getInlandLifestyleStory } from "@/lib/inlandLifestyle";
 import { getInlandShowcaseProperties, getInlandTownProperties } from "@/lib/inlandShowcase";
 
+export const dynamic = "force-dynamic";
+
 export function generateStaticParams() {
   return inlandTowns.map((town) => ({ sted: town.slug }));
 }

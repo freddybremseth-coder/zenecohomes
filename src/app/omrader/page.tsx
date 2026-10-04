@@ -8,6 +8,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
 import { areaMatchesRegion, getAreaProfiles, getProperties, type RegionKey } from "@/lib/realtyflow";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Områder i Spania | Costa Blanca, Cálida og innlandet",
   description:

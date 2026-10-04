@@ -12,6 +12,8 @@ import { areaProfileSlug, areaSlug } from "@/lib/areaRoutes";
 import { bookUrl } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
+export const dynamic = "force-dynamic";
+
   areaMatchesRegion,
   getAreaProfiles,
   getProperties,

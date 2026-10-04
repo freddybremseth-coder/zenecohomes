@@ -12,6 +12,8 @@ import { homeLanguageLinks } from "@/lib/i18n";
 import { INLAND_BRAND, inlandTowns } from "@/lib/inland";
 import { getInlandShowcaseProperties } from "@/lib/inlandShowcase";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Innlandet i Alicante og Murcia | Tomt og moderne nybygg",
   description:
