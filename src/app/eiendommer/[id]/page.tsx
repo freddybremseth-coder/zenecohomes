@@ -5,7 +5,6 @@ import {
   buildEditorialDescription,
   formatPriceForLocale,
   getLocalizedPropertyType,
-  getProperties,
   getProperty,
   getPropertyRef,
   getPropertyTown,
