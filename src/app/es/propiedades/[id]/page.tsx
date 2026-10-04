@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SpanishPropertyNotFoundView } from "@/components/es/SpanishPropertyDetailView";
 import { TrackedSpanishPropertyDetailView } from "@/components/es/TrackedSpanishPropertyDetailView";
-import { getProperties, getProperty, getPropertyRef } from "@/lib/realtyflow";
+import { getProperty, getPropertyRef } from "@/lib/realtyflow";
 import {
   getSpanishPropertyHeading,
   getSpanishPropertySeoDescription,
