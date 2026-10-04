@@ -14,6 +14,8 @@ import { localSeoLandingPagesES } from "@/lib/localSeoLandingPages.es";
 import { getPropertyDetailPath } from "@/lib/propertyRouting";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
+export const dynamic = "force-dynamic";
+
 const baseUrl = "https://www.zenecohomes.com";
 const RETIRED_SEO_SLUGS = new Set([
   "bolig-i-spania",
