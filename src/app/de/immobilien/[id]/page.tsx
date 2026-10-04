@@ -5,7 +5,6 @@ import {
   formatPriceForLocale,
   getLocalizedPropertyTitle,
   getLocalizedPropertyType,
-  getProperties,
   getProperty,
   getPropertyRef,
 } from "@/lib/realtyflow";
