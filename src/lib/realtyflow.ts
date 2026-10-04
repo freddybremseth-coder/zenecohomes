@@ -190,6 +190,7 @@ export type LeadPayload = {
 };
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
+const PROPERTY_CACHE_SECONDS = 300;
 
 export function normalizeSearchText(value: string) {
   return value
@@ -889,7 +890,7 @@ export async function getProperties(limit?: number, brandId?: string): Promise<P
     propertyUrl.searchParams.set("view", "summary");
     if (limit && limit > 0) propertyUrl.searchParams.set("limit", String(limit));
     const res = await fetch(propertyUrl.toString(), {
-      next: { revalidate: 60 },
+      next: { revalidate: PROPERTY_CACHE_SECONDS },
       headers: { Accept: "application/json" },
     });
     if (!res.ok) return fallbackProperties.slice(0, limit);
@@ -966,7 +967,7 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
     propertyUrl.searchParams.set(lookup, normalizedId);
     if (brandId) propertyUrl.searchParams.set("brandId", brandId);
     const res = await fetch(propertyUrl.toString(), {
-      next: { revalidate: 60 },
+      next: { revalidate: PROPERTY_CACHE_SECONDS },
       headers: { Accept: "application/json" },
     });
     if (res.status === 404) return null;
