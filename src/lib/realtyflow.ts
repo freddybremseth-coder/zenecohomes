@@ -958,9 +958,12 @@ export async function getLandPlots(): Promise<LandPlot[]> {
 }
 
 export async function getProperty(id: string, brandId = "zeneco"): Promise<Property | null> {
+  const normalizedId = String(id || "").trim();
+  if (!normalizedId || ["null", "undefined"].includes(normalizedId.toLowerCase())) return null;
+
   const read = async (lookup: "ref" | "id") => {
     const propertyUrl = new URL("/api/properties", REALTYFLOW_BASE);
-    propertyUrl.searchParams.set(lookup, id);
+    propertyUrl.searchParams.set(lookup, normalizedId);
     if (brandId) propertyUrl.searchParams.set("brandId", brandId);
     const res = await fetch(propertyUrl.toString(), {
       next: { revalidate: 60 },
