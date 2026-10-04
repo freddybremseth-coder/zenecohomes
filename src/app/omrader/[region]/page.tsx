@@ -12,8 +12,6 @@ import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
 import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
 import {
-export const dynamic = "force-dynamic";
-
   areaMatchesRegion,
   getAreaProfiles,
   getProperties,
@@ -21,6 +19,8 @@ export const dynamic = "force-dynamic";
   type RegionKey,
   regions,
 } from "@/lib/realtyflow";
+
+export const dynamic = "force-dynamic";
 
 const regionCopy: Record<RegionKey, { title: string; intro: string; proof: string[] }> = {
   "costa-blanca-nord": {
