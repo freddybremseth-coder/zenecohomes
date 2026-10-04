@@ -926,6 +926,7 @@ export async function getAreaProfiles(): Promise<AreaProfile[]> {
   try {
     const res = await fetch(`${REALTYFLOW_BASE}/api/area-profiles?brandId=zeneco&public=1`, {
       next: { revalidate: 3600 },
+      signal: AbortSignal.timeout(PROPERTY_FETCH_TIMEOUT_MS),
       headers: { Accept: "application/json" },
     });
     if (!res.ok) return STATIC_AREA_PROFILES;
@@ -970,6 +971,7 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
     if (brandId) propertyUrl.searchParams.set("brandId", brandId);
     const res = await fetch(propertyUrl.toString(), {
       next: { revalidate: PROPERTY_CACHE_SECONDS },
+      signal: AbortSignal.timeout(PROPERTY_FETCH_TIMEOUT_MS),
       headers: { Accept: "application/json" },
     });
     if (res.status === 404) return null;
