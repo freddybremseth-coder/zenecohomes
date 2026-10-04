@@ -191,6 +191,7 @@ export type LeadPayload = {
 
 const REALTYFLOW_BASE = process.env.REALTYFLOW_BASE_URL || "https://realtyflow.chatgenius.pro";
 const PROPERTY_CACHE_SECONDS = 300;
+const PROPERTY_FETCH_TIMEOUT_MS = 8000;
 
 export function normalizeSearchText(value: string) {
   return value
@@ -891,6 +892,7 @@ export async function getProperties(limit?: number, brandId?: string): Promise<P
     if (limit && limit > 0) propertyUrl.searchParams.set("limit", String(limit));
     const res = await fetch(propertyUrl.toString(), {
       next: { revalidate: PROPERTY_CACHE_SECONDS },
+      signal: AbortSignal.timeout(PROPERTY_FETCH_TIMEOUT_MS),
       headers: { Accept: "application/json" },
     });
     if (!res.ok) return fallbackProperties.slice(0, limit);
