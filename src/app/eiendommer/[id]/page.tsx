@@ -33,8 +33,9 @@ function truncateMeta(value: string): string {
 }
 
 export async function generateStaticParams() {
-  const properties = await getProperties(30, "zeneco");
-  return properties.map((property) => ({ id: encodeURIComponent(getPropertyRef(property)) }));
+  // Inventory changes continuously and RealtyFlow can be temporarily unavailable.
+  // Resolve property pages on demand instead of enumerating upstream data at build time.
+  return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
