@@ -552,7 +552,7 @@ const drafts: CorporateDraft[] = [
     seoTitle: "Hotellalternativ for bedriftshytte | Slik regner CFO",
     title: "Slik beregner dere hotellalternativet for en bedriftshytte",
     excerpt: "En styrevennlig metode for å regne på hotellalternativet: opphold per år × personer × netter × pris per person per natt.",
-    seoDescription: "Slik beregner CFO eller styret alternativ hotellkostnad for en bedriftshytte i Spania med konkrete opphold, personer, netter og hotellpris.",
+    seoDescription: "Slik beregner CFO eller styret alternativ hotellkostnad for en bedriftshytte i Spania med konkrete opphold, personer, netter og realistisk hotellpris.",
     keywords: ["hotellalternativ bedriftshytte", "CFO bedriftshytte kalkyle", "hotellkostnad firmatur", "business case bedriftshytte"],
     intro: [
       "Et godt business case tåler at økonomisjefen spør «hvor kommer tallet fra?». Derfor bør hotellalternativet kunne spores helt ned til konkrete opphold og personnetter.",
