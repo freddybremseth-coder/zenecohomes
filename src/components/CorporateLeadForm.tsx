@@ -1,12 +1,59 @@
 "use client";
 
-import { useState } from "react";
-import { Send } from "lucide-react";
+import { useEffect, useState } from "react";
+import { FileText, Send } from "lucide-react";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+type CalculatorContext = {
+  propertyPrice?: number;
+  users?: number;
+  employeeWeeks?: number;
+  workWeeks?: number;
+  totalWeeks?: number;
+  annualOperating?: number;
+  acquisitionPct?: number;
+  capitalPct?: number;
+  valuePct?: number;
+  holdingYears?: number;
+  annualCostBeforeValue?: number;
+  costPerUseWeek?: number;
+  hotelWorkAlternative?: number;
+  estimatedFutureValue?: number;
+};
+
+const euro = new Intl.NumberFormat("nb-NO", {
+  style: "currency",
+  currency: "EUR",
+  maximumFractionDigits: 0,
+});
+
 export function CorporateLeadForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [calculatorContext, setCalculatorContext] = useState<CalculatorContext | null>(null);
+  const [userCount, setUserCount] = useState("");
+
+  useEffect(() => {
+    function applyContext(detail: CalculatorContext | null) {
+      if (!detail) return;
+      setCalculatorContext(detail);
+      if (detail.users) setUserCount(String(detail.users));
+    }
+
+    try {
+      const stored = window.sessionStorage.getItem("zeneco-corporate-calculator");
+      if (stored) applyContext(JSON.parse(stored));
+    } catch {
+      // Ignore malformed or unavailable session storage.
+    }
+
+    function onCalculator(event: Event) {
+      applyContext((event as CustomEvent<CalculatorContext>).detail);
+    }
+
+    window.addEventListener("zeneco:corporate-calculator", onCalculator);
+    return () => window.removeEventListener("zeneco:corporate-calculator", onCalculator);
+  }, []);
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -14,6 +61,20 @@ export function CorporateLeadForm() {
 
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+
+    const calculatorLines = calculatorContext
+      ? [
+          "",
+          "Beslutningsgrunnlag fra kalkulator:",
+          `Kjøpesum: ${calculatorContext.propertyPrice ? euro.format(calculatorContext.propertyPrice) : "-"}`,
+          `Ansatte/medlemmer: ${calculatorContext.users ?? "-"}`,
+          `Bruk: ${calculatorContext.employeeWeeks ?? "-"} ansatt-/medlemsuker + ${calculatorContext.workWeeks ?? "-"} arbeids-/samlinguker`,
+          `Årlig kostnad før verdiendring: ${calculatorContext.annualCostBeforeValue ? euro.format(calculatorContext.annualCostBeforeValue) : "-"}`,
+          `Kostnad per bruksuke: ${calculatorContext.costPerUseWeek ? euro.format(calculatorContext.costPerUseWeek) : "-"}`,
+          `Hotellalternativ for arbeidsukene: ${calculatorContext.hotelWorkAlternative ? euro.format(calculatorContext.hotelWorkAlternative) : "-"}`,
+          `Verdiscenario: ${calculatorContext.valuePct ?? "-"} % i ${calculatorContext.holdingYears ?? "-"} år`,
+        ]
+      : [];
 
     const message = [
       `Virksomhet/organisasjon: ${data.company || "-"}`,
@@ -25,6 +86,7 @@ export function CorporateLeadForm() {
       `Tidslinje: ${data.timeline || "-"}`,
       "",
       `Behov: ${data.needs || "-"}`,
+      ...calculatorLines,
     ].join("\n");
 
     try {
@@ -36,18 +98,19 @@ export function CorporateLeadForm() {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          source: "zeneco-corporate-homes",
+          source: "zeneco-corporate-decision-note",
           preferred_area: "Costa Blanca / åpen for forslag",
           budget: data.budget,
           timeline: data.timeline,
           purchase_goal: "Bedriftshytte / firmabolig / medlemsbolig i Spania",
-          next_step: "Kostnadsfri bedriftsvurdering",
-          request_type: "corporate-home",
+          next_step: "Beslutningsnotat til styret",
+          request_type: "corporate-home-decision-note",
           organization_name: data.company,
           organization_type: data.organization_type,
           contact_role: data.role,
           user_count: data.users,
           corporate_model: data.model,
+          calculator_context: calculatorContext,
           message,
           page_url: window.location.href,
           utm_source: params.get("utm_source"),
@@ -59,6 +122,7 @@ export function CorporateLeadForm() {
 
       if (!response.ok) throw new Error("submit");
       form.reset();
+      setUserCount("");
       setStatus("sent");
     } catch {
       setStatus("error");
@@ -67,6 +131,20 @@ export function CorporateLeadForm() {
 
   return (
     <form className="corporate-lead-form" onSubmit={onSubmit}>
+      {calculatorContext && (
+        <div className="corporate-form-calculator-context">
+          <FileText size={20} />
+          <div>
+            <strong>Tallene fra kalkulatoren er tatt med</strong>
+            <span>
+              {calculatorContext.propertyPrice ? euro.format(calculatorContext.propertyPrice) : "Valgt kjøpesum"} ·
+              {" "}{calculatorContext.totalWeeks ?? 0} bruksuker ·
+              {" "}{calculatorContext.valuePct ?? 0} % verdiscenario
+            </span>
+          </div>
+        </div>
+      )}
+
       <div className="corporate-form-grid">
         <label>
           Virksomhet / organisasjon
@@ -109,7 +187,14 @@ export function CorporateLeadForm() {
       <div className="corporate-form-grid">
         <label>
           Ansatte / medlemmer
-          <input name="users" type="number" min="1" placeholder="f.eks. 50" />
+          <input
+            name="users"
+            type="number"
+            min="1"
+            placeholder="f.eks. 50"
+            value={userCount}
+            onChange={(event) => setUserCount(event.target.value)}
+          />
         </label>
         <label>
           Budsjett
@@ -150,21 +235,21 @@ export function CorporateLeadForm() {
         <textarea
           name="needs"
           rows={5}
-          placeholder="Fortell kort om mål, antall brukere, ønsket område, boligtype og hvordan dere ser for dere bruken."
+          placeholder="Fortell kort om mål, brukere, boligtype, område eller hva styret trenger for å kunne ta stilling."
         />
       </label>
 
       <button className="submit-button" disabled={status === "sending"}>
         <Send size={18} />
-        {status === "sending" ? "Sender …" : "Be om kostnadsfri bedriftsvurdering"}
+        {status === "sending" ? "Sender …" : "Be om beslutningsnotat"}
       </button>
 
       <p className="corporate-form-privacy">
-        Opplysningene brukes kun til å vurdere henvendelsen og følge opp deres interesse for Zen Corporate Homes.
+        Opplysningene brukes til å lage et første beslutningsgrunnlag og følge opp henvendelsen. Ingen generell boligspam.
       </p>
 
       {status === "sent" && (
-        <p className="form-success">Takk. Vi har mottatt forespørselen. Vi tar kontakt for en kort og uforpliktende behovsavklaring.</p>
+        <p className="form-success">Takk. Forespørselen er mottatt. Vi bruker opplysningene som grunnlag for en kort behovsavklaring og beslutningsnotatet.</p>
       )}
       {status === "error" && (
         <p className="form-error">Noe gikk galt. Prøv igjen, eller bruk booking-knappen på siden.</p>
