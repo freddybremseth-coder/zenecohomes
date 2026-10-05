@@ -4,11 +4,12 @@ import { useMemo, useState } from "react";
 import {
   Building2,
   CalendarDays,
-  Calculator,
   ChevronDown,
   ChevronUp,
   Hotel,
   LineChart,
+  Plus,
+  Trash2,
   Users,
 } from "lucide-react";
 
@@ -20,37 +21,50 @@ const euro = new Intl.NumberFormat("nb-NO", {
 
 const VALUE_SCENARIOS = [0, 2, 3, 5];
 
-function nonNegative(value: number, fallback = 0) {
-  return Number.isFinite(value) && value >= 0 ? value : fallback;
-}
-
-function clamp(value: number, min: number, max: number) {
-  return Math.min(max, Math.max(min, value));
-}
+type BusinessStay = {
+  id: number;
+  name: string;
+  eventsPerYear: number;
+  people: number;
+  nights: number;
+  pricePerPersonNight: number;
+};
 
 export type CorporateCalculatorResult = {
   propertyPrice: number;
   users: number;
   employeeWeeks: number;
-  workWeeks: number;
-  totalWeeks: number;
   annualOperating: number;
   acquisitionPct: number;
   capitalPct: number;
   valuePct: number;
   holdingYears: number;
   annualCostBeforeValue: number;
-  costPerUseWeek: number;
-  hotelWorkAlternative: number;
+  employeeCostPerWeek: number;
+  businessStayNights: number;
+  businessStayCount: number;
+  participantNights: number;
+  hotelAlternativeAnnual: number;
   estimatedFutureValue: number;
   scenarioValueChangeYearOne: number;
+  stays: BusinessStay[];
 };
+
+function n(value: number, fallback = 0) {
+  return Number.isFinite(value) && value >= 0 ? value : fallback;
+}
+
+const DEFAULT_STAYS: BusinessStay[] = [
+  { id: 1, name: "Ledersamling", eventsPerYear: 2, people: 8, nights: 3, pricePerPersonNight: 180 },
+  { id: 2, name: "Avdelingsreise", eventsPerYear: 3, people: 10, nights: 4, pricePerPersonNight: 160 },
+  { id: 3, name: "Styresamling", eventsPerYear: 2, people: 6, nights: 3, pricePerPersonNight: 180 },
+];
 
 export function CorporateHomeCalculator() {
   const [propertyPrice, setPropertyPrice] = useState(450000);
   const [users, setUsers] = useState(50);
   const [employeeWeeks, setEmployeeWeeks] = useState(30);
-  const [workWeeks, setWorkWeeks] = useState(10);
+  const [stays, setStays] = useState<BusinessStay[]>(DEFAULT_STAYS);
 
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [annualOperating, setAnnualOperating] = useState(12000);
@@ -58,71 +72,106 @@ export function CorporateHomeCalculator() {
   const [capitalPct, setCapitalPct] = useState(4);
   const [valuePct, setValuePct] = useState(3);
   const [holdingYears, setHoldingYears] = useState(10);
-  const [peoplePerWorkStay, setPeoplePerWorkStay] = useState(8);
-  const [hotelNightRate, setHotelNightRate] = useState(180);
-  const [hotelNights, setHotelNights] = useState(5);
 
   const result = useMemo<CorporateCalculatorResult>(() => {
-    const price = Math.max(0, nonNegative(propertyPrice, 450000));
-    const people = Math.max(1, nonNegative(users, 50));
-    const employee = clamp(nonNegative(employeeWeeks, 30), 0, 52);
-    const work = clamp(nonNegative(workWeeks, 10), 0, 52 - employee);
-    const totalWeeks = employee + work;
+    const price = n(propertyPrice, 450000);
+    const peopleWithAccess = Math.max(1, n(users, 50));
+    const employeeUseWeeks = Math.min(52, n(employeeWeeks, 30));
 
-    const operating = nonNegative(annualOperating, 12000);
-    const acquisition = price * (nonNegative(acquisitionPct, 12) / 100);
+    const operating = n(annualOperating, 12000);
+    const acquisition = price * (n(acquisitionPct, 12) / 100);
     const capitalBase = price + acquisition;
-    const capitalCost = capitalBase * (nonNegative(capitalPct, 4) / 100);
-    const annualisedAcquisition = holdingYears > 0 ? acquisition / holdingYears : acquisition;
+    const capitalCost = capitalBase * (n(capitalPct, 4) / 100);
+    const years = Math.max(1, Math.round(n(holdingYears, 10)));
+    const annualisedAcquisition = acquisition / years;
     const annualCostBeforeValue = operating + capitalCost + annualisedAcquisition;
-    const costPerUseWeek = totalWeeks > 0 ? annualCostBeforeValue / totalWeeks : annualCostBeforeValue;
 
-    const rooms = Math.max(1, Math.ceil(nonNegative(peoplePerWorkStay, 8) / 2));
-    const hotelPerWorkWeek = rooms * nonNegative(hotelNightRate, 180) * nonNegative(hotelNights, 5);
-    const hotelWorkAlternative = hotelPerWorkWeek * work;
+    const normalizedStays = stays.map((stay) => ({
+      ...stay,
+      eventsPerYear: n(stay.eventsPerYear),
+      people: n(stay.people),
+      nights: n(stay.nights),
+      pricePerPersonNight: n(stay.pricePerPersonNight),
+    }));
 
-    const years = Math.max(1, Math.round(nonNegative(holdingYears, 10)));
-    const estimatedFutureValue = price * Math.pow(1 + nonNegative(valuePct, 3) / 100, years);
-    const scenarioValueChangeYearOne = price * (nonNegative(valuePct, 3) / 100);
+    const businessStayCount = normalizedStays.reduce((sum, stay) => sum + stay.eventsPerYear, 0);
+    const businessStayNights = normalizedStays.reduce(
+      (sum, stay) => sum + stay.eventsPerYear * stay.nights,
+      0,
+    );
+    const participantNights = normalizedStays.reduce(
+      (sum, stay) => sum + stay.eventsPerYear * stay.people * stay.nights,
+      0,
+    );
+    const hotelAlternativeAnnual = normalizedStays.reduce(
+      (sum, stay) =>
+        sum + stay.eventsPerYear * stay.people * stay.nights * stay.pricePerPersonNight,
+      0,
+    );
+
+    const employeeCostPerWeek =
+      employeeUseWeeks > 0 ? annualCostBeforeValue / employeeUseWeeks : annualCostBeforeValue;
+    const estimatedFutureValue = price * Math.pow(1 + n(valuePct, 3) / 100, years);
+    const scenarioValueChangeYearOne = price * (n(valuePct, 3) / 100);
 
     return {
       propertyPrice: price,
-      users: people,
-      employeeWeeks: employee,
-      workWeeks: work,
-      totalWeeks,
+      users: peopleWithAccess,
+      employeeWeeks: employeeUseWeeks,
       annualOperating: operating,
       acquisitionPct,
       capitalPct,
       valuePct,
       holdingYears: years,
       annualCostBeforeValue,
-      costPerUseWeek,
-      hotelWorkAlternative,
+      employeeCostPerWeek,
+      businessStayNights,
+      businessStayCount,
+      participantNights,
+      hotelAlternativeAnnual,
       estimatedFutureValue,
       scenarioValueChangeYearOne,
+      stays: normalizedStays,
     };
   }, [
     propertyPrice,
     users,
     employeeWeeks,
-    workWeeks,
+    stays,
     annualOperating,
     acquisitionPct,
     capitalPct,
     valuePct,
     holdingYears,
-    peoplePerWorkStay,
-    hotelNightRate,
-    hotelNights,
   ]);
+
+  function updateStay(id: number, field: keyof BusinessStay, value: string | number) {
+    setStays((current) =>
+      current.map((stay) => (stay.id === id ? { ...stay, [field]: value } : stay)),
+    );
+  }
+
+  function addStay() {
+    setStays((current) => [
+      ...current,
+      {
+        id: Math.max(0, ...current.map((stay) => stay.id)) + 1,
+        name: "Nytt bedriftsopphold",
+        eventsPerYear: 1,
+        people: 8,
+        nights: 3,
+        pricePerPersonNight: 170,
+      },
+    ]);
+  }
+
+  function removeStay(id: number) {
+    setStays((current) => current.filter((stay) => stay.id !== id));
+  }
 
   function requestDecisionNote() {
     const detail = {
       ...result,
-      peoplePerWorkStay,
-      hotelNightRate,
-      hotelNights,
       generatedAt: new Date().toISOString(),
     };
 
@@ -149,7 +198,7 @@ export function CorporateHomeCalculator() {
         </label>
 
         <label>
-          <span><Users size={17} /> Ansatte / medlemmer</span>
+          <span><Users size={17} /> Ansatte / medlemmer med tilgang</span>
           <input
             type="number"
             min="1"
@@ -160,7 +209,7 @@ export function CorporateHomeCalculator() {
         </label>
 
         <label>
-          <span><CalendarDays size={17} /> Uker til ansatte / medlemmer</span>
+          <span><CalendarDays size={17} /> Ferie-/medlemsuker per år</span>
           <input
             type="number"
             min="0"
@@ -170,18 +219,98 @@ export function CorporateHomeCalculator() {
             onChange={(event) => setEmployeeWeeks(Number(event.target.value))}
           />
         </label>
+      </div>
 
-        <label>
-          <span><Calculator size={17} /> Arbeids- og samlinguker</span>
-          <input
-            type="number"
-            min="0"
-            max="52"
-            step="1"
-            value={workWeeks}
-            onChange={(event) => setWorkWeeks(Number(event.target.value))}
-          />
-        </label>
+      <div className="corporate-stays">
+        <div className="corporate-stays-heading">
+          <div>
+            <span className="corporate-stays-kicker"><Hotel size={17} /> Bedriftsopphold og hotellalternativ</span>
+            <strong>Hva ville dere ellers betalt for overnatting?</strong>
+            <small>
+              Legg inn faktiske turer eller samlinger virksomheten normalt ville betalt hotell for.
+              Ferieuker for ansatte eller medlemmer er ikke med i hotellbesparelsen.
+            </small>
+          </div>
+          <button type="button" className="corporate-add-stay" onClick={addStay}>
+            <Plus size={16} /> Legg til opphold
+          </button>
+        </div>
+
+        <div className="corporate-stay-table" role="table" aria-label="Bedriftsopphold per år">
+          <div className="corporate-stay-row corporate-stay-head" role="row">
+            <span>Type opphold</span>
+            <span>Antall/år</span>
+            <span>Personer</span>
+            <span>Netter</span>
+            <span>Pris pers./natt</span>
+            <span>Årskostnad</span>
+            <span aria-hidden="true" />
+          </div>
+
+          {stays.map((stay) => {
+            const annualCost =
+              n(stay.eventsPerYear) *
+              n(stay.people) *
+              n(stay.nights) *
+              n(stay.pricePerPersonNight);
+
+            return (
+              <div className="corporate-stay-row" role="row" key={stay.id}>
+                <input
+                  aria-label="Type opphold"
+                  value={stay.name}
+                  onChange={(event) => updateStay(stay.id, "name", event.target.value)}
+                />
+                <input
+                  aria-label={"Antall " + stay.name + " per år"}
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={stay.eventsPerYear}
+                  onChange={(event) => updateStay(stay.id, "eventsPerYear", Number(event.target.value))}
+                />
+                <input
+                  aria-label={"Personer per " + stay.name}
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={stay.people}
+                  onChange={(event) => updateStay(stay.id, "people", Number(event.target.value))}
+                />
+                <input
+                  aria-label={"Netter per " + stay.name}
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={stay.nights}
+                  onChange={(event) => updateStay(stay.id, "nights", Number(event.target.value))}
+                />
+                <div className="corporate-number-field">
+                  <input
+                    aria-label={"Hotellpris per person per natt for " + stay.name}
+                    type="number"
+                    min="0"
+                    step="10"
+                    value={stay.pricePerPersonNight}
+                    onChange={(event) =>
+                      updateStay(stay.id, "pricePerPersonNight", Number(event.target.value))
+                    }
+                  />
+                  <b>€</b>
+                </div>
+                <strong>{euro.format(annualCost)}</strong>
+                <button
+                  type="button"
+                  className="corporate-remove-stay"
+                  aria-label={"Fjern " + stay.name}
+                  onClick={() => removeStay(stay.id)}
+                >
+                  <Trash2 size={15} />
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       <button
@@ -241,53 +370,48 @@ export function CorporateHomeCalculator() {
               ))}
             </div>
           </div>
-
-          <label>
-            <span>Personer på arbeidsopphold</span>
-            <input type="number" min="1" step="1" value={peoplePerWorkStay} onChange={(event) => setPeoplePerWorkStay(Number(event.target.value))} />
-          </label>
-          <label>
-            <span>Hotellpris per rom/natt</span>
-            <div className="corporate-number-field">
-              <input type="number" min="0" step="10" value={hotelNightRate} onChange={(event) => setHotelNightRate(Number(event.target.value))} />
-              <b>EUR</b>
-            </div>
-          </label>
-          <label>
-            <span>Netter per arbeidsopphold</span>
-            <input type="number" min="1" max="14" step="1" value={hotelNights} onChange={(event) => setHotelNights(Number(event.target.value))} />
-          </label>
         </div>
       )}
 
       <div className="corporate-calculator-results" aria-live="polite">
         <article className="corporate-result-primary">
-          <span>Årlig kostnad før verdiendring</span>
+          <span>Årlig kostnad ved boligen før verdiendring</span>
           <strong>{euro.format(result.annualCostBeforeValue)}</strong>
           <small>Drift, kapitalkostnad og kjøpskostnader fordelt over valgt eiertid.</small>
         </article>
         <article>
-          <span>Kostnad per planlagt bruksuke</span>
-          <strong>{euro.format(result.costPerUseWeek)}</strong>
-          <small>Basert på {result.totalWeeks} totale bruksuker.</small>
+          <span>Ferie-/medlemsbruk</span>
+          <strong>{result.employeeWeeks} uker</strong>
+          <small>{euro.format(result.employeeCostPerWeek)} per tilgjengelig uke dersom årskostnaden ses mot disse ukene alene.</small>
         </article>
-        <article>
-          <span><Hotel size={15} /> Hotellalternativ for arbeidsukene</span>
-          <strong>{euro.format(result.hotelWorkAlternative)}</strong>
-          <small>Kun {result.workWeeks} arbeids-/samlinguker sammenlignes med hotell.</small>
+        <article className="corporate-result-hotel">
+          <span><Hotel size={15} /> Alternativ hotellkostnad per år</span>
+          <strong>{euro.format(result.hotelAlternativeAnnual)}</strong>
+          <small>
+            {result.businessStayCount} bedriftsopphold · {result.participantNights} personnetter.
+            Dette er overnatting virksomheten ellers kunne ha kjøpt.
+          </small>
         </article>
         <article>
           <span>Scenarioverdi etter {result.holdingYears} år</span>
           <strong>{euro.format(result.estimatedFutureValue)}</strong>
-          <small>Ved {result.valuePct} % årlig verdiendring. Dette er et scenario, ikke en prognose.</small>
+          <small>Ved {result.valuePct} % årlig verdiendring. Scenario, ikke prognose.</small>
         </article>
+      </div>
+
+      <div className="corporate-calculator-scenario-note">
+        <strong>Hotellbeløpet er ikke automatisk en «besparelse».</strong>
+        <span>
+          Det viser alternativ overnattingskostnad for de konkrete bedriftsoppholdene dere har lagt inn.
+          Ferie-/medlemsuker holdes utenfor dette regnestykket.
+        </span>
       </div>
 
       <div className="corporate-calculator-scenario-note">
         <strong>Verdiutvikling holdes utenfor hovedkostnaden.</strong>
         <span>
           Med valgt scenario tilsvarer første års beregnede verdiendring {euro.format(result.scenarioValueChangeYearOne)}.
-          Beløpet er ikke behandlet som kontantinntekt eller sikker besparelse.
+          Beløpet behandles ikke som kontantinntekt eller sikker besparelse.
         </span>
       </div>
 
@@ -296,8 +420,8 @@ export function CorporateHomeCalculator() {
       </button>
 
       <p className="corporate-calculator-note">
-        Planleggingsverktøy, ikke investerings-, skatte-, juridisk eller regnskapsråd. Flyreiser er ikke inkludert.
-        Alle forutsetninger kan endres, og verdiutvikling er usikker.
+        Planleggingsverktøy, ikke investerings-, skatte-, juridisk eller regnskapsråd. Reise, servering,
+        møterom og andre arrangementsutgifter er ikke med i hotellsammenligningen.
       </p>
     </div>
   );
