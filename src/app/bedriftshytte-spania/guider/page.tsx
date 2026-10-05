@@ -16,17 +16,6 @@ export const metadata: Metadata = {
 
 const groups = [
   {
-    title: "Kalkulator og business case",
-    intro: "Nye guider for styre, CFO og ledelse: konkrete opphold, hotellalternativ, årsbudsjett, boligkrav og verdiutvikling.",
-    slugs: [
-      "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte",
-      "slik-beregner-cfo-hotellalternativ-bedriftshytte",
-      "bedriftshytte-styre-ledelse-avdelingsreiser-krav",
-      "arsbudsjett-bedriftshytte-spania",
-      "prisvekst-bolig-spania-business-case-bedriftshytte",
-    ],
-  },
-  {
     title: "Kom i gang",
     intro: "For ledelse og HR som vurderer ideen for første gang.",
     slugs: [
