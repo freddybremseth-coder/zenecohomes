@@ -13,6 +13,7 @@ type CorporateDraft = {
   date?: string;
   updated?: string;
   readingTime?: string;
+  cta?: { label: string; href: string };
   intro: string[];
   sections: { heading: string; body: string[]; bullets?: string[] }[];
   faq: { question: string; answer: string }[];
@@ -34,7 +35,7 @@ function makeArticle(draft: CorporateDraft): Article {
       "Sett et realistisk totalbudsjett for kjøp, drift og lokal oppfølging.",
       "Be om en kostnadsfri bedriftsvurdering før dere bruker tid på konkrete boliger.",
     ],
-    cta: { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: draft.cta || { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
     silo: "corporate",
   };
 }
@@ -847,6 +848,598 @@ const drafts: CorporateDraft[] = [
       { question: "Hva viser offisiell statistikk for Spania?", answer: "INE rapporterte 12,2 prosent årlig vekst i den nasjonale boligprisindeksen i andre kvartal 2026, med 7,4 prosent for nybolig og 12,9 prosent for bruktbolig." },
       { question: "Hvilket scenario bør vi bruke i styrepapiret?", answer: "Vis flere. Et nullscenario, et moderat scenario og et høyere scenario gjør beslutningen mindre avhengig av én antakelse." },
       { question: "Hvorfor står verdiendring utenfor hovedkostnaden?", answer: "Fordi verdiendringen ikke er sikker kontantinntekt og først realiseres ved et eventuelt salg. Det gir en mer konservativ og etterprøvbar beslutningsmodell." }
+    ]
+  },
+
+  {
+    slug: "feriebruk-vs-bedriftsbruk-firmabolig-spania",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    seoTitle: "Feriebruk eller bedriftsbruk av firmabolig i Spania?",
+    title: "Hva er forskjellen på feriebruk og bedriftsbruk av en firmabolig?",
+    excerpt: "Slik skiller virksomheten ferie- og medlemsbruk fra styre-, leder- og arbeidsopphold når samme bolig i Spania skal brukes til flere formål.",
+    seoDescription: "Slik skiller dere feriebruk fra styre-, leder- og arbeidsopphold i en firmabolig i Spania, med tydelig booking, økonomi og dokumentasjon i praksis.",
+    keywords: ["feriebruk firmabolig", "bedriftsbruk bedriftshytte", "firmabolig ansatte", "arbeidsopphold Spania"],
+    intro: [
+      "Den samme boligen kan brukes både som ansattgode og som base for styre, ledelse eller mindre team. Det betyr ikke at bruken bør blandes sammen i kalender, økonomi eller dokumentasjon.",
+      "Et ryddig Corporate Home-oppsett behandler ferie-/medlemsbruk og bedriftsbruk som to tydelige spor. Da blir både booking, budsjett og rådgivning enklere å forstå."
+    ],
+    sections: [
+      {
+        heading: "Feriebruk: boligen som ansatt- eller medlemsfordel",
+        body: [
+          "Feriebruk handler om at ansatte eller medlemmer får disponere boligen privat etter virksomhetens regler. Her er sentrale spørsmål hvem som har tilgang, hvordan populære perioder fordeles, hva brukeren selv dekker og hvordan oppholdet registreres.",
+          "Denne bruken bør ikke automatisk omregnes til en hotellbesparelse for virksomheten. Dersom arbeidsgiver normalt ikke ville betalt den ansattes private feriehotell, finnes det heller ingen reell hotellkostnad å sammenligne med."
+        ],
+        bullets: [
+          "Hvem har disposisjonsrett?",
+          "Hvordan fordeles skoleferier og høysesong?",
+          "Hvem betaler fly, rengjøring og eventuelle tillegg?",
+          "Hvordan registreres faktisk bruk?"
+        ]
+      },
+      {
+        heading: "Bedriftsbruk: når oppholdet har et virksomhetsformål",
+        body: [
+          "Bedriftsbruk kan være ledersamling, styresamling, prosjektarbeid, avdelingsreise eller annet opphold som virksomheten gjennomfører som del av arbeidet.",
+          "For disse oppholdene kan det være relevant å sammenligne mot hva tilsvarende overnatting ellers ville kostet. Zen-kalkulatoren bruker derfor antall opphold per år, personer, netter og hotellpris per person per natt."
+        ]
+      },
+      {
+        heading: "Én kalender – men to typer reservasjoner",
+        body: [
+          "Det praktiske systemet kan være felles, men hver reservasjon bør merkes med bruksformål. Det gjør det mulig å se hvor mye av året som går til ferie-/medlemsbruk og hvor mye som brukes til virksomhetsrelaterte opphold.",
+          "En slik kalender gir også bedre grunnlag for rengjøring, nøkkeladministrasjon, kostnadsfordeling og senere evaluering av ordningen."
+        ],
+        bullets: [
+          "Ferie-/medlemsopphold.",
+          "Ledelse/styre.",
+          "Team/prosjekt.",
+          "Vedlikehold og blokkert kapasitet."
+        ]
+      },
+      {
+        heading: "Hold økonomien i separate spor",
+        body: [
+          "Årlig eierkostnad er ett samlet tall, men nytten kan beskrives i flere spor. Ansattgode kan måles i bruk, venteliste og medarbeidertilfredshet. Bedriftsopphold kan i tillegg sammenlignes med alternativ hotellkostnad.",
+          "Det gir et langt mer troverdig styregrunnlag enn å summere alle bruksuker og påstå at de representerer samme type økonomisk besparelse."
+        ]
+      },
+      {
+        heading: "Skatt, regnskap og interne regler må kvalitetssikres",
+        body: [
+          "Privat bruk, arbeidsrelatert bruk og eventuell bruk av eiere eller nærstående kan reise forskjellige skattemessige og regnskapsmessige spørsmål. Virksomhetens egne rådgivere bør derfor vurdere den faktiske ordningen.",
+          "Zen Corporate Homes hjelper med eiendom, brukskonsept og beslutningsgrunnlag, men erstatter ikke juridisk, skattemessig eller regnskapsmessig rådgivning."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Kan samme bolig brukes både privat og i arbeid?", answer: "Ja, det kan være mulig. Det viktige er å skille bruksformålene tydelig i booking, dokumentasjon og økonomisk vurdering." },
+      { question: "Skal ferieuker inngå i hotellalternativet?", answer: "Ikke dersom virksomheten ellers ikke ville betalt hotell for den private ferien. Ferie-/medlemsbruk bør vises som en egen nytteverdi." },
+      { question: "Bør alle opphold registreres?", answer: "Ja. En enkel og konsekvent brukslogg gjør drift, booking og senere evaluering langt enklere." },
+      { question: "Hvem vurderer skatten?", answer: "Virksomhetens kvalifiserte skatte- og regnskapsrådgivere bør vurdere den konkrete ordningen og den faktiske bruken." }
+    ]
+  },
+  {
+    slug: "beslutningsnotat-bedriftshytte-spania-mal",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "10 min lesing",
+    seoTitle: "Beslutningsnotat for bedriftshytte i Spania | Mal 2026",
+    title: "Slik lager dere et beslutningsnotat for kjøp av bedriftshytte i Spania",
+    excerpt: "En konkret mal for styre og ledelse: formål, brukergruppe, årsmodell, økonomi, hotellalternativ, boligkrav, risiko, rådgivning og neste vedtak.",
+    seoDescription: "Praktisk mal for beslutningsnotat om bedriftshytte i Spania med formål, bruk, økonomi, hotellalternativ, boligkrav, risiko og neste steg internt.",
+    keywords: ["beslutningsnotat bedriftshytte", "styrenotat firmabolig", "mal bedriftshytte Spania", "business case firmabolig"],
+    intro: [
+      "Et godt beslutningsnotat skal gjøre det mulig å ta stilling til ideen uten at styret først må bli eksperter på spansk eiendom. Det bør være kort, etterprøvbart og tydelig på hva som er fakta, hva som er antakelser og hva som fortsatt må avklares.",
+      "Denne strukturen kan brukes før konkrete boliger velges. Målet i første fase er normalt ikke et endelig kjøpsvedtak, men et kontrollert vedtak om å gå videre til neste trinn."
+    ],
+    sections: [
+      {
+        heading: "1. Formål og ønsket effekt",
+        body: [
+          "Start med hvorfor virksomheten vurderer boligen. Er hovedmålet ansattgode, medlemsverdi, ledersamlinger, gjentatte teamopphold eller en kombinasjon?",
+          "Beskriv også hvordan dere senere vil vite om ordningen fungerer, for eksempel faktisk bruk, medarbeiderrespons eller redusert behov for eksterne overnattinger ved samlinger."
+        ]
+      },
+      {
+        heading: "2. Brukere og årsmodell",
+        body: [
+          "Vis hvem som skal ha tilgang og hvordan året kan fordeles. Skill mellom ferie-/medlemsuker, konkrete bedriftsopphold og perioder som må holdes av til vedlikehold eller fleksibilitet.",
+          "For bedriftsopphold bør hvert opphold beskrives med antall turer per år, personer og netter. Da blir hotellalternativet etterprøvbart."
+        ]
+      },
+      {
+        heading: "3. Investeringsramme og årsbudsjett",
+        body: [
+          "Vis kjøpesum, estimerte kjøpskostnader, kapitalkostnad, normal drift og valgt eiertid. Verdiutvikling skal ligge separat som scenario, ikke trekkes fra hovedkostnaden.",
+          "Legg gjerne ved et nullscenario for verdiendring slik at styret ser om begrunnelsen fortsatt står seg uten forventet prisvekst."
+        ]
+      },
+      {
+        heading: "4. Alternativer",
+        body: [
+          "Et beslutningsnotat blir sterkere når styret ser hva eierskap sammenlignes med. Det kan være hotell for konkrete samlinger, løpende korttidsleie eller å ikke etablere ordningen.",
+          "Sammenlign samme behov. Ikke bruk private ferieuker som hotellbesparelse dersom bedriften ellers ikke ville betalt disse oppholdene."
+        ]
+      },
+      {
+        heading: "5. Krav til bolig og område",
+        body: [
+          "Beskriv minimumskrav før dere ser på objekter: soverom, bad, arbeidsflater, internett, uteareal, parkering, helårsservice, transfer og lokal drift.",
+          "Dette hindrer at én attraktiv annonse setter premissene for hele investeringsbeslutningen."
+        ]
+      },
+      {
+        heading: "6. Skatt, juridikk og regnskap",
+        body: [
+          "List spørsmål som må kvalitetssikres av kvalifiserte norske og spanske rådgivere. Det kan gjelde eierstruktur, bruk, dokumentasjon, skatt, regnskapsmessig behandling og senere salg.",
+          "I denne fasen er det ofte nok å markere punktene som åpne beslutningsforutsetninger i stedet for å forsøke å løse dem med antakelser."
+        ]
+      },
+      {
+        heading: "7. Drift og ansvar etter kjøpet",
+        body: [
+          "Beskriv hvem som skal håndtere booking, nøkkel, rengjøring, tilsyn, avvik og lokale leverandører. En eiendom med mange brukere må ha en driftsmodell, ikke bare en eier.",
+          "Zen Eco Homes Care kan være én mulig lokal operativ løsning, men omfang og kostnad bør avtales konkret."
+        ]
+      },
+      {
+        heading: "8. Be styret om riktig neste vedtak",
+        body: [
+          "Første notat trenger ikke be om fullmakt til å kjøpe en bestemt bolig. Et mer kontrollert neste steg kan være å godkjenne investeringsrammen, kravlisten og en shortlist-prosess.",
+          "Når faktiske boliger, rådgivervurderinger og endelige kostnader foreligger, kan styret få et mer komplett beslutningsgrunnlag."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Hvor langt bør beslutningsnotatet være?", answer: "Et første notat kan ofte være 2–5 sider pluss vedlegg dersom formål, tall, risiko og neste beslutning er tydelige." },
+      { question: "Må konkrete boliger være med?", answer: "Nei. I første fase kan representative prisnivåer være bedre. Konkrete objekter bør først komme når behov, ramme og krav er avklart." },
+      { question: "Hva kan kalkulatoren bidra med?", answer: "Den gir et konsistent første tallgrunnlag for kjøpesum, årsbudsjett, verdi-scenario og alternative hotellkostnader for konkrete bedriftsopphold." },
+      { question: "Kan Zen lage beslutningsnotatet?", answer: "Ja. Corporate-løpet er bygget slik at kalkulatortall og behov kan følge forespørselen videre til et første beslutningsgrunnlag." }
+    ]
+  },
+  {
+    slug: "bedriftshytte-alternativ-hotell-gjentatte-samlinger",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    seoTitle: "Bedriftshytte mot hotell ved gjentatte samlinger i Spania",
+    title: "Bedriftshytte som alternativ til hotell for gjentatte samlinger",
+    excerpt: "Når virksomheten samler ledelse, styre eller team flere ganger i året, kan en fast bolig være et relevant alternativ til hotell – men bare når bruken er reell.",
+    seoDescription: "Når kan bedriftshytte være et alternativ til hotell for gjentatte styre-, leder- og teamsamlinger? Se hvilke bruksmønstre og kostnader som bør vurderes.",
+    keywords: ["bedriftshytte alternativ hotell", "gjentatte samlinger Spania", "ledersamling hotell", "firmabolig team"],
+    intro: [
+      "En enkelt firmatur er sjelden et godt argument for å kjøpe eiendom. Regnestykket blir mer interessant når virksomheten har gjentatte samlinger over flere år og samtidig ønsker å bruke boligen som ansatt- eller medlemsfordel.",
+      "Poenget er ikke å bevise at eierskap alltid er billigere. Det er å finne ut om virksomheten har et stabilt bruksmønster som gjør en fast base relevant."
+    ],
+    sections: [
+      {
+        heading: "Gjentakelse er viktigere enn ett dyrt hotellopphold",
+        body: [
+          "En høy hotellregning ett år kan skyldes sesong, konferanse eller et spesielt arrangement. Før virksomheten bruker dette som investeringsargument bør den se på flere års forventet aktivitet.",
+          "To ledersamlinger, flere prosjektuker og en årlig avdelingsreise kan samlet gi et helt annet mønster enn én sporadisk tur."
+        ]
+      },
+      {
+        heading: "Regn hvert opphold separat",
+        body: [
+          "Hotellalternativet bør bygges opp fra konkrete opphold: antall ganger per år, personer, netter og pris per person per natt. Det gir en årskostnad som kan kontrolleres mot historiske reiseregninger eller reelle markedspriser.",
+          "Deretter kan dere teste hvordan bildet ser ut over fem eller ti år uten å anta at hotellpris eller bruk nødvendigvis er konstant."
+        ]
+      },
+      {
+        heading: "En fast base har kvaliteter hotell ikke har",
+        body: [
+          "Eierskap kan gi samme sted hver gang, mulighet for lagring, mer uformelle arbeidsflater og større kontroll over tidspunkt og oppsett. For små grupper kan kjøkken, terrasse og flere oppholdssoner også skape en annen type samling enn tradisjonelle hotellrom.",
+          "Disse fordelene har verdi, men bør beskrives som kvaliteter – ikke konverteres til tilfeldige eurobeløp i business caset."
+        ]
+      },
+      {
+        heading: "Hotell beholder flere fordeler",
+        body: [
+          "Hotell gir fleksibilitet, profesjonelle møterom, servering, ingen kapitalbinding og mulighet til å bytte sted fra gang til gang. For store grupper eller få årlige opphold kan dette være klart mer praktisk.",
+          "Et balansert styrenotat bør derfor beskrive hvor hotellet faktisk er bedre, ikke bare hvor eierskap er attraktivt."
+        ]
+      },
+      {
+        heading: "Kombinasjonsbruk kan være det som gjør modellen relevant",
+        body: [
+          "For mange virksomheter vil ikke bedriftsopphold alene fylle året. Dersom resten av kapasiteten brukes som et reelt ansatt- eller medlems-gode, får eiendommen to formål.",
+          "Det er nettopp derfor de to brukstypene bør vises separat: hotellalternativet for jobbopphold og bruksverdi for ferie-/medlemsuker."
+        ]
+      },
+      {
+        heading: "Når bør dere gå videre?",
+        body: [
+          "Modellen er verdt å undersøke nærmere når virksomheten har stabil økonomi, flerårig horisont, tydelig brukergruppe og flere realistiske opphold gjennom året.",
+          "Neste steg bør være et årsbudsjett og en kravliste før dere bruker tid på konkrete boliger."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Hvor mange samlinger må vi ha for at kjøp skal lønne seg?", answer: "Det finnes ingen universell grense. Kjøpesum, kapital, drift, eiertid, gruppestørrelse og øvrig bruk påvirker mer enn antall turer alene." },
+      { question: "Kan vi sammenligne fem års hotellkostnad med kjøpesummen?", answer: "Ikke alene. Eierskap har både kjøpskostnader, drift, kapitalbinding og en fremtidig markedsverdi. Sammenligningen må ta med hele modellen." },
+      { question: "Hva hvis gruppen blir større?", answer: "Da kan hotell eller eksterne møterom bli mer praktisk. Boligkapasitet bør dimensjoneres for normal bruk, ikke et sjeldent maksimum." },
+      { question: "Er ansattbruk nødvendig?", answer: "Nei, men ekstra reell bruk kan gjøre eiendommen mer relevant. Privat ansattbruk må fortsatt vurderes og organiseres korrekt." }
+    ]
+  },
+  {
+    slug: "storrelse-bolig-styre-teamsamlinger",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    seoTitle: "Hvor stor bolig for styre- og teamsamlinger i Spania?",
+    title: "Hvor stor bolig trenger vi til styre- og teamsamlinger?",
+    excerpt: "Praktisk kapasitetsguide for 6, 8, 10 og 12 personer med soverom, bad, fellesareal, arbeidsplass og vurdering av når hotell bør supplere boligen.",
+    seoDescription: "Guide til boligstørrelse for styre- og teamsamlinger i Spania. Vurder soverom, bad, arbeidsplass og fellesareal for grupper på 6–12 personer.",
+    keywords: ["bolig teamsamling 8 personer", "villa styresamling", "størrelse bedriftshytte", "team retreat bolig Spania"],
+    intro: [
+      "Antall sengeplasser i en boligannonse sier lite om hvor godt boligen fungerer for kolleger. En villa som «sover 10» kan i praksis ha tre dobbeltsenger, en sovesofa og et køyerom – en helt annen løsning enn ti separate hotellrom.",
+      "Derfor bør virksomheten definere ønsket komfortnivå før boligjakten og dimensjonere for normal gruppe, ikke største tenkelige arrangement."
+    ],
+    sections: [
+      {
+        heading: "Gruppe på 6 personer",
+        body: [
+          "For seks kolleger kan tre soverom fungere dersom romdeling er akseptabelt. Dersom ledergruppe eller styre forventer eget rom, bør dere se etter flere soverom eller kombinere boligen med hotell i nærheten.",
+          "Minst to bad, godt spise-/arbeidsbord og en ekstra sittegruppe gjør oppholdet betydelig mer praktisk."
+        ]
+      },
+      {
+        heading: "Gruppe på 8 personer",
+        body: [
+          "Åtte personer er ofte et naturlig skille. Fire gode soverom kan fungere ved deling, men for individuell romstandard kreves en større og mer kostbar bolig.",
+          "Her blir også antall bad, kjøkkenkapasitet, parkeringsplasser og hvorvidt alle kan sitte rundt samme bord viktig."
+        ]
+      },
+      {
+        heading: "Gruppe på 10 personer",
+        body: [
+          "Ved ti personer bør virksomheten være kritisk til om én bolig fortsatt er riktig løsning. Fem soverom og flere bad er mulig å finne, men utvalget blir smalere og driften større.",
+          "Et godt alternativ kan være en hovedbolig for samling og noen hotellrom eller en ekstra leilighet i nærheten."
+        ]
+      },
+      {
+        heading: "Gruppe på 12 personer eller mer",
+        body: [
+          "Når normale teamsamlinger er på tolv eller flere, bør profesjonell overnatting og møterom vurderes seriøst. En svært stor villa kan koste mer, ha høyere drift og være dårligere til privat ansattbruk resten av året.",
+          "Ikke kjøp en overdimensjonert eiendom for et arrangement som skjer én gang i året."
+        ]
+      },
+      {
+        heading: "Fellesarealet er like viktig som soverommene",
+        body: [
+          "Gruppen bør kunne spise og arbeide samlet uten å flytte møbler hele dagen. Samtidig er det nyttig med mindre soner for parallelle samtaler.",
+          "Se på planløsningen, ikke bare kvadratmeter. Et stort åpent areal kan fungere bedre enn flere små rom med samme totale størrelse."
+        ],
+        bullets: [
+          "Bordplass til hele normalgruppen.",
+          "Stue eller terrasse for uformelle samtaler.",
+          "Minst én ekstra sone for mindre grupper.",
+          "Stabilt internett og lading.",
+          "Praktisk kjøkken og nok kjølekapasitet."
+        ]
+      },
+      {
+        heading: "Kjøp for normalen – lei kapasitet for toppene",
+        body: [
+          "En robust strategi er å dimensjonere bedriftshytten for gruppestørrelsen som brukes oftest, og kjøpe ekstra hotellrom eller møterom de få gangene dere er flere.",
+          "Det kan gi bedre feriebruk, lavere kapitalbehov og enklere drift resten av året."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Er fire soverom nok til åtte personer?", answer: "Ja dersom to og to kan dele rom. Hvis individuell romstandard er viktig, er fire soverom ikke nok." },
+      { question: "Hvor mange bad bør vi ha?", answer: "Det finnes ingen fast norm, men flere kolleger samtidig gjør badkapasitet viktig. Vurder morgenlogistikk og privatliv, ikke bare minimumskrav." },
+      { question: "Bør vi kjøpe bolig for 12 dersom vi av og til er 12?", answer: "Vanligvis bør dere først vurdere å dimensjonere for normal bruk og supplere med hotell ved sjeldne store samlinger." },
+      { question: "Hva bør vi sjekke på visning?", answer: "Soveromsfordeling, bad, spisebord, arbeidsflater, Wi‑Fi, lyd/privatliv, parkering, gangavstand og hvordan boligen fungerer når alle er inne samtidig." }
+    ]
+  },
+  {
+    slug: "kombinere-ansattgode-bedriftsbruk-samme-bolig",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    seoTitle: "Kombiner ansattgode og bedriftsbruk i samme bolig i Spania",
+    title: "Slik kombinerer dere ansattgode og bedriftsbruk i samme bolig",
+    excerpt: "En praktisk årsmodell for å kombinere ferieuker for ansatte eller medlemmer med ledersamlinger, styreopphold, teambruk, vedlikehold og lokal drift.",
+    seoDescription: "Slik kombinerer dere ansattgode og bedriftsbruk i samme bolig i Spania med årsplan, booking, separate brukstyper, drift og tydelige prioriteringer.",
+    keywords: ["ansattgode og firmabolig", "kombinere bedriftshytte bruk", "årsplan bedriftshytte", "firmabolig ledersamling ansatte"],
+    intro: [
+      "Det mest interessante Corporate Home-scenariet er ofte ikke enten feriebolig eller arbeidsbase, men begge deler. En bolig kan gi mange ferieuker til ansatte og samtidig brukes noen ganger i året til ledelse, styre eller team.",
+      "For at kombinasjonen skal fungere må virksomheten planlegge året før kalenderen fylles opp. Bedriftsbruk og privat bruk bør ha klare prioriteringer og separate registreringer."
+    ],
+    sections: [
+      {
+        heading: "Lag en årsmodell før booking åpnes",
+        body: [
+          "Start med å blokkere perioder virksomheten vet at den trenger til egne samlinger, samt nødvendige vedlikeholdsperioder. Resten av kapasiteten kan deretter gjøres tilgjengelig for ferie-/medlemsbooking.",
+          "En illustrativ modell kan være 30 ferie-/medlemsuker, 6 team-/prosjektuker, 4 ledelses-/styreuker og 12 uker som buffer, fleksibilitet og vedlikehold. Den faktiske modellen må tilpasses virksomheten."
+        ]
+      },
+      {
+        heading: "Unngå at ledelsen tar alle de attraktive ukene",
+        body: [
+          "Dersom bedriftens samlinger alltid legges i påske, sommerferie eller høstferie, kan ansattgodet raskt oppleves som mindre reelt. Styret bør derfor definere hvilke perioder virksomheten kan prioritere til egne behov.",
+          "Forutsigbarhet er viktigere enn maksimal fleksibilitet. Ansatte bør vite hvilke uker som faktisk blir tilgjengelige før søknadsrunden åpner."
+        ]
+      },
+      {
+        heading: "Bruk én kalender med tydelige kategorier",
+        body: [
+          "En felles kalender reduserer dobbeltbookinger, men hver reservasjon bør ha kategori. Det gjør det mulig å rapportere feriebruk, bedriftsbruk, tomgang og vedlikehold separat.",
+          "Over tid kan dataene vise om årsmodellen bør justeres."
+        ]
+      },
+      {
+        heading: "Kostnad og nytte må beskrives forskjellig",
+        body: [
+          "Ferie-/medlemsukene er først og fremst et gode og bør måles på faktisk bruk og opplevd verdi. Bedriftsopphold kan i tillegg sammenlignes med alternativ hotellovernatting.",
+          "Boligens samlede eierkostnad skal likevel ikke fordeles på en måte som skaper falsk presisjon. Styret bør se både total kostnad og de ulike nytteformene."
+        ]
+      },
+      {
+        heading: "Boligvalget må tåle begge brukerne",
+        body: [
+          "Familier på ferie kan prioritere basseng, strand, uteareal og enkel hverdag. Et team kan prioritere internett, spise-/arbeidsbord, flere bad, transfer og helårsrestauranter.",
+          "De beste kombinasjonsboligene løser begge behov godt nok uten å bli overdimensjonerte for én av dem."
+        ]
+      },
+      {
+        heading: "Drift må være dimensjonert for hyppige skifter",
+        body: [
+          "Mange brukere betyr flere inn- og utsjekker, rengjøring, nøkkelhåndtering og små avvik. Lokal oppfølging blir derfor en del av konseptet, ikke et tillegg man kan improvisere senere.",
+          "En tydelig Care-rutine kan også gjøre det enklere å skifte mellom privat feriebruk og bedriftsopphold."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Kan ansatte booke hele året?", answer: "Det bør virksomheten definere. En vanlig modell er å blokkere bedrifts- og vedlikeholdsperioder først og åpne resten etter tydelige fordelingsregler." },
+      { question: "Hvor mange uker bør holdes som buffer?", answer: "Det finnes ingen standard. Bufferen bør dekke vedlikehold, fleksibilitet, uforutsette avvik og eventuelle samlinger som ikke kan planlegges ett år i forveien." },
+      { question: "Kan virksomheten flytte en ansattbooking for styremøte?", answer: "Det bør reguleres tydelig i bookingpolicyen. Forutsigbare regler er viktige for at ansattgodet skal oppleves reelt og rettferdig." },
+      { question: "Hvordan vet vi om kombinasjonen fungerer?", answer: "Følg faktisk bruk, ventelister, bedriftsopphold, avbestillinger, driftskostnader og enkel brukerfeedback over tid." }
+    ]
+  },
+  {
+    slug: "partnerguide-introdusere-zen-corporate-homes",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    cta: { label: "Utforsk partnerkanalen", href: "/bedriftshytte-spania/partnere#partnersamtale" },
+    seoTitle: "Partnerguide | Introduser Zen Corporate Homes til kunder",
+    title: "Partnerguide: Slik introduserer dere Zen Corporate Homes til kunder",
+    excerpt: "For regnskapsførere, advokater, HR- og bedriftsrådgivere: hvilke kundesignaler som gjør Corporate Homes relevant, og hvordan introduksjonen kan gjøres.",
+    seoDescription: "Guide for regnskapsførere, advokater, HR- og bedriftsrådgivere som vil introdusere Zen Corporate Homes til relevante bedriftskunder i Norge.",
+    keywords: ["Zen Corporate Homes partner", "henvise bedriftskunde Spania", "regnskapsfører partner eiendom", "HR rådgiver ansattgode"],
+    intro: [
+      "Partnerkanalen er laget for rådgivere og organisasjoner som allerede møter virksomheter der en bedriftshytte, firmabolig eller medlemsbolig kan være relevant. Partneren trenger ikke bygge egen eiendomskompetanse i Spania.",
+      "Den viktigste rollen er å gjenkjenne et relevant behov, introdusere konseptet på en nøktern måte og koble kunden til Zen når kunden selv ønsker å utforske det videre."
+    ],
+    sections: [
+      {
+        heading: "Hvilke kundesignaler bør dere lytte etter?",
+        body: [
+          "Corporate Home er mest relevant når kunden allerede diskuterer ansattgoder, rekruttering, retention, ledersamlinger, medlemsfordeler, internasjonal tilstedeværelse eller gjentatte opphold i Spania.",
+          "Det kan også være relevant når eierledere eller styrer spør om langsiktig bruk av kapital og samtidig ønsker en konkret ressurs virksomheten faktisk kan bruke."
+        ],
+        bullets: [
+          "«Vi trenger et ansattgode som faktisk blir brukt.»",
+          "«Vi bruker mye på samlinger og overnatting.»",
+          "«Vi vil samle teamet oftere i Sør-Europa.»",
+          "«Medlemmene våre etterspør konkrete fordeler.»",
+          "«Vi vurderer å kjøpe en bolig gjennom virksomheten.»"
+        ]
+      },
+      {
+        heading: "Slik introduseres konseptet uten å overselge",
+        body: [
+          "En god introduksjon er enkel: Zen Corporate Homes hjelper norske virksomheter med å undersøke om en bolig på Costa Blanca kan fungere som ansattgode, medlemsbolig og/eller base for mindre bedriftsopphold.",
+          "Ikke lov skattefordeler, prisvekst eller hotellbesparelser. Kunden skal først få et beslutningsgrunnlag og koble inn egne faglige rådgivere der det trengs."
+        ]
+      },
+      {
+        heading: "Hva partneren beholder ansvar for",
+        body: [
+          "Partneren fortsetter i sin vanlige fagrolle. Regnskapsfører, advokat, revisor eller HR-rådgiver gir råd innen sitt område etter egne profesjonskrav og kundens konkrete situasjon.",
+          "Zen Corporate Homes overtar ikke partnerens skatte-, regnskaps-, arbeidsretts- eller selskapsrettslige ansvar."
+        ]
+      },
+      {
+        heading: "Hva Zen Corporate Homes tar videre",
+        body: [
+          "Zen kan ta behovsavklaring, brukermodell, budsjett, områdevalg, boligkrav, shortlist, visninger og praktisk koordinering av eiendomsløpet på Costa Blanca.",
+          "Når kunden ønsker det, kan lokal oppfølging etter kjøpet organiseres gjennom Care."
+        ]
+      },
+      {
+        heading: "Når bør dere introdusere kunden?",
+        body: [
+          "Tidlig er bedre enn sent. Dersom kunden allerede har reservasjon på en konkret bolig, kan viktige valg om bruk, budsjett og rådgivning være tatt i feil rekkefølge.",
+          "En første Corporate Home Assessment kan gjøres før kunden har bestemt budsjett eller område."
+        ]
+      },
+      {
+        heading: "Kommersielle rammer avtales før konkrete henvisninger",
+        body: [
+          "Partnerkanalen lover ikke provisjon eller økonomiske vilkår automatisk. Samarbeidsmodell, ansvar, håndtering av kundedata og eventuell honorering skal avtales skriftlig mellom partene før konkrete henvisninger.",
+          "Det gir en ryddig rollefordeling både for kunden og partneren."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Må partneren kunne eiendom i Spania?", answer: "Nei. Partnerens verdi ligger i eksisterende kundetillit og eget fagområde. Zen håndterer eiendomsdelen og lokal prosess." },
+      { question: "Kan partneren delta i første møte?", answer: "Ja, dersom kunden og partneren ønsker det. Partneren kan også bare gjøre introduksjonen og la Zen ta behovsavklaringen videre." },
+      { question: "Får partneren automatisk provisjon?", answer: "Nei. Eventuell honorering og øvrige kommersielle vilkår må avtales skriftlig før konkrete henvisninger." },
+      { question: "Hvem eier kunderelasjonen?", answer: "Partneren kan fortsette som kundens rådgiver på sitt fagområde, mens Zen håndterer Corporate Home- og eiendomsløpet." }
+    ]
+  },
+  {
+    slug: "regnskapsforer-sporsmal-selskap-kjope-bolig-spania",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "10 min lesing",
+    cta: { label: "Se partneropplegget", href: "/bedriftshytte-spania/partnere#partnersamtale" },
+    seoTitle: "Regnskapsfører: spørsmål før selskap kjøper bolig i Spania",
+    title: "Hvilke spørsmål bør en regnskapsfører stille før et selskap kjøper bolig i Spania?",
+    excerpt: "En praktisk sjekkliste for regnskapsførerens første kundesamtale om formål, brukere, finansiering, dokumentasjon, rådgivere, drift og senere salg.",
+    seoDescription: "Sjekkliste for regnskapsførere når et selskap vurderer bolig i Spania: formål, bruk, eierskap, finansiering, dokumentasjon, drift og rådgivere.",
+    keywords: ["regnskapsfører selskap bolig Spania", "AS kjøpe bolig Spania", "firmabolig regnskap", "bedriftshytte rådgiver"],
+    intro: [
+      "Når en bedriftskunde sier «vi vurderer å kjøpe bolig i Spania», er det sjelden riktig å begynne med føringskonto eller avskrivning. Først må regnskapsføreren forstå hva virksomheten faktisk ønsker å gjøre.",
+      "Denne guiden er en samtale- og avklaringssjekkliste, ikke en fasit på skatte- eller regnskapsbehandling. Den konkrete strukturen må vurderes av kvalifiserte rådgivere ut fra selskapet, eierne, bruken og gjeldende regler."
+    ],
+    sections: [
+      {
+        heading: "1. Hva er forretningsmessig formål?",
+        body: [
+          "Be kunden beskrive målet uten å starte med boligen. Er dette et bredt ansattgode, medlemsfordel, base for team og ledelse, representasjon, midlertidige arbeidsopphold eller en kombinasjon?",
+          "Formålet påvirker hvilke spørsmål som må avklares videre."
+        ]
+      },
+      {
+        heading: "2. Hvem skal faktisk bruke boligen?",
+        body: [
+          "Kartlegg om boligen skal være tilgjengelig for en bred gruppe ansatte, medlemmer, ledelse, eiere, nærstående eller eksterne gjester. Forskjellige brukergrupper kan ha forskjellige skattemessige og dokumentasjonsmessige konsekvenser.",
+          "Be kunden beskrive forventet faktisk bruk – ikke bare hvordan ordningen er tenkt markedsført internt."
+        ]
+      },
+      {
+        heading: "3. Hvordan skal feriebruk og bedriftsbruk skilles?",
+        body: [
+          "Spør hvordan booking, kostnader og dokumentasjon skal skille privat ferie-/medlemsbruk fra styre-, leder- og teamopphold.",
+          "En klar brukslogg gjør det enklere å vurdere de faktiske forholdene senere."
+        ]
+      },
+      {
+        heading: "4. Hvem skal eie og finansiere?",
+        body: [
+          "Ikke anta at en bestemt eierstruktur er riktig fordi kunden har hørt om den fra andre. Norsk selskap, spansk enhet eller andre strukturer kan få ulike konsekvenser.",
+          "Avklar også egenkapital, lån, valuta og hvilken del av kapitalen virksomheten ønsker å binde over tid."
+        ]
+      },
+      {
+        heading: "5. Har kunden med hele kostnadsbildet?",
+        body: [
+          "Spør om kjøpskostnader, løpende drift, forsikring, sameie, lokale avgifter, vedlikehold, inventar, rengjøring, nøkkelhold og lokal oppfølging.",
+          "For beslutningsformål bør kapitalkostnaden også være synlig, selv om den regnskapsmessige behandlingen vurderes separat."
+        ]
+      },
+      {
+        heading: "6. Hvilke rådgivere må involveres?",
+        body: [
+          "Grensekryssende eierskap kan kreve både norsk og spansk juridisk, skattemessig og regnskapsmessig kompetanse. Regnskapsføreren bør tidlig avklare hva eget oppdrag dekker og hvilke spørsmål som må henvises videre.",
+          "Zen Corporate Homes kan koordinere eiendomsprosessen, men gir ikke kundens skatte- eller juridiske konklusjoner."
+        ]
+      },
+      {
+        heading: "7. Hvordan skal drift og intern kontroll fungere?",
+        body: [
+          "Spør hvem som godkjenner booking, dokumenterer bruk, håndterer fakturaer, følger opp skader og bestiller lokale tjenester. Mange brukere krever en mer strukturert modell enn en privat feriebolig.",
+          "En enkel drifts- og dokumentasjonsrutine bør være klar før første bruker sjekker inn."
+        ]
+      },
+      {
+        heading: "8. Hva er exit-planen?",
+        body: [
+          "Be kunden tenke på salg før kjøp. Hva skjer hvis ansattordningen ikke brukes, virksomheten endrer strategi eller eiendommen skal selges?",
+          "Et business case bør tåle både lavere bruk og et marked der fremtidig prisutvikling ikke blir som forventet."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Skal regnskapsføreren anbefale eierstruktur?", answer: "Bare innenfor eget mandat og kompetanse. Grensekryssende juridiske og skattemessige spørsmål kan kreve særskilt norsk og spansk rådgivning." },
+      { question: "Hvorfor er faktisk bruk så viktig?", answer: "Fordi den faktiske disposisjonen av boligen kan være relevant for både dokumentasjon og vurdering av den konkrete ordningen." },
+      { question: "Kan Zen levere tallgrunnlag til regnskapsføreren?", answer: "Zen kan bidra med eiendomsdata, kostnadsestimater, brukermodell og Corporate-kalkulator. Faglig regnskaps- og skattebehandling ligger hos kundens rådgivere." },
+      { question: "Når bør regnskapsføreren koble inn Zen?", answer: "Gjerne før kunden begynner å reservere konkrete boliger, slik at formål, budsjett og bruk kan avklares først." }
+    ]
+  },
+  {
+    slug: "partnerprosess-introduksjon-til-kjop",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    cta: { label: "Ta en partnersamtale", href: "/bedriftshytte-spania/partnere#partnersamtale" },
+    seoTitle: "Partnerprosess | Fra introduksjon til boligkjøp i Spania",
+    title: "Slik fungerer partnerprosessen fra introduksjon til kjøp",
+    excerpt: "Steg for steg for rådgivere og organisasjoner: introduksjon, behovsavklaring, beslutningsgrunnlag, rådgiverkontroll, shortlist, visning, kjøp og lokal oppfølging.",
+    seoDescription: "Slik fungerer Zen Corporate Homes partnerprosess fra kundens første introduksjon til behovsavklaring, beslutningsgrunnlag, shortlist, kjøp og drift.",
+    keywords: ["Zen Corporate Homes partnerprosess", "henvisning bedriftskunde", "partner eiendom Spania", "Corporate Home prosess"],
+    intro: [
+      "En god partnerprosess skal være enkel for kunden og forutsigbar for rådgiveren som gjør introduksjonen. Kunden skal vite hvem som gjør hva, og partneren skal ikke miste sin faglige rolle fordi eiendom i Spania kommer inn i samtalen.",
+      "Zen Corporate Homes har derfor en trinnvis modell fra første interesse til eventuell lokal drift etter kjøpet."
+    ],
+    sections: [
+      {
+        heading: "1. Partneren identifiserer et relevant behov",
+        body: [
+          "Utgangspunktet er en eksisterende kundedialog. Kunden kan for eksempel diskutere ansattgoder, teamopphold, medlemsfordeler eller direkte kjøp av bolig gjennom virksomheten.",
+          "Partneren kan introdusere Zen-konseptet og avklare om kunden ønsker en første samtale."
+        ]
+      },
+      {
+        heading: "2. Introduksjonen gjøres med kundens samtykke",
+        body: [
+          "Kundekontakt og personopplysninger bør ikke sendes videre som en løs «lead-liste». Kunden bør vite at Zen kontaktes og hva den første dialogen gjelder.",
+          "Praktisk introduksjonsform og eventuelle kommersielle rammer avtales mellom Zen og partneren."
+        ]
+      },
+      {
+        heading: "3. Zen tar behovsavklaringen",
+        body: [
+          "Før boligjakt kartlegges formål, brukergruppe, ferie-/bedriftsbruk, kapasitet, budsjett, tidshorisont, områder og ønsket driftsmodell.",
+          "Corporate-kalkulatoren kan brukes til å strukturere årsbudsjett, hotellalternativ og verdi-scenario."
+        ]
+      },
+      {
+        heading: "4. Kunden får et beslutningsgrunnlag",
+        body: [
+          "Neste steg er et kort beslutningsnotat som gjør det mulig for styre eller ledelse å vurdere om prosjektet skal utvikles videre.",
+          "Notatet skal også vise hvilke spørsmål som må kvalitetssikres av kundens egne skatte-, regnskaps- og juridiske rådgivere."
+        ]
+      },
+      {
+        heading: "5. Faglige rådgivere kvalitetssikrer sine områder",
+        body: [
+          "Partneren kan fortsatt være kundens regnskapsfører, advokat, HR-rådgiver eller bedriftsrådgiver. Zen erstatter ikke disse fagrollene.",
+          "Ved behov kan kunden også koble inn relevante spanske fagpersoner før bindende kjøpsbeslutning."
+        ]
+      },
+      {
+        heading: "6. Zen lager område- og boligshortlist",
+        body: [
+          "Når investeringsramme og krav er tydelige, kan Zen snevre markedet inn til aktuelle områder og et begrenset antall boliger.",
+          "Shortlisten skal bygge på faktisk bruk og beslutningskriterier – ikke bare på hva som tilfeldigvis ligger øverst i en boligportal."
+        ]
+      },
+      {
+        heading: "7. Visning, kontroll og kjøpsprosess",
+        body: [
+          "Zen koordinerer visninger og eiendomsdialogen, mens juridiske kontroller og kjøpsdokumenter håndteres av relevante kvalifiserte fagpersoner.",
+          "Et endelig kjøp bør først gjennomføres når virksomhetens beslutningsprosess og nødvendige rådgiveravklaringer er på plass."
+        ]
+      },
+      {
+        heading: "8. Lokal drift etter overtakelse",
+        body: [
+          "Et Corporate Home-prosjekt slutter ikke ved notar. Booking, nøkkel, tilsyn, rengjøring, avvik og vedlikehold må fungere for mange brukere.",
+          "Care kan brukes som lokal operativ modell dersom kunden ønsker det."
+        ]
+      },
+      {
+        heading: "Partneren kan følge kunden hele veien",
+        body: [
+          "Partneren kan delta så mye eller lite kunden ønsker. Noen gjør bare introduksjonen, mens andre deltar i beslutningsmøter og fortsetter som faglig rådgiver gjennom hele prosessen.",
+          "Målet er at rollene utfyller hverandre: partnerens etablerte tillit og kompetanse, kombinert med Zens Corporate Home- og Costa Blanca-kompetanse."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Mister partneren kunden til Zen?", answer: "Nei. Partneren kan fortsette sin eksisterende rådgiverrolle. Zen håndterer Corporate Home- og eiendomsløpet, ikke partnerens øvrige kundeforhold." },
+      { question: "Kan kunden starte uten fast budsjett?", answer: "Ja. En første behovsavklaring kan brukes til å etablere et realistisk intervall før konkrete eiendommer vurderes." },
+      { question: "Når blir advokat og skatterådgiver involvert?", answer: "Det avhenger av saken, men relevante faglige spørsmål bør avklares før virksomheten tar bindende kjøpsbeslutninger." },
+      { question: "Hva skjer etter kjøpet?", answer: "Kunden kan etablere egen drift eller bruke lokal oppfølging gjennom Care for blant annet nøkkel, tilsyn og praktiske tjenester." }
     ]
   },
 

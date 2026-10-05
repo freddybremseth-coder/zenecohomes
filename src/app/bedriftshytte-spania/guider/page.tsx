@@ -51,6 +51,9 @@ const groups = [
     title: "Bruk, kapasitet og booking",
     intro: "Hvordan ordningen kan fungere i praksis for ansatte eller medlemmer.",
     slugs: [
+      "feriebruk-vs-bedriftsbruk-firmabolig-spania",
+      "storrelse-bolig-styre-teamsamlinger",
+      "kombinere-ansattgode-bedriftsbruk-samme-bolig",
       "bedriftshytte-for-25-ansatte",
       "bedriftshytte-for-100-ansatte",
       "hvor-mange-kan-dele-en-bedriftshytte",
@@ -68,6 +71,23 @@ const groups = [
       "nybygg-eller-bruktbolig-som-bedriftshytte",
       "costa-blanca-nord-eller-sor-bedriftshytte",
       "alicante-eller-valencia-flyplass-bedriftshytte",
+    ],
+  },
+  {
+    title: "Beslutning og gjentatte samlinger",
+    intro: "For styre og ledelse som vil gå fra idé til et dokumentert beslutningsgrunnlag.",
+    slugs: [
+      "beslutningsnotat-bedriftshytte-spania-mal",
+      "bedriftshytte-alternativ-hotell-gjentatte-samlinger",
+    ],
+  },
+  {
+    title: "For partnere",
+    intro: "Praktiske guider for regnskapsførere, advokater, HR- og bedriftsrådgivere som møter relevante kunder.",
+    slugs: [
+      "partnerguide-introdusere-zen-corporate-homes",
+      "regnskapsforer-sporsmal-selskap-kjope-bolig-spania",
+      "partnerprosess-introduksjon-til-kjop",
     ],
   },
   {

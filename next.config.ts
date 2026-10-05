@@ -47,6 +47,14 @@ const nextConfig: NextConfig = {
       "bedriftshytte-styre-ledelse-avdelingsreiser-krav",
       "arsbudsjett-bedriftshytte-spania",
       "prisvekst-bolig-spania-business-case-bedriftshytte",
+      "feriebruk-vs-bedriftsbruk-firmabolig-spania",
+      "beslutningsnotat-bedriftshytte-spania-mal",
+      "bedriftshytte-alternativ-hotell-gjentatte-samlinger",
+      "storrelse-bolig-styre-teamsamlinger",
+      "kombinere-ansattgode-bedriftsbruk-samme-bolig",
+      "partnerguide-introdusere-zen-corporate-homes",
+      "regnskapsforer-sporsmal-selskap-kjope-bolig-spania",
+      "partnerprosess-introduksjon-til-kjop",
     ];
     const corporateLegacyRedirects = corporateArticleSlugs.map((slug) => ({
       source: `/magasin/${slug}`,
