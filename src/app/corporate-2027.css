@@ -886,3 +886,19 @@
     grid-column: auto;
   }
 }
+
+
+.corporate-custom-value {
+  max-width: 220px;
+  margin-top: 4px;
+}
+
+.corporate-value-guidance {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255,255,255,.58);
+  font-size: .76rem;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: 0;
+}
