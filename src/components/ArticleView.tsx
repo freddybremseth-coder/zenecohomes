@@ -350,6 +350,114 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
 };
 
+
+const RELATED_CORPORATE_SLUGS: Record<string, string[]> = {
+  "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte": [
+    "slik-beregner-cfo-hotellalternativ-bedriftshytte",
+    "bedriftshytte-styre-ledelse-avdelingsreiser-krav",
+    "arsbudsjett-bedriftshytte-spania",
+  ],
+  "slik-beregner-cfo-hotellalternativ-bedriftshytte": [
+    "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte",
+    "arsbudsjett-bedriftshytte-spania",
+    "bedriftshytte-mot-hotell-og-leie",
+  ],
+  "bedriftshytte-styre-ledelse-avdelingsreiser-krav": [
+    "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte",
+    "hvilken-bolig-passer-som-bedriftshytte",
+    "firmabolig-for-ledersamlinger-og-team",
+  ],
+  "arsbudsjett-bedriftshytte-spania": [
+    "slik-beregner-cfo-hotellalternativ-bedriftshytte",
+    "prisvekst-bolig-spania-business-case-bedriftshytte",
+    "slik-presenterer-du-bedriftshytte-for-styret",
+  ],
+  "prisvekst-bolig-spania-business-case-bedriftshytte": [
+    "arsbudsjett-bedriftshytte-spania",
+    "slik-presenterer-du-bedriftshytte-for-styret",
+    "bedriftshytte-mot-hotell-og-leie",
+  ],
+};
+
+const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
+  "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte": [
+    {
+      headingIncludes: "faktiske samlingene",
+      links: [
+        { label: "Beregn deres egen modell", href: "/bedriftshytte-spania#kalkulator" },
+        { label: "Slik beregner CFO hotellalternativet", href: "/bedriftshytte-spania/slik-beregner-cfo-hotellalternativ-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "Ansattferie",
+      links: [
+        { label: "Kan ansatte bruke en bedriftseid bolig i Spania?", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
+      ],
+    },
+  ],
+  "slik-beregner-cfo-hotellalternativ-bedriftshytte": [
+    {
+      headingIncludes: "Formelen",
+      links: [
+        { label: "Åpne Corporate-kalkulatoren", href: "/bedriftshytte-spania#kalkulator" },
+        { label: "Eksempel: ledersamling og avdelingsreise", href: "/bedriftshytte-spania/ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "styret",
+      links: [
+        { label: "Slik presenterer du bedriftshytten for styret", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
+      ],
+    },
+  ],
+  "bedriftshytte-styre-ledelse-avdelingsreiser-krav": [
+    {
+      headingIncludes: "Dør-til-dør",
+      links: [
+        { label: "Alicante eller Valencia flyplass?", href: "/bedriftshytte-spania/alicante-eller-valencia-flyplass-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "to kravlister",
+      links: [
+        { label: "Hvilken bolig passer best som bedriftshytte?", href: "/bedriftshytte-spania/hvilken-bolig-passer-som-bedriftshytte" },
+        { label: "Be om beslutningsnotat", href: "/bedriftshytte-spania#bedriftsvurdering" },
+      ],
+    },
+  ],
+  "arsbudsjett-bedriftshytte-spania": [
+    {
+      headingIncludes: "normal årlig drift",
+      links: [
+        { label: "Vedlikehold, nøkkelhold og rengjøring", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
+        { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com" },
+      ],
+    },
+    {
+      headingIncludes: "verdiutvikling",
+      links: [
+        { label: "Slik bruker styret verdiutvikling i business caset", href: "/bedriftshytte-spania/prisvekst-bolig-spania-business-case-bedriftshytte" },
+        { label: "Test scenarioene i kalkulatoren", href: "/bedriftshytte-spania#kalkulator" },
+      ],
+    },
+  ],
+  "prisvekst-bolig-spania-business-case-bedriftshytte": [
+    {
+      headingIncludes: "tre scenarioer",
+      links: [
+        { label: "Test 0–9 % i Corporate-kalkulatoren", href: "/bedriftshytte-spania#kalkulator" },
+        { label: "Lag komplett årsbudsjett", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+      ],
+    },
+    {
+      headingIncludes: "konklusjonen",
+      links: [
+        { label: "Be om beslutningsnotat med egne tall", href: "/bedriftshytte-spania#bedriftsvurdering" },
+      ],
+    },
+  ],
+};
+
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
   "det-du-ikke-ser-i-boligannonsen": [
     {
@@ -695,6 +803,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
   const rules = [
     ...(CONTEXTUAL_GUIDE_LINKS[slug] || []),
+    ...(CONTEXTUAL_CORPORATE_LINKS[slug] || []),
     ...(CONTEXTUAL_MAGAZINE_LINKS[slug] || []),
   ];
   return rules
@@ -703,7 +812,12 @@ function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
 }
 
 function resolveRelatedArticles(article: Article, silo: ReturnType<typeof articleSilo>) {
-  const curatedSlugs = silo === "guide" ? RELATED_GUIDE_SLUGS[article.slug] || [] : [];
+  const curatedSlugs =
+    silo === "guide"
+      ? RELATED_GUIDE_SLUGS[article.slug] || []
+      : silo === "corporate"
+        ? RELATED_CORPORATE_SLUGS[article.slug] || []
+        : [];
   const curated = curatedSlugs
     .map((slug) => allArticles.find((item) => item.slug === slug))
     .filter((item): item is Article => item !== undefined && !RETIRED_ARTICLE_SLUGS.has(item.slug));
