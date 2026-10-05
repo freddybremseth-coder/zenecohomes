@@ -71,6 +71,8 @@ export function CorporateHomeCalculator() {
   const [acquisitionPct, setAcquisitionPct] = useState(12);
   const [capitalPct, setCapitalPct] = useState(4);
   const [valuePct, setValuePct] = useState(3);
+  const [customValuePct, setCustomValuePct] = useState(8);
+  const [customValueActive, setCustomValueActive] = useState(false);
   const [holdingYears, setHoldingYears] = useState(10);
 
   const result = useMemo<CorporateCalculatorResult>(() => {
@@ -111,8 +113,9 @@ export function CorporateHomeCalculator() {
 
     const employeeCostPerWeek =
       employeeUseWeeks > 0 ? annualCostBeforeValue / employeeUseWeeks : annualCostBeforeValue;
-    const estimatedFutureValue = price * Math.pow(1 + n(valuePct, 3) / 100, years);
-    const scenarioValueChangeYearOne = price * (n(valuePct, 3) / 100);
+    const selectedValuePct = customValueActive ? n(customValuePct, 8) : n(valuePct, 3);
+    const estimatedFutureValue = price * Math.pow(1 + selectedValuePct / 100, years);
+    const scenarioValueChangeYearOne = price * (selectedValuePct / 100);
 
     return {
       propertyPrice: price,
@@ -121,7 +124,7 @@ export function CorporateHomeCalculator() {
       annualOperating: operating,
       acquisitionPct,
       capitalPct,
-      valuePct,
+      valuePct: customValueActive ? n(customValuePct, 8) : n(valuePct, 3),
       holdingYears: years,
       annualCostBeforeValue,
       employeeCostPerWeek,
@@ -142,6 +145,8 @@ export function CorporateHomeCalculator() {
     acquisitionPct,
     capitalPct,
     valuePct,
+    customValuePct,
+    customValueActive,
     holdingYears,
   ]);
 
@@ -363,12 +368,41 @@ export function CorporateHomeCalculator() {
                   key={scenario}
                   className={valuePct === scenario ? "active" : ""}
                   aria-pressed={valuePct === scenario}
-                  onClick={() => setValuePct(scenario)}
+                  onClick={() => {
+                    setValuePct(scenario);
+                    setCustomValueActive(false);
+                  }}
                 >
                   {scenario} %
                 </button>
               ))}
+              <button
+                type="button"
+                className={customValueActive ? "active" : ""}
+                aria-pressed={customValueActive}
+                onClick={() => setCustomValueActive(true)}
+              >
+                Eget tall
+              </button>
             </div>
+            {customValueActive && (
+              <label className="corporate-custom-value">
+                <span>Eget scenario</span>
+                <div className="corporate-number-field">
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.5"
+                    value={customValuePct}
+                    onChange={(event) => setCustomValuePct(Number(event.target.value))}
+                  />
+                  <b>%</b>
+                </div>
+              </label>
+            )}
+            <small className="corporate-value-guidance">
+              I perioder har prisveksten på Costa Blanca vært betydelig høyere enn 3–5 %, og enkelte år kan 8–9 % eller mer forekomme. Bruk derfor gjerne eget scenario, men vurder konservative og høyere alternativer separat.
+            </small>
           </div>
         </div>
       )}
