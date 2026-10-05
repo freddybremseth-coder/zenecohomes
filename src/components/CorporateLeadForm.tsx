@@ -18,7 +18,7 @@ type CalculatorContext = {
   holdingYears?: number;
   annualCostBeforeValue?: number;
   costPerUseWeek?: number;
-  hotelWorkAlternative?: number;
+  hotelAlternativeAnnual?: number;
   estimatedFutureValue?: number;
 };
 
@@ -71,7 +71,7 @@ export function CorporateLeadForm() {
           `Bruk: ${calculatorContext.employeeWeeks ?? "-"} ansatt-/medlemsuker + ${calculatorContext.workWeeks ?? "-"} arbeids-/samlinguker`,
           `Årlig kostnad før verdiendring: ${calculatorContext.annualCostBeforeValue ? euro.format(calculatorContext.annualCostBeforeValue) : "-"}`,
           `Kostnad per bruksuke: ${calculatorContext.costPerUseWeek ? euro.format(calculatorContext.costPerUseWeek) : "-"}`,
-          `Hotellalternativ for arbeidsukene: ${calculatorContext.hotelWorkAlternative ? euro.format(calculatorContext.hotelWorkAlternative) : "-"}`,
+          `Alternativ hotellkostnad for bedriftsopphold: ${calculatorContext.hotelAlternativeAnnual ? euro.format(calculatorContext.hotelAlternativeAnnual) : "-"}`,\n          ...(calculatorContext.stays?.map((stay) =>\n            `- ${stay.name}: ${stay.eventsPerYear} opphold/år × ${stay.people} personer × ${stay.nights} netter × ${euro.format(stay.pricePerPersonNight)} per person/natt`\n          ) ?? []),
           `Verdiscenario: ${calculatorContext.valuePct ?? "-"} % i ${calculatorContext.holdingYears ?? "-"} år`,
         ]
       : [];
@@ -138,7 +138,7 @@ export function CorporateLeadForm() {
             <strong>Tallene fra kalkulatoren er tatt med</strong>
             <span>
               {calculatorContext.propertyPrice ? euro.format(calculatorContext.propertyPrice) : "Valgt kjøpesum"} ·
-              {" "}{calculatorContext.totalWeeks ?? 0} bruksuker ·
+              {" "}{calculatorContext.employeeWeeks ?? 0} ferie-/medlemsuker ·
               {" "}{calculatorContext.valuePct ?? 0} % verdiscenario
             </span>
           </div>
