@@ -850,7 +850,6 @@ const drafts: CorporateDraft[] = [
       { question: "Hvorfor står verdiendring utenfor hovedkostnaden?", answer: "Fordi verdiendringen ikke er sikker kontantinntekt og først realiseres ved et eventuelt salg. Det gir en mer konservativ og etterprøvbar beslutningsmodell." }
     ]
   },
-,
 
   {
     slug: "feriebruk-vs-bedriftsbruk-firmabolig-spania",
