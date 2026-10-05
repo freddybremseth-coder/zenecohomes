@@ -193,15 +193,7 @@ export function navLinks(locale: SiteLocale): NavLink[] {
   return [
     { label: "Boliger", href: "/eiendommer" },
     { label: "Områder", href: "/omrader" },
-    {
-      label: "Bedrift",
-      href: "/bedriftshytte-spania",
-      children: [
-        { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
-        { label: "Guider for bedrifter", href: "/bedriftshytte-spania/guider" },
-        { label: "For partnere", href: "/bedriftshytte-spania/partnere" },
-      ],
-    },
+    { label: "Bedrift", href: "/bedriftshytte-spania" },
     { label: "Om oss", href: "/om-oss" },
     {
       label: "Meny",
@@ -211,8 +203,9 @@ export function navLinks(locale: SiteLocale): NavLink[] {
         { label: "Visningstur", href: "/visningstur" },
         { label: "Slik hjelper vi deg", href: "/slik-hjelper-vi-deg" },
         { label: "Guide", href: "/guide" },
-        { label: "Magasin", href: "/magasin" },
+        { label: "Guider for bedrifter", href: "/bedriftshytte-spania/guider" },
         { label: "For partnere", href: "/bedriftshytte-spania/partnere" },
+        { label: "Magasin", href: "/magasin" },
         { label: "Min side", href: "/min-side" },
         { label: "Keyholding", href: CARE_URL, external: true },
       ],

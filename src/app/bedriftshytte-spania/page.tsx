@@ -306,7 +306,7 @@ export default function CorporateHomesPage() {
         </div>
         <div className="center-action corporate-knowledge-action">
           <Link className="contact-button" href="/bedriftshytte-spania/guider">
-            Se alle Corporate-guider <ArrowRight size={18} />
+            Se alle guider for bedrifter <ArrowRight size={18} />
           </Link>
         </div>
       </section>
