@@ -5,21 +5,30 @@ import { FileText, Send } from "lucide-react";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+type StayContext = {
+  name: string;
+  eventsPerYear: number;
+  people: number;
+  nights: number;
+  pricePerPersonNight: number;
+};
+
 type CalculatorContext = {
   propertyPrice?: number;
   users?: number;
   employeeWeeks?: number;
-  workWeeks?: number;
-  totalWeeks?: number;
+  businessStayCount?: number;
+  participantNights?: number;
   annualOperating?: number;
   acquisitionPct?: number;
   capitalPct?: number;
   valuePct?: number;
   holdingYears?: number;
   annualCostBeforeValue?: number;
-  costPerUseWeek?: number;
-  hotelWorkAlternative?: number;
+  employeeCostPerWeek?: number;
+  hotelAlternativeAnnual?: number;
   estimatedFutureValue?: number;
+  stays?: StayContext[];
 };
 
 const euro = new Intl.NumberFormat("nb-NO", {
@@ -62,16 +71,23 @@ export function CorporateLeadForm() {
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
+    const stayLines =
+      calculatorContext?.stays?.map(
+        (stay) =>
+          `- ${stay.name}: ${stay.eventsPerYear} opphold/år × ${stay.people} personer × ${stay.nights} netter × ${euro.format(stay.pricePerPersonNight)} per person/natt`,
+      ) ?? [];
+
     const calculatorLines = calculatorContext
       ? [
           "",
           "Beslutningsgrunnlag fra kalkulator:",
           `Kjøpesum: ${calculatorContext.propertyPrice ? euro.format(calculatorContext.propertyPrice) : "-"}`,
-          `Ansatte/medlemmer: ${calculatorContext.users ?? "-"}`,
-          `Bruk: ${calculatorContext.employeeWeeks ?? "-"} ansatt-/medlemsuker + ${calculatorContext.workWeeks ?? "-"} arbeids-/samlinguker`,
+          `Ansatte/medlemmer med tilgang: ${calculatorContext.users ?? "-"}`,
+          `Ferie-/medlemsbruk: ${calculatorContext.employeeWeeks ?? "-"} uker per år`,
+          `Bedriftsopphold: ${calculatorContext.businessStayCount ?? "-"} per år / ${calculatorContext.participantNights ?? "-"} personnetter`,
           `Årlig kostnad før verdiendring: ${calculatorContext.annualCostBeforeValue ? euro.format(calculatorContext.annualCostBeforeValue) : "-"}`,
-          `Kostnad per bruksuke: ${calculatorContext.costPerUseWeek ? euro.format(calculatorContext.costPerUseWeek) : "-"}`,
-          `Hotellalternativ for arbeidsukene: ${calculatorContext.hotelWorkAlternative ? euro.format(calculatorContext.hotelWorkAlternative) : "-"}`,
+          `Alternativ hotellkostnad for bedriftsopphold: ${calculatorContext.hotelAlternativeAnnual ? euro.format(calculatorContext.hotelAlternativeAnnual) : "-"}`,
+          ...stayLines,
           `Verdiscenario: ${calculatorContext.valuePct ?? "-"} % i ${calculatorContext.holdingYears ?? "-"} år`,
         ]
       : [];
@@ -137,9 +153,10 @@ export function CorporateLeadForm() {
           <div>
             <strong>Tallene fra kalkulatoren er tatt med</strong>
             <span>
-              {calculatorContext.propertyPrice ? euro.format(calculatorContext.propertyPrice) : "Valgt kjøpesum"} ·
-              {" "}{calculatorContext.totalWeeks ?? 0} bruksuker ·
-              {" "}{calculatorContext.valuePct ?? 0} % verdiscenario
+              {calculatorContext.propertyPrice ? euro.format(calculatorContext.propertyPrice) : "Valgt kjøpesum"} ·{" "}
+              {calculatorContext.employeeWeeks ?? 0} ferie-/medlemsuker ·{" "}
+              {calculatorContext.businessStayCount ?? 0} bedriftsopphold ·{" "}
+              {calculatorContext.valuePct ?? 0} % verdiscenario
             </span>
           </div>
         </div>
@@ -249,7 +266,9 @@ export function CorporateLeadForm() {
       </p>
 
       {status === "sent" && (
-        <p className="form-success">Takk. Forespørselen er mottatt. Vi bruker opplysningene som grunnlag for en kort behovsavklaring og beslutningsnotatet.</p>
+        <p className="form-success">
+          Takk. Forespørselen er mottatt. Vi bruker opplysningene som grunnlag for en kort behovsavklaring og beslutningsnotatet.
+        </p>
       )}
       {status === "error" && (
         <p className="form-error">Noe gikk galt. Prøv igjen, eller bruk booking-knappen på siden.</p>

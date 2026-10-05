@@ -215,7 +215,7 @@ export default function CorporateHomesPage() {
           <p className="eyebrow">Bedriftshytte-kalkulator</p>
           <h2>Regn på modellen før dere ser på konkrete boliger</h2>
           <p>
-            Hovedtallet viser kostnad før eventuell verdiendring. Verdiutvikling vises separat som et scenario, og hotellsammenligningen gjelder bare arbeids- og samlingukene. Det gir et mer konservativt og styrevennlig beslutningsgrunnlag.
+            Hovedtallet viser kostnad før eventuell verdiendring. Hotellalternativet bygges av konkrete bedriftsopphold: hvor mange turer eller samlinger dere har per år, hvor mange personer som deltar, antall netter og pris per person per natt. Ferie- og medlemsuker holdes helt utenfor hotellregnestykket.
           </p>
         </div>
         <CorporateHomeCalculator />
@@ -347,7 +347,7 @@ export default function CorporateHomesPage() {
           <p className="eyebrow">Klar til å legge det fram for styret?</p>
           <h2>Be om et beslutningsnotat med deres egne tall</h2>
           <p>
-            Vi setter opp et første beslutningsgrunnlag med kjøpesum, drift, bruksuker, alternative overnattingskostnader og anbefalt bruk- og bookingmodell. Har dere brukt kalkulatoren, følger tallene automatisk med.
+            Vi setter opp et første beslutningsgrunnlag med kjøpesum, drift, ferie-/medlemsbruk, konkrete bedriftsopphold, alternative hotellkostnader og anbefalt bruk- og bookingmodell. Har dere brukt kalkulatoren, følger tallene og oppholdene automatisk med.
           </p>
           <div className="corporate-contact-note">
             <BriefcaseBusiness size={20} />
