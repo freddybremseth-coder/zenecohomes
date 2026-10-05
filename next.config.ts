@@ -42,6 +42,11 @@ const nextConfig: NextConfig = {
       "firmabolig-for-ledersamlinger-og-team",
       "delt-bedriftshytte-for-flere-virksomheter",
       "slik-presenterer-du-bedriftshytte-for-styret",
+      "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte",
+      "slik-beregner-cfo-hotellalternativ-bedriftshytte",
+      "bedriftshytte-styre-ledelse-avdelingsreiser-krav",
+      "arsbudsjett-bedriftshytte-spania",
+      "prisvekst-bolig-spania-business-case-bedriftshytte",
     ];
     const corporateLegacyRedirects = corporateArticleSlugs.map((slug) => ({
       source: `/magasin/${slug}`,
