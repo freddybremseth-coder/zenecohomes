@@ -9,7 +9,9 @@ import {
   KeyRound,
   LineChart,
   ShieldCheck,
+  SunMedium,
   Users,
+  Wifi,
 } from "lucide-react";
 import { CorporateHomeCalculator } from "@/components/CorporateHomeCalculator";
 import { CorporateLeadForm } from "@/components/CorporateLeadForm";
@@ -19,87 +21,70 @@ import { CARE_URL } from "@/lib/i18n";
 import { corporateArticles } from "@/lib/corporate-content";
 
 export const metadata: Metadata = {
-  title: "Bedriftshytte i Spania | Zen Corporate Homes for bedrifter",
+  title: "Bedriftshytte i Spania | Firmahytte på Costa Blanca",
   description:
-    "Bedriftshytte i Spania for norske bedrifter og organisasjoner. Få hjelp med modell, boligvalg, kjøp, drift og lokal oppfølging på Costa Blanca." ,
+    "Vurder bedriftshytte eller firmabolig i Spania. Beregn kostnad og bruk, sammenlign arbeidsopphold med hotell og få beslutningsnotat til styret.",
   keywords: [
-    "bedriftshytte Spania",
-    "firmahytte Spania",
-    "bedriftsleilighet Spania",
-    "bolig i Spania for ansatte",
+    "bedriftshytte i Spania",
+    "firmahytte i Spania",
+    "firmabolig i Spania",
+    "bedriftsbolig Costa Blanca",
+    "bolig for ansatte i Spania",
+    "bedrift kjøpe bolig i Spania",
+    "bedriftshytte for ansatte",
     "medlemsbolig Spania",
-    "firmahytte Costa Blanca",
   ],
   alternates: { canonical: "/bedriftshytte-spania" },
   openGraph: {
-    title: "Zen Corporate Homes | Bedriftshytte i Spania",
+    title: "Bedriftshytte i Spania | Zen Corporate Homes",
     description:
-      "Fra boligvalg og kjøp til lokal oppfølging: en strukturert B2B-løsning for bedrifter og organisasjoner som vil tilby bolig i Spania.",
+      "Fra idé og styreunderlag til boligvalg, kjøp, bookingmodell og lokal drift på Costa Blanca.",
     url: "https://www.zenecohomes.com/bedriftshytte-spania",
     type: "website",
   },
 };
 
-const products = [
-  {
-    icon: BriefcaseBusiness,
-    label: "Ansattbolig",
-    title: "Bedriftshytte for ansatte",
-    text: "En leilighet eller villa som bedriften stiller til disposisjon etter tydelige regler og en rettferdig bookingmodell.",
-    fit: "Typisk aktuelt for bedrifter med en bred brukergruppe.",
-  },
-  {
-    icon: Building2,
-    label: "Bedriftsvilla",
-    title: "Større bolig for flere brukere",
-    text: "For virksomheter som ønsker mer kapasitet, flere soverom og en bolig som kan fungere gjennom store deler av året.",
-    fit: "Egnet når bruk, kapasitet og langsiktig eierskap veier tyngre enn lavest mulig inngangspris.",
-  },
-  {
-    icon: Handshake,
-    label: "Delt bedriftsbolig",
-    title: "Felles løsning for flere bedrifter",
-    text: "Vi kan utrede bolig og praktisk modell for flere mindre virksomheter som ønsker å dele en løsning.",
-    fit: "Eierstruktur, booking og skatt må avklares konkret før kjøp.",
-  },
-  {
-    icon: Users,
-    label: "Medlemsbolig",
-    title: "Medlemsbolig for foreninger",
-    text: "En bolig organisasjonen kan gjøre tilgjengelig for medlemmer gjennom booking, trekning eller annen fordelingsmodell.",
-    fit: "Medlemsordninger må vurderes separat fra skattereglene for bedriftshytter til ansatte.",
-  },
-];
-
 const process = [
-  ["01", "Behov og bruk", "Vi avklarer hvem som skal bruke boligen, ønsket kapasitet, bookingmodell og budsjett."],
-  ["02", "Område og shortlist", "Vi snevrer inn Costa Blanca etter flytilgang, strand, helårsservice og praktisk drift."],
-  ["03", "Økonomi", "Vi setter opp kjøpesum, forventet drift, bruksuker og et enkelt beslutningsgrunnlag for styre eller ledelse."],
-  ["04", "Juridisk og skattemessig avklaring", "Kunden avklarer eierstruktur, skatt og regnskap med kvalifiserte rådgivere før bindende beslutning."],
-  ["05", "Kjøp og overtakelse", "Vi følger eiendomsprosessen og koordinerer de lokale stegene rundt bolig og overtakelse."],
-  ["06", "Drift etter kjøpet", "Keyholding, tilsyn, rengjøring og praktiske tjenester kan settes opp gjennom Zen Eco Homes Property Care."],
+  ["01", "Formål", "Hva skal boligen løse: ansattgode, medlemsfordel, samlinger, arbeidsopphold eller en kombinasjon?"],
+  ["02", "Brukere", "Hvem skal ha tilgang, hvor mange skal bruke boligen, og hvordan skal ukene fordeles?"],
+  ["03", "Kapasitet", "Vi avklarer antall soverom, bad, arbeidsplasser, fellesareal og praktiske behov."],
+  ["04", "Økonomi", "Kjøpesum, kjøpskostnader, drift, kapitalkostnad og alternative overnattingskostnader settes inn i modellen."],
+  ["05", "Område og shortlist", "Først når bruken er tydelig, velger vi område og aktuelle boliger på Costa Blanca."],
+  ["06", "Kjøp og drift", "Vi følger kjøpsprosessen og kan sette opp lokal oppfølging gjennom Zen Eco Homes Property Care."],
 ];
 
 const faq = [
   {
-    q: "Kan en bedriftshytte ligge i Spania?",
-    a: "Ja. Skatteetatens Skatte-ABC beskriver at reglene for bedriftshytte også kan gjelde bedriftshytter i utlandet når vilkårene for et rimelig velferdstiltak er oppfylt.",
+    q: "Hva koster en bedriftshytte i Spania?",
+    a: "Det avhenger av kjøpesum, kjøpskostnader, årlig drift, kapitalkostnad, antall bruksuker og hvor lenge virksomheten planlegger å eie boligen. Kalkulatoren på siden viser et første scenario med disse forutsetningene hver for seg.",
   },
   {
-    q: "Er bruken alltid skattefri for de ansatte?",
-    a: "Nei. Det avgjørende er blant annet at ordningen er reelt tilgjengelig på like vilkår for alle eller en betydelig gruppe ansatte, og at tiltaket samlet sett anses som rimelig.",
+    q: "Kan en norsk bedrift eie bolig i Spania?",
+    a: "Ja, norske virksomheter kan kjøpe eiendom i Spania. Eierstruktur, skatt, regnskap og bruk bør avklares med kvalifiserte norske og spanske rådgivere før bindende beslutning.",
   },
   {
-    q: "Må bedriften ha minst 10 ansatte?",
-    a: "Skatteetaten bruker færre enn 10 personer med disposisjonsrett som et utgangspunkt for at fordelen kan bli skattepliktig. Det finnes unntak, og flere bedrifter kan eie en bedriftshytte sammen slik at 10 eller flere har rett til å disponere den. Hver modell må vurderes konkret.",
+    q: "Kan en bedriftshytte i Spania være skattefri for ansatte?",
+    a: "Det kan være mulig når ordningen oppfyller vilkårene for et rimelig velferdstiltak og er reelt tilgjengelig på like vilkår for alle eller en betydelig gruppe ansatte. Modellen må vurderes konkret.",
   },
   {
-    q: "Kan arbeidsgiver betale flyreisen til bedriftshytten skattefritt?",
-    a: "Skatteetatens Skatte-ABC sier at dekning av reisekostnader for privat bruk av bedriftshytte er skattepliktig. Reise og selve bruken av boligen må derfor behandles som separate spørsmål.",
+    q: "Må minst 10 ansatte ha disposisjonsrett?",
+    a: "Skatteetatens Skatte-ABC bruker færre enn 10 personer med disposisjonsrett som et utgangspunkt for at fordelen kan bli skattepliktig. Det finnes nyanser og unntak, og flere virksomheter kan i enkelte modeller dele en løsning.",
   },
   {
-    q: "Kan en forening tilby en bolig til medlemmene?",
-    a: "Ja, en organisasjon kan etablere en medlemsordning, men skattereglene for bedriftshytte i arbeidsforhold kan ikke automatisk overføres til medlemsbruk. Struktur, vedtekter og økonomi bør vurderes særskilt.",
+    q: "Kan boligen brukes til styre- og ledersamlinger?",
+    a: "Ja, boligen kan fungere godt for styrearbeid, ledermøter, strategisamlinger og prosjektuker. Formelle selskapsmøter må gjennomføres i tråd med norsk selskapsrett og selskapets vedtekter.",
+  },
+  {
+    q: "Kan generalforsamlingen holdes fra Spania?",
+    a: "Aksjeloven skiller mellom fysisk og elektronisk generalforsamling. Et fysisk møte skal som hovedregel holdes i kommunen der selskapet har forretningskontor, med mindre vedtektene eller særlige grunner åpner for annet. Elektronisk møte kan gjennomføres når lovens krav er oppfylt.",
+  },
+  {
+    q: "Kan en forening leie ut boligen til medlemmene?",
+    a: "En medlemsordning kan organiseres på flere måter, men betaling, utleie og eventuell turistbruk må vurderes særskilt etter lokale regler og organisasjonens struktur før kjøp.",
+  },
+  {
+    q: "Hva skjer hvis virksomheten senere vil selge?",
+    a: "Boligen er en eiendel med markedsverdi og kan selges senere. Kalkulatorens verdiutvikling er kun et scenario, ikke en garanti eller prognose.",
   },
 ];
 
@@ -114,6 +99,36 @@ export default function CorporateHomesPage() {
     })),
   };
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Bedriftshytte og firmabolig i Spania",
+    serviceType: "Rådgivning ved kjøp av bedriftshytte og firmabolig på Costa Blanca",
+    provider: {
+      "@type": "Organization",
+      name: "Zen Eco Homes",
+      url: "https://www.zenecohomes.com",
+    },
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "Costa Blanca",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Norske bedrifter, foreninger og medlemsorganisasjoner",
+    },
+    url: "https://www.zenecohomes.com/bedriftshytte-spania",
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Forside", item: "https://www.zenecohomes.com" },
+      { "@type": "ListItem", position: 2, name: "Bedriftshytte i Spania", item: "https://www.zenecohomes.com/bedriftshytte-spania" },
+    ],
+  };
+
   return (
     <main className="corporate-page">
       <SiteHeader locale="no" />
@@ -124,14 +139,15 @@ export default function CorporateHomesPage() {
           <p className="eyebrow">Zen Corporate Homes · Costa Blanca</p>
           <h1>En bedriftshytte i Spania som faktisk blir brukt</h1>
           <p>
-            Vi hjelper norske bedrifter, foreninger og organisasjoner med å vurdere, finne, kjøpe og følge opp en moderne bolig på Costa Blanca — med en tydelig modell for bruk, økonomi, booking og lokal drift.
+            Ferieuker for ansatte og medlemmer, teamsamlinger med arbeidsro og et fast sted for ledelse og styre.
+            Vi hjelper dere fra første vurdering og styreunderlag til boligvalg, kjøp og lokal oppfølging etter overtakelsen.
           </p>
           <div className="hero-actions">
-            <a className="contact-button" href="#bedriftsvurdering">
-              Få en kostnadsfri bedriftsvurdering <ArrowRight size={18} />
+            <a className="contact-button" href="#kalkulator">
+              Beregn deres modell <ArrowRight size={18} />
             </a>
-            <a className="text-button light" href="#kalkulator">
-              Beregn et eksempel
+            <a className="text-button light" href="#bedriftsvurdering">
+              Be om beslutningsnotat
             </a>
           </div>
           <div className="corporate-hero-points">
@@ -144,59 +160,62 @@ export default function CorporateHomesPage() {
 
       <section className="corporate-intro">
         <div>
-          <p className="eyebrow">Et varig ansatt- eller medlemsfordel</p>
-          <h2>Fra tradisjonell firmahytte til en moderne bolig på Costa Blanca</h2>
+          <p className="eyebrow">Hvorfor Costa Blanca?</p>
+          <h2>Fra tradisjonell firmahytte til en bolig som kan brukes gjennom året</h2>
         </div>
         <p>
-          En bedriftshytte trenger ikke ligge på fjellet. For riktig virksomhet kan en bolig i Spania være et konkret ansattgode, et sted for ledersamlinger og et langsiktig eiendomsvalg. Vi starter med hvem som skal bruke boligen, hvordan den skal fordeles og hva virksomheten ønsker å oppnå — deretter finner vi eiendommen.
+          En bolig på Costa Blanca kan fungere både som feriebolig for ansatte eller medlemmer og som fast base for mindre arbeids- og ledersamlinger. Poenget er ikke bare å kjøpe en bolig i Spania, men å velge en eiendom som passer måten organisasjonen faktisk skal bruke den på.
         </p>
       </section>
 
       <section className="section corporate-decision">
         <div className="section-heading">
-          <p className="eyebrow">Hva kan boligen brukes til?</p>
-          <h2>Én eiendom kan dekke flere behov gjennom året</h2>
-          <p>
-            Bruken bør være planlagt før kjøpet. Det gjør det lettere å velge riktig størrelse, beliggenhet,
-            driftsnivå og bookingmodell.
-          </p>
+          <p className="eyebrow">Et år med boligen</p>
+          <h2>Planlegg bruken før dere velger eiendommen</h2>
+          <p>En tydelig årsmodell gjør det enklere å velge riktig størrelse, beliggenhet, kapasitet og driftsnivå.</p>
+        </div>
+        <div className="corporate-year-grid">
+          <article><strong>30</strong><span>uker til ansatte eller medlemmer</span></article>
+          <article><strong>6</strong><span>uker til teamsamlinger og prosjektarbeid</span></article>
+          <article><strong>4</strong><span>uker til ledelse og styre</span></article>
+          <article><strong>12</strong><span>uker buffer, fleksibilitet og vedlikehold</span></article>
+        </div>
+        <p className="corporate-example-note">Eksempelet viser én mulig modell. Fordelingen tilpasses virksomhetens faktiske behov før boligjakten starter.</p>
+      </section>
+
+      <section className="section corporate-decision">
+        <div className="section-heading">
+          <p className="eyebrow">Hva får virksomheten igjen?</p>
+          <h2>Et ansattgode, en møtebase og en eiendel i samme løsning</h2>
         </div>
         <div className="corporate-decision-grid">
-          <div><BriefcaseBusiness /><strong>Ansattgode</strong><span>Ferieopphold eller lengre opphold som fordeles etter tydelige interne regler.</span></div>
-          <div><Users /><strong>Ledelse og team</strong><span>Ledersamlinger, strategidager, onboarding eller mindre teamopphold.</span></div>
-          <div><Handshake /><strong>Kunder og samarbeid</strong><span>Representasjon eller arbeidsopphold når virksomhetens rådgivere har avklart riktig bruk.</span></div>
-          <div><Building2 /><strong>Medlemsfordel</strong><span>For foreninger og organisasjoner som ønsker en konkret, langsiktig medlemsfordel.</span></div>
+          <div><Users /><strong>Et gode folk husker</strong><span>Tilgang til en bolig i Spania er konkret, synlig og lett å forstå som del av employer branding og medlemsverdi.</span></div>
+          <div><BriefcaseBusiness /><strong>Fast base for samlinger</strong><span>Strategi, onboarding og prosjektarbeid kan gjennomføres i kjente omgivelser uten å starte hotell- og møteplanlegging på nytt hver gang.</span></div>
+          <div><Building2 /><strong>Virksomheten eier eiendelen</strong><span>Boligkjøp er ikke automatisk billigere enn hotell, men virksomheten står igjen med en eiendel som senere kan selges.</span></div>
+          <div><KeyRound /><strong>Lokal drift kan settes bort</strong><span>Nøkkelhold, tilsyn, klargjøring og praktiske tjenester kan organiseres lokalt når ingen fra virksomheten er til stede.</span></div>
         </div>
       </section>
 
       <section className="section corporate-products">
         <div className="section-heading">
-          <p className="eyebrow">Fire norske bedriftsmodeller</p>
-          <h2>Velg modellen etter hvem som skal bruke boligen</h2>
-          <p>Ansatte, ledelse, flere samarbeidende bedrifter eller medlemmer krever ulike løsninger. Vi avklarer bruken først og matcher deretter riktig bolig.</p>
+          <p className="eyebrow">Hva gjør en bolig egnet?</p>
+          <h2>Vi vurderer bruken – ikke bare utsikten</h2>
+          <p>En bedriftshytte med mange brukere stiller andre krav enn en vanlig privat feriebolig.</p>
         </div>
         <div className="corporate-product-grid">
-          {products.map((product) => {
-            const Icon = product.icon;
-            return (
-              <article key={product.label}>
-                <Icon size={26} />
-                <span>{product.label}</span>
-                <h3>{product.title}</h3>
-                <p>{product.text}</p>
-                <small>{product.fit}</small>
-              </article>
-            );
-          })}
+          <article><Wifi size={26} /><span>Arbeid</span><h3>Stabilt nett og gode arbeidsflater</h3><p>For teamsamlinger og lederopphold må boligen fungere som arbeidssted, ikke bare feriebolig.</p><small>Fiber, arbeidsbord, skjermmuligheter og nok strømuttak vurderes tidlig.</small></article>
+          <article><Users size={26} /><span>Kapasitet</span><h3>Nok soverom, bad og fellesareal</h3><p>Boligen må tåle hyppige brukerbytter og samtidig gi plass til både fellesskap og privatliv.</p><small>Kapasiteten bør matche den vanligste bruken, ikke bare maksimum.</small></article>
+          <article><SunMedium size={26} /><span>Beliggenhet</span><h3>Enkel reise og helårsservice</h3><p>Kort vei til Alicante lufthavn, restauranter, dagligvarer og tjenester betyr mer når mange skal bruke boligen.</p><small>Området vurderes ut fra logistikk og helårsbruk, ikke bare høysesong.</small></article>
+          <article><KeyRound size={26} /><span>Drift</span><h3>Enkel å følge opp når den står tom</h3><p>Innredning, tekniske løsninger og vedlikeholdsbehov bør tåle mange brukere og perioder uten eier til stede.</p><small>Care-planen bør være en del av beslutningen før kjøp.</small></article>
         </div>
       </section>
 
       <section className="corporate-calculator-section" id="kalkulator">
         <div className="corporate-section-copy">
           <p className="eyebrow">Bedriftshytte-kalkulator</p>
-          <h2>Gjør tallene forståelige før dere tar neste steg</h2>
+          <h2>Regn på modellen før dere ser på konkrete boliger</h2>
           <p>
-            Juster kjøpesum, antall brukere, planlagte bruksuker og forventet drift. Kalkulatoren er ikke et investerings-, skatte- eller regnskapsregnestykke, men gir et enkelt første bilde som kan brukes i den interne vurderingen.
+            Hovedtallet viser kostnad før eventuell verdiendring. Verdiutvikling vises separat som et scenario, og hotellsammenligningen gjelder bare arbeids- og samlingukene. Det gir et mer konservativt og styrevennlig beslutningsgrunnlag.
           </p>
         </div>
         <CorporateHomeCalculator />
@@ -204,8 +223,9 @@ export default function CorporateHomesPage() {
 
       <section className="section corporate-process">
         <div className="section-heading">
-          <p className="eyebrow">Slik foregår det</p>
-          <h2>Fra første vurdering til boligen er klar for bruk</h2>
+          <p className="eyebrow">Fra idé til beslutning</p>
+          <h2>Det første steget er ikke å se på boliger</h2>
+          <p>Vi avklarer formål, bruk og økonomi først. Deretter lager vi en shortlist som faktisk passer modellen.</p>
         </div>
         <div className="corporate-process-grid">
           {process.map(([number, title, text]) => (
@@ -221,17 +241,13 @@ export default function CorporateHomesPage() {
       <section className="corporate-split">
         <div className="corporate-split-card corporate-tax-card">
           <ShieldCheck size={28} />
-          <p className="eyebrow">Skatt og likebehandling</p>
+          <p className="eyebrow">Skatt, juss og likebehandling</p>
           <h2>Ordningen må bygges riktig fra starten</h2>
           <p>
-            Skatteetatens Skatte-ABC for 2026 sier at bruk av bedriftshytte kan være skattefri når boligen er
-            tilgjengelig slik at alle eller en betydelig gruppe ansatte har lik rett til å disponere den. Det
-            gjelder også bedriftshytter i utlandet.
+            Skatteetatens Skatte-ABC beskriver at bruk av bedriftshytte kan være skattefri når vilkårene for et rimelig velferdstiltak er oppfylt og ordningen er reelt tilgjengelig for alle eller en betydelig gruppe ansatte.
           </p>
           <p>
-            Skatteetaten sier også at færre enn 10 personer med disposisjonsrett som utgangspunkt kan medføre
-            skatteplikt, og anbefaler dokumentasjon av hvem som kan bruke boligen, hvordan bruken fordeles og den
-            faktiske bruken.
+            Uker som brukes som premie, privat fordel eller annen særbruk bør holdes tydelig adskilt fra den ordinære ordningen. Eierstruktur, selskapsmøter, skatt og regnskap må kvalitetssikres av kvalifiserte rådgivere.
           </p>
           <a
             className="text-button"
@@ -241,10 +257,7 @@ export default function CorporateHomesPage() {
           >
             Les gjeldende Skatte-ABC hos Skatteetaten <ArrowRight size={16} />
           </a>
-          <small>
-            Zen Eco Homes gir ikke skatte- eller juridisk rådgivning. Endelig struktur bør kvalitetssikres av
-            kundens norske og spanske fagpersoner.
-          </small>
+          <small>Zen Eco Homes gir ikke skatte-, juridisk eller regnskapsrådgivning.</small>
         </div>
 
         <div className="corporate-split-card corporate-care-card">
@@ -252,8 +265,7 @@ export default function CorporateHomesPage() {
           <p className="eyebrow">Etter kjøpet</p>
           <h2>Bedriften skal ikke måtte drifte en bolig i Spania fra Norge</h2>
           <p>
-            Lokal oppfølging er en sentral del av konseptet. Zen Eco Homes Property Care kan brukes til
-            nøkkelforvaltning, tilsyn og praktiske tjenester når boligen står tom eller bytter bruker.
+            Zen Eco Homes Property Care kan brukes til nøkkelforvaltning, tilsyn, klargjøring og praktiske tjenester mellom oppholdene.
           </p>
           <a className="contact-button" href={CARE_URL} target="_blank" rel="noopener noreferrer">
             Se Property Care <ArrowRight size={18} />
@@ -263,25 +275,22 @@ export default function CorporateHomesPage() {
 
       <section className="section corporate-decision">
         <div className="section-heading">
-          <p className="eyebrow">Bedriftsvurderingen</p>
-          <h2>Dere får et konkret grunnlag for å ta stilling til ideen</h2>
+          <p className="eyebrow">Hva får styret?</p>
+          <h2>Et beslutningsgrunnlag før dere bruker tid på boligjakt</h2>
         </div>
         <div className="corporate-decision-grid">
-          <div><LineChart /><strong>Økonomisk oversikt</strong><span>Aktuell kjøpesum, forventet drift, bruksuker og sammenlignbare alternativer.</span></div>
-          <div><Users /><strong>Bruk og booking</strong><span>Hvem som skal bruke boligen, kapasitet og prinsipper for rettferdig fordeling.</span></div>
-          <div><Building2 /><strong>Relevant boligshortlist</strong><span>Et begrenset utvalg som passer budsjett, kapasitet, område og faktisk bruk.</span></div>
-          <div><KeyRound /><strong>Lokal drift</strong><span>Plan for nøkkelhold, tilsyn, rengjøring og praktisk oppfølging etter overtakelsen.</span></div>
+          <div><LineChart /><strong>Økonomisk modell</strong><span>Kjøpesum, kjøpskostnader, drift, kapitalkostnad, bruksuker og alternative overnattingskostnader.</span></div>
+          <div><Users /><strong>Bruk og booking</strong><span>Forslag til hvem som skal ha tilgang, kapasitet og prinsipper for rettferdig fordeling.</span></div>
+          <div><Building2 /><strong>Krav til bolig</strong><span>Størrelse, beliggenhet, soverom, arbeidsmuligheter og driftsbehov før shortlist lages.</span></div>
+          <div><KeyRound /><strong>Lokal driftsmodell</strong><span>Plan for nøkkelhold, tilsyn, klargjøring og praktisk oppfølging etter overtakelsen.</span></div>
         </div>
       </section>
 
       <section className="section corporate-knowledge" id="kunnskap">
         <div className="section-heading">
-          <p className="eyebrow">Kunnskap for ledelse og HR</p>
-          <h2>Alt dere bør vurdere før en bedriftshytte i Spania</h2>
-          <p>
-            Vi har samlet praktiske guider om økonomi, bruk, booking, drift, områdevalg og beslutningsgrunnlag.
-            Artiklene er skrevet for norske bedrifter, foreninger og organisasjoner.
-          </p>
+          <p className="eyebrow">Kunnskap for ledelse, HR og styre</p>
+          <h2>Spørsmålene dere bør avklare før en bedriftshytte i Spania</h2>
+          <p>Praktiske guider om økonomi, booking, drift, skatt, områdevalg og beslutningsgrunnlag.</p>
         </div>
         <div className="corporate-article-grid">
           {corporateArticles.slice(0, 6).map((article) => (
@@ -310,7 +319,7 @@ export default function CorporateHomesPage() {
         <div>
           <p>
             Zen Corporate Homes har en egen partnerkanal for norske regnskapsmiljøer, advokatfirmaer,
-            HR-/rekrutteringsselskaper, bedriftsrådgivere og nærings- eller medlemsorganisasjoner.
+            HR-/rekrutteringsselskaper, bedriftsrådgivere og medlemsorganisasjoner.
           </p>
           <Link className="text-button" href="/bedriftshytte-spania/partnere">
             Se partnerprogrammet <ArrowRight size={16} />
@@ -321,7 +330,7 @@ export default function CorporateHomesPage() {
       <section className="section corporate-faq">
         <div className="section-heading">
           <p className="eyebrow">Vanlige spørsmål</p>
-          <h2>Bedriftshytte og medlemsbolig i Spania</h2>
+          <h2>Bedriftshytte, firmabolig og medlemsbolig i Spania</h2>
         </div>
         <div className="corporate-faq-list">
           {faq.map((item) => (
@@ -335,14 +344,14 @@ export default function CorporateHomesPage() {
 
       <section className="corporate-contact" id="bedriftsvurdering">
         <div className="corporate-contact-copy">
-          <p className="eyebrow">Neste steg</p>
-          <h2>Få en kostnadsfri første vurdering for deres bedrift eller organisasjon</h2>
+          <p className="eyebrow">Klar til å legge det fram for styret?</p>
+          <h2>Be om et beslutningsnotat med deres egne tall</h2>
           <p>
-            Fortell oss hvor mange som skal kunne bruke boligen, hvilket budsjett dere vurderer og hva dere ønsker å oppnå. Vi går gjennom behovet og kan deretter foreslå en egnet modell, aktuelle områder og et første utvalg boliger.
+            Vi setter opp et første beslutningsgrunnlag med kjøpesum, drift, bruksuker, alternative overnattingskostnader og anbefalt bruk- og bookingmodell. Har dere brukt kalkulatoren, følger tallene automatisk med.
           </p>
           <div className="corporate-contact-note">
             <BriefcaseBusiness size={20} />
-            <span>Ingen forpliktelse og ingen generell boligspam. Vi bruker opplysningene til å vurdere om konseptet passer deres virksomhet.</span>
+            <span>Kostnadsfritt og uforpliktende. Ingen generell boligspam.</span>
           </div>
           <Link className="text-button" href="/booking">
             Book heller en kort samtale <ArrowRight size={16} />
@@ -353,10 +362,13 @@ export default function CorporateHomesPage() {
 
       <Footer />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      {[faqJsonLd, serviceJsonLd, breadcrumbJsonLd].map((data, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
     </main>
   );
 }
