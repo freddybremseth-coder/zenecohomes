@@ -50,6 +50,7 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "Kundeomtaler", href: "/kundeomtaler" },
       { label: "Magasin", href: "/magasin" },
       { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
+      { label: "For partnere", href: "/bedriftshytte-spania/partnere" },
       { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
     ],
   },
@@ -85,6 +86,7 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Kundeomtaler", href: "/kundeomtaler" },
     { label: "Magasin", href: "/magasin" },
     { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
+    { label: "For partnere", href: "/bedriftshytte-spania/partnere" },
     { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
   ],
   de: [
