@@ -10,6 +10,9 @@ type CorporateDraft = {
   keywords: string[];
   seoTitle?: string;
   seoDescription?: string;
+  date?: string;
+  updated?: string;
+  readingTime?: string;
   intro: string[];
   sections: { heading: string; body: string[]; bullets?: string[] }[];
   faq: { question: string; answer: string }[];
@@ -18,10 +21,10 @@ type CorporateDraft = {
 function makeArticle(draft: CorporateDraft): Article {
   return {
     ...draft,
-    date: updated,
-    updated,
+    date: draft.date || updated,
+    updated: draft.updated || draft.date || updated,
     category: "Zen Corporate Homes",
-    readingTime: "6–8 min lesing",
+    readingTime: draft.readingTime || "6–8 min lesing",
     image: cover,
     imageAlt: `Zen Corporate Homes guide: ${draft.title}`,
     seoTitle: draft.seoTitle || `${draft.title} | Zen Corporate Homes`,
@@ -468,7 +471,385 @@ const drafts: CorporateDraft[] = [
       { question: "Bør konkrete boliger være med?", answer: "Representative eksempler er nyttige, men ikke la én bolig styre beslutningen før behovet er avklart." },
       { question: "Hva kan Zen Corporate Homes levere?", answer: "Vi kan bidra med modell, områdeanalyse, kostnadsindikasjon og relevant boligshortlist til den interne vurderingen." }
     ]
-  }
+  },
+
+  {
+    slug: "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    seoTitle: "Ledersamling i Spania | Hotell eller bedriftshytte?",
+    title: "Ledersamling eller avdelingsreise i Spania: hotell eller bedriftshytte?",
+    excerpt: "Slik sammenligner dere hotellkostnaden for ledersamlinger, styresamlinger og avdelingsreiser med kostnaden ved en bedriftshytte i Spania.",
+    seoDescription: "Sammenlign hotell og bedriftshytte for ledersamling, styresamling og avdelingsreise i Spania. Se regnemodell med personer, netter og pris per natt.",
+    keywords: ["ledersamling Spania", "avdelingsreise Spania", "styresamling Spania", "hotell eller bedriftshytte", "firmatur Costa Blanca"],
+    intro: [
+      "Når en virksomhet vurderer en bedriftshytte i Spania, er det lett å blande feriebruk for ansatte med arbeidsrelaterte samlinger. De bør regnes separat. Ferieuker er et ansatt- eller medlems-gode, mens ledersamlinger, styresamlinger og avdelingsreiser kan sammenlignes med en konkret alternativ hotellkostnad.",
+      "Den mest forståelige modellen er derfor ikke «arbeidsuker», men faktiske opphold per år: hvor mange turer dere har, hvor mange personer som deltar, hvor mange netter de blir og hva tilsvarende hotellovernatting ville kostet."
+    ],
+    sections: [
+      {
+        heading: "Start med de faktiske samlingene dere allerede har",
+        body: [
+          "Kartlegg arrangementene virksomheten normalt gjennomfører eller realistisk planlegger å gjennomføre. Det kan være strategisamling, ledersamling, styresamling, prosjektuke, avdelingsreise eller annen jobbreise der virksomheten ellers ville kjøpt overnatting.",
+          "Ikke legg inn hypotetiske hotellnetter bare for å få eierskap til å se gunstig ut. Styret bør kunne se hvilke konkrete opphold hver linje i beregningen bygger på."
+        ],
+        bullets: [
+          "Type samling eller reise.",
+          "Antall opphold per år.",
+          "Antall personer per opphold.",
+          "Antall netter per person.",
+          "Realistisk pris per person per natt."
+        ]
+      },
+      {
+        heading: "Eksempel: tre typer bedriftsopphold gjennom året",
+        body: [
+          "Tenk en virksomhet som har to ledersamlinger med åtte personer i tre netter, tre avdelingsreiser med ti personer i fire netter og to styresamlinger med seks personer i tre netter.",
+          "Med illustrerende hotellpriser på henholdsvis 180, 160 og 180 euro per person per natt blir alternativ overnattingskostnad 8.640 euro for ledersamlingene, 19.200 euro for avdelingsreisene og 6.480 euro for styresamlingene. Totalt blir dette 34.320 euro per år."
+        ],
+        bullets: [
+          "Ledersamling: 2 × 8 personer × 3 netter × €180 = €8.640.",
+          "Avdelingsreise: 3 × 10 personer × 4 netter × €160 = €19.200.",
+          "Styresamling: 2 × 6 personer × 3 netter × €180 = €6.480.",
+          "Samlet alternativ hotellkostnad: €34.320 per år."
+        ]
+      },
+      {
+        heading: "Hotellbeløpet er et alternativ – ikke automatisk en besparelse",
+        body: [
+          "Det er viktig å bruke riktig språk. Dersom virksomheten kjøper bolig for 450.000 euro, kan man ikke uten videre si at 34.320 euro «spares». Boligen har egne kostnader til kapital, kjøp, drift, vedlikehold og lokal oppfølging.",
+          "Det riktige er å vise hotellbeløpet som den overnattingskostnaden virksomheten ellers kunne hatt for de samme konkrete bedriftsoppholdene. Deretter vurderes dette sammen med øvrig bruk av eiendommen."
+        ]
+      },
+      {
+        heading: "Ansattferie og medlemsbruk skal stå i en egen kolonne",
+        body: [
+          "Dersom boligen også skal brukes 20, 30 eller flere uker av ansatte eller medlemmer, er dette en annen type verdi. Disse ukene bør ikke omregnes til en fiktiv hotellbesparelse for virksomheten hvis bedriften normalt ikke ville betalt hotell for privat ferie.",
+          "Ved å skille privat ferie-/medlemsbruk og tjenestebruk blir business caset mer troverdig og enklere å kvalitetssikre av økonomi, HR, regnskapsfører og styre."
+        ]
+      },
+      {
+        heading: "Hva bør sammenligningen også ta med?",
+        body: [
+          "Hotellprisen dekker bare overnatting. Fly, transport, møterom, servering, aktiviteter og andre arrangementsutgifter bør holdes utenfor dersom de ville oppstå både med hotell og bedriftshytte.",
+          "Samtidig kan en fast bolig gi kvaliteter som er vanskelige å prissette direkte: samme base hver gang, mulighet for lagring, mer uformelle arbeidsflater og kombinasjon av arbeidsbruk og ansattgode."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Skal flybilletter regnes inn i hotellalternativet?", answer: "Normalt ikke dersom flykostnaden ville vært omtrent den samme uansett om gruppen bor på hotell eller i bedriftshytten. Sammenlign bare kostnader som faktisk skiller alternativene." },
+      { question: "Er avdelingsreise det samme som feriebruk?", answer: "Nei. En dokumentert arbeids- eller virksomhetsrelatert samling bør holdes separat fra privat feriebruk for ansatte eller medlemmer." },
+      { question: "Kan vi bruke hotellprisen som årlig besparelse?", answer: "Ikke uten videre. Den bør omtales som alternativ overnattingskostnad. Reell økonomisk forskjell avhenger av alle kostnader ved eierskapet og faktisk bruk." },
+      { question: "Hvor finner vi tallene?", answer: "Zen Corporate Homes-kalkulatoren lar dere legge inn hvert bedriftsopphold med antall turer, personer, netter og pris per person per natt." }
+    ]
+  },
+  {
+    slug: "slik-beregner-cfo-hotellalternativ-bedriftshytte",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "8 min lesing",
+    seoTitle: "Hotellalternativ for bedriftshytte | Slik regner CFO",
+    title: "Slik beregner dere hotellalternativet for en bedriftshytte",
+    excerpt: "En styrevennlig metode for å regne på hotellalternativet: opphold per år × personer × netter × pris per person per natt.",
+    seoDescription: "Slik beregner CFO eller styret alternativ hotellkostnad for en bedriftshytte i Spania med konkrete opphold, personer, netter og hotellpris.",
+    keywords: ["hotellalternativ bedriftshytte", "CFO bedriftshytte kalkyle", "hotellkostnad firmatur", "business case bedriftshytte"],
+    intro: [
+      "Et godt business case tåler at økonomisjefen spør «hvor kommer tallet fra?». Derfor bør hotellalternativet kunne spores helt ned til konkrete opphold og personnetter.",
+      "Metoden er enkel: antall opphold per år × personer per opphold × netter per person × pris per person per natt. Summen av alle oppholdstypene er årlig alternativ hotellkostnad."
+    ],
+    sections: [
+      {
+        heading: "Formelen",
+        body: [
+          "For hver oppholdstype beregnes årskostnaden separat. Dersom et opphold skjer fire ganger i året med ti personer, tre netter og 170 euro per person per natt, blir regnestykket 4 × 10 × 3 × 170 = 20.400 euro.",
+          "Har virksomheten flere typer samlinger, summeres de. Dermed ser styret både totalen og hvilke aktiviteter som driver kostnaden."
+        ],
+        bullets: [
+          "Opphold per år.",
+          "Personer per opphold.",
+          "Netter per person.",
+          "Hotellpris per person per natt.",
+          "Årskostnad per oppholdstype og totalt."
+        ]
+      },
+      {
+        heading: "Bruk personnetter som kontrollmål",
+        body: [
+          "Personnetter gjør det enklere å kontrollere om modellen er realistisk. Ti personer i fire netter er 40 personnetter. Tre slike turer gir 120 personnetter per år.",
+          "Dersom kalkylen plutselig viser flere hundre personnetter, bør økonomi eller ledelse spørre om virksomheten faktisk gjennomfører så mange opphold."
+        ]
+      },
+      {
+        heading: "Velg en hotellpris som tåler kontroll",
+        body: [
+          "Bruk helst et prisnivå virksomheten faktisk kjenner fra tilsvarende reiser eller et dokumentert markedsestimat for området og sesongen. Ikke bruk den dyreste helgen i høysesong som standard for hele året.",
+          "Hvis prisene varierer mye, kan dere teste et lavt, normalt og høyt scenario. Hovedmodellen bør fortsatt bruke ett tydelig og dokumenterbart utgangspunkt."
+        ]
+      },
+      {
+        heading: "Hva skal ikke inn i hotellalternativet?",
+        body: [
+          "Kostnader som oppstår i begge alternativer bør normalt ikke brukes for å skape en kunstig forskjell. Fly, taxi, restaurant, aktiviteter og eksternt møterom kan for eksempel være like relevante uansett overnattingsform.",
+          "Tilsvarende skal private ferieuker for ansatte ikke prises som hotellkostnad for bedriften hvis virksomheten ellers ikke ville betalt deres private hotell."
+        ],
+        bullets: [
+          "Ikke tell ledige uker som spart hotell.",
+          "Ikke tell privat ferie som bedriftsreise.",
+          "Ikke bland forventet boligprisvekst inn i hotellbesparelsen.",
+          "Ikke bruk bruttotall uten å vise forutsetningene."
+        ]
+      },
+      {
+        heading: "Slik presenteres tallet for styret",
+        body: [
+          "En god formulering er «alternativ hotellkostnad for planlagte bedriftsopphold: €X per år». Under tallet bør modellen vise antall opphold, personer og personnetter.",
+          "Deretter presenteres årlig kostnad ved boligen før eventuell verdiendring som et eget tall. Verdiutvikling vises separat som scenario."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Bør hotellpris være per rom eller per person?", answer: "Begge modeller kan brukes, men kalkulatoren på Zen Corporate Homes bruker pris per person per natt fordi den fungerer konsistent på tvers av ulike gruppestørrelser og romfordelinger." },
+      { question: "Hva hvis to personer deler rom?", answer: "Da bør pris per person per natt settes ut fra hva virksomheten realistisk ville betalt med den aktuelle romfordelingen. Hensikten er å sammenligne samme behov." },
+      { question: "Kan vi bruke gjennomsnitt fra tidligere reiseregninger?", answer: "Ja. Faktiske historiske kostnader kan være et svært godt utgangspunkt dersom reisene er sammenlignbare." },
+      { question: "Hvorfor ikke kalle det besparelse?", answer: "Fordi virksomheten får andre kostnader ved å eie bolig. Hotellbeløpet er først og fremst kostnaden ved et alternativ som kan sammenlignes med eierskapet." }
+    ]
+  },
+  {
+    slug: "bedriftshytte-styre-ledelse-avdelingsreiser-krav",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "9 min lesing",
+    seoTitle: "Bedriftshytte for styre og team | Krav til boligen",
+    title: "Bedriftshytte for styre, ledelse og avdelingsreiser – hva bør boligen kunne?",
+    excerpt: "Når boligen også skal brukes til styre, ledelse og avdelingsreiser, må kapasitet, arbeidsflater, internett, fellesareal og logistikk vurderes før boligvalg.",
+    seoDescription: "Slik velger dere bedriftshytte i Spania for styre, ledelse og avdelingsreiser. Krav til soverom, arbeidsplass, internett, fellesareal og logistikk.",
+    keywords: ["bedriftshytte styresamling", "bedriftshytte ledersamling", "avdelingsreise Costa Blanca", "villa teamsamling Spania"],
+    intro: [
+      "En bolig som fungerer godt for ferie er ikke automatisk en god bolig for åtte kolleger på strategisamling. Når bedriftshytten også skal brukes til arbeid, må kravlisten utvides.",
+      "Det viktigste er ikke å bygge et konferansehotell i miniatyr. Det er å finne en bolig som gir nok søvnkapasitet, gode fellesarealer, stabil teknologi og enkel logistikk – og å vite når eksternt møterom er en bedre løsning."
+    ],
+    sections: [
+      {
+        heading: "Soverom og bad: regn på mennesker, ikke bare sengeplasser",
+        body: [
+          "En annonse kan oppgi åtte sengeplasser, men fire dobbeltsenger er ikke nødvendigvis riktig for åtte kolleger. For arbeidsrelaterte opphold bør dere definere hvor mange som forventes å kunne ha eget rom, hvem som eventuelt kan dele og hvor mange bad gruppen trenger.",
+          "For et styre eller ledergruppe kan privatliv være viktigere enn maksimal kapasitet. Det kan derfor være bedre med færre personer per opphold enn å fylle alle sengeplasser."
+        ]
+      },
+      {
+        heading: "Fellesareal som faktisk fungerer til arbeid",
+        body: [
+          "Et spisebord for åtte kan også være et arbeidsbord for åtte dersom det er nok plass, strøm, lys og komfort. I tillegg er det nyttig med flere soner slik at mindre grupper kan jobbe parallelt.",
+          "Terrasse, stue og uteområde kan være sterke kvaliteter for uformelle diskusjoner, men bør komme i tillegg til et sted der alle kan sitte samlet med skjerm og dokumenter."
+        ],
+        bullets: [
+          "Bordplass til hele gruppen.",
+          "Stabil Wi‑Fi i arbeidsområdene.",
+          "Tilgang til skjerm eller enkel presentasjonsløsning.",
+          "Nok stikkontakter og lading.",
+          "Mulighet for to mindre grupper å jobbe samtidig."
+        ]
+      },
+      {
+        heading: "Internett og teknisk robusthet",
+        body: [
+          "For en ren feriebolig er ustabilt internett irriterende. For en teamsamling kan det stoppe arbeidsdagen. Fiber eller dokumentert stabil bredbåndsløsning bør derfor være en del av kravlisten.",
+          "Virksomheten bør også ha en enkel reserveplan, for eksempel god mobildekning og mulighet for 5G-deling dersom fastlinjen faller ut."
+        ]
+      },
+      {
+        heading: "Dør-til-dør-logistikk avgjør om boligen blir brukt",
+        body: [
+          "Korte samlinger tåler dårlig lang transfer, komplisert parkering og behov for flere leiebiler. Se derfor på reisetid fra Alicante-Elche, taxi/transfer, restauranter i nærheten og om gruppen kan bevege seg uten bil.",
+          "En bolig fem minutter fra gode restauranter og 40 minutter fra flyplassen kan fungere bedre for bedriften enn en spektakulær villa som krever 90 minutters kjøring og bil til alt."
+        ]
+      },
+      {
+        heading: "Når bør dere bruke eksternt møterom?",
+        body: [
+          "Formelle møter, større presentasjoner, behov for videokonferanseutstyr eller konfidensielle møter kan passe bedre i profesjonelle lokaler. Da kan bedriftshytten være base for overnatting og uformelt arbeid, mens selve møtet gjennomføres på hotell, coworking eller konferansested.",
+          "Denne kombinasjonen kan også gjøre at dere kan velge en bedre bolig uten å kreve at den løser alle møtebehov alene."
+        ]
+      },
+      {
+        heading: "Lag to kravlister: feriebruk og bedriftsbruk",
+        body: [
+          "Ansattfamilien i juli og ledergruppen i november bruker samme bolig på helt forskjellige måter. Kravlisten bør derfor ha to kolonner og finne egenskaper som fungerer for begge.",
+          "Dette reduserer risikoen for at virksomheten ender med en bolig som er god på bilder, men svak i den bruken som faktisk skal rettferdiggjøre investeringen."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Hvor mange soverom trenger en gruppe på åtte?", answer: "Det avhenger av ønsket romdeling. For kolleger kan fire doble rom være for tett dersom alle forventer eget rom. Definer rompolicy før dere velger bolig." },
+      { question: "Må bedriftshytten ha eget møterom?", answer: "Nei. For små grupper kan godt fellesareal være nok. Større eller mer formelle møter kan med fordel legges til profesjonelle lokaler i nærheten." },
+      { question: "Hva er viktigst: havutsikt eller logistikk?", answer: "For hyppige og korte bedriftsopphold vil enkel flytilgang, helårsservice, internett og gangavstand ofte påvirke faktisk bruk mer enn maksimal utsikt." },
+      { question: "Kan samme bolig fungere for ansatte på ferie?", answer: "Ja, og det er ofte poenget. Men boligvalget bør testes mot begge bruksscenarioene før kjøp." }
+    ]
+  },
+  {
+    slug: "arsbudsjett-bedriftshytte-spania",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "10 min lesing",
+    seoTitle: "Årsbudsjett for bedriftshytte i Spania | Komplett modell",
+    title: "Hvordan lage et årsbudsjett for en bedriftshytte i Spania",
+    excerpt: "Komplett budsjettmodell for kjøpskostnader, kapitalkostnad, drift, forsikring, sameie, vedlikehold, rengjøring, lokal oppfølging og buffer.",
+    seoDescription: "Slik lager styret eller CFO et realistisk årsbudsjett for bedriftshytte i Spania med kjøpskostnader, kapital, drift, vedlikehold og lokal oppfølging.",
+    keywords: ["årsbudsjett bedriftshytte", "kostnad firmabolig Spania", "drift bedriftshytte", "CFO bedriftshytte budsjett"],
+    intro: [
+      "Kjøpesummen er bare startpunktet. Et styre som vurderer bedriftshytte i Spania bør se både på kontantbehovet ved kjøp og på en normalisert årlig kostnad over den planlagte eiertiden.",
+      "Zen Corporate Homes-kalkulatoren skiller mellom årlig kostnad før verdiendring og et eget scenario for mulig verdiutvikling. Det er en nyttig disiplin: driftsøkonomi og markedsverdi bør ikke blandes."
+    ],
+    sections: [
+      {
+        heading: "1. Start med total kapital ved kjøp",
+        body: [
+          "Legg kjøpesummen sammen med forventede kjøpskostnader og eventuelle kostnader til møblering eller klargjøring. Den konkrete kjøpskostnaden avhenger av blant annet boligtype, avgifter, juridisk bistand og transaksjonen.",
+          "I en tidlig planmodell kan virksomheten bruke et prosentanslag, men før beslutning bør dette erstattes med et konkret kostnadsestimat for den aktuelle boligen."
+        ]
+      },
+      {
+        heading: "2. Vis kapitalkostnaden eksplisitt",
+        body: [
+          "Kapitalen som bindes i eiendommen har en kostnad enten kjøpet finansieres med lån, egenkapital eller en kombinasjon. Kalkulatoren lar derfor virksomheten sette en årlig kapitalkostnad som egen forutsetning.",
+          "Dette gjør sammenligningen mer ryddig enn å behandle en gjeldfri bolig som om kapitalen var gratis."
+        ]
+      },
+      {
+        heading: "3. Sett opp normal årlig drift",
+        body: [
+          "Driftsbudsjettet bør tilpasses boligtypen. En leilighet i sameie kan ha høyere felleskostnad, men mindre direkte ansvar for basseng og uteområder. En villa kan ha større løpende behov for hage, basseng, teknisk tilsyn og vedlikehold.",
+          "Bruk helst faktiske eller innhentede estimater når en konkret bolig er valgt."
+        ],
+        bullets: [
+          "Felleskostnader eller urbanisasjonsavgifter.",
+          "Forsikring.",
+          "Strøm og vann.",
+          "Lokale eiendoms- og renovasjonskostnader.",
+          "Internett og eventuelle abonnementer.",
+          "Basseng og hage der dette er relevant.",
+          "Vedlikehold og utskifting av inventar.",
+          "Lokal nøkkel-/tilsynstjeneste.",
+          "Rengjøring og klargjøring ved brukerskifter."
+        ]
+      },
+      {
+        heading: "4. Legg inn en vedlikeholdsbuffer",
+        body: [
+          "Et årsbudsjett som bare dekker de faste regningene blir ofte for optimistisk. Mange brukere gir slitasje, og hvitevarer, klimaanlegg, låser, møbler og tekniske installasjoner må før eller senere repareres eller erstattes.",
+          "Bufferen bør tilpasses boligens alder, teknikk, uteareal og bruk. Det er bedre å vise en synlig reserve enn å late som uforutsette kostnader ikke eksisterer."
+        ]
+      },
+      {
+        heading: "5. Fordel engangskostnader over planlagt eiertid",
+        body: [
+          "Kjøpskostnader er ikke en årlig faktura, men de er en reell kostnad ved investeringen. For å få et mer sammenlignbart årsbeløp kan de fordeles over en valgt eiertid, for eksempel ti år.",
+          "Dette er en styringsmodell, ikke regnskapsføring. Den regnskapsmessige behandlingen må virksomhetens regnskapsfører vurdere."
+        ]
+      },
+      {
+        heading: "6. Hold verdiutvikling separat",
+        body: [
+          "Dersom styret ønsker å teste 0, 3, 5, 8 eller 9 prosent årlig verdiendring, kan dette vises som egne scenarier. Mulig prisvekst skal ikke trekkes direkte fra hovedkostnaden som om den var sikker kontantinntekt.",
+          "En separat scenarioanalyse gjør det enkelt å se om beslutningen fortsatt gir mening også med lav eller ingen verdiøkning."
+        ]
+      },
+      {
+        heading: "7. Koble budsjettet til faktisk bruk",
+        body: [
+          "Årsbudsjettet bør suppleres med to separate brukstall: ferie-/medlemsuker og bedriftsopphold. For bedriftsopphold kan dere beregne den alternative hotellkostnaden fra personer, netter og pris per person per natt.",
+          "På den måten får styret et helhetsbilde uten å gjøre privat ansattbruk om til en kunstig hotellbesparelse."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Hva er den største feilen i et årsbudsjett?", answer: "Å regne kun kjøpesum og noen faste regninger. Kapital, kjøpskostnader, vedlikehold, lokal drift og uforutsette kostnader bør også være synlige." },
+      { question: "Skal prisvekst trekkes fra årskostnaden?", answer: "Nei. Zen-modellen viser verdiutvikling separat som scenario fordi fremtidig markedsverdi er usikker og ikke er løpende kontantinntekt." },
+      { question: "Hva med rengjøring mellom ansatte?", answer: "Det bør inn i driftsmodellen hvis virksomheten eller Care dekker klargjøringen. Mange brukerskifter kan gjøre dette til en betydelig praktisk kostnad." },
+      { question: "Er kalkulatoren et regnskap?", answer: "Nei. Den er et planleggings- og beslutningsverktøy. Regnskapsmessig og skattemessig behandling må kvalitetssikres av virksomhetens rådgivere." }
+    ]
+  },
+  {
+    slug: "prisvekst-bolig-spania-business-case-bedriftshytte",
+    date: "2026-10-05",
+    updated: "2026-10-05",
+    readingTime: "10 min lesing",
+    seoTitle: "Prisvekst i Spania | Verdiutvikling i business case",
+    title: "Prisvekst på bolig i Spania: hvordan bør styret bruke verdiutvikling i business caset?",
+    excerpt: "Boligprisene har hatt sterk vekst, men styret bør skille historiske data fra fremtidige scenarier. Slik bruker dere 0, 3, 5, 8 og 9 prosent på en ryddig måte.",
+    seoDescription: "Slik bruker styret boligprisvekst og verdiutvikling i business caset for bedriftshytte i Spania. Ferske 2026-data og scenarioer fra 0 til 9 prosent.",
+    keywords: ["boligprisvekst Spania 2026", "prisvekst Costa Blanca", "verdiutvikling bedriftshytte", "business case bolig Spania", "Alicante boligpriser 2026"],
+    intro: [
+      "Det er legitimt å ta med mulig verdiutvikling når en bedrift vurderer å eie eiendom over mange år. Problemet oppstår når historisk prisvekst behandles som en garanti for fremtiden.",
+      "En bedre metode er å vise dagens markedsdata som bakgrunn og deretter teste flere scenarioer – gjerne fra nullvekst til høyere vekst – uten å trekke forventet verdiøkning fra den løpende hovedkostnaden."
+    ],
+    sections: [
+      {
+        heading: "Hva viser ferske 2026-data?",
+        body: [
+          "Spanias statistikkbyrå INE rapporterte at boligprisindeksen for hele Spania steg 12,2 prosent fra andre kvartal 2025 til andre kvartal 2026. Nyboliger steg 7,4 prosent og bruktboliger 12,9 prosent i samme nasjonale statistikk.",
+          "Idealistas prisrapport for Alicante-provinsen viste i september 2026 en annonsert gjennomsnittspris på 2.767 euro per kvadratmeter og en årsvekst på 7,8 prosent. I mai 2026 viste samme serie 9,1 prosent årsvekst. Idealista opplyser samtidig at metodikken ble forbedret fra juli 2026.",
+          "Tallene må ikke blandes ukritisk: INE er en nasjonal offisiell boligprisindeks, mens Idealista måler annonserte priser i sitt marked. De viser likevel at vekst rundt 8–9 prosent har vært reell i deler av Alicante-markedet i nyere perioder."
+        ],
+        bullets: [
+          "INE, Q2 2026: +12,2 % årlig for boligprisindeksen i Spania.",
+          "INE, Q2 2026: +7,4 % for nybolig og +12,9 % for bruktbolig nasjonalt.",
+          "Idealista Alicante-provinsen, september 2026: +7,8 % årlig annonsert prisutvikling.",
+          "Idealista Alicante-provinsen, mai 2026: +9,1 % årlig i den publiserte serien.",
+          "Historiske tall er bakgrunnsinformasjon, ikke prognose."
+        ]
+      },
+      {
+        heading: "Hvorfor 8–9 prosent kan være et scenario – men ikke standardfasit",
+        body: [
+          "Når markedet nylig har hatt perioder med vekst rundt 8–9 prosent eller mer, er det rimelig at en beslutningsmodell lar brukeren teste slike tall. Det er derfor Zen-kalkulatoren har «Eget tall» i tillegg til mer konservative scenarier.",
+          "Men et tiår med 9 prosent årlig vekst er en helt annen påstand enn ett år med 9 prosent. Rente, tilbud, etterspørsel, valuta, regulering, lokal attraktivitet og konjunkturer kan endre utviklingen betydelig."
+        ]
+      },
+      {
+        heading: "Bruk minst tre scenarioer i styrepapiret",
+        body: [
+          "Et robust beslutningsnotat bør ikke vise bare ett verdiestimat. Bruk et lavt scenario, et moderat scenario og et høyere scenario og se hvordan eiendelens fremtidige verdi endres.",
+          "Eksempelvis kan 0 prosent vise beslutningen uten prisvekst, 3–5 prosent vise moderate langsiktige scenarioer og 8–9 prosent vise et høyere scenario som har historisk støtte i enkelte nyere perioder, men som ikke bør presenteres som forventet avkastning."
+        ],
+        bullets: [
+          "0 %: stresstest uten nominell verdiøkning.",
+          "3 %: moderat scenario.",
+          "5 %: høyere moderat scenario.",
+          "8–9 %: høyt scenario som kan testes, ikke loves."
+        ]
+      },
+      {
+        heading: "Ikke trekk verdiøkningen fra årlig kostnad",
+        body: [
+          "Hvis en bolig til 450.000 euro får et 8 prosent scenario, tilsvarer første års beregnede verdiendring 36.000 euro. Det betyr ikke at virksomheten har fått 36.000 euro i kontanter eller spart 36.000 euro i driftskostnader.",
+          "Verdien realiseres først ved et eventuelt salg, og salget har egne kostnader, skattespørsmål og markedsrisiko. Derfor vises verdiutvikling separat fra årlig kostnad i Corporate-kalkulatoren."
+        ]
+      },
+      {
+        heading: "Mikromarkedet er viktigere enn Costa Blanca som én overskrift",
+        body: [
+          "En leilighet i Albir, en nybyggvilla i Finestrat og en bolig i Alicante by kan utvikle seg forskjellig. Boligtype, mikrobeliggenhet, utsikt, standard, tilbud og etterspørsel påvirker videresalgsverdien.",
+          "Når et konkret kjøp nærmer seg, bør styret erstatte generelle prosentantakelser med vurdering av sammenlignbare boliger og markedet for akkurat den eiendommen."
+        ]
+      },
+      {
+        heading: "Slik bør konklusjonen formuleres",
+        body: [
+          "En nøktern styreformulering kan være: «Eiendommen har en fremtidig markedsverdi som kan utvikle seg både positivt og negativt. Business caset viser flere scenarioer for å illustrere effekten, men hovedkostnaden er beregnet uten å forutsette prisvekst.»",
+          "Da får styret både oppsiden og risikoen synlig, uten at eiendomsrådgivningen blir en avkastningsgaranti."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Er 8–9 prosent årlig prisvekst realistisk?", answer: "Det har forekommet i nyere markedsdata. Idealistas Alicante-serie viste blant annet 9,1 prosent årsvekst i mai 2026 og 7,8 prosent i september 2026. Det betyr ikke at samme vekst vil fortsette hvert år." },
+      { question: "Hva viser offisiell statistikk for Spania?", answer: "INE rapporterte 12,2 prosent årlig vekst i den nasjonale boligprisindeksen i andre kvartal 2026, med 7,4 prosent for nybolig og 12,9 prosent for bruktbolig." },
+      { question: "Hvilket scenario bør vi bruke i styrepapiret?", answer: "Vis flere. Et nullscenario, et moderat scenario og et høyere scenario gjør beslutningen mindre avhengig av én antakelse." },
+      { question: "Hvorfor står verdiendring utenfor hovedkostnaden?", answer: "Fordi verdiendringen ikke er sikker kontantinntekt og først realiseres ved et eventuelt salg. Det gir en mer konservativ og etterprøvbar beslutningsmodell." }
+    ]
+  },
+
 ];
 
 export const corporateArticles: Article[] = drafts.map(makeArticle);
