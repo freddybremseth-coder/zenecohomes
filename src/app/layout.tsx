@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import Script from "next/script";
 import { LazyZenecoChatbot } from "@/components/LazyZenecoChatbot";
 import { SearchDiscoveryTracker } from "@/components/SearchDiscoveryTracker";
 import "leaflet/dist/leaflet.css";
@@ -135,6 +136,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="no" className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CLD2P12KW2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CLD2P12KW2');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
