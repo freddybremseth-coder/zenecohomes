@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { Send } from "lucide-react";
 
 type Props = {
@@ -17,6 +17,7 @@ export function SpanishContactForm({
   source = "zenecohomes-es",
 }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const startedAtRef = useRef(Date.now());
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -35,11 +36,13 @@ export function SpanishContactForm({
           property_title: propertyTitle,
           request_type: requestType,
           page_url: window.location.origin + window.location.pathname,
+          form_started_at: startedAtRef.current,
         }),
       });
       if (!response.ok) throw new Error("request failed");
       setStatus("sent");
       form.reset();
+      startedAtRef.current = Date.now();
     } catch {
       setStatus("error");
     }
@@ -47,6 +50,15 @@ export function SpanishContactForm({
 
   return (
     <form className="lead-form" onSubmit={onSubmit}>
+      <div
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}
+      >
+        <label>
+          Sitio web
+          <input name="contact_website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
       <div className="form-grid">
         <label>
           Nombre
