@@ -26,6 +26,100 @@ function contactJson(request: Request, body: unknown, init?: ResponseInit) {
   });
 }
 
+
+type ContactRateBucket = { count: number; resetAt: number };
+
+const CONTACT_RATE_WINDOW_MS = 15 * 60 * 1000;
+const CONTACT_RATE_MAX = 8;
+const contactRateBuckets = new Map<string, ContactRateBucket>();
+
+function contactClientIp(request: Request) {
+  const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  return forwarded || request.headers.get("cf-connecting-ip")?.trim() || "";
+}
+
+function isContactRateLimited(request: Request) {
+  const ip = contactClientIp(request);
+  if (!ip) return false;
+
+  const now = Date.now();
+  const current = contactRateBuckets.get(ip);
+  if (!current || current.resetAt <= now) {
+    contactRateBuckets.set(ip, { count: 1, resetAt: now + CONTACT_RATE_WINDOW_MS });
+    return false;
+  }
+
+  current.count += 1;
+  if (contactRateBuckets.size > 5000) {
+    for (const [key, bucket] of contactRateBuckets) {
+      if (bucket.resetAt <= now) contactRateBuckets.delete(key);
+    }
+  }
+  return current.count > CONTACT_RATE_MAX;
+}
+
+function contactString(body: Record<string, unknown>, key: string) {
+  const value = body[key];
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function isValidContactEmail(value: string) {
+  return value.length <= 320 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+const TEXT_ONLY_BUDGET_TERMS = [
+  "ikke avklart",
+  "ikke bestemt",
+  "åpen",
+  "open",
+  "not decided",
+  "not sure",
+  "undecided",
+  "a definir",
+  "por definir",
+  "sin definir",
+  "offen",
+  "noch offen",
+];
+
+function looksLikeGeneratedBudget(value: string) {
+  if (!value || /\d/.test(value)) return false;
+
+  const normalized = value.toLocaleLowerCase();
+  if (TEXT_ONLY_BUDGET_TERMS.some((term) => normalized.includes(term))) return false;
+
+  const compact = value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ]/g, "");
+  if (compact.length < 14 || /\s/.test(value)) return false;
+
+  const upper = (compact.match(/[A-ZÀ-ÖØ-Þ]/g) || []).length;
+  const lower = (compact.match(/[a-zà-öø-ÿ]/g) || []).length;
+  return upper >= 4 && lower >= 4;
+}
+
+function contactSpamReason(body: Record<string, unknown>) {
+  const honeypot = contactString(body, "contact_website");
+  if (honeypot) return "honeypot";
+
+  const startedAt = Number(body.form_started_at || 0);
+  if (startedAt > 0 && Date.now() - startedAt >= 0 && Date.now() - startedAt < 500) {
+    return "too-fast";
+  }
+
+  const name = contactString(body, "name");
+  const email = contactString(body, "email");
+  const phone = contactString(body, "phone");
+  const budget = contactString(body, "budget");
+  const message = contactString(body, "message");
+
+  if (name.length > 180 || email.length > 320 || phone.length > 80 || budget.length > 160 || message.length > 6000) {
+    return "field-length";
+  }
+  if (name && /^https?:\/\//i.test(name)) return "name-url";
+  if (looksLikeGeneratedBudget(budget)) return "generated-budget";
+
+  return null;
+}
+
 export async function OPTIONS(request: Request) {
   return new Response(null, {
     status: 204,
@@ -187,6 +281,21 @@ async function recordCareLead(body: Record<string, unknown>) {
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
+
+    const spamReason = contactSpamReason(body);
+    if (spamReason) {
+      console.warn("[contact] blocked suspected spam:", spamReason);
+      return contactJson(request, { ok: true });
+    }
+
+    if (isContactRateLimited(request)) {
+      return contactJson(request, { error: "For mange forespørsler. Prøv igjen senere." }, { status: 429 });
+    }
+
+    const email = contactString(body, "email");
+    if (email && !isValidContactEmail(email)) {
+      return contactJson(request, { error: "Ugyldig e-postadresse" }, { status: 400 });
+    }
 
     const isBuyerMatch = body.source === "zenecohomes-buyer-match";
     if (!body.email || (!body.name && !isBuyerMatch)) {
