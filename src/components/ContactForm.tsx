@@ -53,6 +53,20 @@ type Strings = {
   step2Lead: string;
 };
 
+function ContactSpamTrap() {
+  return (
+    <div
+      aria-hidden="true"
+      style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}
+    >
+      <label>
+        Website
+        <input name="contact_website" tabIndex={-1} autoComplete="off" />
+      </label>
+    </div>
+  );
+}
+
 const T: Record<Locale, Strings> = {
   no: {
     name: "Navn",
@@ -184,6 +198,7 @@ export function ContactForm({
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [step, setStep] = useState<1 | 2>(1);
   const formRef = useRef<HTMLFormElement>(null);
+  const startedAtRef = useRef(Date.now());
 
   async function submitForm(form: HTMLFormElement) {
     setStatus("sending");
@@ -204,11 +219,13 @@ export function ContactForm({
         utm_medium: params.get("utm_medium"),
         utm_campaign: params.get("utm_campaign"),
         utm_content: params.get("utm_content"),
+        form_started_at: startedAtRef.current,
       }),
     });
     if (res.ok) {
       setStatus("sent");
       form.reset();
+      startedAtRef.current = Date.now();
       setStep(1);
     } else {
       setStatus("error");
@@ -234,6 +251,7 @@ export function ContactForm({
   if (variant === "simple") {
     return (
       <form className="lead-form" ref={formRef} onSubmit={onSubmit}>
+        <ContactSpamTrap />
         <div className="form-grid">
           <label>
             {t.name}
@@ -266,6 +284,7 @@ export function ContactForm({
   if (!full) {
     return (
       <form className="lead-form" ref={formRef} onSubmit={onSubmit}>
+        <ContactSpamTrap />
         <div className="form-grid">
           <label>
             {t.name}
@@ -317,6 +336,7 @@ export function ContactForm({
   // Full variant: to trinn (progressiv profilering) for å senke terskelen.
   return (
     <form className="lead-form" ref={formRef} onSubmit={onSubmit}>
+        <ContactSpamTrap />
       <div className="form-steps">
         <span className={step === 1 ? "active" : ""} aria-current={step === 1 ? "step" : undefined}>{t.step1}</span>
         <span className={step === 2 ? "active" : ""} aria-current={step === 2 ? "step" : undefined}>{t.step2}</span>
