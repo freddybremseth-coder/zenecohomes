@@ -334,7 +334,7 @@ export const regions: Array<{ key: RegionKey; label: string; description: string
     label: "Costa Blanca Nord",
     description: "Altea, Albir, Calpe, Finestrat, Polop, La Nucia, Denia, Javea og Moraira.",
     aliases: ["costa blanca north", "costa blanca north inland", "costa blanca nord", "costa blanca norte"],
-    locations: ["altea", "albir", "calpe", "benidorm", "denia", "javea", "jávea", "polop", "la nucia", "finestrat", "villajoyosa", "moraira", "alfaz", "alfas"],
+    locations: ["alicante", "altea", "albir", "calpe", "benidorm", "denia", "javea", "jávea", "polop", "la nucia", "finestrat", "villajoyosa", "moraira", "alfaz", "alfas"],
   },
   {
     key: "costa-blanca-sor",
@@ -400,6 +400,7 @@ export const regions: Array<{ key: RegionKey; label: string; description: string
       "vinalopó",
     ],
     locations: [
+      "alicante",
       "biar",
       "villena",
       "sax",
