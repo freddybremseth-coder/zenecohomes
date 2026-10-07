@@ -211,19 +211,18 @@ export default function GuideHub() {
         );
       })}
 
-      <section className="section proof-section">
+      <section className="section proof-section guide-magazine-bridge">
         <div className="section-heading">
-          <p className="eyebrow">Guide eller Magasin?</p>
-          <h2>Færre guider – sterkere svar</h2>
+          <p className="eyebrow">Vil du lese mer?</p>
+          <h2>Aktuelle saker og erfaringer finner du i Magasin</h2>
           <p>
-            Vi samler overlappende guideinnhold i én sterk side når søkeintensjonen er den samme. Magasin brukes
-            i stedet til marked, sammenligninger, erfaringer og artikler som gir kontekst uten å konkurrere med
-            de viktigste guidene i Google.
+            Guidene gir deg grundige svar på de viktigste spørsmålene rundt boligkjøpet. I Magasin finner du
+            markedsoppdateringer, sammenligninger, erfaringer og aktuelle saker fra Costa Blanca og boligmarkedet i Spania.
           </p>
         </div>
-        <div className="hero-actions">
+        <div className="hero-actions guide-magazine-actions">
           <Link className="contact-button" href="/magasin">Gå til Magasin <ArrowRight size={17} /></Link>
-          <Link className="text-button" href="/eiendommer">Se boliger</Link>
+          <Link className="text-button" href="/eiendommer">Se boliger <ArrowRight size={16} /></Link>
         </div>
       </section>
 
