@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FileText, Send } from "lucide-react";
 
 type Status = "idle" | "sending" | "sent" | "received" | "error";
@@ -41,6 +41,7 @@ export function CorporateLeadForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [calculatorContext, setCalculatorContext] = useState<CalculatorContext | null>(null);
   const [userCount, setUserCount] = useState("");
+  const submissionIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     function applyContext(detail: CalculatorContext | null) {
@@ -107,7 +108,10 @@ export function CorporateLeadForm() {
 
     try {
       const params = new URLSearchParams(window.location.search);
-      const submissionId = window.crypto?.randomUUID?.() || `corporate-decision-note-${Date.now()}`;
+      const submissionId = submissionIdRef.current
+        || window.crypto?.randomUUID?.()
+        || `corporate-decision-note-${Date.now()}`;
+      submissionIdRef.current = submissionId;
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -144,6 +148,7 @@ export function CorporateLeadForm() {
       const delivery = result?.corporateDecisionNote?.delivery;
       form.reset();
       setUserCount("");
+      submissionIdRef.current = null;
       setStatus(delivery?.success === true ? "sent" : "received");
     } catch {
       setStatus("error");
