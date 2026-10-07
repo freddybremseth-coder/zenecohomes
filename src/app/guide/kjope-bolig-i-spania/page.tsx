@@ -356,6 +356,9 @@ export default async function BuyInSpainGuidePage() {
               <p>
                 Heldigvis hadde jeg en lokal rådgiver som kunne rydde opp i informasjonen og svare på spørsmål underveis. Derfor mener jeg det er en klar fordel å ha én rådgiver som kjenner området, kan verifisere opplysningene i annonsene og hjelpe deg med å sortere hvilke boliger som faktisk er relevante.
               </p>
+              <p>
+                Les også hvorfor en <Link href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">god eiendomsrådgiver er viktig</Link> når markedet er fragmentert og samme bolig kan finnes hos flere aktører.
+              </p>
               <Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link>
             </div>
           </article>
@@ -717,9 +720,14 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Derfor er det ikke de praktiske hindrene jeg husker best i ettertid, men hvor mye glede jeg faktisk har hatt av å kjøpe bolig i Spania. Med litt tålmodighet og riktige folk rundt deg er prosessen fullt håndterbar.
           </p>
-          <Link className="text-button" href="/om-oss/freddy">
-            Les mer om Freddy Bremseth <ArrowRight size={16} />
-          </Link>
+          <div className="hero-actions">
+            <Link className="text-button" href="/om-oss/freddy">
+              Les mer om Freddy Bremseth <ArrowRight size={16} />
+            </Link>
+            <Link className="text-button" href="/kundeomtaler">
+              Les kundeomtaler <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -728,7 +736,7 @@ export default async function BuyInSpainGuidePage() {
           <p className="eyebrow">Klar til å begynne boligjakten?</p>
           <h2>Start med en uforpliktende boligprat</h2>
           <p>
-            Vi kan hjelpe deg med områdevalg, boligtype, aktuelle boliger og neste steg i kjøpsprosessen.
+            Vi kan hjelpe deg med områdevalg, boligtype, aktuelle boliger og neste steg i kjøpsprosessen. Du kan også lese mer om <Link href="/om-oss">hvordan Zen Eco Homes jobber</Link> før du bestemmer deg.
           </p>
         </div>
         <Link className="contact-button" href="/booking">
