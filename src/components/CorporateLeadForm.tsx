@@ -144,7 +144,7 @@ export function CorporateLeadForm() {
       const delivery = result?.corporateDecisionNote?.delivery;
       form.reset();
       setUserCount("");
-      setStatus(delivery?.success === false ? "received" : "sent");
+      setStatus(delivery?.success === true ? "sent" : "received");
     } catch {
       setStatus("error");
     }
