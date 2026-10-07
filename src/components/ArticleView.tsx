@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
 import type { Article } from "@/lib/content";
 import { withArticleAttribution } from "@/lib/article-attribution";
+import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
 
 const BASE = "https://www.zenecohomes.com";
@@ -889,6 +890,11 @@ export function ArticleView({ article }: { article: Article }) {
                 </section>
               );
             })}
+
+            {(article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" ||
+              article.slug === "bolig-500000-euro-totalbudsjett-spania") && (
+              <PurchaseBudgetCalculator />
+            )}
 
             <section className="article-next-steps">
               <p className="eyebrow">Anbefalte neste steg</p>
