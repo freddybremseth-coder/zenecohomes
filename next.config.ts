@@ -80,18 +80,12 @@ const nextConfig: NextConfig = {
     }));
 
     const siloRedirects = [
-      ["omkostninger-nybygg-spania", "guide"],
-      ["bankgaranti-nybygg-spania", "guide"],
-      ["finansiering-notar-nie-boligkjop-spania", "guide"],
+      ["finansiere-bolig-i-spania", "guide"],
       ["omradeguide-eiendomskjop-i-spania", "guide"],
       ["guide-tomtekjop-bygging-i-spania", "guide"],
-      ["kjop-bolig-i-spania-na-eller-vente", "guide"],
-      ["nybygg-finestrat-omradeguide", "guide"],
       ["utleie-inntektspotensial-bolig-spania", "guide"],
       ["lopende-kostnader-eie-bolig-spania", "guide"],
-      ["innlandet-finca-olivengard-spania", "guide"],
       ["flytte-til-spania-som-pensjonist", "guide"],
-      ["energieffektive-nybygg-spania", "guide"],
       ["juridiske-fallgruver-boligkjop-spania", "guide"],
       ["skatt-ved-salg-bolig-spania", "guide"],
       ["arv-gaveskatt-bolig-spania", "guide"],
@@ -104,21 +98,38 @@ const nextConfig: NextConfig = {
       permanent: true,
     }));
 
+    const contentConsolidationRedirects = [
+      ["/guide/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
+      ["/magasin/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
+      ["/kjopsprosess/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
+      ["/guide/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
+      ["/magasin/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
+      ["/kjopsprosess/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
+      ["/guide/innlandet-finca-olivengard-spania", "/omrader/innlandet"],
+      ["/magasin/innlandet-finca-olivengard-spania", "/omrader/innlandet"],
+      ["/kjopsprosess/innlandet-finca-olivengard-spania", "/omrader/innlandet"],
+      ["/guide/omkostninger-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/magasin/omkostninger-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/kjopsprosess/omkostninger-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/guide/bankgaranti-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/magasin/bankgaranti-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/kjopsprosess/bankgaranti-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/guide/energieffektive-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/magasin/energieffektive-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/kjopsprosess/energieffektive-nybygg-spania", "/guide/nybygg-i-spania"],
+      ["/guide/kjop-bolig-i-spania-na-eller-vente", "/magasin/kjop-bolig-i-spania-na-eller-vente"],
+      ["/kjopsprosess/kjop-bolig-i-spania-na-eller-vente", "/magasin/kjop-bolig-i-spania-na-eller-vente"],
+    ].map(([source, destination]) => ({ source, destination, permanent: true }));
+
     // Tidligere guideinnhold har ligget under /kjopsprosess. Fang hele den gamle
     // flaten, ikke bare URL-ene vi tilfeldigvis kjenner fra Search Console.
     const legacyKjopsprosessSlugs = [
+      "finansiere-bolig-i-spania",
       "omradeguide-eiendomskjop-i-spania",
       "guide-tomtekjop-bygging-i-spania",
-      "kjop-bolig-i-spania-na-eller-vente",
-      "finansiering-notar-nie-boligkjop-spania",
-      "omkostninger-nybygg-spania",
-      "bankgaranti-nybygg-spania",
-      "nybygg-finestrat-omradeguide",
       "utleie-inntektspotensial-bolig-spania",
       "lopende-kostnader-eie-bolig-spania",
-      "innlandet-finca-olivengard-spania",
       "flytte-til-spania-som-pensjonist",
-      "energieffektive-nybygg-spania",
       "juridiske-fallgruver-boligkjop-spania",
       "skatt-ved-salg-bolig-spania",
       "arv-gaveskatt-bolig-spania",
@@ -176,6 +187,7 @@ const nextConfig: NextConfig = {
       { source: "/tomter", destination: "/omrader/innlandet/tomter", permanent: true },
       { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
       ...legacyKjopsprosessRedirects,
+      ...contentConsolidationRedirects,
       ...marketComparisonRedirects,
       ...siloRedirects,
       ...corporateLegacyRedirects,

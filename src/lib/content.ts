@@ -355,8 +355,8 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "finansiering-notar-nie-boligkjop-spania",
-    title: "Finansiering, NIE, bankkonto og notar – oversikten før boligkjøpet",
+    slug: "finansiere-bolig-i-spania",
+    title: "Finansiere bolig i Spania: lån, NIE, bank og notar",
     excerpt:
       "En kort oversikt over hva du bør ha kontroll på før kjøp: finansiering, totalbudsjett, NIE, bankkonto, advokat, notar og betalingsflyt – med lenker til fordypningene.",
     date: "2026-05-10",
@@ -365,9 +365,9 @@ export const articles: Article[] = [
     readingTime: "5 min lesing",
     image: "/assets/magasin-covers/finansiering.svg",
     imageAlt: "Illustrasjon av finansiering, dokumenter, NIE, bank og notar ved boligkjøp i Spania",
-    seoTitle: "Finansiering, NIE og notar ved boligkjøp i Spania | Oversikt",
+    seoTitle: "Finansiere bolig i Spania | Lån, NIE, bank og notar",
     seoDescription:
-      "Få oversikten over finansiering, NIE, bankkonto, notar, advokat og kjøpskostnader før boligkjøp i Spania – og gå videre til riktig fordypningsguide.",
+      "Slik kan du finansiere bolig i Spania. Få oversikt over lån i Norge eller Spania, NIE, bankkonto, notar, valuta og kostnader før boligkjøpet.",
     keywords: ["NIE Spania", "finansiering bolig Spania", "notar Spania", "kjøpskostnader Spania", "spansk bankkonto"],
     intro: [
       "Denne siden er laget som en oversikt, ikke som fire guider i én. Målet er å vise hva som må avklares og sende deg videre til den riktige fordypningen når du trenger detaljer.",

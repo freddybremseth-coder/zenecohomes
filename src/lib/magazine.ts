@@ -1721,19 +1721,12 @@ export type Silo = "kjopsprosess" | "guide" | "corporate";
 
 /** Slug → silo. Styrer URL-struktur og tematisk gruppering; resten blir /magasin. */
 const SILO_BY_SLUG: Record<string, Silo> = {
-  "omkostninger-nybygg-spania": "guide",
-  "bankgaranti-nybygg-spania": "guide",
-  "kjopsprosess-bolig-i-spania": "guide",
-  "finansiering-notar-nie-boligkjop-spania": "guide",
+  "finansiere-bolig-i-spania": "guide",
   "omradeguide-eiendomskjop-i-spania": "guide",
   "guide-tomtekjop-bygging-i-spania": "guide",
-  "kjop-bolig-i-spania-na-eller-vente": "guide",
-  "nybygg-finestrat-omradeguide": "guide",
   "utleie-inntektspotensial-bolig-spania": "guide",
   "lopende-kostnader-eie-bolig-spania": "guide",
-  "innlandet-finca-olivengard-spania": "guide",
   "flytte-til-spania-som-pensjonist": "guide",
-  "energieffektive-nybygg-spania": "guide",
   "juridiske-fallgruver-boligkjop-spania": "guide",
   "skatt-ved-salg-bolig-spania": "guide",
   "arv-gaveskatt-bolig-spania": "guide",

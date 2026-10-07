@@ -23,10 +23,10 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   ],
   "kjop-bolig-i-spania-na-eller-vente": [
     "omradeguide-eiendomskjop-i-spania",
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
     "juridiske-fallgruver-boligkjop-spania",
   ],
-  "finansiering-notar-nie-boligkjop-spania": [
+  "finansiere-bolig-i-spania": [
     "nie-skattenummer-spania",
     "boliglan-spansk-bank-nordmenn",
     "spansk-bankkonto-valutaveksling",
@@ -34,12 +34,12 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   "omkostninger-nybygg-spania": [
     "lopende-kostnader-eie-bolig-spania",
     "bankgaranti-nybygg-spania",
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
   ],
   "bankgaranti-nybygg-spania": [
     "omkostninger-nybygg-spania",
     "juridiske-fallgruver-boligkjop-spania",
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
   ],
   "nybygg-finestrat-omradeguide": [
     "omradeguide-eiendomskjop-i-spania",
@@ -73,13 +73,13 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   ],
   "juridiske-fallgruver-boligkjop-spania": [
     "bankgaranti-nybygg-spania",
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
     "nie-skattenummer-spania",
   ],
   "skatt-ved-salg-bolig-spania": [
     "arv-gaveskatt-bolig-spania",
     "lopende-kostnader-eie-bolig-spania",
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
   ],
   "arv-gaveskatt-bolig-spania": [
     "skatt-ved-salg-bolig-spania",
@@ -87,17 +87,17 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
     "juridiske-fallgruver-boligkjop-spania",
   ],
   "nie-skattenummer-spania": [
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
     "spansk-bankkonto-valutaveksling",
     "juridiske-fallgruver-boligkjop-spania",
   ],
   "spansk-bankkonto-valutaveksling": [
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
     "boliglan-spansk-bank-nordmenn",
     "nie-skattenummer-spania",
   ],
   "boliglan-spansk-bank-nordmenn": [
-    "finansiering-notar-nie-boligkjop-spania",
+    "finansiere-bolig-i-spania",
     "spansk-bankkonto-valutaveksling",
     "omkostninger-nybygg-spania",
   ],
@@ -137,7 +137,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
   ],
-  "finansiering-notar-nie-boligkjop-spania": [
+  "finansiere-bolig-i-spania": [
     {
       headingIncludes: "Finansieringsvalg",
       links: [
@@ -148,7 +148,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Kjøpskostnader",
       links: [
-        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
         { label: "Lag et realistisk totalbudsjett", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
       ],
     },
@@ -170,7 +170,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Juridisk bistand",
       links: [
-        { label: "Bankgaranti ved nybygg", href: "/guide/bankgaranti-nybygg-spania" },
+        { label: "Bankgaranti ved nybygg", href: "/guide/nybygg-i-spania" },
         { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
@@ -191,7 +191,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hva du må sjekke",
       links: [
-        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
         { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
@@ -200,7 +200,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "De vanligste løpende kostnadene",
       links: [
-        { label: "Omkostninger ved selve kjøpet av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Omkostninger ved selve kjøpet av nybygg", href: "/guide/nybygg-i-spania" },
       ],
     },
   ],
@@ -222,7 +222,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hva NIE er",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -236,7 +236,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hvorfor mange bruker",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -250,7 +250,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Kan jeg låne penger",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -262,13 +262,13 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "søknadsprosess",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
       headingIncludes: "Kalkulator",
       links: [
-        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
       ],
     },
     {
@@ -325,7 +325,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hva kan endre regnestykket",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
   ],
@@ -340,7 +340,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Pris og hva som er inkludert",
       links: [
-        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
       ],
     },
   ],
@@ -419,13 +419,13 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "8 millioner",
       links: [
         { label: "Se boliger opptil €740.000", href: "/eiendommer?region=costa-blanca-nord&maxPrice=740000" },
-        { label: "Nybygg i Finestrat", href: "/guide/nybygg-finestrat-omradeguide" },
+        { label: "Nybygg i Finestrat", href: "/omrader/costa-blanca-nord/finestrat" },
       ],
     },
     {
       headingIncludes: "kjøpskostnadene",
       links: [
-        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
         { label: "Slik utvikler markedet seg nå", href: "/magasin/boligmarkedet-costa-blanca-hosten-2026" },
       ],
     },
@@ -435,7 +435,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Kjøpesummen er bare",
       links: [
         { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
-        { label: "Omkostninger ved nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Omkostninger ved nybygg", href: "/guide/nybygg-i-spania" },
       ],
     },
     {
@@ -468,7 +468,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "arbeidsrekkefølge",
       links: [
-        { label: "Finansiering, notar og NIE", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+        { label: "Finansiering, notar og NIE", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
   ],
@@ -606,7 +606,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       { label: "Slik påvirker eurokursen boligbudsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
     ]},
     { headingIncludes: "Bankgaranti", links: [
-      { label: "Komplett guide til bankgaranti ved nybygg", href: "/guide/bankgaranti-nybygg-spania" },
+      { label: "Komplett guide til bankgaranti ved nybygg", href: "/guide/nybygg-i-spania" },
     ]},
     { headingIncludes: "Leveringstid", links: [
       { label: "Komplett guide til nybygg i Spania", href: "/guide/nybygg-i-spania" },
@@ -653,7 +653,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     ]},
     { headingIncludes: "kontrollert", links: [
       { label: "Områdeguide Finestrat", href: "/omrader/costa-blanca-nord/finestrat" },
-      { label: "Nybygg i Finestrat – kjøperguide", href: "/guide/nybygg-finestrat-omradeguide" },
+      { label: "Nybygg i Finestrat – kjøperguide", href: "/omrader/costa-blanca-nord/finestrat" },
     ]},
   ],
   "villajoyosa-275000-vs-375000": [
@@ -704,7 +704,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       { label: "Åpne N8643", href: "/eiendommer/N8643" },
     ]},
     { headingIncludes: "side ved side", links: [
-      { label: "Nybygg i Finestrat – kjøperguide", href: "/guide/nybygg-finestrat-omradeguide" },
+      { label: "Nybygg i Finestrat – kjøperguide", href: "/omrader/costa-blanca-nord/finestrat" },
     ]},
   ],
 
@@ -713,7 +713,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     { headingIncludes: "N8313", links: [{ label: "Åpne N8313", href: "/eiendommer/N8313" }] },
     { headingIncludes: "N8058", links: [{ label: "Åpne N8058", href: "/eiendommer/N8058" }] },
     { headingIncludes: "€/m²", links: [
-      { label: "Nybygg i Finestrat – kjøperguide", href: "/guide/nybygg-finestrat-omradeguide" },
+      { label: "Nybygg i Finestrat – kjøperguide", href: "/omrader/costa-blanca-nord/finestrat" },
     ]},
   ],
   "finestrat-735000-vs-735950": [

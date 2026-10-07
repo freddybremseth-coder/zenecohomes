@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function NewBuildGuidePage() {
-  return <SeoLandingView page={{ ...page, slug: "guide/nybygg-i-spania" }} locale="no" eq={eq} guideMeta={{ author: "Freddy Bremseth", authorHref: "/om-oss/freddy", updated: "2026-09-29" }} />;
+  return <SeoLandingView page={{ ...page, slug: "guide/nybygg-i-spania" }} locale="no" eq={eq} guideMeta={{ author: "Freddy Bremseth", authorHref: "/om-oss/freddy", updated: "2026-10-07" }} />;
 }

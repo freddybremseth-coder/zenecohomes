@@ -85,7 +85,7 @@ export default function BuyingProcessPage() {
           <Link className="text-button light" href="/guide/kjope-bolig-i-spania">
             Les komplett guide <ArrowRight size={17} />
           </Link>
-          <Link className="text-button light" href="/guide/finansiering-notar-nie-boligkjop-spania">
+          <Link className="text-button light" href="/guide/finansiere-bolig-i-spania">
             Finansiering, notar og NIE
           </Link>
         </div>
