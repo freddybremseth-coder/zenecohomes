@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Clock } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { allArticles, articlePath, articleSilo, getMagazineArticle } from "@/lib/magazine";
+import { allArticles, articlePath, articleSilo, getMagazineArticle, LEGACY_MARKET_COMPARISON_SLUGS } from "@/lib/magazine";
 import { corporateArticles } from "@/lib/corporate-content";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
@@ -47,6 +47,7 @@ const articleCovers: Record<string, string> = {
   "leilighet-eller-villa-costa-blanca": "/assets/magasin-covers/omradevalg.svg",
   "bolig-som-er-lett-a-selge-igjen-spania": "/assets/magasin-covers/radgiver.svg",
   "bolig-under-bygging-eller-ferdig-spania": "/assets/magasin-covers/kjopsprosess.svg",
+  "hva-far-du-for-pengene-costa-blanca-nord-na": "/assets/areas.jpg",
   "costa-blanca-nord-500000-euro-hva-kjope-na": "/assets/areas.jpg",
   "benidorm-villa-456000-vs-516000": "/assets/magasin-covers/omradet-for-boligen.svg",
   "finestrat-villa-650000-700000-735000": "/assets/magasin-covers/omradevalg.svg",
@@ -166,6 +167,7 @@ export const metadata = {
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
   const magazineCmsArticles = cmsArticles.filter((article) => {
+    if (LEGACY_MARKET_COMPARISON_SLUGS.has(article.slug)) return false;
     const known = getMagazineArticle(article.slug);
     return !known || !articleSilo(known);
   });
@@ -208,6 +210,26 @@ export default async function MagazinePage() {
         </nav>
       </section>
 
+      <section className="section magazine-budget-tool">
+        <div>
+          <p className="eyebrow">Boligbudsjett-kalkulator</p>
+          <h2>Start med totalrammen – ikke annonseprisen</h2>
+          <p>
+            Regn bakover fra totalbudsjettet ditt og se en realistisk maksimal kjøpesum med skatt,
+            dokument-/stempelavgift, juridisk bistand, notarius og register. NOK-beregningen bruker
+            oppdatert EUR/NOK-kurs.
+          </p>
+        </div>
+        <div className="hero-actions">
+          <Link className="contact-button" href="/magasin/bolig-500000-euro-totalbudsjett-spania#boligbudsjett-kalkulator">
+            Åpne kalkulatoren <ArrowRight size={17} />
+          </Link>
+          <Link className="text-button" href="/magasin/hva-far-du-for-pengene-costa-blanca-nord-na">
+            Se hva budsjettet kjøper nå
+          </Link>
+        </div>
+      </section>
+
       <section className="section proof-section">
         <div className="section-heading">
           <p className="eyebrow">Redaksjonelle temaer</p>
@@ -233,8 +255,8 @@ export default async function MagazinePage() {
             <p className="eyebrow">Marked akkurat nå</p>
             <h2>Konkrete boliger. Konkrete priser. Bedre beslutninger.</h2>
             <p>
-              Daterte sammenligninger fra boliger som faktisk ligger i Zen-katalogen. Vi bruker dem til å vise
-              hva budsjettet kjøper akkurat nå – og hva som må kontrolleres før du bestemmer deg.
+              Én samlet, datert sammenligning av konkrete boliger og prisnivåer i Zen-katalogen. Åpne prisnivået
+              som passer deg og sammenlign euro, ca. NOK, område og boligtype uten ni nesten like artikler.
             </p>
           </div>
           <div className="magazine-grid">
@@ -258,7 +280,7 @@ export default async function MagazinePage() {
                       <Clock size={15} /> {article.readingTime}
                     </span>
                     <Link className="text-button" href={articlePath(article)}>
-                      Se sammenligningen <ArrowRight size={16} />
+                      Åpne prisnivåene <ArrowRight size={16} />
                     </Link>
                   </div>
                 </div>
