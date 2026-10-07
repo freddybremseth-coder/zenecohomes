@@ -356,82 +356,66 @@ export const articles: Article[] = [
   },
   {
     slug: "finansiering-notar-nie-boligkjop-spania",
-    title: "Finansiering, notar og NIE – praktisk veiledning for boligkjøp i Spania",
+    title: "Finansiering, NIE, bankkonto og notar – oversikten før boligkjøpet",
     excerpt:
-      "En praktisk guide til lån i Norge eller Spania, egenkapital, kjøpskostnader, valutarisiko, NIE, bankkonto, notar og betalingsflyt.",
+      "En kort oversikt over hva du bør ha kontroll på før kjøp: finansiering, totalbudsjett, NIE, bankkonto, advokat, notar og betalingsflyt – med lenker til fordypningene.",
     date: "2026-05-10",
-    updated: "2026-09-15",
+    updated: "2026-10-07",
     category: "Kjøpsprosess",
-    readingTime: "9 min lesing",
+    readingTime: "5 min lesing",
     image: "/assets/magasin-covers/finansiering.svg",
     imageAlt: "Illustrasjon av finansiering, dokumenter, NIE, bank og notar ved boligkjøp i Spania",
-    seoTitle: "Finansiering, notar og NIE ved boligkjøp i Spania | Råd",
+    seoTitle: "Finansiering, NIE og notar ved boligkjøp i Spania | Oversikt",
     seoDescription:
-      "Slik fungerer finansiering, NIE, notar, bankkonto og betalingsflyt når nordmenn kjøper bolig i Spania, fra forberedelse til signering og overtakelse.",
+      "Få oversikten over finansiering, NIE, bankkonto, notar, advokat, kjøpskostnader og betalingsflyt før boligkjøp i Spania – og gå videre til riktig fordypningsguide.",
     keywords: ["NIE Spania", "finansiering bolig Spania", "notar Spania", "kjøpskostnader Spania", "spansk bankkonto"],
     intro: [
-      "Når du kjøper bolig i Spania, må finansiering, dokumentasjon og juridisk overdragelse planlegges tidlig. For norske kjøpere handler dette ofte om valget mellom lån i Norge, lån i Spania eller egenkapital.",
-      "Du trenger normalt NIE for eiendomstransaksjonen. En spansk bankkonto er ofte praktisk, men behovet avhenger av bank, betalingsmåte og leverandører. Uavhengig advokat anbefales for kjøpers juridiske kontroll, mens notaren har en offentlig og upartisk rolle ved skjøtet.",
+      "Denne siden er laget som en oversikt, ikke som fire guider i én. Målet er å vise hva som må avklares og sende deg videre til den riktige fordypningen når du trenger detaljer.",
+      "For norske kjøpere henger finansiering, valuta, NIE, bankkonto, juridisk kontroll og notar sammen i samme kjøpsløp, men de har forskjellige roller og bør ikke blandes sammen.",
     ],
     sections: [
       {
-        heading: "Finansieringsvalg: Norge, Spania eller egenkapital",
+        heading: "Finansieringsvalg: avklar rammen før du velger bolig",
         body: [
-          "Lån i Norge kan være enklere å forstå fordi språk, bankforhold og regelverk er kjent. Samtidig tar du valutarisiko dersom lånet er i norske kroner og boligen kjøpes i euro.",
-          "Lån i Spania kan redusere valutarisiko på selve lånet, men prosessen kan være mer dokumenttung. Spanske banker vurderer blant annet inntekt, gjeld, eiendommen og kundens risikoprofil.",
+          "Bestem først om kjøpet skal finansieres med egenkapital, lån i Norge, lån i Spania eller en kombinasjon. Sammenlign total kostnad, valutarisiko, nødvendig egenkapital og hvor mye av kjøpskostnadene som må betales kontant.",
         ],
         bullets: [
-          "Norsk lån: kjent bank, men valutarisiko NOK/EUR.",
-          "Spansk lån: euro-lån og lokal sikkerhet, men bankspesifikke vilkår og dokumentasjonskrav.",
-          "Egenkapital: ingen lånekostnad, men binder kapital og krever god valutaplan.",
-          "Sammenlign totalkostnad, ikke bare nominell rente.",
+          "Få finansieringsrammen bekreftet før du reserverer.",
+          "Regn i både euro og norske kroner dersom kapitalen kommer fra Norge.",
+          "Skill mellom maksimal kjøpesum og maksimal totalramme.",
         ],
       },
       {
-        heading: "Kjøpskostnader og valutarisiko",
+        heading: "Kjøpskostnader og valutarisiko: regn konkret",
         body: [
-          "Kjøpskostnader kommer i tillegg til kjøpesummen og varierer etter region, boligtype, finansiering og hvilke profesjonelle tjenester du bruker. Be om en konkret kostnadsoppstilling for den boligen og transaksjonen du vurderer fremfor å basere budsjettet på én standardprosent.",
-          "Valutarisiko er viktig for nordmenn. En endring i EUR/NOK mellom reservasjon og sluttbetaling kan utgjøre store beløp. Snakk med bank eller relevant fagperson om overføringsplan og valutarisiko dersom beløpet er stort.",
+          "Kjøpskostnadene avhenger blant annet av bruktbolig eller nybygg, region, kjøpesum og hvilke profesjonelle tjenester som brukes. Bruk derfor et konkret regnestykke fremfor én generell prosent.",
+          "Ved større NOK/EUR-overføringer bør tidspunkt og valutarisiko planlegges sammen med betalingsplanen.",
         ],
         bullets: [
-          "Beregn ITP eller IVA/AJD avhengig av transaksjon og region.",
-          "Legg inn advokat, notar, register, eventuelle bankkostnader og oversettelser.",
-          "Planlegg når euro skal kjøpes, spesielt ved større betalinger.",
-          "Bruk skriftlig betalingsplan og unngå hastige overføringer uten kontroll.",
+          "Beregn riktig skatt for boligtypen.",
+          "Ta med advokat, notar, register og eventuelle bankkostnader.",
+          "Behold en reserve etter overtakelsen.",
         ],
       },
       {
-        heading: "NIE, bankkonto og notar",
+        heading: "NIE, bankkonto og notar: tre forskjellige roller",
         body: [
-          "NIE er utlendingens identifikasjonsnummer og brukes i eiendoms- og skatteprosessen. Det bør ordnes tidlig etter gjeldende prosedyre.",
-          "En spansk bankkonto er ofte praktisk for betalinger og løpende kostnader, men er ikke det samme som et generelt lovkrav for alle kjøp. Notaren er en upartisk offentlig fagperson som formaliserer og kontrollerer sentrale sider ved skjøtet; notaren erstatter ikke kjøpers egen juridiske rådgiver.",
-        ],
-        bullets: [
-          "Start NIE-prosessen tidlig; behandlingstid og dokumentkrav kan variere.",
-          "Forbered pass og dokumentasjon banken eller myndighetene ber om.",
-          "La advokat kontrollere kontrakter og betalingsflyt før notarmøtet.",
-          "Sørg for at strøm, vann, forsikring og felleskostnader håndteres etter kjøp.",
+          "NIE er identifikasjonsnummeret som normalt trengs i eiendoms- og skatteprosessen. En spansk bankkonto kan være praktisk for betalinger og løpende kostnader, men er et separat spørsmål.",
+          "Notaren formaliserer og kontrollerer sentrale sider ved skjøtet som upartisk offentlig fagperson. Notaren erstatter ikke kjøpers egen advokat, som bør kontrollere kontrakter, eiendommen og betalingsflyten på dine vegne.",
         ],
       },
       {
-        heading: "Dokumentasjon banken ofte ber om",
+        heading: "Bruk oversikten som veiviser – ikke som endestasjon",
         body: [
-          "Banken vil normalt be om dokumentasjon på inntekt, formue, gjeld og skatteforhold. Norske dokumenter kan måtte oversettes, og enkelte dokumenter kan kreve ytterligere formalia avhengig av bank og formål.",
-          "Pensjonister bør forberede pensjonsbrev, skattemelding, kontoutskrifter og dokumentasjon på formue. Selvstendig næringsdrivende bør regne med mer dokumentasjon.",
-        ],
-        bullets: [
-          "Inntektsdokumentasjon: lønn, pensjon eller næringsinntekt.",
-          "Skattemeldinger og bankutskrifter.",
-          "Dokumentasjon på egenkapital og opprinnelse til midler.",
-          "Informasjon om eiendommen, kontrakt og eventuell takst.",
+          "Når du vet hvilket spørsmål du faktisk har, er det bedre å lese én presis fordypning enn å gjenta de samme forklaringene på flere sider. Derfor er detaljene om NIE, spansk bankkonto, boliglån og kjøpskostnader samlet i egne guider.",
         ],
       },
     ],
     nextSteps: [
-      "Snakk med bank før visningstur hvis finansiering er nødvendig.",
-      "Søk NIE så tidlig som praktisk mulig.",
-      "Velg uavhengig spansk advokat før du binder deg til viktige kontraktsvilkår eller betalinger.",
-      "Lag en betalings- og valutaplan for reservasjon, delbetalinger og sluttoppgjør.",
+      "Avklar totalbudsjett og finansieringsramme.",
+      "Start NIE-prosessen tidlig nok.",
+      "Velg uavhengig advokat før bindende kontrakter eller større betalinger.",
+      "Bruk de separate guidene for boliglån, NIE, bankkonto og kjøpskostnader når du trenger detaljene.",
     ],
     faq: [
       {
@@ -440,126 +424,14 @@ export const articles: Article[] = [
           "NIE er normalt nødvendig for eiendomstransaksjonen og den tilhørende skatte- og registreringsprosessen. Det bør derfor ordnes tidlig.",
       },
       {
-        question: "Kan jeg finansiere bolig i Spania med norsk lån?",
+        question: "Må jeg ha spansk bankkonto?",
         answer:
-          "Det kan være mulig, for eksempel med sikkerhet i Norge. Du må likevel håndtere valutarisiko og dokumentasjon knyttet til kjøpet i Spania. Banken vurderer din konkrete situasjon.",
+          "Ikke nødvendigvis i alle kjøp, men den kan være praktisk for betalinger og løpende kostnader. Behovet avhenger av bank, betalingsmåte og hvordan boligen skal driftes etter overtakelsen.",
       },
       {
-        question: "Hvor mye bør jeg beregne i kjøpskostnader?",
+        question: "Er notaren min juridiske rådgiver?",
         answer:
-          "Det avhenger av region, bruktbolig eller nybygg, kjøpesum, finansiering og hvilke tjenester du bruker. Be om en konkret beregning av skatt, notar, register, advokat og øvrige kostnader for akkurat ditt kjøp.",
-      },
-    ],
-  },
-  {
-    slug: "kjopsprosess-bolig-i-spania",
-    title: "Kjøpsprosess for bolig i Spania",
-    excerpt:
-      "Steg-for-steg forklaring av hvordan kjøp av bolig i Spania fungerer for nordmenn: megler, reservasjon, advokat, notar og overtakelse.",
-    date: "2026-05-10",
-    updated: "2026-09-15",
-    category: "Kjøpsprosess",
-    readingTime: "10 min lesing",
-    image: "/assets/magasin-covers/kjopsprosess.svg",
-    imageAlt: "Illustrasjon av kjøpsprosessen for bolig i Spania fra søk til nøkkeloverlevering",
-    seoTitle: "Kjøpsprosess for bolig i Spania | Steg-for-steg for nordmenn",
-    seoDescription:
-      "Forstå kjøpsprosessen i Spania: boligsøk, megler, tilbud, reservasjon, advokat, notar, kostnader og overtakelse, med råd for norske kjøpere.",
-    keywords: ["kjøpsprosess Spania", "kjøpe bolig i Spania", "reservasjonskontrakt Spania", "advokat boligkjøp Spania"],
-    intro: [
-      "Å kjøpe bolig i Spania som nordmann er annerledes enn å kjøpe bolig i Norge. Meglersystemet, reservasjonsavtaler, advokatrollen, notar og betalingsflyt fungerer på en annen måte.",
-      "Denne guiden gir deg en praktisk oversikt fra første boligsøk til overtakelse, slik at du vet hvilke steg som kan inngå og hvilke beslutninger du bør ta underveis.",
-    ],
-    sections: [
-      {
-        heading: "Slik fungerer eiendomsmeglere i Spania",
-        body: [
-          "I Spania kan flere meglere ofte markedsføre samme bolig. Du bør derfor velge rådgiver eller megler ut fra hvem som gir deg best beslutningsgrunnlag og oppfølging – ikke bare hvem du først så annonsen hos.",
-          "Det viktigste er ikke bare hvem som finner boligen, men hvem som hjelper deg å vurdere område, pris, dokumenter, risiko, forhandling og videre koordinering med uavhengige fagpersoner.",
-        ],
-        bullets: [
-          "Flere meglere kan ha tilgang til samme bolig.",
-          "Velg samarbeidspartner etter tillit, kunnskap og oppfølging.",
-          "God kommunikasjon reduserer risikoen for misforståelser.",
-          "Avklar på forhånd hvilke tjenester rådgiveren faktisk følger opp etter signering.",
-        ],
-      },
-      {
-        heading: "Kjøpsprosessen steg for steg",
-        body: [
-          "Prosessen starter med behovsavklaring, finansiering og områdevalg. Deretter kan den omfatte boligsøk, visninger, tilbud, reservasjon, juridisk kontroll, finansiering, notarsignering og registrering.",
-          "Rekkefølge og tempo varierer med boligtype, selger, finansiering og dokumentasjon. Derfor bør finansiering, NIE, juridisk rådgiver og egne beslutningskriterier avklares tidlig.",
-        ],
-        bullets: [
-          "1. Avklar budsjett, bruk, område og finansiering.",
-          "2. Gjennomfør boligsøk og visninger med tydelige kriterier.",
-          "3. Forhandle pris og vilkår skriftlig.",
-          "4. Forstå reservasjons-/arrasvilkår og juridiske forbehold før betaling.",
-          "5. La uavhengig advokat gjøre nødvendig juridisk kontroll.",
-          "6. Formaliser overdragelsen og sørg for registrering og etterarbeid.",
-        ],
-      },
-      {
-        heading: "Reservasjonsavtale, arras og due diligence",
-        body: [
-          "Reservasjonsavtale og/eller arras brukes ofte, men struktur og konsekvenser varierer. En slik avtale kan være bindende, så du må forstå hva som skjer dersom kjøper eller selger trekker seg før du signerer eller betaler.",
-          "Før endelig overtakelse bør advokaten kontrollere blant annet registeropplysninger, heftelser, relevante avgifter, tillatelser, felleskostnader og eventuelle avvik eller ulovlige endringer.",
-        ],
-        bullets: [
-          "Ikke betal reservasjon uten å forstå betingelsene.",
-          "Bruk uavhengig advokat som ivaretar kjøpers juridiske interesser.",
-          "Kontroller panteheftelser, utestående kostnader og relevante tillatelser.",
-          "Avklar overtakelsesdato, inventar og betalingsplan skriftlig.",
-        ],
-      },
-      {
-        heading: "Kostnader ved boligkjøp",
-        body: [
-          "Kjøper må regne med kostnader utover kjøpesum. Nivået varierer etter region, skatteregler, bruktbolig eller nybygg, finansiering og profesjonelle tjenester. Bruk en konkret kostnadsoppstilling for boligen fremfor én standardprosent.",
-          "I tillegg kommer løpende kostnader som IBI, forsikring, fellesutgifter, strøm, vann, internett, vedlikehold og eventuell skatterapportering.",
-        ],
-        bullets: [
-          "ITP eller IVA/AJD avhengig av transaksjon og region.",
-          "Notar, eiendomsregister og juridisk bistand.",
-          "Eventuelle bank-, takst- og lånekostnader.",
-          "Årlige kostnader som IBI, forsikring og fellesutgifter.",
-        ],
-      },
-      {
-        heading: "Etter overtakelse",
-        body: [
-          "Når skjøtet er signert og overtakelsen gjennomført, starter den praktiske delen: strøm, vann, internett, forsikring, felleskostnader, nøkler, vedlikehold og eventuelt keyholding.",
-          "Avklar hvem som følger opp registrering, skatt, leverandørbytter og andre praktiske oppgaver, slik at ansvar ikke faller mellom flere aktører.",
-        ],
-        bullets: [
-          "Håndter strøm, vann og felleskostnader etter overtakelse.",
-          "Tegn relevant boligforsikring og vurder alarm eller keyholding.",
-          "Planlegg møbler, hvitevarer og eventuell utleie først når reglene er avklart.",
-          "Sørg for at advokat eller annen relevant fagperson følger opp registrering og skatteforhold.",
-        ],
-      },
-    ],
-    nextSteps: [
-      "Avklar finansiering og totalbudsjett.",
-      "Velg område før du velger enkeltbolig.",
-      "Engasjer uavhengig spansk advokat tidlig.",
-      "Avklar hvem som koordinerer de praktiske stegene gjennom prosessen.",
-    ],
-    faq: [
-      {
-        question: "Hvor lang tid tar et boligkjøp i Spania?",
-        answer:
-          "Det finnes ingen sikker standardtid. Finansiering, dokumentasjon, juridisk kontroll, selgers situasjon, boligtype og avtalt overtakelse kan gjøre prosessen kortere eller betydelig lengre. Få en konkret tidsplan for ditt kjøp.",
-      },
-      {
-        question: "Trenger jeg advokat når jeg kjøper bolig i Spania?",
-        answer:
-          "Uavhengig juridisk bistand anbefales sterkt. Advokaten kan kontrollere juridiske forhold, kontrakter, heftelser, avgifter og tillatelser før du fullfører kjøpet.",
-      },
-      {
-        question: "Kan samme bolig selges av flere meglere?",
-        answer:
-          "Ja, det forekommer ofte. Velg derfor megler eller rådgiver ut fra prosess, informasjon og oppfølging – ikke bare hvem som har annonsen.",
+          "Nei. Notaren er en upartisk offentlig fagperson. Kjøpers egen advokat bør ivareta dine interesser og kontrollere kontrakter, eiendom og betalingsflyt.",
       },
     ],
   },

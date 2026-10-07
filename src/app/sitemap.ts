@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { areaProfileSlug } from "@/lib/areaRoutes";
-import { allArticles, articlePath } from "@/lib/magazine";
+import { allArticles, articlePath, LEGACY_MARKET_COMPARISON_SLUGS } from "@/lib/magazine";
 import { areaMatchesRegion, fallbackProperties, getAreaProfiles, getProperties, getPropertyRef, regions, type RegionKey } from "@/lib/realtyflow";
 import { seoLandingPages } from "@/lib/seoLandingPages";
 import { inlandTowns } from "@/lib/inland";
@@ -33,7 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fetchPublishedPosts("magasin"),
     getAreaProfiles(),
   ]);
-  const retiredArticleSlugs = new Set(["kjopsprosess-bolig-i-spania"]);
+  const retiredArticleSlugs = new Set(["kjopsprosess-bolig-i-spania", ...LEGACY_MARKET_COMPARISON_SLUGS]);
   const articlePaths = Array.from(
     new Set([
       ...allArticles
