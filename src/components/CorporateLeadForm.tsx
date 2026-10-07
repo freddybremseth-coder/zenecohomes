@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FileText, Send } from "lucide-react";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "received" | "error";
 
 type StayContext = {
   name: string;
@@ -41,6 +41,7 @@ export function CorporateLeadForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [calculatorContext, setCalculatorContext] = useState<CalculatorContext | null>(null);
   const [userCount, setUserCount] = useState("");
+  const submissionIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     function applyContext(detail: CalculatorContext | null) {
@@ -107,6 +108,10 @@ export function CorporateLeadForm() {
 
     try {
       const params = new URLSearchParams(window.location.search);
+      const submissionId = submissionIdRef.current
+        || window.crypto?.randomUUID?.()
+        || `corporate-decision-note-${Date.now()}`;
+      submissionIdRef.current = submissionId;
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -126,7 +131,9 @@ export function CorporateLeadForm() {
           contact_role: data.role,
           user_count: data.users,
           corporate_model: data.model,
+          corporate_needs: data.needs,
           calculator_context: calculatorContext,
+          submission_id: submissionId,
           message,
           page_url: window.location.href,
           utm_source: params.get("utm_source"),
@@ -137,9 +144,12 @@ export function CorporateLeadForm() {
       });
 
       if (!response.ok) throw new Error("submit");
+      const result = await response.json().catch(() => ({}));
+      const delivery = result?.corporateDecisionNote?.delivery;
       form.reset();
       setUserCount("");
-      setStatus("sent");
+      submissionIdRef.current = null;
+      setStatus(delivery?.success === true ? "sent" : "received");
     } catch {
       setStatus("error");
     }
@@ -267,7 +277,12 @@ export function CorporateLeadForm() {
 
       {status === "sent" && (
         <p className="form-success">
-          Takk. Forespørselen er mottatt. Vi bruker opplysningene som grunnlag for en kort behovsavklaring og beslutningsnotatet.
+          Takk. Beslutningsgrunnlaget er sendt til e-postadressen du oppga. PDF-en bygger på tallene over, og du kan svare direkte på e-posten dersom noe skal justeres.
+        </p>
+      )}
+      {status === "received" && (
+        <p className="form-success">
+          Takk. Forespørselen er mottatt. E-postleveringen ble ikke bekreftet automatisk, så saken ligger klar til oppfølging hos oss.
         </p>
       )}
       {status === "error" && (
