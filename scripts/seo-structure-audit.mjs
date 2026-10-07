@@ -114,15 +114,17 @@ for (const [source, destination] of literalRedirects) {
   }
 }
 
-for (const slug of [
-  "finansiering-notar-nie-boligkjop-spania",
-  "omkostninger-nybygg-spania",
-  "bankgaranti-nybygg-spania",
+for (const [source, destination] of [
+  ["/kjopsprosess/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
+  ["/kjopsprosess/omkostninger-nybygg-spania", "/guide/nybygg-i-spania"],
+  ["/kjopsprosess/bankgaranti-nybygg-spania", "/guide/nybygg-i-spania"],
+  ["/guide/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
+  ["/guide/innlandet-finca-olivengard-spania", "/omrader/innlandet"],
+  ["/guide/energieffektive-nybygg-spania", "/guide/nybygg-i-spania"],
+  ["/guide/kjop-bolig-i-spania-na-eller-vente", "/magasin/kjop-bolig-i-spania-na-eller-vente"],
 ]) {
-  const source = `/kjopsprosess/${slug}`;
-  const destination = `/guide/${slug}`;
   if (!hasRedirect(source, destination)) {
-    errors.push(`${nextConfig}: missing legacy redirect ${source} -> ${destination}`);
+    errors.push(`${nextConfig}: missing consolidation redirect ${source} -> ${destination}`);
   }
 }
 
