@@ -1,5 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const nok = new Intl.NumberFormat("nb-NO", {
+  style: "currency",
+  currency: "NOK",
+  maximumFractionDigits: 0,
+});
+
+function euroAmount(value: string) {
+  const normalized = value.replace(/[^0-9]/g, "");
+  const amount = Number(normalized);
+  return Number.isFinite(amount) ? amount : 0;
+}
 
 const priceLevels = [
   {
@@ -72,6 +87,27 @@ const priceLevels = [
 ] as const;
 
 export function MarketBudgetComparison() {
+  const [eurNok, setEurNok] = useState(11.75);
+  const [rateSource, setRateSource] = useState("Veiledende kurs");
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/finance/rates")
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data) => {
+        if (!active || !data) return;
+        const rate = Number(data.eurNok);
+        if (Number.isFinite(rate) && rate > 0) setEurNok(rate);
+        if (data.exchangeSource) setRateSource(String(data.exchangeSource));
+      })
+      .catch(() => {
+        // Keep the fallback rate if the live rate service is temporarily unavailable.
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <section className="market-budget-comparison" aria-labelledby="market-budget-comparison-title">
       <div className="market-budget-comparison-heading">
@@ -79,7 +115,8 @@ export function MarketBudgetComparison() {
         <h2 id="market-budget-comparison-title">Åpne prisnivået du vil sammenligne</h2>
         <p>
           I stedet for mange nesten like artikler samler vi de konkrete sammenligningene her.
-          Prisene er markedsøyeblikksbilder og må bekreftes på nytt før visning eller reservasjon.
+          Prisene vises i euro og omtrentlige norske kroner med oppdatert EUR/NOK-kurs. De er
+          markedsøyeblikksbilder og må bekreftes på nytt før visning eller reservasjon.
         </p>
       </div>
 
@@ -102,6 +139,7 @@ export function MarketBudgetComparison() {
                       <th>Ref.</th>
                       <th>Område</th>
                       <th>Pris</th>
+                      <th>Ca. NOK</th>
                       <th>Eksempel</th>
                     </tr>
                   </thead>
@@ -111,6 +149,7 @@ export function MarketBudgetComparison() {
                         <td>{row[0]}</td>
                         <td><MapPin size={14} aria-hidden="true" /> {row[1]}</td>
                         <td>{row[2]}</td>
+                        <td>{nok.format(euroAmount(row[2]) * eurNok)}</td>
                         <td>{row[3]}</td>
                       </tr>
                     ))}
@@ -122,6 +161,11 @@ export function MarketBudgetComparison() {
           </details>
         ))}
       </div>
+
+      <p className="market-budget-rate-note">
+        Omregnet med EUR/NOK {eurNok.toFixed(2).replace(".", ",")} · {rateSource}. NOK-beløpene er
+        veiledende og endrer seg med valutakursen.
+      </p>
 
       <div className="market-budget-links">
         <Link href="/omrader/costa-blanca-nord">
