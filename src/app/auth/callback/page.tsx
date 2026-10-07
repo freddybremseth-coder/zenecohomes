@@ -6,6 +6,14 @@ import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata = {
   title: "Logger inn | Zen Eco Homes",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function AuthCallbackPage() {

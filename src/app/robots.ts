@@ -2,22 +2,21 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = "https://www.zenecohomes.com";
+  const blockedPaths = ["/api/portal/"];
 
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        // Allow the public sign-in pages to be crawled so their noindex
-        // meta directives can be seen. Auth and API resources stay blocked.
-        disallow: ["/auth/", "/api/portal/"],
+        // Public portal/auth pages stay crawlable so search engines can read
+        // their explicit noindex directives. Private API resources stay blocked.
+        disallow: blockedPaths,
       },
       {
         userAgent: "OAI-SearchBot",
         allow: "/",
-        // Allow the public sign-in pages to be crawled so their noindex
-        // meta directives can be seen. Auth and API resources stay blocked.
-        disallow: ["/auth/", "/api/portal/"],
+        disallow: blockedPaths,
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
