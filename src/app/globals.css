@@ -6787,6 +6787,7 @@ footer {
   align-items: center;
   margin-top: 12px;
   margin-bottom: 12px;
+  padding: 58px 64px;
   border-radius: 18px;
   background: var(--dark);
   color: #fff;
@@ -6829,6 +6830,7 @@ footer {
   .magazine-budget-tool {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 30px 24px;
   }
 
   .magazine-budget-tool .hero-actions {
