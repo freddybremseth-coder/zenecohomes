@@ -72,7 +72,7 @@ export const seoLandingPages: SeoLandingPage[] = [
     related: [
       { label: "Områdeguide for eiendomskjøp i Spania", href: "/guide/omradeguide-eiendomskjop-i-spania" },
       { label: "Kjøpsprosess for bolig i Spania", href: "/guide/kjope-bolig-i-spania" },
-      { label: "Finansiering, notar og NIE", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+      { label: "Finansiering, notar og NIE", href: "/guide/finansiere-bolig-i-spania" },
     ],
   },
   {
