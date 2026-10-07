@@ -164,7 +164,7 @@ export function PurchaseBudgetCalculator() {
         : "9 % ITP";
 
   return (
-    <section className="purchase-budget-calc" aria-labelledby="purchase-budget-title">
+    <section className="purchase-budget-calc" id="boligbudsjett-kalkulator" aria-labelledby="purchase-budget-title">
       <div className="purchase-budget-calc-heading">
         <span className="purchase-budget-calc-icon" aria-hidden="true">
           <Calculator size={22} />
