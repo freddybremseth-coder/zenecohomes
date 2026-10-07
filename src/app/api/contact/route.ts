@@ -67,6 +67,16 @@ function isValidContactEmail(value: string) {
   return value.length <= 320 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function corporateCalculatorContext(body: Record<string, unknown>) {
+  const value = body.calculator_context;
+  if (!value || typeof value !== "object" || Array.isArray(value)) return undefined;
+  try {
+    return JSON.stringify(value).length <= 20_000 ? value : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 const TEXT_ONLY_BUDGET_TERMS = [
   "ikke avklart",
   "ikke bestemt",
@@ -285,7 +295,10 @@ export async function POST(request: Request) {
     const spamReason = contactSpamReason(body);
     if (spamReason) {
       console.warn("[contact] blocked suspected spam:", spamReason);
-      return contactJson(request, { ok: true });
+      return contactJson(request, {
+      ok: true,
+      corporateDecisionNote: leadResult?.corporateDecisionNote || null,
+    });
     }
 
     if (isContactRateLimited(request)) {
@@ -306,7 +319,7 @@ export async function POST(request: Request) {
     const preferredArea = inlandContext?.preferredArea || (body.preferred_area ? String(body.preferred_area) : undefined);
     const requestType = inlandContext?.requestType || (body.request_type ? String(body.request_type) : undefined);
 
-    await sendLead({
+    const leadResult = await sendLead({
       name: body.name ? String(body.name) : "Boligmatch",
       email: String(body.email),
       phone: body.phone ? String(body.phone) : undefined,
@@ -335,6 +348,9 @@ export async function POST(request: Request) {
       contact_role: body.contact_role ? String(body.contact_role).slice(0, 160) : undefined,
       user_count: body.user_count ? String(body.user_count).slice(0, 40) : undefined,
       corporate_model: body.corporate_model ? String(body.corporate_model).slice(0, 180) : undefined,
+      corporate_needs: body.corporate_needs ? String(body.corporate_needs).slice(0, 3000) : undefined,
+      calculator_context: corporateCalculatorContext(body),
+      submission_id: body.submission_id ? String(body.submission_id).slice(0, 160) : undefined,
       partner_type: body.partner_type ? String(body.partner_type).slice(0, 80) : undefined,
       partnership_interest: body.partnership_interest ? String(body.partnership_interest).slice(0, 240) : undefined,
       page_url: publicLeadSourcePage(body.page_url),
