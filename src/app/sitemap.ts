@@ -33,7 +33,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fetchPublishedPosts("magasin"),
     getAreaProfiles(),
   ]);
-  const retiredArticleSlugs = new Set(["kjopsprosess-bolig-i-spania", ...LEGACY_MARKET_COMPARISON_SLUGS]);
+  const retiredArticleSlugs = new Set([
+    "kjopsprosess-bolig-i-spania",
+    "omkostninger-nybygg-spania",
+    "bankgaranti-nybygg-spania",
+    "energieffektive-nybygg-spania",
+    "nybygg-finestrat-omradeguide",
+    "innlandet-finca-olivengard-spania",
+    "finansiering-notar-nie-boligkjop-spania",
+    ...LEGACY_MARKET_COMPARISON_SLUGS,
+  ]);
   const articlePaths = Array.from(
     new Set([
       ...allArticles
@@ -83,7 +92,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/es/guias",
     "/omrader",
     "/guide/kjope-bolig-i-spania",
+    "/guide/kostnader-boligkjop-spania",
     "/guide/nybygg-i-spania",
+    "/guide/finansiere-bolig-i-spania",
     "/visningstur",
     "/kundeomtaler",
     "/om-oss",
