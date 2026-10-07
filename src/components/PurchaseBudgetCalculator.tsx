@@ -43,7 +43,8 @@ export function PurchaseBudgetCalculator() {
   const [budget, setBudget] = useState("500000");
   const [purchaseType, setPurchaseType] = useState<PurchaseType>("new");
   const [homeUse, setHomeUse] = useState<HomeUse>("second");
-  const [otherCostsPct, setOtherCostsPct] = useState("1.5");
+  const [legalCostsPct, setLegalCostsPct] = useState("1.0");
+  const [notaryRegistryPct, setNotaryRegistryPct] = useState("0.5");
   const [reserve, setReserve] = useState("0");
   const [eurNok, setEurNok] = useState(11.75);
   const [rateMeta, setRateMeta] = useState<Pick<FinanceRates, "updatedAt" | "exchangeSource">>({});
@@ -78,21 +79,38 @@ export function PurchaseBudgetCalculator() {
     const totalBudgetEur = currency === "NOK" ? inputBudget / eurNok : inputBudget;
     const reserveEur = currency === "NOK" ? inputReserve / eurNok : inputReserve;
     const availableForPurchase = Math.max(0, totalBudgetEur - reserveEur);
-    const otherRate = Math.min(0.1, Math.max(0, toNumber(otherCostsPct) / 100));
+    const legalRate = Math.min(0.1, Math.max(0, toNumber(legalCostsPct) / 100));
+    const notaryRegistryRate = Math.min(0.1, Math.max(0, toNumber(notaryRegistryPct) / 100));
     const ajdRate = homeUse === "habitual" ? 0.001 : 0.014;
 
     const purchaseCosts = (price: number) => {
       if (purchaseType === "new") {
         const iva = price * 0.1;
         const ajd = price * ajdRate;
-        const other = price * otherRate;
-        return { iva, ajd, itp: 0, other, total: iva + ajd + other };
+        const legal = price * legalRate;
+        const notaryRegistry = price * notaryRegistryRate;
+        return {
+          iva,
+          ajd,
+          itp: 0,
+          legal,
+          notaryRegistry,
+          total: iva + ajd + legal + notaryRegistry,
+        };
       }
 
       const itpRate = price > 1_000_000 ? 0.11 : 0.09;
       const itp = price * itpRate;
-      const other = price * otherRate;
-      return { iva: 0, ajd: 0, itp, other, total: itp + other };
+      const legal = price * legalRate;
+      const notaryRegistry = price * notaryRegistryRate;
+      return {
+        iva: 0,
+        ajd: 0,
+        itp,
+        legal,
+        notaryRegistry,
+        total: itp + legal + notaryRegistry,
+      };
     };
 
     let low = 0;
@@ -120,10 +138,20 @@ export function PurchaseBudgetCalculator() {
       costs,
       usedBudgetEur,
       remainingEur,
-      otherRate,
+      legalRate,
+      notaryRegistryRate,
       ajdRate,
     };
-  }, [budget, currency, eurNok, homeUse, otherCostsPct, purchaseType, reserve]);
+  }, [
+    budget,
+    currency,
+    eurNok,
+    homeUse,
+    legalCostsPct,
+    notaryRegistryPct,
+    purchaseType,
+    reserve,
+  ]);
 
   const inputCurrencyLabel = currency === "EUR" ? "€" : "NOK";
   const currentTaxLabel =
@@ -146,7 +174,7 @@ export function PurchaseBudgetCalculator() {
           <h2 id="purchase-budget-title">Hvor dyr bolig kan du faktisk se etter?</h2>
           <p>
             Start med hele rammen din. Kalkulatoren regner bakover og trekker fra skatter,
-            kjøpskostnader og eventuell reserve.
+            dokument-/stempelavgift, juridisk bistand, notarius, register og eventuell reserve.
           </p>
         </div>
       </div>
@@ -229,21 +257,40 @@ export function PurchaseBudgetCalculator() {
           )}
 
           <label>
-            <span>Andre kjøpskostnader</span>
+            <span>Juridisk bistand</span>
             <div className="purchase-budget-input-with-unit single-unit">
               <input
                 type="number"
                 min="0"
                 max="10"
                 step="0.1"
-                value={otherCostsPct}
-                onChange={(event) => setOtherCostsPct(event.target.value)}
+                value={legalCostsPct}
+                onChange={(event) => setLegalCostsPct(event.target.value)}
               />
               <span>%</span>
             </div>
             <small>
-              Veiledende margin for advokat, notar, register og øvrige transaksjonskostnader.
-              Juster hvis du har konkrete tilbud.
+              Veiledende budsjettpost for advokat og juridisk oppfølging. Konkret honorar avtales
+              i den enkelte handelen.
+            </small>
+          </label>
+
+          <label>
+            <span>Notarius og eiendomsregister</span>
+            <div className="purchase-budget-input-with-unit single-unit">
+              <input
+                type="number"
+                min="0"
+                max="10"
+                step="0.1"
+                value={notaryRegistryPct}
+                onChange={(event) => setNotaryRegistryPct(event.target.value)}
+              />
+              <span>%</span>
+            </div>
+            <small>
+              Veiledende samlet planleggingsmargin for notarius, registrering og mindre
+              transaksjonskostnader.
             </small>
           </label>
 
@@ -295,7 +342,7 @@ export function PurchaseBudgetCalculator() {
                   <dd>{euro.format(result.costs.iva)}</dd>
                 </div>
                 <div>
-                  <dt>AJD · {formatRate(result.ajdRate * 100)} %</dt>
+                  <dt>AJD (dokument-/stempelavgift) · {formatRate(result.ajdRate * 100)} %</dt>
                   <dd>{euro.format(result.costs.ajd)}</dd>
                 </div>
               </>
@@ -306,8 +353,12 @@ export function PurchaseBudgetCalculator() {
               </div>
             )}
             <div>
-              <dt>Andre kjøpskostnader · {formatRate(result.otherRate * 100)} %</dt>
-              <dd>{euro.format(result.costs.other)}</dd>
+              <dt>Juridisk bistand · {formatRate(result.legalRate * 100)} %</dt>
+              <dd>{euro.format(result.costs.legal)}</dd>
+            </div>
+            <div>
+              <dt>Notarius og register · {formatRate(result.notaryRegistryRate * 100)} %</dt>
+              <dd>{euro.format(result.costs.notaryRegistry)}</dd>
             </div>
             {result.reserveEur > 0 && (
               <div>
