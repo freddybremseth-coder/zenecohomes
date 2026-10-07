@@ -33,8 +33,8 @@ function toNumber(value: string) {
 
 function formatRate(value: number) {
   return new Intl.NumberFormat("nb-NO", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 4,
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 2,
   }).format(value);
 }
 
