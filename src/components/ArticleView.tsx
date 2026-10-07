@@ -248,16 +248,40 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "boliglan-spansk-bank-nordmenn": [
     {
-      headingIncludes: "Hva banken ser på",
+      headingIncludes: "Kan jeg låne penger",
       links: [
         { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
-        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
     },
     {
-      headingIncludes: "Kostnader og vilkår",
+      headingIncludes: "Viktige krav",
+      links: [
+        { label: "NIE i Spania – steg for steg", href: "/guide/nie-skattenummer-spania" },
+      ],
+    },
+    {
+      headingIncludes: "søknadsprosess",
+      links: [
+        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Kalkulator",
       links: [
         { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Spansk lån vs norsk lån",
+      links: [
+        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+      ],
+    },
+    {
+      headingIncludes: "Husk dette",
+      links: [
+        { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
       ],
     },
   ],
