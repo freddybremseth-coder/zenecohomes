@@ -367,7 +367,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av finansiering, dokumenter, NIE, bank og notar ved boligkjøp i Spania",
     seoTitle: "Finansiering, NIE og notar ved boligkjøp i Spania | Oversikt",
     seoDescription:
-      "Få oversikten over finansiering, NIE, bankkonto, notar, advokat, kjøpskostnader og betalingsflyt før boligkjøp i Spania – og gå videre til riktig fordypningsguide.",
+      "Få oversikten over finansiering, NIE, bankkonto, notar, advokat og kjøpskostnader før boligkjøp i Spania – og gå videre til riktig fordypningsguide.",
     keywords: ["NIE Spania", "finansiering bolig Spania", "notar Spania", "kjøpskostnader Spania", "spansk bankkonto"],
     intro: [
       "Denne siden er laget som en oversikt, ikke som fire guider i én. Målet er å vise hva som må avklares og sende deg videre til den riktige fordypningen når du trenger detaljer.",
