@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
+import { getPropertyDetailPath } from "@/lib/propertyRouting";
 
 const nok = new Intl.NumberFormat("nb-NO", {
   style: "currency",
@@ -141,16 +142,33 @@ export function MarketBudgetComparison() {
                       <th>Pris</th>
                       <th>Ca. NOK</th>
                       <th>Eksempel</th>
+                      <th aria-label="Boliglenke"></th>
                     </tr>
                   </thead>
                   <tbody>
                     {level.rows.map((row) => (
                       <tr key={row[0]}>
-                        <td>{row[0]}</td>
+                        <td>
+                          <Link
+                            className="market-budget-ref-link"
+                            href={getPropertyDetailPath(row[0], "no")}
+                            aria-label={`Se bolig ${row[0]}`}
+                          >
+                            {row[0]}
+                          </Link>
+                        </td>
                         <td><MapPin size={14} aria-hidden="true" /> {row[1]}</td>
                         <td>{row[2]}</td>
                         <td>{nok.format(euroAmount(row[2]) * eurNok)}</td>
                         <td>{row[3]}</td>
+                        <td>
+                          <Link
+                            className="market-budget-property-link"
+                            href={getPropertyDetailPath(row[0], "no")}
+                          >
+                            Se bolig <ArrowRight size={14} />
+                          </Link>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
