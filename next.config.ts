@@ -62,6 +62,23 @@ const nextConfig: NextConfig = {
       permanent: true,
     }));
 
+    const marketComparisonLegacySlugs = [
+      "costa-blanca-nord-500000-euro-hva-kjope-na",
+      "benidorm-villa-456000-vs-516000",
+      "finestrat-villa-650000-700000-735000",
+      "villajoyosa-275000-vs-375000",
+      "costa-blanca-nord-under-300000-tre-kjop",
+      "600000-euro-benidorm-polop-finestrat",
+      "finestrat-430000-leilighet-eller-bungalow",
+      "finestrat-rundt-700000-114-155-314-m2",
+      "finestrat-735000-vs-735950",
+    ];
+    const marketComparisonRedirects = marketComparisonLegacySlugs.map((slug) => ({
+      source: `/magasin/${slug}`,
+      destination: "/magasin/hva-far-du-for-pengene-costa-blanca-nord-na",
+      permanent: true,
+    }));
+
     const siloRedirects = [
       ["omkostninger-nybygg-spania", "guide"],
       ["bankgaranti-nybygg-spania", "guide"],
@@ -159,6 +176,7 @@ const nextConfig: NextConfig = {
       { source: "/tomter", destination: "/omrader/innlandet/tomter", permanent: true },
       { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
       ...legacyKjopsprosessRedirects,
+      ...marketComparisonRedirects,
       ...siloRedirects,
       ...corporateLegacyRedirects,
     ];
