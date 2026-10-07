@@ -1596,86 +1596,285 @@ export const articles: Article[] = [
   },
   {
     slug: "boliglan-spansk-bank-nordmenn",
-    title: "Boliglån i spansk bank for nordmenn: slik fungerer det",
+    title: "Boliglån i Spania: Slik får du lån i spansk bank",
     excerpt:
       "Kan nordmenn få boliglån i Spania? Om bankens vurdering, belåningsgrad, takst og kostnadene ved å låne til bolig i Spania.",
     date: "2026-09-08",
-    updated: "2026-09-15",
+    updated: "2026-10-07",
     category: "Kjøpsprosess",
-    readingTime: "7 min lesing",
+    readingTime: "16 min lesing",
     image: "/assets/magasin-covers/boliglan-bank.svg",
     imageAlt: "Illustrasjon av bolig og spansk bank med boliglån",
-    seoTitle: "Boliglån i Spania | Bank, belåning, takst og kostnader",
+    seoTitle: "Boliglån i Spania | Slik får nordmenn lån i spansk bank",
     seoDescription:
-      "Kan nordmenn få boliglån i Spania? Les om bankens vurdering, belåningsgrad, takst, dokumentasjon, renter og de vanligste kostnadene ved spansk boliglån.",
+      "Boliglån i Spania for nordmenn: se belåningsgrad, renter, Euribor, TAE, egenkapital, kostnader, søknadsprosess og forskjellen på spansk og norsk lån.",
     keywords: [
-      "boliglån Spania nordmenn",
-      "lån bolig Spania",
+      "boliglån i Spania",
+      "låne penger i spansk bank",
+      "lån i spansk bank",
+      "Hva er renten på boliglån i Spania",
+      "kalkulator for boliglån i Spania",
+      "spansk lånekalkulator",
       "belåningsgrad ikke-resident Spania",
-      "spansk bank boliglån",
       "finansiering bolig Spania",
     ],
     intro: [
-      "Spanske banker kan gi boliglån til utenlandske kjøpere, men tilbudet avhenger av bank, skattemessig bosted, inntekt, gjeld, alder, eiendom og øvrig risikoprofil. Ikke bruk én standard belåningsprosent som budsjett før du har et konkret tilbud.",
-      "Denne guiden forklarer hva banken typisk vurderer og hvordan kostnader ved boliglån fordeles etter spansk regelverk. Dette er generell informasjon, ikke finansiell rådgivning.",
+      "Boliglån i Spania er fullt mulig for nordmenn, også dersom du bor og skatter i Norge. Men prosessen fungerer ikke helt som i en norsk bank. Hvor mye du kan låne avhenger blant annet av om boligen skal være fast bolig eller feriebolig, inntekten og gjelden din, bankens takst av eiendommen og hvilken bank du søker hos.",
+      "Jeg har selv spansk boliglån og har fulgt boligkjøpsprosessen både som privat kjøper og som rådgiver for nordmenn som kjøper bolig i Spania. Mitt viktigste råd er å ikke behandle finansieringen som noe man ordner helt til slutt. Får du oversikt over lånemuligheter, egenkapital og totale kjøpskostnader tidlig, blir resten av boligjakten betydelig enklere – og du står sterkere når du finner boligen du faktisk ønsker å kjøpe.",
     ],
     sections: [
       {
-        heading: "Belåningsgrad for ikke-residenter",
+        heading: "Kan jeg låne penger i spansk bank?",
         body: [
-          "Bankene setter egne grenser for belåningsgrad og kan behandle residenter og ikke-residenter forskjellig. Lånebeløpet vurderes også mot bankens takst og kjøpesum. Be derfor om forhåndsvurdering og et konkret tilbud før du setter endelig boligbudsjett.",
+          "Ja. Norske statsborgere kan låne penger i spansk bank uten å være residenter i Spania. Det første jeg ville vært forsiktig med, er likevel påstander som «residenter får 80 prosent og ikke-residenter får 70 prosent». Virkeligheten er mer nyansert. Flere banker oppgir opptil 80 prosent finansiering for primærbolig og opptil 70 prosent for andrebolig, mens egne produkter for ikke-residenter også kan ligge på opptil 70 prosent. Dette er maksimumsgrenser – ikke et løfte om at du faktisk får låne så mye.",
+          "Banken foretar alltid en individuell vurdering, og taksten kan påvirke finansieringen betydelig. Dersom du avtaler å kjøpe en bolig for 500.000 euro, men bankens godkjente takstmann vurderer den lavere, må du være forberedt på at bankens finansieringsgrunnlag kan bli lavere enn kjøpesummen. Derfor anbefaler jeg å få finansieringen vurdert før du binder deg økonomisk til en bolig.",
+          "Jeg ville nesten aldri vurdert et spansk boliglån på grunnlag av ett tilbud alene. Be minst to banker om å regne på den samme finansieringen. Når Bank A har gitt deg et skriftlig tilbud, kan du vise de relevante betingelsene til Bank B og spørre om de kan gi deg et bedre totaltilbud. Hvis Bank B forbedrer tilbudet, kan du gå tilbake til Bank A. Det viktigste er at du sammenligner hele pakken, ikke bare den annonserte renten.",
         ],
+        table: {
+          headers: ["Situasjon", "Eksempler på maksimal finansiering"],
+          rows: [
+            ["Primærbolig", "Opptil ca. 80 %"],
+            ["Andrebolig", "Opptil ca. 70 %"],
+            ["Ikke-residentprodukt", "Opptil ca. 70 %"],
+          ],
+          caption:
+            "Dette er eksempler på maksimale nivåer i markedet. Bankens konkrete tilbud avhenger av kunden, boligen og bankens kredittregler.",
+        },
       },
       {
-        heading: "Hva banken ser på",
+        heading: "Viktige krav for å få lån i Spania",
         body: [
-          "Banken vurderer blant annet betjeningsevne, inntekt, eksisterende gjeld, alder, valuta, skattemessig bosted og eiendommen som sikkerhet. Dokumentkrav varierer mellom banker.",
+          "Når du søker om lån i spansk bank, er bankens hovedspørsmål i praksis hvor stor risiko den tar ved å låne deg penger. Det skiller seg ikke grunnleggende fra Norge, men dokumentasjonen kan oppleves mer omfattende. En norsk bank kjenner ofte økonomien din fra før og arbeider i de samme norske systemene som skatte- og inntektsopplysningene dine. En spansk bank må forstå en norsk kundes økonomi gjennom dokumentasjonen du sender inn.",
+          "Banco de España bruker rundt 40 prosent av nettoinntekt som en viktig referanse i informasjonen sin om samlet gjeldsbelastning. Det betyr ikke at alle banker vil godta 40 prosent. Banken kan legge seg lavere ut fra kundens profil, valuta, alder, eksisterende gjeld og egne risikoregler.",
+          "Min erfaring er at det er mye lettere å få en effektiv bankprosess når dokumentasjonen leveres komplett og ryddig fra starten. Jeg ville samlet alt i én strukturert mappe før søknaden sendes, i stedet for å vente på at banken etterspør ett dokument om gangen. Er du selvstendig næringsdrivende eller har flere selskaper og inntektskilder, må du regne med at banken stiller flere spørsmål.",
         ],
         bullets: [
-          "Inntekt og betjeningsevne.",
-          "Eksisterende gjeld og forpliktelser.",
-          "Dokumentasjon på skatt, inntekt, konti og formue etter bankens krav.",
-          "NIE og bank-/kontooppsett avklares med den aktuelle banken.",
+          "Fast og dokumenterbar inntekt og hvor stabil den er.",
+          "Eksisterende boliglån, kreditter og andre månedlige forpliktelser.",
+          "Alder og ønsket løpetid.",
+          "Arbeidsforhold, pensjon eller næringsinntekt.",
+          "Skattemessig bosted og valutaen inntekten mottas i.",
+          "Egenkapital, formue og dokumentasjon på hvor pengene kommer fra.",
+          "Boligen som skal stilles som sikkerhet og bankens takst av eiendommen.",
+          "Pass, NIE, skattemelding, lønnsslipper eller pensjonsdokumentasjon, kontoutskrifter og låneoversikt etter bankens krav.",
         ],
       },
       {
-        heading: "Takst (tasación)",
+        heading: "Slik foregår en vanlig søknadsprosess",
         body: [
-          "Eiendom som stilles som sikkerhet skal takseres etter reglene for boliglån. Etter Ley 5/2019 ligger takstkostnaden hos låntaker. Bankens beregning av lånet påvirkes av den vurderte verdien og bankens egne kredittregler.",
+          "En typisk søknad om boliglån i Spania starter med økonomien din og avsluttes med den konkrete boligen. Først vurderer banken inntekt, gjeld, egenkapital og øvrig økonomi. Når du har funnet en bolig, må eiendommen normalt takseres av en godkjent takstmann. Banken vurderer deretter både kunden og sikkerheten før den gir endelig lånetilbud.",
+          "Etter den spanske boliglånsloven skal kunden blant annet få FEIN, den standardiserte europeiske låneinformasjonen, og FiAE med viktige vilkår og advarsler. Dokumentasjonen skal normalt være tilgjengelig minst ti kalenderdager før signering. Notaren skal kontrollere informasjonen og gi kunden individuell rådgivning før boliglånet kan gjennomføres.",
+          "Her er det en tydelig forskjell fra det mange er vant til i Norge. Flere spanske banker har digitalisert selve søknaden og lar utenlandske kunder sende inn dokumentasjon elektronisk, så det er ikke riktig at du alltid må møte fysisk i banken. Notarprosessen er derimot en egen del av gjennomføringen. Låntakeren eller en behørig representant må oppfylle kravene til notarial behandling og rådgivning. En advokat, gestor eller annen representant med korrekt fullmakt kan håndtere mye praktisk, men en fullmakt må dekke det som faktisk skal gjøres.",
+        ],
+        bullets: [
+          "Økonomisk forhåndsvurdering.",
+          "Innsending og kontroll av dokumentasjon.",
+          "Valg av konkret eiendom.",
+          "Bankens takst – tasación.",
+          "Endelig kredittgodkjenning.",
+          "Lånetilbud og FEIN/FiAE.",
+          "Obligatorisk notarkontroll.",
+          "Signering av boliglån og kjøp.",
         ],
       },
       {
-        heading: "Kostnader og vilkår",
+        heading: "Hva er renten på boliglån i Spania?",
         body: [
-          "Ley 5/2019 fordeler flere kostnader ved selve boliglånet: taksten bæres av låntaker, mens långiver blant annet bærer gestoría, notarhonorar for låneskjøtet og registrering av pantesikkerheten. Andre gebyrer og renter må vurderes i det konkrete tilbudet.",
+          "Det korte svaret er at det ikke finnes én rente på boliglån i Spania. Renten avhenger av banken, belåningsgraden, økonomien din, løpetiden og om du velger fast, variabel eller blandet rente. Derfor bør et banktilbud alltid leses som en helhet.",
+          "For å forstå variable spanske boliglån bør du kjenne Euribor. Euribor – Euro Interbank Offered Rate – er en markedsbasert referanserente for euroområdet. 12-måneders Euribor er den viktigste referansen for mange spanske boliglån med variabel rente. Et lån kan for eksempel prises som 12-måneders Euribor pluss bankens avtalte margin. Dersom Euribor er 3,0 prosent og bankens margin er 1,0 prosentpoeng, vil den nominelle renten i et forenklet eksempel ligge rundt 4,0 prosent frem til neste renteregulering.",
+          "I september 2026 var 12-måneders Euribor 3,247 prosent, ifølge Banco de España. Euribor er ikke det samme som styringsrenten til Den europeiske sentralbanken. For norske lesere er den nærmeste sammenligningen egentlig NIBOR: Norges Bank setter styringsrenten, som påvirker pengemarkedsrentene og bankenes finansiering; i euroområdet påvirker ECBs renter blant annet Euribor. Banken setter til slutt renten du som kunde får.",
+        ],
+        table: {
+          headers: ["Rentetype", "Hvordan fungerer den?", "Hva bør du tenke på?"],
+          rows: [
+            ["Fast rente", "Renten avtales for hele eller store deler av lånetiden.", "Gir forutsigbar månedskostnad."],
+            ["Variabel rente", "Ofte Euribor + bankens margin.", "Kostnaden kan både stige og falle."],
+            ["Blandet rente", "Fast rente først, variabel senere.", "Kombinerer forutsigbarhet med senere renterisiko."],
+          ],
+        },
+      },
+      {
+        heading: "Hva betyr TAE – og hvorfor er det viktig?",
+        body: [
+          "Når jeg sammenligner spanske lånetilbud, er TAE et av de første tallene jeg ser etter. TAE står for Tasa Anual Equivalente og kan sammenlignes med effektiv rente i Norge. Den nominelle renten – ofte omtalt som TIN i Spania – forteller hvilken rente banken beregner på lånet, mens TAE forsøker å uttrykke den årlige samlede kostnaden når relevante gebyrer og kostnader tas med etter reglene for beregningen.",
+          "Det betyr at Bank A kan ha lavere nominell rente enn Bank B, men likevel være dyrere totalt dersom den krever kostbare forsikringer, konto, kort eller andre produkter. CaixaBanks offentlig tilgjengelige ikke-residenteksempel i oktober 2026 illustrerer dette godt: Et lån på 150.000 euro over 20 år vises med 2,80 prosent fast nominell rente og 4,374 prosent APR/TAE med maksimal rabatt, mens varianten uten rabattene har 3,80 prosent nominell rente og 4,398 prosent APR/TAE. Forskjellen i nominell rente er stor, men forskjellen i oppgitt samlet lånekostnad er langt mindre fordi bonusalternativet er knyttet til andre produkter og kostnader.",
+          "Derfor ville jeg alltid regnet om tilbudene til faktiske euro per måned og per år. Se på TAE, men kontroller også kostnaden på konto, kort, boligforsikring, livsforsikring, alarm- eller sikkerhetstjenester og andre betingelser. Det hjelper lite med en lavere rente dersom de andre månedlige kostnadene spiser opp gevinsten.",
+        ],
+        table: {
+          headers: ["Sammenlign", "Bank A", "Bank B"],
+          rows: [
+            ["Lånebeløp", "", ""],
+            ["Løpetid", "", ""],
+            ["TIN / nominell rente", "", ""],
+            ["TAE / effektiv kostnad", "", ""],
+            ["Månedlig lånebetaling", "", ""],
+            ["Konto og kort", "", ""],
+            ["Bolig- og livsforsikring", "", ""],
+            ["Andre produkter", "", ""],
+            ["Kostnad ved ekstra nedbetaling", "", ""],
+            ["Total årlig kostnad", "", ""],
+          ],
+          caption: "Bruk samme sammenligningsgrunnlag hos begge banker. Da blir det enklere å forhandle og se hva tilbudet faktisk koster.",
+        },
+      },
+      {
+        heading: "Kalkulator for boliglån i Spania",
+        body: [
+          "En kalkulator for boliglån i Spania bør vise mer enn bare månedlig avdrag. For en norsk boligkjøper er det minst like viktig å vite hvor mye kapital som faktisk må være tilgjengelig for å gjennomføre kjøpet. En god spansk lånekalkulator bør derfor regne på kjøpesum, bruktbolig eller nybygg, region, belåningsgrad, lånebeløp, rente, løpetid, månedlig betaling, skatter, øvrige kjøpskostnader og total egen kapital som kreves.",
+          "La oss bruke en bolig til 500.000 euro som eksempel. Dersom banken godkjenner 70 prosent finansiering, blir boliglånet 350.000 euro og egenkapitalen til selve kjøpesummen 150.000 euro. Men det betyr ikke at 150.000 euro er nok til å kjøpe boligen. Skatter og andre kjøpskostnader kommer i tillegg.",
+          "CaixaBank bruker i sitt generelle ikke-residenteksempel ytterligere omtrent 12–15 prosent av boligverdien til skatter og andre kostnader. På en bolig til 500.000 euro tilsvarer det omtrent 60.000–75.000 euro. Samlet kapitalbehov blir da omtrent 210.000–225.000 euro. Det er dette tallet jeg mener en boliglånskalkulator bør vise tydelig, fordi det gir et langt mer realistisk bilde enn bare å si at du trenger 30 prosent egenkapital.",
+          "På Costa Blanca er det også nyttig å se hva skatten alene kan gjøre med regnestykket. For ordinær bruktbolig i Comunitat Valenciana er den generelle ITP-satsen 9 prosent for eiendommer under én million euro fra 1. juni 2026. På en bruktbolig til 500.000 euro utgjør det 45.000 euro i ITP før øvrige kjøpskostnader. Ved ordinært nybygg gjelder normalt 10 prosent IVA, og andre skatter og kostnader kommer i tillegg.",
+        ],
+        table: {
+          headers: ["Eksempel: bolig til 500.000 €", "Beløp"],
+          rows: [
+            ["Kjøpesum", "500.000 €"],
+            ["Boliglån 70 %", "350.000 €"],
+            ["Egenkapital til kjøpesummen", "150.000 €"],
+            ["Skatter og øvrige kjøpskostnader, ca. 12–15 %", "60.000–75.000 €"],
+            ["Estimert kapital du bør ha tilgjengelig", "210.000–225.000 €"],
+          ],
+          caption:
+            "12–15 prosent er et generelt bankeksempel for ikke-residenter. Den faktiske kostnaden avhenger blant annet av bruktbolig eller nybygg, region, boligverdi og hvilke tjenester du bruker.",
+        },
+      },
+      {
+        heading: "Hva koster et spansk boliglån?",
+        body: [
+          "Her må vi skille mellom kostnadene ved å kjøpe boligen og kostnadene ved selve boliglånet. Etter den spanske boliglånsloven betaler kunden normalt taksten av boligen. Banken betaler blant annet kostnadene til notar, eiendomsregister, gestoría og skatt knyttet til etableringen av selve pantelånet. Dette gjelder boliglånet – ikke kjøpsskatter og andre kostnader ved eiendomsoverdragelsen.",
+          "Det som ofte blir dyrt over tid er derfor ikke etableringen av pantet, men renten og de løpende produktene banken knytter til lånet. Hvis én bank gir deg 0,3 prosentpoeng lavere rente, men krever forsikringer og produkter som koster betydelig mer per år, må du regne på om rentebesparelsen faktisk er større enn merkostnaden.",
+          "TAE hjelper deg med å sammenligne, men jeg ville likevel sett på de faktiske eurobeløpene produkt for produkt. Spør banken hva du betaler i året med og uten rabatter, og hvilke produkter som er obligatoriske, valgfrie eller bare nødvendige for å få den annonserte renten.",
+        ],
+        table: {
+          headers: ["Kostnad ved selve boliglånet", "Normalt betaler"],
+          rows: [
+            ["Takst – tasación", "Kunde"],
+            ["Notar for låneskjøtet", "Bank"],
+            ["Registrering av pant", "Bank"],
+            ["Gestoría knyttet til pantelånet", "Bank"],
+            ["AJD på selve pantelånet", "Bank"],
+            ["Eventuelt etableringsgebyr", "Avhenger av tilbudet"],
+            ["Forsikringer og tilleggsprodukter", "Avhenger av vilkårene"],
+          ],
+        },
+      },
+      {
+        heading: "Spansk lån vs norsk lån",
+        body: [
+          "For mange nordmenn er det reelle valget ikke bare mellom to spanske banker, men mellom å låne i Norge eller å ta boliglån i Spania. Begge løsninger kan være gode, og jeg synes det blir for enkelt å velge ut fra hvilken rente som ser lavest ut akkurat i dag.",
+          "Med et spansk boliglån er boligen og lånet normalt i samme valuta. Det gir en naturlig kobling mellom eiendommen i euro og gjelden i euro. Har du fortsatt inntekten din i norske kroner, har du likevel ikke fjernet valutarisikoen. Du må kjøpe euro for å betale lånet, og en svakere norsk krone kan derfor gjøre et uendret spansk lån dyrere målt i NOK.",
+          "Har du betydelig egenkapital i norsk bolig, kan norsk finansiering være enklere. Banken kjenner økonomien din, språk og dokumentasjon er mer kjent, og prosessen kan oppleves enklere. På den andre siden belåner du da norske verdier for å kjøpe en eiendel i euro. Det bedre spørsmålet er derfor ikke bare «hvor er renten lavest?», men hvilken finansieringsstruktur som passer økonomien din best over de neste 10–20 årene.",
+        ],
+        table: {
+          headers: ["", "Spansk boliglån", "Norsk finansiering"],
+          rows: [
+            ["Sikkerhet", "Vanligvis boligen i Spania", "Ofte norsk bolig eller formue"],
+            ["Lånevaluta", "Vanligvis EUR", "Vanligvis NOK"],
+            ["Bankens kjennskap til deg", "Må dokumenteres", "Ofte eksisterende kundeforhold"],
+            ["Dokumentasjon", "Kan være omfattende", "Ofte enklere"],
+            ["Valutarisiko", "Bolig og lån i EUR, men inntekt kan være i NOK", "Lån i NOK, bolig i EUR"],
+            ["Prosess", "Spansk bank, takst og notar", "Mer kjent norsk bankprosess"],
+          ],
+        },
+      },
+      {
+        heading: "Husk dette når du søker boliglån i Spania",
+        body: [
+          "Jeg har selv spansk boliglån, og hvis jeg skulle redusere hele guiden til ett praktisk råd, ville det være dette: Begynn med banken før du forelsker deg i boligen. Det er lett å starte på boligportalene, finne en fantastisk leilighet eller villa og først deretter tenke finansiering. Dersom du trenger lån, mener jeg rekkefølgen bør være motsatt.",
+          "Finn først ut hva du komfortabelt kan bruke totalt, inkludert skatt, omkostninger og reserve, og få en realistisk forhåndsvurdering fra banken. Da vet du hvilken prisklasse du faktisk bør lete i, og du står sterkere når du finner riktig bolig.",
+          "Jeg ville heller ikke valgt et lån bare fordi banken gir deg muligheten til å låne maksimalt. At banken sier at du kan låne 350.000 euro, betyr ikke nødvendigvis at du bør låne 350.000 euro. Boligen skal fortsatt være økonomisk komfortabel dersom renten endrer seg, euroen blir dyrere mot norske kroner, fellesutgiftene øker eller det oppstår andre kostnader. Det er forskjellen mellom å få finansiering og å ha en god finansieringsplan.",
+        ],
+        bullets: [
+          "Innhent tilbud fra minst to banker.",
+          "Sammenlign TAE og total kostnad – ikke bare nominell rente.",
+          "Regn ut kostnaden på forsikringer, konto, kort og andre produkter i euro.",
+          "Vis bankene konkurrentens tilbud og spør om de kan forbedre vilkårene.",
+          "Kontroller hva banken finansierer dersom taksten blir lavere enn kjøpesummen.",
+          "Avklar kostnader ved ekstraordinær nedbetaling eller førtidig innfrielse.",
+          "Regn egenkapital pluss alle kjøpskostnader før boligbudsjettet fastsettes.",
+          "Planlegg valutavekslingen dersom kapitalen eller inntekten din er i NOK.",
+          "Sørg for at reservasjons- eller kjøpekontrakten håndterer finansieringsrisikoen på riktig måte.",
+          "Bruk kvalifisert juridisk og skattemessig rådgivning når situasjonen krever det.",
+        ],
+      },
+      {
+        heading: "Skal du kjøpe bolig i Spania med finansiering?",
+        body: [
+          "Hvis du vurderer boliglån i Spania, anbefaler jeg å se finansieringen som en del av hele boligvalget – ikke som en separat bankoppgave. Boligpris, egenkapital, skatt, omkostninger, valuta, bankvilkår og månedlige kostnader henger sammen.",
+          "Hos Zen Eco Homes kan vi hjelpe deg med å forstå hvordan boligbudsjettet og kjøpsprosessen henger sammen, finne boliger innenfor den reelle økonomiske rammen din og koordinere de praktiske delene rundt kjøpet. Banken tar selve kredittbeslutningen, og juridisk og skattemessig rådgivning må gis av kvalifiserte fagpersoner på de respektive områdene.",
         ],
       },
     ],
     nextSteps: [
-      "Be om finansieringsvurdering før du fastsetter endelig boligbudsjett.",
-      "Avklar dokumentkrav, NIE og bankoppsett med aktuelle långivere.",
-      "Innhent tilbud fra flere banker og sammenlign effektiv kostnad og vilkår.",
-      "Husk at bankens takst og kredittvurdering kan påvirke lånebeløpet.",
+      "Få en tidlig finansieringsvurdering før du setter endelig boligbudsjett.",
+      "Be minst to banker om sammenlignbare tilbud og vurder TAE, totalpris og tilleggsprodukter.",
+      "Regn ut nødvendig egenkapital inkludert skatter og øvrige kjøpskostnader.",
+      "Avklar bankens takst, finansieringsgrad og eventuelle vilkår før du binder deg til boligen.",
     ],
     faq: [
       {
-        question: "Kan nordmenn få boliglån i spansk bank?",
+        question: "Kan nordmenn få boliglån i Spania?",
         answer:
-          "Ja, det kan være mulig. Banken vurderer den enkelte søkeren, eiendommen og dokumentasjonen og setter egne vilkår og grenser for belåning.",
+          "Ja. Norske kjøpere kan søke om boliglån hos spanske banker selv om de ikke er residenter i Spania. Banken vurderer blant annet inntekt, gjeld, egenkapital, alder og eiendommen som skal stilles som sikkerhet.",
       },
       {
-        question: "Hvor mye egenkapital trenger jeg?",
+        question: "Hvor mye kan en ikke-resident låne i Spania?",
         answer:
-          "Det kan ikke fastsettes med én prosent uten et konkret banktilbud. Egenkapitalbehovet avhenger av bankens belåningsgrad, takst/kjøpesum og kjøpskostnadene som ikke finansieres. Be om forhåndsvurdering før du bestemmer budsjett.",
+          "Enkelte banker tilbyr ikke-residenter finansiering på opptil 70 prosent av boligens verdi. Den faktiske belåningsgraden bestemmes etter bankens individuelle kredittvurdering og eiendommens verdi.",
       },
       {
-        question: "Hvilke kostnader har et spansk boliglån?",
+        question: "Kan jeg få 80 prosent boliglån i Spania?",
         answer:
-          "Etter Ley 5/2019 bæres taksten av låntaker, mens långiver blant annet dekker gestoría, notarhonorar for låneskjøtet og registrering av pantesikkerheten. Rente, eventuelle gebyrer og øvrige vilkår fremgår av bankens tilbud.",
+          "Det finnes banker som tilbyr opptil 80 prosent ved kjøp av primærbolig, mens andreboliger ofte begrenses til rundt 70 prosent. Boligtype og bankens vurdering er avgjørende, ikke bare om du er resident.",
+      },
+      {
+        question: "Hva er renten på boliglån i Spania?",
+        answer:
+          "Det finnes ingen felles boliglånsrente. Renten avhenger av bank, økonomi, belåningsgrad, løpetid og om du velger fast, variabel eller blandet rente. For variable lån brukes 12-måneders Euribor ofte som referanse.",
+      },
+      {
+        question: "Hva er Euribor?",
+        answer:
+          "Euribor er en markedsbasert referanserente for euroområdet. For mange spanske boliglån med variabel rente består renten av Euribor pluss en avtalt margin til banken.",
+      },
+      {
+        question: "Hva betyr TAE?",
+        answer:
+          "TAE står for Tasa Anual Equivalente og kan sammenlignes med effektiv rente i Norge. Den gjør det lettere å sammenligne lånetilbud fordi relevante kostnader og gebyrer tas med i beregningen, ikke bare den nominelle renten.",
+      },
+      {
+        question: "Bør jeg spørre flere spanske banker?",
+        answer:
+          "Ja. Jeg anbefaler å innhente minst to tilbud og sammenligne TAE, månedlig betaling, forsikringer, kontoavgifter, øvrige produkter og betingelser for førtidig nedbetaling. Bruk gjerne det beste tilbudet som utgangspunkt når du forhandler med den andre banken.",
+      },
+      {
+        question: "Må jeg møte fysisk i banken i Spania?",
+        answer:
+          "Ikke nødvendigvis. Enkelte banker tilbyr digital søknad og elektronisk innsending av dokumentasjon til utenlandske kjøpere. Boliglånsprosessen innebærer imidlertid notarial behandling, og låntaker eller behørig representant må oppfylle kravene til fremmøte og rådgivning hos notaren.",
+      },
+      {
+        question: "Hvor mye egenkapital trenger jeg til bolig i Spania?",
+        answer:
+          "Dersom banken finansierer 70 prosent, må du dekke minst de resterende 30 prosentene selv. I tillegg kommer skatter og andre kjøpskostnader. Et generelt ikke-residenteksempel fra CaixaBank legger til grunn ytterligere rundt 12–15 prosent, altså samlet kapital på omtrent 42–45 prosent av boligverdien.",
+      },
+      {
+        question: "Hvem betaler taksten ved spansk boliglån?",
+        answer:
+          "Låntakeren betaler normalt taksten. Banken betaler etter gjeldende regler blant annet notar, register, gestoría og skatten knyttet til etableringen av selve pantelånet.",
+      },
+      {
+        question: "Bør jeg ta boliglån i Norge eller Spania?",
+        answer:
+          "Det finnes ikke ett riktig svar. Sammenlign renten, total kostnad, valuta, hvilken eiendom som stilles som sikkerhet, hvor mye fleksibilitet du ønsker og hvordan inntekten din er fordelt mellom NOK og EUR.",
+      },
+      {
+        question: "Når bør jeg begynne låneprosessen?",
+        answer:
+          "Helst før du har bundet deg til en bestemt bolig. En tidlig finansieringsvurdering gir et mer realistisk boligbudsjett og gjør det enklere å handle når du finner riktig eiendom.",
       },
     ],
-    cta: { label: "Les mer om omkostninger ved kjøp", href: "/guide/omkostninger-nybygg-spania" },
-  },
+    cta: { label: "Få rådgivning om boligbudsjett og kjøpsprosess", href: "/booking" },
+  }
 ];
 
 export function getArticle(slug: string) {
