@@ -6900,3 +6900,34 @@ footer {
 .purchase-budget-breakdown-total .purchase-budget-breakdown-nok {
   color: rgba(255, 255, 255, 0.72);
 }
+
+
+/* Guide hub: readable closing actions on light surfaces */
+.guide-magazine-actions .text-button {
+  color: var(--dark);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.guide-magazine-actions .text-button:hover {
+  color: var(--gold-dark);
+}
+
+.guide-magazine-actions .text-button:focus-visible {
+  outline: 3px solid var(--dark);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.guide-magazine-actions .contact-button {
+  border: 1px solid var(--dark);
+  background: var(--dark);
+  color: #fff;
+}
+
+.guide-magazine-actions .contact-button:hover {
+  border-color: var(--gold-dark);
+  background: var(--gold-dark);
+  color: #fff;
+}
