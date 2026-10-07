@@ -403,19 +403,95 @@ const drafts: CorporateDraft[] = [
     slug: "corporate-home-assessment-bedriftsvurdering",
     seoTitle: "Bedriftsvurdering av firmabolig | Zen Corporate Homes",
     title: "Hva inngår i en bedriftsvurdering fra Zen Corporate Homes?",
-    excerpt: "Slik gjør vi en tidlig idé om bedriftshytte om til et konkret beslutningsgrunnlag med modell, område, budsjett og boligshortlist.",
-    seoDescription: "Slik gjør vi en tidlig idé om bedriftshytte om til et konkret beslutningsgrunnlag med modell, område, budsjett og boligshortlist. Les guiden.",
-    keywords: ["bedriftsvurdering bedriftshytte", "Zen Corporate Homes", "firmabolig vurdering"],
-    intro: ["Før virksomheten bruker tid på visninger bør ledelsen vite hva den faktisk ser etter. Derfor starter Zen Corporate Homes med en kostnadsfri første bedriftsvurdering.", "Vurderingen er ikke en juridisk eller skattemessig rapport. Den gjør eiendomsdelen konkret nok til at virksomheten kan avgjøre om ideen er verdt å utvikle videre."],
+    excerpt: "Fra første idé til beslutningsgrunnlag, avklarte kriterier og kvalitetssikret boligshortlist – slik fungerer den kostnadsfrie bedriftsvurderingen.",
+    seoDescription: "Se hva Zen Corporate Homes' kostnadsfrie bedriftsvurdering inneholder: behov, budsjett, beslutningsgrunnlag, områder og kvalitetssikret boligshortlist.",
+    keywords: ["bedriftsvurdering bedriftshytte", "Zen Corporate Homes", "firmabolig vurdering", "beslutningsgrunnlag bedriftshytte", "boligshortlist bedrift"],
+    intro: [
+      "Før virksomheten bruker tid på konkrete boliger og visninger, bør ledelsen vite hva den faktisk ser etter – og om ideen er verdt å utvikle videre. Derfor starter Zen Corporate Homes med en kostnadsfri og uforpliktende bedriftsvurdering.",
+      "Vurderingen er ikke en juridisk, skattemessig eller finansiell rådgivningsrapport. Den skal gjøre eiendomsdelen konkret nok til at ledelsen eller styret kan vurdere modellen, økonomien, bruken og neste steg på et bedre grunnlag.",
+      "Dersom dere bruker kalkulatoren vår før dere sender inn vurderingen, følger tallene med videre og brukes som grunnlag for et første beslutningsnotat."
+    ],
     sections: [
-      { heading: "Behov og brukergruppe", body: ["Vi kartlegger antall potensielle brukere, ønsket bruk, kapasitet, tidshorisont og intern beslutningsprosess.", "Dette brukes til å anbefale en grunnmodell: ansattbolig, bedriftsvilla, delt bedriftsbolig eller medlemsbolig."] },
-      { heading: "Budsjett og områder", body: ["Vi setter opp realistiske prisintervaller og vurderer områder ut fra flytilgang, helårsservice, strand, transport og drift.", "Deretter velges et begrenset antall delmarkeder som er verdt å undersøke nærmere."] },
-      { heading: "Første boligshortlist", body: ["Når behov og budsjett er tydelig kan vi vise representative eller faktisk tilgjengelige boliger som illustrerer hva virksomheten får for pengene.", "Neste steg kan være møte, mer detaljert business case eller visninger i Spania."] }
+      {
+        heading: "Behov og brukergruppe",
+        body: [
+          "Vi starter med å kartlegge hva virksomheten ønsker å oppnå med boligen. Det kan være ansattgode eller personalfordel, medlemsfordel, ledersamlinger og strategisamlinger, mindre team- eller kundesamlinger eller en kombinasjon av bedriftsbruk og strukturert bruk for ansatte eller medlemmer.",
+          "Vi ser blant annet på antall potensielle brukere, forventet bruk gjennom året, tidshorisont, organisasjonstype og hvem som skal være involvert i beslutningen.",
+          "På dette grunnlaget kan vi anbefale en arbeidsmodell, for eksempel ansattbolig / bedriftshytte, bedriftsvilla, delt bedriftsbolig eller medlemsbolig. Modellen er et utgangspunkt og kan justeres når vi vet mer om den faktiske bruken."
+        ]
+      },
+      {
+        heading: "Budsjett og økonomiske forutsetninger",
+        body: [
+          "Et kjøpsbudsjett alene sier ikke nok. Vi ser derfor på den samlede modellen: forventet kjøpesum, kjøpskostnader, årlige driftskostnader, kapitalkostnad, planlagt eierhorisont, forventet bruk, eventuelle bedriftsopphold og alternativ kostnad ved hotell eller annen overnatting.",
+          "Verdiutvikling kan legges inn som et scenario, men behandles ikke som en garantert avkastning eller sikker besparelse. På den måten blir det lettere å se hvilke forutsetninger som faktisk driver regnestykket."
+        ]
+      },
+      {
+        heading: "Dere får et første beslutningsgrunnlag",
+        body: [
+          "Når dere sender inn bedriftsvurderingen, kan Zen Corporate Homes sette opp et første beslutningsgrunnlag basert på opplysningene og kalkulatortallene dere har gitt oss.",
+          "Rapporten kan blant annet inneholde hovedforutsetningene for prosjektet, kjøpesum og beregnede kostnader, bruk og kapasitet, sammenligning med relevante hotellkostnader, verdiscenario, spørsmål ledelsen eller styret bør avklare og anbefalte neste steg.",
+          "Beslutningsgrunnlaget sendes som PDF og kan brukes som et første internt arbeidsdokument. Det er ikke ment som et ferdig investeringsvedtak; hensikten er å gjøre det enklere å avgjøre om ideen bør utvikles videre."
+        ]
+      },
+      {
+        heading: "Område og boligkriterier",
+        body: [
+          "Hvis virksomheten ønsker å gå videre, gjør vi vurderingen mer konkret. Da avklarer vi blant annet ønsket område, boligtype, minimum antall soverom, kapasitet, standard, avstand til flyplass og andre krav som er viktige for den planlagte bruken.",
+          "Vi vurderer aktuelle områder ut fra blant annet tilgjengelighet fra Norge, flyplass og transport, helårsservice, strand og fritidstilbud, drift og lokal oppfølging og boligtilbud innenfor budsjettet.",
+          "Målet er normalt å begrense søket til noen få delmarkeder i stedet for å lete over hele Costa Blanca."
+        ]
+      },
+      {
+        heading: "Første boligshortlist",
+        body: [
+          "Når behov, budsjett og boligkriterier er tilstrekkelig avklart, kan vi lage en første boligshortlist.",
+          "RealtyFlow sammenholder kriteriene med aktuelle boliger og hjelper oss med å identifisere de alternativene som passer best. Forslagene kvalitetssikres av oss før de deles med virksomheten.",
+          "En typisk shortlist vil inneholde 3–5 relevante boliger, med forklaring på hvorfor de passer, hva som skiller dem fra hverandre og eventuelle forhold virksomheten bør være oppmerksom på. Det gir et langt bedre beslutningsgrunnlag enn å starte med en stor liste tilfeldige boliger."
+        ]
+      },
+      {
+        heading: "Fra vurdering til konkret prosjekt",
+        body: [
+          "En vanlig prosess er: bruk kalkulatoren og send inn den kostnadsfrie bedriftsvurderingen; motta et første beslutningsgrunnlag med tall, forutsetninger og åpne spørsmål; gå gjennom behov, bruk, budsjett og beslutningsprosess sammen med oss; fastsett område og konkrete boligkriterier; motta en kvalitetssikret shortlist med relevante boliger; og gå videre med et mer detaljert business case, møte eller visninger i Spania dersom prosjektet fortsatt er interessant.",
+          "Første steg er altså ikke å velge bolig. Første steg er å finne ut hvilken bolig og hvilken modell som faktisk kan fungere for virksomheten."
+        ]
+      },
+      {
+        heading: "Slik går dere videre",
+        body: [
+          "Avklar hvem som skal kunne bruke boligen og hva virksomheten ønsker å oppnå.",
+          "Sett et realistisk totalbudsjett for kjøp, drift og lokal oppfølging.",
+          "Be om en kostnadsfri bedriftsvurdering før dere bruker tid på konkrete boliger."
+        ]
+      }
     ],
     faq: [
-      { question: "Koster den første vurderingen noe?", answer: "Den innledende bedriftsvurderingen er kostnadsfri og uforpliktende." },
-      { question: "Må vi ha bestemt budsjett?", answer: "Nei. Et omtrentlig intervall er nok til å starte." },
-      { question: "Får vi konkrete boliger?", answer: "Når behovet er tydelig kan vi lage en relevant shortlist, avhengig av tilgjengeligheten i markedet." }
+      {
+        question: "Koster den første vurderingen noe?",
+        answer: "Nei. Den innledende bedriftsvurderingen er kostnadsfri og uforpliktende. Formålet er å avklare om ideen er relevant nok til at virksomheten bør bruke mer tid på den."
+      },
+      {
+        question: "Må vi ha bestemt budsjett?",
+        answer: "Nei. Dere kan også starte med at budsjettet ikke er avklart. Et realistisk prisintervall gjør vurderingen mer presis, men vi kan bruke første gjennomgang til å se hvilke budsjettnivåer som passer behovet og hva virksomheten faktisk får for pengene."
+      },
+      {
+        question: "Får vi konkrete boliger?",
+        answer: "Ja, når behov, budsjett, område og de viktigste boligkriteriene er tydelige nok. Vi ønsker ikke å sende en tilfeldig boligliste før vi vet hva virksomheten faktisk trenger. Når kriteriene er klare, kan vi lage en kvalitetssikret shortlist med normalt 3–5 relevante alternativer."
+      },
+      {
+        question: "Får vi en rapport etter vurderingen?",
+        answer: "Når dere sender inn vurderingen med tilstrekkelig informasjon, kan dere få et første beslutningsgrunnlag som PDF. Rapporten bygger på opplysningene og eventuelle kalkulatortall dere har gitt oss og oppsummerer nøkkeltall, forutsetninger, spørsmål som bør avklares og anbefalt vei videre."
+      },
+      {
+        question: "Kan rapporten brukes i styret?",
+        answer: "Den kan brukes som et første internt arbeids- og diskusjonsgrunnlag. Før en endelig beslutning bør konkrete boligkostnader, finansiering, skatt, juridisk struktur og regnskapsmessig behandling kvalitetssikres av relevante fagpersoner."
+      },
+      {
+        question: "Må vi være klare til å kjøpe?",
+        answer: "Nei. Bedriftsvurderingen passer også for virksomheter som bare ønsker å undersøke om en firmabolig, bedriftshytte eller medlemsbolig kan være interessant."
+      }
     ]
   },
   {
