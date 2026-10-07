@@ -6843,3 +6843,29 @@ footer {
     justify-content: center;
   }
 }
+
+
+.market-budget-ref-link,
+.market-budget-property-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--gold-dark);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.market-budget-ref-link:hover,
+.market-budget-property-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.market-budget-property-link {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.market-budget-table-wrap table {
+  min-width: 790px;
+}
