@@ -5,94 +5,131 @@ import { ArrowRight, Clock } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { articlePath, articlesInSilo } from "@/lib/magazine";
-import type { Article } from "@/lib/content";
+import { articlesInSilo } from "@/lib/magazine";
 
 export const metadata = {
   title: "Guider om boligkjøp i Spania | Råd fra Zen Eco Homes",
   description:
-    "Les guider om boligkjøp i Spania, områdevalg, nybygg, tomt, kostnader, finansiering, NIE og praktiske steg før du reserverer bolig i Spania.",
+    "Finn de viktigste guidene om boligkjøp i Spania: kostnader, nybygg, områder, finansiering, NIE, juridikk, skatt, utleie og livet som boligeier.",
   alternates: { canonical: "/guide" },
   openGraph: {
-    title: "Guider om boligkjøp i Spania | Råd fra Zen Eco Homes",
+    title: "Guider om boligkjøp i Spania | Zen Eco Homes",
     description:
-      "Praktiske guider om områdevalg, boligtype, nybygg, finansiering, NIE, juridikk og kostnader ved boligkjøp i Spania.",
+      "Et ryddig kunnskapssenter med de viktigste guidene før, under og etter boligkjøp i Spania.",
     url: "https://www.zenecohomes.com/guide",
     type: "website",
   },
 };
 
-const guideGroups = [
+type GuideItem = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  readingTime: string;
+  category: string;
+  updated: string;
+};
+
+const specialGuides: GuideItem[] = [
+  {
+    slug: "kjope-bolig-i-spania",
+    title: "Kjøpe bolig i Spania (2026) – dette må du vite",
+    excerpt: "Hovedguiden til områdevalg, boligtype, visning, juridisk kontroll, NIE, finansiering, notar og overtakelse.",
+    href: "/guide/kjope-bolig-i-spania",
+    image: "/assets/magasin-covers/kjopsprosess.svg",
+    imageAlt: "Illustrasjon av kjøpsprosessen ved boligkjøp i Spania",
+    readingTime: "18 min lesing",
+    category: "Hovedguide",
+    updated: "2026-10-07",
+  },
+  {
+    slug: "kostnader-boligkjop-spania",
+    title: "Hva koster det å kjøpe bolig i Spania?",
+    excerpt: "ITP, IVA, AJD, advokat, notar, register og finansiering – med interaktiv kalkulator for totalbudsjettet.",
+    href: "/guide/kostnader-boligkjop-spania",
+    image: "/assets/magasin-covers/finansiering.svg",
+    imageAlt: "Illustrasjon av kostnader og totalbudsjett ved boligkjøp i Spania",
+    readingTime: "10 min lesing",
+    category: "Kostnader",
+    updated: "2026-10-07",
+  },
+  {
+    slug: "nybygg-i-spania",
+    title: "Nybygg i Spania – komplett guide",
+    excerpt: "Utbygger, betalingsplan, bankgaranti, IVA og AJD, energieffektivitet, tilvalg, ferdigstillelse og overtakelse samlet i én guide.",
+    href: "/guide/nybygg-i-spania",
+    image: "/assets/magasin-covers/energi-baerekraft.svg",
+    imageAlt: "Illustrasjon av moderne nybygg i Spania",
+    readingTime: "14 min lesing",
+    category: "Nybygg",
+    updated: "2026-10-07",
+  },
+];
+
+const groups = [
+  {
+    id: "start",
+    eyebrow: "Start her",
+    title: "Helheten, budsjettet og finansieringen",
+    intro: "De tre guidene som gir deg rammen før du begynner å bruke tid på konkrete boliger.",
+    slugs: ["kjope-bolig-i-spania", "kostnader-boligkjop-spania", "finansiere-bolig-i-spania"],
+  },
   {
     id: "velge",
     eyebrow: "Velge riktig",
-    title: "Område, boligtype og timing",
-    intro:
-      "Start her hvis du fortsatt vurderer hvor du skal kjøpe, hvilken boligtype som passer eller om tidspunktet er riktig.",
-    slugs: [
-      "omradeguide-eiendomskjop-i-spania",
-      "kjop-bolig-i-spania-na-eller-vente",
-      "nybygg-finestrat-omradeguide",
-      "innlandet-finca-olivengard-spania",
-      "flytte-til-spania-som-pensjonist",
-      "guide-tomtekjop-bygging-i-spania",
-    ],
+    title: "Område, nybygg og tomt",
+    intro: "Fordyp deg i hvor og hva du bør kjøpe før du lager en konkret shortlist.",
+    slugs: ["omradeguide-eiendomskjop-i-spania", "nybygg-i-spania", "guide-tomtekjop-bygging-i-spania"],
   },
   {
     id: "prosess",
-    eyebrow: "Fra reservasjon til notar",
-    title: "Kjøpsprosess, juridikk og finansiering",
-    intro:
-      "Guider for deg som har kommet nærmere et konkret kjøp og vil forstå dokumenter, bank, NIE, kostnader og juridiske kontroller.",
+    eyebrow: "Trygg gjennomføring",
+    title: "Juridikk, NIE, bank og boliglån",
+    intro: "Guidene du trenger når kjøpet går fra plan til kontrakter, finansiering og gjennomføring.",
     slugs: [
-      "finansiering-notar-nie-boligkjop-spania",
       "juridiske-fallgruver-boligkjop-spania",
       "nie-skattenummer-spania",
       "boliglan-spansk-bank-nordmenn",
       "spansk-bankkonto-valutaveksling",
-      "omkostninger-nybygg-spania",
-      "bankgaranti-nybygg-spania",
     ],
   },
   {
     id: "eie",
-    eyebrow: "Etter kjøpet",
-    title: "Eie, bruke og senere selge bolig i Spania",
-    intro:
-      "Kostnader og spørsmål stopper ikke ved overtakelsen. Her finner du guider om drift, utleie, skatt, arv og energieffektivitet.",
+    eyebrow: "Eie og bruke",
+    title: "Kostnader, utleie, pensjon, salg og arv",
+    intro: "Spørsmålene som blir viktige når du skal eie, bruke, leie ut, selge eller overføre boligen.",
     slugs: [
       "lopende-kostnader-eie-bolig-spania",
       "utleie-inntektspotensial-bolig-spania",
+      "flytte-til-spania-som-pensjonist",
       "skatt-ved-salg-bolig-spania",
       "arv-gaveskatt-bolig-spania",
-      "energieffektive-nybygg-spania",
     ],
   },
 ] as const;
 
-function GuideCard({ article }: { article: Article }) {
+function GuideCard({ item }: { item: GuideItem }) {
   return (
     <article className="magazine-card guide-library-card">
       <Image
         className="magazine-cover-image"
-        src={article.image}
-        alt={article.imageAlt || `Illustrasjon til guiden ${article.title}`}
+        src={item.image}
+        alt={item.imageAlt}
         width={1200}
         height={760}
       />
       <div className="magazine-body">
         <p className="magazine-meta">
-          {article.category} · Sist oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
+          {item.category} · Sist oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(item.updated))}
         </p>
-        <h3>{article.title}</h3>
-        <p>{article.excerpt}</p>
+        <h3>{item.title}</h3>
+        <p>{item.excerpt}</p>
         <div className="magazine-actions">
-          <span className="guide-reading-time">
-            <Clock size={15} /> {article.readingTime}
-          </span>
-          <Link className="text-button" href={articlePath(article)}>
-            Les guide <ArrowRight size={16} />
-          </Link>
+          <span className="guide-reading-time"><Clock size={15} /> {item.readingTime}</span>
+          <Link className="text-button" href={item.href}>Les guide <ArrowRight size={16} /></Link>
         </div>
       </div>
     </article>
@@ -100,10 +137,19 @@ function GuideCard({ article }: { article: Article }) {
 }
 
 export default function GuideHub() {
-  const articles = articlesInSilo("guide").filter((article) => article.slug !== "kjopsprosess-bolig-i-spania");
-  const bySlug = new Map(articles.map((article) => [article.slug, article]));
-  const groupedSlugs = new Set<string>(guideGroups.flatMap((group) => [...group.slugs]));
-  const otherArticles = articles.filter((article) => !groupedSlugs.has(article.slug));
+  const contentGuides = articlesInSilo("guide");
+  const contentItems: GuideItem[] = contentGuides.map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    excerpt: article.excerpt,
+    href: `/guide/${article.slug}`,
+    image: article.image,
+    imageAlt: article.imageAlt || `Illustrasjon til guiden ${article.title}`,
+    readingTime: article.readingTime,
+    category: article.category,
+    updated: article.updated,
+  }));
+  const catalog = new Map([...contentItems, ...specialGuides].map((item) => [item.slug, item]));
 
   return (
     <main>
@@ -112,12 +158,12 @@ export default function GuideHub() {
       <section className="page-hero compact-hero image-hero guide-hub-hero">
         <div className="guide-hero-layout">
           <div className="guide-hero-copy">
-            <p className="eyebrow">Kunnskap før boligvalg</p>
+            <p className="eyebrow">Kunnskap uten innholdsstøy</p>
             <h1>Guider om boligkjøp i Spania</h1>
             <p>
-              Et boligkjøp blir enklere når du vet hva som må avklares – og i hvilken rekkefølge.
-              Her finner du praktiske guider om områdevalg, nybygg, finansiering, NIE, juridikk,
-              kostnader og livet som boligeier i Spania.
+              Her samler vi de viktigste fordypningene du trenger før, under og etter boligkjøpet.
+              Vi holder Guide bevisst ryddig: brede og varige spørsmål ligger her, mens markedsoppdateringer,
+              meninger og mer redaksjonelle saker ligger i Magasin.
             </p>
             <div className="hero-actions">
               <Link className="contact-button" href="/guide/kjope-bolig-i-spania">
@@ -129,79 +175,28 @@ export default function GuideHub() {
 
           <aside className="guide-hero-panel" aria-label="Finn riktig guide">
             <p className="eyebrow">Finn riktig svar</p>
-            <h2>Hva vil du vite mer om?</h2>
+            <h2>Hva vil du vite?</h2>
             <nav>
-              <Link href="/guide/kjope-bolig-i-spania">Hele kjøpsreisen <ArrowRight size={15} /></Link>
-              <Link href="/guide/omradeguide-eiendomskjop-i-spania">Velge riktig område <ArrowRight size={15} /></Link>
-              <Link href="/guide/nybygg-i-spania">Kjøpe nybygg <ArrowRight size={15} /></Link>
-              <Link href="/guide/finansiering-notar-nie-boligkjop-spania">Finansiering og notar <ArrowRight size={15} /></Link>
-              <Link href="/guide/juridiske-fallgruver-boligkjop-spania">Juridiske fallgruver <ArrowRight size={15} /></Link>
-              <Link href="/guide/guide-tomtekjop-bygging-i-spania">Tomt og bygging <ArrowRight size={15} /></Link>
+              <Link href="/guide/kjope-bolig-i-spania">Hvordan kjøper jeg bolig? <ArrowRight size={15} /></Link>
+              <Link href="/guide/kostnader-boligkjop-spania">Hva koster kjøpet? <ArrowRight size={15} /></Link>
+              <Link href="/guide/finansiere-bolig-i-spania">Hvordan finansierer jeg? <ArrowRight size={15} /></Link>
+              <Link href="/guide/omradeguide-eiendomskjop-i-spania">Hvor bør jeg kjøpe? <ArrowRight size={15} /></Link>
+              <Link href="/guide/nybygg-i-spania">Hva må jeg vite om nybygg? <ArrowRight size={15} /></Link>
+              <Link href="/guide/juridiske-fallgruver-boligkjop-spania">Hva kan gå galt? <ArrowRight size={15} /></Link>
             </nav>
           </aside>
-        </div>
-      </section>
-
-      <section className="section guide-start-section" id="start">
-        <div className="section-heading guide-section-heading">
-          <p className="eyebrow">Start her</p>
-          <h2>Tre gode innganger til boligkjøpet</h2>
-          <p>
-            Du trenger ikke lese alt. Velg det som passer hvor langt du har kommet, og bruk resten som
-            oppslagsverk når spørsmålene dukker opp.
-          </p>
-        </div>
-
-        <div className="guide-start-grid">
-          <article className="guide-start-card guide-start-card-primary">
-            <span>01</span>
-            <h3>Kjøpe bolig i Spania (2026)</h3>
-            <p>
-              Den komplette hovedguiden: område, boligtype, visning, juridisk kontroll, NIE, finansiering,
-              kostnader, notar og overtakelse.
-            </p>
-            <Link className="text-button" href="/guide/kjope-bolig-i-spania">
-              Les hovedguiden <ArrowRight size={16} />
-            </Link>
-          </article>
-
-          <article className="guide-start-card">
-            <span>02</span>
-            <h3>Nybygg i Spania</h3>
-            <p>
-              Utbygger, betalingsplan, bankgaranti, levering og det du bør kontrollere før du reserverer.
-            </p>
-            <Link className="text-button" href="/guide/nybygg-i-spania">
-              Les nybyggguiden <ArrowRight size={16} />
-            </Link>
-          </article>
-
-          <article className="guide-start-card">
-            <span>03</span>
-            <h3>Slik jobber Zen Eco Homes</h3>
-            <p>
-              Se hele arbeidsflyten fra behovskartlegging og områdevalg til visning, kjøp, overtakelse og oppfølging.
-            </p>
-            <Link className="text-button" href="/kjopsprosessen">
-              Se kjøpsprosessen <ArrowRight size={16} />
-            </Link>
-          </article>
         </div>
       </section>
 
       <section className="guide-index-band" aria-label="Guideoversikt">
         <div>
           <span>Hopp til:</span>
-          {guideGroups.map((group) => (
-            <a href={`#${group.id}`} key={group.id}>{group.title}</a>
-          ))}
+          {groups.map((group) => <a href={`#${group.id}`} key={group.id}>{group.title}</a>)}
         </div>
       </section>
 
-      {guideGroups.map((group) => {
-        const groupArticles = group.slugs.map((slug) => bySlug.get(slug)).filter(Boolean) as Article[];
-        if (!groupArticles.length) return null;
-
+      {groups.map((group) => {
+        const items = group.slugs.map((slug) => catalog.get(slug)).filter(Boolean) as GuideItem[];
         return (
           <section className="section guide-topic-section" id={group.id} key={group.id}>
             <div className="section-heading guide-section-heading">
@@ -210,40 +205,35 @@ export default function GuideHub() {
               <p>{group.intro}</p>
             </div>
             <div className="magazine-grid guide-library-grid">
-              {groupArticles.map((article) => <GuideCard article={article} key={article.slug} />)}
+              {items.map((item) => <GuideCard item={item} key={item.slug} />)}
             </div>
           </section>
         );
       })}
 
-      {otherArticles.length > 0 && (
-        <section className="section guide-topic-section" id="flere">
-          <div className="section-heading guide-section-heading">
-            <p className="eyebrow">Flere guider</p>
-            <h2>Mer kunnskap om bolig og livet i Spania</h2>
-            <p>Flere fordypninger som kan være relevante avhengig av boligtype, område og hvordan du vil bruke boligen.</p>
-          </div>
-          <div className="magazine-grid guide-library-grid">
-            {otherArticles.map((article) => <GuideCard article={article} key={article.slug} />)}
-          </div>
-        </section>
-      )}
-
-      <section className="contact-section guide-contact-section" id="kontakt">
-        <div>
-          <p className="eyebrow">Vil du slippe å sortere alt alene?</p>
-          <h2>Få hjelp til å finne riktig område og riktig neste steg</h2>
+      <section className="section proof-section">
+        <div className="section-heading">
+          <p className="eyebrow">Guide eller Magasin?</p>
+          <h2>Færre guider – sterkere svar</h2>
           <p>
-            Fortell hvordan du vil bruke boligen, omtrent hvilket budsjett du har og når du vurderer å kjøpe.
-            Da kan vi peke deg mot relevante områder, guider og boliger.
+            Vi samler overlappende guideinnhold i én sterk side når søkeintensjonen er den samme. Magasin brukes
+            i stedet til marked, sammenligninger, erfaringer og artikler som gir kontekst uten å konkurrere med
+            de viktigste guidene i Google.
           </p>
         </div>
         <div className="hero-actions">
-          <Link className="contact-button" href="/booking">
-            Book boligprat <ArrowRight size={18} />
-          </Link>
-          <Link className="text-button light" href="/eiendommer">Se boliger</Link>
+          <Link className="contact-button" href="/magasin">Gå til Magasin <ArrowRight size={17} /></Link>
+          <Link className="text-button" href="/eiendommer">Se boliger</Link>
         </div>
+      </section>
+
+      <section className="contact-section guide-contact-section">
+        <div>
+          <p className="eyebrow">Vil du slippe å sortere alt alene?</p>
+          <h2>Få hjelp til å finne riktig område og riktig neste steg</h2>
+          <p>Fortell hvordan du vil bruke boligen, budsjettet og når du vurderer å kjøpe. Da kan vi snevre inn både kunnskapen og boligene.</p>
+        </div>
+        <Link className="contact-button" href="/booking">Book boligprat <ArrowRight size={18} /></Link>
       </section>
 
       <Footer />
