@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
 import type { Article } from "@/lib/content";
 import { withArticleAttribution } from "@/lib/article-attribution";
 import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
+import { MarketBudgetComparison } from "@/components/MarketBudgetComparison";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
 
 const BASE = "https://www.zenecohomes.com";
@@ -141,6 +142,14 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Finansieringsvalg",
       links: [
         { label: "Boliglån i Spania: bank, belåning og takst", href: "/guide/boliglan-spansk-bank-nordmenn" },
+        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+      ],
+    },
+    {
+      headingIncludes: "Kjøpskostnader",
+      links: [
+        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/omkostninger-nybygg-spania" },
+        { label: "Lag et realistisk totalbudsjett", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
       ],
     },
     {
@@ -839,6 +848,15 @@ export function ArticleView({ article }: { article: Article }) {
               ))}
             </div>
 
+            {(article.slug === "bolig-500000-euro-totalbudsjett-spania" ||
+              article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca") && (
+              <PurchaseBudgetCalculator />
+            )}
+
+            {article.slug === "hva-far-du-for-pengene-costa-blanca-nord-na" && (
+              <MarketBudgetComparison />
+            )}
+
             {article.sections.map((section) => {
               const contextualLinks = contextualLinksFor(article.slug, section.heading);
               return (
@@ -890,11 +908,6 @@ export function ArticleView({ article }: { article: Article }) {
                 </section>
               );
             })}
-
-            {(article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" ||
-              article.slug === "bolig-500000-euro-totalbudsjett-spania") && (
-              <PurchaseBudgetCalculator />
-            )}
 
             <section className="article-next-steps">
               <p className="eyebrow">Anbefalte neste steg</p>
