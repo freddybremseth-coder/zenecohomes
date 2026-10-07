@@ -180,6 +180,9 @@ export type LeadPayload = {
   contact_role?: string;
   user_count?: string;
   corporate_model?: string;
+  corporate_needs?: string;
+  calculator_context?: unknown;
+  submission_id?: string;
   partner_type?: string;
   partnership_interest?: string;
   page_url?: string;
@@ -1060,6 +1063,9 @@ export async function sendLead(payload: LeadPayload) {
       contact_role: payload.contact_role || null,
       user_count: payload.user_count || null,
       corporate_model: payload.corporate_model || null,
+      corporate_needs: payload.corporate_needs || null,
+      calculator_context: payload.calculator_context || null,
+      submission_id: payload.submission_id || null,
       partner_type: payload.partner_type || null,
       partnership_interest: payload.partnership_interest || null,
       source: payload.source || "zenecohomes-next",
