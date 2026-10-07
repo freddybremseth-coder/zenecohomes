@@ -19,9 +19,9 @@ const languageLinks = eq
   : undefined;
 
 export const metadata: Metadata = {
-  title: "Kjøpe bolig i Spania (2026) – dette må du vite",
+  title: "Kjøpe bolig i Spania (2026): Dette må du vite før kjøp",
   description:
-    "Kjøpe hus eller leilighet i Spania? Les om kjøpsprosessen, kostnadene og fallgruvene du bør se opp for før du starter boligjakten.",
+    "Kjøpe hus eller leilighet i Spania? Les om kjøpsprosessen, kostnadene, finansiering og fallgruvene du bør kjenne før du starter boligjakten.",
   alternates: {
     canonical: "/guide/kjope-bolig-i-spania",
     languages: eq ? seoHreflang(eq) : undefined,
