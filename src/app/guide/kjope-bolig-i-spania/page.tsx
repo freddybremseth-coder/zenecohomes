@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { findEquivalentBySlug, seoHreflang, siteLocales, withLocale } from "@/lib/i18n";
-import { getLocalizedPropertyType, getProperties } from "@/lib/realtyflow";
+import { getProperties, propertyMatchesType } from "@/lib/realtyflow";
 
 const eq = findEquivalentBySlug("no", "guide/kjope-bolig-i-spania");
 const languageLinks = eq
@@ -165,15 +165,9 @@ function PropertyShowcase({
 
 export default async function BuyInSpainGuidePage() {
   const inventory = await getProperties(0, "zeneco");
-  const townhouses = inventory
-    .filter((property) => /townhouse|rekke/i.test(getLocalizedPropertyType(property, "no")))
-    .slice(0, 3);
-  const apartments = inventory
-    .filter((property) => /leilig|apartment/i.test(getLocalizedPropertyType(property, "no")))
-    .slice(0, 3);
-  const villas = inventory
-    .filter((property) => /villa/i.test(getLocalizedPropertyType(property, "no")))
-    .slice(0, 3);
+  const townhouses = inventory.filter((property) => propertyMatchesType(property, "Rekkehus")).slice(0, 3);
+  const apartments = inventory.filter((property) => propertyMatchesType(property, "Leilighet")).slice(0, 3);
+  const villas = inventory.filter((property) => propertyMatchesType(property, "Villa")).slice(0, 3);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
