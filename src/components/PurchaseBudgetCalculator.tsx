@@ -154,6 +154,9 @@ export function PurchaseBudgetCalculator() {
   ]);
 
   const inputCurrencyLabel = currency === "EUR" ? "€" : "NOK";
+  const inputBudget = toNumber(budget);
+  const inputBudgetEur = currency === "EUR" ? inputBudget : inputBudget / eurNok;
+  const inputBudgetNok = currency === "NOK" ? inputBudget : inputBudget * eurNok;
   const currentTaxLabel =
     purchaseType === "new"
       ? homeUse === "habitual"
@@ -201,6 +204,13 @@ export function PurchaseBudgetCalculator() {
                 <option value="NOK">NOK</option>
               </select>
             </div>
+            <small className="purchase-budget-currency-hint">
+              {currency === "EUR"
+                ? `Ca. ${nok.format(inputBudgetNok)}`
+                : `Ca. ${euro.format(inputBudgetEur)}`}
+              {" · "}EUR/NOK {formatRate(eurNok)}
+              {rateMeta.exchangeSource ? ` · ${rateMeta.exchangeSource}` : ""}
+            </small>
           </label>
 
           {currency === "NOK" && (
@@ -313,27 +323,37 @@ export function PurchaseBudgetCalculator() {
         <div className="purchase-budget-calc-result" aria-live="polite">
           <p className="purchase-budget-result-label">Realistisk maksimal kjøpesum</p>
           <strong className="purchase-budget-result-price">{euro.format(result.maxPriceEur)}</strong>
-          {currency === "NOK" && (
-            <span className="purchase-budget-result-nok">
-              ca. {nok.format(result.maxPriceEur * eurNok)}
-            </span>
-          )}
+          <span className="purchase-budget-result-nok">
+            ca. {nok.format(result.maxPriceEur * eurNok)} · EUR/NOK {formatRate(eurNok)}
+          </span>
 
           <p className="purchase-budget-result-copy">
             Med en totalramme på{" "}
             <strong>
-              {currency === "EUR"
-                ? euro.format(toNumber(budget))
-                : nok.format(toNumber(budget))}
-            </strong>{" "}
-            bør du med disse forutsetningene filtrere boligjakten rundt{" "}
-            <strong>{euro.format(result.maxPriceEur)}</strong>, ikke helt opp mot totalrammen.
+              {currency === "EUR" ? euro.format(inputBudgetEur) : nok.format(inputBudgetNok)}
+            </strong>
+            {" "}
+            <span className="purchase-budget-inline-equivalent">
+              ({currency === "EUR" ? `ca. ${nok.format(inputBudgetNok)}` : `ca. ${euro.format(inputBudgetEur)}`})
+            </span>
+            {" "}bør du med disse forutsetningene filtrere boligjakten rundt{" "}
+            <strong>{euro.format(result.maxPriceEur)}</strong>
+            {" "}
+            <span className="purchase-budget-inline-equivalent">
+              (ca. {nok.format(result.maxPriceEur * eurNok)})
+            </span>
+            , ikke helt opp mot totalrammen.
           </p>
 
           <dl className="purchase-budget-breakdown">
             <div>
               <dt>Kjøpesum</dt>
-              <dd>{euro.format(result.maxPriceEur)}</dd>
+              <dd>
+                {euro.format(result.maxPriceEur)}
+                <small className="purchase-budget-breakdown-nok">
+                  ca. {nok.format(result.maxPriceEur * eurNok)}
+                </small>
+              </dd>
             </div>
             {purchaseType === "new" ? (
               <>
@@ -368,7 +388,12 @@ export function PurchaseBudgetCalculator() {
             )}
             <div className="purchase-budget-breakdown-total">
               <dt>Estimert total</dt>
-              <dd>{euro.format(result.usedBudgetEur)}</dd>
+              <dd>
+                {euro.format(result.usedBudgetEur)}
+                <small className="purchase-budget-breakdown-nok">
+                  ca. {nok.format(result.usedBudgetEur * eurNok)}
+                </small>
+              </dd>
             </div>
           </dl>
 
