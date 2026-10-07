@@ -854,7 +854,10 @@ export function ArticleView({ article }: { article: Article }) {
             )}
 
             {article.slug === "hva-far-du-for-pengene-costa-blanca-nord-na" && (
-              <MarketBudgetComparison />
+              <>
+                <MarketBudgetComparison />
+                <PurchaseBudgetCalculator />
+              </>
             )}
 
             {article.sections.map((section) => {
