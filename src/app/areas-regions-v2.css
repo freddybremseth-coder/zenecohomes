@@ -151,6 +151,28 @@
   }
 }
 
+/* Editorial region pages should not stack two full section paddings:
+   the previous statistics aside ends immediately before the next heading. */
+@media (max-width: 640px) {
+  .section.region-landing-grid {
+    padding-top: 36px;
+    padding-bottom: 12px;
+  }
+
+  .section.region-editorial {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
+  .region-editorial .section-heading {
+    margin-bottom: 0;
+  }
+
+  .region-editorial-grid {
+    margin-top: 24px;
+  }
+}
+
 @media (max-width: 620px) {
   .region-overview-list {
     width: min(100% - 28px, 1280px);
