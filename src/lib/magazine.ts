@@ -1765,7 +1765,7 @@ export function articleSilo(article: Article): Silo | undefined {
 /** Kanonisk basissti for en artikkel: /kjopsprosess, /guide eller /magasin. */
 export function articleBasePath(article: Article): string {
   const silo = articleSilo(article);
-  return silo ? `/${silo}` : "/magasin";
+  return silo ? SILO_META[silo].href : "/magasin";
 }
 
 export function articlePath(article: Article): string {
