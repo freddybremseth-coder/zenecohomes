@@ -13,6 +13,7 @@ import { seoLandingPagesES } from "@/lib/seoLandingPages.es";
 import { localSeoLandingPagesES } from "@/lib/localSeoLandingPages.es";
 import { getPropertyDetailPath } from "@/lib/propertyRouting";
 import { fetchPublishedPosts } from "@/lib/website-content";
+import { magazineArticles } from "@/lib/localizedMagazine";
 
 export const dynamic = "force-dynamic";
 
@@ -62,8 +63,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         .filter((profile) => areaMatchesRegion(profile, region))
         .map((profile) => `/omrader/${region}/${areaProfileSlug(profile)}`),
     );
+  const localizedMagazinePaths = [
+    ...magazineArticles.en.map((article) => `/en/magazine/${article.slug}`),
+    ...magazineArticles.de.map((article) => `/de/magazin/${article.slug}`),
+    ...magazineArticles.es.map((article) => `/es/revista/${article.slug}`),
+  ];
   const isArticleRoute = (route: string) =>
-    route.startsWith("/magasin/") || route.startsWith("/guide/") || route.startsWith("/bedriftshytte-spania/");
+    route.startsWith("/magasin/") ||
+    route.startsWith("/guide/") ||
+    route.startsWith("/bedriftshytte-spania/") ||
+    route.startsWith("/en/magazine/") ||
+    route.startsWith("/de/magazin/") ||
+    route.startsWith("/es/revista/");
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
@@ -90,6 +101,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/es/zonas",
     "/es/proceso-de-compra",
     "/es/guias",
+    "/en/about-us",
+    "/en/client-reviews",
+    "/en/viewing-trip",
+    "/en/corporate",
+    "/en/corporate/guides",
+    "/en/corporate/partners",
+    "/en/magazine",
+    "/de/ueber-uns",
+    "/de/kundenstimmen",
+    "/de/besichtigungsreise",
+    "/de/unternehmen",
+    "/de/unternehmen/ratgeber",
+    "/de/unternehmen/partner",
+    "/de/magazin",
+    "/es/sobre-nosotros",
+    "/es/opiniones-clientes",
+    "/es/viaje-de-visitas",
+    "/es/empresas",
+    "/es/empresas/guias",
+    "/es/empresas/colaboradores",
+    "/es/revista",
+    ...localizedMagazinePaths,
     "/omrader",
     "/guide/kjope-bolig-i-spania",
     "/guide/kostnader-boligkjop-spania",
