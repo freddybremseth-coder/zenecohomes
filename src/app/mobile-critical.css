@@ -62,12 +62,21 @@
     z-index: 9000 !important;
   }
 
+  /* Compact but touch-accessible icon-only trigger. Its accessible
+     button name is supplied by aria-label in ZenecoChatbot.tsx. */
   .chatbot-2027 .chatbot-toggle {
-    min-width: 56px;
-    min-height: 56px;
+    width: 52px !important;
+    min-width: 52px !important;
+    height: 52px !important;
+    min-height: 52px !important;
     margin: 0 !important;
-    padding: 0 16px;
-    box-shadow: 0 18px 46px rgba(23, 32, 39, 0.3);
+    padding: 0 !important;
+    justify-content: center;
+    box-shadow: 0 14px 32px rgba(23, 32, 39, 0.24);
+  }
+
+  .chatbot-2027 .chatbot-toggle span {
+    display: none !important;
   }
 
   /* Open advisor behaves as a real mobile sheet rather than a desktop popup. */
@@ -176,7 +185,7 @@
   }
 
   .chatbot-2027 .chatbot-toggle span {
-    display: inline !important;
+    display: none !important;
   }
 
   .chatbot-2027 .chatbot-toggle {
