@@ -327,11 +327,14 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
             ))}
           </div>
         </article>
-        <aside>
-          <strong>{regionProperties.length}</strong>
-          <span>publiserte boliger i regionen</span>
-          <strong>{regionProfiles.length}</strong>
-          <span>områdeprofiler fra oss</span>
+        <aside
+          aria-label="Regionen i tall"
+          style={{ backgroundColor: "#fcfbf8", color: "#172027" }}
+        >
+          <strong style={{ color: "#806436" }}>{regionProperties.length}</strong>
+          <span style={{ color: "#596976" }}>publiserte boliger i regionen</span>
+          <strong style={{ color: "#806436" }}>{regionProfiles.length}</strong>
+          <span style={{ color: "#596976" }}>områdeprofiler fra oss</span>
         </aside>
       </section>
 
