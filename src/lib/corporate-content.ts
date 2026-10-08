@@ -1170,22 +1170,153 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "medlemsbolig-i-spania-for-foreninger",
-    seoTitle: "Medlemsbolig i Spania | Foreninger og organisasjoner",
-    title: "Medlemsbolig i Spania for foreninger og organisasjoner",
-    excerpt: "Hvordan en forening kan vurdere en felles bolig på Costa Blanca som medlemsfordel – og hvorfor modellen bør holdes adskilt fra reglene for ansattes bedriftshytte.",
-    seoDescription: "Hvordan en forening kan vurdere en felles bolig på Costa Blanca som medlemsfordel. Skill medlemsbruk fra reglene for ansattes bedriftshytte.",
-    keywords: ["medlemsbolig Spania", "forening bolig Costa Blanca", "medlemsfordel Spania"],
-    intro: ["Foreninger og medlemsorganisasjoner kan ha andre mål enn arbeidsgivere. En bolig kan være en synlig medlemsfordel, men organisasjonen må vurdere vedtekter, økonomi, bruksregler og skatteforhold etter sin egen struktur.", "Reglene for bedriftshytte i arbeidsforhold kan ikke uten videre overføres til medlemsbruk."],
+    title: "Medlemsbolig og delt bedriftshytte i Spania: slik kan modellen bygges",
+    excerpt:
+      "Foreninger, organisasjoner og flere virksomheter kan dele bolig i Spania. Slik avklarer dere formål, eiermodell, booking, kostnader, ansvar og exit.",
+    date: "2026-09-26",
+    updated: "2026-10-08",
+    readingTime: "13 min lesing",
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    seoTitle: "Medlemsbolig i Spania | Delt bedriftshytte og modell",
+    seoDescription:
+      "Medlemsbolig eller delt bedriftshytte i Spania: se hvordan foreninger og virksomheter kan organisere eierskap, booking, kostnader, drift og exit.",
+    keywords: [
+      "medlemsbolig Spania",
+      "delt bedriftshytte",
+      "forening bolig Spania",
+      "flere bedrifter eie bolig",
+      "organisasjon firmabolig Spania",
+      "felles bedriftshytte",
+    ],
+    intro: [
+      "En bolig i Spania trenger ikke eies eller brukes av én virksomhet alene. Foreninger, medlemsorganisasjoner eller flere virksomheter kan ønske en felles modell for feriebruk, samlinger eller gjentatte opphold.",
+      "Fordelen er at flere kan dele kapital og drift. Ulempen er at uenighet om bruk, kostnader og beslutninger blir langt mer krevende dersom dette ikke er avtalt før kjøpet.",
+      "Jeg ville derfor sett på delt bolig som et lite samarbeidsprosjekt med fire tydelige lag: formål, eier-/avtalemodell, booking og drift. Denne guiden samler både medlemsbolig og delt bedriftshytte for flere virksomheter.",
+    ],
     sections: [
-      { heading: "Start med organisasjonens formål", body: ["Boligen bør ha en tydelig kobling til medlemsstrategien og være økonomisk forsvarlig innenfor organisasjonens egne rammer.", "Styret bør få et beslutningsgrunnlag som beskriver hvem som kan bruke boligen og hvordan tilgang fordeles."] },
-      { heading: "Booking og likebehandling", body: ["En medlemsordning bør ha transparente regler for søknad, prioritering, gjentatt bruk og avbestilling.", "Med mange medlemmer kan trekning og digitale ventelister være enklere enn manuell behandling."] },
-      { heading: "Få juridisk og skattemessig vurdering", body: ["Organisasjonsform, vedtekter og eventuell betaling fra medlemmer kan påvirke behandlingen av ordningen.", "Zen Corporate Homes kan bistå med eiendom og drift, mens organisasjonen bruker egne rådgivere til struktur og regelverk."] }
+      {
+        heading: "Start med å avklare hvem modellen er for",
+        body: [
+          "En medlemsorganisasjon som vil gi mange medlemmer tilgang til feriebolig har andre behov enn tre selskaper som ønsker en felles base for ledersamlinger.",
+          "Skriv derfor ned brukergrupper og formål før dere diskuterer eierskap. Hvis formålet er uklart, blir både boligvalg og kostnadsdeling vanskelig å forsvare.",
+        ],
+      },
+      {
+        heading: "Tre hovedmodeller: én eier, sameie eller avtalt bruksrett",
+        body: [
+          "Det finnes flere mulige måter å organisere en delt løsning på. Én part kan eie og de andre betale for bruk, flere parter kan eie sammen, eller virksomhetene kan etablere en annen avtalt modell.",
+          "Hvilken modell som er riktig avhenger av skatt, regnskap, risiko, finansiering og hvordan partene ønsker å komme seg ut igjen. Dette må vurderes juridisk og økonomisk før bindende kjøp.",
+        ],
+        table: {
+          headers: ["Modell", "Fordel", "Viktig å avklare"],
+          rows: [
+            ["Én eier + bruksavtale", "Enklere formell eierstruktur", "Pris, rettigheter, varighet og oppsigelse"],
+            ["Felles eierskap", "Kapital og verdi deles", "Beslutninger, finansiering, salg og forkjøpsrett"],
+            ["Leie/bruksmodell", "Lavere binding", "Tilgjengelighet, prisregulering og kontroll"],
+          ],
+        },
+      },
+      {
+        heading: "Brukskapasiteten må fordeles før boligen velges",
+        body: [
+          "Hvis tre virksomheter skal dele én bolig, er ikke tre like eierandeler nødvendigvis det samme som tre like behov. Én virksomhet kan ha 100 ansatte, en annen 15 og en tredje primært bruke boligen til fire samlinger i året.",
+          "Lag en årsmodell som fordeler ferieuker, bedriftsuker og perioder som holdes av til service. Først da vet dere om én bolig faktisk har nok kapasitet.",
+        ],
+      },
+      {
+        heading: "Bookingreglene må tåle høysesong",
+        body: [
+          "En delt modell fungerer vanligvis fint i november. Den testes i juli og påske. Derfor må de mest attraktive periodene ha egne regler.",
+          "Dere kan bruke kvoter, trekning, rotasjon eller en poengmodell. Det viktigste er at prinsippet er avtalt før noen begynner å planlegge ferie, og at endringer krever samme beslutningsprosess som andre vesentlige vilkår.",
+        ],
+        bullets: [
+          "Fordeling av høysesong mellom organisasjoner.",
+          "Intern fordeling hos hver organisasjon.",
+          "Regler for ledige uker og sen booking.",
+          "Avbestilling og bytte av perioder.",
+          "Prioritet ved reelle bedriftsopphold.",
+        ],
+      },
+      {
+        heading: "Kostnader bør fordeles etter en modell som faktisk gir mening",
+        body: [
+          "Noen kostnader følger eierskap, andre følger bruk. Det kan være fornuftig å skille faste kostnader fra variable kostnader i stedet for å dele alt i samme prosent.",
+          "Faste kostnader kan for eksempel fordeles etter eierandel eller avtalt grunnandel, mens rengjøring og enkelte forbruksrelaterte kostnader kan knyttes til faktisk bruk.",
+        ],
+        table: {
+          headers: ["Kostnadstype", "Mulig fordelingsprinsipp"],
+          rows: [
+            ["Kapital/kjøpskostnader", "Eierandel eller avtalt investeringsandel"],
+            ["Faste boligkostnader", "Fast fordelingsnøkkel"],
+            ["Rengjøring/klargjøring", "Per opphold eller faktisk bruk"],
+            ["Vedlikeholdsreserve", "Fast fordelingsnøkkel"],
+            ["Skade utover normal slitasje", "Etter dokumentert hendelse og avtale"],
+          ],
+        },
+      },
+      {
+        heading: "Én driftsstandard er bedre enn tre lokale løsninger",
+        body: [
+          "Selv om flere organisasjoner deler boligen, bør den ha én operativ standard. Én lokal kontakt bør håndtere keyholding, tilsyn, klargjøring, håndverkere og avvik.",
+          "Zen Eco Homes Care kan fungere som felles lokal kontaktflate. Da slipper hver part å etablere egne leverandørforhold og det blir tydeligere hvem som dokumenterer hva.",
+        ],
+      },
+      {
+        heading: "Beslutninger må ha beløpsgrenser og flertallsregler",
+        body: [
+          "Hva skjer når AC-anlegget må byttes? Kan én part bestille arbeid for 4.000 euro? Krever salg enstemmighet? Kan to av tre godkjenne ny møblering?",
+          "Dette er enklere å avtale før kjøp enn når fakturaen ligger på bordet. Lag beløpsgrenser, beslutningsnivåer og en prosess for uenighet.",
+        ],
+      },
+      {
+        heading: "Medlemsbruk krever egne regler internt i organisasjonen",
+        body: [
+          "Foreninger og organisasjoner må i tillegg bestemme hvem blant medlemmene som får tilgang, om medlemmer kan ta med familie eller gjester, hvordan pris/egenandel settes og hvordan populære uker fordeles.",
+          "Den skattemessige og organisatoriske behandlingen vil avhenge av organisasjonstype og hvordan ordningen er bygget. Dette bør kvalitetssikres av rådgivere som kjenner den konkrete organisasjonen.",
+        ],
+      },
+      {
+        heading: "Delt eierskap gjør exit viktigere – ikke mindre",
+        body: [
+          "Hvis én part vil ut etter tre år og de andre vil fortsette, må avtalen gi et svar. Forkjøpsrett, verdsettelsesmetode, frister og hvordan et salg kan gjennomføres bør derfor være del av modellen fra starten.",
+          "En god exit-mekanisme beskytter samarbeidet fordi partene vet hva som skjer hvis behovet endres.",
+        ],
+      },
+      {
+        heading: "Boligen bør velges for samarbeid, ikke for én parts preferanser",
+        body: [
+          "Delt bruk favoriserer ofte robust drift, enkel logistikk og fleksibel kapasitet. Ekstremt personlig stil eller høy driftskompleksitet kan skape mer konflikt enn verdi.",
+          "Jeg ville derfor lagt ekstra vekt på standardiserbar drift, gangavstand, tilgjengelighet, normal kapasitet og et område som fungerer for flere brukergrupper.",
+        ],
+      },
+      {
+        heading: "Slik ville jeg testet modellen før kjøp",
+        body: [
+          "Før bindende investering kan partene simulere ett år. Fordel tenkte ferieuker, samlinger og kostnader på samme måte som dere planlegger å gjøre etter kjøpet.",
+          "Hvis kalenderen eller kostnadsmodellen skaper konflikt på papiret, blir den ikke enklere når det står en virkelig bolig til flere hundre tusen euro bak.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Definer brukergrupper og formål hos hver part.",
+      "Velg prinsipp for eierskap/bruksrett med juridisk og skattemessig rådgivning.",
+      "Simuler ett års booking før dere kjøper.",
+      "Avtal kostnadsdeling, beløpsgrenser og exit-mekanisme skriftlig.",
+      "Velg én lokal driftsstandard og kontaktflate for alle parter.",
     ],
     faq: [
-      { question: "Er medlemsbolig det samme som bedriftshytte?", answer: "Nei. En medlemsorganisasjon har ikke nødvendigvis samme skattemessige ramme som et arbeidsforhold." },
-      { question: "Kan medlemmer betale for bruk?", answer: "Det kan være mulig, men prismodell og behandling bør avklares med organisasjonens juridiske og økonomiske rådgivere." },
-      { question: "Hva er viktigst ved boligvalget?", answer: "Robust drift, kapasitet, enkel adkomst og en beliggenhet som passer et bredt spekter av medlemmer." }
-    ]
+      { question: "Kan flere bedrifter dele én bedriftshytte?", answer: "Ja, det kan organiseres på flere måter, men eierskap, bruk, kostnader, beslutninger og exit bør avtales tydelig og kvalitetssikres juridisk og skattemessig." },
+      { question: "Kan en forening eie bolig i Spania for medlemmer?", answer: "Det kan være mulig, men organisasjonstype, formål, medlemsbruk, skatt, regnskap og spanske krav må vurderes konkret før kjøp." },
+      { question: "Bør alle kostnader deles likt?", answer: "Ikke nødvendigvis. Faste kostnader kan fordeles etter eier-/grunnandel, mens enkelte variable kostnader kan knyttes til faktisk bruk." },
+      { question: "Hvordan fordeler vi sommerukene?", answer: "Bruk en forhåndsavtalt modell som kvoter, rotasjon, trekning eller poeng. Regelen bør være klar før booking åpner." },
+      { question: "Hvem bør eie nøklene og driften?", answer: "Det er ofte best med én felles lokal kontakt som håndterer keyholding, tilsyn og leverandører etter en avtalt driftsstandard." },
+      { question: "Hva hvis én part vil selge seg ut?", answer: "Avtalen bør beskrive forkjøpsrett, verdsettelse, frister og prosess før kjøpet gjennomføres." },
+      { question: "Kan én part bruke mer enn de andre?", answer: "Ja hvis dette er avtalt og gjenspeiles i booking- eller kostnadsmodellen. Uformelle skjevheter skaper lett konflikt." },
+      { question: "Er felles eierskap alltid best?", answer: "Nei. Én eier med bruksavtale eller en leiemodell kan være enklere. Sammenlign strukturene før dere velger." },
+      { question: "Hva slags bolig passer delt bruk?", answer: "Ofte en robust og lettdrevet bolig med god logistikk og kapasitet for normalbruk, fremfor en svært personlig eller kompleks eiendom." },
+      { question: "Kan Zen Corporate Homes hjelpe flere parter samtidig?", answer: "Ja på eiendoms-, område- og driftsdelen, men partenes juridiske, skattemessige og regnskapsmessige avtaler må kvalitetssikres av fagpersoner." },
+    ],
+    cta: { label: "Drøft en delt modell med oss", href: "/bedriftshytte-spania#bedriftsvurdering" },
   },
   {
     slug: "drifte-bedriftshytte-i-spania-fra-norge",
