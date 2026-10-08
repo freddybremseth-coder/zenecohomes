@@ -86,6 +86,7 @@ export function SaveSearchButton({ filters, locale = "no" }: { filters: Filters;
         body: JSON.stringify({ email, locale, filters }),
       });
       setStatus(res.ok ? "done" : "error");
+      if (!res.ok) console.warn("Saved search failed with HTTP status", res.status);
     } catch {
       setStatus("error");
     }
