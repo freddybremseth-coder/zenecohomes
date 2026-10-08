@@ -67,7 +67,7 @@ expectDeclaration(premium, ".region-landing-grid > aside span", "color: var(--ze
 expectDeclaration(premium, ".region-landing-grid > aside strong", "color: var(--ze-accent-text);");
 expectDeclaration(chat, ".chatbot-privacy-note", "color: var(--chat-muted);");
 expectDeclaration(areaLayout, ".region-area-section .area-guide-reading .eyebrow", "color: var(--ze-accent-text, #806436);");
-expectDeclaration(guards, ".access-panel button,\n.chatbot-shell:not(.chatbot-2027) .chatbot-toggle", "color: var(--ze-ink);");
+expectDeclaration(guards, ".chatbot-shell:not(.chatbot-2027) .chatbot-messages .user", "color: var(--ze-ink);");
 
 const importLine = 'import "./contrast-standards.css";';
 assert.ok(layout.includes(importLine), "Contrast styles must be imported");
