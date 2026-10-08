@@ -398,7 +398,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "10-personersregelen",
       links: [
         { label: "Skatteetaten: bedriftshytte", href: "https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/v-4-velferdstiltak/" },
-        { label: "Hvor mange kan dele en bedriftshytte?", href: "/bedriftshytte-spania/hvor-mange-kan-dele-en-bedriftshytte" },
+        { label: "Hvor mange kan dele en bedriftshytte?", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
       ],
     },
     {
@@ -417,27 +417,27 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "booking og likebehandling",
       links: [
-        { label: "Slik lager dere et rettferdig bookingsystem", href: "/bedriftshytte-spania/rettferdig-bookingsystem-for-bedriftshytte" },
+        { label: "Slik lager dere et rettferdig bookingsystem", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
       ],
     },
     {
       headingIncludes: "Hva koster",
       links: [
         { label: "Bedriftshytte mot hotell og leie", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
-        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
       ],
     },
     {
       headingIncludes: "type bolig",
       links: [
         { label: "Hvilken bolig passer som bedriftshytte?", href: "/bedriftshytte-spania/hvilken-bolig-passer-som-bedriftshytte" },
-        { label: "Bedriftsvilla eller ansattleilighet?", href: "/bedriftshytte-spania/bedriftsvilla-eller-ansattleilighet" },
+        { label: "Bedriftsvilla eller ansattleilighet?", href: "/bedriftshytte-spania/hvilken-bolig-passer-som-bedriftshytte" },
       ],
     },
     {
       headingIncludes: "Drift fra Norge",
       links: [
-        { label: "Drifte bedriftshytte i Spania fra Norge", href: "/bedriftshytte-spania/drifte-bedriftshytte-i-spania-fra-norge" },
+        { label: "Drifte bedriftshytte i Spania fra Norge", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
         { label: "Vedlikehold, nøkkelhold og rengjøring", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
       ],
     },
@@ -445,7 +445,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "styrevedtak",
       links: [
         { label: "Slik presenterer du bedriftshytte for styret", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
-        { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
+        { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
       ],
     },
   ],
@@ -454,13 +454,13 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Sammenlign samme behov",
       links: [
         { label: "Fem bruksmodeller for firmabolig", href: "/bedriftshytte-spania/fem-mater-bedrifter-kan-bruke-bolig-costa-blanca" },
-        { label: "Årsbudsjett for bedriftshytte", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+        { label: "Årsbudsjett for bedriftshytte", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
       ],
     },
     {
       headingIncludes: "Hva koster eierskap",
       links: [
-        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
         { label: "Drift, keyholding og vedlikehold", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
       ],
     },
@@ -481,7 +481,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "presentert sammenligningen for styret",
       links: [
         { label: "Slik presenterer du bedriftshytte for styret", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
-        { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
+        { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
       ],
     },
   ],
@@ -497,13 +497,13 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "10-personersregelen",
       links: [
         { label: "Skatteetaten: bedriftshytte og brukerkrav", href: "https://oppslag.rettskilder.skatteetaten.no/rettskilder2/type/handboker/skatte-abc/gjeldende/skatteabc-V-4/skatteabc-V-4.001" },
-        { label: "Hvor mange kan dele en bedriftshytte?", href: "/bedriftshytte-spania/hvor-mange-kan-dele-en-bedriftshytte" },
+        { label: "Hvor mange kan dele en bedriftshytte?", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
       ],
     },
     {
       headingIncludes: "Likebehandling",
       links: [
-        { label: "Slik lager dere et rettferdig bookingsystem", href: "/bedriftshytte-spania/rettferdig-bookingsystem-for-bedriftshytte" },
+        { label: "Slik lager dere et rettferdig bookingsystem", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
       ],
     },
     {
@@ -525,20 +525,20 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "1. Bedriftshytte",
       links: [
         { label: "Kan ansatte bruke bedriftseid bolig i Spania?", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
-        { label: "Rettferdig bookingsystem for bedriftshytte", href: "/bedriftshytte-spania/rettferdig-bookingsystem-for-bedriftshytte" },
+        { label: "Rettferdig bookingsystem for bedriftshytte", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
       ],
     },
     {
       headingIncludes: "2. Ledersamlinger",
       links: [
-        { label: "Firmabolig for ledersamlinger og team", href: "/bedriftshytte-spania/firmabolig-for-ledersamlinger-og-team" },
+        { label: "Firmabolig for ledersamlinger og team", href: "/bedriftshytte-spania/fem-mater-bedrifter-kan-bruke-bolig-costa-blanca" },
         { label: "Bedriftshytte eller hotell?", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
       ],
     },
     {
       headingIncludes: "5. Kombinasjonsmodell",
       links: [
-        { label: "Kombinere ansattgode og bedriftsbruk", href: "/bedriftshytte-spania/kombinere-ansattgode-bedriftsbruk-samme-bolig" },
+        { label: "Kombinere ansattgode og bedriftsbruk", href: "/bedriftshytte-spania/fem-mater-bedrifter-kan-bruke-bolig-costa-blanca" },
       ],
     },
     {
@@ -552,7 +552,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "velger styret",
       links: [
         { label: "Slik presenterer du bedriftshytte for styret", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
-        { label: "Beslutningsnotat for bedriftshytte", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
+        { label: "Beslutningsnotat for bedriftshytte", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
       ],
     },
   ],
@@ -561,7 +561,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Keyholding er mer",
       links: [
         { label: "Zen Eco Homes Care – keyholding og boligtilsyn", href: "https://care.zenecohomes.com" },
-        { label: "Drifte bedriftshytte i Spania fra Norge", href: "/bedriftshytte-spania/drifte-bedriftshytte-i-spania-fra-norge" },
+        { label: "Drifte bedriftshytte i Spania fra Norge", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
       ],
     },
     {
@@ -574,7 +574,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Tilsyn når boligen",
       links: [
         { label: "Zen Eco Homes Care – regelmessig tilsyn", href: "https://care.zenecohomes.com" },
-        { label: "Årsbudsjett for bedriftshytte", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+        { label: "Årsbudsjett for bedriftshytte", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
       ],
     },
     {
@@ -592,7 +592,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hva bør bedriften budsjettere",
       links: [
-        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
         { label: "Bedriftshytte mot hotell og leie", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
       ],
     },
