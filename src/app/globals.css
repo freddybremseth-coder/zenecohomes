@@ -1426,23 +1426,25 @@ select {
   line-height: 1.85;
 }
 
+/* Region statistics are on light paper. Keep the original rules in sync
+   with the 2027 editorial styles, even if Next changes CSS chunk order. */
 .region-landing-grid aside {
   display: grid;
   align-content: center;
   gap: 8px;
-  background: var(--dark);
-  color: white;
+  background: var(--ze-white, #fcfbf8);
+  color: var(--ze-ink, #172027);
 }
 
 .region-landing-grid aside strong {
-  color: var(--gold);
+  color: var(--ze-accent-text, #806436);
   font-size: 3rem;
   line-height: 1;
 }
 
 .region-landing-grid aside span {
   margin-bottom: 18px;
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--ze-muted, #596976);
 }
 
 .region-proof-list {
