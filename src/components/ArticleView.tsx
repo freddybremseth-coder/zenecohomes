@@ -448,7 +448,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
         { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
       ],
     },
-  ],,
+  ],
   "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte": [
     {
       headingIncludes: "Keyholding er mer",
