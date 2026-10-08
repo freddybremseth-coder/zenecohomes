@@ -1593,21 +1593,173 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "kjop-av-bolig-gjennom-selskap-i-spania",
-    seoTitle: "Kjøpe bolig gjennom selskap i Spania | Viktige avklaringer",
-    title: "Kjøp av bolig gjennom selskap i Spania: spørsmål dere må avklare",
-    excerpt: "Eierstruktur, bruk, skatt, regnskap og spansk kjøpsprosess må vurderes før en virksomhet kjøper bolig. Her er spørsmålene ledelsen bør ta med til rådgiverne.",
-    keywords: ["selskap kjøpe bolig Spania", "AS kjøpe bolig Spania", "firmabolig eierskap Spania"],
-    intro: ["At en virksomhet ønsker en bedriftshytte betyr ikke at eierstrukturen bør velges automatisk. Norske og spanske forhold kan påvirke både kjøp, løpende bruk og senere salg.", "Denne guiden gir ikke skatte- eller juridisk rådgivning, men viser hvilke spørsmål som bør være avklart."],
+    title: "Kjøpe bolig i Spania gjennom selskap: dette må avklares",
+    excerpt:
+      "En praktisk styre- og regnskapsguide til eierstruktur, spansk NIF, bruk, finansiering, dokumentasjon, drift og exit når et norsk selskap vurderer bolig i Spania.",
+    date: "2026-09-26",
+    updated: "2026-10-08",
+    readingTime: "15 min lesing",
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    seoTitle: "Kjøpe bolig i Spania gjennom selskap | Viktige avklaringer",
+    seoDescription:
+      "Skal selskapet kjøpe bolig i Spania? Se hva ledelse og regnskapsfører bør avklare om formål, NIF, eierskap, bruk, finansiering, drift og exit.",
+    keywords: [
+      "selskap kjøpe bolig i Spania",
+      "norsk AS kjøpe bolig Spania",
+      "firmabolig eierstruktur",
+      "spansk NIF selskap",
+      "regnskapsfører bolig Spania",
+      "bedriftshytte selskap",
+      "corporate property Spain",
+    ],
+    intro: [
+      "At et norsk selskap kan ønske å eie en bolig i Spania er én ting. Hvordan kjøpet bør struktureres, bokføres og brukes er noe annet. Derfor bør eierstruktur og bruk vurderes før virksomheten signerer reservasjon eller begynner å flytte penger.",
+      "Den spanske skattemyndigheten opplyser at utenlandske juridiske personer og andre ikke-residente enheter trenger spansk NIF når de skal gjennomføre transaksjoner med skattemessig betydning. NIF er bare én del av prosessen. Representasjon, selskapsdokumenter, bank/KYC, kjøpskontroll, norsk regnskap og den faktiske bruken må henge sammen.",
+      "Denne guiden samler også spørsmålene en regnskapsfører bør stille. Zen Corporate Homes kan hjelpe med eiendom, behov, område og gjennomføring, men eierstruktur, skatt og regnskap skal kvalitetssikres av relevante norske og spanske fagpersoner.",
+    ],
     sections: [
-      { heading: "Hvem skal eie?", body: ["Avklar om kjøper skal være norsk selskap, spansk enhet eller en annen struktur som rådgiverne vurderer som riktig. Ikke opprett selskap bare fordi det høres enklere ut.", "Eierstruktur kan påvirke administrasjon, regnskap, beskatning og fremtidig salg."] },
-      { heading: "Hvordan skal boligen brukes?", body: ["Privat bruk av ansatte, arbeidsopphold, representasjon og eventuell utleie er ulike bruksscenarier.", "Beskriv den forventede bruken skriftlig slik at norske og spanske rådgivere vurderer samme faktagrunnlag."] },
-      { heading: "Hva skjer ved salg eller endret strategi?", body: ["Tenk også på exit før kjøp. Selskapets langsiktige plan, finansiering og hva som skjer hvis ordningen avvikles bør inngå i beslutningsgrunnlaget.", "Zen Corporate Homes kan levere eiendomsdelen og koordinere praktiske steg med kundens rådgivere."] }
+      {
+        heading: "Start med formålet – hvorfor skal selskapet eie boligen?",
+        body: [
+          "Eierstrukturen bør følge et reelt formål. Ansattgode, arbeidsopphold, ledersamlinger, medlemsbruk og investering er ikke nødvendigvis samme prosjekt og kan ha ulik regnskapsmessig og skattemessig betydning.",
+          "Hvis virksomheten ikke kan forklare formålet i et kort styrevedtak, er det for tidlig å velge eiermodell. En vag begrunnelse som «det kan være fint å ha» gjør også senere vurderinger av bruk og kostnader vanskeligere.",
+        ],
+        bullets: [
+          "Hvem skal bruke boligen?",
+          "Er hovedbruken fritid, arbeid eller kombinasjon?",
+          "Hvor mange opphold og brukere forventes per år?",
+          "Hvor lenge planlegger selskapet å eie?",
+          "Hva skal skje hvis behovet endres?",
+        ],
+      },
+      {
+        heading: "Direkte eie, annen struktur eller leie?",
+        body: [
+          "Virksomheten bør sammenligne direkte kjøp i det norske selskapet med relevante alternativer før beslutning. Det finnes ikke én struktur som er riktig for alle.",
+          "En annen eierstruktur kan påvirke finansiering, skatt, rapportering, fleksibilitet og senere salg. Leie kan være et bedre første steg dersom behovet ennå ikke er dokumentert over tid.",
+          "Poenget er ikke å velge den mest kompliserte modellen, men den strukturen som best passer faktisk bruk og som kan forklares og administreres i både Norge og Spania.",
+        ],
+      },
+      {
+        heading: "Spansk NIF for utenlandsk selskap",
+        body: [
+          "Agencia Tributaria opplyser at juridiske personer og enheter uten spansk tilhørighet må ha NIF når de skal gjennomføre operasjoner med skattemessig betydning. For utenlandske enheter begynner NIF normalt med bokstaven N.",
+          "Ved søknad om NIF må virksomheten normalt dokumentere blant annet stiftelses-/selskapsdokumenter, vedtekter eller tilsvarende og registrering der dette er relevant. En representant må også kunne opptre på selskapets vegne.",
+          "Den konkrete dokumentpakken og om dokumenter må oversettes, legaliseres eller apostilleres bør avklares med den som håndterer kjøpet før tidskritiske frister starter.",
+        ],
+        table: {
+          headers: ["Tema", "Bør avklares før kjøp"],
+          rows: [
+            ["Spansk NIF", "Hvem søker og hvilke selskapsdokumenter kreves"],
+            ["Representasjon", "Hvem kan signere og om fullmakt skal brukes"],
+            ["Bank/KYC", "Dokumentasjon av selskap, eiere og midlenes opprinnelse"],
+            ["Kjøpskontroll", "Advokat/notar og dokumentasjon på eiendommen"],
+            ["Norsk behandling", "Regnskap, skatt, rapportering og intern godkjenning"],
+          ],
+        },
+      },
+      {
+        heading: "Hvem skal representere selskapet i Spania?",
+        body: [
+          "En eiendomshandel krever at noen kan opptre gyldig for selskapet. Det kan være daglig leder, styreleder eller annen person med tilstrekkelig fullmakt, avhengig av selskapets vedtekter, styrevedtak og dokumentasjonen som aksepteres i Spania.",
+          "Hvis fullmakt brukes, bør omfanget være tydelig og kontrollert. Styret bør vite hvem som kan reservere, signere, betale, åpne konto eller representere selskapet overfor spanske myndigheter og leverandører.",
+        ],
+      },
+      {
+        heading: "Regnskapsføreren bør inn før reservasjonen – ikke etter overtakelsen",
+        body: [
+          "Regnskapsfører eller økonomiansvarlig bør få prosjektet før det blir bindende. Det gjør det mulig å avklare hvordan kjøpskostnader, løpende kostnader, finansiering, bruk og eventuell fordel for ansatte eller eiere skal håndteres.",
+          "Det er mye enklere å etablere gode konti, dokumentasjonsrutiner og bookingkategorier fra dag én enn å rekonstruere privat bruk og arbeidsbruk ett år senere.",
+        ],
+        bullets: [
+          "Hvordan skal eiendommen klassifiseres i regnskapet?",
+          "Hvordan håndteres kjøps- og etableringskostnader?",
+          "Hvordan dokumenteres privat ansattbruk og arbeidsbruk?",
+          "Hvordan bokføres lokal drift og leverandører?",
+          "Hvordan håndteres valutakurser og betalinger i euro?",
+          "Hvilke rapporteringsbehov finnes i Norge og Spania?",
+        ],
+      },
+      {
+        heading: "Bruken av boligen kan være viktigere enn hvem som står på skjøtet",
+        body: [
+          "En struktur som ser ryddig ut på papiret løser ikke en ordning der boligen i praksis brukes privat av eier eller ledelse. Faktisk bruk må samsvare med formålet og de interne reglene virksomheten har vedtatt.",
+          "Hvis boligen også skal være bedriftshytte for ansatte, bør HR-/bookingreglene vurderes parallelt med eierstrukturen. Hvis den brukes til arbeid, bør arbeidsopphold skilles fra feriebruk i kalender og dokumentasjon.",
+        ],
+      },
+      {
+        heading: "Finansiering og kapital må vurderes på selskapsnivå",
+        body: [
+          "Virksomheten bør avklare om kjøpet skal gjøres med egenkapital, ekstern finansiering eller en kombinasjon. Selv ved kontantkjøp har kapitalen en alternativkostnad.",
+          "Finansiering i Norge eller Spania kan påvirke sikkerhet, renter, dokumentasjon og likviditet. Dette bør vurderes sammen med økonomi- og bankrådgivere før boligsøket snevres inn til én prisklasse.",
+        ],
+      },
+      {
+        heading: "Kjøpskostnader og løpende drift må inn i samme modell",
+        body: [
+          "Styret bør se total kapital ved kjøp og et realistisk årlig driftsbudsjett. Det inkluderer ikke bare skatt og felleskostnader, men også forsikring, strøm, vann, internett, vedlikehold, rengjøring, keyholding og lokal oppfølging.",
+          "Hvis boligen skal brukes av mange, er driftskostnaden en del av selve konseptet. En eiendom som ser billig ut, men krever mye service og koordinering, kan være den dyrere løsningen over tid.",
+        ],
+      },
+      {
+        heading: "Due diligence på boligen er separat fra selskapsstrukturen",
+        body: [
+          "Selv om selskapets struktur er avklart, må den konkrete eiendommen kontrolleres. Eiendomsregister, heftelser, tillatelser, fellesforhold, skatter, kontrakter og eventuelle tekniske spørsmål må vurderes i kjøpsprosessen.",
+          "Nybygg og bruktbolig har forskjellige kontrollpunkter. Virksomheten bør bruke kvalifisert juridisk bistand i Spania og sørge for at rådgiverne for selskapet og rådgiverne for eiendommen deler nødvendig informasjon.",
+        ],
+      },
+      {
+        heading: "Fem feil styret bør unngå",
+        body: [
+          "Flere av de vanligste feilene skjer før advokaten ser kontrakten. Selskapet velger bolig før behovet er definert, ser bare på kjøpesummen, utsetter skatte-/regnskapsvurderingen, undervurderer driften eller velger område etter feriepreferansen til én beslutningstaker.",
+          "Et godt prosjekt snur rekkefølgen: formål og bruk først, deretter økonomi og struktur, så område og eiendom.",
+        ],
+        table: {
+          headers: ["Feil", "Bedre arbeidsmåte"],
+          rows: [
+            ["Bolig før behov", "Definer brukergruppe og årsmodell først"],
+            ["Bare kjøpesum", "Vis total kapital og årlig drift"],
+            ["Skatt senere", "Koble inn fagpersoner før bindende kjøp"],
+            ["Drift undervurderes", "Planlegg lokal drift før overtakelse"],
+            ["Personlig områdevalg", "Score områder på virksomhetens krav"],
+          ],
+        },
+      },
+      {
+        heading: "Exit-planen bør eksistere før kjøpet",
+        body: [
+          "Styret bør vite hva som utløser en ny vurdering: lav bruk, endret strategi, kapitalbehov, organisatorisk endring eller markedssituasjon. Det betyr ikke at boligen skal selges ved første avvik, men at beslutningen ikke blir permanent av gammel vane.",
+          "Ved et senere salg må både spanske og norske skatte- og regnskapskonsekvenser vurderes på nytt. Derfor bør dokumentasjon på kjøp, investeringer og kostnader oppbevares strukturert gjennom hele eiertiden.",
+        ],
+      },
+      {
+        heading: "Slik ville jeg organisert fagteamet rundt kjøpet",
+        body: [
+          "Zen Corporate Homes kan eie eiendomsdelen: behov, område, shortlist, visninger, koordinering og plan for lokal drift. Spansk advokat håndterer den juridiske kjøpskontrollen, mens norsk/spansk skatte- og regnskapskompetanse kvalitetssikrer strukturen.",
+          "Målet er at styret får én sammenhengende beslutningsprosess, men at hver fagperson tar ansvar for sitt område. Eiendomsrådgiveren skal ikke late som han er revisor, og revisoren skal ikke måtte velge mikroområde på Costa Blanca.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Skriv ned forretningsmessig formål og forventet bruk før dere diskuterer eierstruktur.",
+      "Ta regnskapsfører/skatterådgiver inn før reservasjon eller betaling.",
+      "Avklar spansk NIF, representasjon og nødvendig selskapsdokumentasjon.",
+      "Lag totalbudsjett og driftsmodell på selskapsnivå.",
+      "Vedta en exit-/revurderingsmekanisme sammen med kjøpsbeslutningen.",
     ],
     faq: [
-      { question: "Bør et norsk AS kjøpe boligen direkte?", answer: "Det kan ikke avgjøres generelt. Riktig struktur avhenger av virksomheten og bør vurderes av norske og spanske fagpersoner." },
-      { question: "Trenger selskapet spansk identifikasjon eller registrering?", answer: "En virksomhet som kjøper eiendom i Spania vil ha formelle krav i kjøpsprosessen. Advokat og gestor bør avklare hva som gjelder for den konkrete kjøperen." },
-      { question: "Hjelper Zen Corporate Homes med advokat?", answer: "Vi kan koordinere eiendomsprosessen og samarbeide med relevante fagpersoner, men juridiske og skattemessige råd gis av kvalifiserte rådgivere." }
-    ]
+      { question: "Kan et norsk AS kjøpe bolig i Spania?", answer: "Et utenlandsk selskap kan gjennomføre transaksjoner med skattemessig betydning i Spania og trenger normalt spansk NIF. Den konkrete eier- og skattestrukturen bør kvalitetssikres før kjøp." },
+      { question: "Trenger selskapet spansk NIF?", answer: "Agencia Tributaria opplyser at juridiske personer og ikke-residente enheter trenger NIF når de skal gjennomføre operasjoner med skattemessig betydning." },
+      { question: "Hvilke dokumenter trengs for NIF?", answer: "Det kreves normalt dokumentasjon på selskapets etablering, vedtekter eller tilsvarende og registrering der dette er relevant, i tillegg til representasjon. Den konkrete pakken bør avklares før søknad." },
+      { question: "Må selskapet opprette spansk datterselskap?", answer: "Ikke anta at dette er nødvendig eller best. Direkte eie, annen struktur og leie bør vurderes ut fra formål, skatt, regnskap, finansiering og exit." },
+      { question: "Når bør regnskapsfører kobles inn?", answer: "Før reservasjon eller annen bindende handling, slik at bokføring, bruk, finansiering og rapportering kan planlegges fra starten." },
+      { question: "Kan eier eller ledelse bruke boligen privat?", answer: "Faktisk privat bruk kan få skatte- og rapporteringskonsekvenser. Ordningen må vurderes konkret og bør ikke blandes sammen med bred bedriftshyttebruk uten klare regler." },
+      { question: "Er selskapets eierstruktur nok til å sikre riktig skattebehandling?", answer: "Nei. Faktisk bruk, finansiering, kostnader og dokumentasjon er også avgjørende og må vurderes av relevante fagpersoner." },
+      { question: "Bør finansiering avklares før boligvalg?", answer: "Ja. Kapitalramme og finansiering påvirker hvilken bolig som er realistisk og hvilke kostnader styret bør sammenligne." },
+      { question: "Hvem bør kontrollere selve boligen?", answer: "Bruk kvalifisert juridisk bistand i Spania for eiendoms- og kontraktskontroll, supplert med teknisk fagkompetanse når det er relevant." },
+      { question: "Hvorfor trenger vi en exit-plan?", answer: "Fordi behov, kapital og strategi kan endres. Styret bør på forhånd vite når eierskapet skal revurderes og hvilken dokumentasjon som må bevares." },
+    ],
+    cta: { label: "Få en første selskaps- og boligavklaring", href: "/bedriftshytte-spania#bedriftsvurdering" },
   },
   {
     slug: "rettferdig-bookingsystem-for-bedriftshytte",
