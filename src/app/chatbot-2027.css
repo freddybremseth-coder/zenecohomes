@@ -246,8 +246,9 @@
 .chatbot-privacy-note {
   margin: 0;
   padding: 0 18px 13px;
-  color: rgba(23, 32, 39, 0.48);
-  font-size: 0.67rem;
+  /* 48% opacity on paper drops below WCAG AA; use the readable muted token. */
+  color: var(--chat-muted);
+  font-size: 0.75rem;
   text-align: center;
 }
 
