@@ -448,7 +448,54 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
         { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
       ],
     },
-  ],
+  ],,
+  "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte": [
+    {
+      headingIncludes: "Keyholding er mer",
+      links: [
+        { label: "Zen Eco Homes Care – keyholding og boligtilsyn", href: "https://care.zenecohomes.com" },
+        { label: "Drifte bedriftshytte i Spania fra Norge", href: "/bedriftshytte-spania/drifte-bedriftshytte-i-spania-fra-norge" },
+      ],
+    },
+    {
+      headingIncludes: "Før ankomst",
+      links: [
+        { label: "Se klargjøring og Care-tjenester", href: "https://care.zenecohomes.com" },
+      ],
+    },
+    {
+      headingIncludes: "Tilsyn når boligen",
+      links: [
+        { label: "Zen Eco Homes Care – regelmessig tilsyn", href: "https://care.zenecohomes.com" },
+        { label: "Årsbudsjett for bedriftshytte", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Uvær og hendelser",
+      links: [
+        { label: "Care – lokal oppfølging og uværskontroll", href: "https://care.zenecohomes.com" },
+      ],
+    },
+    {
+      headingIncludes: "Håndverkere og servicebesøk",
+      links: [
+        { label: "Care – håndverkeroppfølging og nøkkeltilgang", href: "https://care.zenecohomes.com" },
+      ],
+    },
+    {
+      headingIncludes: "Hva bør bedriften budsjettere",
+      links: [
+        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+        { label: "Bedriftshytte mot hotell og leie", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
+      ],
+    },
+    {
+      headingIncludes: "Når Zen Eco Homes Care",
+      links: [
+        { label: "Gå til care.zenecohomes.com", href: "https://care.zenecohomes.com" },
+      ],
+    },
+  ]
 };
 
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
