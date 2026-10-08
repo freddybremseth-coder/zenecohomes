@@ -2977,76 +2977,173 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "partnerguide-introdusere-zen-corporate-homes",
-    date: "2026-10-05",
-    updated: "2026-10-05",
-    readingTime: "9 min lesing",
-    cta: { label: "Utforsk partnerkanalen", href: "/bedriftshytte-spania/partnere#partnersamtale" },
-    seoTitle: "Partnerguide | Introduser Zen Corporate Homes til kunder",
-    title: "Partnerguide: Slik introduserer dere Zen Corporate Homes til kunder",
-    excerpt: "For regnskapsførere, advokater, HR- og bedriftsrådgivere: hvilke kundesignaler som gjør Corporate Homes relevant, og hvordan introduksjonen kan gjøres.",
-    seoDescription: "Guide for regnskapsførere, advokater, HR- og bedriftsrådgivere som vil introdusere Zen Corporate Homes til relevante bedriftskunder i Norge.",
-    keywords: ["Zen Corporate Homes partner", "henvise bedriftskunde Spania", "regnskapsfører partner eiendom", "HR rådgiver ansattgode"],
+    title: "Partnerguide: fra første kundesignal til kjøp i Spania",
+    excerpt:
+      "En komplett arbeidsmodell for regnskapsførere, rådgivere og organisasjoner som vil introdusere relevante kunder til Zen Corporate Homes uten å miste sin rolle.",
+    date: "2026-09-26",
+    updated: "2026-10-08",
+    readingTime: "13 min lesing",
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    seoTitle: "Partnerguide | Fra kundesignal til boligkjøp i Spania",
+    seoDescription:
+      "Partnerguide for rådgivere: slik identifiserer dere relevante kundesignaler, introduserer Zen Corporate Homes og følger kunden fra vurdering til kjøp.",
+    keywords: [
+      "partner Zen Corporate Homes",
+      "bedriftsrådgiver bolig Spania",
+      "regnskapsfører bolig Spania",
+      "henvisning eiendom Spania",
+      "corporate homes partner",
+      "bedriftshytte rådgiver",
+    ],
     intro: [
-      "Partnerkanalen er laget for rådgivere og organisasjoner som allerede møter virksomheter der en bedriftshytte, firmabolig eller medlemsbolig kan være relevant. Partneren trenger ikke bygge egen eiendomskompetanse i Spania.",
-      "Den viktigste rollen er å gjenkjenne et relevant behov, introdusere konseptet på en nøktern måte og koble kunden til Zen når kunden selv ønsker å utforske det videre."
+      "En god partnerintroduksjon starter ikke med å selge en bolig. Den starter når en rådgiver hører et behov som kan egne seg for en strukturert eiendomsvurdering: mye hotellbruk, gjentatte samlinger, ønske om ansattgode eller spørsmål om en fast base i Spania.",
+      "Partnerens verdi er at kunden allerede har tillit til rådgiveren. Zen Corporate Homes skal ikke erstatte denne relasjonen. Vi tar eiendomsdelen videre, mens partneren beholder sin faglige rolle og kan følge kunden gjennom hele prosessen.",
+      "Denne guiden samler den tidligere introduksjonsguiden og partnerprosessen fra første signal til kjøp og lokal drift.",
     ],
     sections: [
       {
-        heading: "Hvilke kundesignaler bør dere lytte etter?",
+        heading: "Hvilke kundesignaler bør partneren lytte etter?",
         body: [
-          "Corporate Home er mest relevant når kunden allerede diskuterer ansattgoder, rekruttering, retention, ledersamlinger, medlemsfordeler, internasjonal tilstedeværelse eller gjentatte opphold i Spania.",
-          "Det kan også være relevant når eierledere eller styrer spør om langsiktig bruk av kapital og samtidig ønsker en konkret ressurs virksomheten faktisk kan bruke."
+          "Det beste tidspunktet for en introduksjon er ofte før kunden selv har bestemt seg for at de «skal kjøpe bolig». Da kan behovet vurderes uten at én konkret eiendom styrer samtalen.",
+          "Relevant signal kan være at virksomheten bruker mye hotell over tid, arrangerer de samme samlingene hvert år, ønsker et mer attraktivt ansattgode eller vurderer å etablere aktivitet på Costa Blanca.",
         ],
         bullets: [
-          "«Vi trenger et ansattgode som faktisk blir brukt.»",
-          "«Vi bruker mye på samlinger og overnatting.»",
-          "«Vi vil samle teamet oftere i Sør-Europa.»",
-          "«Medlemmene våre etterspør konkrete fordeler.»",
-          "«Vi vurderer å kjøpe en bolig gjennom virksomheten.»"
-        ]
+          "Gjentatte hotell- eller leieopphold i Spania.",
+          "Ledersamlinger eller prosjektuker som gjentas.",
+          "HR diskuterer nye langsiktige ansattgoder.",
+          "Forening eller organisasjon ønsker medlemsbolig.",
+          "Selskapet spør om det kan eie eiendom i Spania.",
+          "Ledelsen har funnet en bolig, men mangler beslutningsgrunnlag.",
+        ],
       },
       {
-        heading: "Slik introduseres konseptet uten å overselge",
+        heading: "Introduser behovet – ikke konklusjonen",
         body: [
-          "En god introduksjon er enkel: Zen Corporate Homes hjelper norske virksomheter med å undersøke om en bolig på Costa Blanca kan fungere som ansattgode, medlemsbolig og/eller base for mindre bedriftsopphold.",
-          "Ikke lov skattefordeler, prisvekst eller hotellbesparelser. Kunden skal først få et beslutningsgrunnlag og koble inn egne faglige rådgivere der det trengs."
-        ]
+          "En god introduksjon kan være: «Dere ser ut til å ha et gjentakende behov i Spania. Jeg kjenner en aktør som kan gjøre en første eiendomsvurdering og vise om kjøp faktisk er verdt å utrede.»",
+          "Unngå å love at bedriftshytte blir skattefri, lønnsom eller riktig for kunden. Partneren åpner døren til en vurdering, ikke til en forhåndsbestemt konklusjon.",
+        ],
       },
       {
-        heading: "Hva partneren beholder ansvar for",
+        heading: "Kunden skal samtykke før informasjon deles",
         body: [
-          "Partneren fortsetter i sin vanlige fagrolle. Regnskapsfører, advokat, revisor eller HR-rådgiver gir råd innen sitt område etter egne profesjonskrav og kundens konkrete situasjon.",
-          "Zen Corporate Homes overtar ikke partnerens skatte-, regnskaps-, arbeidsretts- eller selskapsrettslige ansvar."
-        ]
+          "Før kontaktopplysninger eller virksomhetsinformasjon deles med Zen, bør kunden vite hva introduksjonen gjelder og samtykke til at kontakten etableres.",
+          "Det gir en ryddigere start og gjør at første samtale kan handle om kundens mål i stedet for å forklare hvorfor vi ringer.",
+        ],
       },
       {
-        heading: "Hva Zen Corporate Homes tar videre",
+        heading: "Første steg hos Zen er behovsavklaring",
         body: [
-          "Zen kan ta behovsavklaring, brukermodell, budsjett, områdevalg, boligkrav, shortlist, visninger og praktisk koordinering av eiendomsløpet på Costa Blanca.",
-          "Når kunden ønsker det, kan lokal oppfølging etter kjøpet organiseres gjennom Care."
-        ]
+          "Vi starter med bruk, brukergruppe, budsjett, tidshorisont og hvilken beslutning kunden egentlig trenger å ta. Det er bevisst før boligshortlist.",
+          "Hvis behovet ikke ser sterkt nok ut, bør kunden få vite det tidlig. Partneren skal kunne stole på at introduksjonen ikke automatisk blir behandlet som en salgslead som må presses til kjøp.",
+        ],
       },
       {
-        heading: "Når bør dere introdusere kunden?",
+        heading: "Deretter får kunden et første beslutningsgrunnlag",
         body: [
-          "Tidlig er bedre enn sent. Dersom kunden allerede har reservasjon på en konkret bolig, kan viktige valg om bruk, budsjett og rådgivning være tatt i feil rekkefølge.",
-          "En første Corporate Home Assessment kan gjøres før kunden har bestemt budsjett eller område."
-        ]
+          "Når behovet er konkret nok, kan vi sammenligne hotell/leie mot eierskap, skissere krav til område og bolig og vise representative eiendommer innenfor realistisk ramme.",
+          "Dette er fortsatt en vurdering, ikke juridisk eller skattemessig fasit. Partnerens og kundens øvrige fagpersoner kan bruke grunnlaget til å avgjøre hva som må analyseres videre.",
+        ],
       },
       {
-        heading: "Kommersielle rammer avtales før konkrete henvisninger",
+        heading: "Partnerens fagområde skal forbli hos partneren",
         body: [
-          "Partnerkanalen lover ikke provisjon eller økonomiske vilkår automatisk. Samarbeidsmodell, ansvar, håndtering av kundedata og eventuell honorering skal avtales skriftlig mellom partene før konkrete henvisninger.",
-          "Det gir en ryddig rollefordeling både for kunden og partneren."
-        ]
-      }
+          "Regnskapsfører bør fortsatt være regnskapsfører. Skatterådgiver bør eie skattevurderingen. Advokat bør eie juridiske spørsmål. Zen eier eiendoms-, område- og kjøpsprosessen.",
+          "Denne rollefordelingen er en styrke. Kunden får én sammenhengende reise uten at noen rådgiver later som de behersker alle fagområder.",
+        ],
+        table: {
+          headers: ["Rolle", "Typisk ansvar"],
+          rows: [
+            ["Partner/regnskapsfører", "Kundekontekst, regnskap, økonomi og egne fagområder"],
+            ["Skatte-/juridisk rådgiver", "Struktur, skatt, avtaler og juridisk kontroll"],
+            ["Zen Corporate Homes", "Behov, område, bolig, visning, kjøpskoordinering og lokal drift"],
+            ["Kunden/styret", "Formål, rammer, beslutning og interne regler"],
+          ],
+        },
+      },
+      {
+        heading: "Regnskapsføreren kan bruke en fast spørsmålsliste",
+        body: [
+          "Når kunden vurderer selskapskjøp, er noen spørsmål spesielt nyttige før eiendomsjakten går videre. De samme spørsmålene gir Zen et bedre brief.",
+        ],
+        bullets: [
+          "Hva er det forretningsmessige formålet?",
+          "Hvem skal faktisk bruke boligen?",
+          "Hvordan skilles feriebruk og arbeidsbruk?",
+          "Hvem skal eie og finansiere?",
+          "Er hele kjøps- og driftskostnaden med?",
+          "Hvilke norske og spanske rådgivere må involveres?",
+          "Hvordan skal intern kontroll og booking fungere?",
+          "Hva er exit-planen?",
+        ],
+      },
+      {
+        heading: "Når boligkriteriene er klare, lager Zen shortlist",
+        body: [
+          "Shortlisten bør komme etter at beslutningsrammen er tydelig. Vi sammenligner et lite antall boliger på samme kriterier: kapasitet, område, logistikk, drift, pris og egnethet til den valgte bruksmodellen.",
+          "Partneren kan være med i dialogen dersom kunden ønsker det, men trenger ikke håndtere visningskoordinering eller lokale leverandører.",
+        ],
+      },
+      {
+        heading: "Visning og kjøp skal ha klare faglige grenser",
+        body: [
+          "Ved konkret kjøp kobles spansk juridisk kontroll og andre nødvendige fagpersoner inn. Zen kan koordinere informasjonsflyten, men den som gir juridisk råd må stå ansvarlig for sitt råd.",
+          "Det samme gjelder selskapsstruktur, norsk skatt og regnskapsføring. Kunden skal vite hvem som svarer på hva.",
+        ],
+      },
+      {
+        heading: "Partneren kan følge kunden også etter overtakelse",
+        body: [
+          "Et kjøp skaper nye behov: rapportering, budsjettering, intern policy og evaluering av faktisk bruk. Partneren kan derfor ha en naturlig rolle også etter at eiendommen er overtatt.",
+          "Zen Eco Homes Care kan samtidig håndtere den lokale eiendomsdriften med keyholding, tilsyn, klargjøring og koordinering.",
+        ],
+      },
+      {
+        heading: "Kommersielle rammer avtales før konkrete introduksjoner",
+        body: [
+          "Hvis samarbeidet skal ha referralhonorar eller annen kommersiell modell, bør dette avklares før konkrete leads sendes. Kunden skal ikke havne midt i uklarhet om roller eller økonomiske interesser.",
+          "Avtalen bør beskrive når en introduksjon regnes som registrert, hvem som eier kommunikasjonen, hva som skjer hvis kunden allerede finnes i systemet og hvordan eventuell godtgjørelse beregnes.",
+        ],
+      },
+      {
+        heading: "Slik ser partnerprosessen ut fra start til slutt",
+        body: [
+          "Den enkleste modellen er signal → samtykke → introduksjon → behovsavklaring → beslutningsgrunnlag → fagkontroll → shortlist → visning/kjøp → lokal drift og oppfølging.",
+          "Partneren kan være tett på eller bare gjøre introduksjonen. Det viktigste er at kunden opplever én ryddig prosess og aldri må gjette hvem som har ansvar for neste steg.",
+        ],
+        table: {
+          headers: ["Fase", "Primært ansvar"],
+          rows: [
+            ["Kundesignal", "Partner"],
+            ["Samtykke og introduksjon", "Partner + kunde"],
+            ["Behov og første vurdering", "Zen Corporate Homes"],
+            ["Skatt/regnskap/juridikk", "Kundens fagpersoner"],
+            ["Shortlist og visning", "Zen Corporate Homes"],
+            ["Kjøp og overtakelse", "Zen + juridiske fagpersoner"],
+            ["Lokal drift", "Zen Eco Homes Care / avtalt leverandør"],
+          ],
+        },
+      },
+    ],
+    nextSteps: [
+      "Bruk kundesignaler, ikke boliginteresse alene, som trigger for introduksjon.",
+      "Få kundens samtykke før kontaktdata deles.",
+      "Avklar faglige og kommersielle roller før første konkrete henvisning.",
+      "La Zen gjøre behovs- og eiendomsvurderingen før boligshortlist.",
+      "Hold partneren informert i det omfanget kunden ønsker gjennom hele prosessen.",
     ],
     faq: [
-      { question: "Må partneren kunne eiendom i Spania?", answer: "Nei. Partnerens verdi ligger i eksisterende kundetillit og eget fagområde. Zen håndterer eiendomsdelen og lokal prosess." },
-      { question: "Kan partneren delta i første møte?", answer: "Ja, dersom kunden og partneren ønsker det. Partneren kan også bare gjøre introduksjonen og la Zen ta behovsavklaringen videre." },
-      { question: "Får partneren automatisk provisjon?", answer: "Nei. Eventuell honorering og øvrige kommersielle vilkår må avtales skriftlig før konkrete henvisninger." },
-      { question: "Hvem eier kunderelasjonen?", answer: "Partneren kan fortsette som kundens rådgiver på sitt fagområde, mens Zen håndterer Corporate Home- og eiendomsløpet." }
-    ]
+      { question: "Hvem passer som partner?", answer: "Blant annet regnskapsførere, rådgivere, HR-miljøer, organisasjoner og andre som møter virksomheter med gjentakende behov eller interesse for eiendom i Spania." },
+      { question: "Må partneren kunne eiendom i Spania?", answer: "Nei. Partnerens verdi er kundekunnskap og eget fagområde. Zen tar eiendoms- og lokaldelen." },
+      { question: "Når bør kunden introduseres?", answer: "Når det finnes et reelt behov som er verdt å vurdere, gjerne før kunden har låst seg til én konkret bolig." },
+      { question: "Kan partneren love skattefri bedriftshytte?", answer: "Nei. Skatt må vurderes konkret av kvalifisert rådgiver. Introduksjonen bør handle om behov og vurdering, ikke garanterte resultater." },
+      { question: "Må kunden samtykke til introduksjonen?", answer: "Ja, kunden bør vite hva introduksjonen gjelder og godkjenne at kontaktinformasjon deles." },
+      { question: "Hva gjør Zen først?", answer: "Vi avklarer formål, brukere, budsjett og beslutningsbehov før vi lager boligshortlist." },
+      { question: "Hva gjør regnskapsføreren videre?", answer: "Regnskapsføreren beholder sin fagrolle og kan kvalitetssikre økonomi, regnskap og dokumentasjon sammen med andre relevante rådgivere." },
+      { question: "Kan partneren delta i møter?", answer: "Ja, dersom kunden ønsker det. Prosessen kan tilpasses hvor aktiv partneren ønsker å være." },
+      { question: "Hvordan håndteres referralhonorar?", answer: "Eventuelle kommersielle vilkår bør avtales skriftlig før konkrete introduksjoner." },
+      { question: "Hva skjer etter kjøpet?", answer: "Partneren kan fortsette sin faglige oppfølging, mens lokal eiendomsdrift kan håndteres gjennom Zen Eco Homes Care eller annen avtalt leverandør." },
+    ],
+    cta: { label: "Snakk med oss om partnersamarbeid", href: "/bedriftshytte-spania/partnere" },
   },
   {
     slug: "regnskapsforer-sporsmal-selskap-kjope-bolig-spania",
