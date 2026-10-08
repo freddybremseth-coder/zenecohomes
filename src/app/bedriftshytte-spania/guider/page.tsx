@@ -16,87 +16,43 @@ export const metadata: Metadata = {
 
 const groups = [
   {
-    title: "Kalkulator og business case",
-    intro: "Nye guider for styre, CFO og ledelse: konkrete opphold, hotellalternativ, årsbudsjett, boligkrav og verdiutvikling.",
-    slugs: [
-      "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte",
-      "slik-beregner-cfo-hotellalternativ-bedriftshytte",
-      "bedriftshytte-styre-ledelse-avdelingsreiser-krav",
-      "arsbudsjett-bedriftshytte-spania",
-      "prisvekst-bolig-spania-business-case-bedriftshytte",
-    ],
-  },
-  {
-    title: "Kom i gang",
-    intro: "For ledelse og HR som vurderer ideen for første gang.",
+    title: "Start her",
+    intro: "For ledelse og HR som vil forstå konseptet, bruksmodellene og hva som må avklares før virksomheten går videre.",
     slugs: [
       "hva-er-en-bedriftshytte-i-spania",
-      "corporate-home-assessment-bedriftsvurdering",
       "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca",
-      "bedriftshytte-som-langsiktig-ansattgode",
     ],
   },
   {
-    title: "Økonomi, skatt og beslutning",
-    intro: "Beslutningsgrunnlag, eierstruktur og spørsmål som bør avklares med rådgivere.",
+    title: "Økonomi, eierskap og styrebeslutning",
+    intro: "Business case, hotellalternativ, selskapseierskap, risiko og beslutningsgrunnlag samlet i tre komplette guider.",
     slugs: [
       "bedriftshytte-mot-hotell-og-leie",
-      "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
       "kjop-av-bolig-gjennom-selskap-i-spania",
       "slik-presenterer-du-bedriftshytte-for-styret",
-      "fem-feil-ved-kjop-av-bedriftshytte-i-spania",
     ],
   },
   {
-    title: "Bruk, kapasitet og booking",
-    intro: "Hvordan ordningen kan fungere i praksis for ansatte eller medlemmer.",
+    title: "Ansatte, booking og organisasjoner",
+    intro: "Regler for ansattbruk, kapasitet, booking, medlemsbolig og modeller der flere virksomheter eller organisasjoner deler løsningen.",
     slugs: [
-      "feriebruk-vs-bedriftsbruk-firmabolig-spania",
-      "storrelse-bolig-styre-teamsamlinger",
-      "kombinere-ansattgode-bedriftsbruk-samme-bolig",
-      "bedriftshytte-for-25-ansatte",
-      "bedriftshytte-for-100-ansatte",
-      "hvor-mange-kan-dele-en-bedriftshytte",
-      "rettferdig-bookingsystem-for-bedriftshytte",
-      "firmabolig-for-ledersamlinger-og-team",
+      "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
       "medlemsbolig-i-spania-for-foreninger",
     ],
   },
   {
-    title: "Bolig og område",
-    intro: "Velg boligtype og beliggenhet ut fra faktisk bruk og reiselogistikk.",
+    title: "Boligvalg og drift",
+    intro: "Velg riktig bolig, område og kapasitet, og planlegg keyholding, tilsyn, rengjøring og vedlikehold før overtakelsen.",
     slugs: [
       "hvilken-bolig-passer-som-bedriftshytte",
-      "bedriftsvilla-eller-ansattleilighet",
-      "nybygg-eller-bruktbolig-som-bedriftshytte",
-      "costa-blanca-nord-eller-sor-bedriftshytte",
-      "alicante-eller-valencia-flyplass-bedriftshytte",
-    ],
-  },
-  {
-    title: "Beslutning og gjentatte samlinger",
-    intro: "For styre og ledelse som vil gå fra idé til et dokumentert beslutningsgrunnlag.",
-    slugs: [
-      "beslutningsnotat-bedriftshytte-spania-mal",
-      "bedriftshytte-alternativ-hotell-gjentatte-samlinger",
+      "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte",
     ],
   },
   {
     title: "For partnere",
-    intro: "Praktiske guider for regnskapsførere, advokater, HR- og bedriftsrådgivere som møter relevante kunder.",
+    intro: "Én samlet arbeidsmodell for regnskapsførere, rådgivere og organisasjoner som introduserer relevante kunder til Zen Corporate Homes.",
     slugs: [
       "partnerguide-introdusere-zen-corporate-homes",
-      "regnskapsforer-sporsmal-selskap-kjope-bolig-spania",
-      "partnerprosess-introduksjon-til-kjop",
-    ],
-  },
-  {
-    title: "Drift og samarbeid",
-    intro: "Praktisk oppfølging når boligen skal fungere for mange brukere over tid.",
-    slugs: [
-      "drifte-bedriftshytte-i-spania-fra-norge",
-      "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte",
-      "delt-bedriftshytte-for-flere-virksomheter",
     ],
   },
 ];
@@ -111,8 +67,8 @@ export default function CorporateGuidesPage() {
         <p className="eyebrow">Zen Corporate Homes · Kunnskap</p>
         <h1>Guider om bedriftshytte og firmabolig i Spania</h1>
         <p>
-          Praktisk innhold for norske bedrifter, foreninger og organisasjoner som vil forstå bruk, økonomi,
-          booking, drift og boligvalg før de tar en beslutning.
+          Komplette guider for norske bedrifter, foreninger og organisasjoner som vil forstå bruk, økonomi,
+          skatt, booking, boligvalg og drift før de tar en beslutning.
         </p>
         <div className="hero-actions">
           <Link className="contact-button" href="/bedriftshytte-spania#bedriftsvurdering">
