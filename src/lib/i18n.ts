@@ -215,7 +215,7 @@ export function navLinks(locale: SiteLocale): NavLink[] {
           { label: "Guías", href: "/es/guias" },
           { label: "Guías para empresas", href: "/bedriftshytte-spania/guider" },
           { label: "Para colaboradores", href: "/bedriftshytte-spania/partnere" },
-          { label: "Magazin", href: "/magasin" },
+          { label: "Revista", href: "/magasin" },
           { label: "Mi área", href: "/es/mi-area" },
           { label: "Keyholding", href: CARE_URL, external: true },
         ],
