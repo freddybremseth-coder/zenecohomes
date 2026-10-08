@@ -4,6 +4,7 @@ import type { Article } from "@/lib/content";
 import { withArticleAttribution } from "@/lib/article-attribution";
 import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { MarketBudgetComparison } from "@/components/MarketBudgetComparison";
+import { CorporateHomeCalculator } from "@/components/CorporateHomeCalculator";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
 
 const BASE = "https://www.zenecohomes.com";
@@ -384,6 +385,72 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
 };
 
+const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
+  "hva-er-en-bedriftshytte-i-spania": [
+    {
+      headingIncludes: "skattefri for ansatte",
+      links: [
+        { label: "Skatteetaten: gjeldende regler om rimelige velferdstiltak", href: "https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/v-4-velferdstiltak/V-4.002/V-4.008/" },
+        { label: "Les mer om ansatte og bedriftseid bolig", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "10-personersregelen",
+      links: [
+        { label: "Skatteetaten: bedriftshytte", href: "https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/v-4-velferdstiltak/" },
+        { label: "Hvor mange kan dele en bedriftshytte?", href: "/bedriftshytte-spania/hvor-mange-kan-dele-en-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "Reisen til bedriftshytten",
+      links: [
+        { label: "Ansatte og bruk av firmabolig i Spania", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "norsk selskap kjøpe",
+      links: [
+        { label: "Kjøp av bolig gjennom selskap i Spania", href: "/bedriftshytte-spania/kjop-av-bolig-gjennom-selskap-i-spania" },
+        { label: "Spanske skattemyndigheter: NIF for juridiske personer", href: "https://sede.agenciatributaria.gob.es/Sede/en_gb/censos-nif-domicilio-fiscal/solicitar-nif/nif-persona-juridica-entidad.html" },
+      ],
+    },
+    {
+      headingIncludes: "booking og likebehandling",
+      links: [
+        { label: "Slik lager dere et rettferdig bookingsystem", href: "/bedriftshytte-spania/rettferdig-bookingsystem-for-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "Hva koster",
+      links: [
+        { label: "Bedriftshytte mot hotell og leie", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
+        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+      ],
+    },
+    {
+      headingIncludes: "type bolig",
+      links: [
+        { label: "Hvilken bolig passer som bedriftshytte?", href: "/bedriftshytte-spania/hvilken-bolig-passer-som-bedriftshytte" },
+        { label: "Bedriftsvilla eller ansattleilighet?", href: "/bedriftshytte-spania/bedriftsvilla-eller-ansattleilighet" },
+      ],
+    },
+    {
+      headingIncludes: "Drift fra Norge",
+      links: [
+        { label: "Drifte bedriftshytte i Spania fra Norge", href: "/bedriftshytte-spania/drifte-bedriftshytte-i-spania-fra-norge" },
+        { label: "Vedlikehold, nøkkelhold og rengjøring", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "styrevedtak",
+      links: [
+        { label: "Slik presenterer du bedriftshytte for styret", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
+        { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
+      ],
+    },
+  ],
+};
+
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
   "det-du-ikke-ser-i-boligannonsen": [
     {
@@ -729,6 +796,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
 function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
   const rules = [
     ...(CONTEXTUAL_GUIDE_LINKS[slug] || []),
+    ...(CONTEXTUAL_CORPORATE_LINKS[slug] || []),
     ...(CONTEXTUAL_MAGAZINE_LINKS[slug] || []),
   ];
   return rules
@@ -871,6 +939,19 @@ export function ArticleView({ article }: { article: Article }) {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+
+            {article.slug === "hva-er-en-bedriftshytte-i-spania" && (
+              <section className="article-section">
+                <p className="eyebrow">Test et scenario</p>
+                <h2>Bedriftshytte-kalkulator</h2>
+                <p>
+                  Bruk kalkulatoren til å teste kjøpesum, antall brukere, ferieuker, drift,
+                  kapitalkostnad og faktiske bedriftsopphold mot et hotellalternativ. Tallene er
+                  et planleggingsscenario – ikke investerings-, skatte- eller regnskapsråd.
+                </p>
+                <CorporateHomeCalculator />
+              </section>
+            )}
 
             {(article.slug === "bolig-500000-euro-totalbudsjett-spania" ||
               article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca") && (

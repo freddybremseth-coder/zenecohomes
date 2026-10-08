@@ -1,4 +1,4 @@
-import type { Article } from "./content";
+import type { Article, ArticleSection } from "./content";
 
 const updated = "2026-09-26";
 const cover = "/assets/magasin-covers/magasin-standard.svg";
@@ -14,8 +14,10 @@ type CorporateDraft = {
   updated?: string;
   readingTime?: string;
   cta?: { label: string; href: string };
+  author?: { name: string; href?: string };
+  nextSteps?: string[];
   intro: string[];
-  sections: { heading: string; body: string[]; bullets?: string[] }[];
+  sections: ArticleSection[];
   faq: { question: string; answer: string }[];
 };
 
@@ -30,7 +32,7 @@ function makeArticle(draft: CorporateDraft): Article {
     imageAlt: `Zen Corporate Homes guide: ${draft.title}`,
     seoTitle: draft.seoTitle || `${draft.title} | Zen Corporate Homes`,
     seoDescription: draft.seoDescription || draft.excerpt,
-    nextSteps: [
+    nextSteps: draft.nextSteps || [
       "Avklar hvem som skal kunne bruke boligen og hva virksomheten ønsker å oppnå.",
       "Sett et realistisk totalbudsjett for kjøp, drift og lokal oppfølging.",
       "Be om en kostnadsfri bedriftsvurdering før dere bruker tid på konkrete boliger.",
@@ -43,23 +45,287 @@ function makeArticle(draft: CorporateDraft): Article {
 const drafts: CorporateDraft[] = [
   {
     slug: "hva-er-en-bedriftshytte-i-spania",
-    title: "Hva er en bedriftshytte i Spania?",
-    excerpt: "Slik kan en norsk bedrift eie eller disponere en bolig på Costa Blanca som et strukturert ansattgode, og hvilke spørsmål som bør avklares først.",
-    keywords: ["bedriftshytte Spania", "firmahytte Spania", "ansattgode Spania", "firmabolig Costa Blanca"],
+    title: "Bedriftshytte i Spania: Slik fungerer det for norske bedrifter",
+    excerpt:
+      "Hva er en bedriftshytte i Spania, hvem kan bruke den, når kan bruken være skattefri, og hva bør styret avklare før virksomheten kjøper bolig?",
+    date: "2026-09-26",
+    updated: "2026-10-08",
+    readingTime: "15 min lesing",
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    seoTitle: "Bedriftshytte i Spania | Regler, skatt og bruk for bedrifter",
+    seoDescription:
+      "Bedriftshytte i Spania for norske bedrifter: se regler for ansatte, 10-personersregelen, skatt, booking, eierskap, kostnader og styrets vurdering.",
+    keywords: [
+      "bedriftshytte i Spania",
+      "firmahytte Spania",
+      "firmabolig Spania",
+      "bedrift kjøpe bolig i Spania",
+      "ansattgode Spania",
+      "bedriftshytte utlandet skatt",
+      "bedriftshytte 10 ansatte",
+      "bedriftsbolig Costa Blanca",
+    ],
     intro: [
-      "En bedriftshytte i Spania bygger på den samme grunnideen som en tradisjonell norsk firmahytte: virksomheten gjør en fritidsbolig tilgjengelig for ansatte etter tydelige regler. Forskjellen er beliggenheten, reiselogistikken og behovet for lokal drift.",
-      "For noen virksomheter kan en moderne leilighet eller villa på Costa Blanca bli et attraktivt personalgode. Men den bør behandles som et bedriftsprosjekt med klare rammer for bruk, økonomi, ansvar og rådgivning – ikke bare som et vanlig ferieboligkjøp."
+      "En bedriftshytte i Spania er i utgangspunktet det samme konseptet som en norsk firmahytte: virksomheten eier eller disponerer en fritidsbolig som ansatte kan bruke etter et definert system. Forskjellen er at kjøpet skjer i et annet land, med spanske kjøpsregler, norsk skattevurdering av ansattfordelen og et større behov for praktisk drift når boligen står langt fra hovedkontoret.",
+      "Det viktigste er derfor å ikke starte med spørsmålet «hvilken villa skal vi kjøpe?». Start med hvem som skal bruke boligen, hvor ofte, til hva, hvordan populære uker skal fordeles, hva virksomheten faktisk ønsker å oppnå og hvordan ordningen skal dokumenteres. Først når dette er tydelig, gir det mening å velge område og eiendom.",
+      "Skatteetatens regler åpner for at bruk av bedriftshytte i utlandet kan være et skattefritt velferdstiltak når vilkårene er oppfylt. Men det er ikke slik at «10 ansatte = automatisk skattefritt». Antall brukere, likebehandling, rimelighet, faktisk bruk og hvordan ordningen praktiseres må vurderes samlet. Denne guiden forklarer hva ledelsen bør forstå før virksomheten går fra idé til konkret bolig.",
     ],
     sections: [
-      { heading: "Start med brukerne, ikke boligen", body: ["Det første spørsmålet er hvem som skal ha tilgang. Antall ansatte, ønsket bruk gjennom året, høysesong, familier og intern booking påvirker hvilken boligtype som faktisk fungerer.", "Når bruken er definert kan man vurdere størrelse, beliggenhet, flytilgang, parkering, basseng, hjemmekontor og hvor mye lokal oppfølging som trengs."], bullets: ["Definer brukergruppen.", "Bestem prinsipper for booking.", "Avklar forventet antall bruksuker.", "Velg bolig først etter at behovet er tydelig."] },
-      { heading: "Eierskap og skatt må vurderes separat", body: ["Skatteetatens Skatte-ABC beskriver vilkår for når bruk av bedriftshytte kan være et skattefritt velferdstiltak, og reglene kan også gjelde bedriftshytter i utlandet. Den konkrete ordningen må likevel vurderes av virksomhetens egne skatte- og regnskapsrådgivere.", "I tillegg må kjøp og eierskap i Spania gjennomføres med nødvendig juridisk kontroll. Zen Corporate Homes kan hjelpe med eiendom og praktisk prosess, men erstatter ikke juridisk, skattemessig eller regnskapsmessig rådgivning."] },
-      { heading: "Hva Zen Corporate Homes gjør", body: ["Vi hjelper med behovsavklaring, områdevalg, boligshortlist, praktiske kostnadsestimater, visninger, kjøpsprosess og plan for lokal oppfølging.", "Målet er at ledelsen får et forståelig beslutningsgrunnlag før virksomheten binder seg til en konkret eiendom."] }
+      {
+        heading: "Hva er en bedriftshytte i Spania?",
+        body: [
+          "En bedriftshytte kan være en leilighet, et rekkehus eller en villa som arbeidsgiver har kjøpt eller leid for bruk av ansatte i fritiden. Det avgjørende er ikke at boligen ser ut som en norsk hytte, men at den faktisk er etablert og praktisert som en bred bedriftsordning.",
+          "En bolig som i realiteten bare står til disposisjon for eier, daglig leder eller en svært liten lukket gruppe er noe annet enn en reell bedriftshytteordning. Derfor må virksomheten kunne forklare hvem som har tilgang, hvordan booking skjer og hvordan attraktive perioder fordeles.",
+        ],
+        table: {
+          headers: ["Spørsmål", "Bedriftshytte", "Privat/avgrenset bruk"],
+          rows: [
+            ["Hvem kan bruke?", "Alle eller en betydelig gruppe på like vilkår", "Eier, ledelse eller få utvalgte"],
+            ["Hvordan fordeles tid?", "Dokumenterte og reelle bookingregler", "Etter skjønn eller fortrinn"],
+            ["Hva er formålet?", "Rimelig velferdstiltak for ansatte", "Privat fordel eller særfordel"],
+            ["Dokumentasjon", "Regler og oversikt over faktisk bruk", "Lite eller ingen felles ordning"],
+          ],
+          caption:
+            "Skattebehandlingen avgjøres av de faktiske forholdene. Tabellen er en praktisk forenkling, ikke en skattemessig konklusjon.",
+        },
+      },
+      {
+        heading: "Når kan bruk av bedriftshytte være skattefri for ansatte?",
+        body: [
+          "Skatteetatens gjeldende Skatte-ABC beskriver bruk av bedriftshytte som en naturalytelse som kan være skattefri når ordningen kan karakteriseres som et rimelig velferdstiltak og er tilgjengelig for alle eller en betydelig gruppe ansatte. Skatteetaten sier uttrykkelig at dette også kan gjelde bedriftshytter i utlandet.",
+          "Det betyr at selve plasseringen i Spania ikke i seg selv hindrer skattefri bruk. Det avgjørende er hvordan ordningen er utformet og praktisert. Like rettigheter på papiret er ikke nok dersom eierne eller enkelte ansatte i praksis får de beste ukene hvert år.",
+          "Virksomheten bør derfor ha skriftlige regler for hvem som kan booke, hvor lenge, hvor ofte, hvordan høysesong fordeles og hvordan eventuelle avbestillinger håndteres. Skatteetaten anbefaler også at faktisk bruk kan sannsynliggjøres, for eksempel gjennom en bookinghistorikk.",
+        ],
+        bullets: [
+          "Tiltaket må være et velferdstiltak i skattelovens forstand.",
+          "Fordelen må være en naturalytelse.",
+          "Tiltaket må være rimelig.",
+          "Alle eller en betydelig gruppe ansatte må ha reell tilgang.",
+          "Fordelingen bør kunne dokumenteres både gjennom regler og faktisk bruk.",
+        ],
+      },
+      {
+        heading: "10-personersregelen: viktig, men ikke en automatisk fasit",
+        body: [
+          "Skatteetaten bruker færre enn 10 personer med disposisjonsrett til én bedriftshytte som et utgangspunkt for at fordelen kan bli skattepliktig. Begrunnelsen er at hver enkelt i en svært liten gruppe får en så omfattende bruksrett at fordelen lettere blir for stor til å regnes som et rimelig velferdstiltak.",
+          "Men grensen er ikke absolutt begge veier. Skatteetaten åpner for at en ordning i enkelte tilfeller kan være rimelig selv med færre enn 10 brukere, og motsatt er ikke 10 eller flere brukere noen garanti for skattefrihet. Ordningen må fortsatt være rimelig og reelt tilgjengelig på like vilkår.",
+          "Hvis virksomheten har flere hytter, bruker Skatteetaten som utgangspunkt et forhold på omtrent én hytte per ti personer med disposisjonsrett. Tre hytter innebærer derfor som utgangspunkt rundt 30 personer med rett til å bruke ordningen.",
+        ],
+        table: {
+          headers: ["Situasjon", "Skatteetatens utgangspunkt"],
+          rows: [
+            ["Færre enn 10 med disposisjonsrett til én hytte", "Fordelen vil som utgangspunkt være skattepliktig"],
+            ["10 eller flere med disposisjonsrett", "Kan være skattefritt, men rimelighet og reell likebehandling må fortsatt vurderes"],
+            ["Flere bedriftshytter", "Som utgangspunkt omtrent 1 hytte per 10 personer med disposisjonsrett"],
+            ["Delt løsning mellom flere virksomheter", "Kan være relevant dersom samlet brukergruppe og øvrige vilkår er oppfylt"],
+          ],
+          caption:
+            "Dette er Skatteetatens utgangspunkter. Den konkrete ordningen må vurderes ut fra faktiske forhold.",
+        },
+      },
+      {
+        heading: "Små selskaper og eierstyrte selskaper må være ekstra varsomme",
+        body: [
+          "Reglene om skattefrie velferdstiltak gjelder ikke uten videre for virksomheter uten ansatte. Skatteetaten opplyser også at foretak der de ansatte samlet ikke tilsvarer minst én full stilling faller utenfor ordningen.",
+          "For et aksjeselskap som eies av én person, eventuelt sammen med ektefelle eller samboer, kreves det i tillegg andre ansatte uten nær familiemessig tilknytning som samlet utgjør minst én full stilling dersom ordningen skal behandles innenfor reglene om skattefrie velferdstiltak.",
+          "Dette er særlig viktig for små familieeide selskaper. At selskapet juridisk kan kjøpe en bolig i Spania betyr ikke at privat bruk av boligen automatisk kan behandles som et skattefritt ansattgode.",
+        ],
+      },
+      {
+        heading: "Reisen til bedriftshytten er et eget skattespørsmål",
+        body: [
+          "Et punkt som lett overses, er at skattefri bruk av selve bedriftshytten ikke betyr at arbeidsgiver fritt kan betale flyreisen. Skatteetatens Skatte-ABC sier at dekning av kostnad til reise til bedriftshytte er skattepliktig.",
+          "Det er derfor viktig å holde to spørsmål fra hverandre: disposisjonen av boligen og kostnadene ved å komme seg dit. Hvis virksomheten også skal bruke boligen til reelle arbeidsopphold, styresamlinger eller faglige aktiviteter, kan andre regler bli relevante for den konkrete reisen. Det bør vurderes separat av skatte- eller regnskapsrådgiver.",
+        ],
+        table: {
+          headers: ["Fordel/kostnad", "Må vurderes som"],
+          rows: [
+            ["Bruk av bedriftshytten i fritiden", "Kan være skattefritt velferdstiltak når vilkårene er oppfylt"],
+            ["Arbeidsgiver betaler privat reise til hytta", "Skatteetatens utgangspunkt er skattepliktig fordel"],
+            ["Reelt tjeneste-/arbeidsopphold", "Vurderes etter reglene som gjelder for tjenestereisen og aktiviteten"],
+            ["Forlenget privat opphold rundt arbeidsreise", "Privat del må vurderes separat"],
+          ],
+        },
+      },
+      {
+        heading: "Kan et norsk selskap kjøpe bolig i Spania?",
+        body: [
+          "Et utenlandsk selskap kan gjennomføre transaksjoner med skattemessig betydning i Spania og må normalt ha spansk skatteidentifikasjon, NIF, når det gjør det. Den spanske skattemyndigheten har egne regler og prosedyrer for NIF til utenlandske juridiske personer og ikke-residente enheter.",
+          "Men spørsmålet om selskapet bør eie boligen direkte, via en annen struktur eller eventuelt leie i stedet for å kjøpe er et eget eier- og skattevalg. Spansk skatt, norsk selskaps- og skattebehandling, regnskapsføring, finansiering, senere salg og faktisk bruk må ses samlet.",
+          "Zen Corporate Homes kan hjelpe med eiendommen, området, beslutningsgrunnlaget og den praktiske kjøpsprosessen. Valg av selskapsstruktur og skattebehandling bør kvalitetssikres av kvalifiserte norske og spanske rådgivere før virksomheten signerer.",
+        ],
+      },
+      {
+        heading: "Start med brukerne – ikke med boligen",
+        body: [
+          "Det vanligste feilgrepet er å finne en flott villa og først etterpå forsøke å lage en bedriftsmodell som passer eiendommen. Rekkefølgen bør være motsatt. Definer bruksmønsteret først og bruk det som kravspesifikasjon.",
+          "Hvis 40–60 ansatte skal kunne bruke boligen gjennom året, betyr antall soverom, antall bad, rengjøring mellom opphold, parkering og enkel transport mer enn om stuen har den mest spektakulære utsikten. Skal boligen også brukes til mindre ledersamlinger eller prosjektuker, må arbeidsplasser, bord, Wi-Fi og støynivå inn i samme vurdering.",
+        ],
+        bullets: [
+          "Hvor mange personer skal ha rett til å booke?",
+          "Hvor mange personer skal boligen normalt romme samtidig?",
+          "Skal familien til ansatte kunne være med?",
+          "Hvor mange uker forventes realistisk brukt per år?",
+          "Hvordan fordeles sommer, påske, jul og skoleferier?",
+          "Skal boligen også brukes til arbeidsopphold eller samlinger?",
+          "Hvor viktig er gangavstand kontra basseng, utsikt og privatliv?",
+          "Hvor enkelt må det være å komme fra flyplassen uten komplisert logistikk?",
+        ],
+      },
+      {
+        heading: "Slik bør booking og likebehandling fungere",
+        body: [
+          "Et godt bookingsystem er ikke bare praktisk. Det er også en viktig del av å kunne vise at ordningen faktisk er bred og rettferdig. Reglene bør være forståelige før første booking og håndheves likt gjennom året.",
+          "En modell kan for eksempel bruke søknadsfrister og trekning for de mest attraktive periodene, begrense hvor mange høysesonguker samme person kan få og åpne ledige uker for ny booking nærmere datoen. Det viktige er at systemet ikke gir en skjult fortrinnsrett til eiere, ledere eller en liten gruppe.",
+        ],
+        bullets: [
+          "Skriftlige bookingregler som alle brukere kan se.",
+          "Like prinsipper for populære uker.",
+          "Historikk over hvem som faktisk har brukt boligen.",
+          "Regler for avbestilling og ubrukte uker.",
+          "Tydelig ansvar for skader, nøkler, rengjøring og utsjekk.",
+        ],
+      },
+      {
+        heading: "Hva koster en bedriftshytte egentlig?",
+        body: [
+          "Kjøpesummen er bare første tall. Ledelsen bør se på kjøpskostnader, årlig drift, forsikring, comunidad der det er aktuelt, IBI, strøm, vann, internett, vedlikehold, rengjøring, nøkkelhåndtering og reserve for uforutsette hendelser.",
+          "I tillegg bør kapitalen vurderes. Hvis virksomheten binder 500.000 euro i en eiendom, har kapitalen en alternativkostnad selv om kjøpet gjøres uten lån. Hvis boligen finansieres, må renter og lånevilkår inn i modellen.",
+          "Sammenlign heller ikke eierskap med en kunstig høy hotellkostnad. Bruk faktiske opphold virksomheten realistisk ville betalt for, og hold feriebruk for ansatte utenfor hotellbesparelsen. Boligens mulige verdiutvikling kan testes som et scenario, men bør ikke presenteres som garantert avkastning.",
+        ],
+        table: {
+          headers: ["Kostnad", "Ta med i beslutningsgrunnlaget"],
+          rows: [
+            ["Kjøpesum", "Pris på konkret bolig og eventuelle tilvalg"],
+            ["Kjøpskostnader", "Skatter, juridisk bistand, notar/register og øvrige transaksjonskostnader"],
+            ["Årlig drift", "IBI, comunidad, forsikring, strøm, vann, internett og løpende tjenester"],
+            ["Vedlikehold", "Teknisk vedlikehold, basseng/hage der det er aktuelt og reserve"],
+            ["Lokal drift", "Nøkkelhåndtering, tilsyn, rengjøring og klargjøring"],
+            ["Kapital/finansiering", "Alternativ bruk av kapital eller lånekostnad"],
+            ["Senere salg", "Salgsomkostninger og skattemessig behandling må vurderes separat"],
+          ],
+        },
+      },
+      {
+        heading: "Hvilken type bolig fungerer best som bedriftshytte?",
+        body: [
+          "Det finnes ikke én riktig boligtype. En moderne leilighet kan være svært effektiv dersom virksomheten ønsker enkel drift, gangavstand og lave praktiske krav. En villa kan være bedre dersom flere skal bo samtidig, virksomheten ønsker samlinger eller man prioriterer privatliv og større uteareal.",
+          "På Costa Blanca vil jeg normalt vurdere både selve boligen og mikrobeliggenheten. En flott villa 25 minutter opp i fjellet kan være riktig for én bedrift og helt feil for en annen. Hvis brukerne skifter ofte, kan enkel flyplasslogistikk, gangavstand til service og lav driftsfriksjon være mer verdifullt enn maksimal utsikt.",
+        ],
+        table: {
+          headers: ["Behov", "Leilighet", "Villa/rekkehus"],
+          rows: [
+            ["Enkel drift", "Ofte sterk", "Mer varierende"],
+            ["Gangavstand og byliv", "Ofte lettere å finne", "Avhenger av område"],
+            ["Mange samtidige brukere", "Begrenset av størrelse", "Ofte bedre kapasitet"],
+            ["Privat uteareal", "Begrenset", "Ofte bedre"],
+            ["Basseng/hage-vedlikehold", "Ofte felles drift", "Kan bli eget ansvar"],
+            ["Mindre samlinger", "Mulig i større enheter", "Ofte mer fleksibelt"],
+          ],
+        },
+      },
+      {
+        heading: "Drift fra Norge: hvem passer på boligen når den står tom?",
+        body: [
+          "En bedriftshytte med mange brukerskifter trenger mer struktur enn en privat feriebolig. Noen må håndtere nøkler, kontroll etter utsjekk, rengjøring, småskader, håndverkere, uvær, leveranser og spørsmål fra brukere.",
+          "Dette bør være bestemt før overtakelsen. Hvis ansvaret havner tilfeldig hos HR, økonomisjef eller daglig leder etter første vannlekkasje, er driftsmodellen for svak.",
+          "Zen Eco Homes Care kan settes opp som lokal oppfølging med nøkkelhåndtering, tilsyn, klargjøring og koordinering av praktiske oppgaver. Virksomheten bør samtidig ha én intern eier av ordningen som har ansvar for bookingregler, brukerkommunikasjon og budsjett.",
+        ],
+      },
+      {
+        heading: "Fra idé til styrevedtak og kjøp",
+        body: [
+          "Jeg anbefaler at virksomheten behandler bedriftshytten som et lite investerings- og HR-prosjekt. Først defineres formål, brukere og regler. Deretter lages et nøkternt kostnadsbilde og en kravspesifikasjon for bolig. Først etter dette bør ledelsen bruke tid på konkrete objekter.",
+          "Når en aktuell bolig er valgt, må selve kjøpet gjennom ordinær juridisk og økonomisk kontroll i Spania. Selskapsdokumentasjon, fullmakter, NIF, bank, kontrakter, eiendommens juridiske status og skatter må håndteres riktig for den valgte eierstrukturen.",
+        ],
+        table: {
+          headers: ["Fase", "Hva bør være avklart?"],
+          rows: [
+            ["1. Formål", "Ansattgode, medlemsbruk, arbeidsopphold eller kombinasjon"],
+            ["2. Brukere", "Hvem får tilgang, kapasitet og forventede bruksuker"],
+            ["3. Regler", "Booking, høysesong, familie, avbestilling og ansvar"],
+            ["4. Økonomi", "Kjøp, drift, kapital, hotellalternativ og reserve"],
+            ["5. Kravspesifikasjon", "Område, størrelse, bad, parkering, arbeidsplass og praktisk drift"],
+            ["6. Shortlist", "Sammenlign et lite antall reelle boliger"],
+            ["7. Fagkontroll", "Skatt, regnskap, eierstruktur og juridisk kjøpskontroll"],
+            ["8. Kjøp og drift", "Overtakelse, booking, nøkkelhold og løpende oppfølging"],
+          ],
+        },
+      },
+      {
+        heading: "Hva Zen Corporate Homes kan hjelpe med",
+        body: [
+          "Vår rolle er å gjøre eiendomsdelen av beslutningen konkret. Vi kan hjelpe ledelsen med behovsavklaring, scenarioer, områdevalg, kravspesifikasjon, shortlist, visninger, kjøpsprosess og plan for lokal drift.",
+          "Vi kan også lage et første beslutningsgrunnlag med faktiske boligeksempler og realistiske driftsforutsetninger. Det gjør det lettere for styret eller ledelsen å avgjøre om ideen er verdt å utvikle videre før man bruker tid og penger på full juridisk, skattemessig og regnskapsmessig strukturering.",
+          "Det vi ikke gjør, er å erstatte advokat, revisor eller skatterådgiver. Når virksomheten nærmer seg en bindende beslutning, bør de riktige fagpersonene kobles inn på hvert sitt område.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Definer formål, brukergruppe og forventet bruk før dere ser på konkrete boliger.",
+      "Lag skriftlige bookingprinsipper og avklar om ordningen realistisk kan behandles som et velferdstiltak.",
+      "Sett opp totaløkonomien med kjøpskostnader, årlig drift, kapital og lokal oppfølging.",
+      "Få eierstruktur, skatt, regnskap og juridisk gjennomføring kvalitetssikret før bindende kjøp.",
+      "Be om en kostnadsfri bedriftsvurdering med kravspesifikasjon og konkrete boligeksempler.",
     ],
     faq: [
-      { question: "Må bedriftshytten være en hytte?", answer: "Nei. Det kan være en leilighet, villa eller annen egnet fritidsbolig. Det avgjørende er hvordan ordningen og bruken er organisert." },
-      { question: "Kan boligen ligge i utlandet?", answer: "Skatteetatens gjeldende Skatte-ABC beskriver at reglene om bedriftshytte også kan gjelde bedriftshytter i utlandet når vilkårene ellers er oppfylt." },
-      { question: "Kan Zen Corporate Homes gi skatteråd?", answer: "Nei. Vi hjelper med eiendom, beslutningsgrunnlag og lokal prosess. Skatt, regnskap og eierstruktur bør kvalitetssikres av virksomhetens egne rådgivere." }
-    ]
+      {
+        question: "Hva er en bedriftshytte i Spania?",
+        answer:
+          "Det er en fritidsbolig i Spania som en virksomhet eier eller disponerer for ansatte etter en definert ordning. Det kan være leilighet, rekkehus eller villa; det viktige er hvordan tilgangen og bruken faktisk er organisert.",
+      },
+      {
+        question: "Kan en bedriftshytte i Spania være skattefri for ansatte?",
+        answer:
+          "Ja, bruk av bedriftshytte i utlandet kan etter Skatteetatens regler være et skattefritt velferdstiltak når vilkårene er oppfylt. Blant annet må tiltaket være rimelig og være tilgjengelig for alle eller en betydelig gruppe ansatte på reelle og like vilkår.",
+      },
+      {
+        question: "Må minst 10 personer kunne bruke bedriftshytten?",
+        answer:
+          "Skatteetaten bruker færre enn 10 personer med disposisjonsrett til én hytte som et utgangspunkt for at fordelen blir skattepliktig. Det er ikke en absolutt grense: færre kan i enkelte tilfeller godtas, og 10 eller flere gir ikke automatisk skattefrihet.",
+      },
+      {
+        question: "Kan et selskap med bare eieren som ansatt ha skattefri bedriftshytte?",
+        answer:
+          "Reglene om skattefrie velferdstiltak gjelder ikke uten videre for foretak uten reelle ansatte. For eierstyrte aksjeselskaper stiller Skatteetaten særskilte krav til andre ansatte og samlet stillingsomfang. Dette bør avklares konkret før ordningen etableres.",
+      },
+      {
+        question: "Kan arbeidsgiver betale flyreisen til bedriftshytten skattefritt?",
+        answer:
+          "Skatteetatens utgangspunkt er at arbeidsgivers dekning av kostnad til reise til bedriftshytte er skattepliktig. Reelle tjenestereiser eller arbeidsopphold må vurderes etter reglene som gjelder for den konkrete reisen.",
+      },
+      {
+        question: "Kan et norsk AS kjøpe bolig i Spania?",
+        answer:
+          "Et utenlandsk selskap kan gjennomføre eiendomstransaksjoner i Spania og vil normalt måtte ha spansk NIF for transaksjoner med skattemessig betydning. Om selskapet bør eie direkte, via annen struktur eller leie, må vurderes juridisk, skattemessig og regnskapsmessig.",
+      },
+      {
+        question: "Må bedriftshytten være en hytte?",
+        answer:
+          "Nei. En moderne leilighet, et rekkehus eller en villa kan fungere som bedriftshytte. Valget bør styres av kapasitet, drift, beliggenhet og hvordan de ansatte faktisk skal bruke boligen.",
+      },
+      {
+        question: "Hvordan bør populære uker fordeles?",
+        answer:
+          "Virksomheten bør ha en dokumentert og reell modell for likebehandling, for eksempel søknadsfrist og trekning, rotasjon eller andre tydelige regler. Eiere eller ledelse bør ikke ha skjult fortrinnsrett til attraktive perioder.",
+      },
+      {
+        question: "Er bedriftshytte alltid billigere enn hotell?",
+        answer:
+          "Nei. Eierskap binder kapital og gir kjøps- og driftskostnader. En riktig sammenligning bruker realistisk faktisk bruk og reelle hotell- eller leiealternativer, og behandler mulig verdiutvikling som scenario – ikke garanti.",
+      },
+      {
+        question: "Hvem håndterer boligen lokalt?",
+        answer:
+          "Virksomheten kan organisere dette selv eller kjøpe lokal oppfølging. Zen Eco Homes Care kan blant annet bidra med nøkkelhåndtering, tilsyn, klargjøring, rengjøringskoordinering og oppfølging av praktiske avvik.",
+      },
+      {
+        question: "Kan Zen Corporate Homes gi skatte- og juridiske råd?",
+        answer:
+          "Nei. Vi hjelper med eiendom, behov, område, økonomiske scenarioer, shortlist, kjøpsprosess og lokal drift. Skatt, regnskap, selskapsstruktur og juridiske vurderinger skal kvalitetssikres av kvalifiserte fagpersoner.",
+      },
+    ],
+    cta: { label: "Få en kostnadsfri første bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
   },
   {
     slug: "bedriftshytte-mot-hotell-og-leie",
