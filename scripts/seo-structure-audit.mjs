@@ -112,6 +112,34 @@ for (const text of [
   requireText(nav, text, "localized navigation parity");
 }
 
+
+// Localized menus must point to localized destinations, not Norwegian fallbacks.
+for (const text of [
+  'href: "/en/about-us"',
+  'href: "/en/client-reviews"',
+  'href: "/en/viewing-trip"',
+  'href: "/en/corporate"',
+  'href: "/en/corporate/guides"',
+  'href: "/en/corporate/partners"',
+  'href: "/en/magazine"',
+  'href: "/de/ueber-uns"',
+  'href: "/de/kundenstimmen"',
+  'href: "/de/besichtigungsreise"',
+  'href: "/de/unternehmen"',
+  'href: "/de/unternehmen/ratgeber"',
+  'href: "/de/unternehmen/partner"',
+  'href: "/de/magazin"',
+  'href: "/es/sobre-nosotros"',
+  'href: "/es/opiniones-clientes"',
+  'href: "/es/viaje-de-visitas"',
+  'href: "/es/empresas"',
+  'href: "/es/empresas/guias"',
+  'href: "/es/empresas/colaboradores"',
+  'href: "/es/revista"',
+]) {
+  requireText(nav, text, "localized menu destination");
+}
+
 requireText("src/components/SiteHeader.tsx", "<Breadcrumbs locale={locale}", "shared visible breadcrumbs");
 requireText(properties, '"@type": "CollectionPage"', "CollectionPage schema on /eiendommer");
 requireText(properties, '"@type": "BreadcrumbList"', "BreadcrumbList schema on /eiendommer");
