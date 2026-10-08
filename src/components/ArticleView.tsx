@@ -449,6 +449,113 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
   ],
+  "bedriftshytte-mot-hotell-og-leie": [
+    {
+      headingIncludes: "Sammenlign samme behov",
+      links: [
+        { label: "Fem bruksmodeller for firmabolig", href: "/bedriftshytte-spania/fem-mater-bedrifter-kan-bruke-bolig-costa-blanca" },
+        { label: "Årsbudsjett for bedriftshytte", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Hva koster eierskap",
+      links: [
+        { label: "Årsbudsjett for bedriftshytte i Spania", href: "/bedriftshytte-spania/arsbudsjett-bedriftshytte-spania" },
+        { label: "Drift, keyholding og vedlikehold", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "Ferieuker for ansatte",
+      links: [
+        { label: "Kan ansatte bruke bedriftseid bolig i Spania?", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Drift kan være",
+      links: [
+        { label: "Zen Eco Homes Care – keyholding og lokal drift", href: "https://care.zenecohomes.com" },
+        { label: "Komplett guide til drift av bedriftshytte", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "presentert sammenligningen for styret",
+      links: [
+        { label: "Slik presenterer du bedriftshytte for styret", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
+        { label: "Beslutningsnotat – mal og innhold", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
+      ],
+    },
+  ],
+  "kan-ansatte-bruke-bedriftseid-bolig-i-spania": [
+    {
+      headingIncludes: "Fire grunnvilkår",
+      links: [
+        { label: "Skatteetaten: gjeldende Skatte-ABC om velferdstiltak", href: "https://oppslag.rettskilder.skatteetaten.no/rettskilder2/type/handboker/skatte-abc/gjeldende/skatteabc-V-4/skatteabc-V-4.001" },
+        { label: "Hva er en bedriftshytte i Spania?", href: "/bedriftshytte-spania/hva-er-en-bedriftshytte-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "10-personersregelen",
+      links: [
+        { label: "Skatteetaten: bedriftshytte og brukerkrav", href: "https://oppslag.rettskilder.skatteetaten.no/rettskilder2/type/handboker/skatte-abc/gjeldende/skatteabc-V-4/skatteabc-V-4.001" },
+        { label: "Hvor mange kan dele en bedriftshytte?", href: "/bedriftshytte-spania/hvor-mange-kan-dele-en-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "Likebehandling",
+      links: [
+        { label: "Slik lager dere et rettferdig bookingsystem", href: "/bedriftshytte-spania/rettferdig-bookingsystem-for-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "Reisen til bedriftshytten",
+      links: [
+        { label: "Skatteetaten: reisekostnader og velferdstiltak", href: "https://oppslag.rettskilder.skatteetaten.no/rettskilder2/type/handboker/skatte-abc/gjeldende/skatteabc-V-4/skatteabc-V-4.001" },
+      ],
+    },
+    {
+      headingIncludes: "Lokal drift",
+      links: [
+        { label: "Drift, keyholding og rengjøring av bedriftshytte", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
+        { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com" },
+      ],
+    },
+  ],
+  "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca": [
+    {
+      headingIncludes: "1. Bedriftshytte",
+      links: [
+        { label: "Kan ansatte bruke bedriftseid bolig i Spania?", href: "/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania" },
+        { label: "Rettferdig bookingsystem for bedriftshytte", href: "/bedriftshytte-spania/rettferdig-bookingsystem-for-bedriftshytte" },
+      ],
+    },
+    {
+      headingIncludes: "2. Ledersamlinger",
+      links: [
+        { label: "Firmabolig for ledersamlinger og team", href: "/bedriftshytte-spania/firmabolig-for-ledersamlinger-og-team" },
+        { label: "Bedriftshytte eller hotell?", href: "/bedriftshytte-spania/bedriftshytte-mot-hotell-og-leie" },
+      ],
+    },
+    {
+      headingIncludes: "5. Kombinasjonsmodell",
+      links: [
+        { label: "Kombinere ansattgode og bedriftsbruk", href: "/bedriftshytte-spania/kombinere-ansattgode-bedriftsbruk-samme-bolig" },
+      ],
+    },
+    {
+      headingIncludes: "Driftsmodellen må",
+      links: [
+        { label: "Drift, keyholding og rengjøring", href: "/bedriftshytte-spania/vedlikehold-nokkelhold-og-rengjoring-bedriftshytte" },
+        { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com" },
+      ],
+    },
+    {
+      headingIncludes: "velger styret",
+      links: [
+        { label: "Slik presenterer du bedriftshytte for styret", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret" },
+        { label: "Beslutningsnotat for bedriftshytte", href: "/bedriftshytte-spania/beslutningsnotat-bedriftshytte-spania-mal" },
+      ],
+    },
+  ],
   "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte": [
     {
       headingIncludes: "Keyholding er mer",
@@ -987,14 +1094,15 @@ export function ArticleView({ article }: { article: Article }) {
               ))}
             </div>
 
-            {article.slug === "hva-er-en-bedriftshytte-i-spania" && (
+            {(article.slug === "hva-er-en-bedriftshytte-i-spania" ||
+              article.slug === "bedriftshytte-mot-hotell-og-leie") && (
               <section className="article-section">
                 <p className="eyebrow">Test et scenario</p>
-                <h2>Bedriftshytte-kalkulator</h2>
+                <h2>{article.slug === "bedriftshytte-mot-hotell-og-leie" ? "Sammenlign eierskap med hotell" : "Bedriftshytte-kalkulator"}</h2>
                 <p>
-                  Bruk kalkulatoren til å teste kjøpesum, antall brukere, ferieuker, drift,
-                  kapitalkostnad og faktiske bedriftsopphold mot et hotellalternativ. Tallene er
-                  et planleggingsscenario – ikke investerings-, skatte- eller regnskapsråd.
+                  {article.slug === "bedriftshytte-mot-hotell-og-leie"
+                    ? "Legg inn faktiske bedriftsopphold, kjøpesum, drift, kapitalkostnad og eiertid. Hotellalternativet beregnes bare på opphold virksomheten ellers kunne ha kjøpt – ikke på ferieuker for ansatte."
+                    : "Bruk kalkulatoren til å teste kjøpesum, antall brukere, ferieuker, drift, kapitalkostnad og faktiske bedriftsopphold mot et hotellalternativ. Tallene er et planleggingsscenario – ikke investerings-, skatte- eller regnskapsråd."}
                 </p>
                 <CorporateHomeCalculator />
               </section>
