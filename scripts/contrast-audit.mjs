@@ -41,7 +41,8 @@ function testPair(label, a, b, min = 4.5) {
   console.log("PASS", label, ratio.toFixed(2) + ":1");
 }
 function block(source, selector) {
-  const start = source.indexOf(selector + " {");
+  /* The legacy CSS repeats selectors; the last matching rule wins. */
+  const start = source.lastIndexOf(selector + " {");
   assert.notEqual(start, -1, "Missing CSS selector: " + selector);
   const opening = source.indexOf("{", start);
   const end = source.indexOf("}", opening + 1);
