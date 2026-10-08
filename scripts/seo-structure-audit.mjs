@@ -205,6 +205,14 @@ for (const slug of guideSlugs) {
 
 // Corporate article routing integrity: every published Corporate article must
 // resolve under /bedriftshytte-spania, be unique, and have a legacy /magasin redirect.
+const magazineRouting = read("src/lib/magazine.ts");
+if (!magazineRouting.includes("return silo ? SILO_META[silo].href : \"/magasin\";")) {
+  errors.push("src/lib/magazine.ts: articleBasePath must use canonical SILO_META hrefs so Corporate articles resolve under /bedriftshytte-spania");
+}
+if (!hasRedirect("/corporate/:slug", "/bedriftshytte-spania/:slug")) {
+  errors.push("next.config.ts: missing legacy Corporate redirect /corporate/:slug -> /bedriftshytte-spania/:slug");
+}
+
 const corporateContent = read("src/lib/corporate-content.ts");
 const corporateRoute = "src/app/bedriftshytte-spania/[slug]/page.tsx";
 const corporateSlugs = [...corporateContent.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]);

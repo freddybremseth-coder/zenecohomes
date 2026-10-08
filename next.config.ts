@@ -144,6 +144,7 @@ const nextConfig: NextConfig = {
     }));
 
     return [
+      { source: "/corporate/:slug", destination: "/bedriftshytte-spania/:slug", permanent: true },
       { source: "/slik-hjelper-vi-deg", destination: "/kjopsprosessen", permanent: true },
       {
         source: "/:path*",
