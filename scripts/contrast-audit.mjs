@@ -74,4 +74,20 @@ assert.ok(layout.includes(importLine), "Contrast styles must be imported");
 const lastImport = [...layout.matchAll(/^import [^\n]+\.css";$/gm)].at(-1)?.[0];
 assert.equal(lastImport, importLine, "Contrast guardrails must be the final CSS import");
 console.log("PASS", "last CSS import: contrast guardrails");
+const legacy = read("src/app/globals.css");
+const regionPage = read("src/app/omrader/[region]/page.tsx");
+
+expectDeclaration(legacy, ".region-landing-grid aside", "background: var(--ze-white, #fcfbf8);");
+expectDeclaration(legacy, ".region-landing-grid aside", "color: var(--ze-ink, #172027);");
+expectDeclaration(legacy, ".region-landing-grid aside strong", "color: var(--ze-accent-text, #806436);");
+expectDeclaration(legacy, ".region-landing-grid aside span", "color: var(--ze-muted, #596976);");
+expectDeclaration(premium, ".region-landing-grid > aside", "background: var(--ze-white, #fcfbf8);");
+
+// Inline colors are intentional: Next/Safari stylesheet chunk order must
+// not be able to reintroduce invisible text to the region statistics.
+assert.ok(regionPage.includes('style={{ backgroundColor: "#fcfbf8", color: "#172027" }}'), "Region statistics require server-rendered accessible background and text colors");
+assert.equal(regionPage.split('style={{ color: "#806436" }}').length - 1, 2, "Both numbers must have accessible dark-gold text");
+assert.equal(regionPage.split('style={{ color: "#596976" }}').length - 1, 2, "Both statistical labels must have accessible muted text");
+console.log("PASS", "region statistics have server-rendered contrast, with both CSS layers consistent");
+
 console.log("Contrast regression audit passed.");
