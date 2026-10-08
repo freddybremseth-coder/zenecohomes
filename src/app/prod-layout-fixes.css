@@ -242,14 +242,19 @@ body {
     max-width: 100%;
   }
 
-  .chatbot-2027.chatbot-shell {
-    left: 12px !important;
-    right: 12px !important;
-    max-width: none;
+  /* Only the *closed* launcher should sit in the lower-right corner.
+     The old left:12/right:12 rule stretched its inline-flex parent across
+     the entire viewport and left the icon over the article heading. */
+  .chatbot-2027.chatbot-shell:not(:has(.chatbot-panel)) {
+    left: auto !important;
+    right: max(12px, env(safe-area-inset-right)) !important;
+    width: max-content !important;
+    max-width: calc(100vw - 24px);
   }
 
+  /* Open chat continues to use mobile-critical.css's full-width sheet. */
   .chatbot-2027 .chatbot-toggle {
-    margin-left: auto;
+    margin-left: 0;
   }
 }
 
