@@ -489,6 +489,43 @@ const drafts: CorporateDraft[] = [
         ],
       },
       {
+        heading: "CFO-formelen: beregn hotellalternativet med personnetter",
+        body: [
+          "En enkel kontrollformel er antall arrangementer × antall personer × antall netter × realistisk hotellpris per person per natt. Deretter legger dere bare til møterom eller andre kostnader virksomheten faktisk ville kjøpt.",
+          "Personnetter gjør sammenligningen transparent. Seks personer i tre netter er 18 personnetter. Fire slike samlinger gir 72 personnetter. Dette tallet kan kontrolleres mot faktiske reise- og hotellhistorikker i stedet for å bygge modellen på antakelser.",
+        ],
+        table: {
+          headers: ["Eksempel", "Regnestykke"],
+          rows: [
+            ["Ledersamling", "6 personer × 3 netter = 18 personnetter"],
+            ["Fire samlinger", "18 × 4 = 72 personnetter"],
+            ["Hotellalternativ", "72 × realistisk pris per person/natt"],
+            ["Feriebruk", "Holdes utenfor hotellalternativet"],
+          ],
+        },
+      },
+      {
+        heading: "Slik bygger dere et årlig eierbudsjett",
+        body: [
+          "Årsbudsjettet bør ha fire blokker: normal drift, vedlikeholdsreserve, kapitalkostnad og en årlig andel av engangskostnader. Da kan styret sammenligne ett år med eierskap mot ett år med reelt hotell- eller leiebehov.",
+          "Bruk samme modell hvert år og oppdater med faktiske tall. Etter to–tre år får virksomheten da et mye bedre beslutningsgrunnlag for om boligen brukes og koster som forutsatt.",
+        ],
+        bullets: [
+          "Normal drift: IBI, comunidad, forsikring, strøm, vann og internett.",
+          "Operativ drift: rengjøring, sengetøy, keyholding, tilsyn og klargjøring.",
+          "Vedlikeholdsreserve: planlagt service og uforutsette reparasjoner.",
+          "Kapital: rente eller intern alternativkostnad.",
+          "Engangskostnader: fordelt over realistisk eiertid.",
+        ],
+      },
+      {
+        heading: "Gjentatte samlinger er mer relevante enn ett dyrt hotellopphold",
+        body: [
+          "Et enkelt dyrt arrangement er sjelden et godt kjøpsargument. Det interessante er mønsteret over flere år. Hvis virksomheten kan dokumentere at de samme samlingene, prosjektukene eller oppholdene gjentar seg, blir eierskap et mer naturlig alternativ å analysere.",
+          "Derfor bør business caset bruke 12–24 måneders historikk og en fremoverskuende plan. Jo mer gjentakende bruken er, desto mer meningsfull blir sammenligningen mellom fleksibiliteten i hotell og kontrollen i egen bolig.",
+        ],
+      },
+      {
         heading: "Slik ville jeg presentert sammenligningen for styret",
         body: [
           "Et godt beslutningsnotat bør vise forutsetningene før konklusjonen. Styret bør kunne se hva som skjer dersom bruken blir 25 prosent lavere, hotellprisene ikke stiger, vedlikehold blir dyrere eller boligens verdi står stille.",
@@ -666,6 +703,43 @@ const drafts: CorporateDraft[] = [
           "Hvem betaler reise, rengjøring og eventuelle tillegg?",
           "Hva skjer ved skade eller sen avbestilling?",
           "Hvordan dokumenteres faktisk bruk?",
+        ],
+      },
+      {
+        heading: "Hva betyr modellen for 25 ansatte kontra 100 ansatte?",
+        body: [
+          "Antall ansatte påvirker ikke bare skattevurderingen, men også forventningene til tilgjengelighet. Én bolig med 25 brukere kan gi relativt god tilgang per person. Med 100 ansatte blir samme bolig et knappere gode, og kommunikasjon om kapasitet blir enda viktigere.",
+          "Det betyr ikke at virksomheten automatisk trenger flere boliger. Først bør dere måle faktisk etterspørsel, hvor mange som ønsker høysesong, hvor mange som kan reise utenom skoleferier og hvor ofte samme person bør kunne booke.",
+        ],
+        table: {
+          headers: ["Eksempel", "25 ansatte", "100 ansatte"],
+          rows: [
+            ["Én bolig", "Kan gi relativt høy tilgjengelighet", "Blir et mer selektivt gode"],
+            ["Høysesong", "Fortsatt behov for fordelingsmodell", "Trekning/rotasjon blir viktigere"],
+            ["Ledige skuldersesonger", "Kan fylles gjennom fleksibel booking", "Større sannsynlighet for etterspørsel"],
+            ["Behov for flere enheter", "Mål først faktisk bruk", "Vurder først når data viser vedvarende kapasitetsmangel"],
+          ],
+        },
+      },
+      {
+        heading: "Mål etterspørsel før dere kjøper bolig nummer to",
+        body: [
+          "52 kalenderuker er ikke 52 like attraktive uker. Sommer, påske og skoleferier vil ofte ha klart høyere etterspørsel enn november eller tidlig februar. Derfor bør kapasitet måles per sesong, ikke bare som totalt antall ledige uker.",
+          "Etter første driftsår kan virksomheten se på søknader, avslag, faktisk bruk og avbestillinger. Det gir et langt bedre grunnlag for å vurdere flere enheter enn en teoretisk ratio alene.",
+        ],
+        bullets: [
+          "Antall søknader per periode.",
+          "Hvor mange som ikke fikk ønsket uke.",
+          "Faktisk bruk versus reserverte uker.",
+          "Avbestillinger og ubrukte perioder.",
+          "Etterspørsel utenfor skoleferier.",
+        ],
+      },
+      {
+        heading: "Et langsiktig ansattgode bør måles på mer enn beleggsprosent",
+        body: [
+          "En bedriftshytte kan være verdifull selv om alle uker ikke er fulle. For HR kan kjennskap til ordningen, opplevd attraktivitet og hvor bredt godet faktisk brukes være relevante mål i tillegg til ren beleggsprosent.",
+          "Samtidig bør virksomheten unngå å videreføre ordningen av vane. Årlig evaluering av bruk, kostnad og medarbeideropplevelse gjør det mulig å justere bookingregler eller kapasitet før problemene vokser.",
         ],
       },
       {
