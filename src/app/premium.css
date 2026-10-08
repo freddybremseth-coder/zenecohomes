@@ -100,8 +100,8 @@
 .region-landing-grid > aside {
   padding: 30px 0 30px 28px;
   border-left: 1px solid var(--ze-line);
-  background: transparent;
-  /* Legacy region aside was white-on-dark; editorial premium layout is light. */
+  background: var(--ze-white, #fcfbf8);
+  /* Match the base style: light paper with dark, accessible text. */
   color: var(--ze-ink);
   box-shadow: none;
 }
