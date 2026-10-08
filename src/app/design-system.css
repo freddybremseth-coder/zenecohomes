@@ -21,6 +21,8 @@
   --gold: var(--ze-travertine);
   --gold-dark: #745a2f;
   --muted: #596976;
+  /* One canonical secondary-text token for article, form and guide templates. */
+  --ze-muted: #596976;
 }
 
 body {

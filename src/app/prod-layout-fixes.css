@@ -84,7 +84,7 @@ body {
   align-items: center;
   gap: 8px;
   margin-bottom: 12px;
-  color: var(--gold, #c5a059);
+  color: var(--ze-accent-text, #806436);
 }
 
 .region-area-section .area-guide-reading > p:not(.eyebrow) {

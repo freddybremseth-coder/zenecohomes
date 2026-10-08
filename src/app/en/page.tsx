@@ -74,7 +74,7 @@ export default function EnglishHome() {
             >
               <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>{page.title}</strong>
               <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>{page.seoDescription}</p>
-              <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+              <span style={{ color: "var(--ze-accent-text)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
                 Learn more <ArrowRight size={15} />
               </span>
             </Link>
@@ -122,7 +122,7 @@ export default function EnglishHome() {
               Larger plots, modern villas and new-build opportunities around Pinoso, Aspe and Novelda. Water, power, access and planning
               status should be understood before committing.
             </p>
-            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+            <span style={{ color: "var(--ze-accent-text)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
               Explore the interior <ArrowRight size={15} />
             </span>
           </Link>
@@ -137,7 +137,7 @@ export default function EnglishHome() {
               Key holding, inspections, maintenance and getting the home ready before you arrive. With
               care.zenecohomes.com you have a trusted local partner looking after your property between stays.
             </p>
-            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+            <span style={{ color: "var(--ze-accent-text)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
               See keyholding <ArrowRight size={15} />
             </span>
           </a>

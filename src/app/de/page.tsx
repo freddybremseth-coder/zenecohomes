@@ -77,7 +77,7 @@ export default function GermanHome() {
             >
               <strong style={{ color: "var(--dark)", fontSize: "1.15rem" }}>{page.title}</strong>
               <p style={{ color: "var(--muted)", lineHeight: 1.6, margin: "10px 0 0" }}>{page.seoDescription}</p>
-              <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+              <span style={{ color: "var(--ze-accent-text)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
                 Mehr erfahren <ArrowRight size={15} />
               </span>
             </Link>
@@ -125,7 +125,7 @@ export default function GermanHome() {
               Größere Grundstücke, moderne Villen und Neubauoptionen rund um Pinoso, Aspe und Novelda. Wasser,
               Strom, Zufahrt und Planungsstatus sollten vor einer Bindung geklärt werden.
             </p>
-            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+            <span style={{ color: "var(--ze-accent-text)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
               Hinterland entdecken <ArrowRight size={15} />
             </span>
           </Link>
@@ -140,7 +140,7 @@ export default function GermanHome() {
               Schlüsselverwaltung, Kontrolle, Wartung und Vorbereitung vor der Ankunft. Mit care.zenecohomes.com
               haben Sie einen verlässlichen Partner vor Ort, der sich zwischen den Aufenthalten um Ihre Immobilie kümmert.
             </p>
-            <span style={{ color: "var(--gold)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
+            <span style={{ color: "var(--ze-accent-text)", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: 6, marginTop: 12 }}>
               Keyholding ansehen <ArrowRight size={15} />
             </span>
           </a>

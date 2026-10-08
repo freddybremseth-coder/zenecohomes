@@ -1,0 +1,50 @@
+/* WCAG AA text guardrails — only on known light, unillustrated surfaces.
+   Use the dark golden text token instead of decorative travertine gold.
+   Do not apply these rules to dark panels, image overlays or icon-only accents. */
+
+.area-profile-card > section > span,
+.article-card > span,
+.article-card > a,
+.info-card strong,
+.breadcrumb-nav a,
+.read-more-text a,
+.read-more-text button,
+.plot-card p:first-child,
+.portal-topline span,
+.panel-title,
+.buyer-steps strong,
+.property-filmstrip-kicker,
+.inland-index span,
+.inland-place-number {
+  color: var(--ze-accent-text);
+}
+
+/* Links must be recognizable independently of their color. */
+.article-card > a,
+.breadcrumb-nav a,
+.read-more-text a,
+.region-area-section .area-book-link {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.07em;
+}
+
+/* The legacy forms / chat buttons place white text on 2.2:1 travertine. */
+.access-panel button,
+.chatbot-shell:not(.chatbot-2027) .chatbot-toggle,
+.chatbot-shell:not(.chatbot-2027) .chatbot-form button,
+.chatbot-shell:not(.chatbot-2027) .chatbot-input button,
+.chatbot-shell:not(.chatbot-2027) .chatbot-messages .user {
+  color: var(--ze-ink);
+}
+
+/* Fixed header: headings reached through in-page links should remain visible. */
+:where([id]):not(#main-content) {
+  scroll-margin-top: 105px;
+}
+
+@media (max-width: 640px) {
+  :where([id]):not(#main-content) {
+    scroll-margin-top: 85px;
+  }
+}
