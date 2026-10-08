@@ -41,13 +41,11 @@ function testPair(label, a, b, min = 4.5) {
   console.log("PASS", label, ratio.toFixed(2) + ":1");
 }
 function block(source, selector) {
-  /* The legacy CSS repeats selectors; the last matching rule wins. */
-  const start = source.lastIndexOf(selector + " {");
-  assert.notEqual(start, -1, "Missing CSS selector: " + selector);
-  const opening = source.indexOf("{", start);
-  const end = source.indexOf("}", opening + 1);
-  assert.ok(end > opening, "Invalid rule block: " + selector);
-  return source.slice(opening + 1, end);
+  // Base and responsive CSS can define the same selector more than once.
+  // Gather all declarations; region HTML inline styles provide the fallback.
+  const chunks = source.split(selector + " {").slice(1);
+  assert.ok(chunks.length > 0, "Missing CSS selector: " + selector);
+  return chunks.map((chunk) => chunk.slice(0, chunk.indexOf("}"))).join("\n");
 }
 function expectDeclaration(source, selector, declaration) {
   assert.ok(block(source, selector).includes(declaration), selector + " must contain " + declaration);
