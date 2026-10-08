@@ -904,22 +904,194 @@ const drafts: CorporateDraft[] = [
   },
   {
     slug: "hvilken-bolig-passer-som-bedriftshytte",
-    seoTitle: "Bedriftshytte i Spania | Velg riktig boligtype og kapasitet",
-    title: "Hvilken bolig passer best som bedriftshytte?",
-    excerpt: "Leilighet, rekkehus eller villa? Slik vurderer bedriften kapasitet, drift, beliggenhet og bruk før den velger eiendom.",
-    seoDescription: "Leilighet, rekkehus eller villa? Slik vurderer bedriften kapasitet, drift, beliggenhet og bruk før den velger eiendom. Les guiden for norske bedrifter.",
-    keywords: ["beste bedriftshytte Spania", "firmabolig leilighet villa", "bedriftsvilla Costa Blanca"],
-    intro: ["Den flotteste boligen er ikke nødvendigvis den beste bedriftshytten. Når mange skal bruke samme eiendom blir enkel drift, robuste materialer og praktisk beliggenhet ofte viktigere enn særpreg.", "Boligen bør velges ut fra faktisk bruk og administrasjon, ikke bare bilder og utsikt."],
+    title: "Slik velger dere riktig bolig og område for bedriftshytten",
+    excerpt:
+      "Leilighet, rekkehus eller villa? Nybygg eller brukt? Slik velger bedriften størrelse, område, flyplass og driftsnivå ut fra faktisk bruk.",
+    date: "2026-09-26",
+    updated: "2026-10-08",
+    readingTime: "16 min lesing",
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    seoTitle: "Bedriftshytte i Spania | Velg riktig bolig og område",
+    seoDescription:
+      "Velg riktig bedriftshytte i Spania: sammenlign leilighet, villa, størrelse, nybygg, bruktbolig, Costa Blanca nord/sør, flyplass og driftsbehov.",
+    keywords: [
+      "hvilken bolig bedriftshytte",
+      "bedriftsvilla Spania",
+      "ansattleilighet Spania",
+      "nybygg eller brukt bedriftshytte",
+      "Costa Blanca nord eller sør bedriftshytte",
+      "Alicante flyplass bedriftshytte",
+      "størrelse bedriftshytte",
+      "firmabolig Costa Blanca",
+    ],
+    intro: [
+      "Den riktige bedriftshytten er ikke nødvendigvis den boligen ledelsen selv ville valgt som feriebolig. En virksomhet kjøper for mange brukere, ulike behov og flere år. Derfor bør boligvalget komme etter at formål, brukergruppe og forventet bruk er avklart.",
+      "Jeg ville startet med en kravspesifikasjon som beskriver normal bruk, toppbruk og driftsnivå. Deretter velger man boligtype, størrelse, område og prosjekt. Det gir en langt bedre shortlist enn å starte med pris, utsikt eller antall soverom alene.",
+      "Denne guiden samler spørsmålene som tidligere lå spredt i egne artikler om villa mot leilighet, størrelse, nybygg mot brukt, flyplass og Costa Blanca nord mot sør.",
+    ],
     sections: [
-      { heading: "Leilighet: enkelt å eie og enkelt å forlate", body: ["Leiligheter i veldrevne sameier kan være attraktive fordi uteområder, basseng og mye av felles vedlikehold håndteres kollektivt.", "Ulempen er mindre privatliv, mindre lagring og regler i sameiet som må undersøkes."] },
-      { heading: "Villa: kapasitet og fleksibilitet", body: ["Villa gir ofte flere soverom, bedre fellesarealer, privat basseng og større fleksibilitet. Samtidig øker behovet for tilsyn, bassengservice, hage og løpende vedlikehold."] },
-      { heading: "Velg for de mest krevende ukene", body: ["Tenk gjennom høysesong, familier, parkering og hvor mange som realistisk kan bo komfortabelt samtidig.", "En bolig som fungerer godt i juli og ved flere brukerskifter vil som regel også fungere godt resten av året."] }
+      {
+        heading: "Start med normal bruk – ikke den største tenkelige gruppen",
+        body: [
+          "Hvis de fleste opphold vil være én familie eller fire til seks kolleger, bør boligen først og fremst fungere godt for dette. Å kjøpe for den ene helgen i året hvor tolv personer kanskje kommer samtidig kan gjøre investeringen unødvendig dyr.",
+          "For toppene kan hotellrom eller en ekstra leilighet leies i nærheten. Det er ofte bedre enn å binde kapital og betale drift på ekstra kapasitet hele året.",
+        ],
+        table: {
+          headers: ["Typisk bruk", "Praktisk utgangspunkt"],
+          rows: [
+            ["1 familie / 2–4 personer", "2–3 soverom og 2 bad kan være nok"],
+            ["4–6 voksne", "3–4 soverom, flere bad og gode fellesarealer"],
+            ["6–8 voksne", "4+ soverom, badekapasitet og stort spise-/arbeidsbord"],
+            ["10–12 personer", "Stor villa eller kombinasjon med ekstern overnatting"],
+          ],
+          caption: "Dette er planleggingsnivå, ikke en fast standard. Bruksmønster og behov for separate rom betyr mer enn antall sengeplasser alene.",
+        },
+      },
+      {
+        heading: "Leilighet, rekkehus eller villa?",
+        body: [
+          "Leilighet gir ofte lavere driftsfriksjon. Fellesarealer, basseng og uteområder håndteres gjerne gjennom sameiet, og boligen kan ligge nærmere strand, restauranter og tjenester. Det passer godt når mange brukere skal komme og gå.",
+          "Villa gir mer kapasitet, privatliv og fleksibilitet for samlinger, men også mer ansvar. Basseng, hage, uteareal, tekniske installasjoner og sikkerhet gjør at den lokale driftsmodellen blir viktigere.",
+          "Rekkehus kan være et godt mellompunkt: flere soverom og privat uteplass, men ofte med felles drift av basseng og område.",
+        ],
+        table: {
+          headers: ["Boligtype", "Styrker", "Vær oppmerksom på"],
+          rows: [
+            ["Leilighet", "Enkel drift, ofte gangavstand, felles basseng", "Sameieregler, kapasitet og mindre privat uteareal"],
+            ["Rekkehus", "Flere rom, uteplass, moderat drift", "Trapper, parkering og variasjon i felleskostnader"],
+            ["Villa", "Kapasitet, privatliv og samlinger", "Vedlikehold, basseng/hage, sikkerhet og høyere reservebehov"],
+          ],
+        },
+      },
+      {
+        heading: "Hvor stor bolig trenger styre- og teamsamlinger?",
+        body: [
+          "For arbeidsopphold bør dere regne på mennesker, ikke bare sengeplasser. Seks personer som skal arbeide sammen i tre dager trenger ofte mer bordplass, badekapasitet og private rom enn en familie på seks på ferie.",
+          "Fellesarealet er minst like viktig som antall soverom. Et stort spisebord kan fungere som arbeidsbord, men bare dersom stoler, strøm, lys, lydnivå og internett faktisk gjør det mulig å jobbe der flere timer.",
+          "Hvis toppgruppen bare kommer én eller to ganger i året, kan virksomheten kjøpe for normalen og supplere med hotellrom i nærheten.",
+        ],
+      },
+      {
+        heading: "Lag to kravlister hvis boligen skal brukes både privat og i arbeid",
+        body: [
+          "Ansattferie og bedriftsopphold stiller ikke helt de samme kravene. Feriebruk favoriserer gjerne strand, basseng, enkel hverdag og familievennlighet. Arbeidsbruk favoriserer stabile arbeidsflater, separate rom, internett, parkering og logistikk.",
+          "Lag derfor én liste for feriebruk og én for bedriftsbruk. Deretter markerer dere hvilke krav som er absolutte og hvilke som bare er ønskelige. Det gjør kompromissene synlige før dere ser på konkrete boliger.",
+        ],
+        bullets: [
+          "Antall separate soverom ved arbeidsopphold.",
+          "Antall bad ved normal og maksimal bruk.",
+          "Arbeidsbord, skjermmulighet og stabilt internett.",
+          "Gangavstand til restaurant og dagligvare.",
+          "Parkering og enkel taxi-/transferlogistikk.",
+          "Basseng, terrasse og uteareal for fritidsbruk.",
+        ],
+      },
+      {
+        heading: "Nybygg eller bruktbolig som bedriftshytte?",
+        body: [
+          "Nybygg kan gi moderne tekniske løsninger, god energieffektivitet, mindre forventet vedlikehold de første årene og en standard som er enkel å dokumentere. Ulempen kan være leveringstid, tilvalg og at dere kjøper før dere ser den ferdige boligen og omgivelsene.",
+          "Bruktbolig kan ofte tas i bruk raskere og gir mulighet til å se reell utsikt, sol, støy og nabolag før kjøpet. Til gjengjeld bør teknisk tilstand, tidligere endringer og vedlikeholdsbehov undersøkes nøye.",
+          "For virksomheten bør sammenligningen handle om total løsning: kapital, tid til bruk, oppgraderingsbehov, drift og hvor mye usikkerhet organisasjonen vil akseptere.",
+        ],
+        table: {
+          headers: ["Tema", "Nybygg", "Bruktbolig"],
+          rows: [
+            ["Tid til bruk", "Kan være måneder/år ved prosjekt", "Ofte raskere"],
+            ["Teknisk standard", "Ny og dokumentert", "Varierer og bør kontrolleres"],
+            ["Vedlikehold første år", "Ofte lavere", "Avhenger av alder/tilstand"],
+            ["Områdeinntrykk", "Kan fortsatt være under utvikling", "Kan vurderes i ferdig miljø"],
+            ["Tilpasning", "Mulige tilvalg tidlig", "Oppussing etter kjøp"],
+          ],
+        },
+      },
+      {
+        heading: "Costa Blanca Nord eller Sør?",
+        body: [
+          "Det finnes ikke én side av Costa Blanca som er best for bedrifter. Nord har mange etablerte kystbyer, mer kupert landskap og et bredt spekter fra byliv til villaområder. Sør har store boligområder, flere flate områder og mye internasjonal infrastruktur.",
+          "Områdevalget bør knyttes til brukerne. Dersom enkel gangavstand og korte opphold er viktig, må mikroområdet veie mer enn kommunegrensen. Hvis privatliv og større bolig er viktigere, kan bilavhengighet være et akseptabelt kompromiss.",
+        ],
+        bullets: [
+          "Hvor stor andel av brukerne ønsker å klare seg uten bil?",
+          "Hvor ofte er oppholdene korte, og hvor mye betyr reisetid?",
+          "Trenger dere helårsservice og restauranttilbud?",
+          "Er området enkelt for rengjøring, service og håndverkere?",
+          "Finnes hotellkapasitet i nærheten når gruppen blir større enn boligen?",
+        ],
+      },
+      {
+        heading: "Alicante eller Valencia flyplass: mål dør til dør",
+        body: [
+          "For de fleste boliger på Costa Blanca er Alicante-Elche den naturlige flyplassen, mens Valencia kan være et alternativ lenger nord. Men kilometer alene gir ikke hele bildet.",
+          "Mål reell dør-til-dør-tid for de rutene ansatte faktisk vil bruke: flytilbud fra Norge, tidspunkt, bagasje, leiebil eller transfer og den siste kjøreturen til boligen. En billigere bolig som skaper en time ekstra logistikk hver vei kan bli mindre brukt.",
+          "Ved korte arbeidsopphold er denne friksjonen spesielt viktig. Ved lengre ferieuker kan brukerne akseptere mer reisetid for bedre bolig eller område.",
+        ],
+      },
+      {
+        heading: "Gangavstand eller utsikt?",
+        body: [
+          "Boliger høyt i terrenget kan gi fantastisk utsikt, men også gjøre alle brukere avhengige av bil eller taxi. For en privat eier kan dette være helt riktig. For en bedrift med mange ulike brukere kan det skape mer logistikk, flere leiebiler og mindre spontan bruk.",
+          "Jeg ville derfor verdsatt gangavstand til dagligvare, restaurant eller strand som en reell drifts- og brukerfordel, ikke bare et livsstilspoeng.",
+        ],
+      },
+      {
+        heading: "Parkering, trapper og tilgjengelighet er lett å undervurdere",
+        body: [
+          "En bolig som skal brukes av mange aldersgrupper bør vurderes mer praktisk enn en vanlig visning ofte legger opp til. Trapper, heis, parkering, inngang, dusjløsninger og bæring av bagasje kan påvirke hvem som faktisk ønsker å bruke boligen.",
+          "Det betyr ikke at alt må være universelt utformet, men virksomheten bør forstå hvilke brukergrupper som eventuelt faller utenfor før kjøpet.",
+        ],
+      },
+      {
+        heading: "Driftsnivået bør påvirke boligvalget",
+        body: [
+          "En stor villa kan være rimeligere per kvadratmeter enn en sentral leilighet, men dyrere å holde i stabil stand. Basseng, hage, markiser, flere klimaanlegg og større uteareal øker behovet for service og lokal kontroll.",
+          "Hvis virksomheten ønsker lav administrasjon, bør driftskompleksitet stå som eget kriterium i shortlisten. Zen Eco Homes Care kan håndtere keyholding, tilsyn, klargjøring og lokal koordinering, men også med ekstern drift er en enkel bolig enklere og billigere å eie enn en kompleks.",
+        ],
+      },
+      {
+        heading: "Slik scorer vi en konkret bolig",
+        body: [
+          "Når kravspesifikasjonen er klar, kan boliger sammenlignes på en fast score i stedet for magefølelse. Jeg ville brukt fem hovedområder: bruk, logistikk, økonomi, drift og videresalg.",
+          "En bolig trenger ikke vinne alle kategorier. Målet er å se tydelig hvorfor virksomheten aksepterer et kompromiss, for eksempel litt mindre utsikt mot bedre gangavstand og enklere drift.",
+        ],
+        table: {
+          headers: ["Kategori", "Eksempler på kriterier"],
+          rows: [
+            ["Bruk", "Kapasitet, bad, fellesareal, arbeidsmulighet"],
+            ["Logistikk", "Flyplass, gangavstand, parkering, transfer"],
+            ["Økonomi", "Pris, kjøpskostnader, comunidad, forventet drift"],
+            ["Drift", "Teknisk kompleksitet, basseng/hage, servicebehov"],
+            ["Langsiktighet", "Områdekvalitet, fleksibilitet og videresalg"],
+          ],
+        },
+      },
+      {
+        heading: "Min anbefalte arbeidsrekkefølge",
+        body: [
+          "Definer først normalbruk og maksimalbruk. Lag deretter to kravlister for ferie og arbeid dersom boligen skal kombineres. Velg områdekorridor og driftsnivå før dere ser på konkrete prosjekter.",
+          "Til slutt lager vi en kort shortlist med boliger som representerer reelle alternativer. Da kan styret sammenligne tre gode løsninger i stedet for å bli presentert for tjue tilfeldige objekter.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Definer normalgruppe og maksimalgruppe før dere bestemmer antall soverom.",
+      "Lag separate krav for feriebruk og arbeidsopphold.",
+      "Velg ønsket driftsnivå før dere velger villa, rekkehus eller leilighet.",
+      "Mål reell dør-til-dør-logistikk fra flyplass til aktuelle områder.",
+      "Be om en shortlist med få, tydelig forskjellige alternativer som kan scores på samme kriterier.",
     ],
     faq: [
-      { question: "Hvor mange soverom bør en bedriftshytte ha?", answer: "Det avhenger av brukergruppen. Tre soverom kan være et godt utgangspunkt for mange, men større organisasjoner kan trenge mer kapasitet." },
-      { question: "Er nybygg enklere som bedriftshytte?", answer: "Nybygg kan gi moderne teknikk og mindre initialt vedlikehold, men pris, leveringstid og sameiekostnader må vurderes." },
-      { question: "Bør boligen ligge ved stranden?", answer: "Ikke nødvendigvis. Enkel flytilgang, helårsservice, parkering og praktisk drift kan være viktigere enn å ligge helt i første linje." }
-    ]
+      { question: "Er villa alltid best som bedriftshytte?", answer: "Nei. Villa gir kapasitet og privatliv, men også mer drift. Leilighet eller rekkehus kan fungere bedre ved mange brukerskifter og behov for gangavstand." },
+      { question: "Hvor mange soverom bør en bedriftshytte ha?", answer: "Kjøp for normal bruk, ikke én sjelden topp. For seks voksne vil separate soverom og bad ofte være viktigere enn flest mulig sengeplasser." },
+      { question: "Bør vi kjøpe nybygg eller brukt?", answer: "Nybygg kan gi mer forutsigbar teknisk standard og lavere tidlig vedlikehold. Brukt kan tas i bruk raskere og gir bedre innsyn i ferdig område og faktisk utsikt. Sammenlign total løsning." },
+      { question: "Er Costa Blanca Nord eller Sør best?", answer: "Det avhenger av brukergruppe, flylogistikk, gangavstand, boligtype og ønsket prisnivå. Mikroområdet er ofte viktigere enn merkelappen nord eller sør." },
+      { question: "Er Alicante alltid riktig flyplass?", answer: "Alicante er naturlig for mye av Costa Blanca, men Valencia kan være relevant lenger nord. Mål faktisk dør-til-dør-tid fra brukernes avreiseflyplasser." },
+      { question: "Hvor viktig er gangavstand?", answer: "For mange brukere og korte opphold kan gangavstand redusere behovet for leiebil og gjøre boligen betydelig enklere å bruke." },
+      { question: "Hva hvis vi trenger plass til tolv personer bare én gang i året?", answer: "Det kan være billigere å kjøpe for normalen og leie hotellrom eller ekstra bolig ved toppene enn å eie ubrukt kapasitet hele året." },
+      { question: "Bør arbeidsmuligheter påvirke boligvalget?", answer: "Ja, dersom boligen skal brukes til reelle samlinger eller prosjektuker. Bord, stoler, internett, lys, støy og separate rom bør vurderes konkret." },
+      { question: "Hva bør vi tenke på ved mange brukerskifter?", answer: "Enkel rengjøring, robuste materialer, nøkkelløsning, oversiktlig inventar og lokal drift blir viktigere enn ved privat bruk." },
+      { question: "Kan Zen Corporate Homes lage boligshortlist?", answer: "Ja. Etter behovs- og kravsavklaring kan vi sammenligne områder og konkrete boliger på samme beslutningskriterier." },
+    ],
+    cta: { label: "Få en shortlist basert på faktisk bruk", href: "/bedriftshytte-spania#bedriftsvurdering" },
   },
   {
     slug: "alicante-eller-valencia-flyplass-bedriftshytte",
