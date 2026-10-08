@@ -221,8 +221,8 @@ const duplicateCorporateSlugs = corporateSlugs.filter((slug, index) => corporate
 if (duplicateCorporateSlugs.length) {
   errors.push(`src/lib/corporate-content.ts: duplicate Corporate article slugs: ${[...new Set(duplicateCorporateSlugs)].join(", ")}`);
 }
-if (corporateSlugs.length < 23) {
-  errors.push(`src/lib/corporate-content.ts: expected at least 23 Corporate articles, found ${corporateSlugs.length}`);
+if (corporateSlugs.length !== 10) {
+  errors.push(`src/lib/corporate-content.ts: expected 10 consolidated Corporate cornerstone articles, found ${corporateSlugs.length}`);
 }
 for (const requiredSlug of [
   "hva-er-en-bedriftshytte-i-spania",
@@ -242,6 +242,46 @@ for (const slug of corporateSlugs) {
   if (!hasRedirect(source, destination)) {
     errors.push(`${nextConfig}: missing Corporate legacy redirect ${source} -> ${destination}`);
   }
+}
+
+const corporateGuideHub = read("src/app/bedriftshytte-spania/guider/page.tsx");
+const mergedCorporateTargets = {
+  "alicante-eller-valencia-flyplass-bedriftshytte": "hvilken-bolig-passer-som-bedriftshytte",
+  "bedriftsvilla-eller-ansattleilighet": "hvilken-bolig-passer-som-bedriftshytte",
+  "bedriftshytte-for-25-ansatte": "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+  "bedriftshytte-for-100-ansatte": "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+  "drifte-bedriftshytte-i-spania-fra-norge": "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte",
+  "nybygg-eller-bruktbolig-som-bedriftshytte": "hvilken-bolig-passer-som-bedriftshytte",
+  "hvor-mange-kan-dele-en-bedriftshytte": "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+  "costa-blanca-nord-eller-sor-bedriftshytte": "hvilken-bolig-passer-som-bedriftshytte",
+  "fem-feil-ved-kjop-av-bedriftshytte-i-spania": "slik-presenterer-du-bedriftshytte-for-styret",
+  "rettferdig-bookingsystem-for-bedriftshytte": "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+  "bedriftshytte-som-langsiktig-ansattgode": "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
+  "corporate-home-assessment-bedriftsvurdering": "slik-presenterer-du-bedriftshytte-for-styret",
+  "firmabolig-for-ledersamlinger-og-team": "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca",
+  "delt-bedriftshytte-for-flere-virksomheter": "medlemsbolig-i-spania-for-foreninger",
+  "ledersamling-avdelingsreise-spania-hotell-eller-bedriftshytte": "bedriftshytte-mot-hotell-og-leie",
+  "slik-beregner-cfo-hotellalternativ-bedriftshytte": "bedriftshytte-mot-hotell-og-leie",
+  "bedriftshytte-styre-ledelse-avdelingsreiser-krav": "hvilken-bolig-passer-som-bedriftshytte",
+  "arsbudsjett-bedriftshytte-spania": "bedriftshytte-mot-hotell-og-leie",
+  "prisvekst-bolig-spania-business-case-bedriftshytte": "bedriftshytte-mot-hotell-og-leie",
+  "feriebruk-vs-bedriftsbruk-firmabolig-spania": "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca",
+  "beslutningsnotat-bedriftshytte-spania-mal": "slik-presenterer-du-bedriftshytte-for-styret",
+  "bedriftshytte-alternativ-hotell-gjentatte-samlinger": "bedriftshytte-mot-hotell-og-leie",
+  "storrelse-bolig-styre-teamsamlinger": "hvilken-bolig-passer-som-bedriftshytte",
+  "kombinere-ansattgode-bedriftsbruk-samme-bolig": "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca",
+  "regnskapsforer-sporsmal-selskap-kjope-bolig-spania": "kjop-av-bolig-gjennom-selskap-i-spania",
+  "partnerprosess-introduksjon-til-kjop": "partnerguide-introdusere-zen-corporate-homes",
+};
+
+for (const [retiredSlug, targetSlug] of Object.entries(mergedCorporateTargets)) {
+  if (corporateContent.includes(`slug: "${retiredSlug}"`)) {
+    errors.push(`src/lib/corporate-content.ts: retired Corporate article still active: ${retiredSlug}`);
+  }
+  if (corporateGuideHub.includes(`"${retiredSlug}"`)) {
+    errors.push(`src/app/bedriftshytte-spania/guider/page.tsx: retired Corporate article still listed: ${retiredSlug}`);
+  }
+  requireText(nextConfig, `"${retiredSlug}": "${targetSlug}"`, "Corporate consolidation redirect map");
 }
 
 const booking = "src/app/booking/page.tsx";
