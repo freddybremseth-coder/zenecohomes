@@ -54,7 +54,7 @@ const drafts: CorporateDraft[] = [
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     seoTitle: "Bedriftshytte i Spania | Regler, skatt og bruk for bedrifter",
     seoDescription:
-      "Bedriftshytte i Spania for norske bedrifter: se regler for ansatte, 10-personersregelen, skatt, booking, eierskap, kostnader og hvordan styret bør vurdere kjøpet.",
+      "Bedriftshytte i Spania for norske bedrifter: se regler for ansatte, 10-personersregelen, skatt, booking, eierskap, kostnader og styrets vurdering.",
     keywords: [
       "bedriftshytte i Spania",
       "firmahytte Spania",
