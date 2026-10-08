@@ -87,6 +87,31 @@ for (const text of [
   requireText(nav, text, "approved Norwegian navigation structure");
 }
 
+
+// Keep the localized desktop/mobile navigation aligned with the approved Norwegian IA.
+for (const text of [
+  'label: "Properties"',
+  'label: "Areas"',
+  'label: "Corporate"',
+  'label: "About us"',
+  'label: "Menu"',
+  'label: "Get advice"',
+  'label: "Immobilien"',
+  'label: "Regionen"',
+  'label: "Unternehmen"',
+  'label: "Über uns"',
+  'label: "Menü"',
+  'label: "Beratung erhalten"',
+  'label: "Propiedades"',
+  'label: "Zonas"',
+  'label: "Empresas"',
+  'label: "Sobre nosotros"',
+  'label: "Menú"',
+  'label: "Solicitar asesoramiento"',
+]) {
+  requireText(nav, text, "localized navigation parity");
+}
+
 requireText("src/components/SiteHeader.tsx", "<Breadcrumbs locale={locale}", "shared visible breadcrumbs");
 requireText(properties, '"@type": "CollectionPage"', "CollectionPage schema on /eiendommer");
 requireText(properties, '"@type": "BreadcrumbList"', "BreadcrumbList schema on /eiendommer");

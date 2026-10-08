@@ -154,40 +154,73 @@ export function navLinks(locale: SiteLocale): NavLink[] {
   if (locale === "de") {
     return [
       { label: "Immobilien", href: "/de/immobilien" },
-      { label: "Inland", href: "/de/inland" },
-      { label: "Grundstücke", href: "/de/grundstueck-in-spanien" },
       { label: "Regionen", href: "/de/regionen" },
-      { label: "Kaufprozess", href: "/de/kaufprozess" },
-      { label: "Ratgeber", href: "/de/ratgeber" },
-      { label: "Keyholding", href: CARE_URL, external: true },
-      { label: "Über Freddy", href: "/de/ueber-freddy" },
-      { label: "Mein Bereich", href: "/de/min-side", cta: true },
+      { label: "Unternehmen", href: "/bedriftshytte-spania" },
+      { label: "Über uns", href: "/de/ueber-freddy" },
+      {
+        label: "Menü",
+        href: "#",
+        children: [
+          { label: "Kundenstimmen", href: "/kundeomtaler" },
+          { label: "Besichtigungsreise", href: "/visningstur" },
+          { label: "So helfen wir", href: "/de/kaufprozess" },
+          { label: "Ratgeber", href: "/de/ratgeber" },
+          { label: "Ratgeber für Unternehmen", href: "/bedriftshytte-spania/guider" },
+          { label: "Für Partner", href: "/bedriftshytte-spania/partnere" },
+          { label: "Magazin", href: "/magasin" },
+          { label: "Mein Bereich", href: "/de/min-side" },
+          { label: "Keyholding", href: CARE_URL, external: true },
+        ],
+      },
+      { label: "Beratung erhalten", href: "/de/termin", cta: true },
     ];
   }
   if (locale === "en") {
     return [
       { label: "Properties", href: "/en/properties" },
-      { label: "Inland", href: "/en/inland" },
-      { label: "Plots", href: "/en/plot-of-land-in-spain" },
       { label: "Areas", href: "/en/areas" },
-      { label: "Buying process", href: "/en/buying-process" },
-      { label: "Guides", href: "/en/guides" },
-      { label: "Keyholding", href: CARE_URL, external: true },
-      { label: "About Freddy", href: "/en/about-freddy" },
-      { label: "My account", href: "/en/min-side", cta: true },
+      { label: "Corporate", href: "/bedriftshytte-spania" },
+      { label: "About us", href: "/en/about-freddy" },
+      {
+        label: "Menu",
+        href: "#",
+        children: [
+          { label: "Client reviews", href: "/kundeomtaler" },
+          { label: "Viewing trip", href: "/visningstur" },
+          { label: "How we help", href: "/en/buying-process" },
+          { label: "Guides", href: "/en/guides" },
+          { label: "Corporate guides", href: "/bedriftshytte-spania/guider" },
+          { label: "For partners", href: "/bedriftshytte-spania/partnere" },
+          { label: "Magazine", href: "/magasin" },
+          { label: "My account", href: "/en/min-side" },
+          { label: "Keyholding", href: CARE_URL, external: true },
+        ],
+      },
+      { label: "Get advice", href: "/en/booking", cta: true },
     ];
   }
   if (locale === "es") {
     return [
       { label: "Propiedades", href: "/es/propiedades" },
-      { label: "Interior", href: "/es/interior" },
-      { label: "Terrenos", href: "/es/terreno-en-espana" },
       { label: "Zonas", href: "/es/zonas" },
-      { label: "Keyholding", href: CARE_URL, external: true },
-      { label: "Proceso de compra", href: "/es/proceso-de-compra" },
-      { label: "Guías", href: "/es/guias" },
-      { label: "Sobre Freddy", href: "/es/sobre-freddy" },
-      { label: "Mi área", href: "/es/mi-area", cta: true },
+      { label: "Empresas", href: "/bedriftshytte-spania" },
+      { label: "Sobre nosotros", href: "/es/sobre-freddy" },
+      {
+        label: "Menú",
+        href: "#",
+        children: [
+          { label: "Opiniones de clientes", href: "/kundeomtaler" },
+          { label: "Viaje de visitas", href: "/visningstur" },
+          { label: "Cómo te ayudamos", href: "/es/proceso-de-compra" },
+          { label: "Guías", href: "/es/guias" },
+          { label: "Guías para empresas", href: "/bedriftshytte-spania/guider" },
+          { label: "Para colaboradores", href: "/bedriftshytte-spania/partnere" },
+          { label: "Revista", href: "/magasin" },
+          { label: "Mi área", href: "/es/mi-area" },
+          { label: "Keyholding", href: CARE_URL, external: true },
+        ],
+      },
+      { label: "Solicitar asesoramiento", href: "/es/cita", cta: true },
     ];
   }
   return [
