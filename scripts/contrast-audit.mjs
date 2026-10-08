@@ -89,4 +89,19 @@ assert.equal(regionPage.split('style={{ color: "#806436" }}').length - 1, 2, "Bo
 assert.equal(regionPage.split('style={{ color: "#596976" }}').length - 1, 2, "Both statistical labels must have accessible muted text");
 console.log("PASS", "region statistics have server-rendered contrast, with both CSS layers consistent");
 
+
+// Mobile Safari regression: the closed advisor must not stretch left-to-right
+// across the viewport, and adjacent editorial sections must not double-gap.
+const mobileFixes = read("src/app/mobile-critical.css");
+const layoutFixes = read("src/app/prod-layout-fixes.css");
+const regionStyles = read("src/app/areas-regions-v2.css");
+expectDeclaration(layoutFixes, ".chatbot-2027.chatbot-shell:not(:has(.chatbot-panel))", "left: auto !important;");
+expectDeclaration(layoutFixes, ".chatbot-2027.chatbot-shell:not(:has(.chatbot-panel))", "width: max-content !important;");
+expectDeclaration(mobileFixes, ".chatbot-2027 .chatbot-toggle", "width: 52px !important;");
+expectDeclaration(mobileFixes, ".chatbot-2027 .chatbot-toggle span", "display: none !important;");
+expectDeclaration(regionStyles, ".section.region-landing-grid", "padding-bottom: 12px;");
+expectDeclaration(regionStyles, ".section.region-editorial", "padding-top: 24px;");
+assert.ok(mobileFixes.includes(".chatbot-2027.chatbot-shell:has(.chatbot-panel)"), "The full-width open mobile advisor sheet must be preserved");
+console.log("PASS", "mobile region spacing, compact right-aligned advisor, and open mobile sheet");
+
 console.log("Contrast regression audit passed.");
