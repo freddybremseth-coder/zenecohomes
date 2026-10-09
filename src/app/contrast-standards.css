@@ -48,3 +48,61 @@
     scroll-margin-top: 85px;
   }
 }
+
+
+/* Area-profile listing CTA: the original buttons were nearly white-on-paper.
+   Scope to the light property-list section (not image heroes or dark panels). */
+.hero-actions.area-property-cta-actions > .contact-button,
+.hero-actions.area-property-cta-actions > .text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 20px;
+  border: 1px solid var(--ze-ink);
+  border-radius: var(--ze-radius-sm, 10px);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.hero-actions.area-property-cta-actions > .contact-button {
+  background: var(--ze-ink);
+  color: var(--ze-white);
+}
+
+.hero-actions.area-property-cta-actions > .text-button {
+  background: var(--ze-white);
+  color: var(--ze-ink);
+}
+
+.hero-actions.area-property-cta-actions > .contact-button:hover {
+  background: var(--ze-sea);
+  border-color: var(--ze-sea);
+  color: var(--ze-white);
+}
+
+.hero-actions.area-property-cta-actions > .text-button:hover {
+  background: var(--ze-paper);
+  border-color: var(--ze-ink);
+  color: var(--ze-ink);
+}
+
+.hero-actions.area-property-cta-actions > :is(.contact-button, .text-button):focus-visible {
+  outline: 3px solid var(--ze-sea);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .hero-actions.area-property-cta-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .hero-actions.area-property-cta-actions > :is(.contact-button, .text-button) {
+    width: 100%;
+    white-space: normal;
+  }
+}
