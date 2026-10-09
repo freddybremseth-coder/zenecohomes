@@ -39,6 +39,29 @@ for (const href of cornerstoneLinks) {
   requireText(cornerstone, `href="${href}"`, "Erlend cornerstone internal link");
 }
 
+const buyingProcess = "src/app/kjopsprosessen/page.tsx";
+for (const href of [
+  "/guide/kjope-bolig-i-spania",
+  "/guide/kostnader-boligkjop-spania",
+  "/guide/boliglan-spansk-bank-nordmenn",
+  "/guide/nie-skattenummer-spania",
+  "/guide/juridiske-fallgruver-boligkjop-spania",
+  "/guide/nybygg-i-spania",
+  "/omrader",
+  "/booking",
+]) {
+  requireText(buyingProcess, `href="${href}"`, "buying-process customer-journey internal link");
+}
+requireText(buyingProcess, "Hva gjør Zen Eco Homes gjennom kjøpsprosessen?", "customer-journey intent");
+requireText(buyingProcess, "Hvem gjør hva når du kjøper bolig i Spania?", "buyer/advisor/specialist responsibility split");
+requireText(buyingProcess, "Hva er forskjellen på denne siden og guiden", "buying-process vs cornerstone intent separation");
+if (fs.existsSync(path.join(root, "src/app/kjopsprosess/page.tsx"))) {
+  errors.push("src/app/kjopsprosess/page.tsx: redirected legacy buying-process hub must not remain as duplicate content");
+}
+if (!hasRedirect("/kjopsprosess", "/kjopsprosessen")) {
+  errors.push("next.config.ts: missing legacy /kjopsprosess -> /kjopsprosessen redirect");
+}
+
 const editorialArticle = "src/lib/magazine.ts";
 requireText(editorialArticle, 'slug: "det-du-ikke-ser-i-boligannonsen"', "area-first editorial article");
 requireText(editorialArticle, 'author: { name: "Freddy Bremseth", href: "/om-oss/freddy" }', "linked Freddy author on editorial article");
