@@ -191,7 +191,7 @@ export default function BuyingProcessPage() {
       <section className="section split buying-process-intro">
         <div className="section-heading">
           <p className="eyebrow">Kort svar</p>
-          <h2>Hva gjør <span className="human-name">Zen Eco Homes</span> gjennom kjøpsprosessen?</h2>
+          <h2>Hva gjør <span className="human-name">Zen Eco Homes</span> <span className="unbroken-word">gjennom</span> kjøpsprosessen?</h2>
           <p>
             Vi fungerer som kjøperens faste rådgiver og koordinator rundt boligvalget. Vår jobb er å
             gjøre søket mer presist, sammenligne områdene før du velger objekt, følge opp visninger og
@@ -205,7 +205,7 @@ export default function BuyingProcessPage() {
         </div>
         <aside className="process-trust-panel">
           <p className="eyebrow">Tre prinsipper</p>
-          <h2>Område først. Fakta før beslutning. Riktig fagperson til riktig jobb.</h2>
+          <h2>Område først. Fakta før beslutning. Riktig <span className="unbroken-word">fagperson</span> til riktig jobb.</h2>
           <div>
             <span><CheckCircle2 size={18} /> Totalbudsjett før boligjakt</span>
             <span><CheckCircle2 size={18} /> Tilgjengelighet og dokumentasjon må bekreftes</span>
