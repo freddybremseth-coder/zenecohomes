@@ -200,6 +200,16 @@ const CHECKED_BEACH_DISTANCE: Record<string, BeachDistance> = {
 
 // Sep 2026, 2025, 2024, 2023, 2022: matched month/year, original source units.
 const PRICE: Record<string, PriceFact> = {
+  "san pedro del pinatar": {
+    municipality: "San Pedro del Pinatar kommune",
+    months: { 2026: 2043, 2025: 1929, 2024: 1460, 2023: 1195, 2022: 1195 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/murcia-region/murcia-provincia/san-pedro-del-pinatar/historico/", date: "2026-09" },
+  },
+  villena: {
+    municipality: "Villena",
+    months: { 2026: 780, 2025: 711, 2024: 677, 2023: 654, 2022: 609 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/villena/historico/", date: "2026-09" },
+  },
   albir: {
     municipality: "L'Albir (eget prisområde i L'Alfàs del Pi)",
     months: { 2026: 3627, 2025: 3416, 2024: 3111, 2023: 2941, 2022: 2677 },
