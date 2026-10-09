@@ -308,8 +308,8 @@ select {
   justify-content: center;
   gap: 10px;
   padding: 0 26px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   font-weight: 900;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1179,8 +1179,8 @@ select {
   place-items: center;
   border: 0;
   border-radius: 999px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   box-shadow: 0 18px 40px rgba(22, 34, 43, 0.25);
   cursor: pointer;
 }
@@ -1246,8 +1246,8 @@ select {
 
 .chatbot-messages .user {
   justify-self: end;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
 }
 
 .chatbot-form,
@@ -1280,8 +1280,8 @@ select {
   gap: 8px;
   border: 0;
   border-radius: 4px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   font-weight: 900;
   cursor: pointer;
 }
@@ -1294,8 +1294,8 @@ select {
   display: grid;
   place-items: center;
   border-radius: 4px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
 }
 
 .quick-filters {
@@ -1585,7 +1585,8 @@ select {
   margin-top: 24px;
 }
 
-.hero-actions a,
+/* Generic ghost links only: semantic CTA colors come from design system. */
+.hero-actions a:not(.contact-button):not(.text-button),
 .favorite-button {
   min-height: 46px;
   display: inline-flex;
@@ -2121,8 +2122,8 @@ select {
   gap: 10px;
   border: 0;
   border-radius: 4px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
@@ -2190,8 +2191,8 @@ select {
   place-items: center;
   width: 38px;
   height: 38px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   border-radius: 50%;
   font-weight: 900;
 }
@@ -2450,8 +2451,8 @@ select {
 
 .access-panel button {
   padding: 14px 18px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
@@ -2674,8 +2675,8 @@ select {
   min-height: 48px;
   border: 0;
   border-radius: 4px;
-  background: var(--gold);
-  color: white;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   cursor: pointer;
   font-weight: 900;
   text-transform: uppercase;
@@ -3639,13 +3640,14 @@ footer {
   min-height: 48px;
   padding: 0 22px;
   border-radius: 999px;
-  background: var(--gold);
-  color: #fff;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   font-weight: 900;
   text-decoration: none;
 }
 .compare-cta:hover {
   background: var(--gold-dark);
+  color: #fff;
 }
 
 .compare-scroll {
@@ -3767,8 +3769,8 @@ footer {
   white-space: nowrap;
 }
 .save-search-trigger:hover {
-  background: var(--gold);
-  color: #fff;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
 }
 .save-search {
   width: 100%;
@@ -3834,8 +3836,8 @@ footer {
   padding: 0 18px;
   border: none;
   border-radius: 10px;
-  background: var(--gold);
-  color: #fff;
+  background: var(--ze-travertine);
+  color: var(--ze-ink);
   font-weight: 900;
   cursor: pointer;
   white-space: nowrap;
