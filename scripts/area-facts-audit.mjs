@@ -133,6 +133,8 @@ const newIdealista = {
   "san javier": [2108, 1809, 1455, 1340, 1314],
   "san pedro del pinatar": [2043, 1929, 1460, 1195, 1195],
   villena: [780, 711, 677, 654, 609],
+  aspe: [1188, 1007, 844, 907, 818],
+  novelda: [1058, 965, 800, 699, 629],
 };
 const priceSection = data.slice(data.indexOf("const PRICE:"), data.indexOf("const FINESTRAT_DISTRICTS:"));
 for (const [name, values] of Object.entries(newIdealista)) {
