@@ -170,7 +170,7 @@ export default async function AreaTownPage({
             <p>Utvalget endrer seg løpende. Se hele regionen eller be oss sjekke konkrete prosjekter og bruktboliger.</p>
           </div>
         )}
-        <div className="hero-actions" style={{ marginTop: 28 }}>
+        <div className="hero-actions area-property-cta-actions" style={{ marginTop: 28 }}>
           <Link className="contact-button" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
             Se alle boliger i {profile.name}
           </Link>
