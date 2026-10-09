@@ -13,8 +13,18 @@ export type PopulationFact = { value: number; year: number; municipality: string
 export type PriceFact = { municipality: string; months: Record<number, number>; source: FactSource };
 export type NationalityOverview = { description: string; scope: string; year: number; source: FactSource };
 export type BeachDistance = { display: string; note: string; source?: FactSource };
+export type DistrictOverview = {
+  name: string;
+  focus: string;
+  buyerNote: string;
+  beach: string;
+  source: FactSource;
+  price?: { euroM2: number; period: string; source: FactSource };
+};
+
 export type TownAreaFacts = {
   name: string;
+  districts: DistrictOverview[];
   population: PopulationFact | null;
   nationality: NationalityOverview | null;
   beachDistance: BeachDistance | null;
@@ -37,6 +47,94 @@ const POPULATION: Record<string, PopulationFact> = {
     source: { label: "INE · Padrón municipal", url: "https://ine.es/consul/serie.do?L=0&d=true&s=DPOP517", date: "2025-01-01" },
   },
 };
+
+/**
+ * 1 January 2025, official municipal register. These are NOT counts for
+ * urbanisations, beaches, separate hamlets or a specific RealtyFlow listing.
+ * Every key is an explicit match to its actual municipality.
+ * Alicante: Diputación de Alicante (INE). Murcia: CREM (INE).
+ */
+const ALICANTE_CENSUS: FactSource = {
+  label: "INE via Diputación de Alicante · padrón 2025",
+  url: "https://documentacion.diputacionalicante.es/censo.asp",
+  date: "2025-01-01",
+};
+const MURCIA_CENSUS: FactSource = {
+  label: "INE via CREM · padrón 2025",
+  url: "https://econet.carm.es/web/crem/inicio/-/crem/sicrem/PU_datosBasicos/sec164.html",
+  date: "2025-01-01",
+};
+
+const MUNICIPAL_COUNTS: Record<string, [number, string, "A" | "M"]> = {
+  finestrat: [9919, "Finestrat", "A"],
+  polop: [5828, "Polop", "A"],
+  albir: [21080, "L'Alfàs del Pi", "A"],
+  "l albir": [21080, "L'Alfàs del Pi", "A"],
+  "alfas del pi": [21080, "L'Alfàs del Pi", "A"],
+  "alfaz del pi": [21080, "L'Alfàs del Pi", "A"],
+  "la nucia": [19121, "La Nucía", "A"],
+  calpe: [27616, "Calp", "A"],
+  calp: [27616, "Calp", "A"],
+  moraira: [12912, "Teulada (inkl. Moraira)", "A"],
+  teulada: [12912, "Teulada", "A"],
+  javea: [30642, "Xàbia", "A"],
+  xabia: [30642, "Xàbia", "A"],
+  denia: [47261, "Dénia", "A"],
+  villajoyosa: [37449, "La Vila Joiosa", "A"],
+  "la vila joiosa": [37449, "La Vila Joiosa", "A"],
+  "el campello": [31419, "El Campello", "A"],
+  mutxamel: [28621, "Mutxamel", "A"],
+  "sant joan d'alacant": [26834, "Sant Joan d'Alacant", "A"],
+  alicante: [366221, "Alicante", "A"],
+  "guardamar del segura": [18564, "Guardamar del Segura", "A"],
+  "ciudad quesada": [17652, "Rojales (inkl. Ciudad Quesada)", "A"],
+  rojales: [17652, "Rojales", "A"],
+  torrevieja: [98533, "Torrevieja", "A"],
+  "orihuela costa": [84560, "Orihuela (hele kommunen)", "A"],
+  orihuela: [84560, "Orihuela", "A"],
+  "la zenia": [84560, "Orihuela (hele kommunen)", "A"],
+  "cabo roig": [84560, "Orihuela (hele kommunen)", "A"],
+  "santa pola": [39709, "Santa Pola", "A"],
+  "gran alacant": [39709, "Santa Pola (inkl. Gran Alacant)", "A"],
+  "pilar de la horadada": [24316, "Pilar de la Horadada", "A"],
+  "los montesinos": [5786, "Los Montesinos", "A"],
+  algorfa: [3788, "Algorfa", "A"],
+  benijofar: [3679, "Benijófar", "A"],
+  dolores: [8326, "Dolores", "A"],
+  catral: [9600, "Catral", "A"],
+  "san miguel de salinas": [7177, "San Miguel de Salinas", "A"],
+  biar: [3677, "Biar", "A"],
+  villena: [34712, "Villena", "A"],
+  sax: [10346, "Sax", "A"],
+  castalla: [11908, "Castalla", "A"],
+  "banyeres de mariola": [7347, "Banyeres de Mariola", "A"],
+  busot: [3782, "Busot", "A"],
+  pinoso: [8523, "Pinoso", "A"],
+  "el pinos": [8523, "Pinoso", "A"],
+  monovar: [13116, "Monóvar", "A"],
+  "hondon de las nieves": [2738, "Hondón de las Nieves", "A"],
+  aspe: [22397, "Aspe", "A"],
+  novelda: [26606, "Novelda", "A"],
+  "la romana": [2729, "La Romana", "A"],
+  "monforte del cid": [9283, "Monforte del Cid", "A"],
+  jumilla: [27574, "Jumilla", "M"],
+  "san pedro del pinatar": [29674, "San Pedro del Pinatar", "M"],
+  "san javier": [36524, "San Javier", "M"],
+  "los alcazares": [20408, "Los Alcázares", "M"],
+  murcia: [479405, "Murcia", "M"],
+  cartagena: [220704, "Cartagena", "M"],
+  "torre pacheco": [41479, "Torre Pacheco", "M"],
+  mazarron: [35449, "Mazarrón", "M"],
+  aguilas: [37811, "Águilas", "M"],
+};
+const EXPANDED_POPULATION: Record<string, PopulationFact> = Object.fromEntries(
+  Object.entries(MUNICIPAL_COUNTS)
+    .filter(([, [value]]) => value > 0)
+    .map(([name, [value, municipality, region]]) => [
+      name,
+      { value, year: 2025, municipality, source: region === "A" ? ALICANTE_CENSUS : MURCIA_CENSUS },
+    ])
+);
 
 /* Nationality summaries refer to the municipality, not a particular estate.
    Lists are NOT current rankings unless a recent municipal source expressly says so. */
@@ -107,12 +205,81 @@ const PRICE: Record<string, PriceFact> = {
     months: { 2026: 3504, 2025: 3361, 2024: 2984, 2023: 2859, 2022: 2531 },
     source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/altea/historico/", date: "2026-09" },
   },
+  finestrat: {
+    municipality: "Finestrat kommune (alle delområder)",
+    months: { 2026: 3316, 2025: 3175, 2024: 2794, 2023: 2562, 2022: 2433 },
+    source: {
+      label: "Idealista · historiske annonserte salgspriser i Finestrat",
+      url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/historico/",
+      date: "2026-09",
+    },
+  },
   benidorm: {
     municipality: "Benidorm",
     months: { 2026: 3824, 2025: 3456, 2024: 2953, 2023: 2542, 2022: 2296 },
     source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/benidorm/historico/", date: "2026-09" },
   },
 };
+
+/**
+ * Distinct places within one municipality must not receive an invented
+ * single beach distance, price estimate or population as if they were alike.
+ * All descriptions are source-backed; prices shown only for Idealista's
+ * explicitly named published sub-market areas.
+ */
+const FINESTRAT_DISTRICTS: DistrictOverview[] = [
+  {
+    name: "Sierra Cortina",
+    focus: "Etablert boligområde med villaer, leiligheter og nyere boligprosjekter. Ligger ikke i den historiske landsbyen.",
+    buyerNote: "Vurder den konkrete gaten, bakkehelling, bilbehov, utsikt og felleskostnader. Boliger her skal ikke vurderes som boliger i gamlebyen.",
+    beach: "Ikke strandnært sentrum; beregn kjørerute fra boligadresse.",
+    source: {
+      label: "Finestrat kommune · omtale av Sierra Cortina og Balcón",
+      url: "https://ayto-finestrat.es/sigue-la-expansion-de-tecnologia-led-en-finestrat-con-200-luminarias-en-la-urbanizacion-sierra-cortina/",
+    },
+  },
+  {
+    name: "Balcón de Finestrat",
+    focus: "Eget boligområde i Finestrat med nyere boliger og prosjekter.",
+    buyerNote: "Kontroller beliggenhet og byggeetappe før du sammenligner en bolig med Sierra Cortina, Golf Bahía eller gamlebyen.",
+    beach: "Kjøreavstanden varierer med prosjekt og gate; se rute i kart.",
+    source: {
+      label: "Idealista · Balcón de Finestrat–Terra Marina",
+      url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/",
+    },
+    price: { euroM2: 3272, period: "2026-09", source: { label: "Idealista · annonserte priser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/", date: "2026-09" } },
+  },
+  {
+    name: "Golf Bahía",
+    focus: "Et boligområde i Finestrat, med ulike villaer, rekkehus og leilighetsprosjekter.",
+    buyerNote: "Undersøk delområdet, solforhold, adkomst og vedlikehold. Portalens Golf Bahía-statistikk dekker et markedsområde; den er ikke prisantydning for enkeltboligen.",
+    beach: "Ikke ved stranden; bruk adressen når du beregner kjøreruten.",
+    source: {
+      label: "Idealista · Golf Bahía, Finestrat",
+      url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/",
+    },
+    price: { euroM2: 3450, period: "2026-09", source: { label: "Idealista · annonserte priser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/", date: "2026-09" } },
+  },
+  {
+    name: "Finestrat gamleby",
+    focus: "Historisk landsbysentrum i høyden – et annet boligmarked enn de større urbanisasjonene.",
+    buyerNote: "Vurder trappetrinn, parkering, adkomst og tilstand i eldre bygninger. En bolig her bør ikke sammenlignes direkte med nybygg i Sierra Cortina.",
+    beach: "Ikke ved stranden. Kommunen har også La Cala ved sjøen.",
+    source: {
+      label: "Finestrat kommune · historisk sentrum og La Cala",
+      url: "https://ayto-finestrat.es/finestrat-en-fitur-2026/",
+    },
+    price: { euroM2: 3245, period: "2026-09", source: { label: "Idealista · Finestrat Pueblo", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/finestrat-pueblo/", date: "2026-09" } },
+  },
+  {
+    name: "La Cala de Finestrat",
+    focus: "Kystdelen ved sandstranden – ikke det samme som gamlebyen eller boligprosjektene i høyden.",
+    buyerNote: "Kontroller sesongstøy, parkering, fellesutgifter og gangavstand fra den konkrete boligen.",
+    beach: "0 m · kystområde. Eiendommens avstand til sandstranden varierer.",
+    source: { label: "Turisme Comunitat Valenciana · Playa de la Cala de Finestrat", url: "https://www.comunitatvalenciana.com/es/alacant-alicante/finestrat/playas/playa-de-la-cala-de-finestrat" },
+    price: { euroM2: 3044, period: "2026-09", source: { label: "Idealista · Cala de Finestrat", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/cala-de-finestrat/", date: "2026-09" } },
+  },
+];
 
 // Place features appear in the existing destination articles, and are attributed
 // to the same local editorial destination source when available.
@@ -213,7 +380,8 @@ export function getTownAreaFacts(name: string): TownAreaFacts {
   const mapsName = encodeURIComponent(name + ", Spania");
   return {
     name,
-    population: POPULATION[key] || null,
+    districts: key === "finestrat" ? FINESTRAT_DISTRICTS : [],
+    population: POPULATION[key] || EXPANDED_POPULATION[key] || null,
     nationality: NATIONALITIES[key] || null,
     beachDistance: beachOverview(key, coords),
     price: PRICE[key] || null,
