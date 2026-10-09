@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import { getPrimaryImage, getPropertyArea, getPropertyRef, type Property } from "@/lib/realtyflow";
 import {
@@ -33,7 +33,7 @@ export function SpanishPropertyCard({
     <Link className="property-card" href={href} prefetch={priority}>
       <div className="property-image">
         {image ? (
-          <Image
+          <ResilientImage
             src={image}
             alt={heading}
             fill
