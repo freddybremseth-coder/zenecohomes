@@ -115,4 +115,50 @@ for (const [town, series] of Object.entries(morePrices)) {
 }
 console.log("PASS", municipalityRows.length, "municipal population records, 6 additional five-year price series and Finestrat neighborhood separation");
 
+
+// Validate the complete Sep 2022–2026 values for each newly published
+// geographic price series, and ensure submarkets are not confused with
+// the wider municipality (Albir, Moraira and Orihuela Costa).
+const newIdealista = {
+  albir: [3627, 3416, 3111, 2941, 2677],
+  villajoyosa: [3092, 2750, 2312, 2022, 1879],
+  moraira: [4474, 4136, 3950, 3650, 3379],
+  javea: [4166, 3927, 3324, 2997, 2809],
+  xabia: [4166, 3927, 3324, 2997, 2809],
+  "el campello": [3221, 3063, 2508, 2221, 2042],
+  "guardamar del segura": [2643, 2347, 2058, 1843, 1756],
+  "santa pola": [2829, 2438, 2079, 1828, 1594],
+  "orihuela costa": [3058, 2894, 2532, 2306, 2195],
+  "los alcazares": [2150, 1798, 1607, 1352, 1300],
+  "san javier": [2108, 1809, 1455, 1340, 1314],
+};
+const priceSection = data.slice(data.indexOf("const PRICE:"), data.indexOf("const FINESTRAT_DISTRICTS:"));
+for (const [name, values] of Object.entries(newIdealista)) {
+  const selector = name.includes(" ") ? '  "' + name + '": {' : "  " + name + ": {";
+  const begin = priceSection.indexOf(selector);
+  assert.ok(begin >= 0, "Missing Idealista price series for " + name);
+  const item = priceSection.slice(begin, begin + 600);
+  const years = [2026, 2025, 2024, 2023, 2022];
+  for (let index = 0; index < years.length; index++) {
+    assert.ok(item.includes(years[index] + ": " + values[index]), "Wrong Sep " + years[index] + " price for " + name);
+  }
+  assert.ok(item.includes('date: "2026-09"'), name + " has no source period");
+  assert.ok(item.includes("idealista.com/sala-de-prensa/"), name + " missing Idealista source URL");
+}
+const orihuelaSection = priceSection.slice(priceSection.indexOf('  "orihuela costa": {'), priceSection.indexOf('  "orihuela costa": {') + 280);
+assert.ok(orihuelaSection.includes("ikke hele Orihuela"), "Orihuela Costa must never be labelled entire municipality");
+const albirSection = priceSection.slice(priceSection.indexOf("  albir: {"), priceSection.indexOf("  albir: {") + 350);
+assert.ok(albirSection.includes("L'Albir"), "Albir should use its own historic district, not Alfaz municipality price");
+const morairaSection = priceSection.slice(priceSection.indexOf("  moraira: {"), priceSection.indexOf("  moraira: {") + 280);
+assert.ok(morairaSection.includes("Moraira"), "Moraira must not use Teulada's municipal market series");
+console.log("PASS", Object.keys(newIdealista).length, "localized Idealista price series and geographic scopes");
+
+// Ensure that the editorial narrative always precedes the statistics,
+ // including inland communities.
+const coastalTownPage = read("src/app/omrader/[region]/[sted]/page.tsx");
+const inlandTownPage = read("src/app/inland/[sted]/page.tsx");
+assert.ok(coastalTownPage.indexOf('<section className="section split">') < coastalTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Coast: Om must come before Facts");
+assert.ok(inlandTownPage.indexOf('<section className="inland-town-story">') < inlandTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Inland: Om must come before Facts");
+console.log("PASS", "Om always precedes Fakta in coast and inland templates");
+
 console.log("Area facts audit passed.");
