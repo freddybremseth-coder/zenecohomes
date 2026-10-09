@@ -14,12 +14,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+      - name: Check out portrait source repository
+        uses: actions/checkout@v4
+        with:
+          repository: freddybremseth-coder/freddybremseth
+          ref: main
+          path: portrait-source
+          persist-credentials: false
       - name: Unpack optimized portraits
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p public/assets
-          curl -fsSL --retry 3 https://raw.githubusercontent.com/freddybremseth-coder/freddybremseth/main/assets/freddy-portretter-web.zip -o /tmp/freddy-portretter-web.zip\n          unzip -o /tmp/freddy-portretter-web.zip -d public/assets
+          unzip -o portrait-source/assets/freddy-portretter-web.zip -d public/assets
           for file in freddy-ai-utvikler.webp freddy-eiendom-costa-blanca.webp freddy-personlig-radgiver.webp; do test -s "public/assets/$file"; done
       - name: Commit images to PR branch
         run: |
