@@ -131,6 +131,8 @@ const newIdealista = {
   "orihuela costa": [3058, 2894, 2532, 2306, 2195],
   "los alcazares": [2150, 1798, 1607, 1352, 1300],
   "san javier": [2108, 1809, 1455, 1340, 1314],
+  "san pedro del pinatar": [2043, 1929, 1460, 1195, 1195],
+  villena: [780, 711, 677, 654, 609],
 };
 const priceSection = data.slice(data.indexOf("const PRICE:"), data.indexOf("const FINESTRAT_DISTRICTS:"));
 for (const [name, values] of Object.entries(newIdealista)) {
