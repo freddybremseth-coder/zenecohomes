@@ -1,0 +1,128 @@
+/* SITEWIDE WCAG AA ACTION STANDARDS
+   Apply semantic foreground and background pairs to CTA rows on light pages.
+   Brand image/dark-panel CTAs are explicitly restored below. This stylesheet
+   loads last to protect against legacy CSS chunk ordering on mobile Safari. */
+
+:root {
+  --ze-action-primary-bg: var(--ze-ink);
+  --ze-action-primary-fg: var(--ze-white);
+  --ze-action-secondary-bg: var(--ze-white);
+  --ze-action-secondary-fg: var(--ze-ink);
+  --ze-action-accent-bg: var(--ze-travertine);
+  --ze-action-accent-fg: var(--ze-ink);
+}
+
+/* Default: all light article, guide, area, form and listing action rows. */
+.hero-actions > a.contact-button,
+.hero-actions > a.text-button:not(.light),
+.hero-actions > a:not(.contact-button):not(.text-button) {
+  min-height: 52px;
+  padding: 12px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--ze-ink);
+  border-radius: var(--ze-radius-sm);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.hero-actions > a.contact-button {
+  background: var(--ze-action-primary-bg);
+  color: var(--ze-action-primary-fg);
+}
+
+.hero-actions > a.text-button:not(.light),
+.hero-actions > a:not(.contact-button):not(.text-button) {
+  background: var(--ze-action-secondary-bg);
+  color: var(--ze-action-secondary-fg);
+}
+
+.hero-actions > a.contact-button:hover {
+  background: var(--ze-sea);
+  color: var(--ze-white);
+  border-color: var(--ze-sea);
+}
+
+.hero-actions > a.text-button:not(.light):hover,
+.hero-actions > a:not(.contact-button):not(.text-button):hover {
+  background: var(--ze-paper);
+  color: var(--ze-ink);
+  border-color: var(--ze-ink);
+}
+
+.hero-actions > a:focus-visible,
+.hero-actions > a.contact-button:focus-visible,
+.hero-actions > a.text-button:focus-visible {
+  outline: 3px solid var(--ze-sea);
+  outline-offset: 3px;
+}
+
+/* Dark/image hero surfaces: a solid gold button with dark text is readable.
+   White secondary links are only used here against dark backgrounds. */
+:is(.hero, .page-hero, .image-hero, .property-detail-hero, .contact-section, .book-showcase, .corporate-hero, .inland-hero)
+  .hero-actions > a.contact-button {
+  background: var(--ze-action-accent-bg);
+  border-color: var(--ze-action-accent-bg);
+  color: var(--ze-action-accent-fg);
+}
+
+:is(.hero, .page-hero, .image-hero, .property-detail-hero, .contact-section, .book-showcase, .corporate-hero, .inland-hero)
+  .hero-actions > a.contact-button:hover {
+  background: var(--ze-white);
+  color: var(--ze-ink);
+  border-color: var(--ze-white);
+}
+
+:is(.hero, .page-hero, .image-hero, .property-detail-hero, .contact-section, .book-showcase, .corporate-hero, .inland-hero)
+  .hero-actions > a.text-button.light {
+  min-height: 52px;
+  background: transparent;
+  border-color: transparent;
+  color: var(--ze-white);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+:is(.hero, .page-hero, .image-hero, .property-detail-hero, .contact-section, .book-showcase, .corporate-hero, .inland-hero)
+  .hero-actions > a.text-button.light:hover {
+  color: var(--ze-white);
+  background: rgba(23, 32, 39, 0.55);
+}
+
+/* Even when used in a light card, legacy .text-button.light must be legible.
+   The dark-context selector above wins only on known dark/photographic areas. */
+.section:not(.contact-section):not(.image-hero):not(.hero)
+  .hero-actions > a.text-button.light {
+  background: var(--ze-white);
+  border-color: var(--ze-ink);
+  color: var(--ze-ink);
+}
+
+.section:not(.contact-section):not(.image-hero):not(.hero)
+  .hero-actions > a.text-button.light:hover {
+  background: var(--ze-paper);
+  color: var(--ze-ink);
+}
+
+/* The inland sub-brand's legacy olive accent (#6f7f42) does not meet AA
+   with either regular white or charcoal text at small sizes. */
+.inland-theme .text-button:not(.light) {
+  color: #4c592a;
+}
+
+@media (max-width: 640px) {
+  .hero-actions > a.contact-button,
+  .hero-actions > a.text-button:not(.light),
+  .hero-actions > a:not(.contact-button):not(.text-button) {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+}
