@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, BookOpen, Check, Coins, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
@@ -458,7 +458,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(propertyJsonLd) }} />
       <section className="property-detail-hero">
         {mainImage ? (
-          <Image
+          <ResilientImage
             src={mainImage}
             alt={title}
             fill

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import { ArrowLeft, Bath, BedDouble, Check, Coins, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -120,7 +120,7 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
 
       <section className="property-detail-hero">
         {mainImage ? (
-          <Image src={mainImage} alt={heading} fill sizes="100vw" priority style={{ objectFit: "cover", zIndex: 0 }} />
+          <ResilientImage src={mainImage} alt={heading} fill sizes="100vw" priority style={{ objectFit: "cover", zIndex: 0 }} />
         ) : null}
         <div>
           <Link className="back-link" href="/es/propiedades">

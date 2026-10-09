@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { Footer } from "@/components/Footer";
+import { ResilientImage } from "@/components/ResilientImage";
+import { NoBreakName } from "@/components/ProtectedPlaceName";
 import { areaPresentationImage } from "@/lib/areaGuideContent";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -148,14 +150,17 @@ export default async function AreasPage() {
       <section className="section region-overview-list">
         {regions.map((region) => (
           <article className="region-overview-card" key={region.key}>
-            <div
-              className="region-overview-image"
-              style={{ backgroundImage: `url(${regionImages[region.key]})` }}
-              role="img"
-              aria-label={region.title}
-            />
+            <div className="region-overview-image">
+              <ResilientImage
+                src={regionImages[region.key]}
+                alt={region.title}
+                fill
+                sizes="(max-width: 900px) 100vw, 55vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
             <div className="region-overview-copy">
-              <h2>{region.title}</h2>
+              <h2><NoBreakName name={region.title} /></h2>
               <p>{region.text}</p>
               <div className="region-overview-actions">
                 <Link className="contact-button" href={region.href}>

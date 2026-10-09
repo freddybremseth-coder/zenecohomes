@@ -1,3 +1,4 @@
+import { ResilientNativeImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
 import type { Article } from "@/lib/content";
@@ -1065,7 +1066,7 @@ export function ArticleView({ article }: { article: Article }) {
       </section>
 
       <section className="section article-shell">
-        <img className="article-cover-image" src={article.image} alt={article.imageAlt} />
+        <ResilientNativeImage className="article-cover-image" src={article.image} alt={article.imageAlt} />
 
         <div className="article-layout">
           <article className="article-main">
