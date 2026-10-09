@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { ResilientImage } from "@/components/ResilientImage";
+import { NoBreakName } from "@/components/ProtectedPlaceName";
 import Link from "next/link";
 import { ArrowRight, BookOpen, MapPin, ShieldCheck } from "lucide-react";
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
@@ -378,10 +380,10 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
             const excerpt = areaExcerpt(profile.name);
             return (
               <article className="area-profile-card" key={profile.id || profile.name}>
-                <div style={{ backgroundImage: `url(${image})` }} />
+                <div className="area-profile-photo"><ResilientImage src={image} alt={`${profile.name} – områdebilde`} fill sizes="(max-width: 900px) 100vw, 48vw" style={{ objectFit: "cover" }} /></div>
                 <section>
                   <span>{profile.region || selected.label}</span>
-                  <h3>{profile.name}</h3>
+                  <h3><NoBreakName name={profile.name} /></h3>
                   {profile.hero_blurb && <strong>{oneLineAreaText(profile.hero_blurb)}</strong>}
                   {splitAreaParagraphs(profile.description).map((paragraph, index) => <p key={`region-description-${index}`}>{paragraph}</p>)}
                   {book && excerpt.length > 0 && (
