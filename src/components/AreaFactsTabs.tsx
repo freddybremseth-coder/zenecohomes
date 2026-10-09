@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState, type KeyboardEvent } from "react";
-import { ArrowUpRight, BarChart3, Compass, MapPin, Users, UtensilsCrossed } from "lucide-react";
+import { ArrowUpRight, BarChart3, Compass, MapPin, Users } from "lucide-react";
 import type { FactSource, PriceFact, TownAreaFacts } from "@/lib/areaFactData";
 
 function priceGrowth(fact: PriceFact, years: 1 | 2 | 3 | 4) {
@@ -107,16 +107,16 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
                 />
                 <Stat
                   label="Til nærmeste strand"
-                  value={facts.beachNote ? "Se strandsoner" : "Adresseavhengig"}
-                  footnote={facts.beachNote || "Avstand kan ikke fastslås uten adresse."}
+                  value={facts.beachDistance?.display || "Se kart"}
+                  footnote={facts.beachDistance?.note || "Stedet eller boligen trenger et konkret kartpunkt."}
+                  source={facts.beachDistance?.source}
                 />
                 <Stat
                   label="Nasjonaliteter"
-                  value={facts.nationality?.length ? `${facts.nationality.length} dokumenterte grupper` : "Ikke verifisert"}
-                  footnote="Fordeling må bygge på INEs kommunetabeller, ikke turisme eller synsinntrykk."
+                  value={facts.nationality ? "Internasjonalt bomiljø" : "Ikke kartlagt ennå"}
+                  footnote={facts.nationality ? `${facts.nationality.description} ${facts.nationality.scope} · ${facts.nationality.year}.` : "Vi legger inn nasjonaliteter først når lokale kilder bekrefter dem."}
+                  source={facts.nationality?.source}
                 />
-                <Stat label="Restauranter" value={facts.restaurants ? `ca. ${format(facts.restaurants.value)}` : "Ikke verifisert"} footnote="Antall krever kilde, datodato og avgrensning." source={facts.restaurants?.source} />
-                <Stat label="Barer og kaféer" value={facts.bars ? `ca. ${format(facts.bars.value)}` : "Ikke verifisert"} footnote="Ulike registre kan telle virksomhetene forskjellig." source={facts.bars?.source} />
               </dl>
               <div className="area-facts-links">
                 <a href={facts.airportMapsUrl} rel="noopener noreferrer" target="_blank">Beregn kjørerute til flyplassen <ArrowUpRight size={15} /></a>
@@ -172,7 +172,7 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
               ) : (
                 <p>Vi har foreløpig ikke tilstrekkelig kildegrunnlag for en egen attraksjonsliste. Se lokal områdeguide og kart for flere alternativer.</p>
               )}
-              <div className="area-facts-dining"><UtensilsCrossed size={20} aria-hidden="true" /><p>Restauranter og barer endrer seg ofte. Antall publiseres først når geografisk avgrensning, registreringsmetode og datodato er bekreftet.</p></div>
+
             </div>
           )}
         </div>
