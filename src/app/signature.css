@@ -3028,3 +3028,70 @@
   word-break: normal;
   overflow-wrap: normal;
 }
+
+
+/* Buying-process advisor portrait and service introduction. */
+.buying-process-page .buying-advisor-section {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 76px);
+}
+.buying-process-page .buying-advisor-photo {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ece8e2;
+}
+.buying-process-page .buying-advisor-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: cover;
+}
+.buying-process-page .buying-advisor-copy {
+  min-width: 0;
+}
+.buying-process-page .buying-advisor-copy p {
+  max-width: 68ch;
+}
+.buying-process-page .buying-advisor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 22px;
+  margin-top: 24px;
+}
+.buying-process-page .buying-services-section .proof-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 760px) {
+  .buying-process-page .buying-advisor-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .buying-process-page .buying-advisor-photo {
+    max-width: 540px;
+  }
+  .buying-process-page .buying-services-section .proof-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Two distinct brand portraits: property advisor first, personal introduction second. */
+.buying-process-page .buying-advisor-photos { position: relative; min-width: 0; padding: 0 12% 11% 0; }
+.buying-process-page .buying-advisor-photo { margin: 0; }
+.buying-process-page .buying-advisor-photo-main { border-radius: 18px; }
+.buying-process-page .buying-advisor-photo-main img { aspect-ratio: 4 / 5; object-fit: cover; }
+.buying-process-page .buying-advisor-photo-personal {
+  position: absolute; right: 0; bottom: 0; width: 40%;
+  border: 5px solid var(--background, #fff);
+  border-radius: 14px; box-shadow: 0 12px 36px rgba(10, 29, 44, .14);
+}
+.buying-process-page .buying-advisor-photo-personal img { aspect-ratio: 1; object-fit: cover; }
+.buying-process-page .buying-advisor-photo figcaption {
+  background: rgba(255,255,255,.94); color: #223444; padding: 9px 12px;
+  font-size: .78rem; line-height: 1.35;
+}
+@media (max-width: 760px) {
+  .buying-process-page .buying-advisor-photos { max-width: 530px; }
+}
