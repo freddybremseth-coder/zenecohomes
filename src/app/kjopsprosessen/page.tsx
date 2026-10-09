@@ -477,11 +477,11 @@ export default function BuyingProcessPage() {
         </div>
         <div>
           <p className="eyebrow">Kunnskap underveis</p>
-          <h2>Les mer når du trenger detaljene – ikke alt på én side</h2>
+          <h2>Vil du forstå detaljene før du bestemmer deg?</h2>
           <p>
-            Denne siden eier kundereisen. Hovedguiden eier den komplette kjøperkunnskapen, mens
-            spesialguidene går dypere i kostnader, NIE, finansiering, juridikk og nybygg. Det gjør det
-            enklere å finne riktig svar uten at de samme artiklene konkurrerer med hverandre.
+            Vi har samlet egne guider om finansiering, kjøpskostnader, juridisk kontroll og nybygg.
+            Du kan fordype deg i det som er relevant for din situasjon, mens vi hjelper deg å holde
+            oversikt over helheten.
           </p>
           <Link className="contact-button" href="/guide">Se alle guider</Link>
         </div>
