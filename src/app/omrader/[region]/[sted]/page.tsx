@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
-import Image from "next/image";
+import { ResilientImage } from "@/components/ResilientImage";
+import { NoBreakName, ProtectPlaceNames } from "@/components/ProtectedPlaceName";
 import Link from "next/link";
 import { ArrowRight, BookOpen, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -106,8 +107,8 @@ export default async function AreaTownPage({
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">{selectedRegion.label} · områdeguide</p>
-        <h1>Bolig og hverdagsliv i {profile.name}</h1>
-        <p>{heroDescription}</p>
+        <h1>Bolig og hverdagsliv i <NoBreakName name={profile.name} /></h1>
+        <p><ProtectPlaceNames text={heroDescription} /></p>
         <div className="hero-actions">
           <Link className="contact-button" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
             Se boliger i {profile.name} <ArrowRight size={17} />
@@ -120,15 +121,15 @@ export default async function AreaTownPage({
         <div>
           <p className="eyebrow">Om {profile.name}</p>
           <h2>Hvordan er det å bo og kjøpe bolig her?</h2>
-          {!genericPlaceholder && descriptionParagraphs.map((paragraph, index) => <p key={`area-description-${index}`}>{paragraph}</p>)}
-          {excerpt.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          {!genericPlaceholder && descriptionParagraphs.map((paragraph, index) => <p key={`area-description-${index}`}><ProtectPlaceNames text={paragraph} /></p>)}
+          {excerpt.map((paragraph) => <p key={paragraph}><ProtectPlaceNames text={paragraph} /></p>)}
           <div className="area-town-guide">
             {verifiedEditorial && (
               <>
-                <h3>Hva betyr beliggenheten for hverdagen i {profile.name}?</h3>
-                <p>{verifiedEditorial.everyday}</p>
-                <h3>Hva bør du vurdere når du kjøper bolig i {profile.name}?</h3>
-                <p>{verifiedEditorial.buying}</p>
+                <h3>Hva betyr beliggenheten for hverdagen i <NoBreakName name={profile.name} />?</h3>
+                <p><ProtectPlaceNames text={verifiedEditorial.everyday} /></p>
+                <h3>Hva bør du vurdere når du kjøper bolig i <NoBreakName name={profile.name} />?</h3>
+                <p><ProtectPlaceNames text={verifiedEditorial.buying} /></p>
               </>
             )}
             <h3>Hva bør kontrolleres før du bestemmer deg?</h3>
@@ -152,7 +153,7 @@ export default async function AreaTownPage({
           </p>
         </div>
         <div>
-          <Image
+          <ResilientImage
             src={image}
             alt={`${profile.name} i ${selectedRegion.label}`}
             width={1200}
@@ -182,7 +183,7 @@ export default async function AreaTownPage({
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow"><MapPin size={14} /> Aktuelle boliger</p>
-          <h2>Boliger i {profile.name}</h2>
+          <h2>Boliger i <NoBreakName name={profile.name} /></h2>
           <p>
             Utvalget under hentes fra den publiserte boligbasen. Bruk hele boligoversikten for flere filtre,
             eller kontakt oss dersom du vil at vi skal koordinere en kort shortlist. Før du reserverer kan du også
