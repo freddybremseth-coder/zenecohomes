@@ -34,12 +34,33 @@ assertPresent(data, "municipality: \"Altea\"", "Municipality-scoped facts");
 assertPresent(data, "municipality: \"Benidorm\"", "Municipality-scoped facts");
 assertPresent(data, "value: 24592, year: 2025", "INE Altea population");
 assertPresent(data, "value: 77327, year: 2025", "INE Benidorm population");
-assertPresent(data, "nationality: null", "No invented nationality distribution");
-assertPresent(data, "restaurants: null", "No invented restaurant counts");
-assertPresent(data, "bars: null", "No invented bar counts");
+assertPresent(data, "NATIONALITIES[key] || null", "Nationalities shown only from curated sources");
+assertPresent(data, "beachDistance: beachOverview(key, coords)", "Every town uses sourced or qualified coast proximity");
+assertPresent(data, 'display: "0 km · kyststed"', "Coastal places shown with a clear coastal note");
+assertPresent(data, "Grovt orienteringsmål i luftlinje", "Computed inland coast distances always carry caveat");
+assertPresent(data, "CHECKED_BEACH_DISTANCE", "Sourced local beach-distance exceptions");
+assert.ok(!tabs.includes('label="Restauranter"') && !tabs.includes('label="Barer og kaféer"'), "Unused restaurant/bar cards must be removed");
+assert.ok(!tabs.includes("UtensilsCrossed") && !tabs.includes("area-facts-dining"), "Unused dining sections must be removed");
+console.log("PASS", "restaurant/bar fields removed from public facts");
 assertPresent(data, "airportDirectKm:", "Explicit flight-line airport distance");
 assertPresent(tabs, "Luftlinje fra stedets sentrum", "Airport distance scope disclosed");
 assertPresent(tabs, "Sammenligner september hvert år", "Price comparison period disclosed");
+
+const overview = read("src/app/omrader/page.tsx");
+const overviewStyle = read("src/app/areas-regions-v2.css");
+assert.ok(overview.includes("<h2>{region.title}</h2>"), "Regional title must wrap between words");
+assert.ok(!overview.includes("<NoBreakName name={region.title} />"), "Whole region name nowrap causes clipping");
+assert.ok(overviewStyle.includes("font-size: clamp(2.05rem, 2.7vw, 3.2rem);"), "Oversized region title returned");
+assert.ok(overviewStyle.includes("hyphens: none;"), "Place words must not be split with hyphens");
+console.log("PASS", "regional titles wrap at word boundaries without clipping");
+
+const expected = ["polop", "la nucia", "ciudad quesada", "rojales", "mutxamel", "finestrat"];
+for (const place of expected) assert.ok(data.includes(place + ": {") || data.includes('"' + place + '": {'), "Missing verified beach reference for " + place);
+for (const key of ["altea", "albir", "benidorm", "torrevieja", "ciudad quesada", "rojales"]) {
+  const map = data.slice(data.indexOf("const NATIONALITIES:"), data.indexOf("const COASTAL_PLACES"));
+  assert.ok(map.includes(key + ": {") || map.includes('"' + key + '": {'), "Missing nationality source for " + key);
+}
+console.log("PASS", "sourced nationality and nearby-beach samples");
 
 const prices = {
   Altea: { 2026: 3504, 2025: 3361, 2024: 2984, 2023: 2859, 2022: 2531 },
