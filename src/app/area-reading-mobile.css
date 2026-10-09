@@ -1,0 +1,134 @@
+/* Editorial reading: mobile-first guardrails for articles, guides and town pages.
+   Do not hide off-screen content: long words wrap and tables can scroll. */
+
+.article-shell,
+.article-layout,
+.article-main,
+.article-aside,
+.article-section,
+.article-intro,
+.article-faq,
+.article-next-steps,
+.section.split > *,
+.area-town-guide,
+.rich-text,
+.guide-article,
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.article-shell :is(h1, h2, h3, p, li, blockquote),
+.section.split :is(h2, h3, p, li),
+.guide-article :is(h1, h2, h3, p, li),
+.rich-text :is(h1, h2, h3, p, li) {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.article-shell :is(img, video, iframe),
+.section.split img,
+.rich-text :is(img, video, iframe) {
+  max-width: 100%;
+}
+
+.article-table-wrap,
+.article-markdown-table-wrap {
+  display: block;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-markdown-table-wrap table,
+.article-table-wrap table {
+  width: max-content;
+  min-width: 100%;
+}
+
+.article-markdown-table-wrap th,
+.article-markdown-table-wrap td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  min-width: 104px;
+  vertical-align: top;
+}
+
+.area-town-guide {
+  margin-top: 26px;
+}
+
+.area-town-guide h3 {
+  margin: 28px 0 10px;
+  color: var(--ze-ink);
+  font-family: var(--display);
+  font-size: clamp(1.38rem, 2.25vw, 1.85rem);
+  font-weight: 550;
+  line-height: 1.2;
+}
+
+.area-town-guide p {
+  margin: 0 0 18px;
+  color: var(--ze-muted, #596976);
+  line-height: 1.75;
+}
+
+.area-town-buyer-checklist {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 20px;
+  padding-left: 22px;
+  color: var(--ze-ink);
+  line-height: 1.65;
+}
+
+.area-town-source {
+  padding-top: 13px;
+  border-top: 1px solid var(--ze-line);
+  font-size: 0.88rem;
+}
+
+.area-town-source a,
+.section.split a:not(.contact-button):not(.text-button) {
+  color: var(--ze-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .article-layout,
+  .article-aside,
+  .section.split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .article-section h2,
+  .article-next-steps h2,
+  .article-faq h2 {
+    max-width: 100%;
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+    line-height: 1.17;
+  }
+
+  .section.split {
+    row-gap: 28px;
+  }
+
+  .section.split > div,
+  .article-main,
+  .article-intro {
+    width: 100%;
+  }
+
+  .article-table-wrap,
+  .article-markdown-table-wrap {
+    margin-inline: 0;
+  }
+
+  .area-town-guide h3 {
+    font-size: 1.45rem;
+    max-width: 100%;
+  }
+}
