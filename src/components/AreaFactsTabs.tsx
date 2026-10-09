@@ -2,7 +2,13 @@
 
 import { useId, useState, type KeyboardEvent } from "react";
 import { ArrowUpRight, BarChart3, Compass, MapPin, Users, UtensilsCrossed } from "lucide-react";
-import { priceGrowth, type FactSource, type TownAreaFacts } from "@/lib/areaFactData";
+import type { FactSource, PriceFact, TownAreaFacts } from "@/lib/areaFactData";
+
+function priceGrowth(fact: PriceFact, years: 1 | 2 | 3 | 4) {
+  const now = fact.months[2026];
+  const baseline = fact.months[2026 - years];
+  return now && baseline > 0 ? (now / baseline - 1) * 100 : null;
+}
 
 type TabId = "fakta" | "priser" | "opplevelser";
 const TABS: { id: TabId; title: string }[] = [
