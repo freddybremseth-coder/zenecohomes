@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
 import { Footer } from "@/components/Footer";
 import { ResilientImage } from "@/components/ResilientImage";
-import { NoBreakName } from "@/components/ProtectedPlaceName";
+
 import { areaPresentationImage } from "@/lib/areaGuideContent";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -160,7 +160,7 @@ export default async function AreasPage() {
               />
             </div>
             <div className="region-overview-copy">
-              <h2><NoBreakName name={region.title} /></h2>
+              <h2>{region.title}</h2>
               <p>{region.text}</p>
               <div className="region-overview-actions">
                 <Link className="contact-button" href={region.href}>
