@@ -8,6 +8,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
+import { oneLineAreaText, splitAreaParagraphs } from "@/lib/areaDescriptionText.mjs";
 import { areaBuyerChecklist, verifiedAreaEditorial } from "@/lib/areaVerifiedEditorial";
 import { areaProfileSlug, areaSlug } from "@/lib/areaRoutes";
 import { bookUrl } from "@/lib/books";
@@ -94,8 +95,9 @@ export default async function AreaTownPage({
   const excerpt = areaExcerpt(profile.name);
   const verifiedEditorial = verifiedAreaEditorial(profile.name);
   const buyerChecklist = areaBuyerChecklist(profile.name);
-  const existingDescription = profile.description?.trim() || "";
-  const genericPlaceholder = /^Sammenlign boligtyper, beliggenhet og hverdagsliv i /i.test(existingDescription);
+  const descriptionParagraphs = splitAreaParagraphs(profile.description);
+  const genericPlaceholder = /^Sammenlign boligtyper, beliggenhet og hverdagsliv i /i.test(descriptionParagraphs[0] || "");
+  const heroDescription = oneLineAreaText(profile.hero_blurb) || oneLineAreaText(profile.description) || `Les om ${profile.name} før du velger bolig i området.`;
   const book = placeBookForArea(profile.name);
   const image = areaPresentationImage(profile, properties);
 
@@ -105,7 +107,7 @@ export default async function AreaTownPage({
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow">{selectedRegion.label} · områdeguide</p>
         <h1>Bolig og hverdagsliv i {profile.name}</h1>
-        <p>{profile.hero_blurb || profile.description || `Les om ${profile.name} før du velger bolig i området.`}</p>
+        <p>{heroDescription}</p>
         <div className="hero-actions">
           <Link className="contact-button" href={`/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`}>
             Se boliger i {profile.name} <ArrowRight size={17} />
@@ -118,7 +120,7 @@ export default async function AreaTownPage({
         <div>
           <p className="eyebrow">Om {profile.name}</p>
           <h2>Hvordan er det å bo og kjøpe bolig her?</h2>
-          {existingDescription && !genericPlaceholder && <p>{existingDescription}</p>}
+          {!genericPlaceholder && descriptionParagraphs.map((paragraph, index) => <p key={`area-description-${index}`}>{paragraph}</p>)}
           {excerpt.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           <div className="area-town-guide">
             {verifiedEditorial && (
