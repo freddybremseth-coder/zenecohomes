@@ -26,6 +26,7 @@ import "./properties-v2.css";
 import "./advisor-portraits.css";
 import "./areas-regions-v2.css";
 import "./contrast-standards.css";
+import "./area-reading-mobile.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],
