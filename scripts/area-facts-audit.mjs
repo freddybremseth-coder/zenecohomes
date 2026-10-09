@@ -36,7 +36,7 @@ assertPresent(data, "value: 24592, year: 2025", "INE Altea population");
 assertPresent(data, "value: 77327, year: 2025", "INE Benidorm population");
 assertPresent(data, "NATIONALITIES[key] || null", "Nationalities shown only from curated sources");
 assertPresent(data, "beachDistance: beachOverview(key, coords)", "Every town uses sourced or qualified coast proximity");
-assertPresent(data, 'display: "0 km · kyststed"', "Coastal places shown with a clear coastal note");
+assertPresent(data, 'display: "0 m · kyststed"', "Coastal places shown with a clear coastal note");
 assertPresent(data, "Grovt orienteringsmål i luftlinje", "Computed inland coast distances always carry caveat");
 assertPresent(data, "CHECKED_BEACH_DISTANCE", "Sourced local beach-distance exceptions");
 assert.ok(!tabs.includes('label="Restauranter"') && !tabs.includes('label="Barer og kaféer"'), "Unused restaurant/bar cards must be removed");
