@@ -282,3 +282,80 @@
   .area-facts-price-row { grid-template-columns: 36px minmax(0, 1fr) 83px; gap: 9px; }
   .area-facts-price-bars { gap: 15px; }
 }
+
+/* Finestrat-specific locality cards: visible within the shared Facts tab. */
+.area-facts-neighborhoods {
+  min-width: 0;
+  margin-bottom: 32px;
+}
+.area-facts-neighborhoods-intro {
+  max-width: 74ch;
+  margin-bottom: 18px;
+}
+.area-facts-neighborhoods-intro h3 {
+  margin: 12px 0 9px;
+  color: var(--ze-ink);
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 2.65vw, 2.5rem);
+  font-weight: 550;
+  line-height: 1.2;
+}
+.area-facts-neighborhoods-intro p:last-child,
+.area-facts-neighborhoods-disclaimer {
+  color: var(--ze-muted);
+  line-height: 1.7;
+  font-size: .93rem;
+}
+.area-facts-neighborhoods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.area-facts-neighborhood {
+  min-width: 0;
+  border: 1px solid #e6e1d5;
+  border-radius: 12px;
+  background: #f8f6f1;
+  padding: clamp(16px, 2.1vw, 26px);
+}
+.area-facts-neighborhood h4 {
+  margin: 0 0 11px;
+  color: var(--ze-ink);
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 600;
+}
+.area-facts-neighborhood > p {
+  margin: 0 0 12px;
+  color: var(--ze-muted);
+  font-size: .89rem;
+  line-height: 1.6;
+}
+.area-facts-neighborhood-beach {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border-top: 1px solid #e5e0d5;
+  padding-top: 12px;
+  color: var(--ze-ink);
+  font-size: .88rem;
+  font-weight: 650;
+}
+.area-facts-neighborhood-beach svg { flex: 0 0 auto; color: var(--ze-accent-text); }
+.area-facts-neighborhood p.area-facts-neighborhood-note { margin-top: 11px; }
+.area-facts-neighborhood p.area-facts-neighborhood-price {
+  border-top: 1px solid #e5e0d5;
+  padding-top: 12px;
+  font-size: .85rem;
+  color: var(--ze-ink);
+}
+.area-facts-neighborhood-price a {
+  color: var(--ze-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.area-facts-neighborhoods-disclaimer { margin: 14px 0 0; font-size: .8rem; }
+@media (max-width: 680px) {
+  .area-facts-neighborhoods-grid { grid-template-columns: minmax(0, 1fr); }
+}

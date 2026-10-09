@@ -91,6 +91,37 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
         <div role="tabpanel" id={`${id}-panel-${tab}`} aria-labelledby={`${id}-tab-${tab}`} tabIndex={0} className="area-facts-panel">
           {tab === "fakta" && (
             <>
+              {facts.districts.length > 0 && (
+                <div className="area-facts-neighborhoods">
+                  <div className="area-facts-neighborhoods-intro">
+                    <p className="eyebrow">VELG RIKTIG DEL AV KOMMUNEN</p>
+                    <h3>Finestrat er mer enn gamlebyen</h3>
+                    <p>Sierra Cortina, Balcón de Finestrat og Golf Bahía er viktige boligområder med andre kvaliteter enn landsbykjernen. La Cala ligger ved sjøen. Sammenlign delområdene før du vurderer priser og boliger.</p>
+                  </div>
+                  <div className="area-facts-neighborhoods-grid">
+                    {facts.districts.map((district) => (
+                      <article key={district.name} className="area-facts-neighborhood">
+                        <h4>{district.name}</h4>
+                        <p>{district.focus}</p>
+                        <div className="area-facts-neighborhood-beach">
+                          <MapPin size={16} aria-hidden="true" />
+                          <span>{district.beach}</span>
+                        </div>
+                        <p className="area-facts-neighborhood-note">{district.buyerNote}</p>
+                        {district.price && (
+                          <p className="area-facts-neighborhood-price">
+                            Annonsert områdesnitt, sep. 2026: <strong>{format(district.price.euroM2)} €/m²</strong>
+                            {" · "}
+                            <a href={district.price.source.url} target="_blank" rel="noopener noreferrer">Priskilde <ArrowUpRight size={12} aria-hidden="true" /></a>
+                          </p>
+                        )}
+                        <Source source={district.source} />
+                      </article>
+                    ))}
+                  </div>
+                  <p className="area-facts-neighborhoods-disclaimer">Prisnivåene er markedsområder fra Idealista, ikke prisvurderinger av enkeltboliger. «Golf Bahía» og «Sierra Cortina» kan ha overlappende markedsinndeling; en annonseadresse må kontrolleres.</p>
+                </div>
+              )}
               <dl className="area-facts-grid">
                 <Stat
                   label="Innbyggere"
@@ -107,8 +138,10 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
                 />
                 <Stat
                   label="Til nærmeste strand"
-                  value={facts.beachDistance?.display || "Se kart"}
-                  footnote={facts.beachDistance?.note || "Stedet eller boligen trenger et konkret kartpunkt."}
+                  value={facts.districts.length ? "Varierer med delområde" : (facts.beachDistance?.display || "Se kart")}
+                  footnote={facts.districts.length
+                    ? "La Cala ligger ved stranden. Gamlebyen og boligområdene Sierra Cortina, Balcón de Finestrat og Golf Bahía må vurderes separat."
+                    : (facts.beachDistance?.note || "Stedet eller boligen trenger et konkret kartpunkt.")}
                   source={facts.beachDistance?.source}
                 />
                 <Stat

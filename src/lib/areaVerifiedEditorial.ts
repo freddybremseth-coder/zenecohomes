@@ -60,8 +60,8 @@ const AREAS: Record<string, VerifiedAreaEditorial> = {
     source: { label: valencia, url: "https://www.comunitatvalenciana.com/en/alacant-alicante/calp" },
   },
   finestrat: {
-    everyday: "Finestrat spenner fra den historiske landsbyen i fjellsiden til La Cala ved sjøen og området rundt Puig Campana. Kommunen gir dermed ulike boformer, som det er viktig å ikke blande sammen.",
-    buying: "Kartlegg adressen og den reelle reiseveien til tjenester du trenger. Ved nybygg bør du også få dokumentert byggestatus, fellesarealer, ferdigstillelse og hva som inngår i prisen.",
+    everyday: "Finestrat har flere tydelig forskjellige delområder. Gamlebyen ligger i høyden, mens La Cala er kystdelen. Mange boliger som annonseres i Finestrat ligger i egne boligområder som Sierra Cortina, Balcón de Finestrat og Golf Bahía – ikke i gamlebyen.",
+    buying: "Finn først ut hvilket boligområde og hvilken gate annonsen faktisk gjelder. Kontroller adkomst, bilbehov, strandavstand fra adressen, felleskostnader og for nybygg: byggetillatelse, leveringsdato og hva som er inkludert i prisen.",
     source: { label: valencia, url: "https://www.comunitatvalenciana.com/en/alacant-alicante/finestrat" },
   },
   denia: {
