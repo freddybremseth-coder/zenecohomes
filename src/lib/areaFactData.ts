@@ -200,6 +200,71 @@ const CHECKED_BEACH_DISTANCE: Record<string, BeachDistance> = {
 
 // Sep 2026, 2025, 2024, 2023, 2022: matched month/year, original source units.
 const PRICE: Record<string, PriceFact> = {
+  "san pedro del pinatar": {
+    municipality: "San Pedro del Pinatar kommune",
+    months: { 2026: 2043, 2025: 1929, 2024: 1460, 2023: 1195, 2022: 1195 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/murcia-region/murcia-provincia/san-pedro-del-pinatar/historico/", date: "2026-09" },
+  },
+  villena: {
+    municipality: "Villena",
+    months: { 2026: 780, 2025: 711, 2024: 677, 2023: 654, 2022: 609 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/villena/historico/", date: "2026-09" },
+  },
+  albir: {
+    municipality: "L'Albir (eget prisområde i L'Alfàs del Pi)",
+    months: { 2026: 3627, 2025: 3416, 2024: 3111, 2023: 2941, 2022: 2677 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/alfaz-del-pi/lalbir/historico/", date: "2026-09" },
+  },
+  villajoyosa: {
+    municipality: "La Villajoyosa / Vila Joiosa",
+    months: { 2026: 3092, 2025: 2750, 2024: 2312, 2023: 2022, 2022: 1879 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/la-villajoyosa-vila-joiosa/historico/", date: "2026-09" },
+  },
+  moraira: {
+    municipality: "Moraira (eget prisområde i Teulada)",
+    months: { 2026: 4474, 2025: 4136, 2024: 3950, 2023: 3650, 2022: 3379 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/moraira/historico/", date: "2026-09" },
+  },
+  javea: {
+    municipality: "Jávea / Xàbia",
+    months: { 2026: 4166, 2025: 3927, 2024: 3324, 2023: 2997, 2022: 2809 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/javea-xabia/historico/", date: "2026-09" },
+  },
+  xabia: {
+    municipality: "Jávea / Xàbia",
+    months: { 2026: 4166, 2025: 3927, 2024: 3324, 2023: 2997, 2022: 2809 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/javea-xabia/historico/", date: "2026-09" },
+  },
+  "el campello": {
+    municipality: "El Campello",
+    months: { 2026: 3221, 2025: 3063, 2024: 2508, 2023: 2221, 2022: 2042 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/el-campello/historico/", date: "2026-09" },
+  },
+  "guardamar del segura": {
+    municipality: "Guardamar del Segura",
+    months: { 2026: 2643, 2025: 2347, 2024: 2058, 2023: 1843, 2022: 1756 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/guardamar-del-segura/historico/", date: "2026-09" },
+  },
+  "santa pola": {
+    municipality: "Santa Pola",
+    months: { 2026: 2829, 2025: 2438, 2024: 2079, 2023: 1828, 2022: 1594 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/santa-pola/historico/", date: "2026-09" },
+  },
+  "orihuela costa": {
+    municipality: "Orihuela Costa (prisområde, ikke hele Orihuela)",
+    months: { 2026: 3058, 2025: 2894, 2024: 2532, 2023: 2306, 2022: 2195 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/orihuela/orihuela-costa/historico/", date: "2026-09" },
+  },
+  "los alcazares": {
+    municipality: "Los Alcázares",
+    months: { 2026: 2150, 2025: 1798, 2024: 1607, 2023: 1352, 2022: 1300 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/murcia-region/murcia-provincia/los-alcazares/historico/", date: "2026-09" },
+  },
+  "san javier": {
+    municipality: "San Javier kommune",
+    months: { 2026: 2108, 2025: 1809, 2024: 1455, 2023: 1340, 2022: 1314 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/murcia-region/murcia-provincia/san-javier/historico/", date: "2026-09" },
+  },
   altea: {
     municipality: "Altea",
     months: { 2026: 3504, 2025: 3361, 2024: 2984, 2023: 2859, 2022: 2531 },
