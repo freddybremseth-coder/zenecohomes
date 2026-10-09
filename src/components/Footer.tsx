@@ -62,6 +62,7 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
       { label: "freddy@zenecohomes.com", href: "mailto:freddy@zenecohomes.com", external: true },
       { label: "Benidorm, Spania", href: "/om-oss" },
       { label: "Min side", href: "/min-side" },
+      { label: "Facebook · Zen Eco Homes", href: "https://www.facebook.com/zenecohomespain", external: true },
       { label: "Instagram · @zenecohomesspain", href: "https://www.instagram.com/zenecohomesspain/", external: true },
       { label: "YouTube · @ZenEcoHomes", href: "https://www.youtube.com/@ZenEcoHomes", external: true },
     ],
@@ -88,6 +89,7 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Bedriftshytte i Spania", href: "/bedriftshytte-spania" },
     { label: "For partnere", href: "/bedriftshytte-spania/partnere" },
     { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
+    { label: "Facebook · Zen Eco Homes", href: "https://www.facebook.com/zenecohomespain", external: true },
   ],
   de: [
     { label: "Immobilien", href: "/de/immobilien" },
@@ -101,6 +103,7 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Unternehmen", href: "/de/unternehmen" },
     { label: "Partner", href: "/de/unternehmen/partner" },
     { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
+    { label: "Facebook · Zen Eco Homes", href: "https://www.facebook.com/zenecohomespain", external: true },
   ],
   en: [
     { label: "Properties", href: "/en/properties" },
@@ -114,6 +117,7 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Corporate", href: "/en/corporate" },
     { label: "For partners", href: "/en/corporate/partners" },
     { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
+    { label: "Facebook · Zen Eco Homes", href: "https://www.facebook.com/zenecohomespain", external: true },
   ],
   es: [
     { label: "Propiedades", href: "/es/propiedades" },
@@ -127,6 +131,7 @@ const LINKS: Record<SiteLocale, FooterLink[]> = {
     { label: "Empresas", href: "/es/empresas" },
     { label: "Colaboradores", href: "/es/empresas/colaboradores" },
     { label: "Zen Eco Homes Care", href: "https://care.zenecohomes.com", external: true },
+    { label: "Facebook · Zen Eco Homes", href: "https://www.facebook.com/zenecohomespain", external: true },
   ],
 };
 
