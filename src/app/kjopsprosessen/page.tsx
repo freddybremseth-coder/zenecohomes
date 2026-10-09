@@ -188,6 +188,19 @@ export default function BuyingProcessPage() {
         </div>
       </section>
 
+      <section className="section buying-process-portraits" aria-label="Din rådgiver på Costa Blanca">
+        <div className="buying-process-portraits-copy">
+          <p className="eyebrow">Personlig oppfølging</p>
+          <h2>En fast rådgiver gjennom boligkjøpet</h2>
+          <p>Hos Zen Eco Homes møter du mennesker som kjenner Costa Blanca og kan hjelpe deg fra de første spørsmålene til overtakelsen.</p>
+          <Link className="text-button" href="/om-freddy">Bli kjent med Freddy <ArrowRight size={16} /></Link>
+        </div>
+        <div className="buying-process-portraits-images">
+          <img src="/assets/freddy-eiendom-costa-blanca.webp" alt="Freddy Bremseth som eiendomsrådgiver på Costa Blanca" loading="lazy" />
+          <img src="/assets/freddy-personlig-radgiver.webp" alt="Freddy Bremseth i en personlig rådgiversamtale ved Middelhavet" loading="lazy" />
+        </div>
+      </section>
+
       <section className="section split buying-process-intro">
         <div className="section-heading">
           <p className="eyebrow">Kort svar</p>
