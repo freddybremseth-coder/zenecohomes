@@ -14,6 +14,8 @@ const town = read("src/app/omrader/[region]/[sted]/page.tsx");
 const region = read("src/app/omrader/[region]/page.tsx");
 const cards = read("src/components/PropertyCard.tsx");
 const article = read("src/components/ArticleView.tsx");
+const gallery = read("src/components/PropertyGallery.tsx");
+const galleryEs = read("src/components/es/SpanishPropertyGallery.tsx");
 
 assert.ok(!areaVisuals.includes("commons.wikimedia.org/wiki/Special:Redirect/file"), "Unsupported redirected Wikimedia host found");
 assert.ok(next.includes('hostname: "upload.wikimedia.org"'), "Next.js image optimizer must allow Wikimedia upload host");
@@ -23,6 +25,11 @@ assert.ok(town.includes("<ResilientImage"), "Town image lacks error fallback");
 assert.ok(region.includes("<ResilientImage"), "Area cards lack error fallback");
 assert.ok(cards.includes("<ResilientImage"), "Property images lack error fallback");
 assert.ok(article.includes("<ResilientNativeImage"), "Article cover lacks error fallback");
+for (const [language, gallerySource] of [["no", gallery], ["es", galleryEs]]) {
+  assert.ok(gallerySource.includes("<ResilientImage"), language + " gallery thumbnails require fallbacks");
+  assert.ok(gallerySource.includes("<ResilientNativeImage"), language + " fullscreen viewer requires a fallback");
+  assert.ok(!gallerySource.includes("backgroundImage: `url(${image})`"), language + " gallery CSS backgrounds hide errors");
+}
 assert.ok(name.includes('white-space') || css.includes("white-space: nowrap;"), "Proper name typography guard missing");
 assert.ok(css.includes("-webkit-hyphens: none"), "Automatic hyphenation must be disabled");
 
