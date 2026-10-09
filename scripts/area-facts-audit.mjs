@@ -15,9 +15,9 @@ function assertPresent(text, literal, label) {
 }
 
 assertPresent(coastal, "<AreaFactsTabs facts={areaFacts} />", "Facts on all coastal town pages");
-assertPresent(inland, "<AreaFactsTabs facts={areaFacts} />", "Facts on all inland town pages");
+assertPresent(inland, '<AreaFactsTabs facts={areaFacts} showPriceTab={false} />', "Facts on all inland town pages without prices");
 assertPresent(coastal, "getTownAreaFacts(profile.name)", "Coastal location keyed by name");
-assertPresent(inland, "getTownAreaFacts(town.name)", "Inland location keyed by name");
+assertPresent(inland, 'getTownAreaFacts(town.name, { includePriceHistory: false })', "Inland location keyed by name without pricing");
 assertPresent(layout, 'import "./area-facts.css";', "Shared CSS imported");
 assertPresent(css, ".area-facts-tabs button:focus-visible", "Visible keyboard focus");
 assertPresent(css, "@media (max-width: 640px)", "Mobile layout");
@@ -160,7 +160,7 @@ console.log("PASS", Object.keys(newIdealista).length, "localized Idealista price
 const coastalTownPage = read("src/app/omrader/[region]/[sted]/page.tsx");
 const inlandTownPage = read("src/app/inland/[sted]/page.tsx");
 assert.ok(coastalTownPage.indexOf('<section className="section split">') < coastalTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Coast: Om must come before Facts");
-assert.ok(inlandTownPage.indexOf('<section className="inland-town-story">') < inlandTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Inland: Om must come before Facts");
+assert.ok(inlandTownPage.indexOf('<section className="inland-town-story">') < inlandTownPage.indexOf('<AreaFactsTabs facts={areaFacts} showPriceTab={false} />'), "Inland: Om must come before Facts");
 console.log("PASS", "Om always precedes Fakta in coast and inland templates");
 
 
