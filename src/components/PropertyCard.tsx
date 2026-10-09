@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import {
   formatPriceForLocale,
@@ -73,7 +73,7 @@ export function PropertyCard({
     <Link className="property-card" href={href} prefetch={priority}>
       <div className="property-image">
         {image ? (
-          <Image
+          <ResilientImage
             src={image}
             alt={heading}
             fill
