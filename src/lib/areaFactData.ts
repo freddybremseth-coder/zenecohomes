@@ -205,6 +205,36 @@ const PRICE: Record<string, PriceFact> = {
     months: { 2026: 3504, 2025: 3361, 2024: 2984, 2023: 2859, 2022: 2531 },
     source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/altea/historico/", date: "2026-09" },
   },
+  polop: {
+    municipality: "Polop",
+    months: { 2026: 2911, 2025: 2653, 2024: 2606, 2023: 2256, 2022: 2182 },
+    source: { label: "Idealista · historiske annonserte priser i Polop", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/polop/historico/", date: "2026-09" },
+  },
+  calpe: {
+    municipality: "Calpe (Calp)",
+    months: { 2026: 3496, 2025: 3288, 2024: 2945, 2023: 2679, 2022: 2476 },
+    source: { label: "Idealista · historiske annonserte priser i Calpe", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/calpe/historico/", date: "2026-09" },
+  },
+  calp: {
+    municipality: "Calpe (Calp)",
+    months: { 2026: 3496, 2025: 3288, 2024: 2945, 2023: 2679, 2022: 2476 },
+    source: { label: "Idealista · historiske annonserte priser i Calpe", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/calpe/historico/", date: "2026-09" },
+  },
+  "la nucia": {
+    municipality: "La Nucía",
+    months: { 2026: 2504, 2025: 2251, 2024: 1943, 2023: 1728, 2022: 1558 },
+    source: { label: "Idealista · historiske annonserte priser i La Nucía", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/la-nucia/historico/", date: "2026-09" },
+  },
+  denia: {
+    municipality: "Dénia",
+    months: { 2026: 3354, 2025: 3084, 2024: 2791, 2023: 2486, 2022: 2263 },
+    source: { label: "Idealista · historiske annonserte priser i Dénia", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/denia/historico/", date: "2026-09" },
+  },
+  torrevieja: {
+    municipality: "Torrevieja",
+    months: { 2026: 2561, 2025: 2344, 2024: 2019, 2023: 1810, 2022: 1632 },
+    source: { label: "Idealista · historiske annonserte priser i Torrevieja", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/torrevieja/historico/", date: "2026-09" },
+  },
   finestrat: {
     municipality: "Finestrat kommune (alle delområder)",
     months: { 2026: 3316, 2025: 3175, 2024: 2794, 2023: 2562, 2022: 2433 },
