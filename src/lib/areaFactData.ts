@@ -183,7 +183,7 @@ function betweenKm(a: { lat: number; lng: number }, b: { lat: number; lng: numbe
 
 function beachOverview(key: string, coords: { lat: number; lng: number } | null): BeachDistance | null {
   if (COASTAL_PLACES.has(key)) {
-    return { display: "0 km · kyststed", note: "Stedet ligger ved sjøen. Avstanden fra den enkelte bolig varierer." };
+    return { display: "0 m · kyststed", note: "Stedet ligger ved sjøen. Avstanden fra den enkelte bolig varierer." };
   }
   if (CHECKED_BEACH_DISTANCE[key]) return CHECKED_BEACH_DISTANCE[key];
   if (!coords || !COAST_REFERENCES.length) return null;
