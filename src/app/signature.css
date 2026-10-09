@@ -3076,3 +3076,22 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Two distinct brand portraits: property advisor first, personal introduction second. */
+.buying-process-page .buying-advisor-photos { position: relative; min-width: 0; padding: 0 12% 11% 0; }
+.buying-process-page .buying-advisor-photo { margin: 0; }
+.buying-process-page .buying-advisor-photo-main { border-radius: 18px; }
+.buying-process-page .buying-advisor-photo-main img { aspect-ratio: 4 / 5; object-fit: cover; }
+.buying-process-page .buying-advisor-photo-personal {
+  position: absolute; right: 0; bottom: 0; width: 40%;
+  border: 5px solid var(--background, #fff);
+  border-radius: 14px; box-shadow: 0 12px 36px rgba(10, 29, 44, .14);
+}
+.buying-process-page .buying-advisor-photo-personal img { aspect-ratio: 1; object-fit: cover; }
+.buying-process-page .buying-advisor-photo figcaption {
+  background: rgba(255,255,255,.94); color: #223444; padding: 9px 12px;
+  font-size: .78rem; line-height: 1.35;
+}
+@media (max-width: 760px) {
+  .buying-process-page .buying-advisor-photos { max-width: 530px; }
+}
