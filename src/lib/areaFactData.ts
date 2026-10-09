@@ -200,6 +200,16 @@ const CHECKED_BEACH_DISTANCE: Record<string, BeachDistance> = {
 
 // Sep 2026, 2025, 2024, 2023, 2022: matched month/year, original source units.
 const PRICE: Record<string, PriceFact> = {
+  aspe: {
+    municipality: "Aspe",
+    months: { 2026: 1188, 2025: 1007, 2024: 844, 2023: 907, 2022: 818 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/aspe/historico/", date: "2026-09" },
+  },
+  novelda: {
+    municipality: "Novelda",
+    months: { 2026: 1058, 2025: 965, 2024: 800, 2023: 699, 2022: 629 },
+    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/novelda/historico/", date: "2026-09" },
+  },
   "san pedro del pinatar": {
     municipality: "San Pedro del Pinatar kommune",
     months: { 2026: 2043, 2025: 1929, 2024: 1460, 2023: 1195, 2022: 1195 },
