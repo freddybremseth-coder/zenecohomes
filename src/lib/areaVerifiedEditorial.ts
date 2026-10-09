@@ -19,6 +19,26 @@ export type VerifiedAreaEditorial = {
 const valencia = "Turisme Comunitat Valenciana";
 const murcia = "Turismo Región de Murcia";
 const AREAS: Record<string, VerifiedAreaEditorial> = {
+  "la nucia": {
+    everyday: "La Nucía ligger mellom kysten og fjellområdene i Marina Baixa og har en egen bykjerne. Den er derfor et alternativ for deg som ikke må ha stranden utenfor døren, men ønsker å kunne bruke nabobyene ved kysten.",
+    buying: "Test hverdagsruten til skole, handel og andre tjenester fra nøyaktig den boligen du vurderer. I villaområder er vei, parkeringsplass, vedlikehold av uteareal og godkjente byggetiltak viktige kontrollpunkter.",
+    source: { label: valencia, url: "https://www.comunitatvalenciana.com/en/alacant-alicante/la-nucia" },
+  },
+  moraira: {
+    everyday: "Moraira er kystdelen av kommunen Teulada-Moraira, mens Teulada ligger lenger inne i landet. Langs Morairas kyst finnes både bukter og mer sentrale miljøer, så boligvalget bør starte med hvor du ønsker å tilbringe hverdagen.",
+    buying: "Vurder om du prioriterer gangavstand fra sentrum eller mer privatliv i et villaområde. Kontroller adkomst, tomtedokumentasjon og løpende vedlikehold før du sammenligner boliger på pris alene.",
+    source: { label: valencia, url: "https://www.comunitatvalenciana.com/en/alacant-alicante/teulada-moraira" },
+  },
+  mutxamel: {
+    everyday: "Mutxamel har et historisk sentrum og ligger ved Alicante. Her handler boligvalget mer om forholdet mellom lokalt byliv, boligområder og avstand til sjøen enn om å ha en strandpromenade like ved.",
+    buying: "Sjekk de faste reiserutene og den faktiske adkomsten til tjenester du trenger. Ved rekkehus og villaer bør du undersøke både byggets dokumentasjon, tomtens grenser og eventuelle felleseide anlegg.",
+    source: { label: valencia, url: "https://www.comunitatvalenciana.com/en/alacant-alicante/mutxamel" },
+  },
+  "sant joan d'alacant": {
+    everyday: "Sant Joan d'Alacant ligger nær Alicante og har egen bykjerne og historiske landbruksmiljøer. Boligene her bør vurderes som del av en hverdag med by- og tjenestetilgang, ikke automatisk som et strandnært ferievalg.",
+    buying: "Sammenlign en sentral bolig med boligområder i utkanten ut fra skolevei, kollektivtransport og daglige ærend. Som ellers bør lovlighet, fellesutgifter og tilstandsopplysninger sjekkes for hvert enkelt objekt.",
+    source: { label: valencia, url: "https://www.comunitatvalenciana.com/en/alacant-alicante/sant-joan-dalacant" },
+  },
   benidorm: {
     everyday: "Levante, Poniente og området ved gamlebyen gir forskjellige rammer for en vanlig hverdag. De store bystrendene og den tette bystrukturen er dokumenterte kjennetegn, men ro, støy og faktisk gangavstand må vurderes for den konkrete gaten.",
     buying: "Sammenlign en sentral leilighet med en bolig lenger fra stranden ut fra heis, støy fra trafikk og servering, solforhold og hva du faktisk kan gjøre til fots. Be om oppdaterte felleskostnader og undersøk eventuelle regler for korttidsutleie før du legger slike inntekter i et budsjett.",
