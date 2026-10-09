@@ -217,14 +217,27 @@ export default function BuyingProcessPage() {
       </section>
 
       <section className="section buying-advisor-section" aria-labelledby="buying-advisor-heading">
-        <div className="buying-advisor-photo">
-          <Image
-            src="/assets/freddy-bremseth.jpg"
-            alt="Freddy Bremseth, norsk eiendomsrådgiver hos Zen Eco Homes på Costa Blanca"
-            width={480}
-            height={482}
-            sizes="(max-width: 760px) 100vw, 40vw"
-          />
+        <div className="buying-advisor-photos">
+          <figure className="buying-advisor-photo buying-advisor-photo-main">
+            <Image
+              src="/assets/freddy-eiendomsradgiver-costa-blanca.webp"
+              alt="Freddy Bremseth i dress på en terrasse med utsikt over Middelhavet på Costa Blanca"
+              width={800}
+              height={1000}
+              sizes="(max-width: 760px) 100vw, 40vw"
+            />
+            <figcaption>Freddy Bremseth · Din eiendomsrådgiver på Costa Blanca</figcaption>
+          </figure>
+          <figure className="buying-advisor-photo buying-advisor-photo-personal">
+            <Image
+              src="/assets/freddy-bremseth.jpg"
+              alt="Personlig portrett av Freddy Bremseth"
+              width={480}
+              height={482}
+              sizes="(max-width: 760px) 45vw, 16vw"
+            />
+            <figcaption>Bli kjent med Freddy</figcaption>
+          </figure>
         </div>
         <div className="buying-advisor-copy">
           <p className="eyebrow">Din rådgiver på Costa Blanca</p>
