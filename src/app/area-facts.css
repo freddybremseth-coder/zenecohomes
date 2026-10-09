@@ -1,0 +1,284 @@
+/* Area facts: a quiet, premium editorial section on every town page. */
+.area-facts-section {
+  padding-top: clamp(32px, 5vw, 74px);
+  padding-bottom: clamp(56px, 7vw, 100px);
+}
+.area-facts-intro {
+  display: flex;
+  gap: 28px;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.area-facts-intro > div {
+  min-width: 0;
+}
+.area-facts-intro .eyebrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.area-facts-intro h2 {
+  margin: 10px 0 12px;
+  color: var(--ze-ink, #172027);
+  font-family: var(--display, Georgia, serif);
+  font-size: clamp(2.15rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.09;
+  letter-spacing: -0.025em;
+}
+.area-facts-intro > div > p:last-child,
+.area-facts-trust {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--ze-muted, #596976);
+  line-height: 1.7;
+}
+.area-facts-trust {
+  max-width: 270px;
+  font-size: .81rem;
+  border-left: 2px solid var(--ze-travertine, #c6a76d);
+  padding: 8px 0 8px 16px;
+}
+.area-facts-surface {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--ze-line, #deddd5);
+  border-radius: 17px;
+  background: var(--ze-white, #fcfbf8);
+  box-shadow: 0 24px 55px -48px rgba(15,28,34,.32);
+}
+.area-facts-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--ze-line, #deddd5);
+  padding: 12px 17px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.area-facts-tabs button {
+  display: inline-flex;
+  position: relative;
+  flex: 0 0 auto;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 18px 15px;
+  border: 0;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+  color: var(--ze-muted, #596976);
+  font-size: .91rem;
+  font-family: var(--sans, Arial, sans-serif);
+  font-weight: 650;
+  cursor: pointer;
+}
+.area-facts-tabs button:hover {
+  background: var(--ze-paper, #f4f1ea);
+  color: var(--ze-ink, #172027);
+}
+.area-facts-tabs button[aria-selected="true"] {
+  color: var(--ze-ink, #172027);
+  background: #f2efe6;
+}
+.area-facts-tabs button[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  left: 11px;
+  right: 11px;
+  background: var(--ze-accent-text, #806436);
+  border-radius: 3px;
+}
+.area-facts-tabs button:focus-visible {
+  outline: 2px solid var(--ze-sea, #315e64);
+  outline-offset: -3px;
+}
+.area-facts-panel {
+  padding: clamp(19px, 3.2vw, 46px);
+  min-height: 270px;
+}
+.area-facts-panel:focus {
+  outline: none;
+}
+.area-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  gap: 14px;
+}
+.area-fact-stat {
+  padding: 22px;
+  min-width: 0;
+  border: 1px solid #e8e5dc;
+  border-radius: 10px;
+  background: #f8f6f1;
+}
+.area-fact-stat dt {
+  font-size: .83rem;
+  color: var(--ze-muted, #596976);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.area-fact-stat dd {
+  margin: 0;
+  color: var(--ze-ink, #172027);
+  font-family: var(--display, Georgia, serif);
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: 1.15;
+  overflow-wrap: normal;
+}
+.area-fact-stat > p {
+  font-size: .81rem;
+  margin: 12px 0 0;
+  color: var(--ze-muted, #596976);
+  line-height: 1.55;
+}
+.area-facts-source {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  margin-top: 13px;
+  color: var(--ze-accent-text, #806436);
+  font-size: .77rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  line-height: 1.5;
+}
+.area-facts-source:hover,
+.area-facts-links a:hover,
+.area-facts-pending a:hover {
+  color: var(--ze-sea, #315e64);
+}
+.area-facts-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 26px;
+}
+.area-facts-links a,
+.area-facts-pending a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ze-ink, #172027);
+  font-size: .88rem;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.area-facts-price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--ze-line, #deddd5);
+}
+.area-facts-small-title {
+  color: var(--ze-muted, #596976);
+  font-size: .82rem;
+  display: block;
+  margin-bottom: 8px;
+}
+.area-facts-price-header strong {
+  display: block;
+  color: var(--ze-ink, #172027);
+  font-family: var(--display, Georgia, serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 550;
+  line-height: 1.1;
+}
+.area-facts-price-header p {
+  color: var(--ze-muted, #596976);
+  font-size: .89rem;
+}
+.area-facts-prices h3, .area-facts-experiences h3, .area-facts-pending h3 {
+  margin: 28px 0 18px;
+  font-size: clamp(1.22rem, 2vw, 1.6rem);
+  color: var(--ze-ink, #172027);
+  font-family: var(--display, Georgia, serif);
+  font-weight: 600;
+}
+.area-facts-price-bars { display: grid; gap: 16px; max-width: 820px; }
+.area-facts-price-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 95px;
+  align-items: center;
+  gap: 16px;
+  color: var(--ze-ink, #172027);
+  font-size: .9rem;
+}
+.area-facts-price-row strong { text-align: right; font-variant-numeric: tabular-nums; }
+.area-facts-price-track {
+  height: 12px;
+  border-radius: 8px;
+  background: #e7e5dd;
+  overflow: hidden;
+}
+.area-facts-price-fill { height: 100%; min-width: 3px; border-radius: 8px; background: #806436; }
+.area-facts-method {
+  margin: 24px 0 0;
+  max-width: 82ch;
+  color: var(--ze-muted, #596976);
+  line-height: 1.65;
+  font-size: .83rem;
+}
+.area-facts-pending {
+  padding: 25px 10px;
+  max-width: 680px;
+  color: var(--ze-muted, #596976);
+}
+.area-facts-pending h3 { margin-top: 15px; }
+.area-facts-pending p { line-height: 1.7; }
+.area-facts-experiences ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.area-facts-experiences li {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  min-width: 0;
+  padding: 17px 19px;
+  border-radius: 10px;
+  border: 1px solid #e8e5dc;
+  color: var(--ze-ink, #172027);
+  background: #f8f6f1;
+}
+.area-facts-experiences li svg { flex: 0 0 auto; color: #806436; }
+.area-facts-experiences > p { line-height: 1.7; color: var(--ze-muted, #596976); }
+.area-facts-dining {
+  display: flex;
+  gap: 12px;
+  max-width: 800px;
+  margin-top: 28px;
+  padding: 20px;
+  background: #f4f1ea;
+  color: var(--ze-muted, #596976);
+  border-radius: 10px;
+}
+.area-facts-dining svg { flex: 0 0 auto; color: var(--ze-accent-text, #806436); }
+.area-facts-dining p { margin: 0; font-size: .86rem; line-height: 1.65; }
+@media (max-width: 900px) {
+  .area-facts-intro { align-items: start; flex-direction: column; }
+  .area-facts-trust { max-width: 100%; }
+  .area-facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .area-facts-section { padding-top: 35px; padding-bottom: 55px; }
+  .area-facts-tabs { padding: 9px 10px 0; }
+  .area-facts-tabs button { padding-inline: 11px; font-size: .82rem; gap: 6px; }
+  .area-facts-grid { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+  .area-fact-stat { padding: 18px; }
+  .area-facts-experiences ul { grid-template-columns: 1fr; }
+  .area-facts-price-row { grid-template-columns: 36px minmax(0, 1fr) 83px; gap: 9px; }
+  .area-facts-price-bars { gap: 15px; }
+}

@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "seo:audit": "node scripts/seo-metadata-audit.mjs && node scripts/seo-structure-audit.mjs",
-    "build": "npm run seo:audit && npm run contrast:audit && npm run area:text:audit && npm run sitewide:contrast:audit && npm run images:audit && next build",
+    "build": "npm run seo:audit && npm run contrast:audit && npm run area:text:audit && npm run sitewide:contrast:audit && npm run images:audit && npm run area:facts:audit && next build",
     "start": "next start",
     "lint": "next lint",
     "contrast:audit": "node scripts/contrast-audit.mjs",
     "area:text:audit": "node scripts/area-description-audit.mjs",
     "sitewide:contrast:audit": "node scripts/sitewide-contrast-audit.mjs",
-    "images:audit": "node scripts/image-integrity-audit.mjs"
+    "images:audit": "node scripts/image-integrity-audit.mjs",
+    "area:facts:audit": "node scripts/area-facts-audit.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.1",

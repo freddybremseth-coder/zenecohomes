@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, MapPin, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { AreaFactsTabs } from "@/components/AreaFactsTabs";
+import { getTownAreaFacts } from "@/lib/areaFactData";
 import { InlandContactForm } from "@/components/InlandContactForm";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -61,6 +63,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
   const otherTowns = inlandTowns.filter((item) => item.slug !== town.slug).slice(0, 6);
   const intro = displayTownIntro(town);
   const lifestyle = getInlandLifestyleStory(town.slug);
+  const areaFacts = getTownAreaFacts(town.name);
 
   return (
     <main className="inland-theme inland-journal inland-town-page">
@@ -81,6 +84,8 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           </div>
         </div>
       </section>
+
+      <AreaFactsTabs facts={areaFacts} />
 
       <section className="inland-town-story">
         <div className="inland-town-story-heading">
