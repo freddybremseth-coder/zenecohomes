@@ -202,3 +202,19 @@ main .proper-name {
   font-size: inherit;
   margin: 0;
 }
+
+
+/* Preserve visual typography of proper names nested inside area-card h3. */
+.area-profile-card h3 .proper-name,
+.region-overview-copy h2 .proper-name,
+.section.split h3 .proper-name,
+.section.split h2 .proper-name {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  margin: 0;
+  display: inline;
+  white-space: nowrap;
+  hyphens: none;
+}
