@@ -1726,7 +1726,7 @@
 }
 
 .process-trust-panel h2 {
-  max-width: 12ch;
+  max-width: none;
   margin: 6px 0 24px;
   color: white;
 }
@@ -2941,4 +2941,22 @@
   .site-footer-2027 .footer-2027-nav a {
     max-width: 18ch;
   }
+}
+
+
+/* Keep the buying-process trust panel readable: never split names or regular words. */
+.buying-process-page .section.split:first-of-type > * {
+  min-width: 0;
+}
+
+.buying-process-page .section.split:first-of-type h2,
+.buying-process-page .section.split:first-of-type p,
+.buying-process-page .process-trust-panel span {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.buying-process-page .process-trust-panel h2 {
+  text-wrap: pretty;
 }
