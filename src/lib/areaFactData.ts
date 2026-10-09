@@ -277,7 +277,7 @@ const FINESTRAT_DISTRICTS: DistrictOverview[] = [
       label: "Idealista · Balcón de Finestrat–Terra Marina",
       url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/",
     },
-    price: { euroM2: 3272, period: "2026-09", source: { label: "Idealista · annonserte priser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/", date: "2026-09" } },
+    price: { euroM2: 3272, period: "2026-09", source: { label: "Idealista · Balcón de Finestrat–Terra Marina", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/balcon-de-finestrat-terra-marina/", date: "2026-09" } },
   },
   {
     name: "Golf Bahía",
@@ -288,7 +288,7 @@ const FINESTRAT_DISTRICTS: DistrictOverview[] = [
       label: "Idealista · Golf Bahía, Finestrat",
       url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/",
     },
-    price: { euroM2: 3450, period: "2026-09", source: { label: "Idealista · annonserte priser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/", date: "2026-09" } },
+    price: { euroM2: 3450, period: "2026-09", source: { label: "Idealista · Golf Bahía", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/golf-bahia/", date: "2026-09" } },
   },
   {
     name: "Finestrat gamleby",
