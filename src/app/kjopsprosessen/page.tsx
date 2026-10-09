@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
@@ -213,6 +214,71 @@ export default function BuyingProcessPage() {
             <span><CheckCircle2 size={18} /> Oppfølging også etter overtakelsen</span>
           </div>
         </aside>
+      </section>
+
+      <section className="section buying-advisor-section" aria-labelledby="buying-advisor-heading">
+        <div className="buying-advisor-photo">
+          <Image
+            src="/assets/freddy-bremseth.jpg"
+            alt="Freddy Bremseth, norsk eiendomsrådgiver hos Zen Eco Homes på Costa Blanca"
+            width={480}
+            height={482}
+            sizes="(max-width: 760px) 100vw, 40vw"
+          />
+        </div>
+        <div className="buying-advisor-copy">
+          <p className="eyebrow">Din rådgiver på Costa Blanca</p>
+          <h2 id="buying-advisor-heading">En boligreise med en rådgiver som kjenner markedet</h2>
+          <p><strong>Freddy Bremseth · Eiendomsrådgiver, Zen Eco Homes</strong></p>
+          <p>
+            Å kjøpe bolig i Spania handler om mer enn å finne en vakker leilighet eller villa.
+            Det handler om å finne et sted som passer livet du ønsker å leve, økonomien din
+            og planene du har for fremtiden.
+          </p>
+          <p>
+            Jeg bor selv i Benidorm-området og arbeider med boligkjøpere over hele Costa Blanca Nord.
+            Gjennom hverdagen her og samarbeidet med utbyggere, selgere og fagpersoner kjenner jeg
+            forskjellene mellom områdene – også dem du ikke ser i boligannonsene.
+          </p>
+          <p>
+            Min oppgave er ikke å overtale deg til å kjøpe en bestemt bolig. Vi starter med behovene
+            dine, ser på områder og relevante alternativer og vurderer totaløkonomien før du bestemmer deg.
+            Ved kjøp koordinerer vi videre prosess sammen med uavhengige fagpersoner.
+          </p>
+          <p><strong>Du skal vite hva du velger, hvorfor det passer – og hva neste steg er.</strong></p>
+          <div className="buying-advisor-actions">
+            <Link className="contact-button" href="/booking">Avtal en uforpliktende boligprat <ArrowRight size={16} /></Link>
+            <Link className="text-button" href="/om-oss/freddy">Bli kjent med Freddy <ArrowRight size={16} /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section buying-services-section" aria-labelledby="buying-services-heading">
+        <div className="section-heading">
+          <p className="eyebrow">Hva du får hjelp med</p>
+          <h2 id="buying-services-heading">Rådgivning som tar utgangspunkt i din hverdag</h2>
+          <p>Du får en strukturert prosess fra første samtale. Vi forklarer hva vi kan bidra med, og hvem som har ansvaret når andre fagpersoner må inn.</p>
+        </div>
+        <div className="proof-grid">
+          <article><strong>01</strong><h3>Behov og områdevalg</h3><p>Vi avklarer livsstil, bruk, budsjett og krav før vi sammenligner områder, avstander og praktiske forhold.</p></article>
+          <article><strong>02</strong><h3>Boliger og visninger</h3><p>Vi lager en målrettet shortlist, kontrollerer tilgjengelighet så langt mulig og planlegger visninger du faktisk får nytte av.</p></article>
+          <article><strong>03</strong><h3>Beslutning og koordinering</h3><p>Vi sammenligner alternativer, synliggjør kompromisser og koordinerer neste steg med advokat, bank og selger ved behov.</p></article>
+        </div>
+      </section>
+
+      <section className="section buying-local-section">
+        <div className="section-heading">
+          <p className="eyebrow">Lokalkunnskap i praksis</p>
+          <h2>To boliger til samme pris kan gi svært ulik hverdag</h2>
+          <p>
+            En leilighet med gangavstand i Albir eller Benidorm gir andre muligheter enn en villa i
+            åsene ved Finestrat, Polop eller La Nucía. I Altea og Villajoyosa kan avstandene,
+            terrenget og miljøet skifte mye fra ett nabolag til et annet.
+            Vi vurderer ikke bare utsikt og kvadratmeter, men også helårsaktivitet, transport,
+            solforhold og hvordan boligen fungerer når ferien er over.
+          </p>
+          <Link className="text-button" href="/omrader">Utforsk områdene på Costa Blanca Nord <ArrowRight size={16}/></Link>
+        </div>
       </section>
 
       <section className="section cornerstone-section" id="steg-for-steg">
@@ -477,11 +543,11 @@ export default function BuyingProcessPage() {
         </div>
         <div>
           <p className="eyebrow">Kunnskap underveis</p>
-          <h2>Les mer når du trenger detaljene – ikke alt på én side</h2>
+          <h2>Vil du forstå detaljene før du bestemmer deg?</h2>
           <p>
-            Denne siden eier kundereisen. Hovedguiden eier den komplette kjøperkunnskapen, mens
-            spesialguidene går dypere i kostnader, NIE, finansiering, juridikk og nybygg. Det gjør det
-            enklere å finne riktig svar uten at de samme artiklene konkurrerer med hverandre.
+            Vi har samlet egne guider om finansiering, kjøpskostnader, juridisk kontroll og nybygg.
+            Du kan fordype deg i det som er relevant for din situasjon, mens vi hjelper deg å holde
+            oversikt over helheten.
           </p>
           <Link className="contact-button" href="/guide">Se alle guider</Link>
         </div>
