@@ -15,9 +15,9 @@ function assertPresent(text, literal, label) {
 }
 
 assertPresent(coastal, "<AreaFactsTabs facts={areaFacts} />", "Facts on all coastal town pages");
-assertPresent(inland, "<AreaFactsTabs facts={areaFacts} />", "Facts on all inland town pages");
+assertPresent(inland, '<AreaFactsTabs facts={areaFacts} showPriceTab={false} />', "Facts on all inland town pages without prices");
 assertPresent(coastal, "getTownAreaFacts(profile.name)", "Coastal location keyed by name");
-assertPresent(inland, "getTownAreaFacts(town.name)", "Inland location keyed by name");
+assertPresent(inland, 'getTownAreaFacts(town.name, { includePriceHistory: false })', "Inland location keyed by name without pricing");
 assertPresent(layout, 'import "./area-facts.css";', "Shared CSS imported");
 assertPresent(css, ".area-facts-tabs button:focus-visible", "Visible keyboard focus");
 assertPresent(css, "@media (max-width: 640px)", "Mobile layout");
