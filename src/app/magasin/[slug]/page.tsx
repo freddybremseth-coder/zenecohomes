@@ -1,3 +1,4 @@
+import { ResilientNativeImage } from "@/components/ResilientImage";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
@@ -113,7 +114,7 @@ export default async function ArticlePage({ params }: PageProps) {
               </p>
             )}
             {cmsPost.image_url ? (
-              <img
+              <ResilientNativeImage
                 src={cmsPost.image_url}
                 alt={cmsPost.title}
                 className="mb-10 aspect-[16/9] w-full rounded-2xl object-cover"
