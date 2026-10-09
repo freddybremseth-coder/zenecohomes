@@ -3028,3 +3028,12 @@
   word-break: normal;
   overflow-wrap: normal;
 }
+
+/* Buyer journey: advisor portraits */
+.buying-process-portraits{display:grid;grid-template-columns:minmax(250px,1fr) minmax(0,1.25fr);align-items:center;gap:clamp(24px,5vw,72px)}
+.buying-process-portraits-copy{max-width:510px}
+.buying-process-portraits-copy p:not(.eyebrow){line-height:1.75}
+.buying-process-portraits-images{display:grid;grid-template-columns:1.25fr .8fr;align-items:end;gap:clamp(10px,2vw,22px)}
+.buying-process-portraits-images img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:8px}
+.buying-process-portraits-images img:last-child{aspect-ratio:4/5;margin-bottom:22px}
+@media(max-width:760px){.buying-process-portraits{grid-template-columns:1fr}.buying-process-portraits-images{max-width:560px}}
