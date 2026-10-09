@@ -78,4 +78,41 @@ for (const [name, series] of Object.entries(prices)) {
     console.log("PASS", name, years + "y", change.toFixed(1) + "%");
   }
 }
+
+const factData = data.slice(data.indexOf("const MUNICIPAL_COUNTS:"), data.indexOf("const EXPANDED_POPULATION:"));
+const municipalityRows = [...factData.matchAll(/^  (?:"[^"]+"|[a-z]+): \[\d+, "[^"]+", "[AM]"\],?$/gm)];
+assert.ok(municipalityRows.length >= 55, "Population coverage for all coastal and inland core areas unexpectedly shrank");
+assertPresent(data, "EXPANDED_POPULATION[key]", "Fallback municipality facts for every public area");
+assertPresent(data, 'value: 24592, year: 2025', "Altea population remains sourced");
+assertPresent(data, 'value: 77327, year: 2025', "Benidorm population remains sourced");
+assertPresent(data, 'year: 2025, municipality, source: region === "A" ? ALICANTE_CENSUS : MURCIA_CENSUS', "Source and municipality scope preserved");
+assertPresent(data, "FINESTRAT_DISTRICTS: DistrictOverview[]", "Finestrat has distinct residential submarkets");
+for (const district of ["Sierra Cortina", "Balcón de Finestrat", "Golf Bahía", "Finestrat gamleby", "La Cala de Finestrat"]) {
+  assert.ok(data.includes('name: "' + district + '"'), "Missing Finestrat area: " + district);
+}
+assertPresent(data, 'districts: key === "finestrat" ? FINESTRAT_DISTRICTS : []', "Other areas remain unchanged");
+assertPresent(tabs, 'facts.districts.length > 0', "Finestrat district cards must be visible");
+assertPresent(tabs, "Varierer med delområde", "Do not imply one beach distance for every Finestrat housing area");
+assertPresent(css, ".area-facts-neighborhoods-grid", "Responsive district design");
+for (const [district, price] of [["Balcón de Finestrat",3272],["Golf Bahía",3450],["Finestrat Pueblo",3245],["Cala de Finestrat",3044]]) {
+  assert.ok(data.includes("euroM2: " + price), "Missing Idealista market price " + district);
+}
+const morePrices = {
+  Finestrat: {2026:3316,2025:3175,2024:2794,2023:2562,2022:2433},
+  Polop: {2026:2911,2025:2653,2024:2606,2023:2256,2022:2182},
+  Calpe: {2026:3496,2025:3288,2024:2945,2023:2679,2022:2476},
+  "La Nucia": {2026:2504,2025:2251,2024:1943,2023:1728,2022:1558},
+  Denia: {2026:3354,2025:3084,2024:2791,2023:2486,2022:2263},
+  Torrevieja: {2026:2561,2025:2344,2024:2019,2023:1810,2022:1632},
+};
+for (const [town, series] of Object.entries(morePrices)) {
+  const k = town.toLowerCase(), pos = data.indexOf(k.includes(" ") ? '  "' + k + '": {' : "  " + k + ": {", data.indexOf("const PRICE:"));
+  assert.ok(pos > 0, "Missing sourced Idealista price history for " + town);
+  const section = data.slice(pos, pos+520);
+  for (const [year, euros] of Object.entries(series)) {
+    assert.ok(section.includes(year + ": " + euros), "Incorrect Idealista annual value for " + town + "/" + year);
+  }
+}
+console.log("PASS", municipalityRows.length, "municipal population records, 6 additional five-year price series and Finestrat neighborhood separation");
+
 console.log("Area facts audit passed.");
