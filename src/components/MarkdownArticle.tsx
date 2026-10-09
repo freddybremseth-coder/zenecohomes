@@ -107,7 +107,7 @@ export default function MarkdownArticle({
       }
 
       blocks.push(
-        <div key={"table-" + blocks.length} className="my-8 overflow-x-auto rounded-2xl border border-slate-200">
+        <div key={"table-" + blocks.length} className="my-8 overflow-x-auto rounded-2xl border border-slate-200 article-markdown-table-wrap">
           <table className="min-w-full border-collapse text-left text-sm">
             <thead className="bg-slate-50 text-slate-900">
               <tr>
@@ -122,7 +122,7 @@ export default function MarkdownArticle({
               {rows.map((row, rowIndex) => (
                 <tr key={rowIndex}>
                   {row.map((cell, cellIndex) => (
-                    <td key={cellIndex} className="whitespace-nowrap px-4 py-3 align-top">
+                    <td key={cellIndex} className="whitespace-normal px-4 py-3 align-top">
                       {inlineMarkdown(cell, attributionSlug)}
                     </td>
                   ))}

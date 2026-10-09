@@ -8,6 +8,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
+import { areaBuyerChecklist, verifiedAreaEditorial } from "@/lib/areaVerifiedEditorial";
 import { areaProfileSlug, areaSlug } from "@/lib/areaRoutes";
 import { bookUrl } from "@/lib/books";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -91,6 +92,10 @@ export default async function AreaTownPage({
   const properties = await getProperties(0, "zeneco");
   const localProperties = properties.filter((property) => propertyMatchesArea(property, profile.name)).slice(0, 6);
   const excerpt = areaExcerpt(profile.name);
+  const verifiedEditorial = verifiedAreaEditorial(profile.name);
+  const buyerChecklist = areaBuyerChecklist(profile.name);
+  const existingDescription = profile.description?.trim() || "";
+  const genericPlaceholder = /^Sammenlign boligtyper, beliggenhet og hverdagsliv i /i.test(existingDescription);
   const book = placeBookForArea(profile.name);
   const image = areaPresentationImage(profile, properties);
 
@@ -113,8 +118,31 @@ export default async function AreaTownPage({
         <div>
           <p className="eyebrow">Om {profile.name}</p>
           <h2>Hvordan er det å bo og kjøpe bolig her?</h2>
-          {profile.description && <p>{profile.description}</p>}
+          {existingDescription && !genericPlaceholder && <p>{existingDescription}</p>}
           {excerpt.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          <div className="area-town-guide">
+            {verifiedEditorial && (
+              <>
+                <h3>Hva betyr beliggenheten for hverdagen i {profile.name}?</h3>
+                <p>{verifiedEditorial.everyday}</p>
+                <h3>Hva bør du vurdere når du kjøper bolig i {profile.name}?</h3>
+                <p>{verifiedEditorial.buying}</p>
+              </>
+            )}
+            <h3>Hva bør kontrolleres før du bestemmer deg?</h3>
+            <ul className="area-town-buyer-checklist">
+              {buyerChecklist.map((item) => <li key={item}>{item}</li>)}
+            </ul>
+            {verifiedEditorial && (
+              <p className="area-town-source">
+                Stedsopplysningene er kontrollert mot{" "}
+                <a href={verifiedEditorial.source.url} target="_blank" rel="noopener noreferrer">
+                  {verifiedEditorial.source.label}
+                </a>.
+                Kjøpsrådene er kontrollpunkter, ikke en teknisk eller juridisk vurdering av enkeltboliger.
+              </p>
+            )}
+          </div>
           <p>
             Sammenlign stedet med andre alternativer i <Link href={`/omrader/${region}`}>{selectedRegion.label}</Link>,
             eller bruk <Link href="/guide/omradeguide-eiendomskjop-i-spania">områdeguiden for boligkjøp i Spania</Link>

@@ -71,8 +71,9 @@ expectDeclaration(guards, ".chatbot-shell:not(.chatbot-2027) .chatbot-messages .
 const importLine = 'import "./contrast-standards.css";';
 assert.ok(layout.includes(importLine), "Contrast styles must be imported");
 const lastImport = [...layout.matchAll(/^import [^\n]+\.css";$/gm)].at(-1)?.[0];
-assert.equal(lastImport, importLine, "Contrast guardrails must be the final CSS import");
-console.log("PASS", "last CSS import: contrast guardrails");
+assert.equal(lastImport, 'import "./area-reading-mobile.css";', "Reading safeguards must be the final CSS import");
+assert.ok(layout.indexOf(importLine) < layout.indexOf(lastImport), "Contrast styles must load before the final reading guardrails");
+console.log("PASS", "reading safeguards loaded after existing styles");
 const legacy = read("src/app/globals.css");
 const regionPage = read("src/app/omrader/[region]/page.tsx");
 
@@ -116,5 +117,19 @@ expectDeclaration(guards, ".hero-actions.area-property-cta-actions > .text-butto
 testPair("area listing primary button on dark", token("--ze-white"), token("--ze-ink"));
 testPair("area listing secondary button on paper", token("--ze-ink"), token("--ze-white"));
 console.log("PASS", "high-contrast area listing buttons");
+
+
+const areaReading = read("src/app/area-reading-mobile.css");
+const areaEditorial = read("src/lib/areaVerifiedEditorial.ts");
+const markdownRenderer = read("src/components/MarkdownArticle.tsx");
+assert.ok(areaProfile.includes("verifiedAreaEditorial(profile.name)"), "Town page must use verified locality content");
+assert.ok(areaProfile.includes("areaBuyerChecklist(profile.name)"), "Town page must include buyer checks");
+assert.ok(areaProfile.includes("verifiedEditorial.source.url"), "Geographical claims require visible original sources");
+assert.ok(areaProfile.includes("!genericPlaceholder"), "Do not repeat generic RealtyFlow description");
+assert.ok(areaEditorial.includes("return AREAS[normalizeSearchText(name).trim()] || null;"), "Unknown towns cannot receive invented facts");
+assert.ok(areaReading.includes("overflow-wrap: break-word;"), "Mobile long-form must wrap");
+assert.ok(areaReading.includes("overflow-x: auto;"), "Wide tables must scroll rather than expand page");
+assert.ok(markdownRenderer.includes("article-markdown-table-wrap"), "Markdown tables must use responsive table wrapper");
+console.log("PASS", "verified local editorial and responsive article formatting");
 
 console.log("Contrast regression audit passed.");
