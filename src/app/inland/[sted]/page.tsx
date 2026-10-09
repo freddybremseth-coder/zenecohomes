@@ -85,8 +85,6 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         </div>
       </section>
 
-      <AreaFactsTabs facts={areaFacts} />
-
       <section className="inland-town-story">
         <div className="inland-town-story-heading">
           <p className="eyebrow">Om {town.name}</p>
@@ -101,6 +99,8 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           </div>
         </div>
       </section>
+
+      <AreaFactsTabs facts={areaFacts} />
 
       {lifestyle ? (
         <section className="inland-town-story inland-town-lifestyle">
