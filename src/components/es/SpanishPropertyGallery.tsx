@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Images, X } from "lucide-react";
+import { ResilientImage, ResilientNativeImage } from "@/components/ResilientImage";
 
 export function SpanishPropertyGallery({ images, title }: { images: string[]; title: string }) {
   const [open, setOpen] = useState<number | null>(null);
@@ -54,10 +55,11 @@ export function SpanishPropertyGallery({ images, title }: { images: string[]; ti
                 key={`${image}-${imageIndex}`}
                 type="button"
                 className="gallery-thumb gallery-thumb-2027"
-                style={{ backgroundImage: `url(${image})` }}
+
                 onClick={() => setOpen(imageIndex)}
                 aria-label={`${title} – imagen ${imageIndex + 1}`}
               >
+                <ResilientImage src={image} alt={`${title} – imagen ${imageIndex + 1}`} fill sizes="(max-width: 980px) 68vw, 16vw" style={{ objectFit: "cover" }} />
                 <span className="gallery-thumb-index">{String(imageIndex + 1).padStart(2, "0")}</span>
                 {isLastVisible && remaining > 0 && (
                   <span className="gallery-thumb-more">+{remaining} imágenes</span>
@@ -86,8 +88,7 @@ export function SpanishPropertyGallery({ images, title }: { images: string[]; ti
               <ChevronLeft />
             </button>
           )}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <ResilientNativeImage
             className="lightbox-img"
             src={images[open]}
             alt={`${title} – imagen ${open + 1}`}
