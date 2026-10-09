@@ -770,93 +770,143 @@ export const articles: Article[] = [
   },
   {
     slug: "utleie-inntektspotensial-bolig-spania",
-    title: "Utleie av bolig i Spania: kan boligen tjene penger?",
-    excerpt:
-      "Skal boligen også leies ut? Slik vurderer du realistisk utleiepotensial, turistregler, sesong, kostnader og nettoresultat.",
+    title: "Utleie av bolig på Costa Blanca: hva kan du faktisk tjene?",
+    excerpt: "Ferieutleie eller langtidsleie? Se et konkret regneeksempel, hva som påvirker nettoinntekten, og hvilke regler du må kontrollere før boligkjøp i Spania.",
     date: "2026-09-08",
-    updated: "2026-09-15",
+    updated: "2026-10-09",
     category: "Guide",
-    readingTime: "8 min lesing",
+    readingTime: "12 min lesing",
     image: "/assets/magasin-covers/utleie-inntekt.svg",
-    imageAlt: "Illustrasjon av utleiebolig, avkastning og inntektspotensial i Spania",
-    seoTitle: "Utleie av bolig i Spania | Inntektspotensial og turistregler",
-    seoDescription:
-      "Kan boligen din i Spania leies ut? Guide til utleiepotensial, turistregler, sesong, kostnader og realistisk nettoresultat for norske kjøpere.",
-    keywords: [
-      "utleie bolig Spania",
-      "turistlisens Spania",
-      "leieinntekt Costa Blanca",
-      "korttidsutleie Spania",
-      "investering bolig Spania",
-    ],
+    imageAlt: "Illustrasjon av bolig, utleieinntekter og vurdering av utleiepotensial i Spania",
+    seoTitle: "Utleie av bolig i Spania | Inntekt, regler og regneeksempel",
+    seoDescription: "Hva kan du tjene på utleie på Costa Blanca? Sammenlign turistutleie og langtidsleie, se netto-regneeksempel og regler du må sjekke før kjøp.",
+    keywords: ["utleie bolig Spania", "leieinntekt Costa Blanca", "turistutleie Valencia regler", "netto leieinntekt Spania", "langtidsutleie Spania"],
     intro: [
-      "Mange nordmenn tenker: «Vi skal bruke boligen selv, men kanskje leie den ut litt.» Da er det viktig å vurdere utleiepotensial og lovlighet før du kjøper – ikke etterpå. To boliger som ser nesten like ut kan fungere svært forskjellig i leiemarkedet.",
-      "Denne guiden hjelper deg å tenke realistisk rundt inntekt: hva som påvirker etterspørselen, hvilke regler som gjelder for den konkrete boligen, og hvordan du regner på netto etter kostnader.",
+      "Kan leieinntektene betale deler av ferieleiligheten i Spania – eller til og med gjøre den til en investering? Det korte svaret er at det er mulig, men verken høy annonsert døgnpris eller en pen avkastningsprosent forteller hva du faktisk sitter igjen med.",
+      "Det avgjørende er kombinasjonen av lovlig utleieform, beliggenhet, tilgjengelige utleieuker, realistisk etterspørsel og kostnader. Her viser vi hvordan du vurderer en konkret bolig på Costa Blanca – og hvorfor regnestykket bør være klart før reservasjon, ikke etter overtakelse.",
     ],
     sections: [
       {
-        heading: "Hva påvirker leieinntekten?",
+        heading: "Kort fortalt: dette må du vite før du kjøper",
+        bullets: [
+          "Avklar først om boligen lovlig kan brukes til akkurat den utleieformen du planlegger.",
+          "Skill mellom turistutleie, annen tidsbegrenset leie og ordinær boligleie; kontraktstype og faktisk formål betyr noe.",
+          "Beregn utleieukene du virkelig kan tilby, etter at eget bruk og tomme perioder er trukket fra.",
+          "Sammenlign netto driftsresultat og kontantstrøm – ikke bare brutto leieinntekt.",
+          "Undersøk bygningens sameieregler, kommunale krav og dokumentasjon for akkurat den boligen.",
+        ],
+      },
+      {
+        heading: "Tre ulike måter å leie ut bolig i Spania på",
         body: [
-          "Beliggenhet, gangavstand, boligtype, uteplass, standard, kapasitet, utsikt og målgruppe kan påvirke etterspørselen på ulike måter. Ingen enkeltfaktor kan brukes som en sikker regel for pris eller belegg.",
+          "Turistutleie: Korte ferieopphold kan gi høye priser i populære perioder, men innebærer omfattende krav, sesongvariasjoner, gjesteskifter og aktiv drift. Denne modellen må være lovlig på den konkrete adressen.",
+          "Tidsbegrenset leie for et reelt midlertidig behov: Kan passe for eksempel for personer på arbeidsopphold. Dette er ikke en automatisk omvei rundt turistreglene; faktisk bruk, kontraktsgrunnlag, regionale krav og eventuelle registreringsplikter må vurderes.",
+          "Ordinær langtidsutleie: Kan gi mer forutsigbar inntekt og mindre hyppig drift, men omfattes av egne regler om blant annet kontrakter, leietakerrettigheter og oppsigelse. Egen bruk av boligen blir mindre fleksibelt.",
+          "Viktig: Velg ikke kontraktslengde alene for å forsøke å omgå krav til turistutleie. Be en kvalifisert lokal rådgiver eller advokat avklare riktig modell.",
+        ],
+      },
+      {
+        heading: "Hva påvirker leieinntektene på Costa Blanca?",
+        body: [
+          "En god utleiebolig er ikke nødvendigvis den største eller dyreste. To leiligheter til samme pris kan få svært forskjellig etterspørsel. Gangavstand til strand, restauranter og dagligvarer, adkomst fra flyplass, parkering, heis, solforhold, terrasse og gode soverom kan telle mer enn ekstra kvadratmeter.",
         ],
         bullets: [
-          "Beliggenhet: avstand til strand, service, aktiviteter og transport.",
-          "Sesong: etterspørselen varierer mellom områder og gjennom året.",
-          "Boligtype og standard: fasiliteter kan påvirke attraktivitet, men må vurderes mot målgruppen.",
-          "Kapasitet: antall soverom og senger påvirker hvilke gjester boligen passer for.",
-          "Presentasjon og drift: pris, bilder, tilgjengelighet og respons kan påvirke bestillinger.",
+          "Benidorm: Vurder mikroområde, strandtilgang, støy, bygningens profil og hvilken type gjester boligen faktisk passer for.",
+          "Finestrat: Skill mellom strandnære områder og boligområder der bil ofte er nødvendig. Nybyggstandard og uteplass må vurderes mot prisnivå og sesong.",
+          "Villajoyosa: Undersøk avstand til strand, sentrum, transport og hva slags opphold området tiltrekker seg gjennom året.",
+          "Albir: Vurder gangavstand, tilgjengelighet og hvilken etterspørsel det kan være utenfor høysesongen.",
+          "Altea: Utsikt, adkomst, parkering og boligtype betyr mye; en spektakulær beliggenhet gir ikke automatisk høyt belegg.",
         ],
       },
       {
-        heading: "Turistutleie og regler i Comunitat Valenciana",
+        heading: "Eksempel: fra brutto leieinntekt til netto resultat",
         body: [
-          "I Comunitat Valenciana defineres en vivienda de uso turístico blant annet som en komplett bolig som tilbys med turistformål for 10 sammenhengende dager eller mindre til samme leietaker. Regimet krever blant annet gunstig kommunal kompatibilitetsrapport eller tilsvarende dokumentasjon, og registreringen i turistregisteret har fem års gyldighet. Kommuner kan også ha egne begrensninger.",
-          "Reglene er regionale og endres. Sameieregler, kommunale krav og annen bolig-/utleielovgivning kan også påvirke hva som er lovlig. Bekreft derfor gjeldende status for akkurat boligen før du baserer kjøpet på korttidsutleie.",
+          "La oss bruke en tenkt leilighet med lovlig utleieadgang. Tallene nedenfor er kun et pedagogisk scenario, ikke markedsstatistikk, pristilbud eller prognose for noen bestemt adresse.",
+          "Anta 8 utleide høysesonguker til 1 200 euro per uke, 10 uker i skuldersesong til 800 euro og 8 uker i lavsesong til 550 euro. Da blir brutto leieinntekt 22 000 euro per år. Resten av året består av eget bruk, vedlikehold eller ubookede perioder.",
+        ],
+        table: {
+          caption: "Illustrativt årsregnskap i euro – tallene må erstattes med dokumenterte anslag for den aktuelle boligen.",
+          headers: ["Post", "Årlig beløp", "Kommentar"],
+          rows: [
+            ["Brutto leieinntekt", "22 000 €", "26 utleide uker fordelt på tre sesonger"],
+            ["Plattform og betalingsgebyr", "− 2 200 €", "Antatt 10 % samlet"],
+            ["Administrasjon og gjestehåndtering", "− 3 300 €", "Antatt 15 % av brutto"],
+            ["Rengjøring og vask, eierandel", "− 1 200 €", "Avhenger av oppholdslengde og gebyrmodell"],
+            ["Strøm, vann og internett", "− 1 800 €", "Forenklet antakelse"],
+            ["Comunidad, IBI og forsikring", "− 2 000 €", "Eksempel på samlede eierutgifter"],
+            ["Vedlikehold og reserve", "− 1 500 €", "Løpende slitasje og uforutsette utgifter"],
+            ["Driftsresultat før skatt og finansiering", "10 000 €", "Ikke det samme som disponibel nettoinntekt"],
+          ],
+        },
+      },
+      {
+        heading: "Hva betyr resultatet for avkastningen?",
+        body: [
+          "Hvis boligen i eksemplet har en samlet investert kostnad på 300 000 euro, tilsvarer 10 000 euro i driftsresultat cirka 3,3 % årlig driftsavkastning før skatt og finansiering. Det er ikke en garanti for fremtidig inntekt eller verdiutvikling.",
+          "Med boliglån må renter og avdrag inn i en separat kontantstrømkalkyle. Skatt kan avhenge av skattemessig bosted, inntektstype og relevante fradragsregler. En positiv driftsmargin kan derfor likevel gi svak eller negativ kontantstrøm.",
+          "Regn også på et svakt år. Ved eksempelvis færre bookinger, lavere gjennomsnittspris eller større reparasjoner kan nettoresultatet falle betydelig. Eiendom bør ikke kjøpes med en økonomi som bare fungerer i det mest optimistiske scenariet.",
         ],
       },
       {
-        heading: "Regn på reelt nettoresultat",
+        heading: "Turistutleie i Comunitat Valenciana: hvilke regler gjelder?",
         body: [
-          "Brutto leieinntekt er ikke det samme som det du sitter igjen med. Trekk fra relevante fellesutgifter, forsikring, strøm/vann, vedlikehold, rengjøring, forvaltning/administrasjon, skatt og perioder uten leietaker før du vurderer resultatet.",
+          "I Comunitat Valenciana omfatter den regionale definisjonen av vivienda de uso turístico normalt utleie av en komplett bolig for turistformål i høyst 10 sammenhengende dager til samme leietaker. Opphold på 11 dager eller mer faller utenfor denne spesifikke definisjonen, men blir ikke automatisk fritt for andre lover eller registreringskrav.",
+          "For turistutleie må blant annet kommunal arealkompatibilitet, relevante kommunale tillatelser, regional registrering og tekniske krav undersøkes. Regional turistregistrering har som hovedregel fem års gyldighet, med lovbestemte unntak. Kontroller den offisielle statusen – ikke bare hva det står i en salgsannonse.",
+          "Fra 3. april 2025 krever nye turistutleieaktiviteter i sameier som omfattes av den nasjonale eierseksjonsloven normalt uttrykkelig godkjenning fra sameiet etter reglene om tre femdels flertall. Eksisterende lovlig virksomhet kan omfattes av overgangsregler. Eksisterende vedtektsforbud kan kreve en egen vurdering. For nettannonsering kan også nasjonal registrering for korttidsutleie være nødvendig.",
+          "Ikke legg en forventet turistinntekt inn som forutsetning i kjøpsbudsjettet før advokat og relevante myndigheter har bekreftet at modellen er tillatt for den konkrete boligen.",
         ],
         bullets: [
-          "Bruk realistiske scenarier for belegg – ikke full sesong hele året.",
-          "Avklar skattebehandling for din eier- og utleiesituasjon.",
-          "Ta med forvaltning/nøkkelhåndtering hvis du ikke er der selv.",
-          "Sett av til vedlikehold og uforutsette kostnader.",
+          "Undersøk kommune og adresse, ikke bare regionen.",
+          "Be om dokumentasjon for kommunal kompatibilitet og nødvendig regional registrering.",
+          "Les sameiets vedtekter og relevante protokoller, inkludert krav om uttrykkelig godkjenning.",
+          "Kontroller eventuell nasjonal registreringsplikt for markedsføring på digitale plattformer.",
+          "Avklar plikt til gjesteregistrering, forsikring og skattemessig rapportering før oppstart.",
         ],
       },
       {
-        heading: "Eget bruk vs. utleie – en ærlig avveining",
+        heading: "Egen feriebruk og utleie konkurrerer om de samme ukene",
         body: [
-          "En bolig som er perfekt for deg er ikke nødvendigvis optimal for en bestemt leiemålgruppe. Hvis du vil bruke boligen selv i periodene med høyest etterspørsel, må kalkylen ta hensyn til det. Bestem hvor viktig utleie faktisk er før du velger bolig og område.",
+          "Mange ønsker å bruke boligen selv i juli og august, men det er ofte nettopp slike perioder en utleiekalkyle forutsetter høyere inntekter fra. Derfor bør du først reservere de ukene familien faktisk ønsker å bruke boligen, og deretter beregne inntekt fra resten.",
+          "En bolig som skal være et godt familiehjem kan være et utmerket kjøp selv med begrenset utleie. Men hvis leieinntektene er avgjørende for å betjene lånet, må boligvalg og risikotoleranse være annerledes.",
+        ],
+      },
+      {
+        heading: "Hva må du organisere når du ikke bor i Spania?",
+        body: [
+          "Utleie er også drift. Noen må ta imot gjester, håndtere nøkler, kontrollere boligen, organisere rengjøring, følge opp skader og reagere ved vannlekkasje eller uvær. Dette koster penger, men god oppfølging kan redusere risikoen for tap og konflikter.",
+          "ZenEcoHomes kan hjelpe med å vurdere de praktiske behovene, mens tjenester for nøkkelhåndtering og boligtilsyn kan organiseres separat. Et realistisk regnestykke må inkludere slike tjenester – også når eieren planlegger å ordne det meste selv.",
+        ],
+      },
+      {
+        heading: "Slik vurderer vi en bolig med utleiepotensial",
+        body: [
+          "Vi starter med det viktigste spørsmålet: Skal boligen først og fremst være ditt eget sted i Spania, eller må den også oppfylle et bestemt inntektsmål? Deretter sammenligner vi aktuelle boliger ut fra bruk, tilgjengelige utleieperioder, målgruppe, beliggenhet og dokumenterbar lovlighet.",
+          "Vi kan bidra med bolig- og områdeanalyse og en praktisk, scenario-basert inntektsvurdering. Uavhengig juridisk og skattemessig kontroll bør utføres av kvalifiserte fagpersoner. Målet er ikke å selge en optimistisk avkastning, men å hjelpe deg å ta en beslutning du forstår.",
+        ],
+      },
+      {
+        heading: "Offisielle kilder og videre kontroll",
+        body: [
+          "Regler kan endres. Kontroller gjeldende rett hos Generalitat Valenciana (sede.gva.es, prosedyre 19207), i regional turismelov Ley 15/2018 artikkel 65 (boe.es) og i den nasjonale eierseksjonsloven Ley de Propiedad Horizontal artikkel 7.3 og 17.12 (boe.es). Bruk en lokal jurist for å bekrefte konsekvensene for den bestemte eiendommen.",
         ],
       },
     ],
     nextSteps: [
-      "Avklar om utleie er et krav, et pluss eller uaktuelt – det styrer bolig- og områdevalg.",
-      "Sjekk regional registrering, kommunal kompatibilitet og relevante sameieregler før du reserverer med korttidsutleie som premiss.",
-      "Sett opp et realistisk regnestykke med belegg, kostnader og skatt.",
-      "Vurder forvaltning/nøkkelhåndtering hvis du ikke bor der fast.",
+      "Bestem om utleie er et krav til finansieringen eller bare en mulig tilleggsinntekt.",
+      "Avklar lovlig utleieform, kommunale krav og sameiets dokumentasjon før reservasjon.",
+      "Lag minst tre scenarier: forsiktig, forventet og optimistisk, med dokumenterte antakelser.",
+      "Beregn netto driftsresultat, skatt, finansiering og reelt kontantbehov hver for seg.",
+      "Be ZenEcoHomes om en konkret vurdering av aktuelle boliger og områder.",
     ],
     faq: [
-      {
-        question: "Må jeg registrere boligen for turistutleie i Comunitat Valenciana?",
-        answer:
-          "Hvis utleien faller inn under regimet for vivienda de uso turístico, gjelder turistregelverket med blant annet registrering og kommunal kompatibilitetsdokumentasjon. Per gjeldende definisjon gjelder dette blant annet turistutleie av komplett bolig i 10 sammenhengende dager eller mindre til samme leietaker. Bekreft alltid de aktuelle reglene for boligen og kommunen før utleie.",
-      },
-      {
-        question: "Hvor mye kan jeg realistisk tjene på utleie?",
-        answer:
-          "Det avhenger av bolig, beliggenhet, målgruppe, sesong, lovlig utleiemodell, drift og belegg. Regn på netto etter alle relevante kostnader og skatt – ikke bare annonsert døgnpris.",
-      },
-      {
-        question: "Bør jeg velge bolig ut fra eget bruk eller utleie?",
-        answer:
-          "Det bør avklares før kjøp. Skal utleie være en viktig del av regnestykket, må lovlighet, målgruppe og etterspørsel inngå i område- og boligvalget. Skal du mest bruke boligen selv, kan andre hensyn veie tyngre.",
-      },
+      { question: "Hvor mye kan jeg tjene på å leie ut en bolig i Spania?", answer: "Det finnes ikke ett pålitelig beløp for hele Spania eller Costa Blanca. Resultatet avhenger av lovlig utleieform, sesong, leiepris, belegg, egen bruk, driftskostnader og skatt. Start med et netto årsbudsjett for den konkrete boligen." },
+      { question: "Er utleie over 10 dager alltid lovlig uten turistlisens?", answer: "Nei. I Comunitat Valenciana faller opphold på minst 11 sammenhengende dager utenfor den spesifikke regionale definisjonen av turistbolig, men annen boliglovgivning, nasjonal registrering, kommunale krav, kontraktsregler og faktisk bruksformål kan fortsatt gjelde." },
+      { question: "Kan jeg kjøpe en leilighet med eksisterende turistregistrering?", answer: "Muligens, men kontroller om registrering og eventuelle tillatelser fortsatt er gyldige, om overdragelse eller endring krever ny dokumentasjon, og hva sameiet og kommunen tillater. Ikke anta at rettigheter automatisk følger med ved eierskifte." },
+      { question: "Hva er forskjellen på brutto- og nettoavkastning?", answer: "Bruttoavkastning sammenligner leieinntekt med investeringen før utgifter. Netto driftsavkastning trekker fra relevante driftskostnader. Skatt, renter og avdrag må vurderes separat for å forstå hva du faktisk sitter igjen med." },
+      { question: "Kan jeg bruke boligen selv og samtidig leie den ut?", answer: "Ja, hvis utleieformen er lovlig og kontraktene tillater det. Men ukene du bruker selv kan ikke samtidig gi leieinntekter. Høysesonguker kan derfor ha en viktig alternativkostnad." },
+      { question: "Hjelper ZenEcoHomes med vurdering av utleiepotensial?", answer: "Vi kan hjelpe med boligvalg, områdeanalyse og realistiske økonomiske scenarier. Juridisk kontroll, skatterådgivning og endelig godkjenning av utleie må avklares med riktige fagpersoner og myndigheter." },
     ],
-    cta: { label: "Prøv Boligmatchen – finn en bolig som passer bruken din", href: "/eiendommer#boligmatch" },
+    cta: { label: "Finn en bolig som passer både eget bruk og utleie", href: "/eiendommer#boligmatch" },
   },
   {
     slug: "lopende-kostnader-eie-bolig-spania",
