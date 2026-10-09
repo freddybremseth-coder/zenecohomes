@@ -52,7 +52,7 @@ for (const href of [
 ]) {
   requireText(buyingProcess, `href="${href}"`, "buying-process customer-journey internal link");
 }
-requireText(buyingProcess, "Hva gjør Zen Eco Homes gjennom kjøpsprosessen?", "customer-journey intent");
+requireText(buyingProcess, 'Hva gjør <span className="human-name">Zen Eco Homes</span> gjennom kjøpsprosessen?', "customer-journey intent and brand-name protection");
 requireText(buyingProcess, "Hvem gjør hva når du kjøper bolig i Spania?", "buyer/advisor/specialist responsibility split");
 requireText(buyingProcess, "Hva er forskjellen på denne siden og guiden", "buying-process vs cornerstone intent separation");
 if (fs.existsSync(path.join(root, "src/app/kjopsprosess/page.tsx"))) {
