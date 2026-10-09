@@ -126,3 +126,79 @@
     white-space: normal;
   }
 }
+
+
+/* Proper nouns and place names must wrap as a unit, not as "Al-tea".
+   The old area-reading-mobile.css turned on automatic hyphenation for all
+   headings and paragraphs. No automatic hyphenation in public editorial copy. */
+main :is(h1, h2, h3, h4, p, li, blockquote) {
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+main .proper-name {
+  display: inline;
+  white-space: nowrap;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+@media (min-width: 901px) {
+  /* Give the editorial prose a little more width on town pages. */
+  .section.split:has(.area-town-guide) {
+    grid-template-columns: minmax(0, 1.22fr) minmax(0, .88fr);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Keep names intact even inside large headings on narrow screens. */
+  .area-town-guide h3 {
+    font-size: clamp(1.24rem, 5.7vw, 1.45rem);
+  }
+  .section.split:has(.area-town-guide) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Resilient image cards are positioned in-place, preserving original layout. */
+.area-profile-card > .area-profile-photo,
+.region-overview-card > .region-overview-image {
+  position: relative;
+  overflow: hidden;
+  background: #e6e8e2;
+}
+
+.area-profile-card > .area-profile-photo > img,
+.region-overview-card > .region-overview-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resilient-image-placeholder {
+  display: flex;
+  min-height: 210px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #e7e9e4;
+  color: var(--ze-ink);
+  font-size: 0.88rem;
+  font-family: var(--sans);
+  text-align: center;
+}
+
+.resilient-image-placeholder span {
+  color: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: inherit;
+  margin: 0;
+}
