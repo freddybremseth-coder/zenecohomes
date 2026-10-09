@@ -188,10 +188,10 @@ export default function BuyingProcessPage() {
         </div>
       </section>
 
-      <section className="section split">
+      <section className="section split buying-process-intro">
         <div className="section-heading">
           <p className="eyebrow">Kort svar</p>
-          <h2>Hva gjør Zen Eco Homes gjennom kjøpsprosessen?</h2>
+          <h2>Hva gjør <span className="human-name">Zen Eco Homes</span> gjennom kjøpsprosessen?</h2>
           <p>
             Vi fungerer som kjøperens faste rådgiver og koordinator rundt boligvalget. Vår jobb er å
             gjøre søket mer presist, sammenligne områdene før du velger objekt, følge opp visninger og
