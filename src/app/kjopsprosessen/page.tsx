@@ -1,179 +1,500 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { processSteps } from "@/lib/content";
 
-export const metadata = {
-  title: "Kjøpsprosessen i Spania | Fra boligsøk til overtakelse",
+export const metadata: Metadata = {
+  title: "Kjøpsprosessen i Spania | Slik hjelper Zen Eco Homes",
   description:
-    "Se hele kjøpsprosessen for bolig i Spania, fra behov og boligsøk til visning, reservasjon, advokat, NIE, notar, overtakelse og videre oppfølging.",
+    "Se hvordan Zen Eco Homes følger deg fra første boligprat til overtakelse i Spania, med områdevalg, shortlist, visning, advokat, notar og oppfølging.",
   alternates: {
     canonical: "/kjopsprosessen",
   },
   openGraph: {
-    title: "Kjøpsprosessen i Spania | Fra boligsøk til overtakelse",
+    title: "Kjøpsprosessen i Spania | Slik hjelper Zen Eco Homes",
     description:
-      "Få oversikt over prosessen fra første boligsøk til overtakelse med norsk rådgivning og trygg struktur.",
+      "Fra behov og områdevalg til reservasjon, juridisk kontroll, notar, nøkler og oppfølging etter kjøpet.",
     url: "https://www.zenecohomes.com/kjopsprosessen",
     type: "website",
   },
 };
 
+const journeySteps = [
+  {
+    title: "Avklar behov, bruk og totalbudsjett",
+    text:
+      "Vi starter med hvordan boligen skal brukes, hvor ofte du vil være i Spania, hvem som skal bruke den, hvor bilavhengig du ønsker å være og hvilket totalbudsjett du faktisk har.",
+  },
+  {
+    title: "Velg område før du velger bolig",
+    text:
+      "Vi sammenligner områder ut fra hverdagen du ønsker: strand og gange, internasjonalt miljø, skole, flyplass, ro, utsikt, utleiebehov og videresalg. Først deretter snevrer vi inn boligtypen.",
+  },
+  {
+    title: "Bygg en relevant shortlist",
+    text:
+      "Vi søker i tilgjengelige boliger og prosjekter, bekrefter så langt mulig at objektene fortsatt er aktuelle og kutter bort alternativer som ikke passer kriteriene dine.",
+  },
+  {
+    title: "Planlegg visninger med et formål",
+    text:
+      "Visningene brukes ikke bare til å se boligen, men til å teste området, avstander, solforhold, støy, standard, fellesområder og kompromissene som ikke alltid kommer frem i annonsen.",
+  },
+  {
+    title: "Vurder reservasjon før du betaler",
+    text:
+      "Når du finner riktig bolig, går vi gjennom de praktiske vilkårene rundt reservasjonen. Du skal vite hva som betales, hva boligen tas av markedet for, og hvilke forbehold som må avklares før du binder deg videre.",
+  },
+  {
+    title: "La en uavhengig advokat kontrollere kjøpet",
+    text:
+      "Advokaten håndterer den juridiske kontrollen av blant annet eierskap, heftelser, registrerte forhold, kontrakter og relevante tillatelser. Zen Eco Homes koordinerer prosessen, men erstatter ikke advokaten.",
+  },
+  {
+    title: "Få NIE, finansiering og fullmakter på plass",
+    text:
+      "NIE, bank, eventuell finansiering og fullmakt bør avklares tidlig nok til at de ikke forsinker handelen. Flere av disse sporene kan gå parallelt med den juridiske kontrollen.",
+  },
+  {
+    title: "Kontrakt, sluttoppgjør og notar",
+    text:
+      "Når vilkårene er avklart og kjøpet er klart for sluttføring, følger kontrakt og sluttoppgjør etter modellen som gjelder for boligen. Det offentlige skjøtet signeres hos notar.",
+  },
+  {
+    title: "Overtakelse, nøkler og oppfølging",
+    text:
+      "Etter signeringen følger registrering og praktisk overtakelse: nøkler, strøm, vann, forsikring, comunidad og andre løpende forhold. Ved behov kan Zen Eco Homes Care følge boligen når du er borte.",
+  },
+] as const;
+
 const faq = [
   {
-    q: "Trenger jeg NIE for å kjøpe bolig i Spania?",
-    a: "Ja. NIE (Número de Identificación de Extranjero) er utlendingens skattenummer og er normalt nødvendig for eiendomskjøp, skatt, bank og registrering. Vi hjelper deg å skaffe det.",
+    q: "Hva er forskjellen på denne siden og guiden «Kjøpe bolig i Spania»?",
+    a: "Denne siden viser hvordan Zen Eco Homes jobber sammen med deg gjennom selve kundereisen. Hovedguiden «Kjøpe bolig i Spania» er den brede kunnskapsguiden om markedet, boligtyper, kostnader, reservasjon, juridikk, finansiering og fallgruver.",
   },
   {
-    q: "Bør jeg bruke advokat ved boligkjøp i Spania?",
-    a: "Ja, det anbefales sterkt å bruke en uavhengig spansk advokat (abogado) som kontrollerer eiendomsrett, heftelser, lovlighet, kontrakter og skatter før du signerer noe.",
+    q: "Bør jeg ha finansiering og budsjett klart før visning?",
+    a: "Ja, så langt det er mulig. Det viktigste er å kjenne totalbudsjettet, ikke bare ønsket kjøpesum. Da kan vi unngå boliger som blir for dyre når skatt, juridisk bistand, notar, register, bank og andre kjøpskostnader legges til.",
   },
   {
-    q: "Hva koster det å kjøpe bolig i Spania – utover selve prisen?",
-    a: "Regn med om lag 11–14 % i omkostninger på toppen av kjøpesummen, avhengig av boligtype og region. I Comunitat Valenciana er den generelle ITP-satsen på bruktbolig 9 % fra 1. juni 2026 (11 % når verdien overstiger 1 million euro), i tillegg til notar, registrering og advokat. På ordinære nybygg betaler du normalt 10 % IVA (moms) + 1,4 % AJD fra 1. juni 2026, i tillegg til notar og registrering.",
+    q: "Bør en advokat se på reservasjonen før jeg betaler?",
+    a: "Reservasjonsavtaler varierer. Du bør forstå beløp, frister, refusjonsvilkår og eventuelle forbehold før betaling. Når avtalen er bindende eller forholdene er uklare, bør en uavhengig spansk advokat vurdere dokumentet før du går videre.",
   },
   {
-    q: "Kan nordmenn få boliglån i en spansk bank?",
-    a: "Ja. Spanske banker gir ofte lån til utenlandske kjøpere, vanligvis med 60–70 % belåning av kjøpesummen (verdivurdering) for ikke-residenter. Renten og vilkårene avhenger av bank, inntekt og profil.",
+    q: "Hva gjør Zen Eco Homes – og hva gjør advokaten?",
+    a: "Zen Eco Homes hjelper med behovskartlegging, områdevalg, boligsøk, visninger, koordinering og fremdrift. Den uavhengige advokaten har ansvaret for den juridiske kontrollen og kontraktene. Bank og eventuelle finansieringsrådgivere håndterer finansiering, mens notaren formaliserer den offentlige overføringen.",
   },
   {
-    q: "Hva er forskjellen på nybygg og bruktbolig når det gjelder avgifter?",
-    a: "Nybygg (førstegangssalg fra utbygger) har normalt 10 % IVA + 1,4 % AJD i Comunitat Valenciana fra 1. juni 2026. Bruktbolig har overføringsskatt ITP i stedet: den generelle satsen er 9 % fra 1. juni 2026, mens 11 % gjelder når verdien overstiger 1 million euro. Reduserte satser kan gjelde i enkelte tilfeller. Nybygg selges ofte med betalingsplan underveis i byggeperioden.",
+    q: "Hvor lang tid tar kjøpsprosessen?",
+    a: "Bruktbolig kan ofte sluttføres i løpet av noen uker når dokumentasjon, finansiering og juridisk kontroll er på plass, men tidsbruken varierer. Nybygg følger prosjektets bygge- og betalingsplan og kan strekke seg over mange måneder eller år.",
   },
   {
-    q: "Hvordan fungerer reservasjon og kontrakt?",
-    a: "Prosessen går normalt fra en reservasjonsavtale (tar boligen av markedet), til en depositumskontrakt (contrato de arras, ofte ~10 %), og til slutt signering av skjøtet (escritura) hos notar der resten betales og nøklene overleveres.",
+    q: "Er prosessen annerledes for nybygg?",
+    a: "Ja. Nybygg har gjerne reservasjons- og utbyggerkontrakt, betalingsplan under byggeperioden, bankgarantier for forskuddsbetalinger der reglene krever det, ferdigstillelse og kontroll før sluttoppgjør. Derfor har vi en egen guide som går dypere i nybygg.",
   },
   {
-    q: "Hvor lang tid tar kjøpsprosessen i Spania?",
-    a: "Et vanlig kjøp gjennomføres ofte på 4–8 uker etter reservasjon, avhengig av finansiering, dokumentasjon og juridisk kontroll. Nybygg følger byggeperioden og kan ta lengre tid.",
+    q: "Hva skjer etter at jeg har fått nøklene?",
+    a: "Da skal registrering og praktiske forhold på plass: strøm, vann, forsikring, felleskostnader og andre avtaler. Dersom du ikke bor fast i Spania, kan du også ha behov for keyholding, tilsyn, klargjøring og koordinering av service.",
   },
-  {
-    q: "Hvilke løpende kostnader har en bolig i Spania?",
-    a: "De vanligste er kommunal eiendomsskatt (IBI), fellesutgifter (comunidad) hvis boligen ligger i en urbanisasjon, forsikring, strøm og vann, samt en årlig ikke-resident-skatt for utenlandske eiere som ikke er bosatt i Spania.",
-  },
-];
+] as const;
+
+const roles = [
+  ["Behov, område og boligvalg", "Zen Eco Homes + deg", "Vi gir råd og struktur; du tar beslutningen."],
+  ["Boligsøk og visninger", "Zen Eco Homes", "Vi finner, sammenligner og koordinerer relevante alternativer."],
+  ["Reservasjon", "Deg + selger/utbygger", "Zen koordinerer; advokat bør involveres når vilkårene krever juridisk vurdering."],
+  ["Juridisk kontroll", "Uavhengig spansk advokat", "Eierskap, heftelser, registrering, kontrakter og juridiske forhold."],
+  ["NIE og eventuell fullmakt", "Advokat / relevant myndighet", "Kan ofte forberedes parallelt med resten av kjøpet."],
+  ["Finansiering", "Deg + bank/långiver", "Låneramme, takst, dokumentasjon og lånevilkår."],
+  ["Notar og offentlig skjøte", "Notar + partene/representanter", "Notaren formaliserer handelen; advokaten ivaretar kjøperens juridiske kontroll."],
+  ["Overtakelse og boligoppfølging", "Zen Eco Homes / Zen Eco Homes Care", "Praktisk overtakelse og valgfri oppfølging når du ikke er i Spania."],
+] as const;
 
 export default function BuyingProcessPage() {
-  const faqJsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.zenecohomes.com/kjopsprosessen#webpage",
+        url: "https://www.zenecohomes.com/kjopsprosessen",
+        name: "Kjøpsprosessen i Spania med Zen Eco Homes",
+        description:
+          "Slik følger Zen Eco Homes boligkjøpere fra behovskartlegging og områdevalg til overtakelse og oppfølging.",
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://www.zenecohomes.com/kjopsprosessen#howto",
+        name: "Kjøpsprosessen med Zen Eco Homes",
+        step: journeySteps.map((step, index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name: step.title,
+          text: step.text,
+        })),
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.zenecohomes.com/kjopsprosessen#faq",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Zen Eco Homes",
+            item: "https://www.zenecohomes.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Kjøpsprosessen",
+            item: "https://www.zenecohomes.com/kjopsprosessen",
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <main className="buying-process-page">
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <section className="page-hero compact-hero">
-        <p className="eyebrow">Kjøpsprosessen i Spania</p>
-        <h1>Trygt kjøp av bolig og nybygg i Spania</h1>
+        <p className="eyebrow">Slik jobber vi · oppdatert 9. oktober 2026</p>
+        <h1>Kjøpsprosessen med Zen Eco Homes – fra første boligprat til nøklene</h1>
         <p>
-          Vi følger deg gjennom behov, områdevalg, finansiering, NIE, visning, reservasjon, advokat,
-          kontrakt, notar og overtakelse.
+          Et godt boligkjøp i Spania starter før første visning. Vi hjelper deg å avklare behov,
+          totalbudsjett og område, finne relevante boliger, planlegge visninger og holde fremdrift
+          gjennom reservasjon, juridisk kontroll, notar og overtakelse.
         </p>
         <div className="hero-actions">
-          <Link className="text-button light" href="/eiendommer">Se boliger</Link>
-          <Link className="text-button light" href="/visningstur">Visningstur</Link>
-          <Link className="text-button light" href="/guide/kjope-bolig-i-spania">
-            Les komplett guide <ArrowRight size={17} />
+          <Link className="contact-button" href="/booking">
+            Start med en boligprat <ArrowRight size={17} />
           </Link>
-          <Link className="text-button light" href="/guide/finansiere-bolig-i-spania">
-            Finansiering, notar og NIE
+          <Link className="text-button light" href="/eiendommer">Se boliger</Link>
+          <Link className="text-button light" href="/guide/kjope-bolig-i-spania">
+            Les den komplette kjøperguiden
           </Link>
         </div>
       </section>
+
       <section className="section split">
-        <div className="timeline">
-          {processSteps.map((step, index) => (
-            <div className="timeline-item" key={step}>
-              <span>{index + 1}</span>
-              <p>{step}</p>
-            </div>
-          ))}
+        <div className="section-heading">
+          <p className="eyebrow">Kort svar</p>
+          <h2>Hva gjør Zen Eco Homes gjennom kjøpsprosessen?</h2>
+          <p>
+            Vi fungerer som kjøperens faste rådgiver og koordinator rundt boligvalget. Vår jobb er å
+            gjøre søket mer presist, sammenligne områdene før du velger objekt, følge opp visninger og
+            sørge for at du vet hva neste steg er.
+          </p>
+          <p>
+            Vi er ikke advokat, bank eller notar. Når kjøpet går inn i juridikk, finansiering og
+            offentlig overføring, skal riktig fagperson ha ansvaret. Vi holder trådene samlet rundt deg,
+            slik at boligvalget og fremdriften ikke blir fragmentert mellom mange aktører.
+          </p>
         </div>
         <aside className="process-trust-panel">
-          <p className="eyebrow">Slik jobber vi</p>
-          <h2>Én tydelig prosess fra første spørsmål til overtakelse</h2>
+          <p className="eyebrow">Tre prinsipper</p>
+          <h2>Område først. Fakta før beslutning. Riktig fagperson til riktig jobb.</h2>
           <div>
-            <span><CheckCircle2 size={18} /> Strukturert fremdrift</span>
-            <span><CheckCircle2 size={18} /> Dokumenter og neste steg samlet</span>
-            <span><CheckCircle2 size={18} /> Rådgivning på norsk</span>
-            <span><CheckCircle2 size={18} /> Personlig oppfølging underveis</span>
+            <span><CheckCircle2 size={18} /> Totalbudsjett før boligjakt</span>
+            <span><CheckCircle2 size={18} /> Tilgjengelighet og dokumentasjon må bekreftes</span>
+            <span><CheckCircle2 size={18} /> Juridisk kontroll hos uavhengig advokat</span>
+            <span><CheckCircle2 size={18} /> Oppfølging også etter overtakelsen</span>
           </div>
         </aside>
       </section>
-      <section className="section split process-after">
-        <div>
-          <p className="eyebrow">Etter overtakelsen</p>
-          <h2>Prosessen stopper ikke hos notar</h2>
+
+      <section className="section cornerstone-section" id="steg-for-steg">
+        <div className="section-heading">
+          <p className="eyebrow">Steg for steg</p>
+          <h2>Slik ser kjøpsreisen ut med Zen Eco Homes</h2>
           <p>
-            Etter kjøpet kommer nøkler, leverandører, praktiske spørsmål, tilsyn og andre oppgaver som kan være
-            vanskeligere når du ikke er i Spania hele tiden. Derfor er oppfølging etter kjøpet en del av modellen vår.
+            Den nøyaktige rekkefølgen kan variere mellom bruktbolig og nybygg, men disse ni
+            beslutningspunktene gir en god arbeidsmodell for de fleste kjøp.
           </p>
-          <a className="text-button" href="https://care.zenecohomes.com/boligtilsyn-costa-blanca/" target="_blank" rel="noopener noreferrer">
-            Se boligtilsyn og keyholding hos Zen Eco Homes Care <ArrowRight size={16} />
-          </a>
         </div>
-        <div>
-          <p className="eyebrow">Vil du forstå hele kjøpsreisen?</p>
-          <h2>Bruk guidene som fordypning</h2>
+
+        <div className="process-editorial">
+          <div className="process-timeline">
+            {journeySteps.map((step, index) => (
+              <article className="process-row" key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <aside className="process-deeper">
+            <p className="eyebrow">Fordypning underveis</p>
+            <h3>Les riktig guide når spørsmålet oppstår</h3>
+            <Link href="/guide/kjope-bolig-i-spania">
+              Komplett kjøperguide <ArrowRight size={15} />
+            </Link>
+            <Link href="/guide/kostnader-boligkjop-spania">
+              Kjøpskostnader og kalkulator <ArrowRight size={15} />
+            </Link>
+            <Link href="/guide/boliglan-spansk-bank-nordmenn">
+              Boliglån i spansk bank <ArrowRight size={15} />
+            </Link>
+            <Link href="/guide/nie-skattenummer-spania">
+              NIE-nummer <ArrowRight size={15} />
+            </Link>
+            <Link href="/guide/juridiske-fallgruver-boligkjop-spania">
+              Juridiske fallgruver <ArrowRight size={15} />
+            </Link>
+            <Link href="/guide/nybygg-i-spania">
+              Nybygg i Spania <ArrowRight size={15} />
+            </Link>
+          </aside>
+        </div>
+      </section>
+
+      <section className="section cornerstone-section">
+        <div className="section-heading">
+          <p className="eyebrow">Ansvar og roller</p>
+          <h2>Hvem gjør hva når du kjøper bolig i Spania?</h2>
           <p>
-            Kjøpsprosessen viser hvordan vi jobber. Guide-huben går dypere i temaene som NIE, bank, juridikk,
-            omkostninger, tomt, nybygg og skatt.
+            En vanlig årsak til usikkerhet er at kjøperen ikke vet hvem som faktisk har ansvaret for
+            hvert steg. Denne fordelingen er et godt utgangspunkt.
           </p>
-          <Link className="contact-button" href="/guide">Se alle guider</Link>
         </div>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Del av prosessen</th>
+                <th>Hovedansvar</th>
+                <th>Hva det betyr i praksis</th>
+              </tr>
+            </thead>
+            <tbody>
+              {roles.map(([part, owner, explanation]) => (
+                <tr key={part}>
+                  <td><strong>{part}</strong></td>
+                  <td>{owner}</td>
+                  <td>{explanation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style={{ marginTop: 18 }}>
+          Zen Eco Homes gir eiendomsrådgivning og prosessoppfølging. Juridiske, skattemessige og
+          finansielle vurderinger må gjøres av kvalifiserte fagpersoner for din konkrete situasjon.
+        </p>
       </section>
 
       <section className="section proof-section">
         <div className="section-heading">
-          <p className="eyebrow">Unngå vanlige feil</p>
-          <h2>Kunnskap før reservasjon</h2>
+          <p className="eyebrow">Før reservasjon</p>
+          <h2>Dette bør være avklart før du betaler reservasjonsbeløpet</h2>
           <p>
-            Før du reserverer bolig bør du forstå markedspris, tilgjengelighet, dokumentasjon, betalingsplan og
-            hvilke forbehold som bør inn i prosessen.
+            Reservasjon er et naturlig punkt å stoppe opp. Avtalen kan få økonomiske konsekvenser, og
+            vilkårene varierer fra bolig til bolig og mellom bruktbolig og nybygg.
           </p>
         </div>
         <div className="proof-grid">
           <article>
             <strong>01</strong>
-            <h3>Ikke stol blindt på portaler</h3>
-            <p>Gamle annonser og duplikater kan gi feil bilde av markedet.</p>
-            <Link className="text-button" href="/magasin/idealista-finn-ikke-alltid-til-a-stole-pa">
-              Hvorfor portaler kan gi feil bilde <ArrowRight size={16} />
-            </Link>
+            <h3>Er boligen faktisk den riktige?</h3>
+            <p>Område, støy, sol, avstander, vedlikehold og kompromisser bør være vurdert – ikke bare bildene.</p>
           </article>
           <article>
             <strong>02</strong>
-            <h3>Velg riktig rådgiver</h3>
-            <p>En god rådgiver jobber for dine interesser før, under og etter kjøpet.</p>
-            <Link className="text-button" href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">
-              Les mer <ArrowRight size={16} />
-            </Link>
+            <h3>Hva er totalbudsjettet?</h3>
+            <p>Kjøpesum er bare én del. Skatt, advokat, notar, register, finansiering og praktiske kostnader kommer i tillegg.</p>
           </article>
           <article>
             <strong>03</strong>
-            <h3>Sammenlign områder</h3>
-            <p>Riktig område påvirker livskvalitet, kostnader, utleie og videresalg.</p>
-            <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
-              Les mer <ArrowRight size={16} />
-            </Link>
+            <h3>Hva sier reservasjonsavtalen?</h3>
+            <p>Beløp, frist, refusjon, forbehold og konsekvens ved tilbaketrekning skal være forståelig før betaling.</p>
+          </article>
+          <article>
+            <strong>04</strong>
+            <h3>Hvem gjør juridisk kontroll?</h3>
+            <p>En uavhengig advokat bør ha et tydelig mandat til å kontrollere eiendom og kontraktsforhold.</p>
+          </article>
+          <article>
+            <strong>05</strong>
+            <h3>Er finansieringen realistisk?</h3>
+            <p>Hvis du trenger lån, bør ramme, dokumentasjon og tidslinje være avklart før du blir bundet av frister.</p>
+          </article>
+          <article>
+            <strong>06</strong>
+            <h3>Hva skjer etter reservasjonen?</h3>
+            <p>Du bør kjenne neste kontrakt, neste betaling, forventet notardato eller betalingsplan for nybygg.</p>
           </article>
         </div>
       </section>
-      <section className="section proof-section">
+
+      <section className="section split cornerstone-section">
+        <div>
+          <p className="eyebrow">Markedet i Spania</p>
+          <h2>Boligsøket fungerer ikke helt som Finn.no i Norge</h2>
+          <p>
+            Samme bolig kan markedsføres av flere aktører, informasjon kan komme fra ulike systemer og
+            enkelte portalannonser blir liggende etter at statusen har endret seg. Derfor bruker vi
+            ikke en annonse alene som bevis på at en bolig fortsatt er tilgjengelig.
+          </p>
+          <p>
+            Shortlisten bør bygge på oppdatert informasjon, og når et interessant objekt dukker opp,
+            bør tilgjengelighet og nøkkeldata bekreftes før du planlegger reisen rundt akkurat den boligen.
+          </p>
+          <Link className="text-button" href="/magasin/idealista-finn-ikke-alltid-til-a-stole-pa">
+            Hvorfor boligportaler ikke alltid er fasit <ArrowRight size={16} />
+          </Link>
+        </div>
+        <div>
+          <p className="eyebrow">Område før objekt</p>
+          <h2>En god bolig i feil område er fortsatt et dårlig kjøp</h2>
+          <p>
+            På Costa Blanca Nord kan noen få kilometer endre hverdagen mye: gangavstand, høydeforskjell,
+            trafikk, vinterliv, skolevei, strand, utsikt og behovet for bil. Derfor sammenligner vi
+            området før vi bruker tiden på konkrete boliger.
+          </p>
+          <Link className="text-button" href="/omrader">
+            Sammenlign områdene <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section cornerstone-section">
+        <div className="section-heading">
+          <p className="eyebrow">Bruktbolig eller nybygg</p>
+          <h2>Prosessen er lik i målet – men forskjellig underveis</h2>
+          <p>
+            Begge kjøp ender med juridisk kontroll, sluttoppgjør og offentlig overføring, men
+            beslutningspunktene før overtakelse er forskjellige.
+          </p>
+        </div>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Bruktbolig</th>
+                <th>Nybygg</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Det du vurderer</strong></td>
+                <td>Den konkrete boligen, området, teknisk tilstand og registrerte forhold.</td>
+                <td>Prosjekt, utbygger, plantegning, materialer, levering og kontrakts-/betalingsmodell.</td>
+              </tr>
+              <tr>
+                <td><strong>Betalingsløp</strong></td>
+                <td>Reservasjon/kontrakt og sluttoppgjør etter avtalte frister.</td>
+                <td>Ofte flere betalinger under byggeperioden før sluttoppgjør.</td>
+              </tr>
+              <tr>
+                <td><strong>Viktige kontroller</strong></td>
+                <td>Eierskap, heftelser, gjeld, registrering, eventuelle ombygginger og sameieforhold.</td>
+                <td>Utbygger, kontrakt, bankgarantier for forskudd der reglene krever det, fremdrift og ferdigstillelse.</td>
+              </tr>
+              <tr>
+                <td><strong>Tidslinje</strong></td>
+                <td>Ofte uker når finansiering og dokumentasjon er klare, men varierer fra sak til sak.</td>
+                <td>Følger byggeplanen og kan strekke seg over mange måneder eller år.</td>
+              </tr>
+              <tr>
+                <td><strong>Fordypning</strong></td>
+                <td><Link href="/guide/juridiske-fallgruver-boligkjop-spania">Juridiske fallgruver</Link></td>
+                <td><Link href="/guide/nybygg-i-spania">Nybygg i Spania</Link></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="section split cornerstone-section">
+        <div>
+          <p className="eyebrow">Totalbudsjett</p>
+          <h2>Hva bør du vite om kjøpskostnadene før boligsøket?</h2>
+          <p>
+            Bruk totalbudsjett, ikke bare kjøpesum. I Comunitat Valenciana er den generelle ITP-satsen
+            på brukt eiendom 9 % fra 1. juni 2026, mens 11 % gjelder når verdien overstiger 1 million
+            euro. Ved ordinært førstegangssalg av ny bolig gjelder normalt 10 % IVA, og den generelle
+            AJD-satsen i Valencia-regionen er 1,4 % fra 1. juni 2026. Andre satser og særregler kan
+            gjelde i enkelte situasjoner.
+          </p>
+          <p>
+            Advokat, notar, registrering, eventuell bank/takst og andre kostnader kommer i tillegg.
+            Derfor bør du bruke et konkret regnestykke for den aktuelle boligen.
+          </p>
+          <Link className="text-button" href="/guide/kostnader-boligkjop-spania">
+            Se kostnadsguiden og kalkulatoren <ArrowRight size={16} />
+          </Link>
+        </div>
+        <div>
+          <p className="eyebrow">Finansiering</p>
+          <h2>Lån bør avklares før en tidskritisk reservasjon</h2>
+          <p>
+            Dersom kjøpet krever finansiering, bør du vite hvor mye egen kapital som må være tilgjengelig,
+            hvilken dokumentasjon banken trenger og hvor lang behandlingstid som er realistisk.
+          </p>
+          <p>
+            Et lånetilsagn og en faktisk bolighandel er to forskjellige ting. Den konkrete boligen,
+            taksten og bankens endelige kredittvurdering kan påvirke hvor mye som kan finansieres.
+          </p>
+          <Link className="text-button" href="/guide/boliglan-spansk-bank-nordmenn">
+            Les den komplette boliglånsguiden <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section split process-after">
+        <div>
+          <p className="eyebrow">Etter overtakelsen</p>
+          <h2>Prosessen stopper ikke hos notar</h2>
+          <p>
+            Etter kjøpet skal nøkler, strøm, vann, forsikring, felleskostnader og andre praktiske
+            forhold fungere. For en feriebolig er det også viktig å bestemme hvem som følger opp
+            eiendommen når den står tom.
+          </p>
+          <a
+            className="text-button"
+            href="https://care.zenecohomes.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Se keyholding og boligoppfølging hos Zen Eco Homes Care <ArrowRight size={16} />
+          </a>
+        </div>
+        <div>
+          <p className="eyebrow">Kunnskap underveis</p>
+          <h2>Les mer når du trenger detaljene – ikke alt på én side</h2>
+          <p>
+            Denne siden eier kundereisen. Hovedguiden eier den komplette kjøperkunnskapen, mens
+            spesialguidene går dypere i kostnader, NIE, finansiering, juridikk og nybygg. Det gjør det
+            enklere å finne riktig svar uten at de samme artiklene konkurrerer med hverandre.
+          </p>
+          <Link className="contact-button" href="/guide">Se alle guider</Link>
+        </div>
+      </section>
+
+      <section className="section proof-section" id="faq">
         <div className="section-heading">
           <p className="eyebrow">Vanlige spørsmål</p>
-          <h2>Kjøpsprosessen i Spania – spørsmål og svar</h2>
-          <p>De vanligste spørsmålene nordmenn stiller om NIE, kostnader, finansiering og prosessen.</p>
+          <h2>Spørsmål om kjøpsprosessen med Zen Eco Homes</h2>
+          <p>
+            Her svarer vi på spørsmål om roller, fremdrift og samarbeidet. De faglige detaljene ligger
+            i de dedikerte guidene.
+          </p>
         </div>
         <div className="faq-accordion buying-process-faq">
           {faq.map((item, index) => (
@@ -188,11 +509,15 @@ export default function BuyingProcessPage() {
       <section className="contact-section">
         <div>
           <p className="eyebrow">Neste steg</p>
-          <h2>Start med en kort behovsavklaring</h2>
-          <p>Fortell oss hva du ser etter, så kan vi foreslå områder og prosjekter.</p>
+          <h2>Start med behov, område og totalbudsjett</h2>
+          <p>
+            Fortell hvordan du skal bruke boligen, omtrent hvilket budsjett du har og hva som er
+            viktigst i hverdagen. Da kan vi starte med områdene og boligtypene som faktisk passer.
+          </p>
         </div>
         <ContactForm source="buying-process" />
       </section>
+
       <Footer />
     </main>
   );
