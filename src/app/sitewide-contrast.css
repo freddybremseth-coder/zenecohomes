@@ -218,3 +218,15 @@ main .proper-name {
   white-space: nowrap;
   hyphens: none;
 }
+
+
+/* Prevent browser/manual wrapping within protected editorial heading words. */
+.buying-process-page .buying-process-intro h2 .human-name,
+.buying-process-page .buying-process-intro h2 .unbroken-word {
+  display: inline;
+  white-space: nowrap;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
