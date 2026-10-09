@@ -200,25 +200,19 @@ const CHECKED_BEACH_DISTANCE: Record<string, BeachDistance> = {
 
 // Sep 2026, 2025, 2024, 2023, 2022: matched month/year, original source units.
 const PRICE: Record<string, PriceFact> = {
-  aspe: {
-    municipality: "Aspe",
-    months: { 2026: 1188, 2025: 1007, 2024: 844, 2023: 907, 2022: 818 },
-    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/aspe/historico/", date: "2026-09" },
-  },
-  novelda: {
-    municipality: "Novelda",
-    months: { 2026: 1058, 2025: 965, 2024: 800, 2023: 699, 2022: 629 },
-    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/novelda/historico/", date: "2026-09" },
+  "ciudad quesada": {
+    municipality: "Ciudad Quesada (Idealistas eget prisområde, ikke hele Rojales)",
+    months: { 2026: 2887, 2025: 2659, 2024: 2547, 2023: 2356, 2022: 2267 },
+    source: {
+      label: "Idealista · historiske annonserte priser i Ciudad Quesada",
+      url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/ciudad-quesada/historico/",
+      date: "2026-09",
+    },
   },
   "san pedro del pinatar": {
     municipality: "San Pedro del Pinatar kommune",
     months: { 2026: 2043, 2025: 1929, 2024: 1460, 2023: 1195, 2022: 1195 },
     source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/murcia-region/murcia-provincia/san-pedro-del-pinatar/historico/", date: "2026-09" },
-  },
-  villena: {
-    municipality: "Villena",
-    months: { 2026: 780, 2025: 711, 2024: 677, 2023: 654, 2022: 609 },
-    source: { label: "Idealista · historiske annonserte salgspriser", url: "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/villena/historico/", date: "2026-09" },
   },
   albir: {
     municipality: "L'Albir (eget prisområde i L'Alfàs del Pi)",
@@ -478,7 +472,7 @@ function directDistanceKm(lat: number, lon: number): number {
   return Math.round(6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(Math.max(0, 1 - a))));
 }
 
-export function getTownAreaFacts(name: string): TownAreaFacts {
+export function getTownAreaFacts(name: string, options: { includePriceHistory?: boolean } = {}): TownAreaFacts {
   const key = normalizeSearchText(name).trim();
   const coords = getAreaMapCoordinate(name);
   const editorial = verifiedAreaEditorial(name);
@@ -489,7 +483,7 @@ export function getTownAreaFacts(name: string): TownAreaFacts {
     population: POPULATION[key] || EXPANDED_POPULATION[key] || null,
     nationality: NATIONALITIES[key] || null,
     beachDistance: beachOverview(key, coords),
-    price: PRICE[key] || null,
+    price: options.includePriceHistory === false ? null : (PRICE[key] || null),
     airportDirectKm: coords ? directDistanceKm(coords.lat, coords.lng) : null,
     airportMapsUrl: `https://www.google.com/maps/dir/?api=1&origin=${mapsName}&destination=Alicante-Elche+Airport&travelmode=driving`,
     beachMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("playa near " + name + ", Spain")}`,

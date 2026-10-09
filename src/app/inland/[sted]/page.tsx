@@ -63,7 +63,8 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
   const otherTowns = inlandTowns.filter((item) => item.slug !== town.slug).slice(0, 6);
   const intro = displayTownIntro(town);
   const lifestyle = getInlandLifestyleStory(town.slug);
-  const areaFacts = getTownAreaFacts(town.name);
+  // Price trends are not meaningful for these small, heterogeneous inland markets.
+  const areaFacts = getTownAreaFacts(town.name, { includePriceHistory: false });
 
   return (
     <main className="inland-theme inland-journal inland-town-page">
@@ -100,7 +101,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
         </div>
       </section>
 
-      <AreaFactsTabs facts={areaFacts} />
+      <AreaFactsTabs facts={areaFacts} showPriceTab={false} />
 
       {lifestyle ? (
         <section className="inland-town-story inland-town-lifestyle">

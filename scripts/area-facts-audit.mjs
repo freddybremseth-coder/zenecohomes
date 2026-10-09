@@ -132,9 +132,7 @@ const newIdealista = {
   "los alcazares": [2150, 1798, 1607, 1352, 1300],
   "san javier": [2108, 1809, 1455, 1340, 1314],
   "san pedro del pinatar": [2043, 1929, 1460, 1195, 1195],
-  villena: [780, 711, 677, 654, 609],
-  aspe: [1188, 1007, 844, 907, 818],
-  novelda: [1058, 965, 800, 699, 629],
+  "ciudad quesada": [2887, 2659, 2547, 2356, 2267],
 };
 const priceSection = data.slice(data.indexOf("const PRICE:"), data.indexOf("const FINESTRAT_DISTRICTS:"));
 for (const [name, values] of Object.entries(newIdealista)) {
@@ -164,5 +162,31 @@ const inlandTownPage = read("src/app/inland/[sted]/page.tsx");
 assert.ok(coastalTownPage.indexOf('<section className="section split">') < coastalTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Coast: Om must come before Facts");
 assert.ok(inlandTownPage.indexOf('<section className="inland-town-story">') < inlandTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Inland: Om must come before Facts");
 console.log("PASS", "Om always precedes Fakta in coast and inland templates");
+
+
+// Price publication policy: a verified locality history is allowed on the coast,
+// but NOT on heterogeneous inland pages, even where legacy source data exists.
+const inlandComponent = read("src/app/inland/[sted]/page.tsx");
+const tabsComponent = read("src/components/AreaFactsTabs.tsx");
+const coastComponent = read("src/app/omrader/[region]/[sted]/page.tsx");
+const ciudadKey = '  "ciudad quesada": {';
+const ciudadAt = priceSection.indexOf(ciudadKey);
+assert.ok(ciudadAt >= 0, "Ciudad Quesada needs its own Idealista locality series");
+const ciudad = priceSection.slice(ciudadAt, ciudadAt + 620);
+assert.ok(ciudad.includes("ikke hele Rojales"), "Ciudad Quesada must not inherit Rojales municipality pricing");
+assert.ok(ciudad.includes("/ciudad-quesada/historico/"), "Ciudad Quesada needs a direct original-source link");
+assert.ok(inlandComponent.includes('getTownAreaFacts(town.name, { includePriceHistory: false })'), "Inland must not send price histories to browser");
+assert.ok(inlandComponent.includes('<AreaFactsTabs facts={areaFacts} showPriceTab={false} />'), "Inland price tab must be hidden");
+assert.ok(tabsComponent.includes('showPriceTab ? TABS : TABS.filter((item) => item.id !== "priser")'), "Tab navigation must exclude the inland pricing tab");
+assert.ok(tabsComponent.includes('availableTabs.map((item, index)'), "Tabs must reflect chosen pricing policy");
+assert.ok(tabsComponent.includes('showPriceTab && tab === "priser"'), "Price panels must never render on inland");
+assert.ok(tabsComponent.includes('availableTabs[(next + availableTabs.length) % availableTabs.length]'), "Keyboard navigation must use visible tabs");
+assert.ok(tabsComponent.includes('<p>{facts.price.municipality}</p>'), "Idealista submarket names must not be mislabeled as municipalities");
+for (const key of ["aspe", "novelda", "villena"]) {
+  assert.ok(!priceSection.includes('  ' + key + ': {'), "Misleading inland price series still present for " + key);
+}
+assert.ok(coastComponent.includes('<AreaFactsTabs facts={areaFacts} />'), "Coastal prices still available where verified");
+assert.ok(!priceSection.includes('  "la manga": {'), "La Manga must have no guessed series");
+console.log("PASS", "Ciudad Quesada source data and exclusion of inland price tabs and prices");
 
 console.log("Area facts audit passed.");
