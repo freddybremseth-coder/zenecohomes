@@ -160,7 +160,7 @@ console.log("PASS", Object.keys(newIdealista).length, "localized Idealista price
 const coastalTownPage = read("src/app/omrader/[region]/[sted]/page.tsx");
 const inlandTownPage = read("src/app/inland/[sted]/page.tsx");
 assert.ok(coastalTownPage.indexOf('<section className="section split">') < coastalTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Coast: Om must come before Facts");
-assert.ok(inlandTownPage.indexOf('<section className="inland-town-story">') < inlandTownPage.indexOf("<AreaFactsTabs facts={areaFacts} />"), "Inland: Om must come before Facts");
+assert.ok(inlandTownPage.indexOf('<section className="inland-town-story">') < inlandTownPage.indexOf('<AreaFactsTabs facts={areaFacts} showPriceTab={false} />'), "Inland: Om must come before Facts");
 console.log("PASS", "Om always precedes Fakta in coast and inland templates");
 
 
