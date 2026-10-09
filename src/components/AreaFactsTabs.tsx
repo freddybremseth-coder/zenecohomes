@@ -41,6 +41,7 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
   const [tab, setTab] = useState<TabId>("fakta");
   const id = useId().replace(/:/g, "");
   const format = (n: number) => new Intl.NumberFormat("nb-NO").format(n);
+  const maxPriceChange = facts.price ? Math.max(1, ...([1, 2, 3, 4] as const).map((years) => Math.abs(priceGrowth(facts.price!, years) ?? 0))) : 1;
   const keyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
     const next = event.key === "ArrowRight" ? index + 1 : event.key === "ArrowLeft" ? index - 1 : null;
     if (next !== null) {
@@ -142,7 +143,7 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
                       <div className="area-facts-price-row" key={years}>
                         <span>{years} år</span>
                         <div className="area-facts-price-track">
-                          <div className="area-facts-price-fill" style={{ width: `${Math.min(100, Math.max(0, Math.abs(change ?? 0) / 60 * 100))}%` }} />
+                          <div className="area-facts-price-fill" style={{ width: `${Math.min(100, Math.max(0, Math.abs(change ?? 0) / maxPriceChange * 100))}%` }} />
                         </div>
                         <strong>{change === null ? "–" : `${change >= 0 ? "+" : ""}${change.toLocaleString("nb-NO", { maximumFractionDigits: 1, minimumFractionDigits: 1 })} %`}</strong>
                       </div>
