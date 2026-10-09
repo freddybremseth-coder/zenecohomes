@@ -120,6 +120,8 @@ export default async function AreaTownPage({
         </div>
       </section>
 
+      <AreaFactsTabs facts={areaFacts} />
+
       <section className="section split">
         <div>
           <p className="eyebrow">Om {profile.name}</p>
@@ -166,8 +168,6 @@ export default async function AreaTownPage({
           />
         </div>
       </section>
-
-      <AreaFactsTabs facts={areaFacts} />
 
       {book && (
         <section className="section proof-section">
