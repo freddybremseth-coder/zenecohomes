@@ -104,4 +104,17 @@ expectDeclaration(regionStyles, ".section.region-editorial", "padding-top: 24px;
 assert.ok(mobileFixes.includes(".chatbot-2027.chatbot-shell:has(.chatbot-panel)"), "The full-width open mobile advisor sheet must be preserved");
 console.log("PASS", "mobile region spacing, compact right-aligned advisor, and open mobile sheet");
 
+
+// The area-profile listing CTAs must meet AA and must stay explicitly scoped:
+// selectors on image heroes and dark backgrounds have different color needs.
+const areaProfile = read("src/app/omrader/[region]/[sted]/page.tsx");
+assert.ok(areaProfile.includes('className="hero-actions area-property-cta-actions"'), "Area listing buttons must use their own scoped layout class");
+expectDeclaration(guards, ".hero-actions.area-property-cta-actions > .contact-button", "background: var(--ze-ink);");
+expectDeclaration(guards, ".hero-actions.area-property-cta-actions > .contact-button", "color: var(--ze-white);");
+expectDeclaration(guards, ".hero-actions.area-property-cta-actions > .text-button", "background: var(--ze-white);");
+expectDeclaration(guards, ".hero-actions.area-property-cta-actions > .text-button", "color: var(--ze-ink);");
+testPair("area listing primary button on dark", token("--ze-white"), token("--ze-ink"));
+testPair("area listing secondary button on paper", token("--ze-ink"), token("--ze-white"));
+console.log("PASS", "high-contrast area listing buttons");
+
 console.log("Contrast regression audit passed.");
