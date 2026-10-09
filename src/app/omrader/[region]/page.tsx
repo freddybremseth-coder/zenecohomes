@@ -7,6 +7,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
+import { oneLineAreaText, splitAreaParagraphs } from "@/lib/areaDescriptionText.mjs";
 import { areaProfileSlug } from "@/lib/areaRoutes";
 import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
 import { booksForRegion, bookUrl, generalGuideBook } from "@/lib/books";
@@ -250,7 +251,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
       name: profile.name,
       ...coordinates,
       region: selected.label,
-      description: profile.hero_blurb || profile.description || `Les om ${profile.name} før du velger bolig.`,
+      description: oneLineAreaText(profile.hero_blurb) || oneLineAreaText(profile.description) || `Les om ${profile.name} før du velger bolig.`,
       image: areaPresentationImage(profile, properties),
       href: `/omrader/${region}/${areaProfileSlug(profile)}`,
       propertyHref: `/eiendommer?region=${region}&area=${encodeURIComponent(profile.name)}`,
@@ -381,8 +382,8 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
                 <section>
                   <span>{profile.region || selected.label}</span>
                   <h3>{profile.name}</h3>
-                  {profile.hero_blurb && <strong>{profile.hero_blurb}</strong>}
-                  {profile.description && <p>{profile.description}</p>}
+                  {profile.hero_blurb && <strong>{oneLineAreaText(profile.hero_blurb)}</strong>}
+                  {splitAreaParagraphs(profile.description).map((paragraph, index) => <p key={`region-description-${index}`}>{paragraph}</p>)}
                   {book && excerpt.length > 0 && (
                     <div className="area-guide-reading">
                       <p className="eyebrow"><BookOpen size={14} /> Fra Let Me Guide You: {book.title}</p>
