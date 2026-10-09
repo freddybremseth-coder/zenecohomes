@@ -71,9 +71,9 @@ expectDeclaration(guards, ".chatbot-shell:not(.chatbot-2027) .chatbot-messages .
 const importLine = 'import "./contrast-standards.css";';
 assert.ok(layout.includes(importLine), "Contrast styles must be imported");
 const lastImport = [...layout.matchAll(/^import [^\n]+\.css";$/gm)].at(-1)?.[0];
-assert.equal(lastImport, 'import "./area-reading-mobile.css";', "Reading safeguards must be the final CSS import");
+assert.equal(lastImport, 'import "./sitewide-contrast.css";', "Site-wide contrast safeguards must be the final CSS import");
 assert.ok(layout.indexOf(importLine) < layout.indexOf(lastImport), "Contrast styles must load before the final reading guardrails");
-console.log("PASS", "reading safeguards loaded after existing styles");
+console.log("PASS", "site-wide contrast safeguards loaded after existing styles");
 const legacy = read("src/app/globals.css");
 const regionPage = read("src/app/omrader/[region]/page.tsx");
 
