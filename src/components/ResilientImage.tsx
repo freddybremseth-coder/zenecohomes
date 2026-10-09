@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { type ImageProps } from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ImgHTMLAttributes } from "react";
 
 /**
  * A missing remote image must never leave a broken-image icon on public pages.
@@ -47,6 +47,40 @@ export function ResilientImage({
       style={style}
       onError={(event) => {
         onError?.(event);
+        if (current !== fallbackSrc) setCurrent(fallbackSrc);
+        else setUnavailable(true);
+      }}
+    />
+  );
+}
+
+/** Same fallback for legacy <img> content and CMS images (no optimizer). */
+export function ResilientNativeImage({
+  src,
+  alt,
+  className,
+  fallbackSrc = "/assets/areas.jpg",
+  ...props
+}: ImgHTMLAttributes<HTMLImageElement> & { fallbackSrc?: string }) {
+  const [current, setCurrent] = useState(src || fallbackSrc);
+  const [unavailable, setUnavailable] = useState(false);
+  useEffect(() => {
+    setCurrent(src || fallbackSrc);
+    setUnavailable(false);
+  }, [src, fallbackSrc]);
+
+  if (unavailable) {
+    return <div className={`resilient-image-placeholder ${className || ""}`} role="img" aria-label={`${alt || "Foto"} – bilde ikke tilgjengelig`}>Bilde ikke tilgjengelig</div>;
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      {...props}
+      src={current}
+      alt={alt || ""}
+      className={className}
+      onError={(event) => {
+        props.onError?.(event);
         if (current !== fallbackSrc) setCurrent(fallbackSrc);
         else setUnavailable(true);
       }}
