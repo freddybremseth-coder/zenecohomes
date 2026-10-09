@@ -37,8 +37,9 @@ function Stat({
   );
 }
 
-export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
+export function AreaFactsTabs({ facts, showPriceTab = true }: { facts: TownAreaFacts; showPriceTab?: boolean }) {
   const [tab, setTab] = useState<TabId>("fakta");
+  const availableTabs = showPriceTab ? TABS : TABS.filter((item) => item.id !== "priser");
   const id = useId().replace(/:/g, "");
   const format = (n: number) => new Intl.NumberFormat("nb-NO").format(n);
   const maxPriceChange = facts.price ? Math.max(1, ...([1, 2, 3, 4] as const).map((years) => Math.abs(priceGrowth(facts.price!, years) ?? 0))) : 1;
@@ -46,13 +47,13 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
     const next = event.key === "ArrowRight" ? index + 1 : event.key === "ArrowLeft" ? index - 1 : null;
     if (next !== null) {
       event.preventDefault();
-      const selected = TABS[(next + TABS.length) % TABS.length];
+      const selected = availableTabs[(next + availableTabs.length) % availableTabs.length];
       setTab(selected.id);
       document.getElementById(`${id}-tab-${selected.id}`)?.focus();
     }
     if (event.key === "Home" || event.key === "End") {
       event.preventDefault();
-      const selected = TABS[event.key === "Home" ? 0 : TABS.length - 1];
+      const selected = availableTabs[event.key === "Home" ? 0 : availableTabs.length - 1];
       setTab(selected.id);
       document.getElementById(`${id}-tab-${selected.id}`)?.focus();
     }
@@ -66,11 +67,15 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
           <h2 id={`${id}-heading`}>Fakta om {facts.name}</h2>
           <p>Et raskt beslutningsgrunnlag med dokumenterte tall, beliggenhet og opplevelser.</p>
         </div>
-        <p className="area-facts-trust">Befolkning og boligpriser gjelder oppgitt kommune og kildeår. Strandavstander er grove orienteringstall, ikke måling fra boligen.</p>
+        <p className="area-facts-trust">
+          {showPriceTab
+            ? "Befolkning gjelder kommunen. Annonserte boligpriser gjelder Idealistas oppgitte prisområde og dato. Strandavstander er grove orienteringstall."
+            : "Boligprisstatistikk er bevisst utelatt for innlandet: få annonser og store forskjeller mellom nybygg og oppussingsobjekter kan gi misvisende snitt."}
+        </p>
       </div>
       <div className="area-facts-surface">
         <div className="area-facts-tabs" role="tablist" aria-label={`Faktakategorier for ${facts.name}`}>
-          {TABS.map((item, index) => (
+          {availableTabs.map((item, index) => (
             <button
               type="button"
               key={item.id}
@@ -157,14 +162,14 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
               </div>
             </>
           )}
-          {tab === "priser" && (
+          {showPriceTab && tab === "priser" && (
             facts.price ? (
               <div className="area-facts-prices">
                 <div className="area-facts-price-header">
                   <div>
                     <span className="area-facts-small-title">Annonsert pris · september 2026</span>
                     <strong>{format(facts.price.months[2026])} €/m²</strong>
-                    <p>{facts.price.municipality} kommune</p>
+                    <p>{facts.price.municipality}</p>
                   </div>
                   <Source source={facts.price.source} />
                 </div>
