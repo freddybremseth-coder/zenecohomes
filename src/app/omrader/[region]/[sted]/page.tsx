@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { ResilientImage } from "@/components/ResilientImage";
 import { NoBreakName, ProtectPlaceNames } from "@/components/ProtectedPlaceName";
+import { AreaFactsTabs } from "@/components/AreaFactsTabs";
+import { getTownAreaFacts } from "@/lib/areaFactData";
 import Link from "next/link";
 import { ArrowRight, BookOpen, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -101,6 +103,7 @@ export default async function AreaTownPage({
   const heroDescription = oneLineAreaText(profile.hero_blurb) || oneLineAreaText(profile.description) || `Les om ${profile.name} før du velger bolig i området.`;
   const book = placeBookForArea(profile.name);
   const image = areaPresentationImage(profile, properties);
+  const areaFacts = getTownAreaFacts(profile.name);
 
   return (
     <main>
@@ -163,6 +166,8 @@ export default async function AreaTownPage({
           />
         </div>
       </section>
+
+      <AreaFactsTabs facts={areaFacts} />
 
       {book && (
         <section className="section proof-section">
