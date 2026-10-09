@@ -66,7 +66,7 @@ export function AreaFactsTabs({ facts }: { facts: TownAreaFacts }) {
           <h2 id={`${id}-heading`}>Fakta om {facts.name}</h2>
           <p>Et raskt beslutningsgrunnlag med dokumenterte tall, beliggenhet og opplevelser.</p>
         </div>
-        <p className="area-facts-trust">Tall gjelder oppgitt kommune og måleår. Manglende data blir ikke anslått.</p>
+        <p className="area-facts-trust">Befolkning og boligpriser gjelder oppgitt kommune og kildeår. Strandavstander er grove orienteringstall, ikke måling fra boligen.</p>
       </div>
       <div className="area-facts-surface">
         <div className="area-facts-tabs" role="tablist" aria-label={`Faktakategorier for ${facts.name}`}>
