@@ -196,8 +196,8 @@ export default function BuyingProcessPage() {
           <Link className="text-button" href="/om-freddy">Bli kjent med Freddy <ArrowRight size={16} /></Link>
         </div>
         <div className="buying-process-portraits-images">
-          <img src="/assets/freddy-eiendom-costa-blanca.webp" alt="Freddy Bremseth som eiendomsrådgiver på Costa Blanca" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} />
-          <img src="/assets/freddy-personlig-radgiver.webp" alt="Freddy Bremseth i en personlig rådgiversamtale ved Middelhavet" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} />
+          <img src="/assets/freddy-eiendom-costa-blanca.webp" alt="Freddy Bremseth som eiendomsrådgiver på Costa Blanca" loading="lazy" />
+          <img src="/assets/freddy-personlig-radgiver.webp" alt="Freddy Bremseth i en personlig rådgiversamtale ved Middelhavet" loading="lazy" />
         </div>
       </section>
 
