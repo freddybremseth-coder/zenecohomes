@@ -427,6 +427,9 @@ export const articles: Article[] = [
           ],
           caption: "Pedagogisk regneeksempel, ikke et banktilbud. En lavere takst, lavere innvilget lånegrad eller andre kostnader øker kapitalbehovet.",
         },
+      },
+      {
+        heading: "Hva viser regneeksemplet om egenkapital?",
         body: [
           "En kjøper som bare har 120 000 euro tilgjengelig, har altså ikke nødvendigvis nok egenkapital selv om banken vurderer et lån på 70 prosent. Skattene og kjøpskostnadene kommer i tillegg, og finansieringen bør tåle uventede utgifter.",
         ],
