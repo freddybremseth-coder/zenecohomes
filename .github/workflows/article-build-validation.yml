@@ -37,3 +37,5 @@ jobs:
         run: npm run seo:audit
       - name: Check TypeScript
         run: npx tsc --noEmit
+      - name: Validate production build
+        run: npm run build
