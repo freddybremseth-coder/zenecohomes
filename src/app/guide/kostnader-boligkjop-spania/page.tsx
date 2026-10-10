@@ -161,16 +161,22 @@ export default function PurchaseCostsGuidePage() {
             kan takst og andre relevante bankkostnader også komme inn i regnestykket.
           </p>
         </div>
-        <aside className="feature-panel">
-          <div>
-            <p className="eyebrow">Eksempel</p>
+        <aside className="feature-panel purchase-cost-panel" aria-label="Kostnadseksempel for bruktbolig">
+          <div className="purchase-cost-example">
+            <p className="eyebrow">Eksempel · bruktbolig</p>
             <h3>Bruktbolig til €500.000</h3>
-            <p><strong>ITP 9 %: €45.000</strong></p>
-            <p>
-              Med en planleggingspost på eksempelvis 1 % til juridisk bistand og 0,5 % til notar/register og
-              mindre transaksjonskostnader, blir et illustrativt totalbudsjett rundt €552.500.
+            <dl className="purchase-cost-breakdown">
+              <dt>Kjøpesum</dt><dd>€500.000</dd>
+              <dt>ITP (9 %)</dt><dd>€45.000</dd>
+              <dt>Juridisk bistand (anslag 1 %)</dt><dd>€5.000</dd>
+              <dt>Notar, register m.m. (anslag 0,5 %)</dt><dd>€2.500</dd>
+              <dt className="purchase-cost-total-label">Illustrativ totalpris</dt>
+              <dd className="purchase-cost-total-value">€552.500</dd>
+            </dl>
+            <p className="purchase-cost-caveat">
+              Honorarene er planleggingsanslag, ikke lovbestemte satser eller et bindende tilbud.
+              Be om konkrete kostnadsoverslag før kjøpet.
             </p>
-            <small>Honorarpåslagene er eksempler, ikke lovbestemte satser.</small>
           </div>
         </aside>
       </section>
@@ -191,15 +197,22 @@ export default function PurchaseCostsGuidePage() {
           </p>
           <Link className="text-button" href="/guide/nybygg-i-spania">Les den komplette nybyggguiden <ArrowRight size={16} /></Link>
         </div>
-        <aside className="feature-panel">
-          <div>
-            <p className="eyebrow">Eksempel</p>
+        <aside className="feature-panel purchase-cost-panel" aria-label="Kostnadseksempel for nybygg">
+          <div className="purchase-cost-example">
+            <p className="eyebrow">Eksempel · nybygg</p>
             <h3>Nybygg til €500.000</h3>
-            <p><strong>IVA 10 %: €50.000</strong></p>
-            <p><strong>AJD 1,4 %: €7.000</strong></p>
-            <p>
-              Legger du i tillegg inn de samme illustrative planleggingspostene på 1 % til juridisk bistand og
-              0,5 % til notar/register, blir totalrammen rundt €564.500.
+            <dl className="purchase-cost-breakdown">
+              <dt>Kjøpesum</dt><dd>€500.000</dd>
+              <dt>IVA (10 %)</dt><dd>€50.000</dd>
+              <dt>AJD (1,4 %)</dt><dd>€7.000</dd>
+              <dt>Juridisk bistand (anslag 1 %)</dt><dd>€5.000</dd>
+              <dt>Notar, register m.m. (anslag 0,5 %)</dt><dd>€2.500</dd>
+              <dt className="purchase-cost-total-label">Illustrativ totalpris</dt>
+              <dd className="purchase-cost-total-value">€564.500</dd>
+            </dl>
+            <p className="purchase-cost-caveat">
+              Eksemplet bruker generell AJD-sats for en ordinær ferie- eller sekundærbolig.
+              Andre satser kan gjelde. Honorarene er kun planleggingsanslag.
             </p>
           </div>
         </aside>
