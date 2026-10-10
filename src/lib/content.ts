@@ -356,84 +356,140 @@ export const articles: Article[] = [
   },
   {
     slug: "finansiere-bolig-i-spania",
-    title: "Finansiere bolig i Spania: lån, NIE, bank og notar",
-    excerpt:
-      "En kort oversikt over hva du bør ha kontroll på før kjøp: finansiering, totalbudsjett, NIE, bankkonto, advokat, notar og betalingsflyt – med lenker til fordypningene.",
+    title: "Finansiere bolig i Spania: hvor mye kan du kjøpe for?",
+    excerpt: "Egenkapital, boliglån i Norge eller Spania, valutarisiko og månedlig belastning. Slik lager du en trygg finansieringsplan før du reserverer bolig på Costa Blanca.",
     date: "2026-05-10",
-    updated: "2026-10-07",
+    updated: "2026-10-10",
     category: "Kjøpsprosess",
-    readingTime: "5 min lesing",
+    readingTime: "10 min lesing",
     image: "/assets/magasin-covers/finansiering.svg",
-    imageAlt: "Illustrasjon av finansiering, dokumenter, NIE, bank og notar ved boligkjøp i Spania",
-    seoTitle: "Finansiere bolig i Spania | Lån, NIE, bank og notar",
-    seoDescription:
-      "Slik kan du finansiere bolig i Spania. Få oversikt over lån i Norge eller Spania, NIE, bankkonto, notar, valuta og kostnader før boligkjøpet.",
-    keywords: ["NIE Spania", "finansiering bolig Spania", "notar Spania", "kjøpskostnader Spania", "spansk bankkonto"],
+    imageAlt: "Finansieringsplan for boligkjøp i Spania med euro, lånevalg og totalbudsjett",
+    seoTitle: "Finansiere bolig i Spania | Egenkapital, lån og budsjett",
+    seoDescription: "Hvordan finansiere bolig i Spania? Se egenkapital, lån i Norge eller Spania, konkrete regneeksempler, valutarisiko og sjekkliste før reservasjon.",
+    keywords: ["finansiere bolig i Spania", "egenkapital bolig Spania", "finansiering Costa Blanca", "låne til bolig i Spania", "budsjett boligkjøp Spania"],
     intro: [
-      "Denne siden er laget som en oversikt, ikke som fire guider i én. Målet er å vise hva som må avklares og sende deg videre til den riktige fordypningen når du trenger detaljer.",
-      "For norske kjøpere henger finansiering, valuta, NIE, bankkonto, juridisk kontroll og notar sammen i samme kjøpsløp, men de har forskjellige roller og bør ikke blandes sammen.",
+      "Drømmen om en bolig på Costa Blanca begynner ofte med en pris i en boligannonse. Men den viktigste prisen er hva du faktisk må betale totalt, hvor stor del som må finansieres, og hvor mye økonomisk handlefrihet du har igjen etter overtakelsen.",
+      "Det korte svaret er at du kan finansiere boligkjøp i Spania med egne midler, lån med sikkerhet i norsk eiendom, boliglån i spansk bank eller en kombinasjon. Det beste alternativet avhenger av sikkerhet, inntekt, valuta, lånekostnader og hvordan boligen skal brukes. Her får du en plan for å ta beslutningen i riktig rekkefølge – og lenker til detaljguidene der du trenger dem.",
     ],
     sections: [
       {
-        heading: "Finansieringsvalg: avklar rammen før du velger bolig",
+        heading: "Start med totalrammen – ikke annonsert boligpris",
         body: [
-          "Bestem først om kjøpet skal finansieres med egenkapital, lån i Norge, lån i Spania eller en kombinasjon. Sammenlign total kostnad, valutarisiko, nødvendig egenkapital og hvor mye av kjøpskostnadene som må betales kontant.",
+          "Har du 500 000 euro tilgjengelig totalt, kan du normalt ikke bruke hele beløpet på selve boligen. Skatt, notar, eiendomsregister, juridisk bistand og eventuelle bank- eller valutakostnader må også få plass. Nybygg og bruktbolig har ulike skatteregler, og satsene varierer etter region, eiendom og tidspunkt.",
+          "Vår separate guide til kjøpskostnader har den detaljerte og oppdaterbare kostnadsoversikten med kalkulator. Denne finansieringsguiden handler i stedet om hvordan du setter sammen pengene, lånet og sikkerhetsmarginen.",
         ],
         bullets: [
-          "Få finansieringsrammen bekreftet før du reserverer.",
-          "Regn i både euro og norske kroner dersom kapitalen kommer fra Norge.",
-          "Skill mellom maksimal kjøpesum og maksimal totalramme.",
+          "Fastsett samlet ramme for kjøpesum, kjøpskostnader, tilvalg og nødvendige oppgraderinger.",
+          "Trekk fra en buffer du ønsker å beholde etter kjøpet.",
+          "Avklar hvor mye kontant egenkapital du har – og hvor mye som eventuelt er bundet i annen eiendom.",
+          "Få en realistisk låneramme før du legger inn reservasjon eller signerer en bindende avtale.",
         ],
       },
       {
-        heading: "Kjøpskostnader og valutarisiko: regn konkret",
+        heading: "Fire finansieringsmåter – med ulike fordeler og risiko",
+        table: {
+          headers: ["Modell", "Kan passe når", "Dette må du kontrollere"],
+          rows: [
+            ["Egne midler", "Du ønsker å kjøpe uten lån", "Likviditetsbuffer, valutakurs og kapitalbinding"],
+            ["Lån med sikkerhet i Norge", "Du har ledig sikkerhet og tilgang til norsk finansiering", "Rentebetingelser, pant i norsk bolig og valutarisiko i kjøpet"],
+            ["Spansk boliglån", "Du ønsker finansiering med pant i den spanske boligen", "Belåningsgrad, bankens takst, kredittvurdering, lånevilkår og finansieringsfrist"],
+            ["Kombinasjon", "Du vil fordele egenkapital og lånebehov mellom kilder", "Samlet gjeldsbetjening, sikkerhet og samordnet betalingsplan"],
+          ],
+          caption: "Modellene er alternativer, ikke personlige låneanbefalinger. Endelige vilkår vurderes av bankene.",
+        },
         body: [
-          "Kjøpskostnadene avhenger blant annet av bruktbolig eller nybygg, region, kjøpesum og hvilke profesjonelle tjenester som brukes. Bruk derfor et konkret regnestykke fremfor én generell prosent.",
-          "Ved større NOK/EUR-overføringer bør tidspunkt og valutarisiko planlegges sammen med betalingsplanen.",
+          "Det viktigste skillet er ikke nødvendigvis Norge mot Spania. Det er om finansieringen passer din totale økonomi. Et lån med lav annonsert rente kan ha andre kostnader eller større risiko enn et alternativ med høyere nominell rente. Sammenlign tilbud ut fra faktisk samlet kostnad, løpetid, betingelser og valuta.",
+          "For en konkret sammenligning av de to landene har vi en egen artikkel om lån i Norge eller Spania. Søknadsprosessen og bankenes krav behandles i detaljguiden om spansk boliglån.",
+        ],
+      },
+      {
+        heading: "Hvor mye egenkapital kan du trenge?",
+        body: [
+          "Ved spansk boligfinansiering er bankens belåningsgrad bare ett av flere forhold. Ikke-residenter kan i enkelte banker få finansiering opptil rundt 70 prosent, men dette er ingen generell rett eller et lånetilsagn. Banken vurderer inntekt, eksisterende gjeld, alder, boligtype og takst. Lånegrunnlaget kan bli lavere dersom bankens verdsettelse er lavere enn avtalt kjøpesum.",
+          "I tillegg kommer kjøpskostnader som i mange tilfeller må betales av egne midler. Derfor er egenkapitalbehovet større enn bare den delen av boligprisen som banken ikke finansierer.",
+        ],
+      },
+      {
+        heading: "Eksempel: bolig til 400 000 euro med spansk finansiering",
+        body: [
+          "Anta en ordinær bruktbolig på Costa Blanca med avtalt kjøpesum 400 000 euro. For å vise mekanikken legger vi inn et hypotetisk boliglån på 70 prosent av kjøpesummen og illustrative øvrige kjøpskostnader på 42 000 euro. Beløpet for kjøpskostnader er kun et eksempel – bruk den oppdaterte kostnadskalkulatoren og dokumenterte tilbud for riktig resultat.",
+        ],
+        table: {
+          headers: ["Post", "Illustrativt beløp"],
+          rows: [
+            ["Kjøpesum", "400 000 €"],
+            ["Mulig banklån, antatt 70 %", "280 000 €"],
+            ["Kontantandel av kjøpesummen", "120 000 €"],
+            ["Antatte kjøpskostnader", "42 000 €"],
+            ["Egne midler før ekstra buffer", "162 000 €"],
+            ["Eksempel på separat reserve", "15 000 €"],
+            ["Samlet tilgjengelig likviditet i dette scenariet", "177 000 €"],
+          ],
+          caption: "Pedagogisk regneeksempel, ikke et banktilbud. En lavere takst, lavere innvilget lånegrad eller andre kostnader øker kapitalbehovet.",
+        },
+        body: [
+          "En kjøper som bare har 120 000 euro tilgjengelig, har altså ikke nødvendigvis nok egenkapital selv om banken vurderer et lån på 70 prosent. Skattene og kjøpskostnadene kommer i tillegg, og finansieringen bør tåle uventede utgifter.",
+        ],
+      },
+      {
+        heading: "Hva tåler månedsøkonomien?",
+        body: [
+          "Et lånetilsagn er ikke det samme som et komfortabelt privatbudsjett. Undersøk rente, løpetid, terminbeløp, lånets samlede kostnad, forsikringer som er knyttet til rentebetingelser, og hva som skjer hvis renten stiger eller inntekten endrer seg.",
+          "Legg boligdrift som comunidad, IBI, forsikring, strøm, vedlikehold og reiser til Spania oppå lånekostnadene. Dersom planen er å leie ut boligen, bør usikre leieinntekter vurderes separat og konservativt – ikke brukes til å skjule svak løpende betalingsevne.",
         ],
         bullets: [
-          "Beregn riktig skatt for boligtypen.",
-          "Ta med advokat, notar, register og eventuelle bankkostnader.",
-          "Behold en reserve etter overtakelsen.",
+          "Lag et normalbudsjett uten antatt utleieinntekt.",
+          "Lag et stresstestbudsjett med høyere renter og økte driftskostnader.",
+          "Se på total gjeld i Norge og Spania, ikke bare lånet til denne boligen.",
+          "Hold rom for ferier, familie, uforutsette kostnader og vedlikehold.",
         ],
       },
       {
-        heading: "NIE, bankkonto og notar: tre forskjellige roller",
+        heading: "Valuta: når økonomien din er i kroner og kjøpet er i euro",
         body: [
-          "NIE er identifikasjonsnummeret som normalt trengs i eiendoms- og skatteprosessen. En spansk bankkonto kan være praktisk for betalinger og løpende kostnader, men er et separat spørsmål.",
-          "Notaren formaliserer og kontrollerer sentrale sider ved skjøtet som upartisk offentlig fagperson. Notaren erstatter ikke kjøpers egen advokat, som bør kontrollere kontrakter, eiendommen og betalingsflyten på dine vegne.",
+          "Kjøpesummen og spanske kjøpskostnader betales i euro. Hvis sparepengene eller inntekten er i norske kroner, kan valutakursen endre hvor mye kjøpet reelt koster deg. Den samme usikkerheten kan også påvirke fremtidige terminbetalinger dersom lånet løper i euro og inntekten er i kroner.",
+          "Be om dokumentert kurs og totalkostnad ved overføring. Sammenlign eurobeløpet du faktisk mottar, planlegg betalingsfristene med banken og la advokaten verifisere oppgjørsinstruksjonene. Praktiske detaljer om spansk bankkonto, valutaveksling og dokumentasjon er samlet i den egne bank- og valutaguiden.",
         ],
       },
       {
-        heading: "Bruk oversikten som veiviser – ikke som endestasjon",
+        heading: "Når må finansieringen være på plass?",
         body: [
-          "Når du vet hvilket spørsmål du faktisk har, er det bedre å lese én presis fordypning enn å gjenta de samme forklaringene på flere sider. Derfor er detaljene om NIE, spansk bankkonto, boliglån og kjøpskostnader samlet i egne guider.",
+          "En god finansieringsplan følger kjøpsprosessen. Før visning vet du hva du kan kjøpe for. Før reservasjon vet du hvilke betingelser som må være oppfylt. Før privat kjøpekontrakt avklarer du fristene med advokaten. Før notar og overtakelse er betalingsmåte, midler og bankens dokumenter bekreftet.",
+          "Særlig ved boliglån i Spania kan bankens kredittvurdering, takst og påkrevde dokument- og gjennomgangstrinn påvirke tidsplanen. Ikke anta at et uformelt signal fra banken betyr endelig finansiering. Be advokaten vurdere om kontrakten trenger en uttrykkelig finansieringsbetingelse, og hva konsekvensen blir om banken avslår lånet.",
+        ],
+      },
+      {
+        heading: "NIE, bankkonto, advokat og notar: hva har de med finansiering å gjøre?",
+        body: [
+          "NIE er et identifikasjonsnummer som normalt trengs ved eiendomshandelen og den tilhørende skatte- og registreringsprosessen. En spansk konto er ofte praktisk, og noen låne- eller betalingsløsninger kan kreve den, men den er ikke automatisk lovpålagt for alle kjøp.",
+          "Kjøpers uavhengige advokat bør kontrollere kontrakter, eiendomsdokumentasjon og oppgjøret. Notaren er en upartisk offentlig fagperson som formaliserer skjøtet og kontrollerer sentrale lovpålagte forhold. Dette er støttefunksjoner i kjøpet – ikke alternativer til en ordentlig finansieringsplan.",
+        ],
+      },
+      {
+        heading: "Hva vi kan hjelpe deg å avklare før du velger bolig",
+        body: [
+          "Vi hjelper deg å koble ønsket boligtype og område til en realistisk kjøpsramme, slik at du kan filtrere boligene ut fra hva som faktisk er økonomisk mulig. Vi kan også synliggjøre spørsmål du bør ta med til bank og advokat, og hjelpe deg å planlegge en ryddig kjøpsprosess.",
+          "ZenEcoHomes er eiendomsrådgiver, ikke bank eller uavhengig finansrådgiver. Lånevilkår, skattemessige forhold og juridiske konsekvenser må bekreftes av kvalifiserte fagpersoner. Et godt boligkjøp begynner med en finansieringsplan som tåler virkeligheten.",
         ],
       },
     ],
     nextSteps: [
-      "Avklar totalbudsjett og finansieringsramme.",
-      "Start NIE-prosessen tidlig nok.",
-      "Velg uavhengig advokat før bindende kontrakter eller større betalinger.",
-      "Bruk de separate guidene for boliglån, NIE, bankkonto og kjøpskostnader når du trenger detaljene.",
+      "Sett opp total kjøpsramme med boligpris, kjøpskostnader og likviditetsreserve.",
+      "Undersøk egne midler og få skriftlig vurdering av mulig låneramme.",
+      "Sammenlign norsk og spansk lånefinansiering på totalkostnad og risiko.",
+      "Bruk kostnadskalkulatoren for å beregne riktig maksimal kjøpesum.",
+      "Avklar valuta, bankkonto, NIE og betalingstidsplan før kontraktsfrister blir kritiske.",
+      "La uavhengig advokat kontrollere eventuelle finansieringsforbehold før reservasjon.",
     ],
     faq: [
-      {
-        question: "Må jeg ha NIE for å kjøpe bolig i Spania?",
-        answer:
-          "NIE er normalt nødvendig for eiendomstransaksjonen og den tilhørende skatte- og registreringsprosessen. Det bør derfor ordnes tidlig.",
-      },
-      {
-        question: "Må jeg ha spansk bankkonto?",
-        answer:
-          "Ikke nødvendigvis i alle kjøp, men den kan være praktisk for betalinger og løpende kostnader. Behovet avhenger av bank, betalingsmåte og hvordan boligen skal driftes etter overtakelsen.",
-      },
-      {
-        question: "Er notaren min juridiske rådgiver?",
-        answer:
-          "Nei. Notaren er en upartisk offentlig fagperson. Kjøpers egen advokat bør ivareta dine interesser og kontrollere kontrakter, eiendom og betalingsflyt.",
-      },
+      { question: "Hvordan kan nordmenn finansiere bolig i Spania?", answer: "Vanlige løsninger er egne midler, lån med sikkerhet i norsk eiendom, boliglån i spansk bank eller en kombinasjon. Valget avhenger av egenkapital, gjeld, inntekt, sikkerhet, valuta og bankenes individuelle kredittvurdering." },
+      { question: "Hvor mye egenkapital trenger jeg for å kjøpe bolig i Spania?", answer: "Det avhenger av finansieringsmodellen og kjøpskostnadene. Ved spansk finansiering kan ikke-residenter i noen tilfeller få lån opptil rundt 70 prosent av bankens finansieringsgrunnlag, men banken kan tilby mindre. Skatter og andre kjøpskostnader må normalt dekkes i tillegg." },
+      { question: "Er det best å låne i Norge eller Spania?", answer: "Ingen løsning er best for alle. Sammenlign sikkerhet, rente, effektiv kostnad, valuta, løpetid, eksisterende gjeld og egen betalingsevne. Et norsk lån kan stille krav om pant i norsk eiendom, mens et spansk lån normalt bruker den spanske boligen som sikkerhet." },
+      { question: "Kan jeg reservere boligen før jeg har fått endelig lån?", answer: "Det kan være mulig, men innebærer risiko. Avklar med uavhengig advokat om avtalen har et reelt finansieringsforbehold, frister og konsekvensene dersom banken avslår søknaden." },
+      { question: "Må jeg ha NIE og spansk bankkonto?", answer: "NIE er normalt nødvendig for eiendomskjøpet. Spansk bankkonto er ofte praktisk, og kan være nødvendig etter konkrete bank- eller betalingskrav, men er ikke et generelt lovkrav i alle boligkjøp." },
+      { question: "Hvor ser jeg skatter og kjøpskostnader?", answer: "Bruk vår egen guide om kostnader ved boligkjøp i Spania, med kalkulator. Der behandles ITP, IVA, AJD og øvrige kjøpskostnader, slik at denne finansieringsguiden kan konsentrere seg om lånevalg, likviditet og risiko." },
     ],
+    cta: { label: "Få hjelp til å finne bolig innenfor din økonomiske ramme", href: "/booking" },
   },
   {
     slug: "omkostninger-nybygg-spania",
