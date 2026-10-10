@@ -1155,24 +1155,38 @@ export function ArticleView({ article }: { article: Article }) {
                   )}
                   {section.table && (
                     <div className="article-table-wrap">
-                      <table className="article-table">
-                        <thead>
-                          <tr>
-                            {section.table.headers.map((h) => (
-                              <th key={h}>{h}</th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {section.table.rows.map((row, ri) => (
-                            <tr key={ri}>
-                              {row.map((cell, ci) => (
-                                <td key={ci}>{cell}</td>
+                      <div className="article-table-scroll">
+                        <table className="article-table">
+                          <thead>
+                            <tr>
+                              {section.table.headers.map((h) => (
+                                <th scope="col" key={h}>{h}</th>
                               ))}
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody>
+                            {section.table.rows.map((row, ri) => (
+                              <tr key={ri}>
+                                {row.map((cell, ci) => (
+                                  <td key={ci}>{cell}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      <div className="article-table-cards">
+                        {section.table.rows.map((row, ri) => (
+                          <dl className="article-table-card" key={ri}>
+                            {row.map((cell, ci) => (
+                              <div className="article-table-card-field" key={ci}>
+                                <dt>{section.table.headers[ci] ?? `Kolonne ${ci + 1}`}</dt>
+                                <dd>{cell}</dd>
+                              </div>
+                            ))}
+                          </dl>
+                        ))}
+                      </div>
                       {section.table.caption && <p className="article-table-caption">{section.table.caption}</p>}
                     </div>
                   )}
