@@ -1180,7 +1180,7 @@ export function ArticleView({ article }: { article: Article }) {
                           <dl className="article-table-card" key={ri}>
                             {row.map((cell, ci) => (
                               <div className="article-table-card-field" key={ci}>
-                                <dt>{section.table.headers[ci] ?? `Kolonne ${ci + 1}`}</dt>
+                                <dt>{section.table?.headers[ci] ?? `Kolonne ${ci + 1}`}</dt>
                                 <dd>{cell}</dd>
                               </div>
                             ))}
