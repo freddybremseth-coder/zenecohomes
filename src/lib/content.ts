@@ -1309,7 +1309,7 @@ export const articles: Article[] = [
     imageAlt: "Juridisk dokumentkontroll ved boligkjøp i Spania, med kontrakt og eiendomsregister",
     seoTitle: "Juridiske fallgruver ved boligkjøp i Spania | Sjekkliste",
     seoDescription:
-      "Unngå juridiske feil ved boligkjøp i Spania. Sjekk nota simple, heftelser, byggeløyver, arras, sameiegjeld og dokumenter før du reserverer.",
+      "Unngå juridiske feil ved boligkjøp i Spania. Sjekk nota simple, heftelser, byggeløyver, arras, sameiegjeld og dokumenter før du reserverer boligen.",
     keywords: [
       "juridiske fallgruver boligkjøp Spania",
       "advokat boligkjøp Spania",
