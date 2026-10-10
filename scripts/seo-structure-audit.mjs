@@ -226,6 +226,81 @@ for (const slug of guideSlugs) {
   }
 }
 
+// Financial-guide cluster: important Erlend URLs must stay distinct and live.
+// Contextual links depend on section headings, so heading edits must never
+// silently remove links from the rendered article.
+const financeRoutes = [
+  "/guide/kjope-bolig-i-spania",
+  "/guide/kostnader-boligkjop-spania",
+  "/guide/finansiere-bolig-i-spania",
+  "/guide/boliglan-spansk-bank-nordmenn",
+  "/guide/spansk-bankkonto-valutaveksling",
+  "/magasin/lan-i-norge-eller-spania-boligkjop",
+];
+for (const url of financeRoutes.slice(1)) {
+  if (!articleViewContent.includes(`href: "${url}"`) &&
+      !read(cornerstone).includes(`href="${url}"`)) {
+    errors.push(`Financial-guide cluster: missing discoverable contextual link to ${url}`);
+  }
+}
+for (const url of financeRoutes.slice(1, 3).concat(financeRoutes.slice(5))) {
+  requireText(cornerstone, `href="${url}"`, "cornerstone finance and cost link");
+}
+if (read("src/lib/content.ts").includes('href: "/guide/finansiering-notar-nie-boligkjop-spania"')) {
+  errors.push("src/lib/content.ts: stale finance URL must point to /guide/finansiere-bolig-i-spania");
+}
+
+function articleSectionHeadings(source, slug) {
+  const start = source.indexOf(`slug: "${slug}"`);
+  if (start < 0) return [];
+  const end = source.indexOf("\n  {\n    slug:", start + 5);
+  const article = source.slice(start, end > 0 ? end : undefined);
+  return [...article.matchAll(/heading: "([^"]+)"/g)].map((match) => match[1].toLowerCase());
+}
+
+function contextualRulesForSlug(source, blockName, slug) {
+  const blockStart = source.indexOf(`const ${blockName}`);
+  if (blockStart < 0) return [];
+  const entryStart = source.indexOf(`  "${slug}": [`, blockStart);
+  if (entryStart < 0) return [];
+  const nextEntry = source.indexOf('\n  "', entryStart + 5);
+  const entryEnd = nextEntry > entryStart ? nextEntry : source.indexOf("\n};", entryStart);
+  const entry = source.slice(entryStart, entryEnd > entryStart ? entryEnd : undefined);
+  return [...entry.matchAll(/headingIncludes: "([^"]+)"/g)].map((match) => match[1]);
+}
+
+const financeContent = read("src/lib/content.ts");
+for (const slug of [
+  "finansiere-bolig-i-spania",
+  "boliglan-spansk-bank-nordmenn",
+  "spansk-bankkonto-valutaveksling",
+  "utleie-inntektspotensial-bolig-spania",
+]) {
+  const headings = articleSectionHeadings(financeContent, slug);
+  const rules = contextualRulesForSlug(articleViewContent, "CONTEXTUAL_GUIDE_LINKS", slug);
+  if (!headings.length || !rules.length) {
+    errors.push(`Financial-guide cluster: missing headings or contextual rules for ${slug}`);
+  }
+  for (const rule of rules) {
+    if (!headings.some((heading) => heading.includes(rule.toLowerCase()))) {
+      errors.push(`Financial-guide cluster: dead contextual heading rule "${rule}" for ${slug}`);
+    }
+  }
+}
+{
+  const slug = "lan-i-norge-eller-spania-boligkjop";
+  const headings = articleSectionHeadings(read("src/lib/magazine.ts"), slug);
+  const rules = contextualRulesForSlug(articleViewContent, "CONTEXTUAL_MAGAZINE_LINKS", slug);
+  if (!headings.length || !rules.length) {
+    errors.push("Financial-guide cluster: comparison article lacks headings or contextual rules");
+  }
+  for (const rule of rules) {
+    if (!headings.some((heading) => heading.includes(rule.toLowerCase()))) {
+      errors.push(`Financial-guide cluster: dead contextual heading rule "${rule}" for ${slug}`);
+    }
+  }
+}
+
 // Corporate article routing integrity: every published Corporate article must
 // resolve under /bedriftshytte-spania, be unique, and have a legacy /magasin redirect.
 const magazineRouting = read("src/lib/magazine.ts");
