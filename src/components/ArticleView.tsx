@@ -141,24 +141,41 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "finansiere-bolig-i-spania": [
     {
-      headingIncludes: "Finansieringsvalg",
+      headingIncludes: "Start med totalrammen",
       links: [
-        { label: "Boliglån i Spania: bank, belåning og takst", href: "/guide/boliglan-spansk-bank-nordmenn" },
-        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+        { label: "Kjøpskostnader i Spania – se satsene og prøv kalkulatoren", href: "/guide/kostnader-boligkjop-spania" },
       ],
     },
     {
-      headingIncludes: "Kjøpskostnader",
+      headingIncludes: "Fire finansieringsmåter",
       links: [
-        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
-        { label: "Lag et realistisk totalbudsjett", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
+        { label: "Norsk eller spansk lån? Sammenlign løsningene", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+        { label: "Slik søker du boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
       ],
     },
     {
-      headingIncludes: "NIE, bankkonto og notar",
+      headingIncludes: "Hvor mye egenkapital",
       links: [
-        { label: "NIE i Spania – steg for steg", href: "/guide/nie-skattenummer-spania" },
-        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
+        { label: "Dokumentkrav, takst og belåningsgrad i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
+      ],
+    },
+    {
+      headingIncludes: "Valuta:",
+      links: [
+        { label: "Bankkonto og valutaveksling ved boligkjøp", href: "/guide/spansk-bankkonto-valutaveksling" },
+      ],
+    },
+    {
+      headingIncludes: "Når må finansieringen",
+      links: [
+        { label: "Hele kjøpsprosessen steg for steg", href: "/guide/kjope-bolig-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "NIE, bankkonto, advokat og notar",
+      links: [
+        { label: "Slik skaffer du NIE-nummer", href: "/guide/nie-skattenummer-spania" },
+        { label: "Spansk bankkonto og dokumentasjon ved oppgjøret", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
     },
   ],
@@ -224,7 +241,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hva NIE er",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
+        { label: "Finansiere bolig i Spania – lån og egenkapital", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -238,7 +255,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hvorfor mange bruker",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
+        { label: "Finansiere bolig i Spania – lån og egenkapital", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -252,7 +269,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Kan jeg låne penger",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
+        { label: "Finansiere bolig i Spania – lån og egenkapital", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -264,7 +281,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "søknadsprosess",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
+        { label: "Finansiere bolig i Spania – lån og egenkapital", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -297,7 +314,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "utleie-inntektspotensial-bolig-spania": [
     {
-      headingIncludes: "Regn på reelt nettoresultat",
+      headingIncludes: "Eksempel: fra brutto leieinntekt",
       links: [
         { label: "Løpende kostnader ved å eie bolig i Spania", href: "/guide/lopende-kostnader-eie-bolig-spania" },
       ],
@@ -327,7 +344,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Hva kan endre regnestykket",
       links: [
-        { label: "Finansiering, notar og NIE ved boligkjøp", href: "/guide/finansiere-bolig-i-spania" },
+        { label: "Finansiere bolig i Spania – lån og egenkapital", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
   ],
@@ -675,22 +692,22 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "lan-i-norge-eller-spania-boligkjop": [
     {
-      headingIncludes: "Lån i Spania",
+      headingIncludes: "Lån i Spania:",
       links: [
-        { label: "Boliglån i spansk bank for nordmenn", href: "/guide/boliglan-spansk-bank-nordmenn" },
+        { label: "Slik fungerer boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
       ],
     },
     {
-      headingIncludes: "Valuta",
+      headingIncludes: "Valuta er",
       links: [
-        { label: "Bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
-        { label: "Siste markedsoppdatering", href: "/magasin/boligmarkedet-costa-blanca-hosten-2026" },
+        { label: "Bankkonto og valutaveksling fra kroner til euro", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
     },
     {
-      headingIncludes: "arbeidsrekkefølge",
+      headingIncludes: "Hva bør du sammenligne",
       links: [
-        { label: "Finansiering, notar og NIE", href: "/guide/finansiere-bolig-i-spania" },
+        { label: "Finansieringsplan: egenkapital, likviditet og totalbudsjett", href: "/guide/finansiere-bolig-i-spania" },
+        { label: "Kjøpskostnader og kalkulator", href: "/guide/kostnader-boligkjop-spania" },
       ],
     },
   ],
