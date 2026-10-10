@@ -455,7 +455,7 @@ export const articles: Article[] = [
         heading: "Når må finansieringen være på plass?",
         body: [
           "En god finansieringsplan følger kjøpsprosessen. Før visning vet du hva du kan kjøpe for. Før reservasjon vet du hvilke betingelser som må være oppfylt. Før privat kjøpekontrakt avklarer du fristene med advokaten. Før notar og overtakelse er betalingsmåte, midler og bankens dokumenter bekreftet.",
-          "Særlig ved boliglån i Spania kan bankens kredittvurdering, takst og påkrevde dokument- og gjennomgangstrinn påvirke tidsplanen. Ikke anta at et uformelt signal fra banken betyr endelig finansiering. Be advokaten vurdere om kontrakten trenger en uttrykkelig finansieringsbetingelse, og hva konsekvensen blir om banken avslår lånet.",
+          "Særlig ved boliglån i Spania kan bankens kredittvurdering, takst og påkrevde dokument- og gjennomgangstrinn påvirke tidsplanen. Ved lån som omfattes av spansk boliglånslov, skal banken normalt gi FEIN og FiAE minst ti kalenderdager før signering, og notaren skal gjennomføre lovpålagt forhåndskontroll. Planlegg dette som en del av fremdriften, ikke som noe som ordnes på overtakelsesdagen. Ikke anta at et uformelt signal fra banken betyr endelig finansiering. Be advokaten vurdere om kontrakten trenger en uttrykkelig finansieringsbetingelse, og hva konsekvensen blir om banken avslår lånet.",
         ],
       },
       {
@@ -1616,7 +1616,7 @@ export const articles: Article[] = [
           "Nei. NIE er et identifikasjonsnummer og er ikke i seg selv bevis på oppholdsregistrering eller skattemessig bosted.",
       },
     ],
-    cta: { label: "Les mer om finansiering, notar og NIE", href: "/guide/finansiering-notar-nie-boligkjop-spania" },
+    cta: { label: "Finansiering av bolig i Spania", href: "/guide/finansiere-bolig-i-spania" },
   },
   {
     slug: "spansk-bankkonto-valutaveksling",
@@ -1624,9 +1624,9 @@ export const articles: Article[] = [
     excerpt:
       "Er spansk bankkonto nødvendig for ditt kjøp? Slik planlegger du betalinger og sammenligner kostnaden ved veksling fra kroner til euro.",
     date: "2026-09-08",
-    updated: "2026-09-15",
+    updated: "2026-10-10",
     category: "Kjøpsprosess",
-    readingTime: "6 min lesing",
+    readingTime: "8 min lesing",
     image: "/assets/magasin-covers/bankkonto-valuta.svg",
     imageAlt: "Illustrasjon av spansk bank og valutaveksling mellom euro og kroner",
     seoTitle: "Spansk bankkonto og valuta | Guide for boligkjøpere",
@@ -1669,6 +1669,19 @@ export const articles: Article[] = [
         ],
       },
       {
+        heading: "Slik kvalitetssikrer du store betalinger",
+        body: [
+          "Ved reservasjon, delbetaling og sluttoppgjør kan pengene gå til forskjellige mottakere på forskjellige tidspunkter. Avklar hver betaling med din uavhengige advokat og betalingsansvarlige før beløpet sendes. Ikke stol på nye kontonumre som bare kommer i en e-post eller melding – kontroller en eventuell endring gjennom en separat, kjent kontaktkanal.",
+          "En godt planlagt betalingsflyt er særlig viktig når pengene skal veksles fra NOK til EUR. Sørg for å kjenne bankenes behandlingstid, eventuelle beløpsgrenser og hvilke dokumenter som må være godkjent før sluttoppgjøret.",
+        ],
+        bullets: [
+          "Be om skriftlig betalingsplan med mottaker, formål, valuta, beløp og forfallsdato.",
+          "Verifiser kontodetaljer direkte med advokat eller bank gjennom et kjent telefonnummer.",
+          "Få bekreftet samlet eurobeløp etter valutapåslag og gebyrer før overføring.",
+          "Sørg for at dokumentasjon om midlenes opprinnelse er klar i god tid.",
+        ],
+      },
+      {
         heading: "Dokumentasjon og midlenes opprinnelse",
         body: [
           "Banker og andre aktører i transaksjonen har plikter etter hvitvaskingsregelverket. Vær forberedt på å dokumentere identitet, økonomi og hvor midlene kommer fra. Hvilke dokumenter som kreves varierer med bank og transaksjon.",
@@ -1706,7 +1719,7 @@ export const articles: Article[] = [
     excerpt:
       "Kan nordmenn få boliglån i Spania? Om bankens vurdering, belåningsgrad, takst og kostnadene ved å låne til bolig i Spania.",
     date: "2026-09-08",
-    updated: "2026-10-07",
+    updated: "2026-10-10",
     category: "Kjøpsprosess",
     readingTime: "16 min lesing",
     image: "/assets/magasin-covers/boliglan-bank.svg",
@@ -1867,21 +1880,9 @@ export const articles: Article[] = [
       {
         heading: "Spansk lån vs norsk lån",
         body: [
-          "For mange nordmenn er det reelle valget ikke bare mellom to spanske banker, men mellom å låne i Norge eller å ta boliglån i Spania. Begge løsninger kan være gode, og jeg synes det blir for enkelt å velge ut fra hvilken rente som ser lavest ut akkurat i dag.",
-          "Med et spansk boliglån er boligen og lånet normalt i samme valuta. Det gir en naturlig kobling mellom eiendommen i euro og gjelden i euro. Har du fortsatt inntekten din i norske kroner, har du likevel ikke fjernet valutarisikoen. Du må kjøpe euro for å betale lånet, og en svakere norsk krone kan derfor gjøre et uendret spansk lån dyrere målt i NOK.",
-          "Har du betydelig egenkapital i norsk bolig, kan norsk finansiering være enklere. Banken kjenner økonomien din, språk og dokumentasjon er mer kjent, og prosessen kan oppleves enklere. På den andre siden belåner du da norske verdier for å kjøpe en eiendel i euro. Det bedre spørsmålet er derfor ikke bare «hvor er renten lavest?», men hvilken finansieringsstruktur som passer økonomien din best over de neste 10–20 årene.",
+          "Når du vurderer et spansk boliglån, bør du også sammenligne alternativet med å låne mot sikkerhet i Norge. Et spansk lån er normalt knyttet til boligen i euro, mens norsk finansiering ofte innebærer pant i en norsk eiendom og tilbakebetaling i kroner. Begge løsningene kan være aktuelle, avhengig av økonomi og bankens vurdering.",
+          "Den grundige sammenligningen av sikkerhet, valutarisiko og total kostnad ligger i vår egen artikkel om lån i Norge eller Spania. Denne guiden konsentrerer seg om søknaden, lånevilkårene og dokumentasjonskravene i spansk bank.",
         ],
-        table: {
-          headers: ["", "Spansk boliglån", "Norsk finansiering"],
-          rows: [
-            ["Sikkerhet", "Vanligvis boligen i Spania", "Ofte norsk bolig eller formue"],
-            ["Lånevaluta", "Vanligvis EUR", "Vanligvis NOK"],
-            ["Bankens kjennskap til deg", "Må dokumenteres", "Ofte eksisterende kundeforhold"],
-            ["Dokumentasjon", "Kan være omfattende", "Ofte enklere"],
-            ["Valutarisiko", "Bolig og lån i EUR, men inntekt kan være i NOK", "Lån i NOK, bolig i EUR"],
-            ["Prosess", "Spansk bank, takst og notar", "Mer kjent norsk bankprosess"],
-          ],
-        },
       },
       {
         heading: "Husk dette når du søker boliglån i Spania",
