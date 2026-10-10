@@ -295,7 +295,7 @@ export default async function BuyInSpainGuidePage() {
             <div>
               <h3>1. Kjøpesummen er ikke totalkostnaden</h3>
               <p>
-                Som en tommelfingerregel bør du regne med at et boligkjøp i Spania koster omtrent 10–15 % mer enn selve kjøpesummen. Det nøyaktige beløpet avhenger først og fremst av om du kjøper bruktbolig eller nybygg, hvilken region boligen ligger i og om kjøpet finansieres med boliglån.
+                Kjøpesummen er ikke totalbudsjettet. Hvor mye som kommer i tillegg avhenger av boligtype, gjeldende regionale skatter, juridisk bistand og finansieringen din. Den nøyaktige beregningen hører hjemme i vår egen kostnadsguide, ikke i en generell prosentregel.
               </p>
               <p>
                 Ved kjøp av bruktbolig betaler kjøperen ITP (Impuesto sobre Transmisiones Patrimoniales), og satsen varierer mellom de autonome regionene i Spania. Kjøper du nybygg direkte fra en utbygger, betales normalt 10 % IVA (spansk merverdiavgift), i tillegg til AJD (dokumentavgift) som også varierer regionalt.
@@ -309,6 +309,9 @@ export default async function BuyInSpainGuidePage() {
                 <li>takst og andre kostnader dersom du finansierer kjøpet</li>
                 <li>valutaveksling dersom pengene skal overføres fra norske kroner til euro</li>
               </ul>
+              <p>
+                Se <Link href="/guide/kostnader-boligkjop-spania">kjøpskostnader, gjeldende satser og kalkulator for bolig i Spania</Link> for en konkret beregning før reservasjon.
+              </p>
               <p>
                 Husk også at kostnadene ikke stopper når du får nøklene. Som boligeier må du regne med løpende utgifter til blant annet kommunal eiendomsskatt (IBI), felleskostnader dersom boligen ligger i et sameie, forsikring, strøm, vann og vedlikehold.
               </p>
@@ -635,6 +638,9 @@ export default async function BuyInSpainGuidePage() {
                   <li><strong>Lån med sikkerhet i bolig i Norge:</strong> Du øker eller refinansierer boliglånet hjemme og bruker kapitalen til kjøpet i Spania.</li>
                   <li><strong><Link href="/guide/boliglan-spansk-bank-nordmenn">Boliglån i Spania:</Link></strong> Du låner med sikkerhet i den spanske eiendommen. DNB Luxembourg tilbyr denne typen lån til bolig i Spania, og du kan også søke lån i en spansk bank.</li>
                 </ul>
+                <p>
+                  Begynn med <Link href="/guide/finansiere-bolig-i-spania">egenkapital, låneramme og total finansieringsplan</Link>. Hvis du vurderer begge land, kan du også <Link href="/magasin/lan-i-norge-eller-spania-boligkjop">sammenligne lån i Norge og Spania</Link> før du velger finansieringsmodell.
+                </p>
               </div>
             </article>
 
