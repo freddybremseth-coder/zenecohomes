@@ -74,9 +74,9 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
     "omradeguide-eiendomskjop-i-spania",
   ],
   "juridiske-fallgruver-boligkjop-spania": [
-    "bankgaranti-nybygg-spania",
     "finansiere-bolig-i-spania",
-    "nie-skattenummer-spania",
+    "guide-tomtekjop-bygging-i-spania",
+    "boliglan-spansk-bank-nordmenn",
   ],
   "skatt-ved-salg-bolig-spania": [
     "arv-gaveskatt-bolig-spania",
@@ -225,15 +225,61 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "juridiske-fallgruver-boligkjop-spania": [
     {
-      headingIncludes: "Megler, notar",
+      headingIncludes: "De viktigste dokumentene",
       links: [
-        { label: "Slik fungerer hele kjøpsprosessen", href: "/kjopsprosessen" },
+        { label: "Registro de la Propiedad: bestill og forstå nota simple", href: "https://sede.registradores.org/site/propiedad" },
+        { label: "Spanske myndigheter: dokumentkontroll før boligkjøp", href: "https://administracion.gob.es/pag_Home/Tu-espacio-europeo/derechos-obligaciones/ciudadanos/residencia/compraventa-bienes-inmuebles/notarias-registros-propiedad.html" },
       ],
     },
     {
-      headingIncludes: "Reservasjon",
+      headingIncludes: "Fallgruve 2",
       links: [
-        { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
+        { label: "BOE: sameiegjeld og Ley de Propiedad Horizontal", href: "https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906" },
+      ],
+    },
+    {
+      headingIncludes: "Fallgruve 3",
+      links: [
+        { label: "Hva du må kontrollere ved tomt og bygging", href: "/guide/guide-tomtekjop-bygging-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Fallgruve 4",
+      links: [
+        { label: "Alicante kommune: habitabilidad og segunda ocupación", href: "https://www.alicante.es/es/tramites/declaracion-habitabilidad-y-segunda-ocupacion-viviendas-y-autorizaciones-locales-usos-o" },
+      ],
+    },
+    {
+      headingIncludes: "Fallgruve 5",
+      links: [
+        { label: "Utleie av bolig i Spania – regler og økonomi", href: "/guide/utleie-inntektspotensial-bolig-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Fallgruve 6",
+      links: [
+        { label: "BOE: Código Civil og reglene om arras", href: "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763" },
+        { label: "Slik foregår den komplette kjøpsprosessen", href: "/guide/kjope-bolig-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Fallgruve 7",
+      links: [
+        { label: "Nybygg i Spania – betalingsplan og garantier", href: "/guide/nybygg-i-spania" },
+        { label: "BOE: lovgrunnlaget for sikring av forskuddsbetaling", href: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-7897" },
+      ],
+    },
+    {
+      headingIncludes: "Fallgruve 8",
+      links: [
+        { label: "Guide til tomtekjøp og bygging i Spania", href: "/guide/guide-tomtekjop-bygging-i-spania" },
+      ],
+    },
+    {
+      headingIncludes: "Hvem gjør hva",
+      links: [
+        { label: "Slik hjelper vi deg gjennom boligkjøpet", href: "/kjopsprosessen" },
+        { label: "Finansiering og forbehold før kjøpet", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
   ],

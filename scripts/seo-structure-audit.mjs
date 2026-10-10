@@ -301,6 +301,56 @@ for (const slug of [
   }
 }
 
+// Legal due-diligence guide must retain its established SEO URL and contextual
+// links as article sections evolve. This protects the user-facing guide cluster.
+{
+  const slug = "juridiske-fallgruver-boligkjop-spania";
+  const headings = articleSectionHeadings(financeContent, slug);
+  const rules = contextualRulesForSlug(articleViewContent, "CONTEXTUAL_GUIDE_LINKS", slug);
+  const requiredHeadings = [
+    "De viktigste dokumentene",
+    "Fallgruve 2",
+    "Fallgruve 3",
+    "Fallgruve 4",
+    "Fallgruve 6",
+    "Fallgruve 7",
+    "Fallgruve 8",
+    "Hvem gjør hva",
+  ];
+  if (!financeContent.includes(`slug: "${slug}"`) || headings.length < 8) {
+    errors.push("Legal guide: canonical article missing or unexpectedly short");
+  }
+  for (const phrase of requiredHeadings) {
+    if (!headings.some(heading => heading.includes(phrase.toLowerCase()))) {
+      errors.push(`Legal guide: missing section "${phrase}"`);
+    }
+  }
+  for (const rule of rules) {
+    if (!headings.some(heading => heading.includes(rule.toLowerCase()))) {
+      errors.push(`Legal guide: dead contextual heading rule "${rule}"`);
+    }
+  }
+  for (const href of [
+    "/guide/juridiske-fallgruver-boligkjop-spania",
+    "/guide/kjope-bolig-i-spania",
+  ]) {
+    if (href === "/guide/juridiske-fallgruver-boligkjop-spania") {
+      requireText(cornerstone, `href="${href}"`, "pillar to legal due diligence guide");
+    } else if (!articleViewContent.includes(`href: "${href}"`)) {
+      errors.push(`Legal guide: expected contextual link to ${href}`);
+    }
+  }
+  for (const href of [
+    "https://sede.registradores.org/site/propiedad",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906",
+  ]) {
+    if (!articleViewContent.includes(`href: "${href}"`)) {
+      errors.push(`Legal guide: missing official reference ${href}`);
+    }
+  }
+}
+
 // Corporate article routing integrity: every published Corporate article must
 // resolve under /bedriftshytte-spania, be unique, and have a legacy /magasin redirect.
 const magazineRouting = read("src/lib/magazine.ts");
