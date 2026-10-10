@@ -7014,3 +7014,112 @@ footer {
   background: var(--gold-dark);
   color: #fff;
 }
+
+
+/* Buying-costs guide: keep example figures stacked, never in the generic
+   .feature-panel div horizontal flex layout. Scoped to the two cost examples. */
+.cornerstone-guide .purchase-cost-panel {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(16px, 2.5vw, 30px);
+}
+
+.cornerstone-guide .purchase-cost-panel > .purchase-cost-example {
+  display: block;
+  min-width: 0;
+  padding: clamp(18px, 2.3vw, 30px);
+  background: #fff;
+  border-radius: 14px;
+  color: var(--dark);
+  font-weight: 400;
+}
+
+.purchase-cost-example .eyebrow {
+  margin: 0 0 12px;
+}
+
+.purchase-cost-example h3 {
+  margin: 0;
+  color: var(--dark);
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.purchase-cost-breakdown {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  column-gap: 16px;
+  margin: 24px 0 0;
+  min-width: 0;
+}
+
+.purchase-cost-breakdown dt,
+.purchase-cost-breakdown dd {
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(22, 34, 43, 0.12);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.purchase-cost-breakdown dt {
+  min-width: 0;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.purchase-cost-breakdown dd {
+  margin: 0;
+  color: var(--dark);
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.purchase-cost-breakdown .purchase-cost-total-label,
+.purchase-cost-breakdown .purchase-cost-total-value {
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 2px solid var(--dark);
+  border-bottom: 0;
+  color: var(--dark);
+  font-weight: 800;
+}
+
+.purchase-cost-breakdown .purchase-cost-total-value {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+
+.cornerstone-guide .purchase-cost-example .purchase-cost-caveat {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+@media (max-width: 560px) {
+  .cornerstone-guide .purchase-cost-panel {
+    padding: 14px;
+  }
+
+  .cornerstone-guide .purchase-cost-panel > .purchase-cost-example {
+    padding: 18px;
+  }
+
+  .purchase-cost-breakdown {
+    column-gap: 10px;
+  }
+
+  .purchase-cost-breakdown dt,
+  .purchase-cost-breakdown dd {
+    font-size: 0.87rem;
+  }
+
+  .purchase-cost-breakdown .purchase-cost-total-value {
+    font-size: 1.15rem;
+  }
+}
