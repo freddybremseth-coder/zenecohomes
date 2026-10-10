@@ -665,9 +665,9 @@ export const extraArticles: Article[] = [
     excerpt:
       "Norsk sikkerhet, spansk boliglån, renter, valuta og egenkapital påvirker kjøpet på ulike måter. Her er regnestykket norske kjøpere bør gjøre før de velger finansiering.",
     date: "2026-09-29",
-    updated: "2026-09-29",
+    updated: "2026-10-10",
     category: "Finansiering",
-    readingTime: "8 min lesing",
+    readingTime: "9 min lesing",
     image: "/assets/magasin-covers/boliglan-bank.svg",
     imageAlt: "Sammenligning av norsk og spansk finansiering ved boligkjøp i Spania",
     seoTitle: "Lån i Norge eller Spania ved boligkjøp – hva bør du vite?",
@@ -682,7 +682,7 @@ export const extraArticles: Article[] = [
     ],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
-      "For mange norske kjøpere er finansieringen mer komplisert enn selve boligvalget. Noen kan øke lån med sikkerhet i norsk bolig, andre søker spansk boliglån, og enkelte kombinerer egenkapital og finansiering i begge land.",
+      "Det korte svaret: Norsk finansiering kan passe godt når du har ledig sikkerhet og inntekt i kroner. Spansk finansiering kan passe når du ønsker pant i den spanske boligen. Hvilken løsning som er best, avhenger av bankens tilbud og hele økonomien – ikke bare nominell rente.",
       "Det finnes ikke én løsning som alltid er best. En korrekt sammenligning må se på rente, løpetid, sikkerhet, belåningsgrad, valutarisiko, etableringskostnader og hvor mye kontanter du trenger ved kjøpet.",
     ],
     sections: [
@@ -713,6 +713,24 @@ export const extraArticles: Article[] = [
           "En rente som er noen tideler lavere kan se attraktiv ut, men totalen påvirkes også av etableringskostnader, krav til forsikringer eller andre bankprodukter, løpetid og hvor mye egenkapital som bindes.",
           "Sammenlign effektiv kostnad og kontantstrøm over flere år, ikke bare første måneds rente.",
         ],
+      },
+      {
+        heading: "Sammenligning: hva er den reelle forskjellen?",
+        body: [
+          "Tabellen viser hvilke spørsmål som må besvares for samme kjøp. Den rangerer ikke bankene og bruker ingen uverifiserte renter. Be om skriftlige tilbud, og sammenlign samme lånebeløp, løpetid og nedbetalingsprofil før du velger.",
+        ],
+        table: {
+          headers: ["Spørsmål", "Finansiering i Norge", "Spansk boliglån"],
+          rows: [
+            ["Hvor ligger sikkerheten?", "Ofte pant i bolig eller annen sikkerhet i Norge", "Normalt pant i boligen i Spania"],
+            ["Hvilken valuta betales lånet i?", "Ofte NOK; avhenger av bankprodukt", "Vanligvis EUR"],
+            ["Hvordan påvirker valutakursen?", "EUR-beløpet ved kjøp må finansieres, mens NOK-lån typisk betjenes i NOK", "EUR-lånet må betjenes løpende, selv om inntekten er i NOK"],
+            ["Hva bestemmer lånebeløpet?", "Samlet gjeldsbetjening og tilgjengelig sikkerhet", "Kredittvurdering, sikkerhet og bankens takst av den spanske boligen"],
+            ["Hvilken risiko må vurderes?", "Belåning av norske verdier, renter og bundet likviditet", "Rente, EUR/NOK, takst, lånevilkår og finansieringsfrist"],
+            ["Hva bør sammenlignes?", "Effektiv kostnad, løpetid, bindinger og konsekvenser for norsk bolig", "TAE, forsikringer/tilleggsprodukter, løpetid og samlede vilkår"],
+          ],
+          caption: "Overordnet sammenligning, ikke et individuelt tilbud. Bankene kan ha ulike produkter og krav.",
+        },
       },
       {
         heading: "Hva bør du sammenligne før du bestemmer deg?",
@@ -757,7 +775,7 @@ export const extraArticles: Article[] = [
           "Det er en klar fordel å kjenne en realistisk finansieringsramme før du snevrer inn boligjakten, særlig hvis lånet utgjør en betydelig del av kjøpesummen.",
       },
     ],
-    cta: { label: "Les guiden om spansk boliglån", href: "/guide/boliglan-spansk-bank-nordmenn" },
+    cta: { label: "Lag finansieringsplanen for boligkjøpet", href: "/guide/finansiere-bolig-i-spania" },
   },
   {
     slug: "albir-finestrat-villajoyosa-benidorm-hvor-kjope",
