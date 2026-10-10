@@ -3987,6 +3987,21 @@ footer {
 }
 
 /* ── Artikkeltabeller (magasin) ───────────────────── */
+/* Keep desktop tables scrollable inside the article, never the entire page. */
+.article-table-wrap {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.article-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.article-table-cards {
+  display: none;
+}
 .article-table {
   width: 100%;
   border-collapse: collapse;
@@ -4019,6 +4034,70 @@ footer {
   color: var(--muted);
   font-size: 0.85rem;
   font-style: italic;
+}
+
+/* Short screens: show each table row as a labeled, readable card. */
+@media (max-width: 700px) {
+  .article-table-scroll {
+    display: none;
+  }
+
+  .article-table-cards {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .article-table-card {
+    margin: 0;
+    padding: 16px;
+    min-width: 0;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .article-table-card-field {
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .article-table-card-field:first-child {
+    padding-top: 0;
+  }
+
+  .article-table-card-field:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .article-table-card-field dt {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .article-table-card-field dd {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.96rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .article-table-card-field:first-child dd {
+    color: var(--dark);
+    font-size: 1.04rem;
+    font-weight: 800;
+  }
+
+  .article-table-caption {
+    margin-top: 14px;
+  }
 }
 
 /* ── Boligvurdering (unik redaksjonell blokk) ─────── */
