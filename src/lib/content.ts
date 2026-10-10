@@ -1298,94 +1298,193 @@ export const articles: Article[] = [
   },
   {
     slug: "juridiske-fallgruver-boligkjop-spania",
-    title: "Juridiske fallgruver ved boligkjøp i Spania – og hvordan redusere risikoen",
+    title: "Juridiske fallgruver ved boligkjøp i Spania: sjekk dette før du signerer",
     excerpt:
-      "Heftelser, registreringsavvik, ulovlige tilbygg, tillatelser og bindende reservasjons-/arrasavtaler er blant forholdene som bør kontrolleres før boligkjøp i Spania.",
+      "Hva må kontrolleres før boligkjøp i Spania? Få oversikt over nota simple, heftelser, Catastro, ulovlige tilbygg, arras, sameiegjeld, nybygg og dokumentene advokaten bør undersøke.",
     date: "2026-09-08",
-    updated: "2026-09-15",
+    updated: "2026-10-10",
     category: "Kjøpsprosess",
-    readingTime: "8 min lesing",
+    readingTime: "14 min lesing",
     image: "/assets/magasin-covers/juridisk.svg",
-    imageAlt: "Illustrasjon av juridiske fallgruver og kontroll ved boligkjøp i Spania",
-    seoTitle: "Juridiske fallgruver ved boligkjøp i Spania | Guide",
+    imageAlt: "Juridisk dokumentkontroll ved boligkjøp i Spania, med kontrakt og eiendomsregister",
+    seoTitle: "Juridiske fallgruver ved boligkjøp i Spania | Sjekkliste",
     seoDescription:
-      "Dette bør kontrolleres ved boligkjøp i Spania: heftelser, registreringsavvik, tilbygg, tillatelser og kontraktsvilkår. Guide for norske kjøpere.",
+      "Unngå juridiske feil ved boligkjøp i Spania. Sjekk nota simple, heftelser, byggeløyver, arras, sameiegjeld og dokumenter før du reserverer.",
     keywords: [
       "juridiske fallgruver boligkjøp Spania",
       "advokat boligkjøp Spania",
-      "ulovlig tilbygg Spania",
+      "nota simple bolig Spania",
+      "due diligence bolig Spania",
+      "ulovlige tilbygg Spania",
+      "arras kontrakt Spania",
       "heftelser bolig Spania",
-      "trygg boligkjøp Spania",
     ],
     intro: [
-      "Et boligkjøp i Spania kan gjennomføres ryddig når dokumenter, rettigheter, tillatelser, kontrakter og betalingsflyt blir kontrollert i riktig rekkefølge. Risikoen varierer med boligtype og sak, så generelle sjekklister kan ikke erstatte konkret juridisk vurdering.",
-      "Denne guiden forklarer noen typiske kontrollpunkter og hvorfor en uavhengig advokat kan være viktig før du binder deg. Dette er generell informasjon; advokaten vurderer den konkrete boligen og avtalen.",
+      "Det viktigste juridiske rådet ved boligkjøp i Spania er enkelt: Kontroller selger, eiendom, gjeld, lovlig bruk og avtalevilkår før du binder deg økonomisk. En bolig kan se perfekt ut på visning, selv om den har et uavklart tilbygg, registrert pant, manglende brukstillatelse eller en reservasjonsavtale som er vanskelig å komme ut av.",
+      "En uavhengig spansk advokat bør gjennomføre juridisk due diligence for akkurat den boligen du vurderer. Denne guiden viser hvilke spørsmål du bør stille, hva typiske dokumenter betyr og hvordan du kan oppdage varselsignaler. Den erstatter ikke juridisk rådgivning eller kommunal kontroll for en konkret eiendom.",
     ],
     sections: [
       {
-        heading: "Megler, notar og din egen advokat har ulike roller",
+        heading: "Kort svar: hva må være kontrollert før boligkjøpet?",
         body: [
-          "En notar er en upartisk offentlig fagperson og har viktige kontroll- og informasjonsoppgaver ved offentlig skjøte. Notaren er likevel ikke kjøpers private advokat. En uavhengig advokat kan gjøre juridisk due diligence og gi råd ut fra kjøpers interesser før signering og betaling.",
-        ],
-      },
-      {
-        heading: "Vanlige kontrollpunkter",
-        body: [
-          "Hva som er viktigst varierer, men disse forholdene går ofte igjen i juridisk kontroll:",
+          "Før du betaler et større beløp eller signerer en bindende avtale, bør du vite hvem som har rett til å selge, hva du faktisk kjøper, hvilke heftelser og forpliktelser som følger eiendommen, om bruken er lovlig, og hva avtalen sier dersom noe går galt.",
+          "Et godt kontrollresultat er ikke bare at «dokumentene ser greie ut». Advokaten bør kunne forklare hva som er kontrollert, hvilke avvik som gjenstår, hvem som skal rette dem, når det skal skje og hva kjøperen risikerer dersom forholdet ikke løses.",
         ],
         bullets: [
-          "Registeropplysninger, pant, heftelser og relevante utestående krav.",
-          "Tilbygg, basseng, terrasse eller andre endringer og hvordan de er registrert/godkjent.",
-          "Tillatelser og dokumentasjon som er relevante for boligtypen og kommunen.",
-          "Uoverensstemmelser mellom eiendomsregister, matrikkel/catastro og faktisk eiendom.",
-          "Areal, tomtegrenser, adkomst og veirett – særlig på landeiendom.",
-          "Reservasjons- og arrasavtaler med uklare eller ugunstige vilkår.",
+          "Oppdatert nota simple fra Registro de la Propiedad og bekreftelse på selgers identitet og signaturrett.",
+          "Sammenligning av skjøte, eiendomsregister, Catastro og faktisk tomt eller bolig.",
+          "Kontroll av pant, utlegg, servitutter og hvordan eventuelle heftelser skal slettes.",
+          "Undersøkelse av byggetillatelser, tilbygg, basseng, bruk/okkupasjon og kommunale forhold.",
+          "Kontroll av IBI, sameiegjeld, vedtekter, vedtatte ekstraordinære innbetalinger og andre relevante krav.",
+          "Gjennomgang av reservasjons-/arrasavtale, frister, forbehold og dokumentert betalingsflyt.",
         ],
       },
       {
-        heading: "Reservasjon, arras og press",
+        heading: "De viktigste dokumentene – og hva de faktisk forteller deg",
         body: [
-          "Et kjøp kan involvere reservasjonsavtale, arras eller andre private avtaler før offentlig skjøte, men strukturen er ikke lik i alle handler. Private avtaler kan være bindende. La advokaten kontrollere vilkår, konsekvenser og dokumentasjon før du signerer eller betaler.",
-          "Ved nybygg under oppføring bør advokaten også kontrollere hvordan relevante forskuddsbetalinger skal sikres etter gjeldende regler og at betaling skjer til korrekt dokumentert konto.",
+          "Disse dokumentene har forskjellige funksjoner. En nota simple viser registrerte eier- og heftelsesforhold, mens Catastro beskriver eiendommen for blant annet matrikkel- og skatteformål. Ingen av dem er alene en full kommunal godkjenning av alt som er bygget eller bruken du planlegger.",
+        ],
+        table: {
+          headers: ["Dokument eller kilde", "Hva du bør undersøke", "Hvis opplysningene ikke stemmer"],
+          rows: [
+            ["Nota simple / Registro de la Propiedad", "Eier, registrert eiendom, pant, beslag, rettigheter og begrensninger", "Få advokaten til å avklare avvik og sletting av relevante heftelser"],
+            ["Escritura / skjøte", "Tidligere overdragelse, eierforhold, arealbeskrivelse og rettigheter", "Kontroller hva som faktisk inngår i salget"],
+            ["Catastro", "Kart, referanse, bruksangivelse, tomt og bygningsareal", "Ikke anta at registrering i Catastro betyr lovlig byggetillatelse"],
+            ["Ayuntamiento / kommune", "Regulering, byggetillatelser, relevante lovlighetsspørsmål og okkupasjonsdokumentasjon", "Be om kommunal avklaring og eventuelt teknisk fagrapport"],
+            ["Comunidad de propietarios", "Utestående felleskostnader, vedtekter, referater og planlagte arbeider", "Avklar økonomisk ansvar og bruksbegrensninger før kontrakt"],
+            ["IBI / skattedokumentasjon", "At kommunal eiendomsskatt og relevante krav er gjort opp", "La advokaten avklare restanser og hvordan oppgjøret sikres"],
+          ],
+          caption: "Dokumentbehovet varierer etter kommune, boligtype, alder, byggeprosjekt og faktisk bruk.",
+        },
+      },
+      {
+        heading: "Fallgruve 1: Selger er ikke alene om retten til å selge",
+        body: [
+          "En bolig kan være registrert på flere eiere, være del av et dødsbo, ligge i et selskap eller selges gjennom fullmektig. Be advokaten kontrollere at personen som signerer har nødvendig rett eller fullmakt, og at alle påkrevde samtykker foreligger.",
+          "Varselsignal: Navnet i annonse, kontrakt eller betalingsinstruks samsvarer ikke med eieren som fremgår av dokumentene, uten at dette er godt forklart og dokumentert.",
         ],
       },
       {
-        heading: "Slik reduserer du risikoen",
+        heading: "Fallgruve 2: Pant, heftelser og gammel gjeld følger eiendommen",
         body: [
-          "Nøkkelen er å kontrollere før du binder deg økonomisk og å bruke riktig fagperson til riktig oppgave.",
+          "Et registrert pant betyr ikke nødvendigvis at boligen ikke kan kjøpes. Men kjøpet må struktureres slik at heftelser som skal bort faktisk slettes, og at dette kontrolleres ved sluttoppgjøret. En muntlig forsikring fra selger om at et lån «blir ordnet» er ikke nok.",
+          "For leiligheter og boliger i eierseksjonssameier er det dessuten viktig å kontrollere et oppdatert gjeldssertifikat fra sameiet. Etter spansk lov kan eiendommen i visse tilfeller være ansvarlig for sameierestanser fra inneværende år og de tre foregående kalenderårene. Ikke gi avkall på dokumentasjonen uten at advokaten forklarer konsekvensene.",
         ],
         bullets: [
-          "Skaff nødvendige identifikasjonsopplysninger og engasjer uavhengig advokat tidlig.",
-          "La advokaten kontrollere register, kontrakter, tillatelser og relevante heftelser.",
-          "Betal bare til konto og mottaker som er dokumentert og kontrollert for transaksjonen.",
-          "Ved kjøp under oppføring: kontroller garanti-/forsikringsordningen for forskuddsbetalinger der lovens regler gjelder.",
+          "Hvilke pant, utlegg eller servitutter er registrert?",
+          "Hvilke beløp skal eventuelt innfris fra kjøpesummen, og hvem sørger for formell sletting?",
+          "Er sameiegjeld og ekstraordinære bidrag (derramas) avklart skriftlig?",
+          "Finnes det andre utestående offentlige eller private krav som må kontrolleres?",
+        ],
+      },
+      {
+        heading: "Fallgruve 3: Det som er bygget, er ikke nødvendigvis lovlig",
+        body: [
+          "Et basseng, innglasset terrasse, ekstra soverom eller en utvidet villa kan eksistere fysisk og likevel mangle nødvendig tillatelse eller korrekt registrering. Dette er særlig viktig for eldre villaer og eiendommer i innlandet, men kan også gjelde nyere boliger.",
+          "Sammenlign faktisk situasjon med opplysninger i eiendomsregister, Catastro, godkjente planer og kommunale arkiver. Er det avvik, bør advokaten og en kvalifisert arkitekt eller teknisk rådgiver undersøke om det lar seg rette, hva det koster og om det finnes begrensninger. At en endring er gammel, betyr ikke automatisk at den kan legaliseres eller bygges videre på.",
+        ],
+      },
+      {
+        heading: "Fallgruve 4: Boligen kan mangle dokumentasjon for lovlig bruk",
+        body: [
+          "I Comunitat Valenciana må du undersøke hvilken dokumentasjon som kreves for å ta i bruk eller fortsette å bruke en bestemt bolig. Første eller senere okkupasjon kan være regulert gjennom lisens eller declaración responsable, avhengig av situasjonen og kommunen. Det som kreves ved eierskifte eller opprettelse av strøm- og vannavtaler må avklares lokalt.",
+          "Også bolig med lys og vann på visningsdagen kan ha uavklarte rettslige eller tekniske forhold. La derfor advokat og eventuelt teknisk sakkyndig kontrollere brukskategori, nødvendig dokumentasjon og eventuelle pågående kommunale saker – særlig hvis boligen er ombygget eller ligger på rustikk grunn.",
+        ],
+      },
+      {
+        heading: "Fallgruve 5: Sameiets regler kan endre hvordan du får bruke boligen",
+        body: [
+          "En leilighet kan ha lovlige begrensninger knyttet til terrasse, fasade, fellesarealer, installasjoner eller utleie. Be om vedtekter, relevante møtereferater, opplysninger om gjeld og planlagte større arbeider. Et lavt månedlig sameiebeløp utelukker ikke et kommende ekstraordinært bidrag.",
+          "Dersom du kjøper med tanke på turistutleie, må kommunale, regionale og eventuelle sameierettslige krav vurderes særskilt. At den tidligere eieren har leid ut, eller at utleie annonseres på nettet, er ikke bevis for at du lovlig kan videreføre samme aktivitet etter kjøpet.",
+        ],
+      },
+      {
+        heading: "Fallgruve 6: Reservasjonsavtalen binder deg før undersøkelsene er klare",
+        body: [
+          "Reservasjonsavtaler og contrato de arras kan ha forskjellige rettsvirkninger. Artikkel 1454 i den spanske Código Civil beskriver en ordning der kjøper kan tre tilbake ved å tape avtalt arras, mens selger ved å betale dobbelt tilbake. Men ikke alle depositum eller kontrakter er slike arras penitenciales. Det er ordlyden og avtalens rettslige karakter som avgjør.",
+          "La advokaten gjennomgå kontraktutkastet før signering. Avklar hvilke undersøkelser som gjenstår, om kjøpet er betinget av finansiering eller tilfredsstillende juridisk kontroll, når pengene blir tilbakebetalt og hva som skjer ved forsinkelser, avvik eller avslag fra bank.",
+        ],
+        table: {
+          headers: ["Før du signerer", "Spørsmål til advokaten"],
+          rows: [
+            ["Betaling", "Hvem mottar depositumet, og på hvilke vilkår holdes eller frigjøres det?"],
+            ["Finansiering", "Er manglende finansiering en uttrykkelig avtalt opphørsgrunn?"],
+            ["Dokumentkontroll", "Kan kjøpet avsluttes uten tap dersom vesentlige avvik avdekkes?"],
+            ["Frister", "Når må due diligence, bankvurdering, privat kontrakt og notar være gjennomført?"],
+            ["Mislighold", "Hva kan hver av partene kreve hvis avtalen ikke oppfylles?"],
+          ],
+          caption: "Dette er forhandlings- og kontrollspørsmål, ikke standardvilkår som automatisk gjelder i alle avtaler.",
+        },
+      },
+      {
+        heading: "Fallgruve 7: Nybygg betales før boligen er ferdig",
+        body: [
+          "Ved kjøp av bolig under oppføring må du undersøke utbyggerens rett til tomten, tillatelser, prosjektbeskrivelse, betalingsplan, leveransebeskrivelse og hva som skjer ved forsinkelse eller vesentlig endring. Kontroller hvilken sikkerhet loven krever for relevante forskuddsbetalinger, når den gjelder, hvem garantisten er og hvilken konto betalingene skal inn på.",
+          "Reglene om garanti og forsikring for forskuddsbetalinger har konkrete anvendelsesvilkår. Be om dokumentasjonen for ditt prosjekt, fremfor å stole på en generell påstand om at alle innbetalinger er «trygge». For den samlede nybyggprosessen bruker du den separate nybyggguiden.",
+        ],
+      },
+      {
+        heading: "Fallgruve 8: Landeiendom, finca og tomt krever ekstra undersøkelser",
+        body: [
+          "Utenfor tettbygde områder kan det være avgjørende å kontrollere reguleringskategori, rettmessig adkomst, veiretter, vannrettigheter, brønn, avløp, strøm, tomtegrenser, landbrukstilknytning og muligheten for å reparere eller bygge ut. En annonse som lover «mulighet for basseng eller gjestehus» er ikke en kommunal tillatelse.",
+          "Dette gjelder spesielt rustikke tomter, eldre fincaer og bolig med flere bygninger. La advokat og teknisk rådgiver få skriftlig klarhet fra relevante myndigheter før du avtaler bruk, utbygging eller pris ut fra en antatt mulighet.",
+        ],
+      },
+      {
+        heading: "Tre eksempler: hva gjør du når advokaten finner et avvik?",
+        body: [
+          "Eksemplene er oppdiktede illustrasjoner, ikke beskrivelser av faktiske kundesaker. Hensikten er å vise forskjellen mellom et problem som kan avklares og risiko du ikke bør overta uten dokumentasjon.",
+        ],
+        table: {
+          headers: ["Situasjon", "Riktig neste handling", "Unngå dette"],
+          rows: [
+            ["Leilighet: registrert pant", "Få skriftlig plan for innfrielse og formell sletting ved oppgjør", "Å stole på muntlig løfte om at pantet forsvinner"],
+            ["Villa: basseng eller tilbygg mangler i godkjente dokumenter", "Be om kommunal og teknisk vurdering av lovlighet, eventuell utbedring og kostnad", "Å anta at bygget automatisk er lovlig fordi det er gammelt"],
+            ["Nybygg: forskuddsbetaling uten tydelig garanti", "Stopp betalingen inntil advokaten har kontrollert lovens krav og prosjektets dokumentasjon", "Å betale til ubekreftet konto under tidspress"],
+          ],
+        },
+      },
+      {
+        heading: "Hvem gjør hva – og når bør du stoppe?",
+        body: [
+          "Eiendomsrådgiveren kan hjelpe med informasjon om bolig og prosess, hente inn tilgjengelige dokumenter og koordinere dialogen. En uavhengig advokat vurderer dine rettigheter og risiko i den konkrete transaksjonen. Notaren har egne lovbestemte kontroll- og formaliseringsoppgaver og er ikke din private advokat. Ved byggetekniske eller reguleringsmessige spørsmål kan også arkitekt, teknisk sakkyndig eller kommunen måtte involveres.",
+          "Ta en pause i signering eller betaling dersom selger ikke kan dokumentere eierskap, vesentlige avvik ikke er vurdert, kontraktens risiko er uklar, eller mottaker av pengene ikke er uavhengig verifisert. Ingen tidsfrist fra en annonsør bør erstatte nødvendige kontroller.",
+        ],
+        bullets: [
+          "Før reservasjon: avklar advokat, finansiering, kontraktsvilkår og hvilke dokumenter som må frem.",
+          "Før privat kjøpekontrakt: få skriftlig vurdering av eierskap, heftelser, bruk og eventuelle avvik.",
+          "Før notar: kontroller oppdatert registerstatus, sletting av relevante pant, innfrielse av krav og betalingsinstruks.",
+          "Etter signering: følg opp skatter, registrering av eierskap og overføring av relevante avtaler med fagpersonene.",
+        ],
+      },
+      {
+        heading: "Offentlige kilder du kan kontrollere",
+        body: [
+          "Be advokaten vise hvilke primærkilder som er brukt i vurderingen. Relevante eksempler er Registro de la Propiedad for nota simple, kommunens urbanisme- og okkupasjonsregler, den spanske sivilloven for aktuelle kontraktsvilkår, Ley de Propiedad Horizontal for sameieforhold og lovverket om sikkerhet ved forskuddsbetaling på nybygg.",
+          "Kildene forklarer regelverket, men erstatter ikke den eiendomsspesifikke vurderingen. Du finner utvalgte offisielle lenker nedenfor.",
         ],
       },
     ],
     nextSteps: [
-      "Engasjer en uavhengig spansk advokat før vesentlige betalinger eller bindende avtaler.",
-      "Be om oppdaterte registeropplysninger og relevant kommunal/prosjektmessig dokumentasjon.",
-      "Kontroller avvik, tilbygg, tomt og tillatelser etter boligtype.",
-      "Les og forstå reservasjons-/arrasavtalen før signering.",
+      "Velg en uavhengig spanskspråklig advokat som representerer deg som kjøper, og avklar oppdraget skriftlig.",
+      "Be om oppdatert nota simple, skjøte og relevant kommunal dokumentasjon før bindende forpliktelser.",
+      "Sammenlign register, Catastro og den fysiske boligen; bruk teknisk fagperson ved avvik.",
+      "Få kontrollert heftelser, IBI, sameiegjeld, vedtekter og planlagte ekstraordinære utgifter.",
+      "Avklar reservasjons-/arrasvilkår, finansieringsforbehold og konsekvensene ved avvik før signering.",
+      "Bekreft betalingsmottaker og konto gjennom en uavhengig kanal før enhver stor overføring.",
+      "Be om en kort skriftlig oppsummering fra advokaten: kontrollert, uavklart, tiltak og ansvar før notar.",
     ],
     faq: [
-      {
-        question: "Trenger jeg advokat når jeg allerede har megler og notar?",
-        answer:
-          "Notaren er upartisk og meglerens rolle avhenger av oppdraget. Ingen av delene er det samme som en uavhengig advokat som gir juridiske råd på dine vegne. Derfor anbefales egen juridisk kontroll før du binder deg.",
-      },
-      {
-        question: "Hva bør advokaten kontrollere?",
-        answer:
-          "Det avhenger av boligen, men typiske punkter er eierforhold, heftelser, kontrakt, register-/matrikkelavvik, tillatelser, utestående kostnader og særskilte forhold ved nybygg eller landeiendom.",
-      },
-      {
-        question: "Kan jeg miste reservasjonsgebyret?",
-        answer:
-          "Det avhenger av avtalen og situasjonen. Derfor bør konsekvensene ved tilbaketrekning, forbehold og tilbakebetaling være forstått før du betaler.",
-      },
+      { question: "Hva er de vanligste juridiske fallgruvene ved boligkjøp i Spania?", answer: "Typiske risikoer er uklart eierskap, registrert pant eller andre heftelser, avvik mellom eiendomsregister og faktisk bolig, ulovlige tilbygg, manglende tillatelser, restanser til sameiet og ugunstige kontraktsvilkår. Hvilke punkter som er viktige avhenger av eiendommen." },
+      { question: "Er nota simple nok til å vite om en bolig er lovlig?", answer: "Nei. Nota simple viser registrerte opplysninger om eierskap og rettigheter, men den er ikke en full kommunal godkjenning av bygget eller en teknisk tilstandsrapport. Catastro og kommunal dokumentasjon må kontrolleres separat der det er relevant." },
+      { question: "Må jeg ha egen advokat når jeg har megler og notar?", answer: "Det er sterkt anbefalt å bruke en uavhengig advokat som vurderer eiendommen og kontrakten på dine vegne. Notaren er upartisk og har egne lovpålagte oppgaver; meglerens rolle er forskjellig fra advokatens." },
+      { question: "Kan jeg miste reservasjonsbeløpet eller depositumet?", answer: "Ja, avhengig av avtaletype, ordlyd og omstendigheter. Ikke alle reservasjonsbeløp er arras penitenciales etter Código Civil artikkel 1454. La advokaten forklare rettsvirkningene og avtalte forbehold før du betaler." },
+      { question: "Hva skjer hvis selger har boliglån på eiendommen?", answer: "Kjøpet kan ofte gjennomføres dersom det avklares hvordan lånet innfris og heftelsen formelt slettes som del av et kontrollert oppgjør. Dette må være dokumentert og koordinert av advokat, bank og notar." },
+      { question: "Betyr registrert basseng i Catastro at det er lovlig?", answer: "Ikke nødvendigvis. Matrikkelopplysninger og kommunale byggetillatelser er forskjellige kilder. Få en konkret vurdering av godkjente tegninger, tillatelser og aktuell rettsstilling." },
+      { question: "Kan jeg overta en tidligere eiers turistutleie uten videre?", answer: "Ikke uten egen kontroll. Utleie kan være begrenset av kommunale, regionale og sameierettslige regler. Registrering, rettigheter og eventuelle krav ved eierskifte må undersøkes særskilt før kjøpet." },
+      { question: "Hvem kontrollerer at et nybygg har garanti for forskuddsbetaling?", answer: "Din uavhengige advokat bør kontrollere hvilke lovbestemte krav som gjelder for prosjektet og betalingene, og be om konkret dokumentasjon fra utbygger og eventuell garantist før du betaler." },
     ],
-    cta: { label: "Les mer om en trygg kjøpsprosess", href: "/guide/kjope-bolig-i-spania" },
+    cta: { label: "Få hjelp til en trygg boligkjøpsprosess", href: "/booking" },
   },
   {
     slug: "skatt-ved-salg-bolig-spania",
