@@ -1884,86 +1884,230 @@ export const articles: Article[] = [
     cta: { label: "Snakk med oss om hvem som kan hjelpe med langsiktig eierskap", href: "/booking" },
   },
   {
-    slug: "nie-skattenummer-spania",
-    title: "NIE i Spania steg for steg",
-    excerpt:
-      "NIE er utlendingens identifikasjonsnummer og brukes blant annet ved eiendomstransaksjoner og skatt. Slik forbereder du prosessen – og hva nummeret ikke betyr.",
-    date: "2026-09-08",
-    updated: "2026-09-15",
-    category: "Kjøpsprosess",
-    readingTime: "6 min lesing",
-    image: "/assets/magasin-covers/nie-skattenummer.svg",
-    imageAlt: "Illustrasjon av NIE og spansk identifikasjonsnummer",
-    seoTitle: "NIE i Spania | Slik søker du steg for steg | Guide 2026",
-    seoDescription:
-      "Hva er NIE, og hvordan skaffer du det? Guide til identifikasjonsnummeret utlendinger bruker ved blant annet eiendom, skatt og administrative prosesser i Spania.",
-    keywords: [
-      "NIE Spania",
-      "spansk skattenummer",
-      "NIE nummer bolig Spania",
-      "hvordan få NIE",
-      "identifikasjonsnummer Spania",
+    "slug": "nie-skattenummer-spania",
+    "title": "NIE-nummer i Spania – slik søker du steg for steg",
+    "excerpt": "Slik får du NIE i Spania eller Norge: EX-15, Modelo 790 Código 012, ambassade i Oslo, fullmakt, dokumentasjon, gebyr og behandlingstid.",
+    "date": "2026-09-08",
+    "updated": "2026-10-12",
+    "category": "Kjøpsprosess",
+    "readingTime": "11 min lesing",
+    "image": "/assets/magasin-covers/nie-skattenummer.svg",
+    "imageAlt": "NIE-nummer og dokumentene som kreves ved søknad om identifikasjonsnummer i Spania",
+    "seoTitle": "NIE-nummer i Spania | Slik søker du steg for steg 2026",
+    "seoDescription": "Hvordan få NIE-nummer i Spania? Se EX-15, Modelo 790, søknad ved ambassaden i Oslo, pris, dokumenter, fullmakt og behandlingstid for boligkjøpere.",
+    "keywords": [
+      "NIE nummer Spania",
+      "hvordan få NIE nummer i Spania",
+      "NIE i Norge",
+      "hva trengs for å få NIE nummer",
+      "hvor finner jeg mitt NIE nummer",
+      "EX-15",
+      "Modelo 790 Código 012"
     ],
-    intro: [
-      "NIE (Número de Identificación de Extranjero) er utlendingens identifikasjonsnummer i Spania. Det brukes i eiendoms- og skatteprosessen og i en rekke andre administrative sammenhenger. NIE er ikke det samme som å være resident eller skattemessig bosatt i Spania.",
-      "Denne guiden forklarer hva NIE er og hvordan prosessen kan organiseres. Krav og fremgangsmåte kan endres, så kontroller aktuell prosedyre hos myndighetene eller med kvalifisert gestor/advokat.",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "NIE (Número de Identificación de Extranjero) er identifikasjonsnummeret utlendinger bruker i en rekke økonomiske, juridiske og administrative prosesser i Spania. Skal du kjøpe bolig, bør du normalt avklare NIE tidlig – helst før tidsfrister for kontrakt og overtakelse blir kritiske.",
+      "Du kan søke selv i Spania, undersøke søknad ved Spanias ambassade i Oslo eller la en kvalifisert representant bistå med uttrykkelig fullmakt. Her får du dokumentlisten, fremgangsmåten og offisielle kilder."
     ],
-    sections: [
+    "sections": [
       {
-        heading: "Hva NIE er – og ikke er",
-        body: [
-          "NIE er et personlig identifikasjonsnummer for utlendinger. Det er ikke i seg selv et bostedsbevis eller en skatteresidens. Nummeret brukes når du må identifiseres i ulike spanske administrative og økonomiske prosesser.",
-        ],
+        "heading": "Hva er NIE-nummer?",
+        "body": [
+          "NIE står for Número de Identificación de Extranjero og er et personlig, unikt identifikasjonsnummer som spanske myndigheter tildeler utlendinger med relevante økonomiske, profesjonelle eller sosiale forhold til Spania. Nummeret er ikke en oppholdstillatelse eller bekreftelse på at du er skattemessig bosatt i landet.",
+          "NIE er et nummer. TIE er et fysisk identitetskort for visse utenlandske personer med oppholdsrett eller -tillatelse. NIF er betegnelsen på skatteidentifikasjonen; for utenlandske privatpersoner brukes normalt NIE som skattemessig identifikator. Reglene for oppholdsregistrering og skatteresidens er egne spørsmål.",
+          "### Hva brukes NIE-nummer til?",
+          "Du trenger ofte NIE når du skal identifiseres ved boligkjøp og skjøteregistrering, skattebetaling og -rapportering, boliglån og enkelte bankprosesser, arv, juridiske transaksjoner og registrering av andre eiendeler eller kontrakter. At du har NIE betyr ikke at banken automatisk godkjenner finansiering. Se [[finansieringsguiden|/guide/finansiere-bolig-i-spania]] for selve lånevalget."
+        ]
       },
       {
-        heading: "Slik kan NIE skaffes",
-        body: [
-          "Søknadssted, timebestilling, dokumentasjon og muligheten til å bruke fullmektig avhenger av gjeldende prosedyre og hvor du søker. Mange boligkjøpere får hjelp av advokat eller gestor; andre søker selv i Spania eller gjennom relevante spanske utenriksstasjoner der det tilbys.",
-        ],
-        bullets: [
-          "Kontroller aktuell søknadsprosedyre før du bestiller reise eller time.",
-          "Avklar om advokat/gestor kan bistå og hvilke fullmakter som i så fall kreves.",
-          "Ha gyldig pass og dokumentasjon på formålet med søknaden etter gjeldende krav.",
-          "Start tidlig dersom et boligkjøp nærmer seg, siden behandlingstid kan variere.",
-        ],
+        "heading": "Trenger jeg NIE for å kjøpe bolig i Spania?",
+        "body": [
+          "Ja. Som utenlandsk boligkjøper må du normalt ha et NIE-nummer for identifikasjon ved skattemessig håndtering og den formelle eiendomstransaksjonen. Notar, bank og eiendomsregistrering vil kunne etterspørre nummeret og tilhørende dokumentasjon.",
+          "Start derfor NIE-prosessen i god tid før avtalt overtakelse. Les [[hele kjøpsprosessen for bolig i Spania|/guide/kjope-bolig-i-spania]] for hvordan NIE passer inn i reservasjon, kontrakt og oppgjør."
+        ]
       },
       {
-        heading: "Hva du bruker NIE til",
-        body: [
-          "NIE brukes blant annet i forbindelse med eiendomstransaksjoner, skatt og mange kontrakts-/myndighetsprosesser. Banker, forsikringsselskaper og leverandører har egne dokumentkrav, så ikke anta at NIE alene er nok for alle tjenester.",
+        "heading": "Hvordan få NIE-nummer i Spania?",
+        "body": [
+          "Som nordmann har du normalt tre praktiske veier: søke selv i Spania, søke ved Spanias ambassade i Oslo når konsulatets vilkår er oppfylt, eller bruke en representant med riktig fullmakt når myndighetene tillater det. Riktig søknadsvei avhenger av hvor du befinner deg og formålet med søknaden."
         ],
+        "table": {
+          "headers": [
+            "Søknadsvei",
+            "Hvem passer den for?",
+            "Viktig å vite"
+          ],
+          "rows": [
+            [
+              "Personlig i Spania",
+              "Deg som kan møte på relevant politi-/utlendingskontor",
+              "Tilgjengelige timer og lokale instrukser varierer"
+            ],
+            [
+              "Ambassaden i Oslo",
+              "Bosatte i konsulærdistriktet som ikke skal etablere bosted i Spania",
+              "Forhåndsbestilt time og ambassadens dokumentkrav"
+            ],
+            [
+              "Representant med fullmakt",
+              "Boligkjøpere som bruker advokat eller annen kvalifisert representant",
+              "Særskilt fullmaktsordlyd og dokumentkrav må bekreftes"
+            ]
+          ],
+          "caption": "Offentlig behandlingstid og oppmøtekrav avhenger av søknadsvei og myndighet."
+        }
       },
       {
-        heading: "Vanlige feil",
-        body: [
-          "En vanlig utfordring er å starte for sent eller anta at NIE og oppholdsregistrering er det samme. Avklar identifikasjonsnummer, oppholdsstatus, bank og kjøpsdokumentasjon som separate arbeidsstrømmer.",
+        "heading": "Søke om NIE i Spania",
+        "body": [
+          "Du søker normalt ved kompetent politi- eller utlendingsmyndighet i Spania. Finn riktig kontor for din sak, kontroller om timebestilling er nødvendig, og følg kontorets aktuelle dokumentliste.",
+          "Se [[Policía Nacional – offisiell informasjon om NIE|https://www.policia.es/_es/extranjeria_extranjeros.php]] og [[offisiell betalingsside for Modelo 790 Código 012|https://sede.policia.gob.es/Tasa790_012/]]. Ledige timer og utleveringstid varierer lokalt."
         ],
+        "bullets": [
+          "1. Finn kontor og bestill cita previa (time) når dette kreves.",
+          "2. Fyll ut og signer søknadsskjema EX-15.",
+          "3. Fyll ut Modelo 790 Código 012, velg riktig NIE-gebyr og betal etter anvisningene.",
+          "4. Ta med gyldig pass eller godkjent legitimasjon, påkrevde kopier og betalingsbevis.",
+          "5. Dokumenter den konkrete økonomiske eller juridiske begrunnelsen, for eksempel et planlagt boligkjøp.",
+          "6. Møt til avtalt tid, lever dokumentasjonen og følg beskjed om utlevering av NIE-beviset."
+        ]
       },
+      {
+        "heading": "Søke om NIE i Norge",
+        "body": [
+          "Spanias ambassade i Oslo behandler NIE-søknader for personer som ikke planlegger å etablere bosted i Spania, når de oppfyller konsulære krav. Dette er ofte praktisk når boligkjøpet planlegges fra Norge.",
+          "Bestill time via [[ambassadens offisielle NIE-side|https://www.exteriores.gob.es/Embajadas/oslo/en/ServiciosConsulares/Paginas/Consular/NIE.aspx]]. Ambassaden krever originalt og kopiert EX-15-skjema, Modelo 790 Código 012 med gebyr, gyldig pass og kopi av personalsiden, dokumentasjon på grunnen til søknaden og dokumentasjon på bosted i konsulærdistriktet. Ved representasjon gjelder egne krav til fullmakt og legitimasjon.",
+          "Formålet må være konkret, for eksempel dokumentasjon på et boligkjøp eller arveforhold. Ambassaden opplyser at gebyret kan betales med kort ved konsulærseksjonen, og at resultatet normalt sendes på e-post. Kontroller gjeldende fremgangsmåte og timebestilling før du møter. Kontakt: emb.oslo.sc@maec.es."
+        ]
+      },
+      {
+        "heading": "Få hjelp via fullmakt",
+        "body": [
+          "En advokat eller annen representant kan i enkelte tilfeller fremme NIE-søknaden på dine vegne med en gyldig, tilstrekkelig presis fullmakt. Fullmakten må uttrykkelig omfatte rett til å levere søknad om NIE; en generell bistandsavtale er ikke nødvendigvis tilstrekkelig.",
+          "Mange boligkjøpere velger representasjon fordi de ikke kan reise til Spania for hver administrativ oppgave. Avklar med advokaten hvilken original, bekreftelse, oversettelse eller annen dokumentasjon den aktuelle myndigheten krever.",
+          "Vi i ZenEcoHomes kan hjelpe deg å koordinere dette med riktig fagperson som en del av [[kjøpsprosessen|/kjopsprosessen]]. Vi er ikke utstedende myndighet og kan ikke garantere saksbehandlingstid."
+        ]
+      },
+      {
+        "heading": "Hva trenger jeg for å få NIE-nummer?",
+        "body": [
+          "Du trenger normalt gyldig identifikasjon, søknadsskjema EX-15, gebyrskjema Modelo 790 Código 012, en konkret begrunnelse og dokumentasjon som underbygger hvorfor nummeret er nødvendig. Krav til kopier, time og representasjon avhenger av søknadsstedet."
+        ],
+        "bullets": [
+          "Utfylt og signert EX-15, med kopi der det kreves.",
+          "Utfylt Modelo 790 Código 012 og dokumentasjon på betaling etter gjeldende prosedyre.",
+          "Gyldig pass eller annet akseptert ID-dokument og påkrevde kopier.",
+          "Konkret beskrivelse av grunnen til søknaden.",
+          "Dokumentasjon på formålet – for eksempel relevant kjøpe- eller reservasjonsdokumentasjon når dette etterspørres.",
+          "Eventuell uttrykkelig fullmakt og representantens ID.",
+          "Dokumentasjon på bosted i konsulærdistriktet og andre tilleggskrav ved søknad i Oslo."
+        ]
+      },
+      {
+        "heading": "Slik fyller du ut EX-15",
+        "body": [
+          "EX-15 er det offisielle søknadsskjemaet for tildeling av NIE og visse sertifikater. Det fylles ut på spansk med blant annet navn, fødselsdato, nasjonalitet, passnummer, adresse og kontaktopplysninger.",
+          "Oppgi riktig grunn til søknaden og samsvarende dokumentasjon. Sammenlign opplysningene med passet og kontroller underskrift og dato. Ambassaden i Oslo lenker til både skjema og eksempel på utfylling fra [[sin NIE-veiledning|https://www.exteriores.gob.es/Embajadas/oslo/en/ServiciosConsulares/Paginas/Consular/NIE.aspx]]."
+        ]
+      },
+      {
+        "heading": "Hva er Modelo 790 Código 012?",
+        "body": [
+          "Modelo 790 Código 012 er gebyrskjemaet som brukes ved blant annet søknad om tildeling av NIE. Velg tjenesten som gjelder tildeling av NIE, kontroller oppdatert gebyr, og betal på måten myndigheten eller ambassaden instruerer.",
+          "Ikke velg et gebyr for TIE-kort dersom du søker om selve NIE-nummeret. Se [[Policía Nacionals offisielle gebyrskjema|https://sede.policia.gob.es/Tasa790_012/]]; ved søknad i Oslo følges ambassadens betalingsinformasjon."
+        ]
+      },
+      {
+        "heading": "Hvor mye koster et NIE-nummer?",
+        "body": [
+          "Den offentlige avgiften for selve NIE-søknaden er forholdsvis lav, men satsen kan justeres. Kontroller beløpet i aktuell Modelo 790 Código 012 eller hos ambassaden den dagen du søker.",
+          "Bruker du advokat, gestor, oversettelse eller fullmaktshåndtering, betaler du eventuelt for disse tjenestene i tillegg. Be om et spesifisert pristilbud; tjenesteprisen er ikke en offentlig NIE-avgift."
+        ]
+      },
+      {
+        "heading": "Hvor lang tid tar det å få NIE?",
+        "body": [
+          "Det finnes ikke én behandlingstid som gjelder for alle NIE-søknader. Skill mellom ventetid for å få time, myndighetenes behandling etter korrekt mottatt søknad og en eventuell søknad sendt via ambassaden i Oslo.",
+          "I Spania kan tilgjengelige timer og saksflyt variere fra kontor til kontor. For Oslo oppgir ambassaden at NIE normalt utstedes innen opptil fem uker, men at tiden kan forlenges av forhold utenfor konsulatets kontroll. Det er ingen garanti for at et bestemt boligoppgjør kan gjennomføres innen denne perioden. [[Kontroller oppdatert informasjon hos ambassaden|https://www.exteriores.gob.es/Embajadas/oslo/en/ServiciosConsulares/Paginas/Consular/NIE.aspx]]."
+        ]
+      },
+      {
+        "heading": "Hvor finner jeg NIE-nummeret mitt?",
+        "body": [
+          "Du finner normalt NIE på tildelingsbeviset eller NIE-sertifikatet. Har du et TIE-kort, vil nummeret også stå der. Det kan dessuten fremgå av enkelte spanske skatte-, bank- og myndighetsdokumenter.",
+          "Et NIE består typisk av en innledende bokstav, sju sifre og en kontrollbokstav, for eksempel X1234567L (illustrasjon, ikke et gyldig identitetsbevis). Har du mistet sertifikatet, sjekk først dokumentarkivet ditt og med den myndigheten eller rådgiveren som behandlet saken."
+        ]
+      },
+      {
+        "heading": "Trenger begge kjøpere NIE?",
+        "body": [
+          "Ja, normalt må hver utenlandske person som skal registreres som kjøper eller eier identifiseres med sitt eget NIE. Et ektepar som kjøper sammen, skal derfor ikke bruke ett felles nummer.",
+          "Avklar eiersammensetningen tidlig med advokaten, slik at nødvendige identifikasjonsopplysninger er klare til kontrakt og skjøte."
+        ]
+      },
+      {
+        "heading": "Vanlige feil når nordmenn søker om NIE",
+        "body": [
+          "De vanligste praktiske problemene er mangelfull dokumentasjon og sen oppstart. Mange feil kan unngås ved å kontrollere kravene hos det kontoret som skal behandle søknaden, før du bestiller time eller reise."
+        ],
+        "bullets": [
+          "Søknaden startes først rett før en bindende overtakelsesfrist.",
+          "Formålet er for vagt eller det mangler bevis på hvorfor NIE er nødvendig.",
+          "EX-15 er ufullstendig, usignert eller inneholder opplysninger som avviker fra passet.",
+          "Modelo 790 Código 012 eller betalingsbevis mangler.",
+          "Søkeren antar at NIE gir bostedsregistrering eller skattemessig residens.",
+          "Påkrevde kopier, originaler eller fullmaktsdokumenter er ikke med.",
+          "Man følger foreldede bloggoppskrifter i stedet for gjeldende myndighetsinformasjon."
+        ]
+      },
+      {
+        "heading": "Få hjelp med NIE og boligkjøpet",
+        "body": [
+          "Vi hjelper deg å planlegge NIE-dokumentasjon og tidsfrister sammen med resten av boligkjøpet på Costa Blanca, og kan koordinere kontakt med relevante advokater eller andre kvalifiserte representanter.",
+          "[[Bestill en uforpliktende boligprat|/booking]]. Du beholder oversikten over hvem som gjør hva, mens myndighetene avgjør søknaden."
+        ]
+      }
     ],
-    nextSteps: [
-      "Start NIE-prosessen i god tid når et kjøp blir konkret.",
-      "Avklar med advokat/gestor om de kan bistå og hvilke dokumenter som kreves.",
-      "Ha gyldig pass og nødvendig formålsdokumentasjon klar.",
-      "Skill mellom NIE, oppholdsregistrering og skattemessig bosted.",
+    "nextSteps": [
+      "Bestem om du skal søke i Spania, via ambassaden i Oslo eller gjennom representant.",
+      "Samle EX-15, gebyrskjema, pass/ID, kopier og bevis på formålet.",
+      "Kontroller gjeldende krav og timebestilling direkte hos søknadsstedet.",
+      "Legg inn realistisk tidsmargin før avtalt overtakelse.",
+      "Oppbevar tildelingsbeviset og del identifikasjonsopplysninger sikkert med advokaten."
     ],
-    faq: [
+    "faq": [
       {
-        question: "Hva er NIE?",
-        answer:
-          "NIE er utlendingens identifikasjonsnummer i Spania. Det brukes i blant annet eiendoms- og skatteprosesser og en rekke andre administrative sammenhenger.",
+        "question": "Kan jeg søke om NIE fra Norge uten å reise til Spania?",
+        "answer": "Ja, når vilkårene er oppfylt kan du søke ved Spanias ambassade i Oslo. Du må bestille time, levere dokumentasjon og normalt møte selv eller gjennom godkjent representant."
       },
       {
-        question: "Må jeg møte opp personlig for å få NIE?",
-        answer:
-          "Det avhenger av aktuell søknadsvei og fullmakt. Advokat/gestor kan i enkelte situasjoner bistå via fullmakt. Kontroller gjeldende prosedyre før du planlegger.",
+        "question": "Er NIE det samme som spansk skattemessig bosted?",
+        "answer": "Nei. NIE er et personlig identifikasjonsnummer. Skattemessig bosted og oppholdsregistrering avgjøres etter andre regler."
       },
       {
-        question: "Betyr NIE at jeg er bosatt i Spania?",
-        answer:
-          "Nei. NIE er et identifikasjonsnummer og er ikke i seg selv bevis på oppholdsregistrering eller skattemessig bosted.",
+        "question": "Kan en advokat ordne NIE-nummer for meg?",
+        "answer": "I enkelte tilfeller ja, med uttrykkelig fullmakt som godtas av relevant myndighet. Kontroller formkrav og om representanten kan møte på dine vegne."
       },
+      {
+        "question": "Hvor finner jeg mitt NIE-nummer hvis dokumentet er borte?",
+        "answer": "Se etter NIE-beviset, eventuelt TIE-kort eller relevante spanske myndighets- og skattedokumenter. Be om hjelp fra utstedende instans hvis dokumentasjonen er mistet."
+      },
+      {
+        "question": "Hvor lang tid tar NIE via ambassaden i Oslo?",
+        "answer": "Ambassaden oppgir normalt inntil fem uker etter sin prosess, men det kan ta lenger tid. Tilgjengelige timer kommer i tillegg."
+      },
+      {
+        "question": "Må begge ektefeller ha NIE ved felles boligkjøp?",
+        "answer": "Normalt ja. Hver utenlandske person som skal stå som eier eller kjøper må kunne identifiseres individuelt."
+      }
     ],
-    cta: { label: "Finansiering av bolig i Spania", href: "/guide/finansiere-bolig-i-spania" },
+    "cta": {
+      "label": "Bestill en uforpliktende boligprat",
+      "href": "/booking"
+    }
   },
   {
     slug: "spansk-bankkonto-valutaveksling",
