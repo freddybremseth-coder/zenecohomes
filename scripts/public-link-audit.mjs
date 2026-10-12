@@ -31,6 +31,7 @@ const queued = new Map();
 const queue = [];
 let propertyCount = 0;
 let sitemapEntries = 0;
+let legacyRedirectCandidates = 0;
 
 function normalize(candidate, from = ORIGIN + "/") {
   try {
@@ -86,10 +87,31 @@ function selectEvenly(items, limit) {
   return Array.from({ length: limit }, (_, i) => items[Math.round(i * (items.length - 1) / (limit - 1))]);
 }
 
+async function seedLegacyRedirects() {
+  try {
+    const { readFile } = await import("node:fs/promises");
+    const ts = (await import("typescript")).default;
+    const source = (await readFile(new URL("../next.config.ts", import.meta.url), "utf8"))
+      .replaceAll("import.meta.dirname", "process.cwd()");
+    const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } }).outputText;
+    const { default: config } = await import("data:text/javascript;base64," + Buffer.from(js).toString("base64"));
+    const redirects = await config.redirects();
+    for (const redirect of redirects) {
+      // Only literal on-site paths can be probed without inventing URL params.
+      if (!redirect.source.startsWith("/") || /[:*()[\]]/.test(redirect.source)) continue;
+      legacyRedirectCandidates++;
+      add(ORIGIN + redirect.source, "legacy redirect");
+    }
+  } catch (error) {
+    warnings.push("Redirect configuration could not be audited: " + String(error));
+  }
+}
+
 async function seed() {
   for (const path of ["/", "/eiendommer", "/omrader", "/guide", "/magasin", "/bedriftshytte-spania", "/kjopsprosessen", "/min-side", "/de", "/en", "/es"]) {
     add(ORIGIN + path, "navigation");
   }
+  await seedLegacyRedirects();
   let xml;
   try {
     const response = await request(ORIGIN + "/sitemap.xml");
@@ -145,6 +167,8 @@ const report = {
   origin: ORIGIN,
   date: new Date().toISOString(),
   sitemapEntries,
+  legacyRedirectCandidates,
+  legacyRedirectsChecked: [...checked.keys()].filter((url) => queued.get(url) === "legacy redirect").length,
   pagesChecked: checked.size,
   sampledPropertyUrls: [...checked.keys()].filter((url) => propertyPath.test(new URL(url).pathname)).length,
   broken,
@@ -157,6 +181,7 @@ if (process.env.GITHUB_STEP_SUMMARY) {
   await appendFile(process.env.GITHUB_STEP_SUMMARY,
     "### ZenEcoHomes link audit\n" +
     "- Sitemap entries: " + report.sitemapEntries + "\n" +
+    "- Legacy redirects tested: " + report.legacyRedirectsChecked + " / " + report.legacyRedirectCandidates + "\n" +
     "- Pages checked: " + report.pagesChecked + "\n" +
     "- Property URLs sampled: " + report.sampledPropertyUrls + "\n" +
     "- 404 / 410 / soft-404: " + broken.length + "\n" +
