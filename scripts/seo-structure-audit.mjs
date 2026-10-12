@@ -251,11 +251,14 @@ if (read("src/lib/content.ts").includes('href: "/guide/finansiering-notar-nie-bo
 }
 
 function articleSectionHeadings(source, slug) {
-  const start = source.indexOf(`slug: "${slug}"`);
+  // Article records can be authored as TS object literals or JSON-style objects.
+  const start = source.search(new RegExp('(?:slug|"slug")\\s*:\\s*"' + slug + '"'));
   if (start < 0) return [];
-  const end = source.indexOf("\n  {\n    slug:", start + 5);
-  const article = source.slice(start, end > 0 ? end : undefined);
-  return [...article.matchAll(/heading: "([^"]+)"/g)].map((match) => match[1].toLowerCase());
+  const next = source.slice(start + slug.length + 10).search(/\n  \{\n\s*(?:slug|"slug")\s*:/);
+  const end = next >= 0 ? start + slug.length + 10 + next : undefined;
+  const article = source.slice(start, end);
+  return [...article.matchAll(/(?:heading|"heading")\s*:\s*"([^"]+)"/g)]
+    .map((match) => match[1].toLowerCase());
 }
 
 function contextualRulesForSlug(source, blockName, slug) {
