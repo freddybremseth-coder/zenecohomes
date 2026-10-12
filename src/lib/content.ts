@@ -364,7 +364,7 @@ export const articles: Article[] = [
     "readingTime": "9 min lesing",
     "image": "/assets/magasin-covers/finansiering.svg",
     "imageAlt": "Finansieringsplan for boligkjøp i Spania med euro, lånevalg og totalbudsjett",
-    "seoTitle": "Hvordan finansiere bolig i Spania? | 4 løsninger",
+    "seoTitle": "Hvordan finansiere bolig i Spania? | Fire lånemuligheter",
     "seoDescription": "Hvordan finansiere boligkjøp i Spania? Sammenlign spansk lån, lån i Norge, DNB Luxembourg og egne midler. Egenkapital, valuta, eksempel og råd.",
     "keywords": [
       "finansiere bolig i Spania",
