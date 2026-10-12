@@ -1,4 +1,4 @@
-import { PropertyNotFoundView } from "@/components/PropertyDetailView";
+import { notFound } from "next/navigation";
 import { TrackedPropertyDetailView } from "@/components/TrackedPropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
 import {
@@ -74,7 +74,7 @@ export default async function EnglishPropertyPage({ params }: { params: Promise<
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
 
-  if (!property) return <PropertyNotFoundView locale="en" />;
+  if (!property) notFound();
 
   return <TrackedPropertyDetailView property={property} locale="en" />;
 }
