@@ -1963,7 +1963,8 @@ export const articles: Article[] = [
       {
         "heading": "Søke om NIE i Spania",
         "body": [
-          "Du søker normalt ved kompetent politi- eller utlendingsmyndighet i Spania. Finn riktig kontor for din sak, kontroller om timebestilling er nødvendig, og følg kontorets aktuelle dokumentliste."
+          "Du søker normalt ved kompetent politi- eller utlendingsmyndighet i Spania. Finn riktig kontor for din sak, kontroller om timebestilling er nødvendig, og følg kontorets aktuelle dokumentliste.",
+          "Se [[Policía Nacional – offisiell informasjon om NIE|https://www.policia.es/_es/extranjeria_extranjeros.php]] og [[offisiell betalingsside for Modelo 790 Código 012|https://sede.policia.gob.es/Tasa790_012/]]. Ledige timer og utleveringstid varierer lokalt."
         ],
         "bullets": [
           "1. Finn kontor og bestill cita previa (time) når dette kreves.",
@@ -1971,8 +1972,7 @@ export const articles: Article[] = [
           "3. Fyll ut Modelo 790 Código 012, velg riktig NIE-gebyr og betal etter anvisningene.",
           "4. Ta med gyldig pass eller godkjent legitimasjon, påkrevde kopier og betalingsbevis.",
           "5. Dokumenter den konkrete økonomiske eller juridiske begrunnelsen, for eksempel et planlagt boligkjøp.",
-          "6. Møt til avtalt tid, lever dokumentasjonen og følg beskjed om utlevering av NIE-beviset.",
-          "Se [[Policía Nacional – offisiell informasjon om NIE|https://www.policia.es/_es/extranjeria_extranjeros.php]] og [[offisiell betalingsside for Modelo 790 Código 012|https://sede.policia.gob.es/Tasa790_012/]]. Ledige timer og utleveringstid varierer lokalt."
+          "6. Møt til avtalt tid, lever dokumentasjonen og følg beskjed om utlevering av NIE-beviset."
         ]
       },
       {
