@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SpanishPropertyNotFoundView } from "@/components/es/SpanishPropertyDetailView";
+import { notFound } from "next/navigation";
 import { TrackedSpanishPropertyDetailView } from "@/components/es/TrackedSpanishPropertyDetailView";
 import { getProperty, getPropertyRef } from "@/lib/realtyflow";
 import {
@@ -81,6 +81,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function SpanishPropertyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
-  if (!property) return <SpanishPropertyNotFoundView />;
+  if (!property) notFound();
   return <TrackedSpanishPropertyDetailView property={property} />;
 }

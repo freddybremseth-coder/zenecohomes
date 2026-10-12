@@ -1,0 +1,50 @@
+name: Check public links for 404s
+
+on:
+  pull_request:
+    paths:
+      - 'src/app/**'
+      - 'src/components/**'
+      - 'src/lib/realtyflow.ts'
+      - 'src/lib/propertyRouting.ts'
+      - 'src/lib/savedSearchEmails.ts'
+      - 'scripts/public-link-audit.mjs'
+      - '.github/workflows/public-link-audit.yml'
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Check all property URLs (more requests and a longer run)'
+        type: boolean
+        default: false
+  schedule:
+    - cron: '17 5 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  check-public-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check auditor syntax
+        run: node --check scripts/public-link-audit.mjs
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check TypeScript compilation
+        run: npx tsc --noEmit
+      - name: Check live sitemap and public internal links
+        env:
+          FULL_AUDIT: ${{ inputs.full || contains(github.event.pull_request.title, '[full-crawl]') }}
+        run: |
+          if [ "$FULL_AUDIT" = "true" ]; then
+            node scripts/public-link-audit.mjs --full
+          else
+            node scripts/public-link-audit.mjs --limit=400 --property-sample=64
+          fi

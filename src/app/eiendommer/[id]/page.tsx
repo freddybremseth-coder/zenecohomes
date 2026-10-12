@@ -1,4 +1,4 @@
-import { PropertyNotFoundView } from "@/components/PropertyDetailView";
+import { notFound } from "next/navigation";
 import { TrackedPropertyDetailView } from "@/components/TrackedPropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
 import {
@@ -68,6 +68,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title,
     description,
+    robots: property ? undefined : { index: false, follow: true },
     alternates: {
       canonical: getPropertyDetailPath(ref, "no"),
       languages: propertyHreflang(ref),
@@ -92,7 +93,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
 
-  if (!property) return <PropertyNotFoundView locale="no" />;
+  if (!property) notFound();
 
   return <TrackedPropertyDetailView property={property} locale="no" />;
 }
