@@ -1189,9 +1189,22 @@ export function ArticleView({ article }: { article: Article }) {
               return (
                 <section className="article-section" key={section.heading}>
                   <h2>{section.heading}</h2>
-                  {section.body?.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+                  {section.body?.map((paragraph) => {
+                    if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("### ")) {
+                      return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
+                    }
+                    if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.includes("[[")) {
+                      return (
+                        <p key={paragraph}>
+                          {paragraph.split(/(\\[\\[[^\\]]+\\]\\])/g).map((part, i) => {
+                            const match = part.match(/^\\[\\[([^|]+)\\|([^\\]]+)\\]\\]$/);
+                            return match ? <Link key={i} href={match[2]}>{match[1]}</Link> : part;
+                          })}
+                        </p>
+                      );
+                    }
+                    return <p key={paragraph}>{paragraph}</p>;
+                  })}
                   {section.bullets && (
                     <ul className="article-bullets">
                       {section.bullets.map((bullet) => (
