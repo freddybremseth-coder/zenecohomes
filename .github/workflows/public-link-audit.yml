@@ -35,9 +35,13 @@ jobs:
           node-version: '24'
       - name: Check auditor syntax
         run: node --check scripts/public-link-audit.mjs
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check TypeScript compilation
+        run: npx tsc --noEmit
       - name: Check live sitemap and public internal links
         env:
-          FULL_AUDIT: ${{ inputs.full || false }}
+          FULL_AUDIT: ${{ inputs.full || contains(github.event.pull_request.title, '[full-crawl]') }}
         run: |
           if [ "$FULL_AUDIT" = "true" ]; then
             node scripts/public-link-audit.mjs --full
