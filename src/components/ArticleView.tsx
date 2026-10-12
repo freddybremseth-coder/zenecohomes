@@ -285,13 +285,13 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "nie-skattenummer-spania": [
     {
-      headingIncludes: "Hva NIE er",
+      headingIncludes: "Hva er NIE-nummer",
       links: [
         { label: "Finansiere bolig i Spania – lån og egenkapital", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
-      headingIncludes: "Hva du bruker NIE",
+      headingIncludes: "Hvordan få NIE-nummer",
       links: [
         { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
@@ -1188,12 +1188,17 @@ export function ArticleView({ article }: { article: Article }) {
               const contextualLinks = contextualLinksFor(article.slug, section.heading);
               return (
                 <section className="article-section" key={section.heading}>
-                  <h2>{section.heading}</h2>
+                  {article.slug === "nie-skattenummer-spania" && [
+                    "Søke om NIE i Spania", "Søke om NIE i Norge", "Få hjelp via fullmakt",
+                    "Slik fyller du ut EX-15", "Hva er Modelo 790 Código 012?"
+                  ].includes(section.heading)
+                    ? <h3>{section.heading}</h3>
+                    : <h2>{section.heading}</h2>}
                   {section.body?.map((paragraph) => {
-                    if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("### ")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.includes("[[")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
                           {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
