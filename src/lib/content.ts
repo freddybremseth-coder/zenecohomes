@@ -992,92 +992,307 @@ export const articles: Article[] = [
     cta: { label: "Finn en bolig som passer både eget bruk og utleie", href: "/eiendommer#boligmatch" },
   },
   {
-    slug: "lopende-kostnader-eie-bolig-spania",
-    title: "Løpende kostnader ved å eie bolig i Spania",
-    excerpt:
-      "Hva koster det å eie bolig i Spania hvert år? Oversikt over IBI, fellesutgifter, forsikring, strøm og vann, og skatteforhold for ikke-residenter.",
-    date: "2026-09-08",
-    updated: "2026-09-15",
-    category: "Kjøpsprosess",
-    readingTime: "6 min lesing",
-    image: "/assets/magasin-covers/kostnader-eie.svg",
-    imageAlt: "Illustrasjon av løpende kostnader og regninger ved å eie bolig i Spania",
-    seoTitle: "Kostnader ved bolig i Spania | IBI, comunidad og skatt",
-    seoDescription:
-      "Hva koster det årlig å eie bolig i Spania? Se IBI, fellesutgifter, forsikring, strøm, vann og skatteforhold som norske boligeiere bør planlegge for.",
-    keywords: [
-      "løpende kostnader bolig Spania",
-      "IBI eiendomsskatt Spania",
-      "comunidad fellesutgifter Spania",
-      "ikke-resident skatt Spania",
-      "eie bolig Spania kostnader",
+    "slug": "lopende-kostnader-eie-bolig-spania",
+    "title": "Løpende kostnader ved å eie bolig i Spania",
+    "excerpt": "Hva koster det å eie bolig i Spania per år? Få oversikt over IBI, comunidad, Modelo 210, strøm, vann, forsikring, vedlikehold og kostnader ved tom bolig.",
+    "date": "2026-09-08",
+    "updated": "2026-10-12",
+    "category": "Kjøpsprosess",
+    "readingTime": "12 min lesing",
+    "image": "/assets/magasin-covers/kostnader-eie.svg",
+    "imageAlt": "Regninger og løpende utgifter ved å eie bolig i Spania",
+    "seoTitle": "Løpende kostnader ved å eie bolig i Spania | Guide",
+    "seoDescription": "Hva koster det å eie bolig i Spania? Oversikt over IBI, comunidad, strøm, vann, forsikring, Modelo 210 og vedlikehold. Sjekklister og årsbudsjett.",
+    "keywords": [
+      "løpende kostnader ved å eie bolig i Spania",
+      "hva koster det å eie bolig i Spania",
+      "IBI Spania",
+      "comunidad Spania",
+      "Modelo 210",
+      "utgifter villa privat basseng Spania"
     ],
-    intro: [
-      "Selve kjøpet er én ting – men hva koster det å eie boligen år etter år? De løpende kostnadene varierer betydelig med bolig, kommune, fellesanlegg og bruk, så be om faktiske tall før du kjøper.",
-      "Her er de vanligste kostnadskategoriene en norsk boligeier i Spania bør undersøke.",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/eiendomsradgiver-spania.html"
+    },
+    "intro": [
+      "Løpende kostnader ved å eie bolig i Spania er blant annet kommunal eiendomsskatt (IBI), strøm, vann, renovasjon, forsikring og vedlikehold. I tillegg kan du få fellesutgifter (comunidad), kostnader til basseng, sikkerhet, tilsyn og spanske skatter som ikke-resident. Beløpene avhenger av kommune, boligtype, fasiliteter, bruk og skattemessig situasjon.",
+      "Det finnes ikke én pålitelig års- eller månedspris for alle boliger. Før du kjøper bør du derfor hente faktisk IBI-kvittering, sameiebudsjett, tidligere regninger og opplysninger om vedlikehold for akkurat den eiendommen."
     ],
-    sections: [
+    "sections": [
       {
-        heading: "De vanligste løpende kostnadene",
-        body: [
-          "Utgiftene kan betales årlig, kvartalsvis eller løpende. Størrelsen avhenger av bolig, kommune, forbruk og om boligen ligger i en urbanisasjon med fellesanlegg.",
+        "heading": "Hva koster det å eie bolig i Spania?",
+        "body": [
+          "De viktigste faste og variable kostnadene vises nedenfor. Frekvens og betalingsplikt kan variere etter kommune, avtale, eierform og hvilken bolig du kjøper."
         ],
-        table: {
-          caption: "Kategorier og typisk betalingsmønster. Faktiske beløp må hentes fra den konkrete boligen.",
-          headers: ["Kostnad", "Hva er det?", "Typisk frekvens"],
-          rows: [
-            ["IBI", "Kommunal eiendomsskatt basert på skattemessig verdi etter gjeldende regler", "Årlig"],
-            ["Comunidad", "Fellesutgifter i sameie/urbanisasjon", "Månedlig/kvartalsvis eller etter vedtekter"],
-            ["Forsikring", "Bygning/innbo etter behov og avtale", "Vanligvis årlig"],
-            ["Strøm og vann", "Forbruk og faste abonnementsledd", "Etter leverandør"],
-            ["Basura/renovasjon", "Kommunal avfalls-/renovasjonsavgift der den ilegges", "Etter kommune"],
-            ["Skatt for ikke-resident", "Skatteforpliktelser avhenger av bruk, utleie og skattemessig status", "Etter gjeldende regler"],
+        "table": {
+          "headers": [
+            "Kostnad",
+            "Hva dekker den?",
+            "Når betales den?",
+            "Status"
           ],
-        },
+          "rows": [
+            [
+              "IBI",
+              "Kommunal eiendomsskatt",
+              "Årlig etter kommunal kalender",
+              "Normalt obligatorisk"
+            ],
+            [
+              "Basura / kommunale gebyrer",
+              "Renovasjon og eventuelle lokale tjenester",
+              "Årlig eller periodisk",
+              "Avhenger av kommune og regelverk"
+            ],
+            [
+              "Strøm",
+              "Nettleie/effektledd og faktisk forbruk",
+              "Månedlig eller annen fakturaperiode",
+              "Avtale/tilkobling og forbruk"
+            ],
+            [
+              "Vann og avløp",
+              "Abonnement, forbruk, avløpsgebyrer",
+              "Etter lokal leverandør",
+              "Avhenger av tilkobling og ordning"
+            ],
+            [
+              "Comunidad",
+              "Fellesarealer, heis, basseng, drift, administrasjon",
+              "Ofte månedlig eller kvartalsvis",
+              "Obligatorisk når boligen inngår i sameie"
+            ],
+            [
+              "Ekstra innbetalinger (derrama)",
+              "Større vedtak og reparasjoner",
+              "Ved særskilt vedtak",
+              "Situasjonsavhengig, kan være bindende"
+            ],
+            [
+              "Boligforsikring",
+              "Bygning, innbo og ansvar etter polise",
+              "Ofte årlig",
+              "Avtale; kan kreves av långiver for pantobjektet"
+            ],
+            [
+              "Vedlikehold",
+              "Reparasjoner, teknikk, uteområder",
+              "Løpende og uforutsett",
+              "Praktisk nødvendig"
+            ],
+            [
+              "Privat basseng/hage",
+              "Rengjøring, strøm, vann, service",
+              "Sesongvis eller løpende",
+              "Når eiendommen har dette"
+            ],
+            [
+              "Internett, TV, alarm",
+              "Telekom og sikkerhetsavtaler",
+              "Vanligvis månedlig",
+              "Valgfritt/avtalebasert"
+            ],
+            [
+              "Tilsyn og keyholding",
+              "Kontroller og nøkkelhåndtering",
+              "Per besøk eller abonnement",
+              "Valgfritt"
+            ],
+            [
+              "Bankkonto/gebyrer",
+              "Kontohold og overføringer",
+              "Etter bankens prisliste",
+              "Avhenger av bank og avtale"
+            ],
+            [
+              "Skatt for ikke-residenter",
+              "Skatt på beregnet inntekt/utleieinntekt",
+              "Etter gjeldende deklarasjonsfrister",
+              "Avhenger av skatteposisjon og bruk"
+            ],
+            [
+              "Formuesskatt/solidaritetsskatt",
+              "Formuesrelatert personbeskatning",
+              "Årlig når vilkårene er oppfylt",
+              "Kun for aktuelle skattytere"
+            ],
+            [
+              "Boliglån",
+              "Renter og avdrag",
+              "Etter låneavtale",
+              "Hvis finansiert med lån"
+            ]
+          ],
+          "caption": "Ingen beløp er universelle. Få tallene fra kommunen, sameiet, leverandørene og egen skatterådgiver."
+        }
       },
       {
-        heading: "IBI og skattemessig verdi",
-        body: [
-          "IBI (Impuesto sobre Bienes Inmuebles) er kommunal eiendomsskatt. Beregningsgrunnlag og lokal sats gjør at to tilsynelatende like boliger i ulike kommuner kan ha ulik IBI. Be om siste faktiske IBI-kvittering for boligen.",
+        "heading": "Løpende drifts- og bokostnader",
+        "body": [
+          "Boligen har vanligvis både faste abonnementer og forbruksavhengige kostnader. Leiligheter og rekkehus kan ha flere fellesutgifter, mens villaer ofte krever mer individuelt vedlikehold. Sjekk også hvilke tjenester som er frivillige.",
+          "### Strøm og elektrisitet",
+          "Strømregningen består normalt av faste ledd knyttet til avtalt kapasitet, forbruk og andre regulerte eller avtalte kostnader. Klimaanlegg, oppvarming, varmtvann og bassengpumpe kan øke forbruket merkbart. Be om tidligere regninger og kontroller avtalt effekt.",
+          "### Vann og avløp",
+          "Regningen kan inneholde fast abonnement, forbruksledd, avløp og lokale avgifter. Hagevanning, bassengpåfylling og lekkasjer kan gjøre en stor forskjell. Be om faktiske fakturaer fra lokale leverandører.",
+          "### Renovasjon og andre kommunale avgifter",
+          "Basura er en kommunal avgift for avfallshåndtering, der den ilegges. Den kan kreves separat eller etter den lokale betalingsordningen. Undersøk også andre kommunale gebyrer knyttet til eiendommen.",
+          "### Forsikring på bolig i Spania",
+          "Vurder dekning for bygningsskade, innbo, ansvar, vannskader, uvær og skade når boligen står ubebodd. Sameiets forsikring kan dekke felles bygningsdeler, men erstatter ikke nødvendigvis din egen dekning. Be om polise og vilkår; en långiver kan kreve nødvendig skadeforsikring for pantet.",
+          "### Fellesutgifter (comunidad)",
+          "Fellesutgifter finansierer vedtatte fellesoppgaver som trapper, heis, fellesbasseng, hage, renhold, belysning, administrasjon og vedlikehold. Fordelingen følger normalt eierandel/fordelingsnøkkel og vedtekter, ikke nødvendigvis lik pris per bolig. Be om budsjett, protokoller og bekreftelse på utestående krav.",
+          "### Ekstraordinære felleskostnader",
+          "Et sameie kan vedta ekstra innbetalinger (derramas) til for eksempel fasade, heis, tak eller rehabilitering. Disse kan komme i tillegg til vanlige felleskostnader. Gjennomgå møteprotokoller og planlagte arbeider før kjøpet.",
+          "### Vedlikehold av bolig og uteområder",
+          "Sett av penger til maling, tetting, hvitevarer, klimaanlegg, varmtvannsbereder, rør, terrasse og hage. En eldre bolig og en stor tomt kan kreve mer arbeid. Avklar hvem som har ansvar for vegger, tak, uteplasser og tekniske installasjoner.",
+          "### Kostnader ved privat basseng",
+          "Privat basseng kan kreve rengjøring, kjemikalier, filter, pumpeelektrisitet, vannpåfylling og fagservice. Utgifter til reparasjoner eller utskifting av teknikk kommer i tillegg. Kontroller alder, tilstand og driftsjournal.",
+          "### TV, internett og abonnementer",
+          "Internett og TV er vanligvis valgfrie avtaler med månedlig betaling. Sjekk dekning og bindingstid, særlig på landeiendom eller i områder med begrenset fiber.",
+          "### Innbruddsalarm og sikkerhet",
+          "Alarm kan medføre installasjon, utstyr og løpende abonnement til alarmsentral. Undersøk om alarmsystemet eies, leies eller er bundet til kontrakt.",
+          "### Keyholder, tilsyn og vaktmester",
+          "Når du bor i Norge eller er bortreist, kan et lokalt tilsyn oppdage lekkasjer, strømbrudd eller stormskader og bistå med nøkkeloverlevering og håndverkere. Tjenesten er normalt valgfri; kontroller hva avtalen faktisk inkluderer.",
+          "### Bankgebyrer og kostnader til bankkonto",
+          "En spansk bankkonto kan ha gebyrer for konto, kort og overføringer, avhengig av produktet. Be om oppdatert prisliste og vurder om direktebetalinger og avtalegiro er satt opp riktig."
+        ]
+      },
+      {
+        "heading": "Skatter og avgifter ved å eie bolig i Spania",
+        "body": [
+          "IBI er en lokal eiendomsskatt. Andre skatter avhenger blant annet av om du er skattemessig bosatt i Spania, om du leier ut boligen, og størrelsen på din skattepliktige formue.",
+          "### IBI – kommunal eiendomsskatt",
+          "IBI (Impuesto sobre Bienes Inmuebles) beregnes med utgangspunkt i eiendommens cadastralverdi (valor catastral) og kommunens regler og sats. Den er ikke det samme som en prosentandel av annonseringsprisen. Siste IBI-kvittering er det beste utgangspunktet, men undersøk også varslede omtakseringer eller endringer.",
+          "### Skatt for ikke-residenter og Modelo 210",
+          "Eier du en spansk bolig som skattemessig ikke-resident, kan egen bruk og perioder uten utleie gi beregnet skattepliktig eiendomsinntekt (renta inmobiliaria imputada). Beregningsgrunnlaget følger egne regler knyttet til cadastralverdi, ofte 1,1 % eller 2 % etter gjeldende vilkår; prosentsatsene er beregningsgrunnlag, ikke selve skattesatsen. Modelo 210 er skjemaet som benyttes til å rapportere og betale den relevante ikke-residentskatten (IRNR).",
+          "Ved utleie beskattes faktiske leieinntekter etter egne regler, og for visse skattemessige bostedsland kan direkte tilknyttede kostnader trekkes fra hvis vilkårene oppfylles. Tid som er utleid, og tid til privat bruk eller tilgjengelighet, kan dermed behandles ulikt. Kontroller riktig sats, frister og fradrag hos Agencia Tributaria eller skatterådgiver: https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html.",
+          "### Formuesskatt og eventuell solidaritetsskatt",
+          "Impuesto sobre el Patrimonio og Impuesto Temporal de Solidaridad de las Grandes Fortunas kan være aktuelle ved større formuer. Regler, fritak, terskler, verdsetting, gjeld og regionalt regelverk gjør dette til en individuell vurdering. Se https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio.html og https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-temporal-solidaridad-grandes-fortunas.html.",
+          "### Skatt for deg som er skattemessig bosatt i Spania",
+          "Skattemessig residenter følger andre regler for inntekt og formue, blant annet spansk personinntektsskatt (IRPF). Dette er ikke en full guide til skattemessig bosted eller internasjonal beskatning. Få vurdert din konkrete situasjon, også med hensyn til Norge.",
+          "### Skatterepresentant og regnskapshjelp",
+          "En gestor eller skatterådgiver kan hjelpe med skatteplikt, oppgaver og frister. Betalt representasjon er ikke automatisk et generelt krav for enhver utenlandsk eier; særskilte representasjonsplikter avhenger av lovbestemte forhold. Avklar behov og fullmakter før du inngår en avtale."
+        ]
+      },
+      {
+        "heading": "Hva koster det å eie bolig når den står tom?",
+        "body": [
+          "IBI, eventuelle comunidad-krav, faste abonnementer, forsikring, renovasjon og relevante skatter fortsetter normalt selv om du ikke oppholder deg i boligen. Strøm- og vannforbruk kan falle, men faste ledd og sikringsbehov forsvinner ikke nødvendigvis.",
+          "Før lengre fravær bør du gjøre disse kontrollene:"
         ],
+        "bullets": [
+          "Vurder stenging av vann og kontroller mulige lekkasjepunkter.",
+          "Sjekk strøm, sikringer, kjøleskap og hva som må være påslått.",
+          "Gå gjennom forsikringsvilkår for perioder uten tilsyn.",
+          "Avtal tilsyn, nøkkeltilgang og kontaktperson ved skader.",
+          "Planlegg lufting, hage- og bassengvedlikehold også mens boligen er tom."
+        ]
       },
       {
-        heading: "Skatt for ikke-residenter",
-        body: [
-          "Eier du spansk eiendom uten å være skattemessig bosatt i Spania, kan du ha plikter etter reglene for ikke-residenter. Skattebehandlingen avhenger blant annet av egen bruk, utleie og eierstruktur. En kvalifisert skatterådgiver eller gestor bør bekrefte hva som gjelder for deg.",
+        "heading": "Hva er forskjellen på kostnadene ved å eie leilighet, rekkehus og villa?",
+        "body": [
+          "Forskjellen ligger først og fremst i hvem som betaler for vedlikehold og felles fasiliteter. En stor leilighet med heis og flere bassenger kan koste mer i fellesutgifter enn et enkelt rekkehus; en villa kan ha høyere direkte driftsansvar."
         ],
+        "table": {
+          "headers": [
+            "Område",
+            "Leilighet",
+            "Rekkehus",
+            "Frittliggende villa"
+          ],
+          "rows": [
+            [
+              "Basseng",
+              "Ofte felles hvis anlegget har basseng",
+              "Kan være felles eller privat",
+              "Ofte privat dersom basseng finnes"
+            ],
+            [
+              "Hage",
+              "Vanligvis felles eller terrasse",
+              "Kan være privat og/eller felles",
+              "Ofte egen hage og vanning"
+            ],
+            [
+              "Bygningsvedlikehold",
+              "Mye via comunidad, noe privat",
+              "Avhenger av vedtekter og utforming",
+              "Betales ofte direkte av eier"
+            ],
+            [
+              "Fellesarealer",
+              "Trapper/heis/anlegg etter bygg",
+              "Avhenger av urbanisasjon",
+              "Kan være ingen, eller avgift i urbanisasjon"
+            ],
+            [
+              "Tjenester og tilsyn",
+              "Privat valg utover fellesdrift",
+              "Privat valg utover fellesdrift",
+              "Større praktisk vedlikeholdsbehov mulig"
+            ]
+          ],
+          "caption": "Den konkrete fordelingen av ansvar følger eiendommens rettslige organisering, sameievedtekter og avtaler."
+        }
       },
       {
-        heading: "Slik unngår du overraskelser",
-        body: [
-          "Be om dokumentasjon på faktiske løpende kostnader for den konkrete boligen før du kjøper – særlig IBI, comunidad, forsikring og historisk forbruk der det er relevant. Da kan du bygge et realistisk årsbudsjett.",
+        "heading": "Hvordan lager du et realistisk budsjett for bolig i Spania?",
+        "body": [
+          "Lag et årsbudsjett basert på dokumenterte tall, ikke standardanslag fra annonser. Regn først ut kostnader som påløper uansett bruk, deretter de som varierer med forbruk, sesong og vedlikehold.",
+          "Be om siste IBI og basura, aktuelle comunidad-fakturaer med budsjetter og protokoller, 12 måneders strøm- og vannregninger, forsikringstilbud og servicekostnader for basseng/hage. Spør også etter vedtatte eller forventede derramas.",
+          "Eksempel på budsjettmetode: Summer årlige avgifter og forsikring + 12 måneders abonnement/forbruk + fire kvartalsbetalinger til sameie dersom det er betalingsformen + planlagt vedlikehold + separat reserve til uforutsett reparasjon. Del totalen på 12 for en sammenlignbar månedskostnad. Ikke forveksle gjennomsnitt per måned med når regningene faktisk forfaller.",
+          "Har du lån, legg renter og avdrag inn i husholdningens totalbudsjett. Selve valg av finansiering beskrives i [[finansieringsguiden|/guide/finansiere-bolig-i-spania]]. Skatter og engangsomkostninger ved kjøpet hører til [[guiden om kjøpskostnader|/guide/kostnader-boligkjop-spania]]."
         ],
-      },
+        "bullets": [
+          "Årlig: IBI, mange forsikringer og enkelte kommunale avgifter.",
+          "Kvartalsvis eller månedlig: comunidad etter sameiets betalingsplan.",
+          "Månedlig/etter faktura: strøm, vann, telekom, alarm og tilsyn.",
+          "Uregelmessig: reparasjoner, oppgraderinger, ekstraordinære sameieinnbetalinger.",
+          "Legg på en reserve som passer boligens alder, tekniske tilstand og vedlikeholdsansvar."
+        ]
+      }
     ],
-    nextSteps: [
-      "Be om siste IBI og comunidad for den konkrete boligen.",
-      "Sett opp et årsbudsjett før du reserverer.",
-      "Avklar skatteforpliktelser og hvem som skal håndtere dem for deg.",
-      "Vurder forsikring og eventuell nøkkelhåndtering hvis boligen står tom deler av året.",
+    "nextSteps": [
+      "Be om siste IBI, renovasjonsavgift og sameiets regnskap/budsjett.",
+      "Kontroller dokumenterte strøm- og vannregninger gjennom ulike sesonger.",
+      "Undersøk vedtatte ekstraordinære sameieinnbetalinger og teknisk vedlikehold.",
+      "Avklar spanske skatteplikter ut fra bosted, eierform og eventuell utleie.",
+      "Lag én årsoversikt med forfall og en egen uforutsett reserve."
     ],
-    faq: [
+    "faq": [
       {
-        question: "Hva er IBI i Spania?",
-        answer:
-          "IBI er den kommunale eiendomsskatten. Beløpet påvirkes av skattemessig verdi og kommunens sats. Be om den konkrete boligens siste IBI-kvittering fremfor å bruke et generelt estimat.",
+        "question": "Hva koster det å eie bolig i Spania per år?",
+        "answer": "Det finnes ingen universell årspris. Summer faktisk IBI, renovasjon, comunidad, forsikring, strøm, vann, vedlikehold, aktuelle skatter og eventuelle tjenester. Bruk regninger og sameiedokumenter for den konkrete boligen."
       },
       {
-        question: "Må jeg betale skatt i Spania selv om jeg ikke bor der?",
-        answer:
-          "Som eier kan du ha spanske skatteforpliktelser selv om du ikke er skattemessig bosatt i Spania. Det avhenger av eierskap, bruk og eventuell utleie. Få din situasjon bekreftet av kvalifisert fagperson.",
+        "question": "Må jeg betale skatt på bolig i Spania når jeg bor i Norge?",
+        "answer": "Som eier kan du skylde spansk kommunal IBI og skatt etter reglene for ikke-residenter, selv om du bor i Norge. Avklar også rapporteringsplikter i Norge ut fra din situasjon."
       },
       {
-        question: "Hvor høye er fellesutgiftene (comunidad)?",
-        answer:
-          "Det varierer sterkt med sameiet/urbanisasjonen og hvilke fellesanlegg som finnes. Be alltid om faktiske tall, budsjett og gjerne informasjon om planlagte ekstraordinære innbetalinger før kjøp.",
+        "question": "Hva er IBI og comunidad?",
+        "answer": "IBI er kommunal eiendomsskatt. Comunidad er boligens andel av kostnadene i et sameie eller en urbanisasjon, for eksempel til heis, fellesarealer og basseng."
       },
+      {
+        "question": "Må jeg betale skatt selv om jeg ikke leier ut boligen?",
+        "answer": "Ja, mange ikke-residente eiere av byeiendom kan få skatt på beregnet inntekt ved egen bruk eller når boligen står til disposisjon. Den deklareres normalt via Modelo 210 etter gjeldende regler."
+      },
+      {
+        "question": "Må jeg betale felleskostnader når boligen står tom?",
+        "answer": "Ja. Sameiets vedtatte fellesutgifter gjelder normalt uavhengig av om du bruker boligen."
+      },
+      {
+        "question": "Hvilke kostnader har jeg ved å eie en villa med privat basseng?",
+        "answer": "I tillegg til vanlig boligdrift må du budsjettere med rengjøring, kjemikalier, pumpe og strøm, vannpåfylling, service og reparasjoner, samt eventuell hage og vanning."
+      },
+      {
+        "question": "Hvilke kostnader bør jeg undersøke før jeg kjøper?",
+        "answer": "Be om IBI, basura, sameiebudsjett og protokoller, strøm/vann, forsikring, teknisk tilstand, basseng- og hagekostnader, aktuelle skatter og eventuelle ekstraordinære innbetalinger."
+      }
     ],
-    cta: { label: "Se boliger og be om konkrete kostnadsopplysninger", href: "/eiendommer" },
+    "cta": {
+      "label": "Snakk med oss om den konkrete boligens kostnader",
+      "href": "/booking"
+    }
   },
   {
     slug: "innlandet-finca-olivengard-spania",
