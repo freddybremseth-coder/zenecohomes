@@ -969,7 +969,16 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
   const normalizedId = String(id || "").trim();
   if (!normalizedId || ["null", "undefined"].includes(normalizedId.toLowerCase())) return null;
 
-  const read = async (lookup: "ref" | "id") => {
+  // Property cards and saved-search emails link by ref (or external_id/id).
+  // RealtyFlow versions differ in whether the single-property API accepts
+  // ref= or id=. Check identity before accepting an API response: older
+  // versions can return the full catalogue for an unknown query parameter.
+  const matchesRequestedProperty = (property: Property): boolean =>
+    [property.ref, property.external_id, property.id].some(
+      (value) => typeof value === "string" && value.trim() === normalizedId,
+    );
+
+  const read = async (lookup: "ref" | "id"): Promise<Property | null> => {
     const propertyUrl = new URL("/api/properties", REALTYFLOW_BASE);
     propertyUrl.searchParams.set(lookup, normalizedId);
     if (brandId) propertyUrl.searchParams.set("brandId", brandId);
@@ -978,28 +987,41 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
       signal: AbortSignal.timeout(PROPERTY_FETCH_TIMEOUT_MS),
       headers: { Accept: "application/json" },
     });
-    if (res.status === 404) return null;
     if (!res.ok) return null;
-    const data = await res.json();
+    const data: unknown = await res.json();
 
-    // Backward-compatible during the RealtyFlow rollout: older API versions
-    // ignore ref= and return the catalogue array. Find the requested property
-    // locally until every production instance serves direct lookup.
     if (Array.isArray(data)) {
-      return (
-        (data as Property[]).find((property) => property.id === id || getPropertyRef(property) === id) ||
-        null
-      );
+      return (data as Property[]).find(matchesRequestedProperty) || null;
     }
-    return data as Property;
+    if (!data || typeof data !== "object") return null;
+    const response = data as Record<string, unknown>;
+    const candidate = (response.property && typeof response.property === "object"
+      ? response.property
+      : response) as Property;
+    return matchesRequestedProperty(candidate) ? candidate : null;
   };
 
+  const looksLikeUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(normalizedId);
+  const firstLookup = looksLikeUuid ? "id" : "ref";
   try {
-    const looksLikeUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(normalizedId);
-    return await read(looksLikeUuid ? "id" : "ref");
+    const first = await read(firstLookup);
+    if (first) return first;
   } catch {
-    return null;
+    // Retry through the alternate lookup and finally the public catalogue.
   }
+
+  try {
+    const second = await read(firstLookup === "ref" ? "id" : "ref");
+    if (second) return second;
+  } catch {
+    // A transient single-property API failure must not break a live card link.
+  }
+
+  // The catalogue is the source of URLs shown on the website. If the detail
+  // endpoint fails to resolve a visible ref, recover from that same feed.
+  // Next.js caches this feed according to PROPERTY_CACHE_SECONDS.
+  const catalogue = await getProperties(0, brandId);
+  return catalogue.find(matchesRequestedProperty) || null;
 }
 
 export function parseLeadBudgetEstimate(value?: string) {
