@@ -141,38 +141,38 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "finansiere-bolig-i-spania": [
     {
-      headingIncludes: "Start med totalrammen",
+      headingIncludes: "Egenkapital og kostnader",
       links: [
         { label: "Kjøpskostnader i Spania – se satsene og prøv kalkulatoren", href: "/guide/kostnader-boligkjop-spania" },
       ],
     },
     {
-      headingIncludes: "Fire finansieringsmåter",
+      headingIncludes: "4 måter å finansiere",
       links: [
         { label: "Norsk eller spansk lån? Sammenlign løsningene", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
         { label: "Slik søker du boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
       ],
     },
     {
-      headingIncludes: "Hvor mye egenkapital",
+      headingIncludes: "Boliglån i spansk bank",
       links: [
         { label: "Dokumentkrav, takst og belåningsgrad i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
       ],
     },
     {
-      headingIncludes: "Valuta:",
+      headingIncludes: "Valuta og betaling",
       links: [
         { label: "Bankkonto og valutaveksling ved boligkjøp", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
     },
     {
-      headingIncludes: "Når må finansieringen",
+      headingIncludes: "Når bør finansieringen",
       links: [
         { label: "Hele kjøpsprosessen steg for steg", href: "/guide/kjope-bolig-i-spania" },
       ],
     },
     {
-      headingIncludes: "NIE, bankkonto, advokat og notar",
+      headingIncludes: "Norsk bank med pant i bolig i Spania",
       links: [
         { label: "Slik skaffer du NIE-nummer", href: "/guide/nie-skattenummer-spania" },
         { label: "Spansk bankkonto og dokumentasjon ved oppgjøret", href: "/guide/spansk-bankkonto-valutaveksling" },
@@ -217,7 +217,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "lopende-kostnader-eie-bolig-spania": [
     {
-      headingIncludes: "De vanligste løpende kostnadene",
+      headingIncludes: "Hva koster det å eie bolig i Spania?",
       links: [
         { label: "Omkostninger ved selve kjøpet av nybygg", href: "/guide/nybygg-i-spania" },
       ],
