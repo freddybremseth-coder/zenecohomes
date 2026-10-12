@@ -1196,8 +1196,8 @@ export function ArticleView({ article }: { article: Article }) {
                     if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
-                          {paragraph.split(/(\\[\\[[^\\]]+\\]\\])/g).map((part, i) => {
-                            const match = part.match(/^\\[\\[([^|]+)\\|([^\\]]+)\\]\\]$/);
+                          {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
+                            const match = part.match(/^\[\[([^|]+)\|([^\]]+)\]\]$/);
                             return match ? <Link key={i} href={match[2]}>{match[1]}</Link> : part;
                           })}
                         </p>
