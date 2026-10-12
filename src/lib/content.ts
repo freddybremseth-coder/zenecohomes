@@ -491,6 +491,12 @@ export const articles: Article[] = [
         ]
       }
     ],
+    "nextSteps": [
+      "Fastsett total kjøpsramme inkludert omkostninger og buffer.",
+      "Be om konkrete lånetilbud og sammenlign sikkerhet, valuta og totalkostnad.",
+      "Avklar finansiering og betalingsfrister før du reserverer bolig.",
+      "La uavhengig advokat vurdere eventuelle finansieringsforbehold."
+    ],
     "faq": [
       {
         "question": "Hvordan kan jeg finansiere kjøp av bolig i Spania?",
