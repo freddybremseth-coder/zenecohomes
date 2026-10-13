@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { findEquivalentBySlug, seoHreflang, siteLocales, withLocale } from "@/lib/i18n";
@@ -100,21 +101,14 @@ const legalChecks = [
 ] as const;
 
 const faq = [
+  { q: "Er det trygt å kjøpe bolig i Spania?", a: "Ja, det kan være trygt å kjøpe bolig i Spania når du bruker en uavhengig advokat, kontrollerer eierskap, heftelser, tillatelser og dokumentasjon, og forstår avtalene før du betaler eller signerer. Les også vår guide til juridiske fallgruver." },
   {
     q: "Hvor mange nordmenn kjøper bolig i Spania?",
     a: "Det finnes ikke ett fast årlig tall som beskriver norske kjøpere alene i de korte offisielle markedssammendragene, og antallet varierer fra år til år. Det sikre bildet er at utenlandske kjøpere utgjør en stor del av markedet, særlig på Costa Blanca. I andre kvartal 2026 sto utenlandske kjøpere for 15,98 % av boligkjøpene i Spania og 31,03 % i Comunitat Valenciana. For deg som kjøper er likevel område, totalbudsjett og kvaliteten på den konkrete kjøpsprosessen viktigere enn totalvolumet alene.",
   },
   {
-    q: "Hva koster det å kjøpe bolig i Spania?",
-    a: "Som tommelfingerregel bør du budsjettere med omtrent 10–15 % utover kjøpesummen, men det faktiske beløpet avhenger av region, boligtype, juridisk bistand og eventuell finansiering. Bruktbolig utløser ITP, mens nybygg normalt har 10 % IVA i tillegg til AJD og øvrige kostnader.",
-  },
-  {
     q: "Kan nordmenn kjøpe bolig i Spania?",
     a: "Ja. Nordmenn kan kjøpe og eie bolig i Spania. I praksis trenger du NIE-nummer for å gjennomføre kjøpet og håndtere skatt, bank og registrering, og du bør sørge for uavhengig juridisk kontroll før du binder deg.",
-  },
-  {
-    q: "Hvordan finansiere kjøp av bolig i Spania?",
-    a: "De vanligste løsningene er egenkapital, lån med sikkerhet i bolig eller andre verdier i Norge, eller boliglån med sikkerhet i den spanske eiendommen. DNB Luxembourg tilbyr lån med pant i bolig i Spania, og du kan også søke hos spanske banker. Låneramme, takst, dokumentasjon og total kostnad bør avklares tidlig.",
   },
   {
     q: "Hvor lang tid tar det å kjøpe bolig i Spania?",
@@ -143,7 +137,7 @@ function PropertyShowcase({
     <div style={{ marginTop: 44 }}>
       <div className="section-heading">
         <p className="eyebrow">{eyebrow}</p>
-        <h3>{title}</h3>
+        <p className="article-item-title"><strong>{title}</strong></p>
       </div>
       {properties.length > 0 ? (
         <div className="property-grid">
@@ -238,7 +232,6 @@ export default async function BuyInSpainGuidePage() {
 
       <section className="section cornerstone-section">
         <div className="section-heading">
-          <p className="eyebrow">Innledning</p>
           <p>
             Å kjøpe bolig i Spania kan virke som en komplisert og forvirrende prosess. Du har helt sikkert sett identiske boliger på flere nettsider, noen ganger med ulike bilder, beskrivelser og priser.
           </p>
@@ -255,17 +248,11 @@ export default async function BuyInSpainGuidePage() {
           <p>Et boligkjøp i Spania følger vanligvis en fast prosess i åtte steg:</p>
         </div>
 
-        <div className="journey-overview">
-          {eightSteps.map(([title, text], index) => (
-            <article key={title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
-            </article>
+        <ol className="article-bullets guide-steps-list">
+          {eightSteps.map(([title, text]) => (
+            <li key={title}><strong>{title}</strong> – {text}</li>
           ))}
-        </div>
+        </ol>
 
         <div className="section-heading" style={{ marginTop: 36 }}>
           <p>
@@ -293,7 +280,7 @@ export default async function BuyInSpainGuidePage() {
           <article className="preflight-item">
             <CheckCircle2 size={19} />
             <div>
-              <h3>1. Kjøpesummen er ikke totalkostnaden</h3>
+              <h3>Kjøpesummen er ikke totalkostnaden</h3>
               <p>
                 Kjøpesummen er ikke totalbudsjettet. Hvor mye som kommer i tillegg avhenger av boligtype, gjeldende regionale skatter, juridisk bistand og finansieringen din. Den nøyaktige beregningen hører hjemme i vår egen kostnadsguide, ikke i en generell prosentregel.
               </p>
@@ -315,16 +302,17 @@ export default async function BuyInSpainGuidePage() {
               <p>
                 Husk også at kostnadene ikke stopper når du får nøklene. Som boligeier må du regne med løpende utgifter til blant annet kommunal eiendomsskatt (IBI), felleskostnader dersom boligen ligger i et sameie, forsikring, strøm, vann og vedlikehold.
               </p>
-              <Link className="text-button" href="/guide/lopende-kostnader-eie-bolig-spania">
-                Les om hva det koster å eie bolig i Spania <ArrowRight size={15} />
+              <Link className="text-button" href="/guide/kostnader-boligkjop-spania">
+                Se kjøpskostnader og beregn totalbudsjettet <ArrowRight size={15} />
               </Link>
+              <PurchaseBudgetCalculator />
             </div>
           </article>
 
           <article className="preflight-item">
             <CheckCircle2 size={19} />
             <div>
-              <h3>2. Velg område før bolig</h3>
+              <h3>Velg område før bolig</h3>
               <p>
                 Området har ofte større betydning for hvor fornøyd du blir med kjøpet enn selve boligen. Min erfaring er at mange begynner med å lete etter den fineste boligen innenfor budsjettet og vurderer området etterpå. Det kan fort bli feil rekkefølge.
               </p>
@@ -346,7 +334,7 @@ export default async function BuyInSpainGuidePage() {
           <article className="preflight-item">
             <CheckCircle2 size={19} />
             <div>
-              <h3>3. Det spanske boligmarkedet fungerer annerledes enn det norske</h3>
+              <h3>Det spanske boligmarkedet fungerer annerledes enn det norske</h3>
               <p>
                 Boligmarkedet i Spania er strukturert på en annen måte enn hjemme. Det finnes ikke én nasjonal meglerordning med de samme kravene over hele landet, og reglene for eiendomsformidling varierer mellom de autonome regionene.
               </p>
@@ -391,31 +379,31 @@ export default async function BuyInSpainGuidePage() {
         </div>
         <div className="proof-grid">
           <article>
-            <h3>Energimerking</h3>
+            <p className="article-item-title"><strong>Energimerking</strong></p>
             <p>En svak energiklasse kan bety høyere strømforbruk og større behov for oppgraderinger senere. Dette blir også mer relevant i takt med strengere krav til energieffektivitet i europeiske bygg.</p>
           </article>
           <article>
-            <h3>Felleskostnader</h3>
+            <p className="article-item-title"><strong>Felleskostnader</strong></p>
             <p>Sjekk hvor høye de er, hva de dekker og om sameiet har planlagt større arbeider. Et lavt månedsbeløp er ikke nødvendigvis positivt dersom det samtidig ligger større vedlikehold foran.</p>
           </article>
           <article>
-            <h3>Oppgitt areal</h3>
+            <p className="article-item-title"><strong>Oppgitt areal</strong></p>
             <p>Skill mellom boareal, terrasse, tomt og eventuelle fellesarealer. Tallene i annonsen kan være presentert på ulike måter og bør sammenlignes med den offisielle dokumentasjonen.</p>
           </article>
           <article>
-            <h3>Lovlighet og registrering</h3>
+            <p className="article-item-title"><strong>Lovlighet og registrering</strong></p>
             <p>Tilbygg, basseng, innglassede terrasser eller andre endringer bør være korrekt godkjent og registrert. Dette er ikke alltid synlig i annonsen og bør kontrolleres før kjøpet.</p>
           </article>
           <article>
-            <h3>Gjeld og heftelser</h3>
+            <p className="article-item-title"><strong>Gjeld og heftelser</strong></p>
             <p>En bolig kan ha lån, utestående krav eller andre heftelser knyttet til seg. Dette må undersøkes gjennom blant annet eiendomsregisteret før du går videre.</p>
           </article>
           <article>
-            <h3>Byggeår og større oppgraderinger</h3>
+            <p className="article-item-title"><strong>Byggeår og større oppgraderinger</strong></p>
             <p>Eldre boliger kan være gode kjøp, men det er viktig å vite hva som er gjort av oppgraderinger på for eksempel strøm, rør, tak og klimaanlegg.</p>
           </article>
           <article>
-            <h3>Tilgjengelighet og pris</h3>
+            <p className="article-item-title"><strong>Tilgjengelighet og pris</strong></p>
             <p>Bekreft at boligen fortsatt er til salgs og at prisantydningen er oppdatert. I et marked der samme bolig kan ligge hos flere meglere samtidig, kan informasjonen variere fra annonse til annonse.</p>
           </article>
         </div>
@@ -554,7 +542,6 @@ export default async function BuyInSpainGuidePage() {
         <div className="process-editorial">
           <div className="process-timeline">
             <article className="process-row">
-              <span>01</span>
               <div>
                 <h3>1. Behovskartlegging</h3>
                 <p>
@@ -571,7 +558,6 @@ export default async function BuyInSpainGuidePage() {
             </article>
 
             <article className="process-row">
-              <span>02</span>
               <div>
                 <h3>2. Visningstur</h3>
                 <p>
@@ -584,7 +570,6 @@ export default async function BuyInSpainGuidePage() {
             </article>
 
             <article className="process-row">
-              <span>03</span>
               <div>
                 <h3>3. Reservasjon</h3>
                 <p>
@@ -607,7 +592,6 @@ export default async function BuyInSpainGuidePage() {
             </article>
 
             <article className="process-row">
-              <span>04</span>
               <div>
                 <h3>4. Få eiendommen juridisk kontrollert</h3>
                 <p>
@@ -627,7 +611,6 @@ export default async function BuyInSpainGuidePage() {
             </article>
 
             <article className="process-row">
-              <span>05</span>
               <div>
                 <h3>5. Skaff NIE-nummer og avklar finansiering</h3>
                 <p>
@@ -645,7 +628,6 @@ export default async function BuyInSpainGuidePage() {
             </article>
 
             <article className="process-row">
-              <span>06</span>
               <div>
                 <h3>6. Signering hos notar</h3>
                 <p>
@@ -659,7 +641,6 @@ export default async function BuyInSpainGuidePage() {
             </article>
 
             <article className="process-row">
-              <span>07</span>
               <div>
                 <h3>7. Registrering og overtakelse</h3>
                 <p>
@@ -674,15 +655,6 @@ export default async function BuyInSpainGuidePage() {
               </div>
             </article>
           </div>
-
-          <aside className="process-deeper">
-            <p className="eyebrow">Gå dypere</p>
-            <h3>Guider det er smart å lese underveis</h3>
-            <Link href="/guide/nie-skattenummer-spania">NIE i Spania <ArrowRight size={15} /></Link>
-            <Link href="/guide/boliglan-spansk-bank-nordmenn">Boliglån i Spania <ArrowRight size={15} /></Link>
-            <Link href="/guide/juridiske-fallgruver-boligkjop-spania">Juridiske fallgruver <ArrowRight size={15} /></Link>
-            <Link href="/guide/nybygg-i-spania">Nybygg i Spania <ArrowRight size={15} /></Link>
-          </aside>
         </div>
       </section>
 
@@ -739,14 +711,13 @@ export default async function BuyInSpainGuidePage() {
 
       <section className="contact-section">
         <div>
-          <p className="eyebrow">Klar til å begynne boligjakten?</p>
-          <h2>Start med en uforpliktende boligprat</h2>
+          <h2>Klar til å begynne boligjakten?</h2>
           <p>
             Vi kan hjelpe deg med områdevalg, boligtype, aktuelle boliger og neste steg i kjøpsprosessen. Du kan også lese mer om <Link href="/om-oss">hvordan Zen Eco Homes jobber</Link> før du bestemmer deg.
           </p>
         </div>
         <Link className="contact-button" href="/booking">
-          Book en prat <ArrowRight size={18} />
+          Start med en uforpliktende boligprat <ArrowRight size={18} />
         </Link>
       </section>
 
@@ -758,13 +729,14 @@ export default async function BuyInSpainGuidePage() {
         <div className="faq-accordion">
           {faq.map((item, index) => (
             <details key={item.q} open={index === 0}>
-              <summary>{item.q}</summary>
+              <summary><h3>{item.q}</h3></summary>
               <p>{item.a}</p>
             </details>
           ))}
         </div>
       </section>
 
+      <div className="section cornerstone-section"><p>Se også <Link href="/magasin/7-dyre-feil-nordmenn-bolig-spania">sju dyre feil nordmenn gjør ved boligkjøp i Spania</Link>.</p></div>
       <Footer />
     </main>
   );

@@ -7123,3 +7123,12 @@ footer {
     font-size: 1.15rem;
   }
 }
+
+/* Semantic footer labels, budget placement and matching property-page background */
+.footer-2027-group .footer-group-title { font-weight: 700; margin: 0 0 1rem; font-size: 1rem; line-height: 1.4; }
+.properties-page .buyer-match { background: transparent; }
+.properties-budget-calculator { background: transparent; }
+.guide-steps-list { margin: 1.5rem 0; padding-left: 1.5rem; }
+.guide-steps-list li { margin-bottom: .7rem; }
+.cornerstone-guide .article-item-title { margin-bottom: .35rem; }
+.cornerstone-guide .faq-accordion summary h3 { display: inline; font-size: inherit; font-weight: inherit; margin: 0; }

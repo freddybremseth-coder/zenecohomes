@@ -1,5 +1,6 @@
 import { EnergyBenefits } from "@/components/EnergyBenefits";
 import Link from "next/link";
+import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { BuyerMatchQuiz } from "@/components/BuyerMatchQuiz";
 import { Footer } from "@/components/Footer";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -393,6 +394,7 @@ export default async function PropertiesPage({
       </section>
 
       <BuyerMatchQuiz />
+      <section className="section properties-budget-calculator"><PurchaseBudgetCalculator /></section>
       <EnergyBenefits />
 
       <section className="section property-next-steps">
