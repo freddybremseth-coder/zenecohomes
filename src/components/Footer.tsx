@@ -214,7 +214,7 @@ export function Footer({
         <nav className="footer-2027-nav" aria-label="Footer">
           {groups.map((group) => (
             <div className="footer-2027-group" key={group.title}>
-              <h3>{group.title}</h3>
+              <p className="footer-group-title">{group.title}</p>
               <div>
                 {group.links.map((link) =>
                   link.external ? (
