@@ -17,6 +17,10 @@ export const metadata: Metadata = {
 
 const faq = [
   {
+    q: "Hva koster det å kjøpe bolig i Spania?",
+    a: "Totalprisen er kjøpesummen pluss skatter og avgifter, kostnader til juridisk kontroll, notar og register, samt eventuell finansiering, valutaveksling og en reserve. Skatt og kostnader varierer med region, boligtype og kjøperens situasjon. Bruk kalkulatoren på denne siden for å anslå hva du kan kjøpe innenfor totalbudsjettet.",
+  },
+  {
     q: "Hvor mye bør jeg legge til kjøpesummen i Spania?",
     a: "Det finnes ikke én prosent som passer alle kjøp. På Costa Blanca vil skatt alene normalt være 9 % ITP på ordinær bruktbolig under én million euro, mens ordinært nybygg normalt har 10 % IVA og i Comunitat Valenciana vanligvis 1,4 % AJD for en ferie-/sekundærbolig. Advokat, notar, register, bank og andre tjenester kommer i tillegg.",
   },
