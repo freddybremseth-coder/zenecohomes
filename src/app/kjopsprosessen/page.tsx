@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./buying-process-layout.css";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
@@ -351,6 +352,33 @@ export default function BuyingProcessPage() {
             <h3>Hva skjer etter reservasjonen?</h3>
             <p>Du bør kjenne neste kontrakt, neste betaling, forventet notardato eller betalingsplan for nybygg.</p>
           </article>
+        </div>
+      </section>
+
+      <section className="section cornerstone-section buying-process-common-mistakes" id="vanlige-feil">
+        <div className="section-heading">
+          <p className="eyebrow">Unngå kostbare overraskelser</p>
+          <h2>Vanlige feil mange gjør når de kjøper spansk bolig</h2>
+          <p>
+            Mange problemer kan unngås ved å undersøke bolig og område godt, beregne
+            hele kjøpskostnaden og få uavhengig juridisk kontroll før du binder deg.
+          </p>
+        </div>
+        <div className="buying-process-mistakes-content">
+          <p>
+            Noen kjøpere forelsker seg i bildene før de har undersøkt nabolaget gjennom
+            året. Andre baserer budsjettet på prisantydningen alene, stoler på at alle
+            opplysninger i boligannonsen er oppdaterte, eller betaler et reservasjonsbeløp
+            uten å forstå vilkårene. Det kan bli kostbart å oppdage disse forholdene sent.
+          </p>
+          <p>
+            En god prosess gir rom for å kontrollere tilgjengelighet, totalbudsjett,
+            eiendommens dokumentasjon og hva en eventuell avtale faktisk forplikter deg til.
+            Vi har samlet konkrete eksempler og råd i en egen artikkel.
+          </p>
+          <Link className="text-button" href="/magasin/7-dyre-feil-nordmenn-bolig-spania">
+            Les om 7 dyre feil nordmenn gjør ved boligkjøp i Spania <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
