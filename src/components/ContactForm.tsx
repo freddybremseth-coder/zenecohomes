@@ -223,6 +223,7 @@ export function ContactForm({
       }),
     });
     if (res.ok) {
+      window.location.assign("/takk-fa-radgivning");
       setStatus("sent");
       form.reset();
       startedAtRef.current = Date.now();
