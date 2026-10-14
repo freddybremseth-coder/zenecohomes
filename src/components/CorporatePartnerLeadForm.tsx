@@ -54,6 +54,7 @@ export function CorporatePartnerLeadForm() {
       if (!response.ok) throw new Error("submit");
       form.reset();
       setStatus("sent");
+      window.location.assign("/takk-samarbeidspartner");
     } catch {
       setStatus("error");
     }
