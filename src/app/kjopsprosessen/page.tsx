@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
+import { ANDREA_PORTRAIT_DATA_URI } from "@/lib/andreaPortrait";
 
 export const metadata: Metadata = {
   title: "Kjøpsprosessen i Spania | Slik hjelper Zen Eco Homes",
@@ -188,16 +189,16 @@ export default function BuyingProcessPage() {
         </div>
       </section>
 
-      <section className="section buying-process-portraits" aria-label="Din rådgiver på Costa Blanca">
+      <section className="section buying-process-portraits" aria-label="Dine rådgivere på Costa Blanca">
         <div className="buying-process-portraits-copy">
           <p className="eyebrow">Personlig oppfølging</p>
-          <h2>En fast rådgiver gjennom boligkjøpet</h2>
+          <h2>Møt menneskene som hjelper deg med boligkjøpet</h2>
           <p>Hos Zen Eco Homes møter du mennesker som kjenner Costa Blanca og kan hjelpe deg fra de første spørsmålene til overtakelsen.</p>
-          <Link className="text-button" href="/om-freddy">Bli kjent med Freddy <ArrowRight size={16} /></Link>
+          <Link className="text-button" href="/om-oss">Bli kjent med Freddy og Andrea <ArrowRight size={16} /></Link>
         </div>
         <div className="buying-process-portraits-images">
           <img src="/assets/freddy-eiendom-costa-blanca.webp" alt="Freddy Bremseth som eiendomsrådgiver på Costa Blanca" loading="lazy" />
-          <img src="/assets/freddy-personlig-radgiver.webp" alt="Freddy Bremseth i en personlig rådgiversamtale ved Middelhavet" loading="lazy" />
+          <img src={ANDREA_PORTRAIT_DATA_URI} alt="Andrea Thorsnes Karlsen i Zen Eco Homes" loading="lazy" style={{ objectPosition: "center 26%" }} />
         </div>
       </section>
 
