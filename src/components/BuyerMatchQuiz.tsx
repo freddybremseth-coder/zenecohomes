@@ -138,7 +138,7 @@ export function BuyerMatchQuiz() {
     });
 
     if (res.ok) {
-      window.location.assign(filteredHref);
+      window.location.assign("/takk-boligmatch?results=" + encodeURIComponent(filteredHref));
     } else {
       setStatus("error");
     }
