@@ -9,6 +9,18 @@ import { allArticles, articlePath, articleSilo, getMagazineArticle, LEGACY_MARKE
 import { corporateArticles } from "@/lib/corporate-content";
 import { fetchPublishedPosts } from "@/lib/website-content";
 
+// Artikler som er slått sammen med kanoniske guider skal ikke annonseres som selvstendige magasinartikler.
+// Behold redirectene for gamle lenker og søkemotorer.
+const REDIRECTED_MAGAZINE_SLUGS = new Set([
+  "kjopsprosess-bolig-i-spania",
+  "finansiering-notar-nie-boligkjop-spania",
+  "innlandet-finca-olivengard-spania",
+  "omkostninger-nybygg-spania",
+  "bankgaranti-nybygg-spania",
+  "energieffektive-nybygg-spania",
+  "nybygg-finestrat-omradeguide",
+]);
+
 const booksUrl = "https://books.freddybremseth.com";
 const bookUrl = (slug: string) => `${booksUrl}/book/${slug}`;
 
@@ -167,13 +179,13 @@ export const metadata = {
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
   const magazineCmsArticles = cmsArticles.filter((article) => {
-    if (LEGACY_MARKET_COMPARISON_SLUGS.has(article.slug)) return false;
+    if (LEGACY_MARKET_COMPARISON_SLUGS.has(article.slug) || REDIRECTED_MAGAZINE_SLUGS.has(article.slug)) return false;
     const known = getMagazineArticle(article.slug);
     return !known || !articleSilo(known);
   });
   const cmsSlugs = new Set(magazineCmsArticles.map((article) => article.slug));
   const fallbackArticles = allArticles.filter(
-    (article) => !cmsSlugs.has(article.slug) && !articleSilo(article),
+    (article) => !cmsSlugs.has(article.slug) && !articleSilo(article) && !REDIRECTED_MAGAZINE_SLUGS.has(article.slug),
   );
   const currentMarketMaxAgeDays = 45;
   const marketAgeDays = (date: string) => Math.floor((Date.now() - new Date(date).getTime()) / 86_400_000);

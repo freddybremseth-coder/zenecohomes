@@ -1022,121 +1022,33 @@ export const articles: Article[] = [
       "href": "/eiendomsradgiver-spania.html"
     },
     "intro": [
-      "Løpende kostnader ved å eie bolig i Spania er blant annet kommunal eiendomsskatt (IBI), strøm, vann, renovasjon, forsikring og vedlikehold. I tillegg kan du få fellesutgifter (comunidad), kostnader til basseng, sikkerhet, tilsyn og spanske skatter som ikke-resident. Beløpene avhenger av kommune, boligtype, fasiliteter, bruk og skattemessig situasjon.",
-      "Det finnes ikke én pålitelig års- eller månedspris for alle boliger. Før du kjøper bør du derfor hente faktisk IBI-kvittering, sameiebudsjett, tidligere regninger og opplysninger om vedlikehold for akkurat den eiendommen."
+      "Hva koster det å eie bolig i Spania når kjøpet er gjennomført? Her får du et konkret, illustrativt årsbudsjett for leilighet og villa – og en oversikt over IBI, fellesutgifter, forsikring, strøm, vann og vedlikehold. Tallene er planleggingseksempler, ikke dokumenterte markedspriser.",
+      "For en enkel feriebolig er det mer nyttig å regne på hver kostnad enn å oppgi én høy standardsum. Eksemplene nedenfor viser et nøkternt budsjett for begrenset egen bruk og skiller faste utgifter fra forbruk. De er beregnede scenarioer – ikke en kartlegging av faktiske fakturaer. Kostnader til lån, individuell ikke-residentskatt og større reparasjoner er ikke inkludert."
     ],
     "sections": [
       {
         "heading": "Hva koster det å eie bolig i Spania?",
         "body": [
-          "De viktigste faste og variable kostnadene vises nedenfor. Frekvens og betalingsplikt kan variere etter kommune, avtale, eierform og hvilken bolig du kjøper."
+          "En enkel leilighet med moderat bruk kan i dette regneeksemplet koste rundt 1 200–3 200 euro årlig i ordinære driftsutgifter. For en villa med privat basseng brukes her 2 400–6 000 euro, med langt større variasjon i vedlikehold og energiforbruk. Dette er beregnede scenarioer, ikke dokumenterte gjennomsnitt. Bassengservice alene er anslått til cirka 600–1 200 euro i året i publiserte prisguider; utgiftene til strøm, vann og hage kommer an på eiendommen og hvor mye du bruker den."
         ],
         "table": {
-          "headers": [
-            "Kostnad",
-            "Hva dekker den?",
-            "Når betales den?",
-            "Status"
-          ],
+          "headers": ["Utgift", "Leilighet / år", "Villa / år"],
           "rows": [
-            [
-              "IBI",
-              "Kommunal eiendomsskatt",
-              "Årlig etter kommunal kalender",
-              "Normalt obligatorisk"
-            ],
-            [
-              "Basura / kommunale gebyrer",
-              "Renovasjon og eventuelle lokale tjenester",
-              "Årlig eller periodisk",
-              "Avhenger av kommune og regelverk"
-            ],
-            [
-              "Strøm",
-              "Nettleie/effektledd og faktisk forbruk",
-              "Månedlig eller annen fakturaperiode",
-              "Avtale/tilkobling og forbruk"
-            ],
-            [
-              "Vann og avløp",
-              "Abonnement, forbruk, avløpsgebyrer",
-              "Etter lokal leverandør",
-              "Avhenger av tilkobling og ordning"
-            ],
-            [
-              "Comunidad",
-              "Fellesarealer, heis, basseng, drift, administrasjon",
-              "Ofte månedlig eller kvartalsvis",
-              "Obligatorisk når boligen inngår i sameie"
-            ],
-            [
-              "Ekstra innbetalinger (derrama)",
-              "Større vedtak og reparasjoner",
-              "Ved særskilt vedtak",
-              "Situasjonsavhengig, kan være bindende"
-            ],
-            [
-              "Boligforsikring",
-              "Bygning, innbo og ansvar etter polise",
-              "Ofte årlig",
-              "Avtale; kan kreves av långiver for pantobjektet"
-            ],
-            [
-              "Vedlikehold",
-              "Reparasjoner, teknikk, uteområder",
-              "Løpende og uforutsett",
-              "Praktisk nødvendig"
-            ],
-            [
-              "Privat basseng/hage",
-              "Rengjøring, strøm, vann, service",
-              "Sesongvis eller løpende",
-              "Når eiendommen har dette"
-            ],
-            [
-              "Internett, TV, alarm",
-              "Telekom og sikkerhetsavtaler",
-              "Vanligvis månedlig",
-              "Valgfritt/avtalebasert"
-            ],
-            [
-              "Tilsyn og keyholding",
-              "Kontroller og nøkkelhåndtering",
-              "Per besøk eller abonnement",
-              "Valgfritt"
-            ],
-            [
-              "Bankkonto/gebyrer",
-              "Kontohold og overføringer",
-              "Etter bankens prisliste",
-              "Avhenger av bank og avtale"
-            ],
-            [
-              "Skatt for ikke-residenter",
-              "Skatt på beregnet inntekt/utleieinntekt",
-              "Etter gjeldende deklarasjonsfrister",
-              "Avhenger av skatteposisjon og bruk"
-            ],
-            [
-              "Formuesskatt/solidaritetsskatt",
-              "Formuesrelatert personbeskatning",
-              "Årlig når vilkårene er oppfylt",
-              "Kun for aktuelle skattytere"
-            ],
-            [
-              "Boliglån",
-              "Renter og avdrag",
-              "Etter låneavtale",
-              "Hvis finansiert med lån"
-            ]
+            ["IBI og renovasjon", "€250–550", "€400–900"],
+            ["Comunidad", "€300–1 200", "€0–300"],
+            ["Strøm og vann", "€300–650", "€550–1 150"],
+            ["Forsikring", "€150–300", "€250–450"],
+            ["Løpende vedlikehold / basseng og hage", "€200–500", "€1 200–3 200"]
           ],
-          "caption": "Ingen beløp er universelle. Få tallene fra kommunen, sameiet, leverandørene og egen skatterådgiver."
+          "caption": "Illustrative scenarioer ved begrenset egen bruk: leilighet €1 200–3 200; villa €2 400–6 000 per år. Ikke markedsstatistikk. Bassenganslag: Idealista (2025) og Habitissimo (2026), ca. €600–1 200/år; øvrige linjer er budsjettforutsetninger som må erstattes med boligspesifikke kvitteringer. Lån, individuelle skatter og større reparasjoner er ikke med."
         }
       },
       {
         "heading": "Løpende drifts- og bokostnader",
         "body": [
           "Boligen har vanligvis både faste abonnementer og forbruksavhengige kostnader. Leiligheter og rekkehus kan ha flere fellesutgifter, mens villaer ofte krever mer individuelt vedlikehold. Sjekk også hvilke tjenester som er frivillige.",
+          "For eksempel oppgir Idealista (2025) og Habitissimo (2026) et veiledende intervall på €600–1 200 i året for vedlikehold av et privat basseng. Se [[Idealistas gjennomgang av bassengvedlikehold|https://www.idealista.com/news/inmobiliario/vivienda/2025/07/20/852734-cuanto-cuesta-mantener-una-piscina-factores-que-afectan-al-precio]] og [[Habitissimos prisguide|https://www.habitissimo.es/presupuestos/mantenimiento-piscinas]]. Tallene er ikke et pristilbud for en bestemt eiendom.",
+          "Et praktisk råd ved boligkjøp på Costa Blanca er å undersøke kostnadsdriverne før du sammenligner to boliger med samme kjøpesum: heis og oppvarmet fellesbasseng kan gi høye fellesutgifter, mens en villa uten comunidad kan kreve egne serviceavtaler og større vedlikeholdsreserve. Be om styreprotokoller og fakturaer, ikke bare salgsoppgavens anslag.",
           "### Strøm og elektrisitet",
           "Strømregningen består normalt av faste ledd knyttet til avtalt kapasitet, forbruk og andre regulerte eller avtalte kostnader. Klimaanlegg, oppvarming, varmtvann og bassengpumpe kan øke forbruket merkbart. Be om tidligere regninger og kontroller avtalt effekt.",
           "### Vann og avløp",
@@ -1171,9 +1083,9 @@ export const articles: Article[] = [
           "IBI (Impuesto sobre Bienes Inmuebles) beregnes med utgangspunkt i eiendommens cadastralverdi (valor catastral) og kommunens regler og sats. Den er ikke det samme som en prosentandel av annonseringsprisen. Siste IBI-kvittering er det beste utgangspunktet, men undersøk også varslede omtakseringer eller endringer.",
           "### Skatt for ikke-residenter og Modelo 210",
           "Eier du en spansk bolig som skattemessig ikke-resident, kan egen bruk og perioder uten utleie gi beregnet skattepliktig eiendomsinntekt (renta inmobiliaria imputada). Beregningsgrunnlaget følger egne regler knyttet til cadastralverdi, ofte 1,1 % eller 2 % etter gjeldende vilkår; prosentsatsene er beregningsgrunnlag, ikke selve skattesatsen. Modelo 210 er skjemaet som benyttes til å rapportere og betale den relevante ikke-residentskatten (IRNR).",
-          "Ved utleie beskattes faktiske leieinntekter etter egne regler, og for visse skattemessige bostedsland kan direkte tilknyttede kostnader trekkes fra hvis vilkårene oppfylles. Tid som er utleid, og tid til privat bruk eller tilgjengelighet, kan dermed behandles ulikt. Kontroller riktig sats, frister og fradrag hos Agencia Tributaria eller skatterådgiver: https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html.",
+          "Ved utleie beskattes faktiske leieinntekter etter egne regler, og for visse skattemessige bostedsland kan direkte tilknyttede kostnader trekkes fra hvis vilkårene oppfylles. Tid som er utleid, og tid til privat bruk eller tilgjengelighet, kan dermed behandles ulikt. Kontroller riktig sats, frister og fradrag i [[Skatteetatens spanske veiledning for Modelo 210|https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html]] eller hos skatterådgiver.",
           "### Formuesskatt og eventuell solidaritetsskatt",
-          "Impuesto sobre el Patrimonio og Impuesto Temporal de Solidaridad de las Grandes Fortunas kan være aktuelle ved større formuer. Regler, fritak, terskler, verdsetting, gjeld og regionalt regelverk gjør dette til en individuell vurdering. Se https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio.html og https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-temporal-solidaridad-grandes-fortunas.html.",
+          "Impuesto sobre el Patrimonio og Impuesto Temporal de Solidaridad de las Grandes Fortunas kan være aktuelle ved større formuer. Regler, fritak, terskler, verdsetting, gjeld og regionalt regelverk gjør dette til en individuell vurdering. Les reglene om [[spansk formuesskatt|https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio.html]] og [[solidaritetsskatt på store formuer|https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-temporal-solidaridad-grandes-fortunas.html]].",
           "### Skatt for deg som er skattemessig bosatt i Spania",
           "Skattemessig residenter følger andre regler for inntekt og formue, blant annet spansk personinntektsskatt (IRPF). Dette er ikke en full guide til skattemessig bosted eller internasjonal beskatning. Få vurdert din konkrete situasjon, også med hensyn til Norge.",
           "### Skatterepresentant og regnskapshjelp",
@@ -1201,42 +1113,14 @@ export const articles: Article[] = [
         ],
         "table": {
           "headers": [
-            "Område",
+            "Kostnadsdriver",
             "Leilighet",
-            "Rekkehus",
-            "Frittliggende villa"
+            "Villa"
           ],
           "rows": [
-            [
-              "Basseng",
-              "Ofte felles hvis anlegget har basseng",
-              "Kan være felles eller privat",
-              "Ofte privat dersom basseng finnes"
-            ],
-            [
-              "Hage",
-              "Vanligvis felles eller terrasse",
-              "Kan være privat og/eller felles",
-              "Ofte egen hage og vanning"
-            ],
-            [
-              "Bygningsvedlikehold",
-              "Mye via comunidad, noe privat",
-              "Avhenger av vedtekter og utforming",
-              "Betales ofte direkte av eier"
-            ],
-            [
-              "Fellesarealer",
-              "Trapper/heis/anlegg etter bygg",
-              "Avhenger av urbanisasjon",
-              "Kan være ingen, eller avgift i urbanisasjon"
-            ],
-            [
-              "Tjenester og tilsyn",
-              "Privat valg utover fellesdrift",
-              "Privat valg utover fellesdrift",
-              "Større praktisk vedlikeholdsbehov mulig"
-            ]
+            ["Basseng og hage", "Ofte felleskostnad", "Ofte privat drift"],
+            ["Bygningsvedlikehold", "Delt med sameiet", "Direkte eieransvar"],
+            ["Ekstra innbetalinger", "Mulig derrama", "Egne reparasjoner"]
           ],
           "caption": "Den konkrete fordelingen av ansvar følger eiendommens rettslige organisering, sameievedtekter og avtaler."
         }
@@ -1268,7 +1152,7 @@ export const articles: Article[] = [
     "faq": [
       {
         "question": "Hva koster det å eie bolig i Spania per år?",
-        "answer": "Det finnes ingen universell årspris. Summer faktisk IBI, renovasjon, comunidad, forsikring, strøm, vann, vedlikehold, aktuelle skatter og eventuelle tjenester. Bruk regninger og sameiedokumenter for den konkrete boligen."
+        "answer": "I scenarioene for moderat feriebruk: ca. €1 200–3 200 per år for en enkel leilighet og €2 400–6 000 for en villa med basseng og hage, før lån, individuelle skatter og større reparasjoner. Beløpene er regneforutsetninger, ikke verifiserte gjennomsnitt. Kontroller alltid fakturaer for den konkrete boligen."
       },
       {
         "question": "Må jeg betale skatt på bolig i Spania når jeg bor i Norge?",
