@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { BuyerMatchThankYou } from "@/components/BuyerMatchThankYou";
 
 export const metadata: Metadata = {
@@ -7,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function ThankYouPage() {
-  return <BuyerMatchThankYou />;
+  return <Suspense fallback={<main className="mx-auto max-w-2xl px-5 py-24">Laster boligmatch…</main>}><BuyerMatchThankYou /></Suspense>;
 }
