@@ -1002,7 +1002,7 @@ export const articles: Article[] = [
     "title": "Løpende kostnader ved å eie bolig i Spania",
     "excerpt": "Hva koster det å eie bolig i Spania per år? Få oversikt over IBI, comunidad, Modelo 210, strøm, vann, forsikring, vedlikehold og kostnader ved tom bolig.",
     "date": "2026-09-08",
-    "updated": "2026-10-12",
+    "updated": "2026-10-14",
     "category": "Kjøpsprosess",
     "readingTime": "12 min lesing",
     "image": "/assets/magasin-covers/kostnader-eie.svg",
