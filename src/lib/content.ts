@@ -1047,6 +1047,7 @@ export const articles: Article[] = [
         "heading": "Løpende drifts- og bokostnader",
         "body": [
           "Boligen har vanligvis både faste abonnementer og forbruksavhengige kostnader. Leiligheter og rekkehus kan ha flere fellesutgifter, mens villaer ofte krever mer individuelt vedlikehold. Sjekk også hvilke tjenester som er frivillige.",
+          "Et praktisk råd ved boligkjøp på Costa Blanca er å undersøke kostnadsdriverne før du sammenligner to boliger med samme kjøpesum: heis og oppvarmet fellesbasseng kan gi høye fellesutgifter, mens en villa uten comunidad kan kreve egne serviceavtaler og større vedlikeholdsreserve. Be om styreprotokoller og fakturaer, ikke bare salgsoppgavens anslag.",
           "### Strøm og elektrisitet",
           "Strømregningen består normalt av faste ledd knyttet til avtalt kapasitet, forbruk og andre regulerte eller avtalte kostnader. Klimaanlegg, oppvarming, varmtvann og bassengpumpe kan øke forbruket merkbart. Be om tidligere regninger og kontroller avtalt effekt.",
           "### Vann og avløp",
