@@ -182,8 +182,12 @@ export function BuyerMatchQuiz() {
         ) : (
           <form className="quiz-contact-step" onSubmit={onSubmit}>
             <p className="quiz-step-count">Siste steg</p>
-            <h3>Hvor skal vi sende forslagene?</h3>
+            <h3>Hvem skal vi kontakte med forslag?</h3>
             {summary ? <p className="quiz-summary">{summary}</p> : null}
+            <label>
+              Fullt navn
+              <input name="name" type="text" required autoComplete="name" placeholder="Ditt navn" />
+            </label>
             <label>
               E-post
               <input name="email" type="email" required autoComplete="email" placeholder="din@epost.no" />
