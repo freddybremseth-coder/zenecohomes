@@ -1023,30 +1023,31 @@ export const articles: Article[] = [
     },
     "intro": [
       "Hva koster det å eie bolig i Spania når kjøpet er gjennomført? Her får du et konkret, illustrativt årsbudsjett for leilighet og villa – og en oversikt over IBI, fellesutgifter, forsikring, strøm, vann og vedlikehold. Tallene er planleggingseksempler, ikke dokumenterte markedspriser.",
-      "En leilighet uten spesielt kostbare fellesanlegg kan i vårt regneeksempel ha 2 400–5 400 euro i årlige driftsutgifter, mens en villa med privat basseng og hage kan ha 5 400–12 000 euro. Dette er illustrative budsjettrammer før lån, større reparasjoner og individuelle skatter. Be alltid om faktiske regninger for boligen før du bestemmer deg."
+      "For en enkel feriebolig er det mer nyttig å regne på hver kostnad enn å oppgi én høy standardsum. Eksemplene nedenfor viser et nøkternt budsjett for begrenset egen bruk og skiller faste utgifter fra forbruk. De er beregnede scenarioer – ikke en kartlegging av faktiske fakturaer. Kostnader til lån, individuell ikke-residentskatt og større reparasjoner er ikke inkludert."
     ],
     "sections": [
       {
         "heading": "Hva koster det å eie bolig i Spania?",
         "body": [
-          "Som illustrasjon kan du budsjettere omtrent 200–450 euro i måneden for en enklere leilighet og 450–1 000 euro for en villa med privat basseng og hage. Dette er ikke observerte gjennomsnitt eller pristilbud. Fellesanlegg, bruk, boligens alder og kommune kan gi langt høyere eller lavere beløp. Tabellen viser et kompakt regneeksempel; sjekk faktiske fakturaer for din bolig."
+          "En enkel leilighet med moderat bruk kan i dette regneeksemplet koste rundt 1 200–3 200 euro årlig i ordinære driftsutgifter. For en villa med privat basseng brukes her 2 400–6 000 euro, med langt større variasjon i vedlikehold og energiforbruk. Dette er beregnede scenarioer, ikke dokumenterte gjennomsnitt. Bassengservice alene er anslått til cirka 600–1 200 euro i året i publiserte prisguider; utgiftene til strøm, vann og hage kommer an på eiendommen og hvor mye du bruker den."
         ],
         "table": {
           "headers": ["Utgift", "Leilighet / år", "Villa / år"],
           "rows": [
-            ["IBI og renovasjon", "€300–700", "€600–1 400"],
-            ["Comunidad", "€500–1 500", "€0–600"],
-            ["Strøm og vann", "€600–1 200", "€1 200–2 400"],
-            ["Forsikring", "€200–400", "€400–800"],
-            ["Vedlikehold, hage og basseng", "€800–1 600", "€3 200–6 800"]
+            ["IBI og renovasjon", "€250–550", "€400–900"],
+            ["Comunidad", "€300–1 200", "€0–300"],
+            ["Strøm og vann", "€300–650", "€550–1 150"],
+            ["Forsikring", "€150–300", "€250–450"],
+            ["Løpende vedlikehold / basseng og hage", "€200–500", "€1 200–3 200"]
           ],
-          "caption": "Illustrative planleggingstall, ikke statistikk eller tilbud. Sum: leilighet €2 400–5 400; villa €5 400–12 000 per år. Lån, individuelle skatter og større engangsreparasjoner kommer eventuelt i tillegg."
+          "caption": "Illustrative scenarioer ved begrenset egen bruk: leilighet €1 200–3 200; villa €2 400–6 000 per år. Ikke markedsstatistikk. Bassenganslag: Idealista (2025) og Habitissimo (2026), ca. €600–1 200/år; øvrige linjer er budsjettforutsetninger som må erstattes med boligspesifikke kvitteringer. Lån, individuelle skatter og større reparasjoner er ikke med."
         }
       },
       {
         "heading": "Løpende drifts- og bokostnader",
         "body": [
           "Boligen har vanligvis både faste abonnementer og forbruksavhengige kostnader. Leiligheter og rekkehus kan ha flere fellesutgifter, mens villaer ofte krever mer individuelt vedlikehold. Sjekk også hvilke tjenester som er frivillige.",
+          "For eksempel oppgir Idealista (2025) og Habitissimo (2026) et veiledende intervall på €600–1 200 i året for vedlikehold av et privat basseng. Se [[Idealistas gjennomgang av bassengvedlikehold|https://www.idealista.com/news/inmobiliario/vivienda/2025/07/20/852734-cuanto-cuesta-mantener-una-piscina-factores-que-afectan-al-precio]] og [[Habitissimos prisguide|https://www.habitissimo.es/presupuestos/mantenimiento-piscinas]]. Tallene er ikke et pristilbud for en bestemt eiendom.",
           "Et praktisk råd ved boligkjøp på Costa Blanca er å undersøke kostnadsdriverne før du sammenligner to boliger med samme kjøpesum: heis og oppvarmet fellesbasseng kan gi høye fellesutgifter, mens en villa uten comunidad kan kreve egne serviceavtaler og større vedlikeholdsreserve. Be om styreprotokoller og fakturaer, ikke bare salgsoppgavens anslag.",
           "### Strøm og elektrisitet",
           "Strømregningen består normalt av faste ledd knyttet til avtalt kapasitet, forbruk og andre regulerte eller avtalte kostnader. Klimaanlegg, oppvarming, varmtvann og bassengpumpe kan øke forbruket merkbart. Be om tidligere regninger og kontroller avtalt effekt.",
@@ -1151,7 +1152,7 @@ export const articles: Article[] = [
     "faq": [
       {
         "question": "Hva koster det å eie bolig i Spania per år?",
-        "answer": "I våre illustrative eksempler: €2 400–5 400 per år for leilighet og €5 400–12 000 for villa med basseng og hage, før lån, individuelle skatter og større reparasjoner. Dette er ikke dokumenterte markedspriser. Bruk faktiske regninger fra boligen for et reelt budsjett."
+        "answer": "I scenarioene for moderat feriebruk: ca. €1 200–3 200 per år for en enkel leilighet og €2 400–6 000 for en villa med basseng og hage, før lån, individuelle skatter og større reparasjoner. Beløpene er regneforutsetninger, ikke verifiserte gjennomsnitt. Kontroller alltid fakturaer for den konkrete boligen."
       },
       {
         "question": "Må jeg betale skatt på bolig i Spania når jeg bor i Norge?",
