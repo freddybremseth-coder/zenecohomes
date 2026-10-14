@@ -1,0 +1,81 @@
+/* Responsive layout scoped to the buying-process page only. */
+.buying-process-page .section,
+.buying-process-page .section > *,
+.buying-process-page .process-editorial > *,
+.buying-process-page .buying-process-portraits > *,
+.buying-process-page .buying-process-portraits-images > * {
+  min-width: 0;
+}
+.buying-process-page .section.split,
+.buying-process-page .buying-process-intro {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.buying-process-page .section.split h2,
+.buying-process-page .section-heading h2,
+.buying-process-page .process-trust-panel h2 {
+  max-width: none;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+.buying-process-page .process-editorial {
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, .7fr);
+  gap: clamp(28px, 4vw, 64px);
+}
+.buying-process-page .process-deeper {
+  min-width: 0;
+}
+.buying-process-page .process-deeper > a {
+  overflow-wrap: anywhere;
+}
+.buying-process-page .table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.buying-process-page .table-wrap table {
+  width: 100%;
+  min-width: 640px;
+}
+.buying-process-page .buying-process-mistakes-content {
+  max-width: 78ch;
+}
+.buying-process-page .buying-process-mistakes-content p {
+  line-height: 1.75;
+}
+.buying-process-page .buying-process-mistakes-content .text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+@media (max-width: 1000px) {
+  .buying-process-page .process-editorial {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .buying-process-page .process-deeper {
+    position: static;
+  }
+}
+@media (max-width: 800px) {
+  .buying-process-page .section.split,
+  .buying-process-page .buying-process-intro,
+  .buying-process-page .buying-process-portraits {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .buying-process-page .buying-process-portraits-images {
+    width: 100%;
+    max-width: 560px;
+  }
+}
+@media (max-width: 640px) {
+  .buying-process-page .process-row {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .buying-process-page .section-heading h2,
+  .buying-process-page .section.split h2 {
+    overflow-wrap: break-word;
+  }
+}
