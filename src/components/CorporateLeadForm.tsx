@@ -150,6 +150,7 @@ export function CorporateLeadForm() {
       setUserCount("");
       submissionIdRef.current = null;
       setStatus(delivery?.success === true ? "sent" : "received");
+      window.location.assign("/takk-beslutningsnotat");
     } catch {
       setStatus("error");
     }
