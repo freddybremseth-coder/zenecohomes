@@ -306,117 +306,194 @@ export const extraArticles: Article[] = [
     }
   },
   {
-    slug: "hvorfor-god-eiendomsradgiver-er-viktig",
-    title: "Hvorfor er en god eiendomsrådgiver viktig?",
-    excerpt:
-      "En god rådgiver kan spare deg for store summer, feilkjøp og stress når du kjøper bolig i Spania. Her er hva du bør se etter.",
-    date: "2026-05-10",
-    updated: "2026-05-10",
-    category: "Rådgivning",
-    readingTime: "7 min lesing",
-    image: "/assets/magasin-covers/radgiver.svg",
-    imageAlt: "Illustrasjon av norsk eiendomsrådgiver som hjelper boligkjøper i Spania",
-    seoTitle: "Eiendomsrådgiver i Spania | Slik velger du riktig hjelp",
-    seoDescription:
-      "Velg riktig eiendomsrådgiver i Spania. Les hvordan en god rådgiver kan hjelpe med område, pris, forhandling, markedskunnskap og trygg kjøpsprosess.",
-    keywords: [
+    "slug": "hvorfor-god-eiendomsradgiver-er-viktig",
+    "title": "Hvorfor er en god eiendomsrådgiver viktig når du kjøper bolig i Spania?",
+    "excerpt": "En god rådgiver hjelper deg å vurdere område, pris, risiko og hele kjøpsprosessen. Her er hva du bør forvente, og hvilke spørsmål du må stille.",
+    "date": "2026-05-10",
+    "updated": "2026-10-15",
+    "category": "Rådgivning",
+    "readingTime": "9 min lesing",
+    "image": "/assets/magasin-covers/radgiver.svg",
+    "imageAlt": "Illustrasjon av eiendomsrådgiver som hjelper kjøpere å vurdere boliger i Spania",
+    "seoTitle": "Eiendomsrådgiver i Spania: slik velger du riktig hjelp",
+    "seoDescription": "Hva gjør en god eiendomsrådgiver i Spania? Se hvordan du vurderer område, boligpris, honorar, interessekonflikter og juridiske kontroller før kjøp.",
+    "keywords": [
       "eiendomsrådgiver Spania",
-      "boligkjøp Spania rådgiver",
-      "norsk megler Spania",
-      "kjøpe bolig trygt i Spania",
-      "eiendomsmegler Costa Blanca",
+      "norsk eiendomsrådgiver Costa Blanca",
+      "velge eiendomsmegler Spania",
+      "kjøpe bolig Spania rådgivning",
+      "boligkjøp Spania advokat"
     ],
-    intro: [
-      "Å kjøpe bolig i Spania er en stor investering. Forskjellen mellom en god og en dårlig eiendomsrådgiver kan handle om langt mer enn hyggelig service. Det kan påvirke pris, trygghet, forhandling, juridisk flyt og hvor godt du blir fulgt opp etter overtakelse.",
-      "En god rådgiver jobber ikke bare for å vise deg en bolig. De hjelper deg å forstå markedet, vurdere alternativer, stille riktige spørsmål og unngå kostbare feil.",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-freddy"
+    },
+    "intro": [
+      "En god eiendomsrådgiver gjør mer enn å finne annonser og åpne dører. Verdien ligger i å forstå behovene dine, sile bort feil boliger, vurdere pris og beliggenhet, stille kritiske spørsmål og koordinere kjøpsprosessen med riktige fagpersoner. Det kan redusere risiko og unødvendige visninger, men ingen kan love laveste pris eller et problemfritt kjøp.",
+      "Spør derfor ikke bare hvilke boliger rådgiveren kan vise. Undersøk også hvem vedkommende representerer, hvordan honoraret betales og hvem som kontrollerer de juridiske forholdene. Her er hva jeg mener du bør få svar på før du velger samarbeidspartner."
     ],
-    sections: [
+    "sections": [
       {
-        heading: "Velg rådgiver som jobber for deg",
-        body: [
-          "Det finnes mange eiendomsmeglere i Spania, men ikke alle jobber med samme grad av oppfølging, ansvar og langsiktig relasjon. Du bør velge en rådgiver som er tilgjengelig, tydelig og som følger deg gjennom hele prosessen – ikke bare frem til signering.",
-          "Mange tror de må bruke megleren som annonserer en spesifikk bolig. Slik er det ofte ikke. Ser du en interessant bolig hos en annen aktør, kan din valgte rådgiver som regel undersøke og bistå med kjøpet av denne også.",
+        "heading": "Hva gjør en god eiendomsrådgiver før den første visningen?",
+        "body": [
+          "En god rådgiver starter med behov, totalbudsjett og områdevalg – ikke med en tilfeldig annonse. Målet er en kortliste med boliger som passer livet du ønsker å ha i Spania.",
+          "Skal du bo fast, kan skole, helårstilbud og gangavstand være avgjørende. Skal boligen brukes som feriebolig, kan vedlikehold, reisevei og praktisk oppfølging bety mer. Riktig pris hjelper lite dersom hverdagen rundt ikke passer.",
+          "Jeg begynner med å avklare bruk og kompromisser før vi ser på [[områder på Costa Blanca|/omrader]] og velger hvilke eiendommer som er verdt en visning."
         ],
-        bullets: [
-          "Rådgiveren bør støtte deg fra første samtale til etter overtakelse.",
-          "De bør stille opp når du trenger dem, også når spørsmål dukker opp utenom normal arbeidstid.",
-          "De bør hjelpe med praktiske spørsmål etter kjøpet, ikke forsvinne etter signering.",
-          "De bør kunne bistå med boliger fra flere kilder, ikke bare egne annonser.",
-        ],
+        "bullets": [
+          "Hvordan skal boligen brukes: ferie, helårsliv, utleie eller en kombinasjon?",
+          "Hva er totalbudsjettet med kjøpskostnader og reserve?",
+          "Hva må kunne nås til fots, og hvor mye vil du bruke bil?",
+          "Hvilke krav er ufravikelige, og hva kan du kompromisse på?"
+        ]
       },
       {
-        heading: "Prisforskjeller mellom nytt og brukt",
-        body: [
-          "Nye boliger har ofte en mer transparent prisstruktur. Prisene er som regel satt av utbygger og har mindre forhandlingsrom, men også mindre risiko for tilfeldig overprising.",
-          "Brukte boliger fungerer annerledes. Prisen kan være satt ut fra eierens forventninger, behov, gjeld, følelser eller håp. Det kan gi forhandlingsmuligheter, men også stor risiko for at prisen ikke gjenspeiler reell markedsverdi.",
-        ],
-        bullets: [
-          "Nybygg: fast pris, tydeligere betalingsplan og mer forutsigbar standard.",
-          "Bruktbolig: større forhandlingsrom, men mer behov for markedskunnskap og teknisk kontroll.",
-          "En erfaren rådgiver kan se når en bolig er overpriset eller når et tilsynelatende kupp har skjulte problemer.",
-        ],
+        "heading": "Hvordan hjelper lokalkunnskap deg å velge riktig bolig?",
+        "body": [
+          "Lokalkunnskap gjør det lettere å oppdage forhold som ikke er tydelige i en annonse: bakker, støy, solretning, helårsliv, adkomst, innsyn og mulige endringer rundt eiendommen.",
+          "På Costa Blanca Nord kan to boliger i samme prisklasse gi helt forskjellige hverdager. En leilighet ved strandpromenaden og en villa i et høyereliggende område bør ikke sammenlignes bare etter antall kvadratmeter. En rådgiver bør forklare hvorfor akkurat adressen passer dine prioriteringer – og hvorfor den kanskje ikke gjør det.",
+          "Vi har samlet flere praktiske kontrollspørsmål i artikkelen [[det du ikke ser i boligannonsen|/magasin/det-du-ikke-ser-i-boligannonsen]]."
+        ]
       },
       {
-        heading: "Fallgruver i bruktmarkedet",
-        body: [
-          "På bruktmarkedet kan annonserte priser noen ganger være satt med en finger i været. Det kan føre til at kjøpere betaler for mye, eller bruker tid på eiendommer som ser billige ut fordi de har tekniske, juridiske eller praktiske utfordringer.",
-          "En god rådgiver hjelper deg å vurdere om prisen faktisk henger sammen med beliggenhet, standard, dokumentasjon, felleskostnader, vedlikehold og sammenlignbare salg i området.",
-        ],
-        bullets: [
-          "Overprising kan gjøre at du betaler langt mer enn reell markedsverdi.",
-          "Underprising kan skyldes skjulte feil, juridiske problemer eller dårlig beliggenhet.",
-          "Rådgiveren bør kunne foreslå bedre alternativer i samme budsjettklasse.",
-        ],
+        "heading": "Hvordan vurderer rådgiveren om en bolig er riktig priset?",
+        "body": [
+          "Rådgiveren bør sammenligne eiendommen med reelle alternativer i samme område og standardklasse og undersøke hva totalprisen faktisk omfatter. Annonsert pris er bare ett av flere vurderingspunkter.",
+          "For nybygg bør du undersøke leveransebeskrivelse, betalingsplan, tilvalg, prosjektets fremdrift og fellesfasiliteter. For bruktbolig er teknisk tilstand, dokumentasjon og vedlikehold viktig. Forhandlingsrommet varierer; nybygg er ikke automatisk riktig priset, og en lav bruktboligpris betyr ikke automatisk at eiendommen har skjulte feil.",
+          "Be om begrunnelse for prisvurderingen, og skill mellom annonserte priser og dokumenterte salg. En rådgivers vurdering erstatter ikke en uavhengig takst når det er behov for det."
+        ]
       },
       {
-        heading: "Verdien av lokal markedskunnskap",
-        body: [
-          "Lokal kunnskap er avgjørende i Spania. To boliger kan se like ut i en annonse, men ha svært forskjellig verdi på grunn av solforhold, adkomst, støy, fremtidig utbygging, nabolag, service, avstand til strand og videresalgspotensial.",
-          "En god rådgiver kan også jobbe praktisk for deg: reservere riktig bolig raskt, forhandle inkludert møbler eller utstyr, forklare betalingsplan og sørge for at du ikke går videre før viktige forhold er avklart.",
-        ],
-        bullets: [
-          "Markedsinnsikt: kjenner reelle verdier i ulike områder.",
-          "Alternative forslag: kan vise lignende boliger med bedre verdi.",
-          "Forhandling: jobber for best mulig totalpakke, ikke bare lavest mulig pris.",
-          "Fleksibilitet: hjelper når timing, visning eller reservasjon haster.",
-        ],
+        "heading": "Kan rådgiveren hjelpe med boliger annonsert av andre meglere?",
+        "body": [
+          "Ofte kan en rådgiver undersøke boliger som andre aktører markedsfører, men det er ingen garanti for at han eller hun kan formidle enhver eiendom. Tilgang og samarbeid avhenger av selger, oppdrag, eksisterende avtaler og vilkår mellom involverte parter.",
+          "Send gjerne annonser du vurderer til rådgiveren du har valgt. Be om at tilgjengelighet, pris, visningsmuligheter og eventuelt samarbeid undersøkes før du kontakter flere meglere om samme eiendom.",
+          "En ryddig rådgiver skal også kunne si fra når samarbeid ikke er mulig, og hjelpe deg videre med et godt beslutningsgrunnlag uten å love mer enn han eller hun kan levere."
+        ]
       },
       {
-        heading: "Velg en selger og rådgiver, ikke en ekspeditør",
-        body: [
-          "En ekspeditør behandler deg som et saksnummer og gjør minimum. En god selger og rådgiver jobber aktivt for dine interesser, bygger relasjon og tenker langsiktig.",
-          "Den beste rådgiveren er den som tar telefonen når det virkelig gjelder, forklarer risiko før du forelsker deg i boligen, og hjelper deg å få mer trygghet og verdi ut av kjøpet.",
-        ],
-        bullets: [
-          "Spør hvordan rådgiveren følger opp etter kjøpet.",
-          "Be om eksempler på hvordan de har hjulpet kunder med utfordringer.",
-          "Velg noen som kommuniserer tydelig på norsk og kjenner området du vurderer.",
-        ],
+        "heading": "Hva er forskjellen på rådgiver, megler og uavhengig advokat?",
+        "body": [
+          "En rådgiver eller eiendomsmegler kan bidra med boligsøk, visning, forhandling og koordinering etter det konkrete oppdraget. En uavhengig advokat bør kontrollere juridiske forhold, dokumentasjon og kontrakter. Den ene rollen erstatter ikke den andre.",
+          "Før bindende avtaler bør advokaten vurdere registrert eierskap, heftelser, nødvendige tillatelser og kontraktsvilkår. Eiendomsregisterets *nota simple* gir informasjon om registrert eier og rettigheter, men en slik utskrift er ikke en full juridisk eller teknisk gjennomgang.",
+          "Du kan undersøke [[nota simple hos det spanske eiendomsregisteret|https://sede.registradores.org/site/propiedad?lang=es]] og lese [[guiden vår om juridiske fallgruver|/guide/juridiske-fallgruver-boligkjop-spania]]."
+        ]
       },
+      {
+        "heading": "Hva koster det å bruke eiendomsrådgiver i Spania?",
+        "body": [
+          "Det finnes ikke ett honorar som gjelder alle handler. Betaling kan komme fra selger eller utbygger, fra kjøper etter særskilt avtale eller gjennom en annen avklart samarbeidsmodell. At du ikke mottar en separat faktura, betyr ikke at formidlingen mangler en økonomisk interesse.",
+          "Be derfor om skriftlig oversikt over hvem som representeres, hvem som betaler honoraret, hvilke tjenester som inngår og hva du eventuelt betaler ekstra for. Spør også om tjenester etter overtakelsen faktureres separat.",
+          "Valenciaregionen har et offentlig regelverk og register for eiendomsformidlere, med krav blant annet knyttet til profesjonell informasjon og åpenhet. Dersom virksomheten omfattes, bør du kunne få opplysninger som lar deg kontrollere registreringen. Se [[Generalitat Valencianas informasjon om registrering av eiendomsformidlere|https://sede.gva.es/es/detall-tramit?id_proc=G22848]]."
+        ]
+      },
+      {
+        "heading": "Hvordan vet du om rådgiveren faktisk ivaretar dine interesser?",
+        "body": [
+          "Det beste tegnet er åpne svar på risiko, kostnader og alternativer – også når svaret kan være at du bør velge en annen bolig eller vente. En rådgiver som får betalt ved gjennomført handel, har en økonomisk interesse i salget. Det gjør det ekstra viktig å avklare roller og interessekonflikter.",
+          "Still disse spørsmålene før du inngår et samarbeid:"
+        ],
+        "bullets": [
+          "Hvem representerer du i denne handelen, og hvordan får du betalt?",
+          "Hvorfor mener du akkurat denne boligen passer meg bedre enn alternativene?",
+          "Hva er de viktigste ulempene eller risikoene ved eiendommen?",
+          "Hvilke opplysninger er bekreftet, og hva gjenstår å kontrollere?",
+          "Hvem gjør juridisk og teknisk kontroll, og er disse fagpersonene uavhengige?",
+          "Kan du vise relevante referanser og beskrive oppfølgingen etter kjøpet?"
+        ]
+      },
+      {
+        "heading": "Hvordan sammenligner du boligene i praksis?",
+        "body": [
+          "To annonser kan se like attraktive ut. God rådgivning handler om å sammenligne det som betyr noe i kjøperens hverdag, ikke om å presentere flest mulig alternativer.",
+          "Dette er et illustrerende eksempel på kontrollspørsmål ved visning, ikke en vurdering av konkrete boliger:"
+        ],
+        "table": {
+          "headers": [
+            "Tema",
+            "Annonse A",
+            "Annonse B",
+            "Spørsmål rådgiveren bør avklare"
+          ],
+          "rows": [
+            [
+              "Hverdagsliv",
+              "Kort vei til sentrum",
+              "Større uteplass i roligere område",
+              "Faktisk gangrute, bakker og bilbehov"
+            ],
+            [
+              "Totalpris",
+              "Nybygg med tilvalg",
+              "Bruktbolig med vedlikeholdsbehov",
+              "Inkluderte ytelser, dokumenterte kostnader og nødvendige arbeider"
+            ],
+            [
+              "Beliggenhet",
+              "Nær restauranter",
+              "Mer privatliv",
+              "Støy, sol, innsyn og helårsservice"
+            ],
+            [
+              "Kjøpsrisiko",
+              "Fremtidig ferdigstillelse",
+              "Eksisterende teknisk tilstand",
+              "Utbygger, garantier, lovlighet og dokumentasjon"
+            ]
+          ],
+          "caption": "Eksemplene er tenkte. Riktig valg avhenger av dine behov, ikke av hvilken annonse som ser finest ut."
+        }
+      },
+      {
+        "heading": "Hva bør skje etter visningen og etter overtakelsen?",
+        "body": [
+          "Rådgivningen bør ikke slutte når du har funnet en bolig du liker. Deretter følger spørsmål om reservasjon, dokumentasjon, finansiering, kontrakt, notar og overtakelse. Du bør vite hvem som er ansvarlig for hvert steg, og hva rådgiveren konkret leverer.",
+          "Etter kjøpet kan du trenge praktisk hjelp med nøkler, leverandører, tilsyn og klargjøring når du ikke er i Spania. Slike tjenester varierer og kan koste ekstra; få dette avklart.",
+          "Hos Zen Eco Homes er målsetningen en oversiktlig prosess fra behov til overtakelse. Se [[slik jobber vi gjennom kjøpsprosessen|/kjopsprosessen]] og [[hvordan vi planlegger visningstur|/visningstur]]."
+        ]
+      },
+      {
+        "heading": "Hvorfor bør en god rådgiver også kunne si nei?",
+        "body": [
+          "En god rådgiver skal ikke bare bekrefte kjøperens førsteinntrykk. Hvis beliggenhet, økonomi eller dokumentasjon ikke passer med målet, er det bedre å oppdage det før kunden inngår en bindende avtale.",
+          "Jeg har selv kjøpt bolig i Spania og opplevd hvor mye tid som kan gå med til annonser som ikke besvarer enkle spørsmål om tilgjengelighet, nøyaktig beliggenhet og dokumentasjon. Derfor prøver jeg å avklare slike forhold før en travel visningstur. Det er en beskrivelse av min arbeidsmåte, ikke en garanti for at en handel blir problemfri.",
+          "Du kan lese om erfaringene og tilnærmingen min på [[min profil som eiendomsrådgiver på Costa Blanca|/om-freddy]]. Målet er ikke flest mulig visninger, men å forstå hva du kjøper, hvorfor det passer og hvilke spørsmål som fortsatt står åpne."
+        ]
+      }
     ],
-    nextSteps: [
-      "Undersøk rådgiverens erfaring, referanser og lokale nettverk.",
-      "Spør konkret om oppfølging etter overtakelse.",
-      "Få bekreftet at rådgiveren kan bistå med boliger fra flere aktører.",
-      "Velg rådgiver før du begynner å kontakte mange forskjellige meglere selv.",
+    "nextSteps": [
+      "Beskriv boligbehov, område, totalbudsjett og tidsplan før du ber om konkrete forslag.",
+      "Be om å få forklart rolle, godtgjørelse, samarbeid med andre meglere og hva oppdraget inkluderer.",
+      "Sammenlign noen få relevante boliger med dokumenterte fordeler, ulemper og uavklarte spørsmål.",
+      "Bruk uavhengig advokat og eventuelt teknisk fagperson før bindende avtaler.",
+      "Avtal oppfølgingen gjennom kjøpsprosess og overtakelse."
     ],
-    faq: [
+    "faq": [
       {
-        question: "Må jeg bruke megleren som annonserer boligen i Spania?",
-        answer:
-          "Ofte ikke. I Spania kan flere meglere ha tilgang til samme bolig. En rådgiver du stoler på kan ofte undersøke og bistå med kjøpet selv om du fant boligen et annet sted.",
+        "question": "Må jeg ha eiendomsrådgiver for å kjøpe bolig i Spania?",
+        "answer": "Nei. Du kan kjøpe uten en personlig rådgiver. Verdien av rådgivning ligger særlig i områdevalg, sammenligning, visningsplan og koordinering. Uavhengig juridisk kontroll anbefales uansett."
       },
       {
-        question: "Hva er forskjellen på eiendomsmegler og eiendomsrådgiver?",
-        answer:
-          "En megler selger ofte konkrete boliger. En god rådgiver hjelper deg bredere med område, pris, risiko, alternativer, forhandling, advokat og oppfølging gjennom hele kjøpsreisen.",
+        "question": "Er en eiendomsrådgiver alltid på kjøperens side?",
+        "answer": "Ikke nødvendigvis. Det avhenger av oppdraget, hvem rådgiveren representerer og hvem som betaler. Spør konkret om rolle, honorar og eventuelle interessekonflikter."
       },
       {
-        question: "Hvorfor er rådgiver ekstra viktig ved bruktbolig?",
-        answer:
-          "Bruktboliger kan ha større prisvariasjon, teknisk risiko og juridiske spørsmål. En erfaren rådgiver kan hjelpe deg å vurdere om prisen og dokumentasjonen faktisk holder mål.",
+        "question": "Er det gratis for kjøper å bruke megler i Spania?",
+        "answer": "Ikke alltid. Noen handler har honorar fra selger eller utbygger, mens andre har kjøperhonorar eller særskilte tilleggstjenester. Få skriftlig informasjon før du inngår avtale."
       },
+      {
+        "question": "Kan jeg bruke egen rådgiver for en bolig som annonseres av en annen megler?",
+        "answer": "Det kan være mulig dersom selgeren, involverte meglere og avtalene tillater samarbeid. Det er ikke garantert; la rådgiveren undersøke forholdene før du legger planer."
+      },
+      {
+        "question": "Kan eiendomsmegleren gjøre samme jobb som advokaten?",
+        "answer": "Nei. Megleren kan bidra med informasjon og koordinering, men en uavhengig advokat bør kontrollere eierskap, heftelser, relevante tillatelser og kontrakter. Teknisk tilstand kan kreve egen fagperson."
+      }
     ],
+    "cta": {
+      "label": "Bestill en uforpliktende boligprat",
+      "href": "/booking"
+    }
   },
   {
     slug: "idealista-finn-ikke-alltid-til-a-stole-pa",

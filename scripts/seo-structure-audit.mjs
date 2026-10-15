@@ -71,6 +71,18 @@ for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/guide/juridiske
   requireText(editorialArticle, `|${href}]]`, "editorial article contextual in-text link");
 }
 
+const advisorArticle = "src/lib/magazine.ts";
+requireText(advisorArticle, '"slug": "hvorfor-god-eiendomsradgiver-er-viktig"', "property advisor article");
+requireText(advisorArticle, '"updated": "2026-10-15"', "advisor article review date");
+requireText(advisorArticle, '"href": "/om-freddy"', "advisor article linked author");
+requireText(articleViewForEditorial, 'article.slug === "hvorfor-god-eiendomsradgiver-er-viktig"', "advisor article contextual inline links");
+for (const href of ["/omrader", "/magasin/det-du-ikke-ser-i-boligannonsen", "/guide/juridiske-fallgruver-boligkjop-spania", "/kjopsprosessen", "/visningstur", "/om-freddy"]) {
+  requireText(advisorArticle, `|${href}]]`, "advisor article contextual link");
+}
+for (const source of ["https://sede.registradores.org/site/propiedad?lang=es", "https://sede.gva.es/es/detall-tramit?id_proc=G22848"]) {
+  requireText(advisorArticle, source, "advisor article official source");
+}
+
 const properties = "src/app/eiendommer/page.tsx";
 for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen", "/visningstur"]) {
   requireText(properties, `href="${href}"`, "property-list internal link");
