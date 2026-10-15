@@ -185,7 +185,7 @@ export default async function BuyInSpainGuidePage() {
         <div className="cornerstone-hero-layout">
           <div className="cornerstone-hero-copy">
             <p className="eyebrow">
-              Guide · <Link href="/om-oss/freddy">Freddy Bremseth</Link> · Oppdatert 7. oktober 2026
+              Guide · <Link href="/om-oss/freddy">Freddy Bremseth</Link> · Oppdatert 15. oktober 2026
             </p>
             <h1>Kjøpe bolig i Spania (2026) – Dette må du vite</h1>
             <p>
@@ -225,6 +225,7 @@ export default async function BuyInSpainGuidePage() {
           <a href="#boligtype">Boligtype</a>
           <a href="#kjopsprosess">Steg for steg</a>
           <a href="#etter-kjopet">Etter kjøpet</a>
+          <a href="#vanlige-feil">Vanlige feil</a>
           <a href="#erfaringer">Mine erfaringer</a>
           <a href="#faq">FAQ</a>
         </div>
@@ -504,18 +505,18 @@ export default async function BuyInSpainGuidePage() {
           </p>
         </div>
 
-        <div className="table-wrap">
+        <div className="table-wrap buy-guide-comparison">
           <table>
             <thead>
-              <tr><th></th><th>Nybygg</th><th>Bruktbolig</th></tr>
+              <tr><th scope="col">Tema</th><th scope="col">Nybygg</th><th scope="col">Bruktbolig</th></tr>
             </thead>
             <tbody>
-              <tr><td><strong>Overtakelse</strong></td><td>Som regel et sted mellom 12 og 24 måneder</td><td>Inntil 10 uker</td></tr>
-              <tr><td><strong>Skatt ved kjøp</strong></td><td>Normalt 10 % IVA, i tillegg til AJD</td><td>ITP varierer etter region og situasjon</td></tr>
-              <tr><td><strong>Betaling</strong></td><td>Kjøpesummen betales ofte i flere omganger under byggeperioden</td><td>Depositum først, resten ved signering hos notar</td></tr>
-              <tr><td><strong>Vedlikehold</strong></td><td>Begrenset de første fem til ti årene</td><td>Avhenger av alder og tidligere vedlikehold</td></tr>
-              <tr><td><strong>Teknisk risiko</strong></td><td>Lavere grunnet nye installasjoner og lovbestemte garantier</td><td>Høyere. Skjulte feil og eldre installasjoner kan forekomme</td></tr>
-              <tr><td><strong>Tilpasninger</strong></td><td>Ofte mulig å velge enkelte materialer og løsninger</td><td>Du kjøper i hovedsak boligen slik den står</td></tr>
+              <tr><th scope="row">Overtakelse</th><td data-label="Nybygg">Som regel et sted mellom 12 og 24 måneder</td><td data-label="Bruktbolig">Inntil 10 uker</td></tr>
+              <tr><th scope="row">Skatt ved kjøp</th><td data-label="Nybygg">Normalt 10 % IVA, i tillegg til AJD</td><td data-label="Bruktbolig">ITP varierer etter region og situasjon</td></tr>
+              <tr><th scope="row">Betaling</th><td data-label="Nybygg">Kjøpesummen betales ofte i flere omganger under byggeperioden</td><td data-label="Bruktbolig">Depositum først, resten ved signering hos notar</td></tr>
+              <tr><th scope="row">Vedlikehold</th><td data-label="Nybygg">Begrenset de første fem til ti årene</td><td data-label="Bruktbolig">Avhenger av alder og tidligere vedlikehold</td></tr>
+              <tr><th scope="row">Teknisk risiko</th><td data-label="Nybygg">Lavere grunnet nye installasjoner og lovbestemte garantier</td><td data-label="Bruktbolig">Høyere. Skjulte feil og eldre installasjoner kan forekomme</td></tr>
+              <tr><th scope="row">Tilpasninger</th><td data-label="Nybygg">Ofte mulig å velge enkelte materialer og løsninger</td><td data-label="Bruktbolig">Du kjøper i hovedsak boligen slik den står</td></tr>
             </tbody>
           </table>
         </div>
@@ -541,9 +542,10 @@ export default async function BuyInSpainGuidePage() {
 
         <div className="process-editorial">
           <div className="process-timeline">
-            <article className="process-row">
+            <article className="process-row" aria-label="Steg 1">
+              <span aria-hidden="true">01</span>
               <div>
-                <h3>1. Behovskartlegging</h3>
+                <h3>Behovskartlegging</h3>
                 <p>
                   Et godt boligkjøp starter med å avklare hva du faktisk trenger. Hos Zen Eco Homes bruker vi behovskartleggingen til å snevre inn søket og unngå at du bruker tid på boliger som aldri var aktuelle.
                 </p>
@@ -557,9 +559,10 @@ export default async function BuyInSpainGuidePage() {
               </div>
             </article>
 
-            <article className="process-row">
+            <article className="process-row" aria-label="Steg 2">
+              <span aria-hidden="true">02</span>
               <div>
-                <h3>2. Visningstur</h3>
+                <h3>Visningstur</h3>
                 <p>
                   En visningstur er en planlagt tur der du ser flere aktuelle boliger og samtidig blir bedre kjent med områdene du vurderer. Målet er ikke å presse frem et kjøp, men å gi deg et bedre beslutningsgrunnlag.
                 </p>
@@ -569,9 +572,10 @@ export default async function BuyInSpainGuidePage() {
               </div>
             </article>
 
-            <article className="process-row">
+            <article className="process-row" aria-label="Steg 3">
+              <span aria-hidden="true">03</span>
               <div>
-                <h3>3. Reservasjon</h3>
+                <h3>Reservasjon</h3>
                 <p>
                   Når du har funnet en bolig du ønsker å gå videre med, er neste steg ofte å reservere den. En reservasjonsavtale brukes for å ta boligen midlertidig av markedet, mens dokumentasjon, juridiske forhold og videre vilkår blir gjennomgått.
                 </p>
@@ -591,9 +595,10 @@ export default async function BuyInSpainGuidePage() {
               </div>
             </article>
 
-            <article className="process-row">
+            <article className="process-row" aria-label="Steg 4">
+              <span aria-hidden="true">04</span>
               <div>
-                <h3>4. Få eiendommen juridisk kontrollert</h3>
+                <h3>Få eiendommen juridisk kontrollert</h3>
                 <p>
                   Før du binder deg til kjøpet, bør eiendommen kontrolleres juridisk av en uavhengig advokat. Målet er å bekrefte at boligen faktisk kan selges på de vilkårene du er forespeilet, og at det ikke følger med problemer som først dukker opp etter overtakelsen.
                 </p>
@@ -610,9 +615,10 @@ export default async function BuyInSpainGuidePage() {
               </div>
             </article>
 
-            <article className="process-row">
+            <article className="process-row" aria-label="Steg 5">
+              <span aria-hidden="true">05</span>
               <div>
-                <h3>5. Skaff NIE-nummer og avklar finansiering</h3>
+                <h3>Skaff NIE-nummer og avklar finansiering</h3>
                 <p>
                   Du må ha et <Link href="/guide/nie-skattenummer-spania">NIE-nummer</Link> for å gjennomføre et boligkjøp i Spania. NIE (Número de Identidad de Extranjero) er identifikasjonsnummeret utlendinger bruker i Spania, blant annet i forbindelse med boligkjøp, skatt, bankforhold og andre offentlige eller økonomiske prosesser.
                 </p>
@@ -627,9 +633,10 @@ export default async function BuyInSpainGuidePage() {
               </div>
             </article>
 
-            <article className="process-row">
+            <article className="process-row" aria-label="Steg 6">
+              <span aria-hidden="true">06</span>
               <div>
-                <h3>6. Signering hos notar</h3>
+                <h3>Signering hos notar</h3>
                 <p>
                   Når kjøpekontrakten er på plass og alle vilkår er oppfylt, fullføres handelen hos notar. Her signeres det offentlige skjøtet, escritura pública, og resten av kjøpesummen betales i henhold til avtalen.
                 </p>
@@ -640,9 +647,10 @@ export default async function BuyInSpainGuidePage() {
               </div>
             </article>
 
-            <article className="process-row">
+            <article className="process-row" aria-label="Steg 7">
+              <span aria-hidden="true">07</span>
               <div>
-                <h3>7. Registrering og overtakelse</h3>
+                <h3>Registrering og overtakelse</h3>
                 <p>
                   Etter signeringen skal relevante skatter og avgifter betales, og eierskapet registreres i det spanske eiendomsregisteret.
                 </p>
@@ -675,6 +683,29 @@ export default async function BuyInSpainGuidePage() {
             Gjennom <a href="https://care.zenecohomes.com/" target="_blank" rel="noopener noreferrer">Zen Eco Homes Care</a> tilbyr vi også keyholding og oppfølging av boligen når du ikke er i Spania. Det gir deg et fast kontaktpunkt dersom noe skulle oppstå mellom oppholdene.
           </p>
         </div>
+      </section>
+
+      <section className="section proof-section cornerstone-section" id="vanlige-feil">
+        <div className="section-heading">
+          <p className="eyebrow">Unngå fallgruvene</p>
+          <h2>Vanlige feil mange gjør når de kjøper spansk bolig</h2>
+          <p>
+            De vanligste feilene handler ikke bare om selve boligen. De oppstår når område, totalbudsjett,
+            dokumentasjon eller oppfølging ikke er avklart tidlig nok. Dette er seks situasjoner du bør unngå.
+          </p>
+        </div>
+        <div className="mistake-list">
+          <article><span>01</span><div><h3>Boligen velges før området</h3><p>Et fint objekt løser ikke feil reisevei, feil hverdagsliv eller et område du ikke trives i utenfor ferien.</p></div></article>
+          <article><span>02</span><div><h3>Totalbudsjettet blir for lavt</h3><p>Kjøpere ser på pris i annonsen, men glemmer kostnader rundt kjøpet, møbler, drift og eventuelle oppgraderinger.</p></div></article>
+          <article><span>03</span><div><h3>Portaler brukes som fasit</h3><p>Tilgjengelighet og pris bør bekreftes før du reiser eller bygger hele beslutningen på én annonse.</p></div></article>
+          <article><span>04</span><div><h3>Reservasjon skjer for tidlig</h3><p>Ikke la tidspress erstatte dokumentkontroll, avklaringer og forståelse av hva du faktisk signerer.</p></div></article>
+          <article><span>05</span><div><h3>For mange meglere kontaktes samtidig</h3><p>Det kan gi duplikater, telefonpress og en fragmentert prosess. Én tydelig rådgiver kan koordinere bedre.</p></div></article>
+          <article><span>06</span><div><h3>Oppfølging etter kjøpet glemmes</h3><p>Overtakelse, nøkler, leverandører og praktiske spørsmål fortsetter etter notar. Planlegg også tiden etter signering.</p></div></article>
+        </div>
+        <p className="mistakes-more">
+          Les også <Link href="/magasin/7-dyre-feil-nordmenn-bolig-spania">7 dyre feil nordmenn gjør ved boligkjøp i Spania</Link>
+          for flere konkrete eksempler og hva du bør gjøre i stedet.
+        </p>
       </section>
 
       <section className="section split cornerstone-section cornerstone-experience" id="erfaringer">
@@ -736,7 +767,6 @@ export default async function BuyInSpainGuidePage() {
         </div>
       </section>
 
-      <div className="section cornerstone-section"><p>Se også <Link href="/magasin/7-dyre-feil-nordmenn-bolig-spania">sju dyre feil nordmenn gjør ved boligkjøp i Spania</Link>.</p></div>
       <Footer />
     </main>
   );
