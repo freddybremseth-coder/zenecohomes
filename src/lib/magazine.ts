@@ -713,8 +713,8 @@ export const extraArticles: Article[] = [
         "heading": "Hvor dyr bolig kan du kjøpe for 4, 6, 8 eller 10 millioner kroner?",
         "body": [
           "Det avhenger av om millionbeløpet er maksimal kjøpesum eller hele totalbudsjettet, hva euroen koster, og om du kjøper nybygg eller bruktbolig. Når kjøpskostnadene er inkludert, blir den realistiske maksimalprisen lavere enn beløpet du får ved å veksle kroner til euro.",
-          "Tabellen viser et **regneeksempel**, med valutakurs 11,50 kroner per euro (ikke dagens kurs), ordinær bruktboligskatt på 9 % i Valenciaregionen, nybygg med 10 % IVA og ordinær 1,4 % AJD, samt antatte 1 % til advokat og 0,5 % til notar/registrering. Beløpene er avrundet ned til nærmeste 1 000 euro. Møbler, finansiering og en egen kontantreserve kommer i tillegg og må trekkes fra budsjettet før beregningen hvis de skal finansieres av den samme totalrammen.",
-          "Disse valgene gjenspeiler standardforutsetningene i kalkulatoren under. **Endre selv valutakurs, boligtype, avgiftsforutsetninger og reserve** for et mer relevant estimat før du velger bolig."
+          "Tabellen viser et regneeksempel, med valutakurs 11,50 kroner per euro (ikke dagens kurs), ordinær bruktboligskatt på 9 % i Valenciaregionen, nybygg med 10 % IVA og ordinær 1,4 % AJD, samt antatte 1 % til advokat og 0,5 % til notar/registrering. Beløpene er avrundet ned til nærmeste 1 000 euro. Møbler, finansiering og en egen kontantreserve kommer i tillegg og må trekkes fra budsjettet før beregningen hvis de skal finansieres av den samme totalrammen.",
+          "Disse valgene gjenspeiler standardforutsetningene i kalkulatoren under. Endre selv valutakurs, boligtype, avgiftsforutsetninger og reserve for et mer relevant estimat før du velger bolig."
         ],
         "table": {
           "headers": [
@@ -789,7 +789,7 @@ export const extraArticles: Article[] = [
         "body": [
           "En annonsert pris på 500 000 euro er ikke det samme som samlet kapitalbehov. For et ordinært boligkjøp i Valenciaregionen blir de største forskjellene hvilken skatt som gjelder for nybygg eller bruktbolig og hvor mye du avsetter til øvrige kostnader.",
           "Eksemplet under bruker de samme enkle forutsetningene som tabellen: bruktbolig med 9 % ITP, nybygg med 10 % IVA + ordinær 1,4 % AJD, samt 1 % antatt advokatutgift og 0,5 % antatt notar-/registerutgift. Det forutsettes ingen særskilte skattefordeler, finansieringskostnader, møblering eller separat reserve.",
-          "For en bruktbolig blir regnestykket 500 000 + 45 000 i ITP + 5 000 i advokatpost + 2 500 i notar-/registerpost = **552 500 euro**. For vanlig nybygg blir det 500 000 + 50 000 i IVA + 7 000 i AJD + 5 000 + 2 500 = **564 500 euro**. Ved den illustrative kursen 11,50 tilsvarer det omtrent 6,35 og 6,49 millioner kroner. Dette er to budsjettscenarioer, ikke tilbud eller endelig oppgjørsoppstilling."
+          "For en bruktbolig blir regnestykket 500 000 + 45 000 i ITP + 5 000 i advokatpost + 2 500 i notar-/registerpost = 552 500 euro. For vanlig nybygg blir det 500 000 + 50 000 i IVA + 7 000 i AJD + 5 000 + 2 500 = 564 500 euro. Ved den illustrative kursen 11,50 tilsvarer det omtrent 6,35 og 6,49 millioner kroner. Dette er to budsjettscenarioer, ikke tilbud eller endelig oppgjørsoppstilling."
         ],
         "table": {
           "headers": [
@@ -840,7 +840,7 @@ export const extraArticles: Article[] = [
         "body": [
           "De fleste boligkjøp i Spania avtales i euro. Har du inntekt, sparing eller låneramme i kroner, er EUR/NOK-kursen en viktig del av budsjettet. Du må se på beløpet du faktisk får overført etter eventuell veksling og bankens kostnader.",
           "En bolig til 500 000 euro koster 5,75 millioner kroner ved en tenkt kurs på 11,50, men 6 millioner kroner ved kurs 12,00 – en forskjell på 250 000 kroner allerede før skatt og omkostninger. Dette er illustrasjoner, ikke dagens valutakurser.",
-          "Bruk [[guiden om valutaveksling og betaling i Spania|/guide/spansk-bankkonto-valutaveksling]] sammen med kalkulatoren under; der kan du endre EUR/NOK-kursen til det du faktisk får tilbud om."
+          "Bruk [[guiden om valutaveksling og betaling i Spania|/guide/spansk-bankkonto-valutaveksling]] sammen med kalkulatoren på denne siden; der kan du endre EUR/NOK-kursen til det du faktisk får tilbud om."
         ]
       },
       {
