@@ -656,56 +656,6 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
 };
 
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
-  "hva-far-du-for-4-6-8-10-millioner-costa-blanca": [
-    {
-      headingIncludes: "4 millioner",
-      links: [
-        { label: "Se Costa Blanca Nord opptil €370.000", href: "/eiendommer?region=costa-blanca-nord&maxPrice=370000" },
-        { label: "Valuta og bankkonto ved boligkjøp", href: "/guide/spansk-bankkonto-valutaveksling" },
-      ],
-    },
-    {
-      headingIncludes: "6 millioner",
-      links: [
-        { label: "Se boliger opptil €550.000", href: "/eiendommer?region=costa-blanca-nord&maxPrice=550000" },
-      ],
-    },
-    {
-      headingIncludes: "8 millioner",
-      links: [
-        { label: "Se boliger opptil €740.000", href: "/eiendommer?region=costa-blanca-nord&maxPrice=740000" },
-        { label: "Nybygg i Finestrat", href: "/omrader/costa-blanca-nord/finestrat" },
-      ],
-    },
-    {
-      headingIncludes: "kjøpskostnadene",
-      links: [
-        { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
-        { label: "Slik utvikler markedet seg nå", href: "/magasin/boligmarkedet-costa-blanca-hosten-2026" },
-      ],
-    },
-  ],
-  "bolig-500000-euro-totalbudsjett-spania": [
-    {
-      headingIncludes: "Kjøpesummen er bare",
-      links: [
-        { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
-        { label: "Omkostninger ved nybygg", href: "/guide/nybygg-i-spania" },
-      ],
-    },
-    {
-      headingIncludes: "Valutakursen",
-      links: [
-        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
-      ],
-    },
-    {
-      headingIncludes: "tiden etter overtakelse",
-      links: [
-        { label: "Løpende kostnader ved å eie bolig", href: "/guide/lopende-kostnader-eie-bolig-spania" },
-      ],
-    },
-  ],
   "lan-i-norge-eller-spania-boligkjop": [
     {
       headingIncludes: "Lån i Spania:",
@@ -780,8 +730,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "€500.000",
       links: [
-        { label: "Slik lager du totalbudsjettet", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
-      ],
+        ],
     },
     {
       headingIncludes: "finansiering",
@@ -810,7 +759,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       { label: "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
     ]},
     { headingIncludes: "totalbudsjett", links: [
-      { label: "Beregn totalbudsjettet før du kjøper", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
+      { label: "Beregn totalbudsjettet før du kjøper", href: "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca" },
       { label: "Se kjøpskostnader ved boligkjøp i Spania", href: "/guide/kostnader-boligkjop-spania" },
     ]},
     { headingIncludes: "boligannonser", links: [
@@ -877,7 +826,6 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     ]},
     { headingIncludes: "budsjettet", links: [
       { label: "Hva får du for 4, 6, 8 og 10 millioner?", href: "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca" },
-      { label: "Slik lager du totalbudsjettet", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
     ]},
   ],
   "benidorm-villa-456000-vs-516000": [
@@ -1137,8 +1085,7 @@ export function ArticleView({ article }: { article: Article }) {
               </section>
             )}
 
-            {(article.slug === "bolig-500000-euro-totalbudsjett-spania" ||
-              article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca") && (
+            {article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" && (
               <PurchaseBudgetCalculator />
             )}
 
@@ -1163,7 +1110,7 @@ export function ArticleView({ article }: { article: Article }) {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa") && paragraph.includes("[[")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
                           {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
