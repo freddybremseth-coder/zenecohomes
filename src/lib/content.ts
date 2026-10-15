@@ -262,98 +262,170 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "kjop-bolig-i-spania-na-eller-vente",
-    title: "Bør man kjøpe bolig i Spania nå, eller vente?",
-    excerpt:
-      "Kjøpe nå eller vente? Bruk budsjett, tidshorisont, finansiering, område og konkrete sammenlignbare boliger som beslutningsgrunnlag – ikke spådommer om hele markedet.",
-    date: "2026-05-10",
-    updated: "2026-09-15",
-    category: "Marked",
-    readingTime: "8 min lesing",
-    image: "/assets/magasin-covers/kjope-na.svg",
-    imageAlt: "Illustrasjon av spansk boligmarked med vekt mellom å kjøpe nå og vente",
-    seoTitle: "Kjøpe bolig i Spania nå eller vente? | Guide for 2026",
-    seoDescription:
-      "Bør du kjøpe bolig i Spania nå eller vente? Vurder budsjett, finansiering, tidshorisont, område, valuta og konkrete boliger før du bestemmer deg.",
-    keywords: ["kjøpe bolig i Spania nå", "spansk boligmarked", "boligpriser Spania", "investere i bolig Spania"],
-    intro: [
-      "Mange som vurderer bolig i Spania spør om de bør kjøpe nå eller vente på et prisfall. Det er et naturlig spørsmål, men ingen kan vite sikkert hvordan pris, renter og valuta utvikler seg i akkurat det delmarkedet du vurderer.",
-      "Et bedre utgangspunkt er å avgjøre om du har riktig budsjett, finansiering, område og tidshorisont – og om den konkrete boligen er riktig priset sammenlignet med reelle alternativer.",
+    "slug": "kjop-bolig-i-spania-na-eller-vente",
+    "title": "Kjøpe bolig i Spania nå eller vente? Boligmangel og fremtidsutsikter",
+    "excerpt": "Spania bygger ikke nok boliger til å møte behovet. Kan dyrere bygging og en fremtidig gjenoppbygging av Ukraina presse prisene videre opp – eller er det bedre å vente?",
+    "date": "2026-05-10",
+    "updated": "2026-10-15",
+    "category": "Marked",
+    "readingTime": "10 min lesing",
+    "image": "/assets/magasin-covers/kjope-na.svg",
+    "imageAlt": "Illustrasjon av valget mellom å kjøpe bolig i Spania nå og å vente",
+    "seoTitle": "Kjøpe bolig i Spania nå eller vente? Utsikter 2026",
+    "seoDescription": "Bør du kjøpe bolig i Spania nå eller vente? Se boligmangelen, prisveksten og hvordan Ukrainas gjenoppbygging kan påvirke byggekostnader og boligpriser.",
+    "keywords": [
+      "kjøpe bolig i Spania nå eller vente",
+      "boligpriser Spania 2026",
+      "boligmangel Spania",
+      "byggekostnader Spania",
+      "boligmarked Costa Blanca",
+      "Ukraina gjenoppbygging byggevarer"
     ],
-    sections: [
-      {
-        heading: "Markedet må vurderes lokalt",
-        body: [
-          "Spania er ikke ett boligmarked. Kystbyer, storbyer, innland, nybygg og bruktbolig kan utvikle seg forskjellig, og selv naboområder kan ha ulikt tilbud, etterspørsel og prisnivå.",
-          "Derfor bør en beslutning bygge på ferske, sammenlignbare boliger og faktiske prosjekter i området du vurderer – ikke på én nasjonal overskrift eller en generell prognose.",
-        ],
-        bullets: [
-          "Sammenlign samme boligtype og standard i samme mikro-område.",
-          "Se på faktisk tilgjengelighet, ikke bare annonserte startpriser.",
-          "Vurder nybygg og bruktbolig separat når markedene fungerer ulikt.",
-        ],
-      },
-      {
-        heading: "Hva som bør styre tidspunktet",
-        body: [
-          "Tidspunktet bør først og fremst vurderes mot egen økonomi og plan. Har du avklart totalbudsjett, finansiering, tidshorisont og hvordan boligen skal brukes, er du bedre rustet til å vurdere en konkret mulighet.",
-          "Hvis du derimot fortsatt er usikker på område, finansiering eller bruk, kan det være mer verdifullt å bruke tiden på forberedelser enn å forsøke å time markedet.",
-        ],
-        bullets: [
-          "Avklar totalbudsjett og hvor stor valutarisiko du tåler.",
-          "Bestem om boligen er for ferie, helårsbruk, utleie eller en kombinasjon.",
-          "Definer hvor lenge du realistisk planlegger å eie.",
-        ],
-      },
-      {
-        heading: "Hva kan endre regnestykket?",
-        body: [
-          "Renter, EUR/NOK, skatter, byggekostnader, nytt tilbud og lokal etterspørsel kan alle påvirke økonomien. Ingen av faktorene bør brukes alene som argument for å kjøpe eller vente.",
-          "For en norsk kjøper kan valutakursen være like viktig som en mindre endring i lokal boligpris. Regn derfor i både euro og kroner og test flere scenarier før beslutningen.",
-        ],
-        bullets: [
-          "Test økonomien med både sterkere og svakere euro.",
-          "Sammenlign finansieringstilbud på totalkostnad.",
-          "Beregn skatter, avgifter og løpende kostnader for den konkrete boligen.",
-        ],
-      },
-      {
-        heading: "Når det kan være riktig å vente",
-        body: [
-          "Det kan være fornuftig å vente dersom finansieringen ikke er avklart, du er usikker på område, du må selge bolig hjemme først, eller du ikke vet hvordan boligen skal brukes.",
-          "Å vente med en plan er noe annet enn å vente på en bestemt markedsbevegelse. Bruk tiden til å avklare budsjett, område, finansiering, juridisk struktur og beslutningskriterier.",
-        ],
-        bullets: [
-          "Vent hvis økonomien eller finansieringen ikke tåler uforutsette endringer.",
-          "Vent hvis du ikke har sett nok alternativer til å vite hva som er riktig pris og område.",
-          "Følg konkrete delmarkeder fremfor å forsøke å spå hele Spania.",
-        ],
-      },
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Det finnes gode grunner til å tro at boligtilbudet i Spania vil være presset også de neste årene. Det bygges ikke nok i forhold til etableringen av nye husholdninger, og dyrere energi, materialer og knapphet på arbeidskraft kan gjøre nye boliger kostbare å levere. Men ingen av disse forholdene betyr at prisene vil stige i alle områder.",
+      "Jeg mener derfor spørsmålet «kjøpe nå eller vente?» må handle om to ting samtidig: Hva forteller dokumenterte tall om markedet, og hva tåler din egen økonomi dersom utviklingen blir annerledes enn forventet? Det er særlig relevant for nordmenn som vurderer nybygg eller bruktbolig på Costa Blanca."
     ],
-    nextSteps: [
-      "Få finansieringsavklaring før du forelsker deg i en bolig.",
-      "Velg 2–3 aktuelle områder og sammenlign konkrete boliger der.",
-      "Beregn totalkostnad inkludert skatt, advokat, notar, valuta og løpende kostnader.",
-      "Lag en kjøpsstrategi: hva må være riktig for at du skal handle?",
+    "sections": [
+      {
+        "heading": "Bør du kjøpe bolig i Spania nå eller vente?",
+        "body": [
+          "Du bør verken kjøpe fordi du er redd for å gå glipp av prisvekst, eller vente bare fordi du håper på et generelt prisfall. Når boligen passer behovet, prisen kan forsvares mot sammenlignbare alternativer, og finansieringen har en god sikkerhetsmargin, kan det være fornuftig å kjøpe. Er du uavklart på økonomi eller område, kan det være riktig å vente.",
+          "Bak vurderingen ligger en reell utfordring: Spania har hatt sterk boligetterspørsel samtidig som nybyggingen reagerer tregt. Det skaper et mulig langsiktig prispress – ikke en garanti for avkastning eller en oppfordring til å handle raskt."
+        ]
+      },
+      {
+        "heading": "Hvorfor bygges det for få boliger i Spania?",
+        "body": [
+          "Spania har et strukturelt misforhold mellom hvor mange nye husholdninger som etableres og hvor mange nye boliger som ferdigstilles. Banco de España skriver i sin rapport 9. oktober 2026 at gapet har vokst over flere år. Flere igangsatte prosjekter løser ikke utfordringen umiddelbart fordi bygging, godkjenninger og ferdigstillelse tar tid.",
+          "Sentralbanken peker på mangel på fagarbeidere, langsomme reguleringsprosesser, begrenset tilgang på byggeklare tomter og økte byggekostnader. Derfor er det ikke nok å si at prisene har steget og at det dermed automatisk kommer et stort antall nye boliger.",
+          "Dette er en nasjonal vurdering. Den sier ikke at hver by eller hver boligtype på Costa Blanca har mangel. Ved kjøp bør du undersøke faktiske prosjekter, ferdigstillelser og tilgjengelige alternativer i akkurat ditt område. Kilde: [[Banco de España, rapport 9. oktober 2026|https://www.bde.es/wbe/es/publicaciones/analisis-economico-investigacion/proyecciones-macro-informe-trimestral/proyecciones-e-informe-trimestral-de-la-economia-espanola-tercer-trimestre-2026.html]]."
+        ]
+      },
+      {
+        "heading": "Hva viser de siste offisielle boligpristallene?",
+        "body": [
+          "Det nasjonale boligprisindeksen steg 12,2 % fra andre kvartal 2025 til andre kvartal 2026, ifølge INE. Nybygg steg 7,4 %, mens bruktboliger steg 12,9 % i samme periode. Tallene ble publisert 7. september 2026 og viser at prisveksten allerede har vært høy.",
+          "Dette er historiske tall, ikke forventet avkastning neste år. Et nasjonalt gjennomsnitt kan heller ikke brukes som prisestimat for en bestemt leilighet i Albir, en villa i Finestrat eller en bolig i Villajoyosa.",
+          "For å forstå en aktuell eiendom bør vi sammenligne boliger med tilsvarende standard, beliggenhet, solforhold og juridisk status, samt undersøke hva som faktisk er tilgjengelig. Kilde: [[INE, boligprisindeksen for andre kvartal 2026|https://www.ine.es/dyngs/Prensa/IPV2T26.htm]]."
+        ]
+      },
+      {
+        "heading": "Kan gjenoppbyggingen av Ukraina føre til høyere byggekostnader i Spania?",
+        "body": [
+          "Det er mulig, men ikke dokumentert som et sikkert prisutfall. Hvis en fredsavtale gjør at gjenoppbyggingen av Ukraina kan trappes vesentlig opp, kan mange store prosjekter konkurrere om stål, sement, kobber, isolasjon, maskiner, transport og kvalifisert arbeidskraft. Der produksjonskapasiteten allerede er presset, kan økt etterspørsel trekke prisene opp og forlenge leveringstidene.",
+          "Det er et betydelig behov: Verdensbanken, Ukrainas myndigheter, EU og FN anslo 23. februar 2026 gjenoppbyggings- og gjenreisningsbehovet til nesten 588 milliarder amerikanske dollar over ti år. Estimatet beskriver det samlede behovet, ikke en bestillingsliste som vil bli kjøpt inn på én gang. Gjenoppbygging pågår også allerede, og hvor raskt den kan øke avhenger blant annet av fred, finansiering, sikkerhet og kapasitet.",
+          "Like viktig er motkreftene: En varig fred kan over tid redusere enkelte energi- og transportrisikoer, frigjøre kapasitet og bedre handelsforbindelser. Leverandører kan øke produksjonen. Nettoeffekten på byggekostnader i Spania er derfor usikker. Kilde: [[Verdensbankens RDNA5-vurdering, februar 2026|https://www.worldbank.org/en/news/press-release/2026/02/23/updated-ukraine-recovery-and-reconstruction-needs-assessment-released]]."
+        ]
+      },
+      {
+        "heading": "Vil høyere byggekostnader automatisk gi dyrere boliger?",
+        "body": [
+          "Nei. Dyrere materialer og arbeidskraft kan øke kostnaden ved å bygge nye boliger, men salgsprisene styres også av hva kjøperne kan og vil betale, tomtepriser, finansieringskostnader, konkurranse og hvor stort boligtilbudet er.",
+          "Når utbyggere møter høyere byggekostnader, kan de forsøke å øke prisene, redusere marginene, endre prosjektene eller utsette byggestart. Færre nye boliger kan indirekte gi økt etterspørsel etter eksisterende boliger, men også bruktboligmarkedet påvirkes av renter, inntekter og lokale forhold.",
+          "Det er derfor mer presist å snakke om et mulig kostnads- og tilbudspress enn å hevde at fred i Ukraina nødvendigvis vil gjøre spanske eiendommer dyrere."
+        ]
+      },
+      {
+        "heading": "Tre mulige utviklinger for boligmarkedet i 2027–2030",
+        "body": [
+          "Fremtiden bør vurderes som scenarier, ikke som én sikker prognose. Alle tre utviklingene nedenfor er mulige, og ulike deler av Spania kan oppleve forskjellige utslag samtidig."
+        ],
+        "table": {
+          "headers": [
+            "Scenario",
+            "Hva kan drive utviklingen?",
+            "Mulig betydning for kjøperen"
+          ],
+          "rows": [
+            [
+              "Vedvarende knapphet og høye kostnader",
+              "Nye husholdninger vokser raskere enn boligtilbudet. Materialer, energi og arbeidskraft forblir kostbare.",
+              "Nye boliger kan bli vanskeligere å levere rimelig. Prispress kan vedvare i enkelte delmarkeder."
+            ],
+            [
+              "Mer nybygging og roligere kostnadsvekst",
+              "Flere prosjekter fullføres, kapasiteten øker og energikostnadene stabiliseres.",
+              "Utvalget kan bli større og prisveksten kan avta, men det er ikke gitt at alle boliger blir billigere."
+            ],
+            [
+              "Svakere etterspørsel eller dyrere finansiering",
+              "Renter, lavere kjøpekraft, svakere valuta eller usikker økonomi gjør færre kjøpere betalingsdyktige.",
+              "Enkelte boliger kan få lengre salgstid eller lavere priser, også om byggekostnadene er høye."
+            ]
+          ],
+          "caption": "Scenarioer, ikke sannsynlighetsberegninger eller prisprognoser fra Banco de España."
+        }
+      },
+      {
+        "heading": "Hva betyr dette for Costa Blanca – og hvilke områder bør sammenlignes?",
+        "body": [
+          "For Costa Blanca er det særlig viktig å skille mellom nasjonal boligmangel og tilbudet i det enkelte lokale markedet. Benidorm, Albir, Finestrat, Polop og Villajoyosa har ulike boligtyper, tomtesituasjoner, kjøpergrupper og prosjekter. En generell spansk prisprognose kan ikke erstatte vurderingen av den konkrete adressen.",
+          "Som eiendomsrådgiver på Costa Blanca Nord vil jeg undersøke hvor mange sammenlignbare boliger som faktisk er tilgjengelige, om prosjekter er under bygging eller bare planlagt, og om priser samsvarer med standard, solforhold og beliggenhet.",
+          "Begynn med [[områdeoversikten på Costa Blanca|/omrader]] og se deretter [[aktuelle boliger til salgs|/eiendommer]]. Unngå å ta beslutningen bare på grunnlag av annonserte «fra-priser», som kan gjelde andre enheter enn den du ønsker."
+        ]
+      },
+      {
+        "heading": "Hva er den økonomiske risikoen ved å vente ett år?",
+        "body": [
+          "Å vente kan gi en lavere kjøpesum dersom markedet faller, men det kan også gjøre at den ønskede boligen ikke lenger er tilgjengelig eller at kjøpesummen blir høyere. Ingen vet på forhånd hvilken effekt som blir størst.",
+          "Et regneeksempel viser forskjellen: En bolig til 350 000 euro ville koste 367 500 euro dersom prisen steg hypotetiske 5 %, altså 17 500 euro mer. Falt prisen i stedet 5 %, ville den koste 332 500 euro. Dette er to illustrasjoner – verken prognoser eller markedsestimat.",
+          "For en norsk kjøper kommer endringer i EUR/NOK, renter og tilgjengelige lånevilkår i tillegg. En prisnedgang i euro kan bli spist opp av en svakere norsk krone eller dyrere finansiering. Se [[hvordan boligkjøp i Spania kan finansieres|/guide/finansiere-bolig-i-spania]] før du sammenligner tidspunkt."
+        ]
+      },
+      {
+        "heading": "Når kan det være fornuftig å kjøpe nå?",
+        "body": [
+          "Det kan være fornuftig å kjøpe nå når formålet med boligen er klart, du planlegger å eie over tid, totalbudsjettet tåler uforutsette utgifter, finansieringen er avklart og det finnes en konkret bolig til en pris som kan begrunnes mot sammenlignbare alternativer.",
+          "Vurder spesielt om du faktisk vil bruke boligen de kommende årene, og om alternativkostnaden ved å utsette livet i Spania er viktig for deg. Den verdien er personlig og må ikke forveksles med forventet økonomisk avkastning.",
+          "Før reservasjon må en uavhengig advokat kontrollere dokumentasjon og avtalevilkår. Følg [[hele kjøpsprosessen i Spania|/guide/kjope-bolig-i-spania]] fremfor å la en markedsoverskrift styre signeringen."
+        ]
+      },
+      {
+        "heading": "Når er det bedre å vente med boligkjøpet?",
+        "body": [
+          "Det er bedre å vente når lånerammen er usikker, boligtype og område ikke er avklart, du mangler økonomisk buffer, eller du vurderer å kjøpe først og finne ut av bruken etterpå. Å vente med en plan er mer nyttig enn å vente på et vilkårlig prisfall.",
+          "Bruk tiden til å sammenligne områder, få finansieringsbekreftelse, undersøke løpende utgifter og lage en kortliste. Finn også ut hvilke konkrete forhold som må endre seg før du eventuelt kjøper: pris, rente, valutakurs, boligtilbud eller egne behov.",
+          "Det viktigste er ikke å treffe det perfekte tidspunktet i hele Spania, men å unngå et feilkjøp som blir kostbart og vanskelig å endre."
+        ]
+      }
     ],
-    faq: [
-      {
-        question: "Kommer boligprisene i Spania til å falle?",
-        answer:
-          "Det kan ingen vite sikkert på forhånd. Utviklingen varierer mellom regioner, byer, boligtyper og mikrobeliggenheter. Følg det konkrete delmarkedet du vurderer og sammenlign faktiske boliger.",
-      },
-      {
-        question: "Er 2026 et dårlig tidspunkt å kjøpe bolig i Spania?",
-        answer:
-          "Årstallet alene gir ikke svaret. Om tidspunktet er riktig for deg avhenger av økonomi, finansiering, tidshorisont, område og om den konkrete boligen gir mening sammenlignet med alternativene.",
-      },
-      {
-        question: "Hva er risikoen ved å vente?",
-        answer:
-          "Risikoen ved å vente er ikke bare mulig prisendring; valutakurs, renter, tilgjengelighet og egne planer kan også endre seg. Derfor bør du definere hvilke forhold som faktisk må være på plass før du kjøper.",
-      },
+    "nextSteps": [
+      "Velg to eller tre områder på Costa Blanca og sammenlign reelt tilgjengelige boliger i samme kategori.",
+      "Sett opp totalbudsjett i både euro og norske kroner, inkludert kjøpskostnader, finansiering og reserve.",
+      "Undersøk markedets tilbud og faktiske byggetrinn for nybyggprosjekter, ikke bare annonserte planer.",
+      "Vurder et kjøp først når en konkret eiendom passer økonomi og bruk – og juridisk kontroll er gjennomført."
     ],
-  },
+    "faq": [
+      {
+        "question": "Er det boligmangel i Spania i 2026?",
+        "answer": "Ja, Banco de España beskriver et økende gap mellom nye boliger og etableringen av husholdninger. Det er en nasjonal strukturell ubalanse, men graden av mangel varierer mellom byer, boligtyper og lokale delmarkeder."
+      },
+      {
+        "question": "Vil en fredsavtale mellom Russland og Ukraina gi høyere boligpriser i Spania?",
+        "answer": "Ikke nødvendigvis. Økt gjenoppbygging kan øke etterspørselen etter byggevarer og arbeidskraft, men en fredsavtale kan også dempe energirisiko og bedre forsyning. Nettoeffekten på spanske boligpriser er ukjent."
+      },
+      {
+        "question": "Kommer boligprisene i Spania til å falle i 2027?",
+        "answer": "Det finnes ingen sikker prognose for alle boliger i Spania. Utviklingen vil avhenge av lokal etterspørsel og tilbud, finansiering, byggekostnader og den konkrete boligen. Nasjonale historiske pristall sier ikke hva en enkelt eiendom vil koste neste år."
+      },
+      {
+        "question": "Er det tryggere å kjøpe nybygg enn bruktbolig når byggekostnadene stiger?",
+        "answer": "Ikke automatisk. Nybygg og bruktbolig har ulike risikoer. For nybygg bør du kontrollere betalingsplan, garantier, ferdigstillelse og utbygger. For bruktbolig må teknisk tilstand, juridiske forhold og vedlikehold vurderes. Sammenlign totalpris og risiko for den konkrete boligen."
+      },
+      {
+        "question": "Hvordan vet jeg om det er riktig å vente med å kjøpe bolig på Costa Blanca?",
+        "answer": "Vent dersom finansieringen, området eller boligbehovet ikke er avklart. Er planen tydelig, kan du vurdere konkrete boliger opp mot budsjett, tilgjengelighet og sammenlignbare priser uten å måtte spå hele markedet."
+      }
+    ],
+    "cta": {
+      "label": "Se boliger som passer budsjettet ditt",
+      "href": "/eiendommer"
+    }
+  },,
   {
     "slug": "finansiere-bolig-i-spania",
     "title": "Hvordan finansiere kjøp av bolig i Spania?",
