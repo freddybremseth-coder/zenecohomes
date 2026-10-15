@@ -1,3 +1,4 @@
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 "use client";
 
 import { useState } from "react";
@@ -51,7 +52,9 @@ export function CorporatePartnerLeadForm() {
         }),
       });
 
-      if (!response.ok) throw new Error("submit");
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.accepted !== true || !result?.submission_id) throw new Error("submit");
+      trackConfirmedFormSubmission("corporate-partner", result.submission_id);
       form.reset();
       setStatus("sent");
     } catch {
