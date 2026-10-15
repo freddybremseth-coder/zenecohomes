@@ -1,5 +1,7 @@
 "use client";
 
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
+
 import { useEffect, useRef, useState } from "react";
 import { FileText, Send } from "lucide-react";
 
@@ -145,6 +147,8 @@ export function CorporateLeadForm() {
 
       if (!response.ok) throw new Error("submit");
       const result = await response.json().catch(() => ({}));
+      if (result?.accepted !== true || !result?.submission_id) throw new Error("not accepted");
+      trackConfirmedFormSubmission("corporate-home-decision-note", result.submission_id);
       const delivery = result?.corporateDecisionNote?.delivery;
       form.reset();
       setUserCount("");
