@@ -83,6 +83,17 @@ for (const source of ["https://sede.registradores.org/site/propiedad?lang=es", "
   requireText(advisorArticle, source, "advisor article official source");
 }
 
+const portalsArticle = "src/lib/magazine.ts";
+requireText(portalsArticle, '"slug": "idealista-finn-ikke-alltid-til-a-stole-pa"', "portal listings and duplicates article");
+requireText(portalsArticle, '"updated": "2026-10-15"', "portal article revision date");
+requireText(articleViewForEditorial, 'article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa"', "portal article inline link rendering");
+for (const href of ["/magasin/hvorfor-god-eiendomsradgiver-er-viktig", "/magasin/det-du-ikke-ser-i-boligannonsen", "/visningstur", "/eiendommer", "/guide/kjope-bolig-i-spania"]) {
+  requireText(portalsArticle, `|${href}]]`, "portal article contextual links");
+}
+for (const source of ["https://www.idealista.com/tools/centrodeayuda/articulos/control-duplicados/", "https://www.finn.no/eiendom/prisoversikt/2026"]) {
+  requireText(portalsArticle, source, "portal article independent source");
+}
+
 const properties = "src/app/eiendommer/page.tsx";
 for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen", "/visningstur"]) {
   requireText(properties, `href="${href}"`, "property-list internal link");

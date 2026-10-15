@@ -1163,7 +1163,7 @@ export function ArticleView({ article }: { article: Article }) {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig") && paragraph.includes("[[")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
                           {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {

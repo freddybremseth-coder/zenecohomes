@@ -496,107 +496,188 @@ export const extraArticles: Article[] = [
     }
   },
   {
-    slug: "idealista-finn-ikke-alltid-til-a-stole-pa",
-    title: "Hvorfor Idealista og Finn.no ikke alltid er til å stole på",
-    excerpt:
-      "Boligportaler kan gi et nyttig førsteinntrykk, men utdaterte annonser, duplikater og lokkeannonser kan gi feil bilde av markedet i Spania.",
-    date: "2026-05-10",
-    updated: "2026-05-10",
-    category: "Marked",
-    readingTime: "8 min lesing",
-    image: "/assets/magasin-covers/boligportaler.svg",
-    imageAlt: "Illustrasjon av boligportaler, annonser og markedsoversikt for eiendom i Spania",
-    seoTitle: "Idealista og Finn.no i Spania | Dette bør du sjekke",
-    seoDescription:
-      "Idealista og Finn.no kan være nyttige, men annonser i Spania kan være utdaterte, dupliserte eller misvisende. Slik får du et bedre markedsbilde.",
-    keywords: [
+    "slug": "idealista-finn-ikke-alltid-til-a-stole-pa",
+    "title": "Idealista og FINN.no: Hvor mange boliger er egentlig til salgs?",
+    "excerpt": "Mange boligannonser betyr ikke nødvendigvis mange forskjellige, tilgjengelige boliger. Her forklarer jeg hvorfor – og hvordan du finner en rådgiver som kjenner boligen, ikke bare annonsen.",
+    "date": "2026-05-10",
+    "updated": "2026-10-15",
+    "category": "Rådgivning",
+    "readingTime": "9 min lesing",
+    "image": "/assets/magasin-covers/boligportaler.svg",
+    "imageAlt": "Illustrasjon av boligannonser på nett og dupliserte oppføringer for boliger i Spania",
+    "seoTitle": "Idealista og FINN.no i Spania: Unngå duplikatannonser",
+    "seoDescription": "Samme bolig kan annonseres av ti meglere, og annonser kan være utdaterte. Slik bruker du Idealista og FINN.no smart og velger en rådgiver som kjenner boligen.",
+    "keywords": [
       "Idealista Spania",
-      "Finn.no bolig Spania",
-      "boligannonser Spania",
-      "kjøpe bolig Spania portal",
-      "spansk eiendomsmarked annonser",
+      "FINN.no bolig i Spania",
+      "duplikatannonser bolig Spania",
+      "boliger til salgs Costa Blanca",
+      "megler Spania annonser",
+      "eiendomsrådgiver Costa Blanca"
     ],
-    intro: [
-      "Mange norske kjøpere starter på Idealista, Finn.no eller andre boligportaler. Det er helt naturlig. Portalene gir inspirasjon, oversikt og en følelse av prisnivå. Problemet er at de ikke alltid viser det reelle markedet.",
-      "I Spania kan samme bolig ligge ute flere ganger, gamle annonser kan bli liggende lenge, og enkelte annonser brukes som lokkemiddel for å få inn nye leads. Derfor bør portalene brukes som research – ikke som fasit.",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-freddy"
+    },
+    "intro": [
+      "Et søk på Idealista eller FINN.no kan gi inntrykk av at det finnes hundrevis av aktuelle boliger i et område. Men antall annonser er ikke det samme som antall unike boliger som faktisk kan kjøpes. Én bolig kan markedsføres av flere meglere, andre kan være reservert eller solgt, og enkelte annonser mangler oppdatert informasjon.",
+      "Jeg bruker gjerne portalene for å finne interessante alternativer. Problemet oppstår når kjøperen tror at annonsen er en bekreftelse på tilgjengelighet – eller at personen bak den kjenner boligen og området i detalj. I det spanske markedet er det ofte klokere å velge en god rådgiver først og deretter undersøke boligene."
     ],
-    sections: [
+    "sections": [
       {
-        heading: "Hvordan annonseringen fungerer i Spania",
-        body: [
-          "Det spanske meglersystemet er annerledes enn det norske. Flere meglere kan markedsføre samme eiendom, og en bolig kan dukke opp med ulike bilder, ulike tekster og noen ganger ulike priser.",
-          "Det betyr at antallet annonser på en portal ikke nødvendigvis betyr at det finnes like mange unike boliger til salgs.",
+        "heading": "Hvorfor betyr ikke 500 boligannonser at 500 boliger er ledige?",
+        "body": [
+          "Fordi en portal normalt teller annonser, ikke nødvendigvis unike eiendommer med bekreftet tilgjengelighet. Hvis den samme leiligheten markedsføres av ti meglere, kan den gi ti treff selv om det bare finnes én leilighet. Og dersom noen annonser ikke er oppdatert etter reservasjon eller salg, blir det reelle utvalget mindre enn trefflisten antyder.",
+          "Dette er ikke bare min erfaring fra det spanske markedet. Idealista tilbyr selv en egen tjeneste som oppdager samme bolig annonsert av forskjellige meglere eller på forskjellige portaler. Det dokumenterer at duplikater er en reell utfordring, men sier ikke hvor stor andel av alle boligannonser som er duplisert.",
+          "[[Idealistas egen forklaring av duplikatkontroll|https://www.idealista.com/tools/centrodeayuda/articulos/control-duplicados/]] beskriver både hvordan like annonser oppdages og hvordan prisendringer og fjerning av annonser kan overvåkes."
         ],
-        bullets: [
-          "Samme bolig kan ha flere annonser fra forskjellige meglere.",
-          "Meglere kan annonsere boliger de ikke har eksklusiv salgsrett til.",
-          "Gamle annonser kan bli liggende etter at boligen er solgt eller reservert.",
-          "Pris og tilgjengelighet må alltid bekreftes før visning eller beslutning.",
-        ],
+        "bullets": [
+          "Flere annonser kan vise nøyaktig den samme boligen.",
+          "Samme prosjekt kan markedsføres med forskjellige bilder, enhetsnumre og fra-priser.",
+          "En annonse kan ligge synlig uten at tilgjengeligheten nylig er kontrollert.",
+          "Antall søkeresultater er derfor ikke et pålitelig mål på antall kjøpsklare eiendommer."
+        ]
       },
       {
-        heading: "Problemet med utdaterte annonser",
-        body: [
-          "Et vanlig scenario er at du finner en attraktiv bolig, tar kontakt og får beskjed om at den dessverre er solgt – men at megleren har noe annet som kan passe. Noen ganger er dette uskyldig fordi markedet går raskt. Andre ganger brukes attraktive annonser mer bevisst som leadfangst.",
-          "Konsekvensen er at kjøpere bruker tid på boliger som ikke er tilgjengelige, og samtidig får et feil bilde av prisnivået.",
-        ],
-        bullets: [
-          "Du kan tro det finnes flere gode boliger enn det faktisk gjør.",
-          "Gamle priser kan få dagens marked til å se billigere ut enn det er.",
-          "Du kan bruke tid på feil objekter og feil område.",
-          "Du kan bli ledet inn i en salgsprosess uten reell kontroll på markedet.",
-        ],
+        "heading": "Hvordan fungerer FINNs annonsepriser for boliger i utlandet?",
+        "body": [
+          "FINN tilbyr profesjonell annonsering av boliger i utlandet med pristrinn etter annonsevolum. I FINNs offentlige prisliste for 2026 er det et lavere annonseprisnivå ved 500 eller flere annonser enn ved 1–10 annonser. Det gjør storskala annonsering økonomisk annerledes enn å legge ut bare noen få utvalgte eiendommer.",
+          "Det betyr ikke at alle store annonsører har kjøpt en fast «pakke på 500 boliger» eller at annonsene oppdateres tilfeldig. Men det viser hvorfor antall annonser i seg selv ikke sier noe sikkert om hvor grundig hvert objekt er kontrollert. En stor portefølje kan også være et verktøy for å skape henvendelser om andre boliger.",
+          "[[Se FINNs offisielle prisliste for eiendom i utlandet, 2026|https://www.finn.no/eiendom/prisoversikt/2026]]. Prisene og vilkårene kan endres, så daterte prislister må ikke brukes som evigvarende satser."
+        ]
       },
       {
-        heading: "Det spanske markedet har endret seg",
-        body: [
-          "I attraktive områder selges gode prosjekter ofte tidlig, noen ganger før ferdigstillelse eller tidlig i byggefasen. Det betyr at de beste boligene ikke alltid rekker å bli synlige lenge på åpne portaler.",
-          "Samtidig har mange nordmenn vært avventende på grunn av renter, kronekurs og økonomisk usikkerhet. Andre europeiske kjøpere har i flere områder vært mer aktive, noe som har bidratt til konkurranse om de beste objektene.",
-        ],
-        bullets: [
-          "Attraktive boliger kan selges raskt.",
-          "Nybyggprosjekter kan få prisøkninger mellom salgsfaser.",
-          "Portaler viser ofte historikk og annonser, ikke nødvendigvis reell tilgjengelighet akkurat nå.",
-          "Et godt kjøp krever oppdatert lokal informasjon, ikke bare portalsøk.",
-        ],
+        "heading": "Hvorfor kan en boligannonse bli liggende etter at boligen er solgt?",
+        "body": [
+          "En annonse kan bli stående fordi annonsøren ennå ikke har fått salgsinformasjonen, fordi flere formidlere ikke oppdaterer samtidig, eller fordi markedsføringen ikke blir fulgt godt nok opp. At en annonse fortsatt er synlig, beviser verken at boligen er ledig eller at annonsøren bevisst villede kjøperen.",
+          "Jeg kjenner også til arbeidsmåter der en megler betaler for annonsering eller markedsføringskapasitet for en lengre periode. Når utgiften allerede er påløpt, kan det oppleves mindre viktig å erstatte eller avslutte en annonse raskt, samtidig som synlighet fortsatt kan gi nye kundehenvendelser. Men kontraktens varighet, eventuell refusjon og rutiner for fjerning varierer.",
+          "Jeg vil derfor ikke hevde at FINN generelt har en ufravikelig 12-månedersregel eller at ingen får penger tilbake ved tidlig salg. Det er ikke dokumentert i den åpne prislisten og må kontrolleres mot annonsørens faktiske avtale. For deg som boligkjøper er poenget enklere: Be alltid om fersk bekreftelse på status."
+        ]
       },
       {
-        heading: "Hvordan få et riktig markedsbilde",
-        body: [
-          "Bruk portaler til å lære deg områder, boligtyper og omtrentlige prisnivåer. Men før du planlegger visning eller vurderer bud, bør tilgjengelighet og pris bekreftes av en lokal rådgiver eller seriøs megler.",
-          "En god rådgiver kan skille mellom reelle muligheter, duplikater, gamle annonser og boliger som er overpriset i forhold til markedet.",
-        ],
-        bullets: [
-          "Be om bekreftelse på at boligen faktisk er tilgjengelig.",
-          "Sammenlign flere boliger i samme område og standard.",
-          "Ikke bruk gamle portalpriser som eneste grunnlag for budsjett.",
-          "Få hjelp av noen som kjenner det konkrete delmarkedet du vurderer.",
-        ],
+        "heading": "Hvordan kan den samme spanske boligen ligge ute hos ti meglere?",
+        "body": [
+          "Mange boliger i Spania markedsføres uten at én megler har eksklusiv rett til salget. Selger eller utbygger kan bruke flere samarbeidspartnere, og eiendommen kan deles gjennom meglersamarbeid og prosjektporteføljer. Da kan den samme boligen dukke opp med ulike bilder, beskrivelser eller priser.",
+          "En bolig annonsert av ti forskjellige meglere er et illustrerende eksempel, ikke en opptelling av en bestemt portal. Ulike annonsepriser kan skyldes at informasjon oppdateres til ulike tider, ulike inkluderte ytelser eller feil. Det betyr ikke automatisk at kjøperen kan velge den laveste prisen uten å undersøke hva som faktisk selges.",
+          "Ikke alle eiendommer er åpne for alle formidlere. Eksklusive oppdrag, utbyggeravtaler, tilgang og eksisterende kunderegistreringer kan begrense hvem som kan bistå. En god rådgiver bør undersøke samarbeidsmulighetene før han eller hun lover en visning."
+        ]
       },
+      {
+        "heading": "Hvorfor bør du velge rådgiver før du velger meglerannonsen?",
+        "body": [
+          "Fordi det avgjørende er hvem som hjelper deg å forstå markedet, undersøke tilgjengelighet, vurdere pris og risiko og koordinere kjøpet. Annonsøren er ikke nødvendigvis den som kjenner boligen best eller den eneste som kan formidle den.",
+          "Jeg mener en boligkjøper først bør finne en rådgiver som tar seg tid til behovene, kjenner nærområdet og er villig til å anbefale noe annet dersom den første annonsen ikke passer. Send deretter aktuelle lenker fra Idealista, FINN.no eller andre portaler til denne rådgiveren og få undersøkt hvilke av boligene som faktisk kan vises.",
+          "Samtidig må du avklare hvem rådgiveren representerer, hvordan vedkommende får betalt og om samarbeid med annonsøren er mulig. [[Slik velger du en god eiendomsrådgiver i Spania|/magasin/hvorfor-god-eiendomsradgiver-er-viktig]] går gjennom spørsmålene du bør stille."
+        ]
+      },
+      {
+        "heading": "Har megleren som annonserer et nybygg nødvendigvis besøkt prosjektet?",
+        "body": [
+          "Nei. En annonse kan være publisert fra en felles prosjektkatalog, et markedssystem eller utbyggers salgsinformasjon uten at den enkelte annonsøren selv har besøkt tomten eller sett den konkrete enheten. Det er ikke i seg selv uprofesjonelt å videreformidle et prosjekt, men rådgiveren bør være ærlig om hva han eller hun faktisk vet.",
+          "Min erfaring er at enkelte annonsører først må hente inn grunnleggende prosjektinformasjon når en kunde viser interesse. For kjøperen kan det være frustrerende dersom man forventet å snakke med en lokalkjent ekspert. Dette er en praktisk observasjon, ikke grunnlag for å si at de fleste nybyggannonsører aldri har vært på stedet.",
+          "En seriøs rådgiver bør skille mellom opplysninger fra utbygger, det han eller hun selv har kontrollert, og forhold som fortsatt er uavklarte. Før du reiser på visning, be om svar på punktene under."
+        ],
+        "bullets": [
+          "Hvilken blokk, etasje og konkret enhet gjelder annonsen?",
+          "Er denne enheten ledig i dag, og når ble status bekreftet hos utbygger?",
+          "Har rådgiveren besøkt tomten eller prosjektet – og når?",
+          "Hva viser en oppdatert prisliste og godkjent plantegning?",
+          "Hva er inkludert i prisen, og hva kommer i tillegg?",
+          "Når er forventet ferdigstillelse, og hvilke garantier og avtalevilkår gjelder?"
+        ]
+      },
+      {
+        "heading": "Hvordan ser du om en boligannonse er duplisert eller utdatert?",
+        "body": [
+          "Begynn med adresse, kartposisjon, byggnavn, planløsning, terrasseareal og bildedetaljer. Når flere annonser ligner, kan de gjelde samme eiendom selv om bilder, annonsetittel og pris er forskjellige.",
+          "Ikke anta at en annonse er feil bare fordi den ligner en annen. I et nybyggprosjekt kan like plantegninger også gjelde ulike enheter. Få bekreftet referanse eller enhetsnummer hos formidler eller utbygger før du konkluderer.",
+          "Bruk denne enkle sjekklisten når du finner en bolig du vil undersøke:"
+        ],
+        "table": {
+          "headers": [
+            "Dette ser du i annonsen",
+            "Dette bør du spørre om",
+            "Hvorfor"
+          ],
+          "rows": [
+            [
+              "Samme bilder hos flere meglere",
+              "Gjelder det nøyaktig samme enhet?",
+              "Én bolig kan være talt flere ganger."
+            ],
+            [
+              "Prisen er forskjellig",
+              "Hva er oppdatert pris hos eier eller utbygger?",
+              "Tall kan være gamle eller gjelde forskjellig leveranse."
+            ],
+            [
+              "«Fra-pris» på nybygg",
+              "Hvilken enhet er faktisk ledig til den prisen?",
+              "Inngangsprisen er ikke nødvendigvis tilgjengelig."
+            ],
+            [
+              "Annonse publisert lenge",
+              "Når ble tilgjengelighet bekreftet?",
+              "Synlig annonse er ikke bevis på salgsstatus."
+            ],
+            [
+              "Flott utsikt og mange bilder",
+              "Er bildene fra akkurat denne boligen?",
+              "Prosjektbilder og illustrasjoner kan avvike fra konkret enhet."
+            ]
+          ],
+          "caption": "Praktiske kontrollspørsmål – ikke en rangering av de enkelte boligportalene."
+        }
+      },
+      {
+        "heading": "Hva bør være bekreftet før du reiser til Spania på visning?",
+        "body": [
+          "Før du kjøper flybilletter eller legger opp en tett visningsdag, bør du ha en kortliste med boliger som er sjekket for tilgjengelighet, pris, adresse og grunnleggende dokumentasjon. Ved nybygg må vi også vite hvilken konkret enhet som skal vises, ikke bare hvilket prosjekt annonsen gjelder.",
+          "Jeg foretrekker færre, bedre forberedte visninger framfor at vi fyller dagen med annonser som viser seg å være solgt eller uaktuelle. Et realistisk og oppdatert utvalg gir bedre mulighet til å sammenligne beliggenhet, byggekvalitet og totalbudsjett.",
+          "Les gjerne [[hva du ikke ser i boligannonsen|/magasin/det-du-ikke-ser-i-boligannonsen]] og [[hvordan vi planlegger visningstur på Costa Blanca|/visningstur]]."
+        ]
+      },
+      {
+        "heading": "Er Idealista og FINN.no nyttige når du skal kjøpe bolig i Spania?",
+        "body": [
+          "Ja. Portalene er nyttige for å oppdage områder, prisantydninger, boligtyper og prosjekter. Kritikken handler ikke om at alle annonser er upålitelige, men om at et søkeresultat ikke er en kvalitetssikret oversikt over unike, ledige eiendommer.",
+          "Den beste fremgangsmåten er å bruke portalene til å finne muligheter, og deretter bruke lokalkunnskap, oppdatert informasjon og juridisk kontroll til å avgjøre hvilke som faktisk er aktuelle.",
+          "Når behov og område er avklart, kan du [[se aktuelle boliger på Costa Blanca|/eiendommer]] og lese [[hele kjøpsprosessen i Spania|/guide/kjope-bolig-i-spania]] før du eventuelt reserverer."
+        ]
+      }
     ],
-    nextSteps: [
-      "Bruk Idealista og Finn.no som inspirasjon, ikke som endelig fasit.",
-      "Send aktuelle boliger til rådgiver for kontroll av tilgjengelighet og prisnivå.",
-      "Velg område og budsjett før du bruker tid på mange enkeltannonser.",
-      "Få oppdatert shortlist med reelle boliger før du bestiller visningstur.",
+    "nextSteps": [
+      "Bruk Idealista og FINN.no til å utforske boliger, men ikke bruk antall annonser som antall tilgjengelige eiendommer.",
+      "Velg en rådgiver som kan forklare området, kontrollere konkret enhet og si hva vedkommende selv har verifisert.",
+      "Send over en kortliste og be om oppdatert pris, status og referanse/enhetsnummer før visning.",
+      "Få avklart meglerens rolle og godtgjørelse, og bruk uavhengig advokat før bindende avtaler."
     ],
-    faq: [
+    "faq": [
       {
-        question: "Kan jeg stole på boligannonser på Idealista?",
-        answer:
-          "Idealista er nyttig for research, men du bør alltid bekrefte tilgjengelighet, pris og dokumentasjon før du går videre. Annonser kan være utdaterte eller dupliserte.",
+        "question": "Hvorfor finner jeg samme bolig hos mange meglere i Spania?",
+        "answer": "Fordi mange boliger kan formidles gjennom flere ikke-eksklusive salgsoppdrag eller samarbeid. De ulike annonsene kan gjelde én og samme eiendom, og det er viktig å kontrollere referanse, pris og tilgjengelighet."
       },
       {
-        question: "Hvorfor ligger solgte boliger fortsatt ute?",
-        answer:
-          "Noen annonser blir ikke fjernet raskt nok. I andre tilfeller brukes attraktive annonser for å få kontakt med kjøpere, selv om den konkrete boligen ikke lenger er tilgjengelig.",
+        "question": "Kan jeg stole på antall boliger som vises på Idealista og FINN.no?",
+        "answer": "Tallene viser annonser, ikke nødvendigvis unike eiendommer som er ledige. Duplikater og utdaterte annonser kan gjøre antallet misvisende. Be om en bekreftet oversikt før visning."
       },
       {
-        question: "Hvordan finner jeg reelle boliger til salgs i Spania?",
-        answer:
-          "Kombiner portalsøk med lokal rådgiver eller megler som kan bekrefte tilgjengelighet, hente oppdatert informasjon og foreslå alternativer som faktisk er til salgs.",
+        "question": "Har FINN en ettårspakke for utenlandsboliger som ikke kan refunderes?",
+        "answer": "FINNs åpne prisliste for 2026 viser volumavhengige annonsepriser, men dokumenterer ikke at alle annonser er bundet til tolv måneder uten refusjon. Avtaleperioder og refusjonsvilkår må avklares i den konkrete bedriftsavtalen."
       },
+      {
+        "question": "Kan jeg bruke min egen rådgiver selv om jeg fant boligen hos en annen megler?",
+        "answer": "Ofte kan det undersøkes, men det avhenger av selgerens avtaler, meglersamarbeidet og eventuell kunderegistrering. Det er ikke slik at alle meglere automatisk kan formidle alle boliger."
+      },
+      {
+        "question": "Hvordan vet jeg om en nybyggannonse gjelder en ledig leilighet?",
+        "answer": "Be om prosjekt, blokk, etasje, enhetsnummer, oppdatert pris og skriftlig tilgjengelighet fra utbygger eller autorisert formidler. Prosjektbilder og fra-priser bekrefter ikke at akkurat den enheten er ledig."
+      }
     ],
+    "cta": {
+      "label": "Få hjelp til å vurdere aktuelle boliger",
+      "href": "/booking"
+    }
   },
   {
     slug: "hva-far-du-for-4-6-8-10-millioner-costa-blanca",
