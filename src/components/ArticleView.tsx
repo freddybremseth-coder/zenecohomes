@@ -836,30 +836,25 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     },
   ],
   "7-dyre-feil-nordmenn-bolig-spania": [
-    {
-      headingIncludes: "velger bolig",
-      links: [
-        { label: "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
-      ],
-    },
-    {
-      headingIncludes: "totalramme",
-      links: [
-        { label: "Slik lager du et realistisk totalbudsjett", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
-      ],
-    },
-    {
-      headingIncludes: "boligportaler",
-      links: [
-        { label: "Hvorfor Idealista og Finn ikke alltid er fasit", href: "/magasin/idealista-finn-ikke-alltid-til-a-stole-pa" },
-      ],
-    },
-    {
-      headingIncludes: "valuta",
-      links: [
-        { label: "Slik påvirker eurokursen budsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
-      ],
-    },
+    { headingIncludes: "velger område", links: [
+      { label: "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
+    ]},
+    { headingIncludes: "totalbudsjett", links: [
+      { label: "Beregn totalbudsjettet før du kjøper", href: "/magasin/bolig-500000-euro-totalbudsjett-spania" },
+      { label: "Se kjøpskostnader ved boligkjøp i Spania", href: "/guide/kostnader-boligkjop-spania" },
+    ]},
+    { headingIncludes: "boligannonser", links: [
+      { label: "Hvorfor Idealista og Finn ikke alltid er fasit", href: "/magasin/idealista-finn-ikke-alltid-til-a-stole-pa" },
+    ]},
+    { headingIncludes: "reserverer boligen", links: [
+      { label: "Juridiske fallgruver ved boligkjøp i Spania", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+    ]},
+    { headingIncludes: "valutakurs", links: [
+      { label: "Slik påvirker eurokursen boligbudsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
+    ]},
+    { headingIncludes: "kjøpe boligen etter deg", links: [
+      { label: "Hva gjør en bolig lettere å selge igjen?", href: "/magasin/bolig-som-er-lett-a-selge-igjen-spania" },
+    ]},
   ],
 
   "havutsikt-eller-gangavstand-costa-blanca": [
