@@ -1,3 +1,4 @@
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 "use client";
 
 import { useRef, useState } from "react";
@@ -222,7 +223,9 @@ export function ContactForm({
         form_started_at: startedAtRef.current,
       }),
     });
-    if (res.ok) {
+    const result = await res.json().catch(() => null);
+    if (res.ok && result?.accepted === true && result?.submission_id) {
+      trackConfirmedFormSubmission(requestType, result.submission_id);
       setStatus("sent");
       form.reset();
       startedAtRef.current = Date.now();
