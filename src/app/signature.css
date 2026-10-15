@@ -3037,3 +3037,137 @@
 .buying-process-portraits-images img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:8px}
 .buying-process-portraits-images img:last-child{aspect-ratio:4/5;margin-bottom:22px}
 @media(max-width:760px){.buying-process-portraits{grid-template-columns:1fr}.buying-process-portraits-images{max-width:560px}}
+
+
+/* Buyer guide only: the timeline has no second sidebar. Preserve the standard
+   two-column process layout on /kjopsprosessen. */
+.cornerstone-guide #kjopsprosess .process-editorial {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 900px;
+  gap: 0;
+}
+
+.cornerstone-guide #kjopsprosess .process-row > div {
+  min-width: 0;
+}
+
+.cornerstone-guide #kjopsprosess .process-row p + p {
+  margin-top: 13px;
+}
+
+.cornerstone-guide #kjopsprosess .process-row .article-bullets {
+  margin: 16px 0 18px;
+}
+
+.cornerstone-guide #kjopsprosess .process-row .article-bullets + p {
+  margin-top: 12px;
+}
+
+/* Keep the comparison readable across wide desktop and narrow phone screens. */
+.cornerstone-guide .buy-guide-comparison {
+  max-width: 100%;
+  border: 1px solid var(--ze-line);
+  border-radius: 12px;
+  box-shadow: var(--ze-shadow-soft);
+}
+
+.cornerstone-guide .buy-guide-comparison table {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  table-layout: fixed;
+}
+
+.cornerstone-guide .buy-guide-comparison thead th:first-child {
+  width: 26%;
+}
+
+.cornerstone-guide .buy-guide-comparison tbody th {
+  padding: 15px 16px;
+  border-bottom: 1px solid rgba(22, 34, 43, 0.1);
+  color: var(--ze-ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.55;
+  text-align: left;
+  text-transform: none;
+  vertical-align: top;
+}
+
+.cornerstone-guide #vanlige-feil .mistakes-more {
+  max-width: 75ch;
+  margin-top: 28px;
+  line-height: 1.7;
+}
+
+.cornerstone-guide #vanlige-feil .mistakes-more a {
+  color: var(--ze-sea);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .cornerstone-guide #kjopsprosess .process-row {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 22px 0;
+  }
+
+  .cornerstone-guide .buy-guide-comparison {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .cornerstone-guide .buy-guide-comparison table,
+  .cornerstone-guide .buy-guide-comparison tbody,
+  .cornerstone-guide .buy-guide-comparison tr {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cornerstone-guide .buy-guide-comparison thead {
+    display: none;
+  }
+
+  .cornerstone-guide .buy-guide-comparison tbody tr {
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--ze-line);
+    border-radius: 10px;
+    background: white;
+  }
+
+  .cornerstone-guide .buy-guide-comparison tbody th,
+  .cornerstone-guide .buy-guide-comparison tbody td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    overflow-wrap: anywhere;
+  }
+
+  .cornerstone-guide .buy-guide-comparison tbody th {
+    background: rgba(244, 240, 231, 0.8);
+    font-size: 1rem;
+  }
+
+  .cornerstone-guide .buy-guide-comparison tbody td:last-child {
+    border-bottom: 0;
+  }
+
+  .cornerstone-guide .buy-guide-comparison tbody td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 3px;
+    color: var(--ze-sea);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+  }
+}
