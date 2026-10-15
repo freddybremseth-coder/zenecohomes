@@ -94,6 +94,37 @@ for (const source of ["https://www.idealista.com/tools/centrodeayuda/articulos/c
   requireText(portalsArticle, source, "portal article independent source");
 }
 
+
+const mergedBudgetSlug = "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca";
+const removedBudgetSlug = "/magasin/bolig-500000-euro-totalbudsjett-spania";
+if (!hasRedirect(removedBudgetSlug, mergedBudgetSlug)) {
+  errors.push("next.config.ts: missing permanent article consolidation redirect");
+}
+const budgetArticleSource = read("src/lib/magazine.ts");
+if (budgetArticleSource.includes('slug: "bolig-500000-euro-totalbudsjett-spania"') ||
+    budgetArticleSource.includes('"slug": "bolig-500000-euro-totalbudsjett-spania"')) {
+  errors.push("src/lib/magazine.ts: duplicate 500k budget article must be removed");
+}
+for (const required of [
+  '"slug": "hva-far-du-for-4-6-8-10-millioner-costa-blanca"',
+  '"updated": "2026-10-15"',
+  "500 000 euro",
+  "9 % ITP",
+  "1,4 % AJD",
+  "552 500",
+  "564 500",
+  "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-11959",
+  "https://sede.agenciatributaria.gob.es/Sede/iva/iva-operaciones-inmobiliarias/compro-vivienda-tengo-que-pagar-itp.html",
+]) {
+  requireText("src/lib/magazine.ts", required, "consolidated NOK budget and 500k euro buyer article");
+}
+requireText(articleViewForEditorial, 'article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca"', "consolidated budget calculator and inline links");
+if (read("src/app/magasin/page.tsx").includes(removedBudgetSlug) ||
+    read(articleViewForEditorial).includes(removedBudgetSlug)) {
+  errors.push("article or magazine view: internal link still points to removed budget article");
+}
+requireText("src/app/magasin/page.tsx", `${mergedBudgetSlug}#boligbudsjett-kalkulator`, "magazine hero calculator link on merged article");
+
 const properties = "src/app/eiendommer/page.tsx";
 for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen", "/visningstur"]) {
   requireText(properties, `href="${href}"`, "property-list internal link");
