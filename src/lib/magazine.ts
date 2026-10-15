@@ -1229,8 +1229,8 @@ export const extraArticles: Article[] = [
     readingTime: "10 min lesing",
     image: "/assets/magasin-covers/juridisk.svg",
     imageAlt: "Sjekkliste med viktige kontrollpunkter før boligkjøp i Spania",
-    seoTitle: "7 dyre feil ved boligkjøp i Spania – og hvordan du unngår dem",
-    seoDescription: "Skal du kjøpe bolig i Spania? Unngå syv vanlige og kostbare feil med områdevalg, budsjett, reservasjon, juridisk kontroll og videresalg.",
+    seoTitle: "7 dyre feil ved boligkjøp i Spania – slik unngår du dem",
+    seoDescription: "Skal du kjøpe bolig i Spania? Unngå syv vanlige og kostbare feil med områdevalg, totalbudsjett, reservasjon, juridisk kontroll og senere videresalg.",
     keywords: [
       "feil ved boligkjøp i Spania",
       "kjøpe bolig i Spania",
