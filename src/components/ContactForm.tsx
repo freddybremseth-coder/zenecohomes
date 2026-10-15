@@ -1,5 +1,7 @@
 "use client";
 
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
+
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
@@ -222,7 +224,9 @@ export function ContactForm({
         form_started_at: startedAtRef.current,
       }),
     });
-    if (res.ok) {
+    const result = await res.json().catch(() => null);
+    if (res.ok && result?.accepted === true && result?.submission_id) {
+      trackConfirmedFormSubmission(requestType, result.submission_id);
       setStatus("sent");
       form.reset();
       startedAtRef.current = Date.now();

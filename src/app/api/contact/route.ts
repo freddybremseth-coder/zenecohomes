@@ -295,7 +295,7 @@ export async function POST(request: Request) {
     const spamReason = contactSpamReason(body);
     if (spamReason) {
       console.warn("[contact] blocked suspected spam:", spamReason);
-      return contactJson(request, { ok: true });
+      return contactJson(request, { ok: false, accepted: false });
     }
 
     if (isContactRateLimited(request)) {
@@ -364,6 +364,8 @@ export async function POST(request: Request) {
     ]);
     return contactJson(request, {
       ok: true,
+      accepted: true,
+      submission_id: crypto.randomUUID(),
       corporateDecisionNote: leadResult?.corporateDecisionNote || null,
     });
   } catch (error) {
