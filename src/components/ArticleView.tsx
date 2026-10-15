@@ -670,22 +670,6 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
 };
 
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
-  "det-du-ikke-ser-i-boligannonsen": [
-    {
-      headingIncludes: "hverdagen ikke passer",
-      links: [
-        { label: "Sammenlign områdene før du velger bolig", href: "/omrader" },
-        { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
-      ],
-    },
-    {
-      headingIncludes: "færre og bedre visninger",
-      links: [
-        { label: "Slik planlegger vi en visningstur", href: "/visningstur" },
-        { label: "Se boliger til salgs i Spania", href: "/eiendommer" },
-      ],
-    },
-  ],
   "hva-far-du-for-4-6-8-10-millioner-costa-blanca": [
     {
       headingIncludes: "4 millioner",
@@ -1193,7 +1177,7 @@ export function ArticleView({ article }: { article: Article }) {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.includes("[[")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
                           {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
