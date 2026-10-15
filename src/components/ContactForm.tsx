@@ -1,5 +1,6 @@
-import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 "use client";
+
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
