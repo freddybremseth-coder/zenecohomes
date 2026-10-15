@@ -135,106 +135,177 @@ export const extraArticles: Article[] = [
   },
   {
     slug: "det-du-ikke-ser-i-boligannonsen",
-    title: "Det du ikke ser i boligannonsen – derfor starter jeg med området",
-    excerpt:
-      "Fine bilder kan vise boligen, men sjelden hverdagen rundt den. Freddy Bremseth forklarer hva han ser etter før en bolig havner på kundens shortlist.",
+    title: "Det du ikke ser i boligannonsen i Spania – 7 ting å sjekke",
+    excerpt: "Bilder og kartplassering forteller ikke hele historien. Her er sju forhold jeg undersøker før jeg anbefaler en bolig på Costa Blanca.",
     date: "2026-09-29",
-    updated: "2026-09-29",
+    updated: "2026-10-15",
     category: "Rådgivning",
-    readingTime: "6 min lesing",
+    readingTime: "8 min lesing",
     image: "/assets/magasin-covers/omradet-for-boligen.svg",
-    imageAlt: "Illustrasjon av moderne bolig mellom by, fjell og Middelhavet på Costa Blanca",
-    seoTitle: "Bolig i Spania: området avgjør mer enn selve boligen",
-    seoDescription:
-      "En boligannonse viser rom og utsikt, men ikke hvordan hverdagen fungerer. Freddy Bremseth forklarer hva han vurderer i området før en visning i Spania.",
+    imageAlt: "Illustrasjon av bolig og nærområde på Costa Blanca, med kyst, bebyggelse og fjell",
+    seoTitle: "Boligannonse i Spania: 7 ting å sjekke før visning",
+    seoDescription: "Hva viser ikke en boligannonse i Spania? Sjekk støy, avstand, solforhold, utsikt, utgifter og området på Costa Blanca før du bestiller visning.",
     keywords: [
-      "bolig i Spania",
+      "boligannonse Spania",
+      "hva sjekke før boligkjøp i Spania",
       "områdevalg Costa Blanca",
-      "kjøpe bolig Spania",
-      "visning Spania",
-      "eiendomsrådgiver Spania",
+      "boligvisning Spania",
+      "boligkjøp Costa Blanca"
     ],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
-      "Når noen sender meg en boligannonse og spør «hva synes du om denne?», starter jeg sjelden med kjøkkenet, bassenget eller antall kvadratmeter. Først prøver jeg å forstå stedet rundt boligen. Det er nemlig området du skal leve i – boligen er bare én del av hverdagen.",
-      "En annonse er laget for å vise boligen fra sin beste side. Det er helt naturlig. Men bilder forteller lite om hvordan det føles å hente kaffe en tirsdag i januar, hvor mye du bruker bilen, hvordan solen treffer terrassen, hva du hører når vinduene er åpne, eller om området fungerer like godt utenfor høysesongen.",
+      "En boligannonse i Spania viser gjerne pris, bilder, størrelse og fasiliteter. Den forteller sjelden nok om støy, faktiske gangavstander, solforhold gjennom året, byggeplaner rundt boligen eller kostnadene som kommer i tillegg. Det er ofte disse forholdene som avgjør om boligen passer deg.",
+      "Når noen sender meg en annonse og spør hva jeg synes, begynner jeg derfor med adressen og hverdagen rundt boligen. Et fint kjøkken kan du endre. Beliggenheten kan du ikke flytte. Her er sju ting jeg mener du bør undersøke før du bestemmer deg for en visning."
     ],
     sections: [
       {
-        heading: "En flott bolig kan være feil hvis hverdagen ikke passer",
+        heading: "Hva forteller ikke en boligannonse om hverdagen?",
         body: [
-          "Jeg har sett mange boliger som fungerer godt på bilder, men dårligere når vi setter dem inn i kundens faktiske liv. Noen ønsker å gå til strand og restauranter. Andre vil ha ro, privatliv og stor tomt. En familie kan prioritere skole og aktiviteter, mens et par som skal bruke boligen fire måneder i året kanskje legger mest vekt på enkel reisevei og lite vedlikehold.",
-          "Derfor begynner jeg med bruk: Hvordan skal boligen brukes, hvor ofte skal dere være der, og hva vil dere faktisk gjøre i løpet av en vanlig uke? Når det er tydelig, blir det mye enklere å sile bort boliger som er fine, men feil.",
+          "En boligannonse er en presentasjon av det selger ønsker å fremheve, ikke en fullstendig vurdering av hverdagen du får. Det betyr ikke at annonsen er feil. Det betyr at viktige spørsmål ofte står ubesvart.",
+          "Jeg ville særlig undersøkt disse sju forholdene før jeg satte en bolig på kortlisten:"
         ],
         bullets: [
-          "Gangavstand eller bilavhengighet.",
-          "Helårsservice, restauranter og dagligvare.",
-          "Støy, trafikk og aktivitet gjennom året.",
-          "Sol, høyde, vind og orientering.",
-          "Avstand til flyplass, strand, skole eller familie.",
-        ],
+          "Adkomst: faktiske gangruter, bakker, fortau og hvor ofte du må bruke bil.",
+          "Helårsliv: tjenester som er tilgjengelige også utenfor feriesesongen.",
+          "Sol og vind: orientering, skygge og når uteplassen er behagelig å bruke.",
+          "Støy og innsyn: trafikk, nabobygg, aktivitet og privatliv.",
+          "Utsikt og omgivelser: hva som ligger utenfor bildene, og hva som kan endre seg.",
+          "Løpende utgifter: sameie, kommunale avgifter, forsikring og vedlikehold.",
+          "Dokumentasjon: hva som er registrert, godkjent og inkludert i kjøpet."
+        ]
       },
       {
-        heading: "Kartet viser avstand – ikke nødvendigvis hvordan turen oppleves",
+        heading: "Hvorfor velge område før bolig på Costa Blanca?",
         body: [
-          "Fem kilometer kan være en enkel kjøretur eller en upraktisk hverdag. En bolig kan ligge nær sjøen målt i luftlinje, men likevel kreve bil på grunn av høydeforskjeller, motorvei eller manglende fortau. Det samme gjelder skoler, butikker og sentrum.",
-          "Når jeg vurderer et område prøver jeg derfor å tenke i reelle hverdagsruter, ikke bare kilometer. Det er en av grunnene til at områdevalg bør komme før en lang liste med visninger.",
-        ],
+          "Området bør komme først fordi det bestemmer hvordan du faktisk kommer til å bruke boligen. En leilighet med havutsikt er ikke nødvendigvis riktig for den som vil gå til butikker og restauranter hver dag. En bolig med større tomt kan på sin side passe den som prioriterer privatliv.",
+          "På Costa Blanca kan to boliger med samme pris og omtrent samme størrelse gi svært ulike hverdager. En sentrumsnær leilighet i Benidorm eller Albir og en bolig høyt oppe i Finestrat er ikke automatisk sammenlignbare. Det er den konkrete adressen som avgjør, ikke kommunenavnet.",
+          "Start med tre spørsmål: Hvor mange måneder i året vil du være her? Hva ønsker du å gjøre uten bil? Hvilke kompromisser kan du leve med? Bruk deretter [[områdeoversikten for Costa Blanca|/omrader]] til å velge aktuelle steder."
+        ]
       },
       {
-        heading: "Det som ikke står i annonsen er ofte det viktigste å undersøke",
+        heading: "Er «kort vei til stranden» det samme som gangavstand?",
         body: [
-          "Annonsen forteller gjerne om soverom, basseng, utsikt og materialvalg. Den sier sjeldnere noe om hvordan området endrer seg mellom sommer og vinter, planlagt utbygging i nærheten, trafikkmønster, parkering eller hvor lett boligen kan bli å selge igjen.",
-          "Det betyr ikke at noe er galt. Poenget er bare at beslutningen blir bedre når vi fyller inn informasjonen som ikke får plass i salgspresentasjonen.",
+          "Nei. Oppgitt avstand viser ikke nødvendigvis hvor enkel turen er til fots. Luftlinje og gangrute kan være forskjellige, og stigning, store veier og manglende fortau betyr ofte mer enn kilometertallet.",
+          "En kort avstand på kartet kan oppleves lang når du skal opp en bakke med handleposer eller barnevogn. Sjekk derfor både veien ned til stranden og veien hjem igjen."
         ],
         bullets: [
-          "Hva ligger rett utenfor kameraets utsnitt?",
-          "Hvordan fungerer området utenom feriesesongen?",
-          "Hva må du bruke bil til hver dag?",
-          "Er utsikten eller privatlivet sårbart for fremtidig utbygging?",
-          "Passer boligtypen til markedet dersom du en dag skal selge?",
-        ],
+          "Bruk kartets gangrute, ikke bare avstand i luftlinje.",
+          "Se etter bakker, trapper, veikryss og sammenhengende fortau.",
+          "Kontroller veien til dagligvare, apotek, sentrum og kollektivtransport.",
+          "Vurder parkering og biladkomst også i sommermånedene."
+        ]
       },
       {
-        heading: "Derfor ønsker jeg færre og bedre visninger",
+        heading: "Hvordan fungerer området i januar, ikke bare i juli?",
         body: [
-          "En visningstur bør ikke bli en maraton med flest mulig boliger. Når vi har sortert område, bruk og budsjett først, kan vi konsentrere oss om et mindre antall alternativer som faktisk har en reell sjanse til å passe.",
-          "Det gir også bedre sammenligning. Etter femten tilfeldige boliger flyter inntrykkene lett sammen. Etter noen få godt valgte alternativer er det mye enklere å se hva du liker, hvilke kompromisser du kan leve med og hva som bør undersøkes videre.",
-        ],
+          "Et område som er livlig om sommeren, kan være betydelig roligere utenfor høysesongen. Hvis du vil bruke boligen mye gjennom året, bør du sjekke hvilke butikker, restauranter og tjenester som faktisk er tilgjengelige når feriegjestene har reist.",
+          "Vinterro er ikke en ulempe i seg selv. For noen er den hele poenget. Men du bør vite om ønsket om helårsliv betyr at du trenger bil til det meste.",
+          "Se etter faste åpningstider, kollektivtilbud og hvor mye aktivitet området har året rundt. Om mulig bør du besøke det på en vanlig ukedag utenfor høysesongen."
+        ]
       },
       {
-        heading: "Boligen kommer etter at retningen er riktig",
+        heading: "Kan sol, støy, innsyn og havutsikt være annerledes enn på bildene?",
         body: [
-          "Jeg er selvsagt opptatt av selve boligen: planløsning, kvalitet, pris, leveranse, dokumentasjon og hva du faktisk får for pengene. Men den vurderingen blir mer presis når vi allerede vet at stedet passer.",
-          "For meg er dette kjernen i rådgivningen hos Zen Eco Homes: område først, deretter bolig. Ikke fordi boligen er mindre viktig, men fordi den riktige boligen i feil område fortsatt kan bli et feil kjøp.",
+          "Ja. Et bilde viser én vinkel på ett tidspunkt. Det dokumenterer ikke hvor lenge terrassen har sol, hva du hører med åpne vinduer, om naboene ser rett inn, eller hva som kan skje med ubebygde arealer rundt boligen.",
+          "Se om mulig boligen fra flere vinkler og på ulike tider av dagen. Ved spørsmål om mulig utbygging bør relevant kommunal planinformasjon undersøkes. Ingen kan garantere at omgivelsene aldri endres."
         ],
+        bullets: [
+          "Sol: Hvilken retning vender terrassen mot, og hva skygger for den?",
+          "Støy: Ligger det trafikk, utesteder, lekeområder eller tekniske anlegg nær?",
+          "Innsyn: Kan naboer se direkte inn på balkong, terrasse eller i stue?",
+          "Utsikt: Stammer bildene fra akkurat den boligen og etasjen du vurderer?",
+          "Planer: Finnes det relevant regulering eller kjente byggesaker i nærheten?"
+        ]
       },
+      {
+        heading: "Hvilke kostnader og dokumenter ser du ikke i annonsen?",
+        body: [
+          "Kjøpesummen er ikke det samme som kostnaden ved å eie boligen. Felleskostnader, kommunal eiendomsskatt (IBI), forsikring, strøm, vann og vedlikehold varierer med bolig og bruk. Be om dokumentasjon fremfor bare et muntlig anslag.",
+          "At parkering, bod, terrasse eller tilbygg vises på bilder, betyr heller ikke alene at alt er registrert og juridisk inkludert i kjøpet slik du forventer.",
+          "Før bindende avtaler bør en uavhengig advokat kontrollere eierskap, heftelser, dokumentasjon og relevante tillatelser. Les om [[juridiske fallgruver ved boligkjøp|/guide/juridiske-fallgruver-boligkjop-spania]] og [[løpende kostnader ved å eie bolig i Spania|/guide/lopende-kostnader-eie-bolig-spania]]."
+        ]
+      },
+      {
+        heading: "Hvordan sammenligne to boliger som ser like gode ut?",
+        body: [
+          "Sammenlign boligene ut fra det annonsen ikke dokumenterer, ikke bare pris, bilder og antall soverom. Da ser du hvilke kompromisser du faktisk velger mellom.",
+          "Bruk spørsmålene under som en enkel kontroll før visning:"
+        ],
+        table: {
+          headers: [
+            "Annonsen sier",
+            "Kontroller",
+            "Hvorfor"
+          ],
+          rows: [
+            [
+              "«Kort vei til strand»",
+              "Gangrute, bakker og fortau",
+              "Avgjør om bilen blir nødvendig i hverdagen."
+            ],
+            [
+              "«Solrik terrasse»",
+              "Himmelretning, naboskygge og årstid",
+              "Påvirker når uteplassen kan brukes."
+            ],
+            [
+              "«Rolig beliggenhet»",
+              "Trafikk og aktivitet på ulike tider",
+              "Gir bedre bilde av støy og privatliv."
+            ],
+            [
+              "«Fin havutsikt»",
+              "Utsikt fra riktig enhet og planstatus",
+              "Reduserer risiko for feil forventninger."
+            ],
+            [
+              "«Lave kostnader»",
+              "Dokumenterte eierutgifter og vedlikeholdsbehov",
+              "Gjør totaløkonomien lettere å vurdere."
+            ]
+          ],
+          caption: "Kontrollspørsmålene er ikke en garanti for boligens tilstand eller fremtidige omgivelser."
+        }
+      },
+      {
+        heading: "Hva bør du gjøre før du bestiller visning?",
+        body: [
+          "Velg noen få boliger som passer behovene, og undersøk adresse, rutene du vil bruke og åpne spørsmål for hver bolig. En god visningstur handler ikke om å rekke flest mulig visninger, men om å sammenligne reelle alternativer.",
+          "Når vi planlegger visning med kunder, vil jeg også sette av tid til nærområdet: gå en aktuell rute, vurdere trafikk og se hvordan stedet fungerer. [[Slik planlegger vi en visningstur|/visningstur]] forklarer arbeidsmåten.",
+          "Finner du en aktuell bolig, gå videre til [[hele kjøpsprosessen i Spania|/guide/kjope-bolig-i-spania]] og få nødvendige kontroller gjort før du binder deg. Du kan også [[se aktuelle boliger til salgs|/eiendommer]] når område og behov er avklart."
+        ]
+      }
     ],
     nextSteps: [
-      "Sammenlign områdene før du lager en lang boligliste.",
-      "Skriv ned hva som må fungere i en vanlig uke, ikke bare på ferie.",
-      "Velg noen få boliger som representerer reelle alternativer.",
-      "Bruk visningen til å vurdere både boligen og hverdagen rundt den.",
+      "Skriv ned tre ting som må fungere i hverdagen, og tre ting du kan kompromisse på.",
+      "Kontroller gangruter, helårstilbud og forhold rundt hver aktuelle adresse.",
+      "Be om avklaringer om sol, støy, innsyn, utgifter og dokumentasjon før visningen.",
+      "Velg en kortliste med reelle alternativer, og bruk visningen til å vurdere boligen og området."
     ],
     faq: [
       {
-        question: "Bør jeg velge område før jeg velger bolig i Spania?",
-        answer:
-          "Som regel er det en god arbeidsrekkefølge. Når du først vet hvilken hverdag, avstand og type område du ønsker, blir det lettere å sammenligne boliger som faktisk passer behovene dine.",
+        question: "Kan jeg stole på utsikten i en spansk boligannonse?",
+        answer: "Bildene kan vise faktisk utsikt på et tidspunkt, men sjekk at de er tatt fra riktig bolig og etasje. Be om oppdaterte bilder eller video og undersøk relevant planstatus. Fremtidig utsikt kan normalt ikke garanteres."
       },
       {
-        question: "Hvor mange boliger bør jeg se på en visningstur?",
-        answer:
-          "Det finnes ikke ett riktig antall, men kvaliteten på utvalget er viktigere enn mengden. En kort shortlist med relevante boliger gjør det ofte enklere å sammenligne og ta gode beslutninger.",
+        question: "Hvordan undersøker jeg om det kan bygges foran boligen?",
+        answer: "Undersøk kommunens planinformasjon og be en lokal fagperson eller uavhengig advokat hjelpe med å tolke den. Gjeldende planer gir bedre beslutningsgrunnlag, men utelukker ikke senere endringer."
       },
       {
-        question: "Hva bør jeg undersøke rundt selve boligen?",
-        answer:
-          "Se blant annet på reelle avstander, adkomst, støy, sol og orientering, service gjennom året, parkering, nærliggende utbygging og hvordan området passer måten du skal bruke boligen på.",
+        question: "Bør jeg se boligen mer enn én gang før jeg kjøper?",
+        answer: "Det kan være lurt, særlig hvis sol, trafikk eller støy er viktig. Et besøk på en annen tid av døgnet eller utenfor høysesongen kan vise sider ved området som ikke kommer frem på én visning."
       },
+      {
+        question: "Følger parkering og bod alltid med når de vises i annonsen?",
+        answer: "Nei. Hva som juridisk følger boligen, må kontrolleres i salgsdokumentasjon og relevante registre. Få en uavhengig advokat til å bekrefte dette før du binder deg."
+      }
     ],
-    cta: { label: "Sammenlign områder før du velger bolig", href: "/omrader" },
-  },  {
+    cta: {
+      label: "Finn området som passer deg",
+      href: "/omrader"
+    }
+  },
+  {
     slug: "hvorfor-god-eiendomsradgiver-er-viktig",
     title: "Hvorfor er en god eiendomsrådgiver viktig?",
     excerpt:
