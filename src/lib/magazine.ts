@@ -680,213 +680,223 @@ export const extraArticles: Article[] = [
     }
   },
   {
-    slug: "hva-far-du-for-4-6-8-10-millioner-costa-blanca",
-    title: "Hva får du for 4, 6, 8 og 10 millioner kroner på Costa Blanca?",
-    excerpt:
-      "Fire millioner kroner og ti millioner kroner gir svært ulike muligheter på Costa Blanca. Vi oversetter norske budsjetter til euro og viser hva prisnivået betyr i praksis.",
-    date: "2026-09-29",
-    updated: "2026-09-29",
-    category: "Budsjett og marked",
-    readingTime: "8 min lesing",
-    image: "/assets/magasin-covers/finansiering.svg",
-    imageAlt: "Costa Blanca-boliger sammenlignet etter budsjett i norske kroner",
-    seoTitle: "Hva får du for 4, 6, 8 og 10 millioner på Costa Blanca?",
-    seoDescription:
-      "Se hva norske budsjetter på 4, 6, 8 og 10 millioner kroner tilsvarer i euro og hvilke boligtyper og områder som kan være aktuelle på Costa Blanca.",
-    keywords: [
-      "bolig Costa Blanca pris",
-      "bolig Spania 4 millioner",
-      "bolig Spania 6 millioner",
+    "slug": "hva-far-du-for-4-6-8-10-millioner-costa-blanca",
+    "title": "Hva får du for 4, 6, 8 og 10 millioner på Costa Blanca – inkludert kjøpskostnader?",
+    "excerpt": "Hvor dyr bolig kan du kjøpe i Spania med 4, 6, 8 eller 10 millioner kroner totalt? Sammenlign realistisk kjøpesum, nybygg og bruktbolig – med eksemplet 500 000 euro.",
+    "date": "2026-09-29",
+    "updated": "2026-10-15",
+    "category": "Budsjett og marked",
+    "readingTime": "11 min lesing",
+    "image": "/assets/magasin-covers/finansiering.svg",
+    "imageAlt": "Sammenligning av boligbudsjett i norske kroner, maksimal kjøpesum i euro og kostnader ved boligkjøp på Costa Blanca",
+    "seoTitle": "Bolig på Costa Blanca for 4, 6, 8 og 10 millioner?",
+    "seoDescription": "Hva får du for 4, 6, 8 og 10 millioner kroner på Costa Blanca? Regn fra totalbudsjett til boligpris, se eksemplet 500 000 euro og sammenlign nybygg og bruktbolig.",
+    "keywords": [
+      "bolig Costa Blanca 4 millioner",
+      "bolig Spania 6 millioner kroner",
       "bolig Spania 8 millioner",
-      "bolig Spania 10 millioner",
-      "Costa Blanca budsjett",
-      "bolig i Spania norske kroner",
+      "bolig Costa Blanca 10 millioner",
+      "500000 euro bolig totalbudsjett",
+      "omkostninger boligkjøp Valencia",
+      "maks kjøpesum bolig Spania"
     ],
-    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
-    intro: [
-      "Mange norske kjøpere tenker naturlig nok i kroner, mens boligmarkedet i Spania prises i euro. Det første steget er derfor å oversette budsjettet til euro og deretter se hva som faktisk finnes i de områdene du vurderer.",
-      "Med en EUR/NOK-kurs rundt 10,87 den 29. september 2026 tilsvarer 4 millioner kroner omtrent 368.000 euro, 6 millioner omtrent 552.000 euro, 8 millioner omtrent 736.000 euro og 10 millioner omtrent 920.000 euro. Dette er kjøpesum før skatter, gebyrer og øvrige kostnader.",
-      "Eksemplene nedenfor er et øyeblikksbilde. Tilgjengelighet og priser endres fort, så poenget er ikke å love en bestemt bolig til et bestemt budsjett, men å vise hvordan mulighetsrommet endrer seg.",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Har du 4, 6, 8 eller 10 millioner kroner totalt til bolig i Spania, kan du ikke bruke hele beløpet på kjøpesummen. Skatt, juridisk bistand, notar, register og eventuell innredning eller finansiering kommer i tillegg. Den riktige rekkefølgen er å starte med totalrammen i norske kroner og regne bakover til en maksimal boligpris i euro.",
+      "Under viser jeg hva budsjettene kan bety for ulike boligtyper på Costa Blanca, med tydelige regneforutsetninger. Du finner også eksemplet med en bolig til 500 000 euro og vår interaktive kalkulator. Anslagene er illustrasjoner, ikke verifiserte salgspriser eller en garanti for hvilke boliger som er ledige i dag."
     ],
-    sections: [
+    "sections": [
       {
-        heading: "Rundt 4 millioner kroner: leilighet og inngang til nybyggmarkedet",
-        body: [
-          "Et budsjett på rundt 4 millioner kroner tilsvarer cirka 368.000 euro før kjøpskostnader. I Zen Eco Homes-databasen i slutten av september lå det blant annet boliger i Villajoyosa rundt 275.000–360.000 euro, avhengig av størrelse, prosjekt og beliggenhet.",
-          "I dette budsjettet blir prioriteringene tydelige. Du kan finne moderne leiligheter og enkelte gode innganger til nybygg, men nærhet til strand, havutsikt, antall soverom og stor terrasse kan raskt presse prisen opp.",
+        "heading": "Hvor dyr bolig kan du kjøpe for 4, 6, 8 eller 10 millioner kroner?",
+        "body": [
+          "Det avhenger av om millionbeløpet er maksimal kjøpesum eller hele totalbudsjettet, hva euroen koster, og om du kjøper nybygg eller bruktbolig. Når kjøpskostnadene er inkludert, blir den realistiske maksimalprisen lavere enn beløpet du får ved å veksle kroner til euro.",
+          "Tabellen viser et **regneeksempel**, med valutakurs 11,50 kroner per euro (ikke dagens kurs), ordinær bruktboligskatt på 9 % i Valenciaregionen, nybygg med 10 % IVA og ordinær 1,4 % AJD, samt antatte 1 % til advokat og 0,5 % til notar/registrering. Beløpene er avrundet ned til nærmeste 1 000 euro. Møbler, finansiering og en egen kontantreserve kommer i tillegg og må trekkes fra budsjettet før beregningen hvis de skal finansieres av den samme totalrammen.",
+          "Disse valgene gjenspeiler standardforutsetningene i kalkulatoren under. **Endre selv valutakurs, boligtype, avgiftsforutsetninger og reserve** for et mer relevant estimat før du velger bolig."
         ],
-        bullets: [
-          "Typisk sterkest for leiligheter fremfor frittliggende villa.",
-          "Villajoyosa kan gi flere alternativer enn de dyreste delene av Albir og Altea.",
-          "Vurder totalbudsjettet, ikke bare annonsert kjøpesum.",
-          "Prioriter område og bruk før du filtrerer på flest mulig kvadratmeter.",
-        ],
+        "table": {
+          "headers": [
+            "Totalbudsjett",
+            "Euro før kostnader",
+            "Omtrentlig maksimal bruktboligpris",
+            "Omtrentlig maksimal nybyggpris"
+          ],
+          "rows": [
+            [
+              "4 mill. kr",
+              "ca. 347 826 €",
+              "ca. 314 000 €",
+              "ca. 308 000 €"
+            ],
+            [
+              "6 mill. kr",
+              "ca. 521 739 €",
+              "ca. 472 000 €",
+              "ca. 462 000 €"
+            ],
+            [
+              "8 mill. kr",
+              "ca. 695 652 €",
+              "ca. 629 000 €",
+              "ca. 616 000 €"
+            ],
+            [
+              "10 mill. kr",
+              "ca. 869 565 €",
+              "ca. 786 000 €",
+              "ca. 770 000 €"
+            ]
+          ],
+          "caption": "Illustrasjoner ved EUR/NOK 11,50. Forutsetter ordinær skattesats, 1,5 % anslåtte øvrige kjøpskostnader og ingen separat reserve. Skattefordeler og særtilfeller er ikke modellert; få tallene kontrollert."
+        }
       },
       {
-        heading: "Rundt 6 millioner kroner: langt større valgfrihet",
-        body: [
-          "Seks millioner kroner tilsvarer omtrent 552.000 euro med samme valutakurs. Her åpner markedet seg betydelig, både for større leiligheter og enkelte villaalternativer.",
-          "Som eksempel lå det i slutten av september villaer i Benidorm-området fra litt over 500.000 euro. Det betyr ikke at alle slike boliger vil passe en norsk kjøper, men det illustrerer hvordan boligtype og plass endrer seg når budsjettet går fra rundt 350.000 til over 500.000 euro.",
-        ],
-        bullets: [
-          "Flere alternativer med tre soverom.",
-          "Større mulighet for parkering, uteareal og bedre fellesanlegg.",
-          "Enkelte villaer kommer innenfor rekkevidde.",
-          "Du kan i større grad velge mellom beliggenhet og boligstørrelse i stedet for å måtte gi avkall på begge.",
-        ],
+        "heading": "Hva kan du forvente for rundt 4 millioner kroner på Costa Blanca?",
+        "body": [
+          "Ved totalramme på fire millioner kroner gir regneeksemplet plass til bruktbolig rundt 314 000 euro eller ordinært nybygg rundt 308 000 euro før en ekstra personlig reserve. I dette segmentet kan leiligheter og enkelte mer kompakte boliger være relevante alternativer, men boligtype og kvalitet varierer sterkt mellom kommuner og bydeler.",
+          "I Villajoyosa eller mer tilbaketrukne boligområder kan det være verdt å undersøke leiligheter med god planløsning og praktisk beliggenhet, mens svært sentrale sjøfrontbeliggenheter kan gjøre at du må prioritere størrelse eller standard ned. Det er ikke grunnlag for å anta at en bestemt bolig står ledig til disse prisene uten å kontrollere markedet.",
+          "Bruk [[boligsøket for Costa Blanca|/eiendommer]] og [[områdeguiden for Villajoyosa|/omrader/costa-blanca-nord/villajoyosa]] til å sammenligne konkrete muligheter."
+        ]
       },
       {
-        heading: "Rundt 8 millioner kroner: villa blir et reelt hovedalternativ",
-        body: [
-          "Åtte millioner kroner tilsvarer cirka 736.000 euro. I Finestrat fantes det ved utgangen av september flere villaer rundt 700.000–735.000 euro, blant annet boliger med tre soverom, basseng og egne uteområder.",
-          "På dette nivået er det ikke lenger bare spørsmålet om du har råd til en villa. Det viktigere spørsmålet er hvilken type villa du vil ha: større tomt, bedre utsikt, mer gangavstand, nyere prosjekt eller lavere driftsbehov.",
-        ],
+        "heading": "Hva kan du kjøpe for rundt 6 millioner kroner?",
+        "body": [
+          "Et totalbudsjett på seks millioner kroner gir i dette eksemplet rom for omtrent 472 000 euro i bruktboligpris eller 462 000 euro for nybygg, før en eventuell ekstra reserve. Det utvider utvalget av leiligheter og rekkehus, og i noen delmarkeder kan enkelte villaalternativer være aktuelle.",
+          "Forskjellen mellom Albir, Benidorm, Finestrat og Villajoyosa handler ikke bare om kvadratmeter. Nærhet til stranden, faktisk gangavstand, utsikt, vedlikeholdsbehov og kvaliteten på fellesområdene påvirker hvor godt kjøpet passer.",
+          "Vurder hele tilbudet: Kan den samme totalrammen gi en mindre bolig med gangavstand til strand og restauranter, eller et større hjem med basseng og mer bilbruk? Det er behovet som bør avgjøre."
+        ]
       },
       {
-        heading: "Rundt 10 millioner kroner: mer kvalitet, men fortsatt store forskjeller",
-        body: [
-          "Ti millioner kroner tilsvarer omtrent 920.000 euro før kjøpskostnader. Budsjettet gir tilgang til et bredt utvalg moderne villaer og bedre plasserte leiligheter, men det betyr ikke at alle områder tilbyr det samme.",
-          "I Finestrat lå det samtidig flere villaer i området 745.000–805.000 euro. Det gir rom til å vurdere både selve boligen og tillegg som møblering, oppgraderinger eller høyere kjøpskostnader. I mer etablerte og knappe kystområder kan det samme budsjettet kjøpe mindre areal, men en beliggenhet som enkelte kjøpere verdsetter høyere.",
-        ],
+        "heading": "Hva kan du kjøpe for rundt 8 millioner kroner?",
+        "body": [
+          "Med en ramme på åtte millioner kroner viser eksemplet en maksimal bruktboligpris på cirka 629 000 euro og nybyggpris på cirka 616 000 euro. På dette nivået vil flere større leiligheter, rekkehus og enkelte villaer kunne være aktuelle, men det er ingen garanti for en frittliggende villa i de mest etterspurte områdene.",
+          "På steder som Finestrat og Polop kan avveiingen være moderne bolig med mer uteplass og basseng mot lengre avstand til strand og sentrum. I Albir og deler av Altea kan samme ramme gi en annen kombinasjon av areal, beliggenhet og standard.",
+          "Når du sammenligner villaer, må du også undersøke byggeår, energiutgifter, felleskostnader, vedlikehold og eventuelle uferdige tilvalg – ikke bare basseng og utsikt."
+        ]
       },
       {
-        heading: "Den viktigste forskjellen er ikke antall millioner, men hva du prioriterer",
-        body: [
-          "To kjøpere med samme budsjett kan ende med helt forskjellige boliger. Den ene velger en mindre leilighet med gangavstand til strand og restauranter. Den andre velger villa med basseng og utsikt, men aksepterer bil i hverdagen.",
-          "Derfor bruker vi budsjettet som et filter, ikke som selve strategien. Før vi lager shortlist bør vi vite om boligen er feriebolig, fremtidig helårsbolig, familiebase eller et sted som også skal fungere godt ved videresalg.",
-        ],
+        "heading": "Hva kan du kjøpe for rundt 10 millioner kroner?",
+        "body": [
+          "Ti millioner kroner i totalramme tilsvarer rundt 870 000 euro før omkostninger med den illustrative kursen. Med skatte- og kostnadsforutsetningene i tabellen blir maksimal boligpris cirka 786 000 euro for bruktbolig eller 770 000 euro for nybygg, før separat reserve.",
+          "Det kan gi gode valgmuligheter blant større leiligheter og villaer flere steder på Costa Blanca Nord, men kvaliteten på beliggenheten kan fremdeles være den største kostnadsdriveren. En attraktiv adresse nær sjøen kan gi mindre bolig enn en adresse høyere i terrenget.",
+          "Ikke bruk et høyt budsjett som grunn til å hoppe over kontrollen av utsikt, naboarealer, adkomst og juridisk status. [[Dette bør du sjekke bak boligannonsen|/magasin/det-du-ikke-ser-i-boligannonsen]] forklarer hvorfor."
+        ]
       },
       {
-        heading: "Husk kjøpskostnadene før du setter makspris",
-        body: [
-          "Hvis 6 millioner kroner er hele kapitalrammen din, bør du normalt ikke filtrere boliger helt opp mot 6 millioner i ren kjøpesum. Skatter, notar, register, juridisk bistand og andre kostnader kommer i tillegg, og nivået avhenger blant annet av om du kjøper nybygg eller bruktbolig.",
-          "Det er derfor bedre å starte med et totalbudsjett og regne bakover til en realistisk maksimal kjøpesum.",
+        "heading": "Hva koster en bolig til 500 000 euro totalt i Spania?",
+        "body": [
+          "En annonsert pris på 500 000 euro er ikke det samme som samlet kapitalbehov. For et ordinært boligkjøp i Valenciaregionen blir de største forskjellene hvilken skatt som gjelder for nybygg eller bruktbolig og hvor mye du avsetter til øvrige kostnader.",
+          "Eksemplet under bruker de samme enkle forutsetningene som tabellen: bruktbolig med 9 % ITP, nybygg med 10 % IVA + ordinær 1,4 % AJD, samt 1 % antatt advokatutgift og 0,5 % antatt notar-/registerutgift. Det forutsettes ingen særskilte skattefordeler, finansieringskostnader, møblering eller separat reserve.",
+          "For en bruktbolig blir regnestykket 500 000 + 45 000 i ITP + 5 000 i advokatpost + 2 500 i notar-/registerpost = **552 500 euro**. For vanlig nybygg blir det 500 000 + 50 000 i IVA + 7 000 i AJD + 5 000 + 2 500 = **564 500 euro**. Ved den illustrative kursen 11,50 tilsvarer det omtrent 6,35 og 6,49 millioner kroner. Dette er to budsjettscenarioer, ikke tilbud eller endelig oppgjørsoppstilling."
         ],
+        "table": {
+          "headers": [
+            "Post for bolig til €500 000",
+            "Bruktbolig",
+            "Nybygg"
+          ],
+          "rows": [
+            [
+              "Kjøpesum",
+              "500 000 €",
+              "500 000 €"
+            ],
+            [
+              "Kjøpsskatt (ordinær)",
+              "45 000 € ITP (9 %)",
+              "50 000 € IVA (10 %) + 7 000 € AJD (1,4 %)"
+            ],
+            [
+              "Antatt juridisk bistand (1 %)",
+              "5 000 €",
+              "5 000 €"
+            ],
+            [
+              "Antatt notar og register (0,5 %)",
+              "2 500 €",
+              "2 500 €"
+            ],
+            [
+              "Illustrert total før ekstra reserve",
+              "552 500 €",
+              "564 500 €"
+            ]
+          ],
+          "caption": "Eksempel for Valenciaregionen per oktober 2026. Illustrerte rådgiver-/notarposter er ikke offentlige satser; skatteplikt og særtilfeller må bekreftes."
+        }
       },
+      {
+        "heading": "Hvorfor er skatten forskjellig for nybygg og bruktbolig?",
+        "body": [
+          "Ved vanlig kjøp av en eksisterende bolig i Valenciaregionen er hovedregelen overføringsskatt (ITP). Den ordinære satsen ble 9 % fra 1. juni 2026, med 11 % der verdigrensen over én million euro utløser denne satsen. Andre satser og fritak kan gjelde etter konkrete vilkår. Ved ordinært kjøp av nybygg fra utbygger betales normalt 10 % merverdiavgift (IVA) og i tillegg dokumentavgift (AJD). Den generelle AJD-satsen i regionen ble 1,4 % fra 1. juni 2026. Spesialregler, blant annet for kvalifiserende primærbolig, kan endre AJD.",
+          "Det er derfor feil å legge den samme generelle tilleggssatsen på alle boliger. Låneform og skattegrunnlag kan også påvirke totalen. En uavhengig advokat må bekrefte avgiftsbehandlingen og konkret kjøpsoppgjør før signering.",
+          "Kilder: [[BOE, Valenciaregionens lovendringer med virkning fra 1. juni 2026|https://www.boe.es/buscar/doc.php?id=BOE-A-2025-11959]] og [[Agencia Tributaria om IVA og ITP ved boligkjøp|https://sede.agenciatributaria.gob.es/Sede/iva/iva-operaciones-inmobiliarias/compro-vivienda-tengo-que-pagar-itp.html]]. Les også [[guiden til kjøpskostnader i Spania|/guide/kostnader-boligkjop-spania]]."
+        ]
+      },
+      {
+        "heading": "Hvorfor kan valutakursen endre hva du har råd til?",
+        "body": [
+          "De fleste boligkjøp i Spania avtales i euro. Har du inntekt, sparing eller låneramme i kroner, er EUR/NOK-kursen en viktig del av budsjettet. Du må se på beløpet du faktisk får overført etter eventuell veksling og bankens kostnader.",
+          "En bolig til 500 000 euro koster 5,75 millioner kroner ved en tenkt kurs på 11,50, men 6 millioner kroner ved kurs 12,00 – en forskjell på 250 000 kroner allerede før skatt og omkostninger. Dette er illustrasjoner, ikke dagens valutakurser.",
+          "Bruk [[guiden om valutaveksling og betaling i Spania|/guide/spansk-bankkonto-valutaveksling]] sammen med kalkulatoren under; der kan du endre EUR/NOK-kursen til det du faktisk får tilbud om."
+        ]
+      },
+      {
+        "heading": "Hvor mye egenkapital og reserve trenger du?",
+        "body": [
+          "En totalramme er ikke nødvendigvis det samme som sparepengene du har tilgjengelig. Hvis du finansierer en del av kjøpesummen, må du skille mellom bankens eventuelle lånetilsagn, egenkapital, kostnader banken ikke finansierer og kontanter du ønsker å beholde etter kjøpet.",
+          "Vurder møbler, hvitevarer, forsikring, strøm, internett, felleskostnader, eiendomsskatt og fremtidig vedlikehold. Særlig ved villa med basseng eller bolig som står tom store deler av året, kan driftsutgiftene ha stor betydning.",
+          "Les [[hvordan finansiere boligkjøpet|/guide/finansiere-bolig-i-spania]] og [[hva det koster å eie bolig i Spania hvert år|/guide/lopende-kostnader-eie-bolig-spania]] for separate vurderinger."
+        ]
+      },
+      {
+        "heading": "Hva er viktigere enn om du har 4 eller 10 millioner kroner?",
+        "body": [
+          "Før du bestiller visninger bør du avklare om boligen skal brukes til ferie, helårsbolig eller langtidsplaner, og om gangavstand, utsikt, uteareal, antall soverom eller minimalt vedlikehold er viktigst. To kunder med samme budsjett kan få helt forskjellige anbefalinger.",
+          "Jeg bruker derfor ikke budsjettnivåene til å love en bestemt bolig. Jeg starter med beløpet du kan bruke totalt og lager deretter en kortliste som viser hvilke alternativer som faktisk er tilgjengelige. For konkrete, løpende boligsammenligninger kan du gå til [[vår oppdaterte markedssammenligning for Costa Blanca Nord|/magasin/hva-far-du-for-pengene-costa-blanca-nord-na]].",
+          "Når beliggenhet og behov er klare, kan du utforske [[boliger til salgs|/eiendommer]] eller [[bestille en boligprat|/booking]]."
+        ]
+      }
     ],
-    nextSteps: [
-      "Bestem om beløpet i norske kroner er maksimal kjøpesum eller totalramme inkludert kostnader.",
-      "Velg to eller tre områder som passer hverdagen du ønsker.",
-      "Sammenlign boliger i samme prisklasse på tvers av områdene.",
-      "Be om en shortlist med oppdatert tilgjengelighet før du bestiller visning.",
+    "nextSteps": [
+      "Bestem om 4, 6, 8 eller 10 millioner kroner er hele totalrammen, ikke bare ønsket annonsepris.",
+      "Sett av ønsket reserve og juster valutaen i kalkulatoren før du regner maksimal kjøpesum.",
+      "Sammenlign nybygg og bruktbolig med riktige skatter og egne konkrete kostnadsanslag.",
+      "Velg noen få områder og få bekreftet både pris og faktisk tilgjengelighet før visning.",
+      "La bank og uavhengig advokat bekrefte finansiering og det konkrete oppgjøret før reservasjon."
     ],
-    faq: [
+    "faq": [
       {
-        question: "Hvor mye er 4 millioner kroner i euro?",
-        answer:
-          "Med en illustrativ kurs på rundt 10,87 kroner per euro 29. september 2026 tilsvarer 4 millioner kroner omtrent 368.000 euro. Valutakursen endres løpende.",
+        "question": "Hva får jeg for 4 millioner kroner på Costa Blanca?",
+        "answer": "Med et illustrativt totalbudsjett på fire millioner kroner og kurs EUR/NOK 11,50 kan du i vårt regneeksempel se på bruktboliger rundt 314 000 euro eller nybygg rundt 308 000 euro før ekstra reserve. Faktiske boliger og priser varierer med område, standard og tilgjengelighet."
       },
       {
-        question: "Kan jeg kjøpe villa på Costa Blanca for 6 millioner kroner?",
-        answer:
-          "Det kan være mulig i enkelte områder og prosjekter, men boligtype, beliggenhet og tilgjengelighet varierer. I slutten av september 2026 fantes det blant annet villaalternativer i Benidorm-området litt over 500.000 euro.",
+        "question": "Kan jeg kjøpe villa på Costa Blanca for 6 millioner kroner?",
+        "answer": "Det kan være mulig i enkelte områder, særlig hvis du prioriterer beliggenhet eller boligstandard annerledes. Men med seks millioner kroner som totalramme blir maksimalt annonsebeløp lavere enn seks millioner når kjøpsskatten og øvrige kostnader tas med."
       },
       {
-        question: "Bør jeg regne budsjettet i NOK eller euro?",
-        answer:
-          "Bruk begge. Tenk totaløkonomien din i norske kroner, men sett en tydelig kjøpsramme i euro slik at du kan sammenligne boliger og kostnader på samme grunnlag.",
+        "question": "Hvor mye koster en bolig til 500 000 euro totalt?",
+        "answer": "Med eksemplets ordinære skatter for Valenciaregionen, 1 % antatt juridisk bistand og 0,5 % anslått notar/registrering, blir totalen cirka 552 500 euro for bruktbolig eller 564 500 euro for nybygg, før møbler, lån og separat reserve. Regnestykket må tilpasses den konkrete handelen."
       },
+      {
+        "question": "Hvor mye må jeg legge på boligprisen i Spania i 2026?",
+        "answer": "Det avhenger av region og boligtype. I Valenciaregionen er ordinær ITP 9 % for bruktboliger innenfor det generelle prisnivået fra 1. juni 2026. Ordinære nybygg har normalt 10 % IVA og 1,4 % AJD. Honorar, notar, register, finansiering og reserve kommer i tillegg."
+      },
+      {
+        "question": "Hvorfor viser tabellen lavere maksimal boligpris for nybygg enn bruktbolig?",
+        "answer": "Fordi eksempelmodellen bruker ordinære skatter på 11,4 % ved nybygg (IVA og AJD), mot 9 % ITP på vanlig bruktbolig innenfor prisnivåene i tabellen. Det finnes unntak, og nybygg og bruktbolig må alltid sammenlignes med alle relevante kostnader."
+      },
+      {
+        "question": "Bruker kalkulatoren dagens valutakurs?",
+        "answer": "Kalkulatoren forsøker å hente oppdatert EUR/NOK via en datatjeneste og viser en beregningskurs som kan redigeres. Hvis kursen ikke kan hentes, brukes en reserveverdi. Be alltid om faktisk valutatilbud før du overfører penger."
+      }
     ],
-    cta: { label: "Se boliger til salgs", href: "/eiendommer" },
-  },
-  {
-    slug: "bolig-500000-euro-totalbudsjett-spania",
-    title: "En bolig til €500.000 koster ikke €500.000 – slik bør du lage totalbudsjettet",
-    excerpt:
-      "Kjøpesummen er bare én del av regnestykket. Vi bruker en bolig til 500.000 euro som eksempel og viser hvordan norske kjøpere bør tenke totalbudsjett.",
-    date: "2026-09-29",
-    updated: "2026-09-29",
-    category: "Kjøpsøkonomi",
-    readingTime: "7 min lesing",
-    image: "/assets/magasin-covers/finansiering.svg",
-    imageAlt: "Regnestykke for total kostnad ved boligkjøp i Spania",
-    seoTitle: "Hva koster en bolig til €500.000 i Spania totalt nå?",
-    seoDescription:
-      "En bolig til 500.000 euro koster mer enn kjøpesummen. Se hvordan skatter, gebyrer, juridisk hjelp, finansiering og valuta påvirker totalbudsjettet.",
-    keywords: [
-      "kostnader boligkjøp Spania",
-      "500000 euro bolig Spania",
-      "omkostninger bolig Spania",
-      "totalbudsjett bolig Spania",
-      "kjøpe bolig Spania kostnader",
-    ],
-    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
-    intro: [
-      "Det er lett å finne en bolig til 500.000 euro og tenke at dette er budsjettet man trenger. I praksis må en kjøper skille mellom kjøpesum, kjøpskostnader, finansiering, valuta og kostnader etter overtakelse.",
-      "Det viktigste er ikke å bruke én standardprosent ukritisk, men å lage et konkret regnestykke for den aktuelle boligen. Nybygg og bruktbolig beskattes forskjellig, og juridiske, tekniske og bankrelaterte kostnader kan variere.",
-    ],
-    sections: [
-      {
-        heading: "Kjøpesummen er bare startpunktet",
-        body: [
-          "På en bolig til 500.000 euro er selve kjøpesummen den største posten, men den er ikke den eneste. Skatt ved kjøpet, notar, register og juridisk bistand må inn i totalen. Ved finansiering kommer også bankens kostnader og krav inn i vurderingen.",
-          "Zen Eco Homes viser på boligsidene et bredt orienteringsintervall for tilleggskostnader, men den endelige beregningen må gjøres for den konkrete transaksjonen og kjøperens situasjon.",
-        ],
-      },
-      {
-        heading: "Nybygg og bruktbolig må regnes forskjellig",
-        body: [
-          "Ved nybygg er blant annet merverdiavgift og regional dokumentavgift sentrale poster. Ved bruktbolig er det i stedet overføringsskatt som normalt er den største skatteposten. Reglene og satsene kan endres, og derfor bør den juridiske rådgiveren bekrefte det konkrete regnestykket før reservasjon eller kontrakt.",
-          "Det betyr at to boliger med samme pris på 500.000 euro kan få ulik total kostnad.",
-        ],
-      },
-      {
-        heading: "Valutakursen kan flytte totalen mer enn mange gebyrer",
-        body: [
-          "For en norsk kjøper med kapital i kroner er EUR/NOK en del av kjøpesummen. Ved en kurs rundt 10,87 koster 500.000 euro omtrent 5,44 millioner kroner før øvrige kostnader.",
-          "Hvis euroen i stedet koster 11,50 kroner, blir den samme kjøpesummen 5,75 millioner kroner. Forskjellen er over 300.000 kroner uten at selgeren har endret prisen.",
-        ],
-      },
-      {
-        heading: "Finansiering påvirker hvor mye egenkapital du faktisk trenger",
-        body: [
-          "Hvis deler av kjøpet finansieres med lån, må du skille mellom kjøpesum, egenkapital og kostnader som banken ikke nødvendigvis finansierer. Spanske banker vurderer blant annet inntekt, gjeld, alder, bostedsstatus og takst.",
-          "En norsk finansieringsløsning kan gi andre fordeler og ulemper. Poenget er at lånerammen ikke bør vurderes isolert fra valuta og kontantbehov ved kjøpet.",
-        ],
-      },
-      {
-        heading: "Et totalbudsjett må også dekke tiden etter overtakelse",
-        body: [
-          "Møbler, hvitevarer, strømavtale, internett, forsikring, felleskostnader, lokal eiendomsskatt og vedlikehold kommer etter at nøklene er overtatt. Nybygg kan også ha tilvalg som ikke inngår i grunnprisen.",
-          "For en feriebolig kan det være smart å sette av en egen reserve til oppstart og første driftsår i stedet for å bruke all tilgjengelig kapital på maksimal kjøpesum.",
-        ],
-      },
-      {
-        heading: "Slik ville jeg satt opp regnestykket",
-        bullets: [
-          "1. Maksimal totalramme i norske kroner.",
-          "2. Valutakurs og ønsket sikkerhetsmargin.",
-          "3. Realistisk maksimal kjøpesum i euro.",
-          "4. Kjøpsskatt og transaksjonskostnader for den konkrete boligtypen.",
-          "5. Finansieringskostnader og nødvendig egenkapital.",
-          "6. Møblering, tilvalg og reserve etter overtakelse.",
-        ],
-      },
-    ],
-    nextSteps: [
-      "Sett totalrammen før du bestemmer maksimal boligpris.",
-      "Skill mellom nybygg og bruktbolig i kostnadsberegningen.",
-      "La advokat og bank bekrefte konkrete tall før reservasjon.",
-      "Behold en likviditetsreserve etter overtakelsen.",
-    ],
-    faq: [
-      {
-        question: "Hvor mye bør jeg legge til boligprisen i Spania?",
-        answer:
-          "Det finnes ikke én prosent som passer alle kjøp. Nybygg og bruktbolig har ulike skatter, og kostnader til notar, register, advokat og eventuell bank kommer i tillegg. Lag et konkret regnestykke før reservasjon.",
-      },
-      {
-        question: "Hvor mye er 500.000 euro i norske kroner?",
-        answer:
-          "Ved en kurs rundt 10,87 kroner per euro tilsvarer 500.000 euro omtrent 5,44 millioner kroner. Valutakursen endres løpende.",
-      },
-      {
-        question: "Bør jeg bruke hele budsjettet på kjøpesummen?",
-        answer:
-          "Normalt bør du ha rom for skatter, gebyrer, juridisk bistand og kostnader etter overtakelsen. Maksimal kjøpesum bør derfor ligge under maksimal totalramme.",
-      },
-    ],
-    cta: { label: "Se komplett kjøperguide", href: "/guide/kjope-bolig-i-spania" },
+    "cta": {
+      "label": "Finn boliger innenfor totalbudsjettet ditt",
+      "href": "/eiendommer"
+    }
   },
   {
     slug: "lan-i-norge-eller-spania-boligkjop",
