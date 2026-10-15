@@ -425,7 +425,7 @@ export const articles: Article[] = [
       "label": "Se boliger som passer budsjettet ditt",
       "href": "/eiendommer"
     }
-  },,
+  },
   {
     "slug": "finansiere-bolig-i-spania",
     "title": "Hvordan finansiere kjøp av bolig i Spania?",
