@@ -690,7 +690,7 @@ export const extraArticles: Article[] = [
     "image": "/assets/magasin-covers/finansiering.svg",
     "imageAlt": "Sammenligning av boligbudsjett i norske kroner, maksimal kjøpesum i euro og kostnader ved boligkjøp på Costa Blanca",
     "seoTitle": "Bolig på Costa Blanca for 4, 6, 8 og 10 millioner?",
-    "seoDescription": "Hva får du for 4, 6, 8 og 10 millioner kroner på Costa Blanca? Regn fra totalbudsjett til boligpris, se eksemplet 500 000 euro og sammenlign nybygg og bruktbolig.",
+    "seoDescription": "Hva får du for 4, 6, 8 og 10 millioner på Costa Blanca? Regn fra totalbudsjett til boligpris, se eksemplet 500 000 euro og sammenlign nybygg og bruktbolig.",
     "keywords": [
       "bolig Costa Blanca 4 millioner",
       "bolig Spania 6 millioner kroner",
