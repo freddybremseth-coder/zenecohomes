@@ -151,6 +151,20 @@ for (const principle of ["10 000 m²", "2 %", "suelo urbanizable", "prefabrikker
   requireText(plotGuideSource, principle, "land guide practical building restrictions");
 }
 
+// Article tables must fit their content column without horizontal scrolling.
+// The plot-buying guide has three long text columns; other guides also benefit.
+const articleTableCSS = read("src/app/globals.css").split("/* ── Artikkeltabeller")[1]?.split("/* ── Boligvurdering")[0];
+if (!articleTableCSS ||
+    !articleTableCSS.includes("table-layout: fixed;") ||
+    !articleTableCSS.includes("overflow-x: visible;") ||
+    !articleTableCSS.includes("overflow-wrap: anywhere;") ||
+    !articleTableCSS.includes("container: article-table / inline-size;") ||
+    !articleTableCSS.includes("@container article-table (max-width: 760px)") ||
+    articleTableCSS.includes("overflow-x: auto;")) {
+  errors.push("src/app/globals.css: article tables must wrap columns and use cards on narrow containers without horizontal scroll");
+}
+requireText("src/components/ArticleView.tsx", 'className="article-table-cards"', "accessible mobile row cards for article tables");
+
 const properties = "src/app/eiendommer/page.tsx";
 for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen", "/visningstur"]) {
   requireText(properties, `href="${href}"`, "property-list internal link");
