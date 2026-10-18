@@ -153,113 +153,300 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "guide-tomtekjop-bygging-i-spania",
-    title: "Guide til tomtekjøp og bygging i Spania",
-    excerpt:
-      "Hva du må kontrollere før tomtekjøp: regulering, byggbarhet, vann, strøm, adkomst, arkitekt, lisens, budsjett og due diligence.",
-    date: "2026-05-10",
-    updated: "2026-09-15",
-    category: "Tomt og nybygg",
-    readingTime: "10 min lesing",
-    image: "/assets/magasin-covers/tomt-bygg.svg",
-    imageAlt: "Illustrasjon av tomt, moderne bolig, tegninger og bygging i Spania",
-    seoTitle: "Tomtekjøp og bygging i Spania | Guide for nordmenn",
-    seoDescription:
-      "Slik kjøper du tomt og bygger bolig i Spania. Les om regulering, vann, strøm, adkomst, byggetillatelse, arkitekt, kostnader og trygg kontroll før kjøp.",
-    keywords: ["tomt i Spania", "bygge hus i Spania", "kjøpe tomt Costa Blanca", "byggelisens Spania", "nybygg Spania"],
-    intro: [
-      "Å kjøpe tomt og bygge bolig i Spania kan gi deg akkurat den boligen og livsstilen du ønsker. Samtidig er prosessen mer kompleks enn et vanlig boligkjøp, fordi du må kontrollere regulering, byggbarhet, infrastruktur, kostnader og lokale krav før du forplikter deg.",
-      "Denne guiden gir deg en praktisk oversikt over de viktigste punktene du bør undersøke før bud, reservasjon eller kjøp av tomt.",
+    "slug": "guide-tomtekjop-bygging-i-spania",
+    "title": "Kjøpe tomt og bygge hus i Spania: Komplett guide til regler, kostnader og risiko",
+    "excerpt": "Kan du bygge bolig på en rustikk tomt i Spania? Lær forskjellen på urbano og rústico, krav i Valenciaregionen og hvordan du kontrollerer vann, vei, tillatelser og totalbudsjett før kjøp.",
+    "date": "2026-05-10",
+    "updated": "2026-10-18",
+    "category": "Tomt og nybygg",
+    "readingTime": "15 min lesing",
+    "image": "/assets/magasin-covers/tomt-bygg.svg",
+    "imageAlt": "Tomt, husprosjekt og arkitekttegninger ved planlegging av boligbygging i Spania",
+    "seoTitle": "Kjøpe tomt og bygge hus i Spania: regler og kostnader",
+    "seoDescription": "Kan du bygge hus på en tomt i Spania? Sjekk rustikk grunn, byggbarhet, 10 000 m²-regelen, arkitekt, byggetillatelse, vann og kostnader før du kjøper.",
+    "keywords": [
+      "kjøpe tomt i Spania",
+      "bygge hus i Spania",
+      "bygge på rustikk tomt Spania",
+      "byggetillatelse Valenciaregionen",
+      "tomt Pinoso Biar Aspe",
+      "bygge villa Costa Blanca",
+      "kostnader bygge hus Spania"
     ],
-    sections: [
-      {
-        heading: "Hva du må forstå før tomtekjøp",
-        body: [
-          "Først må eierskap, registeropplysninger og eventuelle heftelser kontrolleres. Det bør undersøkes om det finnes pant, servitutter, ubetalte avgifter, tvister eller avvik mellom dokumentene og den faktiske eiendommen.",
-          "Deretter må du forstå hvilken type grunn du kjøper og hva kommunal planlegging faktisk tillater. En attraktiv tomt kan ha begrensninger som gjør at prosjektet ikke kan realiseres slik du ser for deg.",
-        ],
-        bullets: [
-          "Sjekk eierskap, heftelser og eiendomsregister før du binder deg.",
-          "Avklar om tomten faktisk kan bebygges som planlagt.",
-          "Undersøk kommunale planer, nabotomter og fremtidig infrastruktur.",
-          "Beregn løpende kostnader som IBI, renovasjon og lokale gebyrer.",
-        ],
-      },
-      {
-        heading: "Regulering, vann, strøm og adkomst",
-        body: [
-          "Reguleringsplanen og kommunale regler bestemmer blant annet hva som kan bygges, utnyttelse, høyde, avstander og krav til teknisk infrastruktur. En lokal advokat og kvalifisert teknisk fagperson bør kontrollere dette før kjøp.",
-          "Tilgang til vann, strøm og lovlig adkomst er avgjørende. I innlandsområder kan vann komme fra kommunalt nett, vannfellesskap, brønn eller tank, og rettighetene må dokumenteres. Strømtilkobling og adkomst kan også få stor betydning for prosjektbudsjettet.",
-        ],
-        bullets: [
-          "Be om skriftlig dokumentasjon på byggbarhet og relevante kommunale forhold der det er mulig.",
-          "Kontroller vannkilde, vannrettigheter og eventuell avløpsløsning.",
-          "Få estimat på strømtilkobling før kjøp.",
-          "Dokumenter veirett og lovlig adkomst.",
-        ],
-      },
-      {
-        heading: "Kostnadsbilde fra tomt til ferdig bolig",
-        body: [
-          "Totalbudsjettet bør inkludere mer enn tomt og byggekostnad. Du må regne inn arkitekt, tekniske rapporter, lisens, kommunale gebyrer, advokat, geoteknikk, infrastruktur, tilkoblinger, terrengarbeid, basseng, uteområder og buffer.",
-          "Ha en tydelig reserve for uforutsette forhold. Grunnforhold, terreng, materialvalg, energiløsninger, infrastruktur og kommunale krav kan påvirke sluttsummen betydelig.",
-        ],
-        bullets: [
-          "Tomteprisens andel av totalbudsjettet varierer kraftig mellom områder.",
-          "Arkitekt og tekniske fagpersoner bør inn i prosessen tidlig.",
-          "Fastsett prosjektbuffer ut fra tomt, prosjektering, kontrakt og konkret risikobilde – ikke en standardprosent.",
-          "Finansiering av tomt og bygg kan ha andre krav enn kjøp av ferdig bolig.",
-        ],
-      },
-      {
-        heading: "Arkitekt, entreprenør, lisens og tidslinje",
-        body: [
-          "Bruk en kvalifisert arkitekt med nødvendig faglig registrering og lokal erfaring. Arkitekten har en sentral rolle i tegninger, teknisk dokumentasjon, søknad om byggetillatelse og oppfølging av prosjektet.",
-          "Entreprenøren bør ha dokumenterte referanser, forsikringer, riktig kompetanse og lokal erfaring. Prosjektering, kommunal behandling, bygging og ferdigstillelse kan ta svært ulik tid fra kommune til kommune og prosjekt til prosjekt, så be om en konkret tidsplan med forutsetninger.",
-        ],
-        bullets: [
-          "Velg arkitekt med lokal erfaring fra kommunen.",
-          "Bruk skriftlig kontrakt med tydelig pris, leveranse, betalingsplan og ansvar.",
-          "Vurder uavhengig byggeleder hvis du ikke bor i Spania under byggingen.",
-          "Planlegg med margin for behandlingstid, leveranser og uforutsette forhold.",
-        ],
-      },
-      {
-        heading: "Anbefalt due diligence før bud",
-        body: [
-          "Due diligence bør dekke juridiske, tekniske, økonomiske og praktiske forhold. Det er bedre å avklare begrensninger før reservasjon enn etter at du har forpliktet deg.",
-        ],
-        bullets: [
-          "Advokat kontrollerer eiendomsdokumenter, heftelser, kontrakt og juridiske forhold.",
-          "Arkitekt eller relevant tekniker vurderer byggbarhet, utnyttelse, terreng og realistisk prosjekt.",
-          "Teknisk rådgiver vurderer grunn, adkomst, vann, strøm og naturfare ved behov.",
-          "Bank eller finansrådgiver vurderer finansiering, valuta og likviditet.",
-        ],
-      },
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Du kan kjøpe tomt og bygge egen bolig i Spania, men bare dersom den konkrete tomten, reguleringsplanen og prosjektet oppfyller kravene. En stor tomt, vei i nærheten eller et løfte fra selger er ikke dokumentasjon på byggerett. Det viktigste er å få en lokal arkitekt og uavhengig advokat til å kontrollere byggbarhet og eiendomsforhold før du binder deg.",
+      "Denne guiden følger kjøperens beslutningsløp: fra valg mellom bytomt og landbrukstomt til planstatus, vann, strøm, adkomst, arkitekt, byggetillatelse, entreprisekontrakt og kostnader. Eksemplene handler særlig om Valenciaregionen og Costa Blanca med innlandet rundt Pinoso, Aspe og Biar. Andre spanske regioner kan ha andre regler."
     ],
-    nextSteps: [
-      "Finn ut om du ønsker kystnært prosjekt, innlandstomt eller større finca-/landeiendom.",
-      "Engasjer lokal advokat før reservasjon av tomt.",
-      "Få arkitekt eller byggerådgiver til å vurdere tomten før du legger bud.",
-      "Lag komplett budsjett med buffer, ikke bare pris på tomt og bygg.",
+    "sections": [
+      {
+        "heading": "Kan man kjøpe en tomt og bygge hus i Spania?",
+        "body": [
+          "Ja, utlendinger kan kjøpe tomter og bygge bolig i Spania, men kjøpet gir ikke automatisk rett til å bygge. Byggeretten bestemmes av tomtens juridiske status, kommunale planer, regional lovgivning og eventuelle særskilte vern. Du må derfor skille mellom å ha rett til å eie grunnen og å ha tillatelse til et boligprosjekt.",
+          "Det tryggeste første steget er å identifisere nøyaktig matrikkel-/eiendomsreferanse og be kommunens byplankontor (*urbanismo*) om skriftlig planinformasjon. Arkitekten må vurdere om huset du ser for deg er mulig på akkurat denne eiendommen, og advokaten må kontrollere eierskap og kontraktsvilkår.",
+          "Begynn gjerne med [[hovedguiden til boligkjøp i Spania|/guide/kjope-bolig-i-spania]] for den generelle kjøpsprosessen, men bruk kontrollpunktene nedenfor når du vurderer en ubebygd tomt."
+        ]
+      },
+      {
+        "heading": "Hva er forskjellen på urbano, urbanizable og rústico?",
+        "body": [
+          "Tomtens kategori er avgjørende: *suelo urbano* er i utgangspunktet bymessig grunn, *suelo urbanizable* er avsatt til mulig fremtidig byutvikling, mens *suelo no urbanizable* er grunn som normalt ikke skal urbaniseres. Ingen av betegnelsene er alene en garanti for at du kan sette i gang et bestemt husprosjekt.",
+          "På urbane tomter må du fortsatt undersøke tomtens byggefelt, veiadkomst, tilkoblinger, høydegrenser og utnyttelse. Urbanizable kan kreve vedtatt detaljplan, utbygging og kostbare infrastrukturforpliktelser før en bolig kan godkjennes. På rústico/no urbanizable er adgangen til boligbygging mer begrenset og kan være helt utelukket i beskyttede områder.",
+          "Spør alltid etter både *clasificación* (overordnet klassifisering) og *calificación* (tillatt bruk) i den gjeldende planen, inkludert konkret vurdering av eventuelle bygge- og vernesoner."
+        ],
+        "table": {
+          "headers": [
+            "Tomtekategori",
+            "Hva betyr den?",
+            "Hva må avklares før kjøp?"
+          ],
+          "rows": [
+            [
+              "Suelo urbano",
+              "Grunn i bymessig område",
+              "Er tomten en juridisk byggbar tomt med påkrevd infrastruktur og boligformål?"
+            ],
+            [
+              "Suelo urbanizable",
+              "Grunn avsatt til eventuell utvikling",
+              "Er utviklingen vedtatt og gjennomført, og finnes det ekstra urbaniseringskostnader?"
+            ],
+            [
+              "Suelo no urbanizable común",
+              "Ikke-urbaniserbar grunn uten samme særskilte vern som beskyttet grunn",
+              "Er det i det hele tatt adgang til isolert bolig etter regional og kommunal plan?"
+            ],
+            [
+              "Suelo no urbanizable protegido",
+              "Grunn med særskilt vern",
+              "Hvilke verneregler gjør boliger eller tiltak helt eller delvis forbudt?"
+            ]
+          ],
+          "caption": "Forenklet oversikt for Valenciaregionen. Planstatus og faktisk rettighet må kontrolleres individuelt; etiketten «urbano» er ikke alene et byggetillatelsesbevis."
+        }
+      },
+      {
+        "heading": "Kan du bygge hus på rustikk tomt på 10 000 m²?",
+        "body": [
+          "Ikke automatisk. I Valenciaregionens planlov kan frittliggende familiebolig på vanlig ikke-urbaniserbar grunn bare tillates unntaksvis og på bestemte vilkår. Blant kravene er en sammenhengende tomt på minst én hektar (10 000 m²) per bolig – eller større minsteareal dersom kommuneplanen krever det – og en øvre grense for bebygd grunnflate på 2 % av eiendommen. Andre vilkår gjelder blant annet plassering, naturhensyn, vann, avløp og forbud mot å danne boligklynger.",
+          "Et eksempel: En rustikk tomt på 12 000 m² oppfyller isolert sett den regionale minimumsgrensen på 10 000 m², men det gjør den ikke automatisk byggbar. Kommunen kan stille strengere krav, tomten kan være vernet eller ha byggeforbud, og huset må kunne plasseres lovlig. 2 % av 12 000 m² er 240 m² i maksimal bebygd grunnflate etter denne begrensningen; tallet er ingen tillatelse til å bygge 240 m² og er ikke nødvendigvis det samme som samlet innvendig gulvareal.",
+          "En tomt på 9 000 m² kan som hovedregel ikke oppfylle denne ett-hektar-betingelsen for en vanlig isolert bolig under bestemmelsen. Det finnes særskilte bestemmelser, blant annet mulige begrunnede unntak for boliger knyttet til jordbruksdrift, men ingen bør anta at de gjelder uten faglig og offentlig vurdering.",
+          "Se [[Valenciaregionens konsoliderte planlov TRLOTUP, artikkel 211|https://www.boe.es/buscar/act.php?id=DOGV-r-2021-90283]]. Loven må leses sammen med gjeldende lokal plan, vernesoner og prosjektets faktiske bruk."
+        ]
+      },
+      {
+        "heading": "Hvilke dokumenter må du be om før du betaler reservasjon?",
+        "body": [
+          "Du bør ha et lite dokumentgrunnlag før du betaler noe: en oppdatert *nota simple* fra eiendomsregisteret, matrikkelreferanse (*referencia catastral*), kart som viser grensene, dokumentasjon for selgerens eierskap og opplysninger om heftelser, adkomst og faktisk planstatus.",
+          "En nota simple viser grunnleggende registrerte rettigheter og heftelser, men beviser ikke alene hvor lovlige bygningsmulighetene er. Catastro og eiendomsregisteret har ulike roller, og opplysninger om areal og grenser kan avvike. En landmåler kan måtte avklare grensene i terrenget.",
+          "Be også om relevant kommunal planinformasjon eller sertifikat, eventuelle tidligere tillatelser, og skriftlige svar fra vann-/strømselskaper hvis tilkobling er avgjørende. [[Det spanske eiendomsregisterets tjeneste for nota simple|https://sede.registradores.org/site/propiedad?lang=es]] forklarer registeropplysningene; en uavhengig advokat bør vurdere dem i kjøpssaken."
+        ],
+        "bullets": [
+          "Oppdatert nota simple: hjemmelshaver, heftelser og registrerte rettigheter.",
+          "Catastro-kart og referanse samt faktisk grense- og arealsjekk.",
+          "Kommunal planstatus med tillatt boligformål, begrensninger og vernebestemmelser.",
+          "Dokumentert adkomst, eventuelle servitutter og teknisk forsyning.",
+          "Skriftlige forbehold i reservasjons- eller kjøpekontrakt, vurdert av advokat."
+        ]
+      },
+      {
+        "heading": "Hvordan undersøker du om vann, strøm, avløp og vei faktisk er tilgjengelig?",
+        "body": [
+          "Bevis for tekniske tilkoblinger må være konkret. Det holder ikke at en strømmast står nær tomten, eller at en nabo har vann. Avklar kapasitet, mulig tilkoblingspunkt, kostnad, ledningstrasé og hvem som skal betale for arbeid eller rettigheter på andres grunn.",
+          "På innlandstomter kan vann komme fra kommunalt nett, vannfellesskap eller lovlig registrert brønn. En brønn på selve tomten gir ikke automatisk rett til den mengden eller bruken du ønsker. For eksisterende eller nye uttak bør du dokumentere status hos riktig vannmyndighet, i store deler av området blant annet Confederación Hidrográfica del Júcar.",
+          "Avløp kan kreve godkjent individuell løsning. Adkomst må være juridisk sikret, praktisk egnet for byggemaskiner og i samsvar med eventuelle regulerings- og brannkrav. Sjekk også flomveier og erosjon før du velger husets plassering. Se [[Júcar-vannmyndighetens veiledning om vannrettigheter og brønner|https://www.chj.es/es-es/ciudadano/tramitesysolicitudes/Paginas/registrodeaguas.aspx]]."
+        ],
+        "bullets": [
+          "Be om skriftlig kapasitet og tilbud på vann/strøm der dette er aktuelt.",
+          "Få dokumentert registrering eller tillatelse for brønn og formålet vannet skal brukes til.",
+          "Få teknikerens løsning for sanitæravløp og håndtering av overvann.",
+          "Sjekk offentlig vei, privat veirett, kjørestandard og bredde for anleggstrafikk.",
+          "Se tomten både etter regn og i tørt vær dersom lokale forhold tilsier det."
+        ]
+      },
+      {
+        "heading": "Hva bør arkitekten kontrollere før du kjøper tomten?",
+        "body": [
+          "Arkitekten bør gjøre en skriftlig mulighetsvurdering (*estudio de viabilidad*) av tomt og ønsket bolig. Den bør svare på hvor huset kan stå, omtrent hvilke volumer og etasjer som eventuelt kan tillates, byggegrenser, avstand til naboer og behov for særskilte tillatelser.",
+          "Ikke bestill bare en vakker illustrasjon av et hus. Be først om en plan som viser tilkomst, plassering, terreng, mulig byggflate, energiløsninger, basseng, vann og avløp, samt hva som ennå ikke er avklart. En eventuell skriftlig uttalelse fra kommunen veier tyngre enn en annonsetekst om at tomten er «byggbar».",
+          "På skrånende tomter kan geoteknikk, støttemurer og massearbeid forandre budsjettet betydelig. Sørg for at arkitekt og relevante ingeniører undersøker dette tidlig, før en bindende reservasjonsavtale."
+        ]
+      },
+      {
+        "heading": "Hvilke tillatelser trenger du for å bygge nytt hus i Spania?",
+        "body": [
+          "Et vanlig nytt hus krever normalt kommunal byggetillatelse (*licencia de obra mayor*) på grunnlag av et teknisk prosjekt, og noen tomter eller tiltak trenger ytterligere tillatelser. Første steg er å avklare planstatus; deretter utarbeides prosjektgrunnlag og nødvendige rapporter før søknad. Hva som skal leveres, varierer med kommune og tomt.",
+          "Det er ikke trygt å starte arbeid fordi arkitekten har sendt inn en søknad, og en avtalt eller forventet behandlingstid er ikke det samme som innvilget tillatelse. Også oppstilling av prefabrikkert bolig kan være lisenspliktig etter TRLOTUP.",
+          "Etter at bygget er ferdigstilt, må riktig teknisk dokumentasjon, sluttkontroll og formaliteter for første bruk eller innflytting håndteres etter gjeldende lokale regler. [[Valenciaregionens TRLOTUP, blant annet artikkel 232 og 238|https://www.boe.es/buscar/act.php?id=DOGV-r-2021-90283]] beskriver sentrale vilkår for kommunale tillatelser."
+        ]
+      },
+      {
+        "heading": "Hva koster det å kjøpe tomt og bygge hus i Spania?",
+        "body": [
+          "Totalprisen er summen av tomt, kjøpskostnader, prosjektering, tillatelser, selve byggingen, teknisk infrastruktur, uteområder og en reserve. Et pristilbud på en nøkkelferdig villa kan mangle store poster som tomt, fundamentering, vanskelige grunnforhold, tilkoblinger, basseng eller offentlige avgifter.",
+          "Et godt budsjett deles i separate poster med ansvarlig leverandør og status for hvert beløp: fast pris, estimat, uavklart eller betinget. Kommunen kan blant annet ilegge lokal byggeskatt (*ICIO*) og gebyrer. Etter den nasjonale kommuneskatteloven kan kommunen fastsette ICIO-sats opp til 4 % av beregningsgrunnlaget for relevante byggetiltak; det er ikke riktig å legge 4 % på hele eiendomskjøpet uten videre. Sjekk sats og beregningsgrunnlag i den aktuelle kommunen.",
+          "Se [[reglene for kommunal byggeskatt ICIO|https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214]] og [[guiden til kostnader ved boligkjøp|/guide/kostnader-boligkjop-spania]]. Tabellen nedenfor er en budsjettstruktur, ikke et gjeldende pristilbud."
+        ],
+        "table": {
+          "headers": [
+            "Budsjettpost",
+            "Typisk innhold",
+            "Hva må verifiseres?"
+          ],
+          "rows": [
+            [
+              "Tomt og kjøp",
+              "Tomtepris, skatt, notar, register, advokat",
+              "Skatteregime og dokumenterte transaksjonsutgifter"
+            ],
+            [
+              "Prosjektering",
+              "Arkitekt, ingeniør, geoteknikk, oppmåling",
+              "Hva er inkludert og når betales det?"
+            ],
+            [
+              "Offentlige forhold",
+              "Lisens, ICIO, kommunale gebyrer",
+              "Kommunens sats, vedtak og beregningsgrunnlag"
+            ],
+            [
+              "Bygg og leveranser",
+              "Grunnarbeid, konstruksjon, tekniske installasjoner, innredning",
+              "Leveransebeskrivelse, mva og endringspriser"
+            ],
+            [
+              "Tomt og infrastruktur",
+              "Vei, vann, strøm, avløp, terreng, støttemurer",
+              "Nettilgang, rettigheter, kapasitet og faktiske tilbud"
+            ],
+            [
+              "Utearealer og drift",
+              "Basseng, terrasser, hage, gjerder, forsikring",
+              "Hva er tillegg, og hva koster vedlikeholdet?"
+            ],
+            [
+              "Buffer og finansiering",
+              "Uforutsett arbeid, renter, valutakurs, likviditetsreserve",
+              "Scenario for forsinkelser og kostnadsøkning"
+            ]
+          ],
+          "caption": "Samle alle poster i en prosjektkalkyle med estimater som dokumenteres og oppdateres. Ingen generisk kvadratmeterpris gjelder for alle tomter og hus."
+        }
+      },
+      {
+        "heading": "Slik kan en billig tomt bli et dyrt byggeprosjekt",
+        "body": [
+          "Anta at du sammenligner to hypotetiske tomter. Tomt A koster mindre, men ligger langt fra strømnettet, trenger privat adkomst og har store høydeforskjeller. Tomt B koster mer, men har dokumentert tilgjengelig infrastruktur og enklere grunnforhold. Uten konkrete tilkoblings- og grunnarbeidsanslag er det umulig å vite hvilken som blir billigst totalt.",
+          "Be en arkitekt eller prosjektleder lage samme spesifikasjon og samme kostnadsposter for begge tomtene. Da blir det lettere å sammenligne pris på et ferdig lovlig og brukbart hus, ikke bare prisen på grunnen.",
+          "Jeg ville prioritert tomten som gir et realistisk og dokumenterbart sluttresultat innenfor budsjettet, fremfor den som bare har den laveste annonserte tomteprisen."
+        ]
+      },
+      {
+        "heading": "Hva skal stå i kontrakten med entreprenøren?",
+        "body": [
+          "En skriftlig entreprisekontrakt bør forklare nøyaktig hva som skal leveres og hvem som bærer risiko for endringer og forsinkelser. Den bør ikke bare angi husmodell og totalpris, men vise tegninger, materialspesifikasjoner, milepæler, betalingsplan, kontroll ved ferdigstillelse og ansvar ved feil eller mangler.",
+          "Be advokat og teknisk rådgiver gjennomgå kontrakten uavhengig av leverandøren. Betalingsplanen bør knyttes til klart dokumentert fremdrift og nødvendige sikkerheter, ikke bare datoer. Sørg for en praktisk prosess for endringsordrer før ekstra arbeid settes i gang.",
+          "Når noen markedsfører «nøkkelferdig», bør du få et skriftlig dokument som sier hva uttrykket omfatter i akkurat dette tilbudet: kjøkken, hvitevarer, utearealer, basseng, tilkoblinger og ferdigdokumentasjon kan ellers være helt ulike poster."
+        ],
+        "bullets": [
+          "Tegninger, teknisk spesifikasjon og leveransegrenser.",
+          "Priser inklusive/eksklusive skatter, indeksering og tilvalg.",
+          "Betalingsmilepæler, fremdriftsbevis og eventuell sikkerhet.",
+          "Ansvar for byggesøknader, forsikringer og byggledelse.",
+          "Håndtering av avvik, endringer, forsinkelser og reklamasjoner.",
+          "Sluttdokumentasjon, innflytting og overlevering av garantier."
+        ]
+      },
+      {
+        "heading": "Hvordan ser en trygg tidslinje fra tomt til ferdig bolig ut?",
+        "body": [
+          "Prosessen går normalt gjennom tomtevalg, juridisk og teknisk kontroll, mulighetsvurdering, kontrakt, prosjektering, kommunal behandling, bygging, sluttkontroll og overtakelse. Det finnes ikke én pålitelig antall-måneder-garanti som passer alle spanske kommuner eller tomtetyper.",
+          "Be prosjektansvarlig sette opp milepæler med avhengigheter: Det er lite nyttig med lovet byggeoppstart hvis vannrett, adkomst eller byggelisens ikke er avklart. Skille mellom tidsbruk som entreprenøren kan kontrollere, og offentlige prosesser som kan trekke ut.",
+          "Det er normalt mer risikabelt å budsjettere ut fra en optimistisk ferdigstillingsdato enn fra et scenario med dokumenterte forutsetninger og realistisk reserve."
+        ],
+        "bullets": [
+          "1. Shortlist og tomtebesøk med tydelig boligbehov.",
+          "2. Juridisk kontroll, plandokumentasjon og teknisk forundersøkelse.",
+          "3. Skriftlig mulighetsvurdering og betinget kjøpsbeslutning.",
+          "4. Prosjektering, entreprenørtilbud og offentlig tillatelsesløp.",
+          "5. Bygging med fremdriftskontroll og dokumenterte betalinger.",
+          "6. Sluttkontroll, ferdigpapirer og praktisk overtakelse."
+        ]
+      },
+      {
+        "heading": "Hva bør du vite om tomter i Pinoso, Aspe og Biar?",
+        "body": [
+          "Innlandsområdene rundt Pinoso, Aspe og Biar kan tiltrekke kjøpere som ønsker større tomter, landlig beliggenhet og egen villa. Men en stor finca eller landbrukstomt er ikke i seg selv en boligbyggtomt. Kommunene kan ha forskjellige detaljer i sine planer, og eiendommene kan ha svært ulike løsninger for vann, strøm, avløp og offentlig vei.",
+          "I slike områder må du blant annet undersøke jordbruksinteresser, mulige vern, vannressurser, avstand til tjenester og tilgang gjennom hele året. Eksisterende landbruksbygninger er ikke automatisk godkjent for boligbruk, og en eldre konstruksjon på tomten gjør ikke en ny bolig lovlig.",
+          "Les [[om Pinoso og området rundt|/omrader/innlandet/pinoso]] og [[vår oversikt over innlandet|/omrader/innlandet]] før du velger en tomt. De kommunale opplysningene for den konkrete eiendommen må likevel hentes inn separat."
+        ]
+      },
+      {
+        "heading": "Kan du sette opp en prefabrikkert villa eller et lite hus uten byggetillatelse?",
+        "body": [
+          "Nei, ikke regn med det. At boligen er modulbasert, prefabrikkert, står på pilarer eller markedsføres som flyttbar, gjør den ikke automatisk unntatt regulerings- eller lisenskrav. Valenciaregionens TRLOTUP omtaler eksplisitt plassering av prefabrikkerte hus og lignende installasjoner blant tiltak som er underlagt urbanistisk tillatelse.",
+          "Et boligprosjekt på rustikk grunn må vurderes etter den reelle bruken og fysiske tiltakene – ikke salgsnavnet på huset. Be kommunen og arkitekten avklare om akkurat den planlagte konstruksjonen og bruken er lovlig før du bestiller leveransen.",
+          "Kilde: [[TRLOTUP artikkel 232 om tiltak som krever tillatelse|https://www.boe.es/buscar/act.php?id=DOGV-r-2021-90283]]."
+        ]
+      },
+      {
+        "heading": "Hva skal en reservasjonsavtale om tomt inneholde?",
+        "body": [
+          "Betal aldri et betydelig ikke-refunderbart beløp basert på muntlige løfter om at tomten kan bebygges. Be en uavhengig advokat utforme vilkår og frister knyttet til dokumentert planstatus, juridisk kontroll, nødvendige rettigheter og eventuelle forhold som må avklares for det ønskede prosjektet.",
+          "En betinget avtale kan for eksempel regulere hva som skjer hvis kommunal planinformasjon viser at boligen ikke kan tillates eller vesentlige rettigheter mangler. Om og hvordan dette kan avtales, må tilpasses den konkrete transaksjonen – du bør ikke anta at et reservasjonsbeløp automatisk kan kreves tilbake.",
+          "Se også [[juridiske fallgruver ved boligkjøp i Spania|/guide/juridiske-fallgruver-boligkjop-spania]] og [[kjøpsprosessen steg for steg|/kjopsprosessen]]."
+        ]
+      }
     ],
-    faq: [
-      {
-        question: "Kan utlendinger kjøpe tomt i Spania?",
-        answer:
-          "Ja, utlendinger kan kjøpe tomt i Spania. Du trenger de nødvendige identifikasjons- og skatteopplysningene for transaksjonen, og bør bruke uavhengig juridisk og teknisk kontroll av tomt, regulering og kontrakt.",
-      },
-      {
-        question: "Er alle tomter i Spania byggbare?",
-        answer:
-          "Nei. Mange tomter har begrensninger eller er ikke byggbare for det prosjektet du ønsker. Byggbarhet må kontrolleres mot gjeldende kommunale planer og konkrete tomteforhold før kjøp.",
-      },
-      {
-        question: "Hvor lang tid tar det å bygge hus i Spania?",
-        answer:
-          "Det finnes ikke én pålitelig standardtid. Prosjektering, kommunal behandling, grunnarbeid, byggeperiode og ferdigstillelse varierer med kommune, tomt, prosjekt og entreprenør. Be om en konkret tidsplan før du binder deg.",
-      },
+    "nextSteps": [
+      "Velg ønsket boligtype, bruksformål, beliggenhet og maksimal samlet totalramme før tomtesøk.",
+      "Be om referanse til hver aktuell tomt og få advokat til å kontrollere register, heftelser og kontraktsrisiko.",
+      "La lokal arkitekt avklare kommunal planstatus og skriftlig mulighet for akkurat ditt prosjekt.",
+      "Hent dokumentasjon på vann, strøm, avløp, vei og eventuelle brønn- eller servituttrettigheter.",
+      "Få full kostnadsoversikt, entreprisetilbud og realistisk tidslinje – med reserve.",
+      "Signer først når du forstår hvilke vilkår som er avklart og hvilke som fortsatt er usikre."
     ],
+    "faq": [
+      {
+        "question": "Kan nordmenn kjøpe tomt og bygge hus i Spania?",
+        "answer": "Ja. Norske kjøpere kan kjøpe tomt i Spania, men må dokumentere eierskap og kontrollere kommunal planstatus, regionale regler, teknisk infrastruktur og nødvendige tillatelser. Tomteeierskap gir ikke automatisk byggerett."
+      },
+      {
+        "question": "Er en rustikk tomt på 10 000 m² byggbar i Valenciaregionen?",
+        "answer": "Ikke automatisk. Regional lov omtaler minst én hektar for mulig, unntaksvis frittliggende bolig på vanlig ikke-urbaniserbar grunn, men kommuneplanen kan kreve mer, og vern eller andre forhold kan stenge for boligbygging. Arkitekt og kommune må kontrollere hver tomt."
+      },
+      {
+        "question": "Hva betyr at maksimalt 2 % kan bebygges på rustikk tomt?",
+        "answer": "Det er en øvre grense for bebygd grunnflate i den relevante regionale bestemmelsen, ikke et løfte om tillatelse og ikke nødvendigvis lik boligens totale innvendige areal. Kommunens plan og andre krav kan begrense eller utelukke prosjektet."
+      },
+      {
+        "question": "Kan jeg bo i et prefabrikkert hus uten byggetillatelse?",
+        "answer": "Ikke anta det. Valenciaregionens planlov omtaler prefabrikkerte hus blant tiltak som kan kreve lisens. Teknisk utforming, plassering og faktisk bruk må avklares med kommunen før bestilling."
+      },
+      {
+        "question": "Gir en brønn på tomten lovlig vann til boligen?",
+        "answer": "Nei, ikke uten videre. Sjekk lovlig registrering eller tillatelse, vannmengde og tillatt bruksformål hos ansvarlig vannmyndighet. Undersøk også drikkevannskvalitet og krav til avløp."
+      },
+      {
+        "question": "Hva koster det å bygge en villa i Spania per kvadratmeter?",
+        "answer": "Det finnes ikke én pålitelig pris per kvadratmeter som dekker alle tomter og leveranser. Tomt, grunnarbeid, fundamentering, prosjekt, byggetillatelse, tilkoblinger, uteområder og skatter kan gi store forskjeller. Be om spesifiserte tilbud for den konkrete tomten."
+      },
+      {
+        "question": "Når bør jeg betale reservasjonsbeløp for en tomt?",
+        "answer": "Først etter at du har fått nødvendig dokumentasjon og en uavhengig advokat har vurdert avtalen. Viktige forbehold knyttet til byggbarhet, eierskap og rettigheter bør vurderes skriftlig før innbetaling."
+      },
+      {
+        "question": "Hvor lang tid tar det fra tomtekjøp til innflytting?",
+        "answer": "Det varierer med planstatus, prosjekt, kommunal saksbehandling, entreprenør og infrastruktur. Lag en prosjektspesifikk milepælsplan med buffer framfor å stole på én standard leveringstid."
+      }
+    ],
+    "cta": {
+      "label": "Snakk med oss om tomt og boligbygging",
+      "href": "/booking"
+    }
   },
   {
     "slug": "kjop-bolig-i-spania-na-eller-vente",

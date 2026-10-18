@@ -125,6 +125,32 @@ if (read("src/app/magasin/page.tsx").includes(removedBudgetSlug) ||
 }
 requireText("src/app/magasin/page.tsx", `${mergedBudgetSlug}#boligbudsjett-kalkulator`, "magazine hero calculator link on merged article");
 
+const plotGuideSource = "src/lib/content.ts";
+requireText(plotGuideSource, '"slug": "guide-tomtekjop-bygging-i-spania"', "land buying and construction evergreen guide");
+requireText(plotGuideSource, '"updated": "2026-10-18"', "land buying guide update date");
+requireText(plotGuideSource, '"href": "/om-oss/freddy"', "land guide author attribution");
+requireText(articleViewForEditorial, 'article.slug === "guide-tomtekjop-bygging-i-spania"', "land guide real contextual links");
+for (const link of [
+  "/guide/kjope-bolig-i-spania",
+  "/guide/kostnader-boligkjop-spania",
+  "/guide/juridiske-fallgruver-boligkjop-spania",
+  "/omrader/innlandet/pinoso",
+  "/booking",
+]) {
+  requireText(plotGuideSource, link, "plot buying journey link");
+}
+for (const source of [
+  "https://www.boe.es/buscar/act.php?id=DOGV-r-2021-90283",
+  "https://sede.registradores.org/site/propiedad?lang=es",
+  "https://www.chj.es/es-es/ciudadano/tramitesysolicitudes/Paginas/registrodeaguas.aspx",
+  "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214",
+]) {
+  requireText(plotGuideSource, source, "verified official land guide source");
+}
+for (const principle of ["10 000 m²", "2 %", "suelo urbanizable", "prefabrikkert", "nota simple"]) {
+  requireText(plotGuideSource, principle, "land guide practical building restrictions");
+}
+
 const properties = "src/app/eiendommer/page.tsx";
 for (const href of ["/omrader", "/guide/kjope-bolig-i-spania", "/kjopsprosessen", "/visningstur"]) {
   requireText(properties, `href="${href}"`, "property-list internal link");
