@@ -91,6 +91,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "@id": "https://www.zenecohomes.com/#organization",
         name: "Zen Eco Homes",
         url: "https://www.zenecohomes.com",
+        image: "https://www.zenecohomes.com/assets/zeneco-mark.svg",
+        priceRange: "$$",
         description:
           "Eiendomsrådgivning for moderne nybygg, villaer, leiligheter, tomter og eiendomsprosjekter i Spania, med særlig fokus på Costa Blanca og Costa Cálida.",
         telephone: "+4796009965",
