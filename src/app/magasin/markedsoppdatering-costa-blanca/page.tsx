@@ -17,9 +17,9 @@ export default function MarketSeriesPage() {
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section className="section" style={{background:"#17232a",color:"#fff",paddingBlock:"clamp(3rem,6vw,5rem)"}}>
-        <div className="mx-auto max-w-5xl px-5 md:px-8">
+        <div className="mx-auto max-w-5xl" style={{paddingInline:"clamp(1.5rem, 4vw, 3rem)"}}>
           <p className="eyebrow" style={{marginBottom:16}}>FAST MÅNEDLIG SERIE</p>
-          <h1 style={{fontSize:"clamp(2.2rem,5vw,4rem)",lineHeight:1.12,maxWidth:"18ch",overflowWrap:"break-word",marginBottom:20}}>Markedsoppdatering Costa Blanca</h1>
+          <h1 style={{fontSize:"clamp(2.2rem,5vw,4rem)",lineHeight:1.12,maxWidth:"16ch",overflowWrap:"break-word",marginBottom:20}}>Markedsoppdatering Costa Blanca</h1>
           <p style={{maxWidth:"65ch",fontSize:"clamp(1rem,1.6vw,1.2rem)",lineHeight:1.65,color:"#dee3e2"}}>Hva endrer seg i boligmarkedet på Costa Blanca – og hva betyr det for deg som vurderer å kjøpe bolig i Spania?</p>
         </div>
       </section>
