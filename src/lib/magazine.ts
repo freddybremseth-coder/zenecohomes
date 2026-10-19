@@ -26,7 +26,7 @@ export const extraArticles: Article[] = [
     "readingTime": "13 min lesing",
     "image": "/assets/magasin-covers/omradevalg.svg",
     "imageAlt": "Illustrasjon av kystbyer på Costa Blanca",
-    "seoTitle": "Costa Blanca uten bil: Albir, Altea og Benidorm",
+    "seoTitle": "Costa Blanca uten bil: Albir, Altea og Benidorm – guide",
     "seoDescription": "Kan du bo på Costa Blanca uten bil? Sammenlign Albir, Altea, Villajoyosa og Benidorm, sjekk TRAM, bakker, butikker og gangavstand før boligkjøp.",
     "keywords": [
       "Costa Blanca uten bil",
