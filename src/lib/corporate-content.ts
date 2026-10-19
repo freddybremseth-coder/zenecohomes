@@ -2,6 +2,14 @@ import type { Article, ArticleSection } from "./content";
 
 const updated = "2026-09-26";
 const cover = "/assets/magasin-covers/magasin-standard.svg";
+const corporateCovers: Record<string, string> = {
+  "hva-er-en-bedriftshytte-i-spania": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_35-1.png",
+  "bedriftshytte-mot-hotell-og-leie": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_36-2.png",
+  "kan-ansatte-bruke-bedriftseid-bolig-i-spania": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_37-3.png",
+  "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_38-4.png",
+  "hvilken-bolig-passer-som-bedriftshytte": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_40-5.png",
+  "medlemsbolig-i-spania-for-foreninger": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_41-6.png",
+};
 
 type CorporateDraft = {
   slug: string;
@@ -28,7 +36,7 @@ function makeArticle(draft: CorporateDraft): Article {
     updated: draft.updated || draft.date || updated,
     category: "Zen Corporate Homes",
     readingTime: draft.readingTime || "6–8 min lesing",
-    image: cover,
+    image: corporateCovers[draft.slug] || cover,
     imageAlt: `Zen Corporate Homes guide: ${draft.title}`,
     seoTitle: draft.seoTitle || `${draft.title} | Zen Corporate Homes`,
     seoDescription: draft.seoDescription || draft.excerpt,
