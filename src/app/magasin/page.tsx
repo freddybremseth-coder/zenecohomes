@@ -370,7 +370,7 @@ export default async function MagazinePage() {
             <article className="magazine-card" key={article.slug}>
               <Image
                 className="magazine-cover-image"
-                src={getArticleCover(article.slug)}
+                src={article.image || getArticleCover(article.slug)}
                 alt={article.imageAlt}
                 width={1200}
                 height={760}
