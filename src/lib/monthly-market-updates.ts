@@ -9,8 +9,8 @@ export const monthlyMarketUpdates: Article[] = [
     updated: "2026-10-19",
     category: "Markedsoppdatering Costa Blanca",
     readingTime: "8 min lesing",
-    image: "/assets/magasin-covers/costa-blanca-oktober-2026.svg",
-    imageAlt: "Illustrert kystlandskap fra Costa Blanca med hav, fjell og boliger",
+    image: "/assets/areas.jpg",
+    imageAlt: "Panoramautsikt over kysten på Costa Blanca og Middelhavet",
     seoTitle: "Boligmarkedet Costa Blanca oktober 2026 | Zen Eco Homes",
     seoDescription: "Boligpriser i Benidorm, Finestrat og Villajoyosa, nye regler for turistutleie og IVA: Se hva oktober 2026 betyr for boligkjøpere på hele Costa Blanca.",
     keywords: ["markedsoppdatering Costa Blanca", "boligpriser Costa Blanca 2026", "Benidorm boligpriser", "Finestrat nybygg", "Villajoyosa turistutleie", "IVA Spania"],
@@ -53,7 +53,7 @@ export const monthlyMarketUpdates: Article[] = [
         "Ved nybygg med overtakelse senere bør kjøperen be om oppdatert finansieringsvurdering, kontrollere bankgarantier og få tydelig beskrivelse av leveranse og betalingsplan."
       ]},
       { heading: "Les videre og få hjelp til å sammenligne", body: [
-        "Se våre guider om boligkjøp på https://www.zenecohomes.com/guide og hele magasinet på https://www.zenecohomes.com/magasin . Hvis du ønsker å sammenligne aktuelle boliger og totalbudsjett, ta kontakt via https://www.zenecohomes.com/kontakt .",
+        "Se våre guider om boligkjøp på https://www.zenecohomes.com/guide og hele magasinet på https://www.zenecohomes.com/magasin . Hvis du ønsker å sammenligne aktuelle boliger og totalbudsjett, ta kontakt via https://www.zenecohomes.com/booking .",
         "Denne utgaven er datert 19. oktober 2026. Den gir generell markedsinformasjon, ikke individuell juridisk, skattemessig eller finansieringsmessig rådgivning."
       ]}
     ],
@@ -69,6 +69,6 @@ export const monthlyMarketUpdates: Article[] = [
       { question: "Kan man få igjen 21 % IVA ved kjøp av turistleilighet?", answer: "Det kan være mulig ved reell IVA-pliktig virksomhet som gir fradragsrett. Det må vurderes av skatterådgiver og kan påvirkes av privat bruk, fakturering og fremtidig endret bruk." },
       { question: "Kan jeg automatisk leie ut en bolig i Villajoyosa?", answer: "Nei. Kommunale reguleringer og eiendommens konkrete tillatelser må verifiseres. Kommunen vedtok 15. oktober 2026 en områdeavgrenset midlertidig suspensjon for visse nye tillatelser." }
     ],
-    cta: { label: "Snakk med en rådgiver om boligkjøp", href: "/kontakt" }
+    cta: { label: "Snakk med en rådgiver om boligkjøp", href: "/booking" }
   }
 ];
