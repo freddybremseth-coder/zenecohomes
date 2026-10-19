@@ -17,6 +17,255 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "nybygg-under-oppforing-eller-innflyttingsklar-spania",
+    "title": "Nybygg under oppføring eller innflyttingsklar bolig i Spania – hva er tryggest?",
+    "excerpt": "Bør du kjøpe på tegning eller en ferdig nybyggbolig? En grundig guide til betalingsplaner, bankgaranti, forsinkelser, ferdigattest, overtakelse og kjøperrisiko.",
+    "category": "Nybygg og boligkjøp",
+    "date": "2026-10-20",
+    "updated": "2026-10-20",
+    "readingTime": "19 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Moderne boliger under oppføring på Costa Blanca",
+    "seoTitle": "Nybygg i Spania: kjøpe på tegning eller ferdig bolig?",
+    "seoDescription": "Kjøpe nybygg under oppføring eller innflyttingsklart i Spania? Les om bankgaranti, betalingsplan, frister, forsinkelser og overtakelse på Costa Blanca.",
+    "keywords": [
+      "nybygg på tegning Spania",
+      "bankgaranti nybygg Spania",
+      "forsinket overtakelse bolig Spania",
+      "innflyttingsklar nybygg Costa Blanca",
+      "kjøpe bolig under oppføring Spania"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "En bolig under oppføring gir muligheten til å velge tidlig i et prosjekt, kanskje sikre den beste tomten eller få påvirke enkelte løsninger. En ferdig nybyggbolig lar deg derimot se det du kjøper, teste utsikt og standard og ofte planlegge overtakelse med mindre byggeusikkerhet.",
+      "Men «nybygg» er ikke én type handel. Betalingsplaner, dokumentasjon, leveringstid, tillatelser og kjøpers rettigheter er forskjellige avhengig av prosjekt og kontrakt. Når du kjøper i Spania, bør du ikke signere på en forsinkelse eller betale neste avdrag bare fordi noen sier at det er rutine.",
+      "Denne guiden beskriver hva en kjøper bør kontrollere i praksis. Konkrete kontraktsrettigheter og krav må vurderes av en uavhengig spansk advokat med tilgang til avtalen og prosjektets dokumentasjon."
+    ],
+    "sections": [
+      {
+        "heading": "Kort svar: hva bør du velge?",
+        "body": [
+          "Velg ferdigstilt nybygg hvis du vil kontrollere boligen fysisk før kjøpet, har behov for forutsigbar innflytting og ønsker å redusere risikoen knyttet til selve byggeperioden. Velg bolig under oppføring hvis du tåler tidsusikkerhet, vil velge blant flere enheter eller ønsker tilvalg som bare kan gjennomføres tidlig.",
+          "Det betyr ikke at en ferdig bolig er risikofri, eller at kjøp på tegning er uforsvarlig. Begge krever juridisk kontroll, teknisk vurdering og en god gjennomgang av hva som faktisk leveres."
+        ]
+      },
+      {
+        "heading": "To kjøpsmodeller – forskjeller som merkes",
+        "table": {
+          "headers": [
+            "Spørsmål",
+            "Under oppføring",
+            "Ferdigstilt nybygg"
+          ],
+          "rows": [
+            [
+              "Hva kan du se?",
+              "Tegninger, visningsbolig, tomt og byggestatus",
+              "Den konkrete boligen og omgivelsene"
+            ],
+            [
+              "Tidspunkt for overtakelse",
+              "Fremtidig og kan endres",
+              "Ofte nærmere, men dokumentasjon må kontrolleres"
+            ],
+            [
+              "Betalingsrisiko",
+              "Ofte forskudd under byggingen",
+              "Kan være mindre forskuddsperiode"
+            ],
+            [
+              "Tilvalg",
+              "Større mulighet tidlig, men avhenger av byggefase",
+              "Mer begrenset endringsmulighet"
+            ],
+            [
+              "Utsikt og nabobygg",
+              "Må vurderes mot planene",
+              "Faktisk utsikt kan kontrolleres, men fremtidig utbygging gjenstår"
+            ],
+            [
+              "Teknisk kontroll",
+              "Kontrolleres gjennom prosjektet og ved overtakelse",
+              "Kan inspiseres før endelig beslutning"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Første kontroll: hvem er egentlig selger og hvem bygger?",
+        "body": [
+          "Få fullt juridisk navn og selskapsopplysninger til utbyggeren som står i kontrakten. Undersøk hvem som eier tomten, hvem som er kontraktspart og hvilken entreprenør som faktisk utfører arbeidet. Et kjent merkenavn i annonsen er ikke nødvendigvis samme juridiske selskap som mottar betaling.",
+          "La advokaten kontrollere Registro de la Propiedad, heftelser, tomtens identifikasjon, relevante tillatelser og om prosjektet samsvarer med det som markedsføres. Spør også hva som skjer hvis utbygger eller entreprenør får betalingsproblemer."
+        ]
+      },
+      {
+        "heading": "Byggetillatelse før store forskuddsbetalinger",
+        "body": [
+          "Spansk nybyggbeskyttelse for forskuddsbetalinger er regulert i tillegg én til Ley 38/1999 (LOE). Hovedregelen om garanti for innbetalte beløp knyttes til at byggetillatelsen er gitt. Dette bør avklares med advokaten før betalingsforpliktelser avtales eller penger overføres.",
+          "Ikke forveksle reservasjonsavtale, byggetillatelse (licencia de obras), senere dokumentasjon for bruk/innflytting og skjøte. De dekker forskjellige trinn i prosessen.",
+          "Lovkilde: https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567 ."
+        ]
+      },
+      {
+        "heading": "Bankgaranti eller garantiforsikring: hva beskytter pengene?",
+        "body": [
+          "Når lovens vilkår gjelder, krever LOE at utbygger sikrer forskuddsbeløp gjennom bankgaranti (aval) eller garantiforsikring (seguro de caución). Beskyttelsen omfatter innbetalte beløp, relevante skatter og lovbestemte renter etter regelverket. Det er ikke nok at brosjyren lover at innbetalingene er «trygge».",
+          "Be om det konkrete, individuelle garantidokumentet for den aktuelle kjøperen og boligen, med utsteder, beløp, gyldighet og vilkår. Kontroller at hver forskuddsbetaling og eventuell skatt er dekket, at garantien ikke avbrytes for tidlig, og at utstederen kan verifiseres uavhengig.",
+          "En kontrakt kan omtale bankgaranti uten at gyldig individuell garanti faktisk er utstedt. Dette er nettopp noe den uavhengige advokaten må kontrollere før kjøperen betaler."
+        ]
+      },
+      {
+        "heading": "Særskilt konto: betal aldri bare til kontoen i en e-post",
+        "body": [
+          "LOE stiller krav om at forskudd mottas på særskilt konto for utbyggingen. Be om skriftlige betalingsinstrukser, og la advokaten kontrollere at konto, kontraktspart og garantidokument stemmer med hverandre.",
+          "Får du e-post om endret bankkonto, verifiser opplysningene over en kjent og uavhengig kanal før overføring. Dette gjelder også hvis endringen kommer kort tid før en betalingsfrist."
+        ]
+      },
+      {
+        "heading": "Betalingsplanen: forstå hva du risikerer før ferdigstillelse",
+        "body": [
+          "Nybygg under oppføring kan ha reservasjonsbeløp, kontraktsbetaling, ett eller flere byggeavdrag og et sluttoppgjør hos notaren. Fordelingen varierer sterkt mellom prosjekter. Ingen bestemt betalingsmodell er automatisk lovpålagt eller trygg.",
+          "Be om en oversikt i euro der hvert avdrag har dato, utløsende vilkår, skattebeløp, mottakerkonto og tilhørende garanti. Skill mellom betaling på en bestemt dato og betaling først etter dokumentert milepæl. Vurder også hvordan valutakursen fra norske kroner kan påvirke hvert avdrag.",
+          "Er boligen ferdig, må du fortsatt kontrollere reservasjonens vilkår og at alle tillatelser, heftelser og overtakelsesforutsetninger er oppfylt før sluttoppgjør."
+        ]
+      },
+      {
+        "heading": "Leveringsdato: hva står det faktisk i kontrakten?",
+        "body": [
+          "Det er forskjell på annonsert ferdigstillelse, planlagt byggeavslutning, tidspunkt for brukstillatelse og datoen da kjøperen faktisk kan overta boligen med dokumenter og nøkler. Be om én tydelig, kontraktsfestet frist for levering og beskrivelse av forutsetningene.",
+          "Undersøk hvor lang frist utbyggeren har til å utbedre forhold, hvilke unntak som gjelder, hvordan kjøperen må varsles og om kontrakten inneholder en ekstra utsettelsesperiode. Uklare formuleringer kan gjøre et seks måneders avvik langt vanskeligere å håndtere enn kjøperen forventer."
+        ]
+      },
+      {
+        "heading": "Når utbygger melder forsinkelse på seks måneder",
+        "body": [
+          "Tenk deg at en bolig har avtalt levering ved utgangen av desember, men utbygger ønsker å flytte overtakelsen til slutten av juni. Kjøperen får tilsendt et tillegg som skal signeres. At utbyggeren viser til leveranseproblemer, varme, arbeidsplanlegging eller andre forhold, avgjør ikke alene hva kontrakten eller loven tillater.",
+          "En signatur på et tillegg kan få konsekvenser for opprinnelig leveringsdato, misligholdsbeføyelser, renter, erstatning eller rett til å avslutte kontrakten. Be derfor advokaten undersøke den opprinnelige avtalen og foreslå forbehold før en eventuell aksept. Ikke la et tidskritisk krav om signatur erstatte en juridisk vurdering.",
+          "Dokumenter datoen for varselet, hva som er begrunnelsen, eventuelle dokumenterte tap og all tidligere korrespondanse. Dette er en illustrasjon av fremgangsmåten, ikke en vurdering av noen bestemt tvist."
+        ]
+      },
+      {
+        "heading": "Force majeure og leverandørproblemer: ikke stol på merkelappen",
+        "body": [
+          "Noen kontrakter gir særregler for force majeure eller forhold utenfor utbyggers kontroll. Hvorvidt en forsinket dørleveranse, varmeperiode, streik eller annen hendelse faktisk faller innenfor unntaket, kan ikke avgjøres av utbyggers egen beskrivelse alene.",
+          "Advokaten må vurdere ordlyden, bevisene, sammenhengen mellom hendelsen og den konkrete forsinkelsen, hvilke tiltak som ble gjort for å unngå den, og reglene som gjelder avtalen. Vær særlig varsom hvis kontrakten forsøker å frita utbyggeren for enhver forsinkelse, eller samtidig pålegger kjøperen strenge konsekvenser."
+        ]
+      },
+      {
+        "heading": "Kan kjøper kreve pengene tilbake ved forsinket levering?",
+        "body": [
+          "LOEs regler om sikring av forskudd gir et lovregulert rammeverk ved manglende igangsetting eller levering innen avtalt frist. Etter vilkårene kan det være aktuelt å kreve tilbake innbetalte beløp med relevante skatter og lovbestemt rente eller å gi en skriftlig forlengelse med ny dato. Det er ikke det samme som at enhver liten forsinkelse automatisk gir samme rettslige resultat i alle kontrakter.",
+          "Krav mot utbygger og krav under bankgaranti/forsikring kan følge ulike prosesser og frister. Særlig viktig er skriftlig påkrav og dokumentasjon. Garantivilkårene kan inneholde formkrav og tidsbegrensninger. La advokaten håndtere dette før du signerer en forlengelse eller lar frister løpe.",
+          "Se Ley 38/1999, disposición adicional primera: https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567 ."
+        ]
+      },
+      {
+        "heading": "Erstatning for seks måneders utsettelse: hva kan man dokumentere?",
+        "body": [
+          "Hvis forsinkelsen ikke er gyldig unnskyldt, kan det være aktuelt å vurdere økonomisk tap etter avtalen og gjeldende rett. Eksempler på tap som bør dokumenteres, er ekstra leieutgifter, endrede fly-/reiseplaner, lagring eller andre påviselige merkostnader. Om de faktisk kan kreves erstattet, beror på vilkårene og bevisene.",
+          "Det finnes ikke en generell regel om at alle kjøpere automatisk får et bestemt beløp per måned. En utbygger som tilbyr ny dato uten kompensasjon, betyr ikke nødvendigvis at kjøperen er uten rettigheter. Få en individuell vurdering, og dokumenter både tap og kommunikasjon."
+        ]
+      },
+      {
+        "heading": "Ferdig bygd er ikke nødvendigvis klar for lovlig innflytting",
+        "body": [
+          "En bolig kan se ferdig ut uten at alle nødvendige tekniske og administrative forhold er på plass. I Valencia-regionen må kjøperen undersøke relevant dokumentasjon for første gangs bruk eller innflytting, ofte knyttet til declaración responsable de primera ocupación eller kommunens gjeldende ordning.",
+          "Be advokaten kontrollere statusen for den konkrete kommunen, sluttdokumentasjon fra teknisk ledelse, eventuelle avvik og om nødvendige tilkoblinger er tilgjengelige. Kommunale prosedyrer varierer; en brosjyre med «ready to move in» er ikke bevis på at formalitetene er oppfylt.",
+          "Et eksempel på en offentlig kommunal beskrivelse av første gangs bruk finnes på https://sede.valencia.es/sede/registro/procedimiento/UR.LC.190?lang=1 , men lokale krav for boligen din må undersøkes separat."
+        ]
+      },
+      {
+        "heading": "Overtakelse hos notaren: hva bør være dokumentert?",
+        "body": [
+          "Før skjøte og sluttoppgjør bør advokaten kontrollere oppdatert registerinformasjon, selgers rett til å overdra, heftelser, relevante ferdigstillings-/bruksvilkår, energidokumenter, tekniske garantier, vedtekter hvis eiendommen inngår i sameie, samt eventuelle utestående betalinger.",
+          "Avklar også hvem som betaler hvilke skatter og kostnader, hva som skjer med parkeringsplass og bod, og om tilvalg og særskilte leveranser er skrevet inn. Ved innflyttingsklar bolig har kjøper større mulighet til å inspisere det faktiske resultatet før endelig betaling."
+        ]
+      },
+      {
+        "heading": "Befaring og mangelliste før nøkkeloverlevering",
+        "body": [
+          "Planlegg en grundig befaring med protokoll over synlige feil. Test dører, vinduer, vann, avløp, strøm, klimaanlegg, hvitevarer, tetting, fliser, fall på terrasser og eventuelle lekkasjer. Fotografer avvik og noter rom og dato.",
+          "Avklar hva som skal utbedres før signering og hva som kan følges opp etterpå. Muntlige lovnader må skrives ned. Vurder uavhengig teknisk kontroll ved større boligkjøp, særlig når kjøperen ikke selv kan følge byggeprosessen på stedet."
+        ]
+      },
+      {
+        "heading": "Garantier etter overtakelse er noe annet enn bankgaranti for forskudd",
+        "body": [
+          "Det er viktig å skille mellom forskuddsgarantien under bygging og byggrelatert ansvar for mangler etter ferdigstillelse. LOE opererer med ulike ansvarsperioder for bestemte kategorier bygningsfeil; hva som omfattes og hvordan krav fremmes må vurderes konkret.",
+          "Be om forsikringsdokumentasjon, vedlikeholdsanvisninger og kontaktinformasjon for reklamasjoner. Det at en bolig omtales som «10 års garanti», betyr ikke at enhver feil på kjøkken, maling eller utstyr er dekket i ti år."
+        ]
+      },
+      {
+        "heading": "Hva er best hvis du må flytte inn på en bestemt dato?",
+        "body": [
+          "Hvis du har solgt boligen i Norge, har barn som skal starte på skolen eller har en leieavtale som utløper, bør du veie tidsrisiko tungt. En ferdigstilt og dokumentert bolig kan være bedre enn et byggeprosjekt med optimistisk leveringstid.",
+          "Hvis fleksibilitet er viktigere enn tidspunkt og du ønsker spesifikke løsninger som bare kan velges i byggefasen, kan bolig under oppføring fortsatt være riktig. Lag i så fall en realistisk reserveplan for forsinkelse."
+        ]
+      },
+      {
+        "heading": "Sjekkliste før du reserverer eller signerer",
+        "bullets": [
+          "Hva er juridisk navn på utbygger og hvem eier tomten?",
+          "Finnes byggetillatelse, og hva dekker den konkret?",
+          "Er hver forskuddsbetaling beskyttet med en individuell garanti?",
+          "Hvilken konto skal pengene sendes til og hvem kontrollerer den?",
+          "Hvilken dato er bindende for faktisk overtakelse?",
+          "Hva skjer ved forsinkelse, og hvilke unntak står i kontrakten?",
+          "Kan kontrakten endres ensidig av utbygger?",
+          "Er tilvalg, materialer, basseng, parkering og bod avtalt skriftlig?",
+          "Hva er status for ferdigstillings- og brukstillatelser?",
+          "Finnes plan for befaring, mangelliste og utbedring?",
+          "Har advokaten kontrollert heftelser og registerinformasjon?",
+          "Hva er planen hvis boligen blir forsinket flere måneder?"
+        ]
+      },
+      {
+        "heading": "Freddys råd: begynn med risikoen du ikke kan se på prospektet",
+        "body": [
+          "Jeg ville bedt om mer enn prislisten før jeg anbefalte et nybyggprosjekt. Først vil jeg vite hvem som selger, hvilke garantier som finnes, hvor sikre dokumentene og leveringstidene er, og om boligen faktisk passer kunden.",
+          "Det er ofte mulig å vurdere en ferdig bolig raskere fordi det meste kan kontrolleres fysisk. Under oppføring kreves mer dokumentarbeid og tettere oppfølging. Zen Eco Homes hjelper deg med prosjektsammenligning, spørsmål til selger og koordinering med uavhengig advokat og eventuelle tekniske fagpersoner."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Velg mellom tidlig prosjekt og ferdigstilt bolig ut fra din toleranse for risiko og ventetid.",
+      "Innhent byggedokumenter, leveransebeskrivelse og en bindende betalings- og leveringsplan.",
+      "La uavhengig advokat kontrollere forskuddsgaranti, kontrakt og frister.",
+      "Dokumenter alle endringer og ikke signer en forlengelse uten vurdering.",
+      "Avtal teknisk befaring og full dokumentkontroll før sluttoppgjør."
+    ],
+    "faq": [
+      {
+        "question": "Er det trygt å kjøpe nybygg på tegning i Spania?",
+        "answer": "Det kan være trygt med korrekt prosjektdokumentasjon, kontraktskontroll og lovpålagte forskuddsgarantier. Risikoen for byggeforsinkelse er likevel større enn ved dokumentert ferdigstilt bolig."
+      },
+      {
+        "question": "Må utbygger stille bankgaranti for forskuddsbetaling?",
+        "answer": "Når lovens vilkår gjelder, krever LOE sikkerhet via bankgaranti eller garantiforsikring fra byggetillatelsen. Be om individuell dokumentasjon for din bolig og betalingene."
+      },
+      {
+        "question": "Kan jeg nekte å signere et tillegg med seks måneders forsinkelse?",
+        "answer": "Ikke signer før en uavhengig advokat har vurdert kontrakten, begrunnelsen, mulige rettigheter og konsekvensene av endringen. Rettsvirkningene avhenger av den konkrete avtalen."
+      },
+      {
+        "question": "Kan en utbygger skylde på forsinkede leveranser og force majeure?",
+        "answer": "Årsaken må vurderes opp mot kontrakten, faktiske forhold og gjeldende rett. En leverandørforsinkelse er ikke automatisk force majeure."
+      },
+      {
+        "question": "Er ferdig nybygg uten risiko?",
+        "answer": "Nei. Eierforhold, heftelser, brukstillatelse, bygningsfeil og hva som inngår i kjøpet må fortsatt kontrolleres."
+      }
+    ],
+    "cta": {
+      "label": "Få uavhengig hjelp til nybyggkjøp på Costa Blanca",
+      "href": "/kontakt"
+    }
+  },
+
+{
     "slug": "fast-bosetting-eller-feriebolig-spania",
     "title": "Fast bosetting eller feriebolig i Spania – slik velger du riktig bolig",
     "excerpt": "En bolig som fungerer i ferien er ikke nødvendigvis riktig å bo i året rundt. Sammenlign beliggenhet, inneklima, helsetjenester, transport, skatter og vedlikehold.",
