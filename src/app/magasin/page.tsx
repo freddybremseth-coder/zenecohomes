@@ -269,7 +269,7 @@ export default async function MagazinePage() {
         </div>
         <div className="magazine-grid" style={{gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,310px),1fr))"}}>
           <article className="magazine-card">
-            <Image className="magazine-cover-image" src="/assets/areas.jpg" alt="Panorama over Costa Blanca, kyst og boliger" width={1200} height={760} />
+            <Image className="magazine-cover-image" src="/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_14_54-1.png" alt="Markedsanalyse over Costa Blanca med prisutvikling og kystlandskap" width={1200} height={760} />
             <div className="magazine-body">
               <p className="magazine-meta">MÅNEDLIG MARKEDSANALYSE · OKTOBER 2026</p>
               <h3>Markedsoppdatering Costa Blanca</h3>
@@ -280,7 +280,7 @@ export default async function MagazinePage() {
             </div>
           </article>
           <article className="magazine-card">
-            <Image className="magazine-cover-image" src="/assets/areas.jpg" alt="Boliger langs Costa Blanca-kysten" width={1200} height={760} />
+            <Image className="magazine-cover-image" src="/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_14_55-2.png" alt="Sammenligning av ulike boliger og prisnivåer på Costa Blanca" width={1200} height={760} />
             <div className="magazine-body">
               <p className="magazine-meta">KONKRETE BOLIGER OG PRISNIVÅER</p>
               <h3>Marked akkurat nå</h3>
