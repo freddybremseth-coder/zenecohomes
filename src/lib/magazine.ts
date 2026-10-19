@@ -17,6 +17,153 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "albir-eller-villajoyosa-hvor-bo",
+    "title": "Albir eller Villajoyosa – hvor vil du trives best?",
+    "excerpt": "To populære steder på Costa Blanca Nord, men med svært ulik atmosfære. Vi sammenligner strand, hverdagsliv, norsk miljø, boligtyper og praktiske kompromisser.",
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "category": "Områdevalg",
+    "readingTime": "9 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Illustrasjon av kystlandskap og boligområder på Costa Blanca",
+    "seoTitle": "Albir eller Villajoyosa? Bolig, strand og hverdagsliv",
+    "seoDescription": "Albir eller Villajoyosa på Costa Blanca? Sammenlign strand, atmosfære, norsk miljø, boligtyper, transport og praktiske forskjeller før du velger bolig.",
+    "keywords": [
+      "Albir eller Villajoyosa",
+      "bo i Albir Spania",
+      "kjøpe bolig Villajoyosa",
+      "bolig Costa Blanca Nord",
+      "Albir Villajoyosa forskjell"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Albir og Villajoyosa ligger begge på Costa Blanca Nord, men hverdagen kan oppleves ganske forskjellig. Albir har et etablert internasjonalt og norsk miljø, en oversiktlig strandpromenade og mange tjenester rettet mot beboere som er her store deler av året. Villajoyosa har et tydeligere tradisjonelt spansk bypreg, fargerike hus og lange sandstrender.",
+      "Det finnes ikke én vinner. Spørsmålet er om du vil ha et lett tilgjengelig sosialt nettverk og en kompakt feriehverdagslogistikk, eller om du tiltrekkes av mer lokalt byliv og ulike typer boligområder langs kysten.",
+      "Vi sammenligner opplevelsen, ikke bare antall kvadratmeter. Beliggenheten til den konkrete boligen vil alltid ha større betydning enn bynavnet alene."
+    ],
+    "sections": [
+      {
+        "heading": "Hva er den viktigste forskjellen mellom Albir og Villajoyosa?",
+        "body": [
+          "Albir i kommunen l’Alfàs del Pi har en betydelig internasjonal befolkning, restauranter, butikker og et norsk miljø. Bebyggelsen er preget av leiligheter, etablerte boligområder og åser med villaer. Stranden er i hovedsak rullestein.",
+          "Villajoyosa, også kjent som La Vila Joiosa, er en selvstendig spansk kystby med eldre sentrum, fiske- og sjømattradisjoner, sandstrender og nyere boligprosjekter. Byen har både rolige lokalgater og moderne strandområder, og er ikke en ensartet turistdestinasjon."
+        ]
+      },
+      {
+        "heading": "Strandliv: rullestein eller sand?",
+        "body": [
+          "Platja de l’Albir er kjent for sin rullesteinstrand og en lang promenade mot utsikten til Serra Gelada og Altea-bukten. Det kan passe for dem som liker en rolig spasertur og strandkafé, men som ikke er avhengige av finkornet sand.",
+          "Villajoyosa har flere sandstrender, blant annet ved sentrum, i tillegg til andre bukter og kyststrekninger. Avstanden fra boligen til stranden kan imidlertid variere mye; et prospekt med «Villajoyosa» sier ikke at du bor i gangavstand til sentrum eller sjøen."
+        ]
+      },
+      {
+        "heading": "Hvor er det lettest å finne et norsk nettverk?",
+        "body": [
+          "Albir og Alfaz del Pi har et etablert norsk miljø. Den Norske Klubben Costa Blanca har klubbhus og aktiviteter i Alfaz del Pi. Dette kan være verdifullt for dem som ønsker møteplasser, aktiviteter og norsk språk rundt seg.",
+          "Villajoyosa kan passe bedre for dem som ønsker mer kontakt med et ordinært spansk bymiljø. Her finnes også internasjonale beboere, men sosialt nettverk bør vurderes ut fra den konkrete bydelen, egne interesser og språkferdigheter."
+        ]
+      },
+      {
+        "heading": "Boligpriser: hvem får mest for pengene?",
+        "body": [
+          "Det er misvisende å love at én av byene alltid er billigere. Albir har begrenset areal i populære gangavstandsområder og etterspørsel fra internasjonale kjøpere. Villajoyosa har flere ulike delmarkeder, fra tradisjonelle sentrumsleiligheter til nyere boliger nær stranden eller på høydedrag.",
+          "Et rimeligere objekt kan kreve betydelig oppgradering, og en moderne bolig nær sjøen kan ha høyere kvadratmeterpris enn et eldre objekt i Albir. Sammenlign boliger med lik standard, faktisk gangavstand, parkering, uteareal og totalbudsjett – ikke bare kommunens gjennomsnittstall."
+        ]
+      },
+      {
+        "heading": "Transport og hverdagslogistikk",
+        "body": [
+          "Begge områdene har tilgang til TRAM Alicante på relevante strekninger, men stasjonsplassering, linjer og reisetid må sjekkes mot den konkrete boligen og dagens rutetabell. Ikke anta at alle boligområder kan fungere uten bil.",
+          "I Albir kan en sentralt plassert leilighet gi kort vei til butikker og tjenester. I Villajoyosa kan det samme gjelde sentrum, mens enkelte nye prosjekter og boligområder lenger fra sentrum kan gjøre bil mer praktisk."
+        ]
+      },
+      {
+        "heading": "Slik skiller Albir og Villajoyosa seg",
+        "table": {
+          "headers": [
+            "Tema",
+            "Albir",
+            "Villajoyosa"
+          ],
+          "rows": [
+            [
+              "Atmosfære",
+              "Internasjonal, oversiktlig og etablert",
+              "Mer tradisjonelt spansk bypreg"
+            ],
+            [
+              "Strand",
+              "Rullestein og promenade",
+              "Flere sandstrender og bukter"
+            ],
+            [
+              "Norsk miljø",
+              "Tydelig og organisert i området",
+              "Mindre fremtredende i bybildet"
+            ],
+            [
+              "Boligtyper",
+              "Leiligheter og villaområder",
+              "Eldre sentrum, leiligheter og nyere prosjekter"
+            ],
+            [
+              "Gangavstand",
+              "God i sentrale deler",
+              "God sentralt, varierer mer i utkantene"
+            ],
+            [
+              "Best for",
+              "Nettverk, helårsservice og promenade",
+              "Sandstrand, lokalt byliv og variasjon"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Hvem bør velge hva?",
+        "body": [
+          "Velg Albir dersom det viktigste er et kjent internasjonalt miljø, norske møteplasser og at mye av hverdagen kan ordnes på et lite geografisk område. Velg Villajoyosa dersom du ønsker sandstrand, lokal spansk identitet og muligheten til å velge mellom flere typer nabolag.",
+          "Det finnes selvfølgelig unntak på begge steder. Et perfekt plassert objekt i Villajoyosa kan passe bedre enn en leilighet i utkanten av Albir – og omvendt."
+        ]
+      },
+      {
+        "heading": "Freddys råd: prøv en vanlig tirsdag",
+        "body": [
+          "Ta en tur til begge steder uten å gjøre det til en ren visningsdag. Kjøp mat, gå til stranden, finn parkering, prøv kaféene og undersøk hvor mye sol boligen og terrassen har på vinteren. Det avslører mer om hverdagen enn et kart eller annonsebilder.",
+          "Vi kan gjerne sammenligne aktuelle boliger med samme totalbudsjett i begge områder, og være åpne om hvilke kompromisser som følger med hvert valg."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Bestem om norsk nettverk eller tradisjonelt spansk byliv er viktigst.",
+      "Test stranden og gangavstand fra konkrete adresser.",
+      "Sammenlign boliger med lik kvalitet og alle kjøpsomkostninger.",
+      "Besøk begge steder også utenfor sommerferien."
+    ],
+    "faq": [
+      {
+        "question": "Er Albir eller Villajoyosa best for pensjonister?",
+        "answer": "Begge kan passe, men Albir har et mer synlig etablert norsk miljø. Velg ut fra sosialt nettverk, tilgjengelighet, helsetjenester og konkret beliggenhet."
+      },
+      {
+        "question": "Har Albir sandstrand?",
+        "answer": "Albir har hovedsakelig rullesteinstrand, mens Villajoyosa blant annet har sentrale sandstrender."
+      },
+      {
+        "question": "Er bolig i Villajoyosa billigere enn i Albir?",
+        "answer": "Det avhenger av bydel, standard, størrelse og nærhet til strand og tjenester. Sammenlign konkrete objekter fremfor generelle gjennomsnitt."
+      }
+    ],
+    "cta": {
+      "label": "Utforsk boligområdene på Costa Blanca Nord",
+      "href": "/omrader/costa-blanca-nord"
+    }
+  },
+
+{
     "slug": "hva-inngar-i-prisen-nybygg-spania",
     "title": "Hva inngår egentlig i prisen på et nybygg i Spania?",
     "excerpt": "Boligannonse og innflyttingsklar pris er ikke alltid det samme. Sjekk hvitevarer, belysning, parkering, bod, basseng, tilvalg og kjøpskostnader før du reserverer.",
