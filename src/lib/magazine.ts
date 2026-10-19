@@ -18,217 +18,182 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 export const extraArticles: Article[] = [
 {
     "slug": "finestrat-eller-polop-bolig-livsstil",
-    "title": "Finestrat eller Polop – hvor får du riktig bolig for pengene?",
-    "excerpt": "Finestrat og Polop tilbyr moderne boliger nær Benidorm, men med ulik atmosfære, avstand, terreng og pris. En grundig kjøperguide til de reelle forskjellene.",
+    "title": "Finestrat eller Polop – områder, utsikt, priser og hverdagsliv",
+    "excerpt": "Opplev forskjellene mellom Polop Hills, Balcón de Finestrat og Sierra Cortina: utsikt, bratte veier, bilbehov, strender og ulike boligsegmenter.",
     "category": "Områdevalg",
     "date": "2026-10-19",
     "updated": "2026-10-19",
-    "readingTime": "15 min lesing",
+    "readingTime": "16 min lesing",
     "image": "/assets/magasin-covers/omradevalg.svg",
     "imageAlt": "Illustrasjon av boligområder og fjellandskap på Costa Blanca",
     "seoTitle": "Finestrat eller Polop? Boligpriser, avstand og livsstil",
-    "seoDescription": "Finestrat eller Polop på Costa Blanca? Sammenlign nybygg, boligpriser, kjøretid, sol, utsikt, støy, service og totalbudsjett før du velger område.",
+    "seoDescription": "Finestrat eller Polop? Oppdag Polop Hills, Monte Ponoig, Sierra Cortina, boligpriser, bilbehov, utsikt og avstand til strand før du bestemmer deg.",
     "keywords": [
       "Finestrat eller Polop",
-      "bolig Finestrat vs Polop",
-      "nybygg Polop",
-      "Sierra Cortina Finestrat",
-      "bo i Polop Spania"
+      "Polop Hills",
+      "Monte Ponoig Ponotx",
+      "Sierra Cortina villaer",
+      "Finestrat nybygg priser",
+      "bolig Costa Blanca Nord"
     ],
     "author": {
       "name": "Freddy Bremseth",
       "href": "/om-oss/freddy"
     },
     "intro": [
-      "Finestrat og Polop ligger begge nord for Benidorm, med fjell i bakgrunnen og nye boligprosjekter i ulike prisklasser. Men de kan ikke sammenlignes bare på kvadratmeterpris: beliggenhet, utsikt, adkomst, boligstandard og hverdagsbehov kan gjøre en tilsynelatende rimeligere bolig dyrere eller mindre praktisk.",
-      "I Finestrat er det særlig viktig å skille mellom historiske Finestrat pueblo og nyere boligområder som Sierra Cortina og Balcón de Finestrat. Polop har sitt eget tradisjonelle sentrum og nyere urbanisasjoner i utkanten. De ligger forskjellig, og adressen betyr mer enn kommunenavnet.",
-      "Denne guiden hjelper deg å vurdere valget på samme måte som en kjøperrådgiver bør gjøre: fra faktisk bruk og totalbudsjett til sol, støy, terreng og fremtidig salg."
+      "Finestrat og Polop er to populære områder for nyere boliger på Costa Blanca Nord, men de byr på svært ulike hverdager. I Polop Hills lokker nærheten til fjellene, det gamle Polop og utsikten mot Altea. Finestrat har utviklet seg med omfattende boligbygging i åssidene over Benidorm, fra mindre leiligheter til eksklusive villaer i Sierra Cortina.",
+      "Det avgjørende er hvor boligen ligger: hvor bratt det er, hva du ser fra terrassen, hvor enkelt du kommer til butikk og strand, og hvilket prismarked prosjektet faktisk tilhører. Dette er en lokal områdeguide – for detaljer om ekstrautstyr og leveranse, se vår separate artikkel om hva som inngår i nybyggprisen."
     ],
     "sections": [
       {
-        "heading": "Kort svar: Hvem passer best i Finestrat og Polop?",
+        "heading": "Kort svar: Hva skiller Finestrat og Polop?",
         "body": [
-          "Finestrat er ofte aktuelt for kjøpere som vil ha moderne boliger med forholdsvis nær tilgang til Benidorm, større handelsområder og mange fritidstilbud. Polop er ofte aktuelt for dem som ønsker et roligere, mer lokalt preg, fjellkontakt og en annen type hverdag.",
-          "Dette er ikke en garanti for lavere pris i Polop eller bedre utsikt i Finestrat. Forskjellene må kontrolleres mot konkrete adresser og prosjekter."
+          "Polop passer særlig kjøpere som ønsker fjellnær beliggenhet, ro og dramatisk utsikt – og som er komfortable med å bruke bil. Finestrat er mer sammensatt, med nye boligområder i store deler av åssidene, kort vei til handelsområdene og flere ulike prisnivåer, fra leiligheter til eksklusive, skjermede villaer.",
+          "Det er store variasjoner innad i begge områdene. Finn den konkrete gaten, utsikten og adkomsten før du konkluderer."
         ]
       },
       {
-        "heading": "Finestrat er flere forskjellige boligmarkeder",
+        "heading": "Polop Hills: bil er i praksis nødvendig",
         "body": [
-          "Finestrat pueblo ligger oppe i åsene og har en eldre bystruktur. Nye villa- og leilighetsprosjekter i Balcón de Finestrat og Sierra Cortina er en annen opplevelse: urbanisasjoner, terrasser, bassenger, ofte bilavhengighet og utsikt som varierer fra tomt til tomt.",
-          "En leilighet på en lav etasje kan ha helt andre sol- og utsiktsforhold enn toppetasjen i samme prosjekt. Spør om ferdig bebyggelse foran terrassen og om det finnes planer for nye byggetrinn."
+          "Mange av de nyere boligene ligger i og rundt høyereliggende områder som Polop Hills. Veiene opp dit er bratte, og selv en sykkeltur kan bli krevende på returen. Dersom du vil gå eller sykle til daglige gjøremål, er dette et vesentlig kompromiss.",
+          "For de fleste kjøpere av bolig i Polop Hills bør man derfor planlegge med bil – både til butikk, strand og andre daglige behov. Det er noe helt annet enn å bo i et flatt sentrum med tjenester rundt hjørnet."
         ]
       },
       {
-        "heading": "Polop: tradisjonelt sentrum og moderne boliger nær fjellene",
+        "heading": "Monte Ponoig: fjellet som gir Polop sin særegne atmosfære",
         "body": [
-          "Polop har en tydelig småbyidentitet, med eldre sentrum og boligområder som ligger mer spredt. Moderne villaer og rekkehus bygges i ulike randsoner, men du må kontrollere om boligene ligger innen praktisk avstand til butikk, skole, kafé og andre tjenester.",
-          "Det rolige preget kan være en stor fordel. Men en bolig som krever bil til alle daglige gjøremål, passer ikke like godt for alle."
+          "Det spektakulære fjellet du sikter til heter Monte Ponoig, også kalt Ponotx – ikke «Poig punot». Det er kjent som «den sovende løven» på grunn av silhuetten. Ponoig ligger rett vest for Polop og er en del av det beskyttede fjellandskapet sammen med Puig Campana, som ligger ved Finestrat.",
+          "Fra gunstig plasserte boliger i åssiden kan utsikten være slående: mot den gamle byen Polop på høyden, landskapet rundt Altea, havet og deler av Altea Hills. Hva som faktisk er synlig avhenger av boligens høyde, orientering og omkringliggende bygg. Ikke alle tomter har full panoramautsikt.",
+          "Kilde om fjellnavn og landskap: Polop kommunes turbeskrivelse, polop.org/pdf/rutas_senderistas/ruta7/r7.pdf."
         ]
       },
       {
-        "heading": "Avstand og transport: test turen fra den faktiske adressen",
+        "heading": "Stranden i Albir og Altea: planlegg rundt et kvarter i bil",
         "body": [
-          "Finestrats nyere utbyggingsområder kan ligge praktisk til for Benidorm og handel, men avstander, trafikk og adkomst varierer. I Polop vil mange boligområder også være bilorienterte. Ingen av kommunene bør automatisk beskrives som bilfrie alternativer.",
-          "Test kjøreturen til stranden, helsetjenester, matbutikk og stedet du faktisk skal bruke oftest – i rushtid, på en regnværsdag og utenom høysesongen. Sjekk kollektivtilbudet dersom du vil klare deg uten bil."
+          "Fra deler av Polop kan du anslagsvis regne rundt 15 minutter i bil til kysten ved Albir eller Altea under normale forhold. Dette er et praktisk orienteringstall, ikke en garantert kjøretid: nøyaktig avreiseadresse, trafikk, parkeringsbehov og årstid kan endre turen.",
+          "Albir har hovedsakelig rullesteinstrand, og strandsonen i Altea har også flere strekninger med småstein og rullestein. Dersom du ønsker finkornet sandstrand som et hovedkrav, bør du sammenligne flere kyststeder."
         ]
       },
       {
-        "heading": "Utsikt, sol og vind: det du egentlig betaler for",
+        "heading": "Finestrat: stor utbygging og viktige prisforskjeller i åssiden",
         "body": [
-          "Fjell, havutsikt og kveldssol selger boliger, men bilder tatt fra riktig vinkel kan gi et optimistisk inntrykk. Sjekk etasje, himmelretning, fremtidig bygging, støymiljø og terrengets helning.",
-          "En sørvestvendt terrasse kan være attraktiv om vinteren, men sterk sommervarme kan gjøre solskjerming nødvendig. Spør om pergola, screens eller markise er inkludert i nybyggprisen. Kontrollér også eventuell vindeksponering."
+          "Finestrat har fått mange nye boligprosjekter i åssidene over Benidorm. I en del utbygginger ligger de rimeligere enhetene lenger ned mot veier og transportårer, ofte med mer begrenset utsikt. Høyere opp kan villaer få friere utsyn, større terrasser og mer privatliv – men prisene blir vanligvis høyere.",
+          "Som lokale orienteringspunkter i markedet beskriver vi nyere toroms-/to-soveromsboliger fra omkring €350.000 i enkelte prosjekter og enkelte villaer med tre soverom lenger opp mot €700.000 eller mer. Dette er omtrentlige eksempler fra markedet, ikke verifisert dagsaktuell tilgjengelighet eller løfte om at slike boliger finnes til salgs nå."
         ]
       },
       {
-        "heading": "Pris per kvadratmeter forteller bare halve historien",
+        "heading": "Kjeller i en Finestrat-villa: en stor mulig tilleggsinvestering",
         "body": [
-          "Polop kan i noen segmenter gi mer innvendig plass eller tomteareal for samme budsjett enn de mest etterspurte prosjektene i Finestrat. Men det gjelder ikke enhver bolig. Finestrat har på sin side svært varierte mikromarkeder. Bruk konkrete, samtidige tilbud som sammenligningsgrunnlag, ikke et generelt prisløfte.",
-          "Sammenlign boliger med samme leveranse: hvitevarer, basseng, parkering, bod, klimaanlegg, hagetiltak og solskjerming. En prisforskjell på €20.000 kan raskt spises opp av manglende utstyr. Be også om forventede comunidad-kostnader, IBI og vedlikeholdsbudsjett."
+          "I noen villa-prosjekter kan kjeller eller innredning av underetasjen bestilles separat. En komplett løsning med soverom, oppholdsrom og bad kan i enkelte prosjekter ligge rundt €100.000 i tillegg, men både prisen og muligheten avhenger av prosjekt, konstruksjon, tillatelser og leveranse.",
+          "Be om skriftlig totalpris og avklar om arealet er godkjent for den bruken du ønsker. Et rom på tegningen er ikke automatisk godkjent som beboelsesrom."
         ]
       },
       {
-        "heading": "Et regneeksempel: to villaer med ulik leveranse",
+        "heading": "Fem minutter til shopping: praktisk beliggenhet i Finestrat",
         "body": [
-          "Dette er et illustrerende eksempel, ikke eksisterende boliger eller markedspriser: Villa A i Finestrat annonseres for €425.000 med basseng inkludert. Villa B i Polop annonseres for €395.000 uten basseng og uten en del innflyttingsutstyr.",
-          "Dersom B trenger €24.000 til basseng, €5.000 til hvitevarer og €4.000 til solskjerming og andre arbeider, blir sammenlignbar kjøpesum før kjøpsomkostninger €428.000 – altså €3.000 mer enn A. Hvis utstyret derimot allerede er inkludert i B, er konklusjonen motsatt.",
-          "Regnestykket demonstrerer metoden. Alle faktiske tilvalgspriser må hentes skriftlig fra utbygger og relevant leverandør."
-        ],
+          "Fra enkelte nybyggområder i Finestrat er det omtrent fem minutters kjøring til de store handelsområdene ved La Marina. Her finnes et bredt tilbud av butikker og daglige tjenester. Den faktiske turen varierer med boligadresse og trafikk.",
+          "Dette er en konkret fordel for dem som liker å ha mye samlet på ett sted. Men de fleste høyereliggende nybyggområdene er fortsatt bilorienterte; nærhet i kilometer er ikke det samme som enkel gangavstand."
+        ]
+      },
+      {
+        "heading": "Sierra Cortina: fra villaområder ved motorveien til luksus med utsikt",
+        "body": [
+          "Sierra Cortina må ikke behandles som ett prisområde. Nærmere de nedre delene og motorveien finnes ulike boligtyper og prosjekter. Som en grov lokal markedsillustrasjon kan boliger i deler av området ligge omkring €500.000–€1.000.000, avhengig av størrelse, beliggenhet, kvalitet og markedstidspunkt.",
+          "Høyere opp finnes mer eksklusive villaområder med utsikt mot Benidorms skyline. Enkelte har adgangskontroll og sikkerhetstjenester; det må bekreftes for akkurat det anlegget og den eiendommen du vurderer, særlig dersom døgnbemannet vakthold er viktig.",
+          "I dette øvre segmentet forekommer boliger i prisklassen rundt €1,1–5 millioner. Dette er veiledende beskrivelser av et markedssegment, ikke et bekreftet lager av tilgjengelige boliger. Her kan arkitektur, tomteplassering, utsikt og materialvalg være på et nivå som kan sammenlignes med eksklusive villaer i Altea Hills og Marbella."
+        ]
+      },
+      {
+        "heading": "Ikke alle eksklusive boliger blir annonsert på vanlige portaler",
+        "body": [
+          "I de mer eksklusive delene av Sierra Cortina kan enkelte boliger formidles gjennom direkte nettverk, mindre salgsprosesser eller utvalgte rådgivere fremfor bred annonsering. Det betyr ikke at alle boliger i området er «off-market», eller at én rådgiver har eksklusiv tilgang til hele markedet.",
+          "Zen Eco Homes har lokalkunnskap og kontaktflater i disse områdene. Ta kontakt hvis du ønsker at vi skal undersøke relevante prosjekter og muligheter, også der markedsføringen er begrenset. Vi lover ikke en bestemt bolig før tilgjengeligheten er bekreftet."
+        ]
+      },
+      {
+        "heading": "Finestrat og Polop – slik sammenligner du områdene",
         "table": {
           "headers": [
-            "Illustrativt, før skatt",
-            "Finestrat A",
-            "Polop B"
+            "Tema",
+            "Finestrat / Sierra Cortina",
+            "Polop / Polop Hills"
           ],
           "rows": [
             [
-              "Annonsert pris",
-              "€425.000",
-              "€395.000"
+              "Miljø",
+              "Store nybyggområder, nær handel og Benidorm",
+              "Roligere fjellnære boligområder og gammel by"
             ],
             [
-              "Basseng",
-              "Inkludert",
-              "€24.000"
+              "Adkomst",
+              "Bil er ofte praktisk, særlig høyt oppe",
+              "Bil er i praksis nødvendig i Polop Hills"
             ],
             [
-              "Hvitevarer",
-              "Inkludert",
-              "€5.000"
+              "Utsikt",
+              "Fra vei- og åsside til skyline-panorama",
+              "Ponoig, gamle Polop, dal og kyst på utvalgte tomter"
             ],
             [
-              "Solskjerming og annet",
-              "Inkludert",
-              "€4.000"
+              "Strand",
+              "Varierer fra område til område",
+              "Omtrent 15 min bil mot Albir/Altea som orientering"
             ],
             [
-              "Sammenlignbar leveranse",
-              "€425.000",
-              "€428.000"
+              "Boligsegment",
+              "Fra leiligheter til luksusvillaer",
+              "Villaer og rekkehus i fjellnært miljø"
+            ],
+            [
+              "Viktigst å sjekke",
+              "Etasje, veistøy, sikt, byggeplaner, sikkerhet",
+              "Stigninger, bilbehov, solforhold, faktisk utsikt"
             ]
           ]
         }
       },
       {
-        "heading": "Hva med helårsbruk og familier?",
+        "heading": "Freddys råd: besøk riktig delområde, ikke bare kommunen",
         "body": [
-          "Skal du bo fast, trenger du noe annet enn ved korte ferieopphold. Undersøk reell avstand til skole, barnehage, helsesenter, dagligvarebutikk og fritidstilbud. Vurder også arbeidsreiser, parkering og hvordan området fungerer i januar.",
-          "For delårsbruk er det kanskje viktigere med lite vedlikehold, enkel nøkkeloppbevaring og muligheten til å åpne døren til en bolig som er klar. Nyere bygg med god energi- og lydkomfort kan redusere behovet for arbeid, men vær oppmerksom på sameieøkonomi og garantier."
-        ]
-      },
-      {
-        "heading": "Finestrat eller Polop – en praktisk sammenligning",
-        "table": {
-          "headers": [
-            "Spørsmål",
-            "Finestrat",
-            "Polop"
-          ],
-          "rows": [
-            [
-              "Hva trekker kjøpere?",
-              "Nye prosjekter, Benidorm-nærhet, fasiliteter",
-              "Småbypreg, fjellmiljø, ro"
-            ],
-            [
-              "Boligtype",
-              "Leiligheter, rekkehus og villaer",
-              "Villaer, rekkehus og eldre boliger"
-            ],
-            [
-              "Bilbehov",
-              "Ofte viktig i utbyggingsområdene",
-              "Ofte viktig utenfor sentrum"
-            ],
-            [
-              "Utsikt og sol",
-              "Svært prosjekt-/etasjeavhengig",
-              "Svært tomte-/beliggenhetsavhengig"
-            ],
-            [
-              "Pris",
-              "Varierer med mikroområde og standard",
-              "Kan gi verdi, men ikke alltid billigere"
-            ],
-            [
-              "Typisk kompromiss",
-              "Pris og urbanisasjonspreg",
-              "Avstander og serviceadkomst"
-            ]
-          ]
-        }
-      },
-      {
-        "heading": "Sjekkliste på visning: spørsmål du bør stille",
-        "bullets": [
-          "Hva er nøyaktig adresse og reell kjøre-/gangavstand?",
-          "Er hav-/fjellutsikten beskyttet mot nybygg foran?",
-          "Hva inngår i prisen av hvitevarer, basseng og tilvalg?",
-          "Hvilken solretning har terrassen i vintermånedene?",
-          "Hvor ligger trafikk, tekniske anlegg og støykilder?",
-          "Hva forventes i felleskostnader, IBI og vedlikehold?",
-          "Finnes skole, helsetjeneste, butikk og transport nær nok?",
-          "Hva kan forhandles inn i kontrakten uten å øke risikoen?"
-        ]
-      },
-      {
-        "heading": "Freddys råd: velg livsstil først, forhandle leveranse etterpå",
-        "body": [
-          "Jeg ville ikke valgt kommune ut fra lavest annonsert kvadratmeterpris. Finn først riktig livsstil, mikroområde og boligtype. Deretter bør en kjøperrådgiver sammenligne ferdig leveranse, avklare ulempene og forsøke å forhandle frem best mulig samlet avtale.",
-          "En god handel er ikke den laveste prisetiketten. Det er boligen du kan bruke, drifte og trives i uten overraskelser."
+          "Jeg anbefaler at vi kjører opp til både Polop Hills, de lavere delene av Finestrat og de mer skjermede delene av Sierra Cortina. Det er først når du opplever stigningene, utsikten, veiene og avstanden til butikk og strand at valget blir konkret.",
+          "I den øverste delen av Sierra Cortina kan vi også undersøke muligheter som ikke nødvendigvis er markedsført på de største portalene. Zen Eco Homes hjelper deg å sammenligne aktuelle boliger og finne riktig nivå ut fra budsjett og livsstil."
         ]
       }
     ],
     "nextSteps": [
-      "Se konkrete boliger i både Finestrat og Polop med samme totalbudsjett.",
-      "Test beliggenhet, solretning og reell transport.",
-      "Få leveransebeskrivelse, tilvalgsliste og årsbudsjett skriftlig.",
-      "Vurder vedlikehold og helårsbehov før reservasjon."
+      "Besøk Polop Hills og kjør selv veien opp og ned.",
+      "Sammenlign de lavere og høyere utbyggingsområdene i Finestrat.",
+      "Test 15-minuttersestimatet til Albir/Altea fra konkret adresse.",
+      "Be om oppdatert tilgjengelighet, siktlinjer og eventuelt kjellertilvalg.",
+      "Kontakt Zen Eco Homes hvis du ønsker innsyn i prosjekter og muligheter i Sierra Cortina."
     ],
     "faq": [
       {
-        "question": "Er bolig i Polop billigere enn Finestrat?",
-        "answer": "Det kan være forskjeller, men de varierer sterkt med boligtype, mikroområde og leveranse. Sammenlign konkrete boliger, ikke bare kommunenavn."
+        "question": "Heter fjellet ved Polop Puig Ponoig?",
+        "answer": "Fjellet heter Monte Ponoig, også skrevet Ponotx, og kalles den sovende løven. Puig Campana er et annet fjell ved Finestrat."
       },
       {
-        "question": "Er Finestrat nærmere Benidorm enn Polop?",
-        "answer": "Mange nyere Finestrat-områder ligger praktisk til for Benidorm, men faktisk reisetid må beregnes fra boligadressen."
+        "question": "Kan man bo i Polop Hills uten bil?",
+        "answer": "Det kan være upraktisk på grunn av de bratte veiene og avstand til tjenester. For de fleste vil bil være nødvendig."
       },
       {
-        "question": "Trenger jeg bil i Finestrat eller Polop?",
-        "answer": "I mange nyere urbanisasjoner er bil praktisk eller nødvendig. Sjekk gangavstand og kollektivtilbud for den aktuelle adressen."
+        "question": "Hvor lang tid tar det fra Polop til stranden?",
+        "answer": "Omtrent 15 minutter med bil mot Albir og Altea er et orienteringstall fra deler av området, men faktisk tid må sjekkes for hver bolig og trafikkforhold."
       },
       {
-        "question": "Kan jeg forhandle tilvalg i nybygg?",
-        "answer": "Det er mulig å spørre om utstyr og endringer, men tilgjengelighet og vilkår bestemmes av utbygger, kontrakt og byggefase."
+        "question": "Hva koster en bolig i Finestrat?",
+        "answer": "Markedet spenner bredt. Som omtrentlige eksempler finnes segmenter fra rundt €350.000 for enkelte boliger med to soverom, mens villaer og luksusboliger kan koste vesentlig mer. Pris og tilgjengelighet må bekreftes."
+      },
+      {
+        "question": "Finnes det villaer i Sierra Cortina som ikke annonseres på portaler?",
+        "answer": "Ja, enkelte eiendommer kan formidles gjennom begrensede nettverk. Spør Zen Eco Homes om hva som er tilgjengelig nå."
       }
     ],
     "cta": {
-      "label": "Se boliger og områder på Costa Blanca Nord",
-      "href": "/omrader/costa-blanca-nord"
+      "label": "Kontakt Zen Eco Homes om Finestrat og Sierra Cortina",
+      "href": "/booking"
     }
   },
-
 {
     "slug": "albir-eller-villajoyosa-hvor-bo",
     "title": "Albir eller Villajoyosa – hvor vil du trives best?",
