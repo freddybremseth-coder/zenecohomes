@@ -1140,6 +1140,107 @@ export const extraArticles: Article[] = [
     cta: { label: "Sammenlign områder på Costa Blanca", href: "/omrader/costa-blanca-nord" },
   },
   {
+    slug: "costa-blanca-nord-vs-sor-livsstil-priser",
+    title: "Costa Blanca Nord eller Sør – hvor vil du egentlig trives?",
+    excerpt: "Nord og sør på Costa Blanca byr på ulike landskap, boligpriser og hverdagsliv. Finn ut hvilken del som passer din personlighet, økonomi og sosiale behov.",
+    date: "2026-10-19",
+    updated: "2026-10-19",
+    category: "Områdevalg",
+    readingTime: "10 min lesing",
+    image: "/assets/magasin-covers/costa-blanca-nord-sor.svg",
+    imageAlt: "Illustrasjon av grønn fjellkyst i Costa Blanca Nord og brede strender i Costa Blanca Sør",
+    seoTitle: "Costa Blanca Nord vs. Sør – livsstil, priser og områder",
+    seoDescription: "Costa Blanca Nord eller Sør? Sammenlign natur, boligpriser, atmosfære, turisme og norske møteplasser i Albir og Torrevieja før du velger område.",
+    keywords: ["Costa Blanca nord eller sør", "Costa Blanca nord vs sør", "bo i Albir eller Torrevieja", "bolig Costa Blanca nord", "Costa Blanca sør bolig"],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Hvor på Costa Blanca bør du kjøpe bolig? Det ærlige svaret handler ikke bare om pris, strand og antall soldager. Det handler om hvilken livsstil du har – og hvilket miljø du føler deg hjemme i.",
+      "Nord er ofte grønnere og mer kupert, med fjell, utsikt, småbyer og et høyere prisnivå. Sør tilbyr ofte mer bolig for pengene, langstrakte strender, flate områder og et stort internasjonalt miljø med uformelle møteplasser. Dette er hovedtendenser, ikke fasitsvar for enhver by eller gate.",
+      "I Zen Eco Homes arbeider vi mest med Costa Blanca Nord. Nettopp derfor er det viktig å forklare hvem som faktisk kan passe bedre i sør. Det beste boligkjøpet er stedet du vil glede deg til å reise tilbake til.",
+    ],
+    sections: [
+      {
+        heading: "Hva er forskjellen på Costa Blanca Nord og Sør?",
+        body: [
+          "De to områdene deles gjerne omtrent ved Alicante, men grensene brukes ulikt i eiendomsannonser. Her mener vi med nord særlig Albir, Altea, Benidorm, Finestrat, Villajoyosa, Calpe, Moraira, Jávea og Dénia. I sør trekker vi frem Guardamar, Torrevieja, Orihuela Costa og omkringliggende steder.",
+          "Nordkysten har flere fjell, grønne skråninger, klipper, utsiktsområder og historiske sentre. Sør har oftere flatere terreng, brede sandstrender, saltsjøer, store boligområder og kortere avstander på sykkel eller til fots. Begge har unntak.",
+        ],
+      },
+      {
+        heading: "Atmosfæren: uformelt og sosialt eller roligere og mer småbypreget?",
+        body: [
+          "Sør kan passe godt for deg som liker et uformelt miljø, å møte folk på kafé eller pub, spise ute ofte og raskt bli kjent med andre internasjonale beboere. Mange steder er det lett å finne et miljø der du hører ditt eget språk.",
+          "I deler av nord, blant annet Altea og Moraira, opplever mange et roligere og mer tradisjonelt preg, med lokale restauranter, små gater, natur og en annen rytme i hverdagen. Noen vil oppfatte det som mer elegant eller tilbakelent – men stil er personlig, ikke et mål på kvaliteten på menneskene som bor der.",
+          "Samtidig er Benidorm et av Spanias kjente turiststeder, og Torrevieja har rolige boligstrøk. Du bør derfor velge konkret nabolag før du lar en merkelapp som «nord» eller «sør» avgjøre.",
+        ],
+      },
+      {
+        heading: "Pris: er Costa Blanca Sør rimeligere?",
+        body: [
+          "Som hovedmønster får du gjerne flere kvadratmeter for pengene i store deler av sør enn på de mest etterspurte stedene i nord. Dette er en viktig grunn til at kjøpere med lavere budsjett ofte starter med Torrevieja, Orihuela Costa eller områdene rundt.",
+          "Men ikke sammenlign bare gjennomsnittspriser: boligtype, avstand til sjøen, alder, energistandard, gangavstand og utsikt betyr mye. En moderne bolig i et ettertraktet område i sør kan være dyrere enn en eldre bolig lenger inn i landet i nord.",
+          "Har du et stramt budsjett, kan sør være et godt valg. Ønsker du fjellutsikt og en roligere beliggenhet i nord, kan du også undersøke områder litt lenger fra kysten eller velge en mindre, godt planlagt bolig.",
+        ],
+      },
+      {
+        heading: "Er det færre turister i nord?",
+        body: [
+          "Ikke generelt. Benidorm har høy turistaktivitet, og populære steder som Altea, Calpe og Jávea kan være travle i høysesongen. Sør har også rolige nabolag og lokale spanske miljøer.",
+          "Det mange egentlig leter etter, er et område der turismen ikke dominerer hverdagen rundt boligen. Besøk derfor gaten i både vinterhalvåret og sommeren, og undersøk korttidsutleie, trafikk, restaurantliv og lokalt naboskap.",
+        ],
+      },
+      {
+        heading: "Norske møteplasser: Albir, Alfaz del Pi og Torrevieja",
+        body: [
+          "For noen er det viktig å finne venner som snakker norsk. Albir og Alfaz del Pi har et etablert norsk miljø. Den Norske Klubben Costa Blanca har sitt eget klubbhus i Alfaz del Pi, med kafé, turer, arrangementer og aktiviteter. Klubben beskriver seg som et uavhengig, medlemseid møtested. Se klubbens informasjon på dnkcb.lag247.no.",
+          "Torrevieja har også et stort norsk miljø. Sjømannskirken i Torrevieja er et organisert sosialt og kulturelt møtested som tilbyr blant annet turer, konserter, kor, foredrag og møteplasser. Se sjomannskirken.no/torrevieja. I tillegg møtes mange internasjonale beboere på kaféer, restauranter og andre uformelle arenaer.",
+          "Ingen av miljøene passer bare pensjonister. De kan likevel være særlig verdifulle for deg som skal tilbringe lange perioder i Spania og ønsker et sosialt nettverk fra første dag.",
+        ],
+      },
+      {
+        heading: "Nord eller sør: sammenlign det viktigste",
+        table: {
+          headers: ["Tema", "Costa Blanca Nord", "Costa Blanca Sør"],
+          rows: [
+            ["Landskap", "Fjell, daler, grønt og utsikt", "Flatere terreng, lange strender og saltsjøer"],
+            ["Prisnivå", "Ofte høyere i populære kystområder", "Ofte lavere for tilsvarende plass"],
+            ["Stemning", "Flere rolige småby- og villamiljøer", "Flere store, uformelle internasjonale boligmiljøer"],
+            ["Turisme", "Store forskjeller, Benidorm er svært turistpreget", "Store forskjeller, også rolige helårsmiljøer"],
+            ["Sosialt nettverk", "Etablert norsk miljø rundt Albir/Alfaz", "Etablert norsk og internasjonalt miljø i Torrevieja"],
+            ["Passer ofte for", "Natur, utsikt og småbypreg", "Budsjett, brede strender og lett tilgjengelig sosialt liv"],
+          ],
+        },
+      },
+      {
+        heading: "Hvilken del passer best for deg?",
+        body: [
+          "Hvis du drømmer om grønne fjellsider, utsikt, en mer tilbakelent atmosfære og sjarmerende spanske gater – og har budsjett til det – bør du se på nord. Hvis du ønsker enkel tilgang til strandliv, restauranter, et uformelt sosialt miljø og ofte mer bolig for pengene, er sør verdt å undersøke.",
+          "Vil du ha andre nordmenn rundt deg, er både Albir/Alfaz og Torrevieja aktuelle. Vil du bo i et mer spanskspråklig nærmiljø, finnes slike steder på begge sider av Alicante. Prioriter hverdagen du ønsker fremfor hva andre synes er «finest».",
+        ],
+      },
+      {
+        heading: "Freddys råd: velg nabolag – ikke bare kystretning",
+        body: [
+          "Jeg anbefaler at du besøker minst to steder som føles forskjellige, og bruker tid der du faktisk vil bo: ta morgenkaffen, prøv turen til matbutikken, kjenn på trafikken og snakk med folk. Slik oppdager du raskere hvor du hører hjemme.",
+          "Zen Eco Homes har hovedfokus på Costa Blanca Nord. Vi ønsker likevel at du velger sør dersom det passer deg bedre. En fornøyd boligkjøper er viktigere enn at alle kjøper samme sted.",
+        ],
+      },
+    ],
+    nextSteps: [
+      "Sett opp de tre viktigste prioriteringene: budsjett, atmosfære og beliggenhet.",
+      "Besøk både en nordlig og en sørlig by utenfor den travleste sommersesongen.",
+      "Se nabolaget på dag- og kveldstid, og vurder hvordan du vil leve der om vinteren.",
+      "Sammenlign hele budsjettet, ikke bare pris per kvadratmeter.",
+    ],
+    faq: [
+      { question: "Er Costa Blanca Nord dyrere enn Sør?", answer: "Ofte, spesielt i etterspurte kystområder, men boligtype, beliggenhet og standard gir store variasjoner. Sammenlign konkrete boliger." },
+      { question: "Er det mer grønt på Costa Blanca Nord?", answer: "Nord har vanligvis mer kupert og grønt landskap med fjell og daler, mens sør er flatere og tørrere med lange strender og saltsjøer." },
+      { question: "Hvor finner jeg norske miljøer på Costa Blanca?", answer: "Både Albir/Alfaz del Pi og Torrevieja har norske miljøer. Den Norske Klubben Costa Blanca holder til i Alfaz del Pi, og Sjømannskirken i Torrevieja tilbyr mange aktiviteter." },
+      { question: "Er det færre turister på Costa Blanca Nord?", answer: "Ikke nødvendigvis. Benidorm og andre populære steder i nord er turistpregede, mens sør også har rolige, etablerte boområder. Se på konkret bydel." },
+    ],
+    cta: { label: "Finn ditt område på Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
+  },
+  {
     slug: "nybygg-eller-bruktbolig-costa-blanca",
     title: "Nybygg eller bruktbolig i Spania – hva lønner seg egentlig?",
     excerpt: "En billig bruktbolig kan bli kostbar når fukt, svak isolasjon og oppussing kommer på toppen. Vi sammenligner pris, komfort og risiko ved nybygg og bruktbolig på Costa Blanca.",
