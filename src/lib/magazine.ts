@@ -19,11 +19,11 @@ export const extraArticles: Article[] = [
 {
     "slug": "bo-costa-blanca-uten-bil-beste-omrader",
     "title": "Bo på Costa Blanca uten bil: hvilke områder fungerer best?",
-    "excerpt": "Vil du slippe bilen i Spania? Sammenlign Albir, Altea, Villajoyosa, Benidorm og Finestrat etter gangavstand, bakker, TRAM, butikker og hverdagsliv.",
+    "excerpt": "Kan du egentlig klare deg uten bil på Costa Blanca? En grundig sammenligning av Albir, Benidorm, Altea, Villajoyosa, La Cala og åssidene – med TRAM, busser og en praktisk test på visning.",
     "category": "Områdevalg",
     "date": "2026-10-19",
     "updated": "2026-10-19",
-    "readingTime": "13 min lesing",
+    "readingTime": "19 min lesing",
     "image": "/assets/magasin-covers/omradevalg.svg",
     "imageAlt": "Illustrasjon av kystbyer på Costa Blanca",
     "seoTitle": "Costa Blanca uten bil: Albir, Altea og Benidorm – guide",
@@ -42,7 +42,8 @@ export const extraArticles: Article[] = [
     "intro": [
       "En bolig med havutsikt kan se perfekt ut helt til du oppdager at nærmeste dagligvarebutikk ligger ned en bratt bakke – og at du må tilbake samme vei med handleposer. Hvis du skal bo mye på Costa Blanca, kan muligheten til å klare hverdagen uten bil være like viktig som terrasse og utsikt.",
       "Costa Blanca Nord har flere kystbyer der du kan gå til butikker, kaféer og strand. Men kommunegrenser gir lite informasjon: en sentral leilighet i Albir eller Benidorm fungerer annerledes enn en villa i åssidene ved Finestrat, Polop eller Altea Hills.",
-      "Her sammenligner vi mikroområder, ikke bare stedsnavn, og viser en praktisk metode for å teste bilfri hverdag før du reserverer bolig."
+      "Her sammenligner vi mikroområder, ikke bare stedsnavn, og viser en praktisk metode for å teste bilfri hverdag før du reserverer bolig.",
+      "Vi skiller mellom tre forskjellige ønsker: å aldri eie bil, å klare daglige ærend uten bil, og å bruke bil eller taxi bare til større turer. Dette er ikke det samme – og de leder ofte til helt ulike boligvalg."
     ],
     "sections": [
       {
@@ -85,6 +86,29 @@ export const extraArticles: Article[] = [
         "body": [
           "De nye urbanisasjonene ved Balcón de Finestrat og Sierra Cortina gir ofte flott utsikt og nærhet til handelsområdene med bil. Det betyr ikke at det er enkelt å spasere dit. Veier, stigninger og avstander gjør at mange boliger her bør vurderes med et bilbudsjett.",
           "Det samme gjelder Polop Hills: de bratte veiene gjør både gange og sykling krevende, og daglige ærend krever normalt bil. Hvis du ikke ønsker bil, bør slike områder ikke være førstevalget – selv om utsikten frister."
+        ]
+      },
+      {
+        "heading": "La Cala og Cala de Finestrat: strandnært, men undersøk boligadressen",
+        "body": [
+          "Cala de Finestrat har strandområde, butikker, serveringssteder og bussforbindelser. En bolig nær stranden og helårstjenestene kan være praktisk uten daglig bilbruk, særlig hvis du hovedsakelig holder deg lokalt.",
+          "Men navnet «Finestrat» brukes også om nyere boligområder betydelig høyere i terrenget. En bolig i Sierra Cortina eller Balcón de Finestrat er ikke det samme som en leilighet ved La Cala. Busslinjer 14, 15 og 30 dekker ulike deler av området, men ikke alle avganger og holdeplasser passer alle adresser. Kontroller oppdatert trase og frekvens hos Avanza."
+        ]
+      },
+      {
+        "heading": "Hvem kan faktisk leve uten bil – og hvem bør være ekstra kritisk?",
+        "body": [
+          "For en pensjonist som ønsker daglige spaserturer, kafé, apotek og sosiale aktiviteter, kan en sentral leilighet være ideell. For en familie med små barn må skolerute, barnehage, fritidsaktiviteter, kveldstransport og barnevognvennlige fortau testes særskilt.",
+          "For dem som har begrenset mobilitet er 400 meter med trapper, glatte fliser og kraftig stigning ikke en lett tur. Undersøk heis fra gateplan, eventuelle nivåforskjeller, ramper og tilkomst ved regn.",
+          "En fjernarbeider kan klare seg uten bil på dagtid, men bør teste hjemreisen fra flyplass, togstasjon og møter. Hvis du må bestille taxi til nesten alt, er boligen ikke bilfri i praksis, selv om du ikke eier en bil."
+        ]
+      },
+      {
+        "heading": "Bussene kan være viktigere enn TRAM i hverdagen",
+        "body": [
+          "Benidorm og nabobyene har et regionalt bussnett som dekker mange av de sentrale bolig- og strandområdene. Avanza oppgir blant annet linje 10 mellom Benidorm, Albir og Altea, linje 12 via Albir og Villajoyosa, linje 14 mot Finestrat og linje 30 mot Cala Finestrat.",
+          "Sjekk alltid om bussen faktisk stopper nær inngangsdøren, hvor lenge du må vente ved retur, om ruten kjører på søndager og vinterstid, og om siste avgang passer dine aktiviteter. En rute som eksisterer på kartet, er ikke det samme som en praktisk forbindelse for din hverdag.",
+          "Offisielle bussruter og oppdatert informasjon finnes hos operatøren: https://alicante.avanzagrupo.com/en/routes-and-timetables ."
         ]
       },
       {
@@ -142,6 +166,79 @@ export const extraArticles: Article[] = [
         }
       },
       {
+        "heading": "En enkel score for bilfri bolig: vurder seks forhold",
+        "body": [
+          "Dette er en rådgivningsmodell, ikke en offentlig rangering: Gi boligen 0, 1 eller 2 poeng på hvert av de seks områdene under. 0 betyr upraktisk, 1 betyr mulig med kompromisser, og 2 betyr godt tilrettelagt. Høyeste totalsum er 12.",
+          "En høy score må likevel ikke overstyre personlige forhold. Hvis du trenger trinnfri adkomst og boligen har trapper, kan den være uegnet uansett poengsum."
+        ],
+        "table": {
+          "headers": [
+            "Kriterium",
+            "2 poeng når …",
+            "0 poeng når …"
+          ],
+          "rows": [
+            [
+              "Dagligvare og apotek",
+              "Trygt og enkelt å gå fra adressen",
+              "Krever bil/taxi for vanlige ærend"
+            ],
+            [
+              "Terreng og fortau",
+              "Rimelig flatt, godt fortau og kryssing",
+              "Bratt, trappete eller dårlig gåmiljø"
+            ],
+            [
+              "Strand og aktiviteter",
+              "Kan nås på den måten du ønsker",
+              "Avhengig av bil til alt sosialt"
+            ],
+            [
+              "Buss/TRAM",
+              "Relevant holdeplass, hyppige avganger",
+              "Langt til holdeplass eller sjelden drift"
+            ],
+            [
+              "Helårstilbud",
+              "Butikker og tjenester åpne også om vinteren",
+              "Området er sterkt sesongpreget"
+            ],
+            [
+              "Tilgjengelighet",
+              "Bygg, inngang og ruter passer alle i familien",
+              "Trapper/hindringer gjør hverdagen vanskelig"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Fem konkrete situasjoner som avslører om boligannonsen holder det den lover",
+        "bullets": [
+          "Boligen ligger «600 meter fra strand» – men er veien opp igjen bratt og uten fortau?",
+          "Annonsen sier «nær TRAM» – men hvilken linje, hvor ofte og hvor lang er faktisk gåturen til stasjonen?",
+          "Du vil gå til restauranter – er de også åpne i november og februar?",
+          "Du handler dagligvarer uten bil – hvordan er turen hjem med tunge poser i augustvarmen?",
+          "Boligen virker sentral – men ligger den på feil side av en trafikkert vei eller med lange omveier til fotgjengerfelt?"
+        ],
+        "body": [
+          "Bruk kart som første siling, ikke som endelig sannhet. Be rådgiveren om å vise ruten på bakken fra boligadressen. Selv mellom to leiligheter i samme prosjekt kan riktig inngang og gate ha betydning for gangavstanden."
+        ]
+      },
+      {
+        "heading": "Fra flyplassen uten leiebil: hva skjer ved ankomst?",
+        "body": [
+          "Flyplassen i Alicante ligger utenfor denne kyststrekningen. Overgangen mellom fly, flybuss, regionale busser og TRAM krever planlegging, og rutetilbudene er ikke nødvendigvis tilpasset alle flyankomster.",
+          "Når du vurderer bilfritt boligkjøp, tenk på ankomst sent på kvelden, bagasje, barn og hvordan du kommer helt frem til leiligheten. Taxi eller privat transport kan være en fornuftig del av et bilfritt opplegg – bare budsjetter og planlegg det på forhånd."
+        ]
+      },
+      {
+        "heading": "Hva koster alternativene til egen bil?",
+        "body": [
+          "Ikke sammenlign bare billettpris med bensin. Egen bil innebærer også anskaffelse eller leasing, forsikring, vedlikehold, avgifter, parkering og verditap. Et bilfritt liv kan innebære utgifter til taxi, kollektivtransport, flyplasstransport og leveringer.",
+          "Lag ditt eget årsbudsjett basert på hvor mange uker du oppholder deg i Spania. Bruk aktuelle priser fra operatørene og test om taxi er tilgjengelig i området på de tidspunktene du trenger det. Vi oppgir ikke én «gjennomsnittspris», fordi faktisk bruk og kjøremønster varierer sterkt."
+        ]
+      },
+      {
         "heading": "En praktisk test før du kjøper: lev én dag uten bil",
         "body": [
           "Gå fra den konkrete boligen til matbutikk, apotek, strand og nærmeste holdeplass. Ta med handleposer på turen tilbake. Test bakker på en varm dag og se hva som skjer om du må hjem etter mørkets frembrudd.",
@@ -165,11 +262,11 @@ export const extraArticles: Article[] = [
       }
     ],
     "nextSteps": [
-      "Skriv ned hvilke daglige tjenester som må være innen gangavstand.",
-      "Test strekningene fra den faktiske adressen, ikke bare kartet.",
-      "Undersøk TRAM-ruter og holdeplassens høydeforskjell.",
-      "Besøk området på hverdager og om vinteren.",
-      "Be rådgiveren prioritere mikroområder som passer transportbehovet."
+      "Beskriv om du vil være helt bilfri eller bare begrense bilbruken.",
+      "Test hver kandidats faktiske gangvei til butikk, apotek, strand og buss/TRAM.",
+      "Bruk seks-punktsmodellen og legg særlig vekt på terreng, fortau og helårstilbud.",
+      "Undersøk returreiser, søndagsavganger og reiser utenfor høysesong.",
+      "Be om boligforslag filtrert etter faktisk mikroområde fremfor postnummer."
     ],
     "faq": [
       {
@@ -187,6 +284,18 @@ export const extraArticles: Article[] = [
       {
         "question": "Går TRAM til Altea og Villajoyosa?",
         "answer": "Ja, TRAM har forbindelser til begge, men de ligger på ulike linjestrekninger og kan kreve overgang ved Benidorm. Kontroller offisielle rutetider."
+      },
+      {
+        "question": "Kan man bo uten bil i Cala de Finestrat?",
+        "answer": "Det kan fungere i strandnære deler med butikker og buss, men må vurderes fra konkret boligadresse. Nybyggområdene oppe i Finestrats åssider er ofte langt mer bilavhengige."
+      },
+      {
+        "question": "Hva er viktigst: TRAM-stasjon eller kort vei til butikk?",
+        "answer": "Ved daglig bilfri livsstil er kort og trygg gangvei til butikk, apotek og egne aktiviteter ofte minst like viktig som en jernbanestasjon."
+      },
+      {
+        "question": "Går det buss mellom Albir og Benidorm?",
+        "answer": "Ja, Avanza har regionale forbindelser, blant annet linje 10. Kontroller gjeldende trase, frekvens og avgangstider hos operatøren."
       }
     ],
     "cta": {
@@ -194,7 +303,6 @@ export const extraArticles: Article[] = [
       "href": "/booking"
     }
   },
-
 {
     "slug": "finestrat-eller-polop-bolig-livsstil",
     "title": "Finestrat eller Polop – områder, utsikt, priser og hverdagsliv",
