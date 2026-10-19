@@ -16,6 +16,487 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 
 export const extraArticles: Article[] = [
+{
+    "slug": "hva-inngar-i-prisen-nybygg-spania",
+    "title": "Hva inngår egentlig i prisen på et nybygg i Spania?",
+    "excerpt": "Boligannonse og innflyttingsklar pris er ikke alltid det samme. Sjekk hvitevarer, belysning, parkering, bod, basseng, tilvalg og kjøpskostnader før du reserverer.",
+    "category": "Nybygg",
+    "image": "/assets/magasin-covers/omradet-for-boligen.svg",
+    "seoTitle": "Hva inngår i nybyggprisen i Spania? Full sjekkliste",
+    "seoDescription": "Hva følger med når du kjøper nybygg i Spania? Sjekk hvitevarer, belysning, parkering, bod, basseng, tilvalg, skatt og totalkostnad før reservasjon.",
+    "keywords": [
+      "hva inngår i nybygg Spania",
+      "nybygg tilvalg Costa Blanca",
+      "nybygg pris inkludert parkering",
+      "kjøpe nybygg Spania"
+    ],
+    "intro": [
+      "Prisen i nybyggannonsen er bare starten på regnestykket. To boliger til samme pris kan ha ulike leveransebeskrivelser – og derfor ganske ulik ferdig kostnad.",
+      "Spørsmålet er ikke bare hva leiligheten koster, men hva du faktisk får overlevert, hva du selv må kjøpe og hvilke skatter og gebyrer som kommer i tillegg."
+    ],
+    "sections": [
+      {
+        "heading": "Hva følger vanligvis med – og hva varierer?",
+        "body": [
+          "Fast innredning, klimaanlegg, kjøkkenutstyr, baderom og uteområder varierer fra prosjekt til prosjekt. Ikke legg til grunn at ord som «fullt utstyrt» betyr det samme hos alle utbyggere.",
+          "Be om signert memoria de calidades (leveransebeskrivelse), plantegning med arealer og en konkret liste over tilvalg og unntak."
+        ],
+        "table": {
+          "headers": [
+            "Post",
+            "Dette må du få avklart"
+          ],
+          "rows": [
+            [
+              "Kjøkken",
+              "Skap, benkeplate, komfyr, platetopp, ventilator, kjøleskap, oppvaskmaskin"
+            ],
+            [
+              "Bad",
+              "Innredning, dusjskjerm, speil, blandebatterier og eventuelt gulvvarme"
+            ],
+            [
+              "Klima",
+              "Aircondition: maskiner, kanaler, styring og oppvarming"
+            ],
+            [
+              "Belysning",
+              "Kun uttak eller også downlights og lamper?"
+            ],
+            [
+              "Parkering og bod",
+              "Inkludert i prisen eller separat kjøp?"
+            ],
+            [
+              "Basseng og uteareal",
+              "Privat eller felles, ferdig opparbeidet og hva følger med?"
+            ],
+            [
+              "Solskjerming",
+              "Persienner, markiser og screens inkludert eller tilvalg?"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Eksempel: annonserte €350.000 kan bli mer",
+        "body": [
+          "Tenk deg en bolig som annonseres for €350.000. I dette rene regneeksemplet er kjøpesummen €350.000, 10 % IVA €35.000 og 1,5 % AJD €5.250. Allerede da er summen €390.250, før notar, registrering, juridisk bistand, eventuelle finansieringskostnader og tilvalg. Sjekk oppdaterte satser og unntak for kjøpsdatoen og boligens beliggenhet.",
+          "I tillegg kan innredning, møbler, solskjerming eller parkeringsplass være kostnader du må budsjettere separat. Dette er ikke et konkret tilbud eller et universelt skatteeksempel."
+        ]
+      },
+      {
+        "heading": "Betalingsplanen er en del av prisen",
+        "body": [
+          "Ved kjøp under oppføring må du kontrollere reservasjonsvilkår, kontrakt, milepæler, forskuddsgaranti, forventet ferdigstillelse og betalingsplan. Sørg for at juristen din har gjennomgått dokumentene før du binder deg.",
+          "Sammenlign samme leveranse og ferdig dato når du vurderer ulike prosjekter. En høyere startpris kan være bedre verdi hvis vesentlige komponenter er inkludert."
+        ]
+      },
+      {
+        "heading": "Freddys råd: be om én sammenlignbar totalsum",
+        "body": [
+          "Be om en skriftlig oversikt i tre kolonner: inkludert, obligatoriske tillegg og valgfrie tilvalg. Legg til skatter, kjøpskostnader og ditt planlagte møbel- og utstyrsbudsjett. Først da vet du om boligen er innenfor rammen din."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Be om leveransebeskrivelse og plantegning før reservasjon.",
+      "Få skriftlig bekreftet hva som er inkludert og hvilke tilvalg som koster ekstra.",
+      "Regn med alle skatter, gebyrer og innflyttingskostnader.",
+      "La uavhengig advokat kontrollere betalingsplan og garantier."
+    ],
+    "faq": [
+      {
+        "question": "Følger hvitevarer med ved nybygg i Spania?",
+        "answer": "Det varierer. Kontroller leveransebeskrivelsen for hver hvitevare og merke/modell der dette er relevant."
+      },
+      {
+        "question": "Er parkering inkludert i nybyggprisen?",
+        "answer": "Noen ganger, men ikke alltid. Få dokumentert hvilken plass og eventuelt bod som inngår."
+      },
+      {
+        "question": "Er møbler inkludert i nybygg?",
+        "answer": "Vanligvis ikke uten at dette er uttrykkelig avtalt. Visningsboliger kan ha ekstrautstyr."
+      }
+    ],
+    "cta": {
+      "label": "Se moderne nybygg og boliger",
+      "href": "/eiendommer"
+    },
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "readingTime": "8 min lesing",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "imageAlt": "Moderne nybygg og boligområde på Costa Blanca"
+  },
+{
+    "slug": "bedriftshytte-spania-as-skatt-privat-bruk",
+    "title": "Bedriftshytte i Spania: kan et norsk AS eie og bruke boligen?",
+    "excerpt": "Et norsk AS kan eie feriebolig i Spania, men ansattes tilgang, privat bruk, skatteplikt, fradrag og dokumentasjon må avklares før styret bestemmer seg.",
+    "category": "Bedrift og investering",
+    "image": "/assets/magasin-covers/juridisk.svg",
+    "seoTitle": "Bedriftshytte i Spania: AS, skatt og privat bruk – regler",
+    "seoDescription": "Kan et norsk AS eie bedriftshytte i Spania? Les om ansattes rett til bruk, aksjonærers private opphold, skatterisiko, dokumentasjon og styrets ansvar.",
+    "keywords": [
+      "bedriftshytte i Spania AS",
+      "firmahytte skatt privat bruk",
+      "norsk selskap eie bolig Spania",
+      "velferdstiltak bedriftshytte"
+    ],
+    "intro": [
+      "Ja, et norsk aksjeselskap kan som utgangspunkt kjøpe eiendom i Spania. Men spørsmålet styret bør stille er ikke bare om selskapet kan eie boligen – det er hvordan den skal brukes, dokumenteres og behandles skattemessig i begge land.",
+      "En bedriftshytte kan være et attraktivt ansattgode. Den må ikke presenteres som en automatisk skattefri feriebolig for eieren eller en garanti for fradrag."
+    ],
+    "sections": [
+      {
+        "heading": "Når kan ansattes bruk være et skattefritt velferdstiltak?",
+        "body": [
+          "Skatteetatens veiledning om bedriftshytter legger blant annet vekt på at alle eller en betydelig gruppe ansatte skal ha lik rett til å disponere hytten, også når den ligger i utlandet. Vedtekter, rettferdig fordeling og faktisk brukslogg bør kunne dokumenteres.",
+          "Ordningen må vurderes konkret opp mot virksomhetens ansatte og struktur. Små eierstyrte selskaper og ordninger som i praksis bare kommer eierens familie til gode krever særlig aktsomhet."
+        ]
+      },
+      {
+        "heading": "Kan aksjonæren bruke boligen privat?",
+        "body": [
+          "Privat bruk for eier, nærstående eller et begrenset utvalg personer kan utløse beskatning. Hvilken behandling som gjelder avhenger av faktiske forhold, verdsetting, bruk og selskapets dokumentasjon.",
+          "Styrevedtak alene gjør ikke privat bruk skattefri. Få en vurdering fra norsk skatterådgiver før kjøpet og før privat bruk avtales."
+        ]
+      },
+      {
+        "heading": "Hva med fradrag og spanske skatter?",
+        "body": [
+          "Kjøp gjennom norsk AS innebærer ikke automatisk rett til fradrag for spansk merverdiavgift eller alle driftskostnader. Det kan også oppstå spanske skatte-, registrerings- og rapporteringsforpliktelser, avhengig av eierskap og utleie eller bruk.",
+          "La spansk advokat/skatterådgiver og norsk regnskapsfører vurdere selskapsform, finansiering, ansattes bruk, eventuell utleie og rapportering sammen, før signering."
+        ]
+      },
+      {
+        "heading": "Styrets kontrollpunkter før investering",
+        "table": {
+          "headers": [
+            "Tema",
+            "Spørsmål styret må besvare"
+          ],
+          "rows": [
+            [
+              "Formål",
+              "Er dette et reelt ansattgode eller eierens feriebolig?"
+            ],
+            [
+              "Tilgang",
+              "Hvem kan bestille, og er fordelingen rimelig?"
+            ],
+            [
+              "Dokumentasjon",
+              "Finnes vedtekter, bookingregler og brukslogg?"
+            ],
+            [
+              "Økonomi",
+              "Hva blir totalkostnad, likviditet og drift?"
+            ],
+            [
+              "Rådgivning",
+              "Er norsk og spansk skatt/regelverk vurdert?"
+            ],
+            [
+              "Drift",
+              "Hvem håndterer nøkler, renhold og vedlikehold?"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Slik kan Zen Corporate Homes bidra",
+        "body": [
+          "Zen Corporate Homes kan hjelpe bedriften med å finne egnede boligtyper, vurdere beliggenhet, kapasitet og praktisk drift, og lage et bedre beslutningsgrunnlag. Vi erstatter ikke advokat, revisor eller skatterådgiver.",
+          "Relevante rettskilder: Skatteetatens Skatte-ABC om bedriftshytte og velferdstiltak: https://www.skatteetaten.no/rettskilder/type/handboker/skatte-abc/gjeldende/v-4-velferdstiltak/ ."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Definer formålet og hvem som får bruke boligen.",
+      "Få et norsk-spansk skattememo før reservasjon.",
+      "Lag bookingregler og dokumentasjonskrav.",
+      "Beregn totalkostnad og ansvar for drift."
+    ],
+    "faq": [
+      {
+        "question": "Kan et norsk AS kjøpe bolig i Spania?",
+        "answer": "Ja, som utgangspunkt, men eierskap, registrering, skatt og bruken av boligen må vurderes i begge land."
+      },
+      {
+        "question": "Er privat bruk skattefri for aksjonæren?",
+        "answer": "Ikke automatisk. Eier- eller familiedominert bruk kan utløse beskatning og må vurderes konkret."
+      },
+      {
+        "question": "Får bedriften momsfradrag?",
+        "answer": "Det kan ikke forutsettes. Fradragsretten krever konkret vurdering av aktivitet, bruk og spanske regler."
+      }
+    ],
+    "cta": {
+      "label": "Se bedriftsløsninger i Spania",
+      "href": "/bedriftshytte-spania"
+    },
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "readingTime": "8 min lesing",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "imageAlt": "Dokumenter og juridiske kontrollpunkter for bedriftshytte i Spania"
+  },
+{
+    "slug": "costa-blanca-vinteren-bo-feriebolig",
+    "title": "Costa Blanca om vinteren: hvordan er det egentlig å bo her?",
+    "excerpt": "Sol ute betyr ikke nødvendigvis varmt inne. Vi forteller om vinterlivet på Costa Blanca, boligkomfort, åpne restauranter, aktivitet og forskjeller mellom områder.",
+    "category": "Livet i Spania",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "seoTitle": "Costa Blanca om vinteren – vær, bolig og hverdagsliv",
+    "seoDescription": "Hvordan er Costa Blanca om vinteren? Les om sol, kjølige kvelder, varme i boligen, åpne restauranter, sosiale møteplasser og hvilke områder som passer.",
+    "keywords": [
+      "Costa Blanca om vinteren",
+      "bo i Spania vinterstid",
+      "vinter Albir Benidorm Villajoyosa",
+      "feriebolig Spania vinter"
+    ],
+    "intro": [
+      "Du kan sitte i solen på en terrasse i januar og likevel trenge jakke hjemme om kvelden. Vinteren på Costa Blanca er en av de mest undervurderte grunnene til å kjøpe bolig her – og samtidig en vanlig kilde til feil forventninger.",
+      "Hverdagen er annerledes enn norsk vinter, men også annerledes enn spansk sommer. Det riktige området og den riktige boligen betyr mer enn et pent værbilde."
+    ],
+    "sections": [
+      {
+        "heading": "Hvordan oppleves klimaet om vinteren?",
+        "body": [
+          "Kysten har ofte milde dager sammenlignet med Norge, men perioder med vind, regn og kjølige netter forekommer. Været varierer mellom nord og sør, og ikke minst mellom sjøfront, skyggelagte gater og høyereliggende områder.",
+          "Vurder boligens solretning, vindeksponering, uteplass og mulighet til å sitte godt ute på vinterettermiddagen. En sørvendt terrasse kan være langt mer verdt enn store kvadratmeter i skyggen."
+        ]
+      },
+      {
+        "heading": "Varm inne: den viktigste vintertesten ved boligkjøp",
+        "body": [
+          "Eldre spanske boliger kan ha svak isolasjon, kalde fliser, trekk og lite effektiv oppvarming. På dager med sol ute kan det likevel være ubehagelig inne. Moderne vinduer, effektiv varmepumpe og godt klimaskall kan gi betydelig bedre komfort.",
+          "Besøk boligen om mulig i vintermånedene. Spør om reelt strømforbruk og hvordan oppholdsrom og soverom varmes opp. Energieffektivitet handler både om økonomi og trivsel."
+        ]
+      },
+      {
+        "heading": "Er restauranter og servicetilbud åpne?",
+        "body": [
+          "Benidorm og større helårsbyer har et bredt servicetilbud gjennom vinteren. Mindre turistpregede strandområder kan ha flere sesongstengte lokaler. Albir, Altea og Villajoyosa har forskjellige rytmer fra sted til sted.",
+          "Sjekk konkrete nabolag: matbutikk, apotek, kollektivtransport, restauranter og aktiviteter til fots. De fleste boligkjøpere har mer nytte av en god vinterhverdag enn en perfekt juliuke."
+        ]
+      },
+      {
+        "heading": "Hvem trives spesielt godt her om vinteren?",
+        "body": [
+          "Noen ønsker rolige formiddager med turer, sykkel, kafé og lokale markeder; andre vil ha et stort norsk eller internasjonalt miljø med faste aktiviteter. I Albir og Alfaz del Pi finnes etablerte norske møteplasser, mens byer som Benidorm byr på flere helårsåpne tilbud.",
+          "Costa Blanca er ikke bare for pensjonister. Også familier, fjernarbeidere og dem som ønsker lange opphold kan trives – men skole, arbeidsrutiner og transport må vurderes separat."
+        ]
+      },
+      {
+        "heading": "Hva bør du teste før du bestemmer deg?",
+        "table": {
+          "headers": [
+            "Vintertest",
+            "Hvorfor det betyr noe"
+          ],
+          "rows": [
+            [
+              "Sol på terrasse klokken 15",
+              "Uteplassen kan være skyggefull selv på fine dager"
+            ],
+            [
+              "Varme og vinduer",
+              "Komfort og strømforbruk gjennom vinteren"
+            ],
+            [
+              "Åpne butikker og kafeer",
+              "Et nabolag kan endre karakter etter sommeren"
+            ],
+            [
+              "Turvei og kollektivtransport",
+              "Bilbehovet kan bli større enn forventet"
+            ],
+            [
+              "Sosialt nettverk",
+              "Vinteropphold blir bedre med aktivitet og fellesskap"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Freddys råd: besøk området i januar eller februar",
+        "body": [
+          "Hvis du planlegger å bruke boligen mest om vinteren, bør du oppleve den aktuelle gaten, restauranten og terrasseplassen i samme sesong før du kjøper. Finn den boligen du vil trives i på en vanlig tirsdag – ikke bare på en ferieannonse."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Prioriter vinter-sol og boligstandard.",
+      "Besøk aktuelle områder utenfor høysesong.",
+      "Prøv hverdagslogistikken og møtestedene.",
+      "Sammenlign energistandard og faktisk varmekostnad."
+    ],
+    "faq": [
+      {
+        "question": "Er Costa Blanca varmt om vinteren?",
+        "answer": "Ofte mildere enn i Norge, men vær, vind, regn og kjølige kvelder forekommer. Boligens isolasjon og solforhold er avgjørende for komfort."
+      },
+      {
+        "question": "Er Benidorm åpen om vinteren?",
+        "answer": "Benidorm er en stor helårsby med betydelig aktivitet, men tilbudet varierer mellom nabolag og virksomheter."
+      },
+      {
+        "question": "Bør jeg kjøpe sørvendt bolig?",
+        "answer": "Solretningen kan være særlig viktig ved vinterbruk, men vurder også vind, skjerming, utsikt og overoppheting om sommeren."
+      }
+    ],
+    "cta": {
+      "label": "Utforsk områdene på Costa Blanca",
+      "href": "/omrader"
+    },
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "readingTime": "8 min lesing",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "imageAlt": "Kystlandskap og bebyggelse på Costa Blanca i mild vintersesong"
+  },
+{
+    "slug": "overfore-penger-norge-spania-boligkjop",
+    "title": "Slik overfører du penger til Spania ved boligkjøp",
+    "excerpt": "Unngå unødvendig valutapåslag og betalingsstress. Slik sammenligner du kurser, planlegger delbetalinger og kontrollerer mottaker før boligoppgjøret.",
+    "category": "Valuta og økonomi",
+    "image": "/assets/magasin-covers/bankkonto-valuta.svg",
+    "seoTitle": "Overføre penger til Spania ved boligkjøp – trygg guide",
+    "seoDescription": "Slik overfører du større beløp fra Norge til Spania ved boligkjøp. Sammenlign valutakurser, gebyrer og betalingsmåter, og unngå feil ved oppgjøret.",
+    "keywords": [
+      "overføre penger Spania boligkjøp",
+      "valutaveksling NOK euro bolig",
+      "betale nybygg Spania",
+      "valutakurs bolig Spania"
+    ],
+    "intro": [
+      "Forskjellen mellom to tilbud på valutaveksling kan bli stor når du skal betale hundretusener av euro. Men lavest valutapåslag er ikke den eneste faktoren: riktige mottakeropplysninger, dokumentasjon og timing er minst like viktig.",
+      "Dette er en praktisk plan for kjøpere som har penger i norske kroner og skal betale eiendom i euro. Den erstatter ikke personlig finansrådgivning eller oppgjørsinstruks fra advokaten din."
+    ],
+    "sections": [
+      {
+        "heading": "Se på hvor mange euro mottaker faktisk får",
+        "body": [
+          "Sammenlign minst to uavhengige tilbud med samme tidspunkt, beløp og mottakervaluta. Be om oppgitt valutakurs, påslag, faste gebyrer, gebyrer hos mottakerbanken og forventet overføringstid.",
+          "Ikke konkluder ut fra reklame for «gebyrfri overføring». Kostnaden kan ligge i valutakursen. Sammenlign sluttbeløpet i euro etter alle kostnader."
+        ]
+      },
+      {
+        "heading": "Eksempel: 10 øre på eurokursen betyr mye",
+        "body": [
+          "Ved betaling av €400.000 utgjør en kursforskjell på 0,10 NOK per euro 40.000 kroner. Dette er en ren matematisk illustrasjon, ikke en prognose eller en lovnad om besparelse.",
+          "Små endringer i valutakursen kan også endre totalbudsjettet mellom reservasjon og overtakelse. Ha en buffer i norske kroner."
+        ]
+      },
+      {
+        "heading": "Nybygg med delbetalinger krever en valutaplan",
+        "body": [
+          "Nybygg kan ha reserveringsbeløp, senere delbetalinger og sluttoppgjør ved overtakelse. Be om den fullstendige betalingsplanen i euro, sett opp forfallsdatoer og planlegg likviditeten.",
+          "Noen banker og valutatilbydere kan tilby avtaler som låser en fremtidig kurs. Dette kan skape forutsigbarhet, men også innebære bindinger, sikkerhetskrav og kostnader. Få vilkårene skriftlig og vurder risikoen før du inngår avtale."
+        ]
+      },
+      {
+        "heading": "Sikkerhet: dobbelsjekk mottaker før store beløp sendes",
+        "body": [
+          "Bruk betalingsinstruks fra din uavhengige advokat og verifiser mottakerkonto via en kjent, separat kontaktkanal. En e-post med «nytt kontonummer» skal aldri alene være nok til å endre en stor overføring.",
+          "Forvent at banken kan be om dokumentasjon for pengenes opprinnelse, identitet, kjøpekontrakt og transaksjon. Legg inn tid til slike kontroller før oppgjørsdatoen."
+        ]
+      },
+      {
+        "heading": "Hvordan betaler man hos notaren?",
+        "body": [
+          "Ved signering kan oppgjøret etter avtale håndteres med bankutstedt sjekk eller relevante bankoverføringer. Banco de España beskriver blant annet banker's draft og TARGET-overføringer for boligoppgjør. Løsningen må avklares med advokat, bank og notar på forhånd.",
+          "Kilde: Banco de España, «Cheque or transfer? How do you pay for a house?» https://clientebancario.bde.es/pcb/en/blog/compra-de-vivienda-cheque-o-transferencia.html ."
+        ]
+      },
+      {
+        "heading": "Sjekkliste før du sender pengene",
+        "table": {
+          "headers": [
+            "Kontroll",
+            "Hva du gjør"
+          ],
+          "rows": [
+            [
+              "Valuta",
+              "Sammenlign nettobeløpet i euro og totalt NOK-beløp"
+            ],
+            [
+              "Forfall",
+              "Planlegg betaling før bankens og notarens frister"
+            ],
+            [
+              "Mottaker",
+              "Bekreft navn og IBAN separat med kjent kontakt"
+            ],
+            [
+              "Dokumentasjon",
+              "Ha kontrakt, ID og dokumentasjon på midlenes opprinnelse"
+            ],
+            [
+              "Prøveoverføring",
+              "Avklar om bank/oppgjør krever testbetaling"
+            ],
+            [
+              "Kvittering",
+              "Lagre dokumentasjon og bekreft mottak"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Freddys råd: planlegg betaling parallelt med boligkjøpet",
+        "body": [
+          "Ikke vent til uken før overtakelsen. Start med valutabudsjett, bekreftet betalingsplan og bankdialog allerede før reservasjon. Det er tryggere enn å spekulere i hvilken dag euroen blir billigst."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Lag betalingsplan i euro og kroner.",
+      "Be om sammenlignbare pristilbud for valutaveksling.",
+      "Verifiser mottaker uavhengig av e-post.",
+      "Avklar oppgjørsmetode med advokat og notar.",
+      "Test budsjettet for svakere krone."
+    ],
+    "faq": [
+      {
+        "question": "Må jeg ha spansk bankkonto for å kjøpe bolig?",
+        "answer": "Det avhenger av oppgjørsform, bank, notar og de løpende betalingene. Avklar det tidlig med rådgiver og advokat."
+      },
+      {
+        "question": "Er valutamegler alltid billigere enn bank?",
+        "answer": "Nei. Sammenlign faktisk utbetalt eurobeløp og alle kostnader for akkurat din betaling."
+      },
+      {
+        "question": "Kan jeg låse eurokursen før overtakelse?",
+        "answer": "Noen tilbydere tilbyr terminavtaler eller lignende produkter. De kan gi forutsigbarhet, men har egne vilkår, bindinger og risiko."
+      }
+    ],
+    "cta": {
+      "label": "Se guiden om finansiering og valuta",
+      "href": "/guide/spansk-bankkonto-valutaveksling"
+    },
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "readingTime": "8 min lesing",
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "imageAlt": "Illustrasjon av euro, norske kroner og betaling ved boligkjøp i Spania"
+  },
+
   {
     slug: "boligmarkedet-costa-blanca-hosten-2026",
     title: "Boligmarkedet på Costa Blanca høsten 2026: Prisene stiger – men kronen hjelper norske kjøpere",
