@@ -12,7 +12,7 @@ export const monthlyMarketUpdates: Article[] = [
     image: "/assets/magasin-covers/costa-blanca-oktober-2026.svg",
     imageAlt: "Illustrert kystlandskap fra Costa Blanca med hav, fjell og boliger",
     seoTitle: "Boligmarkedet Costa Blanca oktober 2026 | Zen Eco Homes",
-    seoDescription: "Boligpriser i Benidorm, Finestrat og Villajoyosa, turistutleie og IVA: se hva oktober 2026 betyr for kjøpere på Costa Blanca.",
+    seoDescription: "Boligpriser i Benidorm, Finestrat og Villajoyosa, nye regler for turistutleie og IVA: Se hva oktober 2026 betyr for boligkjøpere på hele Costa Blanca.",
     keywords: ["markedsoppdatering Costa Blanca", "boligpriser Costa Blanca 2026", "Benidorm boligpriser", "Finestrat nybygg", "Villajoyosa turistutleie", "IVA Spania"],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
