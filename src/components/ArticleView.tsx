@@ -1138,12 +1138,12 @@ export function ArticleView({ article }: { article: Article }) {
                         source: "https://commons.wikimedia.org/wiki/File:Polop_i_el_Panoig.jpg",
                       },
                       "Finestrat: stor utbygging og viktige prisforskjeller i åssiden": {
-                        file: "Vista_de_Finestrat_des_del_Puig_Campana.jpg",
-                        alt: "Utsikt fra Puig Campana mot Finestrat i Alicante",
-                        caption: "Finestrat sett fra Puig Campana. Bildet viser landskapet, ikke et bestemt nybyggprosjekt.",
+                        file: "Vista_de_Benidorm_i_la_cala_de_Finestrat_amb_la_serra_de_la_Cortina_a_primer_terme_des_del_Puig_Campana.jpg",
+                        alt: "Panoramautsikt fra Puig Campana over Sierra Cortina, Cala de Finestrat og Benidorms skyline",
+                        caption: "Sierra Cortina, Cala de Finestrat og Benidorm sett fra Puig Campana. Oversiktsfoto fra 2015, ikke bilde av et bestemt nybyggprosjekt.",
                         author: "Joanbanjo", license: "CC BY-SA 4.0",
                         licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-                        source: "https://commons.wikimedia.org/wiki/File:Vista_de_Finestrat_des_del_Puig_Campana.jpg",
+                        source: "https://commons.wikimedia.org/wiki/File:Vista_de_Benidorm_i_la_cala_de_Finestrat_amb_la_serra_de_la_Cortina_a_primer_terme_des_del_Puig_Campana.jpg",
                       },
                       "Sierra Cortina: fra villaområder ved motorveien til luksus med utsikt": {
                         file: "Sierra_Cortina.jpg",
