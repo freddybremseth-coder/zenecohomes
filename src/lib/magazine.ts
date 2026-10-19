@@ -1,5 +1,6 @@
 import { articles as baseArticles, type Article } from "./content";
 import { corporateArticles } from "./corporate-content";
+import { monthlyMarketUpdates } from "./monthly-market-updates";
 
 export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
   "costa-blanca-nord-500000-euro-hva-kjope-na",
@@ -1974,7 +1975,7 @@ export const extraArticles: Article[] = [
   },
 ];
 
-export const allArticles: Article[] = [...baseArticles, ...extraArticles, ...corporateArticles];
+export const allArticles: Article[] = [...baseArticles, ...extraArticles, ...corporateArticles, ...monthlyMarketUpdates];
 
 export function getMagazineArticle(slug: string) {
   return allArticles.find((article) => article.slug === slug);
