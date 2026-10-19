@@ -1114,8 +1114,8 @@ export function ArticleView({ article }: { article: Article }) {
                       <ResilientNativeImage
                         className="block h-auto w-full rounded-xl"
                         src={article.slug === "nybygg-eller-bruktbolig-costa-blanca"
-                          ? "/assets/magasin-covers/nybygg-vs-brukt-original.webp"
-                          : "/assets/magasin-covers/costa-blanca-nord-sor-original.webp"}
+                          ? "/assets/magasin-covers/Før og etter_ Leilighet med havutsikt.png"
+                          : "/assets/magasin-covers/Costa Blanca nord eller sør_ Områdeguide.png"}
                         alt={article.slug === "nybygg-eller-bruktbolig-costa-blanca"
                           ? "Illustrasjon: eldre leilighet med tegn på fukt sammenlignet med moderne, lyst nybygg på Costa Blanca"
                           : "Illustrert sammenligning av fjell, grønt og småbyer i Costa Blanca Nord med strender og byliv i Costa Blanca Sør"}
