@@ -1106,6 +1106,27 @@ export function ArticleView({ article }: { article: Article }) {
                   ].includes(section.heading)
                     ? <h3>{section.heading}</h3>
                     : <h2>{section.heading}</h2>}
+                  {((article.slug === "nybygg-eller-bruktbolig-costa-blanca" &&
+                    section.heading.startsWith("Bruktbolig: du kjøper det du ser")) ||
+                    (article.slug === "costa-blanca-nord-vs-sor-livsstil-priser" &&
+                    section.heading.startsWith("Hva er forskjellen på Costa Blanca Nord og Sør?"))) && (
+                    <figure className="my-7 overflow-hidden rounded-xl">
+                      <ResilientNativeImage
+                        className="block h-auto w-full rounded-xl"
+                        src={article.slug === "nybygg-eller-bruktbolig-costa-blanca"
+                          ? "/assets/magasin-covers/nybygg-vs-brukt-original.webp"
+                          : "/assets/magasin-covers/costa-blanca-nord-sor-original.webp"}
+                        alt={article.slug === "nybygg-eller-bruktbolig-costa-blanca"
+                          ? "Illustrasjon: eldre leilighet med tegn på fukt sammenlignet med moderne, lyst nybygg på Costa Blanca"
+                          : "Illustrert sammenligning av fjell, grønt og småbyer i Costa Blanca Nord med strender og byliv i Costa Blanca Sør"}
+                      />
+                      <figcaption className="mt-2 text-sm text-slate-600">
+                        {article.slug === "nybygg-eller-bruktbolig-costa-blanca"
+                          ? "Illustrasjonsbilde: Ulike boligstandarder. Konkrete boliger må alltid vurderes individuelt."
+                          : "Illustrasjonsbilde: Forskjeller i landskap og livsstil. Velg område ut fra egne prioriteringer."}
+                      </figcaption>
+                    </figure>
+                  )}
                   {section.body?.map((paragraph) => {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
