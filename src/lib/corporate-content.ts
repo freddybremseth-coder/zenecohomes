@@ -9,6 +9,10 @@ const corporateCovers: Record<string, string> = {
   "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_38-4.png",
   "hvilken-bolig-passer-som-bedriftshytte": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_40-5.png",
   "medlemsbolig-i-spania-for-foreninger": "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_47_41-6.png",
+  "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte": "/assets/magasin-covers/corporate-drift-bedriftshytte.jpg",
+  "kjop-av-bolig-gjennom-selskap-i-spania": "/assets/magasin-covers/corporate-kjop-gjennom-selskap.jpg",
+  "slik-presenterer-du-bedriftshytte-for-styret": "/assets/magasin-covers/corporate-beslutningsgrunnlag.jpg",
+  "partnerguide-introdusere-zen-corporate-homes": "/assets/magasin-covers/corporate-partnerguide.jpg",
 };
 
 type CorporateDraft = {
