@@ -3080,9 +3080,9 @@ export const extraArticles: Article[] = [
     excerpt:
       "Havutsikt ser fantastisk ut på visning, mens gangavstand merkes hver dag. Vi sammenligner hva de to kvalitetene faktisk betyr for bruk, pris og videresalg.",
     date: "2026-09-29",
-    updated: "2026-09-29",
+    updated: "2026-10-19",
     category: "Boligvalg",
-    readingTime: "7 min lesing",
+    readingTime: "17 min lesing",
     image: "/assets/magasin-covers/omradet-for-boligen.svg",
     imageAlt: "Havutsikt og gangavstand som boligvalg på Costa Blanca",
     seoTitle: "Havutsikt eller gangavstand på Costa Blanca – hva velger du?",
@@ -3095,6 +3095,103 @@ export const extraArticles: Article[] = [
       "Det riktige valget avhenger av hvordan boligen skal brukes. En feriebolig med fantastisk utsikt kan være perfekt hvis du likevel kjører mye. For en kjøper som vil sette fra seg bilen og leve til fots, kan 800 meter flat vei til sentrum være mer verdt enn panoramautsikt fra en bratt åsside.",
     ],
     sections: [
+      {
+        heading: "Kort svar: bør du prioritere havutsikt eller gangavstand?",
+        body: [
+          "Velg gangavstand først hvis du vil leve til fots, oppholder deg lenge i boligen eller ønsker en enkel hverdag uten bil. Velg utsikt først hvis terrasselivet, roen og det å se havet hver dag er viktigere enn transportbehovet. Den beste løsningen kombinerer begge, men da må du ofte kompromisse på størrelse, alder, boligtype eller pris.",
+          "Spør ikke bare hva som er viktigst på visningsdagen. Spør hva du vil sette mest pris på en helt vanlig tirsdag i februar, når du skal handle, besøke apoteket eller spise ute."
+        ]
+      },
+      {
+        heading: "Hva betyr strandnært i en boligannonse?",
+        body: [
+          "«Nær stranden», «bare ti minutter fra sjøen» og «gangavstand» er uttrykk som må dokumenteres. Ti minutter med bil og ti minutter til fots er ulike kvaliteter. En kilometer ned en bratt åsside kan også være langt mer krevende enn en kilometer langs en flat promenade.",
+          "Be om eksakt adresse, en faktisk gangrute og høydeprofil. Undersøk fortau, belysning, trafikkryssinger og om det er mulig å gå tilbake med strandutstyr, barnevogn eller handleposer. Ikke baser beslutningen på luftlinjeavstand."
+        ]
+      },
+      {
+        heading: "Lokale forskjeller på Costa Blanca Nord",
+        table: {
+          headers: ["Område", "Typisk styrke", "Vanlig kompromiss"],
+          rows: [
+            ["Albir sentralt", "Strandpromenade, butikker og sosialt liv til fots", "Mindre privatliv og ikke automatisk åpen havutsikt"],
+            ["Altea nedre sentrum", "Kystnært byliv og tjenester", "Gamlebyen ligger opp bratte gater"],
+            ["Altea Hills", "Panorama, privatliv og høy beliggenhet", "Bilbehov, høydeforskjeller og lengre vei til daglige ærend"],
+            ["Benidorm Poniente sentralt", "Strand, butikker og helårstilbud", "Pris, byliv og mulig trafikkstøy"],
+            ["Finestrat / Sierra Cortina", "Moderne boliger og utsikt fra enkelte tomter", "Bilavhengighet, utbygging og ulik kvalitet på utsikten"],
+            ["Polop Hills", "Fjellandskap, ro og utsikt på utvalgte adresser", "Bratte veier og bil i hverdagen"],
+            ["Villajoyosa sentrum", "Sandstrand og tradisjonelt bymiljø", "Begrenset parkering enkelte steder, og varierende standard"]
+          ]
+        },
+        body: [
+          "Dette er områdekarakteristikker – ikke vurderinger av alle boliger i kommunen. Selv to leiligheter i samme urbanisasjon kan ha helt ulik sol, støy og gangavstand. Den konkrete adressen avgjør."
+        ]
+      },
+      {
+        heading: "Terrassen kan være boligens viktigste rom – men når har den sol?",
+        body: [
+          "En terrasse med havutsikt er ikke automatisk en terrasse du kan bruke hele året. En nordvendt eller skyggefull plassering kan være kjøligere i vintermånedene, mens en helt åpen vestvendt terrasse kan bli svært varm på sommerettermiddagen.",
+          "Be om himmelretning, dokumentasjon av skygge fra nabobygg, overheng og terreng, og prøv boligen til ulike klokkeslett. Ta gjerne en ekstra befaring på vinteren. Undersøk også om markise, screens, pergola eller annen solskjerming er tillatt og inkludert.",
+          "Kystvind kan påvirke komforten, særlig på høye, åpne terrasser. Et glassrekkverk og et fint fotografi sier ikke nødvendigvis noe om vindforholdene."
+        ]
+      },
+      {
+        heading: "Kan noen bygge foran havutsikten du betaler for?",
+        body: [
+          "En ubebygd tomt nedenfor boligen er ikke det samme som en varig fri siktlinje. Undersøk gjeldende reguleringsplan, tillatt byggehøyde, igangsatte prosjekter og omkringliggende tomters status. Dette er spesielt viktig i områder med mye nybygg.",
+          "Be en uavhengig advokat eller relevant fagperson gjennomgå dokumentasjonen og sjekk forholdene med kommunen når nødvendig. En rådgiver bør peke på mulige risikofaktorer, men ikke garantere at utsikten varer for alltid uten et klart juridisk grunnlag.",
+          "Utsikten fra en visningsbolig kan dessuten være bedre enn fra boligen du faktisk kjøper. Kontroller etasje, seksjonsnummer, fremtidige byggetrinn og riktig siktretning."
+        ]
+      },
+      {
+        heading: "Hva med støy, heis, trapper og parkering?",
+        body: [
+          "Boliger nær stranden kan ligge ved restauranter, trafikkerte veier eller travle promenader. Høyereliggende boliger kan gi ro, men også veistøy fra større innfartsårer, vind eller krevende tilkomst.",
+          "Sjekk om heisen går fra garasje og inngang til leilighet uten trapper, om du kan parkere nær inngangen, og hvordan området fungerer i høysesong. For en familie med små barn eller en kjøper med begrenset mobilitet kan dette være viktigere enn en ekstra bit av havutsikten.",
+          "Se også på vinduskvalitet, soverommenes retning og støynivå når vinduene er åpne. Besøk adressen på både dag- og kveldstid."
+        ]
+      },
+      {
+        heading: "Slik sammenligner du to boliger med samme totalbudsjett",
+        body: [
+          "Ikke sammenlign bare pris per kvadratmeter. Still opp begge boligene med total kjøpskostnad, mulig fremtidig utsiktsrisiko, faktisk gangavstand, driftsutgifter, vedlikehold, solforhold og hvor enkelt boligen kan brukes uten bil.",
+          "Gi de viktigste kriteriene en personlig vekt. Hvis du planlegger helårsbruk, bør nærhet til butikk og helsetjenester telle tyngre enn om du bruker boligen kun noen ferieuker. Hvis terrassen er hovedgrunnen til kjøpet, bør sol, vind, privatliv og utsikt vektes mer.",
+          "Unngå å bruke et fast antall euro som generell «pris på havutsikt». Beliggenhetspremien varierer med kommune, utsiktstype, prosjekt, boligstandard, marked og tidspunkt."
+        ],
+        table: {
+          headers: ["Vurdering", "Strandnært / sentralt", "Høytliggende / utsikt"],
+          rows: [
+            ["Vanlig hverdag", "Ofte enklere til fots", "Oftere bil og planlegging"],
+            ["Terrasseliv", "Kan ha mer innsyn og støy", "Kan gi panorama og privatliv"],
+            ["Vinterkomfort", "Sjekk skyggesoner og bygningskvalitet", "Sjekk vind og solretning"],
+            ["Fremtidig utsikt", "Varierer – kontroller bygg foran", "Varierer – kontroller nye byggetrinn"],
+            ["Tilgjengelighet", "Kan være enklere fra gateplan", "Bakker og trappetrinn kan være utfordrende"],
+            ["Videresalg", "Appellerer til kjøpere som vil gå", "Appellerer til kjøpere som prioriterer panorama"]
+          ]
+        }
+      },
+      {
+        heading: "Visningssjekklisten som avslører de skjulte kompromissene",
+        bullets: [
+          "Har vi gått den faktiske ruten fra boligen til strand, butikk, apotek og restaurant?",
+          "Er det fortau, lys, trygge fotgjengerfelt og overkommelige stigninger?",
+          "Hva ser man fra akkurat riktig etasje og terrasse, ikke bare fra visningsboligen?",
+          "Er reguleringsstatus og mulige fremtidige bygg foran boligen undersøkt?",
+          "Når får terrassen vintersol, og når blir den for varm?",
+          "Er vind, støy og innsyn undersøkt på ulike tider av døgnet?",
+          "Fungerer heis, parkering og inngang for hele familien?",
+          "Hva er samlet budsjett inklusive relevante kjøpskostnader og drift?",
+          "Hvis du måtte velge bort enten utsikt eller gangavstand – hvilken egenskap ville du savne mest?"
+        ]
+      },
+      {
+        heading: "Freddys råd: betal for kvalitetene du faktisk kommer til å bruke",
+        body: [
+          "Som kjøperrådgiver ville jeg startet med hvordan kunden skal leve, ikke med de vakreste annonsebildene. Vi bør teste den reelle gangavstanden, sol og sikt fra akkurat den aktuelle boligen, regulering og totaløkonomi før vi bestemmer oss.",
+          "Noen vil ha panoramautsikt og en stor terrasse – og trives godt med bil. Andre vil heller ha mindre bolig noen minutters gange fra strand, butikk og venner. Begge kan være gode valg, men de passer forskjellige mennesker.",
+          "Zen Eco Homes kan hjelpe deg å sammenligne faktiske boliger og mikroområder, avklare spørsmål med selger/utbygger og vurdere kompromissene uten å skjule ulempene."
+        ]
+      },
       {
         heading: "Havutsikt koster – men all havutsikt er ikke lik",
         body: [
@@ -3142,13 +3239,14 @@ export const extraArticles: Article[] = [
       "Kontroller hva som kan bygges foran utsikten.",
       "Vurder boligen ut fra normal hverdag, ikke bare første visningsinntrykk.",
       "Sammenlign to boliger med samme budsjett og forskjellige beliggenhetskvaliteter.",
+      "Kontroller sol, vind, støy, innsyn og mulige fremtidige bygg foran utsikten.",
     ],
     faq: [
       { question: "Er havutsikt verdt å betale ekstra for?", answer: "Det kan være det hvis utsikten er god, varig og viktig for hvordan du bruker boligen. Men den bør sammenlignes mot andre kvaliteter du gir avkall på, som gangavstand, areal og adkomst." },
       { question: "Hva regnes som gangavstand?", answer: "Det finnes ingen universell grense. Terreng, fortau, varme og trafikk betyr minst like mye som meter. Test ruten selv før kjøp." },
       { question: "Hva er best for videresalg?", answer: "Både varig havutsikt og god gangavstand kan være sterke kvaliteter. Det viktigste er at kvaliteten er reell, lett å forstå og passer en bred nok kjøpergruppe." },
     ],
-    cta: { label: "Sammenlign områder på Costa Blanca", href: "/omrader/costa-blanca-nord" },
+    cta: { label: "Få hjelp til å velge riktig beliggenhet", href: "/kontakt" },
   },
   {
     slug: "leilighet-eller-villa-costa-blanca",
