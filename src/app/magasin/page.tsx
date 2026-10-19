@@ -205,6 +205,8 @@ export default async function MagazinePage() {
         </p>
       </section>
 
+      <section className="section"><div className="mx-auto max-w-5xl px-5 md:px-8 rounded-2xl border p-6"><p className="eyebrow">Ny månedlig artikkelserie</p><h2>Markedsoppdatering Costa Blanca</h2><p>Få daterte og kildebelagte oversikter over boligpriser, nye regler og praktiske råd for kjøpere – fra Costa Blanca Nord til Sør.</p><Link href="/magasin/markedsoppdatering-costa-blanca">Se markedsoppdateringene <ArrowRight size={16} className="inline"/></Link></div></section>
+
       <section className="section magazine-guide-bridge">
         <div>
           <p className="eyebrow">Ser du etter kjøperguider?</p>
