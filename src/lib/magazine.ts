@@ -17,6 +17,240 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "costa-blanca-barnefamilier-skole-hverdag",
+    "title": "Costa Blanca for barnefamilier – skoler, barnehager og livet året rundt",
+    "excerpt": "Hvor bør barnefamilier bo på Costa Blanca? En grundig kjøperguide om spansk, norsk og internasjonal skole, barnehage, bosted, transport, fritid og dagligliv.",
+    "category": "Familie og hverdagsliv",
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "readingTime": "18 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Kystsamfunn og boligområder på Costa Blanca",
+    "seoTitle": "Costa Blanca med barn: skole, barnehage og boligvalg",
+    "seoDescription": "Flytte til Costa Blanca med barn? Sammenlign spansk, norsk og internasjonal skole, barnehage, boligområder, transport og familieliv før boligkjøpet.",
+    "keywords": [
+      "flytte til Costa Blanca med barn",
+      "norsk skole Costa Blanca",
+      "barnehage Spania Costa Blanca",
+      "familievennlige områder Costa Blanca",
+      "skole Albir Alfaz Benidorm"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "For en familie er det sjelden nok å finne en pen bolig med tre soverom og basseng. Skolevei, språkutvikling, barnehage, et sosialt miljø for barna og logistikken på en helt vanlig hverdag betyr minst like mye som havutsikt og terrasse.",
+      "På Costa Blanca Nord finnes tradisjonelle spanske byer, internasjonale boligmiljøer og et etablert norsk skolesamfunn. Ingen løsning passer alle familier. Denne guiden går gjennom valgene som bør tas før man reserverer bolig.",
+      "Start med barna og skolehverdagen, ikke med boligannonsen. Deretter vurderer dere hvilke nabolag som passer budsjett, transport, alder og ønsket livsstil."
+    ],
+    "sections": [
+      {
+        "heading": "Kort svar: Hvor bør barnefamilier bo på Costa Blanca Nord?",
+        "body": [
+          "Familier som ønsker norsk skoletilbud, ser ofte mot l’Alfàs del Pi og omkringliggende områder som Albir og La Nucía. Familier som ønsker spansk skole og lokal integrering kan vurdere Benidorm, Villajoyosa, Altea, Finestrat og Polop ut fra konkret skoleplass, boligadresse og daglige behov.",
+          "Ingen kommune garanterer nærhet til ønsket skole. Et rimeligere hus langt fra skole og fritidstilbud kan gi en krevende hverdag. Finn aktuelle skoler og avklar realistisk transport før dere velger område."
+        ]
+      },
+      {
+        "heading": "Tre skolevalg: spansk, norsk eller internasjonalt",
+        "table": {
+          "headers": [
+            "Valg",
+            "Hva kan passe familien?",
+            "Må undersøkes"
+          ],
+          "rows": [
+            [
+              "Spansk offentlig skole",
+              "Lokal tilhørighet og daglig bruk av spansk/valenciansk",
+              "Inntak, skolesone, språkbruk og støtte"
+            ],
+            [
+              "Norsk skole",
+              "Norsk læreplan og norsk skolemiljø",
+              "Opptak, skolepenger, klassetrinn og skolevei"
+            ],
+            [
+              "Privat/internasjonal skole",
+              "Andre språk og læreplaner",
+              "Godkjenning, språk, karakterløp, kostnad og transport"
+            ]
+          ]
+        },
+        "body": [
+          "Valg av skole påvirker barnas venner, språk, fritidsaktiviteter og muligheten til å flytte videre eller tilbake til Norge. Vurder barnets alder, språkbakgrunn og hvor lenge dere planlegger å bo i Spania."
+        ]
+      },
+      {
+        "heading": "Den Norske Skole Costa Blanca – viktig for mange norske familier",
+        "body": [
+          "Den Norske Skole Costa Blanca ligger i l’Alfàs del Pi, i urbanisasjonen El Oasis. Skolen tilbyr norsk grunnskole og videregående skole og har et etablert miljø for norske familier. Bekreft tilbud, kapasitet, inntaksregler, skolepenger og frister direkte med skolen før boligkjøp.",
+          "Skolen oppgir at søknadsprosessen for 2027/2028 åpner i januar 2027. Det er ikke en garanti for skoleplass. Har barnet behov for spesialpedagogisk oppfølging, må dette avklares særskilt; vedtak fra Norge følger ikke automatisk.",
+          "Offisielle kilder: https://www.costablancaskolen.no/ og https://www.costablancaskole.com/kontakt-oss/ ."
+        ]
+      },
+      {
+        "heading": "Spansk skole: slik foregår opptaket i Valencia-regionen",
+        "body": [
+          "Offentlige og offentlig støttede skoler har et formelt opptaks- og innskrivingsløp gjennom Generalitat Valenciana. Skolekretser, prioriteringskriterier, dokumentasjon og søknadsfrister kan påvirke muligheten til å få ønsket skole. Ikke ta for gitt at nærmeste skole automatisk blir tildelt.",
+          "For skoleåret 2026–2027 oppga Generalitat blant annet ordinær søknadsperiode 7.–18. mai 2026 for Infantil og Primaria. Dette er historiske datoer for dette skoleåret, ikke frister for 2027–2028. Kontroller alltid ny kalender og eventuelle ekstraordinære opptak når familien faktisk skal flytte.",
+          "Offisiell opptaksinformasjon: https://sede.gva.es/es/detall-tramit?id_proc=G236 ."
+        ]
+      },
+      {
+        "heading": "Fra barnehage til videregående: alder og terminologi",
+        "body": [
+          "For de yngste må familien skille mellom tilbud for barn under tre år (ofte kalt escuela infantil eller guardería) og andre syklus av Educación Infantil fra omtrent tre til seks år. Primaria følger normalt fra rundt seks år, deretter obligatorisk ungdomstrinn (ESO). Eksakte alderstrinn og plassmuligheter bør bekreftes med skolemyndighetene og den enkelte institusjonen.",
+          "De yngste trenger ofte en praktisk plan for barnehagens åpningstider, måltider, ferieperioder og eventuell tilvenning. En skole som passer en 14-åring kan ligge et helt annet sted enn barnehagen for familiens yngste barn."
+        ]
+      },
+      {
+        "heading": "Hva hvis barnet ikke snakker spansk?",
+        "body": [
+          "Barn lærer språk på ulike måter og i forskjellig tempo. En overgang til spansk skole kan være en mulighet til å bli integrert i lokalmiljøet, men det er også en betydelig endring – særlig for eldre elever som skal lære fagstoff på et nytt språk.",
+          "Spør skolen hvordan de følger opp elever som er nye i språket, hvilket språk som brukes i undervisning og informasjon til foreldre, og om det finnes særskilt støtte. Valencia-regionen bruker både spansk og valenciansk i skolesystemet; faktisk språkfordeling må undersøkes for skolen og skoleåret."
+        ]
+      },
+      {
+        "heading": "L’Alfàs del Pi og Albir: norsk miljø og hverdagsliv",
+        "body": [
+          "L’Alfàs del Pi er særlig aktuelt for norske familier som vil ha nærheten til Den Norske Skole Costa Blanca og et nordisk miljø. Albir gir strandpromenade, butikker og sosiale møteplasser, men den faktiske skoleveien avhenger sterkt av adressen.",
+          "Skal dere ha barn i ulike aldre, er det viktig å teste både kjøring til skolen og ettermiddagsaktiviteter. En leilighet nær stranden kan fungere annerledes enn en villa høyere oppe, selv om begge beskrives som «Albir»."
+        ]
+      },
+      {
+        "heading": "La Nucía: idrett, større boliger og bil i hverdagen",
+        "body": [
+          "La Nucía tiltrekker seg familier som ønsker nyere boliger og tilgang til idrettsanlegg. Området har mange aktiviteter, men enkelte boligområder er spredt og bilavhengige.",
+          "Undersøk om barnas aktiviteter faktisk skjer i nærheten av boligen. Et treningsanlegg i kommunen betyr ikke automatisk at barna kan gå eller sykle trygt dit."
+        ]
+      },
+      {
+        "heading": "Benidorm og Villajoyosa: byliv, tjenester og transport",
+        "body": [
+          "Benidorm har et stort tjenestetilbud gjennom året og områder der skole, butikker og fritidstilbud kan ligge relativt nær boligen. Valget mellom sentrumsleilighet og villa i utkanten gir svært ulik transporthverdag.",
+          "Villajoyosa byr på et tydelig spansk bymiljø og familieaktiviteter rundt sentrum og stranden. Vurder gangveier, skolesone og nærhet til aktivitetene – ikke bare annonserte avstander til havet."
+        ]
+      },
+      {
+        "heading": "Altea, Finestrat og Polop: utsikt, boligrom og skoletransport",
+        "body": [
+          "Altea kan passe familier som ønsker en tradisjonell by og et aktivt lokalsamfunn. Men gamlebyen og flere åssideområder er bratte. Finestrat har moderne nybygg og nærhet til handel fra enkelte delområder, mens Sierra Cortina og Balcón de Finestrat ofte innebærer mye bilbruk.",
+          "Polop har vakre fjellomgivelser og moderne villaer, men i Polop Hills er stigningene store og bil i praksis viktig. For barnefamilier bør kjøring til skole og fritidstilbud telle tungt, særlig dersom begge foreldrene har jobb eller forskjellige hente- og leveringstider."
+        ]
+      },
+      {
+        "heading": "Slik sammenligner dere bosteder som familie",
+        "table": {
+          "headers": [
+            "Prioritet",
+            "Hva dere bør kontrollere"
+          ],
+          "rows": [
+            [
+              "Skole",
+              "Reell plassmulighet, språk, oppstart og rute"
+            ],
+            [
+              "Barnehage",
+              "Alder, åpningstid, plass, ferie og kostnad"
+            ],
+            [
+              "Skolevei",
+              "Gange, buss eller bil, trafikk og henteordning"
+            ],
+            [
+              "Helsetjenester",
+              "Barnelege/helsetjeneste, apotek og nødvendig forsikring"
+            ],
+            [
+              "Aktiviteter",
+              "Idrett, musikk, lek og venner etter skoletid"
+            ],
+            [
+              "Bolig",
+              "Soverom, inneklima, sol, oppbevaring og trygge uteområder"
+            ],
+            [
+              "Økonomi",
+              "Skole- og transportkostnader, comunidad, IBI og drift"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "En vanlig hverdagsmorgen er en bedre boligtest enn en søndagsvisning",
+        "body": [
+          "Se for deg to barn som skal til forskjellige steder. Hvem leverer? Hvor lang tid tar returen i vanlig morgentrafikk? Er det trygg parkering ved skolen? Kan tenåringen komme til idrett eller venner på egen hånd?",
+          "Prøv ruten på skoledager og ikke bare midt på dagen. Legg til handling, legeavtaler og trening. Hvis hverdagen krever flere bilturer hver eneste dag, må dere ønske nettopp den livsstilen – uansett hvor flott boligen er."
+        ]
+      },
+      {
+        "heading": "Hva bør en bolig for små barn og tenåringer inneholde?",
+        "body": [
+          "En familiebolig må tåle langt mer enn feriebruk. Vurder antall soverom, lydisolering, klimaanlegg til både sommer og vinter, solskjerming, bod, plass til barnevogn og sykler og mulighet for hjemmekontor.",
+          "Sjekk sikkerhet ved basseng, terrasser, trapper og trafikkerte veier. For tenåringer kan det være minst like viktig å ha venner og aktiviteter innen en selvstendig og trygg rekkevidde som å ha en stor privat hage."
+        ]
+      },
+      {
+        "heading": "Boligøkonomi med barn: regn på hele hverdagen",
+        "body": [
+          "Boligprisen alene sier lite om familiens samlede økonomi. Sammenlign skolepenger der aktuelt, skoletransport, barnehage, fritidsaktiviteter, bilhold, helseutgifter, boligens energibruk og årlig vedlikehold.",
+          "En rimeligere villa langt fra skole og aktiviteter kan bli mindre praktisk enn en noe dyrere leilighet eller et rekkehus nær barnas hverdag. Her finnes ingen universell vinner: lag budsjett for familiens egne prioriteringer."
+        ]
+      },
+      {
+        "heading": "Før dere kjøper: besøk skolene og området sammen med barna",
+        "body": [
+          "Book samtaler eller omvisninger der skolene tilbyr det, kontroller opptak og oppstart, og bruk noen hverdager i aktuelle områder. Snakk med skoleledelsen om språk og overgang, og prøv transporten fra aktuelle boliger.",
+          "Be rådgiveren finne boliger som passer skole- og aktivitetslogistikken, ikke bare ønsket antall soverom. Bruk uavhengig advokat til selve boligkjøpet, og ikke inngå bindende avtale på forutsetning av en skoleplass som ikke er bekreftet."
+        ]
+      },
+      {
+        "heading": "Freddys råd: planlegg barnas hverdag før dere velger bolig",
+        "body": [
+          "Det viktigste valget er ikke nødvendigvis Albir mot La Nucía eller villa mot leilighet. Først må vi finne et skole- og nærmiljø barna kan trives i, som fungerer for foreldrenes arbeid og familiens transportbehov.",
+          "Zen Eco Homes kan hjelpe dere å identifisere egnede mikroområder og vurdere boliger ut fra skolevei, familieliv, budsjett og langvarig bruk. Målet er å finne et hjem som fungerer også på en vanlig skoledag i november."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Ta kontakt med aktuell skole og bekreft opptak, språk og plassmulighet.",
+      "Velg tre aktuelle mikroområder basert på skole, barnehage og fritid.",
+      "Test hente- og leveringstider fra konkrete boligadresser.",
+      "Lag totalbudsjett for bolig, skole, transport og aktivitet.",
+      "Besøk områdene utenom ferietid før reservasjon."
+    ],
+    "faq": [
+      {
+        "question": "Finnes det norsk skole på Costa Blanca?",
+        "answer": "Ja. Den Norske Skole Costa Blanca ligger i l’Alfàs del Pi og tilbyr norsk grunnskole og videregående opplæring. Opptak og priser må bekreftes med skolen."
+      },
+      {
+        "question": "Hvordan søker man offentlig skole i Valencia-regionen?",
+        "answer": "Gjennom Generalitat Valencianas opptaksprosesser, med frister og dokumentasjon som fastsettes for hvert skoleår. Sjekk gjeldende kalender på sede.gva.es."
+      },
+      {
+        "question": "Er spansk barnehage obligatorisk fra tre år?",
+        "answer": "Educación Infantil er et tilbud for de yngste, mens obligatorisk skolegang starter senere. Undersøk aldersinndeling og plassmuligheter for det aktuelle barnet."
+      },
+      {
+        "question": "Hvor på Costa Blanca passer norske barnefamilier best?",
+        "answer": "Det avhenger av ønsket skolesystem og hverdag. L’Alfàs del Pi og Albir er ofte aktuelle ved norsk skole, mens flere andre kystbyer kan egne seg godt ved spansk skole."
+      },
+      {
+        "question": "Bør vi velge bolig før skoleplass?",
+        "answer": "Det er klokt å avklare reelle skolemuligheter før en bindende boligavtale, særlig når skolevalget er avgjørende for familiens flytting."
+      }
+    ],
+    "cta": {
+      "label": "Få hjelp til å finne et familievennlig boligområde",
+      "href": "/kontakt"
+    }
+  },
+
+{
     "slug": "bo-costa-blanca-uten-bil-beste-omrader",
     "title": "Bo på Costa Blanca uten bil: hvilke områder fungerer best?",
     "excerpt": "Kan du egentlig klare deg uten bil på Costa Blanca? En grundig sammenligning av Albir, Benidorm, Altea, Villajoyosa, La Cala og åssidene – med TRAM, busser og en praktisk test på visning.",
