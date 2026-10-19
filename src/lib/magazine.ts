@@ -22,7 +22,7 @@ export const extraArticles: Article[] = [
     "excerpt": "Boligannonse og innflyttingsklar pris er ikke alltid det samme. Sjekk hvitevarer, belysning, parkering, bod, basseng, tilvalg og kjøpskostnader før du reserverer.",
     "category": "Nybygg",
     "image": "/assets/magasin-covers/omradet-for-boligen.svg",
-    "seoTitle": "Hva inngår i nybyggprisen i Spania? Sjekkliste",
+    "seoTitle": "Hva inngår i nybyggprisen i Spania? Full sjekkliste",
     "seoDescription": "Hva følger med når du kjøper nybygg i Spania? Sjekk hvitevarer, belysning, parkering, bod, basseng, tilvalg, skatt og totalkostnad før reservasjon.",
     "keywords": [
       "hva inngår i nybygg Spania",
@@ -138,7 +138,7 @@ export const extraArticles: Article[] = [
     "excerpt": "Et norsk AS kan eie feriebolig i Spania, men ansattes tilgang, privat bruk, skatteplikt, fradrag og dokumentasjon må avklares før styret bestemmer seg.",
     "category": "Bedrift og investering",
     "image": "/assets/magasin-covers/juridisk.svg",
-    "seoTitle": "Bedriftshytte i Spania: AS, skatt og privat bruk",
+    "seoTitle": "Bedriftshytte i Spania: AS, skatt og privat bruk – regler",
     "seoDescription": "Kan et norsk AS eie bedriftshytte i Spania? Les om ansattes rett til bruk, aksjonærers private opphold, skatterisiko, dokumentasjon og styrets ansvar.",
     "keywords": [
       "bedriftshytte i Spania AS",
