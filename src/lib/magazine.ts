@@ -17,6 +17,185 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "bo-costa-blanca-uten-bil-beste-omrader",
+    "title": "Bo på Costa Blanca uten bil: hvilke områder fungerer best?",
+    "excerpt": "Vil du slippe bilen i Spania? Sammenlign Albir, Altea, Villajoyosa, Benidorm og Finestrat etter gangavstand, bakker, TRAM, butikker og hverdagsliv.",
+    "category": "Områdevalg",
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "readingTime": "13 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Illustrasjon av kystbyer på Costa Blanca",
+    "seoTitle": "Costa Blanca uten bil: Albir, Altea og Benidorm",
+    "seoDescription": "Kan du bo på Costa Blanca uten bil? Sammenlign Albir, Altea, Villajoyosa og Benidorm, sjekk TRAM, bakker, butikker og gangavstand før boligkjøp.",
+    "keywords": [
+      "Costa Blanca uten bil",
+      "bo i Albir uten bil",
+      "TRAM Alicante bolig",
+      "bo i Benidorm uten bil",
+      "bolig nær kollektivtransport Spania"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "En bolig med havutsikt kan se perfekt ut helt til du oppdager at nærmeste dagligvarebutikk ligger ned en bratt bakke – og at du må tilbake samme vei med handleposer. Hvis du skal bo mye på Costa Blanca, kan muligheten til å klare hverdagen uten bil være like viktig som terrasse og utsikt.",
+      "Costa Blanca Nord har flere kystbyer der du kan gå til butikker, kaféer og strand. Men kommunegrenser gir lite informasjon: en sentral leilighet i Albir eller Benidorm fungerer annerledes enn en villa i åssidene ved Finestrat, Polop eller Altea Hills.",
+      "Her sammenligner vi mikroområder, ikke bare stedsnavn, og viser en praktisk metode for å teste bilfri hverdag før du reserverer bolig."
+    ],
+    "sections": [
+      {
+        "heading": "Kort svar: hvilke områder er best uten bil?",
+        "body": [
+          "Sentrale deler av Albir, Benidorm, Villajoyosa og Altea kan fungere godt uten egen bil, hvis boligen har rimelig avstand til dagligvare, apotek og de aktivitetene du faktisk bruker. Benidorm har særlig mange helårstjenester, mens Albir har en kompakt kjerne og internasjonale møteplasser.",
+          "Finestrat Hills, Sierra Cortina, Polop Hills og Altea Hills er i hovedsak bilorienterte boligområder. Selv korte avstander på kartet kan innebære lange og bratte stigninger."
+        ]
+      },
+      {
+        "heading": "Albir: kompakt sentrum og promenadeliv, men sjekk hvor du bor",
+        "body": [
+          "Velger du bolig nær Albir sentrum, hovedgaten og strandpromenaden, kan mye klares til fots. Her finnes handel, kaféer, restauranter, apotek og sosiale møteplasser, noe som er attraktivt for langtidsopphold.",
+          "Vær oppmerksom på at «Albir» i boligannonser også brukes om adresser et godt stykke opp fra de sentrale områdene. Undersøk faktisk gåtid og høydeforskjell, ikke bare luftlinje. TRAM-linje 9 har stopp ved El Albir, men stasjonen ligger ikke på selve strandpromenaden."
+        ]
+      },
+      {
+        "heading": "Benidorm: mange tjenester innen gangavstand",
+        "body": [
+          "Benidorm har et stort nett av butikker, restauranter, helsetjenester og kollektivtilbud som fungerer gjennom store deler av året. Sentrale deler av Poniente, Levante og gamlebyen kan derfor egne seg godt for dem som ikke vil være avhengige av bil.",
+          "Men byen er ikke flat overalt. Enkelte boliger i høyden og i utkanten kan ha krevende stigninger eller lang vei til nødvendige tjenester. Husk også at de mest sentrale gatene kan være livlige – vurder støy og sesongvariasjon."
+        ]
+      },
+      {
+        "heading": "Villajoyosa: spansk byliv og togforbindelse",
+        "body": [
+          "Sentrum i Villajoyosa gir tilgang til mange lokale tjenester og sandstrand. TRAM linje 1 går blant annet via Villajoyosa og forbinder byen med Benidorm og Alicante. Stasjonsnærhet må likevel sjekkes mot den faktiske boligen.",
+          "En moderne leilighet som annonseres «i Villajoyosa», kan ligge et stykke fra sentrum og ha bratt adkomst. En bilfri livsstil er derfor langt enklere fra utvalgte sentrumsadresser enn fra alle nybyggprosjekter kommunen tilbyr."
+        ]
+      },
+      {
+        "heading": "Altea: et attraktivt sentrum, men gamlebyen er bratt",
+        "body": [
+          "Altea har et hyggelig kystsentrum med promenade og butikker. Bolig nær de flate delene av sentrum kan være praktisk, og TRAM-linje 9 stopper i Altea. Men den vakre gamlebyen ligger i en bratt åsside.",
+          "Bor du i gamlebyen, kan du få mange trapper og bakker i hverdagen. Altea Hills er et helt annet boligmarked, der bil i praksis er nødvendig for de fleste."
+        ]
+      },
+      {
+        "heading": "Finestrat og Polop: vakker utsikt, men bilen er ofte nødvendig",
+        "body": [
+          "De nye urbanisasjonene ved Balcón de Finestrat og Sierra Cortina gir ofte flott utsikt og nærhet til handelsområdene med bil. Det betyr ikke at det er enkelt å spasere dit. Veier, stigninger og avstander gjør at mange boliger her bør vurderes med et bilbudsjett.",
+          "Det samme gjelder Polop Hills: de bratte veiene gjør både gange og sykling krevende, og daglige ærend krever normalt bil. Hvis du ikke ønsker bil, bør slike områder ikke være førstevalget – selv om utsikten frister."
+        ]
+      },
+      {
+        "heading": "Hva med TRAM fra Alicante via Benidorm til Altea?",
+        "body": [
+          "TRAM d'Alacant er nyttig, men linjer og stasjoner må forstås riktig. Linje 1 forbinder Alicante og Benidorm via blant annet Villajoyosa. Linje 9 går videre fra Benidorm mot blant annet El Albir, Altea og Dénia. Reiseopplegget kan kreve overgang, og avganger, stengninger og stasjonstilgang må sjekkes på operatørens offisielle nettside.",
+          "Den avgjørende testen er ikke «finnes det TRAM i byen?», men om du klarer å gå fra inngangsdøren til stasjonen på en komfortabel måte, også i sommervarme eller regn. Offisielle rutetider og driftsmeldinger: https://www.tramalacant.es ."
+        ]
+      },
+      {
+        "heading": "Bilfri sammenligning: hvor du bør se nærmere",
+        "table": {
+          "headers": [
+            "Sted / mikroområde",
+            "Bilfri hverdag",
+            "Viktig forbehold"
+          ],
+          "rows": [
+            [
+              "Albir sentrum / strand",
+              "Godt mulig",
+              "Sjekk gangavstand til TRAM og eventuelle bakker"
+            ],
+            [
+              "Benidorm sentralt",
+              "Godt mulig",
+              "Støy, byliv og enkelte bratte områder"
+            ],
+            [
+              "Villajoyosa sentrum",
+              "Godt mulig",
+              "Stasjonsavstand og høydeforskjeller varierer"
+            ],
+            [
+              "Altea nedre sentrum",
+              "Mulig",
+              "Gamlebyen er bratt"
+            ],
+            [
+              "Finestrat nyere åssider",
+              "Ofte upraktisk",
+              "Bil til handel, strand og andre tjenester"
+            ],
+            [
+              "Polop Hills",
+              "Svært upraktisk",
+              "Bratte veier og spredte tjenester"
+            ],
+            [
+              "Altea Hills",
+              "Svært upraktisk",
+              "Stigninger og lange avstander"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "En praktisk test før du kjøper: lev én dag uten bil",
+        "body": [
+          "Gå fra den konkrete boligen til matbutikk, apotek, strand og nærmeste holdeplass. Ta med handleposer på turen tilbake. Test bakker på en varm dag og se hva som skjer om du må hjem etter mørkets frembrudd.",
+          "Undersøk fortau, fotgjengerfelt, belysning, trafikk og hvor lett du kan bestille taxi. Hvis du bruker rullator, barnevogn eller har begrenset bevegelse, bør du teste akkurat dine behov, også inne i bygget og fra garasje eller gate til heis.",
+          "Spør også om det er helårsåpne butikker i nabolaget, ikke bare i juli og august."
+        ]
+      },
+      {
+        "heading": "Betaler du mer for riktig gangavstand?",
+        "body": [
+          "En sentralt plassert bolig med litt mindre terrasse kan være bedre verdi for en kjøper uten bil enn en større bolig høyt oppe med utsikt. Når du regner på transport, tidsbruk og praktiske begrensninger, er billigere kvadratmeter ikke alltid rimeligere hverdag.",
+          "Samtidig må du vurdere støynivå og boligstandard: en godt plassert leilighet med dårlige vinduer kan være ukomfortabel om vinteren. Prioriter en helhetlig løsning."
+        ]
+      },
+      {
+        "heading": "Freddys råd: velg gateløp før du velger bolig",
+        "body": [
+          "Fortell rådgiveren om du faktisk vil være bilfri, eller bare bruke bil sjelden. Da bør søket filtreres på mikroområder og gangavstand til nødvendige tjenester – før man diskuterer utsikt, soverom og fellesbasseng.",
+          "Hos Zen Eco Homes kan vi hjelpe med å vurdere både hverdagslogistikk, boligstandard og totalbudsjett. Den beste boligen er den som fungerer på en vanlig hverdag, ikke bare på feriebilder."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Skriv ned hvilke daglige tjenester som må være innen gangavstand.",
+      "Test strekningene fra den faktiske adressen, ikke bare kartet.",
+      "Undersøk TRAM-ruter og holdeplassens høydeforskjell.",
+      "Besøk området på hverdager og om vinteren.",
+      "Be rådgiveren prioritere mikroområder som passer transportbehovet."
+    ],
+    "faq": [
+      {
+        "question": "Kan jeg bo i Albir uten bil?",
+        "answer": "Ja, i sentrale deler av Albir er det ofte praktisk å gå til butikk og strand. Sjekk konkret adresse og avstand til andre tjenester og TRAM."
+      },
+      {
+        "question": "Kan jeg bo i Benidorm uten bil?",
+        "answer": "Ja, mange sentrale nabolag har et bredt helårstilbud og kollektivtrafikk. Men det finnes også bratte og mer bilavhengige områder."
+      },
+      {
+        "question": "Er Polop Hills egnet uten bil?",
+        "answer": "Vanligvis ikke. Bratte veier og avstand til handel gjør bil viktig i hverdagen."
+      },
+      {
+        "question": "Går TRAM til Altea og Villajoyosa?",
+        "answer": "Ja, TRAM har forbindelser til begge, men de ligger på ulike linjestrekninger og kan kreve overgang ved Benidorm. Kontroller offisielle rutetider."
+      }
+    ],
+    "cta": {
+      "label": "Få hjelp til å finne bolig med god gangavstand",
+      "href": "/booking"
+    }
+  },
+
+{
     "slug": "finestrat-eller-polop-bolig-livsstil",
     "title": "Finestrat eller Polop – områder, utsikt, priser og hverdagsliv",
     "excerpt": "Opplev forskjellene mellom Polop Hills, Balcón de Finestrat og Sierra Cortina: utsikt, bratte veier, bilbehov, strender og ulike boligsegmenter.",
