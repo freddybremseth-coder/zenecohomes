@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Markedsoppdatering Costa Blanca | Zen Eco Homes",
   description: "Månedlige, kildebaserte markedsoppdateringer om boligpriser, kjøpertrender, lover og nybygg på Costa Blanca.",
   alternates: { canonical: "/magasin/markedsoppdatering-costa-blanca" },
-  openGraph: { title: "Markedsoppdatering Costa Blanca | Zen Eco Homes", description: "Månedlige analyser av boligmarkedet på Costa Blanca.", url: "https://www.zenecohomes.com/magasin/markedsoppdatering-costa-blanca", images: [{url:"https://www.zenecohomes.com/assets/areas.jpg",alt:"Kystlandskap på Costa Blanca"}] }
+  openGraph: { title: "Markedsoppdatering Costa Blanca | Zen Eco Homes", description: "Månedlige analyser av boligmarkedet på Costa Blanca.", url: "https://www.zenecohomes.com/magasin/markedsoppdatering-costa-blanca", images: [{url:"https://www.zenecohomes.com/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_14_54-1.png",alt:"Kystlandskap på Costa Blanca"}] }
 };
 
 export default function MarketSeriesPage() {
@@ -28,7 +28,7 @@ export default function MarketSeriesPage() {
           <h2 style={{fontSize:"clamp(1.9rem,3vw,2.8rem)",lineHeight:1.18,marginBottom:28}}>Siste markedsoppdateringer</h2>
           <article style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,280px),1fr))",overflow:"hidden",border:"1px solid #d9d5c9",borderRadius:20,background:"#fff"}}>
             <Link href="/magasin/markedsoppdatering-costa-blanca-oktober-2026" aria-label="Les markedsoppdateringen for oktober 2026" style={{display:"block",position:"relative",minHeight:260}}>
-              <Image src="/assets/areas.jpg" alt="Panoramautsikt over Costa Blanca og Middelhavet" fill sizes="(max-width: 768px) 100vw, 45vw" style={{objectFit:"cover"}} />
+              <Image src="/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_14_54-1.png" alt="Panoramautsikt over Costa Blanca og Middelhavet" fill sizes="(max-width: 768px) 100vw, 45vw" style={{objectFit:"cover"}} />
             </Link>
             <div style={{padding:"clamp(1.25rem,3vw,2rem)",display:"flex",flexDirection:"column",justifyContent:"center",gap:14}}>
               <p className="eyebrow">OKTOBER 2026 · 8 MIN LESING</p>
