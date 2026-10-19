@@ -1150,7 +1150,7 @@ export const extraArticles: Article[] = [
     image: "/assets/magasin-covers/omradet-for-boligen.svg",
     imageAlt: "Illustrasjon som sammenligner moderne nybygg og eldre bolig på Costa Blanca",
     seoTitle: "Nybygg eller bruktbolig i Spania? Kostnader og komfort",
-    seoDescription: "Nybygg eller bruktbolig på Costa Blanca? Les om skjult fukt, isolasjon, støy, oppussing, garantier og kostnader de første fem årene.",
+    seoDescription: "Nybygg eller bruktbolig på Costa Blanca? Les om skjult fukt, isolasjon, støy, oppussing, garantier og kostnader de første fem årene før du kjøper.",
     keywords: [
       "nybygg eller bruktbolig Spania",
       "bruktbolig fukt Spania",
