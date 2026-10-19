@@ -178,6 +178,7 @@ export const metadata = {
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
   const magazineCmsArticles = cmsArticles.filter((article) => {
+    if (article.slug === "markedsoppdatering-costa-blanca-oktober-2026" || article.slug === "boligmarkedet-costa-blanca-hosten-2026") return false;
     if (LEGACY_MARKET_COMPARISON_SLUGS.has(article.slug) || REDIRECTED_MAGAZINE_SLUGS.has(article.slug)) return false;
     const known = getMagazineArticle(article.slug);
     return !known || !articleSilo(known);
@@ -191,7 +192,7 @@ export default async function MagazinePage() {
   const isFreshMarketArticle = (article: (typeof fallbackArticles)[number]) =>
     article.category === "Marked akkurat nå" && marketAgeDays(article.updated) <= currentMarketMaxAgeDays;
   const currentMarketArticles = fallbackArticles.filter(isFreshMarketArticle);
-  const evergreenFallbackArticles = fallbackArticles.filter((article) => !isFreshMarketArticle(article));
+  const evergreenFallbackArticles = fallbackArticles.filter((article) => !isFreshMarketArticle(article) && article.category !== "Markedsoppdatering Costa Blanca" && article.slug !== "boligmarkedet-costa-blanca-hosten-2026");
 
   return (
     <main className="magazine-page">
@@ -204,8 +205,6 @@ export default async function MagazinePage() {
           som gir mer kontekst rundt områdene og markedet.
         </p>
       </section>
-
-      <section className="section"><div className="mx-auto max-w-5xl px-5 md:px-8 rounded-2xl border p-6"><p className="eyebrow">Ny månedlig artikkelserie</p><h2>Markedsoppdatering Costa Blanca</h2><p>Få daterte og kildebelagte oversikter over boligpriser, nye regler og praktiske råd for kjøpere – fra Costa Blanca Nord til Sør.</p><Link href="/magasin/markedsoppdatering-costa-blanca">Se markedsoppdateringene <ArrowRight size={16} className="inline"/></Link></div></section>
 
       <section className="section magazine-guide-bridge">
         <div>
@@ -262,46 +261,37 @@ export default async function MagazinePage() {
         </div>
       </section>
 
-      {currentMarketArticles.length > 0 && (
-        <section className="section">
-          <div className="section-heading">
-            <p className="eyebrow">Marked akkurat nå</p>
-            <h2>Konkrete boliger. Konkrete priser. Bedre beslutninger.</h2>
-            <p>
-              Én samlet, datert sammenligning av konkrete boliger og prisnivåer i Zen-katalogen. Åpne prisnivået
-              som passer deg og sammenlign euro, ca. NOK, område og boligtype uten ni nesten like artikler.
-            </p>
-          </div>
-          <div className="magazine-grid">
-            {currentMarketArticles.map((article) => (
-              <article className="magazine-card" key={article.slug}>
-                <Image
-                  className="magazine-cover-image"
-                  src={getArticleCover(article.slug)}
-                  alt={article.imageAlt}
-                  width={1200}
-                  height={760}
-                />
-                <div className="magazine-body">
-                  <p className="magazine-meta">
-                    Marked akkurat nå · {new Intl.DateTimeFormat("nb-NO").format(new Date(article.updated))}
-                  </p>
-                  <h2>{article.title}</h2>
-                  <p>{article.excerpt}</p>
-                  <div className="magazine-actions">
-                    <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
-                      <Clock size={15} /> {article.readingTime}
-                    </span>
-                    <Link className="text-button" href={articlePath(article)}>
-                      Åpne prisnivåene <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">To måter å følge markedet på</p>
+          <h2>Boligmarkedet på Costa Blanca</h2>
+          <p>Følg de månedlige endringene, eller sammenlign konkrete boliger og priser. Hver serie har sin egen rolle.</p>
+        </div>
+        <div className="magazine-grid" style={{gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,310px),1fr))"}}>
+          <article className="magazine-card">
+            <Image className="magazine-cover-image" src="/assets/areas.jpg" alt="Panorama over Costa Blanca, kyst og boliger" width={1200} height={760} />
+            <div className="magazine-body">
+              <p className="magazine-meta">MÅNEDLIG MARKEDSANALYSE · OKTOBER 2026</p>
+              <h3>Markedsoppdatering Costa Blanca</h3>
+              <p>Boligpriser, etterspørsel, renter, nye lover og utleieregler – med datoer, kilder og råd til kjøpere.</p>
+              <div className="magazine-actions">
+                <Link className="text-button" href="/magasin/markedsoppdatering-costa-blanca">Se månedlige markedsoppdateringer <ArrowRight size={16}/></Link>
+              </div>
+            </div>
+          </article>
+          <article className="magazine-card">
+            <Image className="magazine-cover-image" src="/assets/areas.jpg" alt="Boliger langs Costa Blanca-kysten" width={1200} height={760} />
+            <div className="magazine-body">
+              <p className="magazine-meta">KONKRETE BOLIGER OG PRISNIVÅER</p>
+              <h3>Marked akkurat nå</h3>
+              <p>Hva får du faktisk for pengene? Se daterte sammenligninger av boliger i Zen-katalogen og totalbudsjett.</p>
+              <div className="magazine-actions">
+                <Link className="text-button" href="/magasin/hva-far-du-for-pengene-costa-blanca-nord-na">Se konkrete boligpriser <ArrowRight size={16}/></Link>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
       <section className="section">
         <div className="section-heading">
