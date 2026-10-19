@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 
 const preferences = [
   ["Mest bolig for pengene", "Innlandet, Murcia / Costa Cálida"],
@@ -86,7 +87,7 @@ export function SpainAreaGuide(){
  <p>Vil du kunne gå til stranden, restauranter og butikker uten å bruke bil, bør du se etter en bolig i eller tett på et etablert sentrum. Alicante, Albir, Torrevieja, Fuengirola og flere feriebyer på Kanariøyene kan passe godt.</p>
  <p>Hvis du heller ønsker ro, større uteområder og mer plass rundt boligen, vil du ofte få mer igjen for pengene litt lenger fra kysten eller i mindre byer og innlandsområder. Da må du samtidig regne med at bilen blir en viktigere del av hverdagen.</p>
  <p>Jeg har selv prøvd begge deler, men bor i dag i Benidorm. For meg ble nærhet til strand og storbyliv avgjørende. Er du fortsatt usikker på hvilket område som passer deg? Da kan du ta en uforpliktende prat med oss.</p>
- <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6 my-8"><h2 className="mt-0">La oss finne området som passer deg</h2><p>Fortell oss hva du ønsker, så hjelper vi deg videre.</p><Link href="/kontakt" className="contact-button">Åpne kontaktskjema →</Link></div>
+ <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6 my-8"><h2 className="mt-0">La oss finne området som passer deg</h2><p>Fortell oss hva du ønsker, så hjelper vi deg videre.</p><ContactForm source="guide/omradeguide-eiendomskjop-i-spania" variant="simple" /></div>
  <p>Les også <Link href="/guide/kjope-bolig-i-spania" className="underline">hele guiden til å kjøpe bolig i Spania</Link> eller <Link href="/eiendommer" className="underline">se tilgjengelige eiendommer</Link>.</p>
  <h2>Ofte stilte spørsmål</h2><div className="grid gap-3">{faq.map(([q,a])=><details key={q} className="border rounded-xl p-4"><summary className="font-semibold cursor-pointer">{q}</summary><p>{a}</p></details>)}</div>
  </article></div></section>;
