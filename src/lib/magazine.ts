@@ -1573,9 +1573,9 @@ export const extraArticles: Article[] = [
     excerpt:
       "Det finnes ikke én riktig årspris for å eie bolig i Spania. Men du kan få et svært godt svar før du kjøper hvis du ber om de riktige tallene.",
     date: "2026-09-29",
-    updated: "2026-09-29",
+    updated: "2026-10-19",
     category: "Eierøkonomi",
-    readingTime: "8 min lesing",
+    readingTime: "11 min lesing",
     image: "/assets/magasin-covers/kostnader-eie.svg",
     imageAlt: "Årsbudsjett og løpende kostnader for feriebolig i Spania",
     seoTitle: "Hva koster det å eie feriebolig i Spania hvert år?",
@@ -1618,6 +1618,55 @@ export const extraArticles: Article[] = [
         },
       },
       {
+        heading: "Eksempel: hva kan en feriebolig koste per år?",
+        body: [
+          "For å vise hvordan regnestykket kan settes opp, bruker vi et rent illustrerende eksempel for en leilighet som benyttes noen måneder i året. Dette er ikke et pristilbud eller et gjennomsnitt for Costa Blanca. Reelle tall varierer mye etter kommune, størrelse, bruk og sameiets fasiliteter.",
+          "I eksemplet blir de løpende kostnadene 5.100 euro per år før lånerenter, avdrag, eventuelle ekstraordinære sameieinnbetalinger og større rehabilitering. Det tilsvarer 425 euro per måned regnet over hele året – også når boligen står tom.",
+        ],
+        table: {
+          headers: ["Illustrativ kostnad", "Årskostnad"],
+          rows: [
+            ["IBI og kommunale avgifter", "€500"],
+            ["Comunidad / felleskostnader", "€1.500"],
+            ["Boligforsikring", "€350"],
+            ["Strøm og vann, inkl. fastledd", "€900"],
+            ["Internett og alarm", "€450"],
+            ["Reserve til ordinært vedlikehold", "€900"],
+            ["Avtalt nøkkeloppbevaring / tilsyn", "€500"],
+            ["Sum før skatt og finansiering", "€5.100"],
+          ],
+        },
+      },
+      {
+        heading: "Skatter kommer i tillegg – også når du ikke leier ut",
+        body: [
+          "For en person som skattemessig ikke er bosatt i Spania, kan spansk skatt på beregnet inntekt fra egen bruk av bolig (imputación de rentas inmobiliarias) være relevant. Beregningen avhenger blant annet av skattemessig verdi, gjeldende satser og eierforhold. Dersom boligen leies ut, kommer andre rapporteringsregler inn. Norske skatteforpliktelser må vurderes separat.",
+          "Derfor viser eksemplet over kostnader før personavhengig skatt. Få skattekonsulent til å beregne den konkrete situasjonen i stedet for å bruke en fast prosent av kjøpesummen.",
+        ],
+      },
+      {
+        heading: "Energieffektivitet påvirker både trivsel og driftsbudsjett",
+        body: [
+          "To leiligheter med tilnærmet likt areal kan ha svært forskjellige utgifter til oppvarming og kjøling. Dårlige vinduer, svakt isolerte konstruksjoner, mye solinnstråling og gamle klimaanlegg kan gjøre den eldre boligen kostbar å holde komfortabel.",
+          "Et moderne klimaskall gir ofte bedre forutsetninger for lavere energiforbruk, men faktisk bruk, orientering, ventilasjon og tekniske anlegg avgjør resultatet. Be om energisertifikat og faktiske strømregninger der de finnes.",
+          "Dette handler ikke bare om euro: Det handler om å slippe å fryse inne om vinteren eller ha aircondition på full styrke hele sommeren.",
+        ],
+      },
+      {
+        heading: "Regn på kostnaden ved å bruke boligen – ikke bare å eie den",
+        body: [
+          "Dersom du bruker boligen åtte uker i året og har 5.100 euro i årlige faste og løpende kostnader, tilsvarer det om lag 638 euro per bruksuke før fly, mat, kjøpskostnader, finansiering og eventuell skatt. Det er ikke en sammenligning med hotellpriser, men en nyttig måte å vurdere om boligen passer bruken din.",
+          "Eier du en villa med basseng, hage og egne tekniske installasjoner, må du også beregne drift og vedlikehold som normalt ikke fordeles på et leilighetssameie.",
+        ],
+      },
+      {
+        heading: "Sjekk uventede kostnader i sameiet før du kjøper",
+        body: [
+          "Be om referater fra sameiemøter, godkjente budsjetter, vedlikeholdsplaner og vedtatte ekstraordinære innbetalinger (derrama). Undersøk spesielt planlagte arbeider på fasader, tak, heiser, basseng og felles tekniske anlegg.",
+          "Sammenlign minst tre tall: dagens felleskostnad, forventet fremtidig drift og eventuelt etterslep på vedlikehold. En lav månedlig avgift gir liten trygghet dersom et større ekstraordinært krav kommer rett etter overtakelsen.",
+        ],
+      },
+      {
         heading: "En billig comunidad kan være dyr hvis anlegget er dårlig",
         body: [
           "Lav felleskostnad er ikke alltid et kvalitetsstempel. Et sameie med basseng, heiser, store grøntområder og fellesbygg må finansiere vedlikeholdet på en eller annen måte.",
@@ -1651,6 +1700,8 @@ export const extraArticles: Article[] = [
       "Hent forsikring og eventuelle care-tjenester inn i samme regnestykke.",
       "Skill mellom faste kostnader og forbruksavhengige kostnader.",
       "Sett av en vedlikeholdsreserve som passer boligtypen.",
+      "Be om sameiets budsjetter, møteprotokoller og opplysninger om vedtatte derramas.",
+      "Test årsbudsjettet mot faktisk bruk og energiforbruk.",
     ],
     faq: [
       {
