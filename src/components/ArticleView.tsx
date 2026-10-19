@@ -1127,6 +1127,53 @@ export function ArticleView({ article }: { article: Article }) {
                       </figcaption>
                     </figure>
                   )}
+                  {article.slug === "finestrat-eller-polop-bolig-livsstil" && (() => {
+                    const images: Record<string, { file: string; alt: string; caption: string; author: string; license: string; licenseUrl: string; source: string }> = {
+                      "Monte Ponoig: fjellet som gir Polop sin særegne atmosfære": {
+                        file: "Polop_i_el_Panoig.jpg",
+                        alt: "Gamle Polop med Monte Ponoig i bakgrunnen på Costa Blanca",
+                        caption: "Polop og fjellmassivet Ponoig, et av områdets mest karakteristiske landskap.",
+                        author: "Espencat", license: "Public domain",
+                        licenseUrl: "https://commons.wikimedia.org/wiki/File:Polop_i_el_Panoig.jpg",
+                        source: "https://commons.wikimedia.org/wiki/File:Polop_i_el_Panoig.jpg",
+                      },
+                      "Finestrat: stor utbygging og viktige prisforskjeller i åssiden": {
+                        file: "Vista_de_Finestrat_des_del_Puig_Campana.jpg",
+                        alt: "Utsikt fra Puig Campana mot Finestrat i Alicante",
+                        caption: "Finestrat sett fra Puig Campana. Bildet viser landskapet, ikke et bestemt nybyggprosjekt.",
+                        author: "Joanbanjo", license: "CC BY-SA 4.0",
+                        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+                        source: "https://commons.wikimedia.org/wiki/File:Vista_de_Finestrat_des_del_Puig_Campana.jpg",
+                      },
+                      "Sierra Cortina: fra villaområder ved motorveien til luksus med utsikt": {
+                        file: "Sierra_Cortina.jpg",
+                        alt: "Fotografi av Sierra Cortina-området ved Finestrat",
+                        caption: "Sierra Cortina. Området har ulike delmarkeder og boligtyper.",
+                        author: "PiotrMig", license: "CC BY-SA 4.0",
+                        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+                        source: "https://commons.wikimedia.org/wiki/File:Sierra_Cortina.jpg",
+                      },
+                    };
+                    const photo = images[section.heading];
+                    if (!photo) return null;
+                    return (
+                      <figure className="my-7">
+                        <ResilientNativeImage
+                          className="block h-auto w-full rounded-xl"
+                          src={`https://commons.wikimedia.org/wiki/Special:FilePath/${photo.file}`}
+                          alt={photo.alt}
+                          loading="lazy"
+                          decoding="async"
+                          referrerPolicy="no-referrer"
+                        />
+                        <figcaption className="mt-2 text-sm text-slate-600">
+                          {photo.caption} Foto: <a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.author} / Wikimedia Commons</a>
+                          {" · "}<a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a>.
+                          {" "}Originalfoto, uten redigering.
+                        </figcaption>
+                      </figure>
+                    );
+                  })()}
                   {section.body?.map((paragraph) => {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
