@@ -1241,6 +1241,83 @@ export const extraArticles: Article[] = [
     cta: { label: "Finn ditt område på Costa Blanca Nord", href: "/omrader/costa-blanca-nord" },
   },
   {
+    slug: "hvem-passer-pa-ferieboligen-spania-norge",
+    title: "Hvem passer på ferieboligen i Spania når du er i Norge?",
+    excerpt: "En feriebolig trenger oppfølging også når den står tom. Her er hva du bør avtale om nøkler, tilsyn, uvær, renhold og uforutsette hendelser på Costa Blanca.",
+    date: "2026-10-19",
+    updated: "2026-10-19",
+    category: "Eie bolig i Spania",
+    readingTime: "8 min lesing",
+    image: "/assets/magasin-covers/kostnader-eie.svg",
+    imageAlt: "Illustrasjon om kostnader og praktisk oppfølging av feriebolig i Spania",
+    seoTitle: "Hvem passer på ferieboligen i Spania? Tilsyn og nøkler",
+    seoDescription: "Hvem passer på ferieboligen i Spania når du er i Norge? Les om nøkkeloppbevaring, tilsyn, vannlekkasjer, uvær, rengjøring og trygg drift på Costa Blanca.",
+    keywords: ["tilsyn feriebolig Spania", "nøkkeloppbevaring Costa Blanca", "keyholding Spania", "feriebolig står tom", "boligtilsyn Costa Blanca"],
+    author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
+    intro: [
+      "Det er enkelt å se for seg morgenkaffen på terrassen. Det er vanskeligere å forestille seg hva som skjer i boligen når du er hjemme i Norge, regnet pisker mot vinduene og ingen er der for å oppdage en lekkasje.",
+      "En feriebolig som står tom i lange perioder trenger en plan for nøkler, regelmessig kontroll, varsling og praktisk hjelp. Det betyr ikke at noe alltid vil gå galt. Det betyr at du vet hvem som gjør hva hvis det skjer.",
+      "Slik kan du bygge en tryggere hverdag som boligeier på Costa Blanca – og bruke oppholdene på det du kjøpte boligen for.",
+    ],
+    sections: [
+      { heading: "Hva kan skje når en feriebolig står tom?", body: [
+        "Et vindu kan stå på gløtt etter avreise, et avløp kan begynne å lukte, klimaanlegget kan stoppe eller en liten vannlekkasje kan få utvikle seg før noen oppdager den. Kraftig regn og vind kan påvirke terrasser, markiser og løse gjenstander. Også post, leveranser og meldinger fra sameiet krever en ansvarlig mottaker.",
+        "De fleste av disse hendelsene er håndterbare. Problemet er ofte at ingen har et tydelig ansvar, eller at man først begynner å lete etter nøkkel og håndverker når situasjonen er akutt."
+      ]},
+      { heading: "Nøkkeloppbevaring: hvem kan faktisk komme inn?", body: [
+        "Avtal hvem som oppbevarer ekstranøkkel, hvordan identitet kontrolleres før utlevering og hvem som får adgang til boligen. En nabo kan hjelpe i blant, men kan være bortreist eller ikke ønske et varig ansvar.",
+        "Profesjonell nøkkeloppbevaring bør bygge på registrert utlevering og tilbakelevering, tydelig fullmakt og rutiner for tapte nøkler. Det er forskjell på ren nøkkeloppbevaring og løpende boligtilsyn."
+      ]},
+      { heading: "Boligtilsyn: hva bør kontrolleres under et besøk?", bullets: [
+        "Kontroller synlige tegn på vanninntrenging, fukt og lekkasjer ved vinduer, tak og våtrom.",
+        "Se etter problemer med dører, låser, strøm og eventuelle alarmer.",
+        "Kontroller terrasser, uteområder og synlige skader etter uvær.",
+        "Se etter skadedyrtegn og uvanlig lukt.",
+        "Dokumenter besøket med dato, funn og bilder når dette er avtalt."
+      ], body: [
+        "En visuell kontroll er ikke en bygningsteknisk inspeksjon, og kan ikke garantere at skjulte feil oppdages. Avtal derfor hva tjenesten omfatter, og når en kvalifisert fagperson skal kontaktes.",
+        "Hvor ofte boligen bør ses til avhenger av bygningens tilstand, sesong, forsikring og lokale forhold. Kontroller også forsikringsvilkårene for krav knyttet til ubebodd bolig."
+      ]},
+      { heading: "Hva gjør du etter kraftig regn eller storm?", body: [
+        "På Costa Blanca kan kraftige regnbyger forekomme. Sørg for at noen kan kontrollere utsatte dører, vinduer, takterrasser og sluk når det er forsvarlig å gjøre det. Ved påvist skade bør den dokumenteres og meldes til eier og relevant forsikringsselskap raskt.",
+        "Hvis strømmen forsvinner, bør den ansvarlige vite hvilke tekniske installasjoner som krever oppfølging. Ikke send noen inn i en farlig situasjon under pågående uvær."
+      ]},
+      { heading: "Før ankomst: en bolig som er klar til bruk", body: [
+        "Det er lite hyggelig å komme frem sent på kvelden til en støvete bolig, et kjøleskap som ikke virker eller en nøkkel som ingen finner. En forhåndskontroll kan avdekke synlige problemer, og renhold eller klargjøring kan avtales separat.",
+        "Ved utlån til familie eller gjester bør ansvar for nøkler, renhold og eventuell skade være tydelig. Dersom du også leier ut boligen, må du kontrollere gjeldende lokale regler og forsikringsdekningen – nøkkeloppbevaring alene er ingen utleietillatelse."
+      ]},
+      { heading: "Hva bør en avtale om nøkkeloppbevaring og tilsyn inneholde?", table: {
+        headers: ["Tema", "Det bør stå i avtalen"],
+        rows: [
+          ["Besøksfrekvens", "Hvor ofte og ved hvilke hendelser tilsyn utføres"],
+          ["Dokumentasjon", "Dato, kontrollpunkter, bilder og avviksrapport"],
+          ["Nøkler", "Lagring, autorisasjon og utleveringslogg"],
+          ["Akutte situasjoner", "Kontaktperson, fullmakter og utrykningsgrenser"],
+          ["Ekstratjenester", "Pris og godkjenning for renhold, reparasjon og gjester"],
+          ["Ansvar", "Forsikring, begrensninger og håndtering av skader"]
+        ]
+      }},
+      { heading: "Zen Eco Homes Care: tryggere eierskap også etter overtakelsen", body: [
+        "Zen Eco Homes arbeider ikke bare med selve boligvalget. Gjennom Zen Eco Homes Care er målet å tilby et tydelig kontaktpunkt for tjenester rundt nøkkeloppbevaring, boligtilsyn, klargjøring og praktisk oppfølging.",
+        "Hvilke tjenester som kan leveres til akkurat din bolig, og hva de koster, må avklares før du inngår avtale. Start med å beskrive hvor boligen ligger, hvor ofte den brukes, og hvilken hjelp du faktisk trenger."
+      ]},
+    ],
+    nextSteps: [
+      "Opprett en nøkkel- og kontaktliste med klare fullmakter.",
+      "Kontroller forsikringsvilkår for perioder der boligen står tom.",
+      "Bestem hva som skal sjekkes etter uvær og før ankomst.",
+      "Avtal hvem som dokumenterer funn og innhenter godkjenning før reparasjoner.",
+      "Be om en konkret tjenestebeskrivelse og pris hvis du vurderer ekstern oppfølging."
+    ],
+    faq: [
+      { question: "Trenger jeg tilsyn når ferieboligen står tom?", answer: "Regelmessig tilsyn kan bidra til å oppdage synlige problemer tidlig. Behov og besøksfrekvens avhenger blant annet av boligens tilstand, bruk, risiko og forsikringsvilkår." },
+      { question: "Er nøkkeloppbevaring og boligtilsyn det samme?", answer: "Nei. Nøkkeloppbevaring handler om sikker tilgang, mens boligtilsyn innebærer avtalte kontroller av boligen og rapportering." },
+      { question: "Dekker forsikringen skade når ingen har bodd i boligen på lenge?", answer: "Det varierer mellom forsikringsselskap og avtaler. Les vilkårene for ubebodd bolig, varsling, vedlikehold og skadebegrensning." },
+      { question: "Kan noen klargjøre boligen før jeg kommer til Spania?", answer: "Det kan avtales som en separat tjeneste der slik hjelp tilbys. Avklar omfang, pris, adgang og frist før ankomst." }
+    ],
+    cta: { label: "Les mer om Zen Eco Homes Care", href: "https://care.zenecohomes.com" },
+  },
+  {
     slug: "nybygg-eller-bruktbolig-costa-blanca",
     title: "Nybygg eller bruktbolig i Spania – hva lønner seg egentlig?",
     excerpt: "En billig bruktbolig kan bli kostbar når fukt, svak isolasjon og oppussing kommer på toppen. Vi sammenligner pris, komfort og risiko ved nybygg og bruktbolig på Costa Blanca.",
