@@ -165,114 +165,258 @@ export const extraArticles: Article[] = [
 
 {
     "slug": "hva-inngar-i-prisen-nybygg-spania",
-    "title": "Hva inngår egentlig i prisen på et nybygg i Spania?",
-    "excerpt": "Boligannonse og innflyttingsklar pris er ikke alltid det samme. Sjekk hvitevarer, belysning, parkering, bod, basseng, tilvalg og kjøpskostnader før du reserverer.",
+    "title": "Hva inngår i nybyggprisen i Spania? Den komplette kontrollisten før du kjøper",
+    "excerpt": "To nybygg med samme pris kan ha svært ulik totalpris. Sjekk hvitevarer, basseng, jacuzzi, stikkontakter, gulv, bad, tilvalg og hva du kan forhandle om før du reserverer.",
     "category": "Nybygg",
     "image": "/assets/magasin-covers/omradet-for-boligen.svg",
-    "seoTitle": "Hva inngår i nybyggprisen i Spania? Full sjekkliste",
-    "seoDescription": "Hva følger med når du kjøper nybygg i Spania? Sjekk hvitevarer, belysning, parkering, bod, basseng, tilvalg, skatt og totalkostnad før reservasjon.",
+    "seoTitle": "Nybygg i Spania: hva inngår i prisen og tilvalgene?",
+    "seoDescription": "Hva følger med nybygg i Spania? Sjekk hvitevarer, basseng, jacuzzi, ekstra stikkontakter, gulv, baderom, tilvalg og totalkostnad før du reserverer.",
     "keywords": [
-      "hva inngår i nybygg Spania",
-      "nybygg tilvalg Costa Blanca",
-      "nybygg pris inkludert parkering",
-      "kjøpe nybygg Spania"
+      "hva inngår i nybyggprisen Spania",
+      "tilvalg nybygg Costa Blanca",
+      "hvitevarer inkludert nybygg Spania",
+      "basseng inkludert nybygg Spania",
+      "stikkontakter tilvalg nybygg",
+      "memoria de calidades Spania"
     ],
     "intro": [
-      "Prisen i nybyggannonsen er bare starten på regnestykket. To boliger til samme pris kan ha ulike leveransebeskrivelser – og derfor ganske ulik ferdig kostnad.",
-      "Spørsmålet er ikke bare hva leiligheten koster, men hva du faktisk får overlevert, hva du selv må kjøpe og hvilke skatter og gebyrer som kommer i tillegg."
+      "To boliger kan annonseres for henholdsvis €350.000 og €370.000. Den rimeligste kan likevel bli dyrest dersom hvitevarer, privat basseng, dusjvegger, speil, belysning og nødvendige elektriske uttak kommer i tillegg. Det er ferdig levert bolig – ikke bare annonseprisen – som må sammenlignes.",
+      "Når jeg hjelper kunder med nybygg på Costa Blanca, er et av de viktigste spørsmålene: Hva er faktisk inkludert, hva kan endres, hva koster endringene, og hva bør vi forsøke å forhandle inn før reservasjon? Det er store forskjeller mellom utbyggere, prosjekter og byggetrinn.",
+      "Få en skriftlig og spesifisert leveransebeskrivelse (memoria de calidades), tegningsunderlag og tilvalgsprisliste. Muntlige løfter, dekor i visningsboligen eller formuleringen «fullt utstyrt» er ikke nok."
     ],
     "sections": [
       {
-        "heading": "Hva følger vanligvis med – og hva varierer?",
+        "heading": "Kort svar: Hva er inkludert i prisen på et nybygg i Spania?",
         "body": [
-          "Fast innredning, klimaanlegg, kjøkkenutstyr, baderom og uteområder varierer fra prosjekt til prosjekt. Ikke legg til grunn at ord som «fullt utstyrt» betyr det samme hos alle utbyggere.",
-          "Be om signert memoria de calidades (leveransebeskrivelse), plantegning med arealer og en konkret liste over tilvalg og unntak."
+          "Kun det som står i den bindende kontrakten og vedleggene kan legges til grunn. I noen prosjekter følger hvitevarer, installert klimaanlegg, parkering, bod og privat basseng med. I andre får du bare enkelte komponenter – eller må betale for alt separat.",
+          "Før du sammenligner boligene må du be om tre lister: inkludert i basisprisen, obligatoriske tillegg og valgfrie tilvalg. Ta med skatter og kjøpskostnader i et eget regnestykke. En god rådgiver bør gå gjennom punktene med deg og innhente skriftlige svar fra utbygger."
         ],
         "table": {
           "headers": [
-            "Post",
-            "Dette må du få avklart"
+            "Del av boligen",
+            "Viktigste kontrollspørsmål"
           ],
           "rows": [
             [
-              "Kjøkken",
-              "Skap, benkeplate, komfyr, platetopp, ventilator, kjøleskap, oppvaskmaskin"
+              "Kjøkken og hvitevarer",
+              "Hvilke apparater følger med? Merke, modell, integrering og installasjon?"
             ],
             [
               "Bad",
-              "Innredning, dusjskjerm, speil, blandebatterier og eventuelt gulvvarme"
+              "Følger speil, dusjvegg/-hjørne, møbler, armatur og gulvvarme med?"
             ],
             [
-              "Klima",
-              "Aircondition: maskiner, kanaler, styring og oppvarming"
+              "Elektrisk",
+              "Hvor mange stikkontakter, datapunkter og lampeuttak er tegnet?"
             ],
             [
-              "Belysning",
-              "Kun uttak eller også downlights og lamper?"
+              "Gulv og fliser",
+              "Hvilket materiale, hvilke størrelser og hva koster oppgradering?"
+            ],
+            [
+              "Klima og ventilasjon",
+              "Er både installasjon og innedeler/utedeler inkludert?"
+            ],
+            [
+              "Privat basseng / jacuzzi",
+              "Inkludert, tilvalg eller ikke mulig – og hvilken størrelse?"
+            ],
+            [
+              "Uteområder",
+              "Er terrasse, beplantning, gjerder og solskjerming ferdig?"
             ],
             [
               "Parkering og bod",
-              "Inkludert i prisen eller separat kjøp?"
-            ],
-            [
-              "Basseng og uteareal",
-              "Privat eller felles, ferdig opparbeidet og hva følger med?"
-            ],
-            [
-              "Solskjerming",
-              "Persienner, markiser og screens inkludert eller tilvalg?"
+              "Hvilket nummer, størrelse og eierform – og inngår det i prisen?"
             ]
           ]
         }
       },
       {
-        "heading": "Eksempel: annonserte €350.000 kan bli mer",
+        "heading": "Hvitevarer: en uventet ekstrakostnad på €5.000 er fullt mulig",
         "body": [
-          "Tenk deg en bolig som annonseres for €350.000. I dette rene regneeksemplet er kjøpesummen €350.000, 10 % IVA €35.000 og 1,5 % AJD €5.250. Allerede da er summen €390.250, før notar, registrering, juridisk bistand, eventuelle finansieringskostnader og tilvalg. Sjekk oppdaterte satser og unntak for kjøpsdatoen og boligens beliggenhet.",
-          "I tillegg kan innredning, møbler, solskjerming eller parkeringsplass være kostnader du må budsjettere separat. Dette er ikke et konkret tilbud eller et universelt skatteeksempel."
+          "Et kjøkken kan være markedsført som inkludert uten at oppvaskmaskin, kjøleskap, stekeovn, mikrobølgeovn, ventilator eller vaskemaskin følger med. Andre ganger leveres alt, men i et begrenset standardutvalg. Kontroller hver enkelt enhet.",
+          "Et samlet budsjett på €5.000 for manglende hvitevarer er et illustrerende eksempel, ikke en standardpris. Det kan bli både lavere og høyere avhengig av kvalitet, antall apparater, skaptilpasning, frakt og montering. Spør om prisene inkluderer IVA, tilkobling, bortkjøring av emballasje og garanti.",
+          "Få også svar på om utbygger tillater at du kjøper hvitevarene selv, når de kan monteres, og hvem som får ansvaret hvis en integrert løsning ikke passer."
+        ],
+        "bullets": [
+          "Kjøleskap og fryser – frittstående eller integrert?",
+          "Stekeovn, platetopp, ventilator og mikrobølgeovn – spesifisert?",
+          "Oppvaskmaskin og vaskemaskin – inkludert og tilkoblet?",
+          "Merke, energimerking, modell, garanti og tilgjengelig service?"
         ]
       },
       {
-        "heading": "Betalingsplanen er en del av prisen",
+        "heading": "Basseng og jacuzzi: tilvalg som kan endre hele regnestykket",
         "body": [
-          "Ved kjøp under oppføring må du kontrollere reservasjonsvilkår, kontrakt, milepæler, forskuddsgaranti, forventet ferdigstillelse og betalingsplan. Sørg for at juristen din har gjennomgått dokumentene før du binder deg.",
-          "Sammenlign samme leveranse og ferdig dato når du vurderer ulike prosjekter. En høyere startpris kan være bedre verdi hvis vesentlige komponenter er inkludert."
+          "På enkelte villaer er et privat basseng inkludert; på andre er det bare vist som illustrasjon eller mulig tilvalg. Jacuzzi kan være en ekstra investering selv der bassenget er inkludert. I leilighetsprosjekter må du skille mellom privat basseng, fellesbasseng og en terrasse der utbygger kun viser muligheten.",
+          "Be om mål, dybde, teknisk rom, renseanlegg, trapper, oppvarming, belysning, overdekning, vedlikeholdsbehov og eventuelle bygge-/sameiegodkjenninger. Spør om bassenget er ferdig opparbeidet med alle nødvendige installasjoner.",
+          "Ønsker du større basseng enn standard? Spør om det teknisk og juridisk lar seg gjøre, hvilke tegninger eller tillatelser som må endres, og få totalpris og ny ferdigdato skriftlig. Større basseng kan påvirke tomteutnyttelse, plassering, konstruksjon og driftsutgifter.",
+          "En villa som koster €20.000 mer med ferdig basseng og jacuzzi kan i enkelte tilfeller være et bedre kjøp enn en billigere villa med store tilvalg. Det må dokumenteres gjennom en sammenlignbar leveranse – ikke antas."
         ]
       },
       {
-        "heading": "Freddys råd: be om én sammenlignbar totalsum",
+        "heading": "Stikkontakter og el-punkter: små valg som bør gjøres før veggene lukkes",
         "body": [
-          "Be om en skriftlig oversikt i tre kolonner: inkludert, obligatoriske tillegg og valgfrie tilvalg. Legg til skatter, kjøpskostnader og ditt planlagte møbel- og utstyrsbudsjett. Først da vet du om boligen er innenfor rammen din."
+          "Det er frustrerende å overta en ny bolig og oppdage at det mangler uttak ved sengen, kjøkkenøya, TV-veggen eller terrassen. Be om elektrisk plantegning med plassering av stikkontakter, lysuttak, nettverk, utendørs uttak, ladepunkt og brytere.",
+          "Gå virtuelt gjennom hvert rom med møbelplassering. Hvor skal kaffemaskinen stå? Har kontorplassen nok strøm og internett? Trengs strøm til markise, jacuzzi eller fremtidig bil-lader?",
+          "Spør om enhetspris for ekstra uttak, flytting av punkter og nye kurser – og om endringer bare er mulig før en bestemt byggefase. Få endringene tegnet inn, og avklar tekniske begrensninger og moms før du godkjenner."
+        ]
+      },
+      {
+        "heading": "Gulv, fliser og parkett: kan du velge materialer?",
+        "body": [
+          "Fliser er vanlig i mange nybygg på Costa Blanca, men standardleveransen kan være en bestemt serie, størrelse og farge. Andre prosjekter gir flere valg uten tillegg, mens oppgradering til storformatfliser, naturstein, parkett eller tregulv prises separat.",
+          "Spør om pris per kvadratmeter for materialet og den totale merkostnaden inklusive legging, underlag, lister, svinn og eventuelle endringer i byggehøyde. Ekte tregulv kan kreve særskilt vurdering av fukt, gulvvarme, slitasje og klima.",
+          "Kontroller også sklisikkerhet på uteareal og bad. Et ønsket materiale er ikke nødvendigvis teknisk eller kontraktsmessig mulig i alle rom."
+        ]
+      },
+      {
+        "heading": "Bad: speil og dusjhjørne er ikke alltid inkludert",
+        "body": [
+          "I flere prosjekter er servant, toalett og fliser med, mens speil, baderomsmøbel, dusjglass, dusjdør eller annet ekstrautstyr er utelatt. Det kan skyldes at mange kunder ønsker andre løsninger, men praksisen varierer og må bekreftes for hvert prosjekt.",
+          "Be om pris og mål på den konkrete løsningen, inkludert montering og nødvendige tilpasninger. Hvis dusjveggen ikke er inkludert, må også fall, membran, avløp og valgte glassmål vurderes – dette er ikke bare et spørsmål om dekor.",
+          "Gulvvarme, håndkletørker, speilbelysning og ekstra skapplass kan også være tilvalg som bør prises før kontrakt."
+        ]
+      },
+      {
+        "heading": "Aircondition, oppvarming, solskjerming og utendørs leveranse",
+        "body": [
+          "«Preinstallasjon for aircondition» er ikke det samme som et fullt montert og fungerende klimaanlegg. Spør om innedel, utedel, kanaler, varmepumpefunksjon, termostater og igangkjøring inngår.",
+          "Det samme gjelder markiser, persienner, screens, pergola, hage, belysning ute, gjerder, vanningsanlegg og ladestasjon. Det som vises i 3D-illustrasjoner kan være illustrativt.",
+          "Be om egen uteareal- og teknisk leveranseoversikt med tydelig avgrensning mellom fellesanlegg, privat eiendom og valgfrie forbedringer."
+        ]
+      },
+      {
+        "heading": "Et regneeksempel: den billigste boligen er ikke alltid billigst",
+        "body": [
+          "Eksemplet nedenfor er konstruert for å demonstrere prinsippet. Det er ikke en gjeldende prisliste fra noen utbygger, og beløpene må ikke brukes som tilbud eller anslag uten ny innhenting.",
+          "Bolig A annonseres til €350.000, mens bolig B annonseres til €370.000. Begge sammenlignes med tilsvarende sluttstandard. A får €5.000 i hvitevarer, €24.000 i basseng og jacuzzi, €3.000 i bad/elektrisk og €6.000 i gulv og solskjerming. Da blir A €388.000, mens B fremdeles ligger på €370.000 hvis alt dette virkelig er inkludert i B.",
+          "Først deretter kommer relevante skatter, notar, register, juridisk bistand, møbler og finansiering. Skatter og gebyrer vil normalt avhenge av transaksjonsgrunnlag, eiendomstype og de gjeldende reglene, slik at totalen må beregnes separat for hver bolig."
+        ],
+        "table": {
+          "headers": [
+            "Illustrasjon før skatt/gebyrer",
+            "Bolig A",
+            "Bolig B"
+          ],
+          "rows": [
+            [
+              "Annonsert pris",
+              "€350.000",
+              "€370.000"
+            ],
+            [
+              "Hvitevarer",
+              "€5.000",
+              "Inkludert"
+            ],
+            [
+              "Basseng og jacuzzi",
+              "€24.000",
+              "Inkludert"
+            ],
+            [
+              "Bad og ekstra el-punkter",
+              "€3.000",
+              "Inkludert"
+            ],
+            [
+              "Gulv og solskjerming",
+              "€6.000",
+              "Inkludert"
+            ],
+            [
+              "Sammenlignbar leveranse",
+              "€388.000",
+              "€370.000"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Hva kan du forhandle om med utbygger?",
+        "body": [
+          "Ikke alle utbyggere vil redusere selve kjøpesummen. Noen kan være mer åpne for å inkludere hvitevarer, oppgradere gulv, legge til stikkontakter, montere dusjglass, utvide basseng eller gi andre konkrete fordeler. Dette avhenger blant annet av byggefasen, marginene, interessen for boligen og kontraktens rammer.",
+          "En rådgiver som står på kjøperens side bør sammenligne leveranse og totalpris, dokumentere det som faktisk er forhandlet frem og sikre at alle endringer kommer inn i kontrakt eller signert tillegg med spesifikasjon, pris, tidsfrist og garantier.",
+          "Ingen seriøs rådgiver kan love et bestemt prisavslag eller gratis tilvalg. Verdien ligger i grundige forberedelser, tydelige spørsmål, kontroll av dokumentasjon og forhandling med mål om best mulig samlet avtale."
+        ]
+      },
+      {
+        "heading": "Når må tilvalgene bestilles og hvordan betales de?",
+        "body": [
+          "Spør etter siste bestillingsfrist for hvert tilvalg. Endringer i strøm, rør og konstruksjon må ofte avklares tidligere enn fargevalg eller kjøkkenfronter. Noen endringer er ikke mulige etter at bygget når en bestemt fase.",
+          "Få en spesifisert bestilling der både grunnpris, merpris, avgift, betalingsdato, leveringsdato, garantier og konsekvens ved forsinkelse står. Ikke betal for et muntlig lovet tilvalg.",
+          "Be juristen kontrollere reservasjonskontrakt, forskuddsbetaling, bankgaranti der relevant og hva som skjer hvis utbygger ikke leverer det avtalte."
+        ]
+      },
+      {
+        "heading": "Sjekkliste før reservasjon: få alle svarene skriftlig",
+        "bullets": [
+          "Har vi signert memoria de calidades og målfast plantegning?",
+          "Er alle hvitevarer listet med merke og modell – eller tydelig merket «ikke inkludert»?",
+          "Er basseng/jacuzzi inkludert, og hva koster større basseng hvis mulig?",
+          "Er alle stikkontakter, data- og lysuttak plassert riktig for vår bruk?",
+          "Kan vi velge fliser, parkett eller tregulv, og hva er totalprisen?",
+          "Er speil, dusjskjerm, baderomsmøbler og eventuelt gulvvarme inkludert?",
+          "Er klimaanlegget ferdig installert eller bare forberedt?",
+          "Er parkering, bod, hage, belysning og solskjerming inkludert?",
+          "Er tilvalg, skatter, betalingsdatoer, leveransetid og garanti spesifisert?",
+          "Er forhandlede forbedringer tatt inn i signert avtale?"
+        ]
+      },
+      {
+        "heading": "Freddys vurdering: rådgivning handler om hele avtalen – ikke bare boligen",
+        "body": [
+          "Å få en pris på en bolig er enkelt. Å få en fullstendig og sammenlignbar pris for boligen du faktisk vil bo i, krever mer arbeid. En dyktig kjøperrådgiver setter seg ned med deg, går gjennom hverdagsbehovene, sjekker plantegningene, ber om dokumentasjon og forhandler med utbygger om den komplette leveransen.",
+          "Da kan det vise seg at det rimeligste prosjektet ikke er best, eller at en bedre utstyrt bolig gir høyere verdi selv om prisetiketten er større. Målet er at du skal kjenne hele avtalen før du signerer – ikke oppdage ekstrakostnadene etter at innbetalingene har startet."
         ]
       }
     ],
     "nextSteps": [
-      "Be om leveransebeskrivelse og plantegning før reservasjon.",
-      "Få skriftlig bekreftet hva som er inkludert og hvilke tilvalg som koster ekstra.",
-      "Regn med alle skatter, gebyrer og innflyttingskostnader.",
-      "La uavhengig advokat kontrollere betalingsplan og garantier."
+      "Send en rom-for-rom-liste med ønsket utstyr og endringer til utbygger.",
+      "Krev skriftlig oversikt over inkludert utstyr, obligatoriske tillegg og valgfri tilvalg med avgifter.",
+      "Be om totalpris for basseng/jacuzzi, hvitevarer, gulv, stikkontakter og bad før reservasjon.",
+      "Sammenlign to eller flere boliger på samme ferdige leveransestandard.",
+      "Bruk kjøperrådgiver til å forhandle samlet pakke og uavhengig advokat til å kontrollere kontrakten."
     ],
     "faq": [
       {
-        "question": "Følger hvitevarer med ved nybygg i Spania?",
-        "answer": "Det varierer. Kontroller leveransebeskrivelsen for hver hvitevare og merke/modell der dette er relevant."
+        "question": "Følger alle hvitevarer med når man kjøper nybygg i Spania?",
+        "answer": "Ikke nødvendigvis. Noen leverer alt, andre enkelte eller ingen hvitevarer. Be om skriftlig liste med modeller, montering og priser. Manglende utstyr kan i et illustrerende eksempel koste €5.000 eller mer."
       },
       {
-        "question": "Er parkering inkludert i nybyggprisen?",
-        "answer": "Noen ganger, men ikke alltid. Få dokumentert hvilken plass og eventuelt bod som inngår."
+        "question": "Er basseng eller jacuzzi inkludert i nybyggprisen?",
+        "answer": "Det varierer etter boligtype og prosjekt. Sjekk hva leveransebeskrivelsen sier, og om illustrasjonene viser tilvalg eller faktisk inkludert utstyr."
       },
       {
-        "question": "Er møbler inkludert i nybygg?",
-        "answer": "Vanligvis ikke uten at dette er uttrykkelig avtalt. Visningsboliger kan ha ekstrautstyr."
+        "question": "Kan man bestille et større privat basseng?",
+        "answer": "Noen ganger. Det krever at tomt, tekniske forhold, tillatelser og byggefase tillater endringen. Krev skriftlig pris for komplett leveranse."
+      },
+      {
+        "question": "Hva koster ekstra stikkontakter i et nybygg?",
+        "answer": "Det finnes ingen universell pris. Antall, plassering, nye kurser og byggefase avgjør. Be om spesifisert enhetspris og endret plantegning."
+      },
+      {
+        "question": "Kan jeg bytte fliser med parkett eller tregulv?",
+        "answer": "Noen utbyggere tilbyr slike tilvalg, men tekniske forhold og byggefase kan begrense muligheten. Få totalpris inklusive materialer, legging og underarbeid."
+      },
+      {
+        "question": "Er speil og dusjvegg inkludert på badet?",
+        "answer": "Ikke alltid. Be om en romspesifikk utstyrsliste og skriftlig pris på manglende komponenter."
+      },
+      {
+        "question": "Kan en bolig som koster €20.000 mer likevel være rimeligere?",
+        "answer": "Ja, hvis den inkluderer utstyr og arbeider som koster mer enn differansen i den billigere boligen. Sammenlign sluttstandard, skatter, drift og øvrige kostnader."
       }
     ],
     "cta": {
-      "label": "Se moderne nybygg og boliger",
-      "href": "/eiendommer"
+      "label": "Få hjelp til å sammenligne totalpris og forhandle nybygg",
+      "href": "/booking"
     },
     "date": "2026-10-19",
     "updated": "2026-10-19",
-    "readingTime": "8 min lesing",
+    "readingTime": "17 min lesing",
     "author": {
       "name": "Freddy Bremseth",
       "href": "/om-oss/freddy"
