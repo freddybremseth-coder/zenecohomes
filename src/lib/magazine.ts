@@ -62,7 +62,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Monte Ponoig: fjellet som gir Polop sin særegne atmosfære",
         "body": [
-          "Det spektakulære fjellet du sikter til heter Monte Ponoig, også kalt Ponotx – ikke «Poig punot». Det er kjent som «den sovende løven» på grunn av silhuetten. Ponoig ligger rett vest for Polop og er en del av det beskyttede fjellandskapet sammen med Puig Campana, som ligger ved Finestrat.",
+          "Monte Ponoig, også kjent som Ponotx, reiser seg over Polop og er kjent som «den sovende løven» på grunn av sin karakteristiske silhuett. Fjellene gir området et dramatisk landskap og en egen atmosfære.",
           "Fra gunstig plasserte boliger i åssiden kan utsikten være slående: mot den gamle byen Polop på høyden, landskapet rundt Altea, havet og deler av Altea Hills. Hva som faktisk er synlig avhenger av boligens høyde, orientering og omkringliggende bygg. Ikke alle tomter har full panoramautsikt.",
           "Kilde om fjellnavn og landskap: Polop kommunes turbeskrivelse, polop.org/pdf/rutas_senderistas/ruta7/r7.pdf."
         ]
