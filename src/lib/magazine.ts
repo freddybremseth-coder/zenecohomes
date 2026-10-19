@@ -1141,117 +1141,151 @@ export const extraArticles: Article[] = [
   },
   {
     slug: "nybygg-eller-bruktbolig-costa-blanca",
-    title: "Nybygg eller bruktbolig på Costa Blanca – hva passer faktisk best for deg?",
-    excerpt:
-      "Nybygg er ikke automatisk best, og bruktbolig er ikke automatisk billigst. Vi sammenligner valgene ut fra beliggenhet, vedlikehold, leveringstid, risiko og hvordan boligen skal brukes.",
+    title: "Nybygg eller bruktbolig i Spania – hva lønner seg egentlig?",
+    excerpt: "En billig bruktbolig kan bli kostbar når fukt, svak isolasjon og oppussing kommer på toppen. Vi sammenligner pris, komfort og risiko ved nybygg og bruktbolig på Costa Blanca.",
     date: "2026-09-29",
-    updated: "2026-09-29",
+    updated: "2026-10-19",
     category: "Boligvalg",
-    readingTime: "9 min lesing",
+    readingTime: "12 min lesing",
     image: "/assets/magasin-covers/omradet-for-boligen.svg",
-    imageAlt: "Moderne nybygg og etablert boligmiljø på Costa Blanca",
-    seoTitle: "Nybygg eller bruktbolig på Costa Blanca – hva passer best?",
-    seoDescription:
-      "Sammenlign nybygg og bruktbolig på Costa Blanca. Se forskjeller i beliggenhet, kostnader, vedlikehold, risiko, leveringstid og videresalg før du velger.",
+    imageAlt: "Illustrasjon som sammenligner moderne nybygg og eldre bolig på Costa Blanca",
+    seoTitle: "Nybygg eller bruktbolig i Spania? Kostnader og komfort",
+    seoDescription: "Nybygg eller bruktbolig på Costa Blanca? Les om skjult fukt, isolasjon, støy, oppussing, garantier og kostnader de første fem årene før du kjøper.",
     keywords: [
       "nybygg eller bruktbolig Spania",
-      "nybygg Costa Blanca",
-      "bruktbolig Costa Blanca",
-      "kjøpe bolig Spania",
-      "boligvalg Costa Blanca",
+      "bruktbolig fukt Spania",
+      "isolasjon bolig Spania",
+      "kjøpe eldre bolig Costa Blanca",
+      "kostnader nybygg bruktbolig",
     ],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
-      "Mange starter boligjakten med et standpunkt: «Vi vil bare ha nybygg» eller «Vi vil ha mest mulig bolig for pengene og ser derfor brukt». Begge utgangspunktene kan bli for enkle.",
-      "Det riktige valget avhenger av hva du vil oppnå. Zen Eco Homes har hovedfokus på moderne nybygg og moderne boliger, men hvis en bruktbolig tydelig gir deg bedre beliggenhet, bedre økonomi eller en hverdag som passer bedre, bør den vurderes.",
-      "Spørsmålet er derfor ikke hvilken kategori som er best. Spørsmålet er hvilken bolig som løser behovet ditt med færrest dårlige kompromisser.",
+      "En bolig er ikke nødvendigvis et godt kjøp fordi den er billig. Den er et godt kjøp når du har råd til å kjøpe den, vedlikeholde den og faktisk trives i den.",
+      "Bruktboliger kan gi fantastiske beliggenheter, etablerte nabolag og mye plass. Men en lav pris kan også skjule en hverdag med fuktutredning, trekk, høye strømregninger og stadig oppussing. Et moderne nybygg koster ofte mer ved kjøp, men gir gjerne bedre teknisk standard, komfort og forutsigbarhet.",
+      "Mitt råd er ikke at alle bør velge nybygg. Det er at du må sammenligne fem års faktiske utgifter og den hverdagen du vil få – ikke bare antall kvadratmeter og prisen i annonsen.",
     ],
     sections: [
       {
-        heading: "Nybygg: du kjøper forutsigbarhet – men ikke alltid den beste beliggenheten",
+        heading: "Bruktbolig: du kjøper det du ser – men ikke nødvendigvis alt som ligger bak",
         body: [
-          "Den store styrken ved nybygg er at du vet mer om standarden du overtar. Moderne tekniske løsninger, nyere energikrav, mindre vedlikeholdsbehov og en tydelig leveransebeskrivelse gjør hverdagen enklere for mange som bor deler av året i Norge.",
-          "Ulempen er at de beste etablerte kystområdene ofte har lite ledig tomt. Nybygg kan derfor ligge høyere i terrenget, lenger fra sentrum eller i områder som fortsatt er under utvikling. En flott bolig er ikke nødvendigvis riktig dersom du egentlig ønsket å gå til strand og restauranter.",
+          "En nymalt vegg, et nytt kjøkken og fine bilder kan gi inntrykk av at en bolig er oppgradert. Men maling reparerer ikke en utett terrasse, mangelfull drenering eller fukt som kommer innenfra veggen. Mugg kan være vasket bort eller malt over, og komme tilbake når forholdene igjen ligger til rette. Det er ikke bevis på at selger har forsøkt å skjule noe; poenget er at en pen overflate ikke dokumenterer tilstanden.",
+          "Undersøk lukt, misfarging, saltutslag, skjolder i himling, terrasser over oppholdsrom, tak, fuger, rør, bad og området rundt vinduer. Har boligen nylig blitt malt, er det rimelig å spørre hvorfor. Noen fuktproblemer er lokale og enkle å utbedre, mens andre krever åpning av konstruksjoner og faglig feilsøking.",
+          "Jo eldre og billigere boligen er, desto viktigere er det å ta med kostnaden til en uavhengig byggkyndig. Er du selv erfaren håndverker og har tid til prosjekter, kan oppussing være et godt valg. Hvis du ønsker en enkel feriebolig, bør du være svært forsiktig med å overta ukjente vedlikeholdsbehov.",
         ],
         bullets: [
-          "Sterkt valg når lavt vedlikehold og moderne standard betyr mye.",
-          "Sjekk nøyaktig hva som inngår i prisen og hva som er tilvalg.",
-          "Kontroller reelle avstander og høydeforskjeller, ikke bare kartet.",
-          "Ved bolig under bygging må betalingsplan, bankgaranti og levering vurderes.",
+          "Se forbi maling og styling: be om dokumentasjon på tidligere lekkasjer og utbedringer.",
+          "Bestill teknisk kontroll med relevant fagperson før du binder deg økonomisk.",
+          "Sett av reserve for feil som først avdekkes når arbeidet starter.",
+          "Undersøk også tak, fasade og økonomi i sameiet – ikke bare selve leiligheten.",
         ],
       },
       {
-        heading: "Bruktbolig: du kan kjøpe beliggenheten nybygg ikke kan gjenskape",
+        heading: "I Spania må du sikre deg før kjøpet – ikke planlegge prisavslag etterpå",
         body: [
-          "Bruktboligens største fordel er ofte ikke prisen, men beliggenheten. I etablerte områder kan du kjøpe gangavstand, modne grøntområder, et ferdig nabolag og en plassering som det ikke lenger er mulig å bygge mye nytt på.",
-          "Til gjengjeld kjøper du også boligens historie. Teknisk tilstand, tidligere ombygginger, fukt, elektrisk anlegg, fellesøkonomi og juridisk dokumentasjon må kontrolleres grundigere.",
-        ],
-        bullets: [
-          "Sterkt valg når mikrobeliggenheten er viktigere enn å være førstegangseier.",
-          "Se på dokumentert tilstand, ikke bare nye overflater og styling.",
-          "Be om faktiske felleskostnader og tilgjengelig informasjon om sameiet.",
-          "Bruk uavhengig juridisk kontroll før du binder deg.",
+          "Mange nordmenn er vant til tilstandsrapporter i bolighandelen hjemme. Ved kjøp av bruktbolig i Spania må du ikke anta at en tilsvarende grundig, uavhengig teknisk gjennomgang følger med salget. En bankverdivurdering er heller ikke det samme som en full bygningsteknisk rapport.",
+          "Spansk rett har regler om skjulte mangler (vicios ocultos). Etter Código Civil artikkel 1484–1490 kan det i bestemte tilfeller være grunnlag for å kreve prisreduksjon eller heving. De ordinære kravene etter disse bestemmelsene har en frist på seks måneder fra overleveringen. Om vilkårene er oppfylt, og om andre krav kan gjelde, må vurderes konkret av advokat. Derfor anbefaler jeg både uavhengig advokat og teknisk sakkyndig før kjøpet – ikke et håp om å vinne en tvist senere.",
         ],
       },
       {
-        heading: "Pris: brukt er ikke automatisk billigere",
+        heading: "Eldre spanske boliger: kulde om vinteren, varme om sommeren",
         body: [
-          "Det er lett å sammenligne kvadratmeterpris og konkludere. Det kan bli feil. En bruktbolig kan kreve nytt kjøkken, bad, vinduer, klimaanlegg eller større arbeid kort tid etter overtakelse. Et nybygg kan på sin side ha kostnader til møbler, belysning, solskjerming og tilvalg.",
-          "Sammenlign derfor totalen for de første tre til fem årene, ikke bare kjøpesummen på kontraktsdagen.",
+          "På Costa Blanca kan vinteren være solrik ute, men kald inne i en bolig med svakt isolerte vegger, trekkfulle vinduer og kalde gulv. Det er lite hyggelig å sitte med jakke innendørs når du hadde sett for deg et komfortabelt opphold i Spania. Om sommeren kan de samme konstruksjonene gi overoppheting og mye bruk av aircondition. Resultatet kan bli høyere strømregning og mindre trivsel.",
+          "Boliger fra før dagens strengere energikrav fortjener ekstra undersøkelser. Rundt 2008 kan være en nyttig påminnelse når man vurderer eldre bygg, men ikke en teknisk eller juridisk skillelinje: Spanias byggeregler ble etablert i 2006 og energikravene er videre oppdatert blant annet i 2013 og 2019. Både byggeår, senere rehabilitering, orientering, vinduer og faktisk utførelse avgjør hvordan boligen oppleves.",
+          "Be om energisertifikat og vurder de faktiske forholdene på visning. Et energimerke forteller ikke hele historien om trekk, lydisolasjon, overoppheting eller hvor komfortabel boligen er en januarkveld.",
         ],
       },
       {
-        heading: "Tid: skal du bruke boligen nå eller kan du vente?",
+        heading: "Støyisolasjon: en undervurdert del av bokvaliteten",
         body: [
-          "En ferdig bruktbolig kan normalt tas i bruk langt raskere enn et prosjekt som fortsatt bygges. For kjøpere som vil ha bolig til kommende vinter eller sommer kan leveringstid alene avgjøre valget.",
-          "Kjøper du tidlig i et nybyggprosjekt, får du ofte større utvalg av etasje, orientering og planløsning. Men du må akseptere byggeperioden og at omgivelsene kan være uferdige en stund.",
+          "Isolasjon handler også om lyd. I enkelte eldre leilighetsbygg kan man høre naboens TV, samtaler, stoler som flyttes – eller hvor ofte toalettet brukes om natten. Slik støy kan redusere gleden ved å bruke boligen betydelig.",
+          "Nyere bygg har vanligvis strengere prosjekteringskrav til lydforhold, men også nybygg må kontrolleres: plassering mot heis, basseng, vei og naboer har betydning. Spør om dokumenterte konstruksjoner og besøk området til ulike tider.",
         ],
       },
       {
-        heading: "Videresalg: det er beliggenhet og brukbarhet som må tåle tid",
+        heading: "Nybygg: mer tid til å nyte, mindre tid til å restaurere",
         body: [
-          "Ny og blank standard er attraktiv ved kjøp, men alle nybygg blir bruktboliger. Når du senere skal selge, konkurrerer boligen på beliggenhet, planløsning, sol, parkering, uteareal, utsikt og hvor lett hverdagen fungerer.",
-          "Det er derfor bedre å kjøpe en bolig som mange kan forstå verdien av enn å betale maksimalt for detaljer som bare betyr mye for deg.",
+          "Fordelen med moderne nybygg er ikke bare rene flater og et nytt kjøkken. Det er muligheten til å få en feriebolig med mer forutsigbar teknisk standard, bedre klimaskall, moderne vinduer, gjennomtenkt planløsning og færre forventede større utbedringer i starten.",
+          "For mange er den viktigste gevinsten at feriene brukes til å nyte livet, ikke stadig reparere, fornye og koordinere håndverkere. Men nybygg er ikke risikofritt: kontroller utbygger, kontrakt, leveransebeskrivelse, garantier, tilvalg, ferdigstillelse og kostnader i sameiet.",
         ],
       },
       {
-        heading: "En enkel beslutningsregel",
+        heading: "Hva koster boligen over fem år? Et illustrerende regnestykke",
+        body: [
+          "Se for deg en bruktbolig til 250.000 euro og et moderne nybygg til 310.000 euro. Tabellen nedenfor er kun et tenkt eksempel – ikke markedspriser eller tilbud. Kjøpsskatt, notar, registrering, finansiering, møbler og fellesutgifter er holdt utenfor for å sammenligne vedlikeholds- og oppgraderingsrisiko separat.",
+        ],
         table: {
-          headers: ["Hvis du prioriterer", "Se først på"],
+          headers: ["Eksempel (5 år)", "Bruktbolig", "Nybygg"],
           rows: [
-            ["Lavt vedlikehold, moderne standard og energieffektivitet", "Nybygg"],
-            ["Etablert område og best mulig gangavstand", "Bruktbolig og ferdige nybygg"],
-            ["Ta boligen i bruk raskt", "Ferdig bolig"],
-            ["Størst mulig valg av planløsning og orientering", "Tidlig fase nybygg"],
-            ["Unik mikrobeliggenhet som ikke kan bygges på nytt", "Bruktbolig"],
+            ["Kjøpesum", "€250.000", "€310.000"],
+            ["Planlagte oppgraderinger", "€35.000", "€8.000 tilvalg"],
+            ["Vedlikeholdsreserve / reparasjoner", "€20.000", "€5.000"],
+            ["Sum før kjøpskostnader og drift", "€305.000", "€323.000"],
           ],
         },
       },
+      {
+        heading: "En lavere kvadratmeterpris kan være et dyrt kompromiss",
+        body: [
+          "I eksemplet er forskjellen mellom de to kjøpene ikke lenger 60.000 euro, men 18.000 euro før skatter og løpende drift. Tallene er ikke en prognose: en velholdt bruktbolig kan komme langt bedre ut, og et nybygg kan bli dyrere enn forventet med tilvalg og høyere kjøpsomkostninger.",
+          "Mitt råd til kjøpere med et stramt budsjett er å vurdere en litt mindre, moderne bolig med god planløsning – eller et område der kvadratmeterprisen er lavere – før de velger en større bolig med ukjent teknisk risiko. Komfort, beliggenhet og brukbarhet betyr ofte mer enn noen ekstra kvadratmeter.",
+        ],
+      },
+      {
+        heading: "Nybygg og bruktbolig: den viktigste forskjellen",
+        table: {
+          headers: ["Forhold", "Bruktbolig", "Nybygg"],
+          rows: [
+            ["Teknisk tilstand", "Må undersøkes grundig", "Ny standard, men kontroller leveransen"],
+            ["Fukt og tidligere skader", "Undersøk historikk og overflater", "Kontroller bygging, tetting og overtakelse"],
+            ["Varme og kjøling", "Stor variasjon etter byggeår og oppgraderinger", "Vanligvis nyere energikrav"],
+            ["Lydforhold", "Varierer mye", "Nyere krav, men beliggenhet betyr fortsatt noe"],
+            ["Vedlikehold de første årene", "Kan være betydelig", "Ofte lavere, men ikke null"],
+            ["Beliggenhet", "Ofte sterke etablerte plasseringer", "Kan ligge i nyere utviklingsområder"],
+            ["Tid til innflytting", "Ofte kortere", "Kan kreve venting ved prosjektkjøp"],
+          ],
+        },
+      },
+      {
+        heading: "Når er bruktbolig faktisk det beste kjøpet?",
+        body: [
+          "En godt vedlikeholdt bruktbolig med dokumenterte oppgraderinger, god teknisk gjennomgang og en beliggenhet det nesten ikke finnes nybygg på, kan være det beste valget. En kunde som ønsker sentrum, kort vei til stranden eller en bestemt etablert gate, bør ikke overtales til et nybygg langt unna bare fordi boligen er ny.",
+          "Valget blir særlig interessant for deg som kan håndverk, ønsker et renoveringsprosjekt eller er villig til å betale for profesjonell prosjektstyring. For kjøperen som vil låse døren i Norge og åpne den til en enkel ferie på Costa Blanca, vil moderne standard ofte være mer attraktivt.",
+        ],
+      },
+      {
+        heading: "Freddys råd: kjøp den hverdagen du vil ha",
+        body: [
+          "Ikke spør bare «Hvor stor bolig får jeg?». Spør «Hvordan kommer jeg til å bo her en kald februarkveld, en varm augustdag og når jeg bare har én uke ferie?»",
+          "En mindre, bedre planlagt bolig med riktig beliggenhet, ro og komfort kan gi større glede enn en stor leilighet som stadig må vedlikeholdes. Sammenlign totalbudsjettet og få tekniske forhold kontrollert før du bestemmer deg.",
+        ],
+      },
     ],
     nextSteps: [
-      "Definer først hvordan boligen faktisk skal brukes.",
-      "Sammenlign én god bruktbolig og ett godt nybygg i samme totalbudsjett.",
-      "Regn inn oppgraderinger, tilvalg og vedlikehold før du sammenligner pris.",
-      "Velg beliggenhet før du lar nyhetsfølelsen avgjøre.",
+      "Definer hvor mye arbeid du faktisk vil bruke på boligen.",
+      "Be om energisertifikat, opplysninger om vedlikehold og uavhengig teknisk kontroll ved bruktbolig.",
+      "Sammenlign totalbudsjett, inklusive realistiske oppgraderinger, kjøpskostnader og fem års drift.",
+      "Undersøk nybyggens leveransebeskrivelse, garantier og reelle beliggenhet.",
+      "Vurder mindre bolig eller rimeligere område før du går på kompromiss med komforten.",
     ],
     faq: [
       {
-        question: "Er nybygg tryggere enn bruktbolig i Spania?",
-        answer:
-          "Nybygg gir ofte mer forutsigbar teknisk standard, men krever kontroll av utbygger, kontrakt, bankgaranti og levering. Bruktbolig krever grundigere kontroll av eksisterende teknisk og juridisk tilstand. Begge bør undersøkes før kjøp.",
+        question: "Er det vanlig med skjult fukt i eldre boliger i Spania?",
+        answer: "Fukt kan forekomme, særlig ved utette terrasser, tak, rør eller mangelfull ventilasjon. Omfanget varierer. Nymalte vegger erstatter ikke en teknisk kontroll.",
       },
       {
-        question: "Er bruktbolig alltid billigere enn nybygg?",
-        answer:
-          "Nei. Kjøpesummen kan være lavere, men oppussing og vedlikehold kan endre totalregnestykket. Sammenlign total kostnad og beliggenhet, ikke bare pris per kvadratmeter.",
+        question: "Kan jeg kreve prisavslag hvis jeg finner skjulte feil etter kjøpet?",
+        answer: "Spansk lov har regler om skjulte mangler, men det gjelder vilkår og korte frister. Få konkret juridisk vurdering; ikke regn med at et krav blir enkelt eller automatisk innvilget.",
       },
       {
-        question: "Selger Zen Eco Homes bruktboliger?",
-        answer:
-          "Hovedfokuset er moderne nybygg og moderne boliger. Når en bruktbolig tydelig passer kundens behov bedre, kan den også vurderes.",
+        question: "Er boliger bygget før 2008 dårlig isolert?",
+        answer: "Mange eldre boliger kan ha svakere isolasjon enn moderne bygg, men 2008 er ikke en absolutt grense. Byggestandard, rehabilitering og dokumenterte energi- og lydforhold må vurderes individuelt.",
+      },
+      {
+        question: "Er nybygg alltid lønnsommere enn bruktbolig?",
+        answer: "Nei. Beliggenhet, skatt, tilvalg, vedlikehold, energibruk og fremtidig salg påvirker regnestykket. Sammenlign minst fem års samlede utgifter.",
       },
     ],
-    cta: { label: "Se nybygg og boliger", href: "/eiendommer" },
+    cta: { label: "Se moderne boliger på Costa Blanca", href: "/eiendommer" },
   },
   {
     slug: "eurokurs-boligbudsjett-spania-nordmenn",
