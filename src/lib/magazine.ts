@@ -17,6 +17,219 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "finestrat-eller-polop-bolig-livsstil",
+    "title": "Finestrat eller Polop – hvor får du riktig bolig for pengene?",
+    "excerpt": "Finestrat og Polop tilbyr moderne boliger nær Benidorm, men med ulik atmosfære, avstand, terreng og pris. En grundig kjøperguide til de reelle forskjellene.",
+    "category": "Områdevalg",
+    "date": "2026-10-19",
+    "updated": "2026-10-19",
+    "readingTime": "15 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Illustrasjon av boligområder og fjellandskap på Costa Blanca",
+    "seoTitle": "Finestrat eller Polop? Boligpriser, avstand og livsstil",
+    "seoDescription": "Finestrat eller Polop på Costa Blanca? Sammenlign nybygg, boligpriser, kjøretid, sol, utsikt, støy, service og totalbudsjett før du velger område.",
+    "keywords": [
+      "Finestrat eller Polop",
+      "bolig Finestrat vs Polop",
+      "nybygg Polop",
+      "Sierra Cortina Finestrat",
+      "bo i Polop Spania"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Finestrat og Polop ligger begge nord for Benidorm, med fjell i bakgrunnen og nye boligprosjekter i ulike prisklasser. Men de kan ikke sammenlignes bare på kvadratmeterpris: beliggenhet, utsikt, adkomst, boligstandard og hverdagsbehov kan gjøre en tilsynelatende rimeligere bolig dyrere eller mindre praktisk.",
+      "I Finestrat er det særlig viktig å skille mellom historiske Finestrat pueblo og nyere boligområder som Sierra Cortina og Balcón de Finestrat. Polop har sitt eget tradisjonelle sentrum og nyere urbanisasjoner i utkanten. De ligger forskjellig, og adressen betyr mer enn kommunenavnet.",
+      "Denne guiden hjelper deg å vurdere valget på samme måte som en kjøperrådgiver bør gjøre: fra faktisk bruk og totalbudsjett til sol, støy, terreng og fremtidig salg."
+    ],
+    "sections": [
+      {
+        "heading": "Kort svar: Hvem passer best i Finestrat og Polop?",
+        "body": [
+          "Finestrat er ofte aktuelt for kjøpere som vil ha moderne boliger med forholdsvis nær tilgang til Benidorm, større handelsområder og mange fritidstilbud. Polop er ofte aktuelt for dem som ønsker et roligere, mer lokalt preg, fjellkontakt og en annen type hverdag.",
+          "Dette er ikke en garanti for lavere pris i Polop eller bedre utsikt i Finestrat. Forskjellene må kontrolleres mot konkrete adresser og prosjekter."
+        ]
+      },
+      {
+        "heading": "Finestrat er flere forskjellige boligmarkeder",
+        "body": [
+          "Finestrat pueblo ligger oppe i åsene og har en eldre bystruktur. Nye villa- og leilighetsprosjekter i Balcón de Finestrat og Sierra Cortina er en annen opplevelse: urbanisasjoner, terrasser, bassenger, ofte bilavhengighet og utsikt som varierer fra tomt til tomt.",
+          "En leilighet på en lav etasje kan ha helt andre sol- og utsiktsforhold enn toppetasjen i samme prosjekt. Spør om ferdig bebyggelse foran terrassen og om det finnes planer for nye byggetrinn."
+        ]
+      },
+      {
+        "heading": "Polop: tradisjonelt sentrum og moderne boliger nær fjellene",
+        "body": [
+          "Polop har en tydelig småbyidentitet, med eldre sentrum og boligområder som ligger mer spredt. Moderne villaer og rekkehus bygges i ulike randsoner, men du må kontrollere om boligene ligger innen praktisk avstand til butikk, skole, kafé og andre tjenester.",
+          "Det rolige preget kan være en stor fordel. Men en bolig som krever bil til alle daglige gjøremål, passer ikke like godt for alle."
+        ]
+      },
+      {
+        "heading": "Avstand og transport: test turen fra den faktiske adressen",
+        "body": [
+          "Finestrats nyere utbyggingsområder kan ligge praktisk til for Benidorm og handel, men avstander, trafikk og adkomst varierer. I Polop vil mange boligområder også være bilorienterte. Ingen av kommunene bør automatisk beskrives som bilfrie alternativer.",
+          "Test kjøreturen til stranden, helsetjenester, matbutikk og stedet du faktisk skal bruke oftest – i rushtid, på en regnværsdag og utenom høysesongen. Sjekk kollektivtilbudet dersom du vil klare deg uten bil."
+        ]
+      },
+      {
+        "heading": "Utsikt, sol og vind: det du egentlig betaler for",
+        "body": [
+          "Fjell, havutsikt og kveldssol selger boliger, men bilder tatt fra riktig vinkel kan gi et optimistisk inntrykk. Sjekk etasje, himmelretning, fremtidig bygging, støymiljø og terrengets helning.",
+          "En sørvestvendt terrasse kan være attraktiv om vinteren, men sterk sommervarme kan gjøre solskjerming nødvendig. Spør om pergola, screens eller markise er inkludert i nybyggprisen. Kontrollér også eventuell vindeksponering."
+        ]
+      },
+      {
+        "heading": "Pris per kvadratmeter forteller bare halve historien",
+        "body": [
+          "Polop kan i noen segmenter gi mer innvendig plass eller tomteareal for samme budsjett enn de mest etterspurte prosjektene i Finestrat. Men det gjelder ikke enhver bolig. Finestrat har på sin side svært varierte mikromarkeder. Bruk konkrete, samtidige tilbud som sammenligningsgrunnlag, ikke et generelt prisløfte.",
+          "Sammenlign boliger med samme leveranse: hvitevarer, basseng, parkering, bod, klimaanlegg, hagetiltak og solskjerming. En prisforskjell på €20.000 kan raskt spises opp av manglende utstyr. Be også om forventede comunidad-kostnader, IBI og vedlikeholdsbudsjett."
+        ]
+      },
+      {
+        "heading": "Et regneeksempel: to villaer med ulik leveranse",
+        "body": [
+          "Dette er et illustrerende eksempel, ikke eksisterende boliger eller markedspriser: Villa A i Finestrat annonseres for €425.000 med basseng inkludert. Villa B i Polop annonseres for €395.000 uten basseng og uten en del innflyttingsutstyr.",
+          "Dersom B trenger €24.000 til basseng, €5.000 til hvitevarer og €4.000 til solskjerming og andre arbeider, blir sammenlignbar kjøpesum før kjøpsomkostninger €428.000 – altså €3.000 mer enn A. Hvis utstyret derimot allerede er inkludert i B, er konklusjonen motsatt.",
+          "Regnestykket demonstrerer metoden. Alle faktiske tilvalgspriser må hentes skriftlig fra utbygger og relevant leverandør."
+        ],
+        "table": {
+          "headers": [
+            "Illustrativt, før skatt",
+            "Finestrat A",
+            "Polop B"
+          ],
+          "rows": [
+            [
+              "Annonsert pris",
+              "€425.000",
+              "€395.000"
+            ],
+            [
+              "Basseng",
+              "Inkludert",
+              "€24.000"
+            ],
+            [
+              "Hvitevarer",
+              "Inkludert",
+              "€5.000"
+            ],
+            [
+              "Solskjerming og annet",
+              "Inkludert",
+              "€4.000"
+            ],
+            [
+              "Sammenlignbar leveranse",
+              "€425.000",
+              "€428.000"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Hva med helårsbruk og familier?",
+        "body": [
+          "Skal du bo fast, trenger du noe annet enn ved korte ferieopphold. Undersøk reell avstand til skole, barnehage, helsesenter, dagligvarebutikk og fritidstilbud. Vurder også arbeidsreiser, parkering og hvordan området fungerer i januar.",
+          "For delårsbruk er det kanskje viktigere med lite vedlikehold, enkel nøkkeloppbevaring og muligheten til å åpne døren til en bolig som er klar. Nyere bygg med god energi- og lydkomfort kan redusere behovet for arbeid, men vær oppmerksom på sameieøkonomi og garantier."
+        ]
+      },
+      {
+        "heading": "Finestrat eller Polop – en praktisk sammenligning",
+        "table": {
+          "headers": [
+            "Spørsmål",
+            "Finestrat",
+            "Polop"
+          ],
+          "rows": [
+            [
+              "Hva trekker kjøpere?",
+              "Nye prosjekter, Benidorm-nærhet, fasiliteter",
+              "Småbypreg, fjellmiljø, ro"
+            ],
+            [
+              "Boligtype",
+              "Leiligheter, rekkehus og villaer",
+              "Villaer, rekkehus og eldre boliger"
+            ],
+            [
+              "Bilbehov",
+              "Ofte viktig i utbyggingsområdene",
+              "Ofte viktig utenfor sentrum"
+            ],
+            [
+              "Utsikt og sol",
+              "Svært prosjekt-/etasjeavhengig",
+              "Svært tomte-/beliggenhetsavhengig"
+            ],
+            [
+              "Pris",
+              "Varierer med mikroområde og standard",
+              "Kan gi verdi, men ikke alltid billigere"
+            ],
+            [
+              "Typisk kompromiss",
+              "Pris og urbanisasjonspreg",
+              "Avstander og serviceadkomst"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Sjekkliste på visning: spørsmål du bør stille",
+        "bullets": [
+          "Hva er nøyaktig adresse og reell kjøre-/gangavstand?",
+          "Er hav-/fjellutsikten beskyttet mot nybygg foran?",
+          "Hva inngår i prisen av hvitevarer, basseng og tilvalg?",
+          "Hvilken solretning har terrassen i vintermånedene?",
+          "Hvor ligger trafikk, tekniske anlegg og støykilder?",
+          "Hva forventes i felleskostnader, IBI og vedlikehold?",
+          "Finnes skole, helsetjeneste, butikk og transport nær nok?",
+          "Hva kan forhandles inn i kontrakten uten å øke risikoen?"
+        ]
+      },
+      {
+        "heading": "Freddys råd: velg livsstil først, forhandle leveranse etterpå",
+        "body": [
+          "Jeg ville ikke valgt kommune ut fra lavest annonsert kvadratmeterpris. Finn først riktig livsstil, mikroområde og boligtype. Deretter bør en kjøperrådgiver sammenligne ferdig leveranse, avklare ulempene og forsøke å forhandle frem best mulig samlet avtale.",
+          "En god handel er ikke den laveste prisetiketten. Det er boligen du kan bruke, drifte og trives i uten overraskelser."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Se konkrete boliger i både Finestrat og Polop med samme totalbudsjett.",
+      "Test beliggenhet, solretning og reell transport.",
+      "Få leveransebeskrivelse, tilvalgsliste og årsbudsjett skriftlig.",
+      "Vurder vedlikehold og helårsbehov før reservasjon."
+    ],
+    "faq": [
+      {
+        "question": "Er bolig i Polop billigere enn Finestrat?",
+        "answer": "Det kan være forskjeller, men de varierer sterkt med boligtype, mikroområde og leveranse. Sammenlign konkrete boliger, ikke bare kommunenavn."
+      },
+      {
+        "question": "Er Finestrat nærmere Benidorm enn Polop?",
+        "answer": "Mange nyere Finestrat-områder ligger praktisk til for Benidorm, men faktisk reisetid må beregnes fra boligadressen."
+      },
+      {
+        "question": "Trenger jeg bil i Finestrat eller Polop?",
+        "answer": "I mange nyere urbanisasjoner er bil praktisk eller nødvendig. Sjekk gangavstand og kollektivtilbud for den aktuelle adressen."
+      },
+      {
+        "question": "Kan jeg forhandle tilvalg i nybygg?",
+        "answer": "Det er mulig å spørre om utstyr og endringer, men tilgjengelighet og vilkår bestemmes av utbygger, kontrakt og byggefase."
+      }
+    ],
+    "cta": {
+      "label": "Se boliger og områder på Costa Blanca Nord",
+      "href": "/omrader/costa-blanca-nord"
+    }
+  },
+
+{
     "slug": "albir-eller-villajoyosa-hvor-bo",
     "title": "Albir eller Villajoyosa – hvor vil du trives best?",
     "excerpt": "To populære steder på Costa Blanca Nord, men med svært ulik atmosfære. Vi sammenligner strand, hverdagsliv, norsk miljø, boligtyper og praktiske kompromisser.",
