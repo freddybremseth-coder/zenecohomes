@@ -17,6 +17,253 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "fast-bosetting-eller-feriebolig-spania",
+    "title": "Fast bosetting eller feriebolig i Spania – slik velger du riktig bolig",
+    "excerpt": "En bolig som fungerer i ferien er ikke nødvendigvis riktig å bo i året rundt. Sammenlign beliggenhet, inneklima, helsetjenester, transport, skatter og vedlikehold.",
+    "category": "Boligvalg",
+    "date": "2026-10-20",
+    "updated": "2026-10-20",
+    "readingTime": "18 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Kystby og boligområder på Costa Blanca",
+    "seoTitle": "Fast bosetting eller feriebolig i Spania? Boligguide",
+    "seoDescription": "Skal du bo fast eller kjøpe feriebolig på Costa Blanca? Sammenlign beliggenhet, inneklima, drift, transport, skatter, helsetjenester og boligstandard.",
+    "keywords": [
+      "fast bosetting Spania bolig",
+      "feriebolig eller helårsbolig Costa Blanca",
+      "flytte til Spania bolig",
+      "bo permanent Costa Blanca",
+      "vinterkomfort bolig Spania"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "En terrasse med utsikt og et basseng kan være perfekt i ferien. Men når boligen blir hjemmet ditt, endrer prioriteringene seg: inneklima i januar, plass til arbeid og oppbevaring, helsetjenester, transport og et nabolag som fungerer hele året.",
+      "Mange kjøpere spør først hvor mye bolig de får for pengene. Jeg vil heller starte med hvordan boligen skal brukes: noen uker i året, flere måneder av gangen eller som fast hjem. Det avgjør hvilken beliggenhet, boligtype og standard du bør prioritere.",
+      "Denne guiden handler om boligvalget og hverdagen. Den erstatter ikke individuelle råd om skatt, registrering, trygd eller helse, som må avklares med relevante myndigheter og fagpersoner."
+    ],
+    "sections": [
+      {
+        "heading": "Kort svar: er en god feriebolig også en god helårsbolig?",
+        "body": [
+          "Ikke nødvendigvis. En feriebolig kan med fordel være lett å låse, ha en solrik terrasse og ligge nær strand og restauranter. Et hjem for hele året trenger i tillegg god vinterkomfort, oppvarming, oppbevaring, stabile tjenester, hverdagslogistikk og rom for arbeid, familie eller hobbyer.",
+          "Det finnes boliger som fungerer godt til begge formål. Men det er viktig å sjekke hva du må kompromisse på og ikke la et perfekt sommerinntrykk styre hele kjøpet."
+        ]
+      },
+      {
+        "heading": "Tre bruksmønstre – tre ulike krav",
+        "table": {
+          "headers": [
+            "Bruk",
+            "Prioriter først",
+            "Typiske fallgruver"
+          ],
+          "rows": [
+            [
+              "Ferieuker og helgeturer",
+              "Enkel drift, beliggenhet, sol, kort vei til aktiviteter",
+              "Tom bolig, vedlikehold, transport fra flyplass"
+            ],
+            [
+              "Lange vinteropphold",
+              "Vintersol, isolasjon, varme og helårstilbud",
+              "Kald bolig, stengte tilbud, skygge"
+            ],
+            [
+              "Fast bosetting",
+              "Boligstandard, skole/helse, transport, plass og økonomi",
+              "Feil skolesone, bilavhengighet, manglende oppbevaring"
+            ]
+          ]
+        },
+        "body": [
+          "Valgene henger sammen. En familie som flytter fast til Spania har andre behov enn et par som reiser ned seks uker hver vinter eller en investor som bruker boligen sporadisk."
+        ]
+      },
+      {
+        "heading": "Beliggenhet: kort vei til strand eller kort vei til livet?",
+        "body": [
+          "Ved korte ferieopphold kan strand, promenade og restauranter være avgjørende. Ved fast bosetting blir ofte tilgang til dagligvare, apotek, helsesenter, skoler, arbeidsplass og faste aktiviteter mer viktig.",
+          "Albir, Benidorm, Villajoyosa og nedre Altea kan gi en praktisk hverdag fra riktig sentrumsadresse. Villaer i Sierra Cortina, Polop Hills og Altea Hills kan gi mer privatliv og utsikt, men ofte også større bilbehov. Ikke sammenlign bare bynavn: test faktisk adresse, trafikk og bakker."
+        ]
+      },
+      {
+        "heading": "Inneklima: den skjulte forskjellen mellom sommer og vinter",
+        "body": [
+          "En bolig med store vindusflater og flisgulv kan virke luftig og behagelig i august, men kjølig i januar dersom isolasjon, vinduer og oppvarming er svake. Spør hvordan hele boligen varmes opp, også bad og soverom.",
+          "Se etter energimerking, vindustype, ventilasjon, varmepumpe, mulige fuktproblemer og boligens faktiske strømforbruk. Vurder en faglig gjennomgang ved eldre boliger; bilder og annonser gir ikke svar på bygningens klimaskall.",
+          "Les gjerne også vår separate artikkel om livet på Costa Blanca om vinteren. Den går dypere inn i klima og sesongrytme."
+        ]
+      },
+      {
+        "heading": "Sol på terrassen: test den sesongen du skal bruke den",
+        "body": [
+          "En sør- eller sørvestvendt terrasse kan gi attraktive vinterdager, men være varm i sommersolen. En skyggefull terrasse kan fungere godt i juli, men mindre godt til vinterkaffen. Høye nabobygg og fjellsider kan skygge for solen.",
+          "Be om himmelretning, skyggeforhold og muligheten for solskjerming. En ekstra befaring i sesongen der du vil tilbringe mest tid kan avdekke mer enn en katalog med solfylte bilder."
+        ]
+      },
+      {
+        "heading": "Oppbevaring, lyd og rom: det du merker først når du flytter inn",
+        "body": [
+          "Ved feriebruk klarer man seg gjerne med en koffert og et ekstra skap. Fast bosetting krever ofte plass til yttertøy, dokumenter, hobbyer, sykler, hjemmekontor og besøk. Et ekstra soverom betyr ikke nødvendigvis god planløsning.",
+          "Test lydisolering mellom rom, arbeidsplass, lysforhold, lagringsplass og om boligen har bod eller brukbar garasje. Undersøk internettdekningen på adressen – særlig ved fjernarbeid."
+        ]
+      },
+      {
+        "heading": "Leilighet eller villa: hvem tar ansvar mens du er borte?",
+        "body": [
+          "Leilighet kan gi heis, felles basseng og organisert vedlikehold, men også comunidad-kostnader og fellesregler. En villa gir mer kontroll og privatliv, men kan kreve egen oppfølging av basseng, hage, alarm, fasade og tekniske anlegg.",
+          "Hvis du bor i Norge mesteparten av året, bør nøkkeloppbevaring, tilsyn etter uvær og praktisk tilrettelegging for ankomst være del av regnestykket. Skal du bo fast, blir særlig vedlikeholdsansvaret og daglig tilgjengelighet viktig.",
+          "Ikke glem at sameiefelleskostnader varierer med tjenestetilbud, heiser, fellesareal og vedlikeholdsplan."
+        ]
+      },
+      {
+        "heading": "Helse, skole og transport må komme før reservasjonen",
+        "body": [
+          "Ved fast bosetting bør du kartlegge helsetjenester, medisiner, nærmeste relevante behandlingstilbud og hvordan helseforsikring eller offentlig dekning er organisert i din situasjon. Et europeisk helsetrygdkort er ikke en generell erstatning for en korrekt ordning ved fast flytting.",
+          "For familier bør opptak ved skole eller barnehage, språk og reell skolevei undersøkes før valg av bolig. For eldre eller personer med bevegelsesutfordringer kan heis, fortau og bakker være avgjørende.",
+          "En adresse som virker nær et sykehus eller en skole på kartet, kan kreve bil og være vanskelig å nå uten. Test turene på en vanlig hverdag."
+        ]
+      },
+      {
+        "heading": "Fast flytting til Spania: oppholdsregistrering er ikke det samme som skatt",
+        "body": [
+          "Norske borgere omfattes av EØS-reglene. Ved planlagt opphold i Spania over tre måneder kreves normalt registrering som EØS-borger etter spanske regler, med nærmere vilkår og dokumentasjon. Se informasjon hos Policía Nacional: https://sede.policia.gob.es/portalCiudadano/_es/tramites_extranjeria_tramite_certificadoregistro_ciudadanoue.php .",
+          "Skattemessig bosted er en separat vurdering. Spanske skattemyndigheter viser blant annet til opphold på mer enn 183 dager i kalenderåret og hvor hovedtyngden av økonomiske interesser er. Familieforhold og skatteavtale kan også påvirke vurderingen. Det er derfor feil å behandle 183 dager som en enkel og universell sjekkliste for alle: https://sede.agenciatributaria.gob.es/Sede/no-residentes/residencia-personas-fisicas-juridicas/persona-fisica-residente-espana.html .",
+          "Snakk med rådgivere som kan Norge–Spania før flytting, særlig hvis du beholder bolig, arbeid, selskap eller pensjonsinntekt i Norge. Zen Eco Homes kan hjelpe med boligspørsmål, men erstatter ikke skatte- eller juridisk rådgivning."
+        ]
+      },
+      {
+        "heading": "Helserettigheter: avklar hvilket land som har ansvaret",
+        "body": [
+          "Helseordningen ved flytting avhenger blant annet av om du arbeider, er pensjonist, har trygdeytelser eller er familiemedlem. I noen tilfeller er S1-dokumentasjon relevant for tilgang til helsetjenester i bostedslandet. Andre må dokumentere forsikring eller rettigheter på annen måte.",
+          "Undersøk saken før du flytter og før du velger avstand til nødvendig behandling. EU-kommisjonens oversikt forklarer at ansvar for helsedekning avhenger av situasjon og bosted, ikke bare statsborgerskap: https://europa.eu/youreurope/citizens/health/when-living-abroad/health-insurance-cover/index_en.htm ."
+        ]
+      },
+      {
+        "heading": "Hva koster boligen å eie gjennom hele året?",
+        "body": [
+          "Se forbi kjøpesummen. Lag realistisk budsjett for strøm til kjøling og oppvarming, vann, internett, forsikring, kommunale avgifter som IBI, vedlikehold, sameieutgifter og eventuelt bil. Skatt ved kjøpet og dokumentkostnader må beregnes separat etter boligtype og gjeldende lokale regler.",
+          "Ved feriebruk kommer gjerne fly, transport, nøkkeltjenester, rengjøring og tilsyn. Ved fast bosetting vil daglige levekostnader, helseordning, skole og eventuelle internasjonale inntekts- og skatteforhold kreve oppmerksomhet. Bruk konkrete tilbud og skriftlige estimater, ikke et standardbeløp som skal passe alle."
+        ]
+      },
+      {
+        "heading": "Utleie av ferieboligen: ikke bygg budsjettet på uavklart inntekt",
+        "body": [
+          "Hvis du vurderer å leie ut boligen når du er i Norge, må du undersøke aktuelle regler og tillatelser før kjøp. Turistutleie i Valencia-regionen kan påvirkes av kommunale regler, boligtypen, sameievedtekter og eksisterende registreringer.",
+          "Ikke regn med at en annonsert «mulighet for turistutleie» gir deg lovlig utleierett eller garantert avkastning. Vurder også slitasje, administrasjon og at tilgjengelige ferieuker kan bli færre."
+        ]
+      },
+      {
+        "heading": "En praktisk sammenligning: hva prioriterer du?",
+        "table": {
+          "headers": [
+            "Spørsmål",
+            "Kortere ferieopphold",
+            "Fast bosetting"
+          ],
+          "rows": [
+            [
+              "Butikker og transport",
+              "Praktisk ved ankomst",
+              "Helt sentralt i hverdagen"
+            ],
+            [
+              "Oppvarming og isolasjon",
+              "Viktig ved vinterbruk",
+              "Bør undersøkes svært nøye"
+            ],
+            [
+              "Bod og oppbevaring",
+              "Kan klare seg med mindre",
+              "Ofte viktig"
+            ],
+            [
+              "Skoler og helsetjenester",
+              "Avhenger av bruk",
+              "Må kartlegges tidlig"
+            ],
+            [
+              "Tilsyn når tomt",
+              "Viktig",
+              "Mindre aktuelt hvis alltid hjemme"
+            ],
+            [
+              "Internett og arbeidsrom",
+              "Viktig ved fjernarbeid",
+              "Kan være avgjørende"
+            ],
+            [
+              "Utleiemulighet",
+              "Mulig tilleggsformål",
+              "Sjelden hovedkriterium for hjemmet"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Visningslisten: 12 spørsmål som gir bedre beslutninger",
+        "bullets": [
+          "Skal boligen brukes i korte ferier, lange opphold eller året rundt?",
+          "Er butikken og apoteket praktisk tilgjengelige uten bil?",
+          "Hvordan fungerer oppvarming, ventilasjon og vintertemperatur inne?",
+          "Har terrassen sol når vi faktisk vil bruke den?",
+          "Hva skjer med nabolaget i november og januar?",
+          "Er lyd, internett, bod og planløsning gode nok for vanlig hverdagsliv?",
+          "Hvordan er transport til helse, skole og fritidsaktiviteter?",
+          "Hvem passer på boligen når den står tom?",
+          "Hva er forventede årlige driftskostnader og fellesutgifter?",
+          "Er turistutleie lovlig hvis vi ønsker det?",
+          "Er oppholdsregistrering, helsedekning og skatteforhold vurdert?",
+          "Kan vi se boligen både på en vanlig hverdag og på andre tider av døgnet?"
+        ]
+      },
+      {
+        "heading": "Freddys råd: kjøp til livet du skal leve, ikke til ferieuken du nettopp hadde",
+        "body": [
+          "En god kjøperrådgiver bør først avklare hvem som skal bruke boligen og hvordan. Deretter kan vi vurdere riktig mikroområde, type bolig, drift, vinterkomfort, pris og hva som krever særskilt faglig kontroll.",
+          "Zen Eco Homes hjelper deg med boligvalg, lokalkunnskap, sammenligning av alternativer og en ryddig kjøpsprosess. Vi anbefaler samtidig at skatte-, trygde- og oppholdsspørsmål blir avklart med riktige myndigheter eller rådgivere før en permanent flytting."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Bestem om boligen primært skal være feriebolig, vinterbase eller fast hjem.",
+      "Test en vanlig hverdag på tre konkrete adresser, ikke bare områdene generelt.",
+      "Få dokumentasjon på energi, oppvarming, fellesutgifter og vedlikehold.",
+      "Avklar skole, helse, oppholdsregistrering og skatteforhold ved planlagt flytting.",
+      "Be om en uavhengig gjennomgang før reservasjon og kontrakt."
+    ],
+    "faq": [
+      {
+        "question": "Kan jeg kjøpe feriebolig i Spania og senere bo der fast?",
+        "answer": "Det kan være mulig, men boligens lovlige bruksstatus, praktiske egnethet og dine egne registrerings-, helse- og skatteforhold må undersøkes før permanent flytting."
+      },
+      {
+        "question": "Må jeg registrere meg hvis jeg flytter fast til Spania?",
+        "answer": "Som norsk/EØS-borger skal du normalt registrere deg ved opphold over tre måneder, under gjeldende vilkår. Dette er ikke det samme som skattemessig bosted."
+      },
+      {
+        "question": "Blir jeg automatisk skattepliktig i Spania etter 183 dager?",
+        "answer": "Opphold over 183 dager i kalenderåret er et viktig kriterium, men økonomiske interesser, familieforhold og skatteavtale kan også spille inn. Få individuell vurdering."
+      },
+      {
+        "question": "Er det best å kjøpe nybygg hvis jeg skal bo fast?",
+        "answer": "Ikke nødvendigvis. Godt vedlikeholdt bruktbolig kan fungere utmerket, mens nybygg kan ha moderne standard men feil beliggenhet for din hverdag. Vurder faktiske kvaliteter."
+      },
+      {
+        "question": "Kan jeg bruke europeisk helsetrygdkort når jeg flytter?",
+        "answer": "Europeisk helsetrygdkort dekker ikke automatisk alle behov ved fast bosetting. Avklar hvilken helseordning som gjelder for deg og om S1 eller annen dokumentasjon trengs."
+      }
+    ],
+    "cta": {
+      "label": "Få hjelp til å finne riktig bolig på Costa Blanca",
+      "href": "/kontakt"
+    }
+  },
+
+{
     "slug": "costa-blanca-barnefamilier-skole-hverdag",
     "title": "Costa Blanca for barnefamilier – skoler, barnehager og livet året rundt",
     "excerpt": "Hvor bør barnefamilier bo på Costa Blanca? En grundig kjøperguide om spansk, norsk og internasjonal skole, barnehage, bosted, transport, fritid og dagligliv.",
