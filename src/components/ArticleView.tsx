@@ -951,7 +951,7 @@ function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
 function resolveRelatedArticles(article: Article, silo: ReturnType<typeof articleSilo>) {
   const curatedSlugs = silo === "guide"
     ? RELATED_GUIDE_SLUGS[article.slug] || []
-    : silo === "magasin"
+    : silo === undefined
       ? RELATED_MAGAZINE_SLUGS[article.slug] || []
       : [];
   const curated = curatedSlugs
