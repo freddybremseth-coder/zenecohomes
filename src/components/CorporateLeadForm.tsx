@@ -17,11 +17,16 @@ type StayContext = {
 
 type CalculatorContext = {
   propertyPrice?: number;
+  totalBudget?: number;
+  propertyType?: string;
+  assumptions?: string;
   users?: number;
   employeeWeeks?: number;
   businessStayCount?: number;
   participantNights?: number;
   annualOperating?: number;
+  acquisitionCost?: number;
+  annualCapitalCost?: number;
   acquisitionPct?: number;
   capitalPct?: number;
   valuePct?: number;
@@ -84,14 +89,20 @@ export function CorporateLeadForm() {
       ? [
           "",
           "Beslutningsgrunnlag fra kalkulator:",
-          `Kjøpesum: ${calculatorContext.propertyPrice ? euro.format(calculatorContext.propertyPrice) : "-"}`,
+          `Kjøpesum: ${calculatorContext.propertyPrice != null ? euro.format(calculatorContext.propertyPrice) : "-"}`,
+          `Totalbudsjett: ${calculatorContext.totalBudget != null ? euro.format(calculatorContext.totalBudget) : "-"}`,
+          `Boligtype: ${calculatorContext.propertyType === "new" ? "Nybygg" : "Bruktbolig"}`,
+          `Kjøpsomkostninger: ${calculatorContext.acquisitionCost != null ? euro.format(calculatorContext.acquisitionCost) : "-"}`,
+          `Årlig drift: ${calculatorContext.annualOperating != null ? euro.format(calculatorContext.annualOperating) : "-"}`,
+          `Årlig kapitalkostnad: ${calculatorContext.annualCapitalCost != null ? euro.format(calculatorContext.annualCapitalCost) : "-"}`,
           `Ansatte/medlemmer med tilgang: ${calculatorContext.users ?? "-"}`,
           `Ferie-/medlemsbruk: ${calculatorContext.employeeWeeks ?? "-"} uker per år`,
           `Bedriftsopphold: ${calculatorContext.businessStayCount ?? "-"} per år / ${calculatorContext.participantNights ?? "-"} personnetter`,
-          `Årlig kostnad før verdiendring: ${calculatorContext.annualCostBeforeValue ? euro.format(calculatorContext.annualCostBeforeValue) : "-"}`,
-          `Alternativ hotellkostnad for bedriftsopphold: ${calculatorContext.hotelAlternativeAnnual ? euro.format(calculatorContext.hotelAlternativeAnnual) : "-"}`,
+          `Årlig kostnad før verdiendring: ${calculatorContext.annualCostBeforeValue != null ? euro.format(calculatorContext.annualCostBeforeValue) : "-"}`,
+          `Alternativ hotellkostnad for bedriftsopphold: ${calculatorContext.hotelAlternativeAnnual != null ? euro.format(calculatorContext.hotelAlternativeAnnual) : "Ikke valgt"}`,
           ...stayLines,
           `Verdiscenario: ${calculatorContext.valuePct ?? "-"} % i ${calculatorContext.holdingYears ?? "-"} år`,
+          `Forutsetninger: ${calculatorContext.assumptions ?? "Veiledende estimat"}`,
         ]
       : [];
 
