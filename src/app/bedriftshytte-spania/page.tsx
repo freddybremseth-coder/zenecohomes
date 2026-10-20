@@ -9,8 +9,8 @@ import { CARE_URL } from "@/lib/i18n";
 import { corporateArticles } from "@/lib/corporate-content";
 
 export const metadata: Metadata = {
-  title: "Bedriftshytte i Spania for norske virksomheter | Zen Eco Homes",
-  description: "Vurder bedriftshytte i Spania for ansatte eller medlemmer. Se ulike modeller, kjøpskostnader, skatt, lokal drift og beregn budsjettet.",
+  title: "Bedriftshytte i Spania for bedrifter | Zen Eco Homes",
+  description: "Utforsk bedriftshytte i Spania for ansatte og medlemmer. Se eiermodeller, kjøpskostnader, skatt og drift, og beregn et veiledende totalbudsjett.",
   alternates: {canonical:"/bedriftshytte-spania"},
 };
 const benefits = [
