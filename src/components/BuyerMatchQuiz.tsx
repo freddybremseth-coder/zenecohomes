@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Send } from "lucide-react";
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 
 type Answers = Record<string, string>;
 
@@ -137,7 +138,9 @@ export function BuyerMatchQuiz() {
       }),
     });
 
-    if (res.ok) {
+    const result = res.ok ? await res.json().catch(() => null) : null;
+    if (res.ok && result?.accepted === true && result?.submission_id) {
+      trackConfirmedFormSubmission("boligmatch", result.submission_id);
       window.location.assign(filteredHref);
     } else {
       setStatus("error");
