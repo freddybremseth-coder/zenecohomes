@@ -2,6 +2,7 @@
 
 import { FormEvent, useRef, useState } from "react";
 import { Send } from "lucide-react";
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 
 type Props = {
   propertyRef?: string;
@@ -39,7 +40,9 @@ export function SpanishContactForm({
           form_started_at: startedAtRef.current,
         }),
       });
-      if (!response.ok) throw new Error("request failed");
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.accepted !== true || !result?.submission_id) throw new Error("request failed");
+      trackConfirmedFormSubmission(requestType, result.submission_id);
       setStatus("sent");
       form.reset();
       startedAtRef.current = Date.now();
