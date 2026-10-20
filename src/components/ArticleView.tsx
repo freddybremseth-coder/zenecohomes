@@ -105,6 +105,19 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   ],
 };
 
+const RELATED_MAGAZINE_SLUGS: Record<string, string[]> = {
+  "finestrat-eller-polop-bolig-livsstil": ["bo-costa-blanca-uten-bil-beste-omrader", "havutsikt-eller-gangavstand-costa-blanca", "costa-blanca-barnefamilier-skole-hverdag"],
+  "bo-costa-blanca-uten-bil-beste-omrader": ["havutsikt-eller-gangavstand-costa-blanca", "finestrat-eller-polop-bolig-livsstil", "costa-blanca-barnefamilier-skole-hverdag"],
+  "havutsikt-eller-gangavstand-costa-blanca": ["bo-costa-blanca-uten-bil-beste-omrader", "finestrat-eller-polop-bolig-livsstil", "fast-bosetting-eller-feriebolig-spania"],
+  "costa-blanca-barnefamilier-skole-hverdag": ["bo-costa-blanca-uten-bil-beste-omrader", "fast-bosetting-eller-feriebolig-spania", "finestrat-eller-polop-bolig-livsstil"],
+  "fast-bosetting-eller-feriebolig-spania": ["costa-blanca-barnefamilier-skole-hverdag", "bo-costa-blanca-uten-bil-beste-omrader", "hva-koster-feriebolig-spania-i-aret"],
+  "nybygg-under-oppforing-eller-innflyttingsklar-spania": ["hva-inngar-i-prisen-nybygg-spania", "feil-mangler-nybygg-spania-reklamasjon", "etter-boligkjop-spania-skjote-strom-vann-avgifter"],
+  "hva-inngar-i-prisen-nybygg-spania": ["nybygg-under-oppforing-eller-innflyttingsklar-spania", "feil-mangler-nybygg-spania-reklamasjon", "hva-koster-feriebolig-spania-i-aret"],
+  "feil-mangler-nybygg-spania-reklamasjon": ["nybygg-under-oppforing-eller-innflyttingsklar-spania", "etter-boligkjop-spania-skjote-strom-vann-avgifter", "hva-inngar-i-prisen-nybygg-spania"],
+  "etter-boligkjop-spania-skjote-strom-vann-avgifter": ["feil-mangler-nybygg-spania-reklamasjon", "hva-koster-feriebolig-spania-i-aret", "fast-bosetting-eller-feriebolig-spania"],
+  "hva-koster-feriebolig-spania-i-aret": ["etter-boligkjop-spania-skjote-strom-vann-avgifter", "fast-bosetting-eller-feriebolig-spania", "hva-inngar-i-prisen-nybygg-spania"],
+};
+
 type ContextualLink = { label: string; href: string };
 type ContextualLinkRule = { headingIncludes: string; links: ContextualLink[] };
 
@@ -936,7 +949,11 @@ function contextualLinksFor(slug: string, heading: string): ContextualLink[] {
 }
 
 function resolveRelatedArticles(article: Article, silo: ReturnType<typeof articleSilo>) {
-  const curatedSlugs = silo === "guide" ? RELATED_GUIDE_SLUGS[article.slug] || [] : [];
+  const curatedSlugs = silo === "guide"
+    ? RELATED_GUIDE_SLUGS[article.slug] || []
+    : silo === "magasin"
+      ? RELATED_MAGAZINE_SLUGS[article.slug] || []
+      : [];
   const curated = curatedSlugs
     .map((slug) => allArticles.find((item) => item.slug === slug))
     .filter((item): item is Article => item !== undefined && !RETIRED_ARTICLE_SLUGS.has(item.slug));
