@@ -83,7 +83,7 @@ export function CorporateHomeCalculator(){
     {numberField("Årlige driftskostnader",annualOperating,setAnnualOperating,"€")}
     {numberField("Alternativ kapitalkostnad per år",capitalPct,v=>setCapitalPct(Math.min(25,v)),"%")}
     {numberField("Eiertid",holdingYears,v=>setHoldingYears(Math.max(1,Math.min(30,Math.round(v)))),"år")}
-    <label><span>Scenario for årlig verdiendring</span><select value={valuePct} onChange={e=>setValuePct(Number(e.target.value))}><option value={0}>0 % (nøytralt)</option><option value={2}>2 %</option><option value={3}>3 %</option><option value={5}>5 %</option><option value={-2}>-2 % (prisfall)</option></select></label>
+    <label><span>Scenario for årlig verdiendring</span><select value={valuePct} onChange={e=>setValuePct(Number(e.target.value))}><option value={0}>0 % (nøytralt)</option><option value={2}>2 %</option><option value={3}>3 %</option><option value={5}>5 %</option></select></label>
     <small>Bruktbolig bruker 12 % kjøpskostnader som illustrasjon; nybygg 13 %. Begge må kontrolleres individuelt. Finansiering/lånerenter er ikke beregnet separat: kapitalkostnaden representerer en alternativkostnad, og avdrag er ikke en kostnad i denne modellen.</small>
    </div>}
    <button type="button" className="corporate-calculator-cta" onClick={()=>setPage(2)}>Vis resultatet <ArrowRight size={17}/></button>
