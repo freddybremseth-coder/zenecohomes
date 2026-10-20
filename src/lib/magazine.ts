@@ -4054,9 +4054,9 @@ export const extraArticles: Article[] = [
     excerpt:
       "Det finnes ikke én riktig årspris for å eie bolig i Spania. Men du kan få et svært godt svar før du kjøper hvis du ber om de riktige tallene.",
     date: "2026-09-29",
-    updated: "2026-10-19",
+    updated: "2026-10-20",
     category: "Eierøkonomi",
-    readingTime: "11 min lesing",
+    readingTime: "17 min lesing",
     image: "/assets/magasin-covers/kostnader-eie.svg",
     imageAlt: "Årsbudsjett og løpende kostnader for feriebolig i Spania",
     seoTitle: "Hva koster det å eie feriebolig i Spania hvert år?",
@@ -4176,6 +4176,103 @@ export const extraArticles: Article[] = [
         ],
       },
     ],
+      {
+        heading: "En leilighet, et rekkehus og en villa må budsjetteres forskjellig",
+        body: [
+          "Den samme kjøpesummen kan gi tre helt forskjellige årsbudsjetter. En leilighet i et sameie kan ha betydelige felleskostnader, men ofte mindre direkte ansvar for tak, fasade og fellesbasseng. Et rekkehus kan kombinere egne tekniske installasjoner og hage med fellesutgifter til veier, grøntområder eller basseng. En frittliggende villa har gjerne flere poster du må håndtere selv.",
+          "Det er ikke riktig å rangere boligtypene etter en universell årspris. To leiligheter i ulike sameier kan koste mer forskjellig enn en leilighet og en villa. Undersøk eierskap, vedtekter og hva som er felleseid i hvert enkelt prosjekt."
+        ],
+        table: {
+          headers: ["Post", "Leilighet", "Rekkehus", "Frittliggende villa"],
+          rows: [
+            ["Comunidad", "Ofte viktig budsjettpost", "Avhenger av fellesanlegg", "Kan være lav eller mangle"],
+            ["Fasade / tak", "Ofte via fellesskapet", "Delvis eget eller felles ansvar", "Normalt eierens ansvar"],
+            ["Basseng", "Felles drift kan inngå", "Felles eller privat", "Privat drift ved eget basseng"],
+            ["Hage", "Ofte felles eller begrenset", "Egen og/eller felles", "Egen drift og vedlikehold"],
+            ["Tilsyn ved fravær", "Relevant", "Relevant", "Særlig viktig for installasjoner og uteareal"]
+          ]
+        }
+      },
+      {
+        heading: "Rekkehus er ikke automatisk et rimelig mellomvalg",
+        body: [
+          "Se etter hvem som har vedlikeholdsansvaret for takterrasse, vannisolasjon, fasade, gjerder, private terrasser, garasje og beplantning. Noen rekkehus inngår i omfattende fellesskap med basseng og vakthold, mens andre har få fellesfunksjoner.",
+          "En takterrasse gir god uteplass, men krever også kontroll av fuger, sluk, rekkverk og tetting over tid. Be om fellesvedtekter, godkjent budsjett og dokumentasjon på større arbeider, akkurat som ved kjøp av leilighet."
+        ]
+      },
+      {
+        heading: "Villa med basseng: driften stopper ikke når du reiser hjem",
+        body: [
+          "Et privat basseng innebærer gjerne løpende vannbehandling, rensing, kontroll av pumper og filtre samt vedlikehold av fliser, fuger og eventuelle varmesystemer. Kostnaden varierer med størrelse, dekning, sesong og om arbeidet gjøres av eieren eller en tjenesteleverandør.",
+          "Hage, palmer, vanningsanlegg, utvendig maling, port og alarmsystem kommer i tillegg. I åssideområder kan det også være støttemurer, terrasser og større utearealer som krever tilsyn. Be om tilbud på både ordinær drift og forventet utskifting av teknisk utstyr.",
+          "En villa uten comunidad er altså ikke en villa uten faste og langsiktige utgifter. Forskjellen er ofte at du betaler direkte i stedet for gjennom et fellesbudsjett."
+        ]
+      },
+      {
+        heading: "Tre budsjetter: faste utgifter, variabel bruk og større utbedringer",
+        body: [
+          "Del økonomien i tre deler. Først kommer fakturaer som normalt løper selv om boligen står tom: IBI, comunidad, forsikring, abonnementsavgifter og relevante skatter. Deretter kommer kostnader som endres med bruk: strøm, vann, rengjøring, transport og eventuelt ekstra tilsyn.",
+          "Den tredje delen er en reserve for større arbeider: utskifting av klimaanlegg, maling, tetting, hvitevarer, bassengpumpe eller ekstraordinær sameieinnbetaling. En slik reserve er ikke en faktura du nødvendigvis mottar i år, men penger du bør planlegge å ha tilgjengelig.",
+          "Skill dessuten mellom kostnader du må betale og et beløp du setter av til fremtidig risiko. Da blir det enklere å forstå hvorfor bankkontoen må tåle større utgifter noen år."
+        ],
+        table: {
+          headers: ["Kostnadstype", "Eksempler", "Slik kontrollerer du"],
+          rows: [
+            ["Faste / periodiske", "IBI, comunidad, forsikring, faste strøm- og vannledd", "Siste regninger og vedtak"],
+            ["Bruksavhengige", "Strøm til kjøling, vann, rengjøring", "Historiske fakturaer og eget bruksmønster"],
+            ["Uregelmessige", "Klimaanlegg, tak, fasade, derramas", "Tilstand, vedlikeholdsplan og reserve"]
+          ]
+        }
+      },
+      {
+        heading: "Hva du bør spørre om i sameiets regnskap",
+        body: [
+          "Spør ikke bare hva felleskostnaden er i måneden. Be om siste godkjente regnskap, inneværende budsjett, opplysninger om gjeld, utestående innbetalinger og vedtatte eller diskuterte større arbeider. Har sameiet reservefond, og er dette tilstrekkelig i forhold til vedlikeholdsbehovene?",
+          "Undersøk om felles strøm, heiser, svømmebasseng, hageanlegg og vakthold faktisk er inkludert. I store resortanlegg kan flere av disse postene være betydelige, mens mindre sameier kan ha lavere drift, men høyere vedlikeholdsrisiko hvis økonomien er svak.",
+          "For nybygg uten driftshistorikk: be om skriftlig anslag, hvilke poster det omfatter og hvem som betaler frem til sameiet er etablert. Et estimat er ikke en garantert fremtidig felleskostnad."
+        ]
+      },
+      {
+        heading: "Slik leser du strøm- og vannregningen i stedet for å gjette",
+        body: [
+          "Be om flere strømfakturaer fra ulike sesonger hvis selger kan dele dem. Se etter både energi brukt, avtalt effekt, faste ledd, skatter og andre avtalevilkår. En bolig brukt bare om sommeren vil ikke nødvendigvis gi et realistisk bilde av kostnadene ved oppvarming i januar.",
+          "Sjekk varmtvann, aircondition, bassengoppvarming og eventuell lading av elbil. Sammenlign kilowattimer og bruk, ikke bare eurobeløpet på én regning. For vann må du skille mellom vanlig husholdning, fylling av basseng og vanning av hage.",
+          "Ved kjøp av nybygg må du basere deg på teknisk standard og realistiske bruksforutsetninger snarere enn historiske fakturaer som ikke finnes ennå."
+        ]
+      },
+      {
+        heading: "Ikke-resident skatt, IBI og norske skatter er forskjellige ting",
+        body: [
+          "IBI er en lokal eiendomsskatt til kommunen. For enkelte ikke-residente eiere kommer dessuten spansk skatt på beregnet eiendomsinntekt når boligen er disponibel til eget bruk, ofte rapportert via Modelo 210. Dette gjelder ikke på samme måte for alle eierforhold, og utleie krever separat vurdering.",
+          "Norske skattemessige konsekvenser er et tredje spørsmål og kan blant annet avhenge av skattemessig bosted, formue og leieinntekter. En bolig som ikke leies ut, kan dermed fortsatt innebære mer enn én skatte- og rapporteringsoppgave.",
+          "La en skatterådgiver eller gestor beregne din konkrete situasjon. Ikke bruk en fast prosentsats av kjøpesummen som om det var det offisielle regnestykket."
+        ]
+      },
+      {
+        heading: "Slik sammenligner du to eiendommer på samme budsjett",
+        body: [
+          "Be om faktiske årsbeløp for den ene boligen og skriftlige estimater for den andre. Før opp samme kostnadskategorier, noter usikkerhet og skill felleskostnader fra direkte vedlikehold. Marker poster som er ukjente i stedet for å skrive null.",
+          "Lag deretter to bruksprofiler: et begrenset ferieopphold og et lengre vinteropphold. Test hvordan energiforbruk, tilsyn, vask og reiser påvirker summen. Boligen med lavest kjøpesum er ikke nødvendigvis den med lavest totalbelastning over fem eller ti år.",
+          "Sammenlign gjerne også beliggenhet og gangavstand. Hvis én bolig krever ekstra bilhold hver gang du er i Spania, er det en del av det økonomiske og praktiske boligvalget."
+        ]
+      },
+      {
+        heading: "Hva Zen Eco Homes bør be om før kunden får en anbefaling",
+        bullets: [
+          "Siste IBI og dokumentasjon på renovasjon og andre lokale avgifter.",
+          "Comunidad: regnskap, vedtekter, budsjett og vedtatte derramas.",
+          "Strøm- og vannregninger fra ulike sesonger der historikk finnes.",
+          "Forsikringstilbud som passer faktisk bruk og lengre fravær.",
+          "Ved villa: konkrete pristilbud på basseng, hage og tilsyn.",
+          "Oversikt over utstyr som kan måtte skiftes innen få år.",
+          "Vurdering av Modelo 210 eller andre aktuelle skatter hos gestor.",
+          "En vedlikeholdsreserve, atskilt fra dokumenterte fakturaer.",
+          "Et årsbudsjett som tar høyde for antall uker boligen faktisk brukes."
+        ],
+        body: [
+          "Målet er å gi kjøperen et kontrollerbart budsjett, ikke å presentere et generelt tall som virker presist. De usikre postene skal vises tydelig, og kjøperen bør vite hvilke spørsmål som fortsatt må besvares."
+        ]
+      },
     nextSteps: [
       "Be om konkret IBI og comunidad for boligen du vurderer.",
       "Hent forsikring og eventuelle care-tjenester inn i samme regnestykke.",
