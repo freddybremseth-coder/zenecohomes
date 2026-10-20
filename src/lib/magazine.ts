@@ -17,6 +17,147 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023",
+    "title": "Jeg ba nordmenn kjøpe bolig i Spania i 2023. Mange valgte å vente.",
+    "excerpt": "Jeg jobbet i det spanske eiendomsmarkedet gjennom pandemien. Dette lærte jeg om kjøpere, valutafrykt og forskjellen mellom å følge overskrifter og å kjenne et lokalt boligmarked.",
+    "category": "Kommentar og erfaring",
+    "date": "2026-10-20",
+    "updated": "2026-10-20",
+    "readingTime": "10 min lesing",
+    "image": "/assets/magasin-covers/radgiver.svg",
+    "imageAlt": "Illustrasjon til personlig kommentar om boligmarkedet på Costa Blanca",
+    "seoTitle": "Jeg rådet nordmenn til å kjøpe bolig i Spania i 2023",
+    "seoDescription": "Freddy Bremseth forteller om eiendomsmarkedet på Costa Blanca under covid, norske kjøperes venting, eurokursen og lærdommen fra boligprisene etter 2021.",
+    "keywords": [
+      "boligkjøp Spania 2023 erfaring",
+      "boligpriser Costa Blanca covid",
+      "bør jeg vente med å kjøpe bolig i Spania",
+      "eurokurs boligkjøp Spania",
+      "Freddy Bremseth eiendomsrådgiver"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Under pandemien jobbet jeg i eiendomsbransjen i Spania. Store deler av samfunnet var satt på vent, men jeg fikk tid til å sette meg grundig inn i områder, boligprosjekter og de ulike utbyggernes planer. Den perioden lærte meg noe som fortsatt er sentralt i rådgivningen min: Boligmarkedet følger ikke nødvendigvis stemningen i norske nyhetsoverskrifter.",
+      "Da jeg kom til Norge i 2023 og begynte å holde arrangementer og seminarer om boligkjøp i Spania, var budskapet mitt ganske klart: For dem som allerede hadde bestemt seg for å kjøpe og hadde økonomien i orden, mente jeg at det var et godt tidspunkt. Det sa jeg som råd, ikke som et salgstriks.",
+      "Noen lyttet og kjøpte. Mange svarte at de ville vente til euroen ble rimeligere eller boligprisene falt. Fem år etter pandemien synes jeg erfaringen er verdt å dele – ikke for å si at jeg alltid får rett, men for å vise hvorfor gode beslutninger krever mer enn en følelse av hva som burde skje."
+    ],
+    "sections": [
+      {
+        "heading": "Jeg brukte pandemien til å bli bedre kjent med markedet",
+        "body": [
+          "Jeg besøkte områder og prosjekter, møtte aktører og forsøkte å forstå hvilke utbyggere som hadde tro på markedet over tid. Når man er tett på prosjektene, ser man forskjell på annonserte planer, faktisk fremdrift og hvilke boliger kjøperne etterspør.",
+          "Det gjorde inntrykk at flere store utbyggere holdt fast ved utviklingsplanene sine. De forventet fortsatt etterspørsel etter nye boliger, til tross for usikkerheten. Det er en observasjon fra prosjektene jeg fulgte – ikke en påstand om at byggebransjen var uberørt av pandemien.",
+          "Det var en periode med nasjonale restriksjoner og midlertidig stans i ikke-essensiell byggeaktivitet våren 2020. Poenget mitt er at jeg så aktører som fortsatte å planlegge og satse på prosjektene gjennom krisen og da aktiviteten kunne tas opp igjen. Kilde om den nasjonale stansen: https://www.europapress.es/economia/noticia-grandes-constructoras-inmobiliarias-paralizan-obras-espana-20200330190441.html ."
+        ]
+      },
+      {
+        "heading": "Norske kjøpere ventet. Andre kjøpere tok videovisningen.",
+        "body": [
+          "Jeg møtte en tydelig forskjell i hvordan kjøpere reagerte. Mange nordmenn ville avvente utviklingen og forventet at usikkerhet automatisk måtte føre til kraftige prisfall. Samtidig opplevde jeg kjøpere særlig fra Belgia, Nederland og Polen som var mer villige til å gjennomføre kjøp gjennom videovisninger og digital oppfølging.",
+          "Dette er mine erfaringer fra kundene og prosjektene jeg var involvert i, ikke statistikk over alle kjøpere fra disse landene. Men kontrasten var lærerik: To mennesker kan se på den samme usikkerheten og trekke helt ulike slutninger.",
+          "Da verden åpnet igjen, opplevde jeg at flere prosjekter og attraktive enheter som mange hadde tenkt å vente på, raskt ble solgt. Jeg så hvordan man kan miste valgmuligheter mens man venter på et bedre tidspunkt."
+        ]
+      },
+      {
+        "heading": "I 2023 sa jeg at tiden var god for dem som faktisk ville kjøpe",
+        "body": [
+          "Etter at jeg kom tilbake til Norge i 2023, arrangerte jeg møter, eventer og seminarer om boligkjøp i Spania. Der fortalte jeg om det jeg hadde sett: prosjektene, etterspørselen, tilbudet og hvor forskjellig de enkelte områdene utviklet seg.",
+          "Jeg sa at det etter min vurdering var et godt tidspunkt å kjøpe for dem som hadde bestemt seg, hadde finansieringen på plass og fant en bolig som passet. Det var ikke en oppfordring om å kjøpe hva som helst eller strekke økonomien. Det var et råd om å vurdere realitetene i markedet, fremfor å vente på et dramatisk fall uten konkrete holdepunkter.",
+          "Noen fulgte rådet. Andre mente at prisene måtte snu, eller at den norske kronen snart ville styrke seg betydelig. Jeg respekterer at folk velger forskjellig – men et ønske om lavere priser er ikke det samme som en prognose."
+        ]
+      },
+      {
+        "heading": "«Jeg venter til kronen blir bedre» er forståelig – men ikke hele regnestykket",
+        "body": [
+          "For norske kjøpere er valutakursen viktig. Når euroen blir dyrere målt i norske kroner, blir en bolig i Spania også dyrere, alt annet likt. Derfor er det helt naturlig å følge med på kronen.",
+          "Problemet oppstår hvis man bare ser på valuta og ignorerer boligprisen i euro. Dersom boligprisen stiger mens du venter, kan selv en merkbar styrking av kronen være utilstrekkelig. Du må vurdere begge faktorene samtidig, sammen med eget finansieringsbehov.",
+          "En illustrasjon: En bolig som kostet 300 000 euro og senere koster 480 000 euro, har steget 60 prosent i euro. Selv om euroen samtidig skulle bli ti prosent rimeligere målt i norske kroner, ville prisen omregnet til kroner fortsatt være om lag 44 prosent høyere. Dette er en matematisk illustrasjon, ikke historisk prisutvikling for en bestemt bolig."
+        ]
+      },
+      {
+        "heading": "Hva sier prisutviklingen faktisk?",
+        "body": [
+          "Idealistas historikk for Alicante by viser en annonsert gjennomsnittspris på 1 519 euro per kvadratmeter i oktober 2021 og 2 721 euro i august 2026. Det tilsvarer en økning på om lag 79 prosent i den serien. Kilde: https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/alicante-alacant/historico/ .",
+          "Dette er annonsepriser for Alicante by, ikke dokumenterte salgspriser for alle boliger på Costa Blanca. Tallene kan derfor ikke beskrive nøyaktig hva enhver nybygd villa i Finestrat, Polop eller Altea har steget. Idealista opplyser dessuten at metodikken ble forbedret i juli 2026, noe som gjør det ekstra viktig å tolke lange sammenligninger med varsomhet.",
+          "Statistikken understøtter likevel et hovedpoeng: De som ventet på et generelt kraftig prisfall, møtte i mange områder et marked med betydelig høyere prisforventninger noen år senere. Fortiden gir ikke garanti for hva som vil skje videre."
+        ]
+      },
+      {
+        "heading": "De beste boligene blir ikke nødvendigvis billigere mens du venter",
+        "body": [
+          "Et boligmarked er ikke ett stort produkt med én pris. En sentralt plassert leilighet i Albir, en villa med riktig solretning i Finestrat og et nybyggprosjekt i Polop kan ha helt forskjellig etterspørsel, tilbud og omsetningstakt.",
+          "En kjøper kan oppleve at markedet fortsatt har mange boliger, men at de bestemte boligene han eller hun ønsket seg er solgt. Enheter med riktig etasje, utsikt, planløsning eller beliggenhet er ikke alltid lette å erstatte.",
+          "Det betyr ikke at man skal la seg presse av selgerens «siste sjanse»-argumenter. Det betyr at man bør forstå forskjellen mellom å vente på markedet og å miste et konkret alternativ som oppfyller alle kravene."
+        ]
+      },
+      {
+        "heading": "Nyheter skaper oppmerksomhet – men de gir ikke en personlig boligstrategi",
+        "body": [
+          "Norske medier gjør en viktig jobb når de omtaler økonomisk risiko, rentenivå og svak krone. Problemet er ikke at du leser VG eller snakker med naboen. Problemet er når en dramatisk overskrift eller en annens magefølelse får erstatte kunnskap om akkurat det boligmarkedet og den boligen du vurderer.",
+          "Mange leter ubevisst etter råd som bekrefter det de allerede håper på. Tror du at prisene må falle, finner du lett noen som sier det samme. Tror du alt bare skal stige, finner du også slike stemmer. Ingen av delene er tilstrekkelig som beslutningsgrunnlag.",
+          "Spør heller hva som faktisk er dokumentert: Hvordan har prisene utviklet seg i det konkrete området? Hvor mange sammenlignbare boliger finnes? Hva kan bygges fremover? Hva tåler økonomien din hvis valuta eller rente endrer seg?"
+        ]
+      },
+      {
+        "heading": "Jeg bruker ikke tid på å vinne diskusjoner om markedet",
+        "body": [
+          "Jeg opplever av og til at folk allerede har bestemt seg for hvordan markedet kommer til å utvikle seg. Da er det liten verdi i å diskutere for å få rett. Mitt arbeid er ikke å overbevise noen som ikke ønsker hjelp.",
+          "Jeg vil heller bruke tiden på dem som er åpne for råd og veiledning: kjøpere som vil forstå områdene, sammenligne prosjekter, se risikoene og gjøre en trygg beslutning på egne premisser.",
+          "Det gjelder også når rådet mitt er å vente. Hvis økonomien er presset, behovene ikke er avklart eller prosjektet har svak dokumentasjon, kan det være det riktige å ikke kjøpe. God rådgivning må tåle også den konklusjonen."
+        ]
+      },
+      {
+        "heading": "Hva ville jeg anbefale en boligkjøper i dag?",
+        "body": [
+          "Ikke begynn med spørsmålet «vil markedet falle neste år?» som om det finnes et sikkert svar. Begynn med hvorfor du ønsker bolig i Spania, hvor lenge du vil eie, hva du faktisk trenger, og hvor mye usikkerhet du tåler.",
+          "Deretter: Finn riktig område, få et realistisk totalbudsjett i både euro og norske kroner, sammenlign konkrete boliger, kontroller utbygger og kontrakter og la en uavhengig advokat gå gjennom avtalen. Har du god tid, bruk den til å lære markedet å kjenne – ikke bare til å vente på en overskrift.",
+          "Du trenger ikke kjøpe i dag. Men hvis du har bestemt deg for å kjøpe, bør du ha en bedre begrunnelse for å vente enn at kronen «må» bli sterkere eller at naboen mener boligprisene snart vil kollapse."
+        ]
+      },
+      {
+        "heading": "Min lærdom etter årene i Spania",
+        "body": [
+          "Jeg kommer aldri til å vite sikkert hva en bolig vil koste om et år. Det gjør heller ingen andre. Men jeg vet hvor verdifullt det er å følge markedet tett, besøke prosjektene, snakke med aktørene og skille mellom synsing og dokumenterte forhold.",
+          "Pandemien viste meg hvor forskjellig kjøpere reagerer på usikkerhet. Seminarene i Norge viste meg hvor sterk forventningen om et billigere tidspunkt kan være. Og årene etterpå har minnet meg om at passiv venting også er en beslutning – med sine egne kostnader og muligheter.",
+          "Mitt råd er derfor ikke «kjøp alltid nå». Det er: Skaff deg god informasjon, vurder hele regnestykket og ta en beslutning som passer ditt liv. Jeg hjelper gjerne dem som ønsker å gjøre nettopp det."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Avklar om du ønsker å kjøpe, eller om du ennå utforsker muligheten.",
+      "Sammenlign boligpris i euro og totalbudsjett i norske kroner – ikke valuta alene.",
+      "Vurder konkrete områder og boliger fremfor generelle overskrifter.",
+      "Still krav til dokumentasjon og uavhengig juridisk kontroll.",
+      "Be om rådgivning hvis du vil diskutere muligheter, risiko og riktig tidspunkt for deg."
+    ],
+    "faq": [
+      {
+        "question": "Bør jeg vente med å kjøpe bolig i Spania til kronen blir sterkere?",
+        "answer": "Det kan være klokt å vente hvis egen økonomi tilsier det. Men vurder også hva som skjer med boligprisen i euro, utvalget av boliger og dine egne behov i ventetiden."
+      },
+      {
+        "question": "Steg boligprisene på Costa Blanca etter covid?",
+        "answer": "Mange områder opplevde betydelig prisvekst, men utviklingen varierer mellom steder og boligtyper. Idealistas historikk for Alicante by viser kraftig vekst i annonserte priser fra 2021 til 2026, og er ikke en direkte salgsprisstatistikk for hele Costa Blanca."
+      },
+      {
+        "question": "Er det alltid best å kjøpe så tidlig som mulig?",
+        "answer": "Nei. Dokumentasjon, økonomi, behov og risiko må vurderes konkret. Noen ganger er det riktig å avvente eller velge et annet prosjekt."
+      },
+      {
+        "question": "Hva var forskjellen på kjøpere under covid?",
+        "answer": "Min erfaring fra prosjektene jeg jobbet med var at mange nordmenn ventet, mens enkelte utenlandske kjøpere var raskere til å bruke videovisninger. Det er min observasjon, ikke en generell nasjonal statistikk."
+      }
+    ],
+    "cta": {
+      "label": "Snakk med meg om boligkjøp på Costa Blanca",
+      "href": "/kontakt"
+    }
+  },
+
+{
     "slug": "etter-boligkjop-spania-skjote-strom-vann-avgifter",
     "title": "Etter boligkjøpet i Spania – hva må du ordne etter overtakelsen?",
     "excerpt": "En praktisk sjekkliste fra notar og eiendomsregister til strøm, vann, forsikring, IBI, sameie, skatt for ikke-residenter og tilsyn med ferieboligen.",
