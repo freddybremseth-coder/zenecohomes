@@ -17,6 +17,275 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "feil-mangler-nybygg-spania-reklamasjon",
+    "title": "Feil og mangler i nybygg i Spania – slik går du frem ved overtakelse og reklamasjon",
+    "excerpt": "Hva gjør du når dører, terrasse, bad eller tekniske anlegg ikke er som avtalt? Praktisk guide til mangelliste, bilder, utbygger, byggsakkyndig og spanske ansvarsfrister.",
+    "category": "Nybygg og boligkjøp",
+    "date": "2026-10-20",
+    "updated": "2026-10-20",
+    "readingTime": "18 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Nyoppført bolig på Costa Blanca med terrasse og moderne fasade",
+    "seoTitle": "Feil og mangler i nybygg i Spania – reklamasjonsguide",
+    "seoDescription": "Oppdaget feil i nybygg i Spania? Slik dokumenterer du mangler, lager overtakelsesprotokoll, varsler utbygger og forstår LOEs 1-, 3- og 10-årsansvar.",
+    "keywords": [
+      "feil og mangler nybygg Spania",
+      "reklamasjon bolig Spania",
+      "overtakelse nybygg Costa Blanca",
+      "garanti nybygg Spania",
+      "mangelliste utbygger Spania"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Du får nøklene til en splitter ny bolig. Først ser alt flott ut, men etter noen dager oppdager du at skyvedøren tar i karmen, vann blir stående på terrassen og klimaanlegget ikke kjøler ett av soverommene. Hva gjør du – og hvem har ansvaret?",
+      "Det viktigste er å skille mellom små synlige ferdigstillingsfeil, forhold som påvirker bruken av boligen og alvorlige bygningsproblemer. Måten du dokumenterer, varsler og følger opp feilene på kan få betydning for både resultat og rettigheter.",
+      "I denne guiden går vi gjennom en praktisk kjøperprosess på Costa Blanca. Dette er generell informasjon, ikke en garanti for utfallet i en konkret reklamasjon. Ved konflikt eller mulige frister bør en uavhengig spansk advokat og ved behov en byggteknisk sakkyndig kobles inn."
+    ],
+    "sections": [
+      {
+        "heading": "Kort svar: hva gjør du hvis nybygget har feil?",
+        "body": [
+          "Dokumenter feilen umiddelbart med bilde eller video, dato og nøyaktig plassering. Sammenlign med kontrakt og leveransebeskrivelse. Send en konkret skriftlig melding til riktig utbygger eller ansvarlig part, og be om bekreftelse, plan og tidspunkt for utbedring.",
+          "Er det fare for vannskade, elsikkerhet eller personskade, må du prioritere sikkerhet, skadebegrensning og faglig hjelp. Varsle samtidig ansvarlige og forsikringsselskap der det er relevant. Ikke la en uformell WhatsApp-dialog være eneste spor hvis problemet er alvorlig."
+        ]
+      },
+      {
+        "heading": "Hva er en mangel – og hva er en forventning?",
+        "body": [
+          "En mangel kan være at boligen avviker fra det som faktisk er avtalt, at arbeidet er ufagmessig eller at en teknisk installasjon ikke fungerer som den skal. Men en illustrasjon i et prospekt er ikke automatisk en identisk beskrivelse av den individuelle boligen.",
+          "Sammenlign alltid kjøpsavtalen, memoria de calidades (leveransebeskrivelse), godkjente tegninger, eventuelle tilvalgsbekreftelser og kommunikasjon fra selger. Hvis en dør, et materiale eller et uteområde er endret, må advokaten vurdere om endringen var tillatt og riktig varslet."
+        ]
+      },
+      {
+        "heading": "Før nøklene overleveres: gjør en strukturert forhåndsbefaring",
+        "body": [
+          "Sett av god tid og gå gjennom den konkrete boligen rom for rom. Kontroller innvendige overflater, fliser, fuger, glass, dører, vinduer og rekkverk. Test vannkraner, dusjer, toaletter, stikkontakter, lys, ventilasjon og klimaanlegg der anleggene er klare til bruk.",
+          "Gå deretter gjennom terrasse, sluk og avrenning, utvendig tetting, parkeringsplass, bod, heis og fellesarealer som inngår i leveransen. Ikke prøv risikable tester av elektriske installasjoner eller membraner på egen hånd; bruk fagperson ved mistanke om feil.",
+          "Ta med tegninger og leveransebeskrivelse. Noter også hva som ikke lar seg kontrollere den dagen, for eksempel en installasjon som ennå ikke er satt i drift."
+        ]
+      },
+      {
+        "heading": "En mangelliste som faktisk er nyttig for utbyggeren",
+        "table": {
+          "headers": [
+            "Registrer",
+            "Eksempel"
+          ],
+          "rows": [
+            [
+              "Bolig/rom",
+              "Leilighet B-12, bad 2"
+            ],
+            [
+              "Feil",
+              "Vann samler seg ved dusjdøren"
+            ],
+            [
+              "Dokumentasjon",
+              "Foto 3–5 og kort video, dato"
+            ],
+            [
+              "Avtalegrunnlag",
+              "Leveransebeskrivelse og tegning ved behov"
+            ],
+            [
+              "Konsekvens",
+              "Vann kan renne ut på gulv"
+            ],
+            [
+              "Ønsket oppfølging",
+              "Undersøk fall og utbedre årsak"
+            ],
+            [
+              "Status",
+              "Varslet, avtalt inspeksjon, utbedret, kontrollert"
+            ]
+          ]
+        },
+        "body": [
+          "Et systematisk dokument med én sak per feil fungerer bedre enn en lang, generell klageliste. Skill mellom kosmetiske forhold og tekniske eller sikkerhetsrelaterte mangler."
+        ]
+      },
+      {
+        "heading": "De typiske feilene vi ville sett etter på Costa Blanca",
+        "body": [
+          "Dører og vinduer: skjeve karmer, låser som ikke går ordentlig igjen, trekk, dårlig tetting og glasskader. Bad og kjøkken: fall, lekkasje, løse fuger, utilstrekkelig ventilasjon og utstyr som ikke er levert som avtalt.",
+          "Terrasser og tak: vann som blir stående, feil fall, sluk med dårlig kapasitet, synlige sprekker og fuktmerker etter regn. Klimaanlegg og varme: rom som ikke oppnår ønsket temperatur, kondens, støy eller feil styring.",
+          "Kontroller også at garasjeplass, bod, basseng og hage er det som faktisk er avtalt. Det hjelper lite at hovedboligen ser riktig ut hvis tilvalg eller andre leveranser mangler."
+        ]
+      },
+      {
+        "heading": "Sprekker: overflatefeil eller tegn på noe større?",
+        "body": [
+          "Små riss i puss og maling kan oppstå av ulike årsaker og trenger ikke bety strukturell skade. Men sprekker som utvikler seg, kommer tilbake etter utbedring eller opptrer sammen med skjeve dører, fukt eller bevegelser må undersøkes.",
+          "Ikke la utbygger eller kjøper selv fastslå årsaken ut fra et fotografi. Få en kvalifisert teknisk vurdering ved tvil, særlig når feilen kan berøre konstruksjonen."
+        ]
+      },
+      {
+        "heading": "LOE i Spania: hva betyr 1, 3 og 10 år?",
+        "table": {
+          "headers": [
+            "Ansvarsperiode",
+            "Hva den i hovedsak gjelder"
+          ],
+          "rows": [
+            [
+              "1 år",
+              "Utførelsesfeil på overflater og avsluttende arbeider (acabados)"
+            ],
+            [
+              "3 år",
+              "Bygnings- eller installasjonsfeil som medfører at krav til beboelighet (habitabilidad) ikke oppfylles"
+            ],
+            [
+              "10 år",
+              "Alvorlige feil ved bærende konstruksjoner som direkte påvirker mekanisk motstand og stabilitet"
+            ]
+          ]
+        },
+        "body": [
+          "Ley 38/1999, de Ordenación de la Edificación (LOE), artikkel 17, har ulike ansvarsperioder for bygningsskader avhengig av feiltype. Dette er ikke en generell garanti for at ethvert produkt, enhver kosmetisk feil eller enhver uenighet dekkes i ti år.",
+          "Periodene regnes i utgangspunktet fra mottakelsen av byggearbeidet mellom entreprenør og utbygger, eller fra retting av reservasjoner der loven bestemmer det – ikke nødvendigvis fra datoen kjøperen får nøklene. Be advokaten finne den dokumenterte startdatoen.",
+          "Offisiell lovtekst: https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567 ."
+        ]
+      },
+      {
+        "heading": "En viktig forskjell: ansvarsperiode og foreldelsesfrist",
+        "body": [
+          "At LOE omtaler ett, tre og ti år betyr ikke at du alltid kan vente så lenge med å fremme et krav. Artikkel 18 fastsetter en egen toårsfrist for bestemte krav om ansvar for bygningsskade, regnet fra skaden oppstår, samtidig som kontraktsrettslige krav kan ha andre regler.",
+          "Fristberegning, avbrudd av foreldelse og riktig motpart er juridiske spørsmål. Hvis utbyggeren drøyer, eller feilen kan være alvorlig, bør du kontakte advokat tidlig i stedet for å anta at et vennlig løfte om å «ordne det senere» beskytter kravet."
+        ]
+      },
+      {
+        "heading": "Byggeansvar er ikke det samme som en obligatorisk forsikring",
+        "body": [
+          "De lovbestemte ansvarsperiodene i LOE må skilles fra hvilke forsikringer eller garantier som faktisk er obligatoriske og tegnet. Det såkalte seguro decenal gjelder i hovedsak alvorlige strukturelle skader. Ikke anta at et tiårig forsikringsbevis dekker defekt maling, hvitevarer, fliser eller alle fuktproblemer.",
+          "Kjøperen bør be om dokumentasjon på relevante garantier og forsikringer, samt instruksjoner for bruk og vedlikehold. Ved produktfeil kan også andre regelsett og garantier være aktuelle, avhengig av kontrakt og leveranse."
+        ]
+      },
+      {
+        "heading": "Hvem kontakter du: selger, utbygger, entreprenør eller forsikring?",
+        "body": [
+          "Start med den kontraktsmessige selgeren eller utbyggerens oppgitte reklamasjonskanal og be om et saksnummer. Deretter kan saken involvere entreprenør, teknisk ansvarlig, forsikringsselskap eller sameiet, avhengig av feilen.",
+          "For feil i felles tak, fasade, heis eller felles basseng må administrator eller styret i sameiet ofte involveres. Det betyr ikke at du skal ignorere ditt eget kontraktsforhold; sørg for at varslingen når riktig part.",
+          "Dersom flere aktører viser til hverandre, bør advokaten avgjøre hvem krav skal rettes mot, og hvordan dokumentasjon og frister skal sikres."
+        ]
+      },
+      {
+        "heading": "Skriftlig reklamasjon: beskriv fakta, ikke bare misnøye",
+        "body": [
+          "Skriv nøyaktig hva som er galt, når det ble oppdaget, hvor det er, hvilke dokumenter som viser avtalt leveranse og hvilke følger feilen har. Legg ved nummererte bilder og foreslå inspeksjon og plan for utbedring.",
+          "Ved viktige krav kan advokaten anbefale en etterprøvbar formell varslingskanal, for eksempel burofax med dokumentasjon av innhold og levering. Ikke gjør krav eller forpliktelser avhengige av en ubekreftet telefonsamtale.",
+          "Hold kommunikasjonen saklig. Målet er rask og riktig utbedring, samtidig som du bevarer bevis hvis saken senere må vurderes av andre."
+        ]
+      },
+      {
+        "heading": "Hva hvis utbyggeren retter én feil, men nye problemer oppstår?",
+        "body": [
+          "Behold samme saksoversikt, men lag ny registrering for nye eller tilbakevendende forhold. Dokumenter før og etter utbedring. En ny fuge eller maling over en fuktflekk betyr ikke nødvendigvis at årsaken er funnet.",
+          "Særlig ved lekkasjer er det nyttig å få teknisk rapport som beskriver kilde, tiltak og kontroll etterpå. Ved gjentatte feil kan en uavhengig byggsakkyndig være avgjørende for å avklare årsak og nødvendig reparasjon."
+        ]
+      },
+      {
+        "heading": "Når bør du bruke uavhengig byggsakkyndig?",
+        "body": [
+          "Vurder fagperson ved fukt, gjentatte vanninntrengninger, vesentlige feil på terrassefall, uventede bevegelser eller sprekker, brann- og elsikkerhet eller konflikt om årsaken til en feil.",
+          "En arkitekt eller teknisk arkitekt (arquitecto técnico) med relevant erfaring kan dokumentere målinger og årsaksvurderinger. Kostnaden ved faglig undersøkelse bør sammenlignes med verdien og risikoen i saken."
+        ]
+      },
+      {
+        "heading": "Bør du signere overtakelse hvis det finnes mangler?",
+        "body": [
+          "Ikke anta at enhver kosmetisk mangel gir rett til å utsette overtakelsen, eller at enhver signatur automatisk betyr at du har frafalt alle rettigheter. Dette avhenger av kontrakten, mangelens betydning og hvilke forbehold som er tatt.",
+          "Lag en tydelig protokoll for forhold du har sett, med frist og ansvar for utbedring der det er mulig. La advokaten vurdere kontrakt, brukstillatelsesdokumenter og konsekvensene før du signerer overtakelses- eller oppgjørspapirer hvis vesentlige forhold gjenstår.",
+          "Merk at LOEs «acta de recepción de la obra» normalt er mottakelsesdokumentet mellom entreprenør og utbygger. Det er ikke automatisk identisk med kjøperens egen overtakelsesprotokoll."
+        ]
+      },
+      {
+        "heading": "Hvis selger ikke svarer eller avviser feilen",
+        "body": [
+          "Følg opp skriftlig, legg ved oppdatert dokumentasjon og be om en begrunnet avklaring. Ved større eller gjentatte forhold kan en teknisk rapport og et formelt krav utarbeidet av advokat være nødvendig.",
+          "Ikke bestill omfattende egen utbedring og forvent automatisk refusjon, med mindre nødrettslig skadebegrensning krever rask innsats eller advokaten har vurdert fremgangsmåten. Det kan påvirke bevis, årsaksvurdering og muligheten til å fremme krav.",
+          "Mulige videre skritt kan være mekling, forbrukerordninger eller søksmål avhengig av saken. Riktig spor avhenger av partene, kravet og dokumentasjonen."
+        ]
+      },
+      {
+        "heading": "Hva med ekstra kostnader og økonomisk tap?",
+        "body": [
+          "Noen mangler medfører bare arbeid som må fullføres. Andre kan føre til utgifter til midlertidig bolig, teknisk rapport, tapt bruk eller skade på innbo. Om slike tap kan kreves erstattet, avhenger av kontrakt, årsakssammenheng, bevis og gjeldende rett.",
+          "Ta vare på fakturaer og kvitteringer og noter hvorfor kostnadene oppstod. Unngå å oppgi bestemte erstatningssatser eller garantere kompensasjon uten juridisk vurdering."
+        ]
+      },
+      {
+        "heading": "Praktisk eksempel: vann blir stående på terrassen etter regn",
+        "body": [
+          "Etter et regnskyll oppdager kjøperen at vann blir stående ved terrassedøren. Først fotograferer man området og registrerer hvor lenge vannet blir liggende. Deretter sammenligner man med prosjektert løsning og varsler utbygger skriftlig.",
+          "Ved mistanke om feil fall, sluk eller tetting bør en relevant fagperson undersøke årsaken. Løsningen kan være noe helt annet enn en overflatebehandling. Det er nødvendig å skille mellom normal vannfilm og faktisk funksjonsfeil ut fra konkret måling og teknisk vurdering.",
+          "Poenget er å registrere problemet riktig og få årsaken vurdert, ikke å fastslå at enhver vanndam automatisk er en lovlig mangel."
+        ]
+      },
+      {
+        "heading": "Din sjekkliste ved overtakelse og etter innflytting",
+        "bullets": [
+          "Få kopi av kontrakt, tegninger og leveransebeskrivelse.",
+          "Sett av en egen befaring med nok tid, gjerne med fagperson.",
+          "Test det som kan prøves av dører, vinduer, vann, strøm og klimaanlegg.",
+          "Kontroller terrasse, avløp, fuktmerker, garasje, bod og fellesarealer.",
+          "Lag én registrering per feil med bilder, dato og rom.",
+          "Send samlet mangelliste skriftlig og be om bekreftelse.",
+          "Avtal inspeksjon, ansvar og realistisk frist for hver sak.",
+          "Kontroller utførte reparasjoner og noter det som fortsatt gjenstår.",
+          "Ta vare på overtakelses- og byggedokumenter, garantier og kvitteringer.",
+          "Ved vesentlig skade: avklar LOE-frister og rettslig krav med advokat."
+        ]
+      },
+      {
+        "heading": "Freddys råd: følg opp boligen etter at kontrakten er signert",
+        "body": [
+          "God kjøperrådgivning stopper ikke når kjøperen får nøklene. En ny bolig bør leveres i samsvar med kontrakten, og eventuelle avvik må behandles systematisk. Det krever skriftlig dokumentasjon, riktig teknisk bistand og tydelig dialog med utbygger.",
+          "Zen Eco Homes kan bidra med praktisk gjennomgang, koordinering og oppfølging av spørsmål som oppstår ved overtakelse, og koble inn uavhengig advokat eller teknisk fagperson der det er nødvendig. Det viktigste er at kjøperen ikke overser et problem eller mister oversikten over en reklamasjon."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Samle kontrakt, memoria de calidades og eventuelle tilvalgsavtaler.",
+      "Dokumenter hver mangel med dato, rom og foto/video.",
+      "Varsle skriftlig og be om en plan for inspeksjon og utbedring.",
+      "Bruk uavhengig tekniker ved fukt, lekkasjer, strukturelle forhold eller uenighet.",
+      "Få advokat til å vurdere frister før saken trekker ut."
+    ],
+    "faq": [
+      {
+        "question": "Hvor lang garanti er det på nybygg i Spania?",
+        "answer": "LOE beskriver ulike ansvarsperioder på ett, tre og ti år for forskjellige typer bygningsskader. Det betyr ikke at alle feil omfattes av ti år, og det finnes egne frister for krav."
+      },
+      {
+        "question": "Begynner garantien når jeg får nøklene?",
+        "answer": "LOEs frister knyttes normalt til mottak av byggearbeidet mellom entreprenør og utbygger, ikke nødvendigvis til din nøkkeloverlevering. Be om dokumentert startdato."
+      },
+      {
+        "question": "Hva gjør jeg hvis det lekker inn vann fra terrassen?",
+        "answer": "Dokumenter problemet, begrens eventuell skade på trygg måte, varsle utbygger skriftlig og få en faglig vurdering av årsaken. Ved alvorlig skade bør forsikringsselskap og advokat kontaktes raskt."
+      },
+      {
+        "question": "Kan utbygger nekte å reparere en feil?",
+        "answer": "Det kan oppstå tvist om årsak, ansvar og om forholdet er en mangel. En teknisk rapport, kontrakt og skriftlig dokumentasjon er da viktige, og advokat kan vurdere rettslige krav."
+      },
+      {
+        "question": "Må jeg akseptere en bolig med mangler ved overtakelse?",
+        "answer": "Det avhenger av kontrakt og hvor vesentlige manglene er. Lag skriftlig protokoll og få juridisk vurdering før signering dersom viktige forhold gjenstår."
+      }
+    ],
+    "cta": {
+      "label": "Få hjelp med overtakelse og boligkjøp på Costa Blanca",
+      "href": "/kontakt"
+    }
+  },
+
+{
     "slug": "nybygg-under-oppforing-eller-innflyttingsklar-spania",
     "title": "Nybygg under oppføring eller innflyttingsklar bolig i Spania – hva er tryggest?",
     "excerpt": "Bør du kjøpe på tegning eller en ferdig nybyggbolig? En grundig guide til betalingsplaner, bankgaranti, forsinkelser, ferdigattest, overtakelse og kjøperrisiko.",
