@@ -17,6 +17,251 @@ export const LEGACY_MARKET_COMPARISON_SLUGS = new Set([
 
 export const extraArticles: Article[] = [
 {
+    "slug": "etter-boligkjop-spania-skjote-strom-vann-avgifter",
+    "title": "Etter boligkjøpet i Spania – hva må du ordne etter overtakelsen?",
+    "excerpt": "En praktisk sjekkliste fra notar og eiendomsregister til strøm, vann, forsikring, IBI, sameie, skatt for ikke-residenter og tilsyn med ferieboligen.",
+    "category": "Boligkjøp og eierskap",
+    "date": "2026-10-20",
+    "updated": "2026-10-20",
+    "readingTime": "18 min lesing",
+    "image": "/assets/magasin-covers/omradevalg.svg",
+    "imageAlt": "Boliger på Costa Blanca med praktisk overtakelse og løpende eierskap",
+    "seoTitle": "Etter boligkjøpet i Spania: skjøte, strøm, IBI og skatt",
+    "seoDescription": "Hva skjer etter boligkjøpet i Spania? Sjekkliste for skjøte, register, strøm, vann, forsikring, IBI, comunidad, Modelo 210, boligtilsyn og vedlikehold.",
+    "keywords": [
+      "etter boligkjøp Spania",
+      "skjøte registrering eiendom Spania",
+      "strøm vann bolig Spania",
+      "IBI eiendomsskatt Spania",
+      "modelo 210 feriebolig Spania"
+    ],
+    "author": {
+      "name": "Freddy Bremseth",
+      "href": "/om-oss/freddy"
+    },
+    "intro": [
+      "Nøklene er overlevert, skjøtet er signert hos notaren og kjøperen kan endelig flytte inn. Men overtakelsen er ikke siste oppgave. Nå skal eiendommen registreres riktig, strøm og vann settes i ditt navn, forsikring på plass og de løpende betalingene organiseres.",
+      "Hvis du bor i Norge og bare bruker boligen deler av året, kommer dessuten spørsmål om hvem som følger opp lekkasjer, post, nøkkelutlevering og tilsyn. En god overtakelse handler derfor like mye om å etablere trygge rutiner som om å motta nøkler.",
+      "Denne guiden er laget for boligkjøpere på Costa Blanca, men prosedyrene og lokale avgiftene kan variere. La advokat, gestor eller relevant fagperson bekrefte dine konkrete skatte- og registreringsforpliktelser."
+    ],
+    "sections": [
+      {
+        "heading": "Kort svar: dette bør du ordne etter boligkjøpet",
+        "body": [
+          "Sørg for at skjøtet blir fulgt opp i eiendomsregisteret, at relevante skatter og gebyrer blir håndtert, at strøm og vann står i riktig navn, at boligen er forsikret og at sameie og kommune har dine kontakt- og betalingsopplysninger. Lag deretter rutiner for post, vedlikehold og årlige avgifter.",
+          "Det er nyttig å ha én ansvarlig person som holder oversikt over frister og bekreftelser, også når flere aktører hjelper deg. Ikke anta at «advokaten ordner alt» uten en konkret oversikt over hva oppdraget omfatter."
+        ]
+      },
+      {
+        "heading": "Første uke: hvem har ansvaret for hva?",
+        "table": {
+          "headers": [
+            "Oppgave",
+            "Hvem følger vanligvis opp?",
+            "Hva du bør få bekreftet"
+          ],
+          "rows": [
+            [
+              "Skjøte (escritura)",
+              "Notar og advokat/gestor",
+              "Kopi og endelig dokument"
+            ],
+            [
+              "Kjøpsskatt og dokumentavgift",
+              "Advokat/gestor etter avtale",
+              "Kvittering og innsending"
+            ],
+            [
+              "Eiendomsregister",
+              "Advokat/gestor/notar etter avtale",
+              "Registrering eller status"
+            ],
+            [
+              "Strøm og vann",
+              "Eier, rådgiver eller forvalter",
+              "Kontrakt, måler og første faktura"
+            ],
+            [
+              "Sameie (comunidad)",
+              "Eier og administrator",
+              "Eierdata, regler, bankbetaling"
+            ],
+            [
+              "Forsikring",
+              "Eier og forsikringsgiver",
+              "Gyldig dekning fra overtakelse"
+            ],
+            [
+              "Boligtilsyn",
+              "Eier eller lokal tjenesteleverandør",
+              "Nøkler og rutine ved hendelser"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Skjøte hos notaren og registrering i Registro de la Propiedad",
+        "body": [
+          "Escritura pública er det notarielle kjøpsdokumentet. Etter signering må skattebehandling og registrering i Registro de la Propiedad følges opp. Be om kopi av dokumentet og bekreftelse på at registreringsprosessen er fullført.",
+          "En nota simple kan brukes til å kontrollere hvordan eiendommen fremstår i registeret, inkludert registrert eier og registrerte heftelser. Har kjøpet omfattet bod, garasje eller flere registerenheter, kontroller alle relevante referanser.",
+          "Ikke bland sammen notarialt skjøte, eiendomsregister og Catastro. De har ulike funksjoner, og opplysningene bør samsvare."
+        ]
+      },
+      {
+        "heading": "Skatter ved selve kjøpet: behold alle kvitteringer",
+        "body": [
+          "Ved bruktbolig kan kjøpet utløse ITP, mens kjøp av nybygg fra utbygger normalt behandles med IVA og eventuelt AJD. Hvilke satser og fritak som gjelder avhenger av boligtype, tidspunkt og personlige forhold. Denne artikkelen handler om oppfølgingen etter kjøpet, ikke en ny beregning av kjøpskostnadene.",
+          "I Valencia-regionen brukes blant annet modelo 600 for relevante ITP/AJD-saker. Generalitat opplyser at den ordinære selvangivelsesfristen for eiendomsoverdragelse normalt er én måned fra handlingen eller avtalen. Sørg for at den ansvarlige har kontroll på akkurat din frist og dokumentasjon.",
+          "Offisiell veiledning: https://sede.gva.es/es/detall-tramit?id_proc=16 ."
+        ]
+      },
+      {
+        "heading": "Catastro: sjekk at eiendommen og eieropplysningene stemmer",
+        "body": [
+          "Catastro er det administrative eiendomskartverket og skattegrunnlaget. Kontroller referencia catastral, adresse, arealopplysninger og registrert eierinformasjon, særlig dersom det er nybygg, oppdeling av tomt eller endringer i boligen.",
+          "Opplysninger kan oppdateres via meldinger fra notar eller registreringsmyndigheter, men kontroller resultatet og spør om en egen melding er nødvendig. Registrering i Catastro og i Registro de la Propiedad er ikke det samme."
+        ]
+      },
+      {
+        "heading": "Strøm: eierskifte er ikke alltid det samme som ny tilkobling",
+        "body": [
+          "Ved kjøp av bruktbolig kan du normalt undersøke om en eksisterende strømavtale kan overføres (cambio de titular). Du bør få leverandør, kontraktsnummer, CUPS-kode, ønsket avtaleform, målerstand og kontoinformasjon på plass.",
+          "Ved nybygg kan det være nødvendig å opprette kontrakt eller ferdigstille tilkobling med riktig dokumentasjon. Bekreft at boligen har sin egen lovlige forsyning og ikke er avhengig av en midlertidig byggestrømløsning.",
+          "Sjekk avtalt effekt (potencia contratada), faste kostnader og faktisk behov. For liten effekt kan gi problemer når varmepumpe, komfyr og varmtvann brukes samtidig; for høy effekt kan koste unødvendig."
+        ]
+      },
+      {
+        "heading": "Vann og avløp: registrer måler og lokalt selskap",
+        "body": [
+          "Vannforsyningen administreres ofte av et lokalt selskap eller kommunal leverandør. Be om kontraktsnummer, målernummer, måleravlesning ved overtakelse og bekreftelse på at betaling er satt opp.",
+          "Ved nybygg må du undersøke om endelig vannkontrakt og alle tilkoblinger er klare. Vannavgift, renovasjon og eventuelle avløpskostnader kan faktureres separat eller gjennom lokale ordninger."
+        ]
+      },
+      {
+        "heading": "Forsikring: fra hvilken dato dekker den nye eierens bolig?",
+        "body": [
+          "Ikke vent til første ferie med å undersøke forsikring. En hus- eller innboforsikring bør passe boligtypen, verdien, bruksmønsteret og eventuell tid boligen står tom. Noen avtaler krever spesielle sikkerhetstiltak eller jevnlige tilsyn ved lengre fravær.",
+          "I sameier kan bygningens fellesforsikring dekke noen forhold uten at den erstatter din egen innboforsikring eller ansvarsforsikring. Undersøk vannskade, ansvar overfor naboer, innbrudd og skader etter uvær. Oppgi riktig bruk og eventuell utleie til forsikringsselskapet."
+        ]
+      },
+      {
+        "heading": "Comunidad: sameieavgift, vedtekter og kontaktopplysninger",
+        "body": [
+          "Kjøper du leilighet, rekkehus eller bolig i en urbanisasjon med fellesarealer, kan du bli medlem av en comunidad de propietarios. Registrer kontaktinformasjon, korrekt betalingskonto og hvordan du mottar informasjon om møter og vedtak.",
+          "Be om vedtekter, siste budsjett og informasjon om eventuelle ekstraordinære innbetalinger (derramas). Se hva avgiften faktisk dekker: heiser, basseng, fellesarealer, portvakt, vedlikehold og eventuelle tjenester. Det er ikke nok å vite månedssummen.",
+          "Undersøk om sameiet har regler om fasadeendringer, markiser, bassengbruk, dyr eller utleie som kan påvirke hvordan du ønsker å bruke boligen."
+        ]
+      },
+      {
+        "heading": "IBI, renovasjon og andre kommunale avgifter",
+        "body": [
+          "IBI (Impuesto sobre Bienes Inmuebles) er en kommunal eiendomsskatt som normalt faktureres årlig. Kommunen kan også ha avfalls-/renovasjonsavgifter og andre lokale gebyrer med egne innkrevingsordninger.",
+          "Dato for betalingskrav og hvem som er registrert betalingsansvarlig ved eierskifte bør undersøkes lokalt. Avtal hvem som håndterer krav knyttet til overtakelsesåret, og kontroller at autotrekk ikke fortsetter på selgerens konto ved en feil.",
+          "Sørg for at kommunen har riktig postadresse og at du mottar kvitteringer. Det kan være store praktiske forskjeller mellom Benidorm, Altea, l’Alfàs del Pi, Finestrat, Polop og Villajoyosa."
+        ]
+      },
+      {
+        "heading": "Ikke-resident og Modelo 210: en avgift mange overser",
+        "body": [
+          "Hvis du ikke er skattemessig bosatt i Spania og eier en urban boligeiendom til eget bruk, kan spanske regler om beregnet eiendomsinntekt (renta inmobiliaria imputada) være aktuelle selv om du ikke leier ut boligen. Dette rapporteres i relevante tilfeller gjennom Modelo 210.",
+          "Skatteberegningen baseres blant annet på eiendommens cadastral-verdi og gjeldende regler. Dersom eiendommen leies ut, kan andre regler, inntektskoder og innleveringsrutiner gjelde. Ikke bland denne statlige skatteplikten sammen med kommunal IBI.",
+          "Spanske skattemyndigheters offisielle veiledning: https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html ."
+        ]
+      },
+      {
+        "heading": "Fast bosetting gir et annet administrativt bilde",
+        "body": [
+          "Flytter du permanent til Spania, bør du avklare oppholdsregistrering, helseordning, skatt og praktiske forhold knyttet til folkeregistrert adresse. Å eie bolig innebærer ikke i seg selv at du automatisk er skattemessig bosatt i Spania.",
+          "Dersom du planlegger å tilbringe store deler av året i Spania, må du få personlig råd om samspillet mellom norske og spanske regler. Eiendomsrådgiveren kan hjelpe med boligvalg og praktisk overtakelse, mens skatterådgiver og myndigheter må avklare regelverket for deg."
+        ]
+      },
+      {
+        "heading": "Nøkler, alarmer og trygg adgang til boligen",
+        "body": [
+          "Noter antall nøkler, fjernkontroller, garasjebrikker og alarmkoder ved overtakelse. Kontroller at du har tilgang til bod, garasje, tekniske rom der det er relevant og alle innganger som inngår i avtalen.",
+          "Ved bruktbolig kan det være klokt å vurdere utskifting av låssylinder og oppdatering av alarmkoder. Ved nybygg bør du forsikre deg om at midlertidige byggenøkler og entreprenørtilganger er avsluttet eller håndtert på en trygg måte."
+        ]
+      },
+      {
+        "heading": "En feriebolig som står tom trenger et tydelig tilsynsopplegg",
+        "body": [
+          "Et godt tilsyn kan være enkle, faste kontroller av dører, vinduer, fukt, sikringer, vann, terrasse og synlige skader etter regn eller uvær. Sett av ansvar og hvordan du skal få melding ved funn.",
+          "Avtal separat hva nøkkeloppbevaring, innslipp av håndverkere, rengjøring, ankomstforberedelser og akutte utrykninger innebærer. Det er stor forskjell på å holde et nøkkelsett og å ha et reelt ansvar for boligen.",
+          "Be om bilder og kort rapport ved vesentlige hendelser, og etabler en kontaktliste til forsikring, administrator og lokal fagperson."
+        ]
+      },
+      {
+        "heading": "Vedlikehold: lag en enkel årsplan",
+        "body": [
+          "Kontroller klimaanlegg og filtre, vannavstengning, tetninger, sluk, basseng der aktuelt og terrasse før perioder med mye regn. Følg leverandørenes vedlikeholdsanvisninger og oppbevar kvitteringer.",
+          "Særlig ved nybygg bør feil og mangler føres i en egen liste og varsles til utbygger. En oppfølgingsrutine er også nyttig for å dokumentere tilbakevendende problemer. Ved større tekniske feil bør en sakkyndig vurdere årsak."
+        ]
+      },
+      {
+        "heading": "Dokumentmappen: samle alt på ett sted",
+        "bullets": [
+          "Signert escritura og senere registreringsbekreftelse eller oppdatert nota simple.",
+          "Kvitteringer for betalte kjøpsskatter og offentlige gebyrer.",
+          "Referencia catastral, IBI-faktura og lokale avfallsavgifter.",
+          "CUPS, strøm- og vannkontrakt, måleravlesninger og kontonumre.",
+          "Forsikringsbevis, kontaktinformasjon og skademeldingsrutine.",
+          "Sameievedtekter, administrator og innbetalingsplan.",
+          "Leveransebeskrivelse, tekniske garantier og mangelliste ved nybygg.",
+          "Oversikt over nøkler, alarm, tilsynsleverandør og lokalt nødnummer.",
+          "Årlig oversikt over frister for IBI, eventuelt Modelo 210 og forsikringsfornyelse."
+        ]
+      },
+      {
+        "heading": "De første 30 dagene: prioriter det som kan skape problemer",
+        "body": [
+          "Begynn med juridiske og økonomiske frister: status for skatt og registrering, forsikringsdekning, forsyningsavtaler og kontaktinformasjon til sameie og kommune. Følg opp dette før du bruker tid på møbler og dekor.",
+          "Gå deretter gjennom boligen på nytt. Sjekk vann, avløp, strøm, vinduer og eventuelle feil, og få dokumentert alt som må rettes. Hvis boligen skal stå tom, legg til nøkkelrutine og inspeksjoner."
+        ]
+      },
+      {
+        "heading": "Freddys råd: et godt kjøp skal også være enkelt å eie",
+        "body": [
+          "Kjøperen skal ikke måtte lure på om IBI, strøm, vann eller sameiebetalingen faktisk er ordnet. Jeg anbefaler en skriftlig overtakelsesliste med ansvarlig person, frist og dokumentasjon for hver oppgave.",
+          "Zen Eco Homes kan bidra med praktiske spørsmål og koordinering rundt overtakelse og videre bruk, mens uavhengig advokat, gestor og skatterådgiver tar de oppgavene som krever deres fagansvar. Målet er at den nye boligen skal bli en glede, ikke en serie administrative overraskelser."
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Få skriftlig bekreftelse på registrering og betalte kjøpsskatter.",
+      "Overfør strøm, vann og relevante abonnementer.",
+      "Kontroller forsikring, sameie og kommunale kontaktopplysninger.",
+      "Avklar IBI og eventuell Modelo 210 med gestor eller skatterådgiver.",
+      "Lag dokumentmappe og vedlikeholds-/tilsynsrutine hvis boligen står tom."
+    ],
+    "faq": [
+      {
+        "question": "Er boligkjøpet ferdig når skjøtet signeres hos notaren?",
+        "answer": "Notarsignering er et viktig steg, men skattebehandling, registrering og praktiske eierskifter må følges opp. Be advokaten bekrefte når disse er fullført."
+      },
+      {
+        "question": "Hva er IBI i Spania?",
+        "answer": "IBI er kommunal eiendomsskatt som normalt faktureres årlig. Forfall og innkrevingsrutiner varierer mellom kommuner."
+      },
+      {
+        "question": "Må jeg betale Modelo 210 hvis jeg ikke leier ut ferieboligen?",
+        "answer": "Som ikke-resident fysisk person kan du være omfattet av regler om beregnet eiendomsinntekt for urban eiendom til eget bruk. Få individuell vurdering."
+      },
+      {
+        "question": "Hvem overfører strøm og vann til mitt navn?",
+        "answer": "Dette kan gjøres av eier eller en representant etter avtale. Sørg for at målerstand, kontraktsnummer og betalingsbekreftelse dokumenteres."
+      },
+      {
+        "question": "Trenger jeg tilsyn med ferieboligen når jeg bor i Norge?",
+        "answer": "Regelmessig tilsyn kan redusere risikoen for at lekkasjer og andre problemer forblir uoppdaget. Sjekk også forsikringsvilkårene ved lengre fravær."
+      }
+    ],
+    "cta": {
+      "label": "Få hjelp til trygg overtakelse og eierskap",
+      "href": "/kontakt"
+    }
+  },
+
+{
     "slug": "feil-mangler-nybygg-spania-reklamasjon",
     "title": "Feil og mangler i nybygg i Spania – slik går du frem ved overtakelse og reklamasjon",
     "excerpt": "Hva gjør du når dører, terrasse, bad eller tekniske anlegg ikke er som avtalt? Praktisk guide til mangelliste, bilder, utbygger, byggsakkyndig og spanske ansvarsfrister.",
