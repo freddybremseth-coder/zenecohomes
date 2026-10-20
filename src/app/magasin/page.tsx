@@ -206,6 +206,39 @@ export default async function MagazinePage() {
         </p>
       </section>
 
+      <section className="section magazine-budget-tool">
+        <div>
+          <p className="eyebrow">Fra min erfaring · Freddy Bremseth</p>
+          <h2>Jeg anbefalte boligkjøp i 2023. Mange valgte å vente.</h2>
+          <p>
+            Under pandemien fulgte jeg utbyggere og boligprosjekter på Costa Blanca. Senere holdt jeg seminarer
+            i Norge og møtte kjøpere som ventet på lavere priser og sterkere krone. Her forteller jeg hva jeg så,
+            hva utviklingen har lært meg, og hvorfor jeg mener gode råd må bygge på kunnskap – ikke overskrifter.
+          </p>
+        </div>
+        <div className="hero-actions">
+          <Link className="contact-button" href="/magasin/hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023">
+            Les min erfaring <ArrowRight size={17} />
+          </Link>
+          <Link className="text-button" href="/magasin/eurokurs-boligbudsjett-spania-nordmenn">
+            Les også om eurokurs og boligbudsjett
+          </Link>
+        </div>
+      </section>
+
+      <section className="section magazine-guide-bridge">
+        <div>
+          <p className="eyebrow">Hvor begynner boligjakten?</p>
+          <h2>Finn artikler som passer fasen du er i</h2>
+          <p>Fra områdevalg til kontrakt, overtakelse og løpende kostnader: les videre i en naturlig rekkefølge, med konkrete råd i hvert trinn.</p>
+        </div>
+        <nav aria-label="Les magasinet etter fase i boligkjøpet">
+          <Link href="/magasin/bo-costa-blanca-uten-bil-beste-omrader"><span>01</span><div><strong>Velg område og hverdagsliv</strong><small>Gangavstand, transport og det som betyr noe utenfor visningen</small></div><ArrowRight size={16}/></Link>
+          <Link href="/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania"><span>02</span><div><strong>Vurder prosjekt og kjøpsrisiko</strong><small>Byggestatus, garanti og levering før du signerer</small></div><ArrowRight size={16}/></Link>
+          <Link href="/magasin/etter-boligkjop-spania-skjote-strom-vann-avgifter"><span>03</span><div><strong>Overta og eie boligen</strong><small>Skjøte, forsyning, sameie, skatt og videre oppfølging</small></div><ArrowRight size={16}/></Link>
+        </nav>
+      </section>
+
       <section className="section magazine-guide-bridge">
         <div>
           <p className="eyebrow">Ser du etter kjøperguider?</p>
