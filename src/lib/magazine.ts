@@ -4175,8 +4175,7 @@ export const extraArticles: Article[] = [
           "Hvis to boliger koster omtrent det samme, kan forskjellen i årlige kostnader påvirke hvilket kjøp som passer best over tid.",
         ],
       },
-    ],
-      {
+          {
         heading: "En leilighet, et rekkehus og en villa må budsjetteres forskjellig",
         body: [
           "Den samme kjøpesummen kan gi tre helt forskjellige årsbudsjetter. En leilighet i et sameie kan ha betydelige felleskostnader, men ofte mindre direkte ansvar for tak, fasade og fellesbasseng. Et rekkehus kan kombinere egne tekniske installasjoner og hage med fellesutgifter til veier, grøntområder eller basseng. En frittliggende villa har gjerne flere poster du må håndtere selv.",
@@ -4273,6 +4272,7 @@ export const extraArticles: Article[] = [
           "Målet er å gi kjøperen et kontrollerbart budsjett, ikke å presentere et generelt tall som virker presist. De usikre postene skal vises tydelig, og kjøperen bør vite hvilke spørsmål som fortsatt må besvares."
         ]
       },
+    ],
     nextSteps: [
       "Be om konkret IBI og comunidad for boligen du vurderer.",
       "Hent forsikring og eventuelle care-tjenester inn i samme regnestykke.",
