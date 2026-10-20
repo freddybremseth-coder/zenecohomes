@@ -27,7 +27,7 @@ export const extraArticles: Article[] = [
     "image": "/assets/magasin-covers/omradevalg.svg",
     "imageAlt": "Boliger på Costa Blanca med praktisk overtakelse og løpende eierskap",
     "seoTitle": "Etter boligkjøpet i Spania: skjøte, strøm, IBI og skatt",
-    "seoDescription": "Hva skjer etter boligkjøpet i Spania? Sjekkliste for skjøte, register, strøm, vann, forsikring, IBI, comunidad, Modelo 210 og boligtilsyn.",
+    "seoDescription": "Hva skjer etter boligkjøpet i Spania? Sjekkliste for skjøte, register, strøm, vann, forsikring, IBI, comunidad, Modelo 210, boligtilsyn og vedlikehold.",
     "keywords": [
       "etter boligkjøp Spania",
       "skjøte registrering eiendom Spania",
