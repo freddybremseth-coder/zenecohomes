@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpainAreaGuide } from "@/components/SpainAreaGuide";
 import { notFound } from "next/navigation";
 
 import { ArticleView, buildArticleMetadata } from "@/components/ArticleView";
@@ -19,6 +20,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!article || articleSilo(article) !== "guide") {
     return { title: "Artikkel ikke funnet | Zen Eco Homes" };
   }
+  if (slug === "omradeguide-eiendomskjop-i-spania") {
+    return { title: "Hvor er det best å kjøpe eiendom i Spania? | Zen Eco Homes", description: "Finn riktig område i Spania for boligkjøp. Sammenlign klima, pris, reisevei og norsk miljø i Costa Blanca, Costa del Sol, innlandet og øyene.", alternates: { canonical: "/guide/omradeguide-eiendomskjop-i-spania" } };
+  }
   return buildArticleMetadata(article);
 }
 
@@ -32,7 +36,9 @@ export default async function GuideArticlePage({ params }: PageProps) {
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <ArticleView article={article} />
+      {slug === "omradeguide-eiendomskjop-i-spania" ? (
+        <><section className="page-hero compact-hero article-hero"><p className="eyebrow">Områdeguide</p><h1>Hvor er det best å kjøpe eiendom i Spania?</h1></section><SpainAreaGuide /></>
+      ) : <ArticleView article={article} />}
       <Footer />
     </main>
   );
