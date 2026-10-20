@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+import { SpainRegionsMap } from "@/components/SpainRegionsMap";
 
 const preferences = [
   ["Mest bolig for pengene", "Innlandet, Murcia / Costa Cálida"],
@@ -30,7 +31,6 @@ const faq = [
 ];
 function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
 function Airport({title,rows}:{title:string;rows:string[][]}) { return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><div className="grid gap-2">{rows.map(([name,time])=><div key={name} className="flex flex-wrap justify-between gap-2 border-b border-slate-200 py-2"><span className="font-medium">{name}</span><span>{time}</span></div>)}</div></section>; }
-function RegionMap() { const regions=[{id:"middelhavskysten",name:"Middelhavskysten",x:252,y:225,w:225,h:65},{id:"nord-spania",name:"Nord-Spania / Atlanterhavet",x:96,y:65,w:270,h:60},{id:"innlandet",name:"Innlandet",x:115,y:150,w:225,h:60},{id:"oyene",name:"Balearene / Kanariøyene",x:35,y:325,w:320,h:58}];return <div className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-4"><p className="mb-3 text-sm text-slate-600">Klikk på et område for å gå til omtalen. Skjematisk kart, ikke geografisk målestokk.</p><svg viewBox="0 0 520 410" role="img" aria-label="Klikkbart skjematisk kart over spanske områdetyper" className="w-full h-auto max-h-[430px]"><path d="M84 86 L195 43 L310 57 L390 115 L381 184 L455 222 L434 300 L337 338 L236 300 L172 326 L99 248 L62 168 Z" fill="#dce9dd" stroke="#76938a" strokeWidth="3"/><path d="M35 365 L56 356 M73 372 L93 359 M103 382 L129 367" stroke="#88a9bb" strokeWidth="12" strokeLinecap="round"/>{regions.map(r=><a key={r.id} href={"#"+r.id} aria-label={"Les om "+r.name}><rect x={r.x} y={r.y} width={r.w} height={r.h} rx="13" fill="#fff" stroke="#738d91" strokeWidth="2"/><text x={r.x+r.w/2} y={r.y+r.h/2+5} fontSize="15" fill="#183c42" textAnchor="middle" fontWeight="600">{r.name}</text></a>)}</svg><nav aria-label="Hopp til region" className="flex flex-wrap gap-3 text-sm">{regions.map(r=><a className="underline underline-offset-4" key={r.id} href={"#"+r.id}>{r.name}</a>)}</nav></div>; }
 export function SpainAreaGuide(){
  return <section className="section article-shell"><div className="article-layout"><article className="article-main prose max-w-none">
  <p>Hvor i Spania du bør kjøpe eiendom avhenger av både prisnivå, klima og hvordan du ønsker å bruke boligen i hverdagen. Jeg har sett mange boligkjøpere starte med en klar idé om hvor de skal bo, for så å endre mening over tid når de besøker områdene.</p>
@@ -38,7 +38,7 @@ export function SpainAreaGuide(){
  <Comparison rows={preferences}/><p><Link href="/omrader" className="underline">Se områdene ZenEcoHomes jobber i →</Link></p>
  <h2 id="oversikt">Oversikt over de ulike områdene i Spania</h2>
  <p>Spania består av 17 autonome regioner, og det er store geografiske forskjeller mellom Middelhavskysten, Atlanterhavskysten, innlandet og øygruppene. For boligkjøpere merkes dette blant annet på klima, boligpriser, reisevei og hvor turistpreget et område egentlig er.</p>
- <p>Mange nordmenn ser først mot kjente kystområder som Costa Blanca, Costa del Sol og Costa Cálida, men det finnes også mange spennende områder lenger nord, i innlandet og utenfor fastlandet.</p><RegionMap/>
+ <p>Mange nordmenn ser først mot kjente kystområder som Costa Blanca, Costa del Sol og Costa Cálida, men det finnes også mange spennende områder lenger nord, i innlandet og utenfor fastlandet.</p><SpainRegionsMap/>
  <h3 id="middelhavskysten">Middelhavskysten</h3>
  <p>Middelhavskysten i Spania strekker seg fra Catalonia i nordøst, gjennom Valencia-regionen og Murcia, og videre sørover langs Andalucía. Det betyr at mange av de mest populære kystområdene i Spania ligger her.</p>
  <p>Costa Brava ligger lengst nord mot Frankrike, etterfulgt av blant annet Costa Daurada og Costa del Azahar. Lenger sør ligger Costa Blanca Nord og Costa Blanca Sør i Alicante-provinsen, deretter Costa Cálida i Murcia-regionen, før kysten fortsetter mot Costa de Almería, Costa Tropical og Costa del Sol.</p>
