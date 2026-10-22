@@ -119,6 +119,7 @@ const nextConfig: NextConfig = {
     }));
 
     const contentConsolidationRedirects = [
+      ["/magasin/hva-koster-feriebolig-spania-i-aret", "/guide/lopende-kostnader-eie-bolig-spania"],
       ["/magasin/bolig-500000-euro-totalbudsjett-spania", "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca"],
       ["/guide/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
       ["/magasin/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],

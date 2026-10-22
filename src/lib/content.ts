@@ -1261,7 +1261,7 @@ export const articles: Article[] = [
     "title": "Løpende kostnader ved å eie bolig i Spania",
     "excerpt": "Hva koster det å eie bolig i Spania per år? Få oversikt over IBI, comunidad, Modelo 210, strøm, vann, forsikring, vedlikehold og kostnader ved tom bolig.",
     "date": "2026-09-08",
-    "updated": "2026-10-14",
+    "updated": "2026-10-22",
     "category": "Kjøpsprosess",
     "readingTime": "12 min lesing",
     "image": "/assets/magasin-covers/kostnader-eie.svg",
@@ -1277,165 +1277,245 @@ export const articles: Article[] = [
       "utgifter villa privat basseng Spania"
     ],
     "author": {
-      "name": "Freddy Bremseth",
-      "href": "/eiendomsradgiver-spania.html"
+      "name": "Andrea Thorsnes Karlsen"
     },
     "intro": [
-      "Hva koster det å eie bolig i Spania når kjøpet er gjennomført? Her får du et konkret, illustrativt årsbudsjett for leilighet og villa – og en oversikt over IBI, fellesutgifter, forsikring, strøm, vann og vedlikehold. Tallene er planleggingseksempler, ikke dokumenterte markedspriser.",
-      "For en enkel feriebolig er det mer nyttig å regne på hver kostnad enn å oppgi én høy standardsum. Eksemplene nedenfor viser et nøkternt budsjett for begrenset egen bruk og skiller faste utgifter fra forbruk. De er beregnede scenarioer – ikke en kartlegging av faktiske fakturaer. Kostnader til lån, individuell ikke-residentskatt og større reparasjoner er ikke inkludert."
+      "Hvor mye du må betale, avhenger blant annet av boligtype, beliggenhet og bruk. I denne guiden ser vi på de vanligste kostnadene, hva du bør regne med i årsbudsjettet, og hvilke faktorer som påvirker prisen."
     ],
     "sections": [
       {
         "heading": "Hva koster det å eie bolig i Spania?",
         "body": [
-          "En enkel leilighet med moderat bruk kan i dette regneeksemplet koste rundt 1 200–3 200 euro årlig i ordinære driftsutgifter. For en villa med privat basseng brukes her 2 400–6 000 euro, med langt større variasjon i vedlikehold og energiforbruk. Dette er beregnede scenarioer, ikke dokumenterte gjennomsnitt. Bassengservice alene er anslått til cirka 600–1 200 euro i året i publiserte prisguider; utgiftene til strøm, vann og hage kommer an på eiendommen og hvor mye du bruker den."
+          "Det koster vanligvis mellom 2 400 og 6 230 euro i året å eie en enkel leilighet i Spania, mens en villa med privat basseng koster mellom 3 730 og 10 350 euro.",
+          "Nybygg kan gi mer forutsigbare vedlikeholdskostnader i starten, men felleskostnader, energibruk og fasiliteter påvirker fortsatt totalbudsjettet.",
+          "Tabellen nedenfor sammenligner de anslåtte årlige kostnadene for en leilighet med fellesbasseng og en villa med privat basseng og hage. Vi skiller mellom løpende kostnader og et totalbudsjett som også inkluderer penger satt av til vedlikehold og reparasjoner.",
+          "Kostnadene er veiledende budsjettanslag, ikke dokumenterte gjennomsnitt for alle boliger på Costa Blanca. Budsjettet omfatter ikke renter og avdrag på boliglån, større, uforutsette reparasjoner utover den årlige avsetningen, eventuell formuesskatt eller andre skatter som avhenger av den enkelte eierens situasjon eller kostnader og skatter knyttet til utleie, dersom boligen skal leies ut.",
+          "Jeg opplever at mange boligkjøpere undervurderer de samlede kostnadene ved å eie bolig i Spania. I tillegg til strøm og vann kommer blant annet felleskostnader, eiendomsskatt, renovasjonsavgifter, forsikring og vedlikehold.",
+          "For eldre boliger kan det også komme betydelige utgifter til reparasjoner og utskifting av tekniske installasjoner. Jeg anbefaler derfor å se på de samlede bokostnadene over tid, ikke bare kjøpesummen.",
+          "Husk at kostnadene ved selve boligkjøpet kommer i tillegg. Les også vår guide om hva det koster å kjøpe bolig i Spania."
         ],
         "table": {
-          "headers": ["Utgift", "Leilighet / år", "Villa / år"],
-          "rows": [
-            ["IBI og renovasjon", "€250–550", "€400–900"],
-            ["Comunidad", "€300–1 200", "€0–300"],
-            ["Strøm og vann", "€300–650", "€550–1 150"],
-            ["Forsikring", "€150–300", "€250–450"],
-            ["Løpende vedlikehold / basseng og hage", "€200–500", "€1 200–3 200"]
+          "headers": [
+            "Årlige kostnader",
+            "Leilighet med fellesbasseng",
+            "Villa med privat basseng"
           ],
-          "caption": "Illustrative scenarioer ved begrenset egen bruk: leilighet €1 200–3 200; villa €2 400–6 000 per år. Ikke markedsstatistikk. Bassenganslag: Idealista (2025) og Habitissimo (2026), ca. €600–1 200/år; øvrige linjer er budsjettforutsetninger som må erstattes med boligspesifikke kvitteringer. Lån, individuelle skatter og større reparasjoner er ikke med."
+          "rows": [
+            [
+              "Eiendomsskatt (IBI)",
+              "300–600 €",
+              "400–1 000 €"
+            ],
+            [
+              "Skatt for ikke-fastboende (Modelo 210)",
+              "150–350 €",
+              "200–500 €"
+            ],
+            [
+              "Felleskostnader",
+              "600–1 800 €",
+              "0–600 €"
+            ],
+            [
+              "Strøm",
+              "400–900 €",
+              "700–1 500 €"
+            ],
+            [
+              "Vann",
+              "150–350 €",
+              "300–800 €"
+            ],
+            [
+              "Boligforsikring",
+              "200–400 €",
+              "400–800 €"
+            ],
+            [
+              "Renovasjon og avfall",
+              "50–180 €",
+              "80–200 €"
+            ],
+            [
+              "Vedlikehold av basseng",
+              "Inkludert i felleskostnader*",
+              "600–1 800 €"
+            ],
+            [
+              "Sum løpende kostnader",
+              "1 850–4 580 €",
+              "2 680–7 200 €"
+            ],
+            [
+              "Avsetning til reparasjoner og vedlikehold",
+              "500–1 500 €",
+              "1 000–3 000 €"
+            ],
+            [
+              "Skattemelding og administrasjon",
+              "50–150 €",
+              "50–150 €"
+            ],
+            [
+              "Anslått årlig totalbudsjett",
+              "2 400–6 230 €",
+              "3 730–10 350 €"
+            ],
+            [
+              "Valgfrie kostnader",
+              "",
+              ""
+            ],
+            [
+              "Internett og TV",
+              "240–360 €",
+              "240–360 €"
+            ],
+            [
+              "Innbruddsalarm med abonnement",
+              "420–650 €",
+              "420–650 €"
+            ],
+            [
+              "Keyholder og tilsyn av bolig",
+              "150–600 €",
+              "150–600 €"
+            ],
+            [
+              "Sum valgfrie kostnader",
+              "810–1 610 €",
+              "810–1 610 €"
+            ],
+            [
+              "Totalbudsjett inkl. valgfrie kostnader",
+              "3 210–7 840 €",
+              "4 540–11 960 €"
+            ]
+          ],
+          "caption": "*Forutsetter at basseng- og hagevedlikehold inngår i leilighetens felleskostnader."
         }
       },
       {
         "heading": "Løpende drifts- og bokostnader",
         "body": [
-          "Boligen har vanligvis både faste abonnementer og forbruksavhengige kostnader. Leiligheter og rekkehus kan ha flere fellesutgifter, mens villaer ofte krever mer individuelt vedlikehold. Sjekk også hvilke tjenester som er frivillige.",
-          "For eksempel oppgir Idealista (2025) og Habitissimo (2026) et veiledende intervall på €600–1 200 i året for vedlikehold av et privat basseng. Se [[Idealistas gjennomgang av bassengvedlikehold|https://www.idealista.com/news/inmobiliario/vivienda/2025/07/20/852734-cuanto-cuesta-mantener-una-piscina-factores-que-afectan-al-precio]] og [[Habitissimos prisguide|https://www.habitissimo.es/presupuestos/mantenimiento-piscinas]]. Tallene er ikke et pristilbud for en bestemt eiendom.",
-          "Et praktisk råd ved boligkjøp på Costa Blanca er å undersøke kostnadsdriverne før du sammenligner to boliger med samme kjøpesum: heis og oppvarmet fellesbasseng kan gi høye fellesutgifter, mens en villa uten comunidad kan kreve egne serviceavtaler og større vedlikeholdsreserve. Be om styreprotokoller og fakturaer, ikke bare salgsoppgavens anslag.",
-          "### Strøm og elektrisitet",
-          "Strømregningen består normalt av faste ledd knyttet til avtalt kapasitet, forbruk og andre regulerte eller avtalte kostnader. Klimaanlegg, oppvarming, varmtvann og bassengpumpe kan øke forbruket merkbart. Be om tidligere regninger og kontroller avtalt effekt.",
-          "### Vann og avløp",
-          "Regningen kan inneholde fast abonnement, forbruksledd, avløp og lokale avgifter. Hagevanning, bassengpåfylling og lekkasjer kan gjøre en stor forskjell. Be om faktiske fakturaer fra lokale leverandører.",
-          "### Renovasjon og andre kommunale avgifter",
-          "Basura er en kommunal avgift for avfallshåndtering, der den ilegges. Den kan kreves separat eller etter den lokale betalingsordningen. Undersøk også andre kommunale gebyrer knyttet til eiendommen.",
-          "### Forsikring på bolig i Spania",
-          "Vurder dekning for bygningsskade, innbo, ansvar, vannskader, uvær og skade når boligen står ubebodd. Sameiets forsikring kan dekke felles bygningsdeler, men erstatter ikke nødvendigvis din egen dekning. Be om polise og vilkår; en långiver kan kreve nødvendig skadeforsikring for pantet.",
-          "### Fellesutgifter (comunidad)",
-          "Fellesutgifter finansierer vedtatte fellesoppgaver som trapper, heis, fellesbasseng, hage, renhold, belysning, administrasjon og vedlikehold. Fordelingen følger normalt eierandel/fordelingsnøkkel og vedtekter, ikke nødvendigvis lik pris per bolig. Be om budsjett, protokoller og bekreftelse på utestående krav.",
-          "### Ekstraordinære felleskostnader",
-          "Et sameie kan vedta ekstra innbetalinger (derramas) til for eksempel fasade, heis, tak eller rehabilitering. Disse kan komme i tillegg til vanlige felleskostnader. Gjennomgå møteprotokoller og planlagte arbeider før kjøpet.",
-          "### Vedlikehold av bolig og uteområder",
-          "Sett av penger til maling, tetting, hvitevarer, klimaanlegg, varmtvannsbereder, rør, terrasse og hage. En eldre bolig og en stor tomt kan kreve mer arbeid. Avklar hvem som har ansvar for vegger, tak, uteplasser og tekniske installasjoner.",
+          "Når du eier bolig i Spania, har du både faste kostnader som løper uavhengig av hvor mye du bruker boligen, og utgifter som varierer med bruken. Eiendomsskatt, forsikring og felleskostnader må som regel betales også når boligen står tom, mens strøm og vann i større grad påvirkes av forbruket.",
+          "### Renovasjonsavgift og andre kommunale avgifter",
+          "Kommunen kan kreve en egen avgift for renovasjon og avfallshåndtering (tasa de basura). På Costa Blanca kan du som en grov pekepinn regne med 50–180 euro i året for en leilighet og 80–200 euro for en villa. Beløpet varierer mellom kommunene og kan faktureres separat eller sammen med andre kommunale avgifter.",
+          "### Felleskostnader i leiligheter og boligområder",
+          "For en leilighet på Costa Blanca ligger felleskostnadene (gastos de comunidad) ofte på rundt 600–1800 euro i året, men større boligkomplekser med flere basseng, treningsrom eller vakthold kan koste mer. Det kan også forekomme ekstra innbetalinger, kalt derramas, som kommer i tillegg til de vanlige kostnadene.",
+          "Felleskostnadene kan blant annet dekke:",
+          "Vedlikehold av basseng og hage",
+          "Renhold og belysning av fellesarealer",
+          "Drift og vedlikehold av heis",
+          "Forsikring av bygningen og fellesarealene",
+          "Administrasjon og vedlikehold av felles installasjoner",
+          "Beløpet avhenger av hvilke fasiliteter boligområdet har.",
+          "En frittstående villa kan ha få eller ingen felleskostnader, med mindre den ligger i et boligområde med felles fasiliteter.",
+          "#### Lave felleskostnader er ikke alltid ensbetydende med lave bokostnader",
+          "Min erfaring er at lave felleskostnader ikke nødvendigvis er et godt tegn. Det kan bety at sameiet setter av for lite penger til fremtidig vedlikehold. Når fasader, tak, heiser eller basseng må rehabiliteres, kan eierne få store ekstraregninger (derramas). Dette er spesielt relevant i eldre boligkomplekser.",
+          "Jeg anbefaler derfor å undersøke sameiets økonomi, vedlikeholdsplaner og eventuelle planlagte ekstra innbetalinger før du kjøper.",
+          "### Strøm",
+          "Strømkostnadene avhenger av boligens størrelse, hvor mye den brukes, og hvor mye strøm aircondition, oppvarming og andre apparater krever. Boligens alder og energieffektivitet har også mye å si.",
+          "Anslåtte årlige strømkostnader:",
+          "Leilighet: 400–900 euro",
+          "Villa: 700–1 500 euro",
+          "Nyere boliger har ofte bedre isolasjon og mer energieffektive løsninger, som varmepumpe eller aerotermia, og kan derfor ha lavere strømbehov enn eldre boliger. Solcelleanlegg kan redusere behovet for å kjøpe strøm fra nettet, avhengig av produksjon og forbruk.",
+          "Strømregningen består av et fastledd for avtalt kapasitet og betaling for strømmen du bruker. Nettariffer og avgifter inngår normalt i regningen, og prisene varierer etter strømavtale og forbruk.",
+          "### Vann",
+          "Vannregningen består vanligvis av en fast avgift og betaling etter forbruk. Den kan også inkludere avgifter for avløp og rensing av avløpsvann. Prisene varierer mellom kommunene, og enkelte steder øker prisen per kubikkmeter når forbruket passerer bestemte grenser.",
+          "Anslåtte årlige vannkostnader:",
+          "Leilighet: 150–350 euro",
+          "Villa: 300–800 euro",
+          "På Costa Blanca kan du bruke 2,20–2,70 euro per kubikkmeter (1 000 liter) som et veiledende anslag for vann og vanlige tilleggsavgifter. Den faktiske prisen avhenger av kommunen og hvordan avgiftene beregnes.",
+          "Villaer har ofte høyere vannforbruk, særlig dersom du har privat basseng eller hage som må vannes.",
+          "### Internett og TV – valgfritt",
+          "Fiberbredbånd koster ofte rundt 240–360 euro i året, avhengig av leverandør og hastighet. TV-pakker kan være inkludert eller kjøpes separat.",
+          "For en fritidsbolig kan det lønne seg å velge et abonnement uten lang bindingstid. Sjekk også fiberdekningen på adressen før du bestiller, og undersøk om månedsprisen øker etter en eventuell kampanjeperiode.",
+          "### Boligforsikring",
+          "Prisen avhenger blant annet av boligens størrelse, forsikringsdekningen og om boligen brukes som fast bolig eller fritidsbolig.",
+          "Anslåtte årlige kostnader:",
+          "Leilighet: 200–400 euro",
+          "Villa med privat basseng: 400–800 euro",
+          "Boligforsikring (seguro de hogar) kan dekke skader på selve boligen, innbo og ansvar, for eksempel ved vannlekkasjer. Du kan undersøke tilbud fra både spanske og norske forsikringsselskaper. If tilbyr forsikring for fritidsbolig i Spania. Mange opplever at prisen hos norske tilbydere er høyere, men man får norsk kundeservice, som for en del veier opp mot kostnaden.",
+          "Kjøper du leilighet, bør du også undersøke hva sameiets bygningsforsikring dekker. Da kan du lettere vurdere hvilken forsikring du trenger for egen bolig, innbo og ansvar.",
+          "### Vedlikehold og reparasjoner",
+          "Sett av penger hvert år til vedlikehold og uforutsette reparasjoner. Nybygg krever vanligvis mindre vedlikehold i starten, mens eldre boliger kan trenge større investeringer i for eksempel tak, rør og klimaanlegg.",
+          "Anbefalt årlig avsetning:",
+          "Leilighet: 500–1 500 euro",
+          "Villa: 1 000–3 000 euro",
+          "Villaeiere må også ta høyde for løpende vedlikehold av basseng og hage, som kommer i tillegg til avsetningen over. I leiligheter kan større arbeider på bygningen medføre ekstra innbetalinger til sameiet (derramas).",
           "### Kostnader ved privat basseng",
-          "Privat basseng kan kreve rengjøring, kjemikalier, filter, pumpeelektrisitet, vannpåfylling og fagservice. Utgifter til reparasjoner eller utskifting av teknikk kommer i tillegg. Kontroller alder, tilstand og driftsjournal.",
-          "### TV, internett og abonnementer",
-          "Internett og TV er vanligvis valgfrie avtaler med månedlig betaling. Sjekk dekning og bindingstid, særlig på landeiendom eller i områder med begrenset fiber.",
+          "Et privat basseng medfører kostnader til rengjøring, kjemikalier og vedlikehold av pumpe, filter og annet teknisk utstyr. Regn med omtrent 600–1 800 euro i året til bassengvedlikehold, avhengig av størrelsen og om du gjør jobben selv eller bruker et vedlikeholdsfirma. Strøm og vann kommer i tillegg, og større reparasjoner kan gi ekstra kostnader.",
+          "Før du kjøper bolig, bør du undersøke bassengets tilstand, alderen på det tekniske utstyret og tidligere vedlikehold.",
           "### Innbruddsalarm og sikkerhet",
-          "Alarm kan medføre installasjon, utstyr og løpende abonnement til alarmsentral. Undersøk om alarmsystemet eies, leies eller er bundet til kontrakt.",
+          "En alarm tilkoblet alarmsentral koster ofte rundt 420–650 euro i året, avhengig av leverandør og abonnement. Installasjon eller kjøp av utstyr kan komme i tillegg.",
+          "Undersøk om alarmsystemet følger med boligen, og sjekk bindingstid, pris etter eventuelle kampanjer og vilkårene for oppsigelse.",
           "### Keyholder, tilsyn og vaktmester",
-          "Når du bor i Norge eller er bortreist, kan et lokalt tilsyn oppdage lekkasjer, strømbrudd eller stormskader og bistå med nøkkeloverlevering og håndverkere. Tjenesten er normalt valgfri; kontroller hva avtalen faktisk inkluderer.",
-          "### Bankgebyrer og kostnader til bankkonto",
-          "En spansk bankkonto kan ha gebyrer for konto, kort og overføringer, avhengig av produktet. Be om oppdatert prisliste og vurder om direktebetalinger og avtalegiro er satt opp riktig."
-        ]
-      },
-      {
-        "heading": "Skatter og avgifter ved å eie bolig i Spania",
-        "body": [
-          "IBI er en lokal eiendomsskatt. Andre skatter avhenger blant annet av om du er skattemessig bosatt i Spania, om du leier ut boligen, og størrelsen på din skattepliktige formue.",
-          "### IBI – kommunal eiendomsskatt",
-          "IBI (Impuesto sobre Bienes Inmuebles) beregnes med utgangspunkt i eiendommens cadastralverdi (valor catastral) og kommunens regler og sats. Den er ikke det samme som en prosentandel av annonseringsprisen. Siste IBI-kvittering er det beste utgangspunktet, men undersøk også varslede omtakseringer eller endringer.",
-          "### Skatt for ikke-residenter og Modelo 210",
-          "Eier du en spansk bolig som skattemessig ikke-resident, kan egen bruk og perioder uten utleie gi beregnet skattepliktig eiendomsinntekt (renta inmobiliaria imputada). Beregningsgrunnlaget følger egne regler knyttet til cadastralverdi, ofte 1,1 % eller 2 % etter gjeldende vilkår; prosentsatsene er beregningsgrunnlag, ikke selve skattesatsen. Modelo 210 er skjemaet som benyttes til å rapportere og betale den relevante ikke-residentskatten (IRNR).",
-          "Ved utleie beskattes faktiske leieinntekter etter egne regler, og for visse skattemessige bostedsland kan direkte tilknyttede kostnader trekkes fra hvis vilkårene oppfylles. Tid som er utleid, og tid til privat bruk eller tilgjengelighet, kan dermed behandles ulikt. Kontroller riktig sats, frister og fradrag i [[Skatteetatens spanske veiledning for Modelo 210|https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html]] eller hos skatterådgiver.",
-          "### Formuesskatt og eventuell solidaritetsskatt",
-          "Impuesto sobre el Patrimonio og Impuesto Temporal de Solidaridad de las Grandes Fortunas kan være aktuelle ved større formuer. Regler, fritak, terskler, verdsetting, gjeld og regionalt regelverk gjør dette til en individuell vurdering. Les reglene om [[spansk formuesskatt|https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-sobre-patrimonio.html]] og [[solidaritetsskatt på store formuer|https://sede.agenciatributaria.gob.es/Sede/declaraciones-informativas-otros-impuestos-tasas/impuesto-temporal-solidaridad-grandes-fortunas.html]].",
-          "### Skatt for deg som er skattemessig bosatt i Spania",
-          "Skattemessig residenter følger andre regler for inntekt og formue, blant annet spansk personinntektsskatt (IRPF). Dette er ikke en full guide til skattemessig bosted eller internasjonal beskatning. Få vurdert din konkrete situasjon, også med hensyn til Norge.",
-          "### Skatterepresentant og regnskapshjelp",
-          "En gestor eller skatterådgiver kan hjelpe med skatteplikt, oppgaver og frister. Betalt representasjon er ikke automatisk et generelt krav for enhver utenlandsk eier; særskilte representasjonsplikter avhenger av lovbestemte forhold. Avklar behov og fullmakter før du inngår en avtale."
+          "Når boligen står tom, kan regelmessig tilsyn bidra til å oppdage lekkasjer, fukt og skader tidlig. En enkel avtale med månedlige besøk kan koste rundt 150–600 euro i året, avhengig av leverandør og hvilke tjenester som inngår.",
+          "Avklar om avtalen inkluderer nøkkeloppbevaring, tilsynsrapport og oppfølging ved skader. Hyppigere besøk, utrykning og håndverkerarbeid kan koste ekstra.",
+          "### Skatter og avgifter ved å eie bolig i Spania",
+          "Som boligeier i Spania må du regne med å betale skatter og avgifter hvert år. Hvor mye du betaler, avhenger blant annet av boligens skattemessige verdi, om du er skattemessig bosatt i Spania eller utlandet, og om du leier ut boligen.",
+          "#### Eiendomsskatt (IBI)",
+          "IBI (Impuesto sobre Bienes Inmuebles) er en årlig eiendomsskatt som betales til kommunen. Skatten beregnes ut fra boligens valor catastral – en offentlig fastsatt verdi som blant annet tar hensyn til beliggenhet, tomt og bygningens egenskaper. Verdien er ikke nødvendigvis den samme som markedsverdien eller kjøpesummen.",
+          "Kommunen fastsetter skattesatsen. For urbane eiendommer er den ordinære satsen som hovedregel mellom 0,4 og 1,1 prosent. Den faktiske skatten avhenger av boligens valor catastral og satsen som gjelder i kommunen.",
+          "Eksempel: En bolig har en valor catastral på 100 000 euro. Med en IBI-sats på 0,6 prosent blir den årlige eiendomsskatten:",
+          "100 000 € × 0,6 % = 600 € per år.",
+          "Be om den siste IBI-regningen før du kjøper bolig, slik at du får vite hva skatten faktisk er for eiendommen.",
+          "#### Skatt for ikke-residenter og Modelo 210",
+          "Hvis du er skattemessig bosatt i Norge og eier bolig i Spania som du bruker privat eller lar stå tom, må du normalt betale spansk skatt på en beregnet inntekt fra boligen. Dette gjelder selv om du ikke leier den ut. Skatten rapporteres til den spanske skatteetaten gjennom skjemaet Modelo 210.",
+          "Skatten beregnes blant annet ut fra boligens valor catastral, hvor stor del av året du har eid boligen, og eierandelen din. For personer som er skattemessig bosatt i Norge, er skattesatsen normalt 19 prosent av den beregnede inntekten.",
+          "Som en grov pekepinn kan du budsjettere med 150–350 euro i året for en leilighet og 200–500 euro for en villa. Dette er anslag, ikke faste satser. Leier du ut boligen, gjelder det egne regler for skatt på leieinntektene. Planlegger du å leie ut boligen, bør du også lese vår guide om utleie av bolig i Spania og hva du realistisk kan tjene.",
+          "#### Kostnader til skattemelding og administrasjon",
+          "Skatten som rapporteres gjennom Modelo 210, er en egen kostnad. Mange utenlandske boligeiere velger i tillegg å betale en spansk gestor eller skatterådgiver for å håndtere skattemeldingen og andre administrative oppgaver.",
+          "For hjelp med en enkel årlig Modelo 210-erklæring kan du bruke 50–150 euro per eier som et veiledende budsjett. Dette er honoraret for hjelpen, ikke selve skatten. Prisen varierer etter leverandør og hva som inngår. Leier du ut boligen eller trenger hjelp med flere skatteforhold, kan honoraret bli høyere."
         ]
       },
       {
         "heading": "Hva koster det å eie bolig når den står tom?",
         "body": [
-          "IBI, eventuelle comunidad-krav, faste abonnementer, forsikring, renovasjon og relevante skatter fortsetter normalt selv om du ikke oppholder deg i boligen. Strøm- og vannforbruk kan falle, men faste ledd og sikringsbehov forsvinner ikke nødvendigvis.",
-          "Før lengre fravær bør du gjøre disse kontrollene:"
-        ],
-        "bullets": [
-          "Vurder stenging av vann og kontroller mulige lekkasjepunkter.",
-          "Sjekk strøm, sikringer, kjøleskap og hva som må være påslått.",
-          "Gå gjennom forsikringsvilkår for perioder uten tilsyn.",
-          "Avtal tilsyn, nøkkeltilgang og kontaktperson ved skader.",
-          "Planlegg lufting, hage- og bassengvedlikehold også mens boligen er tom."
-        ]
-      },
-      {
-        "heading": "Hva er forskjellen på kostnadene ved å eie leilighet, rekkehus og villa?",
-        "body": [
-          "Forskjellen ligger først og fremst i hvem som betaler for vedlikehold og felles fasiliteter. En stor leilighet med heis og flere bassenger kan koste mer i fellesutgifter enn et enkelt rekkehus; en villa kan ha høyere direkte driftsansvar."
-        ],
-        "table": {
-          "headers": [
-            "Kostnadsdriver",
-            "Leilighet",
-            "Villa"
-          ],
-          "rows": [
-            ["Basseng og hage", "Ofte felleskostnad", "Ofte privat drift"],
-            ["Bygningsvedlikehold", "Delt med sameiet", "Direkte eieransvar"],
-            ["Ekstra innbetalinger", "Mulig derrama", "Egne reparasjoner"]
-          ],
-          "caption": "Den konkrete fordelingen av ansvar følger eiendommens rettslige organisering, sameievedtekter og avtaler."
-        }
-      },
-      {
-        "heading": "Hvordan lager du et realistisk budsjett for bolig i Spania?",
-        "body": [
-          "Lag et årsbudsjett basert på dokumenterte tall, ikke standardanslag fra annonser. Regn først ut kostnader som påløper uansett bruk, deretter de som varierer med forbruk, sesong og vedlikehold.",
-          "Be om siste IBI og basura, aktuelle comunidad-fakturaer med budsjetter og protokoller, 12 måneders strøm- og vannregninger, forsikringstilbud og servicekostnader for basseng/hage. Spør også etter vedtatte eller forventede derramas.",
-          "Eksempel på budsjettmetode: Summer årlige avgifter og forsikring + 12 måneders abonnement/forbruk + fire kvartalsbetalinger til sameie dersom det er betalingsformen + planlagt vedlikehold + separat reserve til uforutsett reparasjon. Del totalen på 12 for en sammenlignbar månedskostnad. Ikke forveksle gjennomsnitt per måned med når regningene faktisk forfaller.",
-          "Har du lån, legg renter og avdrag inn i husholdningens totalbudsjett. Selve valg av finansiering beskrives i [[finansieringsguiden|/guide/finansiere-bolig-i-spania]]. Skatter og engangsomkostninger ved kjøpet hører til [[guiden om kjøpskostnader|/guide/kostnader-boligkjop-spania]]."
-        ],
-        "bullets": [
-          "Årlig: IBI, mange forsikringer og enkelte kommunale avgifter.",
-          "Kvartalsvis eller månedlig: comunidad etter sameiets betalingsplan.",
-          "Månedlig/etter faktura: strøm, vann, telekom, alarm og tilsyn.",
-          "Uregelmessig: reparasjoner, oppgraderinger, ekstraordinære sameieinnbetalinger.",
-          "Legg på en reserve som passer boligens alder, tekniske tilstand og vedlikeholdsansvar."
+          "Selv når du ikke bruker boligen, løper mange av de faste kostnadene videre. Eiendomsskatt (IBI), eventuelle felleskostnader, boligforsikring og relevant skatt for ikke-residenter må normalt betales uavhengig av hvor mye du bruker boligen.",
+          "Du kan likevel redusere enkelte utgifter og forebygge skader når boligen står tom over lengre tid.",
+          "Slik kan du redusere kostnadene og ta vare på boligen:",
+          "Forebygg vannskader: Steng hovedvanntilførselen når du reiser bort, dersom boligens installasjoner og forsikringsvilkår tillater det.",
+          "Reduser strømforbruket: Slå av unødvendige apparater, og vurder om du trenger aktive strøm- og TV-abonnementer hele året.",
+          "Sjekk boligforsikringen: Undersøk hvilke vilkår som gjelder når boligen står tom over lengre tid, og om forsikringen krever bestemte sikkerhetstiltak eller regelmessig tilsyn.",
+          "Vurder alarm og tilsyn: Alarm og jevnlige kontroller kan bidra til å oppdage innbrudd, lekkasjer og andre skader tidlig.",
+          "Tilpass vedlikeholdet: Planlegg hage- og bassengvedlikehold etter sesong og behov, slik at du unngår unødvendige kostnader og skader.",
+          "Når en bolig står tom over lengre tid, er det ikke bare de faste kostnadene jeg mener du bør være oppmerksom på. Fukt, vannlekkasjer, dårlig ventilasjon og problemer med klimaanlegget kan utvikle seg uten at noen oppdager det. Små problemer kan dermed bli til større skader.",
+          "Jeg anbefaler jevnlig tilsyn, særlig etter perioder med kraftig regnvær, og at du undersøker forsikringsvilkårene for boliger som står ubebodd over lengre tid. Hvis du ikke selv er i Spania store deler av året, kan det være nyttig å ha noen som kontrollerer boligen regelmessig.",
+          "Les mer om tilsyn og nøkkelholdertjenester hos Zen Eco Homes Care."
         ]
       }
     ],
-    "nextSteps": [
-      "Be om siste IBI, renovasjonsavgift og sameiets regnskap/budsjett.",
-      "Kontroller dokumenterte strøm- og vannregninger gjennom ulike sesonger.",
-      "Undersøk vedtatte ekstraordinære sameieinnbetalinger og teknisk vedlikehold.",
-      "Avklar spanske skatteplikter ut fra bosted, eierform og eventuell utleie.",
-      "Lag én årsoversikt med forfall og en egen uforutsett reserve."
-    ],
+    "nextSteps": [],
     "faq": [
       {
         "question": "Hva koster det å eie bolig i Spania per år?",
-        "answer": "I scenarioene for moderat feriebruk: ca. €1 200–3 200 per år for en enkel leilighet og €2 400–6 000 for en villa med basseng og hage, før lån, individuelle skatter og større reparasjoner. Beløpene er regneforutsetninger, ikke verifiserte gjennomsnitt. Kontroller alltid fakturaer for den konkrete boligen."
+        "answer": "Kostnadene avhenger av boligtype, beliggenhet og bruk. I vårt anslag ligger det årlige totalbudsjettet på 2 400–6 230 euro for en leilighet med fellesbasseng og 3 730–10 350 euro for en villa med privat basseng, inkludert avsetning til vedlikehold og reparasjoner."
       },
       {
         "question": "Må jeg betale skatt på bolig i Spania når jeg bor i Norge?",
-        "answer": "Som eier kan du skylde spansk kommunal IBI og skatt etter reglene for ikke-residenter, selv om du bor i Norge. Avklar også rapporteringsplikter i Norge ut fra din situasjon."
+        "answer": "Ja, som regel. Eier du bolig i Spania og er skattemessig bosatt i Norge, må du normalt betale spansk skatt på boligen. Du kan også måtte rapportere en beregnet inntekt gjennom Modelo 210, selv om du ikke leier ut boligen."
       },
       {
         "question": "Hva er IBI og comunidad?",
-        "answer": "IBI er kommunal eiendomsskatt. Comunidad er boligens andel av kostnadene i et sameie eller en urbanisasjon, for eksempel til heis, fellesarealer og basseng."
+        "answer": "IBI er den årlige eiendomsskatten du betaler til kommunen. Comunidad er felleskostnadene i et sameie, som kan dekke blant annet vedlikehold av fellesarealer, basseng, heis og hage."
       },
       {
         "question": "Må jeg betale skatt selv om jeg ikke leier ut boligen?",
-        "answer": "Ja, mange ikke-residente eiere av byeiendom kan få skatt på beregnet inntekt ved egen bruk eller når boligen står til disposisjon. Den deklareres normalt via Modelo 210 etter gjeldende regler."
+        "answer": "Ja, normalt. Hvis du er skattemessig bosatt i Norge og bruker boligen privat eller lar den stå tom, må du som regel betale spansk skatt på en beregnet inntekt fra boligen. Skatten rapporteres gjennom Modelo 210."
       },
       {
         "question": "Må jeg betale felleskostnader når boligen står tom?",
-        "answer": "Ja. Sameiets vedtatte fellesutgifter gjelder normalt uavhengig av om du bruker boligen."
+        "answer": "Ja. Felleskostnadene må normalt betales uavhengig av hvor mye du bruker boligen. Beløpet avhenger blant annet av sameiets fasiliteter, vedlikehold og hva som inngår i avtalen."
       },
       {
         "question": "Hvilke kostnader har jeg ved å eie en villa med privat basseng?",
-        "answer": "I tillegg til vanlig boligdrift må du budsjettere med rengjøring, kjemikalier, pumpe og strøm, vannpåfylling, service og reparasjoner, samt eventuell hage og vanning."
+        "answer": "I tillegg til eiendomsskatt, strøm, vann og forsikring må du regne med kostnader til basseng, hage og vedlikehold av selve boligen. I denne guiden er det anslått 600–1 800 euro i året til bassengvedlikehold, mens reparasjoner og utskifting av utstyr kan komme i tillegg."
       },
       {
         "question": "Hvilke kostnader bør jeg undersøke før jeg kjøper?",
-        "answer": "Be om IBI, basura, sameiebudsjett og protokoller, strøm/vann, forsikring, teknisk tilstand, basseng- og hagekostnader, aktuelle skatter og eventuelle ekstraordinære innbetalinger."
+        "answer": "Be om dokumentasjon på IBI, felleskostnader og tidligere strøm- og vannregninger. Sjekk også boligens tilstand, forsikring, eventuelle planlagte arbeider i sameiet og kostnader til basseng og hage dersom dette er aktuelt."
       }
     ],
     "cta": {

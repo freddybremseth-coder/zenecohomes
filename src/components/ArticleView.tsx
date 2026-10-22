@@ -1192,6 +1192,9 @@ export function ArticleView({ article }: { article: Article }) {
                     );
                   })()}
                   {section.body?.map((paragraph) => {
+                    if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("#### ")) {
+                      return <h4 key={paragraph}>{paragraph.slice(5)}</h4>;
+                    }
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
@@ -1265,7 +1268,7 @@ export function ArticleView({ article }: { article: Article }) {
               );
             })}
 
-            <section className="article-next-steps">
+            {article.nextSteps.length > 0 && <section className="article-next-steps">
               <p className="eyebrow">Anbefalte neste steg</p>
               <h2>Slik går du videre</h2>
               <ol>
@@ -1278,7 +1281,7 @@ export function ArticleView({ article }: { article: Article }) {
                   {article.cta.label} <ArrowRight size={17} />
                 </Link>
               )}
-            </section>
+            </section>}
 
             <section className="article-faq">
               <p className="eyebrow">Vanlige spørsmål</p>
