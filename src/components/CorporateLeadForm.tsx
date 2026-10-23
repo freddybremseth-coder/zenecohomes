@@ -36,6 +36,12 @@ type CalculatorContext = {
   hotelAlternativeAnnual?: number;
   estimatedFutureValue?: number;
   stays?: StayContext[];
+  ownershipCount?: number;
+  ownershipShare?: number;
+  loan?: number;
+  equityAmount?: number;
+  annualLoanPayment?: number;
+  saleProceedsScenario?: number;
 };
 
 const euro = new Intl.NumberFormat("nb-NO", {
@@ -102,6 +108,12 @@ export function CorporateLeadForm() {
           `Alternativ hotellkostnad for bedriftsopphold: ${calculatorContext.hotelAlternativeAnnual != null ? euro.format(calculatorContext.hotelAlternativeAnnual) : "Ikke valgt"}`,
           ...stayLines,
           `Verdiscenario: ${calculatorContext.valuePct ?? "-"} % i ${calculatorContext.holdingYears ?? "-"} år`,
+          `Antall eiere: ${calculatorContext.ownershipCount ?? "Ikke oppgitt"}`,
+          `Eierandel: ${calculatorContext.ownershipShare ?? "Ikke oppgitt"} %`,
+          `Lånebeløp: ${calculatorContext.loan != null ? euro.format(calculatorContext.loan) : "-"}`,
+          `Egenkapital: ${calculatorContext.equityAmount != null ? euro.format(calculatorContext.equityAmount) : "-"}`,
+          `Årlig lånebetaling: ${calculatorContext.annualLoanPayment != null ? euro.format(calculatorContext.annualLoanPayment) : "-"}`,
+          `Mulig nettoproveny ved salg: ${calculatorContext.saleProceedsScenario != null ? euro.format(calculatorContext.saleProceedsScenario) : "-"}`,
           `Forutsetninger: ${calculatorContext.assumptions ?? "Veiledende estimat"}`,
         ]
       : [];
