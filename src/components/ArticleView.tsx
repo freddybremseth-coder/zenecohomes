@@ -6,6 +6,7 @@ import { withArticleAttribution } from "@/lib/article-attribution";
 import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { MarketBudgetComparison } from "@/components/MarketBudgetComparison";
 import { CorporateHomeCalculator } from "@/components/CorporateHomeCalculator";
+import { CorporateBoardCalculator } from "@/components/CorporateBoardCalculator";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
 
 const BASE = "https://www.zenecohomes.com";
@@ -1101,6 +1102,8 @@ export function ArticleView({ article }: { article: Article }) {
                 <CorporateHomeCalculator />
               </section>
             )}
+
+            {article.slug === "slik-presenterer-du-bedriftshytte-for-styret" && <CorporateBoardCalculator />}
 
             {article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" && (
               <PurchaseBudgetCalculator />

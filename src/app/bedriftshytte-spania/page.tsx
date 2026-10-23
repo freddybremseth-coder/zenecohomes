@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { CorporateHomeCalculator } from "@/components/CorporateHomeCalculator";
+import { CorporateSimpleCalculator } from "@/components/CorporateSimpleCalculator";
 import { CorporateLeadForm } from "@/components/CorporateLeadForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -79,16 +79,29 @@ export default function CorporateHomesPage() {
       <div className="section-heading"><h2>En bedriftshytte - mange muligheter</h2><p>En bedriftshytte i Spania er en mulighet til å gi ansatte, ledere eller medlemmer noe litt utenom det vanlige. Se for dere en feriebolig på Costa Blanca, der sol, varme og nye opplevelser blir en del av et ansattgode dere kan tilby. Det kan skape verdi langt utover selve oppholdet – enten målet er å belønne ansatte, styrke samholdet eller gi medlemmene en ekstra fordel.</p><p>Her er noen måter en bolig i Spania kan bli en verdifull ressurs for virksomheten.</p></div>
       <div className="corporate-decision-grid">{benefits.map(([title,copy])=><article key={title} style={{padding:"1.5rem",borderRadius:"1rem",background:"var(--surface, #fff)",boxShadow:"0 6px 22px #172f4012"}}><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </section>
+    <section className="section corporate-decision" id="eierskap">
+      <div className="section-heading"><h2>Må bedriften eie hele boligen alene?</h2><p>Dere kan eie en bedriftshytte selv, dele eierskap med andre virksomheter eller organisere en medlemsbolig. Valget påvirker både investeringen og hvordan boligen kan brukes.</p></div>
+      <div className="corporate-decision-grid">
+        {[
+          ["Eget eierskap","Virksomheten eier og disponerer boligen etter sin egen bruksmodell."],
+          ["Delt eierskap","Flere bedrifter deler investering, drift og tilgjengelige uker etter avtale. Dette kan gjøre ordningen tilgjengelig med lavere kapitalbehov."],
+          ["Medlemsmodell","En forening eller organisasjon eier boligen og legger til rette for bruk blant medlemmene."]
+        ].map(([title,copy])=><article key={title} style={{padding:"1.5rem",borderRadius:"1rem",background:"var(--surface, #fff)",boxShadow:"0 6px 22px #172f4012"}}><h3>{title}</h3><p>{copy}</p></article>)}
+      </div>
+      <p style={{marginTop:20}}>Ved delt eierskap må partene avklare eierandeler, booking, vedlikehold, beslutninger og hvordan en deltaker kan tre ut. Eier- og skatteforhold bør kvalitetssikres av fagpersoner.</p>
+      <Link className="contact-button" href="/bedriftshytte-spania#bedriftsvurdering">Snakk med oss om delt eierskap <ArrowRight size={18}/></Link>
+    </section>
+    <section className="corporate-calculator-section" id="kalkulator">
+      <div className="corporate-section-copy"><h2>Hva koster en bedriftshytte i Spania</h2><p>For å finne ut hvilke muligheter virksomheten har, er det lurt å starte med totalbudsjettet. Boligprisen er bare én del av regnestykket. I tillegg kommer kjøpsomkostninger, løpende eierkostnader og eventuell praktisk oppfølging av boligen. Disse utgiftene påvirker hvor mye dere faktisk kan bruke på selve boligen.</p><p>Hva dere får for budsjettet, avhenger blant annet av hvor i Spania dere ønsker å kjøpe, hvilken boligtype dere ser etter, og hvilken størrelse og standard dere ønsker. En leilighet i et etablert boligområde vil for eksempel ha en annen pris enn en større villa med privat basseng. Derfor er det viktig å se boligprisen i sammenheng med både totalbudsjettet og virksomhetens behov.</p><p>Den enkle kalkulatoren gir dere et første estimat på investering og årlige kostnader. Ønsker dere å sammenligne finansiering, hotellalternativer, delt eierskap og langsiktig økonomi, finner dere den omfattende kalkulatoren i styreguiden.</p></div>
+      <CorporateSimpleCalculator />
+    </section>
+    <section className="section corporate-decision"><div className="section-heading"><h2>Hvorfor velge Zen Eco Homes?</h2><p>Vi er deres lokale samarbeidspartner på Costa Blanca: fra behov og områdevalg, til eiendom, kjøpsprosess og praktisk oppfølging etter overtakelsen. Vi starter med virksomhetens bruk og økonomi før vi foreslår boliger.</p><Link className="contact-button" href="/booking">Snakk med en rådgiver <ArrowRight size={18}/></Link></div></section>
+    <section className="section corporate-products"><div className="section-heading"><h2>Sammen finner vi riktig bedriftshytte i Spania</h2><p>En bedriftshytte skal dekke virksomhetens behov over tid. Derfor er det viktig å tenke gjennom hvordan boligen skal brukes. Svarene gir et tydeligere bilde av hvilken bolig som vil passe virksomheten – og hvilke egenskaper dere bør prioritere når dere skal velge.</p></div>
+      <div className="corporate-product-grid">{[["Formål og bruk","Hva ønsker dere å oppnå med boligen, og hvem skal kunne bruke den?"],["Kapasitet og fasiliteter","Hvor mange skal kunne bo der samtidig, og hvilke fasiliteter er viktige for den planlagte bruken?"],["Beliggenhet","Er det viktigst med kort vei til flyplass, strender, restauranter, aktiviteter eller gode arbeidsforhold?"]].map(([t,d])=><article key={t}><h3>{t}</h3><p>{d}</p></article>)}</div>
+    </section>
     <section className="section corporate-process">
       <div className="section-heading"><h2>Dette hjelper Zen Eco Homes med</h2><p>Fra den første idéen til nøklene i hånden – og videre derfra. Zen Eco Homes hjelper dere gjennom hele prosessen, fra behovsavklaring og boligvalg til kjøp og lokal oppfølging gjennom Zen Eco Care når boligen er deres.</p></div>
       <div className="corporate-process-grid">{steps.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>
-    </section>
-    <section className="corporate-calculator-section" id="kalkulator">
-      <div className="corporate-section-copy"><h2>Hva koster en bedriftshytte i Spania</h2><p>For å finne ut hvilke muligheter virksomheten har, er det lurt å starte med totalbudsjettet. Boligprisen er bare én del av regnestykket. I tillegg kommer kjøpsomkostninger, løpende eierkostnader og eventuell praktisk oppfølging av boligen. Disse utgiftene påvirker hvor mye dere faktisk kan bruke på selve boligen.</p><p>Hva dere får for budsjettet, avhenger blant annet av hvor i Spania dere ønsker å kjøpe, hvilken boligtype dere ser etter, og hvilken størrelse og standard dere ønsker. En leilighet i et etablert boligområde vil for eksempel ha en annen pris enn en større villa med privat basseng. Derfor er det viktig å se boligprisen i sammenheng med både totalbudsjettet og virksomhetens behov.</p><p>Med vår budsjettkalkulator kan dere beregne en veiledende boligpris, få en første oversikt over kostnadene og sammenligne med hva tilsvarende opphold på hotell kan koste.</p></div>
-      <CorporateHomeCalculator />
-    </section>
-    <section className="section corporate-products"><div className="section-heading"><h2>Sammen finner vi riktig bedriftshytte i Spania</h2><p>En bedriftshytte skal dekke virksomhetens behov over tid. Derfor er det viktig å tenke gjennom hvordan boligen skal brukes. Svarene gir et tydeligere bilde av hvilken bolig som vil passe virksomheten – og hvilke egenskaper dere bør prioritere når dere skal velge.</p></div>
-      <div className="corporate-product-grid">{[["Formål og bruk","Hva ønsker dere å oppnå med boligen, og hvem skal kunne bruke den?"],["Kapasitet og fasiliteter","Hvor mange skal kunne bo der samtidig, og hvilke fasiliteter er viktige for den planlagte bruken?"],["Beliggenhet","Er det viktigst med kort vei til flyplass, strender, restauranter, aktiviteter eller gode arbeidsforhold?"]].map(([t,d])=><article key={t}><h3>{t}</h3><p>{d}</p></article>)}</div>
     </section>
     <section className="section corporate-decision"><div className="section-heading"><h2>Ordningen må bygges riktig fra starten</h2><p>En bedriftshytte i Spania kan være et verdifullt gode for ansatte, men det er viktig å avklare skatteregler, eierskap og bruk før virksomheten bestemmer seg for å kjøpe. Hvordan ordningen organiseres og praktiseres, har betydning for den skattemessige behandlingen.</p></div>
       <h3>Skatt og bruk av bedriftshytten</h3><p>Bruk av bedriftshytte kan på visse vilkår være skattefri for ansatte når den regnes som et rimelig velferdstiltak og er reelt tilgjengelig for alle eller en betydelig gruppe ansatte. Det er derfor viktig å planlegge hvem som skal kunne bruke boligen, hvordan oppholdene fordeles, og hvordan ordningen dokumenteres.</p>
@@ -105,7 +118,7 @@ export default function CorporateHomesPage() {
     <section className="section corporate-decision"><div className="section-heading"><h2>Neste steg for deres virksomhet</h2><p>Enten dere er i startfasen eller allerede har konkrete planer, hjelper vi dere videre. Zen Eco Homes gir råd gjennom hele prosessen – fra behovsavklaring og vurdering av ulike løsninger til gjennomgang av budsjett og aktuelle boliger.</p><p>Book en uforpliktende prat for å utforske mulighetene, eller send oss en e-post dersom dere har spørsmål. Sammen finner vi ut hva som kan passe for deres virksomhet.</p><Link className="contact-button" href="/booking">Ta kontakt <ArrowRight size={18}/></Link></div></section>
     <section className="section corporate-faq"><div className="section-heading"><h2>FAQ</h2></div><div className="corporate-faq-list">{faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
     <section className="corporate-intro"><div><h2>Har dere kunder eller medlemmer som kan være aktuelle?</h2></div><div><p>Zen Eco Homes har en egen partnerkanal for norske regnskapsmiljøer, advokatfirmaer, HR-/rekrutteringsselskaper, bedriftsrådgivere og medlemsorganisasjoner.</p><Link className="contact-button" href="/bedriftshytte-spania/partnere">Se partnerprogrammet <ArrowRight size={18}/></Link></div></section>
-    <section className="corporate-contact" id="bedriftsvurdering"><div className="corporate-contact-copy"><h2>Få en detaljert kostnadsoversikt på e-post</h2><p>Fyll inn kontaktinformasjon for en mer utfyllende rapport med beregninger, forutsetninger og kostnadsoversikt. Har dere brukt kalkulatoren, følger tallene med.</p></div><CorporateLeadForm /></section>
+    <section className="corporate-contact" id="bedriftsvurdering"><div className="corporate-contact-copy"><h2>Få en utvidet økonomisk oversikt på e-post</h2><p>Fyll inn kontaktinformasjon for en mer utfyllende rapport med beregninger og forutsetninger. Tall fra den enkle kalkulatoren følger med når dere har valgt å bruke dem.</p></div><CorporateLeadForm /></section>
     <Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqJsonLd)}}/>
   </main>;
 }
