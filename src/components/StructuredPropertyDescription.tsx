@@ -22,10 +22,12 @@ function parseDescription(text: string) {
 export function StructuredPropertyDescription({ text, locale = "no" }: { text: string; locale?: string }) {
   const [expanded, setExpanded] = useState(false);
   const t = labels[locale] || labels.no;
-  const groups = useMemo(() => parseDescription(text), [text]);
+  // Remove a trailing feed identifier, never part of the customer-facing story.
+  const customerText = useMemo(() => text.trim().replace(/\s+\(\d{3,6}\)\s*$/, ""), [text]);
+  const groups = useMemo(() => parseDescription(customerText), [customerText]);
   const all = groups.about.length + groups.facilities.length + groups.location.length;
-  if (!text.trim()) return null;
-  if (text.length < 450 || all < 4) return <div className="rich-text"><h2>{t.about}</h2><p className="whitespace-pre-line">{text}</p></div>;
+  if (!customerText) return null;
+  if (customerText.length < 450 || all < 4) return <div className="rich-text"><h2>{t.about}</h2><p className="whitespace-pre-line">{customerText}</p></div>;
   return <article className="rich-text property-description-structured">
     {(["about", "facilities", "location"] as const).map(key => {
       const sentences = groups[key];
