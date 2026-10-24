@@ -88,6 +88,7 @@ export type Property = {
   primary_image?: string;
   image_path?: string;
   gallery?: string[];
+  floorplans?: string[];
   images_json?: string | string[];
   property_type?: string;
   property_type_no?: string;
@@ -611,6 +612,11 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
     ...localizedFieldCandidates("title", locale).map((field) => readField(property, field)),
     readTranslatedField(property, "title", locale),
   ].find(Boolean);
+  if (localized && (locale !== "no" || localized.length >= 340)) return localized;
+  if (locale === "no") {
+    const fullSource = readField(property, "source_description");
+    if (fullSource.length > (localized?.length || 0)) return fullSource;
+  }
   if (localized) return localized;
 
   for (const fallbackLocale of fallbackLocaleOrder[locale]) {
@@ -652,7 +658,7 @@ export function getLocalizedPropertyDescription(property: Property, locale: Prop
     if (fallback) return fallback;
   }
 
-  return pickLongest([readField(property, "marketing_description"), readField(property, "description")]);
+  return pickLongest([readField(property, "marketing_description"), readField(property, "description"), locale === "no" ? readField(property, "source_description") : ""]);
 }
 
 /**
