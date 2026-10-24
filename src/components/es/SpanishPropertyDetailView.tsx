@@ -1,3 +1,4 @@
+import { StructuredPropertyDescription } from "@/components/StructuredPropertyDescription";
 import { PropertyFloorplans } from "@/components/PropertyFloorplans";
 import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
@@ -146,10 +147,7 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
             ))}
           </div>
 
-          <article className="rich-text">
-            <h2>Sobre la vivienda</h2>
-            {description.split(/\n{2,}/).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </article>
+          <StructuredPropertyDescription text={description} locale="es" />
 
           <PropertyFloorplans images={property.floorplans || []} locale="es" />
 
