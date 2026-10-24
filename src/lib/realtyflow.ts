@@ -615,7 +615,7 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
   if (localized && (locale !== "no" || localized.length >= 340)) return localized;
   if (locale === "no") {
     const fullSource = readField(property, "source_description");
-    if (fullSource.length > localized.length) return fullSource;
+    if (fullSource.length > (localized?.length || 0)) return fullSource;
   }
   if (localized) return localized;
 
