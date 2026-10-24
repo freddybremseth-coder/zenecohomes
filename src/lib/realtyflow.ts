@@ -607,35 +607,35 @@ function localizedFieldCandidates(field: string, locale: PropertyLocale) {
   return suffixes.map((suffix) => `${field}_${suffix}`);
 }
 
+/** Property title is a heading, never a source description or a slogan.
+ * Factual details in the heading help distinguish individual units without inventing USPs.
+ */
 export function getLocalizedPropertyTitle(property: Property, locale: PropertyLocale = "no") {
   const localized = [
     ...localizedFieldCandidates("title", locale).map((field) => readField(property, field)),
     readTranslatedField(property, "title", locale),
   ].find(Boolean);
-  if (localized && (locale !== "no" || localized.length >= 340)) return localized;
-  if (locale === "no") {
-    const fullSource = readField(property, "source_description");
-    if (fullSource.length > (localized?.length || 0)) return fullSource;
-  }
-  if (localized) return localized;
-
-  for (const fallbackLocale of fallbackLocaleOrder[locale]) {
-    const fallback = [
-      ...localizedFieldCandidates("title", fallbackLocale).map((field) => readField(property, field)),
-      readTranslatedField(property, "title", fallbackLocale),
-    ].find(Boolean);
-    if (fallback) return fallback;
-  }
-
-  return readField(property, "title") || defaultTitle[locale];
+  const candidate = String(localized || "").replace(/\s+/g, " ").trim();
+  const generic = /\b(drømmebolig|drømmehus|fantastisk|luksus|eksklusiv|spectacular|amazing|dream home|luxury|stunning|lujoso|espectacular|fantástico|traumhaus)\b/i;
+  // A long feed title may contain a complete sales description. Never put it in H1 or breadcrumbs.
+  if (candidate && candidate.length <= 110 && !generic.test(candidate)) return candidate;
+  const type = getLocalizedPropertyType(property, locale);
+  const town = getPropertyTown(property) || readField(property, "location");
+  const beds = Number(property.bedrooms) > 0 ? Number(property.bedrooms) : null;
+  const area = getPropertyArea(property);
+    const bedroomLabel = locale === "en" ? "bedrooms" : locale === "de" ? "Schlafzimmer" : "soverom";
+  const where = locale === "en" ? "in" : locale === "de" ? "in" : "i";
+  const details = [beds ? `${beds} ${bedroomLabel}` : "", area > 0 ? `${area} m²` : ""].filter(Boolean).join(" · ");
+  const factual = [type || (locale === "no" ? "Bolig" : "Property"), details, town ? `${where} ${town}` : ""].filter(Boolean).join(" – ");
+  return factual || candidate.slice(0, 110) || defaultTitle[locale];
 }
 
 export function getLocalizedPropertyDescription(property: Property, locale: PropertyLocale = "no") {
   // Norsk: bruk RealtyFlows redaksjonelle, faktabaserte tekst (editorial_no) når den
   // finnes. Rå feed-beskrivelse (source_description/description) er fallback. Ingen
   // AI-kall her – teksten er ferdig generert i RealtyFlow.
-  if (locale === "no" && property.editorial_no_approved !== false) {
-    // Respekter godkjenning: vis redaksjonell tekst med mindre den er eksplisitt ikke godkjent.
+  if (locale === "no" && property.editorial_no_approved === true) {
+    // Vis kun uttrykkelig godkjent redaksjonell tekst; forslag må ikke publiseres automatisk.
     const editorial = buildEditorialDescription(property.editorial_no);
     if (editorial) return editorial;
   }
