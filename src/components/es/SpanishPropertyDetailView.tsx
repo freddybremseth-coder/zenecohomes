@@ -154,7 +154,7 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
           <section className="buyer-next-steps">
             <h2>Descubre esta vivienda</h2>
             <p>Solicita la información completa del proyecto, los planos disponibles y una visita presencial o virtual. Te ayudamos a encontrar la vivienda y las opciones que mejor se adapten a lo que buscas.</p>
-            <a className="text-button" href="#kontakt">Solicitar información sobre esta vivienda →</a>
+            <a className="text-button" href="#contacto">Solicitar información sobre esta vivienda →</a>
           </section>
 
           {images.length > 1 && (
@@ -167,10 +167,10 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
           <section className="area-context">
             <h2>Zona y ubicación</h2>
             <p>
-              La vivienda está en {town}. Para valorar una compra estudiamos también distancia a playa, servicios, golf, centros sanitarios, aeropuerto y cómo funciona la zona fuera de la temporada alta.
+              Descubre la zona de {town}, su entorno y las posibilidades de disfrutar de esta vivienda durante todo el año. Solicita información sobre los servicios y puntos de interés cercanos.
             </p>
             <div>
-              <span>Valoración de la zona</span>
+              <span>Descubre el entorno</span>
               <span>Alternativas en un presupuesto similar</span>
               <span>Visita virtual o presencial</span>
             </div>
