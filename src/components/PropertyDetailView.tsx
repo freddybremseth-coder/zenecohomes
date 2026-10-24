@@ -1,3 +1,4 @@
+import { PropertyFloorplans } from "@/components/PropertyFloorplans";
 import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -500,7 +501,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
       </section>
 
       <section className="detail-layout">
-        <div>
+        <div className="property-detail-primary">
           <div className="detail-facts">
             {detailFacts.map((fact) => (
               <span key={fact.label}>
@@ -526,6 +527,8 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               text={description || t.descriptionFallback}
             />
           </article>
+
+          <PropertyFloorplans images={property.floorplans || []} locale={locale} />
 
           <section className="decision-grid">
             <article>
@@ -579,20 +582,6 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               </div>
             ))}
           </section>
-
-          {Array.isArray(property.floorplans) && property.floorplans.length > 0 && (
-            <section className="premium-gallery">
-              <h2>Plantegninger</h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {property.floorplans.filter(url => /^https:\/\//i.test(url)).map((url, index) => (
-                  <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-xl border border-slate-200 p-2">
-                    <img src={url} alt={`Åpne plantegning ${index + 1}`} className="h-64 w-full object-contain" loading="lazy" />
-                    <span className="block p-2 text-sm">Åpne plantegning {index + 1} ↗</span>
-                  </a>
-                ))}
-              </div>
-            </section>
-          )}
 
           {images.length > 1 && (
             <section className="premium-gallery">
