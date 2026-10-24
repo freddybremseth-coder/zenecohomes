@@ -1,3 +1,4 @@
+import { PropertyFloorplans } from "@/components/PropertyFloorplans";
 import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import { ArrowLeft, Bath, BedDouble, Check, Coins, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
@@ -138,7 +139,7 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
       </section>
 
       <section className="detail-layout">
-        <div>
+        <div className="property-detail-primary">
           <div className="detail-facts">
             {facts.map((fact) => (
               <span key={fact.label}>{fact.icon} {fact.label}</span>
@@ -149,6 +150,8 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
             <h2>Sobre la vivienda</h2>
             {description.split(/\n{2,}/).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </article>
+
+          <PropertyFloorplans images={property.floorplans || []} locale="es" />
 
           <section className="decision-grid">
             <article>
@@ -206,20 +209,6 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
               <div key={step}><span>{index + 1}</span><p>{step}</p></div>
             ))}
           </section>
-
-          {Array.isArray(property.floorplans) && property.floorplans.length > 0 && (
-            <section className="premium-gallery">
-              <h2>Planos de la vivienda</h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {property.floorplans.filter(url => /^https:\/\//i.test(url)).map((url, index) => (
-                  <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-xl border border-slate-200 p-2">
-                    <img src={url} alt={`Abrir plano ${index + 1}`} className="h-64 w-full object-contain" loading="lazy" />
-                    <span className="block p-2 text-sm">Abrir plano {index + 1} ↗</span>
-                  </a>
-                ))}
-              </div>
-            </section>
-          )}
 
           {images.length > 1 && (
             <section className="premium-gallery">
