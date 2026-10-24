@@ -151,61 +151,10 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
 
           <PropertyFloorplans images={property.floorplans || []} locale="es" />
 
-          <section className="decision-grid">
-            <article>
-              <h2>Qué conviene comprobar antes de reservar</h2>
-              <ul>
-                <li>Precio y disponibilidad actualizados de la unidad concreta.</li>
-                <li>Qué incluye el precio y qué elementos son extras.</li>
-                <li>Contrato, calendario de pagos, garantías y fecha prevista de entrega.</li>
-                <li>Situación jurídica y urbanística revisada por el profesional correspondiente.</li>
-                <li>Distancias reales a servicios y funcionamiento de la zona durante todo el año.</li>
-              </ul>
-              <Link className="text-button" href="/es/asesor-inmobiliario-espana">Cómo te ayudamos</Link>
-            </article>
-
-            <article>
-              <h2>Coste total orientativo</h2>
-              <p>
-                Los impuestos y gastos dependen de la operación y de si se trata de obra nueva o segunda mano. Como primera orientación, muchos compradores reservan aproximadamente un 10–14 % adicional al precio.
-              </p>
-              <div className="cost-box">
-                <span>Precio</span>
-                <strong>{formatSpanishPrice(property.price)}</strong>
-                <span>Gastos orientativos</span>
-                <strong>{lowerCosts && upperCosts ? `${formatSpanishPrice(lowerCosts)} – ${formatSpanishPrice(upperCosts)}` : "A confirmar"}</strong>
-                <span>Total orientativo</span>
-                <strong>{lowerTotal && upperTotal ? `${formatSpanishPrice(lowerTotal)} – ${formatSpanishPrice(upperTotal)}` : "A confirmar"}</strong>
-              </div>
-              <small>El cálculo definitivo debe hacerse para la vivienda y situación fiscal concretas.</small>
-            </article>
-
-            <article>
-              <h2>¿Puede funcionar para alquiler?</h2>
-              <p>
-                Antes de basar la compra en ingresos de alquiler hay que estudiar normativa aplicable, licencias, gastos de comunidad, estacionalidad, demanda y competencia en la ubicación concreta.
-              </p>
-              <Link className="text-button" href="/es/vivienda-en-espana">Comprar vivienda en España</Link>
-            </article>
-
-            <article>
-              <h2>¿Qué está incluido?</h2>
-              <p>
-                Pide la información completa para confirmar cocina y electrodomésticos, climatización, iluminación, piscina, jardín, aparcamiento, mobiliario, placas solares y cualquier suplemento relevante.
-              </p>
-              <Link className="text-button" href="/es/obra-nueva-en-espana">Guía de obra nueva</Link>
-            </article>
-          </section>
-
           <section className="buyer-next-steps">
-            <h2>Siguientes pasos</h2>
-            {[
-              "Confirmamos precio, disponibilidad y condiciones actuales.",
-              "Te enviamos documentación, planos y alternativas comparables.",
-              "Organizamos visita virtual o presencial y coordinamos el siguiente paso de la compra.",
-            ].map((step, index) => (
-              <div key={step}><span>{index + 1}</span><p>{step}</p></div>
-            ))}
+            <h2>Descubre esta vivienda</h2>
+            <p>Solicita la información completa del proyecto, los planos disponibles y una visita presencial o virtual. Te ayudamos a encontrar la vivienda y las opciones que mejor se adapten a lo que buscas.</p>
+            <a className="text-button" href="#kontakt">Solicitar información sobre esta vivienda →</a>
           </section>
 
           {images.length > 1 && (
