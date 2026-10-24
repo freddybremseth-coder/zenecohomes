@@ -623,8 +623,8 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
   const town = getPropertyTown(property) || readField(property, "location");
   const beds = Number(property.bedrooms) > 0 ? Number(property.bedrooms) : null;
   const area = getPropertyArea(property);
-  const bedroomLabel = locale === "en" ? "bedrooms" : locale === "de" ? "Schlafzimmer" : locale === "es" ? "dormitorios" : locale === "fr" ? "chambres" : "soverom";
-  const where = locale === "en" ? "in" : locale === "de" ? "in" : locale === "es" ? "en" : locale === "fr" ? "à" : "i";
+    const bedroomLabel = locale === "en" ? "bedrooms" : locale === "de" ? "Schlafzimmer" : "soverom";
+  const where = locale === "en" ? "in" : locale === "de" ? "in" : "i";
   const details = [beds ? `${beds} ${bedroomLabel}` : "", area > 0 ? `${area} m²` : ""].filter(Boolean).join(" · ");
   const factual = [type || (locale === "no" ? "Bolig" : "Property"), details, town ? `${where} ${town}` : ""].filter(Boolean).join(" – ");
   return factual || candidate.slice(0, 110) || defaultTitle[locale];
