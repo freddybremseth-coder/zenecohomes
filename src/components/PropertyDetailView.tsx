@@ -1,3 +1,4 @@
+import { StructuredPropertyDescription } from "@/components/StructuredPropertyDescription";
 import { PropertyFloorplans } from "@/components/PropertyFloorplans";
 import { ResilientImage } from "@/components/ResilientImage";
 import Link from "next/link";
@@ -518,15 +519,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
             typeLabel={type || (locale === "de" ? "Immobilie" : locale === "en" ? "property" : "bolig")}
           />
 
-          <article className="rich-text">
-            <h2>{t.about}</h2>
-            <ReadMoreText
-              actionLabel={t.fullOffer}
-              lessLabel={t.readLess}
-              moreLabel={t.readMore}
-              text={description || t.descriptionFallback}
-            />
-          </article>
+          <StructuredPropertyDescription text={description || t.descriptionFallback} locale={locale} />
 
           <PropertyFloorplans images={property.floorplans || []} locale={locale} />
 
