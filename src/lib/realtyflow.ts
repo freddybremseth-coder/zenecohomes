@@ -640,11 +640,17 @@ export function getLocalizedPropertyDescription(property: Property, locale: Prop
     if (editorial) return editorial;
   }
 
+  // RealtyFlow writes AI drafts into description_no even before review.
+  // If an editorial object exists but was not approved, do not expose the
+  // generated Norwegian description as the public fallback.
+  const unapprovedNorwegianEditorial = locale === "no" && Boolean(property.editorial_no) && property.editorial_no_approved !== true;
   const localized = pickLongest([
     ...localizedFieldCandidates("marketing_description", locale).map((field) => readField(property, field)),
-    ...localizedFieldCandidates("description", locale).map((field) => readField(property, field)),
+    ...localizedFieldCandidates("description", locale)
+      .filter((field) => !unapprovedNorwegianEditorial || !/^description_(?:no|nb|nb_no|nb-NO)$/.test(field))
+      .map((field) => readField(property, field)),
     readTranslatedField(property, "marketing_description", locale),
-    readTranslatedField(property, "description", locale),
+    ...(unapprovedNorwegianEditorial ? [] : [readTranslatedField(property, "description", locale)]),
   ]);
   if (localized) return localized;
 
