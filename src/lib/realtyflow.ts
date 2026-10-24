@@ -615,8 +615,8 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
     ...localizedFieldCandidates("title", locale).map((field) => readField(property, field)),
     readTranslatedField(property, "title", locale),
   ].find(Boolean);
-  const candidate = String(localized || "").replace(/\\s+/g, " ").trim();
-  const generic = /\\b(drømmebolig|drømmehus|fantastisk|luksus|eksklusiv|spectacular|amazing|dream home|luxury|stunning|lujoso|espectacular|fantástico|traumhaus)\\b/i;
+  const candidate = String(localized || "").replace(/\s+/g, " ").trim();
+  const generic = /\b(drømmebolig|drømmehus|fantastisk|luksus|eksklusiv|spectacular|amazing|dream home|luxury|stunning|lujoso|espectacular|fantástico|traumhaus)\b/i;
   // A long feed title may contain a complete sales description. Never put it in H1 or breadcrumbs.
   if (candidate && candidate.length <= 110 && !generic.test(candidate)) return candidate;
   const type = getLocalizedPropertyType(property, locale);
