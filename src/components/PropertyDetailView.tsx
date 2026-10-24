@@ -523,57 +523,10 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
 
           <PropertyFloorplans images={property.floorplans || []} locale={locale} />
 
-          <section className="decision-grid">
-            <article>
-              <h2>{t.decisionTitle}</h2>
-              <ul>
-                {t.decisionItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <Link className="text-button" href={t.processHref}>
-                {t.processLink}
-              </Link>
-            </article>
-            <article>
-              <h2>{t.costsTitle}</h2>
-              <p>{t.costsBody}</p>
-              <div className="cost-box">
-                <span>{t.price}</span>
-                <strong>{formatPriceForLocale(property.price, locale)}</strong>
-                <span>{t.costs}</span>
-                <strong>{estimatedCosts ? formatPriceForLocale(estimatedCosts, locale) : t.clarify}</strong>
-                <span>{t.total}</span>
-                <strong>{estimatedTotal ? formatPriceForLocale(estimatedTotal, locale) : formatPriceForLocale(undefined, locale)}</strong>
-              </div>
-              <Link className="text-button" href={t.financingHref}>
-                {t.financingLink}
-              </Link>
-            </article>
-            <article>
-              <h2>{t.rentalTitle}</h2>
-              <p>{t.rentalBody}</p>
-              <Link className="text-button" href={t.areaHref}>
-                {t.areaLink}
-              </Link>
-            </article>
-            <article>
-              <h2>{t.includedTitle}</h2>
-              <p>{t.includedBody}</p>
-              <Link className="text-button" href={t.newBuildHref}>
-                {t.newBuildLink}
-              </Link>
-            </article>
-          </section>
-
           <section className="buyer-next-steps">
-            <h2>{t.nextStepsTitle}</h2>
-            {t.nextSteps.map((step, index) => (
-              <div key={step}>
-                <span>{index + 1}</span>
-                <p>{step}</p>
-              </div>
-            ))}
+            <h2>Opplev denne boligen</h2>
+            <p>Ønsker du flere bilder, komplett prospekt, tilgjengelige plantegninger eller å avtale en visning? Vi hjelper deg med å finne boligen og alternativene som passer dine ønsker.</p>
+            <a className="text-button" href="#kontakt">Få mer informasjon om boligen →</a>
           </section>
 
           {images.length > 1 && (
@@ -626,7 +579,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
             <span>/</span>
             <Link href={propertyListPathByLocale[locale]}>{t.allProperties}</Link>
             <span>/</span>
-            <span>{title}</span>
+            <span>{cleanHeading}</span>
           </nav>
         </div>
 
