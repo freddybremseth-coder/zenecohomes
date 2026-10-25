@@ -8,7 +8,7 @@ export function PropertyProjectFacts({ property, locale = "no" }: { property: Pr
   const amenities = Array.isArray(property.amenities_no)
     ? property.amenities_no.filter((item): item is string => typeof item === "string" && item.trim().length > 0)
     : typeof property.amenities_no === "string"
-      ? property.amenities_no.split(/\\n|;/).map(item => item.trim()).filter(Boolean)
+      ? property.amenities_no.split(/\n|;/).map(item => item.trim()).filter(Boolean)
       : [];
   if (!completion && amenities.length === 0) return null;
   const title = isEs ? "Detalles del proyecto" : isEn ? "Project details" : isDe ? "Projektdetails" : "Prosjekt og leveranse";
