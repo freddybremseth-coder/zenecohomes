@@ -72,7 +72,7 @@ export type Property = {
   editorial_no?: EditorialNo | string | null;
   editorial_no_approved?: boolean | null;
   source_description?: string | null;
-  amenities_no?: string | null;
+  amenities_no?: string[] | string | null;
   expected_completion_source?: string | null;
   expected_completion_manual?: string | null;
   // Deterministisk SEO-metadata fra RealtyFlow-editorial-pipelinen (uten branding).
