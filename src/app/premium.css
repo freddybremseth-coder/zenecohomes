@@ -276,3 +276,11 @@
 .property-description-group h2 { margin-bottom: 8px; }
 .property-description-group p { max-width: 70ch; overflow-wrap: anywhere; line-height: 1.7; }
 .property-description-toggle { margin-top: 18px; min-height: 44px; padding: 10px 16px; border: 1px solid var(--ze-line); border-radius: 8px; background: #fff; color: var(--ze-ink); font-weight: 600; }
+
+/* Project facts are visible only when sourced data exists, and stay in the left column. */
+.property-project-facts { max-width: 100%; min-width: 0; margin-block: 24px 34px; }
+.property-project-facts h2 { margin-bottom: 16px; }
+.property-project-facts dl { display: grid; gap: 12px; }
+.property-project-facts dl > div { padding: 16px 18px; background: #f7f7f4; border: 1px solid rgba(23,32,39,.09); border-radius: 10px; overflow-wrap: anywhere; }
+.property-project-facts dt { margin-bottom: 8px; font-weight: 700; }
+.property-project-facts dd { margin: 0; line-height: 1.7; }
