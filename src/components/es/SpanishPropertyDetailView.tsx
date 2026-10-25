@@ -1,3 +1,4 @@
+import { PropertyProjectFacts } from "@/components/PropertyProjectFacts";
 import { StructuredPropertyDescription } from "@/components/StructuredPropertyDescription";
 import { PropertyFloorplans } from "@/components/PropertyFloorplans";
 import { ResilientImage } from "@/components/ResilientImage";
@@ -148,6 +149,8 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
           </div>
 
           <StructuredPropertyDescription text={description} locale="es" />
+
+          <PropertyProjectFacts property={property} locale={"es"} />
 
           <PropertyFloorplans images={property.floorplans || []} locale="es" />
 
