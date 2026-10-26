@@ -24,8 +24,8 @@ for (const cluster of clusters) {
     const source = fs.readFileSync(file, "utf8");
     if (!source.includes("canonical:")) errors.push(`${file}: missing canonical`);
     for (const [locale, route] of Object.entries(cluster.routes)) {
-      const pattern = new RegExp(`["']?${locale}["']?\\s*:\\s*["']${route.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}["']`);
-      if (!pattern.test(source)) errors.push(`${file}: missing hreflang ${locale} -> ${route}`);
+      const variants = [`"${locale}": "${route}"`, `${locale}: "${route}"`];
+      if (!variants.some((value) => source.includes(value))) errors.push(`${file}: missing hreflang ${locale} -> ${route}`);
     }
   }
   if (cluster.metadataFactory) {
