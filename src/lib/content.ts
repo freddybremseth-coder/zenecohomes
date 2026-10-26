@@ -9,6 +9,9 @@ export type ArticleSection = {
   body?: string[];
   bullets?: string[];
   table?: ArticleTable;
+  tableNote?: string;
+  optionalTableIntro?: string;
+  optionalTable?: ArticleTable;
 };
 
 export type Article = {
@@ -1289,110 +1292,37 @@ export const articles: Article[] = [
           "Det koster vanligvis mellom 2 400 og 6 230 euro i året å eie en enkel leilighet i Spania, mens en villa med privat basseng koster mellom 3 730 og 10 350 euro.",
           "Nybygg kan gi mer forutsigbare vedlikeholdskostnader i starten, men felleskostnader, energibruk og fasiliteter påvirker fortsatt totalbudsjettet.",
           "Tabellen nedenfor sammenligner de anslåtte årlige kostnadene for en leilighet med fellesbasseng og en villa med privat basseng og hage. Vi skiller mellom løpende kostnader og et totalbudsjett som også inkluderer penger satt av til vedlikehold og reparasjoner.",
-          "Kostnadene er veiledende budsjettanslag, ikke dokumenterte gjennomsnitt for alle boliger på Costa Blanca. Budsjettet omfatter ikke renter og avdrag på boliglån, større, uforutsette reparasjoner utover den årlige avsetningen, eventuell formuesskatt eller andre skatter som avhenger av den enkelte eierens situasjon eller kostnader og skatter knyttet til utleie, dersom boligen skal leies ut.",
           "Jeg opplever at mange boligkjøpere undervurderer de samlede kostnadene ved å eie bolig i Spania. I tillegg til strøm og vann kommer blant annet felleskostnader, eiendomsskatt, renovasjonsavgifter, forsikring og vedlikehold.",
           "For eldre boliger kan det også komme betydelige utgifter til reparasjoner og utskifting av tekniske installasjoner. Jeg anbefaler derfor å se på de samlede bokostnadene over tid, ikke bare kjøpesummen.",
           "Husk at kostnadene ved selve boligkjøpet kommer i tillegg. Les også vår guide om hva det koster å kjøpe bolig i Spania."
         ],
         "table": {
-          "headers": [
-            "Årlige kostnader",
-            "Leilighet med fellesbasseng",
-            "Villa med privat basseng"
-          ],
+          "headers": ["Årlige kostnader", "Leilighet med fellesbasseng", "Villa med privat basseng"],
           "rows": [
-            [
-              "Eiendomsskatt (IBI)",
-              "300–600 €",
-              "400–1 000 €"
-            ],
-            [
-              "Skatt for ikke-fastboende (Modelo 210)",
-              "150–350 €",
-              "200–500 €"
-            ],
-            [
-              "Felleskostnader",
-              "600–1 800 €",
-              "0–600 €"
-            ],
-            [
-              "Strøm",
-              "400–900 €",
-              "700–1 500 €"
-            ],
-            [
-              "Vann",
-              "150–350 €",
-              "300–800 €"
-            ],
-            [
-              "Boligforsikring",
-              "200–400 €",
-              "400–800 €"
-            ],
-            [
-              "Renovasjon og avfall",
-              "50–180 €",
-              "80–200 €"
-            ],
-            [
-              "Vedlikehold av basseng",
-              "Inkludert i felleskostnader*",
-              "600–1 800 €"
-            ],
-            [
-              "Sum løpende kostnader",
-              "1 850–4 580 €",
-              "2 680–7 200 €"
-            ],
-            [
-              "Avsetning til reparasjoner og vedlikehold",
-              "500–1 500 €",
-              "1 000–3 000 €"
-            ],
-            [
-              "Skattemelding og administrasjon",
-              "50–150 €",
-              "50–150 €"
-            ],
-            [
-              "Anslått årlig totalbudsjett",
-              "2 400–6 230 €",
-              "3 730–10 350 €"
-            ],
-            [
-              "Valgfrie kostnader",
-              "",
-              ""
-            ],
-            [
-              "Internett og TV",
-              "240–360 €",
-              "240–360 €"
-            ],
-            [
-              "Innbruddsalarm med abonnement",
-              "420–650 €",
-              "420–650 €"
-            ],
-            [
-              "Keyholder og tilsyn av bolig",
-              "150–600 €",
-              "150–600 €"
-            ],
-            [
-              "Sum valgfrie kostnader",
-              "810–1 610 €",
-              "810–1 610 €"
-            ],
-            [
-              "Totalbudsjett inkl. valgfrie kostnader",
-              "3 210–7 840 €",
-              "4 540–11 960 €"
-            ]
+            ["Eiendomsskatt (IBI)", "300–600 €", "400–1 000 €"],
+            ["Skatt for ikke-fastboende (Modelo 210)", "150–350 €", "200–500 €"],
+            ["Felleskostnader", "600–1 800 €", "0–600 €"],
+            ["Strøm", "400–900 €", "700–1 500 €"],
+            ["Vann", "150–350 €", "300–800 €"],
+            ["Boligforsikring", "200–400 €", "400–800 €"],
+            ["Renovasjon og avfall", "50–180 €", "80–200 €"],
+            ["Vedlikehold av basseng", "Inkludert i felleskostnader*", "600–1 800 €"],
+            ["Gestor/regnskap", "50–150 €", "50–150 €"],
+            ["Sum årlige kostnader", "1 900–4 730 €", "2 730–7 350 €"],
+            ["Anbefalt vedlikeholdsreserve", "500–1 500 €", "1 000–3 000 €"],
+            ["Sum årsbudsjett inkl. vedlikeholdsreserve", "2 400–6 230 €", "3 730–10 350 €"]
           ],
           "caption": "*Forutsetter at basseng- og hagevedlikehold inngår i leilighetens felleskostnader."
+        },
+        "tableNote": "Kostnadene er veiledende budsjettanslag, ikke dokumenterte gjennomsnitt for alle boliger på Costa Blanca. Budsjettet omfatter ikke renter og avdrag på boliglån, større, uforutsette reparasjoner utover den årlige avsetningen, eventuell formuesskatt eller andre skatter som avhenger av den enkelte eierens situasjon eller kostnader og skatter knyttet til utleie, dersom boligen skal leies ut.",
+        "optionalTableIntro": "Vi har også laget en oversikt over valgfrie kostnader som kan komme i tillegg til de vanlige bokostnadene. Hvilke kostnader som er aktuelle, avhenger av boligen din og hvilke tjenester du har behov for.",
+        "optionalTable": {
+          "headers": ["Valgfrie tjenester", "Typisk årskostnad"],
+          "rows": [
+            ["Internett og TV", "240–360 €"],
+            ["Innbruddsalarm med abonnement", "420–650 €"],
+            ["Keyholder og tilsyn av bolig", "150–600 €"]
+          ]
         }
       },
       {
@@ -1404,11 +1334,11 @@ export const articles: Article[] = [
           "### Felleskostnader i leiligheter og boligområder",
           "For en leilighet på Costa Blanca ligger felleskostnadene (gastos de comunidad) ofte på rundt 600–1800 euro i året, men større boligkomplekser med flere basseng, treningsrom eller vakthold kan koste mer. Det kan også forekomme ekstra innbetalinger, kalt derramas, som kommer i tillegg til de vanlige kostnadene.",
           "Felleskostnadene kan blant annet dekke:",
-          "Vedlikehold av basseng og hage",
-          "Renhold og belysning av fellesarealer",
-          "Drift og vedlikehold av heis",
-          "Forsikring av bygningen og fellesarealene",
-          "Administrasjon og vedlikehold av felles installasjoner",
+          "• Vedlikehold av basseng og hage",
+          "• Renhold og belysning av fellesarealer",
+          "• Drift og vedlikehold av heis",
+          "• Forsikring av bygningen og fellesarealene",
+          "• Administrasjon og vedlikehold av felles installasjoner",
           "Beløpet avhenger av hvilke fasiliteter boligområdet har.",
           "En frittstående villa kan ha få eller ingen felleskostnader, med mindre den ligger i et boligområde med felles fasiliteter.",
           "#### Lave felleskostnader er ikke alltid ensbetydende med lave bokostnader",
@@ -1476,11 +1406,11 @@ export const articles: Article[] = [
           "Selv når du ikke bruker boligen, løper mange av de faste kostnadene videre. Eiendomsskatt (IBI), eventuelle felleskostnader, boligforsikring og relevant skatt for ikke-residenter må normalt betales uavhengig av hvor mye du bruker boligen.",
           "Du kan likevel redusere enkelte utgifter og forebygge skader når boligen står tom over lengre tid.",
           "Slik kan du redusere kostnadene og ta vare på boligen:",
-          "Forebygg vannskader: Steng hovedvanntilførselen når du reiser bort, dersom boligens installasjoner og forsikringsvilkår tillater det.",
-          "Reduser strømforbruket: Slå av unødvendige apparater, og vurder om du trenger aktive strøm- og TV-abonnementer hele året.",
-          "Sjekk boligforsikringen: Undersøk hvilke vilkår som gjelder når boligen står tom over lengre tid, og om forsikringen krever bestemte sikkerhetstiltak eller regelmessig tilsyn.",
-          "Vurder alarm og tilsyn: Alarm og jevnlige kontroller kan bidra til å oppdage innbrudd, lekkasjer og andre skader tidlig.",
-          "Tilpass vedlikeholdet: Planlegg hage- og bassengvedlikehold etter sesong og behov, slik at du unngår unødvendige kostnader og skader.",
+          "• Forebygg vannskader: Steng hovedvanntilførselen når du reiser bort, dersom boligens installasjoner og forsikringsvilkår tillater det.",
+          "• Reduser strømforbruket: Slå av unødvendige apparater, og vurder om du trenger aktive strøm- og TV-abonnementer hele året.",
+          "• Sjekk boligforsikringen: Undersøk hvilke vilkår som gjelder når boligen står tom over lengre tid, og om forsikringen krever bestemte sikkerhetstiltak eller regelmessig tilsyn.",
+          "• Vurder alarm og tilsyn: Alarm og jevnlige kontroller kan bidra til å oppdage innbrudd, lekkasjer og andre skader tidlig.",
+          "• Tilpass vedlikeholdet: Planlegg hage- og bassengvedlikehold etter sesong og behov, slik at du unngår unødvendige kostnader og skader.",
           "Når en bolig står tom over lengre tid, er det ikke bare de faste kostnadene jeg mener du bør være oppmerksom på. Fukt, vannlekkasjer, dårlig ventilasjon og problemer med klimaanlegget kan utvikle seg uten at noen oppdager det. Små problemer kan dermed bli til større skader.",
           "Jeg anbefaler jevnlig tilsyn, særlig etter perioder med kraftig regnvær, og at du undersøker forsikringsvilkårene for boliger som står ubebodd over lengre tid. Hvis du ikke selv er i Spania store deler av året, kan det være nyttig å ha noen som kontrollerer boligen regelmessig.",
           "Les mer om tilsyn og nøkkelholdertjenester hos Zen Eco Homes Care."
