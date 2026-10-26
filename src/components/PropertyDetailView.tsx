@@ -1,7 +1,7 @@
 import "@/components/property-detail-mobile.css";
 import { StructuredPropertyDescription } from "@/components/StructuredPropertyDescription";
 import { PropertyFloorplans } from "@/components/PropertyFloorplans";
-import { ResilientImage } from "@/components/ResilientImage";
+import { PropertyHeroGallery } from "@/components/PropertyHeroGallery";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, BookOpen, Check, Coins, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
@@ -471,16 +471,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
       <SiteHeader locale={locale} languageLinks={propertyLanguageLinks(ref, locale)} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(propertyJsonLd) }} />
       <section className="property-detail-hero">
-        {mainImage ? (
-          <ResilientImage
-            src={mainImage}
-            alt={title}
-            fill
-            sizes="100vw"
-            priority
-            style={{ objectFit: "cover", zIndex: 0 }}
-          />
-        ) : null}
+        <PropertyHeroGallery images={images.length ? images : mainImage ? [mainImage] : []} title={title} locale={locale} />
         <div>
           <Link className="back-link" href={propertyListPathByLocale[locale]}>
             <ArrowLeft size={18} /> {t.allProperties}
