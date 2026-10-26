@@ -9,7 +9,16 @@ import { homeLanguageLinks } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Om Zen Eco Homes | Norsk eiendomsrådgivning i Spania",
   description: "Bli kjent med Zen Eco Homes og hvordan vi hjelper boligkjøpere med områdevalg, shortlist, visning, kjøpsprosess, overtakelse og oppfølging i Spania.",
-  alternates: { canonical: "/om-oss" },
+  alternates: {
+    canonical: "/om-oss",
+    languages: {
+      "nb-NO": "/om-oss",
+      "x-default": "/om-oss",
+      en: "/en/about-us",
+      "de-DE": "/de/ueber-uns",
+      "es-ES": "/es/sobre-nosotros",
+    },
+  },
 };
 
 export default function AboutPage() {
