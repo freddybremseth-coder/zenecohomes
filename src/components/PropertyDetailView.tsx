@@ -599,6 +599,11 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               referrerPolicy="no-referrer-when-downgrade"
             />
           </section>
+          <section className="property-detail-section property-final-help">
+            <h2>{locale === "no" ? "Vil du ha hjelp til å finne riktig bolig?" : locale === "en" ? "Need help finding the right property?" : "Hilfe bei der Immobiliensuche?"}</h2>
+            <p>{locale === "no" ? "Vi hjelper deg å sammenligne denne boligen med relevante alternativer, og avklarer spørsmål før du bestemmer deg." : "We can help compare this property with alternatives and answer questions before you decide."}</p>
+            <a className="text-button" href="#kontakt">{locale === "no" ? "Få personlig hjelp" : t.askProperty}</a>
+          </section>
           <nav className="breadcrumb-nav" aria-label={t.breadcrumbLabel}>
             <Link href={locale === "no" ? "/" : `/${locale}`}>{t.home}</Link>
             <span>/</span>
