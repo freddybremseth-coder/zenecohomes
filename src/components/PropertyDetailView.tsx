@@ -357,7 +357,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
       : title;
   const unavailable = locale === "no" ? "Denne informasjonen er ikke tilgjengelig ved publisering, ta kontakt for oppdatert informasjon." : locale === "en" ? "This information was not available at publication. Contact us for an update." : "Diese Information war bei Veröffentlichung nicht verfügbar. Bitte fragen Sie nach aktuellen Angaben.";
   const completionRaw = String(property.expected_completion_manual || property.expected_completion_source || "").trim();
-  const isoCompletion = completionRaw.match(/^(\\d{4})-(\\d{2})(?:-\\d{2})?$/);
+  const isoCompletion = completionRaw.match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
   const completion = isoCompletion && Number(isoCompletion[2]) >= 1 && Number(isoCompletion[2]) <= 12
     ? new Intl.DateTimeFormat(locale === "no" ? "nb-NO" : locale === "en" ? "en-GB" : "de-DE", { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(Number(isoCompletion[1]), Number(isoCompletion[2]) - 1, 1)))
     : completionRaw;
@@ -370,7 +370,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
         ? (locale === "no" ? "Under planlegging" : locale === "en" ? "In planning" : "In Planung")
         : "";
   const amenities = Array.isArray(property.amenities_no) ? property.amenities_no.filter((item): item is string => typeof item === "string" && Boolean(item.trim())) : typeof property.amenities_no === "string" ? property.amenities_no.split(/[;\n]/).map(item => item.trim()).filter(Boolean) : [];
-  const disclosedFeatures = [...amenities.filter((item) => !/^(floor\\s?plans?|plantegning(?:er)?|planos?|photo(?:s)?|bilder|image(?:s)?|video|pdf|brochure|prospekt)$/i.test(item)), ...(property.pool === true ? [locale === "no" ? "Basseng oppgitt" : "Pool listed"] : [])].filter((item,index,all)=>all.indexOf(item)===index);
+  const disclosedFeatures = [...amenities.filter((item) => !/^(floor\s?plans?|plantegning(?:er)?|planos?|photo(?:s)?|bilder|image(?:s)?|video|pdf|brochure|prospekt)$/i.test(item)), ...(property.pool === true ? [locale === "no" ? "Basseng oppgitt" : "Pool listed"] : [])].filter((item,index,all)=>all.indexOf(item)===index);
   const estimatedCosts = property.price ? Math.round(property.price * 0.135) : 0;
   const estimatedTotal = property.price ? property.price + estimatedCosts : 0;
   const detailPath = getPropertyDetailPath(ref, locale);
