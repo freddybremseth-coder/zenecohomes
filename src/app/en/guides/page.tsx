@@ -8,7 +8,16 @@ import { homeLanguageLinks } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Spain Property Buying Guides | Advice | Zen Eco Homes",
   description: "Property buying guides for Spain covering areas, new builds, plots, financing, NIE, legal checks, costs and practical steps before you reserve a home.",
-  alternates: { canonical: "/en/guides" },
+  alternates: {
+    canonical: "/en/guides",
+    languages: {
+      "nb-NO": "/guide",
+      "x-default": "/guide",
+      en: "/en/guides",
+      "de-DE": "/de/ratgeber",
+      "es-ES": "/es/guias",
+    },
+  },
 };
 
 const guides = [
