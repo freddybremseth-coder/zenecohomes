@@ -55,3 +55,20 @@
   .property-detail-section h2 { font-size: clamp(1.4rem,6vw,1.85rem); }
   .property-cost-list > div { align-items: flex-start; }
 }
+
+.property-hero-gallery { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.property-hero-gallery-controls {
+  position: absolute; z-index: 3; right: clamp(18px,4vw,52px); top: 46%;
+  display: flex; align-items: center; gap: 8px; padding: 5px;
+  border-radius: 999px; color: #fff; background: rgba(17,29,35,.74);
+}
+.property-hero-gallery-controls button {
+  width: 44px; height: 44px; display: grid; place-items: center; cursor: pointer;
+  border: 1px solid rgba(255,255,255,.45); border-radius: 50%; color: inherit; background: transparent;
+}
+.property-hero-gallery-controls button:focus-visible { outline: 3px solid #e4ba6c; outline-offset: 2px; }
+.property-hero-gallery-controls span { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; font-weight: 700; white-space: nowrap; }
+@media (max-width: 900px) {
+  .property-hero-gallery-controls { top: 92px; right: 14px; }
+  .property-hero-gallery-controls button { width: 40px; height: 40px; }
+}
