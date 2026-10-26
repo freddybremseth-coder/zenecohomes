@@ -1,0 +1,57 @@
+/* Property details: source-led content and narrow-screen containment. */
+.property-detail-primary,
+.property-contact-column,
+.property-detail-section,
+.property-brochure-box,
+.property-mortgage-box { min-width: 0; max-width: 100%; }
+.property-detail-primary { overflow-wrap: anywhere; }
+.property-detail-section {
+  margin: 18px 0;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid var(--line, #e0e5df);
+  border-radius: 16px;
+  background: #fff;
+}
+.property-detail-section h2 { margin: 0 0 16px; }
+.property-detail-section h3 { font-size: 1.04rem; margin: 0 0 8px; }
+.property-detail-section p { line-height: 1.7; }
+.property-detail-section li { margin-bottom: 9px; line-height: 1.6; }
+.property-project-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+.property-project-grid > div { min-width: 0; padding: 16px; border-radius: 12px; background: #f4f6f2; }
+.property-cost-list { margin: 18px 0; }
+.property-cost-list > div { display: flex; gap: 12px; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #e7eae4; padding: 12px 0; }
+.property-cost-list dd { margin: 0; font-weight: 700; text-align: right; overflow-wrap: anywhere; }
+.property-brochure-box { position: static; margin: 18px 0; scroll-margin-top: 100px; }
+.property-mortgage-box { position: static; }
+.property-contact-column { display: grid; gap: 16px; }
+.property-detail-primary .premium-gallery { margin: 18px 0; }
+.property-mobile-cta { display: none; }
+@media (max-width: 900px) {
+  .detail-layout { width: min(100% - 28px, 720px); display: flex; flex-direction: column; gap: 18px; padding: 30px 0 110px; }
+  .property-detail-primary, .property-contact-column { width: 100%; min-width: 0; }
+  .property-detail-hero { min-height: 480px; padding: 126px 18px 38px; }
+  .property-detail-hero > div { min-width: 0; width: 100%; }
+  .property-detail-hero h1 { font-size: clamp(1.85rem, 8vw, 3.2rem); overflow-wrap: anywhere; }
+  .property-detail-hero strong { font-size: clamp(1.35rem, 5vw, 1.85rem); }
+  .detail-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-bottom: 16px; }
+  .detail-facts span { min-width: 0; padding: 10px; overflow-wrap: anywhere; }
+  .property-detail-section, .premium-gallery, .area-context, .sticky-card { width: 100%; max-width: 100%; margin-inline: 0; padding: 18px; }
+  .property-map, .property-map iframe, .property-filmstrip, .gallery-grid, .gallery-filmstrip { max-width: 100%; min-width: 0; }
+  .property-map iframe { width: 100%; }
+  .property-mobile-cta {
+    position: fixed; z-index: 100; display: flex; justify-content: center; align-items: center;
+    bottom: 0; left: 0; right: 0; min-height: 54px;
+    padding: 12px 20px max(12px, env(safe-area-inset-bottom));
+    color: #17251f; background: #e4ba6c; font-weight: 800;
+    box-shadow: 0 -8px 24px rgba(0,0,0,.14); text-align: center;
+  }
+}
+@media (max-width: 520px) {
+  .property-project-grid { grid-template-columns: minmax(0,1fr); }
+  .property-detail-hero { min-height: 410px; }
+  .detail-facts span { font-size: .86rem; }
+  .hero-actions { align-items: stretch; }
+  .hero-actions > * { max-width: 100%; }
+  .property-detail-section h2 { font-size: clamp(1.4rem,6vw,1.85rem); }
+  .property-cost-list > div { align-items: flex-start; }
+}
