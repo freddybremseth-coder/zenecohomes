@@ -521,7 +521,6 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
             </section>
           )}
           <section className="property-detail-section" id="om-boligen">
-            <h2>{t.about}</h2>
             <StructuredPropertyDescription text={description || unavailable} locale={locale} />
             {property.terrace_size ? <p>{locale === "no" ? "Oppgitt terrasseareal" : "Terrace area"}: {property.terrace_size} m²</p> : null}
             {property.plot_size ? <p>{locale === "no" ? "Oppgitt tomteareal" : "Plot area"}: {property.plot_size} m²</p> : null}
