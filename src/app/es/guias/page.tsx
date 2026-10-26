@@ -10,7 +10,16 @@ import { seoLandingPagesES } from "@/lib/seoLandingPages.es";
 export const metadata: Metadata = {
   title: "Guías para comprar vivienda en España | Zen Eco Homes",
   description: "Guías para comprar vivienda en España sobre zonas, obra nueva, terrenos, financiación, NIE, aspectos legales, costes y pasos antes de reservar.",
-  alternates: { canonical: "/es/guias" },
+  alternates: {
+    canonical: "/es/guias",
+    languages: {
+      "nb-NO": "/guide",
+      "x-default": "/guide",
+      en: "/en/guides",
+      "de-DE": "/de/ratgeber",
+      "es-ES": "/es/guias",
+    },
+  },
 };
 
 export default function SpanishGuidesPage() {
