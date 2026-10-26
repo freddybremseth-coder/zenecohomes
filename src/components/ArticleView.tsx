@@ -1,13 +1,48 @@
 import { ResilientNativeImage } from "@/components/ResilientImage";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
-import type { Article } from "@/lib/content";
+import type { Article, ArticleTable } from "@/lib/content";
 import { withArticleAttribution } from "@/lib/article-attribution";
 import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { MarketBudgetComparison } from "@/components/MarketBudgetComparison";
 import { CorporateHomeCalculator } from "@/components/CorporateHomeCalculator";
 import { CorporateBoardCalculator } from "@/components/CorporateBoardCalculator";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
+
+function CostArticleTable({ table, highlightTotals = false }: { table: ArticleTable; highlightTotals?: boolean }) {
+  const isTotal = (label: string) => highlightTotals && (
+    label === "Sum årlige kostnader" || label === "Sum årsbudsjett inkl. vedlikeholdsreserve"
+  );
+  return (
+    <div className="article-table-wrap">
+      <div className="article-table-scroll">
+        <table className="article-table">
+          <thead><tr>{table.headers.map((h) => <th scope="col" key={h}>{h}</th>)}</tr></thead>
+          <tbody>{table.rows.map((row, ri) => (
+            <tr key={ri} style={isTotal(row[0]) ? { backgroundColor: "#fff2cf", fontWeight: 700 } : undefined}>
+              {row.map((cell, ci) => (
+                <td key={ci} style={isTotal(row[0]) ? { backgroundColor: "#fff2cf", fontWeight: 700 } : undefined}>{cell}</td>
+              ))}
+            </tr>
+          ))}</tbody>
+        </table>
+      </div>
+      <div className="article-table-cards">
+        {table.rows.map((row, ri) => (
+          <dl className="article-table-card" key={ri} style={isTotal(row[0]) ? { backgroundColor: "#fff2cf", fontWeight: 700 } : undefined}>
+            {row.map((cell, ci) => (
+              <div className="article-table-card-field" key={ci}>
+                <dt>{table.headers[ci] ?? `Kolonne ${ci + 1}`}</dt>
+                <dd>{cell}</dd>
+              </div>
+            ))}
+          </dl>
+        ))}
+      </div>
+      {table.caption && <p className="article-table-caption">{table.caption}</p>}
+    </div>
+  );
+}
 
 const BASE = "https://www.zenecohomes.com";
 
@@ -1194,7 +1229,37 @@ export function ArticleView({ article }: { article: Article }) {
                       </figure>
                     );
                   })()}
-                  {section.body?.map((paragraph) => {
+                  {section.body?.map((paragraph, paragraphIndex) => {
+                    if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("• ")) {
+                      if (paragraphIndex > 0 && section.body?.[paragraphIndex - 1]?.startsWith("• ")) return null;
+                      const items = section.body?.slice(paragraphIndex).filter((line, i, lines) =>
+                        i === 0 || lines.slice(0, i).every((previous) => previous.startsWith("• "))
+                      ).filter((line) => line.startsWith("• ")) ?? [];
+                      return <ul className="article-bullets" key={paragraph}>{items.map((item) => {
+                        const match = item.slice(2).match(/^([^:]+:)(.*)$/);
+                        return <li key={item}>{match ? <><strong>{match[1]}</strong>{match[2]}</> : item.slice(2)}</li>;
+                      })}</ul>;
+                    }
+                    if (article.slug === "lopende-kostnader-eie-bolig-spania" &&
+                        section.heading === "Hva koster det å eie bolig i Spania?" &&
+                        paragraph.startsWith("Tabellen nedenfor sammenligner")) {
+                      return <div key={paragraph}>
+                        <p>{paragraph}</p>
+                        {section.table && <CostArticleTable table={section.table} highlightTotals />}
+                        {section.tableNote && <p className="text-sm italic text-slate-600">{section.tableNote}</p>}
+                        {section.optionalTableIntro && <p className="mt-6">{section.optionalTableIntro}</p>}
+                        {section.optionalTable && <CostArticleTable table={section.optionalTable} />}
+                      </div>;
+                    }
+                    if (article.slug === "lopende-kostnader-eie-bolig-spania" &&
+                        (/^Anslåtte årlige (strøm|vann)kostnader:$/.test(paragraph) ||
+                         paragraph === "Anslåtte årlige kostnader:" ||
+                         paragraph === "Anbefalt årlig avsetning:")) {
+                      return <p key={paragraph}><strong>{paragraph}</strong></p>;
+                    }
+                    if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("Eksempel:")) {
+                      return <p key={paragraph}><strong>Eksempel</strong>{paragraph.slice("Eksempel".length)}</p>;
+                    }
                     if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("#### ")) {
                       return <h4 key={paragraph}>{paragraph.slice(5)}</h4>;
                     }
@@ -1220,7 +1285,7 @@ export function ArticleView({ article }: { article: Article }) {
                       ))}
                     </ul>
                   )}
-                  {section.table && (
+                  {section.table && !(article.slug === "lopende-kostnader-eie-bolig-spania" && section.heading === "Hva koster det å eie bolig i Spania?") && (
                     <div className="article-table-wrap">
                       <div className="article-table-scroll">
                         <table className="article-table">
