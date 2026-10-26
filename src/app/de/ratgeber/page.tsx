@@ -8,7 +8,16 @@ import { homeLanguageLinks } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Ratgeber Immobilienkauf Spanien | Guides | Zen Eco Homes",
   description: "Ratgeber zum Immobilienkauf in Spanien: Regionen, Neubau, Grundstücke, Finanzierung, NIE, Recht, Kosten und praktische Schritte vor der Reservierung.",
-  alternates: { canonical: "/de/ratgeber" },
+  alternates: {
+    canonical: "/de/ratgeber",
+    languages: {
+      "nb-NO": "/guide",
+      "x-default": "/guide",
+      en: "/en/guides",
+      "de-DE": "/de/ratgeber",
+      "es-ES": "/es/guias",
+    },
+  },
 };
 
 const guides = [
