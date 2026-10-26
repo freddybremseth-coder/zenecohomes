@@ -1,7 +1,7 @@
-import { PropertyProjectFacts } from "@/components/PropertyProjectFacts";
+import "@/components/property-detail-mobile.css";
 import { StructuredPropertyDescription } from "@/components/StructuredPropertyDescription";
 import { PropertyFloorplans } from "@/components/PropertyFloorplans";
-import { ResilientImage } from "@/components/ResilientImage";
+import { PropertyHeroGallery } from "@/components/PropertyHeroGallery";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, Bath, BedDouble, BookOpen, Check, Coins, Home, LandPlot, MessageCircle, Ruler, Tag, Waves, Zap } from "lucide-react";
@@ -9,7 +9,6 @@ import { AreaInsight } from "@/components/AreaInsight";
 import { ContactForm } from "@/components/ContactForm";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { MortgageCalculator } from "@/components/MortgageCalculator";
-import { PropertyAssessment } from "@/components/PropertyAssessment";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { Footer } from "@/components/Footer";
 import { ReadMoreText } from "@/components/ReadMoreText";
@@ -356,6 +355,22 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
     townDisplay && type
       ? `${type}${property.bedrooms ? ` ${withWord} ${property.bedrooms} ${bedroomWord}` : ""} ${inWord} ${townDisplay}`
       : title;
+  const unavailable = locale === "no" ? "Denne informasjonen er ikke tilgjengelig ved publisering, ta kontakt for oppdatert informasjon." : locale === "en" ? "This information was not available at publication. Contact us for an update." : "Diese Information war bei Veröffentlichung nicht verfügbar. Bitte fragen Sie nach aktuellen Angaben.";
+  const completionRaw = String(property.expected_completion_manual || property.expected_completion_source || "").trim();
+  const isoCompletion = completionRaw.match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
+  const completion = isoCompletion && Number(isoCompletion[2]) >= 1 && Number(isoCompletion[2]) <= 12
+    ? new Intl.DateTimeFormat(locale === "no" ? "nb-NO" : locale === "en" ? "en-GB" : "de-DE", { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(Number(isoCompletion[1]), Number(isoCompletion[2]) - 1, 1)))
+    : completionRaw;
+  const rawStatus = String(property.status || "").trim().toLowerCase();
+  const projectStatus = /under construction|under bygg|en construcci[oó]n|building/.test(rawStatus)
+    ? (locale === "no" ? "Under bygging" : locale === "en" ? "Under construction" : "Im Bau")
+    : /completed|finished|ferdig|entregado|ready/.test(rawStatus)
+      ? (locale === "no" ? "Ferdigstilt" : locale === "en" ? "Completed" : "Fertiggestellt")
+      : /planning|planlagt|off.plan|sobre plano/.test(rawStatus)
+        ? (locale === "no" ? "Under planlegging" : locale === "en" ? "In planning" : "In Planung")
+        : "";
+  const amenities = Array.isArray(property.amenities_no) ? property.amenities_no.filter((item): item is string => typeof item === "string" && Boolean(item.trim())) : typeof property.amenities_no === "string" ? property.amenities_no.split(/[;\n]/).map(item => item.trim()).filter(Boolean) : [];
+  const disclosedFeatures = [...amenities.filter((item) => !/^(floor\s?plans?|plantegning(?:er)?|planos?|photo(?:s)?|bilder|image(?:s)?|video|pdf|brochure|prospekt)$/i.test(item)), ...(property.pool === true ? [locale === "no" ? "Basseng oppgitt" : "Pool listed"] : [])].filter((item,index,all)=>all.indexOf(item)===index);
   const estimatedCosts = property.price ? Math.round(property.price * 0.135) : 0;
   const estimatedTotal = property.price ? property.price + estimatedCosts : 0;
   const detailPath = getPropertyDetailPath(ref, locale);
@@ -460,16 +475,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
       <SiteHeader locale={locale} languageLinks={propertyLanguageLinks(ref, locale)} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(propertyJsonLd) }} />
       <section className="property-detail-hero">
-        {mainImage ? (
-          <ResilientImage
-            src={mainImage}
-            alt={title}
-            fill
-            sizes="100vw"
-            priority
-            style={{ objectFit: "cover", zIndex: 0 }}
-          />
-        ) : null}
+        <PropertyHeroGallery images={images.length ? images : mainImage ? [mainImage] : []} title={title} locale={locale} />
         <div>
           <Link className="back-link" href={propertyListPathByLocale[locale]}>
             <ArrowLeft size={18} /> {t.allProperties}
@@ -496,7 +502,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               }}
             />
             <a href="#kontakt">
-              <MessageCircle size={17} /> {t.bookViewing}
+              <MessageCircle size={17} /> {locale === "no" ? "Få tilsendt salgsoppgaven" : locale === "en" ? "Request the property brochure" : "Exposé anfordern"}
             </a>
           </div>
         </div>
@@ -512,40 +518,63 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
             ))}
           </div>
 
-          <PropertyAssessment
-            property={property}
-            locale={locale}
-            town={townDisplay}
-            regionKey={areaRegionKey}
-            typeLabel={type || (locale === "de" ? "Immobilie" : locale === "en" ? "property" : "bolig")}
-          />
-
-          <StructuredPropertyDescription text={description || t.descriptionFallback} locale={locale} />
-
-          <PropertyProjectFacts property={property} locale={locale} />
-
-          <PropertyFloorplans images={property.floorplans || []} locale={locale} />
-
-          <section className="buyer-next-steps">
-            <h2>Opplev denne boligen</h2>
-            <p>Ønsker du flere bilder, komplett prospekt, tilgjengelige plantegninger eller å avtale en visning? Vi hjelper deg med å finne boligen og alternativene som passer dine ønsker.</p>
-            <a className="text-button" href="#kontakt">Få mer informasjon om boligen →</a>
-          </section>
-
           {images.length > 1 && (
-            <section className="premium-gallery">
+            <section className="premium-gallery" id="bilder">
               <h2>{t.images}</h2>
               <PropertyGallery images={images} title={title} />
             </section>
           )}
+          <section className="property-detail-section" id="om-boligen">
+            <StructuredPropertyDescription text={description || unavailable} locale={locale} />
+            {property.terrace_size ? <p>{locale === "no" ? "Oppgitt terrasseareal" : "Terrace area"}: {property.terrace_size} m²</p> : null}
+            {property.plot_size ? <p>{locale === "no" ? "Oppgitt tomteareal" : "Plot area"}: {property.plot_size} m²</p> : null}
+          </section>
+          <section className="property-detail-section">
+            <h2>{locale === "no" ? "Prosjektstatus" : locale === "en" ? "Project status" : "Projektstatus"}</h2>
+            <div className="property-project-grid">
+              <div><h3>{locale === "no" ? "Ferdigstillelse" : locale === "en" ? "Completion" : "Fertigstellung"}</h3><p>{completion || unavailable}</p></div>
+              <div><h3>{locale === "no" ? "Prosjektstatus" : locale === "en" ? "Construction status" : "Baustatus"}</h3><p>{projectStatus || unavailable}</p></div>
+            </div>
+          </section>
+          <PropertyFloorplans images={property.floorplans || []} locale={locale} />
+          <section className="sticky-card property-brochure-box" id="kontakt">
+            <h2>{t.fullInfoTitle}</h2>
+            <p>{locale === "no" ? "Få tilsendt tilgjengelig salgsoppgave, plantegninger og oppdatert informasjon. Vi sjekker dokumentasjonen for akkurat denne boligen." : "Request the available brochure, floor plans and updated details for this property."}</p>
+            <ContactForm locale={locale} propertyRef={ref} propertyTitle={title} requestType={t.requestType} source={`property-${locale}-${ref}`} variant="compact" />
+          </section>
+          <section className="sticky-card property-mortgage-box">
+            <h2>{locale === "no" ? "Lånekalkulator" : locale === "en" ? "Mortgage calculator" : "Hypothekenrechner"}</h2>
+            <MortgageCalculator price={property.price} locale={locale} />
+          </section>
+          <section className="property-detail-section">
+            <h2>{t.costsTitle}</h2>
+            <p>{t.costsBody}</p>
+            <dl className="property-cost-list">
+              <div><dt>{t.price}</dt><dd>{formatPriceForLocale(property.price, locale)}</dd></div>
+              <div><dt>{t.costs}</dt><dd>{property.price ? formatPriceForLocale(estimatedCosts,locale) : unavailable}</dd></div>
+              <div><dt>{t.total}</dt><dd>{property.price ? formatPriceForLocale(estimatedTotal,locale) : unavailable}</dd></div>
+            </dl>
+            <p><small>{locale === "no" ? "Dette er et generelt budsjettanslag, ikke et bindende kostnadsoverslag. Skatter og gebyrer avhenger av bolig og kjøper." : "Illustrative estimate; actual taxes and fees depend on the transaction."}</small></p>
+          </section>
+          <section className="property-detail-section">
+            <h2>{t.includedTitle}</h2>
+            {disclosedFeatures.length ? <><p>{locale === "no" ? "Følgende egenskaper er oppgitt i boligdataene. Det må bekreftes i leveransebeskrivelsen hva som inngår i kjøpesummen." : "The following features are listed. Confirm what is included in the sale specification."}</p><ul>{disclosedFeatures.map(item=><li key={item}>{item}</li>)}</ul></> : <p>{unavailable}</p>}
+          </section>
+          <section className="property-detail-section">
+            <h2>{t.rentalTitle}</h2><p>{t.rentalBody}</p>
+            <p>{locale === "no" ? "Mulighet for utleie og eventuelle nødvendige lisenser må kontrolleres for denne boligen." : "Rental eligibility and any licences must be checked for this property."}</p>
+          </section>
+          <section className="property-detail-section">
+            <h2>{t.decisionTitle}</h2><ul>{t.decisionItems.map(item=><li key={item}>{item}</li>)}</ul>
+          </section>
+          <section className="property-detail-section">
+            <h2>{t.nextStepsTitle}</h2><ol>{t.nextSteps.map(item=><li key={item}>{item}</li>)}</ol>
+            <a className="text-button" href="#kontakt">{locale === "no" ? "Be om salgsoppgaven" : t.requestOffer}</a>
+          </section>
           <section className="area-context">
             <h2>{t.areaTitle}</h2>
-            <p>{t.areaBody(townDisplay)}</p>
-            <div>
-              {t.areaBadges.map((badge) => (
-                <span key={badge}>{badge}</span>
-              ))}
-            </div>
+            <p>{locale === "no" ? `Boligen ligger i ${townDisplay}. Se områdeguiden for mer informasjon om byen, hverdagsliv og nærområder.` : locale === "en" ? `The property is located in ${townDisplay}. Read our area guide for local information.` : `Die Immobilie liegt in ${townDisplay}. Lesen Sie mehr in unserem Gebietsführer.`}</p>
+            <Link className="text-button" href={areaPageHref}>{t.areaReadMore}</Link>
             <AreaInsight regionKey={areaRegionKey} locale={locale} />
             <div className="area-book">
               <p className="area-book-lead">
@@ -586,27 +615,9 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
           </nav>
         </div>
 
-        <aside className="sticky-card">
-          <h2>{t.fullInfoTitle}</h2>
-          <ul className="property-info-list">
-            {t.fullInfoList.map((item) => (
-              <li key={item}>
-                <Check size={15} /> {item}
-              </li>
-            ))}
-          </ul>
-          <MortgageCalculator price={property.price} locale={locale} />
-          <div id="kontakt" />
-          <ContactForm
-            locale={locale}
-            propertyRef={ref}
-            propertyTitle={title}
-            requestType={t.requestType}
-            source={`property-${locale}-${ref}`}
-            variant="compact"
-          />
-        </aside>
+
       </section>
+      <a className="property-mobile-cta" href="#kontakt">{locale === "no" ? "Få tilsendt salgsoppgaven" : locale === "en" ? "Request the brochure" : "Exposé anfordern"}</a>
       <Footer />
     </main>
   );
