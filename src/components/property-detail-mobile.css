@@ -86,3 +86,15 @@
   background: linear-gradient(0deg, rgba(15,24,31,.83), rgba(15,24,31,.12) 68%);
 }
 .property-detail-hero > div:not(.property-hero-gallery) { z-index: 3; }
+
+/* Both brochure and calculator belong to the same reading column; brochure first. */
+main:has(.property-detail-hero) .detail-layout {
+  display: block;
+  width: min(960px, calc(100% - 40px));
+  margin-inline: auto;
+}
+main:has(.property-detail-hero) .property-detail-primary { width: 100%; }
+main:has(.property-detail-hero) .property-mortgage-box { margin: 18px 0; }
+@media (max-width: 900px) {
+  main:has(.property-detail-hero) .detail-layout { width: min(100% - 28px, 720px); }
+}
