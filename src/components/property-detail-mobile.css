@@ -79,3 +79,10 @@
   max-width: none; z-index: 0;
 }
 .property-detail-hero > .property-hero-gallery .property-hero-gallery-controls { z-index: 4; }
+
+.property-detail-hero > .property-hero-gallery { z-index: 2; }
+.property-detail-hero > .property-hero-gallery::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(0deg, rgba(15,24,31,.83), rgba(15,24,31,.12) 68%);
+}
+.property-detail-hero > div:not(.property-hero-gallery) { z-index: 3; }
