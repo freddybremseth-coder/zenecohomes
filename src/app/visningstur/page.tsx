@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const day = [
   ["Første stopp", "Vi starter i området og ser på hverdagen rundt boligen: service, avstander, adkomst og det du faktisk vil bruke."],
-  ["Utvalgte visninger", "Vi prioriterer et begrenset antall relevante boliger fremfor å fylle dagen med objekter som ikke passer profilen din."],
+  ["Utvalgte visninger", "Vi prioriterer boliger som passer profilen din, slik at du får mest mulig ut av visningsdagen."],
   ["Sammenligning underveis", "Etter hver visning noterer vi hva som fungerte og hva som ikke gjorde det. Shortlisten kan justeres samme dag."],
   ["Oppsummering", "Dagen avsluttes med en konkret rangering av alternativer, spørsmål som må avklares og neste steg – uten press om å reservere."],
 ] as const;
@@ -26,28 +26,27 @@ export default function ViewingTripPage() {
 
       <section className="page-hero compact-hero">
         <p className="eyebrow">Visningstur til Spania</p>
-        <h1>En visningstur skal gi klarhet – ikke flere tilfeldige boliger</h1>
+        <h1>Visningstur til Spania – finn riktig bolig og område med norske rådgivere</h1>
         <p>
-          Vi avklarer område, budsjett og krav før du reiser, bekrefter tilgjengelighet så nær turen som mulig
-          og samler et lite antall boliger som faktisk er relevante.
+          På en visningstur får du oppleve aktuelle boliger, utforske områdene og kjenne etter hvor du kan trives. Zen Eco Homes hjelper deg med å finne relevante boliger ut fra dine ønsker og ditt budsjett.
         </p>
         <div className="hero-actions">
-          <Link className="contact-button" href="/booking">Planlegg visningstur <ArrowRight size={17} /></Link>
+          <Link className="contact-button" href="/booking">Ta kontakt <ArrowRight size={17} /></Link>
           <Link className="text-button light" href="/eiendommer">Se boliger</Link>
-          <Link className="text-button light" href="/omrader">Sammenlign områder</Link>
         </div>
       </section>
 
       <section className="section viewing-prep">
         <div>
           <p className="eyebrow">Før reisen</p>
-          <h2>Slik forbereder vi visningsturen</h2>
+          <h2>Slik planlegger vi visningsturen til Spania</h2>
           <p className="viewing-lead">
-            Målet er ikke å fylle kalenderen. Målet er at boligene du ser skal være relevante nok til at du faktisk kan sammenligne dem.
+            God planlegging er nøkkelen til en vellykket visningstur. Vi ser på et nøye utvalg av boliger som samsvarer med ønskene dine, og vurderer helheten – fra boligens egenskaper og beliggenhet til området rundt. Slik får du et godt grunnlag for å finne boligen som passer best for deg.
           </p>
+          <p><Link className="text-button" href="/kjopsprosessen">Les om kjøpsprosessen <ArrowRight size={16} /></Link></p>
           <div className="viewing-prep-list">
             <article><CheckCircle2 size={18}/><div><h3>Behov og totalbudsjett først</h3><p>Vi avklarer hvordan boligen skal brukes, økonomisk ramme og hva som er viktigst for deg.</p></div></article>
-            <article><CheckCircle2 size={18}/><div><h3>Området snevres inn</h3><p>Vi reduserer geografi før vi velger objekter, slik at visningsdagen ikke brukes på store transportetapper.</p></div></article>
+            <article><CheckCircle2 size={18}/><div><h3>Vi finner de rette områdene</h3><p>Vi ser etter områder på Costa Blanca der du kan trives. <Link href="/omrader">Se områdene</Link>.</p></div></article>
             <article><CheckCircle2 size={18}/><div><h3>Tilgjengelighet bekreftes</h3><p>Pris og tilgjengelighet sjekkes på nytt så nær visningsdagen som mulig.</p></div></article>
             <article><CheckCircle2 size={18}/><div><h3>Én koordinert plan</h3><p>Relevante utviklere og meglere samles i én kjøreplan, med nok tid mellom stoppene.</p></div></article>
           </div>
@@ -66,17 +65,14 @@ export default function ViewingTripPage() {
           <p>
             Har du allerede valgt område og en svært kort shortlist, kan turen være kortere.
           </p>
-          <Link className="text-button" href="/guide/omradeguide-eiendomskjop-i-spania">
-            Les områdeguiden <ArrowRight size={16}/>
-          </Link>
         </aside>
       </section>
 
       <section className="section proof-section">
         <div className="section-heading">
           <p className="eyebrow"><MapPin size={14}/> Eksempel på en visningsdag</p>
-          <h2>Fra område til oppsummering</h2>
-          <p>Planen tilpasses kunden, men en god dag har en tydelig rekkefølge og nok tid til å tenke mellom visningene.</p>
+          <h2>Slik foregår en visningsdag i Spania</h2>
+          <p>Planen for visningsdagen skreddersys for hver enkelt, med en god balanse mellom boligvisninger, opplevelsen av områdene og tid til å vurdere inntrykkene underveis.</p>
         </div>
         <div className="viewing-day-timeline">
           {day.map(([title, text], index) => (
@@ -88,37 +84,25 @@ export default function ViewingTripPage() {
         </div>
       </section>
 
-      <section className="section split viewing-evaluation">
+      <section className="section viewing-evaluation">
         <div>
-          <p className="eyebrow">Hva ser vi etter?</p>
-          <h2>Boligen er bare én del av vurderingen</h2>
+          <p className="eyebrow">Din rådgiver på turen</p>
+          <h2>Visningstur med norsk rådgiver</h2>
           <p>
-            På visning ser vi også på solforhold, adkomst, støy, omkringliggende tomter, byggeaktivitet,
-            parkering, gangavstand, servicetilbud og hvordan området fungerer utenfor høysesongen.
+            På visningstur i Spania møter du Freddy, vår norske eiendomsrådgiver med god kjennskap til det spanske boligmarkedet. Han hjelper deg med å vurdere boligene, bli kjent med områdene og få svar på spørsmålene som dukker opp underveis. Med en norsk rådgiver ved din side blir det enklere å forstå mulighetene og ta gode, informerte valg.
           </p>
-          <Link className="text-button" href="/guide/kjope-bolig-i-spania">
-            Les komplett kjøperguide <ArrowRight size={16}/>
-          </Link>
+          <p>
+            <Link href="/om-oss">Les mer om oss</Link> og <Link href="/kundeomtaler">se kundeomtaler</Link>.
+          </p>
         </div>
-        <aside className="viewing-after">
-          <p className="eyebrow">Etter visningen</p>
-          <h2>Ingen reservasjon før viktige spørsmål er avklart</h2>
-          <p>
-            Hvis en bolig skiller seg ut, samler vi spørsmål om pris, leveranse, betalingsplan, dokumentasjon
-            og andre forhold som må undersøkes. Deretter går saken videre i den strukturerte
-            <Link href="/kjopsprosessen"> kjøpsprosessen</Link>.
-          </p>
-          <Link className="text-button" href="/kjopsprosessen">Se hele kjøpsprosessen <ArrowRight size={16}/></Link>
-        </aside>
       </section>
 
       <section className="section viewing-shortlist">
         <div className="section-heading">
           <p className="eyebrow">Før du bestiller fly</p>
-          <h2>Gjør shortlisten så god som mulig hjemmefra</h2>
+          <h2>Har du funnet en interessant bolig et annet sted</h2>
           <p>
-            Start med boligoversikten og Boligmatch. Send oss gjerne referanser du allerede har funnet, også fra
-            andre portaler, så kan de vurderes og koordineres før turen.
+            Du trenger ikke begrense deg til boligene du finner hos Zen Eco Homes. Har du sett en interessant bolig på Finn.no, Idealista eller hos en annen eiendomsmegler? Send oss lenken, så setter vi opp visning for deg og koordinerer den med resten av visningsturen.
           </p>
         </div>
         <div className="hero-actions">
@@ -130,7 +114,7 @@ export default function ViewingTripPage() {
       <section className="contact-section">
         <div>
           <p className="eyebrow">Neste steg</p>
-          <h2>Fortell når du planlegger å komme til Spania</h2>
+          <h2>Fortell oss når du ønsker å komme på visningstur</h2>
           <p>Vi starter med område, budsjett og boligbruk og bygger en realistisk visningsplan derfra.</p>
         </div>
         <Link className="contact-button" href="/booking">Planlegg visningstur</Link>
