@@ -120,7 +120,7 @@ export default function ViewingTripPage() {
         <Link className="contact-button" href="/booking">Planlegg visningstur</Link>
       </section>
 
-      <Footer />
+      <Footer showCta={false} />
     </main>
   );
 }
