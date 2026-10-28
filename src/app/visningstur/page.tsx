@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Clock, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -85,7 +86,7 @@ export default function ViewingTripPage() {
       </section>
 
       <section className="section viewing-evaluation">
-        <div>
+        <div className="viewing-evaluation-copy">
           <p className="eyebrow">Din rådgiver på turen</p>
           <h2>Visningstur med norsk rådgiver</h2>
           <p>
@@ -95,12 +96,21 @@ export default function ViewingTripPage() {
             <Link href="/om-oss">Les mer om oss</Link> og <Link href="/kundeomtaler">se kundeomtaler</Link>.
           </p>
         </div>
+        <figure className="viewing-evaluation-photo">
+          <Image
+            src="/assets/freddy-bremseth.jpg"
+            alt="Freddy Bremseth, norsk eiendomsrådgiver hos Zen Eco Homes"
+            width={480}
+            height={482}
+            sizes="(max-width: 760px) 100vw, 36vw"
+          />
+        </figure>
       </section>
 
       <section className="section viewing-shortlist">
         <div className="section-heading">
           <p className="eyebrow">Før du bestiller fly</p>
-          <h2>Har du funnet en interessant bolig et annet sted</h2>
+          <h2>Har du funnet en interessant bolig et annet sted?</h2>
           <p>
             Du trenger ikke begrense deg til boligene du finner hos Zen Eco Homes. Har du sett en interessant bolig på Finn.no, Idealista eller hos en annen eiendomsmegler? Send oss lenken, så setter vi opp visning for deg og koordinerer den med resten av visningsturen.
           </p>
