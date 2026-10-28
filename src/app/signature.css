@@ -1407,15 +1407,51 @@
 }
 
 .viewing-evaluation {
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(36px, 6vw, 88px);
+  align-items: center;
 }
 
-.viewing-evaluation > div {
-  padding: clamp(10px, 1vw, 16px) 0;
+.viewing-evaluation-copy > h2 {
+  max-width: none;
+  margin-bottom: 20px;
 }
 
-.viewing-evaluation > div > p:not(.eyebrow) {
-  max-width: 62ch;
+.viewing-evaluation-copy > p:not(.eyebrow) {
+  max-width: 64ch;
+  color: var(--ze-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.viewing-evaluation-copy a {
+  color: var(--ze-ink);
+  text-underline-offset: 3px;
+}
+
+.viewing-evaluation-photo {
+  margin: 0;
+  width: 100%;
+}
+
+.viewing-evaluation-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 480 / 482;
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .viewing-evaluation {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .viewing-evaluation-photo {
+    max-width: 440px;
+  }
 }
 
 .viewing-after {
