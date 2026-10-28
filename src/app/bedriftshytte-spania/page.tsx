@@ -71,11 +71,11 @@ export default function CorporateHomesPage() {
       <div className="corporate-hero-inner">
         <h1>Bedriftshytte i Spania for norske virksomheter</h1>
         <p>Gi ansatte, ledere eller medlemmer muligheten til å bruke en bolig i Spania. Zen Eco Homes hjelper dere med å utforske mulighetene og finne en løsning som passer bedriftens behov.</p>
-        <p>Her kan dere lese om ulike modeller for bedriftshytte i Spania, hva dere bør vite om kostnader og skatt, hvordan dere kan organisere bruken av boligen, og hva som kreves for kjøp og lokal drift.</p>
         <div className="hero-actions"><Link className="contact-button" href="/booking">Book en uforpliktende prat <ArrowRight size={18}/></Link><a className="text-button light" href="#kalkulator">Se hva en bedriftshytte kan koste</a></div>
       </div>
     </section>
     <section className="section corporate-decision">
+      <p style={{maxWidth:"72ch",marginBottom:"1.5rem"}}>Her kan dere lese om ulike modeller for bedriftshytte i Spania, hva dere bør vite om kostnader og skatt, hvordan dere kan organisere bruken av boligen, og hva som kreves for kjøp og lokal drift.</p>
       <div className="section-heading"><h2>En bedriftshytte - mange muligheter</h2><p>En bedriftshytte i Spania er en mulighet til å gi ansatte, ledere eller medlemmer noe litt utenom det vanlige. Se for dere en feriebolig på Costa Blanca, der sol, varme og nye opplevelser blir en del av et ansattgode dere kan tilby. Det kan skape verdi langt utover selve oppholdet – enten målet er å belønne ansatte, styrke samholdet eller gi medlemmene en ekstra fordel.</p><p>Her er noen måter en bolig i Spania kan bli en verdifull ressurs for virksomheten.</p></div>
       <div className="corporate-decision-grid">{benefits.map(([title,copy])=><article key={title} style={{padding:"1.5rem",borderRadius:"1rem",background:"var(--surface, #fff)",boxShadow:"0 6px 22px #172f4012"}}><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </section>
@@ -92,7 +92,12 @@ export default function CorporateHomesPage() {
       <Link className="contact-button" href="/bedriftshytte-spania#bedriftsvurdering">Snakk med oss om delt eierskap <ArrowRight size={18}/></Link>
     </section>
     <section className="corporate-calculator-section" id="kalkulator">
-      <div className="corporate-section-copy"><h2>Hva koster en bedriftshytte i Spania</h2><p>For å finne ut hvilke muligheter virksomheten har, er det lurt å starte med totalbudsjettet. Boligprisen er bare én del av regnestykket. I tillegg kommer kjøpsomkostninger, løpende eierkostnader og eventuell praktisk oppfølging av boligen. Disse utgiftene påvirker hvor mye dere faktisk kan bruke på selve boligen.</p><p>Hva dere får for budsjettet, avhenger blant annet av hvor i Spania dere ønsker å kjøpe, hvilken boligtype dere ser etter, og hvilken størrelse og standard dere ønsker. En leilighet i et etablert boligområde vil for eksempel ha en annen pris enn en større villa med privat basseng. Derfor er det viktig å se boligprisen i sammenheng med både totalbudsjettet og virksomhetens behov.</p><p>Den enkle kalkulatoren gir dere et første estimat på investering og årlige kostnader. Ønsker dere å sammenligne finansiering, hotellalternativer, delt eierskap og langsiktig økonomi, finner dere den omfattende kalkulatoren i styreguiden.</p></div>
+      <div className="corporate-section-copy"><h2>Hva koster en bedriftshytte i Spania?</h2>
+        <p>Start med totalbudsjettet. I tillegg til boligprisen må dere regne med rundt 10–15 % i skatter og kjøpsomkostninger.</p>
+        <p>Totalbudsjettet avgjør dermed hvilken prisklasse dere kan se etter. Beliggenhet, boligtype, størrelse og standard påvirker hva dere får for pengene.</p>
+        <p>Bruk den enkle kalkulatoren for å finne aktuell boligprisklasse og beregne årlige eierkostnader. I styreguiden finner dere en mer omfattende kalkulator for å utforske finansiering, hotellalternativer, delt eierskap og langsiktig økonomi.</p>
+        <p><Link href="/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret">Se styreguiden og den omfattende kalkulatoren <ArrowRight size={16} style={{display:"inline"}} /></Link></p>
+      </div>
       <CorporateSimpleCalculator />
     </section>
     <section className="section corporate-decision"><div className="section-heading"><h2>Hvorfor velge Zen Eco Homes?</h2><p>Vi er deres lokale samarbeidspartner på Costa Blanca: fra behov og områdevalg, til eiendom, kjøpsprosess og praktisk oppfølging etter overtakelsen. Vi starter med virksomhetens bruk og økonomi før vi foreslår boliger.</p><Link className="contact-button" href="/booking">Snakk med en rådgiver <ArrowRight size={18}/></Link></div></section>
