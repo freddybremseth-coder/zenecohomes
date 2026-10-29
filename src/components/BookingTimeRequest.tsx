@@ -7,7 +7,7 @@ import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 export function BookingTimeRequest() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const startedAt = useRef(Date.now());
-  const today = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Madrid" });
+  const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Madrid" });
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
