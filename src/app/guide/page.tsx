@@ -39,7 +39,7 @@ const specialGuides: GuideItem[] = [
     title: "Flytte til Spania (2026) – praktiske råd og erfaringer",
     excerpt: "Oppholdsrett, NIE, padrón, flyttemelding, skatt, pensjon, helse, levekostnader og Freddys råd til deg som flytter.",
     href: "/guide/flytte-til-spania",
-    image: "/assets/magasin-covers/omradeguide.svg",
+    image: "/assets/magasin-covers/pensjon-flytte.svg",
     imageAlt: "Illustrasjon til guide om å flytte til Spania",
     readingTime: "15 min lesing",
     category: "Livet i Spania",
