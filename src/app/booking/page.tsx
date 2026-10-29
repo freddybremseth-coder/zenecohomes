@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, CalendarClock, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CalendarClock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { BookingTimeRequest } from "@/components/BookingTimeRequest";
 import { Footer } from "@/components/Footer";
