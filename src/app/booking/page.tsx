@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, CalendarClock, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CalendarClock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { BookingTimeRequest } from "@/components/BookingTimeRequest";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -25,39 +26,41 @@ export default async function BookingPage({
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
       <section className="page-hero compact-hero image-hero">
         <p className="eyebrow"><CalendarClock size={15} /> 15-minutters boligprat</p>
-        <h1>Fortell kort hva du vurderer</h1>
+        <h1>Ta en boligprat med oss</h1>
         <p>
-          Denne første praten er for å avklare område, budsjett, bruk og hva du bør gjøre videre. Hovedfokuset vårt
-          er moderne nybygg og moderne boliger på Costa Blanca og i utvalgte innlandsområder.
+          Velg det som passer deg best: send oss en kort henvendelse, eller foreslå et tidspunkt for en uforpliktende samtale om bolig i Spania.
         </p>
       </section>
 
+      <section className="section" aria-labelledby="booking-options-title">
+        <p className="eyebrow">Enkelt å komme i gang</p>
+        <h2 id="booking-options-title">Hvordan vil du ta kontakt?</h2>
+        <p className="booking-lead">Du trenger ikke ha valgt område eller bolig. Begge alternativer er uforpliktende.</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 290px), 1fr))", gap: "1rem", marginTop: "1.5rem" }}>
+          <a className="booking-form-panel" href="#foresporsel" style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+            <p className="eyebrow">Alternativ 1</p>
+            <h3>Send en henvendelse</h3>
+            <p>Skriv kort hva du lurer på. Vi tar kontakt med deg.</p>
+            <strong>Gå til kontaktskjema →</strong>
+          </a>
+          <a className="booking-form-panel" href="#book-tid" style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+            <p className="eyebrow">Alternativ 2</p>
+            <h3>Book en tid</h3>
+            <p>Foreslå dato og klokkeslett for en 15-minutters boligprat. Vi bekrefter tidspunktet.</p>
+            <strong>Velg ønsket tid →</strong>
+          </a>
+        </div>
+      </section>
       <section className="section booking-layout">
         <div>
-          <p className="eyebrow">Hva vi kan avklare</p>
-          <h2>Få et bedre utgangspunkt før du bestiller visningstur</h2>
-          <p className="booking-lead">
-            Samtalen brukes til å rydde i de viktigste valgene først. Du trenger ikke ha bestemt område eller bolig før du tar kontakt.
-          </p>
-          <div className="booking-agenda">
-            <article><CheckCircle2 size={18}/><div><h3>Område og bruk</h3><p>Hvilke områder som passer feriebruk, fast bolig, utleie eller mer plass.</p></div></article>
-            <article><CheckCircle2 size={18}/><div><h3>Totalbudsjett</h3><p>En realistisk ramme som tar høyde for mer enn bare annonseprisen.</p></div></article>
-            <article><CheckCircle2 size={18}/><div><h3>Boligtype</h3><p>Nybygg, villa, leilighet, rekkehus eller tomt – og hvilke kompromisser som følger med.</p></div></article>
-            <article><CheckCircle2 size={18}/><div><h3>Neste steg</h3><p>Hva som bør avklares før reservasjon, og hvordan en god visningsplan kan bygges opp.</p></div></article>
-          </div>
-          <p className="booking-note">
-            Send inn kontaktinformasjonen din og skriv gjerne når det passer best å bli kontaktet. Dette er en forespørsel om samtale, ikke en automatisk kalenderbooking.
-          </p>
+          <p className="eyebrow">1 · Send en henvendelse</p>
+          <h2>Fortell kort hva du vurderer</h2>
+          <p className="booking-lead">Spør om områder, budsjett, boligtype, visningstur eller kjøpsprosessen. Vi svarer og hjelper deg videre.</p>
           <Link className="text-button" href="/om-oss/freddy"><ArrowLeft size={16} /> Les mer om Freddy</Link>
         </div>
         <aside className="booking-form-panel" id="foresporsel">
-          <p className="eyebrow">{infoMeeting ? "Interesse for infomøte" : "Forespør samtale"}</p>
-          <h2>{infoMeeting ? "Få beskjed når neste infomøte er satt" : "Fortell kort hva du vurderer"}</h2>
-          {infoMeeting && (
-            <p className="booking-note">
-              Send inn kontaktinformasjonen din. Vi registrerer dette som interesse for neste digitale infomøte om boligkjøp i Spania.
-            </p>
-          )}
+          <p className="eyebrow">{infoMeeting ? "Interesse for infomøte" : "Kontaktskjema"}</p>
+          <h2>{infoMeeting ? "Få beskjed når neste infomøte er satt" : "Send oss en melding"}</h2>
           <ContactForm
             source={infoMeeting ? "zenecohomes-infomote" : "zenecohomes-booking"}
             requestType={infoMeeting ? "infomote" : "booking"}
@@ -65,6 +68,20 @@ export default async function BookingPage({
           />
         </aside>
       </section>
+      {!infoMeeting && (
+        <section className="section booking-layout" id="book-tid">
+          <div>
+            <p className="eyebrow">2 · Book en tid</p>
+            <h2>Foreslå en tid for boligprat</h2>
+            <p className="booking-lead">Velg en dato og et klokkeslett som passer deg. Samtalen varer omtrent 15 minutter og kan gjennomføres på telefon eller digitalt.</p>
+            <p className="booking-note">Tidspunktet er ikke reservert før du har fått en bekreftelse fra oss.</p>
+          </div>
+          <aside className="booking-form-panel">
+            <h2>Velg ønsket tidspunkt</h2>
+            <BookingTimeRequest />
+          </aside>
+        </section>
+      )}
       <section className="contact-section booking-info-meeting">
         <div>
           <p className="eyebrow">Digitalt infomøte</p>
