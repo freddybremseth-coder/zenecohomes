@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
-import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { findEquivalentBySlug, seoHreflang, siteLocales, withLocale } from "@/lib/i18n";
@@ -48,7 +47,7 @@ const eightSteps = [
   ],
   [
     "Få boligen juridisk kontrollert",
-    "En advokat bør kontrollere eierskap, heftelser, gjeld, tillatelser og opplysninger i eiendomsregisteret før du binder deg videre.",
+    "La en uavhengig advokat undersøke boligen og dokumentasjonen før du inngår bindende avtaler.",
   ],
   [
     "Skaff NIE og avklar det praktiske",
@@ -201,7 +200,7 @@ export default async function BuyInSpainGuidePage() {
 
           <aside className="cornerstone-hero-panel" aria-label="Kort om guiden">
             <p className="eyebrow">Praktisk kjøperguide</p>
-            <h2>Dette får du svar på</h2>
+            <p className="article-item-title"><strong>Dette får du svar på</strong></p>
             <ul>
               <li>Hvordan kjøpsprosessen fungerer steg for steg</li>
               <li>Hva boligkjøpet faktisk koster</li>
@@ -277,9 +276,8 @@ export default async function BuyInSpainGuidePage() {
           </p>
         </div>
 
-        <div className="preflight-list">
-          <article className="preflight-item">
-            <CheckCircle2 size={19} />
+        <div className="section-heading">
+          <article style={{ marginTop: 36 }}>
             <div>
               <h3>Kjøpesummen er ikke totalkostnaden</h3>
               <p>
@@ -306,12 +304,10 @@ export default async function BuyInSpainGuidePage() {
               <Link className="text-button" href="/guide/kostnader-boligkjop-spania">
                 Se kjøpskostnader og beregn totalbudsjettet <ArrowRight size={15} />
               </Link>
-              <PurchaseBudgetCalculator />
             </div>
           </article>
 
-          <article className="preflight-item">
-            <CheckCircle2 size={19} />
+          <article style={{ marginTop: 36 }}>
             <div>
               <h3>Velg område før bolig</h3>
               <p>
@@ -332,8 +328,7 @@ export default async function BuyInSpainGuidePage() {
             </div>
           </article>
 
-          <article className="preflight-item">
-            <CheckCircle2 size={19} />
+          <article style={{ marginTop: 36 }}>
             <div>
               <h3>Det spanske boligmarkedet fungerer annerledes enn det norske</h3>
               <p>
@@ -688,7 +683,6 @@ export default async function BuyInSpainGuidePage() {
       <section className="section proof-section cornerstone-section" id="vanlige-feil">
         <div className="section-heading">
           <p className="eyebrow">Unngå fallgruvene</p>
-          <h2>Vanlige feil mange gjør når de kjøper spansk bolig</h2>
           <p>
             De vanligste feilene handler ikke bare om selve boligen. De oppstår når område, totalbudsjett,
             dokumentasjon eller oppfølging ikke er avklart tidlig nok. Dette er seks situasjoner du bør unngå.
