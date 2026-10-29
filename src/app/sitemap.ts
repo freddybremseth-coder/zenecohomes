@@ -150,6 +150,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/es/revista",
     ...localizedMagazinePaths,
     "/omrader",
+    "/guide/flytte-til-spania",
     "/guide/kjope-bolig-i-spania",
     "/guide/kostnader-boligkjop-spania",
     "/guide/nybygg-i-spania",
