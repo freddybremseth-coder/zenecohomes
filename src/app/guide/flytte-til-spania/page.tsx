@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: { title: "Flytte til Spania (2026) | Zen Eco Homes", description: "Praktiske råd og personlige erfaringer med å flytte fra Norge til Spania.", url: "https://www.zenecohomes.com/guide/flytte-til-spania", type: "article" },
 };
 
-const body = `<p><strong>Lag en ny side med URL: /guide/flytte-til-spania </strong></p>
+const body = `
 <p>Som nordmann kan du flytte til Spania uten visum, men det er flere praktiske og økonomiske forhold du må ha kontroll på før du etablerer deg. Jeg vet selv at det ikke alltid er like enkelt å vite hvor man skal begynne.</p>
 <p>I denne guiden deler jeg mine erfaringer og forklarer hva du må ordne, hvilke regler du bør kjenne til og hva du bør tenke på for å få en god start på livet i Spania.</p>
 <h2>Dette må du ordne før du flytter til Spania</h2>
