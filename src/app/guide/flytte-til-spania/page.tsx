@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Footer } from "@/components/Footer";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -26,7 +25,7 @@ const body = `
 <p>Du kan dermed bo i Spania i seks måneder, ett år eller permanent, så lenge du oppfyller vilkårene. Dette gjelder også pensjonister og personer som mottar uføretrygd fra Norge.</p>
 <p>Etter fem år med sammenhengende, lovlig opphold får du som hovedregel permanent oppholdsrett i Spania.</p>
 <h3>NIE, oppholdsregistrering og padrón</h3>
-<p>[NIE](/guide/nie-skattenummer-spania &quot;/guide/nie-skattenummer-spania&quot;), oppholdsregistrering og padrón er tre forskjellige ting, men alle er relevante når du skal etablere deg i Spania.</p>
+<p><a href="/guide/nie-skattenummer-spania">NIE</a>, oppholdsregistrering og padrón er tre forskjellige ting, men alle er relevante når du skal etablere deg i Spania.</p>
 <div class="article-table-wrap"><div class="article-table-scroll"><table class="article-table"><thead><tr><th><strong>Registrering</strong></th><th><strong>Hva innebærer det?</strong></th></tr></thead><tbody><tr><td><strong>NIE</strong></td><td>Et personlig identifikasjonsnummer for utlendinger, som blant annet brukes ved boligkjøp, banktjenester og kontakt med offentlige myndigheter.</td></tr><tr><td><strong>Oppholdsregistrering</strong></td><td>Registrering i det spanske utlendingsregisteret ved opphold utover tre måneder. Registreringsbeviset inneholder også NIE-nummeret ditt.</td></tr><tr><td><strong>Padrón</strong></td><td>Registrering av bostedsadressen din hos kommunen der du bor.</td></tr></tbody></table></div></div>
 <h4>Slik registrerer du deg som bosatt i Spania:</h4>
 <ol><li><strong>Registrer bostedsadressen din (padrón).</strong> Dette gjør du hos rådhuset (<em>Ayuntamiento</em>) i kommunen der du bor. Du trenger gyldig legitimasjon og dokumentasjon på adressen, for eksempel en leiekontrakt eller et skjøte. Registreringen er gratis.</li><li><strong>Bestill time for oppholdsregistrering.</strong> Du må møte personlig hos utlendingskontoret (<em>Oficina de Extranjería</em>) eller en politistasjon som behandler slike søknader. Timen bestilles gjennom det offentlige systemet for timebestilling (<em>cita previa</em>).</li><li><strong>Fyll ut skjema EX-18.</strong> Dette er søknadsskjemaet for EØS-borgere som skal registrere seg som bosatt i Spania. Du må også betale gebyret gjennom skjema 790, kode 012. Gebyret er 12 euro per oktober 2026.</li><li><strong>Ta med nødvendig dokumentasjon.</strong> I tillegg til gyldig pass eller nasjonalt ID-kort må du dokumentere at du oppfyller vilkårene for opphold. Hvilke dokumenter du trenger, avhenger av om du arbeider, studerer eller skal forsørge deg selv.</li><li><strong>Motta registreringsbeviset.</strong> Når søknaden er godkjent, utstedes normalt et grønt registreringsbevis som bekrefter at du er registrert som bosatt. Beviset inneholder blant annet ditt NIE-nummer og registrerte adresse.</li></ol>
@@ -75,7 +74,7 @@ const body = `
 <p>Men det er store forskjeller i levekostnadene avhengig av hvor i Spania man bor. Kyst- og storbyer er vesentlig dyrere enn mindre steder i innlandet, spesielt i boligprisene.</p>
 <p>Når du lager ditt eget budsjett bør du ta høyde for:</p>
 <ul><li><strong>Bolig:</strong> Husleie eller faste utgifter knyttet til egen bolig, inkludert kommunale avgifter og eventuelle felleskostnader.</li><li><strong>Strøm og vann:</strong> Utgiftene varierer med boligtype, årstid og bruk av klimaanlegg eller oppvarming.</li><li><strong>Mat og dagligvarer:</strong> Generelt lavere priser enn i Norge, men kostnadene avhenger av handlevaner.</li><li><strong>Transport:</strong> Bilhold kan være nødvendig utenfor byene, mens større byer ofte har bedre kollektivtilbud.</li><li><strong>Forsikring og helsetjenester:</strong> Private forsikringer kan bli en betydelig utgift dersom du ikke har rett til offentlig helsehjelp.</li></ul>
-<p>Se [hva det koster å eie bolig i Spania](/guide/lopende-kostnader-eie-bolig-spania &quot;/guide/lopende-kostnader-eie-bolig-spania&quot;).</p>
+<p>Se <a href="/guide/lopende-kostnader-eie-bolig-spania">hva det koster å eie bolig i Spania</a> eller les om <a href="/guide/kostnader-boligkjop-spania">vanlige kostnader knyttet til et boligkjøp</a>.</p>
 <h2>Mine råd til deg som flytter til Spania</h2>
 <p>Siden jeg har flyttet til Spania selv, vet jeg godt at det er stor forskjell på å feriere her og bo her fast. Her er mine råd.</p>
 <h3>Lær deg språket</h3>
@@ -92,16 +91,17 @@ const body = `
 <h3>Undersøk hvordan området fungerer året rundt</h3>
 <p>Mange populære ferieområder forandrer seg mye utenfor turistsesongen. Restauranter og butikker kan holde stengt deler av året, og enkelte områder har få fastboende. Jeg anbefaler derfor å besøke stedet også utenom sommermånedene før du bestemmer deg.</p>
 <p>Mitt viktigste råd er å velge bosted ut fra hverdagen du ønsker, ikke bare hvordan stedet oppleves på ferie.</p>
-<p>I vår [områdeguide for boligkjøp i Spania](/guide/omradeguide-eiendomskjop-i-spania &quot;/guide/omradeguide-eiendomskjop-i-spania&quot;).</p>
+<p>I vår <a href="/guide/omradeguide-eiendomskjop-i-spania">områdeguide for boligkjøp i Spania</a> går vi nærmere gjennom hva du bør vurdere når du skal finne et område som passer deg. Alternativt kan du sjekke ut <a href="/omrader">områdene Zen Eco Homes jobber i</a>.</p>
 <h2>Ofte stilte spørsmål</h2>
-<details><summary>Hva kan nordmenn jobbe med i spania?</summary><p>Nordmenn kan arbeide som ansatte eller selvstendig næringsdrivende i Spania. Vanlige muligheter finnes innen reiseliv, salg, kundeservice, teknologi og internasjonale bedrifter. Sjekk språkkrav, lønn, skatt og trygd før du starter.</p></details>
-<details><summary>Hvor lenge kan man være i spania uten å melde flytting?</summary><p>Flytter du fra Norge for å oppholde deg i utlandet i minst seks måneder, skal du melde flytting til Folkeregisteret. Spansk oppholdsregistrering gjelder normalt ved opphold over tre måneder. Dette er to ulike regler.</p></details>
-<details><summary>Hvor mye skatt må jeg betale i spania?</summary><p>Det avhenger av hvor du er skattemessig bosatt, inntektene dine og hvilke fradrag og avtaler som gjelder. Ved mer enn 183 dager i Spania i et kalenderår er du normalt skattemessig bosatt der, men individuelle forhold kan endre vurderingen.</p></details>
-<details><summary>Hva er vanlig lønn i spania?</summary><p>Lønningene varierer mye mellom bransjer, stillinger og regioner, og ligger generelt lavere enn i Norge. Undersøk gjeldende lønn for akkurat ditt yrke før du legger flyttebudsjettet.</p></details>
-<details><summary>Hvor lenge kan jeg bo i spania som pensjonist?</summary><p>Du kan bo i Spania permanent hvis du oppfyller vilkårene for EØS-oppholdsrett. Ved opphold over tre måneder må du normalt registrere deg og dokumentere midler og helsedekning.</p></details>
-<details><summary>Er det billigere å bo i spania enn i norge?</summary><p>Generelt er prisnivået lavere i Spania, men boligkostnader varierer sterkt etter sted. Sett opp et eget budsjett for bolig, strøm, vann, transport, forsikringer og helsehjelp.</p></details>
-<details><summary>Hva må man gjøre for å flytte til spania?</summary><p>Avklar oppholdsrett, NIE, oppholdsregistrering, padrón, flyttemelding til Norge, skatt og helsedekning. Hvilke dokumenter du trenger avhenger av om du jobber, studerer eller lever av egne midler eller pensjon.</p></details>
-<details><summary>Kan jeg bo i spania i 6 måneder?</summary><p>Ja, som norsk EØS-borger kan du bo i Spania i seks måneder dersom du oppfyller vilkårene for opphold utover tre måneder og registrerer deg etter reglene. Husk også norske regler om flyttemelding og skatt.</p></details>`;
+<details><summary>Hva kan nordmenn jobbe med i Spania?</summary><p>Nordmenn kan arbeide som ansatte eller selvstendig næringsdrivende i Spania. Aktuelle muligheter finnes blant annet innen reiseliv, kundeservice, salg, teknologi og internasjonale virksomheter. Undersøk språkkrav, lønn, skatt og trygd før du flytter.</p></details>
+<details><summary>Hvor lenge kan man være i Spania uten å melde flytting?</summary><p>Planlegger du å bo i utlandet i minst seks måneder, må du melde flytting fra Norge til Folkeregisteret. I Spania må EØS-borgere normalt registrere oppholdet ved opphold utover tre måneder. Det er ulike regelverk.</p></details>
+<details><summary>Hvor mye skatt må jeg betale i Spania?</summary><p>Skatten avhenger av inntekt, bosted, personlige forhold og eventuelle skatteavtaler. Du kan bli skattemessig bosatt i Spania ved mer enn 183 dagers opphold i kalenderåret eller når sentrale økonomiske interesser er der. Be om individuell skatterådgivning.</p></details>
+<details><summary>Hva er vanlig lønn i Spania?</summary><p>Lønningene varierer etter yrke, erfaring og region. Det generelle lønnsnivået er lavere enn i Norge. Undersøk aktuelle stillinger og lønnsvilkår før du planlegger økonomien.</p></details>
+<details><summary>Hvor lenge kan jeg bo i Spania som pensjonist?</summary><p>Du kan bo i Spania på lang sikt dersom du oppfyller vilkårene for EØS-oppholdsrett. Ved opphold over tre måneder trenger du normalt oppholdsregistrering og dokumentasjon på tilstrekkelige midler og helsedekning.</p></details>
+<details><summary>Er det billigere å bo i Spania enn i Norge?</summary><p>Generelt er mange varer og tjenester billigere, men boligpris og husleie varierer mye mellom kysten, storbyene og innlandet. Sett opp et personlig budsjett for bolig, strøm, mat, transport og forsikringer.</p></details>
+<details><summary>Hva må man gjøre for å flytte til Spania?</summary><p>Sørg for å avklare oppholdsrett, NIE, oppholdsregistrering, padrón, flyttemelding fra Norge, skatt og helsedekning. Kravene til dokumentasjon avhenger av om du arbeider, studerer eller lever av pensjon eller egne midler.</p></details>
+<details><summary>Kan jeg bo i Spania i 6 måneder?</summary><p>Ja, som norsk EØS-borger kan du bo i Spania i seks måneder hvis du oppfyller vilkårene for opphold utover tre måneder og registrerer deg. Sjekk også flyttemelding og skatteplikt i Norge og Spania.</p></details>
+`;
 
 export default function FlytteTilSpaniaPage() {
   return <main>
@@ -110,17 +110,11 @@ export default function FlytteTilSpaniaPage() {
       <Link className="text-button light article-back-link" href="/guide">← Alle guider</Link>
       <p className="eyebrow">Guide · <Link href="/om-oss/freddy">Freddy Bremseth</Link> · Oktober 2026</p>
       <h1>Flytte til Spania (2026): Praktiske råd og mine erfaringer</h1>
-      <p>Som nordmann kan du flytte til Spania uten visum, men det er flere praktiske og økonomiske forhold du må ha kontroll på før du etablerer deg.</p>
     </section>
     <section className="section article-shell">
       <div className="article-layout">
         <article className="article-main flytte-guide-content">
           <div dangerouslySetInnerHTML={{ __html: body }} />
-          <div className="article-section">
-            <h2>Vil du finne riktig sted å bo?</h2>
-            <p>Vi hjelper deg å utforske områder og boliger på Costa Blanca ut fra hverdagen du ønsker.</p>
-            <Link className="contact-button" href="/booking">Book en boligprat <ArrowRight size={16}/></Link>
-          </div>
         </article>
       </div>
     </section>
