@@ -11,6 +11,8 @@ type ContactFormProps = {
   propertyRef?: string;
   propertyTitle?: string;
   requestType?: string;
+  /** GA4 reporting category; CRM requestType remains independent. */
+  formType?: string;
   locale?: Locale;
   /** "full" = to steg. "compact" = kort ett-trinn. "simple" = lav terskel for booking/infomøte. */
   variant?: "full" | "compact" | "simple";
@@ -191,6 +193,7 @@ export function ContactForm({
   propertyRef,
   propertyTitle,
   requestType = "general",
+  formType,
   locale = "no",
   variant = "full",
 }: ContactFormProps) {
@@ -226,7 +229,7 @@ export function ContactForm({
     });
     const result = await res.json().catch(() => null);
     if (res.ok && result?.accepted === true && result?.submission_id) {
-      trackConfirmedFormSubmission(requestType, result.submission_id);
+      trackConfirmedFormSubmission(formType || (propertyRef ? "salgsoppgave" : requestType === "infomote" ? "infomote" : requestType === "booking_request" ? "boligprat" : requestType === "general" ? "kontakt" : requestType), result.submission_id);
       setStatus("sent");
       form.reset();
       startedAtRef.current = Date.now();
