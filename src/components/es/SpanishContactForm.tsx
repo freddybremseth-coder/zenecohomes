@@ -42,7 +42,7 @@ export function SpanishContactForm({
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || result?.accepted !== true || !result?.submission_id) throw new Error("request failed");
-      trackConfirmedFormSubmission(requestType, result.submission_id);
+      trackConfirmedFormSubmission(propertyRef ? "salgsoppgave" : requestType === "general" ? "kontakt" : requestType, result.submission_id);
       setStatus("sent");
       form.reset();
       startedAtRef.current = Date.now();
