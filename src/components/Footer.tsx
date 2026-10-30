@@ -57,6 +57,7 @@ const NORWEGIAN_GROUPS: FooterGroup[] = [
   {
     title: "Kontakt",
     links: [
+      { label: "Kontakt oss", href: "/kontakt-oss" },
       { label: "Booking", href: "/booking" },
       { label: "+47 960 09 965", href: "tel:+4796009965", external: true },
       { label: "freddy@zenecohomes.com", href: "mailto:freddy@zenecohomes.com", external: true },
