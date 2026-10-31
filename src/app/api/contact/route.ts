@@ -357,6 +357,11 @@ export async function POST(request: Request) {
       utm_content: body.utm_content ? String(body.utm_content).slice(0, 160) : undefined,
     });
 
+    if (!leadResult || leadResult.success !== true || !leadResult.contact?.id) {
+      console.error("[contact] Realtyflow did not confirm stored lead");
+      return contactJson(request, { error: "Henvendelsen kunne ikke bekreftes lagret", accepted: false }, { status: 502 });
+    }
+
     await Promise.all([
       recordPropertyLead(body).catch(() => undefined),
       recordCorporateLead(body).catch(() => undefined),

@@ -72,11 +72,11 @@ export function ViewingTripForm() {
         </select>
       </label>
       <label>Kommentar (valgfritt)<textarea name="comment" rows={4} maxLength={6000} /></label>
-      <p>Vi tar kontakt med deg så raskt vi har anledning.</p>
+      <p style={{ color: "#18232a", lineHeight: 1.6 }}>Vi tar kontakt med deg så raskt vi har anledning.</p>
       <button className="submit-button" type="submit" disabled={status === "sending"}>
         {status === "sending" ? "Sender..." : "Send"}
       </button>
-      {status === "sent" && <p className="form-success" role="status" aria-live="polite">Takk! Vi har mottatt henvendelsen din.</p>}
+      {status === "sent" && <p className="form-success" role="status" aria-live="polite">Takk for henvendelsen! Vi har mottatt forespørselen om visningstur og tar kontakt så raskt vi kan.</p>}
       {status === "error" && <p className="form-error" role="alert">Noe gikk galt. Prøv igjen, eller ta kontakt direkte.</p>}
     </form>
   );
