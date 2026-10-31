@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -518,18 +517,6 @@ export default function BuyingProcessPage() {
             </details>
           ))}
         </div>
-      </section>
-
-      <section className="contact-section">
-        <div>
-          <p className="eyebrow">Neste steg</p>
-          <h2>Start med behov, område og totalbudsjett</h2>
-          <p>
-            Fortell hvordan du skal bruke boligen, omtrent hvilket budsjett du har og hva som er
-            viktigst i hverdagen. Da kan vi starte med områdene og boligtypene som faktisk passer.
-          </p>
-        </div>
-        <ContactForm source="buying-process" />
       </section>
 
       <Footer />

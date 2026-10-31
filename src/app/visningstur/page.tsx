@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Clock, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ViewingTripForm } from "@/components/ViewingTripForm";
 import { homeLanguageLinks } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -127,7 +128,7 @@ export default function ViewingTripPage() {
           <h2>Fortell oss når du ønsker å komme på visningstur</h2>
           <p>Vi starter med område, budsjett og boligbruk og bygger en realistisk visningsplan derfra.</p>
         </div>
-        <Link className="contact-button" href="/booking">Planlegg visningstur</Link>
+        <div className="booking-form-panel"><ViewingTripForm /></div>
       </section>
 
       <Footer showCta={false} />

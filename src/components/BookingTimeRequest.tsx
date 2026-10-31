@@ -69,7 +69,7 @@ export function BookingTimeRequest() {
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || result?.accepted !== true || !result?.submission_id) throw new Error("Request not accepted");
-      trackConfirmedFormSubmission("booking", result.submission_id);
+      trackConfirmedFormSubmission("boligprat", result.submission_id);
       form.reset();
       setChoice("asap");
       setStatus("sent");
