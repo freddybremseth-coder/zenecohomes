@@ -289,16 +289,6 @@ export function ZenecoChatbot() {
     [profile, conversationText],
   );
 
-  const whatsappUrl = useMemo(() => {
-    const text = [
-      `Hei Freddy, jeg har brukt Zen Eco-rådgiveren på zenecohomes.com.`,
-      lead.name ? `Navn: ${lead.name}` : "",
-      lead.phone ? `Telefon: ${lead.phone}` : "",
-      summary,
-      pageContext ? `Side: ${pageContext}` : "",
-    ].filter(Boolean).join("\n\n");
-    return `https://wa.me/4796009965?text=${encodeURIComponent(text)}`;
-  }, [lead.name, lead.phone, pageContext, summary]);
 
   function appendUser(text: string) {
     const nextProfile = parseProfile(text, profile);
@@ -339,7 +329,7 @@ export function ZenecoChatbot() {
 
     if (stage === "email") {
       if (!/^\S+@\S+\.\S+$/.test(text)) {
-        setMessages((prev) => [...prev, { role: "user", text }, { role: "assistant", text: locale === "no" ? "Skriv en gyldig e-post, eller velg «Bare telefon»." : "Please enter a valid email, or choose phone only." }]);
+        setMessages((prev) => [...prev, { role: "user", text }, { role: "assistant", text: locale === "no" ? "Skriv en gyldig e-postadresse for at vi skal kunne kontakte deg." : "Please enter a valid email address so we can contact you." }]);
         return;
       }
       setLead((prev) => ({ ...prev, email: text }));
@@ -388,9 +378,6 @@ export function ZenecoChatbot() {
     }
   }
 
-  function choosePhoneOnly() {
-    setMessages((prev) => [...prev, { role: "assistant", text: locale === "no" ? "Oppgi e-post for å sende forespørselen til Zen Eco Homes, eller bruk kontaktsiden." : "Please provide your email to contact Zen Eco Homes, or use our contact page." }]);
-  }
 
   function startHandoff() {
     setStage("name");
