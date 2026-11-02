@@ -1,5 +1,6 @@
-import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 "use client";
+
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { ArrowRight, MessageCircle, Send, Sparkles, X } from "lucide-react";
@@ -55,9 +56,9 @@ const UI: Record<Locale, {
     handoff: "Kontakt Zen Eco Homes",
     nameAsk: "Klart. Først: hva heter du?",
     phoneAsk: (name) => `Takk, ${name}. Hvilket telefonnummer er best å nå deg på?`,
-    emailAsk: "Fint. Vil du også legge til e-post for boliglenker og skriftlig oppfølging? Det er valgfritt.",
+    emailAsk: "Oppgi e-postadressen din, så sender vi henvendelsen til Zen Eco Homes for personlig oppfølging.",
     phoneOnly: "Bare telefon",
-    emailPlaceholder: "E-post (valgfritt)",
+    emailPlaceholder: "E-post",
     done: "Da er behovet ditt oppsummert. Zen Eco Homes tar kontakt med deg. Du kan også fortsette å spørre meg her.",
     whatsapp: "Send sammendrag til Freddy",
     keepChatting: "Fortsett å spørre",
@@ -78,9 +79,9 @@ const UI: Record<Locale, {
     handoff: "Contact Zen Eco Homes",
     nameAsk: "Of course. First, what is your name?",
     phoneAsk: (name) => `Thanks, ${name}. What phone number is best for reaching you?`,
-    emailAsk: "Would you also like to add an email for property links and written follow-up? It is optional.",
+    emailAsk: "Please enter your email so Zen Eco Homes can follow up.",
     phoneOnly: "Phone only",
-    emailPlaceholder: "Email (optional)",
+    emailPlaceholder: "Email",
     done: "Your requirements are summarized. Zen Eco Homes will contact you. You can also keep asking questions here.",
     whatsapp: "Send summary to Freddy",
     keepChatting: "Keep chatting",
@@ -101,7 +102,7 @@ const UI: Record<Locale, {
     handoff: "Zen Eco Homes kontaktieren",
     nameAsk: "Gerne. Wie heißen Sie?",
     phoneAsk: (name) => `Danke, ${name}. Unter welcher Telefonnummer sind Sie am besten erreichbar?`,
-    emailAsk: "Möchten Sie zusätzlich eine E-Mail für Immobilienlinks und schriftliche Informationen angeben? Optional.",
+    emailAsk: "Bitte geben Sie Ihre E-Mail-Adresse an, damit Zen Eco Homes Sie kontaktieren kann.",
     phoneOnly: "Nur Telefon",
     emailPlaceholder: "E-Mail (optional)",
     done: "Ihre Wünsche sind zusammengefasst. Zen Eco Homes wird Sie kontaktieren. Sie können hier weitere Fragen stellen.",
@@ -124,7 +125,7 @@ const UI: Record<Locale, {
     handoff: "Contactar con Zen Eco Homes",
     nameAsk: "Perfecto. Primero, ¿cómo te llamas?",
     phoneAsk: (name) => `Gracias, ${name}. ¿Cuál es el mejor teléfono para contactarte?`,
-    emailAsk: "¿Quieres añadir también un email para recibir enlaces de viviendas e información por escrito? Es opcional.",
+    emailAsk: "Indica tu correo electrónico para que Zen Eco Homes pueda contactarte.",
     phoneOnly: "Solo teléfono",
     emailPlaceholder: "Email (opcional)",
     done: "He resumido lo que buscas. Zen Eco Homes se pondrá en contacto contigo. También puedes seguir preguntando aquí.",
@@ -438,9 +439,7 @@ export function ZenecoChatbot() {
             </button>
           )}
 
-          {stage === "email" && (
-            <button className="chatbot-phone-only" type="button" onClick={choosePhoneOnly}>{c.phoneOnly}</button>
-          )}
+
 
           {stage === "done" && (
             <div className="chatbot-complete-actions">
