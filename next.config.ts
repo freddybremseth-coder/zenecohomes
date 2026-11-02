@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
+  async rewrites() {
+    return [{ source: "/informasjonsmøte", destination: "/informasjonsmote" }];
+  },
   async redirects() {
     // Artikler som er flyttet fra /magasin til innholdssiloer. Holdes i synk med
     // SILO_BY_SLUG i src/lib/magazine.ts. 301 for å bevare SEO-verdi.
@@ -169,7 +172,6 @@ const nextConfig: NextConfig = {
       ...corporateMergedRedirects,
       { source: "/corporate/:slug", destination: "/bedriftshytte-spania/:slug", permanent: true },
       { source: "/slik-hjelper-vi-deg", destination: "/kjopsprosessen", permanent: true },
-      { source: "/informasjonsmøte", destination: "/informasjonsmote", permanent: true },
       {
         source: "/:path*",
         has: [
