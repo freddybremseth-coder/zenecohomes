@@ -79,7 +79,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
             <a className="contact-button" href="#eiendommer">
               {hasLocalProperties ? `Se aktuelle boliger i ${town.name}` : "Se boligmodeller og inspirasjon"} <ArrowRight size={18} />
             </a>
-            <a className="text-button light" href="#kontakt">Finn tomt i {town.name}</a>
+            <a className="text-button light" href="/booking">Finn tomt i {town.name}</a>
             <Link className="text-button light" href="/omrader/innlandet">Til alle områder</Link>
           </div>
         </div>
