@@ -3,7 +3,6 @@ import { ArrowRight, MapPin, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { AreaFactsTabs } from "@/components/AreaFactsTabs";
 import { getTownAreaFacts } from "@/lib/areaFactData";
-import { InlandContactForm } from "@/components/InlandContactForm";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -80,7 +79,7 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
             <a className="contact-button" href="#eiendommer">
               {hasLocalProperties ? `Se aktuelle boliger i ${town.name}` : "Se boligmodeller og inspirasjon"} <ArrowRight size={18} />
             </a>
-            <a className="text-button light" href="#kontakt">Finn tomt i {town.name}</a>
+            <a className="text-button light" href="/booking">Finn tomt i {town.name}</a>
             <Link className="text-button light" href="/omrader/innlandet">Til alle områder</Link>
           </div>
         </div>
@@ -210,15 +209,6 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
             <MapPin size={17} /> Snakk med Freddy om tomt i {town.name}
           </Link>
         </div>
-      </section>
-
-      <section className="contact-section" id="kontakt">
-        <div>
-          <p className="eyebrow">Neste steg</p>
-          <h2>Vil du finne bolig eller bygge moderne i {town.name}?</h2>
-          <p>Fortell oss hvordan du vil bo og omtrent hvilket budsjett du har. Vi sjekker lokale boliger først. Hvis riktig bolig ikke finnes, kan vi gå videre med tomt og vurdere hvilke boligmodeller som faktisk lar seg gjennomføre der.</p>
-        </div>
-        <InlandContactForm source={`${INLAND_BRAND.leadSource}-${town.slug}`} />
       </section>
 
       <Footer />

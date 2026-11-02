@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 import { ArrowRight, Loader2, Mail, Phone, UserRoundPlus } from "lucide-react";
 
 export function PortalJoinForm() {
@@ -26,7 +27,9 @@ export function PortalJoinForm() {
       }),
     });
 
-    if (res.ok) {
+    const result = await res.json().catch(() => null);
+    if (res.ok && result?.accepted === true && result?.submission_id) {
+      trackConfirmedFormSubmission("minside", result.submission_id);
       const email = String(data.email || "").trim().toLowerCase();
       if (email) {
         await fetch("/api/portal/magic-link", {

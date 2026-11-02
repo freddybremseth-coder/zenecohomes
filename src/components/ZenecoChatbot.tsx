@@ -1,5 +1,7 @@
 "use client";
 
+import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
+
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { ArrowRight, MessageCircle, Send, Sparkles, X } from "lucide-react";
 
@@ -51,14 +53,14 @@ const UI: Record<Locale, {
       { label: "Tomt + bygge", text: "Jeg vurderer tomt og å bygge i innlandet" },
       { label: "Hva koster det totalt?", text: "Hva bør jeg beregne i totale kjøpskostnader?" },
     ],
-    handoff: "La Freddy følge opp dette",
+    handoff: "Kontakt Zen Eco Homes",
     nameAsk: "Klart. Først: hva heter du?",
     phoneAsk: (name) => `Takk, ${name}. Hvilket telefonnummer er best å nå deg på?`,
-    emailAsk: "Fint. Vil du også legge til e-post for boliglenker og skriftlig oppfølging? Det er valgfritt.",
+    emailAsk: "Oppgi e-postadressen din, så sender vi henvendelsen til Zen Eco Homes for personlig oppfølging.",
     phoneOnly: "Bare telefon",
-    emailPlaceholder: "E-post (valgfritt)",
-    done: "Da er behovet ditt oppsummert. Du kan sende det direkte til Freddy på WhatsApp, eller fortsette å spørre meg her.",
-    whatsapp: "Send sammendrag til Freddy",
+    emailPlaceholder: "E-post",
+    done: "Da er behovet ditt oppsummert. Zen Eco Homes tar kontakt med deg. Du kan også fortsette å spørre meg her.",
+    whatsapp: "Kontakt Zen Eco Homes",
     keepChatting: "Fortsett å spørre",
     close: "Lukk chat",
     send: "Send",
@@ -74,14 +76,14 @@ const UI: Record<Locale, {
       { label: "Plot + build", text: "I am considering a plot and building inland" },
       { label: "Total purchase cost", text: "What should I budget for in total purchase costs?" },
     ],
-    handoff: "Ask Freddy to follow up",
+    handoff: "Contact Zen Eco Homes",
     nameAsk: "Of course. First, what is your name?",
     phoneAsk: (name) => `Thanks, ${name}. What phone number is best for reaching you?`,
-    emailAsk: "Would you also like to add an email for property links and written follow-up? It is optional.",
+    emailAsk: "Please enter your email so Zen Eco Homes can follow up.",
     phoneOnly: "Phone only",
-    emailPlaceholder: "Email (optional)",
-    done: "Your requirements are summarized. You can send them directly to Freddy on WhatsApp or keep asking me questions here.",
-    whatsapp: "Send summary to Freddy",
+    emailPlaceholder: "Email",
+    done: "Your requirements are summarized. Zen Eco Homes will contact you. You can also keep asking questions here.",
+    whatsapp: "Contact Zen Eco Homes",
     keepChatting: "Keep chatting",
     close: "Close chat",
     send: "Send",
@@ -97,14 +99,14 @@ const UI: Record<Locale, {
       { label: "Grundstück + Bau", text: "Ich erwäge ein Grundstück und einen Neubau im Inland" },
       { label: "Gesamtkosten", text: "Mit welchen Gesamtkosten muss ich beim Kauf rechnen?" },
     ],
-    handoff: "Freddy soll mich kontaktieren",
+    handoff: "Zen Eco Homes kontaktieren",
     nameAsk: "Gerne. Wie heißen Sie?",
     phoneAsk: (name) => `Danke, ${name}. Unter welcher Telefonnummer sind Sie am besten erreichbar?`,
-    emailAsk: "Möchten Sie zusätzlich eine E-Mail für Immobilienlinks und schriftliche Informationen angeben? Optional.",
+    emailAsk: "Bitte geben Sie Ihre E-Mail-Adresse an, damit Zen Eco Homes Sie kontaktieren kann.",
     phoneOnly: "Nur Telefon",
     emailPlaceholder: "E-Mail (optional)",
-    done: "Ihre Wünsche sind zusammengefasst. Sie können sie direkt per WhatsApp an Freddy senden oder hier weiterfragen.",
-    whatsapp: "Zusammenfassung an Freddy senden",
+    done: "Ihre Wünsche sind zusammengefasst. Zen Eco Homes wird Sie kontaktieren. Sie können hier weitere Fragen stellen.",
+    whatsapp: "Zen Eco Homes kontaktieren",
     keepChatting: "Weiter fragen",
     close: "Chat schließen",
     send: "Senden",
@@ -120,14 +122,14 @@ const UI: Record<Locale, {
       { label: "Parcela + construir", text: "Estoy valorando parcela y construir en el interior" },
       { label: "Coste total", text: "¿Qué gastos totales debo calcular para la compra?" },
     ],
-    handoff: "Que Freddy me contacte",
+    handoff: "Contactar con Zen Eco Homes",
     nameAsk: "Perfecto. Primero, ¿cómo te llamas?",
     phoneAsk: (name) => `Gracias, ${name}. ¿Cuál es el mejor teléfono para contactarte?`,
-    emailAsk: "¿Quieres añadir también un email para recibir enlaces de viviendas e información por escrito? Es opcional.",
+    emailAsk: "Indica tu correo electrónico para que Zen Eco Homes pueda contactarte.",
     phoneOnly: "Solo teléfono",
     emailPlaceholder: "Email (opcional)",
-    done: "He resumido lo que buscas. Puedes enviárselo directamente a Freddy por WhatsApp o seguir preguntándome aquí.",
-    whatsapp: "Enviar resumen a Freddy",
+    done: "He resumido lo que buscas. Zen Eco Homes se pondrá en contacto contigo. También puedes seguir preguntando aquí.",
+    whatsapp: "Contactar con Zen Eco Homes",
     keepChatting: "Seguir preguntando",
     close: "Cerrar chat",
     send: "Enviar",
@@ -287,16 +289,6 @@ export function ZenecoChatbot() {
     [profile, conversationText],
   );
 
-  const whatsappUrl = useMemo(() => {
-    const text = [
-      `Hei Freddy, jeg har brukt Zen Eco-rådgiveren på zenecohomes.com.`,
-      lead.name ? `Navn: ${lead.name}` : "",
-      lead.phone ? `Telefon: ${lead.phone}` : "",
-      summary,
-      pageContext ? `Side: ${pageContext}` : "",
-    ].filter(Boolean).join("\n\n");
-    return `https://wa.me/4796009965?text=${encodeURIComponent(text)}`;
-  }, [lead.name, lead.phone, pageContext, summary]);
 
   function appendUser(text: string) {
     const nextProfile = parseProfile(text, profile);
@@ -337,7 +329,7 @@ export function ZenecoChatbot() {
 
     if (stage === "email") {
       if (!/^\S+@\S+\.\S+$/.test(text)) {
-        setMessages((prev) => [...prev, { role: "user", text }, { role: "assistant", text: locale === "no" ? "Skriv en gyldig e-post, eller velg «Bare telefon»." : "Please enter a valid email, or choose phone only." }]);
+        setMessages((prev) => [...prev, { role: "user", text }, { role: "assistant", text: locale === "no" ? "Skriv en gyldig e-postadresse for at vi skal kunne kontakte deg." : "Please enter a valid email address so we can contact you." }]);
         return;
       }
       setLead((prev) => ({ ...prev, email: text }));
@@ -365,29 +357,27 @@ export function ZenecoChatbot() {
           bedrooms: profile.bedrooms,
           timeline: profile.timeline,
           purchase_goal: profile.goal,
-          next_step: "Personlig oppfølging fra Freddy",
+          next_step: "Personlig oppfølging fra Zen Eco Homes",
           source: "zenecohomes-chatbot-conversation",
           request_type: "Chatbot – kvalifisert samtale",
           page_url: typeof window !== "undefined" ? window.location.href : undefined,
           message: `${summary}\n\nSide: ${pageContext}`,
         }),
       });
-      if (!response.ok) throw new Error("Lead save failed");
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.accepted !== true || !result?.submission_id) throw new Error("Lead save failed");
+      trackConfirmedFormSubmission("chatbot", result.submission_id);
       setLeadSaved(true);
       setMessages((prev) => [...prev, { role: "user", text: email }, { role: "assistant", text: c.done }]);
       setStage("done");
     } catch {
-      setMessages((prev) => [...prev, { role: "assistant", text: locale === "no" ? "Jeg fikk ikke lagret e-posten automatisk akkurat nå. Du kan fortsatt sende hele sammendraget direkte til Freddy på WhatsApp." : "I could not save the email automatically right now. You can still send the full summary directly to Freddy on WhatsApp." }]);
-      setStage("done");
+      setMessages((prev) => [...prev, { role: "assistant", text: locale === "no" ? "Jeg fikk ikke lagret e-posten automatisk akkurat nå. Du kan kontakte Zen Eco Homes via kontaktsiden." : "I could not save the email automatically right now. You can contact Zen Eco Homes using the contact page." }]);
+      setStage("email");
     } finally {
       setSendingLead(false);
     }
   }
 
-  function choosePhoneOnly() {
-    setMessages((prev) => [...prev, { role: "user", text: c.phoneOnly }, { role: "assistant", text: c.done }]);
-    setStage("done");
-  }
 
   function startHandoff() {
     setStage("name");
@@ -436,15 +426,11 @@ export function ZenecoChatbot() {
             </button>
           )}
 
-          {stage === "email" && (
-            <button className="chatbot-phone-only" type="button" onClick={choosePhoneOnly}>{c.phoneOnly}</button>
-          )}
+
 
           {stage === "done" && (
             <div className="chatbot-complete-actions">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={16} /> {c.whatsapp}
-              </a>
+              <a href="/kontakt-oss"><MessageCircle size={16} /> {locale === "no" ? "Kontakt Zen Eco Homes" : locale === "de" ? "Zen Eco Homes kontaktieren" : locale === "es" ? "Contactar con Zen Eco Homes" : "Contact Zen Eco Homes"}</a>
               <button type="button" onClick={keepChatting}>{c.keepChatting}</button>
               {leadSaved && <small>✓ CRM</small>}
             </div>

@@ -280,17 +280,6 @@ export default async function InlandPage() {
         </div>
       </section>
 
-      <section className="contact-section" id="kontakt">
-        <div>
-          <p className="eyebrow">Neste steg</p>
-          <h2>Fortell oss hvor og hvordan du ønsker å bo</h2>
-          <p>
-            Vi starter med området du ønsker. Deretter finner og kvalitetssikrer vi tomten, før vi vurderer hvilken moderne boligmodell som passer tomten, regelverket og totalbudsjettet best.
-          </p>
-        </div>
-        <ContactForm source={INLAND_BRAND.leadSource} />
-      </section>
-
       <Footer />
     </main>
   );
