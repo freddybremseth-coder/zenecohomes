@@ -235,7 +235,7 @@ export function navLinks(locale: SiteLocale): NavLink[] {
         { label: "Kundeomtaler", href: "/kundeomtaler" },
         { label: "Visningstur", href: "/visningstur" },
         { label: "Slik hjelper vi deg", href: "/slik-hjelper-vi-deg" },
-        { label: "Informasjonsmøter", href: "/informasjonsmøte" },
+        { label: "Informasjonsmøter", href: "/informasjonsmote" },
         { label: "Guide", href: "/guide" },
         { label: "Guider for bedrifter", href: "/bedriftshytte-spania/guider" },
         { label: "For partnere", href: "/bedriftshytte-spania/partnere" },
