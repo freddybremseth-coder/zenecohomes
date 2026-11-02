@@ -30,7 +30,8 @@ function contactJson(request: Request, body: unknown, init?: ResponseInit) {
 type ContactRateBucket = { count: number; resetAt: number };
 
 const CONTACT_RATE_WINDOW_MS = 15 * 60 * 1000;
-const CONTACT_RATE_MAX = 8;
+// Allow normal QA across the six public form types while retaining IP throttling.
+const CONTACT_RATE_MAX = 30;
 const contactRateBuckets = new Map<string, ContactRateBucket>();
 
 function contactClientIp(request: Request) {
@@ -299,7 +300,7 @@ export async function POST(request: Request) {
     }
 
     if (isContactRateLimited(request)) {
-      return contactJson(request, { error: "For mange forespørsler. Prøv igjen senere." }, { status: 429 });
+      return contactJson(request, { error: "For mange forespørsler fra samme nettverk. Vent 15 minutter før du prøver igjen.", code: "rate_limited", accepted: false }, { status: 429, headers: { "Retry-After": "900" } });
     }
 
     const email = contactString(body, "email");
