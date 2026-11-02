@@ -60,7 +60,7 @@ const UI: Record<Locale, {
     phoneOnly: "Bare telefon",
     emailPlaceholder: "E-post",
     done: "Da er behovet ditt oppsummert. Zen Eco Homes tar kontakt med deg. Du kan også fortsette å spørre meg her.",
-    whatsapp: "Send sammendrag til Freddy",
+    whatsapp: "Kontakt Zen Eco Homes",
     keepChatting: "Fortsett å spørre",
     close: "Lukk chat",
     send: "Send",
@@ -83,7 +83,7 @@ const UI: Record<Locale, {
     phoneOnly: "Phone only",
     emailPlaceholder: "Email",
     done: "Your requirements are summarized. Zen Eco Homes will contact you. You can also keep asking questions here.",
-    whatsapp: "Send summary to Freddy",
+    whatsapp: "Contact Zen Eco Homes",
     keepChatting: "Keep chatting",
     close: "Close chat",
     send: "Send",
@@ -106,7 +106,7 @@ const UI: Record<Locale, {
     phoneOnly: "Nur Telefon",
     emailPlaceholder: "E-Mail (optional)",
     done: "Ihre Wünsche sind zusammengefasst. Zen Eco Homes wird Sie kontaktieren. Sie können hier weitere Fragen stellen.",
-    whatsapp: "Zusammenfassung an Freddy senden",
+    whatsapp: "Zen Eco Homes kontaktieren",
     keepChatting: "Weiter fragen",
     close: "Chat schließen",
     send: "Senden",
@@ -129,7 +129,7 @@ const UI: Record<Locale, {
     phoneOnly: "Solo teléfono",
     emailPlaceholder: "Email (opcional)",
     done: "He resumido lo que buscas. Zen Eco Homes se pondrá en contacto contigo. También puedes seguir preguntando aquí.",
-    whatsapp: "Enviar resumen a Freddy",
+    whatsapp: "Contactar con Zen Eco Homes",
     keepChatting: "Seguir preguntando",
     close: "Cerrar chat",
     send: "Enviar",
@@ -372,7 +372,7 @@ export function ZenecoChatbot() {
       setStage("done");
     } catch {
       setMessages((prev) => [...prev, { role: "assistant", text: locale === "no" ? "Jeg fikk ikke lagret e-posten automatisk akkurat nå. Du kan kontakte Zen Eco Homes via kontaktsiden." : "I could not save the email automatically right now. You can contact Zen Eco Homes using the contact page." }]);
-      setStage("done");
+      setStage("email");
     } finally {
       setSendingLead(false);
     }
