@@ -10,6 +10,7 @@ on:
       - 'src/lib/savedSearchEmails.ts'
       - 'scripts/public-link-audit.mjs'
       - '.github/workflows/public-link-audit.yml'
+      - 'vercel.json'
   workflow_dispatch:
     inputs:
       full:
