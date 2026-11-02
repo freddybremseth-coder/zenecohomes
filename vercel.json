@@ -8,5 +8,12 @@
       "path": "/api/cron/saved-search-alerts",
       "schedule": "0 7 * * *"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/informasjonsm%C3%B8te",
+      "destination": "/informasjonsmote",
+      "permanent": true
+    }
   ]
 }
