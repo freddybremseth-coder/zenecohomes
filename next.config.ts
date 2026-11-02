@@ -169,6 +169,7 @@ const nextConfig: NextConfig = {
       ...corporateMergedRedirects,
       { source: "/corporate/:slug", destination: "/bedriftshytte-spania/:slug", permanent: true },
       { source: "/slik-hjelper-vi-deg", destination: "/kjopsprosessen", permanent: true },
+      { source: "/informasjonsmøte", destination: "/informasjonsmote", permanent: true },
       {
         source: "/:path*",
         has: [
