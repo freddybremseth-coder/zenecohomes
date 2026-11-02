@@ -39,7 +39,9 @@ jobs:
         run: npm ci
       - name: Check TypeScript compilation
         run: npx tsc --noEmit
+      # Production crawling checks the deployed site, not the PR branch. Keep it on scheduled/manual runs.
       - name: Check live sitemap and public internal links
+        if: github.event_name != 'pull_request'
         env:
           FULL_AUDIT: ${{ inputs.full || contains(github.event.pull_request.title, '[full-crawl]') }}
         run: |
