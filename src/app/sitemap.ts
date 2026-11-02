@@ -156,6 +156,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/guide/nybygg-i-spania",
     "/guide/finansiere-bolig-i-spania",
     "/visningstur",
+    "/informasjonsmøte",
     "/kundeomtaler",
     "/om-oss",
     "/om-oss/freddy",
