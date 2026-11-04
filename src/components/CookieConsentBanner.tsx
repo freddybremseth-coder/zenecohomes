@@ -29,20 +29,35 @@ export function CookieConsentBanner() {
   }, []);
 
   useEffect(() => {
+    // Basic Consent Mode v2: do not load Google's tag or send cookieless
+    // pings before a visitor affirmatively opts in to analytics.
+    const w = window as typeof window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
+    w.dataLayer = w.dataLayer || [];
+    w.gtag = (...args: unknown[]) => { w.dataLayer?.push(args); };
+    w.gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+
     const syncAnalytics = () => {
-      if (!readCookieConsent()?.analytics) return;
-      const w = window as typeof window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
-      w.dataLayer = w.dataLayer || [];
-      w.gtag = (...args: unknown[]) => { w.dataLayer?.push(args); };
-      w.gtag("js", new Date());
-      w.gtag("config", GA_ID);
-      if (!document.getElementById("zeneco-analytics-script")) {
-        const script = document.createElement("script");
-        script.id = "zeneco-analytics-script";
-        script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-        document.head.appendChild(script);
-      }
+      const allowed = readCookieConsent()?.analytics === true;
+      // Marketing tags are not in use. Keep all advertising signals denied.
+      w.gtag?.("consent", "update", {
+        analytics_storage: allowed ? "granted" : "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+      if (!allowed || document.getElementById("zeneco-analytics-script")) return;
+      w.gtag?.("js", new Date());
+      w.gtag?.("config", GA_ID);
+      const script = document.createElement("script");
+      script.id = "zeneco-analytics-script";
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(script);
     };
     syncAnalytics();
     window.addEventListener(COOKIE_CONSENT_EVENT, syncAnalytics);
