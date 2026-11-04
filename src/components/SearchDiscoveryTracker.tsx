@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { safeDiscoveryReferrer } from "@/lib/seo-referrer";
+import { readCookieConsent } from "@/lib/cookie-consent";
 
 const DISCOVERY_ENDPOINT = "https://realtyflow.chatgenius.pro/api/public/search-discovery";
 
@@ -12,6 +13,7 @@ const DISCOVERY_ENDPOINT = "https://realtyflow.chatgenius.pro/api/public/search-
  */
 export function SearchDiscoveryTracker() {
   useEffect(() => {
+    if (!readCookieConsent()?.analytics) return;
     const safeReferrer = safeDiscoveryReferrer(document.referrer);
     if (!safeReferrer) return;
 

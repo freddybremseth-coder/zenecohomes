@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
+import { CookieSettingsButton } from "@/components/CookieSettingsButton";
 
 export const metadata: Metadata = {
   title: "Informasjonskapsler | Cookies og sporing hos Zen Eco Homes",
@@ -45,10 +46,10 @@ export default function CookiesPage() {
       </p>
       <h2>Dine valg</h2>
       <p>
-        Du kan se og slette lagrede nettsteddata i nettleserens innstillinger. Funksjoner som favoritter kan da
-        nullstilles. Dersom vi senere tar i bruk valgfrie markedsførings- eller analysekategorier som krever
-        samtykke, skal disse håndteres med et egnet samtykkevalg før de aktiveres.
+        Du kan når som helst endre eller trekke tilbake ditt samtykke nedenfor. Analyse er avslått til du aktivt
+        godtar den. Nødvendige funksjoner, som å lagre favoritter du selv velger, kan bruke nettleserlagring.
       </p>
+      <CookieSettingsButton />
       <h2>Kontakt</h2><p>Kontakt Zen Eco Homes dersom du har spørsmål om teknologiene som brukes på nettstedet.</p>
     </section><Footer showCta={false}/>
   </main>;
