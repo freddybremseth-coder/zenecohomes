@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { useEffect } from "react";
+import { readCookieConsent } from "@/lib/cookie-consent";
 
 const SESSION_KEY = "ze-property-conversion-session-v1";
 
@@ -24,6 +25,7 @@ function sendEvent(
   propertyRef: string,
   copySource: "realtyflow" | "fallback",
 ) {
+  if (!readCookieConsent()?.analytics) return;
   const body = JSON.stringify({ eventType, propertyRef, copySource, sessionId: sessionId() });
   if (typeof navigator !== "undefined" && typeof navigator.sendBeacon === "function") {
     try {
@@ -49,6 +51,7 @@ export function PropertyConversionViewTracker({
   copySource: "realtyflow" | "fallback";
 }) {
   useEffect(() => {
+    if (!readCookieConsent()?.analytics) return;
     if (!propertyRef) return;
     const key = `ze-property-conversion-view-v1:${propertyRef}`;
     try {

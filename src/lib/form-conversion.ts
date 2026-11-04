@@ -1,6 +1,9 @@
 /** Only call this after the server explicitly confirms a stored lead. Never on page view. */
+import { readCookieConsent } from "@/lib/cookie-consent";
+
 export function trackConfirmedFormSubmission(formType: string, submissionId: string) {
   if (typeof window === "undefined" || !submissionId) return;
+  if (!readCookieConsent()?.analytics) return;
   const key = "zeneco-ga4-conversion:" + submissionId;
   try {
     if (window.sessionStorage.getItem(key)) return;
