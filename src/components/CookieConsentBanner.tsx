@@ -17,7 +17,13 @@ export function CookieConsentBanner() {
     setVisible(!existing);
     setAnalytics(existing?.analytics ?? false);
     setMarketing(existing?.marketing ?? false);
-    const reopen = () => { setSettings(true); setVisible(true); };
+    const reopen = () => {
+      const latest = readCookieConsent();
+      setAnalytics(latest?.analytics ?? false);
+      setMarketing(latest?.marketing ?? false);
+      setSettings(true);
+      setVisible(true);
+    };
     window.addEventListener("zeneco:open-cookie-settings", reopen);
     return () => window.removeEventListener("zeneco:open-cookie-settings", reopen);
   }, []);
