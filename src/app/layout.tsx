@@ -28,8 +28,8 @@ import "./areas-regions-v2.css";
 import "./contrast-standards.css";
 import "./area-reading-mobile.css";
 import "./area-facts.css";
-import "./sitewide-contrast.css";
 import "./cookie-consent.css";
+import "./sitewide-contrast.css";
 
 const zenecoSans = Inter({
   subsets: ["latin"],
