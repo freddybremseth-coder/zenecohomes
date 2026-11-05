@@ -111,6 +111,16 @@ export type Property = {
   translations?: unknown;
 };
 
+/** The public catalogue, individual detail pages and sitemap must agree.
+ * RealtyFlow's missing status is tolerated for older/imported records, while
+ * an explicit non-available status or visibility flag hides the listing.
+ */
+export function isPubliclyAvailableProperty(property: Property): boolean {
+  if (property.show_on_website === false || property.website_visible === false) return false;
+  const status = normalizeSearchText(String(property.status || "").trim());
+  return !status || ["tilgjengelig", "available", "active", "for sale", "en venta", "disponible"].includes(status);
+}
+
 export type PropertyLocale = "no" | "de" | "en";
 
 export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida" | "innlandet";
@@ -915,11 +925,7 @@ export async function getProperties(limit?: number, brandId?: string): Promise<P
     });
     if (!res.ok) return fallbackProperties.slice(0, limit);
     const data = await res.json();
-    const items = (Array.isArray(data) ? data : []).filter((property: Property) => {
-      if (typeof property.show_on_website === "boolean") return property.show_on_website;
-      if (typeof property.website_visible === "boolean") return property.website_visible;
-      return true;
-    });
+    const items = (Array.isArray(data) ? data : []).filter(isPubliclyAvailableProperty);
     return (limit ? items.slice(0, limit) : items) as Property[];
   } catch {
     return fallbackProperties.slice(0, limit);
@@ -1005,14 +1011,14 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
     const data: unknown = await res.json();
 
     if (Array.isArray(data)) {
-      return (data as Property[]).find(matchesRequestedProperty) || null;
+      return (data as Property[]).find((property) => matchesRequestedProperty(property) && isPubliclyAvailableProperty(property)) || null;
     }
     if (!data || typeof data !== "object") return null;
     const response = data as Record<string, unknown>;
     const candidate = (response.property && typeof response.property === "object"
       ? response.property
       : response) as Property;
-    return matchesRequestedProperty(candidate) ? candidate : null;
+    return matchesRequestedProperty(candidate) && isPubliclyAvailableProperty(candidate) ? candidate : null;
   };
 
   const looksLikeUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(normalizedId);
