@@ -32,14 +32,9 @@ export function CookieConsentBanner() {
     // Basic Consent Mode v2: do not load Google's tag or send cookieless
     // pings before a visitor affirmatively opts in to analytics.
     const w = window as typeof window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
-    w.dataLayer = w.dataLayer || [];
-    w.gtag = (...args: unknown[]) => { w.dataLayer?.push(args); };
-    w.gtag("consent", "default", {
-      analytics_storage: "denied",
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-    });
+    // The inline head script owns the synchronous consent default and gtag queue.
+    // Never overwrite gtag here: doing so can disrupt tag initialization.
+    if (!w.gtag) return;
 
     const syncAnalytics = () => {
       const allowed = readCookieConsent()?.analytics === true;

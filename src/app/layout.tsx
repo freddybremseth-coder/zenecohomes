@@ -140,6 +140,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="no" className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
+      <head>
+        {/* Consent Mode v2 defaults must run synchronously before any Google tag. */}
+        <script
+          id="zeneco-google-consent-default"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});`,
+          }}
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"
