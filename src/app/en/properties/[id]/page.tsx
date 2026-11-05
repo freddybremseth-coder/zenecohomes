@@ -7,6 +7,7 @@ import {
   getLocalizedPropertyType,
   getProperty,
   getPropertyRef,
+  getPropertyTown,
 } from "@/lib/realtyflow";
 
 function fitSeoTitle(value: string) {
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const rawTitle = property ? `${getLocalizedPropertyTitle(property, "en")} | Property in Spain` : "Property in Spain";
   const title = fitSeoTitle(rawTitle);
   const rawDescription = property
-    ? `${formatPriceForLocale(property.price, "en")} · ${property.location || property.town || "Spain"} · ${getLocalizedPropertyType(property, "en")}. Request brochure, availability and advice from Zen Eco Homes.`
+    ? `${formatPriceForLocale(property.price, "en")} · ${getPropertyTown(property) || property.town || "Spain"} · ${getLocalizedPropertyType(property, "en")}. Request brochure, availability and advice from Zen Eco Homes.`
     : "Property for sale in Spain with Zen Eco Homes.";
   const description = fitMetaDescription(rawDescription);
 
