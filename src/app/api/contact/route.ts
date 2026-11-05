@@ -313,6 +313,10 @@ export async function POST(request: Request) {
       return contactJson(request, { error: isBuyerMatch ? "E-post er påkrevd" : "Navn og e-post er påkrevd" }, { status: 400 });
     }
 
+    if (body.request_type === "kontakt_bedrift" && (!contactString(body, "organization_name") || !contactString(body, "phone"))) {
+      return contactJson(request, { error: "Bedriftsnavn og telefonnummer er påkrevd" }, { status: 400 });
+    }
+
     const inlandContext = getInlandLeadContext(body);
     const preferredArea = inlandContext?.preferredArea || (body.preferred_area ? String(body.preferred_area) : undefined);
     const requestType = inlandContext?.requestType || (body.request_type ? String(body.request_type) : undefined);
