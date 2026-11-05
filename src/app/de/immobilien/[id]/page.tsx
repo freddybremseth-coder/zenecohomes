@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 import { TrackedPropertyDetailView } from "@/components/TrackedPropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
+import { getPropertySeoPlace, getPropertySeoType } from "@/lib/propertySeoMetadata";
 import {
   formatPriceForLocale,
-  getLocalizedPropertyTitle,
-  getLocalizedPropertyType,
   getProperty,
   getPropertyRef,
-  getPropertyTown,
 } from "@/lib/realtyflow";
 
 function fitSeoTitle(value: string) {
@@ -46,10 +44,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
   const ref = property ? getPropertyRef(property) : decodeURIComponent(id);
-  const rawTitle = property ? `${getLocalizedPropertyTitle(property, "de")} | Immobilie in Spanien` : "Immobilie in Spanien";
+  const rawTitle = property
+    ? `${getPropertySeoType(property, "de")}${property.bedrooms ? ` mit ${property.bedrooms} Schlafzimmern` : ""} in ${getPropertySeoPlace(property, "de")} | Spanien`
+    : "Immobilie in Spanien";
   const title = fitSeoTitle(rawTitle);
   const rawDescription = property
-    ? `${formatPriceForLocale(property.price, "de")} · ${getPropertyTown(property) || property.town || "Spanien"} · ${getLocalizedPropertyType(property, "de")}. Fordern Sie Exposé, Verfügbarkeit und Beratung von Zen Eco Homes an.`
+    ? `${formatPriceForLocale(property.price, "de")} · ${getPropertySeoPlace(property, "de")} · ${getPropertySeoType(property, "de")}. Fordern Sie Exposé, Verfügbarkeit und Beratung von Zen Eco Homes an.`
     : "Immobilie zum Verkauf in Spanien bei Zen Eco Homes.";
   const description = fitMetaDescription(rawDescription);
 
