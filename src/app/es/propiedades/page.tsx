@@ -20,6 +20,7 @@ const regionLabels: Record<string, string> = {
   "costa-blanca-nord": "Costa Blanca Norte",
   "costa-blanca-sor": "Costa Blanca Sur",
   "costa-calida": "Costa Cálida",
+  "costa-de-almeria": "Costa de Almería",
   innlandet: "Interior",
 };
 
