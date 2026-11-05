@@ -17,6 +17,7 @@ const germanRegionLabels: Record<string, string> = {
   "costa-blanca-nord": "Costa Blanca Nord",
   "costa-blanca-sor": "Costa Blanca Süd",
   "costa-calida": "Costa Cálida",
+  "costa-de-almeria": "Costa de Almería",
 };
 
 function getGermanRegionLabel(region?: string) {
