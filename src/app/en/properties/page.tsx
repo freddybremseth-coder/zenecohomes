@@ -17,6 +17,7 @@ const englishRegionLabels: Record<string, string> = {
   "costa-blanca-nord": "Costa Blanca North",
   "costa-blanca-sor": "Costa Blanca South",
   "costa-calida": "Costa Cálida",
+  "costa-de-almeria": "Costa de Almería",
 };
 
 function getEnglishRegionLabel(region?: string) {
