@@ -12,6 +12,7 @@ import {
   getPrimaryImage,
   getPropertyArea,
   getPropertyImages,
+  getPropertyMapQuery,
   getPropertyRef,
   type Property,
 } from "@/lib/realtyflow";
@@ -183,7 +184,7 @@ export function SpanishPropertyDetailView({ property }: { property: Property }) 
             <h2>Mapa y ubicación</h2>
             <iframe
               title={`Mapa – ${town}`}
-              src={`https://www.google.com/maps?q=${encodeURIComponent(`${town}, Spain`)}&z=12&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(getPropertyMapQuery(property))}&z=12&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
