@@ -28,6 +28,7 @@ import {
   getPrimaryImage,
   getPropertyArea,
   getPropertyImages,
+  getPropertyMapQuery,
   getPropertyRef,
   getPropertyTown,
   propertyMatchesRegion,
@@ -601,7 +602,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
             <h2>{t.mapTitle}</h2>
             <iframe
               title={`${t.mapTitle} – ${townDisplay}`}
-              src={`https://www.google.com/maps?q=${encodeURIComponent(`${townDisplay}, Alicante, Spain`)}&z=12&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(getPropertyMapQuery(property))}&z=12&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
