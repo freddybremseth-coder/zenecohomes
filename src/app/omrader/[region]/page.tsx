@@ -44,6 +44,11 @@ const regionCopy: Record<RegionKey, { title: string; intro: string; proof: strin
       "Costa Calida og Murcia-regionen passer for deg som ønsker nye prosjekter, golfresorter, roligere omgivelser og et annet alternativ til Costa Blanca. Områdene rundt Los Alcazares, San Pedro del Pinatar, La Manga og Altaona er særlig aktuelle.",
     proof: ["Bredt utvalg av nybygg og golfprosjekter", "Mar Menor, Middelhavet og roligere kystbyer", "Murcia-regionen som alternativ til Costa Blanca"],
   },
+  "costa-de-almeria": {
+    title: "Costa de Almería",
+    intro: "Almería-provinsen strekker seg fra Pulpí og San Juan de los Terreros i øst til Almerimar og områdene vest for Almería by. Avstandene er store, så velg sted ut fra reisevei, helårstilbud og boligtype.",
+    proof: ["Egen provins i Andalucía – ikke Murcia", "Kystbyer, strender og nye boligprosjekter", "Store forskjeller i reisevei og nærmiljø"],
+  },
   innlandet: {
     title: "Bolig i innlandet i Alicante og Murcia",
     intro:
@@ -137,6 +142,10 @@ const regionSeo: Record<RegionKey, { title: string; description: string }> = {
     description:
       "Costa Cálida: sammenlign Los Alcázares, San Pedro del Pinatar, La Manga og Murcia-områder. Se nybygg, boliger og råd før et trygt boligkjøp i Spania.",
   },
+  "costa-de-almeria": {
+    title: "Costa de Almería | Boliger og nybygg | Zen Eco Homes",
+    description: "Se boliger og nybygg i Almería-provinsen: Pulpí, San Juan de los Terreros, Vera, Mojácar og Almerimar. Sammenlign beliggenhet og reisevei før kjøp.",
+  },
   innlandet: {
     title: "Innlandet i Spania | Tomter og boliger | Zen Eco Homes",
     description:
@@ -185,6 +194,16 @@ const regionFaq: Record<RegionKey, { q: string; a: string }[]> = {
     {
       q: "Er Costa Cálida rimeligere enn Costa Blanca?",
       a: "Ikke nødvendigvis. Pris avhenger av sted, prosjekt, boligtype, kvalitet og tilbud i markedet. Vi sammenligner konkrete alternativer i stedet for å anta at én hel region alltid er billigere enn en annen.",
+    },
+  ],
+  "costa-de-almeria": [
+    {
+      q: "Er Costa de Almería det samme som Costa Cálida?",
+      a: "Nei. Costa de Almería ligger i Andalucía, mens Costa Cálida ligger i Murcia-regionen. Begge har kyst mot Middelhavet, men geografien og reiseveiene er forskjellige.",
+    },
+    {
+      q: "Hvilke områder er med i boligsøket for Almería?",
+      a: "Vi viser annonser fra hele Almería-provinsen, blant annet Pulpí, San Juan de los Terreros, Vera, Mojácar og Almerimar, når boliger er tilgjengelige i vår import.",
     },
   ],
   innlandet: [
