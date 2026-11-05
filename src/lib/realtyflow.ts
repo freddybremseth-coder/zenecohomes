@@ -230,6 +230,7 @@ const TOWN_DISPLAY: Array<[string, string]> = [
   ["algorfa", "Algorfa"], ["benijofar", "Benijófar"], ["dolores", "Dolores"], ["catral", "Catral"],
   ["daya", "Daya Nueva"], ["bigastro", "Bigastro"], ["jacarilla", "Jacarilla"], ["san miguel", "San Miguel de Salinas"],
   // Costa Cálida / Almería
+  ["santiago de la ribera", "Santiago de la Ribera"], ["pulpi", "Pulpí"],
   ["san pedro del pinatar", "San Pedro del Pinatar"], ["san javier", "San Javier"], ["los alcazares", "Los Alcázares"],
   ["torre pacheco", "Torre Pacheco"], ["mazarron", "Mazarrón"], ["aguilas", "Águilas"], ["cartagena", "Cartagena"],
   ["fuente alamo", "Fuente Álamo"], ["alhama", "Alhama de Murcia"], ["banos y mendigo", "Baños y Mendigo"],
@@ -245,7 +246,10 @@ const TOWN_MATCH: Array<[string, string]> = TOWN_DISPLAY.map(([key, display]) =>
  * delen før komma i location, ellers null.
  */
 export function getPropertyTown(property: Property): string | null {
-  if (property.town && property.town.trim()) return property.town.trim();
+  // Some feeds put a province in `town`, while the locality appears elsewhere.
+  const suppliedTown = (property.town || "").trim();
+  const isBroadTown = /^(murcia|alicante|almeria|costa\s)/i.test(normalizeSearchText(suppliedTown));
+  if (suppliedTown && !isBroadTown) return suppliedTown;
   // 1) Tittel + sted er mest pålitelig.
   const hay = normalizeSearchText(
     [property.title, property.title_no, property.title_en, property.title_de, property.location]
@@ -257,7 +261,7 @@ export function getPropertyTown(property: Property): string | null {
   }
   // 2) "Town, Area"-sted (ikke en grov "Costa ..."-sone).
   const loc = (property.location || "").trim();
-  if (loc && !/^costa /i.test(loc)) {
+  if (loc && !/^(costa |murcia$|alicante$|almeria$)/i.test(normalizeSearchText(loc))) {
     const first = loc.split(/[,_]/)[0].trim();
     if (first) return first;
   }
@@ -288,7 +292,17 @@ export function getPropertyTown(property: Property): string | null {
     }
     if (best) return best;
   }
-  return null;
+  return suppliedTown || null;
+}
+
+/** Avoid forcing Alicante into maps for properties in other provinces. */
+export function getPropertyMapQuery(property: Property): string {
+  const town = getPropertyTown(property) || property.location || "Spania";
+  const normalized = normalizeSearchText(town);
+  const province = /\b(pulpi|almerimar|vera)\b/.test(normalized) ? "Almería"
+    : /\b(santiago de la ribera|san javier|san pedro del pinatar|los alcazares|cartagena|murcia|aguilas|mazarron|torre pacheco|alhama de murcia)\b/.test(normalized) ? "Murcia"
+    : "";
+  return [town, province, "Spain"].filter(Boolean).join(", ");
 }
 
 // Boligtype-grupper: en etikett (f.eks. "Leilighet") matcher flere rå typer i dataene
