@@ -140,7 +140,7 @@ export function BuyerMatchQuiz() {
 
     const result = res.ok ? await res.json().catch(() => null) : null;
     if (res.ok && result?.accepted === true && result?.submission_id) {
-      trackConfirmedFormSubmission("boligmatch", result.submission_id);
+      await trackConfirmedFormSubmission("boligmatch", result.submission_id);
       window.location.assign(filteredHref);
     } else {
       setStatus("error");
