@@ -1,0 +1,62 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import { loadTsModule } from "../scripts/load-ts-module.mjs";
+
+const inventory = loadTsModule("src/lib/realtyflow.ts");
+const seo = loadTsModule("src/lib/propertySeoMetadata.ts");
+const routing = loadTsModule("src/lib/propertyRouting.ts");
+
+test("only available, publicly visible listings qualify for sitemap and details", () => {
+  const base = { ref: "TEST-1", status: "TILGJENGELIG", show_on_website: true, website_visible: true };
+  assert.equal(inventory.isPubliclyAvailableProperty(base), true);
+  for (const status of ["RESERVERT", "SOLGT", "INACTIVE", "REMOVED"]) {
+    assert.equal(inventory.isPubliclyAvailableProperty({ ...base, status }), false, status);
+  }
+  assert.equal(inventory.isPubliclyAvailableProperty({ ...base, show_on_website: false }), false);
+  assert.equal(inventory.isPubliclyAvailableProperty({ ...base, website_visible: false }), false);
+  assert.equal(inventory.isPubliclyAvailableProperty({ ...base, show_on_website: true, website_visible: false }), false);
+});
+
+test("public list and detail queries reject removed inventory", async () => {
+  const originalFetch = globalThis.fetch;
+  const active = { ref: "ACTIVE", status: "TILGJENGELIG", show_on_website: true, website_visible: true };
+  const sold = { ref: "SOLD", status: "SOLGT", show_on_website: true, website_visible: true };
+  try {
+    globalThis.fetch = async () => ({ ok: true, json: async () => [active, sold] });
+    const listings = await inventory.getProperties(0, "zeneco");
+    assert.deepEqual(listings.map(p => p.ref), ["ACTIVE"]);
+    assert.equal(await inventory.getProperty("SOLD"), null);
+    assert.equal((await inventory.getProperty("ACTIVE"))?.ref, "ACTIVE");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("property metadata labels use local towns and translated property types", () => {
+  const property = { ref: "TEST-2", property_type: "Ground Floor Apartment", town: "Pinoso", location: "Costa Blanca South - Inland" };
+  assert.equal(seo.getPropertySeoPlace(property, "en"), "Pinoso");
+  assert.equal(seo.getPropertySeoPlace(property, "de"), "Pinoso");
+  assert.equal(seo.getPropertySeoType(property, "en"), "Apartment");
+  assert.equal(seo.getPropertySeoType(property, "de"), "Wohnung");
+});
+
+test("sitemap enumerates the full uncapped brand inventory in all four languages", () => {
+  const source = fs.readFileSync("src/app/sitemap.ts", "utf8");
+  assert.match(source, /getProperties\(0,\s*"zeneco"\)/);
+  assert.match(source, /\["no",\s*"de",\s*"en",\s*"es"\]/);
+  assert.match(source, /getPropertyDetailPath\(ref, locale\)/);
+  const alternates = routing.propertyHreflang("TEST-3");
+  assert.equal(new Set(Object.values(alternates)).size, 4);
+  assert.equal(alternates["en"], "https://www.zenecohomes.com/en/properties/TEST-3");
+});
+
+test("document language follows locale without changing unrelated page metadata", () => {
+  const proxy = fs.readFileSync("src/proxy.ts", "utf8");
+  const layout = fs.readFileSync("src/app/layout.tsx", "utf8");
+  assert.match(proxy, /x-zeneco-document-lang/);
+  assert.match(layout, /<html lang=\{documentLanguage\}/);
+  for (const path of ["src/app/en/properties/[id]/page.tsx", "src/app/de/immobilien/[id]/page.tsx"]) {
+    assert.match(fs.readFileSync(path, "utf8"), /getPropertySeoType/);
+  }
+});
