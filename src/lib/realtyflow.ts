@@ -113,7 +113,7 @@ export type Property = {
 
 export type PropertyLocale = "no" | "de" | "en";
 
-export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida" | "innlandet";
+export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida" | "costa-de-almeria" | "innlandet";
 
 export type AreaProfile = {
   id?: string;
@@ -231,6 +231,9 @@ const TOWN_DISPLAY: Array<[string, string]> = [
   ["daya", "Daya Nueva"], ["bigastro", "Bigastro"], ["jacarilla", "Jacarilla"], ["san miguel", "San Miguel de Salinas"],
   // Costa Cálida / Almería
   ["santiago de la ribera", "Santiago de la Ribera"], ["pulpi", "Pulpí"],
+  ["san juan de los terreros", "San Juan de los Terreros"], ["mojacar", "Mojácar"],
+  ["garrucha", "Garrucha"], ["cuevas del almanzora", "Cuevas del Almanzora"],
+  ["roquetas de mar", "Roquetas de Mar"], ["el ejido", "El Ejido"],
   ["san pedro del pinatar", "San Pedro del Pinatar"], ["san javier", "San Javier"], ["los alcazares", "Los Alcázares"],
   ["torre pacheco", "Torre Pacheco"], ["mazarron", "Mazarrón"], ["aguilas", "Águilas"], ["cartagena", "Cartagena"],
   ["fuente alamo", "Fuente Álamo"], ["alhama", "Alhama de Murcia"], ["banos y mendigo", "Baños y Mendigo"],
@@ -246,9 +249,10 @@ const TOWN_MATCH: Array<[string, string]> = TOWN_DISPLAY.map(([key, display]) =>
  * delen før komma i location, ellers null.
  */
 export function getPropertyTown(property: Property): string | null {
-  // Some feeds put a province in `town`, while the locality appears elsewhere.
+  // Feeds sometimes put the province/region in `town` (e.g. Murcia), while
+  // the actual locality is supplied in the title or description.
   const suppliedTown = (property.town || "").trim();
-  const isBroadTown = /^(murcia|alicante|almeria|costa\s)/i.test(normalizeSearchText(suppliedTown));
+  const isBroadTown = /^(murcia|alicante|almeria|costa\s|costa blanca|costa calida)/i.test(normalizeSearchText(suppliedTown));
   if (suppliedTown && !isBroadTown) return suppliedTown;
   // 1) Tittel + sted er mest pålitelig.
   const hay = normalizeSearchText(
@@ -295,11 +299,11 @@ export function getPropertyTown(property: Property): string | null {
   return suppliedTown || null;
 }
 
-/** Avoid forcing Alicante into maps for properties in other provinces. */
+/** Broad province is never used as a forced map suffix for a different town. */
 export function getPropertyMapQuery(property: Property): string {
   const town = getPropertyTown(property) || property.location || "Spania";
   const normalized = normalizeSearchText(town);
-  const province = /\b(pulpi|almerimar|vera)\b/.test(normalized) ? "Almería"
+  const province = /\b(pulpi|almerimar|vera|san juan de los terreros|mojacar|garrucha|cuevas del almanzora|roquetas de mar|el ejido|almeria)\b/.test(normalized) ? "Almería"
     : /\b(santiago de la ribera|san javier|san pedro del pinatar|los alcazares|cartagena|murcia|aguilas|mazarron|torre pacheco|alhama de murcia)\b/.test(normalized) ? "Murcia"
     : "";
   return [town, province, "Spain"].filter(Boolean).join(", ");
@@ -405,6 +409,13 @@ export const regions: Array<{ key: RegionKey; label: string; description: string
       "santiage de la ribera",
       "yecla",
     ],
+  },
+  {
+    key: "costa-de-almeria",
+    label: "Costa de Almería",
+    description: "Pulpí, San Juan de los Terreros, Vera, Mojácar, Almerimar og øvrige Almería-provinsen.",
+    aliases: ["costa de almeria", "costa almeria", "almeria province", "provincia de almeria"],
+    locations: ["pulpi", "san juan de los terreros", "vera", "mojacar", "garrucha", "cuevas del almanzora", "almerimar", "el ejido", "roquetas de mar", "almeria"],
   },
   {
     key: "innlandet",
@@ -857,6 +868,12 @@ export function propertyMatchesRegion(property: Property, region?: string) {
   if (!region) return true;
   const selected = regions.find((item) => item.key === region);
   if (!selected) return true;
+  // Province/locality takes precedence over a conflicting broad feed label
+  // (e.g. "Pulpí - Murcia"). Never place an Almería listing in Costa Cálida.
+  const locality = normalizeSearchText([getPropertyTown(property), property.location, property.region].filter(Boolean).join(" "));
+  const almeriaLocality = /\b(pulpi|san juan de los terreros|mojacar|garrucha|cuevas del almanzora|almerimar|el ejido|roquetas de mar|almeria)\b/.test(locality)
+    || /\bvera\b/.test(normalizeSearchText(getPropertyTown(property) || ""));
+  if (almeriaLocality) return selected.key === "costa-de-almeria";
   const explicitRegionText = normalizeSearchText([property.region, property.location].filter(Boolean).join(" "));
   if (explicitRegionText) {
     // RealtyFlow merker innlandssonene på Costa Blanca som "Costa Blanca South/North - Inland".
