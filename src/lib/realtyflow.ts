@@ -874,6 +874,10 @@ export function propertyMatchesRegion(property: Property, region?: string) {
   const almeriaLocality = /\b(pulpi|san juan de los terreros|mojacar|garrucha|cuevas del almanzora|almerimar|el ejido|roquetas de mar|almeria)\b/.test(locality)
     || /\bvera\b/.test(normalizeSearchText(getPropertyTown(property) || ""));
   if (almeriaLocality) return selected.key === "costa-de-almeria";
+  const verifiedTown = normalizeSearchText(getPropertyTown(property) || "");
+  if (/\b(santiago de la ribera|san pedro del pinatar|san javier|los alcazares|torre pacheco|cartagena|aguilas|mazarron)\b/.test(verifiedTown)) {
+    return selected.key === "costa-calida";
+  }
   const explicitRegionText = normalizeSearchText([property.region, property.location].filter(Boolean).join(" "));
   if (explicitRegionText) {
     // RealtyFlow merker innlandssonene på Costa Blanca som "Costa Blanca South/North - Inland".
