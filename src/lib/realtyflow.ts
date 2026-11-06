@@ -644,7 +644,7 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
 
 /** Conservative protection against Norwegian copy accidentally stored in localized feed fields. */
 function looksNorwegianDescription(text: string): boolean {
-  return /\\b(?:boligen|soverom|bad(?:et)?|beliggende|felles|svømmebasseng(?:er)?|innendørs|utendørs|parkeringsplass|leiligheten|topp(?:leilighet)|oppvarmet|forhåndsinstallasjon|nær|tomten|kjøkken|terrasse(?:n)?|nybygg(?:et)?|flott|utsikt(?:en)?)\\b/i.test(text);
+  return /\b(?:boligen|soverom|bad(?:et)?|beliggende|felles|svømmebasseng(?:er)?|innendørs|utendørs|parkeringsplass|leiligheten|topp(?:leilighet)|oppvarmet|forhåndsinstallasjon|nær|tomten|kjøkken|terrasse(?:n)?|nybygg(?:et)?|flott|utsikt(?:en)?)\b/i.test(text);
 }
 
 /** Honest, language-specific facts when RealtyFlow has no usable translation. */
