@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Fraunces, Inter } from "next/font/google";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 import { LazyZenecoChatbot } from "@/components/LazyZenecoChatbot";
@@ -72,8 +71,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const documentLanguage = (await headers()).get("x-zeneco-document-lang") || "nb";
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -141,8 +139,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   };
 
   return (
-    <html lang={documentLanguage} className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
+    <html lang="nb" className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
       <head>
+        {/* Safe client-side language correction; shared root must remain static for cached property routes. */}
+        <script dangerouslySetInnerHTML={{ __html: `var s=location.pathname.split('/')[1];document.documentElement.lang=s==='de'?'de':s==='en'?'en':s==='es'?'es':'nb';` }} />
         {/* Consent Mode v2 defaults must run synchronously before any Google tag. */}
         <script
           id="zeneco-google-consent-default"

@@ -55,7 +55,9 @@ test("document language follows locale without changing unrelated page metadata"
   const proxy = fs.readFileSync("src/proxy.ts", "utf8");
   const layout = fs.readFileSync("src/app/layout.tsx", "utf8");
   assert.match(proxy, /x-zeneco-document-lang/);
-  assert.match(layout, /<html lang=\{documentLanguage\}/);
+  assert.match(layout, /<html lang="nb"/);
+  assert.ok(layout.includes("document.documentElement.lang"));
+  assert.ok(!layout.includes("await headers()"));
   for (const path of ["src/app/en/properties/[id]/page.tsx", "src/app/de/immobilien/[id]/page.tsx"]) {
     assert.match(fs.readFileSync(path, "utf8"), /getPropertySeoType/);
   }
