@@ -427,7 +427,7 @@ export default async function PropertiesPage({
         </div>
       </section>
 
-      <Footer />
+      <Footer ctaVariant="properties" />
     </main>
   );
 }
