@@ -642,6 +642,29 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
   return factual || candidate.slice(0, 110) || defaultTitle[locale];
 }
 
+/** Conservative protection against Norwegian copy accidentally stored in localized feed fields. */
+function looksNorwegianDescription(text: string): boolean {
+  return /\\b(?:boligen|soverom|bad(?:et)?|beliggende|felles|svømmebasseng(?:er)?|innendørs|utendørs|parkeringsplass|leiligheten|topp(?:leilighet)|oppvarmet|forhåndsinstallasjon|nær|tomten|kjøkken|terrasse(?:n)?|nybygg(?:et)?|flott|utsikt(?:en)?)\\b/i.test(text);
+}
+
+/** Honest, language-specific facts when RealtyFlow has no usable translation. */
+function buildLocalizedPropertySummary(property: Property, locale: Exclude<PropertyLocale, "no">): string {
+  const type = getLocalizedPropertyType(property, locale);
+  const place = getPropertyTown(property) || readField(property, "location");
+  const bedrooms = Number(property.bedrooms) || 0;
+  const bathrooms = Number(property.bathrooms) || 0;
+  const builtArea = getPropertyArea(property);
+  const plot = Number(property.plot_size) || 0;
+  if (locale === "de") {
+    const intro = [type || "Immobilie", place ? `in ${place}` : "in Spanien"].join(" ");
+    const facts = [bedrooms ? `${bedrooms} Schlafzimmer` : "", bathrooms ? `${bathrooms} Badezimmer` : "", builtArea ? `${builtArea} m² Wohnfläche` : "", plot ? `${plot} m² Grundstück` : "", property.pool ? "Swimmingpool" : ""].filter(Boolean);
+    return `${intro}. ${facts.length ? `Ausstattung laut Exposé: ${facts.join(", ")}. ` : ""}Fordern Sie die aktuelle Objektbeschreibung, Grundrisse und Verfügbarkeit bei Zen Eco Homes an.`;
+  }
+  const intro = [type || "Property", place ? `in ${place}` : "in Spain"].join(" ");
+  const facts = [bedrooms ? `${bedrooms} bedrooms` : "", bathrooms ? `${bathrooms} bathrooms` : "", builtArea ? `${builtArea} m² built area` : "", plot ? `${plot} m² plot` : "", property.pool ? "swimming pool" : ""].filter(Boolean);
+  return `${intro}. ${facts.length ? `Property details: ${facts.join(", ")}. ` : ""}Request the latest brochure, floor plans and availability from Zen Eco Homes.`;
+}
+
 export function getLocalizedPropertyDescription(property: Property, locale: PropertyLocale = "no") {
   // Norsk: bruk RealtyFlows redaksjonelle, faktabaserte tekst (editorial_no) når den
   // finnes. Rå feed-beskrivelse (source_description/description) er fallback. Ingen
@@ -664,7 +687,11 @@ export function getLocalizedPropertyDescription(property: Property, locale: Prop
     readTranslatedField(property, "marketing_description", locale),
     ...(unapprovedNorwegianEditorial ? [] : [readTranslatedField(property, "description", locale)]),
   ]);
-  if (localized) return localized;
+  if (localized && (locale === "no" || !looksNorwegianDescription(localized))) return localized;
+
+  // Never display a Norwegian/other-locale description on an international listing.
+  // RealtyFlow may not have a reviewed translation for every incoming feed record.
+  if (locale !== "no") return buildLocalizedPropertySummary(property, locale);
 
   for (const fallbackLocale of fallbackLocaleOrder[locale]) {
     const fallback = pickLongest([
