@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Fraunces, Inter } from "next/font/google";
 import { CookieConsentBanner } from "@/components/CookieConsentBanner";
 import { LazyZenecoChatbot } from "@/components/LazyZenecoChatbot";
@@ -71,7 +72,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const documentLanguage = (await headers()).get("x-zeneco-document-lang") || "nb";
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -139,7 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="no" className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
+    <html lang={documentLanguage} className={`${zenecoSans.variable} ${zenecoDisplay.variable}`}>
       <head>
         {/* Consent Mode v2 defaults must run synchronously before any Google tag. */}
         <script
