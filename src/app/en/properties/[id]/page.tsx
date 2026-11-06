@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
 import { TrackedPropertyDetailView } from "@/components/TrackedPropertyDetailView";
 import { getPropertyDetailPath, propertyHreflang } from "@/lib/propertyRouting";
+import { getPropertySeoPlace, getPropertySeoType } from "@/lib/propertySeoMetadata";
 import {
   formatPriceForLocale,
-  getLocalizedPropertyTitle,
-  getLocalizedPropertyType,
   getProperty,
   getPropertyRef,
 } from "@/lib/realtyflow";
@@ -45,10 +44,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const property = await getProperty(decodeURIComponent(id));
   const ref = property ? getPropertyRef(property) : decodeURIComponent(id);
-  const rawTitle = property ? `${getLocalizedPropertyTitle(property, "en")} | Property in Spain` : "Property in Spain";
+  const rawTitle = property
+    ? `${getPropertySeoType(property, "en")}${property.bedrooms ? ` with ${property.bedrooms} bedrooms` : ""} in ${getPropertySeoPlace(property, "en")} | Spain`
+    : "Property in Spain";
   const title = fitSeoTitle(rawTitle);
   const rawDescription = property
-    ? `${formatPriceForLocale(property.price, "en")} · ${property.location || property.town || "Spain"} · ${getLocalizedPropertyType(property, "en")}. Request brochure, availability and advice from Zen Eco Homes.`
+    ? `${formatPriceForLocale(property.price, "en")} · ${getPropertySeoPlace(property, "en")} · ${getPropertySeoType(property, "en")}. Request brochure, availability and advice from Zen Eco Homes.`
     : "Property for sale in Spain with Zen Eco Homes.";
   const description = fitMetaDescription(rawDescription);
 
