@@ -619,7 +619,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
 
       </section>
       <a className="property-mobile-cta" href="#kontakt">{locale === "no" ? "Få tilsendt salgsoppgaven" : locale === "en" ? "Request the brochure" : "Exposé anfordern"}</a>
-      <Footer ctaVariant="contact" />
+      <Footer locale={locale} ctaVariant="contact" />
     </main>
   );
 }

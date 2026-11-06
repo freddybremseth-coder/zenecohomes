@@ -100,3 +100,13 @@ test("cookie consent renders locale-specific text without changing analytics han
   assert.ok(source.includes("setLocale(pathLocale"));
   assert.match(source, /COOKIE_CONSENT_EVENT/);
 });
+
+
+test("visible property footer follows page locale and SEO titles do not repeat country", () => {
+  const detail = fs.readFileSync("src/components/PropertyDetailView.tsx", "utf8");
+  assert.equal(detail.split('<Footer locale={locale} ctaVariant="contact" />').length - 1, 2);
+  for (const [path, country] of [["src/app/de/immobilien/[id]/page.tsx", "Spanien"], ["src/app/en/properties/[id]/page.tsx", "Spain"]]) {
+    const source = fs.readFileSync(path, "utf8");
+    assert.ok(!source.includes('${clean} | ' + country));
+  }
+});

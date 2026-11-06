@@ -10,9 +10,9 @@ import {
 
 function fitSeoTitle(value: string) {
   const clean = value.replace(/\s+/g, " ").trim();
-  if (clean.length >= 50 && clean.length <= 60) return clean;
+  // Do not append the country again: the base title already ends in it.
+  if (clean.length >= 45 && clean.length <= 60) return clean;
   const candidates = [
-    `${clean} | Spain`,
     `${clean} | Zen Eco Homes`,
     `${clean} | Property in Spain`,
     `${clean} | Property in Spain | Zen Eco Homes`,
