@@ -52,12 +52,32 @@ const TOWN_COORDS: Record<string, [number, number]> = {
   "los alcazares": [37.7443, -0.8497],
   "los alcázares": [37.7443, -0.8497],
   "san pedro del pinatar": [37.8357, -0.791],
+  "santiago de la ribera": [37.796, -0.805],
+  aguilas: [37.406, -1.583],
+  // Almería province: map groups must not fall back to the Alicante coast.
+  almeria: [36.835, -2.463],
+  almerimar: [36.698, -2.791],
+  "el ejido": [36.775, -2.815],
+  "roquetas de mar": [36.765, -2.615],
+  aguadulce: [36.814, -2.573],
+  adra: [36.749, -3.023],
+  pulpi: [37.411, -1.744],
+  "san juan de los terreros": [37.357, -1.656],
+  vera: [37.246, -1.868],
+  "vera playa": [37.219, -1.815],
+  garrucha: [37.182, -1.822],
+  mojacar: [37.141, -1.851],
+  "cuevas del almanzora": [37.296, -1.882],
+  "huercal-overa": [37.389, -1.945],
+  carboneras: [36.997, -1.893],
+  nijar: [36.966, -2.206],
 };
 
 const REGION_COORDS: Record<string, [number, number]> = {
   "costa-blanca-nord": [38.62, -0.03],
   "costa-blanca-sor": [38.0, -0.68],
   "costa-calida": [37.78, -0.86],
+  "costa-de-almeria": [36.90, -2.25],
   innlandet: [38.42, -0.92],
 };
 
