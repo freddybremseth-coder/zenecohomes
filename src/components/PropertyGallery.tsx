@@ -5,7 +5,12 @@ import { ChevronLeft, ChevronRight, Images, X } from "lucide-react";
 import { ResilientImage, ResilientNativeImage } from "@/components/ResilientImage";
 
 /** Premium filmstrip + full-screen lightbox for property imagery. */
-export function PropertyGallery({ images, title }: { images: string[]; title: string }) {
+export function PropertyGallery({ images, title, locale = "no" }: { images: string[]; title: string; locale?: "no" | "en" | "de" }) {
+  const words = locale === "de"
+    ? { images: "Bilder", gallery: "Galerie", all: "Alle Bilder ansehen", image: "Bild", close: "Schließen", prev: "Vorheriges Bild", next: "Nächstes Bild" }
+    : locale === "en"
+      ? { images: "images", gallery: "Gallery", all: "View all images", image: "image", close: "Close", prev: "Previous image", next: "Next image" }
+      : { images: "bilder", gallery: "Galleri", all: "Se alle bilder", image: "bilde", close: "Lukk", prev: "Forrige bilde", next: "Neste bilde" };
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback(
@@ -36,14 +41,14 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
 
   return (
     <>
-      <section className="property-filmstrip" aria-label={`Bilder av ${title}`}>
+      <section className="property-filmstrip" aria-label={`${words.gallery}: ${title}`}>
         <div className="property-filmstrip-head">
           <div>
-            <span className="property-filmstrip-kicker">Galleri</span>
-            <strong>{images.length} bilder</strong>
+            <span className="property-filmstrip-kicker">{words.gallery}</span>
+            <strong>{images.length} {words.images}</strong>
           </div>
           <button type="button" className="property-gallery-all" onClick={() => setOpen(0)}>
-            <Images size={17} /> Se alle bilder
+            <Images size={17} /> {words.all}
           </button>
         </div>
 
@@ -59,12 +64,12 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
                 className="gallery-thumb gallery-thumb-2027"
 
                 onClick={() => setOpen(imageIndex)}
-                aria-label={`${title} – bilde ${imageIndex + 1}`}
+                aria-label={`${title} – ${words.image} ${imageIndex + 1}`}
               >
-                <ResilientImage src={image} alt={`${title} – bilde ${imageIndex + 1}`} fill sizes="(max-width: 980px) 68vw, 16vw" style={{ objectFit: "cover" }} />
+                <ResilientImage src={image} alt={`${title} – ${words.image} ${imageIndex + 1}`} fill sizes="(max-width: 980px) 68vw, 16vw" style={{ objectFit: "cover" }} />
                 <span className="gallery-thumb-index">{String(imageIndex + 1).padStart(2, "0")}</span>
                 {isLastVisible && remaining > 0 && (
-                  <span className="gallery-thumb-more">+{remaining} bilder</span>
+                  <span className="gallery-thumb-more">+{remaining} {words.images}</span>
                 )}
               </button>
             );
@@ -73,8 +78,8 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
       </section>
 
       {open !== null && (
-        <div className="lightbox" role="dialog" aria-modal="true" aria-label={`Galleri – ${title}`} onClick={close}>
-          <button className="lightbox-close" type="button" onClick={close} aria-label="Lukk">
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label={`${words.gallery} – ${title}`} onClick={close}>
+          <button className="lightbox-close" type="button" onClick={close} aria-label={words.close}>
             <X />
           </button>
           {images.length > 1 && (
@@ -85,7 +90,7 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
                 e.stopPropagation();
                 step(-1);
               }}
-              aria-label="Forrige bilde"
+              aria-label={words.prev}
             >
               <ChevronLeft />
             </button>
@@ -93,7 +98,7 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
           <ResilientNativeImage
             className="lightbox-img"
             src={images[open]}
-            alt={`${title} – bilde ${open + 1}`}
+            alt={`${title} – ${words.image} ${open + 1}`}
             onClick={(e) => e.stopPropagation()}
           />
           {images.length > 1 && (
@@ -104,7 +109,7 @@ export function PropertyGallery({ images, title }: { images: string[]; title: st
                 e.stopPropagation();
                 step(1);
               }}
-              aria-label="Neste bilde"
+              aria-label={words.next}
             >
               <ChevronRight />
             </button>
