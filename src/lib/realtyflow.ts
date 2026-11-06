@@ -111,6 +111,16 @@ export type Property = {
   translations?: unknown;
 };
 
+/** The public catalogue, individual detail pages and sitemap must agree.
+ * RealtyFlow's missing status is tolerated for older/imported records, while
+ * an explicit non-available status or visibility flag hides the listing.
+ */
+export function isPubliclyAvailableProperty(property: Property): boolean {
+  if (property.show_on_website === false || property.website_visible === false) return false;
+  const status = normalizeSearchText(String(property.status || "").trim());
+  return !status || ["tilgjengelig", "available", "active", "for sale", "en venta", "disponible"].includes(status);
+}
+
 export type PropertyLocale = "no" | "de" | "en";
 
 export type RegionKey = "costa-blanca-nord" | "costa-blanca-sor" | "costa-calida" | "costa-de-almeria" | "innlandet";
@@ -657,6 +667,29 @@ export function getLocalizedPropertyTitle(property: Property, locale: PropertyLo
   return factual || candidate.slice(0, 110) || defaultTitle[locale];
 }
 
+/** Conservative protection against Norwegian copy accidentally stored in localized feed fields. */
+function looksNorwegianDescription(text: string): boolean {
+  return /\b(?:boligen|soverom|bad(?:et)?|beliggende|felles|svømmebasseng(?:er)?|innendørs|utendørs|parkeringsplass|leiligheten|topp(?:leilighet)|oppvarmet|forhåndsinstallasjon|nær|tomten|kjøkken|terrasse(?:n)?|nybygg(?:et)?|flott|utsikt(?:en)?)\b/i.test(text);
+}
+
+/** Honest, language-specific facts when RealtyFlow has no usable translation. */
+function buildLocalizedPropertySummary(property: Property, locale: Exclude<PropertyLocale, "no">): string {
+  const type = getLocalizedPropertyType(property, locale);
+  const place = getPropertyTown(property) || readField(property, "location");
+  const bedrooms = Number(property.bedrooms) || 0;
+  const bathrooms = Number(property.bathrooms) || 0;
+  const builtArea = getPropertyArea(property);
+  const plot = Number(property.plot_size) || 0;
+  if (locale === "de") {
+    const intro = [type || "Immobilie", place ? `in ${place}` : "in Spanien"].join(" ");
+    const facts = [bedrooms ? `${bedrooms} Schlafzimmer` : "", bathrooms ? `${bathrooms} Badezimmer` : "", builtArea ? `${builtArea} m² Wohnfläche` : "", plot ? `${plot} m² Grundstück` : "", property.pool ? "Swimmingpool" : ""].filter(Boolean);
+    return `${intro}. ${facts.length ? `Ausstattung laut Exposé: ${facts.join(", ")}. ` : ""}Fordern Sie die aktuelle Objektbeschreibung, Grundrisse und Verfügbarkeit bei Zen Eco Homes an.`;
+  }
+  const intro = [type || "Property", place ? `in ${place}` : "in Spain"].join(" ");
+  const facts = [bedrooms ? `${bedrooms} bedrooms` : "", bathrooms ? `${bathrooms} bathrooms` : "", builtArea ? `${builtArea} m² built area` : "", plot ? `${plot} m² plot` : "", property.pool ? "swimming pool" : ""].filter(Boolean);
+  return `${intro}. ${facts.length ? `Property details: ${facts.join(", ")}. ` : ""}Request the latest brochure, floor plans and availability from Zen Eco Homes.`;
+}
+
 export function getLocalizedPropertyDescription(property: Property, locale: PropertyLocale = "no") {
   // Norsk: bruk RealtyFlows redaksjonelle, faktabaserte tekst (editorial_no) når den
   // finnes. Rå feed-beskrivelse (source_description/description) er fallback. Ingen
@@ -679,7 +712,11 @@ export function getLocalizedPropertyDescription(property: Property, locale: Prop
     readTranslatedField(property, "marketing_description", locale),
     ...(unapprovedNorwegianEditorial ? [] : [readTranslatedField(property, "description", locale)]),
   ]);
-  if (localized) return localized;
+  if (localized && (locale === "no" || !looksNorwegianDescription(localized))) return localized;
+
+  // Never display a Norwegian/other-locale description on an international listing.
+  // RealtyFlow may not have a reviewed translation for every incoming feed record.
+  if (locale !== "no") return buildLocalizedPropertySummary(property, locale);
 
   for (const fallbackLocale of fallbackLocaleOrder[locale]) {
     const fallback = pickLongest([
@@ -950,11 +987,7 @@ export async function getProperties(limit?: number, brandId?: string): Promise<P
     });
     if (!res.ok) return fallbackProperties.slice(0, limit);
     const data = await res.json();
-    const items = (Array.isArray(data) ? data : []).filter((property: Property) => {
-      if (typeof property.show_on_website === "boolean") return property.show_on_website;
-      if (typeof property.website_visible === "boolean") return property.website_visible;
-      return true;
-    });
+    const items = (Array.isArray(data) ? data : []).filter(isPubliclyAvailableProperty);
     return (limit ? items.slice(0, limit) : items) as Property[];
   } catch {
     return fallbackProperties.slice(0, limit);
@@ -1040,14 +1073,14 @@ export async function getProperty(id: string, brandId = "zeneco"): Promise<Prope
     const data: unknown = await res.json();
 
     if (Array.isArray(data)) {
-      return (data as Property[]).find(matchesRequestedProperty) || null;
+      return (data as Property[]).find((property) => matchesRequestedProperty(property) && isPubliclyAvailableProperty(property)) || null;
     }
     if (!data || typeof data !== "object") return null;
     const response = data as Record<string, unknown>;
     const candidate = (response.property && typeof response.property === "object"
       ? response.property
       : response) as Property;
-    return matchesRequestedProperty(candidate) ? candidate : null;
+    return matchesRequestedProperty(candidate) && isPubliclyAvailableProperty(candidate) ? candidate : null;
   };
 
   const looksLikeUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(normalizedId);
