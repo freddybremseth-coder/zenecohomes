@@ -152,7 +152,7 @@ export default async function Home() {
             </article>
           ))}
         </div>
-        <div className="center-action"><Link className="contact-button" href="/booking">Kontakt oss <ArrowRight size={18} /></Link></div>
+        <div className="center-action"><Link className="contact-button" href="/kontakt-oss">Kontakt oss <ArrowRight size={18} /></Link></div>
       </section>
 
       <HomeAdvisors />
@@ -160,10 +160,10 @@ export default async function Home() {
       <section className="contact-section" id="kontakt">
         <div>
           <p className="eyebrow">Klar for neste steg?</p>
-          <h2>Fortell oss hvordan du ønsker å bo</h2>
-          <p>Vi starter med område, bruk og budsjett og hjelper deg videre til de riktige moderne boligene.</p>
+          <h2>Vil du ha hjelp til å finne riktig bolig?</h2>
+          <p>Vil du ha hjelp til å finne riktig bolig?</p>
         </div>
-        <Link className="contact-button" href="/booking">Book en uforpliktende boligprat <ArrowRight size={18} /></Link>
+        <div className="hero-actions"><Link className="contact-button" href="/booking">Book en uforpliktende boligprat <ArrowRight size={18} /></Link><Link className="text-button light" href="/kontakt-oss">Ta kontakt</Link></div>
       </section>
 
       <Footer showCta={false} />

@@ -238,15 +238,6 @@ export default function GuideHub() {
         </div>
       </section>
 
-      <section className="contact-section guide-contact-section">
-        <div>
-          <p className="eyebrow">Vil du slippe å sortere alt alene?</p>
-          <h2>Få hjelp til å finne riktig område og riktig neste steg</h2>
-          <p>Fortell hvordan du vil bruke boligen, budsjettet og når du vurderer å kjøpe. Da kan vi snevre inn både kunnskapen og boligene.</p>
-        </div>
-        <Link className="contact-button" href="/booking">Book boligprat <ArrowRight size={18} /></Link>
-      </section>
-
       <Footer />
     </main>
   );

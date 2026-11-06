@@ -33,8 +33,8 @@ export default function ViewingTripPage() {
           På en visningstur får du oppleve aktuelle boliger, utforske områdene og kjenne etter hvor du kan trives. Zen Eco Homes hjelper deg med å finne relevante boliger ut fra dine ønsker og ditt budsjett.
         </p>
         <div className="hero-actions">
-          <Link className="contact-button" href="/booking">Ta kontakt <ArrowRight size={17} /></Link>
-          <Link className="text-button light" href="/eiendommer">Se boliger</Link>
+          <Link className="contact-button" href="#visningstur-skjema">Planlegg visningstur <ArrowRight size={17} /></Link>
+          <Link className="text-button light" href="/kontakt-oss">Ta kontakt</Link>
         </div>
       </section>
 
@@ -117,12 +117,11 @@ export default function ViewingTripPage() {
           </p>
         </div>
         <div className="hero-actions">
-          <Link className="contact-button" href="/eiendommer">Se boliger til salgs</Link>
-          <Link className="text-button" href="/booking">Book behovsavklaring</Link>
+          <Link className="contact-button" href="/kontakt-oss">Ta kontakt</Link>
         </div>
       </section>
 
-      <section className="contact-section">
+      <section className="contact-section" id="visningstur-skjema">
         <div>
           <p className="eyebrow">Neste steg</p>
           <h2>Fortell oss når du ønsker å komme på visningstur</h2>

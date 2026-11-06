@@ -54,13 +54,13 @@ export default async function BookingPage({
       <section className="contact-section booking-info-meeting">
         <div>
           <p className="eyebrow">Digitalt infomøte</p>
-          <h2>Vil du få beskjed om neste infomøte om boligkjøp i Spania?</h2>
+          <h2>Ønsker du å lære mer om boligkjøp i Spania?</h2>
           <p>
-            Vi publiserer dato når neste møte er satt. Meld interesse nå, så bruker vi samme enkle kontaktskjema uten å opprette et ekstra skjema på siden.
+            Vi holder jevnlige, gratis digitale informasjonsmøter hvor du får innsikt i boligmarkedet, aktuelle områder og kjøpsprosessen. Velg et tidspunkt som passer deg, og meld deg på.
           </p>
         </div>
-        <Link className="contact-button" href="/booking?type=infomote#foresporsel">
-          Meld interesse
+        <Link className="contact-button" href="/informasjonsmote">
+          Se kommende infomøter
         </Link>
       </section>
       <Footer />

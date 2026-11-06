@@ -323,7 +323,7 @@ export function PropertyNotFoundView({ locale }: { locale: Locale }) {
           <ArrowLeft size={18} /> {t.backToProperties}
         </Link>
       </section>
-      <Footer />
+      <Footer ctaVariant="contact" />
     </main>
   );
 }
@@ -619,7 +619,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
 
       </section>
       <a className="property-mobile-cta" href="#kontakt">{locale === "no" ? "Få tilsendt salgsoppgaven" : locale === "en" ? "Request the brochure" : "Exposé anfordern"}</a>
-      <Footer />
+      <Footer ctaVariant="contact" />
     </main>
   );
 }

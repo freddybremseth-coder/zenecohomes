@@ -38,6 +38,7 @@ export default function AboutPage() {
         <p className="eyebrow">Menneskene bak</p>
         <h2>Rådgivning, kunder og digital synlighet</h2>
         <p>Zen Eco Homes kombinerer lokal eiendomsrådgivning med innhold og systemer som skal gjøre kjøpsreisen enklere å forstå.</p>
+        <Link className="contact-button" href="/kontakt-oss">Kontakt oss <ArrowRight size={16}/></Link>
       </div>
       <div className="about-team-grid">
         <article>

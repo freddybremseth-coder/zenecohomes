@@ -31,7 +31,7 @@ export default function ReviewsPage() {
         <Link href="/om-oss">Om Zen Eco Homes <span>→</span></Link>
       </aside>
     </section>
-    <section className="contact-section"><div><h2>Vil du vite hvordan vi kan hjelpe deg?</h2><p>Start med en kort, uforpliktende behovsavklaring.</p></div><Link className="contact-button" href="/booking">Få rådgivning</Link></section>
+    <section className="contact-section"><div><h2>Vil du vite hvordan vi kan hjelpe deg?</h2><p>Start med en uforpliktende prat om dine ønsker og behov, eller ta kontakt hvis du har spørsmål.</p></div><div className="hero-actions"><Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link><Link className="text-button light" href="/kontakt-oss">Ta kontakt</Link></div></section>
     <Footer />
   </main>;
 }

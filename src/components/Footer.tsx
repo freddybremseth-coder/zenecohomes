@@ -141,7 +141,7 @@ const CTA: Record<SiteLocale, { eyebrow: string; title: string; body: string; pr
     eyebrow: "Neste steg",
     title: "Vil du ha hjelp til å finne riktig bolig?",
     body: "Start med en kort boligprat, eller gå rett til boligene.",
-    primary: "Book en kort boligprat",
+    primary: "Book en uforpliktende boligprat",
     primaryHref: "/booking",
     secondary: "Se boliger",
     secondaryHref: "/eiendommer",
@@ -179,13 +179,17 @@ const CTA: Record<SiteLocale, { eyebrow: string; title: string; body: string; pr
 export function Footer({
   locale = "no",
   showCta = true,
+  ctaVariant = "default",
 }: {
   locale?: SiteLocale;
   showCta?: boolean;
+  ctaVariant?: "default" | "properties" | "contact";
 } = {}) {
   const links = LINKS[locale];
   const groups = locale === "no" ? NORWEGIAN_GROUPS : [{ title: SUBLINE[locale], links }];
-  const cta = CTA[locale];
+  const cta = locale === "no" && ctaVariant === "contact"
+    ? { ...CTA.no, body: "Start med en uforpliktende prat om dine ønsker og behov, eller ta kontakt hvis du har spørsmål.", secondary: "Ta kontakt", secondaryHref: "/kontakt-oss" }
+    : CTA[locale];
 
   return (
     <footer className="site-footer-2027">
@@ -198,7 +202,7 @@ export function Footer({
           </div>
           <div className="footer-2027-actions">
             <Link className="footer-primary" href={cta.primaryHref}>{cta.primary}</Link>
-            <Link className="footer-secondary" href={cta.secondaryHref}>{cta.secondary} →</Link>
+            {ctaVariant !== "properties" && <Link className="footer-secondary" href={cta.secondaryHref}>{cta.secondary} →</Link>}
           </div>
         </div>
       )}
