@@ -60,3 +60,31 @@ test("document language follows locale without changing unrelated page metadata"
     assert.match(fs.readFileSync(path, "utf8"), /getPropertySeoType/);
   }
 });
+
+
+test("German and English descriptions never fall back to Norwegian editorial text", () => {
+  const norwegianOnly = {
+    ref: "N10034", property_type: "Penthouse", town: "Pulpí", bedrooms: 2, bathrooms: 2,
+    built_area: 73, description_no: "Moderne toppleilighet i Pulpí med 2 soverom og 2 bad.",
+    editorial_no_approved: true,
+    editorial_no: { intro_no: "Moderne toppleilighet i Pulpí med 2 soverom og 2 bad." },
+  };
+  assert.match(inventory.getLocalizedPropertyDescription(norwegianOnly, "no"), /soverom/);
+  const german = inventory.getLocalizedPropertyDescription(norwegianOnly, "de");
+  assert.match(german, /Schlafzimmer/);
+  assert.doesNotMatch(german, /soverom|toppleilighet/);
+  const english = inventory.getLocalizedPropertyDescription(norwegianOnly, "en");
+  assert.match(english, /bedrooms/);
+  assert.doesNotMatch(english, /soverom|toppleilighet/);
+  assert.equal(inventory.getLocalizedPropertyDescription({ ...norwegianOnly, description_de: "Penthouse mit Blick auf das Meer." }, "de"), "Penthouse mit Blick auf das Meer.");
+  assert.match(inventory.getLocalizedPropertyDescription({ ...norwegianOnly, description_de: "Boligen har 2 soverom." }, "de"), /Schlafzimmer/);
+});
+
+test("property detail propagates locale to gallery and footer", () => {
+  const detail = fs.readFileSync("src/components/PropertyDetailView.tsx", "utf8");
+  const gallery = fs.readFileSync("src/components/PropertyGallery.tsx", "utf8");
+  assert.match(detail, /<PropertyGallery[^>]+locale=\\{locale\\}/);
+  assert.match(detail, /<Footer locale=\\{locale\\}/);
+  assert.match(gallery, /Alle Bilder ansehen/);
+  assert.match(gallery, /View all images/);
+});
