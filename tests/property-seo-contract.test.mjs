@@ -83,8 +83,8 @@ test("German and English descriptions never fall back to Norwegian editorial tex
 test("property detail propagates locale to gallery and footer", () => {
   const detail = fs.readFileSync("src/components/PropertyDetailView.tsx", "utf8");
   const gallery = fs.readFileSync("src/components/PropertyGallery.tsx", "utf8");
-  assert.match(detail, /<PropertyGallery[^>]+locale=\\{locale\\}/);
-  assert.match(detail, /<Footer locale=\\{locale\\}/);
+  assert.match(detail, /<PropertyGallery[^>]+locale=\{locale\}/);
+  assert.match(detail, /<Footer locale=\{locale\}/);
   assert.match(gallery, /Alle Bilder ansehen/);
   assert.match(gallery, /View all images/);
 });
