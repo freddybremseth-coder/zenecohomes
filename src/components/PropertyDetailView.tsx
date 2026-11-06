@@ -323,7 +323,7 @@ export function PropertyNotFoundView({ locale }: { locale: Locale }) {
           <ArrowLeft size={18} /> {t.backToProperties}
         </Link>
       </section>
-      <Footer ctaVariant="contact" />
+      <Footer locale={locale} ctaVariant="contact" />
     </main>
   );
 }
@@ -371,7 +371,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
         ? (locale === "no" ? "Under planlegging" : locale === "en" ? "In planning" : "In Planung")
         : "";
   const amenities = Array.isArray(property.amenities_no) ? property.amenities_no.filter((item): item is string => typeof item === "string" && Boolean(item.trim())) : typeof property.amenities_no === "string" ? property.amenities_no.split(/[;\n]/).map(item => item.trim()).filter(Boolean) : [];
-  const disclosedFeatures = [...amenities.filter((item) => !/^(floor\s?plans?|plantegning(?:er)?|planos?|photo(?:s)?|bilder|image(?:s)?|video|pdf|brochure|prospekt)$/i.test(item)), ...(property.pool === true ? [locale === "no" ? "Basseng oppgitt" : "Pool listed"] : [])].filter((item,index,all)=>all.indexOf(item)===index);
+  const disclosedFeatures = [...amenities.filter((item) => !/^(floor\s?plans?|plantegning(?:er)?|planos?|photo(?:s)?|bilder|image(?:s)?|video|pdf|brochure|prospekt)$/i.test(item)), ...(property.pool === true ? [locale === "no" ? "Basseng oppgitt" : locale === "de" ? "Pool vorhanden" : "Pool listed"] : [])].filter((item,index,all)=>all.indexOf(item)===index);
   const estimatedCosts = property.price ? Math.round(property.price * 0.135) : 0;
   const estimatedTotal = property.price ? property.price + estimatedCosts : 0;
   const detailPath = getPropertyDetailPath(ref, locale);
@@ -522,7 +522,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
           {images.length > 1 && (
             <section className="premium-gallery" id="bilder">
               <h2>{t.images}</h2>
-              <PropertyGallery images={images} title={title} />
+              <PropertyGallery images={images} title={title} locale={locale} />
             </section>
           )}
           <section className="property-detail-section" id="om-boligen">
@@ -540,7 +540,7 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
           <PropertyFloorplans images={property.floorplans || []} locale={locale} />
           <section className="sticky-card property-brochure-box" id="kontakt">
             <h2>{t.fullInfoTitle}</h2>
-            <p>{locale === "no" ? "Få tilsendt tilgjengelig salgsoppgave, plantegninger og oppdatert informasjon. Vi sjekker dokumentasjonen for akkurat denne boligen." : "Request the available brochure, floor plans and updated details for this property."}</p>
+            <p>{locale === "no" ? "Få tilsendt tilgjengelig salgsoppgave, plantegninger og oppdatert informasjon. Vi sjekker dokumentasjonen for akkurat denne boligen." : locale === "de" ? "Fordern Sie das verfügbare Exposé, Grundrisse und aktuelle Informationen zu dieser Immobilie an." : "Request the available brochure, floor plans and updated details for this property."}</p>
             <ContactForm locale={locale} propertyRef={ref} propertyTitle={title} requestType={t.requestType} source={`property-${locale}-${ref}`} variant="compact" />
           </section>
           <section className="sticky-card property-mortgage-box">
@@ -555,15 +555,15 @@ export function PropertyDetailView({ property, locale }: { property: Property; l
               <div><dt>{t.costs}</dt><dd>{property.price ? formatPriceForLocale(estimatedCosts,locale) : unavailable}</dd></div>
               <div><dt>{t.total}</dt><dd>{property.price ? formatPriceForLocale(estimatedTotal,locale) : unavailable}</dd></div>
             </dl>
-            <p><small>{locale === "no" ? "Dette er et generelt budsjettanslag, ikke et bindende kostnadsoverslag. Skatter og gebyrer avhenger av bolig og kjøper." : "Illustrative estimate; actual taxes and fees depend on the transaction."}</small></p>
+            <p><small>{locale === "no" ? "Dette er et generelt budsjettanslag, ikke et bindende kostnadsoverslag. Skatter og gebyrer avhenger av bolig og kjøper." : locale === "de" ? "Unverbindliche Schätzung. Tatsächliche Steuern und Gebühren hängen von der Immobilie und dem Käufer ab." : "Illustrative estimate; actual taxes and fees depend on the transaction."}</small></p>
           </section>
           <section className="property-detail-section">
             <h2>{t.includedTitle}</h2>
-            {disclosedFeatures.length ? <><p>{locale === "no" ? "Følgende egenskaper er oppgitt i boligdataene. Det må bekreftes i leveransebeskrivelsen hva som inngår i kjøpesummen." : "The following features are listed. Confirm what is included in the sale specification."}</p><ul>{disclosedFeatures.map(item=><li key={item}>{item}</li>)}</ul></> : <p>{unavailable}</p>}
+            {disclosedFeatures.length ? <><p>{locale === "no" ? "Følgende egenskaper er oppgitt i boligdataene. Det må bekreftes i leveransebeskrivelsen hva som inngår i kjøpesummen." : locale === "de" ? "Folgende Merkmale sind in den Objektdaten angegeben. Bitte prüfen Sie anhand der Baubeschreibung, was im Kaufpreis enthalten ist." : "The following features are listed. Confirm what is included in the sale specification."}</p><ul>{disclosedFeatures.map(item=><li key={item}>{item}</li>)}</ul></> : <p>{unavailable}</p>}
           </section>
           <section className="property-detail-section">
             <h2>{t.rentalTitle}</h2><p>{t.rentalBody}</p>
-            <p>{locale === "no" ? "Mulighet for utleie og eventuelle nødvendige lisenser må kontrolleres for denne boligen." : "Rental eligibility and any licences must be checked for this property."}</p>
+            <p>{locale === "no" ? "Mulighet for utleie og eventuelle nødvendige lisenser må kontrolleres for denne boligen." : locale === "de" ? "Die Vermietbarkeit und eventuell erforderliche Genehmigungen müssen für diese Immobilie geprüft werden." : "Rental eligibility and any licences must be checked for this property."}</p>
           </section>
           <section className="property-detail-section">
             <h2>{t.decisionTitle}</h2><ul>{t.decisionItems.map(item=><li key={item}>{item}</li>)}</ul>
