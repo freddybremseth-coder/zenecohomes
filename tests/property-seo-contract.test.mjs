@@ -95,6 +95,6 @@ test("cookie consent renders locale-specific text without changing analytics han
   for (const phrase of ["Wir respektieren Ihre Privatsphäre", "We respect your privacy", "Respetamos tu privacidad", "Vi respekterer personvernet ditt"]) {
     assert.ok(source.includes(phrase), phrase);
   }
-  assert.match(source, /setLocale\\(pathLocale/);
+  assert.ok(source.includes("setLocale(pathLocale"));
   assert.match(source, /COOKIE_CONSENT_EVENT/);
 });
