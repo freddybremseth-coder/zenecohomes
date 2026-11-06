@@ -88,3 +88,13 @@ test("property detail propagates locale to gallery and footer", () => {
   assert.match(gallery, /Alle Bilder ansehen/);
   assert.match(gallery, /View all images/);
 });
+
+
+test("cookie consent renders locale-specific text without changing analytics handling", () => {
+  const source = fs.readFileSync("src/components/CookieConsentBanner.tsx", "utf8");
+  for (const phrase of ["Wir respektieren Ihre Privatsphäre", "We respect your privacy", "Respetamos tu privacidad", "Vi respekterer personvernet ditt"]) {
+    assert.ok(source.includes(phrase), phrase);
+  }
+  assert.match(source, /setLocale\\(pathLocale/);
+  assert.match(source, /COOKIE_CONSENT_EVENT/);
+});
