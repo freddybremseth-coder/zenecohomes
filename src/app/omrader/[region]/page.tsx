@@ -400,6 +400,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
             return (
               <article className="area-profile-card" key={profile.id || profile.name}>
                 <div className="area-profile-photo"><ResilientImage src={image} alt={`${profile.name} – områdebilde`} fill sizes="(max-width: 900px) 100vw, 48vw" style={{ objectFit: "cover" }} /></div>
+                {/^(xal[oó]|jal[oó]n)/i.test(profile.name) && <small style={{ display: "block", marginTop: "0.35rem", color: "#64748b", fontSize: "0.72rem" }}>Foto: <a href="https://commons.wikimedia.org/wiki/File:Xal%C3%B3,_Marina_Alta,_Pa%C3%ADs_Valenci%C3%A0.JPG" target="_blank" rel="noopener noreferrer">Joanbanjo / Wikimedia Commons</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>)</small>}
                 <section>
                   <span>{profile.region || selected.label}</span>
                   <h3><NoBreakName name={profile.name} /></h3>
