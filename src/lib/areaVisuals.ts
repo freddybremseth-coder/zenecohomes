@@ -7,8 +7,8 @@ import { normalizeSearchText } from "@/lib/realtyflow";
  * beach + skyline for Benidorm, old town for Altea, Peñón de Ifach for Calpe,
  * Puig Campana for Finestrat, etc.
  *
- * Sources below are Wikimedia Commons files released as CC0/public domain,
- * so they can be used commercially without attribution requirements.
+ * Most sources below are Wikimedia Commons CC0/public-domain photographs.
+ * Xaló is CC BY-SA 3.0 by Joanbanjo and is attributed on its area pages.
  */
 /* Commons redirect pages are not valid Next.js optimized image hosts.
  * These paths point directly at Wikimedia's static upload origin, which is
@@ -26,6 +26,7 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "CastMoraira01.jpg": "7/71/CastMoraira01.jpg",
   "Jávea desde el Montgó.jpg": "9/9b/J%C3%A1vea_desde_el_Montg%C3%B3.jpg",
   "El Campello - Playa 2.jpg": "8/85/El_Campello_-_Playa_2.jpg",
+  "Xaló, Marina Alta, País Valencià.JPG": "2/28/Xal%C3%B3%2C_Marina_Alta%2C_Pa%C3%ADs_Valenci%C3%A0.JPG",
 };
 function commons(fileName: string) {
   const path = VERIFIED_COMMONS[fileName];
@@ -63,6 +64,11 @@ const AREA_VISUALS: Record<string, string> = {
 
   "el campello": commons("El Campello - Playa 2.jpg"),
   campello: commons("El Campello - Playa 2.jpg"),
+
+  // Real Xaló/Jalón town view. Joanbanjo, CC BY-SA 3.0 (attributed on area pages).
+  "xalo jalon": commons("Xaló, Marina Alta, País Valencià.JPG"),
+  xalo: commons("Xaló, Marina Alta, País Valencià.JPG"),
+  jalon: commons("Xaló, Marina Alta, País Valencià.JPG"),
 };
 
 export function getEditorialAreaImage(areaName: string): string | null {
