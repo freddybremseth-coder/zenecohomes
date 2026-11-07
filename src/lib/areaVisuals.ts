@@ -7,8 +7,8 @@ import { normalizeSearchText } from "@/lib/realtyflow";
  * beach + skyline for Benidorm, old town for Altea, Peñón de Ifach for Calpe,
  * Puig Campana for Finestrat, etc.
  *
- * Sources below are Wikimedia Commons files released as CC0/public domain,
- * so they can be used commercially without attribution requirements.
+ * Most sources below are Wikimedia Commons CC0/public-domain photographs.
+ * Xaló is CC BY-SA 3.0 by Joanbanjo and is attributed on its area pages.
  */
 /* Commons redirect pages are not valid Next.js optimized image hosts.
  * These paths point directly at Wikimedia's static upload origin, which is
