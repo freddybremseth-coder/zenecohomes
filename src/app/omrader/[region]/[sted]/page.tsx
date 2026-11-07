@@ -164,6 +164,7 @@ export default async function AreaTownPage({
             sizes="(max-width: 800px) 100vw, 50vw"
             style={{ width: "100%", height: "auto", borderRadius: "var(--radius-2027)" }}
           />
+          {/^(xal[oó]|jal[oó]n)/i.test(profile.name) && <small style={{ display: "block", marginTop: "0.35rem", color: "#64748b", fontSize: "0.72rem" }}>Foto: <a href="https://commons.wikimedia.org/wiki/File:Xal%C3%B3,_Marina_Alta,_Pa%C3%ADs_Valenci%C3%A0.JPG" target="_blank" rel="noopener noreferrer">Joanbanjo / Wikimedia Commons</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>)</small>}
         </div>
       </section>
 
