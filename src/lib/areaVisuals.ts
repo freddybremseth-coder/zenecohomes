@@ -27,6 +27,7 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "Jávea desde el Montgó.jpg": "9/9b/J%C3%A1vea_desde_el_Montg%C3%B3.jpg",
   "El Campello - Playa 2.jpg": "8/85/El_Campello_-_Playa_2.jpg",
   "Xaló, Marina Alta, País Valencià.JPG": "2/28/Xal%C3%B3%2C_Marina_Alta%2C_Pa%C3%ADs_Valenci%C3%A0.JPG",
+  "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": "9/9b/Playa_Centro%2C_Villajoyosa%2C_Espa%C3%B1a%2C_2014-07-03%2C_DD_28.JPG",
 };
 function commons(fileName: string) {
   const path = VERIFIED_COMMONS[fileName];
@@ -44,6 +45,10 @@ const AREA_VISUALS: Record<string, string> = {
   altea: commons("Old altea.jpg"),
 
   benidorm: commons("Benidorm - Playa de Poniente 26.jpg"),
+
+  // Playa Centro: colorful waterfront houses, promenade and sandy beach.
+  villajoyosa: commons("Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG"),
+  "la vila joiosa": commons("Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG"),
 
   benissa: commons("Punta Prado in Benissa.jpg"),
 
