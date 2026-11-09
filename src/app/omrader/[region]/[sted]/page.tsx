@@ -112,6 +112,7 @@ export default async function AreaTownPage({
       <section
         className="page-hero compact-hero image-hero"
         style={villajoyosaHero ? {
+          position: "relative",
           backgroundImage: `linear-gradient(90deg, rgba(22, 34, 43, 0.86), rgba(22, 34, 43, 0.39)), url("${image}")`,
           backgroundPosition: "center, 62% center",
         } : undefined}
