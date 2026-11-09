@@ -103,12 +103,20 @@ export default async function AreaTownPage({
   const heroDescription = oneLineAreaText(profile.hero_blurb) || oneLineAreaText(profile.description) || `Les om ${profile.name} før du velger bolig i området.`;
   const book = placeBookForArea(profile.name);
   const image = areaPresentationImage(profile, properties);
+  const villajoyosaHero = /^(villajoyosa|la vila joiosa)$/i.test(profile.name.trim());
   const areaFacts = getTownAreaFacts(profile.name);
 
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <section className="page-hero compact-hero image-hero">
+      <section
+        className="page-hero compact-hero image-hero"
+        style={villajoyosaHero ? {
+          position: "relative",
+          backgroundImage: `linear-gradient(90deg, rgba(22, 34, 43, 0.86), rgba(22, 34, 43, 0.39)), url("${image}")`,
+          backgroundPosition: "center, 62% center",
+        } : undefined}
+      >
         <p className="eyebrow">{selectedRegion.label} · områdeguide</p>
         <h1>Bolig og hverdagsliv i <NoBreakName name={profile.name} /></h1>
         <p><ProtectPlaceNames text={heroDescription} /></p>
@@ -118,6 +126,7 @@ export default async function AreaTownPage({
           </Link>
           <Link className="text-button light" href={`/omrader/${region}`}>Til {selectedRegion.label}</Link>
         </div>
+        {villajoyosaHero && <small style={{ position: "absolute", bottom: 8, right: 12, fontSize: "0.64rem", color: "#fff", textShadow: "0 1px 3px #000" }}>Foto: <a href="https://commons.wikimedia.org/wiki/File:Playa_Centro,_Villajoyosa,_Espa%C3%B1a,_2014-07-03,_DD_28.JPG" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>Diego Delso</a> · CC BY-SA 4.0</small>}
       </section>
 
       <section className="section split">
