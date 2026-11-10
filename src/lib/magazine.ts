@@ -696,6 +696,7 @@ export const extraArticles: Article[] = [
     },
     "intro": [
       "En bolig under oppføring gir muligheten til å velge tidlig i et prosjekt, kanskje sikre den beste tomten eller få påvirke enkelte løsninger. En ferdig nybyggbolig lar deg derimot se det du kjøper, teste utsikt og standard og ofte planlegge overtakelse med mindre byggeusikkerhet.",
+      "Ønsker du en bredere oversikt over kjøpsprosessen, kostnader og hva du bør undersøke når du kjøper nybygg? Les [[vår komplette guide til nybygg i Spania|/guide/nybygg-i-spania]].",
       "Men «nybygg» er ikke én type handel. Betalingsplaner, dokumentasjon, leveringstid, tillatelser og kjøpers rettigheter er forskjellige avhengig av prosjekt og kontrakt. Når du kjøper i Spania, bør du ikke signere på en forsinkelse eller betale neste avdrag bare fordi noen sier at det er rutine.",
       "Denne guiden beskriver hva en kjøper bør kontrollere i praksis. Konkrete kontraktsrettigheter og krav må vurderes av en uavhengig spansk advokat med tilgang til avtalen og prosjektets dokumentasjon."
     ],
@@ -3455,7 +3456,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Ved vanlig kjøp av en eksisterende bolig i Valenciaregionen er hovedregelen overføringsskatt (ITP). Den ordinære satsen ble 9 % fra 1. juni 2026, med 11 % der verdigrensen over én million euro utløser denne satsen. Andre satser og fritak kan gjelde etter konkrete vilkår. Ved ordinært kjøp av nybygg fra utbygger betales normalt 10 % merverdiavgift (IVA) og i tillegg dokumentavgift (AJD). Den generelle AJD-satsen i regionen ble 1,4 % fra 1. juni 2026. Spesialregler, blant annet for kvalifiserende primærbolig, kan endre AJD.",
           "Det er derfor feil å legge den samme generelle tilleggssatsen på alle boliger. Låneform og skattegrunnlag kan også påvirke totalen. En uavhengig advokat må bekrefte avgiftsbehandlingen og konkret kjøpsoppgjør før signering.",
-          "Kilder: [[BOE, Valenciaregionens lovendringer med virkning fra 1. juni 2026|https://www.boe.es/buscar/doc.php?id=BOE-A-2025-11959]] og [[Agencia Tributaria om IVA og ITP ved boligkjøp|https://sede.agenciatributaria.gob.es/Sede/iva/iva-operaciones-inmobiliarias/compro-vivienda-tengo-que-pagar-itp.html]]. Les også [[guiden til kjøpskostnader i Spania|/guide/kostnader-boligkjop-spania]]."
+          "Kilder: [[BOE, Valenciaregionens lovendringer med virkning fra 1. juni 2026|https://www.boe.es/buscar/doc.php?id=BOE-A-2025-11959]] og [[Agencia Tributaria om IVA og ITP ved boligkjøp|https://sede.agenciatributaria.gob.es/Sede/iva/iva-operaciones-inmobiliarias/compro-vivienda-tengo-que-pagar-itp.html]]. Les også [[guiden til kjøpskostnader i Spania|/guide/kjope-bolig-i-spania]]."
         ]
       },
       {

@@ -57,17 +57,6 @@ const specialGuides: GuideItem[] = [
     updated: "2026-10-07",
   },
   {
-    slug: "kostnader-boligkjop-spania",
-    title: "Hva koster det å kjøpe bolig i Spania?",
-    excerpt: "ITP, IVA, AJD, advokat, notar, register og finansiering – med interaktiv kalkulator for totalbudsjettet.",
-    href: "/guide/kostnader-boligkjop-spania",
-    image: "/assets/magasin-covers/finansiering.svg",
-    imageAlt: "Illustrasjon av kostnader og totalbudsjett ved boligkjøp i Spania",
-    readingTime: "10 min lesing",
-    category: "Kostnader",
-    updated: "2026-10-07",
-  },
-  {
     slug: "nybygg-i-spania",
     title: "Nybygg i Spania – komplett guide",
     excerpt: "Utbygger, betalingsplan, bankgaranti, IVA og AJD, energieffektivitet, tilvalg, ferdigstillelse og overtakelse samlet i én guide.",
@@ -85,8 +74,8 @@ const groups = [
     id: "start",
     eyebrow: "Start her",
     title: "Helheten, budsjettet og finansieringen",
-    intro: "De tre guidene som gir deg rammen før du begynner å bruke tid på konkrete boliger.",
-    slugs: ["kjope-bolig-i-spania", "kostnader-boligkjop-spania", "finansiere-bolig-i-spania"],
+    intro: "Guidene som gir deg rammen før du begynner å bruke tid på konkrete boliger.",
+    slugs: ["kjope-bolig-i-spania", "finansiere-bolig-i-spania"],
   },
   {
     id: "velge",
@@ -190,7 +179,7 @@ export default function GuideHub() {
             <h2>Hva vil du vite?</h2>
             <nav>
               <Link href="/guide/kjope-bolig-i-spania">Hvordan kjøper jeg bolig? <ArrowRight size={15} /></Link>
-              <Link href="/guide/kostnader-boligkjop-spania">Hva koster kjøpet? <ArrowRight size={15} /></Link>
+              <Link href="/guide/kjope-bolig-i-spania">Hva koster kjøpet? <ArrowRight size={15} /></Link>
               <Link href="/guide/finansiere-bolig-i-spania">Hvordan finansierer jeg? <ArrowRight size={15} /></Link>
               <Link href="/guide/omradeguide-eiendomskjop-i-spania">Hvor bør jeg kjøpe? <ArrowRight size={15} /></Link>
               <Link href="/guide/nybygg-i-spania">Hva må jeg vite om nybygg? <ArrowRight size={15} /></Link>

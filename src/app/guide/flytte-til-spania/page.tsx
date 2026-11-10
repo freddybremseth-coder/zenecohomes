@@ -74,7 +74,7 @@ const body = `
 <p>Men det er store forskjeller i levekostnadene avhengig av hvor i Spania man bor. Kyst- og storbyer er vesentlig dyrere enn mindre steder i innlandet, spesielt i boligprisene.</p>
 <p>Når du lager ditt eget budsjett bør du ta høyde for:</p>
 <ul><li><strong>Bolig:</strong> Husleie eller faste utgifter knyttet til egen bolig, inkludert kommunale avgifter og eventuelle felleskostnader.</li><li><strong>Strøm og vann:</strong> Utgiftene varierer med boligtype, årstid og bruk av klimaanlegg eller oppvarming.</li><li><strong>Mat og dagligvarer:</strong> Generelt lavere priser enn i Norge, men kostnadene avhenger av handlevaner.</li><li><strong>Transport:</strong> Bilhold kan være nødvendig utenfor byene, mens større byer ofte har bedre kollektivtilbud.</li><li><strong>Forsikring og helsetjenester:</strong> Private forsikringer kan bli en betydelig utgift dersom du ikke har rett til offentlig helsehjelp.</li></ul>
-<p>Se <a href="/guide/lopende-kostnader-eie-bolig-spania">hva det koster å eie bolig i Spania</a> eller les om <a href="/guide/kostnader-boligkjop-spania">vanlige kostnader knyttet til et boligkjøp</a>.</p>
+<p>Se <a href="/guide/lopende-kostnader-eie-bolig-spania">hva det koster å eie bolig i Spania</a> eller les om <a href="/guide/kjope-bolig-i-spania">vanlige kostnader knyttet til et boligkjøp</a>.</p>
 <h2>Mine råd til deg som flytter til Spania</h2>
 <p>Siden jeg har flyttet til Spania selv, vet jeg godt at det er stor forskjell på å feriere her og bo her fast. Her er mine råd.</p>
 <h3>Lær deg språket</h3>

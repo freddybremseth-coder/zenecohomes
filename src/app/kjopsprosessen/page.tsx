@@ -257,7 +257,7 @@ export default function BuyingProcessPage() {
             <Link href="/guide/kjope-bolig-i-spania">
               Komplett kjøperguide <ArrowRight size={15} />
             </Link>
-            <Link href="/guide/kostnader-boligkjop-spania">
+            <Link href="/guide/kjope-bolig-i-spania">
               Kjøpskostnader og kalkulator <ArrowRight size={15} />
             </Link>
             <Link href="/guide/boliglan-spansk-bank-nordmenn">
@@ -449,7 +449,7 @@ export default function BuyingProcessPage() {
             Advokat, notar, registrering, eventuell bank/takst og andre kostnader kommer i tillegg.
             Derfor bør du bruke et konkret regnestykke for den aktuelle boligen.
           </p>
-          <Link className="text-button" href="/guide/kostnader-boligkjop-spania">
+          <Link className="text-button" href="/guide/kjope-bolig-i-spania">
             Se kostnadsguiden og kalkulatoren <ArrowRight size={16} />
           </Link>
         </div>

@@ -291,7 +291,7 @@ export const articles: Article[] = [
         "body": [
           "Totalprisen er summen av tomt, kjøpskostnader, prosjektering, tillatelser, selve byggingen, teknisk infrastruktur, uteområder og en reserve. Et pristilbud på en nøkkelferdig villa kan mangle store poster som tomt, fundamentering, vanskelige grunnforhold, tilkoblinger, basseng eller offentlige avgifter.",
           "Et godt budsjett deles i separate poster med ansvarlig leverandør og status for hvert beløp: fast pris, estimat, uavklart eller betinget. Kommunen kan blant annet ilegge lokal byggeskatt (*ICIO*) og gebyrer. Etter den nasjonale kommuneskatteloven kan kommunen fastsette ICIO-sats opp til 4 % av beregningsgrunnlaget for relevante byggetiltak; det er ikke riktig å legge 4 % på hele eiendomskjøpet uten videre. Sjekk sats og beregningsgrunnlag i den aktuelle kommunen.",
-          "Se [[reglene for kommunal byggeskatt ICIO|https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214]] og [[guiden til kostnader ved boligkjøp|/guide/kostnader-boligkjop-spania]]. Tabellen nedenfor er en budsjettstruktur, ikke et gjeldende pristilbud."
+          "Se [[reglene for kommunal byggeskatt ICIO|https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214]] og [[guiden til kostnader ved boligkjøp|/guide/kjope-bolig-i-spania]]. Tabellen nedenfor er en budsjettstruktur, ikke et gjeldende pristilbud."
         ],
         "table": {
           "headers": [
@@ -719,7 +719,7 @@ export const articles: Article[] = [
         "body": [
           "Du må normalt ha nok disponible midler til den delen av kjøpesummen banken ikke finansierer, pluss kjøpskostnadene. Hvor mye det blir, avhenger av kjøpesum, boligtype, region og bankens vurdering.",
           "For en bolig på 400 000 € med et hypotetisk lån på 60 % må du dekke 160 000 € av selve prisen. Legger vi illustrativt 42 000 € i kjøpskostnader til grunn, trenger du 202 000 € før ekstra reserve. Et lavere lånetilsagn eller en lavere banktakst øker behovet.",
-          "Ta med takst, eventuelle etableringskostnader, renter, valutaveksling og overføringer i budsjettet. Ikke bland utgifter til lånedokumentet med avgifter for eiendomskjøpet. Bruk kalkulatoren i /guide/kostnader-boligkjop-spania for den konkrete handelen."
+          "Ta med takst, eventuelle etableringskostnader, renter, valutaveksling og overføringer i budsjettet. Ikke bland utgifter til lånedokumentet med avgifter for eiendomskjøpet. Bruk kalkulatoren i [[kjøpsguiden|/guide/kjope-bolig-i-spania]] for den konkrete handelen."
         ]
       },
       {

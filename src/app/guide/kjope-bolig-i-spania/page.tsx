@@ -102,6 +102,7 @@ const legalChecks = [
 
 const faq = [
   { q: "Er det trygt å kjøpe bolig i Spania?", a: "Ja, det kan være trygt å kjøpe bolig i Spania når du bruker en uavhengig advokat, kontrollerer eierskap, heftelser, tillatelser og dokumentasjon, og forstår avtalene før du betaler eller signerer. Les også vår guide til juridiske fallgruver." },
+  { q: "Er notar og eiendomsregister inkludert i skatten?", a: "Nei. Skatter som ITP, IVA og AJD kommer i tillegg til kostnader for notar og registrering i eiendomsregisteret. Dette er separate kostnader som beregnes ut fra den konkrete handelen." },
   {
     q: "Hvor mange nordmenn kjøper bolig i Spania?",
     a: "Det finnes ikke ett fast årlig tall som beskriver norske kjøpere alene i de korte offisielle markedssammendragene, og antallet varierer fra år til år. Det sikre bildet er at utenlandske kjøpere utgjør en stor del av markedet, særlig på Costa Blanca. I andre kvartal 2026 sto utenlandske kjøpere for 15,98 % av boligkjøpene i Spania og 31,03 % i Comunitat Valenciana. For deg som kjøper er likevel område, totalbudsjett og kvaliteten på den konkrete kjøpsprosessen viktigere enn totalvolumet alene.",
@@ -283,29 +284,26 @@ export default async function BuyInSpainGuidePage() {
             <div>
               <h3>Kjøpesummen er ikke totalkostnaden</h3>
               <p>
-                Kjøpesummen er ikke totalbudsjettet. Hvor mye som kommer i tillegg avhenger av boligtype, gjeldende regionale skatter, juridisk bistand og finansieringen din. Den nøyaktige beregningen hører hjemme i vår egen kostnadsguide, ikke i en generell prosentregel.
+                Når du kjøper bolig i Spania, må du beregne mer enn kjøpesummen. Skatter, avgifter og kostnader til blant annet advokat, notar og eiendomsregister kommer i tillegg.
               </p>
               <p>
-                Ved kjøp av bruktbolig betaler kjøperen ITP (Impuesto sobre Transmisiones Patrimoniales), og satsen varierer mellom de autonome regionene i Spania. Kjøper du nybygg direkte fra en utbygger, betales normalt 10 % IVA (spansk merverdiavgift), i tillegg til AJD (dokumentavgift) som også varierer regionalt.
+                Ved kjøp av bruktbolig betaler kjøperen overføringsavgiften ITP (<em>Impuesto sobre Transmisiones Patrimoniales</em>). I Comunitat Valenciana er den generelle satsen 9 % (11 % dersom boligens verdi overstiger 1 million euro). Ved kjøp av nybygg betales normalt 10 % merverdiavgift (IVA) og 1,4 % dokumentavgift (AJD). AJD kan reduseres til 0,1 % dersom boligen oppfyller kravene til kjøperens faste bolig. Andre regionale satser og særregler kan gjelde.
               </p>
-              <p>I tillegg bør du ta høyde for:</p>
+              <p>I tillegg bør du beregne kostnader til:</p>
               <ul className="article-bullets">
-                <li>advokat og juridisk kontroll</li>
-                <li>notar</li>
+                <li>advokat og juridisk kontroll: Avklar på forhånd hva advokatens honorar inkluderer, for eksempel juridisk kontroll av boligen, gjennomgang av kontrakter og oppfølging frem til overtakelse.</li>
+                <li>notar: Honorarene følger regulerte tariffer og påvirkes av dokumentene og transaksjonen.</li>
                 <li>registrering i eiendomsregisteret</li>
-                <li>eventuell gestoría</li>
+                <li>eventuell gestoría: Kan være relevant for skatteinnlevering, registrering, kontrakter med leverandører og annen administrasjon, avhengig av hvem som håndterer kjøpet.</li>
                 <li>takst og andre kostnader dersom du finansierer kjøpet</li>
                 <li>valutaveksling dersom pengene skal overføres fra norske kroner til euro</li>
               </ul>
               <p>
-                Se <Link href="/guide/kostnader-boligkjop-spania">kjøpskostnader, gjeldende satser og kalkulator for bolig i Spania</Link> for en konkret beregning før reservasjon.
+                Bruk kalkulatoren nedenfor til å lage et foreløpig totalbudsjett før reservasjon. La advokaten bekrefte skattene og kostnadene for den konkrete handelen.
               </p>
               <p>
                 Husk også at kostnadene ikke stopper når du får nøklene. Som boligeier må du regne med løpende utgifter til blant annet kommunal eiendomsskatt (IBI), felleskostnader dersom boligen ligger i et sameie, forsikring, strøm, vann og vedlikehold.
               </p>
-              <Link className="text-button" href="/guide/kostnader-boligkjop-spania">
-                Se kjøpskostnader og beregn totalbudsjettet <ArrowRight size={15} />
-              </Link>
               <PurchaseBudgetCalculator />
             </div>
           </article>
@@ -495,13 +493,13 @@ export default async function BuyInSpainGuidePage() {
         <div className="section-heading" style={{ marginTop: 50 }}>
           <h3>Nybygg eller bruktbolig?</h3>
           <p>
-            Forskjellen mellom nybygg og bruktbolig handler først og fremst om hva du kjøper, når du kan overta og hvor mye usikkerhet du er komfortabel med. Med bruktbolig kan du se nøyaktig hva du kjøper, overta raskere og velge fra et større utvalg.
+            Forskjellen mellom nybygg og bruktbolig handler først og fremst om hva du kjøper, når du kan overta, og hvor mye usikkerhet du er komfortabel med. Med bruktbolig kan du se nøyaktig hva du kjøper, overta raskere og velge blant et større utvalg av boliger.
           </p>
           <p>
-            Nybygg gir på sin side moderne standard, mindre vedlikeholdsbehov og bedre forutsigbarhet rundt boligens tekniske tilstand. Sistnevnte er noe jeg mener er lett å undervurdere.
+            Nybygg gir på sin side moderne standard, mindre vedlikeholdsbehov og bedre forutsigbarhet rundt boligens tekniske tilstand. Det siste er noe jeg mener er lett å undervurdere.
           </p>
           <p>
-            Jeg har selv tatt over en spansk bruktbolig, som tilsynelatende var i god stand, men hvor store deler av gulvet måtte rives grunnet problemer med vannrørene. Denne enkelthendelsen betyr ikke at det er risikabelt å kjøpe bruktbolig i Spania, men den påpeker viktigheten av å undersøke teknisk stand og tidligere ombygging før du binder deg.
+            Jeg har selv overtatt en bruktbolig i Spania som tilsynelatende var i god stand. Likevel måtte store deler av gulvet rives på grunn av problemer med vannrørene. Denne erfaringen betyr ikke at det er risikabelt å kjøpe bruktbolig, men viser hvor viktig det er å undersøke boligens tekniske tilstand og tidligere ombygginger før du binder deg.
           </p>
         </div>
 
@@ -511,12 +509,12 @@ export default async function BuyInSpainGuidePage() {
               <tr><th scope="col">Tema</th><th scope="col">Nybygg</th><th scope="col">Bruktbolig</th></tr>
             </thead>
             <tbody>
-              <tr><th scope="row">Overtakelse</th><td data-label="Nybygg">Som regel et sted mellom 12 og 24 måneder</td><td data-label="Bruktbolig">Inntil 10 uker</td></tr>
-              <tr><th scope="row">Skatt ved kjøp</th><td data-label="Nybygg">Normalt 10 % IVA, i tillegg til AJD</td><td data-label="Bruktbolig">ITP varierer etter region og situasjon</td></tr>
-              <tr><th scope="row">Betaling</th><td data-label="Nybygg">Kjøpesummen betales ofte i flere omganger under byggeperioden</td><td data-label="Bruktbolig">Depositum først, resten ved signering hos notar</td></tr>
-              <tr><th scope="row">Vedlikehold</th><td data-label="Nybygg">Begrenset de første fem til ti årene</td><td data-label="Bruktbolig">Avhenger av alder og tidligere vedlikehold</td></tr>
-              <tr><th scope="row">Teknisk risiko</th><td data-label="Nybygg">Lavere grunnet nye installasjoner og lovbestemte garantier</td><td data-label="Bruktbolig">Høyere. Skjulte feil og eldre installasjoner kan forekomme</td></tr>
-              <tr><th scope="row">Tilpasninger</th><td data-label="Nybygg">Ofte mulig å velge enkelte materialer og løsninger</td><td data-label="Bruktbolig">Du kjøper i hovedsak boligen slik den står</td></tr>
+              <tr><th scope="row">Overtakelse</th><td data-label="Nybygg">Fra noen få måneder til opptil 24 måneder, avhengig av prosjektets fremdrift.</td><td data-label="Bruktbolig">Kan ofte overtas kort tid etter at kjøpet er gjennomført</td></tr>
+              <tr><th scope="row">Skatt ved kjøp</th><td data-label="Nybygg">Normalt 10 % IVA (merverdiavgift) og dokumentavgift (AJD)</td><td data-label="Bruktbolig">ITP (overføringsavgift), som varierer etter region og situasjon</td></tr>
+              <tr><th scope="row">Betaling</th><td data-label="Nybygg">Ved kjøp før ferdigstillelse betales kjøpesummen ofte i flere omganger</td><td data-label="Bruktbolig">Vanligvis depositum først og resten ved signering hos notar</td></tr>
+              <tr><th scope="row">Vedlikehold</th><td data-label="Nybygg">Vanligvis mindre vedlikehold de første årene</td><td data-label="Bruktbolig">Avhenger av boligens alder, tilstand og tidligere vedlikehold</td></tr>
+              <tr><th scope="row">Teknisk risiko</th><td data-label="Nybygg">Nye installasjoner og lovbestemte garantier gir bedre forutsigbarhet</td><td data-label="Bruktbolig">Eldre installasjoner og skjulte feil kan føre til uventede kostnader</td></tr>
+              <tr><th scope="row">Tilpasninger</th><td data-label="Nybygg">Ofte mulig å velge enkelte materialer og løsninger under byggeprosessen</td><td data-label="Bruktbolig">Du kjøper i hovedsak boligen slik den står</td></tr>
             </tbody>
           </table>
         </div>
@@ -589,6 +587,7 @@ export default async function BuyInSpainGuidePage() {
                 <p>
                   Reservasjon betyr ikke nødvendigvis at hele kjøpet er endelig avgjort, men avtalen kan likevel få økonomiske konsekvenser. Derfor bør du vite nøyaktig hva du signerer og på hvilke vilkår før pengene overføres.
                 </p>
+                <p>Ved kjøp av nybygg kan reservasjonsavtalen, kontraktsprosessen og betalingsplanen være annerledes. Les mer i <Link href="/guide/nybygg-i-spania">guiden vår til kjøp av nybygg i Spania</Link>.</p>
                 <p>
                   Etter reservasjonen går prosessen normalt videre med juridisk kontroll av eiendommen før du signerer en mer omfattende kjøpekontrakt.
                 </p>
@@ -600,15 +599,16 @@ export default async function BuyInSpainGuidePage() {
               <div>
                 <h3>Få eiendommen juridisk kontrollert</h3>
                 <p>
-                  Før du binder deg til kjøpet, bør eiendommen kontrolleres juridisk av en uavhengig advokat. Målet er å bekrefte at boligen faktisk kan selges på de vilkårene du er forespeilet, og at det ikke følger med problemer som først dukker opp etter overtakelsen.
+                  Før du binder deg til kjøpet, bør eiendommen kontrolleres juridisk av en uavhengig advokat. Målet er å bekrefte at boligen kan selges på de vilkårene du er forespeilet, og at det ikke følger med juridiske problemer som først dukker opp etter overtakelsen.
                 </p>
                 <p>En grundig kontroll bør blant annet avklare:</p>
                 <ul className="article-bullets">
                   {legalChecks.map((item) => <li key={item}>{item}</li>)}
                 </ul>
                 <p>
-                  Dette er viktig fordi spesielt eldre boliger kan ha blitt bygget om eller utvidet over tid uten at alle endringene nødvendigvis er registrert korrekt. Selv det minste avvik kan skape problemer ved videresalg, finansiering eller senere søknader om nye endringer.
+                  Dette er særlig viktig ved kjøp av eldre boliger, som kan ha blitt bygget om eller utvidet uten at alle endringene er registrert korrekt. Slike avvik kan skape problemer ved videresalg, finansiering eller senere søknader om nye endringer.
                 </p>
+                <p>Ved kjøp av nybygg bør også advokaten kontrollere at nødvendige tillatelser og dokumenter er på plass før du går videre med kjøpet.</p>
                 <Link href="/guide/juridiske-fallgruver-boligkjop-spania">
                   Les mer om juridiske fallgruver ved boligkjøp i Spania <ArrowRight size={15} />
                 </Link>

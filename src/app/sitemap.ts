@@ -68,6 +68,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "kombinere-ansattgode-bedriftsbruk-samme-bolig",
     "regnskapsforer-sporsmal-selskap-kjope-bolig-spania",
     "partnerprosess-introduksjon-til-kjop",
+    "bolig-under-bygging-eller-ferdig-spania",
     ...LEGACY_MARKET_COMPARISON_SLUGS,
   ]);
   const articlePaths = Array.from(
@@ -152,7 +153,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/omrader",
     "/guide/flytte-til-spania",
     "/guide/kjope-bolig-i-spania",
-    "/guide/kostnader-boligkjop-spania",
     "/guide/nybygg-i-spania",
     "/guide/finansiere-bolig-i-spania",
     "/visningstur",
