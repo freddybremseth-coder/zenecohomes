@@ -178,6 +178,7 @@ export const metadata = {
 export default async function MagazinePage() {
   const cmsArticles = await fetchPublishedPosts("magasin");
   const magazineCmsArticles = cmsArticles.filter((article) => {
+    if (article.slug === "bolig-under-bygging-eller-ferdig-spania") return false;
     if (article.slug === "markedsoppdatering-costa-blanca-oktober-2026" || article.slug === "boligmarkedet-costa-blanca-hosten-2026") return false;
     if (LEGACY_MARKET_COMPARISON_SLUGS.has(article.slug) || REDIRECTED_MAGAZINE_SLUGS.has(article.slug)) return false;
     const known = getMagazineArticle(article.slug);
@@ -185,7 +186,7 @@ export default async function MagazinePage() {
   });
   const cmsSlugs = new Set(magazineCmsArticles.map((article) => article.slug));
   const fallbackArticles = allArticles.filter(
-    (article) => !cmsSlugs.has(article.slug) && !articleSilo(article) && !REDIRECTED_MAGAZINE_SLUGS.has(article.slug),
+    (article) => article.slug !== "bolig-under-bygging-eller-ferdig-spania" && !cmsSlugs.has(article.slug) && !articleSilo(article) && !REDIRECTED_MAGAZINE_SLUGS.has(article.slug),
   );
   const currentMarketMaxAgeDays = 45;
   const marketAgeDays = (date: string) => Math.floor((Date.now() - new Date(date).getTime()) / 86_400_000);

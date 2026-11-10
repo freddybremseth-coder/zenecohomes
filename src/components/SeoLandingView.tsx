@@ -16,6 +16,13 @@ type Props = {
   guideMeta?: { author: string; authorHref: string; updated: string };
 };
 
+function linkedParagraph(paragraph: string) {
+  return paragraph.split(/(\[\[[^\]]+\|\/[^\]]+\]\])/g).map((part, index) => {
+    const match = /^\[\[([^|]+)\|(\/[^\]]+)\]\]$/.exec(part);
+    return match ? <Link key={index} href={match[2]}>{match[1]}</Link> : part;
+  });
+}
+
 export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
   const t = ui[locale];
   const selfUrl = `${BASE}${withLocale(locale, `/${page.slug}`)}`;
@@ -123,7 +130,7 @@ export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
                 </h2>
                 {section.body.map((paragraph) => (
                   <p key={paragraph} style={{ color: "var(--muted)", fontSize: "1.08rem", lineHeight: 1.9 }}>
-                    {paragraph}
+                    {linkedParagraph(paragraph)}
                   </p>
                 ))}
                 {section.bullets && (
@@ -145,7 +152,7 @@ export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
                 {page.faq.map((item) => (
                   <details key={item.question} style={{ border: "1px solid var(--line)", padding: 18, background: "#fbfbf7" }}>
                     <summary style={{ cursor: "pointer", color: "var(--dark)", fontWeight: 900 }}>{item.question}</summary>
-                    <p style={{ color: "var(--muted)", lineHeight: 1.75 }}>{item.answer}</p>
+                    <p style={{ color: "var(--muted)", lineHeight: 1.75 }}>{linkedParagraph(item.answer)}</p>
                   </details>
                 ))}
               </div>

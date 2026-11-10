@@ -42,7 +42,6 @@ for (const href of cornerstoneLinks) {
 const buyingProcess = "src/app/kjopsprosessen/page.tsx";
 for (const href of [
   "/guide/kjope-bolig-i-spania",
-  "/guide/kostnader-boligkjop-spania",
   "/guide/boliglan-spansk-bank-nordmenn",
   "/guide/nie-skattenummer-spania",
   "/guide/juridiske-fallgruver-boligkjop-spania",
@@ -132,7 +131,6 @@ requireText(plotGuideSource, '"href": "/om-oss/freddy"', "land guide author attr
 requireText(articleViewForEditorial, 'article.slug === "guide-tomtekjop-bygging-i-spania"', "land guide real contextual links");
 for (const link of [
   "/guide/kjope-bolig-i-spania",
-  "/guide/kostnader-boligkjop-spania",
   "/guide/juridiske-fallgruver-boligkjop-spania",
   "/omrader/innlandet/pinoso",
   "/booking",
@@ -325,7 +323,6 @@ for (const slug of guideSlugs) {
 // silently remove links from the rendered article.
 const financeRoutes = [
   "/guide/kjope-bolig-i-spania",
-  "/guide/kostnader-boligkjop-spania",
   "/guide/finansiere-bolig-i-spania",
   "/guide/boliglan-spansk-bank-nordmenn",
   "/guide/spansk-bankkonto-valutaveksling",
@@ -337,7 +334,7 @@ for (const url of financeRoutes.slice(1)) {
     errors.push(`Financial-guide cluster: missing discoverable contextual link to ${url}`);
   }
 }
-for (const url of financeRoutes.slice(1, 3).concat(financeRoutes.slice(5))) {
+for (const url of ["/guide/finansiere-bolig-i-spania", "/magasin/lan-i-norge-eller-spania-boligkjop"]) {
   requireText(cornerstone, `href="${url}"`, "cornerstone finance and cost link");
 }
 if (read("src/lib/content.ts").includes('href: "/guide/finansiering-notar-nie-boligkjop-spania"')) {

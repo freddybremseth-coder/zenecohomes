@@ -192,7 +192,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Egenkapital og kostnader",
       links: [
-        { label: "Kjøpskostnader i Spania – se satsene og prøv kalkulatoren", href: "/guide/kostnader-boligkjop-spania" },
+        { label: "Kjøpskostnader i Spania – se satsene og prøv kalkulatoren", href: "/guide/kjope-bolig-i-spania" },
       ],
     },
     {
@@ -722,7 +722,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Hva bør du sammenligne",
       links: [
         { label: "Finansieringsplan: egenkapital, likviditet og totalbudsjett", href: "/guide/finansiere-bolig-i-spania" },
-        { label: "Kjøpskostnader og kalkulator", href: "/guide/kostnader-boligkjop-spania" },
+        { label: "Kjøpskostnader og kalkulator", href: "/guide/kjope-bolig-i-spania" },
       ],
     },
   ],
@@ -809,7 +809,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     ]},
     { headingIncludes: "totalbudsjett", links: [
       { label: "Beregn totalbudsjettet før du kjøper", href: "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca" },
-      { label: "Se kjøpskostnader ved boligkjøp i Spania", href: "/guide/kostnader-boligkjop-spania" },
+      { label: "Se kjøpskostnader ved boligkjøp i Spania", href: "/guide/kjope-bolig-i-spania" },
     ]},
     { headingIncludes: "boligannonser", links: [
       { label: "Hvorfor Idealista og Finn ikke alltid er fasit", href: "/magasin/idealista-finn-ikke-alltid-til-a-stole-pa" },

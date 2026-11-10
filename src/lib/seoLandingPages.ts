@@ -86,47 +86,53 @@ export const seoLandingPages: SeoLandingPage[] = [
     seoDescription:
       "Nybygg i Spania: les om utbygger, betalingsplan, bankgaranti, 10 % IVA, AJD, energieffektivitet, tilvalg, overtakelse og trygg kjøpsprosess.",
     primaryCta: { label: "Se nybygg og boliger", href: "/eiendommer" },
-    secondaryCta: { label: "Beregn kjøpskostnadene", href: "/guide/kostnader-boligkjop-spania" },
+    secondaryCta: { label: "Beregn kjøpskostnadene", href: "/guide/kjope-bolig-i-spania" },
     sections: [
       {
         heading: "Hvorfor mange velger nybygg i Spania",
         body: [
-          "Nybygg gir ofte moderne planløsninger, nye tekniske installasjoner, bedre energiytelse og mindre vedlikehold de første årene. For en feriebolig kan det være attraktivt å vite at rør, strøm, klimaanlegg, vinduer og fellesanlegg er nye fremfor å overta en eldre bolig med ukjent historikk.",
-          "Nybygg er likevel ikke automatisk et tryggere eller bedre kjøp. Du må vurdere mikrobeliggenheten, utbyggeren, prosjektfasen, betalingsplanen, hva som faktisk er inkludert og hvor lenge du skal vente på overtakelsen. Et flott visningskontor eller en god 3D-presentasjon erstatter ikke dokumentkontroll.",
+          "Nybygg gir ofte moderne planløsninger, nye tekniske installasjoner, god energieffektivitet og mindre vedlikeholdsbehov de første årene. For mange som kjøper feriebolig i Spania, er det attraktivt å vite at rør, elektriske anlegg, klimaanlegg, vinduer og fellesanlegg er nye, og at boligen er bygget etter dagens tekniske standarder.",
+          "En annen fordel med nybygg er muligheten til å velge en bolig som passer egne ønsker og behov. Avhengig av prosjektets fremdrift kan du ofte påvirke materialvalg, overflater og enkelte løsninger før boligen ferdigstilles. For å få mest mulig ut av kjøpet er det likevel viktig å sette seg inn i prosjektets leveransebeskrivelse, kontrakt og betalingsplan før du reserverer.",
         ],
         bullets: [
-          "Lavere forventet vedlikehold i starten, men ikke vedlikeholdsfritt.",
-          "Ofte bedre isolasjon, vinduer og energieffektive tekniske løsninger.",
-          "Mulighet for enkelte tilvalg dersom du kjøper tidlig nok i prosjektet.",
-          "Større behov for å forstå kontrakt, byggeperiode og forskuddsbetalinger.",
+          "Mindre vedlikehold: Nye installasjoner og materialer gir vanligvis lavere vedlikeholdsbehov de første årene.",
+          "Energieffektivitet: Moderne isolasjon, vinduer og tekniske løsninger kan gi bedre energiytelse.",
+          "Tilpasningsmuligheter: Mulighet til å velge enkelte materialer og løsninger dersom du kjøper tidlig nok i prosjektet.",
+          "Moderne standard: Planløsninger, fasiliteter og tekniske løsninger tilpasset dagens boligbehov.",
+          "Forutsigbarhet: Du får oversikt over boligens standard, leveranse og forventede ferdigstillelse før overtakelse.",
         ],
       },
       {
-        heading: "Slik skiller nybygg seg fra bruktbolig",
+        heading: "Kjøp av nybygg før boligen er ferdig",
         body: [
-          "Ved bruktbolig kan du normalt se den ferdige boligen, undersøke faktiske solforhold og overta forholdsvis raskt. Ved nybygg kan du kjøpe fra plantegning eller mens prosjektet er under oppføring. Da blir kontrakt, leveransebeskrivelse og utbyggers dokumentasjon en større del av beslutningsgrunnlaget.",
-          "Betalingen skjer også ofte trinnvis. Reservasjon etterfølges gjerne av kontrakt og avtalte delbetalinger under byggeperioden, før sluttoppgjøret gjennomføres ved ferdigstillelse og notar. Den konkrete betalingsplanen varierer fra prosjekt til prosjekt.",
+          "Når du kjøper bruktbolig i Spania, kan du undersøke den ferdige boligen, se hvordan den ligger i terrenget og vurdere standarden før du bestemmer deg. Du får også et større utvalg av etablerte boliger og områder, men må være forberedt på at det kan dukke opp behov for oppussing eller vedlikehold.",
+          "Med nybygg får du en bolig som er bygget etter nyere standarder, med moderne planløsning og tekniske løsninger. Du slipper ofte større oppgraderinger i starten, og i enkelte prosjekter kan du velge materialer og tilpasninger. Til gjengjeld må du undersøke hva som faktisk inngår i leveransen, og være oppmerksom på at boligen kan være under oppføring når du kjøper.",
+          "Valget handler derfor ikke bare om pris og standard, men også om hvor mye du ønsker å kunne kontrollere før kjøpet, hvor raskt du vil overta og hvor mye arbeid du er villig til å legge i boligen etterpå.",
+          "Vil du vite mer om forskjellen mellom å kjøpe nybygg under oppføring og en ferdigstilt bolig? Les [[vår guide til nybygg under oppføring eller innflyttingsklar bolig i Spania|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
         ],
       },
       {
         heading: "Hva du bør kontrollere før du reserverer",
         body: [
-          "Før reservasjon bør pris, tilgjengelighet, bygge- og leveringsstatus bekreftes skriftlig. Be også om plantegning, kvalitetsbeskrivelse, betalingsplan og informasjon om hva som er inkludert i den annonserte prisen.",
-          "Jeg anbefaler at en uavhengig spansk advokat kontrollerer prosjektet og kontraktene før du gjør vesentlige betalinger. Megler, utbygger, notar og kjøpers advokat har forskjellige roller; advokaten skal ivareta dine interesser.",
+          "Før du reserverer et nybygg, bør du undersøke hvem som står bak prosjektet, hvor langt byggeprosessen har kommet, og hva som faktisk inngår i kjøpet. Be om skriftlig dokumentasjon på pris, tilgjengelighet, forventet ferdigstillelse og leveranse.",
+          "Jeg anbefaler at en uavhengig spansk advokat kontrollerer prosjektets dokumentasjon og kontraktene før du signerer eller gjør større innbetalinger. Megler, utbygger, notar og kjøpers advokat har forskjellige roller. Advokaten skal ivareta dine interesser.",
         ],
         bullets: [
-          "Hvem er utbygger, og hvilke prosjekter har selskapet levert tidligere?",
-          "Foreligger nødvendige tillatelser for den fasen prosjektet er i?",
-          "Hva er forventet ferdigstillelse, og hva sier kontrakten om forsinkelse?",
-          "Hvilken bolig, parkering, bod, terrasse og uteareal er juridisk knyttet til kjøpet?",
-          "Hva følger med av hvitevarer, belysning, klimaanlegg, møbler, basseng og hage?",
+          "Utbygger: Hvem står bak prosjektet, og hvilke boliger har selskapet levert tidligere?",
+          "Byggetillatelser: Foreligger nødvendige tillatelser for prosjektet og byggefasen?",
+          "Fremdrift: Når er boligen forventet ferdigstilt, og hva sier kontrakten om eventuelle forsinkelser?",
+          "Boligen du kjøper: Hvilken bolig, parkering, bod, terrasse og uteareal inngår i avtalen?",
+          "Leveransen: Hva er inkludert i prisen, for eksempel hvitevarer, belysning, klimaanlegg, møbler, basseng og hage?",
+          "Betalingsplan: Når skal de ulike innbetalingene gjennomføres, og hvordan er forskuddsbetalingene sikret?",
         ],
       },
       {
         heading: "Betalingsplan og sikring av forskuddsbetalinger",
         body: [
-          "Når du kjøper bolig under oppføring, betaler du ofte deler av kjøpesummen før boligen er ferdig. Etter dagens regler i Ley de Ordenación de la Edificación skal relevante forskuddsbetalinger, fra tidspunktet lovens vilkår er oppfylt, sikres gjennom godkjent forsikring eller bankgaranti dersom prosjektet ikke blir startet eller ferdigstilt som avtalt.",
+          "Når du kjøper bolig under oppføring, betaler du ofte deler av kjøpesummen før boligen er ferdig. Betalingsplanen varierer fra prosjekt til prosjekt, men fordeles gjerne over byggeperioden frem til sluttoppgjøret ved overtakelse. Ved kjøp av ferdigstilt bolig betales normalt en større del av kjøpesummen på kortere tid. Be om en fullstendig betalingsplan tidlig, slik at du kan planlegge finansieringen og ta høyde for eventuelle endringer i valutakursen dersom du betaler med norske kroner.",
+          "Etter dagens regler i Ley de Ordenación de la Edificación skal relevante forskuddsbetalinger, fra tidspunktet lovens vilkår er oppfylt, sikres gjennom godkjent forsikring eller bankgaranti dersom prosjektet ikke blir startet eller ferdigstilt som avtalt.",
           "Reglene krever også at slike forskudd håndteres gjennom en særskilt konto, og garantien skal omfatte forskuddsbeløpene, relevante skatter og lovbestemt rente. Din advokat bør kontrollere at garantien, kontoen, beløpet, kjøpernavnet og den konkrete boligen stemmer før vesentlige overføringer.",
+          "Vil du lese mer om kravene for bankgaranti, forskuddsbetalinger og kjøperbeskyttelse? Se [[vår grundige guide til nybygg under oppføring eller innflyttingsklar bolig i Spania|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
         ],
         bullets: [
           "Betal bare til konto som er kontrollert mot prosjekt og kontrakt.",
@@ -138,21 +144,28 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Hva koster nybygg i tillegg til kjøpesummen?",
         body: [
-          "Ordinær førstegangsoverdragelse av bolig fra utbygger har normalt 10 % IVA. I tillegg kommer regional AJD. På Costa Blanca i Comunitat Valenciana er den generelle AJD-satsen 1,4 % fra 1. juni 2026 for relevante notarielle dokumenter, mens særregler blant annet finnes for egen faste bolig når vilkårene er oppfylt.",
-          "I tillegg må du budsjettere med juridisk bistand, notar og eiendomsregister, og eventuelle kostnader knyttet til finansiering, fullmakt, oversettelse, møbler og tilvalg. Bruk derfor totalbudsjett, ikke annonsert kjøpesum, når du bestemmer prisklasse.",
+          "Når du kjøper nybygg i Spania, betaler du normalt 10 % IVA (merverdiavgift) og dokumentavgift (AJD). På Costa Blanca i Comunitat Valenciana er den generelle AJD-satsen 1,4 % fra 1. juni 2026. Det finnes reduserte satser dersom boligen skal brukes som fast bolig og vilkårene er oppfylt.",
+          "I tillegg bør du undersøke om det kommer kostnader for tilvalg, møblering eller opparbeiding av uteområder. Dette varierer fra prosjekt til prosjekt, og er ikke alltid inkludert i annonsert pris. Be om en skriftlig oversikt over hva som inngår i prisen, og hvilke tillegg du må regne med. Da får du et mer realistisk bilde av hva boligen faktisk vil koste.",
         ],
         bullets: [
-          "IVA på ordinære nye boliger: normalt 10 %.",
-          "AJD er regional og må kontrolleres for den konkrete boligen og kjøperen.",
-          "Notar og register følger regulerte tariffer og beregnes konkret.",
-          "Advokathonorar og andre tjenester avtales med leverandøren.",
+          "IVA: Betales normalt sammen med de ulike innbetalingene dersom boligen kjøpes før den er ferdig.",
+          "AJD: Beregnes separat og betales i forbindelse med skjøtet.",
+          "Tilvalg og tillegg: Ekstra materialvalg, hvitevarer, møbler, basseng eller hage kan påvirke totalprisen.",
+          "Juridisk bistand, notar og eiendomsregister: Kommer i tillegg og bør tas med i totalbudsjettet.",
         ],
       },
       {
         heading: "Leveransebeskrivelsen er like viktig som plantegningen",
         body: [
-          "Mange prosjekter presenteres med svært gode illustrasjoner, men det er leveransebeskrivelsen og kontrakten som bør styre forventningene. Kontroller hvilke materialer og kvaliteter som er avtalt, hvilke produkter som kan erstattes med tilsvarende, og hva som regnes som tilvalg.",
-          "Sjekk spesielt kjøkken og hvitevarer, belysning, garderober, klimaanlegg, gulv, baderom, solskjerming, solceller, basseng, hage, parkering, ladeløsning og opparbeidelse av uteområder. To boliger med lik annonsepris kan få svært forskjellig sluttpris når tilvalg tas med.",
+          "Mange nybyggprosjekter presenteres med flotte illustrasjoner og plantegninger. Men det er leveransebeskrivelsen og kontrakten som viser hvilken standard og hvilke materialer du faktisk får. Kontroller hvilke kvaliteter som er avtalt, og om utbygger kan erstatte produkter med tilsvarende alternativer.",
+          "Ikke ta for gitt at alt du ser på illustrasjoner eller i en visningsbolig følger med i prisen. Be om en skriftlig oversikt over hva som er inkludert, og hva som eventuelt kommer i tillegg. To boliger med lik annonsert pris kan få svært forskjellig totalpris når tilvalg og uteområder tas med.",
+        ],
+        bullets: [
+          "Kjøkken: Innredning, benkeplate og hvitevarer.",
+          "Innvendig standard: Gulv, garderober, belysning og baderomsinnredning.",
+          "Tekniske løsninger: Klimaanlegg, oppvarming, ventilasjon og solceller.",
+          "Uteområder: Basseng, hage, terrasse, solskjerming og opparbeidelse av tomten.",
+          "Parkering: Parkeringsplass, bod og eventuell ladeløsning for elbil.",
         ],
       },
       {
@@ -165,15 +178,28 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Overtakelse: kontroller boligen før sluttoppgjøret",
         body: [
-          "Når boligen nærmer seg ferdigstillelse, bør dokumentasjon og fysisk leveranse kontrolleres før sluttoppgjøret. Gå gjennom boligen systematisk og noter mangler, skader, feil på overflater, dører, vinduer, sanitærutstyr, elektrisk anlegg, klimaanlegg og eventuelle tilvalg.",
-          "Spansk byggelovgivning har ulike ansvarsperioder for byggfeil, blant annet ett år for enkelte utførelsesfeil, tre år for forhold knyttet til habitabilitet og ti år for alvorlige strukturelle feil. Dette betyr ikke at alle problemer automatisk løses; dokumenter avvik tidlig og bruk de riktige fagpersonene.",
+          "Når boligen nærmer seg ferdigstillelse, bør du kontrollere både dokumentasjonen og den fysiske leveransen før sluttoppgjøret. Gå gjennom boligen systematisk, og sjekk at den samsvarer med kontrakten og leveransebeskrivelsen.",
+          "Dokumenter eventuelle mangler med bilder og en skriftlig liste. Be om en plan for utbedring, og få advokaten din til å vurdere dokumentasjonen og eventuelle uavklarte forhold før sluttoppgjøret.",
+          "Spansk byggelovgivning har ulike ansvarsperioder for bestemte typer byggfeil. Det er viktig å kjenne forskjellen mellom disse og garantier for forskuddsbetalinger. Les mer: [[Feil og mangler i nybygg i Spania – slik går du frem ved overtakelse og reklamasjon|/magasin/feil-mangler-nybygg-spania-reklamasjon]].",
+        ],
+        bullets: [
+          "Overflater og utførelse: Gulv, fliser, vegger, fuger og maling.",
+          "Dører og vinduer: Åpning, lukking, låser og tetting.",
+          "Tekniske installasjoner: Vann, avløp, strøm, ventilasjon og klimaanlegg.",
+          "Avtalte leveranser: Hvitevarer, belysning, garderober, basseng, hage og eventuelle tilvalg.",
+          "Dokumentasjon: Nødvendige ferdigstillelses- og bruksdokumenter, energidokumentasjon og garantier.",
         ],
       },
       {
         heading: "Tidlig prosjektfase eller nesten ferdig?",
         body: [
-          "Kjøper du tidlig, kan du få større utvalg av beliggenhet i prosjektet og noen ganger flere tilvalg, men du må vente lenger og forholde deg til mer byggeaktivitet og større usikkerhet rundt det ferdige nabolaget. Kjøper du nær ferdigstillelse, ser du mer av det faktiske resultatet og kan ofte overta raskere, men de beste plasseringene kan allerede være solgt.",
-          "Jeg ville derfor sammenlignet ikke bare pris, men solretning, utsikt, fremtidige byggetrinn, nabotomter, fellesområder, vei og gangavstand til det du faktisk skal bruke i hverdagen.",
+          "Kjøper du tidlig i et byggeprosjekt, får du ofte flere boligenheter å velge mellom. Du kan ha større mulighet til å velge etasje, orientering, utsikt og plassering, og i noen prosjekter kan du også påvirke materialvalg og tilvalg før byggingen har kommet for langt.",
+          "Prisene kan endre seg gjennom byggeprosessen, og noen utbyggere justerer prisene etter hvert som prosjektet utvikles. Ved å kjøpe tidlig kan du derfor i enkelte tilfeller få en gunstigere pris, samtidig som du gjerne har flere boliger å velge mellom.",
+          "Kjøper du tidlig, må du samtidig ta utgangspunkt i tegninger, beskrivelser og eventuelle visningsboliger når du vurderer hvordan den ferdige boligen og omgivelsene vil bli. Det kan være lurt å undersøke solforhold, utsikt, innsyn, fremtidige byggetrinn og hvordan fellesområdene er planlagt.",
+          "Velger du en ferdigstilt eller nesten ferdig bolig, får du mulighet til å se mer av det faktiske resultatet før du bestemmer deg. Du kan undersøke utsikten fra terrassen, vurdere solforhold, materialer, fellesområder og omgivelsene rundt boligen. Leveringstiden er gjerne kortere, men utvalget av boliger kan være mer begrenset, og mulighetene for individuelle tilpasninger færre.",
+          "Prosjektfasen påvirker også hvordan kjøpet finansieres. Ved kjøp under oppføring fordeles betalingen ofte over byggeperioden. Det gir deg mulighet til å planlegge økonomien over lengre tid, men du bør også ta høyde for valutakursen dersom du betaler med norske kroner. Ved kjøp av ferdig bolig betales normalt en større del av kjøpesummen på kortere tid.",
+          "Hva som passer best, avhenger av dine ønsker og behov. Ønsker du størst mulig valgfrihet og mulighet til å påvirke boligens utforming, kan det lønne seg å se på prosjekter tidlig i byggefasen. Vil du heller se den ferdige boligen før du kjøper og kunne flytte inn raskere, kan en innflyttingsklar bolig være et godt alternativ.",
+          "Vil du sammenligne fordeler og ulemper ved å kjøpe bolig under oppføring eller velge en ferdigstilt bolig? Les [[vår guide til nybygg under oppføring eller innflyttingsklar bolig i Spania|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
         ],
       },
       {
@@ -186,39 +212,19 @@ export const seoLandingPages: SeoLandingPage[] = [
     ],
     faq: [
       {
-        question: "Hvor mye skatt betaler man på nybygg i Spania?",
-        answer:
-          "Ved ordinær førstegangsoverdragelse av bolig fra utbygger er IVA normalt 10 %. Regional AJD kommer i tillegg. I Comunitat Valenciana er den generelle AJD-satsen 1,4 % fra 1. juni 2026, med særregler for enkelte situasjoner.",
-      },
-      {
-        question: "Er forskuddsbetalinger på nybygg sikret?",
-        answer:
-          "Spansk lov har regler om sikring av relevante forskuddsbetalinger gjennom bankgaranti eller forsikring når vilkårene er oppfylt. Advokaten din bør kontrollere garanti, særskilt konto og dokumentasjon for den konkrete betalingen.",
-      },
-      {
-        question: "Gjelder Ley 57/1968 fortsatt?",
-        answer:
-          "Selve Ley 57/1968 er opphevet. Beskyttelsen av forskuddsbetalinger er videreført i senere lovgivning, særlig i Ley de Ordenación de la Edificación med dagens regler om garantier.",
-      },
-      {
-        question: "Er nybygg alltid mer energieffektivt?",
-        answer:
-          "Nyere krav gir ofte bedre energiytelse, men ikke alle prosjekter er like. Sammenlign energiklasse, isolasjon, vinduer, orientering, solskjerming og tekniske installasjoner på den konkrete boligen.",
-      },
-      {
         question: "Kan prisene på nybygg forhandles?",
         answer:
-          "Utbyggere har ofte faste prislister, men det kan i noen prosjekter finnes rom for tilvalg, møbler, hvitevarer, betalingsplan eller andre kommersielle vilkår. Sammenlign alltid totalpakken.",
+          "Utbyggere har ofte faste prislister, men det kan i enkelte prosjekter være rom for å forhandle om tilvalg, møbler, hvitevarer, betalingsplan eller andre kommersielle vilkår. Mulighetene varierer mellom utbyggere og prosjektfaser. Sammenlign alltid totalpakken, ikke bare boligprisen.",
       },
       {
         question: "Hvor lang tid tar det før et nybygg er ferdig?",
         answer:
-          "Det varierer med prosjektfase. Mange kjøp under oppføring innebærer 12–24 måneders ventetid, men ferdige eller nesten ferdige boliger kan overtas langt raskere. Bruk kontraktens konkrete leveringsfrister som grunnlag.",
+          "Det avhenger av hvor langt prosjektet har kommet når du kjøper. En bolig som fortsatt er under oppføring, kan ha betydelig lengre leveringstid enn en ferdigstilt bolig. Sjekk forventet ferdigstillelse og avtalte leveringsfrister i kontrakten. Vil du sammenligne fordeler og ulemper ved de ulike prosjektfasene? Les [[vår guide til nybygg under oppføring eller innflyttingsklar bolig i Spania|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
       },
     ],
     related: [
       { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
-      { label: "Kostnader ved boligkjøp – med kalkulator", href: "/guide/kostnader-boligkjop-spania" },
+      { label: "Kostnader ved boligkjøp – med kalkulator", href: "/guide/kjope-bolig-i-spania" },
       { label: "Finansiere bolig i Spania", href: "/guide/finansiere-bolig-i-spania" },
       { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       { label: "Boliger og nybygg til salgs", href: "/eiendommer" },
