@@ -140,6 +140,11 @@ export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
                     ))}
                   </ul>
                 )}
+                {section.afterBullets?.map((paragraph) => (
+                  <p key={paragraph} style={{ color: "var(--muted)", fontSize: "1.08rem", lineHeight: 1.9 }}>
+                    {linkedParagraph(paragraph)}
+                  </p>
+                ))}
               </section>
             ))}
 
