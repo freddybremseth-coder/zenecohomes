@@ -290,7 +290,7 @@ export default async function BuyInSpainGuidePage() {
                 Når du kjøper bolig i Spania, må du beregne mer enn kjøpesummen. Skatter, avgifter og kostnader til blant annet advokat, notar og eiendomsregister kommer i tillegg.
               </p>
               <p>
-                Ved kjøp av bruktbolig betaler kjøperen overføringsavgiften ITP (<em>Impuesto sobre Transmisiones Patrimoniales</em>). I Comunitat Valenciana er den generelle satsen 9 % (11 % dersom boligens verdi overstiger 1 million euro). Ved kjøp av nybygg betales normalt 10 % merverdiavgift (IVA) og 1,4 % dokumentavgift (AJD). AJD kan reduseres til 0,1 % dersom boligen oppfyller kravene til kjøperens faste bolig. Andre regionale satser og særregler kan gjelde.
+                Ved kjøp av bruktbolig betaler kjøperen overføringsavgiften ITP (<em>Impuesto sobre Transmisiones Patrimoniales</em>). I Comunitat Valenciana er den generelle satsen 9 % (11 % dersom boligens verdi overstiger 1 million euro). Ved kjøp av nybygg betales normalt 10 % merverdiavgift (IVA) og 1,4 % dokumentavgift (AJD). AJD kan reduseres til 0,1 % dersom boligen oppfyller kravene til kjøperens faste bolig.
               </p>
               <p>I tillegg bør du beregne kostnader til:</p>
               <ul className="article-bullets">
@@ -298,7 +298,6 @@ export default async function BuyInSpainGuidePage() {
                 <li>notar: Honorarene følger regulerte tariffer og påvirkes av dokumentene og transaksjonen.</li>
                 <li>registrering i eiendomsregisteret</li>
                 <li>eventuell gestoría: Kan være relevant for skatteinnlevering, registrering, kontrakter med leverandører og annen administrasjon, avhengig av hvem som håndterer kjøpet.</li>
-                <li>takst og andre kostnader dersom du finansierer kjøpet</li>
                 <li>valutaveksling dersom pengene skal overføres fra norske kroner til euro</li>
               </ul>
               <p>
