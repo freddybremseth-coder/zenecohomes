@@ -243,9 +243,6 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Ønsker du en bredere oversikt over kjøpsprosessen, kostnader og hva du bør undersøke når du kjøper nybygg? Les vår <Link href="/guide/nybygg-i-spania">komplette guide til nybygg i Spania</Link>.
           </p>
-          <p>
-            Ønsker du en bredere oversikt over kjøpsprosessen, kostnader og hva du bør undersøke når du kjøper nybygg? Les vår <Link href="/guide/nybygg-i-spania">komplette guide til nybygg i Spania</Link>.
-          </p>
         </div>
       </section>
 
