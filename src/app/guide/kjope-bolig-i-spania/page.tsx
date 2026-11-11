@@ -240,6 +240,9 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Jeg har fulgt kjøpsprosessen tett fra begge sider, både som selger og privat kjøper, og vet godt hvilke spørsmål som dukker opp underveis. Her får du svar på det som er viktigst å vite før du kjøper hus, leilighet eller annen eiendom i Spania.
           </p>
+          <p>
+            Ønsker du en bredere oversikt over kjøpsprosessen, kostnader og hva du bør undersøke når du kjøper nybygg? Les vår <Link href="/guide/nybygg-i-spania">komplette guide til nybygg i Spania</Link>.
+          </p>
         </div>
       </section>
 
