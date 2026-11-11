@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { SiteLocale } from "@/lib/i18n";
+import { articleSilo, getMagazineArticle } from "@/lib/magazine";
 
 const labels: Record<SiteLocale, Record<string, string>> = {
   no: {
@@ -101,16 +102,40 @@ export function Breadcrumbs({ locale = "no" }: { locale?: SiteLocale }) {
   const segments = ["en", "de", "es"].includes(rawSegments[0]) ? rawSegments.slice(1) : rawSegments;
   const localePrefix = locale === "no" ? "" : `/${locale}`;
 
-  const items = [
-    { label: homeLabel[locale], href: localePrefix || "/" },
-    ...segments.map((segment, index) => {
-      const path = segments.slice(0, index + 1).join("/");
-      return {
-        label: humanize(segment, locale, index, segments),
-        href: `${localePrefix}/${path}`,
-      };
-    }),
-  ];
+  const isCorporateSection = segments[0] === "bedriftshytte-spania";
+  const corporateArticle =
+    isCorporateSection && segments.length === 2 ? getMagazineArticle(segments[1]) : undefined;
+  const isCorporateGuideArticle =
+    corporateArticle !== undefined && articleSilo(corporateArticle) === "corporate";
+
+  const items = isCorporateSection
+    ? [
+        { label: homeLabel[locale], href: localePrefix || "/" },
+        { label: "Bedriftshytte i Spania", href: `${localePrefix}/bedriftshytte-spania` },
+        ...(segments.length === 1
+          ? []
+          : segments[1] === "guider"
+            ? [{ label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` }]
+            : isCorporateGuideArticle
+              ? [
+                  { label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` },
+                  { label: corporateArticle.title, href: `${localePrefix}/bedriftshytte-spania/${corporateArticle.slug}` },
+                ]
+              : segments.slice(1).map((segment, index) => ({
+                  label: humanize(segment, locale, index + 1, segments),
+                  href: `${localePrefix}/${segments.slice(0, index + 2).join("/")}`,
+                }))),
+      ]
+    : [
+        { label: homeLabel[locale], href: localePrefix || "/" },
+        ...segments.map((segment, index) => {
+          const path = segments.slice(0, index + 1).join("/");
+          return {
+            label: humanize(segment, locale, index, segments),
+            href: `${localePrefix}/${path}`,
+          };
+        }),
+      ];
 
   return (
     <nav className="global-breadcrumbs" aria-label={locale === "no" ? "Brødsmuler" : "Breadcrumb"}>
