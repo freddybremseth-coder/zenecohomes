@@ -116,7 +116,7 @@ export function Breadcrumbs({ locale = "no" }: { locale?: SiteLocale }) {
           ? []
           : segments[1] === "guider"
             ? [{ label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` }]
-            : isCorporateGuideArticle
+            : isCorporateGuideArticle && corporateArticle
               ? [
                   { label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` },
                   { label: corporateArticle.title, href: `${localePrefix}/bedriftshytte-spania/${corporateArticle.slug}` },
