@@ -19,7 +19,7 @@ type Props = {
 function linkedParagraph(paragraph: string) {
   return paragraph.split(/(\[\[[^\]]+\|\/[^\]]+\]\])/g).map((part, index) => {
     const match = /^\[\[([^|]+)\|(\/[^\]]+)\]\]$/.exec(part);
-    return match ? <Link key={index} href={match[2]}>{match[1]}</Link> : part;
+    return match ? (\n      <Link\n        key={index}\n        href={match[2]}\n        style={{\n          color: "var(--ze-sea)",\n          textDecoration: "underline",\n          textDecorationColor: "rgba(8, 74, 78, 0.25)",\n          textUnderlineOffset: 3,\n        }}\n      >\n        {match[1]}\n      </Link>\n    ) : part;
   });
 }
 
