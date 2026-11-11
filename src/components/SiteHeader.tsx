@@ -12,8 +12,10 @@ export function SiteHeader({
   locale = "no",
   languageLinks,
   homepage = false,
+  breadcrumbCurrentLabel,
 }: {
   homepage?: boolean;
+  breadcrumbCurrentLabel?: string;
   locale?: SiteLocale;
   languageLinks?: LanguageLink[];
 } = {}) {
@@ -201,7 +203,7 @@ export function SiteHeader({
         ) : <span className="language-switcher">{languageOptions}</span>)}
       </nav>
       </header>
-      <Breadcrumbs locale={locale} />
+      <Breadcrumbs locale={locale} currentLabel={breadcrumbCurrentLabel} />
     </>
   );
 }

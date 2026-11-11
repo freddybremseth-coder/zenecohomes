@@ -29,7 +29,7 @@ export default async function CorporateArticlePage({ params }: PageProps) {
 
   return (
     <main className="corporate-page">
-      <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
+      <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} breadcrumbCurrentLabel={article.title} />
       <ArticleView article={article} />
       <Footer />
     </main>

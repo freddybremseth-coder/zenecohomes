@@ -90,7 +90,7 @@ function humanize(segment: string, locale: SiteLocale, index: number, segments: 
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-export function Breadcrumbs({ locale = "no" }: { locale?: SiteLocale }) {
+export function Breadcrumbs({ locale = "no", currentLabel }: { locale?: SiteLocale; currentLabel?: string }) {
   const pathname = usePathname() || "/";
   const normalized = pathname.replace(/\/$/, "") || "/";
   if (normalized === "/" || normalized === `/${locale}` || propertyDetailPatterns.some((pattern) => pattern.test(normalized))) {
@@ -101,16 +101,36 @@ export function Breadcrumbs({ locale = "no" }: { locale?: SiteLocale }) {
   const segments = ["en", "de", "es"].includes(rawSegments[0]) ? rawSegments.slice(1) : rawSegments;
   const localePrefix = locale === "no" ? "" : `/${locale}`;
 
-  const items = [
-    { label: homeLabel[locale], href: localePrefix || "/" },
-    ...segments.map((segment, index) => {
-      const path = segments.slice(0, index + 1).join("/");
-      return {
-        label: humanize(segment, locale, index, segments),
-        href: `${localePrefix}/${path}`,
-      };
-    }),
-  ];
+  const isCorporateSection = segments[0] === "bedriftshytte-spania";
+
+  const items = isCorporateSection
+    ? [
+        { label: homeLabel[locale], href: localePrefix || "/" },
+        { label: "Bedriftshytte i Spania", href: `${localePrefix}/bedriftshytte-spania` },
+        ...(segments.length === 1
+          ? []
+          : segments[1] === "guider"
+            ? [{ label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` }]
+            : currentLabel
+              ? [
+                  { label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` },
+                  { label: currentLabel, href: `${localePrefix}/${segments.join("/")}` },
+                ]
+              : segments.slice(1).map((segment, index) => ({
+                  label: humanize(segment, locale, index + 1, segments),
+                  href: `${localePrefix}/${segments.slice(0, index + 2).join("/")}`
+                }))),
+      ]
+    : [
+        { label: homeLabel[locale], href: localePrefix || "/" },
+        ...segments.map((segment, index) => {
+          const path = segments.slice(0, index + 1).join("/");
+          return {
+            label: humanize(segment, locale, index, segments),
+            href: `${localePrefix}/${path}`,
+          };
+        }),
+      ];
 
   return (
     <nav className="global-breadcrumbs" aria-label={locale === "no" ? "Brødsmuler" : "Breadcrumb"}>
