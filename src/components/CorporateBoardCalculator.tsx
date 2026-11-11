@@ -141,7 +141,7 @@ export function CorporateBoardCalculator() {
             <ArrowLeft size={17} /> Tilbake til kalkulatoren
           </button>
           <p className="eyebrow">Neste steg</p>
-          <h2>Få beslutningsnotatet tilsendt</h2>
+          <h2>Få en utvidet økonomisk oversikt på e-post</h2>
           <p>
             Fyll ut kontaktinformasjonen, så sender vi dere et beslutningsnotat basert på
             forutsetningene og beregningene fra kalkulatoren.
