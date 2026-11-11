@@ -12,9 +12,9 @@ import {
 } from "@/lib/realtyflow";
 
 export const metadata: Metadata = {
-  title: "Bedriftshytte i Spania for norske virksomheter | Zen Eco Homes",
+  title: "Bedriftshytte i Spania for norske bedrifter | Zen Eco Homes",
   description:
-    "Gi ansatte eller medlemmer tilgang til en firmahytte i Spania. Få norsk rådgivning om bolig, kjøp, økonomi og oppfølging på Costa Blanca.",
+    "Gi ansatte eller medlemmer tilgang til en firmahytte i Spania. Få norsk rådgivning om bolig, kjøp, økonomi og lokal oppfølging på Costa Blanca.",
   alternates: { canonical: "/bedriftshytte-spania" },
 };
 
