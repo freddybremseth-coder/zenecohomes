@@ -1055,14 +1055,23 @@ export function ArticleView({ article }: { article: Article }) {
     })),
   };
 
+  const breadcrumbItems = isCorporate
+    ? [
+        { "@type": "ListItem", position: 1, name: "Forside", item: BASE },
+        { "@type": "ListItem", position: 2, name: "Bedriftshytte i Spania", item: `${BASE}/bedriftshytte-spania` },
+        { "@type": "ListItem", position: 3, name: "Guider", item: `${BASE}/bedriftshytte-spania/guider` },
+        { "@type": "ListItem", position: 4, name: article.title, item: `${BASE}${canonicalPath}` },
+      ]
+    : [
+        { "@type": "ListItem", position: 1, name: "Forside", item: BASE },
+        { "@type": "ListItem", position: 2, name: hub.label, item: `${BASE}${hub.href}` },
+        { "@type": "ListItem", position: 3, name: article.title, item: `${BASE}${canonicalPath}` },
+      ];
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Forside", item: BASE },
-      { "@type": "ListItem", position: 2, name: hub.label, item: `${BASE}${hub.href}` },
-      { "@type": "ListItem", position: 3, name: article.title, item: `${BASE}${canonicalPath}` },
-    ],
+    itemListElement: breadcrumbItems,
   };
 
   return (
