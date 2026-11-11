@@ -1,129 +1,253 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { CorporateSimpleCalculator } from "@/components/CorporateSimpleCalculator";
-import { CorporateLeadForm } from "@/components/CorporateLeadForm";
 import { Footer } from "@/components/Footer";
+import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
-import { CARE_URL } from "@/lib/i18n";
-import { corporateArticles } from "@/lib/corporate-content";
+import {
+  getProperties,
+  isPubliclyAvailableProperty,
+  propertyMatchesType,
+  type Property,
+} from "@/lib/realtyflow";
 
 export const metadata: Metadata = {
-  title: "Bedriftshytte i Spania for bedrifter | Zen Eco Homes",
-  description: "Utforsk bedriftshytte i Spania for ansatte og medlemmer. Se eiermodeller, kjøpskostnader, skatt og drift, og beregn et veiledende totalbudsjett.",
-  alternates: {canonical:"/bedriftshytte-spania"},
+  title: "Bedriftshytte i Spania for norske virksomheter | Zen Eco Homes",
+  description:
+    "Gi ansatte eller medlemmer tilgang til en firmahytte i Spania. Få norsk rådgivning om bolig, kjøp, økonomi og oppfølging på Costa Blanca.",
+  alternates: { canonical: "/bedriftshytte-spania" },
 };
+
 const benefits = [
-  ["Et gode folk husker", "Gi ansatte tilgang til en feriebolig i Spania som kan brukes til avslapning og kvalitetstid med familien. En bedriftshytte kan være et verdifullt ansattgode som bidrar til å styrke trivsel og tilhørighet."],
-  ["Fast base for samlinger", "Bruk boligen som base for mindre samlinger, lengre arbeidsopphold eller tid sammen utenfor de vanlige rammene. Med riktig tilrettelegging kan boligen bli en nyttig ressurs for både samarbeid og fellesskap."],
-  ["En medlemsfordel som skaper verdi", "Foreninger og organisasjoner kan tilby medlemmer tilgang til en bolig i Spania som en del av medlemsfordelene. Det kan gi medlemmene nye muligheter og gjøre medlemskapet mer attraktivt."],
-  ["Del eierskapet med andre bedrifter", "Ønsker dere fordelene ved en egen feriebolig uten å stå for hele investeringen alene? Flere bedrifter kan gå sammen om eierskap og bruk, og dele både kostnader og ansvar etter en avtalt modell."],
+  {
+    title: "Et gode folk husker",
+    copy: "Gi ansatte tilgang til en bedriftshytte i Spania som skaper rom for avslapning og kvalitetstid med familien.",
+  },
+  {
+    title: "Fast base for samlinger",
+    copy: "Bruk bedriftshytta som base for jobbsamlinger, arbeidsopphold og sosiale aktiviteter.",
+  },
+  {
+    title: "En medlemsfordel som skaper verdi",
+    copy: "Gi medlemmer tilgang til en bolig i Spania som gjør medlemskapet mer attraktivt.",
+  },
+  {
+    title: "Del eierskapet med andre bedrifter",
+    copy: "Gå sammen med andre bedrifter om å eie en bedriftshytte og dele på kostnader, ansvar og bruk.",
+  },
 ];
+
 const steps = [
-  ["01 Avklar behovene", "Vi starter med å forstå hva dere ønsker å oppnå, hvem som skal bruke boligen og hvordan den skal benyttes gjennom året. Sammen ser vi på ulike løsninger for bruk, booking og eierskap, slik at modellen passer virksomhetens behov og forutsetninger."],
-  ["02 Få oversikt over økonomien", "Vi setter opp et beslutningsgrunnlag med aktuelle kostnader, budsjett og boligmuligheter, slik at dere kan vurdere hva som er realistisk før dere går videre."],
-  ["03 Finn riktig bolig", "Når behov og økonomiske rammer er avklart, hjelper vi dere med å finne aktuelle boliger som passer virksomhetens ønsker og forutsetninger. Vi bistår dere gjennom kjøpsprosessen frem til dere får nøklene i hånden."],
-  ["04 Rådgivning uten kostnad for kunden", "Det skal være enkelt å utforske mulighetene. Derfor er rådgivningen og hjelpen vi gir i forbindelse med kjøpsprosessen, kostnadsfri og uforpliktende for dere."],
-  ["05 Zen Eco Care – oppfølging etter kjøpet", "Også etter at nøklene er overlevert, kan vi hjelpe dere videre. Gjennom Zen Eco Care kan vi tilby tilleggstjenester for oppfølging og ivaretakelse av boligen."],
-];
-const faq = [
   {
-    q: "Hva koster en bedriftshytte i Spania?",
-    a: "Det avhenger av kjøpesum, kjøpskostnader, årlig drift, kapitalkostnad, antall bruksuker og hvor lenge virksomheten planlegger å eie boligen. Kalkulatoren på siden viser et første scenario med disse forutsetningene hver for seg.",
+    title: "01 Avklar behovene",
+    copy: "Vi kartlegger hvordan boligen skal brukes, hvem den skal være tilgjengelig for og hvilke løsninger som passer virksomheten.",
   },
   {
-    q: "Kan en norsk bedrift eie bolig i Spania?",
-    a: "Ja, norske virksomheter kan kjøpe eiendom i Spania. Eierstruktur, skatt, regnskap og bruk bør avklares med kvalifiserte norske og spanske rådgivere før bindende beslutning.",
+    title: "02 Få oversikt over økonomien",
+    copy: "Vi gir dere oversikt over aktuelle boligpriser, kostnader og økonomiske rammer.",
   },
   {
-    q: "Kan en bedriftshytte i Spania være skattefri for ansatte?",
-    a: "Det kan være mulig når ordningen oppfyller vilkårene for et rimelig velferdstiltak og er reelt tilgjengelig på like vilkår for alle eller en betydelig gruppe ansatte. Modellen må vurderes konkret.",
+    title: "03 Finn riktig bolig",
+    copy: "Vi finner aktuelle boliger som passer virksomhetens ønsker og budsjett.",
   },
   {
-    q: "Må minst 10 ansatte ha disposisjonsrett?",
-    a: "Skatteetatens Skatte-ABC bruker færre enn 10 personer med disposisjonsrett som et utgangspunkt for at fordelen kan bli skattepliktig. Det finnes nyanser og unntak, og flere virksomheter kan i enkelte modeller dele en løsning.",
+    title: "04 Rådgivning uten kostnad",
+    copy: "Vår rådgivning og hjelp gjennom kjøpsprosessen er kostnadsfri og uforpliktende.",
   },
   {
-    q: "Kan boligen brukes til styre- og ledersamlinger?",
-    a: "Ja, boligen kan fungere godt for styrearbeid, ledermøter, strategisamlinger og prosjektuker. Formelle selskapsmøter må gjennomføres i tråd med norsk selskapsrett og selskapets vedtekter.",
-  },
-  {
-    q: "Kan generalforsamlingen holdes fra Spania?",
-    a: "Aksjeloven skiller mellom fysisk og elektronisk generalforsamling. Et fysisk møte skal som hovedregel holdes i kommunen der selskapet har forretningskontor, med mindre vedtektene eller særlige grunner åpner for annet. Elektronisk møte kan gjennomføres når lovens krav er oppfylt.",
-  },
-  {
-    q: "Kan en forening leie ut boligen til medlemmene?",
-    a: "En medlemsordning kan organiseres på flere måter, men betaling, utleie og eventuell turistbruk må vurderes særskilt etter lokale regler og organisasjonens struktur før kjøp.",
-  },
-  {
-    q: "Hva skjer hvis virksomheten senere vil selge?",
-    a: "Boligen er en eiendel med markedsverdi og kan selges senere. Kalkulatorens verdiutvikling er kun et scenario, ikke en garanti eller prognose.",
+    title: "05 Zen Eco Care – oppfølging etter kjøpet",
+    copy: "Gjennom Zen Eco Care kan vi tilby tilleggstjenester for blant annet tilsyn, rengjøring, nøkkelhold og vedlikehold.",
   },
 ];
 
+export default async function CorporateHomesPage() {
+  const properties = await getProperties(0, "zeneco");
+  const featuredVillas: Property[] = properties
+    .filter(isPubliclyAvailableProperty)
+    .filter((property) => propertyMatchesType(property, "villa"))
+    .slice(0, 3);
 
-export default function CorporateHomesPage() {
-  const faqJsonLd = {"@context":"https://schema.org","@type":"FAQPage",mainEntity:faq.map(item=>({"@type":"Question",name:item.q,acceptedAnswer:{"@type":"Answer",text:item.a}}))};
-  return <main className="corporate-page">
-    <SiteHeader locale="no" />
-    <section className="image-hero corporate-hero">
-      <div className="corporate-hero-shade" />
-      <div className="corporate-hero-inner">
-        <h1>Bedriftshytte i Spania for norske virksomheter</h1>
-        <p>Gi ansatte, ledere eller medlemmer muligheten til å bruke en bolig i Spania. Zen Eco Homes hjelper dere med å utforske mulighetene og finne en løsning som passer bedriftens behov.</p>
-        <div className="hero-actions"><Link className="contact-button" href="/booking">Book en uforpliktende prat <ArrowRight size={18}/></Link><a className="text-button light" href="#kalkulator">Se hva en bedriftshytte kan koste</a></div>
-      </div>
-    </section>
-    <section className="section corporate-decision">
-      <p style={{maxWidth:"72ch",marginBottom:"1.5rem"}}>Her kan dere lese om ulike modeller for bedriftshytte i Spania, hva dere bør vite om kostnader og skatt, hvordan dere kan organisere bruken av boligen, og hva som kreves for kjøp og lokal drift.</p>
-      <div className="section-heading"><h2>En bedriftshytte - mange muligheter</h2><p>En bedriftshytte i Spania er en mulighet til å gi ansatte, ledere eller medlemmer noe litt utenom det vanlige. Se for dere en feriebolig på Costa Blanca, der sol, varme og nye opplevelser blir en del av et ansattgode dere kan tilby. Det kan skape verdi langt utover selve oppholdet – enten målet er å belønne ansatte, styrke samholdet eller gi medlemmene en ekstra fordel.</p><p>Her er noen måter en bolig i Spania kan bli en verdifull ressurs for virksomheten.</p></div>
-      <div className="corporate-decision-grid">{benefits.map(([title,copy])=><article key={title} style={{padding:"1.5rem",borderRadius:"1rem",background:"var(--surface, #fff)",boxShadow:"0 6px 22px #172f4012"}}><h3>{title}</h3><p>{copy}</p></article>)}</div>
-    </section>
-    <section className="section corporate-decision" id="eierskap">
-      <div className="section-heading"><h2>Må bedriften eie hele boligen alene?</h2><p>Dere kan eie en bedriftshytte selv, dele eierskap med andre virksomheter eller organisere en medlemsbolig. Valget påvirker både investeringen og hvordan boligen kan brukes.</p></div>
-      <div className="corporate-decision-grid">
-        {[
-          ["Eget eierskap","Virksomheten eier og disponerer boligen etter sin egen bruksmodell."],
-          ["Delt eierskap","Flere bedrifter deler investering, drift og tilgjengelige uker etter avtale. Dette kan gjøre ordningen tilgjengelig med lavere kapitalbehov."],
-          ["Medlemsmodell","En forening eller organisasjon eier boligen og legger til rette for bruk blant medlemmene."]
-        ].map(([title,copy])=><article key={title} style={{padding:"1.5rem",borderRadius:"1rem",background:"var(--surface, #fff)",boxShadow:"0 6px 22px #172f4012"}}><h3>{title}</h3><p>{copy}</p></article>)}
-      </div>
-      <p style={{marginTop:20}}>Ved delt eierskap må partene avklare eierandeler, booking, vedlikehold, beslutninger og hvordan en deltaker kan tre ut. Eier- og skatteforhold bør kvalitetssikres av fagpersoner.</p>
-      <Link className="contact-button" href="/bedriftshytte-spania#bedriftsvurdering">Snakk med oss om delt eierskap <ArrowRight size={18}/></Link>
-    </section>
-    <section className="corporate-calculator-section" id="kalkulator">
-      <div className="corporate-section-copy"><h2>Hva koster en bedriftshytte i Spania?</h2>
-        <p>Start med totalbudsjettet. I tillegg til boligprisen må dere regne med rundt 10–15 % i skatter og kjøpsomkostninger.</p>
-        <p>Totalbudsjettet avgjør dermed hvilken prisklasse dere kan se etter. Beliggenhet, boligtype, størrelse og standard påvirker hva dere får for pengene.</p>
-        <p>Bruk den enkle kalkulatoren for å finne aktuell boligprisklasse og beregne årlige eierkostnader. I styreguiden finner dere en mer omfattende kalkulator for å utforske finansiering, hotellalternativer, delt eierskap og langsiktig økonomi.</p>
-        <p><Link href="/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret">Se styreguiden og den omfattende kalkulatoren <ArrowRight size={16} style={{display:"inline"}} /></Link></p>
-      </div>
-      <CorporateSimpleCalculator />
-    </section>
-    <section className="section corporate-decision"><div className="section-heading"><h2>Hvorfor velge Zen Eco Homes?</h2><p>Vi er deres lokale samarbeidspartner på Costa Blanca: fra behov og områdevalg, til eiendom, kjøpsprosess og praktisk oppfølging etter overtakelsen. Vi starter med virksomhetens bruk og økonomi før vi foreslår boliger.</p><Link className="contact-button" href="/booking">Snakk med en rådgiver <ArrowRight size={18}/></Link></div></section>
-    <section className="section corporate-products"><div className="section-heading"><h2>Sammen finner vi riktig bedriftshytte i Spania</h2><p>En bedriftshytte skal dekke virksomhetens behov over tid. Derfor er det viktig å tenke gjennom hvordan boligen skal brukes. Svarene gir et tydeligere bilde av hvilken bolig som vil passe virksomheten – og hvilke egenskaper dere bør prioritere når dere skal velge.</p></div>
-      <div className="corporate-product-grid">{[["Formål og bruk","Hva ønsker dere å oppnå med boligen, og hvem skal kunne bruke den?"],["Kapasitet og fasiliteter","Hvor mange skal kunne bo der samtidig, og hvilke fasiliteter er viktige for den planlagte bruken?"],["Beliggenhet","Er det viktigst med kort vei til flyplass, strender, restauranter, aktiviteter eller gode arbeidsforhold?"]].map(([t,d])=><article key={t}><h3>{t}</h3><p>{d}</p></article>)}</div>
-    </section>
-    <section className="section corporate-process">
-      <div className="section-heading"><h2>Dette hjelper Zen Eco Homes med</h2><p>Fra den første idéen til nøklene i hånden – og videre derfra. Zen Eco Homes hjelper dere gjennom hele prosessen, fra behovsavklaring og boligvalg til kjøp og lokal oppfølging gjennom Zen Eco Care når boligen er deres.</p></div>
-      <div className="corporate-process-grid">{steps.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>
-    </section>
-    <section className="section corporate-decision"><div className="section-heading"><h2>Ordningen må bygges riktig fra starten</h2><p>En bedriftshytte i Spania kan være et verdifullt gode for ansatte, men det er viktig å avklare skatteregler, eierskap og bruk før virksomheten bestemmer seg for å kjøpe. Hvordan ordningen organiseres og praktiseres, har betydning for den skattemessige behandlingen.</p></div>
-      <h3>Skatt og bruk av bedriftshytten</h3><p>Bruk av bedriftshytte kan på visse vilkår være skattefri for ansatte når den regnes som et rimelig velferdstiltak og er reelt tilgjengelig for alle eller en betydelig gruppe ansatte. Det er derfor viktig å planlegge hvem som skal kunne bruke boligen, hvordan oppholdene fordeles, og hvordan ordningen dokumenteres.</p>
-      <p>Les mer i guiden <Link href="/bedriftshytte-spania/hva-er-en-bedriftshytte-i-spania">Bedriftshytte i Spania: Slik fungerer det for norske bedrifter</Link>.</p>
-      <h3>Eierskap og skattemessige forhold</h3><p>Valg av eierstruktur og hvordan boligen skal brukes, kan få betydning for både skatt og regnskap. Virksomheten bør derfor få den planlagte løsningen vurdert av kvalifiserte rådgivere før kjøpet gjennomføres.</p>
-      <p>I guiden <Link href="/bedriftshytte-spania/kan-ansatte-bruke-bedriftseid-bolig-i-spania">Kan ansatte bruke bedriftseid bolig i Spania? Regler og praksis</Link> kan dere lese mer om skattebehandling, likebehandling, booking og dokumentasjon.</p>
-      <p>Zen Eco Homes bistår med eiendomsvalg og kjøpsprosessen, men erstatter ikke juridisk, skattemessig eller regnskapsmessig rådgivning.</p>
-    </section>
-    <section className="section corporate-knowledge" id="kunnskap"><div className="section-heading"><h2>Lær mer om bedriftshytte i Spania</h2><p>Det er flere forhold å sette seg inn i når virksomheten vurderer å kjøpe bolig i Spania. I guidene våre får dere mer kunnskap om mulighetene, reglene og de praktiske vurderingene som kan hjelpe dere med å ta gode beslutninger.</p></div>
-      <div className="corporate-article-grid">{corporateArticles.slice(0,3).map(article=><article className="corporate-article-card" key={article.slug}><span>{article.readingTime}</span><h3>{article.title}</h3><p>{article.excerpt}</p><Link className="text-button" href={`/bedriftshytte-spania/${article.slug}`}>Les guiden <ArrowRight size={16}/></Link></article>)}</div>
-      <div className="center-action corporate-knowledge-action"><Link className="contact-button" href="/bedriftshytte-spania/guider">Se alle guidene for bedrifter <ArrowRight size={18}/></Link></div>
-    </section>
-    <section className="corporate-split"><div className="corporate-split-card corporate-care-card"><h2>Zen Eco Care – oppfølging av boligen etter kjøpet</h2><p>Når virksomheten eier en bolig i Spania, er det viktig at den blir godt ivaretatt også mellom oppholdene. Med Zen Eco Care kan dere få hjelp med praktisk oppfølging og tilsyn av boligen, slik at det blir enklere å eie og administrere en eiendom fra Norge.</p><p>Vi kan blant annet tilby regelmessig boligtilsyn, nøkkeloppbevaring, klargjøring før ankomst, rengjøring og oppfølging av basseng og hage. Tjenestene tilpasses boligen og behovene deres, slik at dere kan velge den oppfølgingen som passer virksomheten best.</p><a className="contact-button" href={CARE_URL}>Les mer om Zen Eco Care <ArrowRight size={18}/></a></div></section>
-    <section className="section corporate-decision"><div className="section-heading"><h2>Neste steg for deres virksomhet</h2><p>Enten dere er i startfasen eller allerede har konkrete planer, hjelper vi dere videre. Zen Eco Homes gir råd gjennom hele prosessen – fra behovsavklaring og vurdering av ulike løsninger til gjennomgang av budsjett og aktuelle boliger.</p><p>Book en uforpliktende prat for å utforske mulighetene, eller send oss en e-post dersom dere har spørsmål. Sammen finner vi ut hva som kan passe for deres virksomhet.</p><Link className="contact-button" href="/booking">Ta kontakt <ArrowRight size={18}/></Link></div></section>
-    <section className="section corporate-faq"><div className="section-heading"><h2>FAQ</h2></div><div className="corporate-faq-list">{faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
-    <section className="corporate-intro"><div><h2>Har dere kunder eller medlemmer som kan være aktuelle?</h2></div><div><p>Zen Eco Homes har en egen partnerkanal for norske regnskapsmiljøer, advokatfirmaer, HR-/rekrutteringsselskaper, bedriftsrådgivere og medlemsorganisasjoner.</p><Link className="contact-button" href="/bedriftshytte-spania/partnere">Se partnerprogrammet <ArrowRight size={18}/></Link></div></section>
-    <section className="corporate-contact" id="bedriftsvurdering"><div className="corporate-contact-copy"><h2>Få en utvidet økonomisk oversikt på e-post</h2><p>Fyll inn kontaktinformasjon for en mer utfyllende rapport med beregninger og forutsetninger. Tall fra den enkle kalkulatoren følger med når dere har valgt å bruke dem.</p></div><CorporateLeadForm /></section>
-    <Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqJsonLd)}}/>
-  </main>;
+  return (
+    <main className="corporate-page">
+      <SiteHeader locale="no" />
+      <section className="image-hero corporate-hero">
+        <div className="corporate-hero-shade" />
+        <div className="corporate-hero-inner">
+          <h1>Bedriftshytte i Spania for norske virksomheter</h1>
+          <p>
+            Gi ansatte, ledere eller medlemmer tilgang til en firmahytte i Spania. Zen Eco Homes hjelper norske
+            virksomheter med å vurdere muligheten, finne riktig bolig og følge opp kjøpet på Costa Blanca.
+          </p>
+          <div className="hero-actions">
+            <Link className="contact-button" href="/kontakt-bedrift">
+              Kontakt oss <ArrowRight size={18} />
+            </Link>
+            <Link className="text-button light" href="#boliger">
+              Se boliger
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section corporate-decision">
+        <div className="section-heading">
+          <h2>En bedriftshytte – mange muligheter</h2>
+        </div>
+        <div className="corporate-decision-grid">
+          {benefits.map((benefit) => (
+            <article
+              key={benefit.title}
+              style={{
+                padding: "1.5rem",
+                borderRadius: "1rem",
+                background: "var(--surface, #fff)",
+                boxShadow: "0 6px 22px #172f4012",
+              }}
+            >
+              <h3>{benefit.title}</h3>
+              <p>{benefit.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section corporate-decision">
+        <div className="section-heading">
+          <h2>Norsk rådgiver med lokal kjennskap til Costa Blanca</h2>
+          <p>
+            Hos Zen Eco Homes får dere hjelp av norske rådgivere som kjenner det spanske boligmarkedet og bor på
+            Costa Blanca. Vi har selv vært gjennom kjøpsprosessen og hjelper dere med å finne riktig bolig og en
+            løsning som passer virksomhetens behov.
+          </p>
+          <Link className="text-button" href="/om-oss">
+            Les mer om oss <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section corporate-process">
+        <div className="section-heading">
+          <h2>Dette hjelper Zen Eco Homes med</h2>
+          <p>Fra den første idéen til nøklene i hånden – og videre derfra. Zen Eco Homes hjelper dere gjennom hele prosessen.</p>
+        </div>
+        <div className="corporate-process-grid">
+          {steps.map((step) => (
+            <article key={step.title}>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </article>
+          ))}
+        </div>
+        <div className="center-action">
+          <Link className="contact-button" href="/kontakt-bedrift">
+            Kontakt oss om bedriftshytte <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section corporate-products" id="boliger">
+        <div className="section-heading">
+          <h2>Se boliger for bedriftshytte i Spania</h2>
+        </div>
+        {featuredVillas.length > 0 ? (
+          <div className="property-grid">
+            {featuredVillas.map((property, index) => (
+              <PropertyCard key={property.id || property.ref || index} property={property} />
+            ))}
+          </div>
+        ) : (
+          <p>Ta kontakt, så finner vi aktuelle villaer som passer virksomhetens behov og budsjett.</p>
+        )}
+        <div className="center-action">
+          <Link className="contact-button" href="/eiendommer">
+            Se alle boliger <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section corporate-decision">
+        <div className="section-heading">
+          <h2>Dette bør dere vite før dere kjøper</h2>
+          <p>
+            En bedriftshytte i Spania kan tilpasses både virksomhetens budsjett og hvordan boligen skal brukes. Det
+            finnes flere muligheter for eierskap, kostnadsfordeling og organisering av oppholdene.
+          </p>
+        </div>
+        <div className="corporate-decision-grid">
+          <article
+            style={{
+              padding: "1.5rem",
+              borderRadius: "1rem",
+              background: "var(--surface, #fff)",
+              boxShadow: "0 6px 22px #172f4012",
+            }}
+          >
+            <h3>Kostnader</h3>
+            <p>
+              I tillegg til kjøpesummen kommer kjøpsomkostninger og løpende utgifter. Normalt bør man beregne rundt
+              10–15 % av kjøpesummen i ekstra kostnader.
+            </p>
+          </article>
+          <article
+            style={{
+              padding: "1.5rem",
+              borderRadius: "1rem",
+              background: "var(--surface, #fff)",
+              boxShadow: "0 6px 22px #172f4012",
+            }}
+          >
+            <h3>Skatt og bruk</h3>
+            <p>
+              En bedriftshytte kan være et skattefritt gode for ansatte når vilkårene er oppfylt. Med tydelige
+              retningslinjer for booking og bruk kan virksomheten legge til rette for at flere får glede av boligen.
+            </p>
+          </article>
+          <article
+            style={{
+              padding: "1.5rem",
+              borderRadius: "1rem",
+              background: "var(--surface, #fff)",
+              boxShadow: "0 6px 22px #172f4012",
+            }}
+          >
+            <h3>Les mer om mulighetene</h3>
+            <p>
+              Vi har samlet guider om økonomi, eierskap, skatteregler, beslutningsgrunnlag og praktisk bruk av
+              bedriftshytte i Spania.
+            </p>
+          </article>
+        </div>
+        <div className="center-action hero-actions">
+          <Link className="contact-button" href="/bedriftshytte-spania/guider">
+            Se alle guider <ArrowRight size={18} />
+          </Link>
+          <Link
+            className="contact-button"
+            href="/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret"
+          >
+            Sett opp beslutningsnotat <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section corporate-decision">
+        <div className="section-heading">
+          <h2>Neste steg for deres virksomhet</h2>
+          <p>
+            Kontakt oss for en uforpliktende prat for å utforske mulighetene, eller send oss en e-post dersom dere
+            har spørsmål. Sammen finner vi ut hva som kan passe for deres virksomhet.
+          </p>
+          <div className="hero-actions">
+            <Link className="contact-button" href="/kontakt-bedrift">
+              Kontakt oss <ArrowRight size={18} />
+            </Link>
+            <Link className="text-button" href="/eiendommer">
+              Se boliger <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  );
 }
