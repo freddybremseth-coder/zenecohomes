@@ -106,12 +106,11 @@ export const seoLandingPages: SeoLandingPage[] = [
         ],
       },
       {
-        heading: "Kjøp av nybygg før boligen er ferdig",
+        heading: "Slik skiller nybygg seg fra bruktbolig",
         body: [
-          "Når du kjøper bruktbolig i Spania, kan du undersøke den ferdige boligen, se hvordan den ligger i terrenget og vurdere standarden før du bestemmer deg. Du får også et større utvalg av etablerte boliger og områder, men må være forberedt på at det kan dukke opp behov for oppussing eller vedlikehold.",
-          "Med nybygg får du en bolig som er bygget etter nyere standarder, med moderne planløsning og tekniske løsninger. Du slipper ofte større oppgraderinger i starten, og i enkelte prosjekter kan du velge materialer og tilpasninger. Til gjengjeld må du undersøke hva som faktisk inngår i leveransen, og være oppmerksom på at boligen kan være under oppføring når du kjøper.",
-          "Valget handler derfor ikke bare om pris og standard, men også om hvor mye du ønsker å kunne kontrollere før kjøpet, hvor raskt du vil overta og hvor mye arbeid du er villig til å legge i boligen etterpå.",
-          "Vil du vite mer om forskjellen mellom å kjøpe nybygg under oppføring og en ferdigstilt bolig? Les [[vår guide til nybygg under oppføring eller innflyttingsklar bolig i Spania|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
+          "Når du kjøper bruktbolig i Spania, kan du undersøke den ferdige boligen og vurdere standard, teknisk tilstand og beliggenhet før du bestemmer deg. Med nybygg kjøper du ofte før boligen er ferdigstilt, og må i større grad basere vurderingen på tegninger, leveransebeskrivelse og dokumentasjon fra utbyggeren.",
+          "Nybygg gir gjerne moderne løsninger og mindre vedlikeholdsbehov de første årene, mens bruktboliger kan gi tilgang til etablerte områder og mulighet for raskere overtakelse.",
+          "Vil du se nærmere på fordeler og ulemper ved de to boligtypene? Les vår [[sammenligning av nybygg eller bruktbolig på Costa Blanca|/magasin/nybygg-eller-bruktbolig-costa-blanca]].",
         ],
       },
       {
