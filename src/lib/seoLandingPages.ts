@@ -8,7 +8,7 @@ export type SeoLandingPage = {
   seoDescription: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
-  sections: { heading: string; body: string[]; bullets?: string[] }[];
+  sections: { heading: string; body: string[]; bullets?: string[]; afterBullets?: string[] }[];
   faq: { question: string; answer: string }[];
   related: { label: string; href: string }[];
 };
@@ -92,7 +92,7 @@ export const seoLandingPages: SeoLandingPage[] = [
         heading: "Hvorfor mange velger nybygg i Spania",
         body: [
           "Nybygg gir ofte moderne planløsninger, nye tekniske installasjoner, god energieffektivitet og mindre vedlikeholdsbehov de første årene. For mange som kjøper feriebolig i Spania, er det attraktivt å vite at rør, elektriske anlegg, klimaanlegg, vinduer og fellesanlegg er nye, og at boligen er bygget etter dagens tekniske standarder.",
-          "En annen fordel med nybygg er muligheten til å velge en bolig som passer egne ønsker og behov. Avhengig av prosjektets fremdrift kan du ofte påvirke materialvalg, overflater og enkelte løsninger før boligen ferdigstilles. For å få mest mulig ut av kjøpet er det likevel viktig å sette seg inn i prosjektets leveransebeskrivelse, kontrakt og betalingsplan før du reserverer.",
+          "En annen fordel med nybygg er muligheten til å velge en bolig som passer egne ønsker og behov. Avhengig av prosjektets fremdrift kan du ofte påvirke materialvalg, overflater og enkelte løsninger før boligen ferdigstilles.",
         ],
         bullets: [
           "Mindre vedlikehold: Nye installasjoner og materialer gir vanligvis lavere vedlikeholdsbehov de første årene.",
@@ -100,6 +100,9 @@ export const seoLandingPages: SeoLandingPage[] = [
           "Tilpasningsmuligheter: Mulighet til å velge enkelte materialer og løsninger dersom du kjøper tidlig nok i prosjektet.",
           "Moderne standard: Planløsninger, fasiliteter og tekniske løsninger tilpasset dagens boligbehov.",
           "Forutsigbarhet: Du får oversikt over boligens standard, leveranse og forventede ferdigstillelse før overtakelse.",
+        ],
+        afterBullets: [
+          "For å få mest mulig ut av kjøpet er det likevel viktig å sette seg inn i prosjektets leveransebeskrivelse, kontrakt og betalingsplan før du reserverer.",
         ],
       },
       {
@@ -159,6 +162,7 @@ export const seoLandingPages: SeoLandingPage[] = [
         body: [
           "Mange nybyggprosjekter presenteres med flotte illustrasjoner og plantegninger. Men det er leveransebeskrivelsen og kontrakten som viser hvilken standard og hvilke materialer du faktisk får. Kontroller hvilke kvaliteter som er avtalt, og om utbygger kan erstatte produkter med tilsvarende alternativer.",
           "Ikke ta for gitt at alt du ser på illustrasjoner eller i en visningsbolig følger med i prisen. Be om en skriftlig oversikt over hva som er inkludert, og hva som eventuelt kommer i tillegg. To boliger med lik annonsert pris kan få svært forskjellig totalpris når tilvalg og uteområder tas med.",
+          "Se spesielt etter hva som inngår i:",
         ],
         bullets: [
           "Kjøkken: Innredning, benkeplate og hvitevarer.",
@@ -172,7 +176,7 @@ export const seoLandingPages: SeoLandingPage[] = [
         heading: "Energiklasse, isolasjon og solceller",
         body: [
           "Nyere byggekrav gir ofte bedre energiytelse enn i mange eldre spanske boliger, men du bør fortsatt lese dokumentasjonen. Energiklasse, isolasjon, vinduer, orientering, solskjerming, ventilasjon og klimaanlegg påvirker både komfort og strømforbruk.",
-          "Solceller kan være positivt, men sjekk hva som faktisk er installert eller klargjort, anleggets størrelse, orientering og om løsningen er individuell eller felles. Ikke bruk ordet 'energieffektiv' som erstatning for tekniske spesifikasjoner og energiattest.",
+          "Solceller kan være positivt, men sjekk hva som faktisk er installert eller klargjort, anleggets størrelse, orientering og om løsningen er individuell eller felles.",
         ],
       },
       {
