@@ -91,7 +91,7 @@ export default async function CorporateHomesPage() {
 
       <section className="section corporate-decision">
         <div className="section-heading">
-          <h2>En bedriftshytte – mange muligheter</h2>
+          <h2>En bedriftshytte - mange muligheter</h2>
         </div>
         <div className="corporate-decision-grid">
           {benefits.map((benefit) => (
