@@ -160,16 +160,9 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Leveransebeskrivelsen er like viktig som plantegningen",
         body: [
-          "Mange nybyggprosjekter presenteres med flotte illustrasjoner og plantegninger. Men det er leveransebeskrivelsen og kontrakten som viser hvilken standard og hvilke materialer du faktisk får. Kontroller hvilke kvaliteter som er avtalt, og om utbygger kan erstatte produkter med tilsvarende alternativer.",
-          "Ikke ta for gitt at alt du ser på illustrasjoner eller i en visningsbolig følger med i prisen. Be om en skriftlig oversikt over hva som er inkludert, og hva som eventuelt kommer i tillegg. To boliger med lik annonsert pris kan få svært forskjellig totalpris når tilvalg og uteområder tas med.",
-          "Se spesielt etter hva som inngår i:",
-        ],
-        bullets: [
-          "Kjøkken: Innredning, benkeplate og hvitevarer.",
-          "Innvendig standard: Gulv, garderober, belysning og baderomsinnredning.",
-          "Tekniske løsninger: Klimaanlegg, oppvarming, ventilasjon og solceller.",
-          "Uteområder: Basseng, hage, terrasse, solskjerming og opparbeidelse av tomten.",
-          "Parkering: Parkeringsplass, bod og eventuell ladeløsning for elbil.",
+          "Plantegninger og illustrasjoner gir et inntrykk av hvordan boligen skal bli, men det er leveransebeskrivelsen og kontrakten som viser hvilken standard og hvilke materialer du faktisk får. Kontroller hva som er inkludert i kjøpesummen, og om utbygger kan erstatte avtalte produkter med tilsvarende alternativer.",
+          "Ikke ta for gitt at alt du ser i illustrasjoner eller visningsboliger følger med. Be om en skriftlig oversikt over hva som inngår, og hvilke tilvalg eller tilleggskostnader du må regne med.",
+          "Vil du vite mer om hva som vanligvis inngår i prisen, og hvilke tilvalg som kan gi ekstra kostnader? Les [[guide til hva som inngår i nybyggprisen i Spania|/magasin/hva-inngar-i-prisen-nybygg-spania]].",
         ],
       },
       {
