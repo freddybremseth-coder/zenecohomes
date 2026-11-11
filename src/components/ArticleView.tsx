@@ -1374,7 +1374,7 @@ export function ArticleView({ article }: { article: Article }) {
                   ? "Vi hjelper virksomheten å vurdere modell, budsjett, område, boligtype, drift og neste steg."
                   : "Vi hjelper deg å vurdere område, budsjett, boligtype, risiko og neste steg før du reserverer."}
               </p>
-              <Link className="contact-button" href={isCorporate ? "/bedriftshytte-spania#bedriftsvurdering" : withArticleAttribution("/booking", article.slug, isCurrentMarketArticle)}>
+              <Link className="contact-button" href={isCorporate ? "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" : withArticleAttribution("/booking", article.slug, isCurrentMarketArticle)}>
                 {isCorporate ? "Be om bedriftsvurdering" : "Få rådgivning"} <ArrowRight size={17} />
               </Link>
             </section>
