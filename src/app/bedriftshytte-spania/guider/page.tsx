@@ -71,7 +71,7 @@ export default function CorporateGuidesPage() {
           skatt, booking, boligvalg og drift før de tar en beslutning.
         </p>
         <div className="hero-actions">
-          <Link className="contact-button" href="/bedriftshytte-spania#bedriftsvurdering">
+          <Link className="contact-button" href="/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator">
             Få en kostnadsfri bedriftsvurdering <ArrowRight size={18} />
           </Link>
           <Link className="text-button light" href="/bedriftshytte-spania">
@@ -114,7 +114,7 @@ export default function CorporateGuidesPage() {
             Vi kan lage en kostnadsfri første vurdering med anbefalt modell, aktuelle områder, budsjettintervall
             og representative boliger.
           </p>
-          <Link className="contact-button" href="/bedriftshytte-spania#bedriftsvurdering">
+          <Link className="contact-button" href="/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator">
             Be om bedriftsvurdering <ArrowRight size={18} />
           </Link>
         </div>

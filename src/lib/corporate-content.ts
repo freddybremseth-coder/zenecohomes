@@ -49,7 +49,7 @@ function makeArticle(draft: CorporateDraft): Article {
       "Sett et realistisk totalbudsjett for kjøp, drift og lokal oppfølging.",
       "Be om en kostnadsfri bedriftsvurdering før dere bruker tid på konkrete boliger.",
     ],
-    cta: draft.cta || { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: draft.cta || { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
     silo: "corporate",
   };
 }
@@ -337,7 +337,7 @@ const drafts: CorporateDraft[] = [
           "Nei. Vi hjelper med eiendom, behov, område, økonomiske scenarioer, shortlist, kjøpsprosess og lokal drift. Skatt, regnskap, selskapsstruktur og juridiske vurderinger skal kvalitetssikres av kvalifiserte fagpersoner.",
       },
     ],
-    cta: { label: "Få en kostnadsfri første bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Få en kostnadsfri første bedriftsvurdering", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "bedriftshytte-mot-hotell-og-leie",
@@ -574,7 +574,7 @@ const drafts: CorporateDraft[] = [
       { question: "Hva bør styret teste i sensitivitetsanalysen?", answer: "Lavere bruk, høyere vedlikehold, null verdiutvikling, endret kapitalkostnad og et realistisk hotell-/leiealternativ." },
       { question: "Kan Zen Corporate Homes lage et beslutningsgrunnlag?", answer: "Ja. Vi kan konkretisere behov, boligkrav, kostnadsscenarioer og faktiske boligeksempler. Skatt, regnskap og juridisk struktur må kvalitetssikres av relevante fagpersoner." },
     ],
-    cta: { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "kan-ansatte-bruke-bedriftseid-bolig-i-spania",
@@ -797,7 +797,7 @@ const drafts: CorporateDraft[] = [
       { question: "Hva hvis ordningen ikke kvalifiserer som skattefri?", answer: "Da kan fordelen bli skattepliktig for brukeren. Verdsettelse og rapportering bør håndteres av kvalifisert skatte- eller regnskapsrådgiver." },
       { question: "Kan Zen Corporate Homes avgjøre skattebehandlingen?", answer: "Nei. Vi kan hjelpe med eiendom, behov, bookingmodell og praktisk drift. Den konkrete skatte- og regnskapsbehandlingen må kvalitetssikres av fagpersoner." },
     ],
-    cta: { label: "Få en kostnadsfri første bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Få en kostnadsfri første bedriftsvurdering", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "fem-mater-bedrifter-kan-bruke-bolig-costa-blanca",
@@ -986,7 +986,7 @@ const drafts: CorporateDraft[] = [
       { question: "Bør Care kobles til fra starten?", answer: "Hvis virksomheten ikke har egen lokal drift, er det fornuftig å planlegge keyholding, tilsyn, klargjøring og håndverkeroppfølging før første opphold." },
       { question: "Hva bør styret bestemme først?", answer: "Primærbruk, forventet bruk, brukergruppe, økonomisk ramme og hvem som eier den operative driften internt." },
     ],
-    cta: { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Få en kostnadsfri bedriftsvurdering", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "hvilken-bolig-passer-som-bedriftshytte",
@@ -1177,7 +1177,7 @@ const drafts: CorporateDraft[] = [
       { question: "Hva bør vi tenke på ved mange brukerskifter?", answer: "Enkel rengjøring, robuste materialer, nøkkelløsning, oversiktlig inventar og lokal drift blir viktigere enn ved privat bruk." },
       { question: "Kan Zen Corporate Homes lage boligshortlist?", answer: "Ja. Etter behovs- og kravsavklaring kan vi sammenligne områder og konkrete boliger på samme beslutningskriterier." },
     ],
-    cta: { label: "Få en shortlist basert på faktisk bruk", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Få en shortlist basert på faktisk bruk", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "medlemsbolig-i-spania-for-foreninger",
@@ -1327,7 +1327,7 @@ const drafts: CorporateDraft[] = [
       { question: "Hva slags bolig passer delt bruk?", answer: "Ofte en robust og lettdrevet bolig med god logistikk og kapasitet for normalbruk, fremfor en svært personlig eller kompleks eiendom." },
       { question: "Kan Zen Corporate Homes hjelpe flere parter samtidig?", answer: "Ja på eiendoms-, område- og driftsdelen, men partenes juridiske, skattemessige og regnskapsmessige avtaler må kvalitetssikres av fagpersoner." },
     ],
-    cta: { label: "Drøft en delt modell med oss", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Drøft en delt modell med oss", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "vedlikehold-nokkelhold-og-rengjoring-bedriftshytte",
@@ -1806,7 +1806,7 @@ const drafts: CorporateDraft[] = [
       { question: "Hvem bør kontrollere selve boligen?", answer: "Bruk kvalifisert juridisk bistand i Spania for eiendoms- og kontraktskontroll, supplert med teknisk fagkompetanse når det er relevant." },
       { question: "Hvorfor trenger vi en exit-plan?", answer: "Fordi behov, kapital og strategi kan endres. Styret bør på forhånd vite når eierskapet skal revurderes og hvilken dokumentasjon som må bevares." },
     ],
-    cta: { label: "Få en første selskaps- og boligavklaring", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Få en første selskaps- og boligavklaring", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "slik-presenterer-du-bedriftshytte-for-styret",
@@ -1993,7 +1993,7 @@ const drafts: CorporateDraft[] = [
       { question: "Hva er den vanligste feilen?", answer: "Å starte med en konkret bolig og forsøke å bygge business caset rundt den etterpå." },
       { question: "Kan Zen Corporate Homes lage beslutningsgrunnlaget?", answer: "Vi kan lage eiendoms- og behovsdelen, økonomiske scenarioer og shortlist. Juridisk, skatte- og regnskapsmessig kvalitetssikring må gjøres av relevante fagpersoner." },
     ],
-    cta: { label: "Be om en kostnadsfri første bedriftsvurdering", href: "/bedriftshytte-spania#bedriftsvurdering" },
+    cta: { label: "Be om en kostnadsfri første bedriftsvurdering", href: "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" },
   },
   {
     slug: "partnerguide-introdusere-zen-corporate-homes",

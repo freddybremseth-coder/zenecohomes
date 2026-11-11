@@ -295,7 +295,7 @@ export function CorporateLeadForm() {
 
       <button className="submit-button" disabled={status === "sending"}>
         <Send size={18} />
-        {status === "sending" ? "Sender …" : "Be om beslutningsnotat"}
+        {status === "sending" ? "Sender …" : "Få beslutningsnotatet tilsendt"}
       </button>
 
       <p className="corporate-form-privacy">

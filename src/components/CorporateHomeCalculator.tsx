@@ -46,7 +46,7 @@ export function CorporateHomeCalculator(){
   };
   try{sessionStorage.setItem("zeneco-corporate-calculator",JSON.stringify(detail));}catch{}
   window.dispatchEvent(new CustomEvent("zeneco:corporate-calculator",{detail}));
-  document.getElementById("bedriftsvurdering")?.scrollIntoView({behavior:"smooth",block:"start"});
+  window.location.href="/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret?request=1#styrekalkulator";
  }
  function numberField(label:string,value:number,update:(v:number)=>void,unit="",max?:number){
   return <label><span>{label}</span><div className="corporate-number-field"><input aria-label={label} type="number" min={0} max={max} step="any" value={value} onChange={e=>update(max===undefined?safe(Number(e.target.value)):Math.min(max,safe(Number(e.target.value))))}/>{unit&&<b>{unit}</b>}</div></label>;
