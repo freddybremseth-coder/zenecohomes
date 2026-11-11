@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { SiteLocale } from "@/lib/i18n";
-import { articleSilo, getMagazineArticle } from "@/lib/magazine";
 
 const labels: Record<SiteLocale, Record<string, string>> = {
   no: {
@@ -91,7 +90,7 @@ function humanize(segment: string, locale: SiteLocale, index: number, segments: 
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-export function Breadcrumbs({ locale = "no" }: { locale?: SiteLocale }) {
+export function Breadcrumbs({ locale = "no", currentLabel }: { locale?: SiteLocale; currentLabel?: string }) {
   const pathname = usePathname() || "/";
   const normalized = pathname.replace(/\/$/, "") || "/";
   if (normalized === "/" || normalized === `/${locale}` || propertyDetailPatterns.some((pattern) => pattern.test(normalized))) {
@@ -103,10 +102,6 @@ export function Breadcrumbs({ locale = "no" }: { locale?: SiteLocale }) {
   const localePrefix = locale === "no" ? "" : `/${locale}`;
 
   const isCorporateSection = segments[0] === "bedriftshytte-spania";
-  const corporateArticle =
-    isCorporateSection && segments.length === 2 ? getMagazineArticle(segments[1]) : undefined;
-  const isCorporateGuideArticle =
-    corporateArticle !== undefined && articleSilo(corporateArticle) === "corporate";
 
   const items = isCorporateSection
     ? [
@@ -116,14 +111,14 @@ export function Breadcrumbs({ locale = "no" }: { locale?: SiteLocale }) {
           ? []
           : segments[1] === "guider"
             ? [{ label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` }]
-            : isCorporateGuideArticle && corporateArticle
+            : currentLabel
               ? [
                   { label: "Guider", href: `${localePrefix}/bedriftshytte-spania/guider` },
-                  { label: corporateArticle.title, href: `${localePrefix}/bedriftshytte-spania/${corporateArticle.slug}` },
+                  { label: currentLabel, href: `${localePrefix}/${segments.join("/")}` },
                 ]
               : segments.slice(1).map((segment, index) => ({
                   label: humanize(segment, locale, index + 1, segments),
-                  href: `${localePrefix}/${segments.slice(0, index + 2).join("/")}`,
+                  href: `${localePrefix}/${segments.slice(0, index + 2).join("/")}`
                 }))),
       ]
     : [
