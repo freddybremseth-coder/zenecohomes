@@ -106,7 +106,7 @@ export const seoLandingPages: SeoLandingPage[] = [
         ],
       },
       {
-        heading: "Slik skiller nybygg seg fra bruktbolig",
+        heading: "Kjøp av nybygg før boligen er ferdig",
         body: [
           "Når du kjøper bruktbolig i Spania, kan du undersøke den ferdige boligen og vurdere standard, teknisk tilstand og beliggenhet før du bestemmer deg. Med nybygg kjøper du ofte før boligen er ferdigstilt, og må i større grad basere vurderingen på tegninger, leveransebeskrivelse og dokumentasjon fra utbyggeren.",
           "Nybygg gir gjerne moderne løsninger og mindre vedlikeholdsbehov de første årene, mens bruktboliger kan gi tilgang til etablerte områder og mulighet for raskere overtakelse.",
