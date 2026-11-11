@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { CorporateLeadForm } from "@/components/CorporateLeadForm";
 
@@ -29,6 +29,10 @@ export function CorporateBoardCalculator() {
   const [hotel, HT] = useState(150);
   const [sellingCosts, SC] = useState(3);
   const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("request") === "1") setShowForm(true);
+  }, []);
 
   const calc = useMemo(() => {
     const total = price * (1 + purchasePct / 100);
@@ -82,7 +86,7 @@ export function CorporateBoardCalculator() {
             max={max}
             step={step}
             value={value}
-            onChange={(event) => setter(Math.min(max, n(Number(event.target.value)))}
+            onChange={(event) => setter(Math.min(max, n(Number(event.target.value))))}
           />
         </div>
       </label>
