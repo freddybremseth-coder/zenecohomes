@@ -7149,12 +7149,12 @@ footer {
 
 /* Finance guide: inline links in paragraphs */
 .article-main.finance-guide-article p a {
-  color: #5a6e3c;
+  color: #315e64;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
 }
 
 .article-main.finance-guide-article p a:hover {
-  color: #2f3a22;
+  color: #0b4f59;
 }
