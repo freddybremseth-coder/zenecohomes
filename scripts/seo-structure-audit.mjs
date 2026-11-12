@@ -333,6 +333,9 @@ for (const url of financeRoutes.slice(1)) {
     errors.push(`Financial-guide cluster: missing discoverable contextual link to ${url}`);
   }
 }
+if (!read("next.config.ts").includes('["/magasin/lan-i-norge-eller-spania-boligkjop", "/guide/finansiere-bolig-i-spania"]')) {
+  errors.push("Financial-guide cluster: retired comparison article must redirect to the finance guide");
+}
 if (read("src/lib/content.ts").includes('href: "/guide/finansiering-notar-nie-boligkjop-spania"')) {
   errors.push("src/lib/content.ts: stale finance URL must point to /guide/finansiere-bolig-i-spania");
 }
