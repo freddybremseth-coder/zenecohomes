@@ -1,7 +1,10 @@
+import { InlandPhotoSource } from "@/components/InlandPhotoSource";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, Check, Leaf, MapPin, ShieldCheck, Sun, Zap } from "lucide-react";
 import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExplorerMap";
+import { AreaPhotoCredit } from "@/components/AreaPhotoCredit";
+import { getEditorialAreaImage } from "@/lib/areaVisuals";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { InlandAreaFinder } from "@/components/InlandAreaFinder";
@@ -71,6 +74,7 @@ function displayTownIntro(town: (typeof inlandTowns)[number]) {
 
 export default async function InlandPage() {
   const properties = await getInlandShowcaseProperties();
+  const inlandHeroImage = getEditorialAreaImage("Biar");
   const sortedTowns = [...inlandTowns].sort((a, b) => a.name.localeCompare(b.name, "nb"));
   const mapLocations: AreaExplorerLocation[] = sortedTowns.flatMap((town) => {
     const coordinates = getAreaMapCoordinate(town.name);
@@ -122,7 +126,16 @@ export default async function InlandPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteHeader locale="no" languageLinks={homeLanguageLinks("no")} />
 
-      <section className="hero inland-hero">
+      <section
+        className="hero inland-hero"
+        style={{
+          backgroundImage: inlandHeroImage
+            ? `linear-gradient(180deg, rgba(22, 34, 43, 0.3), rgba(23, 30, 16, 0.82)), url("${inlandHeroImage}")`
+            : "linear-gradient(120deg, #233128, #51664c)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="eyebrow">Alicante & Murcia Inland</p>
@@ -137,6 +150,11 @@ export default async function InlandPage() {
           </div>
         </div>
       </section>
+
+      <div style={{ padding: "0.45rem 5vw", background: "#f8f6f0", color: "#526276" }}>
+        <span style={{ fontSize: "0.77rem" }}>Toppbilde: Biar i Alicante-innlandet, ikke et generisk landskap.</span>
+        <AreaPhotoCredit areaName="Biar" />
+      </div>
 
       <section className="inland-intro" id="steder">
         <div className="inland-intro-copy">
@@ -174,6 +192,7 @@ export default async function InlandPage() {
                 <span>{town.eyebrow}</span>
               </div>
               <h3>{town.name}</h3>
+              <InlandPhotoSource name={town.slug === "hondon-dalene" ? "Hondón de las Nieves (Hondón-dalene)" : town.name} photo={town.photo} />
               <p>{displayTownIntro(town)}</p>
               <Link className="text-button area-property-link" href={`/omrader/innlandet/${town.slug}`}>
                 <MapPin size={17} /> Utforsk {town.name}

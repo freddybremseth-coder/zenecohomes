@@ -5,10 +5,10 @@ import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExp
 import { Footer } from "@/components/Footer";
 import { ResilientImage } from "@/components/ResilientImage";
 
-import { areaPresentationImage } from "@/lib/areaGuideContent";
+import { getEditorialAreaImage } from "@/lib/areaVisuals";
+import { AreaPhotoCredit } from "@/components/AreaPhotoCredit";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
-import { areaMatchesRegion, getAreaProfiles, getProperties, type RegionKey } from "@/lib/realtyflow";
 
 export const dynamic = "force-dynamic";
 
@@ -98,13 +98,17 @@ const mapLocations: AreaExplorerLocation[] = [
 ];
 
 export default async function AreasPage() {
-  const [profiles, properties] = await Promise.all([getAreaProfiles(), getProperties(0, "zeneco")]);
+  // Each regional overview has a named, documented exemplar city.
+  // Never select a random feed profile or claim a single photo depicts an entire region.
+  const representativeTowns: Record<string, string> = {
+    "costa-blanca-nord": "Altea",
+    "costa-blanca-sor": "Guardamar del Segura",
+    "costa-calida": "Los Alcázares",
+    innlandet: "Biar",
+  };
   const regionImages = Object.fromEntries(
-    regions.map((region) => {
-      const profile = profiles.find((item) => areaMatchesRegion(item, region.key as RegionKey));
-      return [region.key, profile ? areaPresentationImage(profile, properties) : "/assets/areas.jpg"];
-    }),
-  ) as Record<string, string>;
+    regions.map((region) => [region.key, getEditorialAreaImage(representativeTowns[region.key])]),
+  ) as Record<string, string | null>;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -152,7 +156,9 @@ export default async function AreasPage() {
           <article className="region-overview-card" key={region.key}>
             <div className="region-overview-image">
               <ResilientImage
-                src={regionImages[region.key]}
+                src={regionImages[region.key] || ""}
+                fallbackSrc=""
+                unoptimized
                 alt={region.title}
                 fill
                 sizes="(max-width: 900px) 100vw, 55vw"
@@ -161,6 +167,8 @@ export default async function AreasPage() {
             </div>
             <div className="region-overview-copy">
               <h2>{region.title}</h2>
+              <small style={{ display: "block", color: "#64748b" }}>Fotografiet viser {representativeTowns[region.key]} – et sted i {region.title}.</small>
+              <AreaPhotoCredit areaName={representativeTowns[region.key]} />
               <p>{region.text}</p>
               <div className="region-overview-actions">
                 <Link className="contact-button" href={region.href}>

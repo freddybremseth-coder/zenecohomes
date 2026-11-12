@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { ResilientImage } from "@/components/ResilientImage";
+import { AreaPhotoCredit } from "@/components/AreaPhotoCredit";
 import { NoBreakName, ProtectPlaceNames } from "@/components/ProtectedPlaceName";
 import { AreaFactsTabs } from "@/components/AreaFactsTabs";
 import { getTownAreaFacts } from "@/lib/areaFactData";
@@ -103,7 +104,6 @@ export default async function AreaTownPage({
   const heroDescription = oneLineAreaText(profile.hero_blurb) || oneLineAreaText(profile.description) || `Les om ${profile.name} før du velger bolig i området.`;
   const book = placeBookForArea(profile.name);
   const image = areaPresentationImage(profile, properties);
-  const villajoyosaHero = /^(villajoyosa|la vila joiosa)$/i.test(profile.name.trim());
   const areaFacts = getTownAreaFacts(profile.name);
 
   return (
@@ -111,11 +111,14 @@ export default async function AreaTownPage({
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section
         className="page-hero compact-hero image-hero"
-        style={villajoyosaHero ? {
+        style={{
           position: "relative",
-          backgroundImage: `linear-gradient(90deg, rgba(22, 34, 43, 0.86), rgba(22, 34, 43, 0.39)), url("${image}")`,
-          backgroundPosition: "center, 62% center",
-        } : undefined}
+          backgroundImage: image
+            ? `linear-gradient(90deg, rgba(22, 34, 43, 0.88), rgba(22, 34, 43, 0.44)), url("${image}")`
+            : "linear-gradient(100deg, #172a34, #344957)",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
       >
         <p className="eyebrow">{selectedRegion.label} · områdeguide</p>
         <h1>Bolig og hverdagsliv i <NoBreakName name={profile.name} /></h1>
@@ -126,7 +129,6 @@ export default async function AreaTownPage({
           </Link>
           <Link className="text-button light" href={`/omrader/${region}`}>Til {selectedRegion.label}</Link>
         </div>
-        {villajoyosaHero && <small style={{ position: "absolute", bottom: 8, right: 12, fontSize: "0.64rem", color: "#fff", textShadow: "0 1px 3px #000" }}>Foto: <a href="https://commons.wikimedia.org/wiki/File:Playa_Centro,_Villajoyosa,_Espa%C3%B1a,_2014-07-03,_DD_28.JPG" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>Diego Delso</a> · CC BY-SA 4.0</small>}
       </section>
 
       <section className="section split">
@@ -165,16 +167,25 @@ export default async function AreaTownPage({
           </p>
         </div>
         <div>
-          <ResilientImage
-            src={image}
-            alt={`${profile.name} i ${selectedRegion.label}`}
-            width={1200}
-            height={850}
-            sizes="(max-width: 800px) 100vw, 50vw"
-            style={{ width: "100%", height: "auto", borderRadius: "var(--radius-2027)" }}
-          />
-          {/^(villajoyosa|la vila joiosa)$/i.test(profile.name) && <small style={{ display: "block", marginTop: "0.35rem", color: "#64748b", fontSize: "0.72rem" }}>Foto: <a href="https://commons.wikimedia.org/wiki/File:Playa_Centro,_Villajoyosa,_Espa%C3%B1a,_2014-07-03,_DD_28.JPG" target="_blank" rel="noopener noreferrer">Diego Delso / Wikimedia Commons</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>)</small>}
-          {/^(xal[oó]|jal[oó]n)/i.test(profile.name) && <small style={{ display: "block", marginTop: "0.35rem", color: "#64748b", fontSize: "0.72rem" }}>Foto: <a href="https://commons.wikimedia.org/wiki/File:Xal%C3%B3,_Marina_Alta,_Pa%C3%ADs_Valenci%C3%A0.JPG" target="_blank" rel="noopener noreferrer">Joanbanjo / Wikimedia Commons</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>)</small>}
+          {image ? (
+            <>
+              <ResilientImage
+                src={image}
+                fallbackSrc=""
+                unoptimized
+                alt={`Dokumentert stedfoto fra ${profile.name} i ${selectedRegion.label}`}
+                width={1200}
+                height={850}
+                sizes="(max-width: 800px) 100vw, 50vw"
+                style={{ width: "100%", height: "auto", borderRadius: "var(--radius-2027)" }}
+              />
+              <AreaPhotoCredit areaName={profile.name} />
+            </>
+          ) : (
+            <div role="status" className="resilient-image-placeholder" style={{ padding: "3rem 1rem", borderRadius: "var(--radius-2027)" }}>
+              Ingen dokumenterte fotografier fra {profile.name} er tilgjengelige ennå.
+            </div>
+          )}
         </div>
       </section>
 

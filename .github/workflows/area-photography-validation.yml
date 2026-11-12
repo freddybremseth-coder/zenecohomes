@@ -1,0 +1,91 @@
+name: Validate area photography PR
+on:
+  push:
+    branches:
+      - fix/verified-area-photography-20261112
+  pull_request:
+    paths:
+      - 'src/lib/areaVisuals.ts'
+      - 'src/lib/areaGuideContent.ts'
+      - 'src/app/omrader/**'
+      - 'src/app/inland/page.tsx'
+      - 'src/components/AreaPhotoCredit.tsx'
+      - 'src/components/ResilientImage.tsx'
+      - 'scripts/image-integrity-audit.mjs'
+      - 'scripts/verify-wikimedia-images.mjs'
+      - 'scripts/area-visual-smoke.mjs'
+jobs:
+  area-photo-checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run images:audit
+      - run: npx tsc --noEmit
+      - run: npm run build
+  area-photo-remote-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - run: node scripts/verify-wikimedia-images.mjs
+
+  area-visual-smoke:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      # The separate area-photo-checks job already builds production.
+      # Visual smoke uses Next dev so it does not rely on production .next artifacts.
+      - run: npm install --no-save --no-package-lock playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Start isolated Next.js dev server for browser testing
+        run: |
+          NEXT_TELEMETRY_DISABLED=1 npm run dev -- --hostname 127.0.0.1 > /tmp/zeneco-next.log 2>&1 &
+          echo $! > /tmp/zeneco-next.pid
+          for n in $(seq 1 60); do
+            if curl --max-time 8 -f -s -o /dev/null http://127.0.0.1:3000/; then
+              echo "Next.js test server responding"
+              exit 0
+            fi
+            sleep 2
+          done
+          tail -120 /tmp/zeneco-next.log
+          exit 1
+      - name: Capture mobile and desktop area pages
+        run: node scripts/area-visual-smoke.mjs
+      - name: Save visual test report and screenshots
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: area-visual-smoke
+          path: artifacts/area-smoke
+          if-no-files-found: warn
+      - name: Show Next.js server logs after failure
+        if: failure()
+        run: tail -120 /tmp/zeneco-next.log || true
