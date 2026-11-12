@@ -94,3 +94,10 @@ GitHub Actions-kjøringen [43279956222](https://github.com/freddybremseth-coder/
 **Tiltak på foto:** Redaksjonelle Wikimedia-foto på områdeoversikt, regionkort og byside bruker nå `unoptimized` for direkte nettleserhenting og unngår felles server-IP hos Next.js bildeoptimalisering. Andre eiendomsbilder beholder optimizer. Visuell regresjonstest er utvidet til å rapportere feil i stedfoto eksplisitt; cookie-banner avvises før skjermbilde.
 
 **Viktig:** Siden GitHub-runneren selv også mottar 429 fra Wikimedia, er direkte nettleserhenting et forsøk på å forbedre leveransen for ekte besøkende, **ikke en bekreftet løsning**. Vi bør ikke publisere før en ekstern nettleser med vanlig nettforbindelse har verifisert konkrete foto og redaksjonelle opphavsdata. Dersom direktebilder fortsatt feiler, må godkjente og korrekt lisensierte fotografier lagres i en egen billedbank/CDN og krediteringen bevares.
+
+
+## Andre runde med ekte stedfoto, og leveranseforbehold
+
+Flere dynamiske områdeprofiler viste nøytrale felt fordi de ikke hadde egne stedsbilder i den kuraterte katalogen. Det er nå lagt til egne, stedfestede Wikimedia Commons-filer for Campoamor, Gran Alacant, La Zenia, Calasparra, La Mata, San Fulgencio, Murcia, Santiago de la Ribera, Playa Honda og Torre-Pacheco. Hver oppføring har fotograf, Commons-filside og korrekt CC-lisens i `src/lib/areaVisuals.ts`. Alicante-bildet er skiftet fra et neon-skilt til et ekte havnepanorama sett fra Castillo de Santa Bárbara (Tamorlan, CC BY 3.0, 3 888 × 2 592 px). Torre-Pacheco viser en stedfestet vindmølle av Werner Wilmes (CC BY 2.0, 5 327 × 3 551 px).
+
+Playwright-testen på commit `8d1ba45f` gav 11/14 beståtte sidevisninger og 3 varierende feil, alle på mobil: Albir, Villajoyosa og Alicante. Tidligere direkte-innlastingskjøring gav 13/14 bestått. Variasjonen tilsier at enkelte Commons-kilder fortsatt ikke leveres stabilt på tvers av kjøringer. **Disse testresultatene kan ikke brukes som endelig publiseringsgodkjenning.** Områder uten autentisk foto (bl.a. enkelte golfurbanisasjoner) får fortsatt nøytral merket flate; det er bedre enn et misvisende bilde fra en annen kommune.
