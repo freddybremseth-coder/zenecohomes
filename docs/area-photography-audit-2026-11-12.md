@@ -60,3 +60,14 @@ Innlandsdelen har fra før egne navngitte Wikimedia-motiver for Biar, Villena, S
 - Undersøk på lengre sikt hosting av godkjente, lisenskorrekte fotografier i egen mediekatalog, med kreditering og historikk, for mindre avhengighet av eksterne bilder.
 
 Referanse: `src/lib/areaVisuals.ts` er kilde til gyldige koblinger, filenes Commons-sider er kilde til stedsfesting/fotorettigheter.
+
+
+## Tilleggsrunde 12. november – byområder ved Alicante
+
+Tre nye stedsfestede redaksjonelle bilder er lagt til, slik at områdesidene ikke trenger å bruke nærmeste kyststed som erstatning:
+
+- **Sant Joan d'Alacant:** `Església de sant Joan Baptista de Sant Joan d'Alacant.jpg` – Joanbanjo, CC BY-SA 4.0. Historisk kirke i selve byen, ikke Playa San Juan i Alicante.
+- **Mutxamel/Muchamiel:** `Iglesia parroquial de Muchamiel.jpg` – Rodriguillo, public domain. Kommunens historiske kirke, ikke foto fra Alicante sentrum.
+- **Alicante/Alacant:** `Alicante City & Beach - Castillo de Santa Bárbara.jpg` – Varondán, CC BY-SA 4.0. Høyt oppløst by- og strandmotiv.
+
+Bildenes Commons-stier er kontrollert mot filnavn og MD5-sharder i `npm run images:audit`. Kontroll av motivutsnitt på faktisk mobilskjerm og samtlige historiske innlandsfotos lisenser gjenstår fortsatt.
