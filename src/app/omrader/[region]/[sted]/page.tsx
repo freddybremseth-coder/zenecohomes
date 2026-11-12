@@ -104,7 +104,6 @@ export default async function AreaTownPage({
   const heroDescription = oneLineAreaText(profile.hero_blurb) || oneLineAreaText(profile.description) || `Les om ${profile.name} før du velger bolig i området.`;
   const book = placeBookForArea(profile.name);
   const image = areaPresentationImage(profile, properties);
-  const villajoyosaHero = /^(villajoyosa|la vila joiosa)$/i.test(profile.name.trim());
   const areaFacts = getTownAreaFacts(profile.name);
 
   return (
@@ -112,11 +111,14 @@ export default async function AreaTownPage({
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <section
         className="page-hero compact-hero image-hero"
-        style={villajoyosaHero && image ? {
+        style={{
           position: "relative",
-          backgroundImage: `linear-gradient(90deg, rgba(22, 34, 43, 0.86), rgba(22, 34, 43, 0.39)), url("${image}")`,
-          backgroundPosition: "center, 62% center",
-        } : undefined}
+          backgroundImage: image
+            ? `linear-gradient(90deg, rgba(22, 34, 43, 0.88), rgba(22, 34, 43, 0.44)), url("${image}")`
+            : "linear-gradient(100deg, #172a34, #344957)",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
       >
         <p className="eyebrow">{selectedRegion.label} · områdeguide</p>
         <h1>Bolig og hverdagsliv i <NoBreakName name={profile.name} /></h1>
