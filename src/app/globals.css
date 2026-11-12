@@ -7176,3 +7176,19 @@ footer {
   border-color: var(--gold-dark);
   color: #fff;
 }
+
+
+/* Purchase guide: desktop layout for the personal-experience section only */
+@media (min-width: 761px) {
+  .cornerstone-guide .cornerstone-experience {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-inline: clamp(28px, 4.5vw, 64px);
+  }
+
+  .cornerstone-guide .cornerstone-experience > div {
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}
