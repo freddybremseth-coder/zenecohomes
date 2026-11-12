@@ -402,7 +402,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
               <article className="area-profile-card" key={profile.id || profile.name}>
                 <div className="area-profile-photo">
                   {image ? (
-                    <ResilientImage src={image} fallbackSrc="" alt={`${profile.name} – fotografi fra stedet`} fill sizes="(max-width: 900px) 100vw, 48vw" style={{ objectFit: "cover" }} />
+                    <ResilientImage src={image} fallbackSrc="" unoptimized alt={`${profile.name} – fotografi fra stedet`} fill sizes="(max-width: 900px) 100vw, 48vw" style={{ objectFit: "cover" }} />
                   ) : (
                     <div role="status" className="resilient-image-placeholder" style={{ padding: "2rem", height: "100%", display: "grid", placeItems: "center", textAlign: "center" }}>
                       Stedsfoto mangler for {profile.name}
