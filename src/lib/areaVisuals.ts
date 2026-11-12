@@ -28,6 +28,18 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "El Campello - Playa 2.jpg": "8/85/El_Campello_-_Playa_2.jpg",
   "Xaló, Marina Alta, País Valencià.JPG": "2/28/Xal%C3%B3%2C_Marina_Alta%2C_Pa%C3%ADs_Valenci%C3%A0.JPG",
   "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": "9/9b/Playa_Centro%2C_Villajoyosa%2C_Espa%C3%B1a%2C_2014-07-03%2C_DD_28.JPG",
+  "L'Alfàs del Pi.jpg": "f/fd/L%27Alf%C3%A0s_del_Pi.jpg",
+  "La Nucia.jpg": "7/77/La_Nucia.jpg",
+  "Teulada.jpg": "f/fb/Teulada.jpg",
+  "Torrevieja - Playas 12.jpg": "4/45/Torrevieja_-_Playas_12.jpg",
+  "Guardamar del Segura - Playa Babilonia 4.jpg": "3/34/Guardamar_del_Segura_-_Playa_Babilonia_4.jpg",
+  "Ciudad Quesada from the air.jpg": "d/da/Ciudad_Quesada_from_the_air.jpg",
+  "Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg": "9/92/Beach_in_Cala_Capit%C3%A1n_in_Cabo_Roig_in_Orihuela_Costa,_Orihuela,_Alicante,_Spain,_2022_January_-_2.jpg",
+  "Santa Pola - panoramio (4).jpg": "c/cb/Santa_Pola_-_panoramio_(4).jpg",
+  "Mar Menor desde Villananitos.jpg": "a/a2/Mar_Menor_desde_Villananitos.jpg",
+  "Iglesia San Francisco Javier.jpg": "4/42/Iglesia_San_Francisco_Javier.jpg",
+  "Los Alcazares del mar menor.JPG": "c/c0/Los_Alcazares_del_mar_menor.JPG",
+  "Playa natural - La Manga - panorama - panoramio.jpg": "d/d2/Playa_natural_-_La_Manga_-_panorama_-_panoramio.jpg",
 };
 function commons(fileName: string) {
   const path = VERIFIED_COMMONS[fileName];
@@ -39,8 +51,9 @@ const AREA_VISUALS: Record<string, string> = {
   // Costa Blanca Nord — coastal identity first
   albir: commons("Playa del Racó del Albir.JPG"),
   "l albir": commons("Playa del Racó del Albir.JPG"),
-  "alfas del pi": commons("Playa del Racó del Albir.JPG"),
-  "alfaz del pi": commons("Playa del Racó del Albir.JPG"),
+  "alfas del pi": commons("L'Alfàs del Pi.jpg"),
+  "alfaz del pi": commons("L'Alfàs del Pi.jpg"),
+  "l alfas del pi": commons("L'Alfàs del Pi.jpg"),
 
   altea: commons("Old altea.jpg"),
 
@@ -62,7 +75,7 @@ const AREA_VISUALS: Record<string, string> = {
   polop: commons("Polop i el Panoig.jpg"),
 
   moraira: commons("CastMoraira01.jpg"),
-  teulada: commons("CastMoraira01.jpg"),
+  teulada: commons("Teulada.jpg"),
 
   javea: commons("Jávea desde el Montgó.jpg"),
   xabia: commons("Jávea desde el Montgó.jpg"),
@@ -71,22 +84,57 @@ const AREA_VISUALS: Record<string, string> = {
   campello: commons("El Campello - Playa 2.jpg"),
 
   // Real Xaló/Jalón town view. Joanbanjo, CC BY-SA 3.0 (attributed on area pages).
+
+  "la nucia": commons("La Nucia.jpg"),
+  "la nucia alicante": commons("La Nucia.jpg"),
+  torrevieja: commons("Torrevieja - Playas 12.jpg"),
+  "guardamar del segura": commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
+  guardamar: commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
+  "ciudad quesada": commons("Ciudad Quesada from the air.jpg"),
+  "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
+  "santa pola": commons("Santa Pola - panoramio (4).jpg"),
+  "san pedro del pinatar": commons("Mar Menor desde Villananitos.jpg"),
+  "san javier": commons("Iglesia San Francisco Javier.jpg"),
+  "los alcazares": commons("Los Alcazares del mar menor.JPG"),
+  "la manga": commons("Playa natural - La Manga - panorama - panoramio.jpg"),
+
   "xalo jalon": commons("Xaló, Marina Alta, País Valencià.JPG"),
   xalo: commons("Xaló, Marina Alta, País Valencià.JPG"),
   jalon: commons("Xaló, Marina Alta, País Valencià.JPG"),
 };
 
+/** Photo selection is exact: neither substring matching nor a nearby town counts. */
 export function getEditorialAreaImage(areaName: string): string | null {
-  const target = normalizeSearchText(areaName);
-  if (!target) return null;
+  const key = normalizeSearchText(areaName);
+  return key ? AREA_VISUALS[key] || null : null;
+}
 
-  if (AREA_VISUALS[target]) return AREA_VISUALS[target];
+type Credit = { author: string; license: string; licenseUrl?: string };
+const PHOTO_CREDITS: Record<string, Credit> = {
+  "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": { author: "Diego Delso", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Xaló, Marina Alta, País Valencià.JPG": { author: "Joanbanjo", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
+  "L'Alfàs del Pi.jpg": { author: "B25es", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
+  "La Nucia.jpg": { author: "Wikimedia Commons", license: "Se kildeside for lisens" },
+  "Teulada.jpg": { author: "Espencat", license: "Public domain" },
+  "Torrevieja - Playas 12.jpg": { author: "Zarateman", license: "CC0 1.0", licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/" },
+  "Guardamar del Segura - Playa Babilonia 4.jpg": { author: "Zarateman", license: "CC0 1.0", licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/" },
+  "Ciudad Quesada from the air.jpg": { author: "Euromarina", license: "CC0 1.0", licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/" },
+  "Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg": { author: "Ximonic (Simo Räsänen)", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Santa Pola - panoramio (4).jpg": { author: "Halina Frederiksen", license: "CC BY 3.0", licenseUrl: "https://creativecommons.org/licenses/by/3.0/" },
+  "Mar Menor desde Villananitos.jpg": { author: "Anidae", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Iglesia San Francisco Javier.jpg": { author: "Nurialsl", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Los Alcazares del mar menor.JPG": { author: "Vordmeils", license: "Public domain" },
+  "Playa natural - La Manga - panorama - panoramio.jpg": { author: "INDALOMANIA", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
+};
 
-  // RealtyFlow area names can include a municipality/region suffix. Match a
-  // known place only when it is a meaningful contained term.
-  const match = Object.entries(AREA_VISUALS).find(([key]) =>
-    key.length >= 5 && (target.includes(key) || key.includes(target)),
-  );
-
-  return match?.[1] || null;
+export function getEditorialAreaPhoto(areaName: string) {
+  const url = getEditorialAreaImage(areaName);
+  if (!url) return null;
+  const fileName = Object.keys(VERIFIED_COMMONS).find((file) => commons(file) === url);
+  if (!fileName) return null;
+  return {
+    url,
+    sourceUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(fileName.replaceAll(" ", "_"))}`,
+    credit: PHOTO_CREDITS[fileName] || { author: "Wikimedia Commons", license: "Se kildeside for lisens" },
+  };
 }
