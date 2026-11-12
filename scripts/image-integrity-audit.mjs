@@ -6,6 +6,8 @@ const root = resolve(new URL("..", import.meta.url).pathname);
 const read = (path) => readFileSync(join(root, path), "utf8");
 
 const areaVisuals = read("src/lib/areaVisuals.ts");
+const areaGuide = read("src/lib/areaGuideContent.ts");
+const areaHub = read("src/app/omrader/page.tsx");
 const next = read("next.config.ts");
 const safe = read("src/components/ResilientImage.tsx");
 const name = read("src/components/ProtectedPlaceName.tsx");
@@ -19,6 +21,14 @@ const galleryEs = read("src/components/es/SpanishPropertyGallery.tsx");
 
 assert.ok(!areaVisuals.includes("commons.wikimedia.org/wiki/Special:Redirect/file"), "Unsupported redirected Wikimedia host found");
 assert.ok(next.includes('hostname: "upload.wikimedia.org"'), "Next.js image optimizer must allow Wikimedia upload host");
+assert.ok(areaVisuals.includes("return key ? AREA_VISUALS[key] || null : null"), "Area photo selector must use strict normalized keys");
+assert.ok(!areaVisuals.includes("target.includes(key)") && !areaVisuals.includes("key.includes(target)"), "Substring matching incorrectly borrows photos from neighboring towns");
+assert.ok(areaVisuals.includes('"alfas del pi": commons("L\'Alfàs del Pi.jpg")'), "Alfàs must not show Albir beach");
+assert.ok(areaVisuals.includes('teulada: commons("Teulada.jpg")'), "Teulada must not show Moraira");
+assert.ok(!areaGuide.includes("profile.photo_url") && !areaGuide.includes("getPrimaryImage("), "Unverified CMS/property photos must not become town photos");
+assert.ok(!areaGuide.includes('return "/assets/areas.jpg"'), "Generic image fallback is not a photograph of the town");
+assert.ok(!areaHub.includes("profiles.find((item) => areaMatchesRegion"), "Regional card must not choose the first arbitrary town");
+assert.ok(areaHub.includes('fallbackSrc=""') && town.includes('fallbackSrc=""') && region.includes('fallbackSrc=""'), "Area images must not silently fall back to an unrelated photo");
 assert.ok(existsSync(join(root, "public/assets/areas.jpg")), "Known safe site placeholder missing");
 assert.ok(safe.includes("onError=") && safe.includes('fallbackSrc = "/assets/areas.jpg"'), "Image fallback missing");
 assert.ok(town.includes("<ResilientImage"), "Town image lacks error fallback");
