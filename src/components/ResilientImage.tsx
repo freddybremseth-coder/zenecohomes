@@ -47,7 +47,7 @@ export function ResilientImage({
       style={style}
       onError={(event) => {
         onError?.(event);
-        if (current !== fallbackSrc) setCurrent(fallbackSrc);
+        if (fallbackSrc && current !== fallbackSrc) setCurrent(fallbackSrc);
         else setUnavailable(true);
       }}
     />
@@ -81,7 +81,7 @@ export function ResilientNativeImage({
       className={className}
       onError={(event) => {
         props.onError?.(event);
-        if (current !== fallbackSrc) setCurrent(fallbackSrc);
+        if (fallbackSrc && current !== fallbackSrc) setCurrent(fallbackSrc);
         else setUnavailable(true);
       }}
     />
