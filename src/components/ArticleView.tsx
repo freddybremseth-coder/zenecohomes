@@ -1056,7 +1056,7 @@ export function ArticleView({ article }: { article: Article }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      {article.faq.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <section className="page-hero compact-hero article-hero">
@@ -1339,18 +1339,20 @@ export function ArticleView({ article }: { article: Article }) {
               )}
             </section>}
 
-            <section className="article-faq">
-              <p className="eyebrow">Vanlige spørsmål</p>
-              <h2>FAQ</h2>
-              <div className="faq-accordion">
-                {article.faq.map((item, index) => (
-                  <details key={item.question} open={index === 0}>
-                    <summary>{item.question}</summary>
-                    <p>{item.answer}</p>
-                  </details>
-                ))}
-              </div>
-            </section>
+            {article.faq.length > 0 && (
+              <section className="article-faq">
+                <p className="eyebrow">Vanlige spørsmål</p>
+                <h2>FAQ</h2>
+                <div className="faq-accordion">
+                  {article.faq.map((item, index) => (
+                    <details key={item.question} open={index === 0}>
+                      <summary>{item.question}</summary>
+                      <p>{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            )}
           </article>
 
           <aside className="article-aside">
