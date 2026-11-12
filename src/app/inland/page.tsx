@@ -1,3 +1,4 @@
+import { InlandPhotoSource } from "@/components/InlandPhotoSource";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, Check, Leaf, MapPin, ShieldCheck, Sun, Zap } from "lucide-react";
@@ -191,6 +192,7 @@ export default async function InlandPage() {
                 <span>{town.eyebrow}</span>
               </div>
               <h3>{town.name}</h3>
+              <InlandPhotoSource name={town.slug === "hondon-dalene" ? "Hondón de las Nieves (Hondón-dalene)" : town.name} photo={town.photo} />
               <p>{displayTownIntro(town)}</p>
               <Link className="text-button area-property-link" href={`/omrader/innlandet/${town.slug}`}>
                 <MapPin size={17} /> Utforsk {town.name}
