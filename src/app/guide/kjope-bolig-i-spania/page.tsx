@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -20,57 +20,14 @@ const languageLinks = eq
   : undefined;
 
 export const metadata: Metadata = {
-  title: "Kjøpe bolig i Spania (2026): Dette må du vite før kjøp",
+  title: "Kjøpe bolig i Spania (2026) – guide for nordmenn",
   description:
-    "Kjøpe hus eller leilighet i Spania? Les om kjøpsprosessen, kostnadene, finansiering og fallgruvene du bør kjenne før du starter boligjakten.",
+    "Komplett guide for nordmenn som vil kjøpe bolig i Spania. Les om kjøpsprosessen, kostnader, finansiering, områdevalg, boligtyper og overtakelse.",
   alternates: {
     canonical: "/guide/kjope-bolig-i-spania",
     languages: eq ? seoHreflang(eq) : undefined,
   },
 };
-
-const eightSteps = [
-  [
-    "Avklar budsjett og finansiering",
-    "Finn ut hvor mye du kan bruke totalt, inkludert egenkapital, finansiering og kostnader som kommer i tillegg til kjøpesummen.",
-  ],
-  [
-    "Velg område og boligtype",
-    "Bestem hvor du vil kjøpe, og om du ser etter leilighet, villa, rekkehus, finca eller en annen boligtype.",
-  ],
-  [
-    "Finn boliger og dra på visning",
-    "Sammenlign aktuelle boliger, undersøk nærområdet og kontroller at boligen samsvarer med annonsen og behovene dine.",
-  ],
-  [
-    "Reserver boligen",
-    "Når du har funnet riktig bolig, inngås det en reservasjonsavtale for å ta den av markedet mens dokumentasjon og vilkår gjennomgås.",
-  ],
-  [
-    "Få boligen juridisk kontrollert",
-    "En advokat bør kontrollere eierskap, heftelser, gjeld, tillatelser og opplysninger i eiendomsregisteret før du binder deg videre.",
-  ],
-  [
-    "Skaff NIE og avklar det praktiske",
-    "Sørg for at NIE-nummer, finansiering og eventuell fullmakt er på plass før sluttføringen av kjøpet.",
-  ],
-  [
-    "Signer kjøpekontrakten og betal depositum",
-    "Deretter følger normalt en privat kjøpekontrakt eller contrato de arras, med avtalte vilkår, frister og depositum.",
-  ],
-  [
-    "Signer hos notar og registrer eierskapet",
-    "Hos notar signeres det offentlige skjøtet, escritura pública, og sluttoppgjøret gjennomføres. Deretter registreres eierskapet i det spanske eiendomsregisteret før overtakelsen fullføres.",
-  ],
-] as const;
-
-const houseChecks = [
-  "om tomt, basseng og eventuelle tilbygg er korrekt registrert",
-  "hvor mye vedlikehold eiendommen krever",
-  "hva den årlige IBI-en faktisk er",
-  "om boligen ligger i en urbanisasjon med felleskostnader",
-  "om vann, avløp og øvrig infrastruktur er kommunalt tilknyttet eller privat",
-] as const;
 
 const apartmentChecks = [
   "hvor høye felleskostnadene er og hva de dekker",
@@ -79,25 +36,6 @@ const apartmentChecks = [
   "hvilke regler som gjelder for utleie",
   "om bod, parkering og terrasse faktisk følger boligen juridisk",
   "om heis og fellesområder er tilgjengelige og i god stand",
-] as const;
-
-const reservationChecks = [
-  "hvor stort reservasjonsbeløpet er",
-  "hvor lenge boligen tas av markedet",
-  "om beløpet trekkes fra kjøpesummen senere",
-  "hva som skjer dersom juridisk kontroll avdekker problemer",
-  "hvilke vilkår som gjelder dersom kjøper eller selger trekker seg",
-  "når neste kontrakt og betaling skal gjennomføres",
-] as const;
-
-const legalChecks = [
-  "hvem som faktisk står registrert som eier",
-  "om det finnes lån, heftelser eller andre krav knyttet til eiendommen",
-  "om oppgitt areal stemmer med registrerte opplysninger",
-  "om tilbygg, basseng, terrasse eller andre endringer er lovlig oppført og registrert",
-  "om det finnes utestående skatter eller felleskostnader",
-  "om eiendommen har nødvendige tillatelser og sertifikater",
-  "om det finnes begrensninger, servitutter eller andre forhold som påvirker bruken av eiendommen",
 ] as const;
 
 const faq = [
@@ -160,7 +98,6 @@ function PropertyShowcase({
 
 export default async function BuyInSpainGuidePage() {
   const inventory = await getProperties(0, "zeneco");
-  const townhouses = inventory.filter((property) => propertyMatchesType(property, "Rekkehus")).slice(0, 3);
   const apartments = inventory.filter((property) => propertyMatchesType(property, "Leilighet")).slice(0, 3);
   const villas = inventory.filter((property) => propertyMatchesType(property, "Villa")).slice(0, 3);
 
@@ -186,34 +123,10 @@ export default async function BuyInSpainGuidePage() {
         <div className="cornerstone-hero-layout">
           <div className="cornerstone-hero-copy">
             <p className="eyebrow">
-              Guide · <Link href="/om-oss/freddy">Freddy Bremseth</Link> · Oppdatert 15. oktober 2026
+              Guide · <Link href="/om-oss/andrea">Andrea Thorsnes</Link> · Oppdatert 12. november 2026
             </p>
-            <h1>Kjøpe bolig i Spania (2026) – Dette må du vite</h1>
-            <p>
-              Kjøpe hus eller leilighet i Spania? Les om kjøpsprosessen, kostnadene og fallgruvene du bør se opp for før du starter boligjakten.
-            </p>
-            <div className="hero-actions">
-              <Link className="contact-button" href="/eiendommer">
-                Se boliger til salgs <ArrowRight size={17} />
-              </Link>
-              <Link className="text-button light" href="/booking">Book en uforpliktende boligprat</Link>
-            </div>
+            <h1>Kjøpe bolig i Spania (2026) – guide for nordmenn</h1>
           </div>
-
-          <aside className="cornerstone-hero-panel" aria-label="Kort om guiden">
-            <p className="eyebrow">Praktisk kjøperguide</p>
-            <h2>Dette får du svar på</h2>
-            <ul>
-              <li>Hvordan kjøpsprosessen fungerer steg for steg</li>
-              <li>Hva boligkjøpet faktisk koster</li>
-              <li>Hvordan det spanske markedet skiller seg fra Norge</li>
-              <li>Hva du bør kontrollere før du reserverer</li>
-              <li>Hus, leilighet, villa, finca og nybygg</li>
-            </ul>
-            <Link className="text-button light" href="/om-oss/freddy">
-              Om forfatteren <ArrowRight size={15} />
-            </Link>
-          </aside>
         </div>
       </section>
 
@@ -221,12 +134,10 @@ export default async function BuyInSpainGuidePage() {
         <div>
           <span>På denne siden:</span>
           <a href="#hvordan-kjope">Hvordan kjøpe</a>
-          <a href="#for-boligjakten">Før boligjakten</a>
-          <a href="#boliger-til-salgs">Finne bolig</a>
+          <a href="#for-du-kjoper">Før du kjøper</a>
           <a href="#boligtype">Boligtype</a>
-          <a href="#kjopsprosess">Steg for steg</a>
+          <a href="#boligannonse">Boligannonse</a>
           <a href="#etter-kjopet">Etter kjøpet</a>
-          <a href="#vanlige-feil">Vanlige feil</a>
           <a href="#erfaringer">Mine erfaringer</a>
           <a href="#faq">FAQ</a>
         </div>
@@ -240,212 +151,148 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Jeg har fulgt kjøpsprosessen tett fra begge sider, både som selger og privat kjøper, og vet godt hvilke spørsmål som dukker opp underveis. Her får du svar på det som er viktigst å vite før du kjøper hus, leilighet eller annen eiendom i Spania.
           </p>
-          <p>
-            Ønsker du en bredere oversikt over kjøpsprosessen, kostnader og hva du bør undersøke når du kjøper nybygg? Les vår <Link href="/guide/nybygg-i-spania">komplette guide til nybygg i Spania</Link>.
-          </p>
         </div>
       </section>
 
       <section className="section cornerstone-section" id="hvordan-kjope">
         <div className="section-heading">
-          <p className="eyebrow">Kort svar først</p>
           <h2>Hvordan kjøpe bolig i Spania?</h2>
-          <p>Et boligkjøp i Spania følger vanligvis en fast prosess i åtte steg:</p>
-        </div>
-
-        <ol className="article-bullets guide-steps-list">
-          {eightSteps.map(([title, text]) => (
-            <li key={title}><strong>{title}</strong> – {text}</li>
-          ))}
-        </ol>
-
-        <div className="section-heading" style={{ marginTop: 36 }}>
           <p>
-            Kjøper du bruktbolig kan du normalt flytte inn etter rundt 10 uker. Ved nybygg kjøper du ofte før boligen er ferdigstilt, og må derfor vente en god del lengre.
+            Et boligkjøp i Spania følger mange av de samme prinsippene som i Norge, men det er enkelte forskjeller i hvordan kjøpet gjennomføres. Blant annet brukes reservasjonsavtaler, juridiske kontroller og notar ved sluttføringen.
           </p>
           <p>
-            Et kjøp av nybygg følger også en litt annen prosess, eksempelvis ved at kjøpesummen deles opp og betales underveis i byggeperioden.
-          </p>
-          <Link className="text-button" href="/guide/nybygg-i-spania">
-            Les kjøperguiden for nybygg i Spania <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
-
-      <section className="section cornerstone-section" id="for-boligjakten">
-        <div className="section-heading">
-          <p className="eyebrow">Før boligjakten</p>
-          <h2>Viktig før du begynner å se på hus og leilighet i Spania</h2>
-          <p>
-            Før du begynner å lete etter konkrete boliger i Spania, bør du forstå rammene rundt kjøpet. Min erfaring er at mange starter i feil ende, noe som ofte leder til problemer. Her er tre ting du bør vite før du starter boligjakten.
+            Her går vi gjennom kjøpsprosessen i seks steg, fra de første forberedelsene til du får nøklene til din nye bolig.
           </p>
         </div>
 
-        <div className="preflight-list">
-          <article className="preflight-item">
-            <CheckCircle2 size={19} />
-            <div>
-              <h3>Kjøpesummen er ikke totalkostnaden</h3>
-              <p>
-                Når du kjøper bolig i Spania, må du beregne mer enn kjøpesummen. Skatter, avgifter og kostnader til blant annet advokat, notar og eiendomsregister kommer i tillegg.
-              </p>
-              <p>
-                Ved kjøp av bruktbolig betaler kjøperen overføringsavgiften ITP (<em>Impuesto sobre Transmisiones Patrimoniales</em>). I Comunitat Valenciana er den generelle satsen 9 % (11 % dersom boligens verdi overstiger 1 million euro). Ved kjøp av nybygg betales normalt 10 % merverdiavgift (IVA) og 1,4 % dokumentavgift (AJD). AJD kan reduseres til 0,1 % dersom boligen oppfyller kravene til kjøperens faste bolig.
-              </p>
-              <p>I tillegg bør du beregne kostnader til:</p>
-              <ul className="article-bullets">
-                <li>advokat og juridisk kontroll: Avklar på forhånd hva advokatens honorar inkluderer, for eksempel juridisk kontroll av boligen, gjennomgang av kontrakter og oppfølging frem til overtakelse.</li>
-                <li>notar: Honorarene følger regulerte tariffer og påvirkes av dokumentene og transaksjonen.</li>
-                <li>registrering i eiendomsregisteret</li>
-                <li>eventuell gestoría: Kan være relevant for skatteinnlevering, registrering, kontrakter med leverandører og annen administrasjon, avhengig av hvem som håndterer kjøpet.</li>
-                <li>valutaveksling dersom pengene skal overføres fra norske kroner til euro</li>
-              </ul>
-              <p>
-                Bruk kalkulatoren nedenfor til å lage et foreløpig totalbudsjett før reservasjon. La advokaten bekrefte skattene og kostnadene for den konkrete handelen.
-              </p>
-              <p>
-                Husk også at kostnadene ikke stopper når du får nøklene. Som boligeier må du regne med løpende utgifter til blant annet kommunal eiendomsskatt (IBI), felleskostnader dersom boligen ligger i et sameie, forsikring, strøm, vann og vedlikehold.
-              </p>
-              <PurchaseBudgetCalculator />
-            </div>
-          </article>
+        <div className="article-content">
+          <h3>1. Avklar budsjett og finansiering</h3>
+          <p>
+            Før du begynner å se på <Link href="/eiendommer">boliger til salgs i Spania</Link>, bør du finne ut hvor mye du kan bruke på boligkjøpet. Husk at skatter, avgifter og andre kjøpsomkostninger kommer i tillegg til kjøpesummen. Dersom du trenger lån, bør finansieringen avklares på et tidlig tidspunkt.
+          </p>
+          <p>
+            Tenk også gjennom hvordan boligen skal brukes. Skal du kjøpe feriebolig i Spania, helårsbolig eller kanskje den skal leies ut deler av året? Dette har betydning for både budsjett, områdevalg og hvilken boligtype som passer deg.
+          </p>
 
-          <article className="preflight-item">
-            <CheckCircle2 size={19} />
-            <div>
-              <h3>Velg område før bolig</h3>
-              <p>
-                Området har ofte større betydning for hvor fornøyd du blir med kjøpet enn selve boligen. Min erfaring er at mange begynner med å lete etter den fineste boligen innenfor budsjettet og vurderer området etterpå. Det kan fort bli feil rekkefølge.
-              </p>
-              <p>
-                En bolig kan være svært attraktiv på papiret, men mindre praktisk dersom du senere oppdager at du er avhengig av bil til alt, at området er langt roligere utenfor sesongen enn du forventet, eller at avstanden til flyplassen blir upraktisk.
-              </p>
-              <p>
-                Derfor er det lurt å starte med hvordan du faktisk ønsker å bruke boligen. Behovene blir ganske forskjellige dersom du vil ha gangavstand til restauranter og strand, sammenlignet med om du ønsker større tomt, mer ro og lavere boligpris i innlandet.
-              </p>
-              <p>
-                I vår <Link href="/guide/omradeguide-eiendomskjop-i-spania">områdeguide for boligkjøp i Spania</Link> kan du lese mer om de ulike regionene og sammenligne blant annet prisnivå, klima, avstand til flyplass og servicetilbud.
-              </p>
-              <Link className="text-button" href="/omrader">
-                Utforsk områdene våre <ArrowRight size={15} />
-              </Link>
-            </div>
-          </article>
+          <h3>2. Finn bolig og dra på visning</h3>
+          <p>
+            Når budsjettet er avklart, kan du begynne å lete etter aktuelle boliger. Vær oppmerksom på at eiendommer som fortsatt er annonsert på boligportaler, allerede kan være reservert eller solgt. Du bør derfor få bekreftet tilgjengeligheten før du planlegger en visning.
+          </p>
+          <p>
+            På visning bør du undersøke både boligen og nærområdet. Solforhold, støy, avstand til servicetilbud og behovet for bil kan være minst like viktig som selve boligen.
+          </p>
+          <p>Les mer om hvordan vi organiserer <Link href="/visningstur">visningsturer i Spania</Link>.</p>
 
-          <article className="preflight-item">
-            <CheckCircle2 size={19} />
-            <div>
-              <h3>Det spanske boligmarkedet fungerer annerledes enn det norske</h3>
-              <p>
-                Boligmarkedet i Spania er strukturert på en annen måte enn hjemme. Det finnes ikke én nasjonal meglerordning med de samme kravene over hele landet, og reglene for eiendomsformidling varierer mellom de autonome regionene.
-              </p>
-              <p>
-                En annen forskjell er hvordan boligene markedsføres. I Spania kan den samme leiligheten eller det samme huset være annonsert av flere meglere samtidig, med ulike bilder og beskrivelser.
-              </p>
-              <p>
-                Det betyr ikke nødvendigvis at noe er galt, men det gjør boligjakten mer uoversiktlig. Da jeg kjøpte min første leilighet i Spania, opplevde jeg selv hvor vanskelig det kunne være å vite hvilke opplysninger som faktisk stemte.
-              </p>
-              <p>
-                Heldigvis hadde jeg en lokal rådgiver som kunne rydde opp i informasjonen og svare på spørsmål underveis. Derfor mener jeg det er en klar fordel å ha én rådgiver som kjenner området, kan verifisere opplysningene i annonsene og hjelpe deg med å sortere hvilke boliger som faktisk er relevante.
-              </p>
-              <p>
-                Les også hvorfor en <Link href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">god eiendomsrådgiver er viktig</Link> når markedet er fragmentert og samme bolig kan finnes hos flere aktører.
-              </p>
-              <Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link>
-            </div>
-          </article>
+          <h3>3. Reservasjon og juridisk kontroll</h3>
+          <p>
+            Når du har funnet en bolig du ønsker å kjøpe, er det vanlig å inngå en reservasjonsavtale. Dette innebærer at du betaler et beløp for å holde boligen av markedet i en avtalt periode.
+          </p>
+          <p>
+            Før du signerer eller betaler, bør en uavhengig advokat gjennomgå vilkårene. Advokaten bør også kontrollere eierskap, heftelser, tillatelser og annen relevant dokumentasjon før du påtar deg ytterligere forpliktelser.
+          </p>
+
+          <h3>4. Kjøpekontrakt, NIE og forberedelser</h3>
+          <p>
+            Når de nødvendige kontrollene er gjennomført, inngås normalt en privat kjøpekontrakt. Den fastsetter blant annet kjøpesum, betalingsplan, frister og vilkår for handelen. Ved bruktbolig benyttes ofte en <em>contrato de arras</em>, der kjøper betaler et avtalt depositum.
+          </p>
+          <p>
+            Du trenger også et <Link href="/guide/nie-skattenummer-spania">spansk identifikasjonsnummer (NIE)</Link> for å gjennomføre kjøpet. Søknaden bør startes tidlig, samtidig som du avklarer bank, finansiering og eventuelle fullmakter.
+          </p>
+
+          <h3>5. Signering og sluttoppgjør hos notar</h3>
+          <p>
+            Selve boligkjøpet sluttføres normalt hos en spansk notar (<em>notario</em>). Her signerer kjøper og selger det offentlige skjøtet, <em>escritura pública</em>, og sluttoppgjøret gjennomføres etter det som er avtalt.
+          </p>
+          <p>
+            Notaren kontrollerer bestemte formelle og juridiske forhold ved handelen, men erstatter ikke kjøperens egen advokat. Husk å kontrollere at dokumentasjonen og eventuelle uavklarte forhold er gjennomgått før signeringen.
+          </p>
+
+          <h3>6. Registrering og overtakelse</h3>
+          <p>
+            Når skjøtet er signert og oppgjøret gjennomført, får du normalt nøklene til boligen. Deretter skal nødvendige skatter og avgifter håndteres, og eierskapet registreres i det spanske eiendomsregisteret (<em>Registro de la Propiedad</em>). Du må også sørge for at blant annet strøm, vann, forsikring og eventuelle felleskostnader blir fulgt opp.
+          </p>
         </div>
       </section>
 
-      <section className="section proof-section cornerstone-section" id="boliger-til-salgs">
+      <section className="section cornerstone-section" id="for-du-kjoper">
         <div className="section-heading">
-          <p className="eyebrow">Boligsøk</p>
-          <h2>Hvor finner jeg boliger til salgs i Spania?</h2>
+          <h2>Dette bør du vite før du kjøper eiendom i Spania</h2>
           <p>
-            Hos ZenEcoHomes finner du et bredt utvalg av <Link href="/eiendommer">boliger til salgs i Spania</Link>, inkludert hus, leiligheter, villaer og fincaer i områdene vi jobber i. Finner du ikke det du ser etter i boligoversikten vår, kan vi hjelpe deg å finne alternativer gjennom nettverket vårt.
-          </p>
-          <p>
-            Mange nordmenn starter også den spanske boligdrømmen på Finn og Idealista. Det er forståelig, men <Link href="/magasin/idealista-finn-ikke-alltid-til-a-stole-pa">Finn og Idealista er ikke alltid til å stole på</Link>. Utdaterte annonser og boliger som allerede er reservert er bare noen av problemene med store boligportaler.
-          </p>
-          <p>
-            Derfor bør du få bekreftet pris og tilgjengelighet, samt rådføre deg med noen som kjenner det lokale markedet før du går videre.
+            Før du begynner å lete etter hus, leilighet eller annen eiendom, er det noen forhold du bør sette deg inn i. Kostnader, finansiering og valg av område har stor betydning for hvilke boliger som faktisk passer deg.
           </p>
         </div>
 
-        <div className="section-heading" style={{ marginTop: 34 }}>
-          <h3>Hva bør man se etter i en boligannonse?</h3>
+        <div className="article-content">
+          <h3>Kostnader ved boligkjøpet</h3>
           <p>
-            De som vurderer å kjøpe eiendom i Spania vil naturligvis fokusere mest på faktorer som solforhold, basseng og avstanden til strand og flyplass. Men det er minst like viktig å se på forholdene som kan påvirke kostnader og vedlikehold.
+            Når du kjøper eiendom i Spania bør du beregne 10–15 % ekstra i kjøpsomkostninger utover kjøpesummen. Ved nybygg ligger ekstrakostnaden mellom 12 og 14 prosent, mens bruktbolig ligger mellom 10 og 13 prosent.
           </p>
-        </div>
-        <div className="proof-grid">
-          <article>
-            <p className="article-item-title"><strong>Energimerking</strong></p>
-            <p>En svak energiklasse kan bety høyere strømforbruk og større behov for oppgraderinger senere. Dette blir også mer relevant i takt med strengere krav til energieffektivitet i europeiske bygg.</p>
-          </article>
-          <article>
-            <p className="article-item-title"><strong>Felleskostnader</strong></p>
-            <p>Sjekk hvor høye de er, hva de dekker og om sameiet har planlagt større arbeider. Et lavt månedsbeløp er ikke nødvendigvis positivt dersom det samtidig ligger større vedlikehold foran.</p>
-          </article>
-          <article>
-            <p className="article-item-title"><strong>Oppgitt areal</strong></p>
-            <p>Skill mellom boareal, terrasse, tomt og eventuelle fellesarealer. Tallene i annonsen kan være presentert på ulike måter og bør sammenlignes med den offisielle dokumentasjonen.</p>
-          </article>
-          <article>
-            <p className="article-item-title"><strong>Lovlighet og registrering</strong></p>
-            <p>Tilbygg, basseng, innglassede terrasser eller andre endringer bør være korrekt godkjent og registrert. Dette er ikke alltid synlig i annonsen og bør kontrolleres før kjøpet.</p>
-          </article>
-          <article>
-            <p className="article-item-title"><strong>Gjeld og heftelser</strong></p>
-            <p>En bolig kan ha lån, utestående krav eller andre heftelser knyttet til seg. Dette må undersøkes gjennom blant annet eiendomsregisteret før du går videre.</p>
-          </article>
-          <article>
-            <p className="article-item-title"><strong>Byggeår og større oppgraderinger</strong></p>
-            <p>Eldre boliger kan være gode kjøp, men det er viktig å vite hva som er gjort av oppgraderinger på for eksempel strøm, rør, tak og klimaanlegg.</p>
-          </article>
-          <article>
-            <p className="article-item-title"><strong>Tilgjengelighet og pris</strong></p>
-            <p>Bekreft at boligen fortsatt er til salgs og at prisantydningen er oppdatert. I et marked der samme bolig kan ligge hos flere meglere samtidig, kan informasjonen variere fra annonse til annonse.</p>
-          </article>
+          <PurchaseBudgetCalculator />
+          <p>
+            I tillegg bør du ta høyde for de løpende <Link href="/guide/lopende-kostnader-eie-bolig-spania">kostnadene ved å eie bolig i Spania</Link>, som blant annet omfatter eiendomsskatt, forsikring, strøm, vann og fellesutgifter.
+          </p>
+
+          <h3>Hvordan finansiere kjøpet?</h3>
+          <p>
+            Du kan <Link href="/guide/finansiere-bolig-i-spania">finansiere boligkjøpet i Spania</Link> på fire måter:
+          </p>
+          <ul className="article-bullets">
+            <li><strong>Egne midler:</strong> Du betaler hele kjøpesummen med oppsparte penger, uten å ta opp boliglån.</li>
+            <li><strong>Lån med sikkerhet i norsk bolig:</strong> Har du tilstrekkelig egenkapital i en bolig i Norge, kan det være mulig å øke det eksisterende boliglånet.</li>
+            <li><strong>Boliglån i Spania:</strong> Du kan søke om finansiering gjennom en spansk bank, som blant annet vurderer inntekt, gjeld, egenkapital og boligens verdi.</li>
+            <li><strong>Boliglån i Norge med sikkerhet i spansk bolig:</strong> Noen banker, som DNB Luxembourg, tilbyr lån med sikkerhet i din spanske bolig.</li>
+          </ul>
+
+          <h3>Velg riktig område før boligjakten</h3>
+          <p>
+            Området har ofte større betydning for hvor fornøyd du blir med kjøpet enn selve boligen. Min erfaring er at mange begynner med å lete etter den fineste boligen innenfor budsjettet og vurderer beliggenheten etterpå. Det kan fort bli feil rekkefølge.
+          </p>
+          <p>
+            Et hus eller en leilighet kan være attraktiv på papiret, men mindre praktisk dersom du senere oppdager at du er avhengig av bil til alt, at området er langt roligere utenfor sesongen enn forventet, eller at reiseveien fra flyplassen blir upraktisk.
+          </p>
+          <p>
+            Derfor anbefaler jeg å ta utgangspunkt i hvordan du ønsker å bruke boligen. Behovene blir ganske forskjellige dersom du vil ha gangavstand til restauranter og strand, sammenlignet med om du ønsker større tomt, mer ro og lavere boligpris i innlandet. Vår <Link href="/guide/omradeguide-eiendomskjop-i-spania">områdeguide for boligkjøp i Spania</Link> gir deg en oversikt over ulike regioner og hva som skiller dem.
+          </p>
+
+          <h3>Slik skiller det spanske boligmarkedet seg fra det norske</h3>
+          <p>
+            Det spanske boligmarkedet fungerer annerledes enn det norske. Reglene for eiendomsformidling varierer mellom regionene, og boligportaler som <Link href="/magasin/idealista-finn-ikke-alltid-til-a-stole-pa">Finn og Idealista er ikke alltid til å stole på</Link> fordi annonser kan bli liggende ute selv etter at eiendommen er solgt.
+          </p>
+          <p>Priser og andre opplysninger kan også være utdaterte.</p>
+          <p>
+            Da jeg kjøpte min første leilighet i Spania, opplevde jeg selv hvor vanskelig det kunne være å vite hvilke opplysninger som faktisk stemte. Heldigvis hadde jeg en lokal rådgiver som kunne rydde opp i informasjonen og svare på spørsmål underveis.
+          </p>
+          <p>
+            Derfor mener jeg det er en fordel å ha én rådgiver som kjenner området, kan kontrollere at opplysningene stemmer og hjelpe deg med å finne boliger som faktisk er aktuelle.
+          </p>
+          <div className="hero-actions">
+            <Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link>
+          </div>
         </div>
       </section>
 
       <section className="section cornerstone-section" id="boligtype">
         <div className="section-heading">
-          <p className="eyebrow">Boligtype</p>
           <h2>Hus, leilighet eller villa – hva passer deg?</h2>
           <p>
-            Hva du bør kjøpe av hus, leilighet og villa i Spania handler om langt mer enn bare pris og størrelse. Forskjellene ligger også i hvor mye vedlikehold du ønsker, hvor mye privatliv du trenger, hvilke felleskostnader du er komfortabel med og hvordan du faktisk skal bruke boligen.
+            Hva du bør kjøpe av hus, leilighet eller villa i Spania handler om langt mer enn bare pris og størrelse. Forskjellene ligger også i hvor mye vedlikehold du ønsker, hvor mye privatliv du trenger, hvilke felleskostnader du er komfortabel med og hvordan du faktisk skal bruke boligen.
           </p>
         </div>
-
         <div className="section-heading" style={{ marginTop: 34 }}>
           <h3>Kjøpe hus i Spania</h3>
           <p>
-            Når du kjøper hus i Spania får du noen opplagte fordeler som mer privatliv og mindre avhengighet av fellesarealer og sameieregler. Det er også vanlig at hus har lavere eller ingen fellesutgifter dersom eiendommen ikke ligger i en urbanisasjon.
+            Når du kjøper hus i Spania får du noen opplagte fordeler som mer privatliv og mindre avhengighet av fellesarealer og sameieregler. Det er også vanlig at hus har lavere fellesutgifter.
           </p>
           <p>
-            Samtidig følger det større ansvar for eiendommen enn ved kjøp av leilighet. Du er selv ansvarlig for å dekke vedlikehold av for eksempel fasade, tak, uteområder, basseng og tekniske installasjoner.
+            Samtidig innebærer et hus ofte større ansvar enn en leilighet. Du må selv sørge for vedlikehold av blant annet tak, fasade, uteområder og tekniske installasjoner. Har boligen privat basseng, kommer også rengjøring og vedlikehold av dette i tillegg. Før du kjøper et spansk hus, bør du undersøke:
           </p>
-          <p>
-            Et hus vil naturligvis koste mer enn en leilighet, spesielt hvis du vil bo nær stranden, men når det gjelder skatt og øvrige kostnader, er det ikke slik at hus automatisk beskattes hardere enn leiligheter. Den kommunale eiendomsskatten, IBI, påvirkes blant annet av eiendommens kadastrale verdi og hvilken sats kommunen bruker.
-          </p>
-          <p>
-            Et større hus med tomt kan derfor få høyere løpende skatt enn en mindre leilighet, men det skyldes verdien og eiendommen – ikke at det er et hus i seg selv.
-          </p>
-          <p>Før du kjøper et spansk hus, bør du undersøke:</p>
           <ul className="article-bullets">
-            {houseChecks.map((item) => <li key={item}>{item}</li>)}
+            <li><strong>Vedlikehold:</strong> Hvilken stand er tak, fasade, basseng og tekniske installasjoner i?</li>
+            <li><strong>Felleskostnader:</strong> Ligger boligen i en urbanisasjon med fellesutgifter og egne regler?</li>
+            <li><strong>Tomt og tilbygg:</strong> Er basseng, garasje og eventuelle utvidelser lovlig oppført og registrert?</li>
+            <li><strong>Infrastruktur:</strong> Er vann, avløp og strøm tilkoblet ordinære forsyningsnett, eller har eiendommen egne løsninger?</li>
           </ul>
         </div>
-
-        <PropertyShowcase
-          eyebrow="Utvalgte rekkehus"
-          title="Tre rekkehus fra boligoversikten"
-          properties={townhouses}
-          href="/eiendommer?q=&type=Rekkehus&minPrice=&maxPrice=&bedrooms=&bathrooms=&lifestyle=&minSize="
-          linkLabel="Se alle rekkehus"
-        />
 
         <div className="section-heading" style={{ marginTop: 50 }}>
           <h3>Kjøpe leilighet i Spania</h3>
@@ -470,7 +317,7 @@ export default async function BuyInSpainGuidePage() {
         />
 
         <div className="section-heading" style={{ marginTop: 50 }}>
-          <h3>Villa eller finca?</h3>
+          <h3>Villa eller finca – hva er forskjellen?</h3>
           <p>En villa og finca kan ved første øyekast ligne på hverandre, men det er likevel noen markante forskjeller.</p>
           <ul className="article-bullets">
             <li><strong>Villa:</strong> Ligger gjerne i et etablert boligområde eller en urbanisasjon.</li>
@@ -503,6 +350,9 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Jeg har selv overtatt en bruktbolig i Spania som tilsynelatende var i god stand. Likevel måtte store deler av gulvet rives på grunn av problemer med vannrørene. Denne erfaringen betyr ikke at det er risikabelt å kjøpe bruktbolig, men viser hvor viktig det er å undersøke boligens tekniske tilstand og tidligere ombygginger før du binder deg.
           </p>
+          <p>
+            Vil du lese mer om hva du bør vite når du vurderer å kjøpe ny bolig i Spania? Se vår <Link href="/guide/nybygg-i-spania">guide til nybygg i Spania</Link>.
+          </p>
         </div>
 
         <div className="table-wrap buy-guide-comparison">
@@ -520,199 +370,74 @@ export default async function BuyInSpainGuidePage() {
             </tbody>
           </table>
         </div>
+
       </section>
 
-      <section className="section cornerstone-section" id="kjopsprosess">
+      <section className="section cornerstone-section" id="boligannonse">
         <div className="section-heading">
-          <p className="eyebrow">Kjøpsprosessen</p>
-          <h2>Slik kjøper du eiendom i Spania steg for steg</h2>
+          <h2>Hva bør man se etter i en boligannonse?</h2>
           <p>
-            Et hus- eller leilighetskjøp i Spania går normalt fra behovskartlegging og visning til juridisk kontroll, finansiering, kontrakter og til slutt signering hos notar. Selve prosessen er ikke nødvendigvis komplisert, men rekkefølgen er viktig.
+            Mange som vurderer å kjøpe bolig i Spania starter naturligvis med faktorer som solforhold, basseng og avstand til strand og flyplass. Men det er minst like viktig å se på forholdene som kan påvirke kostnader og vedlikehold.
           </p>
-          <p>
-            Du bør særlig unngå å betale større beløp eller signere bindende avtaler før boligen og dokumentasjonen er kontrollert.
-          </p>
-          <p>
-            Min erfaring er at prosessen blir langt enklere når de viktigste avklaringene tas tidlig. Videre går jeg gjennom hvert steg, og forklarer hvordan vi i ZenEcoHomes kan hjelpe deg med boligjakten.
-          </p>
-          <Link className="text-button" href="/kjopsprosessen">
-            Les mer om hvordan vi hjelper deg med boligkjøpet <ArrowRight size={16} />
-          </Link>
         </div>
-
-        <div className="process-editorial">
-          <div className="process-timeline">
-            <article className="process-row" aria-label="Steg 1">
-              <span aria-hidden="true">01</span>
-              <div>
-                <h3>Behovskartlegging</h3>
-                <p>
-                  Et godt boligkjøp starter med å avklare hva du faktisk trenger. Hos Zen Eco Homes bruker vi behovskartleggingen til å snevre inn søket og unngå at du bruker tid på boliger som aldri var aktuelle.
-                </p>
-                <p>
-                  Vi ser blant annet på hvor ofte du skal bruke boligen, hvor avhengig du ønsker å være av bil, hvor viktig nærhet til strand og servicetilbud er, og hvor mye vedlikehold du er komfortabel med.
-                </p>
-                <p>
-                  Dette gjør det enklere å finne ut om du bør se mot kysten, innlandet, leilighet, villa, finca eller nybygg – og hvilke områder som faktisk passer budsjettet og hverdagen du ser for deg.
-                </p>
-                <Link href="/booking">Book en uforpliktende prat <ArrowRight size={15} /></Link>
-              </div>
-            </article>
-
-            <article className="process-row" aria-label="Steg 2">
-              <span aria-hidden="true">02</span>
-              <div>
-                <h3>Visningstur</h3>
-                <p>
-                  En visningstur er en planlagt tur der du ser flere aktuelle boliger og samtidig blir bedre kjent med områdene du vurderer. Målet er ikke å presse frem et kjøp, men å gi deg et bedre beslutningsgrunnlag.
-                </p>
-                <p>
-                  Hos Zen Eco Homes legger vi opp turen på forhånd, basert på behovene og budsjettet ditt. Det betyr at vår <Link href="/visningstur">visningstur til Spania</Link> består utelukkende av boliger som er relevante for deg.
-                </p>
-              </div>
-            </article>
-
-            <article className="process-row" aria-label="Steg 3">
-              <span aria-hidden="true">03</span>
-              <div>
-                <h3>Reservasjon</h3>
-                <p>
-                  Når du har funnet en bolig du ønsker å gå videre med, er neste steg ofte å reservere den. En reservasjonsavtale brukes for å ta boligen midlertidig av markedet, mens dokumentasjon, juridiske forhold og videre vilkår blir gjennomgått.
-                </p>
-                <p>
-                  Ved reservasjon betales det normalt et mindre beløp. Størrelsen varierer fra handel til handel, og derfor er det viktig å lese avtalen nøye før du betaler.
-                </p>
-                <p>Sjekk særlig:</p>
-                <ul className="article-bullets">
-                  {reservationChecks.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-                <p>
-                  Reservasjon betyr ikke nødvendigvis at hele kjøpet er endelig avgjort, men avtalen kan likevel få økonomiske konsekvenser. Derfor bør du vite nøyaktig hva du signerer og på hvilke vilkår før pengene overføres.
-                </p>
-                <p>Ved kjøp av nybygg kan reservasjonsavtalen, kontraktsprosessen og betalingsplanen være annerledes. Les mer i <Link href="/guide/nybygg-i-spania">guiden vår til kjøp av nybygg i Spania</Link>.</p>
-                <p>
-                  Etter reservasjonen går prosessen normalt videre med juridisk kontroll av eiendommen før du signerer en mer omfattende kjøpekontrakt.
-                </p>
-              </div>
-            </article>
-
-            <article className="process-row" aria-label="Steg 4">
-              <span aria-hidden="true">04</span>
-              <div>
-                <h3>Få eiendommen juridisk kontrollert</h3>
-                <p>
-                  Før du binder deg til kjøpet, bør eiendommen kontrolleres juridisk av en uavhengig advokat. Målet er å bekrefte at boligen kan selges på de vilkårene du er forespeilet, og at det ikke følger med juridiske problemer som først dukker opp etter overtakelsen.
-                </p>
-                <p>En grundig kontroll bør blant annet avklare:</p>
-                <ul className="article-bullets">
-                  {legalChecks.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-                <p>
-                  Dette er særlig viktig ved kjøp av eldre boliger, som kan ha blitt bygget om eller utvidet uten at alle endringene er registrert korrekt. Slike avvik kan skape problemer ved videresalg, finansiering eller senere søknader om nye endringer.
-                </p>
-                <p>Ved kjøp av nybygg bør også advokaten kontrollere at nødvendige tillatelser og dokumenter er på plass før du går videre med kjøpet.</p>
-                <Link href="/guide/juridiske-fallgruver-boligkjop-spania">
-                  Les mer om juridiske fallgruver ved boligkjøp i Spania <ArrowRight size={15} />
-                </Link>
-              </div>
-            </article>
-
-            <article className="process-row" aria-label="Steg 5">
-              <span aria-hidden="true">05</span>
-              <div>
-                <h3>Skaff NIE-nummer og avklar finansiering</h3>
-                <p>
-                  Du må ha et <Link href="/guide/nie-skattenummer-spania">NIE-nummer</Link> for å gjennomføre et boligkjøp i Spania. NIE (Número de Identidad de Extranjero) er identifikasjonsnummeret utlendinger bruker i Spania, blant annet i forbindelse med boligkjøp, skatt, bankforhold og andre offentlige eller økonomiske prosesser.
-                </p>
-                <p>Når det gjelder finansiering, finnes det flere vanlige løsninger:</p>
-                <ul className="article-bullets">
-                  <li><strong>Lån med sikkerhet i bolig i Norge:</strong> Du øker eller refinansierer boliglånet hjemme og bruker kapitalen til kjøpet i Spania.</li>
-                  <li><strong><Link href="/guide/boliglan-spansk-bank-nordmenn">Boliglån i Spania:</Link></strong> Du låner med sikkerhet i den spanske eiendommen. DNB Luxembourg tilbyr denne typen lån til bolig i Spania, og du kan også søke lån i en spansk bank.</li>
-                </ul>
-                <p>
-                  Begynn med <Link href="/guide/finansiere-bolig-i-spania">egenkapital, låneramme og valg av finansieringsmodell</Link> før du velger finansieringsmodell.
-                </p>
-              </div>
-            </article>
-
-            <article className="process-row" aria-label="Steg 6">
-              <span aria-hidden="true">06</span>
-              <div>
-                <h3>Signering hos notar</h3>
-                <p>
-                  Når kjøpekontrakten er på plass og alle vilkår er oppfylt, fullføres handelen hos notar. Her signeres det offentlige skjøtet, escritura pública, og resten av kjøpesummen betales i henhold til avtalen.
-                </p>
-                <p>
-                  Notaren kontrollerer identiteten til partene og formaliserer overføringen av eiendommen. Før signeringen bør advokaten din ha gjennomgått dokumentasjonen og bekreftet at boligen kan overtas på de avtalte vilkårene.
-                </p>
-                <p>Dersom du ikke kan møte personlig, kan handelen i mange tilfeller gjennomføres ved hjelp av fullmakt.</p>
-              </div>
-            </article>
-
-            <article className="process-row" aria-label="Steg 7">
-              <span aria-hidden="true">07</span>
-              <div>
-                <h3>Registrering og overtakelse</h3>
-                <p>
-                  Etter signeringen skal relevante skatter og avgifter betales, og eierskapet registreres i det spanske eiendomsregisteret.
-                </p>
-                <p>
-                  Samtidig starter den praktiske overtakelsen. Du får nøklene og bør sørge for at blant annet strøm, vann, forsikring og eventuelle felleskostnader overføres til ditt navn.
-                </p>
-                <p>
-                  Når registreringen og de praktiske forholdene er på plass, er boligkjøpet formelt avsluttet og eiendommen klar til bruk.
-                </p>
-              </div>
-            </article>
-          </div>
+        <div className="proof-grid">
+          <article>
+            <h3>Energimerking</h3>
+            <p>En svak energiklasse kan bety høyere strømforbruk og større behov for oppgraderinger senere. Dette blir også mer relevant i takt med strengere krav til energieffektivitet i europeiske bygg.</p>
+          </article>
+          <article>
+            <h3>Felleskostnader</h3>
+            <p>Sjekk hvor høye de er, hva de dekker og om sameiet har planlagt større arbeider. Et lavt månedsbeløp er ikke nødvendigvis positivt dersom det samtidig ligger større vedlikehold foran.</p>
+          </article>
+          <article>
+            <h3>Oppgitt areal</h3>
+            <p>Skill mellom boareal, terrasse, tomt og eventuelle fellesarealer. Tallene i annonsen kan være presentert på ulike måter og bør sammenlignes med den offisielle dokumentasjonen.</p>
+          </article>
+          <article>
+            <h3>Lovlighet og registrering</h3>
+            <p>Tilbygg, basseng, innglassede terrasser eller andre endringer bør være korrekt godkjent og registrert. Dette er ikke alltid synlig i annonsen og bør kontrolleres før kjøpet.</p>
+          </article>
+          <article>
+            <h3>Gjeld og heftelser</h3>
+            <p>En bolig kan ha lån, utestående krav eller andre heftelser knyttet til seg. Dette må undersøkes gjennom blant annet eiendomsregisteret før du går videre.</p>
+          </article>
+          <article>
+            <h3>Byggeår og større oppgraderinger</h3>
+            <p>Eldre boliger kan være gode kjøp, men det er viktig å vite hva som er gjort av oppgraderinger på for eksempel strøm, rør, tak og klimaanlegg.</p>
+          </article>
+          <article>
+            <h3>Tilgjengelighet og pris</h3>
+            <p>Bekreft at boligen fortsatt er til salgs og at prisantydningen er oppdatert. I et marked der samme bolig kan ligge hos flere meglere samtidig, kan informasjonen variere fra annonse til annonse.</p>
+          </article>
         </div>
       </section>
-
+      
       <section className="section cornerstone-section" id="etter-kjopet">
         <div className="section-heading">
-          <p className="eyebrow">Etter overtakelsen</p>
-          <h2>Hva skjer etter kjøpet?</h2>
+          <h2>Hva skjer etter boligkjøpet?</h2>
           <p>
-            Når boligen er overtatt, starter en ny del av prosessen. Nå handler det først og fremst om å få de praktiske forholdene på plass og sørge for at løpende kostnader, skatt og vedlikehold blir fulgt opp.
-          </p>
-          <p>
-            Det første du bør gjøre er å kontrollere at strøm, vann, forsikring og eventuelle felleskostnader er registrert riktig. Har du kjøpt leilighet eller bolig i en urbanisasjon, bør sameiet også ha korrekte kontakt- og betalingsopplysninger.
-          </p>
-          <p>
-            Dersom du ikke bor fast i Spania, bør du også tenke gjennom hvem som følger opp boligen når du er borte. Det kan være nyttig med noen som kan kontrollere eiendommen, håndtere mindre problemer og sørge for at boligen er klar før du kommer tilbake.
-          </p>
-          <p>
-            Gjennom <a href="https://care.zenecohomes.com/" target="_blank" rel="noopener noreferrer">Zen Eco Homes Care</a> tilbyr vi også keyholding og oppfølging av boligen når du ikke er i Spania. Det gir deg et fast kontaktpunkt dersom noe skulle oppstå mellom oppholdene.
+            Når du har fått nøklene til din nye bolig i Spania, gjenstår det fortsatt noen praktiske oppgaver. Blant annet må eierskapet registreres, avtaler overføres og nødvendige betalinger organiseres.
           </p>
         </div>
-      </section>
-
-      <section className="section proof-section cornerstone-section" id="vanlige-feil">
-        <div className="section-heading">
-          <p className="eyebrow">Unngå fallgruvene</p>
-          <h2>Vanlige feil mange gjør når de kjøper spansk bolig</h2>
+        <div className="article-content">
+          <p>Dette bør du sørge for etter overtakelsen:</p>
+          <ul className="article-bullets">
+            <li><strong>Skjøte og registrering:</strong> Få bekreftet at relevante skatter og avgifter er håndtert, og at eierskapet blir registrert i det spanske eiendomsregisteret.</li>
+            <li><strong>Strøm og vann:</strong> Sørg for at abonnementene overføres til ditt navn, og at riktige betalingsopplysninger er registrert.</li>
+            <li><strong>Forsikring:</strong> Kontroller at boligen er forsikret fra overtakelsen, med dekning som passer eiendommen og hvordan den skal brukes.</li>
+            <li><strong>Sameie og lokale avgifter:</strong> Oppdater kontaktinformasjon og betalingsavtaler for eventuelle felleskostnader, kommunale avgifter og eiendomsskatt.</li>
+          </ul>
           <p>
-            De vanligste feilene handler ikke bare om selve boligen. De oppstår når område, totalbudsjett,
-            dokumentasjon eller oppfølging ikke er avklart tidlig nok. Dette er seks situasjoner du bør unngå.
+            Det er også viktig å avklare hvem som har ansvaret for de forskjellige oppgavene. I vår guide om <Link href="/magasin/etter-boligkjop-spania-skjote-strom-vann-avgifter">hva du må ordne etter boligkjøpet i Spania</Link> går vi gjennom de praktiske forberedelsene og hva du bør kontrollere etter overtakelsen.
+          </p>
+          <p>
+            Dersom du skal bruke boligen som feriebolig, bør du også tenke på hvem som følger opp eiendommen når du er i Norge. Gjennom <Link href="https://care.zenecohomes.com/">Zen Eco Homes Care</Link> tilbyr vi blant annet nøkkeloppbevaring og tilsyn, slik at du har et lokalt kontaktpunkt når du ikke er i Spania.
           </p>
         </div>
-        <div className="mistake-list">
-          <article><span>01</span><div><h3>Boligen velges før området</h3><p>Et fint objekt løser ikke feil reisevei, feil hverdagsliv eller et område du ikke trives i utenfor ferien.</p></div></article>
-          <article><span>02</span><div><h3>Totalbudsjettet blir for lavt</h3><p>Kjøpere ser på pris i annonsen, men glemmer kostnader rundt kjøpet, møbler, drift og eventuelle oppgraderinger.</p></div></article>
-          <article><span>03</span><div><h3>Portaler brukes som fasit</h3><p>Tilgjengelighet og pris bør bekreftes før du reiser eller bygger hele beslutningen på én annonse.</p></div></article>
-          <article><span>04</span><div><h3>Reservasjon skjer for tidlig</h3><p>Ikke la tidspress erstatte dokumentkontroll, avklaringer og forståelse av hva du faktisk signerer.</p></div></article>
-          <article><span>05</span><div><h3>For mange meglere kontaktes samtidig</h3><p>Det kan gi duplikater, telefonpress og en fragmentert prosess. Én tydelig rådgiver kan koordinere bedre.</p></div></article>
-          <article><span>06</span><div><h3>Oppfølging etter kjøpet glemmes</h3><p>Overtakelse, nøkler, leverandører og praktiske spørsmål fortsetter etter notar. Planlegg også tiden etter signering.</p></div></article>
-        </div>
-        <p className="mistakes-more">
-          Les også <Link href="/magasin/7-dyre-feil-nordmenn-bolig-spania">7 dyre feil nordmenn gjør ved boligkjøp i Spania</Link>
-          for flere konkrete eksempler og hva du bør gjøre i stedet.
-        </p>
       </section>
 
       <section className="section split cornerstone-section cornerstone-experience" id="erfaringer">
         <div>
-          <p className="eyebrow">Mine erfaringer</p>
           <h2>Mine erfaringer med å kjøpe bolig i Spania</h2>
           <p>
             Da jeg kjøpte min første bolig i Spania, merket jeg raskt hvor annerledes prosessen var sammenlignet med Norge. Ting tar ofte litt lengre tid, og flere prosesser er mindre digitale enn vi er vant til hjemme.
@@ -721,43 +446,21 @@ export default async function BuyInSpainGuidePage() {
             Første gang jeg skulle ordne bankforhold i Spania, føltes det nesten som å bli sendt tilbake til 80-tallet. Jeg måtte fysisk møte opp på bankkontoret og gå gjennom dokumentasjonen der. Det er ikke nødvendigvis vanskelig, men du må være forberedt på at ting ikke alltid løses med BankID og noen få klikk.
           </p>
           <p>
-            Et annet inntrykk jeg satt igjen med, var mengden papirarbeid. Pass, NIE, bankpapirer, kontrakter, skatteopplysninger og andre dokumenter dukker opp flere steder i prosessen.
-          </p>
-        </div>
-        <div>
-          <p>
             Samtidig er dette småting sett opp mot det jeg faktisk fikk igjen. Når kjøpet først er gjennomført, sitter du igjen med det som faktisk betyr noe: et eget sted i solen, mer tid utendørs, et behagelig klima og friheten til å reise ned når det passer.
           </p>
           <p>
             Derfor er det ikke de praktiske hindrene jeg husker best i ettertid, men hvor mye glede jeg faktisk har hatt av å kjøpe bolig i Spania. Med litt tålmodighet og riktige folk rundt deg er prosessen fullt håndterbar.
           </p>
           <div className="hero-actions">
-            <Link className="text-button" href="/om-oss/freddy">
-              Les mer om Freddy Bremseth <ArrowRight size={16} />
-            </Link>
-            <Link className="text-button" href="/kundeomtaler">
-              Les kundeomtaler <ArrowRight size={16} />
-            </Link>
+            <Link className="contact-button" href="/kontakt-oss">Kontakt oss</Link>
+            <Link className="text-button" href="/kundeomtaler">Se hva tidligere kunder sier om oss</Link>
           </div>
         </div>
       </section>
 
-      <section className="contact-section">
-        <div>
-          <h2>Klar til å begynne boligjakten?</h2>
-          <p>
-            Vi kan hjelpe deg med områdevalg, boligtype, aktuelle boliger og neste steg i kjøpsprosessen. Du kan også lese mer om <Link href="/om-oss">hvordan Zen Eco Homes jobber</Link> før du bestemmer deg.
-          </p>
-        </div>
-        <Link className="contact-button" href="/booking">
-          Start med en uforpliktende boligprat <ArrowRight size={18} />
-        </Link>
-      </section>
-
       <section className="section cornerstone-section" id="faq">
         <div className="section-heading">
-          <p className="eyebrow">Vanlige spørsmål</p>
-          <h2>Vanlige spørsmål om å kjøpe bolig i Spania</h2>
+          <h2>Vanlige spørsmål om boligkjøp i Spania</h2>
         </div>
         <div className="faq-accordion">
           {faq.map((item, index) => (
