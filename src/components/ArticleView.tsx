@@ -1253,7 +1253,19 @@ export function ArticleView({ article }: { article: Article }) {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.includes("[[")) {
+                    if (article.slug === "finansiere-bolig-i-spania" && (paragraph.includes("[[") || paragraph.includes("**"))) {
+                      return (
+                        <p key={paragraph}>
+                          {paragraph.split(/(\[\[[^\]]+\]\]|\*\*[^*]+\*\*)/g).map((part, i) => {
+                            const linkMatch = part.match(/^\[\[([^|]+)\|([^\]]+)\]\]$/);
+                            if (linkMatch) return <Link key={i} href={linkMatch[2]}>{linkMatch[1]}</Link>;
+                            if (part.startsWith("**") && part.endsWith("**")) return <strong key={i}>{part.slice(2, -2)}</strong>;
+                            return part;
+                          })}
+                        </p>
+                      );
+                    }
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
                           {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
