@@ -4358,7 +4358,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "2. Du forveksler totalbudsjett med kjøpesum",
+        heading: "2. Skill mellom totalbudsjett og kjøpesum",
         body: [
           "Maksimal kjøpesum må være lavere enn totalbudsjettet fordi skatter, avgifter og andre kjøpskostnader kommer i tillegg. Hvor mye du må sette av, avhenger blant annet av om du kjøper nybygg eller bruktbolig.",
           "Har du seks millioner kroner som samlet ramme, kan du ikke uten videre kjøpe for seks millioner. Du må også vurdere juridisk bistand, notar, registrering, eventuell finansiering og utgifter til møblering eller oppussing.",
@@ -4366,7 +4366,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "3. Du antar at alle boligannonser er oppdaterte",
+        heading: "3. Få bekreftet pris og tilgjengelighet",
         body: [
           "En annonse er ikke en bekreftelse på at boligen fortsatt er til salgs. Den samme boligen kan være publisert av flere aktører, og både pris og tilgjengelighet kan ha endret seg.",
           "Ti annonser betyr derfor ikke nødvendigvis ti ulike boliger. Be om å få bekreftet hvilke boliger som faktisk er tilgjengelige, hva prisen omfatter, og om annonsens opplysninger er oppdaterte.",
@@ -4374,7 +4374,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "4. Du reserverer boligen før vilkår og finansiering er avklart",
+        heading: "4. Avklar finansiering og reservasjonsvilkår",
         body: [
           "Ikke betal et reservasjonsbeløp før du forstår avtalen og hvilke konsekvenser det kan få å trekke seg. Vilkårene varierer, og en reservasjon er ikke automatisk risikofri bare fordi beløpet er lite sammenlignet med kjøpesummen.",
           "Avklar finansieringen og la en uavhengig advokat kontrollere hva som skal undersøkes, hvilke frister som gjelder, og når betalingene skal skje. Be spesielt om en tydelig forklaring på om og når reservasjonsbeløpet kan tilbakebetales.",
@@ -4382,7 +4382,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "5. Du lar havutsikten overskygge beliggenheten",
+        heading: "5. Velg utsikt, beliggenhet og hverdag ut fra dine ønsker",
         body: [
           "Vurder hvordan beliggenheten fungerer i praksis, ikke bare hvordan utsikten ser ut på bildene. Støy, vind, solforhold, bratt adkomst og nærliggende byggeprosjekter kan påvirke både trivsel og bruk.",
           "En kilometer på flat vei i Albir er ikke det samme som en kilometer opp en bratt bakke i Finestrat. Gå den faktiske ruten til butikk eller strand. Besøk gjerne området på ulike tider av døgnet.",
@@ -4390,7 +4390,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "6. Du undervurderer valutakurs og renteendringer",
+        heading: "6. Planlegg for valuta og renteendringer",
         body: [
           "Når boligen prises i euro og pengene dine står i norske kroner, påvirker valutakursen hvor mye kjøpet koster. Har du lån med flytende rente, må du også tåle at finansieringskostnadene endrer seg.",
           "Et enkelt regneeksempel: Hvis eurokursen øker med 50 øre, blir en bolig til 500 000 euro 250 000 kroner dyrere målt i norske kroner. Eksemplet gjelder den samme kjøpesummen og ser bort fra øvrige kostnader.",
@@ -4398,7 +4398,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "7. Du tenker ikke på hvem som skal kjøpe boligen etter deg",
+        heading: "7. Tenk langsiktig uten å glemme boligdrømmen",
         body: [
           "Tenk på videresalg allerede når du kjøper. Selv om du planlegger å beholde boligen lenge, kan familie, helse eller økonomi gjøre at du ønsker å selge tidligere.",
           "En praktisk planløsning, god adkomst, parkering, uteplass og nærhet til tjenester kan gjøre boligen aktuell for flere kjøpergrupper. En svært spesiell bolig kan være riktig for deg, men ha et smalere marked ved salg.",
@@ -4406,7 +4406,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "Slik reduserer du risikoen før boligkjøpet",
+        heading: "Slik tar du neste steg med trygghet",
         body: [
           "Den tryggeste rekkefølgen er å avklare behov og bruksformål, velge område, sette et realistisk totalbudsjett, avklare finansieringen og først deretter gå på visninger. Før du binder deg, må nødvendige juridiske og tekniske undersøkelser være planlagt.",
           "Ingen sjekkliste fjerner all risiko. Men en tydelig prosess gjør det lettere å sammenligne aktuelle boliger, stille bedre spørsmål og si nei når noe ikke stemmer.",
