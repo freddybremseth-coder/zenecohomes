@@ -1256,8 +1256,8 @@ export function ArticleView({ article }: { article: Article }) {
                     if (article.slug === "finansiere-bolig-i-spania" && (paragraph.includes("[[") || paragraph.includes("**"))) {
                       return (
                         <p key={paragraph}>
-                          {paragraph.split(/(\\[\\[[^\\]]+\\]\\]|\\*\\*[^*]+\\*\\*)/g).map((part, i) => {
-                            const linkMatch = part.match(/^\\[\\[([^|]+)\\|([^\\]]+)\\]\\]$/);
+                          {paragraph.split(/(\[\[[^\]]+\]\]|\*\*[^*]+\*\*)/g).map((part, i) => {
+                            const linkMatch = part.match(/^\[\[([^|]+)\|([^\]]+)\]\]$/);
                             if (linkMatch) return <Link key={i} href={linkMatch[2]}>{linkMatch[1]}</Link>;
                             if (part.startsWith("**") && part.endsWith("**")) return <strong key={i}>{part.slice(2, -2)}</strong>;
                             return part;
