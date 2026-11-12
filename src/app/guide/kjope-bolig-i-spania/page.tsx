@@ -165,7 +165,7 @@ export default async function BuyInSpainGuidePage() {
           </p>
         </div>
 
-        <div className="article-content">
+        <div className="section-heading">
           <h3>1. Avklar budsjett og finansiering</h3>
           <p>
             Før du begynner å se på <Link href="/eiendommer">boliger til salgs i Spania</Link>, bør du finne ut hvor mye du kan bruke på boligkjøpet. Husk at skatter, avgifter og andre kjøpsomkostninger kommer i tillegg til kjøpesummen. Dersom du trenger lån, bør finansieringen avklares på et tidlig tidspunkt.
@@ -222,7 +222,7 @@ export default async function BuyInSpainGuidePage() {
           </p>
         </div>
 
-        <div className="article-content">
+        <div className="section-heading">
           <h3>Kostnader ved boligkjøpet</h3>
           <p>
             Når du kjøper eiendom i Spania bør du beregne 10–15 % ekstra i kjøpsomkostninger utover kjøpesummen. Ved nybygg ligger ekstrakostnaden mellom 12 og 14 prosent, mens bruktbolig ligger mellom 10 og 13 prosent.
@@ -419,7 +419,7 @@ export default async function BuyInSpainGuidePage() {
             Når du har fått nøklene til din nye bolig i Spania, gjenstår det fortsatt noen praktiske oppgaver. Blant annet må eierskapet registreres, avtaler overføres og nødvendige betalinger organiseres.
           </p>
         </div>
-        <div className="article-content">
+        <div className="section-heading">
           <p>Dette bør du sørge for etter overtakelsen:</p>
           <ul className="article-bullets">
             <li><strong>Skjøte og registrering:</strong> Få bekreftet at relevante skatter og avgifter er håndtert, og at eierskapet blir registrert i det spanske eiendomsregisteret.</li>
