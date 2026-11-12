@@ -7178,17 +7178,24 @@ footer {
 }
 
 
-/* Purchase guide: desktop layout for the personal-experience section only */
+/* Purchase guide: wider experience panel with generous inner spacing.
+   Desktop only; the mobile layout remains unchanged. */
 @media (min-width: 761px) {
   .cornerstone-guide .cornerstone-experience {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
-    padding-inline: clamp(28px, 4.5vw, 64px);
+    padding-inline: 0;
   }
 
   .cornerstone-guide .cornerstone-experience > div {
+    box-sizing: border-box;
     width: 100%;
-    max-width: 900px;
-    margin-inline: auto;
+    max-width: none;
+    margin: 0;
+    padding: clamp(40px, 5vw, 64px) clamp(36px, 5vw, 72px);
+  }
+
+  .cornerstone-guide .cornerstone-experience > div > p {
+    max-width: none;
   }
 }
