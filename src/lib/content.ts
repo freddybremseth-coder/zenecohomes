@@ -619,15 +619,15 @@ export const articles: Article[] = [
   {
     "slug": "finansiere-bolig-i-spania",
     "title": "Hvordan finansiere kjøp av bolig i Spania?",
-    "excerpt": "Sammenlign egne midler, spansk boliglån og lån med pant i Norge eller Spania. Se eksempel på egenkapital, valuta og riktig tidspunkt for finansiering.",
+    "excerpt": "Få oversikt over fire måter å finansiere boligkjøp i Spania på, og hva du bør vurdere om egenkapital, valuta og tidspunkt for finansiering.",
     "date": "2026-05-10",
     "updated": "2026-11-12",
     "category": "Kjøpsprosess",
-    "readingTime": "9 min lesing",
+    "readingTime": "6 min lesing",
     "image": "/assets/magasin-covers/finansiering.svg",
     "imageAlt": "Finansieringsplan for boligkjøp i Spania med euro, lånevalg og totalbudsjett",
     "seoTitle": "Hvordan finansiere bolig i Spania? | Fire lånemuligheter",
-    "seoDescription": "Hvordan finansiere boligkjøp i Spania? Sammenlign spansk lån, lån i Norge, DNB Luxembourg og egne midler. Egenkapital, valuta, eksempel og råd.",
+    "seoDescription": "Hvordan finansiere boligkjøp i Spania? Se fire finansieringsalternativer, hva du bør vurdere om egenkapital og valutarisiko, og når finansieringen bør være avklart.",
     "keywords": [
       "finansiere bolig i Spania",
       "finansiering boligkjøp Spania",
