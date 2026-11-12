@@ -174,7 +174,7 @@ export function PurchaseBudgetCalculator() {
         </span>
         <div>
           <p className="eyebrow">Totalbudsjett → maksimal kjøpesum</p>
-          <h2 id="purchase-budget-title">Hvor dyr bolig kan du faktisk se etter?</h2>
+          <p className="purchase-budget-calc-title" id="purchase-budget-title">Hvor dyr bolig kan du faktisk se etter?</p>
           <p>
             Start med hele rammen din. Kalkulatoren regner bakover og trekker fra skatter,
             dokument-/stempelavgift, juridisk bistand, notarius, register og eventuell reserve.
