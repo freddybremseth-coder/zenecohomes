@@ -7162,3 +7162,17 @@ footer {
 .article-main.finance-guide-article p a:hover {
   color: #0b4f59;
 }
+
+
+/* Purchase guide: gold primary action in the personal-experience section */
+.cornerstone-experience .hero-actions .contact-button {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+.cornerstone-experience .hero-actions .contact-button:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: #fff;
+}
