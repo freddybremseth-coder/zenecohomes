@@ -267,7 +267,7 @@ export default function BuyingProcessPage() {
               NIE-nummer <ArrowRight size={15} />
             </Link>
             <Link href="/guide/juridiske-fallgruver-boligkjop-spania">
-              Juridiske fallgruver <ArrowRight size={15} />
+              Slik sikrer du boligkjøpet <ArrowRight size={15} />
             </Link>
             <Link href="/guide/nybygg-i-spania">
               Nybygg i Spania <ArrowRight size={15} />
