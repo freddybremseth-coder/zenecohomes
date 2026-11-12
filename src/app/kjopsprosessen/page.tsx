@@ -29,9 +29,9 @@ const journeySteps = [
       "Vi starter med hvordan boligen skal brukes, hvor ofte du vil være i Spania, hvem som skal bruke den, hvor bilavhengig du ønsker å være og hvilket totalbudsjett du faktisk har.",
   },
   {
-    title: "Velg område før du velger bolig",
+    title: "Utforsk områdene som passer deg",
     text:
-      "Vi sammenligner områder ut fra hverdagen du ønsker: strand og gange, internasjonalt miljø, skole, flyplass, ro, utsikt, utleiebehov og videresalg. Først deretter snevrer vi inn boligtypen.",
+      "Vi sammenligner områder ut fra hverdagen du ønsker: strand og gangavstand, internasjonalt miljø, skole, flyplass, ro, utsikt og mulighet for utleie. Du kan utforske både områder og boliger underveis; målet er å finne en kombinasjon som passer deg.",
   },
   {
     title: "Bygg en relevant shortlist",
@@ -73,11 +73,11 @@ const journeySteps = [
 const faq = [
   {
     q: "Hva er forskjellen på denne siden og guiden «Kjøpe bolig i Spania»?",
-    a: "Denne siden viser hvordan Zen Eco Homes jobber sammen med deg gjennom selve kundereisen. Hovedguiden «Kjøpe bolig i Spania» er den brede kunnskapsguiden om markedet, boligtyper, kostnader, reservasjon, juridikk, finansiering og fallgruver.",
+    a: "Denne siden viser hvordan Zen Eco Homes følger deg gjennom kundereisen. Hovedguiden «Kjøpe bolig i Spania» gir mer kunnskap om markedet, boligtyper, kostnader, reservasjon, juridiske kontroller og finansiering.",
   },
   {
     q: "Bør jeg ha finansiering og budsjett klart før visning?",
-    a: "Ja, så langt det er mulig. Det viktigste er å kjenne totalbudsjettet, ikke bare ønsket kjøpesum. Da kan vi unngå boliger som blir for dyre når skatt, juridisk bistand, notar, register, bank og andre kjøpskostnader legges til.",
+    a: "Du kan gjerne begynne å utforske boliger før alle detaljer er på plass. Før du forplikter deg økonomisk bør du likevel kjenne totalbudsjettet, inkludert skatter, juridisk bistand, notar, registrering, eventuell bankfinansiering og andre kjøpskostnader.",
   },
   {
     q: "Bør en advokat se på reservasjonen før jeg betaler?",
