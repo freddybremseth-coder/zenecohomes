@@ -630,7 +630,7 @@ export default async function BuyInSpainGuidePage() {
                   <li><strong><Link href="/guide/boliglan-spansk-bank-nordmenn">Boliglån i Spania:</Link></strong> Du låner med sikkerhet i den spanske eiendommen. DNB Luxembourg tilbyr denne typen lån til bolig i Spania, og du kan også søke lån i en spansk bank.</li>
                 </ul>
                 <p>
-                  Begynn med <Link href="/guide/finansiere-bolig-i-spania">egenkapital, låneramme og total finansieringsplan</Link>. Hvis du vurderer begge land, kan du også <Link href="/magasin/lan-i-norge-eller-spania-boligkjop">sammenligne lån i Norge og Spania</Link> før du velger finansieringsmodell.
+                  Begynn med <Link href="/guide/finansiere-bolig-i-spania">egenkapital, låneramme og total finansieringsplan</Link>. Du kan også  før du velger finansieringsmodell.
                 </p>
               </div>
             </article>
