@@ -71,7 +71,7 @@ const realtyflow = read("src/lib/realtyflow.ts");
 const staticProfiles = realtyflow.slice(realtyflow.indexOf("const STATIC_AREA_PROFILES:"), realtyflow.indexOf("];", realtyflow.indexOf("const STATIC_AREA_PROFILES:")) + 2);
 const staticAreaNames = [...staticProfiles.matchAll(/^  [{] name: "([^"]+)"/gm)].map((item) => item[1]);
 const photoKeys = new Set([...areaVisuals.slice(areaVisuals.indexOf("const AREA_VISUALS:"), areaVisuals.indexOf("/** Photo selection")).matchAll(/^  (?:"([^"]+)"|([a-z]+)): commons[(]/gm)].map((item) => item[1] || item[2]));
-const normalize = (value) => value.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().trim().replace(/\\s+/g, " ");
+const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim().replace(/\s+/g, " ");
 assert.ok(staticAreaNames.length >= 18, "Expected full static regional town catalog");
 for (const areaName of staticAreaNames) {
   assert.ok(photoKeys.has(normalize(areaName)), `Missing verified image for static area ${areaName}`);
