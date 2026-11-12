@@ -7,8 +7,8 @@ import { normalizeSearchText } from "@/lib/realtyflow";
  * beach + skyline for Benidorm, old town for Altea, Peñón de Ifach for Calpe,
  * Puig Campana for Finestrat, etc.
  *
- * Most sources below are Wikimedia Commons CC0/public-domain photographs.
- * Xaló is CC BY-SA 3.0 by Joanbanjo and is attributed on its area pages.
+ * Wikimedia sources have different copyright licenses (CC0, CC BY, CC BY-SA
+ * and public domain). See the per-file credits and link to the Commons file.
  */
 /* Commons redirect pages are not valid Next.js optimized image hosts.
  * These paths point directly at Wikimedia's static upload origin, which is
@@ -16,7 +16,6 @@ import { normalizeSearchText } from "@/lib/realtyflow";
  * Do not generate these paths from unverified file names. */
 const VERIFIED_COMMONS: Record<string, string> = {
   "Playa del Racó del Albir.JPG": "9/97/Playa_del_Rac%C3%B3_del_Albir.JPG",
-  "Old altea.jpg": "b/b7/Old_altea.jpg",
   "Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg": "0/09/Vista_de_Altea,_Alicante,_Espa%C3%B1a,_2023-01-21,_DD_43.jpg",
   "Benidorm - Playa de Poniente 26.jpg": "4/45/Benidorm_-_Playa_de_Poniente_26.jpg",
   "Punta Prado in Benissa.jpg": "8/8c/Punta_Prado_in_Benissa.jpg",
