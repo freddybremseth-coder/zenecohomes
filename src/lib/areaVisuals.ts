@@ -140,9 +140,10 @@ export function getEditorialAreaPhoto(areaName: string) {
   if (!url) return null;
   const fileName = Object.keys(VERIFIED_COMMONS).find((file) => commons(file) === url);
   if (!fileName) return null;
+  const credit: Credit = PHOTO_CREDITS[fileName] || { author: "Wikimedia Commons", license: "Se kildeside for lisens" };
   return {
     url,
     sourceUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(fileName.replaceAll(" ", "_"))}`,
-    credit: PHOTO_CREDITS[fileName] || { author: "Wikimedia Commons", license: "Se kildeside for lisens" },
+    credit,
   };
 }
