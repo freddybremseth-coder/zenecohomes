@@ -198,7 +198,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "4 måter å finansiere",
       links: [
-        { label: "Norsk eller spansk lån? Sammenlign løsningene", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+
         { label: "Slik søker du boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
       ],
     },
@@ -389,7 +389,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Spansk lån vs norsk lån",
       links: [
         { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
-        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+        { label: "Finansiering av boligkjøpet i Spania", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -705,28 +705,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
 };
 
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
-  "lan-i-norge-eller-spania-boligkjop": [
-    {
-      headingIncludes: "Lån i Spania:",
-      links: [
-        { label: "Slik fungerer boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
-      ],
-    },
-    {
-      headingIncludes: "Valuta er",
-      links: [
-        { label: "Bankkonto og valutaveksling fra kroner til euro", href: "/guide/spansk-bankkonto-valutaveksling" },
-      ],
-    },
-    {
-      headingIncludes: "Hva bør du sammenligne",
-      links: [
-        { label: "Finansieringsplan: egenkapital, likviditet og totalbudsjett", href: "/guide/finansiere-bolig-i-spania" },
-        { label: "Kjøpskostnader og kalkulator", href: "/guide/kjope-bolig-i-spania" },
-      ],
-    },
-  ],
-  "albir-finestrat-villajoyosa-benidorm-hvor-kjope": [
+"albir-finestrat-villajoyosa-benidorm-hvor-kjope": [
     {
       headingIncludes: "Albir",
       links: [
@@ -784,7 +763,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "finansiering",
       links: [
-        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+        { label: "Finansiering av boligkjøpet i Spania", href: "/guide/finansiere-bolig-i-spania" },
         { label: "Bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
     },
@@ -1272,10 +1251,10 @@ export function ArticleView({ article }: { article: Article }) {
                     if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("#### ")) {
                       return <h4 key={paragraph}>{paragraph.slice(5)}</h4>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania") && paragraph.includes("[[")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
                           {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
