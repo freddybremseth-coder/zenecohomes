@@ -29,3 +29,4 @@ jobs:
       - run: npm ci
       - run: npm run images:audit
       - run: npx tsc --noEmit
+      - run: npm run build
