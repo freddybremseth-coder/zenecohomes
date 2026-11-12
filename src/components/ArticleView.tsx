@@ -355,13 +355,6 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
     {
-      headingIncludes: "Spansk lån vs norsk lån",
-      links: [
-        { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
-        { label: "Finansiering av boligkjøpet i Spania", href: "/guide/finansiere-bolig-i-spania" },
-      ],
-    },
-    {
       headingIncludes: "Husk dette",
       links: [
         { label: "Kjøpe bolig i Spania – komplett guide", href: "/guide/kjope-bolig-i-spania" },
