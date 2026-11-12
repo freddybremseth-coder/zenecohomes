@@ -112,7 +112,7 @@ const AREA_VISUALS: Record<string, string> = {
 
 /** Photo selection is exact: neither substring matching nor a nearby town counts. */
 export function getEditorialAreaImage(areaName: string): string | null {
-  const key = normalizeSearchText(areaName);
+  const key = normalizeSearchText(areaName).trim().replace(/\s+/g, " ");
   return key ? AREA_VISUALS[key] || null : null;
 }
 
