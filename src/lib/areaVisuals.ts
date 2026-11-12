@@ -137,7 +137,7 @@ const AREA_VISUALS: Record<string, string> = {
   "torre pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
   "torre-pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
   "santiago de la ribera": commons("Santiago de la Ribera.jpg"),
-  "playa honda": commons("La Manga - Playa de la naturaleza - panoramio.jpg"),
+  // Playa Honda requires a photograph verified as taken in Playa Honda; no La Manga substitute.
   "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
   "santa pola": commons("Santa Pola - panoramio (4).jpg"),
   "san pedro del pinatar": commons("Mar Menor desde Villananitos.jpg"),
