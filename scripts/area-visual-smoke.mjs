@@ -37,7 +37,9 @@ try {
         const response = await page.goto(base + route, { waitUntil: "domcontentloaded", timeout: 60000 });
         if (!response || response.status() >= 400) issues.push("HTTP " + (response?.status() || "no response"));
         await page.locator("h1").first().waitFor({ timeout: 20000 });
-        await page.waitForTimeout(1700);
+        // Dismiss consent only for accurate screenshots, without accepting analytics.
+        await page.getByRole("button", { name: /^Avvis$/ }).first().click({ timeout: 2500 }).catch(() => {});
+        await page.waitForTimeout(1900);
         const details = await page.evaluate(() => {
           const h1 = document.querySelector("h1")?.textContent?.trim() || "";
           const visibleImages = [...document.images].filter(im => im.getBoundingClientRect().width > 0 && im.getBoundingClientRect().height > 0);
@@ -48,12 +50,16 @@ try {
             visibleImages: visibleImages.length,
             missing,
             neutralPanels: document.querySelectorAll(".resilient-image-placeholder").length,
+            failedEditorialPanels: [...document.querySelectorAll(".resilient-image-placeholder")].map(el => el.getAttribute("aria-label") || "").filter(label => /fotografi fra stedet|dokumentert stedfoto/i.test(label)),
             hasGenericPlacePhoto: !!document.querySelector('.areas-page img[src*="/assets/areas.jpg"]'),
           };
         });
         if (details.horizontalOverflow) issues.push("Horizontal overflow on " + device);
         if (details.missing.length) issues.push("Broken visible images: " + details.missing.slice(0, 5).join("; "));
         if (details.hasGenericPlacePhoto) issues.push("Generic place-photo placeholder reintroduced");
+        if (details.failedEditorialPanels.length) issues.push("Verified town photos unavailable: " + details.failedEditorialPanels.slice(0, 8).join("; "));
+        const failedWikimediaRequests = networkImageErrors.filter(item => item.url.includes("upload.wikimedia.org") && item.status >= 400);
+        if (failedWikimediaRequests.length) issues.push("Wikimedia browser requests failed: " + failedWikimediaRequests.length);
         if (!details.h1) issues.push("Missing heading");
         const filename = "artifacts/area-smoke/" + device + "-" + pathName + ".png";
         await page.screenshot({ path: filename, fullPage: true, timeout: 30000 });
@@ -62,6 +68,8 @@ try {
         issues.push(err instanceof Error ? err.message : String(err));
         reports.push({ device, route, issues, networkImageErrors });
       }
+      // The Playwright page is reused: prevent previous route listeners from accumulating.
+      page.removeAllListeners("response");
       if (issues.length) hardFailures++;
     }
     await context.close();
