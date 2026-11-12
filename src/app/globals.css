@@ -7178,9 +7178,15 @@ footer {
 }
 
 
-/* Purchase guide: wider experience panel with generous inner spacing.
+/* Purchase guide: align article text fields with the section width and
+   give the personal-experience panel generous inner spacing.
    Desktop only; the mobile layout remains unchanged. */
 @media (min-width: 761px) {
+  .cornerstone-guide .section-heading {
+    width: 100%;
+    max-width: none;
+  }
+
   .cornerstone-guide .cornerstone-experience {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
@@ -7192,7 +7198,7 @@ footer {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: clamp(40px, 5vw, 64px) clamp(36px, 5vw, 72px);
+    padding: clamp(56px, 6vw, 80px) clamp(56px, 6vw, 96px);
   }
 
   .cornerstone-guide .cornerstone-experience > div > p {
