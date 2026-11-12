@@ -190,36 +190,6 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "finansiere-bolig-i-spania": [
     {
-      headingIncludes: "Egenkapital og kostnader",
-      links: [
-        { label: "Kjøpskostnader i Spania – se satsene og prøv kalkulatoren", href: "/guide/kjope-bolig-i-spania" },
-      ],
-    },
-    {
-      headingIncludes: "4 måter å finansiere",
-      links: [
-        { label: "Slik søker du boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
-      ],
-    },
-    {
-      headingIncludes: "Boliglån i spansk bank",
-      links: [
-        { label: "Dokumentkrav, takst og belåningsgrad i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
-      ],
-    },
-    {
-      headingIncludes: "Valuta og betaling",
-      links: [
-        { label: "Bankkonto og valutaveksling ved boligkjøp", href: "/guide/spansk-bankkonto-valutaveksling" },
-      ],
-    },
-    {
-      headingIncludes: "Når bør finansieringen",
-      links: [
-        { label: "Hele kjøpsprosessen steg for steg", href: "/guide/kjope-bolig-i-spania" },
-      ],
-    },
-    {
       headingIncludes: "Norsk bank med pant i bolig i Spania",
       links: [
         { label: "Slik skaffer du NIE-nummer", href: "/guide/nie-skattenummer-spania" },
