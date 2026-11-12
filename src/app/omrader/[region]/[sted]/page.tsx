@@ -172,6 +172,7 @@ export default async function AreaTownPage({
               <ResilientImage
                 src={image}
                 fallbackSrc=""
+                unoptimized
                 alt={`Dokumentert stedfoto fra ${profile.name} i ${selectedRegion.label}`}
                 width={1200}
                 height={850}
