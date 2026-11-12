@@ -323,7 +323,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
-      <section className="page-hero compact-hero image-hero">
+      <section className="page-hero compact-hero image-hero" style={{ backgroundImage: "linear-gradient(110deg, #192e3b, #36576a)" }}>
         <p className="eyebrow">Regionguide</p>
         <h1>{copy.title}</h1>
         <p>{copy.intro}</p>
