@@ -76,3 +76,10 @@ Bildenes Commons-stier er kontrollert mot filnavn og MD5-sharder i `npm run imag
 ## Skarphet og motiv – Altea
 
 Den tidligere kilden `Old altea.jpg` var bare 474 × 640 piksler og egner seg ikke som stort område- eller hero-bilde. Den synlige Altea-profilen bruker nå `Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg` (7 179 × 3 025), fotograf Diego Delso, CC BY-SA 4.0. Det er et stedsfestet utsiktsfoto av Altea. Den gamle filoppføringen beholdes kun i fotomanifestet og brukes ikke lenger på områdesiden.
+
+
+## Nettverkskontroll – faktiske Wikimedia-filsvar
+
+En separat GitHub Actions-kontroll bruker HTTP HEAD mot alle godkjente Commons-filbaner. Den første kjøringen 12. november fikk **2 × HTTP OK og 27 × HTTP 429**, uten rapporterte 404/410. **Dette beviser ikke at de 27 øvrige bildene fungerer.** Wikimedia begrenset automatisk forespørselsmengden fra GitHub-serveren. Testskriptet stopper derfor tidlig ved gjentatt 429, markerer gjenværende bilder som **ikke testet**, og varsler dette i GitHub. Nettverksfeil utenom 404/410 rapporteres som uavklart, aldri som bekreftet gyldig.
+
+**Publiseringskrav:** Gå gjennom bildene på en faktisk nettside med vanlig nettleser (mobil og desktop), og kontroller Next.js image optimizer. Hvis Commons-bilder stadig blokkeres, skal godkjente lisenskorrekte originaler vurderes lagret på ZenEcoHomes' eget CDN/lagringsløsning med beholdt kreditering og kilde.
