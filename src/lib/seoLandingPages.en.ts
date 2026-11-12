@@ -71,35 +71,35 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
     slug: "new-build-in-spain",
     title: "New build in Spain",
     eyebrow: "Buying a new build",
-    hero: "Buy a new build in Spain – modern, efficient, secure",
+    hero: "Find your new-build home in Spain – designed around your lifestyle",
     description:
-      "New-build apartments, villas and projects across Spain with high energy efficiency and modern specifications. We guide you from selection through payment plan and bank guarantee to handover.",
+      "Explore modern apartments and villas, compare locations and discover a home that suits your plans. We help you understand specifications, payment schedules, applicable deposit protections and handover arrangements before you commit.",
     seoTitle: "New Build in Spain | Modern Homes with Local Advice",
     seoDescription:
-      "New build in Spain: modern, energy-efficient apartments and villas. Advice on location, developer, payment plan, bank guarantee and handover — clear and secure.",
+      "Explore new builds in Spain with practical advice on locations, developers, specifications, payment plans, applicable deposit protections and handover.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
     secondaryCta: { label: "Browse properties", href: "/en/properties" },
     sections: [
       {
         heading: "The advantages of a new build",
         body: [
-          "New builds offer modern layouts, good insulation, air conditioning and low running costs — often energy class A. Buying early lets you choose finishes and sometimes the layout.",
-          "Spain is more than the Costa Blanca: the Costa Cálida, Costa del Sol and inland areas also offer attractive projects. The key is to settle on area and purpose before reserving.",
+          "New builds may offer modern layouts, good insulation and efficient climate control. Energy ratings and running costs vary by property. Depending on the project and stage of construction, you may be able to choose finishes or certain layout options.",
+          "Spain offers different lifestyles, from the Costa Blanca and Costa Cálida to inland towns. You can explore both homes and locations before deciding what matters most. Review the reservation terms before committing.",
         ],
         bullets: [
-          "Energy class A and low running costs.",
+          "Check the property's energy rating and expected running costs.",
           "Modern specification, often with pool and communal areas.",
-          "Choice of finishes when buying early — best units go first.",
+          "Choice of finishes where the developer and project stage allow it.",
         ],
       },
       {
         heading: "Buying a new build safely",
         body: [
-          "With a new build you pay in stages as construction progresses. Deposits must be protected by a bank guarantee, and the developer should be carefully checked.",
-          "We coordinate with the developer, bank and an independent lawyer so the contract, guarantees and handover dates all hold up.",
+          "For an off-plan purchase, payments may be spread across construction milestones. Ask an independent Spanish lawyer to check the developer, building licence, payment terms and legally required protection for advance payments in your specific case.",
+          "We help coordinate practical questions with the developer and an independent lawyer, who should assess the contract, applicable guarantees and delivery terms before you become bound.",
         ],
         bullets: [
-          "Staged payments secured by a bank guarantee.",
+          "Clear staged payments and verification of applicable advance-payment protection.",
           "Checks on developer, licences and handover date.",
           "Independent lawyer for the legal review.",
         ],
@@ -109,7 +109,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
       {
         question: "What should I check when buying a new build in Spain?",
         answer:
-          "A vetted developer, deposits protected by a bank guarantee, a valid building licence and an independent lawyer. That keeps the purchase safe even when you pay in stages.",
+          "Check the developer, building licence, specifications, payment schedule, applicable protection for advance payments and contract terms with an independent Spanish lawyer. These checks reduce risk but do not eliminate it.",
       },
       {
         question: "How long does completion take?",

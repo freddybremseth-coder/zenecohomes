@@ -4,6 +4,7 @@ on:
     paths:
       - 'src/lib/content.ts'
       - 'src/lib/magazine.ts'
+      - 'src/lib/seoLandingPages.*.ts'
       - 'src/components/ArticleView.tsx'
       - 'src/app/guide/**'
       - 'scripts/seo-*.mjs'
@@ -13,6 +14,7 @@ on:
     paths:
       - 'src/lib/content.ts'
       - 'src/lib/magazine.ts'
+      - 'src/lib/seoLandingPages.*.ts'
       - 'src/components/ArticleView.tsx'
       - 'src/app/guide/**'
       - 'scripts/seo-*.mjs'

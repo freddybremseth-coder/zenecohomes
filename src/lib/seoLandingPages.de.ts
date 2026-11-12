@@ -89,7 +89,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
         bullets: [
           "Energieeffizienz und niedrige Betriebskosten.",
           "Moderne Ausstattung und individuelle Auswahl bei frühem Kauf.",
-          "Zahlung nach Baufortschritt mit Bankgarantie.",
+          "Zahlungsplan und gesetzlich erforderliche Sicherheiten für Vorauszahlungen prüfen.",
         ],
       },
       {
@@ -191,9 +191,9 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
     slug: "neubau-in-spanien",
     title: "Neubau in Spanien",
     eyebrow: "Neubau kaufen",
-    hero: "Neubau in Spanien kaufen – modern, effizient, sicher",
+    hero: "Neubau in Spanien – finden Sie ein Zuhause, das zu Ihnen passt",
     description:
-      "Neubauwohnungen, Villen und Projekte in Spanien mit hoher Energieeffizienz und moderner Ausstattung. Wir begleiten Sie von der Auswahl über Zahlungsplan und Bankgarantie bis zur Übergabe.",
+      "Entdecken Sie moderne Wohnungen und Villen und vergleichen Sie Lage, Ausstattung und Lebensstil. Wir helfen Ihnen, Zahlungsplan, gesetzlich erforderliche Sicherheiten und Übergabe vor einer verbindlichen Entscheidung zu verstehen.",
     seoTitle: "Neubau in Spanien kaufen | Moderne Immobilien sicher",
     seoDescription:
       "Neubau in Spanien: moderne Wohnungen und Villen. Beratung zu Lage, Bauträger, Zahlungsplan, Bankgarantie, Kosten und sicherer Übergabe vor Ort.",
@@ -203,23 +203,23 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
       {
         heading: "Die Vorteile eines Neubaus",
         body: [
-          "Neubauten bieten moderne Grundrisse, gute Dämmung, Klimatisierung und niedrige Betriebskosten – oft mit Energieklasse A. Bei frühem Einstieg können Sie Ausstattung und teils den Grundriss mitgestalten.",
-          "Spanien ist mehr als die Costa Blanca: auch Costa Cálida, Costa del Sol und das Hinterland bieten attraktive Projekte. Entscheidend ist, Region und Nutzung vor der Reservierung zu klären.",
+          "Neubauten können moderne Grundrisse, gute Dämmung und effiziente Klimatisierung bieten. Energieklasse und laufende Kosten hängen vom Objekt ab. Je nach Bauphase lassen sich bestimmte Ausstattungsmerkmale mitgestalten.",
+          "Neben der Costa Blanca bieten auch die Costa Cálida und das Hinterland unterschiedliche Wohnmöglichkeiten. Sie können Regionen und Immobilien parallel erkunden. Vor einer verbindlichen Reservierung sollten die Vertragsbedingungen geklärt sein.",
         ],
         bullets: [
-          "Energieklasse A, niedrige laufende Kosten.",
+          "Energieausweis und voraussichtliche laufende Kosten prüfen.",
           "Moderne Ausstattung, oft mit Pool und Gemeinschaftsanlagen.",
-          "Auswahl bei frühem Kauf – die besten Einheiten zuerst.",
+          "Auswahl bei Materialien und Ausstattung, sofern Projekt und Bauphase dies erlauben.",
         ],
       },
       {
         heading: "Sicher kaufen beim Neubau",
         body: [
-          "Beim Neubau zahlen Sie nach Baufortschritt. Anzahlungen müssen durch eine Bankgarantie abgesichert sein, und der Bauträger sollte sorgfältig geprüft werden.",
-          "Wir koordinieren mit Bauträger, Bank und einem unabhängigen Anwalt, damit Vertrag, Garantien und Übergabetermine stimmen.",
+          "Bei einem Kauf vor Fertigstellung können Zahlungen in Etappen anfallen. Ein unabhängiger spanischer Anwalt sollte den Bauträger, die Baugenehmigung, Zahlungsbedingungen und die im konkreten Fall vorgeschriebene Absicherung von Vorauszahlungen prüfen.",
+          "Wir unterstützen die Abstimmung mit dem Bauträger und einem unabhängigen Anwalt, der Vertrag, Sicherheiten und Übergabebedingungen vor einer verbindlichen Zusage prüfen sollte.",
         ],
         bullets: [
-          "Zahlung nach Baufortschritt mit Bankgarantie.",
+          "Zahlungsplan und gesetzlich erforderliche Sicherheiten für Vorauszahlungen prüfen.",
           "Prüfung von Bauträger, Lizenzen und Übergabetermin.",
           "Unabhängiger Anwalt für die rechtliche Kontrolle.",
         ],
@@ -229,7 +229,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
       {
         question: "Was ist beim Neubau-Kauf in Spanien zu beachten?",
         answer:
-          "Wichtig sind ein geprüfter Bauträger, abgesicherte Anzahlungen (Bankgarantie), eine gültige Baulizenz und ein unabhängiger Anwalt. So ist der Kauf auch beim Bau in Etappen sicher.",
+          "Wichtig sind die Prüfung des Bauträgers, der Baugenehmigung, des Zahlungsplans, der gesetzlich vorgeschriebenen Sicherheiten und des Vertrags durch einen unabhängigen spanischen Anwalt. Diese Prüfungen mindern Risiken, beseitigen sie aber nicht vollständig.",
       },
       {
         question: "Wie lange dauert die Fertigstellung?",
