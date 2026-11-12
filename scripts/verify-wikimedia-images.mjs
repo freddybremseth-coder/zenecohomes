@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const source = readFileSync(new URL("../src/lib/areaVisuals.ts", import.meta.url), "utf8");
-const block = source.match(/const VERIFIED_COMMONS:[^=]+=[ ]*[{]([\\s\\S]*?)[}];/);
+const block = source.match(/const VERIFIED_COMMONS:[^=]+=[ ]*[{]([\s\S]*?)[}];/);
 assert.ok(block, "Missing verified photograph catalog");
 const files = [...block[1].matchAll(/^  "([^"]+)": "([^"]+)",?$/gm)];
 assert.ok(files.length >= 20, "Unexpectedly small catalog");
