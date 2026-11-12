@@ -162,7 +162,7 @@ export default function GuideHub() {
             <p className="eyebrow">Kunnskap uten innholdsstøy</p>
             <h1>Guider om boligkjøp i Spania</h1>
             <p>
-              Her samler vi de viktigste fordypningene du trenger før, under og etter boligkjøpet.
+              Her hjelper vi deg fra boligdrøm til trygt kjøp, med konkrete råd om områdevalg, økonomi og de kontrollene som gir deg trygghet.
               Vi holder Guide bevisst ryddig: brede og varige spørsmål ligger her, mens markedsoppdateringer,
               meninger og mer redaksjonelle saker ligger i Magasin.
             </p>
@@ -183,7 +183,7 @@ export default function GuideHub() {
               <Link href="/guide/finansiere-bolig-i-spania">Hvordan finansierer jeg? <ArrowRight size={15} /></Link>
               <Link href="/guide/omradeguide-eiendomskjop-i-spania">Hvor bør jeg kjøpe? <ArrowRight size={15} /></Link>
               <Link href="/guide/nybygg-i-spania">Hva må jeg vite om nybygg? <ArrowRight size={15} /></Link>
-              <Link href="/guide/juridiske-fallgruver-boligkjop-spania">Hva kan gå galt? <ArrowRight size={15} /></Link>
+              <Link href="/guide/juridiske-fallgruver-boligkjop-spania">Hvordan sikrer jeg kjøpet? <ArrowRight size={15} /></Link>
             </nav>
           </aside>
         </div>

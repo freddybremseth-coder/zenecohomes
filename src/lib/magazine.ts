@@ -4326,8 +4326,8 @@ export const extraArticles: Article[] = [
   },
   {
     slug: "7-dyre-feil-nordmenn-bolig-spania",
-    title: "7 dyre feil nordmenn gjør når de kjøper bolig i Spania",
-    excerpt: "De dyreste feilene ved boligkjøp i Spania kan skje før du signerer. Lær hvordan du unngår feil område, feil budsjett og mangelfull kontroll.",
+    title: "7 gode valg før du kjøper bolig i Spania",
+    excerpt: "Fra områdevalg og hverdagsliv til budsjett og juridisk kontroll: syv råd som gjør boligjakten enklere og kjøpet tryggere.",
     date: "2026-09-29",
     updated: "2026-10-15",
     category: "Kjøpsråd",
@@ -4345,20 +4345,20 @@ export const extraArticles: Article[] = [
     ],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
-      "De dyreste feilene ved boligkjøp i Spania skjer ofte før kjøpekontrakten signeres. Du kan velge feil område, bruke hele budsjettet på kjøpesummen eller reservere uten å forstå vilkårene. Mye av dette kan unngås med riktig rekkefølge og grundige undersøkelser.",
-      "Som eiendomsrådgiver på Costa Blanca mener jeg at den beste boligjakten starter med hvordan boligen skal brukes, ikke med en annonse. Her får du syv konkrete feil å se etter – og hva du bør gjøre i stedet.",
+      "Det viktigste er å finne en bolig som passer livet du ønsker å leve. Med en realistisk totalramme, et område du trives i og riktig dokumentkontroll blir det enklere å ta en god beslutning. Enkelte feil kan bli kostbare, men mye kan forebygges gjennom en ryddig kjøpsprosess.",
+      "Som eiendomsrådgiver på Costa Blanca mener jeg at boligjakten bør starte med ønskene dine, og deretter kombinere entusiasmen med gode avklaringer. Her er syv valg du kan gjøre med større trygghet, og hvilke spørsmål du bør få avklart underveis.",
     ],
     sections: [
       {
-        heading: "1. Du velger bolig før du velger område",
+        heading: "1. Velg et område som passer hverdagen din",
         body: [
-          "Velg først området som passer hverdagen din. En flott leilighet eller villa kan være et dårlig kjøp dersom avstanden til strand, butikker og restauranter ikke stemmer med måten du vil bruke boligen på.",
+          "Start med det som betyr mest for deg i hverdagen. Noen ønsker gangavstand til strand og restauranter, mens andre foretrekker fred, utsikt og stor tomt. Ingen av delene er feil – det viktige er at beliggenheten passer dine prioriteringer.",
           "På Costa Blanca kan hverdagen være svært forskjellig i Benidorm, Villajoyosa, Albir og Finestrat. En bolig i en åsside kan gi bedre utsikt og mer plass, men samtidig gjøre deg avhengig av bil. Tenk gjennom en vanlig tirsdag, ikke bare en feriedag.",
           "Skriv ned hva du vil kunne nå til fots, hvor ofte du vil bruke bil, og om boligen skal fungere hele året. Sammenlign deretter områdene før du bestiller visninger.",
         ],
       },
       {
-        heading: "2. Du forveksler totalbudsjett med kjøpesum",
+        heading: "2. Skill mellom totalbudsjett og kjøpesum",
         body: [
           "Maksimal kjøpesum må være lavere enn totalbudsjettet fordi skatter, avgifter og andre kjøpskostnader kommer i tillegg. Hvor mye du må sette av, avhenger blant annet av om du kjøper nybygg eller bruktbolig.",
           "Har du seks millioner kroner som samlet ramme, kan du ikke uten videre kjøpe for seks millioner. Du må også vurdere juridisk bistand, notar, registrering, eventuell finansiering og utgifter til møblering eller oppussing.",
@@ -4366,7 +4366,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "3. Du antar at alle boligannonser er oppdaterte",
+        heading: "3. Få bekreftet pris og tilgjengelighet",
         body: [
           "En annonse er ikke en bekreftelse på at boligen fortsatt er til salgs. Den samme boligen kan være publisert av flere aktører, og både pris og tilgjengelighet kan ha endret seg.",
           "Ti annonser betyr derfor ikke nødvendigvis ti ulike boliger. Be om å få bekreftet hvilke boliger som faktisk er tilgjengelige, hva prisen omfatter, og om annonsens opplysninger er oppdaterte.",
@@ -4374,7 +4374,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "4. Du reserverer boligen før vilkår og finansiering er avklart",
+        heading: "4. Avklar finansiering og reservasjonsvilkår",
         body: [
           "Ikke betal et reservasjonsbeløp før du forstår avtalen og hvilke konsekvenser det kan få å trekke seg. Vilkårene varierer, og en reservasjon er ikke automatisk risikofri bare fordi beløpet er lite sammenlignet med kjøpesummen.",
           "Avklar finansieringen og la en uavhengig advokat kontrollere hva som skal undersøkes, hvilke frister som gjelder, og når betalingene skal skje. Be spesielt om en tydelig forklaring på om og når reservasjonsbeløpet kan tilbakebetales.",
@@ -4382,7 +4382,7 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "5. Du lar havutsikten overskygge beliggenheten",
+        heading: "5. Velg utsikt, beliggenhet og hverdag ut fra dine ønsker",
         body: [
           "Vurder hvordan beliggenheten fungerer i praksis, ikke bare hvordan utsikten ser ut på bildene. Støy, vind, solforhold, bratt adkomst og nærliggende byggeprosjekter kan påvirke både trivsel og bruk.",
           "En kilometer på flat vei i Albir er ikke det samme som en kilometer opp en bratt bakke i Finestrat. Gå den faktiske ruten til butikk eller strand. Besøk gjerne området på ulike tider av døgnet.",
@@ -4390,25 +4390,25 @@ export const extraArticles: Article[] = [
         ],
       },
       {
-        heading: "6. Du undervurderer valutakurs og renteendringer",
+        heading: "6. Planlegg for valuta og renteendringer",
         body: [
           "Når boligen prises i euro og pengene dine står i norske kroner, påvirker valutakursen hvor mye kjøpet koster. Har du lån med flytende rente, må du også tåle at finansieringskostnadene endrer seg.",
           "Et enkelt regneeksempel: Hvis eurokursen øker med 50 øre, blir en bolig til 500 000 euro 250 000 kroner dyrere målt i norske kroner. Eksemplet gjelder den samme kjøpesummen og ser bort fra øvrige kostnader.",
-          "Test budsjettet med en høyere eurokurs og en høyere rente enn du forventer. Skille mellom lån med sikkerhet i Norge og finansiering gjennom spansk bank, siden vilkår og kostnader kan være forskjellige.",
+          "Test budsjettet med en høyere eurokurs og en høyere rente enn du forventer. Skill mellom lån med sikkerhet i Norge og finansiering gjennom spansk bank, siden vilkår og kostnader kan være forskjellige.",
         ],
       },
       {
-        heading: "7. Du tenker ikke på hvem som skal kjøpe boligen etter deg",
+        heading: "7. Tenk langsiktig uten å glemme boligdrømmen",
         body: [
-          "Tenk på videresalg allerede når du kjøper. Selv om du planlegger å beholde boligen lenge, kan familie, helse eller økonomi gjøre at du ønsker å selge tidligere.",
-          "En praktisk planløsning, god adkomst, parkering, uteplass og nærhet til tjenester kan gjøre boligen aktuell for flere kjøpergrupper. En svært spesiell bolig kan være riktig for deg, men ha et smalere marked ved salg.",
-          "Still deg spørsmålet: Ville denne boligen fortsatt vært attraktiv for andre hvis mine egne behov endrer seg? Det gir et nyttig korrektiv før du bestemmer deg.",
+          "Først og fremst skal boligen passe livet du ønsker å leve. Det kan likevel være nyttig å tenke gjennom om behovene dine kan endre seg, og hvor fleksibel boligen er på lengre sikt.",
+          "Planløsning, adkomst, parkering og tilgang til tjenester kan ha betydning ved et fremtidig salg. En spesiell bolig kan samtidig være det riktige valget nettopp fordi den oppfyller dine personlige ønsker, selv om kjøpergruppen ved videresalg kan være mindre.",
+          "Spør deg selv: Vil jeg trives her, og er det forhold jeg bør forstå hvis jeg en dag skal selge? Videresalg er ett hensyn, men bør ikke automatisk veie tyngre enn livskvalitet.",
         ],
       },
       {
-        heading: "Slik reduserer du risikoen før boligkjøpet",
+        heading: "Slik tar du neste steg med trygghet",
         body: [
-          "Den tryggeste rekkefølgen er å avklare behov og bruksformål, velge område, sette et realistisk totalbudsjett, avklare finansieringen og først deretter gå på visninger. Før du binder deg, må nødvendige juridiske og tekniske undersøkelser være planlagt.",
+          "En god start er å avklare hvordan du ønsker å bruke boligen, hvilke områder som passer, og et realistisk totalbudsjett. Du kan gjerne utforske boliger og områder underveis. Før du inngår bindende avtaler, bør finansiering, vilkår og nødvendige juridiske og tekniske undersøkelser være forsvarlig avklart.",
           "Ingen sjekkliste fjerner all risiko. Men en tydelig prosess gjør det lettere å sammenligne aktuelle boliger, stille bedre spørsmål og si nei når noe ikke stemmer.",
         ],
       },
@@ -4421,8 +4421,8 @@ export const extraArticles: Article[] = [
     ],
     faq: [
       {
-        question: "Hva er den vanligste feilen når nordmenn kjøper bolig i Spania?",
-        answer: "En grunnleggende feil er å forelske seg i boligen før område, bruk og totalbudsjett er avklart. Da kan en flott bolig vise seg å passe dårlig i hverdagen.",
+        question: "Hva bør jeg prioritere først når jeg kjøper bolig i Spania?",
+        answer: "Start med hvordan du ønsker å bruke boligen, hva som betyr mest i hverdagen og hvilket totalbudsjett du har. Det gjør det lettere å kjenne igjen en bolig som faktisk passer deg.",
       },
       {
         question: "Hvor mye bør jeg sette av til kostnader utover kjøpesummen?",

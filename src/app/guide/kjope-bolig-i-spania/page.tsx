@@ -39,7 +39,7 @@ const apartmentChecks = [
 ] as const;
 
 const faq = [
-  { q: "Er det trygt å kjøpe bolig i Spania?", a: "Ja, det kan være trygt å kjøpe bolig i Spania når du bruker en uavhengig advokat, kontrollerer eierskap, heftelser, tillatelser og dokumentasjon, og forstår avtalene før du betaler eller signerer. Les også vår guide til juridiske fallgruver." },
+  { q: "Er det trygt å kjøpe bolig i Spania?", a: "Ja, et boligkjøp i Spania kan gjennomføres på en trygg og ryddig måte. En uavhengig advokat bør kontrollere eierskap, heftelser, tillatelser og dokumentasjon, og du bør forstå avtalene før du betaler eller signerer. Les også vår guide til juridiske kontroller ved boligkjøp." },
   { q: "Er notar og eiendomsregister inkludert i skatten?", a: "Nei. Skatter som ITP, IVA og AJD kommer i tillegg til kostnader for notar og registrering i eiendomsregisteret. Dette er separate kostnader som beregnes ut fra den konkrete handelen." },
   {
     q: "Hvor mange nordmenn kjøper bolig i Spania?",
@@ -146,10 +146,10 @@ export default async function BuyInSpainGuidePage() {
       <section className="section cornerstone-section">
         <div className="section-heading">
           <p>
-            Å kjøpe bolig i Spania kan virke som en komplisert og forvirrende prosess. Du har helt sikkert sett identiske boliger på flere nettsider, noen ganger med ulike bilder, beskrivelser og priser.
+            Å finne sitt eget sted i Spania skal være både inspirerende og oversiktlig. Underveis møter du gjerne mange boliger, områder og annonser – noen ganger vises den samme boligen hos flere aktører med forskjellige opplysninger. Vi hjelper deg å sortere alternativene og finne ut hva som faktisk passer.
           </p>
           <p>
-            Jeg har fulgt kjøpsprosessen tett fra begge sider, både som selger og privat kjøper, og vet godt hvilke spørsmål som dukker opp underveis. Her får du svar på det som er viktigst å vite før du kjøper hus, leilighet eller annen eiendom i Spania.
+            Jeg har fulgt boligkjøp tett fra begge sider, både som selger og privat kjøper. Her viser jeg deg hvordan du kan gå fra boligdrøm til et gjennomtenkt kjøp – med råd om områder, budsjett, boliger og kontrollene som bør gjøres før du binder deg.
           </p>
         </div>
       </section>
@@ -168,7 +168,7 @@ export default async function BuyInSpainGuidePage() {
         <div className="section-heading">
           <h3>1. Avklar budsjett og finansiering</h3>
           <p>
-            Før du begynner å se på <Link href="/eiendommer">boliger til salgs i Spania</Link>, bør du finne ut hvor mye du kan bruke på boligkjøpet. Husk at skatter, avgifter og andre kjøpsomkostninger kommer i tillegg til kjøpesummen. Dersom du trenger lån, bør finansieringen avklares på et tidlig tidspunkt.
+            Du kan gjerne utforske <Link href="/eiendommer">boliger til salgs i Spania</Link> mens du finner ut hva du ønsker deg. Før du legger inn bud eller binder deg økonomisk, bør du kjenne totalbudsjettet. Skatter, avgifter og andre kjøpsomkostninger kommer i tillegg til kjøpesummen, og eventuell finansiering bør avklares tidlig.
           </p>
           <p>
             Tenk også gjennom hvordan boligen skal brukes. Skal du kjøpe feriebolig i Spania, helårsbolig eller kanskje den skal leies ut deler av året? Dette har betydning for både budsjett, områdevalg og hvilken boligtype som passer deg.

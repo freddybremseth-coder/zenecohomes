@@ -79,9 +79,9 @@ export const seoLandingPages: SeoLandingPage[] = [
     slug: "nybygg-i-spania",
     title: "Nybygg i Spania",
     eyebrow: "Komplett guide · oppdatert 2026",
-    hero: "Nybygg i Spania: dette bør du vite før du reserverer",
+    hero: "Nybygg i Spania: finn boligen som passer deg",
     description:
-      "Nybygg kan gi moderne standard, lavere vedlikeholdsbehov og en mer forutsigbar teknisk start. Samtidig kjøper du ofte før boligen er ferdig, betaler i flere omganger og må forstå utbygger, kontrakt, garantier, skatter, leveranse og overtakelse før du binder deg.",
+      "Med nybygg kan du få moderne standard, energieffektive løsninger og kanskje mulighet til å velge materialer og tilpasninger. Vi hjelper deg å sammenligne prosjektene og forstå leveranse, betalingsplan, garantier og kontrakter før du binder deg.",
     seoTitle: "Nybygg i Spania | Komplett guide for norske kjøpere 2026",
     seoDescription:
       "Nybygg i Spania: les om utbygger, betalingsplan, bankgaranti, 10 % IVA, AJD, energieffektivitet, tilvalg, overtakelse og trygg kjøpsprosess.",
