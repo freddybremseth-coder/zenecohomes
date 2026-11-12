@@ -236,14 +236,15 @@ main .proper-name {
    experience panel. This file loads after signature.css and all other styles.
    Scoped to .cornerstone-guide so no other page is affected. */
 @media (min-width: 761px) {
-  /* Consistent vertical rhythm between the guide's main sections. */
+  /* Bring H2 sections closer to the preceding content. */
   .cornerstone-guide .cornerstone-section {
-    padding-block: 52px;
+    padding-block: 32px 52px;
   }
 
-  /* Give every H3 the same lead-in spacing, matching the first H3's rhythm. */
+  /* Match the larger lead-in before the first H3 (the preceding heading
+     block has a 46px bottom margin) throughout the guide. */
   .cornerstone-guide .section-heading h3 {
-    margin-block-start: 1.15em;
+    margin-block-start: 46px;
   }
 
   .cornerstone-guide .section-heading {
