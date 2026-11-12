@@ -20,7 +20,7 @@ const languageLinks = eq
   : undefined;
 
 export const metadata: Metadata = {
-  title: "Kjøpe bolig i Spania (2026) – guide for nordmenn",
+  title: "Kjøpe bolig i Spania (2026) – komplett guide for nordmenn",
   description:
     "Komplett guide for nordmenn som vil kjøpe bolig i Spania. Les om kjøpsprosessen, kostnader, finansiering, områdevalg, boligtyper og overtakelse.",
   alternates: {
