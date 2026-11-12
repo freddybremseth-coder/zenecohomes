@@ -67,9 +67,9 @@ export const seoLandingPagesES: SeoLandingPage[] = [
     slug: "obra-nueva-en-espana",
     title: "Obra nueva en España",
     eyebrow: "Comprar obra nueva",
-    hero: "Obra nueva en España: moderna, eficiente y bien planificada",
+    hero: "Obra nueva en España: encuentra una vivienda para tu estilo de vida",
     description:
-      "Apartamentos y villas de obra nueva con asesoramiento sobre ubicación, promotor, memoria de calidades, calendario de pagos, garantías y entrega.",
+      "Descubre apartamentos y villas de obra nueva y compara ubicaciones y estilos de vida. Te ayudamos a entender las calidades, los pagos, las garantías aplicables y la entrega antes de asumir compromisos.",
     seoTitle: "Obra nueva en España | Viviendas modernas con asesoramiento",
     seoDescription:
       "Compra obra nueva en España con una visión clara de ubicación, promotor, pagos, garantías, costes y entrega. Viviendas modernas en Costa Blanca y alrededores.",
@@ -80,7 +80,7 @@ export const seoLandingPagesES: SeoLandingPage[] = [
         heading: "Qué aporta una vivienda de obra nueva",
         body: [
           "La obra nueva suele ofrecer distribuciones actuales, mejor aislamiento, climatización eficiente y menor mantenimiento inicial. Comprar en una fase temprana también puede permitir elegir acabados o algunas opciones de distribución.",
-          "Lo importante es no elegir solo por la infografía. Hay que valorar ubicación, orientación, equipamiento incluido, gastos de comunidad, promotor y coste total.",
+          "Además de las imágenes del proyecto, conviene valorar la orientación, el entorno, el equipamiento incluido, los gastos de comunidad y el coste total. Cada comprador puede tener prioridades diferentes.",
         ],
         bullets: [
           "Mejor eficiencia energética y confort.",
@@ -91,7 +91,7 @@ export const seoLandingPagesES: SeoLandingPage[] = [
       {
         heading: "Pagos, garantías y entrega",
         body: [
-          "En una compra sobre plano los pagos se realizan normalmente por fases. Las cantidades anticipadas deben quedar correctamente protegidas y el contrato debe definir plazos, condiciones y documentación.",
+          "En una compra sobre plano los pagos suelen realizarse por fases. Un abogado independiente debe comprobar qué protección legal corresponde a las cantidades anticipadas en el caso concreto y revisar plazos y condiciones contractuales.",
           "Te ayudamos a ordenar la información y a coordinar las preguntas que deben resolver promotor, banco y abogado antes de comprometer una cantidad importante.",
         ],
         bullets: [
