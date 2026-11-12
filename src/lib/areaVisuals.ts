@@ -29,6 +29,9 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "Xaló, Marina Alta, País Valencià.JPG": "2/28/Xal%C3%B3%2C_Marina_Alta%2C_Pa%C3%ADs_Valenci%C3%A0.JPG",
   "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": "9/9b/Playa_Centro%2C_Villajoyosa%2C_Espa%C3%B1a%2C_2014-07-03%2C_DD_28.JPG",
   "Pueblo y castillo de Biar, Alicante.jpg": "c/cd/Pueblo_y_castillo_de_Biar%2C_Alicante.jpg",
+  "Església de sant Joan Baptista de Sant Joan d'Alacant.jpg": "0/0d/Esgl%C3%A9sia_de_sant_Joan_Baptista_de_Sant_Joan_d%27Alacant.jpg",
+  "Iglesia parroquial de Muchamiel.jpg": "5/58/Iglesia_parroquial_de_Muchamiel.jpg",
+  "Alicante City & Beach - Castillo de Santa Bárbara.jpg": "f/f8/Alicante_City_%26_Beach_-_Castillo_de_Santa_B%C3%A1rbara.jpg",
   "L'Alfàs del Pi.jpg": "f/fd/L%27Alf%C3%A0s_del_Pi.jpg",
   "Vista de la Nucia des del castell de Polop.JPG": "e/e4/Vista_de_la_Nucia_des_del_castell_de_Polop.JPG",
   "Teulada.jpg": "f/fb/Teulada.jpg",
@@ -87,6 +90,15 @@ const AREA_VISUALS: Record<string, string> = {
   "el campello": commons("El Campello - Playa 2.jpg"),
   campello: commons("El Campello - Playa 2.jpg"),
 
+  // Verified local historic center, municipal church and Alicante cityscape.
+  "sant joan d'alacant": commons("Església de sant Joan Baptista de Sant Joan d'Alacant.jpg"),
+  "sant joan dalacant": commons("Església de sant Joan Baptista de Sant Joan d'Alacant.jpg"),
+  "san juan de alicante": commons("Església de sant Joan Baptista de Sant Joan d'Alacant.jpg"),
+  mutxamel: commons("Iglesia parroquial de Muchamiel.jpg"),
+  muchamiel: commons("Iglesia parroquial de Muchamiel.jpg"),
+  alicante: commons("Alicante City & Beach - Castillo de Santa Bárbara.jpg"),
+  alacant: commons("Alicante City & Beach - Castillo de Santa Bárbara.jpg"),
+
   // Real Xaló/Jalón town view. Joanbanjo, CC BY-SA 3.0 (attributed on area pages).
 
   biar: commons("Pueblo y castillo de Biar, Alicante.jpg"),
@@ -118,6 +130,9 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "Església de sant Joan Baptista de Sant Joan d'Alacant.jpg": { author: "Joanbanjo", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Iglesia parroquial de Muchamiel.jpg": { author: "Rodriguillo", license: "Public domain" },
+  "Alicante City & Beach - Castillo de Santa Bárbara.jpg": { author: "Varondán", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Pueblo y castillo de Biar, Alicante.jpg": { author: "Bsanchez", license: "CC BY-SA 3.0 ES", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/es/" },
   "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": { author: "Diego Delso", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Xaló, Marina Alta, País Valencià.JPG": { author: "Joanbanjo", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
