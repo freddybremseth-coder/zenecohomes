@@ -17,6 +17,7 @@ import { normalizeSearchText } from "@/lib/realtyflow";
 const VERIFIED_COMMONS: Record<string, string> = {
   "Playa del Racó del Albir.JPG": "9/97/Playa_del_Rac%C3%B3_del_Albir.JPG",
   "Old altea.jpg": "b/b7/Old_altea.jpg",
+  "Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg": "0/09/Vista_de_Altea,_Alicante,_Espa%C3%B1a,_2023-01-21,_DD_43.jpg",
   "Benidorm - Playa de Poniente 26.jpg": "4/45/Benidorm_-_Playa_de_Poniente_26.jpg",
   "Punta Prado in Benissa.jpg": "8/8c/Punta_Prado_in_Benissa.jpg",
   "Vista sobre Calpe y el Peñón de Ifach.jpg": "5/53/Vista_sobre_Calpe_y_el_Pe%C3%B1%C3%B3n_de_Ifach.jpg",
@@ -60,7 +61,7 @@ const AREA_VISUALS: Record<string, string> = {
   "l alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "l\u0027alfas del pi": commons("L\u0027Alfàs del Pi.jpg"),
 
-  altea: commons("Old altea.jpg"),
+  altea: commons("Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg"),
 
   benidorm: commons("Benidorm - Playa de Poniente 26.jpg"),
 
@@ -130,6 +131,7 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg": { author: "Diego Delso", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Església de sant Joan Baptista de Sant Joan d'Alacant.jpg": { author: "Joanbanjo", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Iglesia parroquial de Muchamiel.jpg": { author: "Rodriguillo", license: "Public domain" },
   "Alicante City & Beach - Castillo de Santa Bárbara.jpg": { author: "Varondán", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
