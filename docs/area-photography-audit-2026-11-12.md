@@ -31,7 +31,7 @@ Omfang: `/omrader`, regionkort, byguider, kartkort og innlandsoversikt.
 | Nord | Xaló/Jalón | Xaló, Marina Alta, País Valencià.JPG | Lokalt innlandsmotiv |
 | Sør | Torrevieja | Torrevieja - Playas 12.jpg | Nytt, CC0 |
 | Sør | Guardamar del Segura | Guardamar del Segura - Playa Babilonia 4.jpg | Nytt, CC0 |
-| Sør | Ciudad Quesada, Rojales | Ciudad Quesada from the air.jpg | Nytt, CC0; liten original (640×480), bør erstattes med bedre lokaloppløst foto ved anledning |
+| Sør | Ciudad Quesada, Rojales | Ciudad Quesada 02.jpg | H. Helmlechner, CC BY-SA 4.0; 2 592 × 1 728 piksler, dokumentert stedfoto |
 | Sør | Orihuela Costa | Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg | Nytt, Cabo Roig; opphav Ximonic |
 | Sør | Santa Pola | Santa Pola - panoramio (4).jpg | Nytt, opphav Halina Frederiksen |
 | Cálida | San Pedro del Pinatar | Mar Menor desde Villananitos.jpg | Nytt, Villananitos/Lo Pagán, Anidae |
