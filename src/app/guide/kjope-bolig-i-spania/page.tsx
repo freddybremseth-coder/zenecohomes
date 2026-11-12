@@ -190,6 +190,9 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Før du signerer eller betaler, bør en uavhengig advokat gjennomgå vilkårene. Advokaten bør også kontrollere eierskap, heftelser, tillatelser og annen relevant dokumentasjon før du påtar deg ytterligere forpliktelser.
           </p>
+          <p>
+            Les også om <Link href="/guide/juridiske-fallgruver-boligkjop-spania">juridiske fallgruver ved boligkjøp i Spania</Link> før du går videre.
+          </p>
 
           <h3>4. Kjøpekontrakt, NIE og forberedelser</h3>
           <p>
@@ -264,6 +267,9 @@ export default async function BuyInSpainGuidePage() {
           </p>
           <p>
             Derfor mener jeg det er en fordel å ha én rådgiver som kjenner området, kan kontrollere at opplysningene stemmer og hjelpe deg med å finne boliger som faktisk er aktuelle.
+          </p>
+          <p>
+            Les også hvorfor en <Link href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">god eiendomsrådgiver er viktig</Link>, mer om <Link href="/om-oss">hvordan Zen Eco Homes jobber</Link> og hvordan vi følger deg gjennom <Link href="/kjopsprosessen">kjøpsprosessen</Link>.
           </p>
           <div className="hero-actions">
             <Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link>
