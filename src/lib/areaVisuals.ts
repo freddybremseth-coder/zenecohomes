@@ -35,6 +35,10 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "L'Alfàs del Pi.jpg": "f/fd/L%27Alf%C3%A0s_del_Pi.jpg",
   "Vista de la Nucia des del castell de Polop.JPG": "e/e4/Vista_de_la_Nucia_des_del_castell_de_Polop.JPG",
   "Teulada.jpg": "f/fb/Teulada.jpg",
+  "Playa de La Glea, en Dehesa de Campoamor.jpg": "9/9a/Playa_de_La_Glea,_en_Dehesa_de_Campoamor.jpg",
+  "Gran Alacant 03.JPG": "6/6d/Gran_Alacant_03.JPG",
+  "La Zenia Boulevard (49287363646).jpg": "c/c4/La_Zenia_Boulevard_(49287363646).jpg",
+  "Plaza del ayuntamiento de Calasparra.jpg": "b/b7/Plaza_del_ayuntamiento_de_Calasparra.jpg",
   "Torrevieja - Playas 12.jpg": "4/45/Torrevieja_-_Playas_12.jpg",
   "Guardamar del Segura - Playa Babilonia 4.jpg": "3/34/Guardamar_del_Segura_-_Playa_Babilonia_4.jpg",
   "Ciudad Quesada 02.jpg": "4/41/Ciudad_Quesada_02.jpg",
@@ -109,6 +113,11 @@ const AREA_VISUALS: Record<string, string> = {
   "guardamar del segura": commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
   guardamar: commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
   "ciudad quesada": commons("Ciudad Quesada 02.jpg"),
+  campoamor: commons("Playa de La Glea, en Dehesa de Campoamor.jpg"),
+  "dehesa de campoamor": commons("Playa de La Glea, en Dehesa de Campoamor.jpg"),
+  "gran alacant": commons("Gran Alacant 03.JPG"),
+  "la zenia": commons("La Zenia Boulevard (49287363646).jpg"),
+  calasparra: commons("Plaza del ayuntamiento de Calasparra.jpg"),
   "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
   "santa pola": commons("Santa Pola - panoramio (4).jpg"),
   "san pedro del pinatar": commons("Mar Menor desde Villananitos.jpg"),
@@ -130,6 +139,10 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "Playa de La Glea, en Dehesa de Campoamor.jpg": { author: "Emilio Gómez Fernández", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Gran Alacant 03.JPG": { author: "Zeisterre", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
+  "La Zenia Boulevard (49287363646).jpg": { author: "Kent Wang", license: "CC BY-SA 2.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/" },
+  "Plaza del ayuntamiento de Calasparra.jpg": { author: "Anidae", license: "CC BY 4.0", licenseUrl: "https://creativecommons.org/licenses/by/4.0/" },
   "Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg": { author: "Diego Delso", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Església de sant Joan Baptista de Sant Joan d'Alacant.jpg": { author: "Joanbanjo", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Iglesia parroquial de Muchamiel.jpg": { author: "Rodriguillo", license: "Public domain" },
