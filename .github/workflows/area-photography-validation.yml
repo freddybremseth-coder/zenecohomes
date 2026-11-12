@@ -60,7 +60,8 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: npm run build
+      # The separate area-photo-checks job already builds production.
+      # Visual smoke uses Next dev so it does not rely on production .next artifacts.
       - run: npm install --no-save --no-package-lock playwright
       - run: npx playwright install --with-deps chromium
       - name: Start isolated Next.js dev server for browser testing
