@@ -122,6 +122,7 @@ const nextConfig: NextConfig = {
     }));
 
     const contentConsolidationRedirects = [
+      ["/guide/kostnader-boligkjop-spania", "/guide/kjope-bolig-i-spania"],
       ["/magasin/lan-i-norge-eller-spania-boligkjop", "/guide/finansiere-bolig-i-spania"],
       ["/magasin/bolig-under-bygging-eller-ferdig-spania", "/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania"],
       ["/magasin/hva-koster-feriebolig-spania-i-aret", "/guide/lopende-kostnader-eie-bolig-spania"],
