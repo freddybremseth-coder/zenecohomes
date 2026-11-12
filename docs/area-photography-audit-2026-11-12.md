@@ -71,3 +71,8 @@ Tre nye stedsfestede redaksjonelle bilder er lagt til, slik at områdesidene ikk
 - **Alicante/Alacant:** `Alicante City & Beach - Castillo de Santa Bárbara.jpg` – Varondán, CC BY-SA 4.0. Høyt oppløst by- og strandmotiv.
 
 Bildenes Commons-stier er kontrollert mot filnavn og MD5-sharder i `npm run images:audit`. Kontroll av motivutsnitt på faktisk mobilskjerm og samtlige historiske innlandsfotos lisenser gjenstår fortsatt.
+
+
+## Skarphet og motiv – Altea
+
+Den tidligere kilden `Old altea.jpg` var bare 474 × 640 piksler og egner seg ikke som stort område- eller hero-bilde. Den synlige Altea-profilen bruker nå `Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg` (7 179 × 3 025), fotograf Diego Delso, CC BY-SA 4.0. Det er et stedsfestet utsiktsfoto av Altea. Den gamle filoppføringen beholdes kun i fotomanifestet og brukes ikke lenger på områdesiden.
