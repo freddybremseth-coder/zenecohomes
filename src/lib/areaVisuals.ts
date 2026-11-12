@@ -55,6 +55,7 @@ const AREA_VISUALS: Record<string, string> = {
   "alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "alfaz del pi": commons("L'Alfàs del Pi.jpg"),
   "l alfas del pi": commons("L'Alfàs del Pi.jpg"),
+  "l\u0027alfas del pi": commons("L\u0027Alfàs del Pi.jpg"),
 
   altea: commons("Old altea.jpg"),
 
@@ -80,6 +81,8 @@ const AREA_VISUALS: Record<string, string> = {
 
   javea: commons("Jávea desde el Montgó.jpg"),
   xabia: commons("Jávea desde el Montgó.jpg"),
+  "javea/xabia": commons("Jávea desde el Montgó.jpg"),
+  "javea xabia": commons("Jávea desde el Montgó.jpg"),
 
   "el campello": commons("El Campello - Playa 2.jpg"),
   campello: commons("El Campello - Playa 2.jpg"),
@@ -87,6 +90,7 @@ const AREA_VISUALS: Record<string, string> = {
   // Real Xaló/Jalón town view. Joanbanjo, CC BY-SA 3.0 (attributed on area pages).
 
   biar: commons("Pueblo y castillo de Biar, Alicante.jpg"),
+  nucia: commons("La Nucia.jpg"),
   "la nucia": commons("La Nucia.jpg"),
   "la nucia alicante": commons("La Nucia.jpg"),
   torrevieja: commons("Torrevieja - Playas 12.jpg"),
@@ -102,6 +106,7 @@ const AREA_VISUALS: Record<string, string> = {
 
   "xalo jalon": commons("Xaló, Marina Alta, País Valencià.JPG"),
   xalo: commons("Xaló, Marina Alta, País Valencià.JPG"),
+  "xalo/jalon": commons("Xaló, Marina Alta, País Valencià.JPG"),
   jalon: commons("Xaló, Marina Alta, País Valencià.JPG"),
 };
 
