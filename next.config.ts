@@ -123,7 +123,6 @@ const nextConfig: NextConfig = {
 
     const contentConsolidationRedirects = [
       ["/guide/kostnader-boligkjop-spania", "/guide/kjope-bolig-i-spania"],
-      ["/magasin/lan-i-norge-eller-spania-boligkjop", "/guide/finansiere-bolig-i-spania"],
       ["/magasin/bolig-under-bygging-eller-ferdig-spania", "/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania"],
       ["/magasin/hva-koster-feriebolig-spania-i-aret", "/guide/lopende-kostnader-eie-bolig-spania"],
       ["/magasin/bolig-500000-euro-totalbudsjett-spania", "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca"],
@@ -217,6 +216,11 @@ const nextConfig: NextConfig = {
       { source: "/tomter", destination: "/omrader/innlandet/tomter", permanent: true },
       { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
       ...legacyKjopsprosessRedirects,
+      {
+        source: "/magasin/lan-i-norge-eller-spania-boligkjop",
+        destination: "/guide/finansiere-bolig-i-spania",
+        statusCode: 301,
+      },
       ...contentConsolidationRedirects,
       ...marketComparisonRedirects,
       ...siloRedirects,
