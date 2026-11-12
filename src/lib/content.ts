@@ -2308,7 +2308,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av bolig og spansk bank med boliglån",
     seoTitle: "Boliglån i Spania | Slik får nordmenn lån i spansk bank",
     seoDescription:
-      "Boliglån i Spania for nordmenn: se belåningsgrad, renter, Euribor, TAE, egenkapital, kostnader, søknadsprosess og forskjellen på spansk og norsk lån.",
+      "Boliglån i Spania for nordmenn: se belåningsgrad, renter, Euribor, TAE, egenkapital, kostnader og søknadsprosess i spansk bank.",
     keywords: [
       "boliglån i Spania",
       "låne penger i spansk bank",
@@ -2458,13 +2458,6 @@ export const articles: Article[] = [
             ["Forsikringer og tilleggsprodukter", "Avhenger av vilkårene"],
           ],
         },
-      },
-      {
-        heading: "Spansk lån vs norsk lån",
-        body: [
-          "Når du vurderer et spansk boliglån, bør du også sammenligne alternativet med å låne mot sikkerhet i Norge. Et spansk lån er normalt knyttet til boligen i euro, mens norsk finansiering ofte innebærer pant i en norsk eiendom og tilbakebetaling i kroner. Begge løsningene kan være aktuelle, avhengig av økonomi og bankens vurdering.",
-          "Den grundige sammenligningen av sikkerhet, valutarisiko og total kostnad ligger i vår egen artikkel om lån i Norge eller Spania. Denne guiden konsentrerer seg om søknaden, lånevilkårene og dokumentasjonskravene i spansk bank.",
-        ],
       },
       {
         heading: "Husk dette når du søker boliglån i Spania",
