@@ -92,7 +92,7 @@ export const seoLandingPagesES: SeoLandingPage[] = [
         heading: "Pagos, garantías y entrega",
         body: [
           "En una compra sobre plano los pagos suelen realizarse por fases. Un abogado independiente debe comprobar qué protección legal corresponde a las cantidades anticipadas en el caso concreto y revisar plazos y condiciones contractuales.",
-          "Te ayudamos a ordenar la información y a coordinar las preguntas que deben resolver promotor, banco y abogado antes de comprometer una cantidad importante.",
+          "Te ayudamos a ordenar la información y las preguntas para el promotor y un abogado independiente, para que puedas decidir con criterio antes de asumir obligaciones contractuales.",
         ],
         bullets: [
           "Calendario de pagos claro.",
