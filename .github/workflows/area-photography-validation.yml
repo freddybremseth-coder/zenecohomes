@@ -1,0 +1,31 @@
+name: Validate area photography PR
+on:
+  push:
+    branches:
+      - fix/verified-area-photography-20261112
+  pull_request:
+    paths:
+      - 'src/lib/areaVisuals.ts'
+      - 'src/lib/areaGuideContent.ts'
+      - 'src/app/omrader/**'
+      - 'src/app/inland/page.tsx'
+      - 'src/components/AreaPhotoCredit.tsx'
+      - 'src/components/ResilientImage.tsx'
+      - 'scripts/image-integrity-audit.mjs'
+jobs:
+  area-photo-checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run images:audit
+      - run: npx tsc --noEmit
