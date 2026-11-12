@@ -1268,8 +1268,8 @@ export function ArticleView({ article }: { article: Article }) {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
-                          {paragraph.split(/(\\[\\[[^\\]]+\\]\\])/g).map((part, i) => {
-                            const match = part.match(/^\\[\\[([^|]+)\\|([^\\]]+)\\]\\]$/);
+                          {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
+                            const match = part.match(/^\[\[([^|]+)\|([^\]]+)\]\]$/);
                             return match ? <Link key={i} href={match[2]}>{match[1]}</Link> : part;
                           })}
                         </p>
