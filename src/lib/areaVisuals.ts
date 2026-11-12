@@ -139,6 +139,7 @@ const AREA_VISUALS: Record<string, string> = {
   "la manga": commons("Playa natural - La Manga - panorama - panoramio.jpg"),
 
   "xalo jalon": commons("Xaló, Marina Alta, País Valencià.JPG"),
+  "xalo (jalon)": commons("Xaló, Marina Alta, País Valencià.JPG"),
   xalo: commons("Xaló, Marina Alta, País Valencià.JPG"),
   "xalo/jalon": commons("Xaló, Marina Alta, País Valencià.JPG"),
   jalon: commons("Xaló, Marina Alta, País Valencià.JPG"),
