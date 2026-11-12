@@ -326,7 +326,6 @@ const financeRoutes = [
   "/guide/finansiere-bolig-i-spania",
   "/guide/boliglan-spansk-bank-nordmenn",
   "/guide/spansk-bankkonto-valutaveksling",
-  "/magasin/lan-i-norge-eller-spania-boligkjop",
 ];
 for (const url of financeRoutes.slice(1)) {
   if (!articleViewContent.includes(`href: "${url}"`) &&
@@ -334,8 +333,8 @@ for (const url of financeRoutes.slice(1)) {
     errors.push(`Financial-guide cluster: missing discoverable contextual link to ${url}`);
   }
 }
-for (const url of ["/guide/finansiere-bolig-i-spania", "/magasin/lan-i-norge-eller-spania-boligkjop"]) {
-  requireText(cornerstone, `href="${url}"`, "cornerstone finance and cost link");
+if (!read("next.config.ts").includes('["/magasin/lan-i-norge-eller-spania-boligkjop", "/guide/finansiere-bolig-i-spania"]')) {
+  errors.push("Financial-guide cluster: retired comparison article must redirect to the finance guide");
 }
 if (read("src/lib/content.ts").includes('href: "/guide/finansiering-notar-nie-boligkjop-spania"')) {
   errors.push("src/lib/content.ts: stale finance URL must point to /guide/finansiere-bolig-i-spania");
@@ -374,19 +373,6 @@ for (const slug of [
   const rules = contextualRulesForSlug(articleViewContent, "CONTEXTUAL_GUIDE_LINKS", slug);
   if (!headings.length || !rules.length) {
     errors.push(`Financial-guide cluster: missing headings or contextual rules for ${slug}`);
-  }
-  for (const rule of rules) {
-    if (!headings.some((heading) => heading.includes(rule.toLowerCase()))) {
-      errors.push(`Financial-guide cluster: dead contextual heading rule "${rule}" for ${slug}`);
-    }
-  }
-}
-{
-  const slug = "lan-i-norge-eller-spania-boligkjop";
-  const headings = articleSectionHeadings(read("src/lib/magazine.ts"), slug);
-  const rules = contextualRulesForSlug(articleViewContent, "CONTEXTUAL_MAGAZINE_LINKS", slug);
-  if (!headings.length || !rules.length) {
-    errors.push("Financial-guide cluster: comparison article lacks headings or contextual rules");
   }
   for (const rule of rules) {
     if (!headings.some((heading) => heading.includes(rule.toLowerCase()))) {

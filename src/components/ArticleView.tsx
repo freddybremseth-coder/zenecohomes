@@ -198,7 +198,6 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "4 måter å finansiere",
       links: [
-        { label: "Norsk eller spansk lån? Sammenlign løsningene", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
         { label: "Slik søker du boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
       ],
     },
@@ -389,7 +388,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Spansk lån vs norsk lån",
       links: [
         { label: "Spansk bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
-        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+        { label: "Finansiering av boligkjøpet i Spania", href: "/guide/finansiere-bolig-i-spania" },
       ],
     },
     {
@@ -705,27 +704,6 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
 };
 
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
-  "lan-i-norge-eller-spania-boligkjop": [
-    {
-      headingIncludes: "Lån i Spania:",
-      links: [
-        { label: "Slik fungerer boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
-      ],
-    },
-    {
-      headingIncludes: "Valuta er",
-      links: [
-        { label: "Bankkonto og valutaveksling fra kroner til euro", href: "/guide/spansk-bankkonto-valutaveksling" },
-      ],
-    },
-    {
-      headingIncludes: "Hva bør du sammenligne",
-      links: [
-        { label: "Finansieringsplan: egenkapital, likviditet og totalbudsjett", href: "/guide/finansiere-bolig-i-spania" },
-        { label: "Kjøpskostnader og kalkulator", href: "/guide/kjope-bolig-i-spania" },
-      ],
-    },
-  ],
   "albir-finestrat-villajoyosa-benidorm-hvor-kjope": [
     {
       headingIncludes: "Albir",
@@ -784,7 +762,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "finansiering",
       links: [
-        { label: "Lån i Norge eller Spania?", href: "/magasin/lan-i-norge-eller-spania-boligkjop" },
+        { label: "Finansiering av boligkjøpet i Spania", href: "/guide/finansiere-bolig-i-spania" },
         { label: "Bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
     },
@@ -1077,7 +1055,7 @@ export function ArticleView({ article }: { article: Article }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      {article.faq.length > 0 && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <section className="page-hero compact-hero article-hero">
@@ -1272,10 +1250,10 @@ export function ArticleView({ article }: { article: Article }) {
                     if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("#### ")) {
                       return <h4 key={paragraph}>{paragraph.slice(5)}</h4>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania") && paragraph.startsWith("### ")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania") && paragraph.includes("[[")) {
+                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.includes("[[")) {
                       return (
                         <p key={paragraph}>
                           {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
@@ -1360,18 +1338,20 @@ export function ArticleView({ article }: { article: Article }) {
               )}
             </section>}
 
-            <section className="article-faq">
-              <p className="eyebrow">Vanlige spørsmål</p>
-              <h2>FAQ</h2>
-              <div className="faq-accordion">
-                {article.faq.map((item, index) => (
-                  <details key={item.question} open={index === 0}>
-                    <summary>{item.question}</summary>
-                    <p>{item.answer}</p>
-                  </details>
-                ))}
-              </div>
-            </section>
+            {article.faq.length > 0 && (
+              <section className="article-faq">
+                <p className="eyebrow">Vanlige spørsmål</p>
+                <h2>FAQ</h2>
+                <div className="faq-accordion">
+                  {article.faq.map((item, index) => (
+                    <details key={item.question} open={index === 0}>
+                      <summary>{item.question}</summary>
+                      <p>{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            )}
           </article>
 
           <aside className="article-aside">
