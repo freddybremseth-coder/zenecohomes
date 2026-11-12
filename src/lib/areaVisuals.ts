@@ -96,6 +96,7 @@ const AREA_VISUALS: Record<string, string> = {
   javea: commons("Jávea desde el Montgó.jpg"),
   xabia: commons("Jávea desde el Montgó.jpg"),
   "javea/xabia": commons("Jávea desde el Montgó.jpg"),
+  "javea / xabia": commons("Jávea desde el Montgó.jpg"),
   "javea xabia": commons("Jávea desde el Montgó.jpg"),
 
   "el campello": commons("El Campello - Playa 2.jpg"),
