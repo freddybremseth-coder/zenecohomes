@@ -198,7 +198,6 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "4 måter å finansiere",
       links: [
-
         { label: "Slik søker du boliglån i spansk bank", href: "/guide/boliglan-spansk-bank-nordmenn" },
       ],
     },
@@ -705,7 +704,7 @@ const CONTEXTUAL_CORPORATE_LINKS: Record<string, ContextualLinkRule[]> = {
 };
 
 const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
-"albir-finestrat-villajoyosa-benidorm-hvor-kjope": [
+  "albir-finestrat-villajoyosa-benidorm-hvor-kjope": [
     {
       headingIncludes: "Albir",
       links: [
