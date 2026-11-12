@@ -39,6 +39,8 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "Gran Alacant 03.JPG": "6/6d/Gran_Alacant_03.JPG",
   "La Zenia Boulevard (49287363646).jpg": "c/c4/La_Zenia_Boulevard_(49287363646).jpg",
   "Plaza del ayuntamiento de Calasparra.jpg": "b/b7/Plaza_del_ayuntamiento_de_Calasparra.jpg",
+  "Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg": "e/e3/Playa_de_la_Mata_in_La_Mata,_Torrevieja,_Alicante,_Spain,_2022_January.jpg",
+  "Calle de San Fulgencio.jpg": "3/37/Calle_de_San_Fulgencio.jpg",
   "Torrevieja - Playas 12.jpg": "4/45/Torrevieja_-_Playas_12.jpg",
   "Guardamar del Segura - Playa Babilonia 4.jpg": "3/34/Guardamar_del_Segura_-_Playa_Babilonia_4.jpg",
   "Ciudad Quesada 02.jpg": "4/41/Ciudad_Quesada_02.jpg",
@@ -118,6 +120,8 @@ const AREA_VISUALS: Record<string, string> = {
   "gran alacant": commons("Gran Alacant 03.JPG"),
   "la zenia": commons("La Zenia Boulevard (49287363646).jpg"),
   calasparra: commons("Plaza del ayuntamiento de Calasparra.jpg"),
+  "la mata": commons("Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg"),
+  "san fulgencio": commons("Calle de San Fulgencio.jpg"),
   "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
   "santa pola": commons("Santa Pola - panoramio (4).jpg"),
   "san pedro del pinatar": commons("Mar Menor desde Villananitos.jpg"),
@@ -139,6 +143,8 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg": { author: "Ximonic (Simo Räsänen)", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Calle de San Fulgencio.jpg": { author: "19Tarrestnom65", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Playa de La Glea, en Dehesa de Campoamor.jpg": { author: "Emilio Gómez Fernández", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Gran Alacant 03.JPG": { author: "Zeisterre", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
   "La Zenia Boulevard (49287363646).jpg": { author: "Kent Wang", license: "CC BY-SA 2.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/" },
