@@ -68,6 +68,7 @@ const AREA_VISUALS: Record<string, string> = {
   "alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "alfaz del pi": commons("L'Alfàs del Pi.jpg"),
   "l alfas del pi": commons("L'Alfàs del Pi.jpg"),
+  "l’alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "l\u0027alfas del pi": commons("L\u0027Alfàs del Pi.jpg"),
 
   altea: commons("Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg"),
@@ -95,6 +96,7 @@ const AREA_VISUALS: Record<string, string> = {
   javea: commons("Jávea desde el Montgó.jpg"),
   xabia: commons("Jávea desde el Montgó.jpg"),
   "javea/xabia": commons("Jávea desde el Montgó.jpg"),
+  "javea / xabia": commons("Jávea desde el Montgó.jpg"),
   "javea xabia": commons("Jávea desde el Montgó.jpg"),
 
   "el campello": commons("El Campello - Playa 2.jpg"),
