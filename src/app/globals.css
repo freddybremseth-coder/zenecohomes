@@ -7145,3 +7145,24 @@ footer {
 .guide-steps-list li { margin-bottom: .7rem; }
 .cornerstone-guide .article-item-title { margin-bottom: .35rem; }
 .cornerstone-guide .faq-accordion summary h3 { display: inline; font-size: inherit; font-weight: inherit; margin: 0; }
+
+
+/* Inline text links: consistent Zen green and underline across the site */
+p a:not(.text-button):not(.contact-button),
+li a:not(.text-button):not(.contact-button),
+blockquote a,
+dd a,
+figcaption a {
+  color: #5a6e3c;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+p a:not(.text-button):not(.contact-button):hover,
+li a:not(.text-button):not(.contact-button):hover,
+blockquote a:hover,
+dd a:hover,
+figcaption a:hover {
+  color: #2f3a22;
+}
