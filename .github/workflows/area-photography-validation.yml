@@ -63,15 +63,18 @@ jobs:
       - run: npm run build
       - run: npm install --no-save --no-package-lock playwright
       - run: npx playwright install --with-deps chromium
-      - name: Start Next.js and await HTTP readiness
+      - name: Start isolated Next.js dev server for browser testing
         run: |
-          npm run start > /tmp/zeneco-next.log 2>&1 &
+          NEXT_TELEMETRY_DISABLED=1 npm run dev -- --hostname 127.0.0.1 > /tmp/zeneco-next.log 2>&1 &
           echo $! > /tmp/zeneco-next.pid
-          for n in $(seq 1 90); do
-            if curl -f -s -o /dev/null http://127.0.0.1:3000/omrader; then exit 0; fi
+          for n in $(seq 1 60); do
+            if curl --max-time 8 -f -s -o /dev/null http://127.0.0.1:3000/; then
+              echo "Next.js test server responding"
+              exit 0
+            fi
             sleep 2
           done
-          cat /tmp/zeneco-next.log
+          tail -120 /tmp/zeneco-next.log
           exit 1
       - name: Capture mobile and desktop area pages
         run: node scripts/area-visual-smoke.mjs
