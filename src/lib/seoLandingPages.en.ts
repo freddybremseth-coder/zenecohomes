@@ -76,7 +76,7 @@ export const seoLandingPagesEN: SeoLandingPage[] = [
       "Explore modern apartments and villas, compare locations and discover a home that suits your plans. We help you understand specifications, payment schedules, applicable deposit protections and handover arrangements before you commit.",
     seoTitle: "New Build in Spain | Modern Homes with Local Advice",
     seoDescription:
-      "New build in Spain: modern, energy-efficient apartments and villas. Advice on location, developer, payment plan, bank guarantee and handover — clear and secure.",
+      "Explore new builds in Spain with practical advice on locations, developers, specifications, payment plans, applicable deposit protections and handover.",
     primaryCta: { label: "Book a consultation", href: BOOKING },
     secondaryCta: { label: "Browse properties", href: "/en/properties" },
     sections: [
