@@ -29,6 +29,8 @@ assert.ok(!areaGuide.includes("profile.photo_url") && !areaGuide.includes("getPr
 assert.ok(!areaGuide.includes('return "/assets/areas.jpg"'), "Generic image fallback is not a photograph of the town");
 assert.ok(!areaHub.includes("profiles.find((item) => areaMatchesRegion"), "Regional card must not choose the first arbitrary town");
 assert.ok(areaHub.includes('fallbackSrc=""') && town.includes('fallbackSrc=""') && region.includes('fallbackSrc=""'), "Area images must not silently fall back to an unrelated photo");
+assert.ok(town.includes("backgroundImage: image") && town.includes("linear-gradient(100deg, #172a34"), "Town hero must override generic global area background");
+assert.ok(region.includes('backgroundImage: "linear-gradient(110deg, #192e3b'), "Region hero must not reuse a generic photographic placeholder");
 assert.ok(existsSync(join(root, "public/assets/areas.jpg")), "Known safe site placeholder missing");
 assert.ok(safe.includes("onError=") && safe.includes('fallbackSrc = "/assets/areas.jpg"'), "Image fallback missing");
 assert.ok(town.includes("<ResilientImage"), "Town image lacks error fallback");
