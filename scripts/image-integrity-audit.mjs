@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 
@@ -45,6 +46,24 @@ for (const [language, gallerySource] of [["no", gallery], ["es", galleryEs]]) {
 assert.ok(name.includes('white-space') || css.includes("white-space: nowrap;"), "Proper name typography guard missing");
 assert.ok(css.includes("-webkit-hyphens: none"), "Automatic hyphenation must be disabled");
 
+// Wikimedia Commons uses an MD5-derived shard path calculated from the
+// canonical UTF-8 file name (spaces replaced with underscores). A valid-looking
+// but wrong shard silently breaks image delivery, so validate every mapping.
+const wikimediaEntries = [...areaVisuals.matchAll(/^  "([^"]+\\.(?:jpg|jpeg|png))": "([0-9a-f]\\/[0-9a-f]{2}\\/[^"]+)",?$/gmi)];
+for (const [, fileName, remotePath] of wikimediaEntries) {
+  const canonical = fileName.replaceAll(" ", "_");
+  const shard = createHash("md5").update(canonical, "utf8").digest("hex");
+  assert.ok(
+    remotePath.startsWith(`${shard[0]}/${shard.slice(0, 2)}/`),
+    `Invalid Wikimedia storage shard for ${fileName}: ${remotePath}`,
+  );
+  assert.equal(
+    decodeURIComponent(remotePath.split("/").slice(2).join("/")),
+    canonical,
+    `Wrong Commons source filename for ${fileName}`,
+  );
+}
+assert.ok(wikimediaEntries.length >= 20, "Expected verified Commons file manifest for Northern and Southern Costa Blanca and Costa Cálida");
 const originalFiles = [...areaVisuals.matchAll(/^  "[^"]+\.\w+": "[0-9a-f]\/\w+\/[^"]+",?$/gm)];
 assert.ok(originalFiles.length >= 11, "Expected complete set of approved direct Wikimedia filenames");
 for (const match of originalFiles) {
