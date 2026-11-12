@@ -50,6 +50,20 @@ try {
             visibleImages: visibleImages.length,
             missing,
             neutralPanels: document.querySelectorAll(".resilient-image-placeholder").length,
+            // Record live area-profile gaps separately from network failures.
+            // These are editorial work items, not broken-image build failures.
+            areaPhotoCoverage: [...document.querySelectorAll(".area-profile-card")].map(card => {
+              const name = card.querySelector("h3")?.textContent?.trim() || "(ukjent)";
+              const photo = card.querySelector(".area-profile-photo");
+              const missingPhoto = photo?.textContent?.includes("Stedsfoto mangler for ") || false;
+              const failedPhoto = !!photo?.querySelector(".resilient-image-placeholder") && !missingPhoto;
+              const image = photo?.querySelector("img");
+              return {
+                name,
+                status: missingPhoto ? "mangler-kilde" : failedPhoto ? "lasting-feilet" : image?.naturalWidth ? "lastet" : image ? "avventer-lasting" : "ukjent",
+                source: image?.getAttribute("src") || null,
+              };
+            }),
             failedEditorialPanels: [...document.querySelectorAll(".resilient-image-placeholder")].map(el => el.getAttribute("aria-label") || "").filter(label => /fotografi fra stedet|dokumentert stedfoto/i.test(label)),
             hasGenericPlacePhoto: !!document.querySelector('.areas-page img[src*="/assets/areas.jpg"]'),
           };
@@ -79,6 +93,35 @@ try {
 }
 
 await writeFile("artifacts/area-smoke/report.json", JSON.stringify(reports, null, 2));
+// Consolidate distinct places from the desktop region pages only, avoiding
+// double-counting the same photo on desktop and mobile.
+const areaCoverage = reports
+  .filter(item => item.device === "desktop" && /^\/omrader\/[^/]+$/.test(item.route))
+  .flatMap(item => (item.areaPhotoCoverage || []).map(area => ({ region: item.route.split("/")[2], ...area })));
+const coverageTotals = Object.fromEntries(
+  ["lastet", "mangler-kilde", "lasting-feilet", "avventer-lasting", "ukjent"]
+    .map(status => [status, areaCoverage.filter(item => item.status === status).length]),
+);
+await writeFile("artifacts/area-smoke/coverage.json", JSON.stringify({ totals: coverageTotals, areas: areaCoverage }, null, 2));
+const coverageMd = [
+  "# Redaksjonell bildedekning per område",
+  "",
+  "Dette er en rapport fra områdesidene i testmiljøet, ikke en påstand om bilderettigheter eller live tilgjengelighet for alle besøkende.",
+  "",
+  "| Område | Region | Bildestatus |",
+  "| --- | --- | --- |",
+  ...areaCoverage.sort((a, b) => a.region.localeCompare(b.region) || a.name.localeCompare(b.name))
+    .map(item => `| ${item.name.replaceAll("|", "/")} | ${item.region} | ${item.status} |`),
+  "",
+  `**Totalt: ${areaCoverage.length} områdekort.** Mangler dokumentert kilde: ${coverageTotals["mangler-kilde"]}. Mislykket innlasting: ${coverageTotals["lasting-feilet"]}.`,
+  "",
+  "Neste steg: erstatt bare manglende foto med stedsspesifikke bilder hvor motiv, fotograf og lisens er kontrollert.",
+].join("\n");
+await writeFile("artifacts/area-smoke/coverage.md", coverageMd);
+console.log("AREA_COVERAGE_REPORT", areaCoverage.length, JSON.stringify(coverageTotals));
+for (const item of areaCoverage.filter(item => item.status === "mangler-kilde")) {
+  console.log("PHOTO_SOURCE_MISSING", item.region, item.name);
+}
 for (const item of reports) {
   console.log((item.issues.length ? "FAIL" : "PASS") + " " + item.device + " " + item.route +
     " | h1: " + (item.h1 || "none") + " | visible images " + (item.visibleImages ?? 0) +
