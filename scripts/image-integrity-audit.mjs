@@ -49,7 +49,7 @@ assert.ok(css.includes("-webkit-hyphens: none"), "Automatic hyphenation must be 
 // Wikimedia Commons uses an MD5-derived shard path calculated from the
 // canonical UTF-8 file name (spaces replaced with underscores). A valid-looking
 // but wrong shard silently breaks image delivery, so validate every mapping.
-const wikimediaEntries = [...areaVisuals.matchAll(/^  "([^"]+\\.(?:jpg|jpeg|png))": "([0-9a-f]\\/[0-9a-f]{2}\\/[^"]+)",?$/gmi)];
+const wikimediaEntries = [...areaVisuals.matchAll(/^  "([^"]+[.](?:jpg|jpeg|png))": "([0-9a-f][/][0-9a-f]{2}[/][^"]+)",?$/gmi)];
 for (const [, fileName, remotePath] of wikimediaEntries) {
   const canonical = fileName.replaceAll(" ", "_");
   const shard = createHash("md5").update(canonical, "utf8").digest("hex");
