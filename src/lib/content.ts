@@ -642,12 +642,11 @@ export const articles: Article[] = [
       {
         "heading": "4 måter å finansiere boligkjøpet i Spania",
         "body": [
-          "Du kan finansiere hele eller deler av boligkjøpet med egne midler eller lån. De ulike alternativene skiller seg særlig fra hverandre når det gjelder hvilken eiendom som stilles som sikkerhet, valuta og samlet kostnad.",
-          "### Hva bør du vite om de ulike lånealternativene?",
-          "**Egne midler:** Du kan finansiere hele eller deler av kjøpet med oppsparte midler. Husk å sette av penger til kjøpsomkostninger og en økonomisk buffer.",
-          "**Spansk boliglån:** Banken tar pant i boligen du kjøper i Spania. Banken vurderer blant annet inntekt, eksisterende gjeld og betalingsevne før den avgjør hvor mye den kan tilby å låne. I vår [[guide til boliglån i spansk bank|/guide/boliglan-spansk-bank-nordmenn]] kan du lese mer om lånevilkår, bankenes krav og hvordan søknadsprosessen fungerer.",
-          "**Lån med pant i norsk bolig:** Du kan undersøke muligheten for å øke boliglånet, refinansiere eller ta opp et rammelån med sikkerhet i boligen din i Norge. Lånet vil normalt være i norske kroner, og banken tar pant i den norske boligen – ikke i eiendommen du kjøper i Spania.",
-          "**Norsk bank med pant i bolig i Spania:** DNB Luxembourg tilbyr finansiering med pant i eiendom i Spania. Det betyr at banken tar sikkerhet i boligen du kjøper, i stedet for å belaste boligen din i Norge.",
+          "Du kan finansiere hele eller deler av boligkjøpet på fire måter:",
+          "**Egne midler:** Bruk oppsparte midler, og sett av penger til kjøpsomkostninger og buffer.",
+          "**Spansk boliglån:** Lån med pant i boligen du kjøper i Spania.",
+          "**Lån med pant i norsk bolig:** Øk boliglånet, refinansier eller bruk rammelån med sikkerhet i norsk bolig.",
+          "**Norsk bank med pant i bolig i Spania:** DNB Luxembourg tilbyr finansiering med sikkerhet i spansk eiendom.",
           "Hvilken løsning som passer best, avhenger av økonomien din, tilgjengelig sikkerhet, lånevilkår og valutarisiko. Når du sammenligner tilbud, bør du se på samlet kostnad, løpetid, etableringskostnader og hvor mye kapital du må ha tilgjengelig – ikke bare nominell rente."
         ]
       },
@@ -694,7 +693,7 @@ export const articles: Article[] = [
         "heading": "Når bør finansieringen være på plass?",
         "body": [
           "Finansieringsrammen bør være avklart før du reserverer eller binder deg til en konkret bolig. Et foreløpig banksignal er ikke det samme som et endelig lånetilsagn.",
-          "Reservasjonsbeløp, privat kjøpekontrakt og overtakelse kan ha korte frister. Uten finansieringsavklaring risikerer du at takst, bankbehandling eller dokumentkrav forsinker oppgjøret. La en uavhengig advokat vurdere nødvendige finansieringsforbehold før du undertegner. Les /guide/kjope-bolig-i-spania for kjøpsløpet."
+          "Reservasjonsbeløp, privat kjøpekontrakt og overtakelse kan ha korte frister. Uten finansieringsavklaring risikerer du at takst, bankbehandling eller dokumentkrav forsinker oppgjøret. La en uavhengig advokat vurdere nødvendige finansieringsforbehold før du undertegner. Les vår [[guide til kjøp av bolig i Spania|/guide/kjope-bolig-i-spania]] for kjøpsprosessen."
         ]
       },
       {
