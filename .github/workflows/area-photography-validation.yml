@@ -12,6 +12,7 @@ on:
       - 'src/components/AreaPhotoCredit.tsx'
       - 'src/components/ResilientImage.tsx'
       - 'scripts/image-integrity-audit.mjs'
+      - 'scripts/verify-wikimedia-images.mjs'
 jobs:
   area-photo-checks:
     runs-on: ubuntu-latest
@@ -30,3 +31,16 @@ jobs:
       - run: npm run images:audit
       - run: npx tsc --noEmit
       - run: npm run build
+  area-photo-remote-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - run: node scripts/verify-wikimedia-images.mjs
