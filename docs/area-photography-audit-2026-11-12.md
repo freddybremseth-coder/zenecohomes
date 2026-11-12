@@ -22,7 +22,7 @@ Omfang: `/omrader`, regionkort, byguider, kartkort og innlandsoversikt.
 | Nord | Dénia | Dénia castillo 1.jpg | Dénia slott |
 | Nord | Finestrat | Puig Campana Puig Campana.JPG | Landskap i Finestrat kommune, bør suppleres med landsbybilde |
 | Nord | Jávea / Xàbia | Jávea desde el Montgó.jpg | Javea |
-| Nord | La Nucía | La Nucia.jpg | Stedsfestet til kommunen, men bygning for byplansaker; bedre landsbymotiv ønskelig |
+| Nord | La Nucía | Vista de la Nucia des del castell de Polop.JPG | Verifisert bypanorama fotografert fra Polop; Joanbanjo, CC BY-SA 4.0 |
 | Nord | Moraira | CastMoraira01.jpg | Moraira |
 | Nord | Teulada | Teulada.jpg | Rettet: brukte tidligere Moraira |
 | Nord | Polop | Polop i el Panoig.jpg | Polop |
@@ -42,7 +42,7 @@ Omfang: `/omrader`, regionkort, byguider, kartkort og innlandsoversikt.
 
 Innlandsdelen har fra før egne navngitte Wikimedia-motiver for Biar, Villena, Sax, Castalla, Banyeres de Mariola, Busot, Pinoso, Jumilla, Monóvar, Hondón de las Nieves, Aspe, Novelda, La Romana og Monforte del Cid.
 
-**Merknad:** Samleprofilen «Hondón-dalene» deler bilde med «Hondón de las Nieves»; dette er et navngitt sted innen dalområdet, men bør merkes som *Hondón de las Nieves – fra Hondón-dalene* eller erstattes med et bredere dalmotiv. Stedsfotografiene i innlandsdata og foto-krediteringen der bør tas med i neste kvalitetssikring.
+**Merknad:** Samleprofilen «Hondón-dalene» deler bilde med «Hondón de las Nieves»; dette er et navngitt sted innen dalområdet, men bør merkes som *Hondón de las Nieves – fra Hondón-dalene* eller erstattes med et bredere dalmotiv. Stedsfotografiene i innlandsdata har nå synlig lenke til Commons-filside for opphav og lisens. Fullstendig detaljkontroll av alle innlandslisensene gjenstår.
 
 ## Identifiserte feil og reparasjoner
 - `src/lib/areaGuideContent.ts`: tidligere dynamisk fallback fra `profile.photo_url`, boligannonse, omslagsbilde og `/assets/areas.jpg`. **Fjernet** for byguider.
