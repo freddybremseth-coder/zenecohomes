@@ -122,7 +122,7 @@ const nextConfig: NextConfig = {
     }));
 
     const contentConsolidationRedirects = [
-      ["/guide/kostnader-boligkjop-spania", "/guide/kjope-bolig-i-spania"],
+      ["/magasin/lan-i-norge-eller-spania-boligkjop", "/guide/finansiere-bolig-i-spania"],
       ["/magasin/bolig-under-bygging-eller-ferdig-spania", "/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania"],
       ["/magasin/hva-koster-feriebolig-spania-i-aret", "/guide/lopende-kostnader-eie-bolig-spania"],
       ["/magasin/bolig-500000-euro-totalbudsjett-spania", "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca"],
