@@ -184,7 +184,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "due diligence",
       links: [
-        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+        { label: "Slik kontrollerer du boligkjøpet juridisk", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
   ],
@@ -208,7 +208,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Juridisk bistand",
       links: [
         { label: "Bankgaranti ved nybygg", href: "/guide/nybygg-i-spania" },
-        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+        { label: "Slik kontrollerer du boligkjøpet juridisk", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
     {
@@ -229,7 +229,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Hva du må sjekke",
       links: [
         { label: "Omkostninger ved kjøp av nybygg", href: "/guide/nybygg-i-spania" },
-        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+        { label: "Slik kontrollerer du boligkjøpet juridisk", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
   ],
@@ -417,7 +417,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
       headingIncludes: "Dette må sjekkes ved tomt og finca",
       links: [
         { label: "Se tomter i innlandet", href: "/omrader/innlandet/tomter" },
-        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+        { label: "Slik kontrollerer du boligkjøpet juridisk", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
   ],
@@ -434,7 +434,7 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Testament og grensekryssende arv",
       links: [
-        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+        { label: "Slik kontrollerer du boligkjøpet juridisk", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
     {
@@ -706,7 +706,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Bruktbolig",
       links: [
-        { label: "Juridiske fallgruver ved boligkjøp", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+        { label: "Slik kontrollerer du boligkjøpet juridisk", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
       ],
     },
     {
@@ -755,13 +755,13 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     { headingIncludes: "boligannonser", links: [
       { label: "Hvorfor Idealista og Finn ikke alltid er fasit", href: "/magasin/idealista-finn-ikke-alltid-til-a-stole-pa" },
     ]},
-    { headingIncludes: "reserverer boligen", links: [
-      { label: "Juridiske fallgruver ved boligkjøp i Spania", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
+    { headingIncludes: "reservasjonsvilkår", links: [
+      { label: "Dette bør advokaten kontrollere før kjøpet", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
     ]},
     { headingIncludes: "valutakurs", links: [
       { label: "Slik påvirker eurokursen boligbudsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
     ]},
-    { headingIncludes: "kjøpe boligen etter deg", links: [
+    { headingIncludes: "Tenk langsiktig", links: [
       { label: "Hva gjør en bolig lettere å selge igjen?", href: "/magasin/bolig-som-er-lett-a-selge-igjen-spania" },
     ]},
   ],
@@ -1336,10 +1336,10 @@ export function ArticleView({ article }: { article: Article }) {
               <p>
                 {isCorporate
                   ? "Vi hjelper virksomheten å vurdere modell, budsjett, område, boligtype, drift og neste steg."
-                  : "Vi hjelper deg å vurdere område, budsjett, boligtype, risiko og neste steg før du reserverer."}
+                  : "Vi hjelper deg å finne områder og boliger som passer dine ønsker, se helheten i budsjettet og avklare viktige spørsmål før du bestemmer deg."}
               </p>
               <Link className="contact-button" href={isCorporate ? "/bedriftshytte-spania/slik-presenterer-du-bedriftshytte-for-styret#styrekalkulator" : withArticleAttribution("/booking", article.slug, isCurrentMarketArticle)}>
-                {isCorporate ? "Be om bedriftsvurdering" : "Få rådgivning"} <ArrowRight size={17} />
+                {isCorporate ? "Be om bedriftsvurdering" : "Book en uforpliktende boligprat"} <ArrowRight size={17} />
               </Link>
             </section>
 
@@ -1349,9 +1349,17 @@ export function ArticleView({ article }: { article: Article }) {
                 <h3>{silo === "guide" ? "Hovedguide og relaterte guider" : "Relaterte artikler"}</h3>
                 <nav>
                   {silo === "guide" && (
-                    <Link href="/guide/kjope-bolig-i-spania">
-                      <span>Kjøpe bolig i Spania – komplett hovedguide</span><ArrowRight size={15} />
-                    </Link>
+                    <>
+                      <Link href="/guide/kjope-bolig-i-spania">
+                        <span>Kjøpe bolig i Spania – komplett hovedguide</span><ArrowRight size={15} />
+                      </Link>
+                      <Link href="/omrader">
+                        <span>Utforsk områdene på Costa Blanca</span><ArrowRight size={15} />
+                      </Link>
+                      <Link href="/eiendommer">
+                        <span>Se boliger som er til salgs</span><ArrowRight size={15} />
+                      </Link>
+                    </>
                   )}
                   {relatedArticles.map((item) => (
                     <Link key={item.slug} href={articlePath(item)}>
