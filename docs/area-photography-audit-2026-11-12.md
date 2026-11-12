@@ -83,3 +83,14 @@ Den tidligere kilden `Old altea.jpg` var bare 474 × 640 piksler og egner seg ik
 En separat GitHub Actions-kontroll bruker HTTP HEAD mot alle godkjente Commons-filbaner. Den første kjøringen 12. november fikk **2 × HTTP OK og 27 × HTTP 429**, uten rapporterte 404/410. **Dette beviser ikke at de 27 øvrige bildene fungerer.** Wikimedia begrenset automatisk forespørselsmengden fra GitHub-serveren. Testskriptet stopper derfor tidlig ved gjentatt 429, markerer gjenværende bilder som **ikke testet**, og varsler dette i GitHub. Nettverksfeil utenom 404/410 rapporteres som uavklart, aldri som bekreftet gyldig.
 
 **Publiseringskrav:** Gå gjennom bildene på en faktisk nettside med vanlig nettleser (mobil og desktop), og kontroller Next.js image optimizer. Hvis Commons-bilder stadig blokkeres, skal godkjente lisenskorrekte originaler vurderes lagret på ZenEcoHomes' eget CDN/lagringsløsning med beholdt kreditering og kilde.
+
+
+## Første reelle Chromium-test: problemer funnet og tiltak
+
+GitHub Actions-kjøringen [43279956222](https://github.com/freddybremseth-coder/zenecohomes/actions/runs/43279956222) kjørte 7 URL-er × desktop 1440 px og mobil 390 px, produserte skjermbilder og rapport som artifact `area-visual-smoke`.
+
+**Resultat: 14 sidevisninger, 5 med synlige bildefeil.** Alicante-bildet manglet i Costa Blanca Sør (begge bredder), Los Alcázares manglet i Costa Cálida (begge bredder) og Albir-bildet manglet på mobil i Costa Blanca Nord. Flere andre bildeforespørsler fikk **HTTP 429 via Next.js `/_next/image`**, og sidene viste nøytrale paneler. Eksternt eiendomsfoto fra apinmo ga også 404 (utenfor det redaksjonelle stedfotoomfanget). Layout-breddetesten avdekket ikke horisontal oversvømmelse.
+
+**Tiltak på foto:** Redaksjonelle Wikimedia-foto på områdeoversikt, regionkort og byside bruker nå `unoptimized` for direkte nettleserhenting og unngår felles server-IP hos Next.js bildeoptimalisering. Andre eiendomsbilder beholder optimizer. Visuell regresjonstest er utvidet til å rapportere feil i stedfoto eksplisitt; cookie-banner avvises før skjermbilde.
+
+**Viktig:** Siden GitHub-runneren selv også mottar 429 fra Wikimedia, er direkte nettleserhenting et forsøk på å forbedre leveransen for ekte besøkende, **ikke en bekreftet løsning**. Vi bør ikke publisere før en ekstern nettleser med vanlig nettforbindelse har verifisert konkrete foto og redaksjonelle opphavsdata. Dersom direktebilder fortsatt feiler, må godkjente og korrekt lisensierte fotografier lagres i en egen billedbank/CDN og krediteringen bevares.
