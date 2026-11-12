@@ -1634,9 +1634,9 @@ export const articles: Article[] = [
   },
   {
     slug: "juridiske-fallgruver-boligkjop-spania",
-    title: "Juridiske fallgruver ved boligkjøp i Spania: sjekk dette før du signerer",
+    title: "Trygt boligkjøp i Spania: juridiske kontroller før du signerer",
     excerpt:
-      "Hva må kontrolleres før boligkjøp i Spania? Få oversikt over nota simple, heftelser, Catastro, ulovlige tilbygg, arras, sameiegjeld, nybygg og dokumentene advokaten bør undersøke.",
+      "En oversikt over dokumentene en uavhengig advokat bør kontrollere, slik at du kan velge drømmeboligen med større trygghet. Les om eierforhold, tillatelser, reservasjon og nybygg.",
     date: "2026-09-08",
     updated: "2026-10-10",
     category: "Kjøpsprosess",
@@ -1656,8 +1656,8 @@ export const articles: Article[] = [
       "heftelser bolig Spania",
     ],
     intro: [
-      "Det viktigste juridiske rådet ved boligkjøp i Spania er enkelt: Kontroller selger, eiendom, gjeld, lovlig bruk og avtalevilkår før du binder deg økonomisk. En bolig kan se perfekt ut på visning, selv om den har et uavklart tilbygg, registrert pant, manglende brukstillatelse eller en reservasjonsavtale som er vanskelig å komme ut av.",
-      "En uavhengig spansk advokat bør gjennomføre juridisk due diligence for akkurat den boligen du vurderer. Denne guiden viser hvilke spørsmål du bør stille, hva typiske dokumenter betyr og hvordan du kan oppdage varselsignaler. Den erstatter ikke juridisk rådgivning eller kommunal kontroll for en konkret eiendom.",
+      "Boligjakten skal være inspirerende. Når du finner et sted du virkelig vil eie, er neste steg å få de viktige juridiske forholdene kontrollert før du binder deg økonomisk. Eierforhold, heftelser, lovlig bruk og avtalevilkår er normale kontrollpunkter som en uavhengig advokat kan hjelpe deg å avklare. Eventuelle avvik må vurderes konkret før kjøpet går videre.",
+      "Denne guiden viser hva en uavhengig spansk advokat bør undersøke, hvilke spørsmål det er lurt å stille, og hvordan eventuelle funn kan håndteres. Ikke alle risikoer gjelder alle boliger: kontrollene må tilpasses nybygg, bruktbolig eller landeiendom. Guiden erstatter ikke individuell juridisk rådgivning eller kommunal kontroll.",
     ],
     sections: [
       {
