@@ -64,6 +64,19 @@ for (const [, fileName, remotePath] of wikimediaEntries) {
   );
 }
 assert.ok(wikimediaEntries.length >= 20, "Expected verified Commons file manifest for Northern and Southern Costa Blanca and Costa Cálida");
+// Every core SEO area profile must have its own exact-match photo.
+// RealtyFlow may add more areas dynamically; they retain the neutral
+// no-photo state until a local source is verified.
+const realtyflow = read("src/lib/realtyflow.ts");
+const staticProfiles = realtyflow.slice(realtyflow.indexOf("const STATIC_AREA_PROFILES:"), realtyflow.indexOf("];", realtyflow.indexOf("const STATIC_AREA_PROFILES:")) + 2);
+const staticAreaNames = [...staticProfiles.matchAll(/^  [{] name: "([^"]+)"/gm)].map((item) => item[1]);
+const photoKeys = new Set([...areaVisuals.slice(areaVisuals.indexOf("const AREA_VISUALS:"), areaVisuals.indexOf("/** Photo selection")).matchAll(/^  (?:"([^"]+)"|([a-z]+)): commons[(]/gm)].map((item) => item[1] || item[2]));
+const normalize = (value) => value.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().trim().replace(/\\s+/g, " ");
+assert.ok(staticAreaNames.length >= 18, "Expected full static regional town catalog");
+for (const areaName of staticAreaNames) {
+  assert.ok(photoKeys.has(normalize(areaName)), `Missing verified image for static area ${areaName}`);
+}
+console.log("STATIC_AREA_PHOTO_COVERAGE", staticAreaNames.length, "core profiles have verified images");
 const originalFiles = [...areaVisuals.matchAll(/^  "[^"]+\.\w+": "[0-9a-f]\/\w+\/[^"]+",?$/gm)];
 assert.ok(originalFiles.length >= 11, "Expected complete set of approved direct Wikimedia filenames");
 for (const match of originalFiles) {
