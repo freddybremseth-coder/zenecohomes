@@ -1,8 +1,6 @@
 import { placeBooks, type PlaceBook } from "@/lib/books";
 import { getEditorialAreaImage } from "@/lib/areaVisuals";
 import {
-  getPrimaryImage,
-  getPropertyTown,
   normalizeSearchText,
   type AreaProfile,
   type Property,
@@ -64,14 +62,6 @@ const AREA_EXCERPTS: Record<string, string[]> = {
   ],
 };
 
-function normalizedCandidates(book: PlaceBook | null, areaName: string) {
-  return new Set([
-    normalizeSearchText(areaName),
-    ...(book?.matchTerms || []).map((term) => normalizeSearchText(term)),
-    ...(book ? [normalizeSearchText(book.town)] : []),
-  ].filter(Boolean));
-}
-
 export function placeBookForArea(areaName: string): PlaceBook | null {
   const target = normalizeSearchText(areaName);
   if (!target) return null;
@@ -97,28 +87,11 @@ export function areaExcerpt(areaName: string): string[] {
 }
 
 /**
- * Bildeprioritet:
- * 1. Redaksjonelt stedsspesifikt bilde som forklarer området visuelt.
- * 2. RealtyFlows godkjente områdebilde.
- * 3. Et faktisk publisert boligbilde fra samme sted som siste dynamiske fallback.
- * 4. Det unike omslaget til stedsguiden.
- * 5. Generisk områdefoto kun som siste sikkerhetsnett.
+ * A place page must only show a documented photo taken IN that place.
+ * Never use RealtyFlow profile photos of unknown provenance, property
+ * listing imagery, book covers or a generic Costa Blanca placeholder.
+ * Missing town photos are surfaced as a neutral, labelled state in the UI.
  */
-export function areaPresentationImage(profile: AreaProfile, properties: Property[]): string {
-  const editorialImage = getEditorialAreaImage(profile.name);
-  if (editorialImage) return editorialImage;
-
-  if (profile.photo_url) return profile.photo_url;
-
-  const book = placeBookForArea(profile.name);
-  const candidates = normalizedCandidates(book, profile.name);
-  const property = properties.find((item) => {
-    const town = normalizeSearchText(getPropertyTown(item) || "");
-    return town ? candidates.has(town) : false;
-  });
-  const propertyImage = property ? getPrimaryImage(property) : null;
-  if (propertyImage) return propertyImage;
-
-  if (book?.cover) return book.cover;
-  return "/assets/areas.jpg";
+export function areaPresentationImage(profile: AreaProfile, _properties: Property[]): string | null {
+  return getEditorialAreaImage(profile.name);
 }
