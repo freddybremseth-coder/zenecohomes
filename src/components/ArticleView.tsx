@@ -1055,7 +1055,7 @@ export function ArticleView({ article }: { article: Article }) {
         <ResilientNativeImage className="article-cover-image" src={article.image} alt={article.imageAlt} />
 
         <div className="article-layout">
-          <article className="article-main">
+          <article className={`article-main${article.slug === "finansiere-bolig-i-spania" ? " finance-guide-article" : ""}`}>
             <div className="article-intro">
               {isCurrentMarketArticle && (
                 <div className="market-snapshot-note">
