@@ -627,7 +627,7 @@ export const articles: Article[] = [
     "image": "/assets/magasin-covers/finansiering.svg",
     "imageAlt": "Finansieringsplan for boligkjøp i Spania med euro, lånevalg og totalbudsjett",
     "seoTitle": "Hvordan finansiere bolig i Spania? | Fire lånemuligheter",
-    "seoDescription": "Hvordan finansiere boligkjøp i Spania? Se fire finansieringsalternativer, hva du bør vurdere om egenkapital og valutarisiko, og når finansieringen bør være avklart.",
+    "seoDescription": "Hvordan finansiere bolig i Spania? Se fire alternativer, og få oversikt over egenkapital, valutarisiko og når finansieringen bør være på plass.",
     "keywords": [
       "finansiere bolig i Spania",
       "finansiering boligkjøp Spania",
