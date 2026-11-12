@@ -1,3 +1,4 @@
+import { InlandPhotoSource } from "@/components/InlandPhotoSource";
 import Link from "next/link";
 import { ArrowRight, MapPin, ShieldCheck } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -84,6 +85,9 @@ export default async function InlandTownPage({ params }: { params: Promise<{ ste
           </div>
         </div>
       </section>
+      <div style={{ padding: "0.45rem 5vw", background: "#f8f6f0" }}>
+        <InlandPhotoSource name={town.slug === "hondon-dalene" ? "Hondón de las Nieves (Hondón-dalene)" : town.name} photo={town.photo} />
+      </div>
 
       <section className="inland-town-story">
         <div className="inland-town-story-heading">
