@@ -89,7 +89,7 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
         bullets: [
           "Energieeffizienz und niedrige Betriebskosten.",
           "Moderne Ausstattung und individuelle Auswahl bei frühem Kauf.",
-          "Zahlung nach Baufortschritt mit Bankgarantie.",
+          "Zahlungsplan und gesetzlich erforderliche Sicherheiten für Vorauszahlungen prüfen.",
         ],
       },
       {
@@ -204,22 +204,22 @@ export const seoLandingPagesDE: SeoLandingPage[] = [
         heading: "Die Vorteile eines Neubaus",
         body: [
           "Neubauten können moderne Grundrisse, gute Dämmung und effiziente Klimatisierung bieten. Energieklasse und laufende Kosten hängen vom Objekt ab. Je nach Bauphase lassen sich bestimmte Ausstattungsmerkmale mitgestalten.",
-          "Spanien ist mehr als die Costa Blanca: auch Costa Cálida, Costa del Sol und das Hinterland bieten attraktive Projekte. Entscheidend ist, Region und Nutzung vor der Reservierung zu klären.",
+          "Neben der Costa Blanca bieten auch die Costa Cálida und das Hinterland unterschiedliche Wohnmöglichkeiten. Sie können Regionen und Immobilien parallel erkunden. Vor einer verbindlichen Reservierung sollten die Vertragsbedingungen geklärt sein.",
         ],
         bullets: [
           "Energieausweis und voraussichtliche laufende Kosten prüfen.",
           "Moderne Ausstattung, oft mit Pool und Gemeinschaftsanlagen.",
-          "Auswahl bei frühem Kauf – die besten Einheiten zuerst.",
+          "Auswahl bei Materialien und Ausstattung, sofern Projekt und Bauphase dies erlauben.",
         ],
       },
       {
         heading: "Sicher kaufen beim Neubau",
         body: [
           "Bei einem Kauf vor Fertigstellung können Zahlungen in Etappen anfallen. Ein unabhängiger spanischer Anwalt sollte den Bauträger, die Baugenehmigung, Zahlungsbedingungen und die im konkreten Fall vorgeschriebene Absicherung von Vorauszahlungen prüfen.",
-          "Wir koordinieren mit Bauträger, Bank und einem unabhängigen Anwalt, damit Vertrag, Garantien und Übergabetermine stimmen.",
+          "Wir unterstützen die Abstimmung mit dem Bauträger und einem unabhängigen Anwalt, der Vertrag, Sicherheiten und Übergabebedingungen vor einer verbindlichen Zusage prüfen sollte.",
         ],
         bullets: [
-          "Zahlung nach Baufortschritt mit Bankgarantie.",
+          "Zahlungsplan und gesetzlich erforderliche Sicherheiten für Vorauszahlungen prüfen.",
           "Prüfung von Bauträger, Lizenzen und Übergabetermin.",
           "Unabhängiger Anwalt für die rechtliche Kontrolle.",
         ],
