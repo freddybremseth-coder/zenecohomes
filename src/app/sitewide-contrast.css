@@ -230,3 +230,35 @@ main .proper-name {
   word-break: keep-all;
   overflow-wrap: normal;
 }
+
+
+/* Purchase guide only: final desktop overrides for the editorial width and
+   experience panel. This file loads after signature.css and all other styles.
+   Scoped to .cornerstone-guide so no other page is affected. */
+@media (min-width: 761px) {
+  .cornerstone-guide .section-heading {
+    width: 100%;
+    max-width: none;
+  }
+
+  .cornerstone-guide .section-heading > p:not(.eyebrow) {
+    width: 100%;
+    max-width: none;
+  }
+
+  .cornerstone-guide .cornerstone-experience {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-inline: 0;
+  }
+
+  /* This page has one direct child, so it matches both first-child and
+     last-child. Restore comfortable padding without changing its dark panel. */
+  .cornerstone-guide .cornerstone-experience > div:first-child {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(56px, 6vw, 80px) clamp(56px, 5vw, 80px);
+  }
+}
