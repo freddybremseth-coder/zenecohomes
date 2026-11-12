@@ -387,6 +387,7 @@ export default async function BuyInSpainGuidePage() {
           </p>
         </div>
         <div className="section-heading" style={{ marginTop: 28 }}>
+          {/* Seksjonen ble kontrollert og republiseres etter PR #348. */}
           <h3>Skatt og utleie ved kjøp av feriebolig i Spania</h3>
           <p>
             Som norsk skattemessig bosatt eier av feriebolig i Spania betaler du årlig spansk <Link href="/guide/lopende-kostnader-eie-bolig-spania">eiendomsskatt (IBI)</Link>. I tillegg beregnes det normalt spansk inntektsskatt på en sjablongmessig leieverdi når boligen står til din egen disposisjon, selv om du ikke leier den ut.
