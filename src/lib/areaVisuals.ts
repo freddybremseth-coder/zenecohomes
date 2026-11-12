@@ -28,6 +28,7 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "El Campello - Playa 2.jpg": "8/85/El_Campello_-_Playa_2.jpg",
   "Xaló, Marina Alta, País Valencià.JPG": "2/28/Xal%C3%B3%2C_Marina_Alta%2C_Pa%C3%ADs_Valenci%C3%A0.JPG",
   "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": "9/9b/Playa_Centro%2C_Villajoyosa%2C_Espa%C3%B1a%2C_2014-07-03%2C_DD_28.JPG",
+  "Pueblo y castillo de Biar, Alicante.jpg": "c/cd/Pueblo_y_castillo_de_Biar%2C_Alicante.jpg",
   "L'Alfàs del Pi.jpg": "f/fd/L%27Alf%C3%A0s_del_Pi.jpg",
   "La Nucia.jpg": "7/77/La_Nucia.jpg",
   "Teulada.jpg": "f/fb/Teulada.jpg",
@@ -85,6 +86,7 @@ const AREA_VISUALS: Record<string, string> = {
 
   // Real Xaló/Jalón town view. Joanbanjo, CC BY-SA 3.0 (attributed on area pages).
 
+  biar: commons("Pueblo y castillo de Biar, Alicante.jpg"),
   "la nucia": commons("La Nucia.jpg"),
   "la nucia alicante": commons("La Nucia.jpg"),
   torrevieja: commons("Torrevieja - Playas 12.jpg"),
@@ -111,10 +113,11 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "Pueblo y castillo de Biar, Alicante.jpg": { author: "Bsanchez", license: "CC BY-SA 3.0 ES", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/es/" },
   "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": { author: "Diego Delso", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Xaló, Marina Alta, País Valencià.JPG": { author: "Joanbanjo", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
   "L'Alfàs del Pi.jpg": { author: "B25es", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
-  "La Nucia.jpg": { author: "Wikimedia Commons", license: "Se kildeside for lisens" },
+  "La Nucia.jpg": { author: "B25es", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
   "Teulada.jpg": { author: "Espencat", license: "Public domain" },
   "Torrevieja - Playas 12.jpg": { author: "Zarateman", license: "CC0 1.0", licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/" },
   "Guardamar del Segura - Playa Babilonia 4.jpg": { author: "Zarateman", license: "CC0 1.0", licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/" },
