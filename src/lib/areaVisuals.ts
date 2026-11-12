@@ -31,7 +31,7 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "Pueblo y castillo de Biar, Alicante.jpg": "c/cd/Pueblo_y_castillo_de_Biar%2C_Alicante.jpg",
   "Església de sant Joan Baptista de Sant Joan d'Alacant.jpg": "0/0d/Esgl%C3%A9sia_de_sant_Joan_Baptista_de_Sant_Joan_d%27Alacant.jpg",
   "Iglesia parroquial de Muchamiel.jpg": "5/58/Iglesia_parroquial_de_Muchamiel.jpg",
-  "Alicante City & Beach - Castillo de Santa Bárbara.jpg": "f/f8/Alicante_City_%26_Beach_-_Castillo_de_Santa_B%C3%A1rbara.jpg",
+  "Vista Alicante-Desde Castillo Santa Bárbara.JPG": "b/b0/Vista_Alicante-Desde_Castillo_Santa_B%C3%A1rbara.JPG",
   "L'Alfàs del Pi.jpg": "f/fd/L%27Alf%C3%A0s_del_Pi.jpg",
   "Vista de la Nucia des del castell de Polop.JPG": "e/e4/Vista_de_la_Nucia_des_del_castell_de_Polop.JPG",
   "Teulada.jpg": "f/fb/Teulada.jpg",
@@ -42,6 +42,7 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg": "e/e3/Playa_de_la_Mata_in_La_Mata,_Torrevieja,_Alicante,_Spain,_2022_January.jpg",
   "Calle de San Fulgencio.jpg": "3/37/Calle_de_San_Fulgencio.jpg",
   "Cathedral, Murcia.jpg": "2/27/Cathedral,_Murcia.jpg",
+  "Windmühle bei Torre Pacheco - 52476806321.jpg": "5/5e/Windm%C3%BChle_bei_Torre_Pacheco_-_52476806321.jpg",
   "Santiago de la Ribera.jpg": "3/3b/Santiago_de_la_Ribera.jpg",
   "La Manga - Playa de la naturaleza - panoramio.jpg": "9/92/La_Manga_-_Playa_de_la_naturaleza_-_panoramio.jpg",
   "Torrevieja - Playas 12.jpg": "4/45/Torrevieja_-_Playas_12.jpg",
@@ -105,8 +106,8 @@ const AREA_VISUALS: Record<string, string> = {
   "san juan de alicante": commons("Església de sant Joan Baptista de Sant Joan d'Alacant.jpg"),
   mutxamel: commons("Iglesia parroquial de Muchamiel.jpg"),
   muchamiel: commons("Iglesia parroquial de Muchamiel.jpg"),
-  alicante: commons("Alicante City & Beach - Castillo de Santa Bárbara.jpg"),
-  alacant: commons("Alicante City & Beach - Castillo de Santa Bárbara.jpg"),
+  alicante: commons("Vista Alicante-Desde Castillo Santa Bárbara.JPG"),
+  alacant: commons("Vista Alicante-Desde Castillo Santa Bárbara.JPG"),
 
   // Real Xaló/Jalón town view. Joanbanjo, CC BY-SA 3.0 (attributed on area pages).
 
@@ -126,6 +127,8 @@ const AREA_VISUALS: Record<string, string> = {
   "la mata": commons("Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg"),
   "san fulgencio": commons("Calle de San Fulgencio.jpg"),
   murcia: commons("Cathedral, Murcia.jpg"),
+  "torre pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
+  "torre-pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
   "santiago de la ribera": commons("Santiago de la Ribera.jpg"),
   "playa honda": commons("La Manga - Playa de la naturaleza - panoramio.jpg"),
   "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
@@ -149,6 +152,7 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "Windmühle bei Torre Pacheco - 52476806321.jpg": { author: "Werner Wilmes", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0/" },
   "Cathedral, Murcia.jpg": { author: "PiotrMig", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Santiago de la Ribera.jpg": { author: "Wikiwiki", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "La Manga - Playa de la naturaleza - panoramio.jpg": { author: "INDALOMANIA", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
@@ -161,7 +165,7 @@ const PHOTO_CREDITS: Record<string, Credit> = {
   "Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg": { author: "Diego Delso", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Església de sant Joan Baptista de Sant Joan d'Alacant.jpg": { author: "Joanbanjo", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Iglesia parroquial de Muchamiel.jpg": { author: "Rodriguillo", license: "Public domain" },
-  "Alicante City & Beach - Castillo de Santa Bárbara.jpg": { author: "Varondán", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Vista Alicante-Desde Castillo Santa Bárbara.JPG": { author: "Tamorlan", license: "CC BY 3.0", licenseUrl: "https://creativecommons.org/licenses/by/3.0/" },
   "Pueblo y castillo de Biar, Alicante.jpg": { author: "Bsanchez", license: "CC BY-SA 3.0 ES", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/es/" },
   "Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG": { author: "Diego Delso", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Xaló, Marina Alta, País Valencià.JPG": { author: "Joanbanjo", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
