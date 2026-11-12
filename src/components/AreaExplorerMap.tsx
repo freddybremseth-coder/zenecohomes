@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ResilientNativeImage } from "@/components/ResilientImage";
 
 export type AreaExplorerLocation = {
   id: string;
@@ -90,7 +91,7 @@ export function AreaExplorerMap({
         <div className="area-explorer-map-canvas" ref={mapRef} />
         {selected && (
           <article className="area-explorer-map-card" aria-live="polite">
-            {selected.image && <img src={selected.image} alt={`${selected.name} – område i Spania`} loading="lazy" />}
+            {selected.image && <ResilientNativeImage src={selected.image} fallbackSrc="" alt={`${selected.name} – fotografi fra stedet`} loading="lazy" />}
             <div>
               <span>{selected.region || "Zen Eco Homes"}</span>
               <strong className="area-explorer-map-title">{selected.name}</strong>
