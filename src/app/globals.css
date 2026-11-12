@@ -7145,3 +7145,16 @@ footer {
 .guide-steps-list li { margin-bottom: .7rem; }
 .cornerstone-guide .article-item-title { margin-bottom: .35rem; }
 .cornerstone-guide .faq-accordion summary h3 { display: inline; font-size: inherit; font-weight: inherit; margin: 0; }
+
+
+/* Finance guide: inline links in paragraphs */
+.article-main.finance-guide-article p a {
+  color: #5a6e3c;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.article-main.finance-guide-article p a:hover {
+  color: #2f3a22;
+}
