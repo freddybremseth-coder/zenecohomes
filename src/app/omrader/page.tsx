@@ -158,6 +158,7 @@ export default async function AreasPage() {
               <ResilientImage
                 src={regionImages[region.key] || ""}
                 fallbackSrc=""
+                unoptimized
                 alt={region.title}
                 fill
                 sizes="(max-width: 900px) 100vw, 55vw"
