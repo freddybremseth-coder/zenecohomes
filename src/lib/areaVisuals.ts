@@ -41,6 +41,9 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "Plaza del ayuntamiento de Calasparra.jpg": "b/b7/Plaza_del_ayuntamiento_de_Calasparra.jpg",
   "Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg": "e/e3/Playa_de_la_Mata_in_La_Mata,_Torrevieja,_Alicante,_Spain,_2022_January.jpg",
   "Calle de San Fulgencio.jpg": "3/37/Calle_de_San_Fulgencio.jpg",
+  "Cathedral, Murcia.jpg": "2/27/Cathedral,_Murcia.jpg",
+  "Santiago de la Ribera.jpg": "3/3b/Santiago_de_la_Ribera.jpg",
+  "La Manga - Playa de la naturaleza - panoramio.jpg": "9/92/La_Manga_-_Playa_de_la_naturaleza_-_panoramio.jpg",
   "Torrevieja - Playas 12.jpg": "4/45/Torrevieja_-_Playas_12.jpg",
   "Guardamar del Segura - Playa Babilonia 4.jpg": "3/34/Guardamar_del_Segura_-_Playa_Babilonia_4.jpg",
   "Ciudad Quesada 02.jpg": "4/41/Ciudad_Quesada_02.jpg",
@@ -122,6 +125,9 @@ const AREA_VISUALS: Record<string, string> = {
   calasparra: commons("Plaza del ayuntamiento de Calasparra.jpg"),
   "la mata": commons("Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg"),
   "san fulgencio": commons("Calle de San Fulgencio.jpg"),
+  murcia: commons("Cathedral, Murcia.jpg"),
+  "santiago de la ribera": commons("Santiago de la Ribera.jpg"),
+  "playa honda": commons("La Manga - Playa de la naturaleza - panoramio.jpg"),
   "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
   "santa pola": commons("Santa Pola - panoramio (4).jpg"),
   "san pedro del pinatar": commons("Mar Menor desde Villananitos.jpg"),
@@ -143,6 +149,9 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "Cathedral, Murcia.jpg": { author: "PiotrMig", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Santiago de la Ribera.jpg": { author: "Wikiwiki", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "La Manga - Playa de la naturaleza - panoramio.jpg": { author: "INDALOMANIA", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
   "Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg": { author: "Ximonic (Simo Räsänen)", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Calle de San Fulgencio.jpg": { author: "19Tarrestnom65", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Playa de La Glea, en Dehesa de Campoamor.jpg": { author: "Emilio Gómez Fernández", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
