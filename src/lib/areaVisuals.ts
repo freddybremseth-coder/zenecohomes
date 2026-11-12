@@ -35,6 +35,8 @@ const VERIFIED_COMMONS: Record<string, string> = {
   "L'Alfàs del Pi.jpg": "f/fd/L%27Alf%C3%A0s_del_Pi.jpg",
   "Vista de la Nucia des del castell de Polop.JPG": "e/e4/Vista_de_la_Nucia_des_del_castell_de_Polop.JPG",
   "Teulada.jpg": "f/fb/Teulada.jpg",
+  "San Miguel de Salinas.jpg": "6/6e/San_Miguel_de_Salinas.jpg",
+  "Yecla. Vista desde el Santuario del Castillo 8.JPG": "6/61/Yecla._Vista_desde_el_Santuario_del_Castillo_8.JPG",
   "Playa de La Glea, en Dehesa de Campoamor.jpg": "9/9a/Playa_de_La_Glea,_en_Dehesa_de_Campoamor.jpg",
   "Gran Alacant 03.JPG": "6/6d/Gran_Alacant_03.JPG",
   "La Zenia Boulevard (49287363646).jpg": "c/c4/La_Zenia_Boulevard_(49287363646).jpg",
@@ -121,6 +123,9 @@ const AREA_VISUALS: Record<string, string> = {
   "guardamar del segura": commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
   guardamar: commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
   "ciudad quesada": commons("Ciudad Quesada 02.jpg"),
+  "san miguel": commons("San Miguel de Salinas.jpg"),
+  "san miguel de salinas": commons("San Miguel de Salinas.jpg"),
+  yecla: commons("Yecla. Vista desde el Santuario del Castillo 8.JPG"),
   campoamor: commons("Playa de La Glea, en Dehesa de Campoamor.jpg"),
   "dehesa de campoamor": commons("Playa de La Glea, en Dehesa de Campoamor.jpg"),
   "gran alacant": commons("Gran Alacant 03.JPG"),
@@ -154,6 +159,8 @@ export function getEditorialAreaImage(areaName: string): string | null {
 
 type Credit = { author: string; license: string; licenseUrl?: string };
 const PHOTO_CREDITS: Record<string, Credit> = {
+  "San Miguel de Salinas.jpg": { author: "B25es", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
+  "Yecla. Vista desde el Santuario del Castillo 8.JPG": { author: "Enrique Íñiguez Rodríguez (Qoan)", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
   "Windmühle bei Torre Pacheco - 52476806321.jpg": { author: "Werner Wilmes", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0/" },
   "Cathedral, Murcia.jpg": { author: "PiotrMig", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Santiago de la Ribera.jpg": { author: "Wikiwiki", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
