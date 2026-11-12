@@ -2308,7 +2308,7 @@ export const articles: Article[] = [
     imageAlt: "Illustrasjon av bolig og spansk bank med boliglån",
     seoTitle: "Boliglån i Spania | Slik får nordmenn lån i spansk bank",
     seoDescription:
-      "Boliglån i Spania for nordmenn: se belåningsgrad, renter, Euribor, TAE, egenkapital, kostnader og søknadsprosess i spansk bank.",
+      "Boliglån i Spania for nordmenn: Les om belåningsgrad, renter, Euribor, TAE, egenkapital, lånekostnader og hvordan du søker boliglån i spansk bank.",
     keywords: [
       "boliglån i Spania",
       "låne penger i spansk bank",
