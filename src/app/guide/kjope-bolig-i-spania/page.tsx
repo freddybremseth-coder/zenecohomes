@@ -123,7 +123,7 @@ export default async function BuyInSpainGuidePage() {
         <div className="cornerstone-hero-layout">
           <div className="cornerstone-hero-copy">
             <p className="eyebrow">
-              Guide · <Link href="/om-oss/andrea">Andrea Thorsnes</Link> · Oppdatert 12. november 2026
+              Guide · <Link href="/om-oss/freddy">Freddy Bremseth</Link> · Oppdatert 12. november 2026
             </p>
             <h1>Kjøpe bolig i Spania (2026) – guide for nordmenn</h1>
           </div>
