@@ -2206,9 +2206,9 @@ export const articles: Article[] = [
     excerpt:
       "Er spansk bankkonto nødvendig for ditt kjøp? Slik planlegger du betalinger og sammenligner kostnaden ved veksling fra kroner til euro.",
     date: "2026-09-08",
-    updated: "2026-10-10",
+    updated: "2026-11-13",
     category: "Kjøpsprosess",
-    readingTime: "8 min lesing",
+    readingTime: "10 min lesing",
     image: "/assets/magasin-covers/bankkonto-valuta.svg",
     imageAlt: "Illustrasjon av spansk bank og valutaveksling mellom euro og kroner",
     seoTitle: "Spansk bankkonto og valuta | Guide for boligkjøpere",
