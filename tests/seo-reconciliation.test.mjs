@@ -17,6 +17,11 @@ test('consolidated money-transfer article redirects with HTTP 301 and is hidden 
   assert.equal(redirect?.statusCode, 301);
   const magazinePage = fs.readFileSync('src/app/magasin/page.tsx', 'utf8');
   assert.match(magazinePage, /"overfore-penger-norge-spania-boligkjop"/);
+  const articleContent = fs.readFileSync('src/lib/content.ts', 'utf8');
+  assert.match(articleContent, /\[\[guide til kjøp av nybygg i Spania\|\/guide\/nybygg-i-spania\]\]/);
+  assert.match(articleContent, /\[\[guide til finansiering av bolig i Spania\|\/guide\/finansiere-bolig-i-spania\]\]/);
+  const articleView = fs.readFileSync('src/components/ArticleView.tsx', 'utf8');
+  assert.match(articleView, /article\.slug === "spansk-bankkonto-valutaveksling"/);
 });
 
 test('every guide legacy URL redirects directly to its canonical route', () => {
