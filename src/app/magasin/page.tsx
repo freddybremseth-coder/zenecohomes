@@ -21,6 +21,7 @@ const REDIRECTED_MAGAZINE_SLUGS = new Set([
   "nybygg-finestrat-omradeguide",
   "lan-i-norge-eller-spania-boligkjop",
   "overfore-penger-norge-spania-boligkjop",
+  "7-dyre-feil-nordmenn-bolig-spania",
 ]);
 
 const booksUrl = "https://books.freddybremseth.com";
@@ -52,7 +53,6 @@ const articleCovers: Record<string, string> = {
   "albir-finestrat-villajoyosa-benidorm-hvor-kjope": "/assets/magasin-covers/omradevalg.svg",
   "nybygg-eller-bruktbolig-costa-blanca": "/assets/magasin-covers/omradet-for-boligen.svg",
   "hva-koster-feriebolig-spania-i-aret": "/assets/magasin-covers/kostnader-eie.svg",
-  "7-dyre-feil-nordmenn-bolig-spania": "/assets/magasin-covers/juridisk.svg",
   "havutsikt-eller-gangavstand-costa-blanca": "/assets/magasin-covers/omradet-for-boligen.svg",
   "leilighet-eller-villa-costa-blanca": "/assets/magasin-covers/omradevalg.svg",
   "bolig-som-er-lett-a-selge-igjen-spania": "/assets/magasin-covers/radgiver.svg",
