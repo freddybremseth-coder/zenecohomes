@@ -20,6 +20,7 @@ const REDIRECTED_MAGAZINE_SLUGS = new Set([
   "energieffektive-nybygg-spania",
   "nybygg-finestrat-omradeguide",
   "lan-i-norge-eller-spania-boligkjop",
+  "overfore-penger-norge-spania-boligkjop",
 ]);
 
 const booksUrl = "https://books.freddybremseth.com";
