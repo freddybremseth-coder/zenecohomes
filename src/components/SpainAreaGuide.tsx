@@ -32,7 +32,7 @@ const faq = [
 function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
 function Airport({title,rows}:{title:string;rows:string[][]}) { return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><div className="grid gap-2">{rows.map(([name,time])=><div key={name} className="flex flex-wrap justify-between gap-2 border-b border-slate-200 py-2"><span className="font-medium">{name}</span><span>{time}</span></div>)}</div></section>; }
 export function SpainAreaGuide(){
- return <section className="section cornerstone-section"><div className="section-heading"><article className="article-main prose max-w-none">
+ return <section className="section cornerstone-section"><article className="article-main prose max-w-none">
  <p>Hvor i Spania du bør kjøpe eiendom avhenger av både prisnivå, klima og hvordan du ønsker å bruke boligen i hverdagen. Jeg har sett mange boligkjøpere starte med en klar idé om hvor de skal bo, for så å endre mening over tid når de besøker områdene.</p>
  <p>I denne guiden ser vi ikke bare nærmere på de ulike stedene i Spania, men vi skal også prøve å finne ut hvilke områder som passer best til det livet du ser for deg.</p>
  <Comparison rows={preferences}/><p><Link href="/omrader" className="underline">Se områdene ZenEcoHomes jobber i →</Link></p>
@@ -90,5 +90,5 @@ export function SpainAreaGuide(){
  <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6 my-8"><h2 className="mt-0">La oss finne området som passer deg</h2><p>Fortell oss hva du ønsker, så hjelper vi deg videre.</p><ContactForm source="guide/omradeguide-eiendomskjop-i-spania" variant="simple" /></div>
  <p>Les også <Link href="/guide/kjope-bolig-i-spania" className="underline">hele guiden til å kjøpe bolig i Spania</Link> eller <Link href="/eiendommer" className="underline">se tilgjengelige eiendommer</Link>.</p>
  <section id="faq"><h2>Ofte stilte spørsmål</h2><div className="faq-accordion">{faq.map(([q,a], index)=><details key={q} open={index === 0}><summary><h3>{q}</h3></summary><p>{a}</p></details>)}</div></section>
- </article></div></section>;
+ </article></section>;
 }
