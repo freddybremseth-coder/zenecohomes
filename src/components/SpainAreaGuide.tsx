@@ -29,13 +29,23 @@ const faq = [
  ["Hvilke områder i Spania er varmest om vinteren?","Sør på Kanariøyene, særlig Sør-Tenerife og sørlige Gran Canaria, er normalt varmest og jevnest gjennom vinteren. På fastlandet er Costa del Sol og deler av Costa Blanca blant alternativene med milde vinterdager."],
  ["Hvor i Spania er det best å bo?","Det avhenger av din hverdag: Costa Blanca og Costa del Sol passer ofte dem som ønsker kystliv og internasjonale miljøer, storbyene passer dem som vil gå til det meste, og innlandet passer dem som prioriterer ro og plass. Test området utenfor feriesesongen før du bestemmer deg."]
 ];
-function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
+function PreferenceTable({rows}:{rows:string[][]}) {
+ return <div className="buy-guide-comparison area-preference-table my-6">
+  <table>
+   <thead><tr><th scope="col">Hvis du prioriterer</th><th scope="col">Områder du bør se nærmere på</th></tr></thead>
+   <tbody>{rows.map(([priority,areas])=><tr key={priority}>
+    <th scope="row">{priority}</th>
+    <td data-label="Områder du bør se nærmere på">{areas}</td>
+   </tr>)}</tbody>
+  </table>
+ </div>;
+}
 function Airport({title,rows}:{title:string;rows:string[][]}) { return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><div className="grid gap-2">{rows.map(([name,time])=><div key={name} className="flex flex-wrap justify-between gap-2 border-b border-slate-200 py-2"><span className="font-medium">{name}</span><span>{time}</span></div>)}</div></section>; }
 export function SpainAreaGuide(){
- return <section className="section cornerstone-section"><article className="article-main prose max-w-none">
+ return <section className="section cornerstone-section"><article className="article-main prose max-w-none area-guide-article">
  <p>Hvor i Spania du bør kjøpe eiendom avhenger av både prisnivå, klima og hvordan du ønsker å bruke boligen i hverdagen. Jeg har sett mange boligkjøpere starte med en klar idé om hvor de skal bo, for så å endre mening over tid når de besøker områdene.</p>
  <p>I denne guiden ser vi ikke bare nærmere på de ulike stedene i Spania, men vi skal også prøve å finne ut hvilke områder som passer best til det livet du ser for deg.</p>
- <Comparison rows={preferences}/><p><Link href="/omrader" className="underline">Se områdene ZenEcoHomes jobber i →</Link></p>
+ <h3 className="area-preference-heading">Hvilket område passer best for deg?</h3><PreferenceTable rows={preferences}/><p><Link href="/omrader" className="underline">Se områdene ZenEcoHomes jobber i →</Link></p>
  <h2 id="oversikt">Oversikt over de ulike områdene i Spania</h2>
  <p>Spania består av 17 autonome regioner, og det er store geografiske forskjeller mellom Middelhavskysten, Atlanterhavskysten, innlandet og øygruppene. For boligkjøpere merkes dette blant annet på klima, boligpriser, reisevei og hvor turistpreget et område egentlig er.</p>
  <p>Mange nordmenn ser først mot kjente kystområder som Costa Blanca, Costa del Sol og Costa Cálida, men det finnes også mange spennende områder lenger nord, i innlandet og utenfor fastlandet.</p><SpainRegionsMap/>
