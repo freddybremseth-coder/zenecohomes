@@ -130,6 +130,7 @@ const nextConfig: NextConfig = {
       ["/flytte-til-spania-som-pensjonist", "/guide/flytte-til-spania"],
       ["/flytte-til-spania-pensjonist", "/guide/flytte-til-spania"],
       ["/guide/kostnader-boligkjop-spania", "/guide/kjope-bolig-i-spania"],
+      ["/magasin/eurokurs-boligbudsjett-spania-nordmenn", "/guide/spansk-bankkonto-valutaveksling"],
       ["/magasin/bolig-under-bygging-eller-ferdig-spania", "/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania"],
       ["/magasin/hva-koster-feriebolig-spania-i-aret", "/guide/lopende-kostnader-eie-bolig-spania"],
       ["/magasin/bolig-500000-euro-totalbudsjett-spania", "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca"],
