@@ -7151,6 +7151,22 @@ footer {
 .cornerstone-guide .faq-accordion summary h3 { display: inline; font-size: inherit; font-weight: inherit; margin: 0; }
 
 
+/* Inline internal links in article text: shared guide styling. */
+.article-main p a[href^="/"],
+.article-main li a[href^="/"],
+.article-main td a[href^="/"] {
+  color: #315e64;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.article-main p a[href^="/"]:hover,
+.article-main li a[href^="/"]:hover,
+.article-main td a[href^="/"]:hover {
+  color: #0b4f59;
+}
+
 /* Finance guide: inline links in paragraphs */
 .article-main.finance-guide-article p a {
   color: #315e64;
