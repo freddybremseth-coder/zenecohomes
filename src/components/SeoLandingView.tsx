@@ -114,15 +114,9 @@ export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
       </section>
 
       <section className="section">
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 1fr) minmax(280px, 360px)",
-            gap: 34,
-            alignItems: "start",
-          }}
-        >
+        <div className="seo-landing-layout">
           <article
+            className="seo-landing-article"
             style={{
               background: "white",
               border: "1px solid var(--line)",
@@ -179,7 +173,7 @@ export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
             </section>
           </article>
 
-          <aside className="feature-panel" style={{ position: "sticky", top: 110 }}>
+          <aside className="feature-panel seo-landing-advisor" style={{ position: "sticky", top: 110 }}>
             <div style={{ display: "block" }}>
               <p className="eyebrow">{t.nextStep}</p>
               {page.advisorHeadingLevel === "h2" ? (
