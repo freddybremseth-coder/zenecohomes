@@ -19,6 +19,7 @@ const REDIRECTED_MAGAZINE_SLUGS = new Set([
   "bankgaranti-nybygg-spania",
   "energieffektive-nybygg-spania",
   "nybygg-finestrat-omradeguide",
+  "lan-i-norge-eller-spania-boligkjop",
 ]);
 
 const booksUrl = "https://books.freddybremseth.com";
