@@ -221,6 +221,11 @@ const nextConfig: NextConfig = {
         destination: "/guide/finansiere-bolig-i-spania",
         statusCode: 301,
       },
+      {
+        source: "/magasin/overfore-penger-norge-spania-boligkjop",
+        destination: "/guide/spansk-bankkonto-valutaveksling",
+        statusCode: 301,
+      },
       ...contentConsolidationRedirects,
       ...marketComparisonRedirects,
       ...siloRedirects,
