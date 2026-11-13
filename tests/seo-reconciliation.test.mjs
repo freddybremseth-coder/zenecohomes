@@ -11,6 +11,14 @@ const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind
 const { default: config } = await import(`data:text/javascript;base64,${Buffer.from(js).toString('base64')}`);
 const redirects = await config.redirects();
 
+test('consolidated money-transfer article redirects with HTTP 301 and is hidden from the magazine listing', () => {
+  const redirect = redirects.find(r => r.source === '/magasin/overfore-penger-norge-spania-boligkjop');
+  assert.equal(redirect?.destination, '/guide/spansk-bankkonto-valutaveksling');
+  assert.equal(redirect?.statusCode, 301);
+  const magazinePage = fs.readFileSync('src/app/magasin/page.tsx', 'utf8');
+  assert.match(magazinePage, /"overfore-penger-norge-spania-boligkjop"/);
+});
+
 test('every guide legacy URL redirects directly to its canonical route', () => {
   for (const article of allArticles.filter(a => articleSilo(a) === 'guide')) {
     const destination = article.slug === 'kjopsprosess-bolig-i-spania' ? '/guide/kjope-bolig-i-spania' : `/guide/${article.slug}`;
