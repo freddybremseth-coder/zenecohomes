@@ -756,7 +756,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "bolig-under-bygging-eller-ferdig-spania": [
     { headingIncludes: "Betalingsplanen", links: [
-      { label: "Slik påvirker eurokursen boligbudsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
+      { label: "Planlegg valutabuffer og betalinger", href: "/guide/spansk-bankkonto-valutaveksling" },
     ]},
     { headingIncludes: "Bankgaranti", links: [
       { label: "Komplett guide til bankgaranti ved nybygg", href: "/guide/nybygg-i-spania" },
