@@ -52,7 +52,7 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   "omradeguide-eiendomskjop-i-spania": [
     "nybygg-finestrat-omradeguide",
     "innlandet-finca-olivengard-spania",
-    "flytte-til-spania-som-pensjonist",
+    "flytte-til-spania",
   ],
   "guide-tomtekjop-bygging-i-spania": [
     "innlandet-finca-olivengard-spania",
@@ -92,17 +92,12 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   "lopende-kostnader-eie-bolig-spania": [
     "omkostninger-nybygg-spania",
     "utleie-inntektspotensial-bolig-spania",
-    "flytte-til-spania-som-pensjonist",
+    "flytte-til-spania",
   ],
   "innlandet-finca-olivengard-spania": [
     "guide-tomtekjop-bygging-i-spania",
     "omradeguide-eiendomskjop-i-spania",
     "juridiske-fallgruver-boligkjop-spania",
-  ],
-  "flytte-til-spania-som-pensjonist": [
-    "omradeguide-eiendomskjop-i-spania",
-    "lopende-kostnader-eie-bolig-spania",
-    "spansk-bankkonto-valutaveksling",
   ],
   "energieffektive-nybygg-spania": [
     "bankgaranti-nybygg-spania",
@@ -372,20 +367,6 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
   "utleie-inntektspotensial-bolig-spania": [
     {
       headingIncludes: "Eksempel: fra brutto leieinntekt",
-      links: [
-        { label: "Løpende kostnader ved å eie bolig i Spania", href: "/guide/lopende-kostnader-eie-bolig-spania" },
-      ],
-    },
-  ],
-  "flytte-til-spania-som-pensjonist": [
-    {
-      headingIncludes: "Ferie eller fast bosetting",
-      links: [
-        { label: "Sammenlign områder før du velger bolig", href: "/omrader" },
-      ],
-    },
-    {
-      headingIncludes: "Skatt ved fast bosted",
       links: [
         { label: "Løpende kostnader ved å eie bolig i Spania", href: "/guide/lopende-kostnader-eie-bolig-spania" },
       ],
