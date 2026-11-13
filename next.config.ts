@@ -219,6 +219,11 @@ const nextConfig: NextConfig = {
       { source: "/kjopsprosess/kjopsprosess-bolig-i-spania", destination: "/guide/kjope-bolig-i-spania", permanent: true },
       ...legacyKjopsprosessRedirects,
       {
+        source: "/magasin/7-dyre-feil-nordmenn-bolig-spania",
+        destination: "/guide/kjope-bolig-i-spania",
+        statusCode: 301,
+      },
+      {
         source: "/magasin/lan-i-norge-eller-spania-boligkjop",
         destination: "/guide/finansiere-bolig-i-spania",
         statusCode: 301,
