@@ -273,3 +273,72 @@ main .proper-name {
     padding: clamp(56px, 6vw, 80px) clamp(56px, 5vw, 80px);
   }
 }
+
+/* Area guide: align long-form reading rhythm with the main purchase guide. */
+.area-guide-article {
+  font-size: 1.0625rem;
+  line-height: 1.78;
+}
+
+.area-guide-article p,
+.area-guide-article li {
+  line-height: 1.78;
+}
+
+.area-guide-article p {
+  margin-block: 0 1.2em;
+}
+
+.area-guide-article h2 {
+  margin-block: 2.25em 0.75em;
+  line-height: 1.2;
+}
+
+.area-guide-article h3 {
+  margin-block: 1.9em 0.65em;
+  line-height: 1.25;
+}
+
+.area-guide-article .area-preference-heading {
+  margin-block: 1.7em 0.7em;
+}
+
+.area-guide-article .area-preference-table {
+  margin-block: 1.25rem 1.75rem;
+}
+
+.area-guide-article .area-preference-table table {
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.area-guide-article .area-preference-table thead th {
+  padding: 14px 16px;
+  color: var(--ze-ink);
+  background: rgba(244, 240, 231, 0.8);
+  font-weight: 700;
+  text-align: left;
+  text-transform: none;
+}
+
+.area-guide-article .area-preference-table tbody td {
+  padding: 15px 16px;
+  border-bottom: 1px solid rgba(22, 34, 43, 0.1);
+  vertical-align: top;
+}
+
+.area-guide-article .area-preference-table tbody tr:last-child th,
+.area-guide-article .area-preference-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .area-guide-article {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .area-guide-article .area-preference-table tbody td {
+    padding-block: 10px 13px;
+  }
+}
