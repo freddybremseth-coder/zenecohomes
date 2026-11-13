@@ -52,7 +52,6 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   "omradeguide-eiendomskjop-i-spania": [
     "nybygg-finestrat-omradeguide",
     "innlandet-finca-olivengard-spania",
-    "flytte-til-spania",
   ],
   "guide-tomtekjop-bygging-i-spania": [
     "innlandet-finca-olivengard-spania",
