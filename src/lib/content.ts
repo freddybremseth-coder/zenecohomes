@@ -2235,7 +2235,11 @@ export const articles: Article[] = [
       {
         heading: "Betaling av kjøpesummen",
         body: [
-          "Betalingsmåte ved sluttoppgjør avtales og dokumenteres i kjøpsprosessen. Banksjekk, bankoverføring eller andre kontrollerte løsninger kan brukes avhengig av transaksjonen. Avklar tidlig med advokat og bank hvor midlene må være, frister og hvilken dokumentasjon som kreves.",
+          "Betalingsmåten ved sluttoppgjøret avtales og dokumenteres i kjøpsprosessen. Banksjekk, bankoverføring eller andre kontrollerte løsninger kan brukes avhengig av transaksjonen. Avklar tidlig med advokat og bank hvor midlene må være, hvilke frister som gjelder, og hvilken dokumentasjon som kreves.",
+          "Hvordan du planlegger betalingene, avhenger også av om du kjøper en ferdigstilt bolig eller et nybygg under oppføring. Ved en ferdigstilt bolig skjer en stor del av betalingen normalt i forbindelse med overtakelsen, mens nybygg ofte har flere innbetalinger gjennom byggeperioden.",
+          "Be om en samlet betalingsplan som viser beløp i euro, betalingsmottaker, kontonummer, forfallsdato og hva hver betaling gjelder. Ved kjøp av nybygg kan planen omfatte reservasjonsbeløp, betaling ved kontraktsinngåelse, delbetalinger under byggingen og sluttoppgjør ved ferdigstillelse. Den konkrete planen varierer fra prosjekt til prosjekt.",
+          "Planlegg valutavekslingen ut fra de faktiske forfallsdatoene, og start i god tid før hver betaling. Da får du tid til å sammenligne tilbud, gjennomføre overføringen og håndtere eventuelle forsinkelser. Be også advokaten kontrollere at betalingsinstruksene stemmer med kjøpekontrakten, og at forskuddsbetalinger er sikret i tråd med gjeldende regler. Les mer i vår [[guide til kjøp av nybygg i Spania|/guide/nybygg-i-spania]].",
+          "Ved overtakelse hos notar må betalingsformen og tidspunktet være avklart på forhånd. Banksjekk og bankoverføring kan ha ulike kostnader og behandlingstider. Avtal derfor løsningen med advokat, bank og notar, slik at riktig beløp er tilgjengelig når oppgjøret skal gjennomføres.",
         ],
       },
       {
@@ -2251,15 +2255,46 @@ export const articles: Article[] = [
         ],
       },
       {
+        heading: "Hvordan sammenligner du tilbud på valutaveksling?",
+        body: [
+          "Den beste valutaløsningen er den som gir deg flest mulig euro etter at alle kostnader er trukket fra. Derfor bør du sammenligne minst to tilbud før du veksler større beløp.",
+          "Be hver tilbyder om et konkret tilbud basert på samme beløp i norske kroner, samme tidspunkt og samme mottakervaluta. Sammenlign hvor mange euro som faktisk blir overført, ikke bare kursen som vises i markedsføringen.",
+          "Se spesielt etter valutakurs og kursmargin, overføringsgebyr, eventuelle gebyrer hos mottakerbanken, behandlingstid, beløpsgrenser og dokumentasjonskrav. En overføring som markedsføres som gebyrfri, kan fortsatt ha en kostnad gjennom valutakursen. Det viktigste er å vite nøyaktig hvor mange euro som kommer frem på den spanske kontoen.",
+          "Ved store beløp kan selv små kursforskjeller utgjøre mye. En forskjell på 10 øre per euro betyr 40 000 kroner ved veksling av 400 000 euro.",
+          "Les også vår [[guide til finansiering av bolig i Spania|/guide/finansiere-bolig-i-spania]] dersom du vil se valutakostnadene i sammenheng med egenkapital, lån og det samlede boligbudsjettet.",
+        ],
+      },
+      {
+        heading: "Bør du sikre valutakursen før boligkjøpet?",
+        body: [
+          "Du kan i noen tilfeller avtale valutakursen på forhånd dersom du vet at du skal betale et bestemt beløp i euro på et senere tidspunkt. Enkelte banker og valutatilbydere tilbyr løsninger der du låser en kurs for en fremtidig betaling.",
+          "Dette kan være aktuelt dersom du kjøper nybygg og allerede kjenner betalingsplanen. Ved å avtale kursen på forhånd kan du få bedre oversikt over hvor mange norske kroner du trenger til de kommende innbetalingene.",
+          "Vilkårene varierer mellom tilbydere, og du kan måtte binde deg til en bestemt dato eller et bestemt beløp. Noen avtaler kan også innebære krav om sikkerhet eller andre kostnader. Dersom valutakursen senere utvikler seg i din favør, får du heller ikke nødvendigvis glede av den forbedringen på beløpet du allerede har sikret.",
+          "Før du inngår en avtale, bør du undersøke hvilken kurs og hvilke kostnader som gjelder, hvor lenge kursen er bindende, om du må betale på en bestemt dato, hva som skjer dersom betalingsplanen eller overtakelsen blir utsatt, og om avtalen krever depositum eller annen sikkerhet. Be om vilkårene skriftlig og vurder løsningen opp mot din egen økonomi. Målet er forutsigbarhet, ikke å spekulere i hvilken vei valutakursen vil bevege seg.",
+          "Les gjerne mer om hvordan valutarisiko påvirker finansieringen i [[guiden om å finansiere bolig i Spania|/guide/finansiere-bolig-i-spania]].",
+        ],
+      },
+      {
+        heading: "Hvor stor valutabuffer bør du ha i boligbudsjettet?",
+        body: [
+          "En valutabuffer gir deg rom for at eurokursen kan endre seg mellom tidspunktet du planlegger kjøpet og tidspunktet du faktisk betaler. Dette er særlig viktig dersom du har inntekt og sparepenger i norske kroner, men skal betale bolig og andre kostnader i euro.",
+          "Hvis du planlegger å betale 400 000 euro, vil en kursendring på 10 øre utgjøre 40 000 kroner. Det viser hvor mye valutakursen kan påvirke beløpet du trenger i norske kroner.",
+          "Hvor stor buffer du bør sette av, avhenger blant annet av hvor lang tid det er til betaling eller overtakelse, hvor mye av kjøpesummen som gjenstår, om du betaler i flere omganger, hvilken valuta inntekten din er i, og hvor stort økonomisk handlingsrom du har. Det finnes ingen buffer som passer for alle.",
+          "Beregn boligbudsjettet med rom for kursendringer, slik at en svakere krone ikke velter finansieringsplanen. Valutarisikoen kan også fortsette etter kjøpet dersom du har løpende utgifter eller boliglån i euro. Les mer i [[guiden om finansiering av bolig i Spania|/guide/finansiere-bolig-i-spania]].",
+        ],
+      },
+      {
         heading: "Slik kvalitetssikrer du store betalinger",
         body: [
           "Ved reservasjon, delbetaling og sluttoppgjør kan pengene gå til forskjellige mottakere på forskjellige tidspunkter. Avklar hver betaling med din uavhengige advokat og betalingsansvarlige før beløpet sendes. Ikke stol på nye kontonumre som bare kommer i en e-post eller melding – kontroller en eventuell endring gjennom en separat, kjent kontaktkanal.",
-          "En godt planlagt betalingsflyt er særlig viktig når pengene skal veksles fra NOK til EUR. Sørg for å kjenne bankenes behandlingstid, eventuelle beløpsgrenser og hvilke dokumenter som må være godkjent før sluttoppgjøret.",
+          "En godt planlagt betalingsflyt er særlig viktig når pengene skal veksles fra NOK til EUR. Sørg for å kjenne bankenes behandlingstid, eventuelle beløpsgrenser og hvilke dokumenter som må være godkjent før sluttoppgjøret. Planlegg med god tidsmargin, og ta vare på kvitteringer og bekreftelser. Be mottakeren bekrefte at beløpet er kommet frem.",
+          "Der det er praktisk mulig, kan du også avklare med banken om en mindre prøveoverføring er hensiktsmessig før en større betaling. Dette kan være en ekstra kontroll, men erstatter ikke verifisering av betalingsinstruksene og mottakeropplysningene.",
         ],
         bullets: [
           "Be om skriftlig betalingsplan med mottaker, formål, valuta, beløp og forfallsdato.",
           "Verifiser kontodetaljer direkte med advokat eller bank gjennom et kjent telefonnummer.",
           "Få bekreftet samlet eurobeløp etter valutapåslag og gebyrer før overføring.",
+          "Avklar om en prøveoverføring er hensiktsmessig, og bekreft at hovedbeløpet er mottatt.",
           "Sørg for at dokumentasjon om midlenes opprinnelse er klar i god tid.",
         ],
       },
@@ -2267,6 +2302,7 @@ export const articles: Article[] = [
         heading: "Dokumentasjon og midlenes opprinnelse",
         body: [
           "Banker og andre aktører i transaksjonen har plikter etter hvitvaskingsregelverket. Vær forberedt på å dokumentere identitet, økonomi og hvor midlene kommer fra. Hvilke dokumenter som kreves varierer med bank og transaksjon.",
+          "Ha relevante dokumenter klare før du bestiller en stor overføring. Det kan for eksempel være kontoutskrifter, salgsoppgjør, lånedokumentasjon eller annen dokumentasjon som forklarer midlenes opprinnelse. Banken eller valutatilbyderen kan be om dokumentasjonen før betalingen gjennomføres, så det er lurt å avklare kravene tidlig.",
         ],
       },
     ],
