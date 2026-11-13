@@ -16,6 +16,7 @@ import { normalizeSearchText } from "@/lib/realtyflow";
  * Do not generate these paths from unverified file names. */
 const VERIFIED_COMMONS: Record<string, string> = {
   "Playa del Racó del Albir.JPG": "9/97/Playa_del_Rac%C3%B3_del_Albir.JPG",
+  "Amanecer en el Mar Menor .jpg": "6/6b/Amanecer_en_el_Mar_Menor_.jpg",
   "Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg": "0/09/Vista_de_Altea,_Alicante,_Espa%C3%B1a,_2023-01-21,_DD_43.jpg",
   "Benidorm - Playa de Poniente 26.jpg": "4/45/Benidorm_-_Playa_de_Poniente_26.jpg",
   "Punta Prado in Benissa.jpg": "8/8c/Punta_Prado_in_Benissa.jpg",
@@ -137,6 +138,8 @@ const AREA_VISUALS: Record<string, string> = {
   "torre pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
   "torre-pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
   "santiago de la ribera": commons("Santiago de la Ribera.jpg"),
+  // Categorized by Wikimedia Commons under Playa Honda, Cartagena; Mar Menor sunrise, not a specific street/beach claim.
+  "playa honda": commons("Amanecer en el Mar Menor .jpg"),
   // Playa Honda requires a photograph verified as taken in Playa Honda; no La Manga substitute.
   "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
   "santa pola": commons("Santa Pola - panoramio (4).jpg"),
@@ -165,6 +168,7 @@ const PHOTO_CREDITS: Record<string, Credit> = {
   "Windmühle bei Torre Pacheco - 52476806321.jpg": { author: "Werner Wilmes", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0/" },
   "Cathedral, Murcia.jpg": { author: "PiotrMig", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Santiago de la Ribera.jpg": { author: "Wikiwiki", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
+  "Amanecer en el Mar Menor .jpg": { author: "Fcarreradelafuente", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
   "La Manga - Playa de la naturaleza - panoramio.jpg": { author: "INDALOMANIA", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" },
   "Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg": { author: "Ximonic (Simo Räsänen)", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
   "Calle de San Fulgencio.jpg": { author: "19Tarrestnom65", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" },
