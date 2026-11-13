@@ -7205,3 +7205,53 @@ footer {
     max-width: none;
   }
 }
+
+
+/* SEO landing guides: preserve the two-column sticky advisor layout on desktop,
+   but prioritize readable article width and a compact advisor panel on mobile. */
+.seo-landing-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 34px;
+  align-items: start;
+}
+
+.seo-landing-article {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .seo-landing-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .seo-landing-advisor {
+    position: static !important;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .seo-landing-article {
+    padding: 24px 18px !important;
+  }
+
+  .seo-landing-advisor {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .seo-landing-advisor > div {
+    padding: 14px;
+  }
+
+  .seo-landing-advisor .contact-button {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
