@@ -146,10 +146,10 @@ export default async function BuyInSpainGuidePage() {
       <section className="section cornerstone-section">
         <div className="section-heading">
           <p>
-            Å finne sitt eget sted i Spania skal være både inspirerende og oversiktlig. Underveis møter du gjerne mange boliger, områder og annonser – noen ganger vises den samme boligen hos flere aktører med forskjellige opplysninger. Vi hjelper deg å sortere alternativene og finne ut hva som faktisk passer.
+            Å kjøpe bolig i Spania skal være både inspirerende og oversiktlig. Underveis møter du gjerne mange boliger, områder og annonser – noen ganger vises den samme boligen hos flere aktører med forskjellige opplysninger. Vi hjelper deg å sortere alternativene og finne ut hva som faktisk passer.
           </p>
           <p>
-            Jeg har fulgt boligkjøp tett fra begge sider, både som selger og privat kjøper. Her viser jeg deg hvordan du kan gå fra boligdrøm til et gjennomtenkt kjøp – med råd om områder, budsjett, boliger og kontrollene som bør gjøres før du binder deg.
+            Jeg har fulgt boligkjøp tett fra begge sider, både som selger og privat kjøper. Her viser jeg deg hvordan du kan gå fra boligdrøm til et gjennomtenkt kjøp – med råd om områder, budsjett, boliger og kontrollene som bør gjøres før du kjøper hus, leilighet eller annen eiendom i Spania.
           </p>
         </div>
       </section>
