@@ -11,6 +11,9 @@ export type SeoLandingPage = {
   sections: { heading: string; body: string[]; bullets?: string[]; afterBullets?: string[] }[];
   faq: { question: string; answer: string }[];
   related: { label: string; href: string }[];
+  showHeroActions?: boolean;
+  showRelated?: boolean;
+  advisorHeadingLevel?: "h2" | "h3";
 };
 
 export const seoLandingPages: SeoLandingPage[] = [
@@ -87,6 +90,9 @@ export const seoLandingPages: SeoLandingPage[] = [
       "Nybygg i Spania: les om utbygger, betalingsplan, bankgaranti, 10 % IVA, AJD, energieffektivitet, tilvalg, overtakelse og trygg kjøpsprosess.",
     primaryCta: { label: "Se nybygg og boliger", href: "/eiendommer" },
     secondaryCta: { label: "Beregn kjøpskostnadene", href: "/guide/kjope-bolig-i-spania" },
+    showHeroActions: false,
+    showRelated: false,
+    advisorHeadingLevel: "h2",
     sections: [
       {
         heading: "Hvorfor mange velger nybygg i Spania",
@@ -131,16 +137,10 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Betalingsplan og sikring av forskuddsbetalinger",
         body: [
-          "Når du kjøper bolig under oppføring, betaler du ofte deler av kjøpesummen før boligen er ferdig. Betalingsplanen varierer fra prosjekt til prosjekt, men fordeles gjerne over byggeperioden frem til sluttoppgjøret ved overtakelse. Ved kjøp av ferdigstilt bolig betales normalt en større del av kjøpesummen på kortere tid. Be om en fullstendig betalingsplan tidlig, slik at du kan planlegge finansieringen og ta høyde for eventuelle endringer i valutakursen dersom du betaler med norske kroner.",
-          "Etter dagens regler i Ley de Ordenación de la Edificación skal relevante forskuddsbetalinger, fra tidspunktet lovens vilkår er oppfylt, sikres gjennom godkjent forsikring eller bankgaranti dersom prosjektet ikke blir startet eller ferdigstilt som avtalt.",
-          "Reglene krever også at slike forskudd håndteres gjennom en særskilt konto, og garantien skal omfatte forskuddsbeløpene, relevante skatter og lovbestemt rente. Din advokat bør kontrollere at garantien, kontoen, beløpet, kjøpernavnet og den konkrete boligen stemmer før vesentlige overføringer.",
-          "Vil du lese mer om kravene for bankgaranti, forskuddsbetalinger og kjøperbeskyttelse? Se [[vår grundige guide til nybygg under oppføring eller innflyttingsklar bolig i Spania|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
-        ],
-        bullets: [
-          "Betal bare til konto som er kontrollert mot prosjekt og kontrakt.",
-          "Be om dokumentasjon som gjelder dine konkrete forskuddsbetalinger.",
-          "Ta vare på alle kvitteringer, kontrakter og garanti-/forsikringsdokumenter.",
-          "Ley 57/1968 er historisk; dagens ordning følger senere lovgivning, særlig LOE.",
+          "Når du kjøper nybygg i Spania, er det viktig å forstå hvordan kjøpesummen skal betales, og hvilken sikkerhet du har for pengene du betaler før boligen er ferdig. Ved kjøp av bolig under oppføring betales kjøpesummen ofte i flere omganger, mens ferdigstilte boliger normalt har et kortere betalingsforløp.",
+          "Spansk lov stiller krav om at relevante forskuddsbetalinger sikres gjennom bankgaranti (aval bancario) eller garantiforsikring (seguro de caución) når lovens vilkår er oppfylt. Dette skal beskytte kjøperen dersom prosjektet ikke blir startet eller ferdigstilt i samsvar med avtalen.",
+          "Før du signerer, bør du få oversikt over betalingsforpliktelsene og la en uavhengig spansk advokat kontrollere kontrakten og at den nødvendige sikkerheten er på plass. Husk også å ta høyde for valutakursen dersom du finansierer kjøpet med norske kroner.",
+          "Betalingsplan, garantier og vilkår ved forsinkelser kan ha stor betydning for risikoen ved boligkjøpet. Les mer i vår [[guide til nybygg under oppføring eller innflyttingsklar bolig i Spania|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
         ],
       },
       {
@@ -159,9 +159,10 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Leveransebeskrivelsen er like viktig som plantegningen",
         body: [
-          "Plantegninger og illustrasjoner gir et inntrykk av hvordan boligen skal bli, men det er leveransebeskrivelsen og kontrakten som viser hvilken standard og hvilke materialer du faktisk får. Kontroller hva som er inkludert i kjøpesummen, og om utbygger kan erstatte avtalte produkter med tilsvarende alternativer.",
-          "Ikke ta for gitt at alt du ser i illustrasjoner eller visningsboliger følger med. Be om en skriftlig oversikt over hva som inngår, og hvilke tilvalg eller tilleggskostnader du må regne med.",
-          "Vil du vite mer om hva som vanligvis inngår i prisen, og hvilke tilvalg som kan gi ekstra kostnader? Les [[guide til hva som inngår i nybyggprisen i Spania|/magasin/hva-inngar-i-prisen-nybygg-spania]].",
+          "Når du kjøper nybygg i Spania, bør du ikke bare vurdere boligens utforming og beliggenhet. Du bør også undersøke hvilken standard du faktisk får. Leveransebeskrivelsen (memoria de calidades) og kjøpekontrakten beskriver hva utbyggeren har forpliktet seg til å levere.",
+          "Det er viktig å skille mellom det som er inkludert i standardleveransen, og løsninger som vises i illustrasjoner eller visningsboliger. Slike presentasjoner kan inneholde oppgraderinger og tilvalg som ikke følger med i kjøpesummen.",
+          "Be derfor om skriftlig dokumentasjon på boligens standard, og kontroller at leveransen samsvarer med det som er avtalt. Dette gir deg et bedre grunnlag for å sammenligne ulike nybyggprosjekter og vurdere den reelle verdien av boligen.",
+          "Vil du vite mer om hvordan du vurderer leveransen og hvilke tillegg som kan påvirke totalprisen? Les vår [[guide til hva som inngår i nybyggprisen i Spania|/magasin/hva-inngar-i-prisen-nybygg-spania]].",
         ],
       },
       {
@@ -174,16 +175,10 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Overtakelse: kontroller boligen før sluttoppgjøret",
         body: [
-          "Når boligen nærmer seg ferdigstillelse, bør du kontrollere både dokumentasjonen og den fysiske leveransen før sluttoppgjøret. Gå gjennom boligen systematisk, og sjekk at den samsvarer med kontrakten og leveransebeskrivelsen.",
-          "Dokumenter eventuelle mangler med bilder og en skriftlig liste. Be om en plan for utbedring, og få advokaten din til å vurdere dokumentasjonen og eventuelle uavklarte forhold før sluttoppgjøret.",
-          "Spansk byggelovgivning har ulike ansvarsperioder for bestemte typer byggfeil. Det er viktig å kjenne forskjellen mellom disse og garantier for forskuddsbetalinger. Les mer: [[Feil og mangler i nybygg i Spania – slik går du frem ved overtakelse og reklamasjon|/magasin/feil-mangler-nybygg-spania-reklamasjon]].",
-        ],
-        bullets: [
-          "Overflater og utførelse: Gulv, fliser, vegger, fuger og maling.",
-          "Dører og vinduer: Åpning, lukking, låser og tetting.",
-          "Tekniske installasjoner: Vann, avløp, strøm, ventilasjon og klimaanlegg.",
-          "Avtalte leveranser: Hvitevarer, belysning, garderober, basseng, hage og eventuelle tilvalg.",
-          "Dokumentasjon: Nødvendige ferdigstillelses- og bruksdokumenter, energidokumentasjon og garantier.",
+          "Når nybygget er ferdigstilt, er det viktig å forsikre seg om at både boligen og nødvendig dokumentasjon er i orden før du gjennomfører sluttoppgjøret og overtar nøklene.",
+          "Boligen bør være levert i samsvar med kjøpekontrakten og den avtalte leveransen. Kontroller at ferdigstillelsen er dokumentert, og at nødvendige tillatelser og dokumenter for bruk og innflytting foreligger. En uavhengig advokat bør gjennomgå dokumentasjonen og avklare eventuelle forhold som gjenstår før overtakelsen.",
+          "Det kan også være lurt å få en fagperson til å vurdere boligens tekniske tilstand før du overtar. Dersom det oppdages feil eller mangler, er det viktig å få disse dokumentert og avklart med utbyggeren.",
+          "Les mer om hva du bør undersøke ved overtakelsen, hvordan du følger opp feil og mangler, og hvilke rettigheter du har i vår [[guide til feil og mangler ved nybygg i Spania|/magasin/feil-mangler-nybygg-spania-reklamasjon]].",
         ],
       },
       {
