@@ -2238,7 +2238,7 @@ export const articles: Article[] = [
           "Betalingsmåten ved sluttoppgjøret avtales og dokumenteres i kjøpsprosessen. Banksjekk, bankoverføring eller andre kontrollerte løsninger kan brukes avhengig av transaksjonen. Avklar tidlig med advokat og bank hvor midlene må være, hvilke frister som gjelder, og hvilken dokumentasjon som kreves.",
           "Hvordan du planlegger betalingene, avhenger også av om du kjøper en ferdigstilt bolig eller et nybygg under oppføring. Ved en ferdigstilt bolig skjer en stor del av betalingen normalt i forbindelse med overtakelsen, mens nybygg ofte har flere innbetalinger gjennom byggeperioden.",
           "Be om en samlet betalingsplan som viser beløp i euro, betalingsmottaker, kontonummer, forfallsdato og hva hver betaling gjelder. Ved kjøp av nybygg kan planen omfatte reservasjonsbeløp, betaling ved kontraktsinngåelse, delbetalinger under byggingen og sluttoppgjør ved ferdigstillelse. Den konkrete planen varierer fra prosjekt til prosjekt.",
-          "Planlegg valutavekslingen ut fra de faktiske forfallsdatoene, og start i god tid før hver betaling. Da får du tid til å sammenligne tilbud, gjennomføre overføringen og håndtere eventuelle forsinkelser. Be også advokaten kontrollere at betalingsinstruksene stemmer med kjøpekontrakten, og at forskuddsbetalinger er sikret i tråd med gjeldende regler. Les mer i vår [guide til kjøp av nybygg i Spania](/guide/nybygg-i-spania).",
+          "Planlegg valutavekslingen ut fra de faktiske forfallsdatoene, og start i god tid før hver betaling. Da får du tid til å sammenligne tilbud, gjennomføre overføringen og håndtere eventuelle forsinkelser. Be også advokaten kontrollere at betalingsinstruksene stemmer med kjøpekontrakten, og at forskuddsbetalinger er sikret i tråd med gjeldende regler. Les mer i vår [[guide til kjøp av nybygg i Spania|/guide/nybygg-i-spania]].",
           "Ved overtakelse hos notar må betalingsformen og tidspunktet være avklart på forhånd. Banksjekk og bankoverføring kan ha ulike kostnader og behandlingstider. Avtal derfor løsningen med advokat, bank og notar, slik at riktig beløp er tilgjengelig når oppgjøret skal gjennomføres.",
         ],
       },
@@ -2261,7 +2261,7 @@ export const articles: Article[] = [
           "Be hver tilbyder om et konkret tilbud basert på samme beløp i norske kroner, samme tidspunkt og samme mottakervaluta. Sammenlign hvor mange euro som faktisk blir overført, ikke bare kursen som vises i markedsføringen.",
           "Se spesielt etter valutakurs og kursmargin, overføringsgebyr, eventuelle gebyrer hos mottakerbanken, behandlingstid, beløpsgrenser og dokumentasjonskrav. En overføring som markedsføres som gebyrfri, kan fortsatt ha en kostnad gjennom valutakursen. Det viktigste er å vite nøyaktig hvor mange euro som kommer frem på den spanske kontoen.",
           "Ved store beløp kan selv små kursforskjeller utgjøre mye. En forskjell på 10 øre per euro betyr 40 000 kroner ved veksling av 400 000 euro.",
-          "Les også vår [guide til finansiering av bolig i Spania](/guide/finansiere-bolig-i-spania) dersom du vil se valutakostnadene i sammenheng med egenkapital, lån og det samlede boligbudsjettet.",
+          "Les også vår [[guide til finansiering av bolig i Spania|/guide/finansiere-bolig-i-spania]] dersom du vil se valutakostnadene i sammenheng med egenkapital, lån og det samlede boligbudsjettet.",
         ],
       },
       {
@@ -2271,7 +2271,7 @@ export const articles: Article[] = [
           "Dette kan være aktuelt dersom du kjøper nybygg og allerede kjenner betalingsplanen. Ved å avtale kursen på forhånd kan du få bedre oversikt over hvor mange norske kroner du trenger til de kommende innbetalingene.",
           "Vilkårene varierer mellom tilbydere, og du kan måtte binde deg til en bestemt dato eller et bestemt beløp. Noen avtaler kan også innebære krav om sikkerhet eller andre kostnader. Dersom valutakursen senere utvikler seg i din favør, får du heller ikke nødvendigvis glede av den forbedringen på beløpet du allerede har sikret.",
           "Før du inngår en avtale, bør du undersøke hvilken kurs og hvilke kostnader som gjelder, hvor lenge kursen er bindende, om du må betale på en bestemt dato, hva som skjer dersom betalingsplanen eller overtakelsen blir utsatt, og om avtalen krever depositum eller annen sikkerhet. Be om vilkårene skriftlig og vurder løsningen opp mot din egen økonomi. Målet er forutsigbarhet, ikke å spekulere i hvilken vei valutakursen vil bevege seg.",
-          "Les gjerne mer om hvordan valutarisiko påvirker finansieringen i [guiden om å finansiere bolig i Spania](/guide/finansiere-bolig-i-spania).",
+          "Les gjerne mer om hvordan valutarisiko påvirker finansieringen i [[guiden om å finansiere bolig i Spania|/guide/finansiere-bolig-i-spania]].",
         ],
       },
       {
