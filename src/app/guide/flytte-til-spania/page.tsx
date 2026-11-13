@@ -41,6 +41,10 @@ const body = `
 <p>Når flyttingen er registrert, vil Folkeregisteret vise at du er bosatt i utlandet. Dette betyr imidlertid ikke at du automatisk slutter å betale skatt til Norge eller mister alle rettigheter i folketrygden. Skatt og trygd følger egne regler, som vi forklarer i neste del av guiden.</p>
 <h2>Skatt, pensjon og helsetjenester ved flytting</h2>
 <p>Hvor du skal betale skatt og hvilke rettigheter du har til pensjon, trygd og helsetjenester, avhenger blant annet av inntekten din og om du skal arbeide eller bo fast i Spania. Her forklarer vi hva som gjelder i praksis.</p>
+<h3>Hvis du flytter til Spania som pensjonist</h3>
+<p>Som norsk pensjonist kan du i mange tilfeller flytte permanent til Spania og fortsatt motta pensjon fra Norge. Før du flytter, bør du likevel avklare tre viktige forhold:</p>
+<ul><li><strong>Oppholdsrett:</strong> Du må dokumentere at du har tilstrekkelige økonomiske midler til å forsørge deg selv og eventuell familie, samt helsedekning som oppfyller kravene for opphold utover tre måneder.</li><li><strong>Pensjon og skatt:</strong> Norsk alderspensjon og uføretrygd kan som hovedregel tas med til Spania, men enkelte ytelser kan ha særskilte begrensninger. Flyttingen kan også endre hvilket land du skal betale skatt til.</li><li><strong>Helsedekning:</strong> Dersom Norge fortsatt har ansvaret for helsetrygden din, kan du ha rett til offentlig helsehjelp i Spania gjennom S1-ordningen. Dette må avklares med Helfo før flytting.</li></ul>
+<p>Det er viktig å undersøke hvordan reglene påvirker akkurat din situasjon før du bestemmer deg. Nedenfor kan du lese mer om skatt, pensjon og helsetjenester ved flytting til Spania.</p>
 <h3>Hvor skal du betale skatt når du flytter til Spania?</h3>
 <p>Du blir som hovedregel regnet som skattemessig bosatt i Spania dersom du oppholder deg der i mer enn 183 dager i løpet av et kalenderår. Du kan også bli regnet som bosatt dersom dine viktigste økonomiske interesser er i Spania.</p>
 <p>Når du er skattemessig bosatt i Spania, må du som hovedregel oppgi inntektene dine fra både Norge og Spania til spanske skattemyndigheter.</p>
