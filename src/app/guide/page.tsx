@@ -105,7 +105,6 @@ const groups = [
       "lopende-kostnader-eie-bolig-spania",
       "utleie-inntektspotensial-bolig-spania",
       "flytte-til-spania",
-      "flytte-til-spania-som-pensjonist",
       "skatt-ved-salg-bolig-spania",
       "arv-gaveskatt-bolig-spania",
     ],
