@@ -20,6 +20,7 @@ test('consolidated money-transfer article redirects with HTTP 301 and is hidden 
   const articleContent = fs.readFileSync('src/lib/content.ts', 'utf8');
   assert.match(articleContent, /\[\[guide til kjøp av nybygg i Spania\|\/guide\/nybygg-i-spania\]\]/);
   assert.match(articleContent, /\[\[guide til finansiering av bolig i Spania\|\/guide\/finansiere-bolig-i-spania\]\]/);
+  assert.match(articleContent, /\[\[guiden om å finansiere bolig i Spania\|\/guide\/finansiere-bolig-i-spania\]\]/);
   const articleView = fs.readFileSync('src/components/ArticleView.tsx', 'utf8');
   assert.match(articleView, /article\.slug === "spansk-bankkonto-valutaveksling"/);
 });
