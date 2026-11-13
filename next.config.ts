@@ -130,6 +130,7 @@ const nextConfig: NextConfig = {
       ["/magasin/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
       ["/kjopsprosess/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
       ["/guide/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
+      ["/magasin/overfore-penger-norge-spania-boligkjop", "/guide/spansk-bankkonto-valutaveksling"],
       ["/magasin/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
       ["/kjopsprosess/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
       ["/guide/innlandet-finca-olivengard-spania", "/omrader/innlandet"],
