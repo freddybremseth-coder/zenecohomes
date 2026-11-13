@@ -99,16 +99,18 @@ export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
             <span><CalendarDays size={16} /> Sist oppdatert {new Intl.DateTimeFormat("nb-NO").format(new Date(guideMeta.updated))}</span>
           </div>
         )}
-        <div className="hero-actions">
-          <Link className="contact-button" href={page.primaryCta.href}>
-            {page.primaryCta.label} <ArrowRight size={18} />
-          </Link>
-          {page.secondaryCta && (
-            <Link className="text-button light" href={page.secondaryCta.href}>
-              {page.secondaryCta.label}
+        {page.showHeroActions !== false && (
+          <div className="hero-actions">
+            <Link className="contact-button" href={page.primaryCta.href}>
+              {page.primaryCta.label} <ArrowRight size={18} />
             </Link>
-          )}
-        </div>
+            {page.secondaryCta && (
+              <Link className="text-button light" href={page.secondaryCta.href}>
+                {page.secondaryCta.label}
+              </Link>
+            )}
+          </div>
+        )}
       </section>
 
       <section className="section">
@@ -180,22 +182,28 @@ export function SeoLandingView({ page, locale, eq, guideMeta }: Props) {
           <aside className="feature-panel" style={{ position: "sticky", top: 110 }}>
             <div style={{ display: "block" }}>
               <p className="eyebrow">{t.nextStep}</p>
-              <h3 style={{ margin: "0 0 12px", color: "var(--dark)", fontSize: "1.45rem" }}>{t.advisorHeading}</h3>
+              {page.advisorHeadingLevel === "h2" ? (
+                <h2 style={{ margin: "0 0 12px", color: "var(--dark)", fontSize: "1.65rem" }}>{t.advisorHeading}</h2>
+              ) : (
+                <h3 style={{ margin: "0 0 12px", color: "var(--dark)", fontSize: "1.45rem" }}>{t.advisorHeading}</h3>
+              )}
               <p style={{ color: "var(--muted)", lineHeight: 1.7 }}>{t.advisorBody}</p>
               <Link className="contact-button" href={t.contactHref} style={{ marginTop: 12 }}>
                 {t.contactCta} <ArrowRight size={17} />
               </Link>
             </div>
-            <div style={{ display: "block" }}>
-              <strong>{t.relatedHeading}</strong>
-              <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
-                {page.related.map((item) => (
-                  <Link key={item.href} href={item.href} style={{ color: "var(--gold)", lineHeight: 1.45 }}>
-                    {item.label}
-                  </Link>
-                ))}
+{page.showRelated !== false && (
+              <div style={{ display: "block" }}>
+                <strong>{t.relatedHeading}</strong>
+                <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
+                  {page.related.map((item) => (
+                    <Link key={item.href} href={item.href} style={{ color: "var(--gold)", lineHeight: 1.45 }}>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </aside>
         </div>
       </section>
