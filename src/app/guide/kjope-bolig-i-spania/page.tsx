@@ -386,19 +386,6 @@ export default async function BuyInSpainGuidePage() {
             Mange som vurderer å kjøpe bolig i Spania starter naturligvis med faktorer som solforhold, basseng og avstand til strand og flyplass. Men det er minst like viktig å se på forholdene som kan påvirke kostnader og vedlikehold.
           </p>
         </div>
-        <div className="section-heading" style={{ marginTop: 28 }}>
-          {/* Seksjonen ble kontrollert og republiseres etter PR #348. */}
-          <h3>Skatt og utleie ved kjøp av feriebolig i Spania</h3>
-          <p>
-            Som norsk skattemessig bosatt eier av feriebolig i Spania betaler du årlig spansk <Link href="/guide/lopende-kostnader-eie-bolig-spania">eiendomsskatt (IBI)</Link>. I tillegg beregnes det normalt spansk inntektsskatt på en sjablongmessig leieverdi når boligen står til din egen disposisjon, selv om du ikke leier den ut.
-          </p>
-          <p>
-            Dersom du ønsker å leie ut boligen når du ikke bruker den selv, skal leieinntektene rapporteres og beskattes i Spania. Utleie kan dermed bidra til å dekke deler av kostnadene ved å eie boligen, og er verdt å ta med i vurderingen av boligens <Link href="/guide/utleie-inntektspotensial-bolig-spania">utleiepotensial og mulige leieinntekter</Link>.
-          </p>
-          <p>
-            Ved et senere salg kan en eventuell gevinst også utløse skatt i Spania. Du kan lese mer om <Link href="/guide/skatt-ved-salg-bolig-spania">skatt ved salg av bolig i Spania</Link> og hvilke regler som gjelder for gevinstbeskatning.
-          </p>
-        </div>
         <div className="proof-grid">
           <article>
             <h3>Energimerking</h3>
