@@ -51,7 +51,6 @@ const articleCovers: Record<string, string> = {
   "hva-far-du-for-4-6-8-10-millioner-costa-blanca": "/assets/magasin-covers/finansiering.svg",
   "albir-finestrat-villajoyosa-benidorm-hvor-kjope": "/assets/magasin-covers/omradevalg.svg",
   "nybygg-eller-bruktbolig-costa-blanca": "/assets/magasin-covers/omradet-for-boligen.svg",
-  "eurokurs-boligbudsjett-spania-nordmenn": "/assets/magasin-covers/bankkonto-valuta.svg",
   "hva-koster-feriebolig-spania-i-aret": "/assets/magasin-covers/kostnader-eie.svg",
   "7-dyre-feil-nordmenn-bolig-spania": "/assets/magasin-covers/juridisk.svg",
   "havutsikt-eller-gangavstand-costa-blanca": "/assets/magasin-covers/omradet-for-boligen.svg",
@@ -220,9 +219,6 @@ export default async function MagazinePage() {
         <div className="hero-actions">
           <Link className="contact-button" href="/magasin/hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023">
             Les min erfaring <ArrowRight size={17} />
-          </Link>
-          <Link className="text-button" href="/magasin/eurokurs-boligbudsjett-spania-nordmenn">
-            Les også om eurokurs og boligbudsjett
           </Link>
         </div>
       </section>
