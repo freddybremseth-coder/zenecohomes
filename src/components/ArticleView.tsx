@@ -91,7 +91,6 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
   "lopende-kostnader-eie-bolig-spania": [
     "omkostninger-nybygg-spania",
     "utleie-inntektspotensial-bolig-spania",
-    "flytte-til-spania",
   ],
   "innlandet-finca-olivengard-spania": [
     "guide-tomtekjop-bygging-i-spania",
