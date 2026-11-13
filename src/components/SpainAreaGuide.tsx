@@ -29,6 +29,7 @@ const faq = [
  ["Hvilke områder i Spania er varmest om vinteren?","Sør på Kanariøyene, særlig Sør-Tenerife og sørlige Gran Canaria, er normalt varmest og jevnest gjennom vinteren. På fastlandet er Costa del Sol og deler av Costa Blanca blant alternativene med milde vinterdager."],
  ["Hvor i Spania er det best å bo?","Det avhenger av din hverdag: Costa Blanca og Costa del Sol passer ofte dem som ønsker kystliv og internasjonale miljøer, storbyene passer dem som vil gå til det meste, og innlandet passer dem som prioriterer ro og plass. Test området utenfor feriesesongen før du bestemmer deg."]
 ];
+function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
 function PreferenceTable({rows}:{rows:string[][]}) {
  return <div className="buy-guide-comparison area-preference-table my-6">
   <table>
