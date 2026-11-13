@@ -709,27 +709,6 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
   ],
-  "7-dyre-feil-nordmenn-bolig-spania": [
-    { headingIncludes: "velger område", links: [
-      { label: "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
-    ]},
-    { headingIncludes: "totalbudsjett", links: [
-      { label: "Beregn totalbudsjettet før du kjøper", href: "/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca" },
-      { label: "Se kjøpskostnader ved boligkjøp i Spania", href: "/guide/kjope-bolig-i-spania" },
-    ]},
-    { headingIncludes: "boligannonser", links: [
-      { label: "Hvorfor Idealista og Finn ikke alltid er fasit", href: "/magasin/idealista-finn-ikke-alltid-til-a-stole-pa" },
-    ]},
-    { headingIncludes: "reservasjonsvilkår", links: [
-      { label: "Dette bør advokaten kontrollere før kjøpet", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
-    ]},
-    { headingIncludes: "valutakurs", links: [
-    ]},
-    { headingIncludes: "Tenk langsiktig", links: [
-      { label: "Hva gjør en bolig lettere å selge igjen?", href: "/magasin/bolig-som-er-lett-a-selge-igjen-spania" },
-    ]},
-  ],
-
   "havutsikt-eller-gangavstand-costa-blanca": [
     { headingIncludes: "gangavstand", links: [
       { label: "Sammenlign Albir, Finestrat, Villajoyosa og Benidorm", href: "/magasin/albir-finestrat-villajoyosa-benidorm-hvor-kjope" },
@@ -829,9 +808,6 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
     ]},
     { headingIncludes: "N6149", links: [
       { label: "Åpne N6149", href: "/eiendommer/N6149" },
-    ]},
-    { headingIncludes: "undersøkt", links: [
-      { label: "7 dyre feil før boligkjøp", href: "/magasin/7-dyre-feil-nordmenn-bolig-spania" },
     ]},
   ],
   "600000-euro-benidorm-polop-finestrat": [
