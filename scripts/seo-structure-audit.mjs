@@ -274,7 +274,8 @@ const literalRedirects = [
   ["/inland", "/omrader/innlandet"],
   ["/tomter", "/omrader/innlandet/tomter"],
   ["/kjopsprosess/kjopsprosess-bolig-i-spania", "/guide/kjope-bolig-i-spania"],
-  ["/guide/flytte-til-spania-pensjonist", "/guide/flytte-til-spania-som-pensjonist"],
+  ["/guide/flytte-til-spania-som-pensjonist", "/guide/flytte-til-spania"],
+  ["/guide/flytte-til-spania-pensjonist", "/guide/flytte-til-spania"],
 ];
 for (const [source, destination] of literalRedirects) {
   if (!hasRedirect(source, destination)) {
@@ -283,6 +284,12 @@ for (const [source, destination] of literalRedirects) {
 }
 
 for (const [source, destination] of [
+  ["/magasin/flytte-til-spania-som-pensjonist", "/guide/flytte-til-spania"],
+  ["/magasin/flytte-til-spania-pensjonist", "/guide/flytte-til-spania"],
+  ["/kjopsprosess/flytte-til-spania-som-pensjonist", "/guide/flytte-til-spania"],
+  ["/kjopsprosess/flytte-til-spania-pensjonist", "/guide/flytte-til-spania"],
+  ["/flytte-til-spania-som-pensjonist", "/guide/flytte-til-spania"],
+  ["/flytte-til-spania-pensjonist", "/guide/flytte-til-spania"],
   ["/kjopsprosess/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
   ["/kjopsprosess/omkostninger-nybygg-spania", "/guide/nybygg-i-spania"],
   ["/kjopsprosess/bankgaranti-nybygg-spania", "/guide/nybygg-i-spania"],
