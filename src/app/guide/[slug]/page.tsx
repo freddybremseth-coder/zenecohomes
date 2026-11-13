@@ -37,7 +37,25 @@ export default async function GuideArticlePage({ params }: PageProps) {
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
       {slug === "omradeguide-eiendomskjop-i-spania" ? (
-        <><section className="page-hero compact-hero article-hero"><p className="eyebrow">Områdeguide</p><h1>Hvor er det best å kjøpe eiendom i Spania?</h1></section><SpainAreaGuide /></>
+        <div className="cornerstone-guide">
+          <section className="page-hero compact-hero image-hero cornerstone-hero">
+            <div className="cornerstone-hero-layout">
+              <div className="cornerstone-hero-copy">
+                <p className="eyebrow">Områdeguide · Oppdatert 15. september 2026</p>
+                <h1>Hvor er det best å kjøpe eiendom i Spania?</h1>
+              </div>
+            </div>
+          </section>
+          <nav className="guide-index-band cornerstone-index" aria-label="Innhold i områdeguiden">
+            <div>
+              <span>På denne siden:</span>
+              <a href="#oversikt">Områdene i Spania</a>
+              <a href="#valg-omrade">Slik velger du område</a>
+              <a href="#faq">FAQ</a>
+            </div>
+          </nav>
+          <SpainAreaGuide />
+        </div>
       ) : <ArticleView article={article} />}
       <Footer />
     </main>
