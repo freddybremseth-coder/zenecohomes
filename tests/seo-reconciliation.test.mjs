@@ -26,6 +26,18 @@ test('consolidated money-transfer article redirects with HTTP 301 and is hidden 
   assert.match(articleView, /article\.slug === "spansk-bankkonto-valutaveksling"/);
 });
 
+
+test('7 dyre feil article redirects with HTTP 301 to the buying guide and is removed from magazine content', () => {
+  const redirect = redirects.find(r => r.source === '/magasin/7-dyre-feil-nordmenn-bolig-spania');
+  assert.equal(redirect?.destination, '/guide/kjope-bolig-i-spania');
+  assert.equal(redirect?.statusCode, 301);
+  assert.equal(allArticles.some(article => article.slug === '7-dyre-feil-nordmenn-bolig-spania'), false);
+  const magazinePage = fs.readFileSync('src/app/magasin/page.tsx', 'utf8');
+  assert.match(magazinePage, /"7-dyre-feil-nordmenn-bolig-spania"/);
+  const articleView = fs.readFileSync('src/components/ArticleView.tsx', 'utf8');
+  assert.doesNotMatch(articleView, /\/magasin\/7-dyre-feil-nordmenn-bolig-spania/);
+});
+
 test('every guide legacy URL redirects directly to its canonical route', () => {
   for (const article of allArticles.filter(a => articleSilo(a) === 'guide')) {
     const destination = article.slug === 'kjopsprosess-bolig-i-spania' ? '/guide/kjope-bolig-i-spania' : `/guide/${article.slug}`;
