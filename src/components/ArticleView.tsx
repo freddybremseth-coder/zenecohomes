@@ -695,20 +695,6 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       ],
     },
   ],
-  "eurokurs-boligbudsjett-spania-nordmenn": [
-    {
-      headingIncludes: "€500.000",
-      links: [
-        ],
-    },
-    {
-      headingIncludes: "finansiering",
-      links: [
-        { label: "Finansiering av boligkjøpet i Spania", href: "/guide/finansiere-bolig-i-spania" },
-        { label: "Bankkonto og valutaveksling", href: "/guide/spansk-bankkonto-valutaveksling" },
-      ],
-    },
-  ],
   "hva-koster-feriebolig-spania-i-aret": [
     {
       headingIncludes: "årsbudsjettet",
@@ -738,7 +724,6 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
       { label: "Dette bør advokaten kontrollere før kjøpet", href: "/guide/juridiske-fallgruver-boligkjop-spania" },
     ]},
     { headingIncludes: "valutakurs", links: [
-      { label: "Slik påvirker eurokursen boligbudsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
     ]},
     { headingIncludes: "Tenk langsiktig", links: [
       { label: "Hva gjør en bolig lettere å selge igjen?", href: "/magasin/bolig-som-er-lett-a-selge-igjen-spania" },
@@ -771,7 +756,7 @@ const CONTEXTUAL_MAGAZINE_LINKS: Record<string, ContextualLinkRule[]> = {
   ],
   "bolig-under-bygging-eller-ferdig-spania": [
     { headingIncludes: "Betalingsplanen", links: [
-      { label: "Slik påvirker eurokursen boligbudsjettet", href: "/magasin/eurokurs-boligbudsjett-spania-nordmenn" },
+      { label: "Planlegg valutabuffer og betalinger", href: "/guide/spansk-bankkonto-valutaveksling" },
     ]},
     { headingIncludes: "Bankgaranti", links: [
       { label: "Komplett guide til bankgaranti ved nybygg", href: "/guide/nybygg-i-spania" },

@@ -2203,10 +2203,19 @@ export const articles: Article[] = [
         heading: "Hvor stor valutabuffer bør du ha i boligbudsjettet?",
         body: [
           "En valutabuffer gir deg rom for at eurokursen kan endre seg mellom tidspunktet du planlegger kjøpet og tidspunktet du faktisk betaler. Dette er særlig viktig dersom du har inntekt og sparepenger i norske kroner, men skal betale bolig og andre kostnader i euro.",
+          "Tabellen viser hvordan samme boligpris i euro kan gi svært ulik kostnad i norske kroner ved ulike valutakurser. Kursene er illustrative scenarioer, ikke en prognose eller en oppdatert kursnotering.",
           "Hvis du planlegger å betale 400 000 euro, vil en kursendring på 10 øre utgjøre 40 000 kroner. Det viser hvor mye valutakursen kan påvirke beløpet du trenger i norske kroner.",
           "Hvor stor buffer du bør sette av, avhenger blant annet av hvor lang tid det er til betaling eller overtakelse, hvor mye av kjøpesummen som gjenstår, om du betaler i flere omganger, hvilken valuta inntekten din er i, og hvor stort økonomisk handlingsrom du har. Det finnes ingen buffer som passer for alle.",
           "Beregn boligbudsjettet med rom for kursendringer, slik at en svakere krone ikke velter finansieringsplanen. Valutarisikoen kan også fortsette etter kjøpet dersom du har løpende utgifter eller boliglån i euro. Les mer i [[guiden om finansiering av bolig i Spania|/guide/finansiere-bolig-i-spania]].",
         ],
+        table: {
+          headers: ["Boligpris", "EUR/NOK 10,50", "EUR/NOK 10,87", "EUR/NOK 11,50", "EUR/NOK 12,00"],
+          rows: [
+            ["€350.000", "3,68 mill. kr", "3,80 mill. kr", "4,03 mill. kr", "4,20 mill. kr"],
+            ["€500.000", "5,25 mill. kr", "5,44 mill. kr", "5,75 mill. kr", "6,00 mill. kr"],
+            ["€750.000", "7,88 mill. kr", "8,15 mill. kr", "8,63 mill. kr", "9,00 mill. kr"],
+          ],
+        },
       },
       {
         heading: "Slik kvalitetssikrer du store betalinger",
