@@ -138,7 +138,7 @@ function GuideCard({ item }: { item: GuideItem }) {
 }
 
 export default function GuideHub() {
-  const contentGuides = articlesInSilo("guide");
+  const contentGuides = articlesInSilo("guide").filter((article) => article.slug !== "kostnader-boligkjop-spania");
   const contentItems: GuideItem[] = contentGuides.map((article) => ({
     slug: article.slug,
     title: article.title,
