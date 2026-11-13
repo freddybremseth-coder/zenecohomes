@@ -130,7 +130,6 @@ const nextConfig: NextConfig = {
       ["/magasin/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
       ["/kjopsprosess/nybygg-finestrat-omradeguide", "/omrader/costa-blanca-nord/finestrat"],
       ["/guide/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
-      ["/magasin/overfore-penger-norge-spania-boligkjop", "/guide/spansk-bankkonto-valutaveksling"],
       ["/magasin/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
       ["/kjopsprosess/finansiering-notar-nie-boligkjop-spania", "/guide/finansiere-bolig-i-spania"],
       ["/guide/innlandet-finca-olivengard-spania", "/omrader/innlandet"],
@@ -220,6 +219,11 @@ const nextConfig: NextConfig = {
       {
         source: "/magasin/lan-i-norge-eller-spania-boligkjop",
         destination: "/guide/finansiere-bolig-i-spania",
+        statusCode: 301,
+      },
+      {
+        source: "/magasin/overfore-penger-norge-spania-boligkjop",
+        destination: "/guide/spansk-bankkonto-valutaveksling",
         statusCode: 301,
       },
       ...contentConsolidationRedirects,
