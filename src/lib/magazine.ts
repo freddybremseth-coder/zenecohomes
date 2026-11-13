@@ -4953,7 +4953,6 @@ const SILO_BY_SLUG: Record<string, Silo> = {
   "guide-tomtekjop-bygging-i-spania": "guide",
   "utleie-inntektspotensial-bolig-spania": "guide",
   "lopende-kostnader-eie-bolig-spania": "guide",
-  "flytte-til-spania-som-pensjonist": "guide",
   "juridiske-fallgruver-boligkjop-spania": "guide",
   "skatt-ved-salg-bolig-spania": "guide",
   "arv-gaveskatt-bolig-spania": "guide",
