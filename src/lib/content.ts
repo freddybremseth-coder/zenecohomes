@@ -1062,13 +1062,13 @@ export const articles: Article[] = [
     title: "Utleie av bolig på Costa Blanca: hva kan du faktisk tjene?",
     excerpt: "Ferieutleie eller langtidsleie? Se et konkret regneeksempel, hva som påvirker nettoinntekten, og hvilke regler du må kontrollere før boligkjøp i Spania.",
     date: "2026-09-08",
-    updated: "2026-10-09",
+    updated: "2026-11-16",
     category: "Guide",
-    readingTime: "12 min lesing",
+    readingTime: "14 min lesing",
     image: "/assets/magasin-covers/utleie-inntekt.svg",
     imageAlt: "Illustrasjon av bolig, utleieinntekter og vurdering av utleiepotensial i Spania",
     seoTitle: "Utleie av bolig i Spania | Inntekt, regler og regneeksempel",
-    seoDescription: "Hva kan du tjene på utleie på Costa Blanca? Sammenlign turistutleie og langtidsleie, se netto-regneeksempel og regler du må sjekke før kjøp.",
+    seoDescription: "Utleie på Costa Blanca: nettoinntekt, lokale tillatelser og 10 % IVA på bestemte korttidsopphold fra 1. desember 2026.",
     keywords: ["utleie bolig Spania", "leieinntekt Costa Blanca", "turistutleie Valencia regler", "netto leieinntekt Spania", "langtidsutleie Spania"],
     intro: [
       "Kan leieinntektene betale deler av ferieleiligheten i Spania – eller til og med gjøre den til en investering? Det korte svaret er at det er mulig, men verken høy annonsert døgnpris eller en pen avkastningsprosent forteller hva du faktisk sitter igjen med.",
@@ -1095,6 +1095,15 @@ export const articles: Article[] = [
         ],
       },
       {
+        heading: "Nytt fra 1. desember 2026: 10 % IVA på visse korte utleieopphold",
+        body: [
+          "Den spanske Kongressen stadfestet Real Decreto-ley 29/2026 den 12. november 2026. Artikkel 7 fastsetter at møblert boligutleie til samme leietaker på høyst 30 netter som hovedregel ikke er IVA-fritatt når boligen ikke er utleiers faste bosted. Disse tjenestene får 10 % IVA fra 1. desember 2026. Hotellignende tilleggstjenester kan utløse IVA-plikt uavhengig av oppholdslengde.",
+          "Dette er merverdiavgift på utleietjenesten – ikke kjøpsskatten på boligen, og heller ikke en generell 10 % skatt på all ordinær langtidsleie. De nasjonale skattereglene er forskjellige fra Comunitat Valencianas regionale definisjon av turistutleie på normalt høyst 10 dager. At et opphold faller utenfor regional turistdefinisjon betyr derfor ikke at det er IVA-fritt.",
+          "Ved 1 000 € i avtalt pris før IVA kommer 100 € i IVA i tillegg. Hvis gjesten i stedet betaler 1 000 € inkludert IVA, er avgiftsgrunnlaget 909,09 € og IVA-beløpet 90,91 €. Kontroller derfor om prisanslagene i utleiebudsjettet er inklusive eller eksklusive IVA, og hold utgående IVA adskilt fra inntekt og driftskostnader.",
+          "Offisielle kilder: Kongressens stadfestelse https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23755 ; lovtekstens artikkel 7 https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823 ; Agencia Tributaria https://www3.agenciatributaria.gob.es/Sede/iva/novedades-iva/novedades-normativa-2026/real-decreto-ley-29-2026-octubre.html . Les også vår markedsoppdatering: /magasin/utleie-spania-10-prosent-iva-vedtatt-november-2026."
+        ]
+      },
+      {
         heading: "Hva påvirker leieinntektene på Costa Blanca?",
         body: [
           "En god utleiebolig er ikke nødvendigvis den største eller dyreste. To leiligheter til samme pris kan få svært forskjellig etterspørsel. Gangavstand til strand, restauranter og dagligvarer, adkomst fra flyplass, parkering, heis, solforhold, terrasse og gode soverom kan telle mer enn ekstra kvadratmeter.",
@@ -1111,7 +1120,7 @@ export const articles: Article[] = [
         heading: "Eksempel: fra brutto leieinntekt til netto resultat",
         body: [
           "La oss bruke en tenkt leilighet med lovlig utleieadgang. Tallene nedenfor er kun et pedagogisk scenario, ikke markedsstatistikk, pristilbud eller prognose for noen bestemt adresse.",
-          "Anta 8 utleide høysesonguker til 1 200 euro per uke, 10 uker i skuldersesong til 800 euro og 8 uker i lavsesong til 550 euro. Da blir brutto leieinntekt 22 000 euro per år. Resten av året består av eget bruk, vedlikehold eller ubookede perioder.",
+          "Anta 8 utleide høysesonguker til 1 200 euro per uke, 10 uker i skuldersesong til 800 euro og 8 uker i lavsesong til 550 euro. Da blir brutto leieinntekt 22 000 euro per år. Resten av året består av eget bruk, vedlikehold eller ubookede perioder. Eksemplet forutsetter priser eksklusive eventuell utgående IVA; ved faste gjestepriser inklusive IVA må avgiftsdelen trekkes ut før beregningen.",
         ],
         table: {
           caption: "Illustrativt årsregnskap i euro – tallene må erstattes med dokumenterte anslag for den aktuelle boligen.",
