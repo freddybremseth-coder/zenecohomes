@@ -93,8 +93,8 @@ export const monthlyMarketUpdates: Article[] = [
         "Sammenlign totalbudsjett, boligstandard, avstand til tjenester, planløsning, løpende utgifter og realistisk bruk av boligen – ikke bare et kommune-gjennomsnitt."
       ]},
       { heading: "Nye regler for korttidsutleie og 10 % IVA: Hva gjelder?", body: [
-        "Real Decreto-ley 29/2026 ble vedtatt 6. oktober og publisert i BOE 7. oktober. Lovteksten setter 1. desember 2026 som virkningsdato for 10 % IVA på bestemte møblerte utleieforhold på maksimalt 30 netter til samme leietaker, med unntak og vilkår. Den parlamentariske stadfestelsen må kontrolleres før regelen brukes som en endelig økonomisk forutsetning.",
-        "Kilde: BOE https://www.boe.es/eli/es/rdl/2026/10/06/29/ . Dette er ikke en generell ny turistlisens, og IVA-regler erstatter aldri kommunale tillatelser."
+        "Real Decreto-ley 29/2026 ble vedtatt 6. oktober og publisert i BOE 7. oktober. Lovteksten setter 1. desember 2026 som virkningsdato for 10 % IVA på bestemte møblerte utleieforhold på maksimalt 30 netter til samme leietaker, med unntak og vilkår. Kongressen stadfestet dekretloven 12. november 2026, offentliggjort i BOE 13. november. Kjøperen må fortsatt få konkret skattefaglig vurdering av vilkår og unntak.",
+        "Kilder: BOE lovtekst https://www.boe.es/eli/es/rdl/2026/10/06/29/ og Kongressens stadfestelse https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23755 . Dette er ikke en generell ny turistlisens, og IVA-regler erstatter aldri kommunale tillatelser."
       ]},
       { heading: "Kan 21 %-IVA på en turistleilighet trekkes fra?", body: [
         "Enkelte turist- eller næringsklassifiserte nybygg selges med 21 % IVA, mot normalt 10 % på ordinære nye boliger. Hvis kjøperen faktisk driver virksomhet som gir fradragsrett, kan inngående IVA på kjøpet etter en konkret avgiftsvurdering være fradragsberettiget. Fradraget er ikke automatisk, og privat bruk eller senere endret bruk kan føre til begrensninger og justeringer.",
