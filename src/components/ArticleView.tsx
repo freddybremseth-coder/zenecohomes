@@ -1170,7 +1170,7 @@ export function ArticleView({ article }: { article: Article }) {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if (paragraph.includes("[[") || paragraph.includes("**")) {
+                    if (paragraph.includes("[[") || paragraph.includes("**") || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "guide-tomtekjop-bygging-i-spania") {
                       return <p key={paragraph}>{renderInlineContent(paragraph)}</p>;
                     }
                     if (article.slug === "hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023") {
