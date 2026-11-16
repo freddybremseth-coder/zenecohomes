@@ -10,7 +10,7 @@ import { ANDREA_PORTRAIT_DATA_URI } from "@/lib/andreaPortrait";
 export const metadata: Metadata = {
   title: "Slik hjelper vi deg med boligkjøpet i Spania | Zen Eco Homes",
   description:
-    "Få personlig hjelp gjennom boligkjøpet i Spania – fra områdevalg og skreddersydde boligforslag til visninger, overtakelse og oppfølging.",
+    "Få personlig hjelp gjennom boligkjøpet i Spania – fra områdevalg og skreddersydde boligforslag til visninger, overtakelse og oppfølging hele veien.",
   alternates: {
     canonical: "/kjopsprosessen",
   },
