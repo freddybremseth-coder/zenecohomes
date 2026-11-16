@@ -3207,3 +3207,30 @@
     text-transform: uppercase;
   }
 }
+
+/* Rental tax explainer: comfortable reading margins on narrow screens. */
+@media (max-width: 640px) {
+  .article-shell.rental-tax-article {
+    padding-inline: clamp(30px, 7vw, 38px);
+  }
+  .rental-tax-article .article-cover-image {
+    width: 100%;
+    max-height: 280px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .rental-tax-article .article-layout {
+    margin-top: 30px;
+  }
+  .rental-tax-article .article-intro p,
+  .rental-tax-article .article-section > p {
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+  .rental-tax-article .article-section h2 {
+    max-width: 100%;
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
+    line-height: 1.18;
+  }
+}

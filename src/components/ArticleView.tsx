@@ -893,7 +893,7 @@ export function ArticleView({ article }: { article: Article }) {
   const canonicalPath = articlePath(article);
   const relatedArticles = resolveRelatedArticles(article, silo);
   const isCorporate = silo === "corporate";
-  const isCurrentMarketArticle = article.category === "Marked akkurat nå";
+  const isCurrentMarketArticle = article.category === "Marked akkurat nå" && !article.slug.startsWith("utleie-spania-10-prosent-iva");
   const currentMarketMaxAgeDays = 45;
   const currentMarketAgeDays = isCurrentMarketArticle
     ? Math.floor((Date.now() - new Date(article.updated).getTime()) / 86_400_000)
@@ -984,7 +984,7 @@ export function ArticleView({ article }: { article: Article }) {
         </div>
       </section>
 
-      <section className="section article-shell">
+      <section className={`section article-shell${article.slug.startsWith("utleie-spania-10-prosent-iva") ? " rental-tax-article" : ""}`}>
         <ResilientNativeImage className="article-cover-image" src={article.image} alt={article.imageAlt} />
 
         <div className="article-layout">
