@@ -988,7 +988,7 @@ export function ArticleView({ article }: { article: Article }) {
         <ResilientNativeImage className="article-cover-image" src={article.image} alt={article.imageAlt} />
 
         <div className="article-layout">
-          <article className={`article-main${article.slug === "finansiere-bolig-i-spania" ? " finance-guide-article" : ""}`}>
+          <article className={`article-main${article.slug === "finansiere-bolig-i-spania" ? " finance-guide-article" : ""}${article.slug === "hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023" ? " article-2023-link-style" : ""}`}>
             <div className="article-intro">
               {isCurrentMarketArticle && (
                 <div className="market-snapshot-note">
@@ -1184,9 +1184,9 @@ export function ArticleView({ article }: { article: Article }) {
                         "midlertidig stans i ikke-essensiell byggeaktivitet våren 2020": "https://www.europapress.es/economia/noticia-grandes-constructoras-inmobiliarias-paralizan-obras-espana-20200330190441.html",
                         "valutakursen": "/guide/spansk-bankkonto-valutaveksling",
                         "Idealistas historikk for Alicante by": "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/alicante-alacant/historico/",
-                        "«vil markedet falle neste år?»": "/magasin/kjop-bolig-i-spania-na-eller-vente",
+                        "Du trenger ikke kjøpe i dag.": "/magasin/kjop-bolig-i-spania-na-eller-vente",
                       };
-                      const linkedText = paragraph.split(/(boligkjøp i Spania|midlertidig stans i ikke-essensiell byggeaktivitet våren 2020|valutakursen|Idealistas historikk for Alicante by|«vil markedet falle neste år?»)/g);
+                      const linkedText = paragraph.split(/(boligkjøp i Spania|midlertidig stans i ikke-essensiell byggeaktivitet våren 2020|valutakursen|Idealistas historikk for Alicante by|Du trenger ikke kjøpe i dag\.)/g);
                       return (
                         <p key={paragraph}>
                           {linkedText.map((part, i) => {
