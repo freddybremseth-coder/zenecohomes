@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
-import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
+
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { findEquivalentBySlug, seoHreflang, siteLocales, withLocale } from "@/lib/i18n";
@@ -230,7 +230,9 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Når du kjøper eiendom i Spania bør du beregne 10–15 % ekstra i kjøpsomkostninger utover kjøpesummen. Ved nybygg ligger ekstrakostnaden mellom 12 og 14 prosent, mens bruktbolig ligger mellom 10 og 13 prosent.
           </p>
-          <PurchaseBudgetCalculator />
+          <p>
+            Bruk gjerne <Link href="/magasin/hva-far-du-for-4-6-8-10-millioner-costa-blanca#boligbudsjett-kalkulator">boligbudsjett-kalkulatoren i magasinet</Link> for å regne ut en realistisk totalramme før du velger bolig.
+          </p>
           <p>
             I tillegg bør du ta høyde for de løpende <Link href="/guide/lopende-kostnader-eie-bolig-spania">kostnadene ved å eie bolig i Spania</Link>, som blant annet omfatter eiendomsskatt, forsikring, strøm, vann og fellesutgifter.
           </p>
