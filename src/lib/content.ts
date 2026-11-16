@@ -190,7 +190,7 @@ export const articles: Article[] = [
         "body": [
           "Ja, utlendinger kan kjøpe tomter og bygge bolig i Spania, men kjøpet gir ikke automatisk rett til å bygge. Byggeretten bestemmes av tomtens juridiske status, kommunale planer, regional lovgivning og eventuelle særskilte vern. Du må derfor skille mellom å ha rett til å eie grunnen og å ha tillatelse til et boligprosjekt.",
           "Det tryggeste første steget er å identifisere nøyaktig matrikkel-/eiendomsreferanse og be kommunens byplankontor (*urbanismo*) om skriftlig planinformasjon. Arkitekten må vurdere om huset du ser for deg er mulig på akkurat denne eiendommen, og advokaten må kontrollere eierskap og kontraktsvilkår.",
-          "Begynn gjerne med [[hovedguiden til boligkjøp i Spania|/guide/kjope-bolig-i-spania]] for den generelle kjøpsprosessen, men bruk kontrollpunktene nedenfor når du vurderer en ubebygd tomt."
+          "Hvis du vurderer å kjøpe bolig i Spania, men også er nysgjerrig på muligheten for å bygge selv, kan du lese mer om hva som inngår i et vanlig [[boligkjøp i Spania|/guide/kjope-bolig-i-spania]] i vår kjøpsguide. Bruk kontrollpunktene nedenfor når du vurderer en ubebygd tomt."
         ]
       },
       {
@@ -291,7 +291,7 @@ export const articles: Article[] = [
         "body": [
           "Totalprisen er summen av tomt, kjøpskostnader, prosjektering, tillatelser, selve byggingen, teknisk infrastruktur, uteområder og en reserve. Et pristilbud på en nøkkelferdig villa kan mangle store poster som tomt, fundamentering, vanskelige grunnforhold, tilkoblinger, basseng eller offentlige avgifter.",
           "Et godt budsjett deles i separate poster med ansvarlig leverandør og status for hvert beløp: fast pris, estimat, uavklart eller betinget. Kommunen kan blant annet ilegge lokal byggeskatt (*ICIO*) og gebyrer. Etter den nasjonale kommuneskatteloven kan kommunen fastsette ICIO-sats opp til 4 % av beregningsgrunnlaget for relevante byggetiltak; det er ikke riktig å legge 4 % på hele eiendomskjøpet uten videre. Sjekk sats og beregningsgrunnlag i den aktuelle kommunen.",
-          "Se [[reglene for kommunal byggeskatt ICIO|https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214]] og [[guiden til kostnader ved boligkjøp|/guide/kjope-bolig-i-spania]]. Tabellen nedenfor er en budsjettstruktur, ikke et gjeldende pristilbud."
+          "Se [[reglene for kommunal byggeskatt ICIO|https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214]]. Tabellen nedenfor er en budsjettstruktur, ikke et gjeldende pristilbud."
         ],
         "table": {
           "headers": [
@@ -343,7 +343,7 @@ export const articles: Article[] = [
         "heading": "Slik kan en billig tomt bli et dyrt byggeprosjekt",
         "body": [
           "Anta at du sammenligner to hypotetiske tomter. Tomt A koster mindre, men ligger langt fra strømnettet, trenger privat adkomst og har store høydeforskjeller. Tomt B koster mer, men har dokumentert tilgjengelig infrastruktur og enklere grunnforhold. Uten konkrete tilkoblings- og grunnarbeidsanslag er det umulig å vite hvilken som blir billigst totalt.",
-          "Be en arkitekt eller prosjektleder lage samme spesifikasjon og samme kostnadsposter for begge tomtene. Da blir det lettere å sammenligne pris på et ferdig lovlig og brukbart hus, ikke bare prisen på grunnen.",
+          "Be en arkitekt eller prosjektleder lage samme spesifikasjon og samme kostnadsposter for begge tomtene. Da blir det lettere å sammenligne prisen på et ferdig, lovlig og brukbart hus med [[ferdige boliger til salgs i Spania|/eiendommer]], ikke bare prisen på grunnen.",
           "Jeg ville prioritert tomten som gir et realistisk og dokumenterbart sluttresultat innenfor budsjettet, fremfor den som bare har den laveste annonserte tomteprisen."
         ]
       },
@@ -1070,7 +1070,7 @@ export const articles: Article[] = [
     keywords: ["utleie bolig Spania", "leieinntekt Costa Blanca", "turistutleie Valencia regler", "netto leieinntekt Spania", "langtidsutleie Spania"],
     intro: [
       "Kan leieinntektene betale deler av ferieleiligheten i Spania – eller til og med gjøre den til en investering? Det korte svaret er at det er mulig, men verken høy annonsert døgnpris eller en pen avkastningsprosent forteller hva du faktisk sitter igjen med.",
-      "Det avgjørende er kombinasjonen av lovlig utleieform, beliggenhet, tilgjengelige utleieuker, realistisk etterspørsel og kostnader. Her viser vi hvordan du vurderer en konkret bolig på Costa Blanca – og hvorfor regnestykket bør være klart før reservasjon, ikke etter overtakelse.",
+      "Det avgjørende er kombinasjonen av lovlig utleieform, beliggenhet, tilgjengelige utleieuker, realistisk etterspørsel og kostnader. Her viser vi hvordan du vurderer en konkret bolig på Costa Blanca – og hvorfor regnestykket bør være klart før reservasjon, ikke etter overtakelse. Dersom du vurderer å kjøpe bolig med tanke på utleie, bør du også se på de øvrige forholdene ved boligkjøpet – ikke bare forventede leieinntekter. I vår guide til [[å kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]] får du en oversikt over hva du bør undersøke før du går videre med et kjøp.",
     ],
     sections: [
       {
@@ -1095,10 +1095,10 @@ export const articles: Article[] = [
       {
         heading: "Nytt fra 1. desember 2026: 10 % IVA på visse korte utleieopphold",
         body: [
-          "Den spanske Kongressen stadfestet Real Decreto-ley 29/2026 den 12. november 2026. Artikkel 7 fastsetter at møblert boligutleie til samme leietaker på høyst 30 netter som hovedregel ikke er IVA-fritatt når boligen ikke er utleiers faste bosted. Disse tjenestene får 10 % IVA fra 1. desember 2026. Hotellignende tilleggstjenester kan utløse IVA-plikt uavhengig av oppholdslengde.",
+          "[[Den spanske Kongressen stadfestet|https://boe.es/buscar/doc.php?id=BOE-A-2026-23755]] [[Real Decreto-ley 29/2026|https://sede.agenciatributaria.gob.es/Sede/iva/novedades-iva/novedades-normativa-2026/real-decreto-ley-29-2026-octubre.html]] den 12. november 2026. [[Artikkel 7|https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823#a7]] fastsetter at møblert boligutleie til samme leietaker på høyst 30 netter som hovedregel ikke er IVA-fritatt når boligen ikke er utleiers faste bosted. Disse tjenestene får 10 % IVA fra 1. desember 2026. Hotellignende tilleggstjenester kan utløse IVA-plikt uavhengig av oppholdslengde.",
           "Dette er merverdiavgift på utleietjenesten – ikke kjøpsskatten på boligen, og heller ikke en generell 10 % skatt på all ordinær langtidsleie. De nasjonale skattereglene er forskjellige fra Comunitat Valencianas regionale definisjon av turistutleie på normalt høyst 10 dager. At et opphold faller utenfor regional turistdefinisjon betyr derfor ikke at det er IVA-fritt.",
           "Ved 1 000 € i avtalt pris før IVA kommer 100 € i IVA i tillegg. Hvis gjesten i stedet betaler 1 000 € inkludert IVA, er avgiftsgrunnlaget 909,09 € og IVA-beløpet 90,91 €. Kontroller derfor om prisanslagene i utleiebudsjettet er inklusive eller eksklusive IVA, og hold utgående IVA adskilt fra inntekt og driftskostnader.",
-          "Offisielle kilder: Kongressens stadfestelse https://boe.es/buscar/doc.php?id=BOE-A-2026-23755 ; lovtekstens artikkel 7 https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823 ; Agencia Tributaria https://sede.agenciatributaria.gob.es/Sede/iva/novedades-iva/novedades-normativa-2026/real-decreto-ley-29-2026-octubre.html . Les også vår markedsoppdatering: /magasin/utleie-spania-10-prosent-iva-vedtatt-november-2026."
+          "Les også vår [[markedsoppdatering om 10 % IVA ved korttidsutleie|/magasin/utleie-spania-10-prosent-iva-vedtatt-november-2026]]."
         ]
       },
       {
@@ -1176,7 +1176,7 @@ export const articles: Article[] = [
       {
         heading: "Slik vurderer vi en bolig med utleiepotensial",
         body: [
-          "Vi starter med det viktigste spørsmålet: Skal boligen først og fremst være ditt eget sted i Spania, eller må den også oppfylle et bestemt inntektsmål? Deretter sammenligner vi aktuelle boliger ut fra bruk, tilgjengelige utleieperioder, målgruppe, beliggenhet og dokumenterbar lovlighet.",
+          "Vi starter med det viktigste spørsmålet: Skal boligen først og fremst være ditt eget sted i Spania, eller må den også oppfylle et bestemt inntektsmål? Deretter sammenligner vi [[aktuelle boliger|/eiendommer]] ut fra bruk, tilgjengelige utleieperioder, målgruppe, beliggenhet og dokumenterbar lovlighet.",
           "Vi kan bidra med bolig- og områdeanalyse og en praktisk, scenario-basert inntektsvurdering. Uavhengig juridisk og skattemessig kontroll bør utføres av kvalifiserte fagpersoner. Målet er ikke å selge en optimistisk avkastning, men å hjelpe deg å ta en beslutning du forstår.",
         ],
       },
@@ -1236,10 +1236,10 @@ export const articles: Article[] = [
         "body": [
           "Det koster vanligvis mellom 2 400 og 6 230 euro i året å eie en enkel leilighet i Spania, mens en villa med privat basseng koster mellom 3 730 og 10 350 euro.",
           "Nybygg kan gi mer forutsigbare vedlikeholdskostnader i starten, men felleskostnader, energibruk og fasiliteter påvirker fortsatt totalbudsjettet.",
-          "Tabellen nedenfor sammenligner de anslåtte årlige kostnadene for en leilighet med fellesbasseng og en villa med privat basseng og hage. Vi skiller mellom løpende kostnader og et totalbudsjett som også inkluderer penger satt av til vedlikehold og reparasjoner.",
+          "Tabellen nedenfor sammenligner de anslåtte årlige kostnadene for en leilighet med fellesbasseng og en villa med privat basseng og hage. Du kan også se [[leiligheter, rekkehus og villaer til salgs i Spania|/eiendommer]] for å sammenligne aktuelle boligtyper. Vi skiller mellom løpende kostnader og et totalbudsjett som også inkluderer penger satt av til vedlikehold og reparasjoner.",
           "Jeg opplever at mange boligkjøpere undervurderer de samlede kostnadene ved å eie bolig i Spania. I tillegg til strøm og vann kommer blant annet felleskostnader, eiendomsskatt, renovasjonsavgifter, forsikring og vedlikehold.",
           "For eldre boliger kan det også komme betydelige utgifter til reparasjoner og utskifting av tekniske installasjoner. Jeg anbefaler derfor å se på de samlede bokostnadene over tid, ikke bare kjøpesummen.",
-          "Husk at kostnadene ved selve boligkjøpet kommer i tillegg. Les også vår guide om hva det koster å kjøpe bolig i Spania."
+          "Husk at kostnadene ved selve [[boligkjøpet|/guide/kjope-bolig-i-spania]] kommer i tillegg."
         ],
         "table": {
           "headers": ["Årlige kostnader", "Leilighet med fellesbasseng", "Villa med privat basseng"],
@@ -1358,7 +1358,7 @@ export const articles: Article[] = [
           "• Tilpass vedlikeholdet: Planlegg hage- og bassengvedlikehold etter sesong og behov, slik at du unngår unødvendige kostnader og skader.",
           "Når en bolig står tom over lengre tid, er det ikke bare de faste kostnadene jeg mener du bør være oppmerksom på. Fukt, vannlekkasjer, dårlig ventilasjon og problemer med klimaanlegget kan utvikle seg uten at noen oppdager det. Små problemer kan dermed bli til større skader.",
           "Jeg anbefaler jevnlig tilsyn, særlig etter perioder med kraftig regnvær, og at du undersøker forsikringsvilkårene for boliger som står ubebodd over lengre tid. Hvis du ikke selv er i Spania store deler av året, kan det være nyttig å ha noen som kontrollerer boligen regelmessig.",
-          "Les mer om tilsyn og nøkkelholdertjenester hos Zen Eco Homes Care."
+          "Les mer om tilsyn og nøkkelholdertjenester hos [[Zen Eco Homes Care|https://care.zenecohomes.com/]]."
         ]
       }
     ],
@@ -1589,7 +1589,7 @@ export const articles: Article[] = [
     ],
     intro: [
       "Boligjakten skal være inspirerende. Når du finner et sted du virkelig vil eie, er neste steg å få de viktige juridiske forholdene kontrollert før du binder deg økonomisk. Eierforhold, heftelser, lovlig bruk og avtalevilkår er normale kontrollpunkter som en uavhengig advokat kan hjelpe deg å avklare. Eventuelle avvik må vurderes konkret før kjøpet går videre.",
-      "Denne guiden viser hva en uavhengig spansk advokat bør undersøke, hvilke spørsmål det er lurt å stille, og hvordan eventuelle funn kan håndteres. Ikke alle risikoer gjelder alle boliger: kontrollene må tilpasses nybygg, bruktbolig eller landeiendom. Guiden erstatter ikke individuell juridisk rådgivning eller kommunal kontroll.",
+      "Denne guiden viser hva en uavhengig spansk advokat bør undersøke, hvilke spørsmål det er lurt å stille, og hvordan eventuelle funn kan håndteres. Ikke alle risikoer gjelder alle boliger: kontrollene må tilpasses nybygg, bruktbolig eller landeiendom. Guiden erstatter ikke individuell juridisk rådgivning eller kommunal kontroll. Vil du ha oversikt over hele prosessen fra områdevalg til overtakelse, kan du lese vår [[guide til å kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]].",
     ],
     sections: [
       {
@@ -1801,7 +1801,7 @@ export const articles: Article[] = [
       {
         heading: "Tenk på et framtidig salg allerede ved kjøp",
         body: [
-          "Beliggenhet, standard, dokumentasjon og etterspørsel kan påvirke hvor lett en bolig lar seg selge videre. Det er fornuftig å vurdere videresalg som ett av flere kriterier, men framtidig pris kan aldri garanteres.",
+          "Beliggenhet, standard, dokumentasjon og etterspørsel kan påvirke hvor lett en bolig lar seg selge videre. Når du skal [[kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]], er det fornuftig å vurdere videresalg som ett av flere kriterier, men framtidig pris kan aldri garanteres.",
         ],
       },
     ],
@@ -1852,7 +1852,7 @@ export const articles: Article[] = [
       "ISD Spania bolig",
     ],
     intro: [
-      "Et boligkjøp i Spania er ofte et langsiktig eierskap som kan gå i arv. Arv og gave over landegrenser påvirkes av flere regelsett og bør vurderes konkret før tiltak gjennomføres. Dette er generell informasjon; spesialisert juridisk/skatterådgivning anbefales.",
+      "Et [[boligkjøp i Spania|/guide/kjope-bolig-i-spania]] er ofte et langsiktig eierskap som kan gå i arv. Arv og gave over landegrenser påvirkes av flere regelsett og bør vurderes konkret før tiltak gjennomføres. Dette er generell informasjon; spesialisert juridisk/skatterådgivning anbefales.",
       "Her er hovedpunktene eiere bør være oppmerksomme på.",
     ],
     sections: [
@@ -2154,7 +2154,7 @@ export const articles: Article[] = [
       "overføre penger Spania",
     ],
     intro: [
-      "Et boligkjøp i Spania betales i euro. En spansk bankkonto er ofte praktisk for kjøpsoppgjør og løpende kostnader, men er ikke et universelt lovkrav for alle transaksjoner. Bank, advokat, betalingsmetode og leverandører avgjør hva som er praktisk og nødvendig i ditt kjøp.",
+      "Et [[boligkjøp i Spania|/guide/kjope-bolig-i-spania]] betales i euro. En spansk bankkonto er ofte praktisk for kjøpsoppgjør og løpende kostnader, men er ikke et universelt lovkrav for alle transaksjoner. Bank, advokat, betalingsmetode og leverandører avgjør hva som er praktisk og nødvendig i ditt kjøp.",
       "Valutaveksling fra kroner til euro kan samtidig påvirke totaløkonomien. Sammenlign totalkostnad og planlegg betalingsflyten i god tid. Dette er generell informasjon, ikke finansiell rådgivning.",
     ],
     sections: [
@@ -2298,7 +2298,7 @@ export const articles: Article[] = [
     ],
     intro: [
       "Boliglån i Spania er fullt mulig for nordmenn, også dersom du bor og skatter i Norge. Men prosessen fungerer ikke helt som i en norsk bank. Hvor mye du kan låne avhenger blant annet av om boligen skal være fast bolig eller feriebolig, inntekten og gjelden din, bankens takst av eiendommen og hvilken bank du søker hos.",
-      "Jeg har selv spansk boliglån og har fulgt boligkjøpsprosessen både som privat kjøper og som rådgiver for nordmenn som kjøper bolig i Spania. Mitt viktigste råd er å ikke behandle finansieringen som noe man ordner helt til slutt. Får du oversikt over lånemuligheter, egenkapital og totale kjøpskostnader tidlig, blir resten av boligjakten betydelig enklere – og du står sterkere når du finner boligen du faktisk ønsker å kjøpe.",
+      "Jeg har selv spansk boliglån og har fulgt boligkjøpsprosessen både som privat kjøper og som rådgiver for nordmenn som [[kjøper bolig i Spania|/guide/kjope-bolig-i-spania]]. Mitt viktigste råd er å ikke behandle finansieringen som noe man ordner helt til slutt. Får du oversikt over lånemuligheter, egenkapital og totale kjøpskostnader tidlig, blir resten av boligjakten betydelig enklere – og du står sterkere når du finner boligen du faktisk ønsker å kjøpe.",
     ],
     sections: [
       {
@@ -2340,7 +2340,7 @@ export const articles: Article[] = [
       {
         heading: "Slik foregår en vanlig søknadsprosess",
         body: [
-          "En typisk søknad om boliglån i Spania starter med økonomien din og avsluttes med den konkrete boligen. Først vurderer banken inntekt, gjeld, egenkapital og øvrig økonomi. Når du har funnet en bolig, må eiendommen normalt takseres av en godkjent takstmann. Banken vurderer deretter både kunden og sikkerheten før den gir endelig lånetilbud.",
+          "En typisk søknad om boliglån i Spania starter med økonomien din og avsluttes med den konkrete boligen. Først vurderer banken inntekt, gjeld, egenkapital og øvrig økonomi. Når du har funnet en aktuell bolig blant [[boliger til salgs i Spania|/eiendommer]], må eiendommen normalt takseres av en godkjent takstmann. Banken vurderer deretter både kunden og sikkerheten før den gir endelig lånetilbud.",
           "Etter den spanske boliglånsloven skal kunden blant annet få FEIN, den standardiserte europeiske låneinformasjonen, og FiAE med viktige vilkår og advarsler. Dokumentasjonen skal normalt være tilgjengelig minst ti kalenderdager før signering. Notaren skal kontrollere informasjonen og gi kunden individuell rådgivning før boliglånet kan gjennomføres.",
           "Her er det en tydelig forskjell fra det mange er vant til i Norge. Flere spanske banker har digitalisert selve søknaden og lar utenlandske kunder sende inn dokumentasjon elektronisk, så det er ikke riktig at du alltid må møte fysisk i banken. Notarprosessen er derimot en egen del av gjennomføringen. Låntakeren eller en behørig representant må oppfylle kravene til notarial behandling og rådgivning. En advokat, gestor eller annen representant med korrekt fullmakt kan håndtere mye praktisk, men en fullmakt må dekke det som faktisk skal gjøres.",
         ],
