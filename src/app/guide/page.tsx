@@ -11,7 +11,13 @@ export const metadata = {
   title: "Guider om boligkjøp i Spania | Råd fra Zen Eco Homes",
   description:
     "Finn de viktigste guidene om boligkjøp i Spania: kostnader, nybygg, områder, finansiering, NIE, juridikk, skatt, utleie og livet som boligeier.",
-  alternates: { canonical: "/guide" },
+  alternates: { canonical: "/guide", languages: {
+        "nb-NO": "/guide",
+        "en": "/en/guides",
+        "de-DE": "/de/ratgeber",
+        "es-ES": "/es/guias",
+        "x-default": "/guide"
+    } },
   openGraph: {
     title: "Guider om boligkjøp i Spania | Zen Eco Homes",
     description:
