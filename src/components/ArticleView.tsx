@@ -1001,7 +1001,7 @@ export function ArticleView({ article }: { article: Article }) {
                   </span>
                 </div>
               )}
-              {silo === "guide" && article.slug !== "finansiere-bolig-i-spania" && (
+              {silo === "guide" && !["finansiere-bolig-i-spania", "guide-tomtekjop-bygging-i-spania", "boliglan-spansk-bank-nordmenn", "spansk-bankkonto-valutaveksling", "lopende-kostnader-eie-bolig-spania", "utleie-inntektspotensial-bolig-spania", "skatt-ved-salg-bolig-spania", "arv-gaveskatt-bolig-spania"].includes(article.slug) && (
                 <p className="article-cluster-link">
                   Denne artikkelen er en del av{" "}
                   <Link href="/guide/kjope-bolig-i-spania">vår komplette guide til å kjøpe bolig i Spania</Link>.
