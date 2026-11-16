@@ -1068,7 +1068,7 @@ export const articles: Article[] = [
     image: "/assets/magasin-covers/utleie-inntekt.svg",
     imageAlt: "Illustrasjon av bolig, utleieinntekter og vurdering av utleiepotensial i Spania",
     seoTitle: "Utleie av bolig i Spania | Inntekt, regler og regneeksempel",
-    seoDescription: "Utleie på Costa Blanca: nettoinntekt, lokale tillatelser og 10 % IVA på bestemte korttidsopphold fra 1. desember 2026.",
+    seoDescription: "Utleie på Costa Blanca: Se nettoinntekt, lokale tillatelser og 10 % IVA på visse korttidsopphold fra desember 2026. Regler, eksempler og kjøperråd.",
     keywords: ["utleie bolig Spania", "leieinntekt Costa Blanca", "turistutleie Valencia regler", "netto leieinntekt Spania", "langtidsutleie Spania"],
     intro: [
       "Kan leieinntektene betale deler av ferieleiligheten i Spania – eller til og med gjøre den til en investering? Det korte svaret er at det er mulig, men verken høy annonsert døgnpris eller en pen avkastningsprosent forteller hva du faktisk sitter igjen med.",
