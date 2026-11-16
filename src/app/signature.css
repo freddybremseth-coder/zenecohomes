@@ -3211,7 +3211,7 @@
 /* Rental tax explainer: comfortable reading margins on narrow screens. */
 @media (max-width: 640px) {
   .article-shell.rental-tax-article {
-    padding-inline: clamp(24px, 6vw, 34px);
+    padding-inline: clamp(30px, 7vw, 38px);
   }
   .rental-tax-article .article-cover-image {
     width: 100%;
