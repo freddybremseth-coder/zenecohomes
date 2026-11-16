@@ -2111,6 +2111,17 @@
   line-height: 1.82;
 }
 
+.article-section > p a {
+  color: var(--ze-sea);
+  text-decoration: underline;
+  text-decoration-color: rgba(8, 74, 78, 0.25);
+  text-underline-offset: 3px;
+}
+
+.article-section > p a:hover {
+  text-decoration-color: currentColor;
+}
+
 .article-bullets {
   display: grid;
   gap: 10px;
