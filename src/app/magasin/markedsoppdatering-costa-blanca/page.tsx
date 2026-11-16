@@ -51,12 +51,12 @@ export default function MarketSeriesPage() {
           </nav>
           <div style={{ display: "grid", gap: 18 }}>
             {reports.map((report, index) => (
-              <article key={report.slug} id={report.slug} style={{ scrollMarginTop: 110, display: "grid", gridTemplateColumns: "minmax(0,1fr)", border: "1px solid #d9d5c9", borderRadius: 18, background: "#fff", overflow: "hidden" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr)", gap: 0 }}>
-                  <Link href={articlePath(report)} style={{ display: "block", position: "relative", height: "clamp(150px,32vw,270px)" }} aria-label={`Les ${report.title}`}>
+              <article className="market-report-card" key={report.slug} id={report.slug} style={{ scrollMarginTop: 110, display: "grid", gridTemplateColumns: "minmax(0,1fr)", border: "1px solid #d9d5c9", borderRadius: 18, background: "#fff", overflow: "hidden" }}>
+                <div className="market-report-card-inner" style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr)", gap: 0 }}>
+                  <Link className="market-report-card-image" href={articlePath(report)} style={{ display: "block", position: "relative", height: "clamp(150px,32vw,270px)" }} aria-label={`Les ${report.title}`}>
                     <Image src={report.image} alt={report.imageAlt} fill sizes="(max-width: 768px) 100vw, 900px" style={{ objectFit: "cover" }} />
                   </Link>
-                  <div style={{ padding: "clamp(1rem,3vw,1.7rem)", display: "grid", gap: 10 }}>
+                  <div className="market-report-card-content" style={{ padding: "clamp(1rem,3vw,1.7rem)", display: "grid", gap: 10 }}>
                     <p className="eyebrow" style={{ margin: 0 }}>{index === 0 ? "NYESTE · " : ""}{norwegianMonth.format(new Date(`${report.date}T12:00:00Z`))} · {report.readingTime}</p>
                     <h3 style={{ fontSize: "clamp(1.25rem,2.5vw,1.7rem)", lineHeight: 1.25, margin: 0, overflowWrap: "break-word" }}>
                       <Link href={articlePath(report)} style={{ color: "inherit", textDecoration: "none" }}>{report.title}</Link>
