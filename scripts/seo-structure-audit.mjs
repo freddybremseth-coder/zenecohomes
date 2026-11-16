@@ -51,9 +51,15 @@ for (const href of [
 ]) {
   requireText(buyingProcess, `href="${href}"`, "buying-process customer-journey internal link");
 }
-requireText(buyingProcess, 'Hva gjør <span className="human-name">Zen Eco Homes</span> <span className="unbroken-word">gjennom</span> kjøpsprosessen?', "customer-journey intent and brand-name protection");
-requireText(buyingProcess, "Hvem gjør hva når du kjøper bolig i Spania?", "buyer/advisor/specialist responsibility split");
-requireText(buyingProcess, "Hva er forskjellen på denne siden og guiden", "buying-process vs cornerstone intent separation");
+const buyingProcessContent = read(buyingProcess);
+if (
+  buyingProcessContent.includes('aria-label="Roller og neste steg i boligkjøpet"') ||
+  buyingProcessContent.includes('Hva gjør <span className="human-name">Zen Eco Homes</span>') ||
+  buyingProcessContent.includes("Hvem gjør hva når du kjøper bolig i Spania?") ||
+  buyingProcessContent.includes("Hva er forskjellen på denne siden og guiden")
+) {
+  errors.push(`${buyingProcess}: removed roles/next-steps section or its cards have been reintroduced`);
+}
 if (fs.existsSync(path.join(root, "src/app/kjopsprosess/page.tsx"))) {
   errors.push("src/app/kjopsprosess/page.tsx: redirected legacy buying-process hub must not remain as duplicate content");
 }
