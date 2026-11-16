@@ -26,7 +26,7 @@ export default function MarketSeriesPage() {
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <section className="section" style={{ background: "#17232a", color: "#fff", paddingBlock: "clamp(2.25rem,5vw,4.5rem)" }}>
+      <section className="section" style={{ background: "#17232a", color: "#fff", paddingTop: "clamp(5.5rem,9vw,7rem)", paddingBottom: "clamp(2rem,5vw,4.5rem)" }}>
         <div className="mx-auto max-w-5xl px-5 md:px-8">
           <p className="eyebrow" style={{ marginBottom: 12, color: "#d9e7e3" }}>MARKED OG PRISER</p>
           <h1 style={{ fontSize: "clamp(1.85rem,5vw,3.65rem)", lineHeight: 1.14, maxWidth: "100%", overflowWrap: "normal", wordBreak: "normal", hyphens: "auto", marginBottom: 16 }}>
