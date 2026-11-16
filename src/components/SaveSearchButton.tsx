@@ -70,6 +70,7 @@ export function SaveSearchButton({ filters, locale = "no" }: { filters: Filters;
   const t = T[locale];
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error" | "invalid">("idle");
 
   async function submit(e: React.FormEvent) {
@@ -78,6 +79,7 @@ export function SaveSearchButton({ filters, locale = "no" }: { filters: Filters;
       setStatus("invalid");
       return;
     }
+    setErrorMessage("");
     setStatus("sending");
     try {
       const res = await fetch("/api/saved-search", {
@@ -85,8 +87,11 @@ export function SaveSearchButton({ filters, locale = "no" }: { filters: Filters;
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, locale, filters }),
       });
+      const payload = res.ok ? null : await res.json().catch(() => null);
+      setErrorMessage(typeof payload?.error === "string" ? payload.error : t.error);
       setStatus(res.ok ? "done" : "error");
     } catch {
+      setErrorMessage(t.error);
       setStatus("error");
     }
   }
@@ -133,7 +138,7 @@ export function SaveSearchButton({ filters, locale = "no" }: { filters: Filters;
         </button>
       </div>
       {status === "invalid" && <p className="save-search-msg error">{t.invalid}</p>}
-      {status === "error" && <p className="save-search-msg error">{t.error}</p>}
+      {status === "error" && <p className="save-search-msg error" role="alert">{errorMessage || t.error}</p>}
       <p className="save-search-privacy">{t.privacy}</p>
     </form>
   );

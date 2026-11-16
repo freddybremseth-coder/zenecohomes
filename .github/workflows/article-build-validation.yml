@@ -8,6 +8,8 @@ on:
       - 'src/components/ArticleView.tsx'
       - 'src/app/guide/**'
       - 'src/app/kjopsprosessen/page.tsx'
+      - 'src/app/api/saved-search/route.ts'
+      - 'src/components/SaveSearchButton.tsx'
       - 'scripts/seo-*.mjs'
       - '.github/workflows/article-build-validation.yml'
   push:
@@ -19,6 +21,8 @@ on:
       - 'src/components/ArticleView.tsx'
       - 'src/app/guide/**'
       - 'src/app/kjopsprosessen/page.tsx'
+      - 'src/app/api/saved-search/route.ts'
+      - 'src/components/SaveSearchButton.tsx'
       - 'scripts/seo-*.mjs'
       - '.github/workflows/article-build-validation.yml'
 permissions:
