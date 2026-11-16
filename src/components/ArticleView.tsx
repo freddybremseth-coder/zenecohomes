@@ -64,7 +64,6 @@ const RELATED_GUIDE_SLUGS: Record<string, string[]> = {
     "juridiske-fallgruver-boligkjop-spania",
   ],
   "finansiere-bolig-i-spania": [
-    "nie-skattenummer-spania",
     "boliglan-spansk-bank-nordmenn",
     "spansk-bankkonto-valutaveksling",
   ],
@@ -185,7 +184,6 @@ const CONTEXTUAL_GUIDE_LINKS: Record<string, ContextualLinkRule[]> = {
     {
       headingIncludes: "Norsk bank med pant i bolig i Spania",
       links: [
-        { label: "Slik skaffer du NIE-nummer", href: "/guide/nie-skattenummer-spania" },
         { label: "Spansk bankkonto og dokumentasjon ved oppgjøret", href: "/guide/spansk-bankkonto-valutaveksling" },
       ],
     },
@@ -1003,7 +1001,7 @@ export function ArticleView({ article }: { article: Article }) {
                   </span>
                 </div>
               )}
-              {silo === "guide" && (
+              {silo === "guide" && article.slug !== "finansiere-bolig-i-spania" && (
                 <p className="article-cluster-link">
                   Denne artikkelen er en del av{" "}
                   <Link href="/guide/kjope-bolig-i-spania">vår komplette guide til å kjøpe bolig i Spania</Link>.
