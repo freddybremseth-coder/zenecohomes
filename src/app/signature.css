@@ -2122,6 +2122,18 @@
   text-decoration-color: currentColor;
 }
 
+/* Keep links and source references visually consistent on the 2023 article only. */
+.article-main.article-2023-link-style .article-section a {
+  color: var(--ze-sea);
+  text-decoration: underline;
+  text-decoration-color: rgba(8, 74, 78, 0.25);
+  text-underline-offset: 3px;
+}
+
+.article-main.article-2023-link-style .article-section a:hover {
+  text-decoration-color: currentColor;
+}
+
 .article-bullets {
   display: grid;
   gap: 10px;
