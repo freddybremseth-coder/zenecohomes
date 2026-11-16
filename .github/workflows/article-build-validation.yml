@@ -10,6 +10,9 @@ on:
       - 'src/app/kjopsprosessen/page.tsx'
       - 'src/app/api/saved-search/route.ts'
       - 'src/components/SaveSearchButton.tsx'
+      - 'src/app/api/contact/route.ts'
+      - 'src/components/CorporateLeadForm.tsx'
+      - 'src/lib/realtyflow.ts'
       - 'scripts/seo-*.mjs'
       - '.github/workflows/article-build-validation.yml'
   push:
@@ -23,6 +26,9 @@ on:
       - 'src/app/kjopsprosessen/page.tsx'
       - 'src/app/api/saved-search/route.ts'
       - 'src/components/SaveSearchButton.tsx'
+      - 'src/app/api/contact/route.ts'
+      - 'src/components/CorporateLeadForm.tsx'
+      - 'src/lib/realtyflow.ts'
       - 'scripts/seo-*.mjs'
       - '.github/workflows/article-build-validation.yml'
 permissions:
