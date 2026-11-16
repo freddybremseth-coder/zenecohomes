@@ -143,6 +143,28 @@ export default function BuyingProcessPage() {
         </div>
       </section>
 
+      <section className="section buying-process-content" aria-label="Roller og neste steg i boligkjøpet">
+        <div className="section-heading">
+          <h2>Hva gjør <span className="human-name">Zen Eco Homes</span> <span className="unbroken-word">gjennom</span> kjøpsprosessen?</h2>
+          <p>Vi hjelper deg med områdevalg, boligforslag, visninger og koordinering. For juridiske, skattemessige og tekniske vurderinger anbefaler vi uavhengige fagpersoner.</p>
+        </div>
+        <div className="buying-process-help-grid">
+          <article>
+            <h3>Hvem gjør hva når du kjøper bolig i Spania?</h3>
+            <p>Du bestemmer hvilken bolig du vil kjøpe og godkjenner avtalene. Vi organiserer boligjakten, dialogen og visningene. Advokat kontrollerer rettigheter og kjøpekontrakter, mens bank og andre fagpersoner vurderer finansiering og tekniske forhold.</p>
+            <p>Før du går videre kan du lese om <Link href="/guide/juridiske-fallgruver-boligkjop-spania">juridiske fallgruver</Link>, <Link href="/guide/nie-skattenummer-spania">NIE og skattenummer</Link> og <Link href="/guide/boliglan-spansk-bank-nordmenn">boliglån i spansk bank</Link>.</p>
+          </article>
+          <article>
+            <h3>Finn riktig område og boligtype</h3>
+            <p>Vi hjelper deg med å sammenligne <Link href="/omrader">områdene på Costa Blanca</Link>, og med å vurdere om bruktbolig eller nybygg passer deg. Les også vår <Link href="/guide/nybygg-i-spania">guide om nybygg i Spania</Link>.</p>
+          </article>
+          <article>
+            <h3>Hva er forskjellen på denne siden og guiden til boligkjøp?</h3>
+            <p>Her beskriver vi hvordan vi følger deg opp som rådgivere. I den komplette <Link href="/guide/kjope-bolig-i-spania">guiden til boligkjøp i Spania</Link> finner du detaljer om selve kjøpsprosessen, dokumenter, kostnader og viktige kontroller.</p>
+          </article>
+        </div>
+      </section>
+
       <Testimonials heading="Dette sier våre tidligere kunder" carousel />
 
       <Footer />
