@@ -172,12 +172,13 @@ export function CorporateLeadForm() {
       if (!response.ok) throw new Error("submit");
       const result = await response.json().catch(() => ({}));
       if (result?.accepted !== true || !result?.submission_id) throw new Error("not accepted");
-      trackConfirmedFormSubmission("corporate-home-decision-note", result.submission_id);
+      await trackConfirmedFormSubmission("corporate-home-decision-note", result.submission_id);
       const delivery = result?.corporateDecisionNote?.delivery;
       form.reset();
       setUserCount("");
       submissionIdRef.current = null;
       setStatus(delivery?.success === true ? "sent" : "received");
+      window.location.assign("/takk-beslutningsnotat?delivery=" + (delivery?.success === true ? "sent" : "received"));
     } catch {
       setStatus("error");
     }
