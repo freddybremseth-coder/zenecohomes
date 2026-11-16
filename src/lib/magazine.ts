@@ -50,7 +50,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Jeg besøkte områder og prosjekter, møtte aktører og forsøkte å forstå hvilke utbyggere som hadde tro på markedet over tid. Når man er tett på prosjektene, ser man forskjell på annonserte planer, faktisk fremdrift og hvilke boliger kjøperne etterspør.",
           "Det gjorde inntrykk at flere store utbyggere holdt fast ved utviklingsplanene sine. De forventet fortsatt etterspørsel etter nye boliger, til tross for usikkerheten. Det er en observasjon fra prosjektene jeg fulgte – ikke en påstand om at byggebransjen var uberørt av pandemien.",
-          "Det var en periode med nasjonale restriksjoner og midlertidig stans i ikke-essensiell byggeaktivitet våren 2020. Poenget mitt er at jeg så aktører som fortsatte å planlegge og satse på prosjektene gjennom krisen og da aktiviteten kunne tas opp igjen. Kilde om den nasjonale stansen: https://www.europapress.es/economia/noticia-grandes-constructoras-inmobiliarias-paralizan-obras-espana-20200330190441.html ."
+          "Det var en periode med nasjonale restriksjoner og midlertidig stans i ikke-essensiell byggeaktivitet våren 2020. Poenget mitt er at jeg så aktører som fortsatte å planlegge og satse på prosjektene gjennom krisen og da aktiviteten kunne tas opp igjen."
         ]
       },
       {
@@ -80,7 +80,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Hva sier prisutviklingen faktisk?",
         "body": [
-          "Idealistas historikk for Alicante by viser en annonsert gjennomsnittspris på 1 519 euro per kvadratmeter i oktober 2021 og 2 721 euro i august 2026. Det tilsvarer en økning på om lag 79 prosent i den serien. Kilde: https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/alicante-alacant/historico/ .",
+          "Idealistas historikk for Alicante by viser en annonsert gjennomsnittspris på 1 519 euro per kvadratmeter i oktober 2021 og 2 721 euro i august 2026. Det tilsvarer en økning på om lag 79 prosent i den serien.",
           "Dette er annonsepriser for Alicante by, ikke dokumenterte salgspriser for alle boliger på Costa Blanca. Tallene kan derfor ikke beskrive nøyaktig hva enhver nybygd villa i Finestrat, Polop eller Altea har steget. Idealista opplyser dessuten at metodikken ble forbedret i juli 2026, noe som gjør det ekstra viktig å tolke lange sammenligninger med varsomhet.",
           "Statistikken understøtter likevel et hovedpoeng: De som ventet på et generelt kraftig prisfall, møtte i mange områder et marked med betydelig høyere prisforventninger noen år senere. Fortiden gir ikke garanti for hva som vil skje videre."
         ]
