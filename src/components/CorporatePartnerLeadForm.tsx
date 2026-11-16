@@ -55,9 +55,10 @@ export function CorporatePartnerLeadForm() {
 
       const result = await response.json().catch(() => null);
       if (!response.ok || result?.accepted !== true || !result?.submission_id) throw new Error("submit");
-      trackConfirmedFormSubmission("corporate-partner", result.submission_id);
+      await trackConfirmedFormSubmission("corporate-partner", result.submission_id);
       form.reset();
       setStatus("sent");
+      window.location.assign("/takk-samarbeidspartner");
     } catch {
       setStatus("error");
     }
