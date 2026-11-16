@@ -45,7 +45,7 @@ function Airport({title,rows}:{title:string;rows:string[][]}) { return <section 
 export function SpainAreaGuide(){
  return <section className="section cornerstone-section"><article className="article-main prose max-w-none area-guide-article">
  <p>Hvor i Spania du bør kjøpe eiendom avhenger av både prisnivå, klima og hvordan du ønsker å bruke boligen i hverdagen. Jeg har sett mange boligkjøpere starte med en klar idé om hvor de skal bo, for så å endre mening over tid når de besøker områdene.</p>
- <p>I denne guiden ser vi ikke bare nærmere på de ulike stedene i Spania, men vi skal også prøve å finne ut hvilke områder som passer best til det livet du ser for deg.</p>
+ <p>I denne guiden ser vi ikke bare nærmere på de ulike stedene i Spania, men vi skal også prøve å finne ut hvilke områder som passer best til det livet du ser for deg. Når du har funnet områder som kan passe dine ønsker, er neste steg å se nærmere på selve boligkjøpet. I vår guide til <Link href="/guide/kjope-bolig-i-spania" className="underline">kjøpe bolig i Spania</Link> får du oversikt over prosessen fra de første vurderingene til overtakelse.</p>
  <h3 className="area-preference-heading">Hvilket område passer best for deg?</h3><PreferenceTable rows={preferences}/><p><Link href="/omrader" className="underline">Se områdene ZenEcoHomes jobber i →</Link></p>
  <h2 id="oversikt">Oversikt over de ulike områdene i Spania</h2>
  <p>Spania består av 17 autonome regioner, og det er store geografiske forskjeller mellom Middelhavskysten, Atlanterhavskysten, innlandet og øygruppene. For boligkjøpere merkes dette blant annet på klima, boligpriser, reisevei og hvor turistpreget et område egentlig er.</p>
@@ -55,7 +55,7 @@ export function SpainAreaGuide(){
  <p>Costa Brava ligger lengst nord mot Frankrike, etterfulgt av blant annet Costa Daurada og Costa del Azahar. Lenger sør ligger Costa Blanca Nord og Costa Blanca Sør i Alicante-provinsen, deretter Costa Cálida i Murcia-regionen, før kysten fortsetter mot Costa de Almería, Costa Tropical og Costa del Sol.</p>
  <p>Forskjellene er større enn navnene kan gi inntrykk av. Nord på Middelhavskysten er klimaet generelt kjøligere og landskapet grønnere, mens sørøstlige deler av Spania har tørrere klima og milde vintre.</p>
  <p>Boligmarkedet varierer også betydelig, fra eksklusive markeder rundt Marbella og deler av Costa Blanca Nord til rimeligere alternativer i Murcia, Almería og enkelte steder lenger inn fra kysten.</p>
- <p>Blant norske boligkjøpere er Costa Blanca Nord og Sør, Costa Cálida og Costa del Sol populære områder. Det skyldes mildt klima, store internasjonale miljøer og gode flyforbindelser.</p>
+ <p>Blant norske boligkjøpere er Costa Blanca Nord og Sør, Costa Cálida og Costa del Sol populære områder. Det skyldes mildt klima, store internasjonale miljøer og gode flyforbindelser. Du kan også se <Link href="/eiendommer" className="underline">boliger til salgs i Spania</Link> for å sammenligne konkrete alternativer i disse områdene.</p>
  <h3 id="nord-spania">Nord-Spania og Atlanterhavskysten</h3>
  <p>Nord-Spania og Atlanterhavskysten skiller seg markant fra områdene langs Middelhavet, og byr på en helt annen hverdag. Her er det store grøntområder, mer nedbør og et kjøligere klima gjennom året.</p>
  <p>De mest kjente områdene er Galicia, Asturias, Cantabria og Baskerland, og de består av mange mindre byer og landsbyer, samt noen storbyer som Bilbao og San Sebastián.</p>
