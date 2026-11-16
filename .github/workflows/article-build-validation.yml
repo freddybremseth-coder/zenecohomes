@@ -13,6 +13,8 @@ on:
       - 'src/app/api/contact/route.ts'
       - 'src/components/CorporateLeadForm.tsx'
       - 'src/lib/realtyflow.ts'
+      - 'src/lib/form-conversion.ts'
+      - 'src/components/BuyerMatchQuiz.tsx'
       - 'scripts/seo-*.mjs'
       - '.github/workflows/article-build-validation.yml'
   push:
@@ -29,6 +31,8 @@ on:
       - 'src/app/api/contact/route.ts'
       - 'src/components/CorporateLeadForm.tsx'
       - 'src/lib/realtyflow.ts'
+      - 'src/lib/form-conversion.ts'
+      - 'src/components/BuyerMatchQuiz.tsx'
       - 'scripts/seo-*.mjs'
       - '.github/workflows/article-build-validation.yml'
 permissions:
