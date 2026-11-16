@@ -58,7 +58,8 @@ export async function POST(request: Request) {
     .single();
 
   if (error) {
-    return NextResponse.json({ error: "Kunne ikke lagre søket akkurat nå." }, { status: 500 });
+    console.error("[saved-search] database insert failed", error.code, error.message);
+    return NextResponse.json({ error: "Boligvarsel kunne ikke lagres. Tjenesten er midlertidig utilgjengelig." }, { status: 503 });
   }
 
   if (hasEmailConfig()) {
