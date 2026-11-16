@@ -9,8 +9,8 @@ export const monthlyMarketUpdates: Article[] = [
     updated: "2026-11-16",
     category: "Marked akkurat nå",
     readingTime: "7 min lesing",
-    image: "/assets/areas.jpg",
-    imageAlt: "Kystlandskap og boliger på Costa Blanca i Spania",
+    image: "/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_14_54-1.png",
+    imageAlt: "Illustrert utsikt over Costa Blanca med boligmarked og kystlandskap",
     seoTitle: "10 % IVA på utleie i Spania vedtatt | Costa Blanca 2026",
     seoDescription: "Fra 1. desember 2026 gjelder 10 % IVA for visse korte utleieopphold i Spania. Kongressen stadfestet loven 12. november. Les reglene og unntakene.",
     keywords: ["10 prosent IVA utleie Spania", "moms korttidsutleie Spania 2026", "turistutleie Costa Blanca", "Real Decreto-ley 29/2026", "utleie bolig Benidorm Finestrat Villajoyosa"],
@@ -21,8 +21,8 @@ export const monthlyMarketUpdates: Article[] = [
     ],
     sections: [
       { heading: "Hva ble vedtatt i Kongressen 12. november?", body: [
-        "Real Decreto-ley 29/2026 ble opprinnelig publisert 7. oktober og trådte i kraft 8. oktober. Kongressen stadfestet dekretloven 12. november. Stadfestelsen er offentliggjort her: https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23755",
-        "Selve lovteksten, artikkel 7, finnes her: https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823. Den spanske skattemyndigheten forklarer endringen her: https://www3.agenciatributaria.gob.es/Sede/iva/novedades-iva/novedades-normativa-2026/real-decreto-ley-29-2026-octubre.html"
+        "Real Decreto-ley 29/2026 ble opprinnelig publisert 7. oktober og trådte i kraft 8. oktober. Kongressen stadfestet dekretloven 12. november. Stadfestelsen er offentliggjort her: https://boe.es/buscar/doc.php?id=BOE-A-2026-23755",
+        "Selve lovteksten, artikkel 7, finnes her: https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823. Den spanske skattemyndigheten forklarer endringen her: https://sede.agenciatributaria.gob.es/Sede/iva/novedades-iva/novedades-normativa-2026/real-decreto-ley-29-2026-octubre.html"
       ]},
       { heading: "Når gjelder 10 % IVA på korttidsutleie?", body: [
         "Fra 1. desember 2026 faller utleie av møblerte boliger utenfor det vanlige IVA-fritaket når oppholdet er på høyst 30 netter og boligen ikke er utleiers egen faste bolig, slik vilkårene i loven er formulert. Disse utleietjenestene omfattes av redusert IVA-sats på 10 %. Utleie med hotellignende tilleggstjenester er også en egen kategori som kan være IVA-pliktig.",
