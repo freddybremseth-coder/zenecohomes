@@ -9,6 +9,22 @@ import { CorporateHomeCalculator } from "@/components/CorporateHomeCalculator";
 import { CorporateBoardCalculator } from "@/components/CorporateBoardCalculator";
 import { allArticles, articleBasePath, articlePath, articleSilo, SILO_META } from "@/lib/magazine";
 
+function renderInlineContent(content: string) {
+  return content.split(/(\[\[[^\]]+\]\]|\*\*[^*]+\*\*)/g).map((part, index) => {
+    const linkMatch = part.match(/^\[\[([^|]+)\|([^\]]+)\]\]$/);
+    if (linkMatch) {
+      const href = linkMatch[2].replace(/\\([/:.])/g, "$1");
+      return /^https?:\/\//i.test(href)
+        ? <a key={index} href={href} target="_blank" rel="noopener noreferrer">{linkMatch[1]}</a>
+        : <Link key={index} href={href}>{linkMatch[1]}</Link>;
+    }
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
 function CostArticleTable({ table, highlightTotals = false }: { table: ArticleTable; highlightTotals?: boolean }) {
   const isTotal = (label: string) => highlightTotals && (
     label === "Sum årlige kostnader" || label === "Sum årsbudsjett inkl. vedlikeholdsreserve"
@@ -1001,14 +1017,14 @@ export function ArticleView({ article }: { article: Article }) {
                   </span>
                 </div>
               )}
-              {silo === "guide" && !["finansiere-bolig-i-spania", "guide-tomtekjop-bygging-i-spania", "boliglan-spansk-bank-nordmenn", "spansk-bankkonto-valutaveksling", "lopende-kostnader-eie-bolig-spania", "utleie-inntektspotensial-bolig-spania", "skatt-ved-salg-bolig-spania", "arv-gaveskatt-bolig-spania"].includes(article.slug) && (
+              {silo === "guide" && !["finansiere-bolig-i-spania", "guide-tomtekjop-bygging-i-spania", "juridiske-fallgruver-boligkjop-spania", "nie-skattenummer-spania", "boliglan-spansk-bank-nordmenn", "spansk-bankkonto-valutaveksling", "lopende-kostnader-eie-bolig-spania", "utleie-inntektspotensial-bolig-spania", "skatt-ved-salg-bolig-spania", "arv-gaveskatt-bolig-spania"].includes(article.slug) && (
                 <p className="article-cluster-link">
                   Denne artikkelen er en del av{" "}
                   <Link href="/guide/kjope-bolig-i-spania">vår komplette guide til å kjøpe bolig i Spania</Link>.
                 </p>
               )}
               {article.intro.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>{renderInlineContent(paragraph)}</p>
               ))}
             </div>
 
@@ -1154,27 +1170,8 @@ export function ArticleView({ article }: { article: Article }) {
                     if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "finansiere-bolig-i-spania") && paragraph.startsWith("### ")) {
                       return <h3 key={paragraph}>{paragraph.slice(4)}</h3>;
                     }
-                    if (article.slug === "finansiere-bolig-i-spania" && (paragraph.includes("[[") || paragraph.includes("**"))) {
-                      return (
-                        <p key={paragraph}>
-                          {paragraph.split(/(\[\[[^\]]+\]\]|\*\*[^*]+\*\*)/g).map((part, i) => {
-                            const linkMatch = part.match(/^\[\[([^|]+)\|([^\]]+)\]\]$/);
-                            if (linkMatch) return <Link key={i} href={linkMatch[2]}>{linkMatch[1]}</Link>;
-                            if (part.startsWith("**") && part.endsWith("**")) return <strong key={i}>{part.slice(2, -2)}</strong>;
-                            return part;
-                          })}
-                        </p>
-                      );
-                    }
-                    if ((article.slug === "lopende-kostnader-eie-bolig-spania" || article.slug === "nie-skattenummer-spania" || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "kjop-bolig-i-spania-na-eller-vente" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "hva-far-du-for-4-6-8-10-millioner-costa-blanca" || article.slug === "guide-tomtekjop-bygging-i-spania" || article.slug === "spansk-bankkonto-valutaveksling") && paragraph.includes("[[")) {
-                      return (
-                        <p key={paragraph}>
-                          {paragraph.split(/(\[\[[^\]]+\]\])/g).map((part, i) => {
-                            const match = part.match(/^\[\[([^|]+)\|([^\]]+)\]\]$/);
-                            return match ? <Link key={i} href={match[2]}>{match[1]}</Link> : part;
-                          })}
-                        </p>
-                      );
+                    if (paragraph.includes("[[") || paragraph.includes("**") || article.slug === "det-du-ikke-ser-i-boligannonsen" || article.slug === "hvorfor-god-eiendomsradgiver-er-viktig" || article.slug === "idealista-finn-ikke-alltid-til-a-stole-pa" || article.slug === "guide-tomtekjop-bygging-i-spania") {
+                      return <p key={paragraph}>{renderInlineContent(paragraph)}</p>;
                     }
                     if (article.slug === "hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023") {
                       const inlineLinks: Record<string, string> = {
@@ -1202,7 +1199,7 @@ export function ArticleView({ article }: { article: Article }) {
                   {section.bullets && (
                     <ul className="article-bullets">
                       {section.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
+                        <li key={bullet}>{renderInlineContent(bullet)}</li>
                       ))}
                     </ul>
                   )}
@@ -1262,7 +1259,7 @@ export function ArticleView({ article }: { article: Article }) {
               <h2>Slik går du videre</h2>
               <ol>
                 {article.nextSteps.map((step) => (
-                  <li key={step}>{step}</li>
+                  <li key={step}>{renderInlineContent(step)}</li>
                 ))}
               </ol>
               {article.cta && (
@@ -1279,8 +1276,8 @@ export function ArticleView({ article }: { article: Article }) {
                 <div className="faq-accordion">
                   {article.faq.map((item, index) => (
                     <details key={item.question} open={index === 0}>
-                      <summary>{item.question}</summary>
-                      <p>{item.answer}</p>
+                      <summary>{renderInlineContent(item.question)}</summary>
+                      <p>{renderInlineContent(item.answer)}</p>
                     </details>
                   ))}
                 </div>

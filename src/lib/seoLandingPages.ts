@@ -122,7 +122,7 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Hva du bør kontrollere før du reserverer",
         body: [
-          "Når du vurderer et [[nybygg til salgs i Spania|/eiendommer]], bør du undersøke hvem som står bak prosjektet, hvor langt byggeprosessen har kommet, og hva som faktisk inngår i kjøpet. Be om skriftlig dokumentasjon på pris, tilgjengelighet, forventet ferdigstillelse og leveranse.",
+          "Når du vurderer et nybygg til salgs i Spania, bør du undersøke hvem som står bak prosjektet, hvor langt byggeprosessen har kommet, og hva som faktisk inngår i kjøpet. Be om skriftlig dokumentasjon på pris, tilgjengelighet, forventet ferdigstillelse og leveranse.",
           "Jeg anbefaler at en uavhengig spansk advokat kontrollerer prosjektets dokumentasjon og kontraktene før du signerer eller gjør større innbetalinger. Megler, utbygger, notar og kjøpers advokat har forskjellige roller. Advokaten skal ivareta dine interesser.",
         ],
         bullets: [
@@ -198,6 +198,7 @@ export const seoLandingPages: SeoLandingPage[] = [
         body: [
           "Ikke start med spørsmålet 'hvilket prosjekt er finest?'. Start med område, totalbudsjett og hvordan boligen skal brukes. Deretter kan du sammenligne 2–4 reelle prosjekter på de samme kriteriene: beliggenhet, totalpris, levering, standard, felleskostnader, garantier og videresalg.",
           "På den måten blir nybygg et boligvalg – ikke et salgsmøte. Zen Eco Homes kan hjelpe med område og prosjektshortlist, mens uavhengig advokat bør kontrollere de juridiske dokumentene før du binder deg.",
+          "[[Se aktuelle boliger og nybygg til salgs i Spania|/eiendommer]] for å sammenligne konkrete alternativer.",
         ],
       },
     ],
