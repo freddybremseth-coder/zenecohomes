@@ -97,7 +97,7 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Hvorfor mange velger nybygg i Spania",
         body: [
-          "Nybygg gir ofte moderne planløsninger, nye tekniske installasjoner, god energieffektivitet og mindre vedlikeholdsbehov de første årene. For mange som kjøper feriebolig i Spania, er det attraktivt å vite at rør, elektriske anlegg, klimaanlegg, vinduer og fellesanlegg er nye, og at boligen er bygget etter dagens tekniske standarder.",
+          "Nybygg gir ofte moderne planløsninger, nye tekniske installasjoner, god energieffektivitet og mindre vedlikeholdsbehov de første årene. For mange som [[kjøper feriebolig i Spania|/guide/kjope-bolig-i-spania]], er det attraktivt å vite at rør, elektriske anlegg, klimaanlegg, vinduer og fellesanlegg er nye, og at boligen er bygget etter dagens tekniske standarder.",
           "En annen fordel med nybygg er muligheten til å velge en bolig som passer egne ønsker og behov. Avhengig av prosjektets fremdrift kan du ofte påvirke materialvalg, overflater og enkelte løsninger før boligen ferdigstilles.",
         ],
         bullets: [
@@ -122,7 +122,7 @@ export const seoLandingPages: SeoLandingPage[] = [
       {
         heading: "Hva du bør kontrollere før du reserverer",
         body: [
-          "Før du reserverer et nybygg, bør du undersøke hvem som står bak prosjektet, hvor langt byggeprosessen har kommet, og hva som faktisk inngår i kjøpet. Be om skriftlig dokumentasjon på pris, tilgjengelighet, forventet ferdigstillelse og leveranse.",
+          "Når du vurderer et [[nybygg til salgs i Spania|/eiendommer]], bør du undersøke hvem som står bak prosjektet, hvor langt byggeprosessen har kommet, og hva som faktisk inngår i kjøpet. Be om skriftlig dokumentasjon på pris, tilgjengelighet, forventet ferdigstillelse og leveranse.",
           "Jeg anbefaler at en uavhengig spansk advokat kontrollerer prosjektets dokumentasjon og kontraktene før du signerer eller gjør større innbetalinger. Megler, utbygger, notar og kjøpers advokat har forskjellige roller. Advokaten skal ivareta dine interesser.",
         ],
         bullets: [
