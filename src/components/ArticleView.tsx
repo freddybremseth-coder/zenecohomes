@@ -1178,6 +1178,27 @@ export function ArticleView({ article }: { article: Article }) {
                         </p>
                       );
                     }
+                    if (article.slug === "hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023") {
+                      const inlineLinks: Record<string, string> = {
+                        "boligkjøp i Spania": "/guide/kjope-bolig-i-spania",
+                        "midlertidig stans i ikke-essensiell byggeaktivitet våren 2020": "https://www.europapress.es/economia/noticia-grandes-constructoras-inmobiliarias-paralizan-obras-espana-20200330190441.html",
+                        "valutakursen": "/guide/spansk-bankkonto-valutaveksling",
+                        "Idealistas historikk for Alicante by": "https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/alicante-alacant/historico/",
+                        "«vil markedet falle neste år?»": "/magasin/kjop-bolig-i-spania-na-eller-vente",
+                      };
+                      const linkedText = paragraph.split(/(boligkjøp i Spania|midlertidig stans i ikke-essensiell byggeaktivitet våren 2020|valutakursen|Idealistas historikk for Alicante by|«vil markedet falle neste år?»)/g);
+                      return (
+                        <p key={paragraph}>
+                          {linkedText.map((part, i) => {
+                            const href = inlineLinks[part];
+                            if (!href) return part;
+                            return href.startsWith("http")
+                              ? <a key={i} href={href} target="_blank" rel="noopener noreferrer">{part}</a>
+                              : <Link key={i} href={href}>{part}</Link>;
+                          })}
+                        </p>
+                      );
+                    }
                     return <p key={paragraph}>{paragraph}</p>;
                   })}
                   {section.bullets && (
@@ -1283,7 +1304,7 @@ export function ArticleView({ article }: { article: Article }) {
               </Link>
             </section>
 
-            {(silo === "guide" || relatedArticles.length > 0) && (
+            {article.slug !== "hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023" && (silo === "guide" || relatedArticles.length > 0) && (
               <section className="article-related">
                 <p className="eyebrow">Les videre</p>
                 <h3>{silo === "guide" ? "Hovedguide og relaterte guider" : "Relaterte artikler"}</h3>
