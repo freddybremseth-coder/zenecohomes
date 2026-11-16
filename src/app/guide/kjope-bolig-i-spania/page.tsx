@@ -335,6 +335,9 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Slike eiendommer finnes særlig i <Link href="/omrader/innlandet">innlandet i Alicante</Link>, hvor prisnivået ofte er lavere enn langs kysten. Ulempen med en finca er at man får lengre avstand til strand og internasjonale miljøer.
           </p>
+          <p>
+            Vurderer du å kjøpe en ubebygd tomt og bygge din egen bolig? Da er det flere forhold du bør undersøke før kjøpet. Les vår <Link href="/guide/guide-tomtekjop-bygging-i-spania">guide til tomtekjøp og bygging i Spania</Link> for mer om regulering, byggbarhet, tillatelser og kostnader.
+          </p>
         </div>
 
         <PropertyShowcase
