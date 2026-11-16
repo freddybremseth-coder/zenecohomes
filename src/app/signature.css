@@ -3234,3 +3234,38 @@
     line-height: 1.18;
   }
 }
+
+/* Market reports: scan months quickly on a phone without oversized repeated cards. */
+@media (max-width: 640px) {
+  .market-report-card .market-report-card-inner {
+    grid-template-columns: minmax(0, 116px) minmax(0, 1fr) !important;
+    align-items: stretch;
+  }
+  .market-report-card .market-report-card-image {
+    height: 100% !important;
+    min-height: 160px;
+  }
+  .market-report-card .market-report-card-content {
+    padding: 14px !important;
+    gap: 8px !important;
+  }
+  .market-report-card .market-report-card-content h3 {
+    font-size: 1.08rem !important;
+    line-height: 1.28 !important;
+  }
+  .market-report-card .market-report-card-content p:not(.eyebrow) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 0.92rem;
+    line-height: 1.45 !important;
+  }
+  .market-report-card .market-report-card-content .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+  .rental-tax-article .article-main {
+    max-width: 100%;
+  }
+}
