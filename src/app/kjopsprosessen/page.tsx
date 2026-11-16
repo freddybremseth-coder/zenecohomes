@@ -100,7 +100,7 @@ export default function BuyingProcessPage() {
           <article>
             <h3>Finn ut hva som passer deg</h3>
             <p>
-              Du får hjelp til å avklare behov, budsjett og hvilke områder som passer best. Målet er å finne alternativer som passer til både økonomien din og hvordan du ønsker å bruke boligen.
+              Du får hjelp til å avklare behov, budsjett og hvilke områder som passer best. Målet er å finne alternativer som passer til både økonomien din og hvordan du ønsker å bruke boligen. Se også vår <Link href="/omrader">områdeoversikt over Costa Blanca</Link>.
             </p>
             <p>
               Er du fortsatt i vurderingsfasen, kan du delta på våre uforpliktende <Link href="/informasjonsmote">informasjonsmøter</Link> for å lære mer om boligmarkedet og stille spørsmål.
@@ -113,7 +113,7 @@ export default function BuyingProcessPage() {
               Sammen finner vi boligene som passer behovene dine. Vi undersøker tilgjengeligheten og hjelper deg med å vurdere aktuelle alternativer, slik at du kan bruke tiden på boliger som faktisk er interessante.
             </p>
             <p>
-              Se vårt utvalg av <Link href="/eiendommer">boliger til salgs i Spania</Link>.
+              Se vårt utvalg av <Link href="/eiendommer">boliger til salgs i Spania</Link>. Er du interessert i nybygg, kan du også lese vår <Link href="/guide/nybygg-i-spania">guide om nybygg i Spania</Link>.
             </p>
           </article>
 
@@ -130,7 +130,7 @@ export default function BuyingProcessPage() {
               Når du har funnet drømmeboligen hjelper vi deg med å koordinere de praktiske stegene frem mot overtakelsen. Du får oversikt over hva som skal skje og hvem som har ansvar for de ulike oppgavene.
             </p>
             <p>
-              Vil du vite mer om hvordan selve kjøpet foregår, kan du lese vår guide om å <Link href="/guide/kjope-bolig-i-spania">kjøpe bolig i Spania</Link>.
+              Vil du vite mer om hvordan selve kjøpet foregår, kan du lese vår guide om å <Link href="/guide/kjope-bolig-i-spania">kjøpe bolig i Spania</Link>. Før du går videre, kan det også være nyttig å lese om <Link href="/guide/juridiske-fallgruver-boligkjop-spania">juridiske fallgruver</Link>, <Link href="/guide/nie-skattenummer-spania">NIE og skattenummer</Link> og <Link href="/guide/boliglan-spansk-bank-nordmenn">boliglån i spansk bank</Link>.
             </p>
           </article>
 
