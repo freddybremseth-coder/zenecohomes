@@ -642,7 +642,7 @@ export const articles: Article[] = [
       {
         "heading": "4 måter å finansiere boligkjøpet i Spania",
         "body": [
-          "Du kan finansiere hele eller deler av boligkjøpet på fire måter:",
+          "Ved [[boligkjøp i Spania|/guide/kjope-bolig-i-spania]] kan du finansiere hele eller deler av kjøpet på fire måter:",
           "**Egne midler:** Bruk oppsparte midler, og sett av penger til kjøpsomkostninger og buffer.",
           "**Spansk boliglån:** Lån med pant i boligen du kjøper i Spania.",
           "**Lån med pant i norsk bolig:** Øk boliglånet, refinansier eller bruk rammelån med sikkerhet i norsk bolig.",
@@ -676,9 +676,7 @@ export const articles: Article[] = [
         "heading": "Egenkapital og kostnader",
         "body": [
           "Når du kjøper bolig i Spania, må du ha nok disponible midler til å dekke den delen av kjøpesummen som ikke finansieres gjennom lån. I tillegg kommer skatter og andre kjøpsomkostninger, som må inngå i det samlede boligbudsjettet.",
-          "Det er også lurt å sette av en økonomisk reserve, slik at du ikke bruker alle tilgjengelige midler på selve boligkjøpet. Hvor mye kapital du trenger, avhenger blant annet av boligpris, boligtype, region og hvilken finansiering banken eventuelt tilbyr.",
-          "Dersom du vurderer spansk boliglån, kan du lese mer om belåningsgrad og hvor mye egenkapital bankene normalt krever i vår [[guide til boliglån i spansk bank for nordmenn|/guide/boliglan-spansk-bank-nordmenn]].",
-          "For å få oversikt over skatter og kjøpsomkostninger kan du bruke [[kjøpskostnadskalkulatoren i vår kjøpsguide|/guide/kjope-bolig-i-spania]]."
+          "Det er også lurt å sette av en økonomisk reserve, slik at du ikke bruker alle tilgjengelige midler på selve boligkjøpet. Hvor mye kapital du trenger, avhenger blant annet av boligpris, boligtype, region og hvilken finansiering banken eventuelt tilbyr. Husk at det også følger [[løpende kostnader med å eie bolig i Spania|/guide/lopende-kostnader-eie-bolig-spania]], som du bør ta høyde for i budsjettet.",
         ]
       },
       {
@@ -692,8 +690,8 @@ export const articles: Article[] = [
       {
         "heading": "Når bør finansieringen være på plass?",
         "body": [
-          "Finansieringsrammen bør være avklart før du reserverer eller binder deg til en konkret bolig. Et foreløpig banksignal er ikke det samme som et endelig lånetilsagn.",
-          "Reservasjonsbeløp, privat kjøpekontrakt og overtakelse kan ha korte frister. Uten finansieringsavklaring risikerer du at takst, bankbehandling eller dokumentkrav forsinker oppgjøret. La en uavhengig advokat vurdere nødvendige finansieringsforbehold før du undertegner. Les vår [[guide til kjøp av bolig i Spania|/guide/kjope-bolig-i-spania]] for kjøpsprosessen."
+          "Finansieringsrammen bør være avklart før du reserverer eller binder deg til en konkret bolig. Et foreløpig banksignal er ikke det samme som et endelig lånetilsagn. Du kan se aktuelle [[boliger til salgs i Spania|/eiendommer]] og få en bedre oversikt over hvilke boliger som kan være aktuelle for ditt budsjett.",
+          "Reservasjonsbeløp, privat kjøpekontrakt og overtakelse kan ha korte frister. Uten finansieringsavklaring risikerer du at takst, bankbehandling eller dokumentkrav forsinker oppgjøret. La en uavhengig advokat vurdere nødvendige finansieringsforbehold før du undertegner."
         ]
       },
       {
@@ -708,7 +706,7 @@ export const articles: Article[] = [
         "heading": "Usikker på hvilken finansieringsløsning som passer deg?",
         "body": [
           "Riktig løsning avhenger av disponible egne midler, eventuell ledig sikkerhet i norsk bolig, inntekt, gjeld, lånebehov og valuta. I en uforpliktende boligprat kan vi se på hvordan ønsket bolig, område og budsjett henger sammen, før du tar lånespørsmålene videre til banken.",
-          "Bestill en boligprat på /booking. ZenEcoHomes gir eiendomsveiledning, ikke personlige lånetilsagn eller uavhengig finansiell rådgivning."
+          "ZenEcoHomes gir eiendomsveiledning, ikke personlige lånetilsagn eller uavhengig finansiell rådgivning."
         ]
       }
     ],
