@@ -31,7 +31,7 @@ const faq = [
 ];
 function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
 function PreferenceTable({rows}:{rows:string[][]}) {
- return <div className="buy-guide-comparison area-preference-table my-6">
+ return <div className="area-guide-table area-table--editorial area-preference-table my-6">
   <table>
    <thead><tr><th scope="col">Hvis du prioriterer</th><th scope="col">Områder du bør se nærmere på</th></tr></thead>
    <tbody>{rows.map(([priority,areas])=><tr key={priority}>
@@ -100,15 +100,12 @@ export function SpainAreaGuide(){
  <h3>Hvor varmt skal det være om vinteren?</h3>
  <p>Hvis du ønsker milde temperaturer også om vinteren, er Kanariøyene normalt det beste valget. Sør på Tenerife ligger normaltemperaturen i januar rundt 18,4 °C, mens Gran Canaria ligger rundt 17,9 °C. Til sammenligning ligger Málaga og Alicante rundt 12 °C. Dette er døgnmiddel, ikke dagtemperatur, og ingen av stedene garanterer sommervarme hver dag.</p>
  <p>Her er områdene i Spania med varmest vintre:</p>
- <div className="area-guide-table area-table--outline area-winter-table">
-  <table>
-   <thead><tr><th scope="col">Område</th><th scope="col">Døgnmiddel i januar</th><th scope="col">Dagtemperatur / forhold</th></tr></thead>
-   <tbody>{winterTemperatures.map(([area,average,day])=><tr key={area}>
-    <th scope="row">{area}</th>
-    <td data-label="Døgnmiddel i januar">{average}</td>
-    <td data-label="Dagtemperatur / forhold">{day}</td>
-   </tr>)}</tbody>
-  </table>
+ <div className="area-winter-list">
+  {winterTemperatures.map(([area,average,day])=><section className="area-winter-item" key={area}>
+   <h4>{area}</h4>
+   <p><strong>Døgnmiddel i januar:</strong> {average}</p>
+   <p><strong>Dagtemperatur / forhold:</strong> {day}</p>
+  </section>)}
  </div>
  <h3>Hvor ofte skal du reise til og fra Spania?</h3>
  <p>Skal du reise mye mellom Norge og Spania, ville jeg definitivt valgt et sted i nærheten av en flyplass. En time eller mer i taxi kan være ganske seigt etter en lang flytur.</p>
