@@ -3718,3 +3718,9 @@
 .area-guide-article .area-winter-item p + p {
   margin-top: 3px;
 }
+
+
+/* Keep the preference table header white, independent of generic table styles. */
+.area-guide-article .area-preference-table thead th {
+  background-color: #fff;
+}
