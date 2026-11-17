@@ -3585,3 +3585,65 @@
     font-size: 1rem;
   }
 }
+
+
+/* Area guide: use the G editorial table consistently, with a soft green header.
+   On mobile keep the desktop two-column relationship and allow labels to wrap. */
+.area-guide-article .area-table--editorial thead th {
+  color: #315b48;
+  background: #edf4ee;
+  font-size: .78rem;
+  font-weight: 750;
+  letter-spacing: .035em;
+  text-transform: none;
+}
+.area-guide-article .area-table--editorial thead th + th {
+  text-align: right;
+}
+@media (max-width: 700px) {
+  .area-guide-article .area-table--editorial table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .area-guide-article .area-table--editorial thead {
+    display: table-header-group;
+  }
+  .area-guide-article .area-table--editorial tbody {
+    display: table-row-group;
+  }
+  .area-guide-article .area-table--editorial tbody tr {
+    display: table-row;
+    padding: 0;
+  }
+  .area-guide-article .area-table--editorial thead th,
+  .area-guide-article .area-table--editorial tbody th,
+  .area-guide-article .area-table--editorial tbody td {
+    display: table-cell;
+    box-sizing: border-box;
+    padding: 11px 10px;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    vertical-align: top;
+  }
+  .area-guide-article .area-table--editorial thead th:first-child,
+  .area-guide-article .area-table--editorial tbody th {
+    width: 40%;
+  }
+  .area-guide-article .area-table--editorial thead th:last-child,
+  .area-guide-article .area-table--editorial tbody td {
+    width: 60%;
+  }
+  .area-guide-article .area-table--editorial tbody th {
+    font-size: .9rem;
+  }
+  .area-guide-article .area-table--editorial tbody td {
+    font-size: .94rem;
+    text-align: right;
+  }
+  .area-guide-article .area-table--editorial tbody td::before {
+    content: none;
+    display: none;
+  }
+}
