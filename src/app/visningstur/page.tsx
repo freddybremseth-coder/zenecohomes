@@ -46,6 +46,15 @@ export default function ViewingTripPage() {
             God planlegging er nøkkelen til en vellykket visningstur. Vi ser på et nøye utvalg av boliger som samsvarer med ønskene dine, og vurderer helheten – fra boligens egenskaper og beliggenhet til området rundt. Slik får du et godt grunnlag for å finne boligen som passer best for deg.
           </p>
           <p><Link className="text-button" href="/kjopsprosessen">Les om kjøpsprosessen <ArrowRight size={16} /></Link></p>
+          <p>
+            Vil du bli bedre kjent med livet på Costa Blanca utenom boligvisningene,
+            kan du utforske opplevelser og utflukter hos{" "}
+            <a href="https://www.costablancatours.pro/?utm_source=zenecohomes&utm_medium=referral&utm_campaign=viewing-trip-area-experience" target="_blank" rel="noopener noreferrer">
+              Costa Blanca Tours
+            </a>.
+            Dette er et frivillig tillegg til visningsturen, ikke en del av boligkjøpet.
+          </p>
+
           <div className="viewing-prep-list">
             <article><CheckCircle2 size={18}/><div><h3>Behov og totalbudsjett først</h3><p>Vi avklarer hvordan boligen skal brukes, økonomisk ramme og hva som er viktigst for deg.</p></div></article>
             <article><CheckCircle2 size={18}/><div><h3>Vi finner de rette områdene</h3><p>Vi ser etter områder på Costa Blanca der du kan trives. <Link href="/omrader">Se områdene</Link>.</p></div></article>
