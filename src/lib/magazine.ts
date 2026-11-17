@@ -251,9 +251,9 @@ export const extraArticles: Article[] = [
       {
         "heading": "Skatter ved selve kjøpet: behold alle kvitteringer",
         "body": [
-          "Ved bruktbolig kan kjøpet utløse ITP, mens kjøp av nybygg fra utbygger normalt behandles med IVA og eventuelt AJD. Hvilke satser og fritak som gjelder avhenger av boligtype, tidspunkt og personlige forhold. Denne artikkelen handler om oppfølgingen etter kjøpet, ikke en ny beregning av kjøpskostnadene.",
+          "Ved bruktbolig kan kjøpet utløse ITP, mens kjøp av nybygg fra utbygger normalt behandles med IVA og eventuelt AJD. Hvilke satser og fritak som gjelder avhenger av boligtype, tidspunkt og personlige forhold.",
           "I Valencia-regionen brukes blant annet modelo 600 for relevante ITP/AJD-saker. Generalitat opplyser at den ordinære selvangivelsesfristen for eiendomsoverdragelse normalt er én måned fra handlingen eller avtalen. Sørg for at den ansvarlige har kontroll på akkurat din frist og dokumentasjon.",
-          "Offisiell veiledning: https://sede.gva.es/es/detall-tramit?id_proc=16 ."
+          "Offisiell veiledning fra [[Generalitat Valenciana|https://sede.gva.es/es/detall-tramit?id_proc=16]]."
         ]
       },
       {
@@ -298,6 +298,7 @@ export const extraArticles: Article[] = [
         "body": [
           "IBI (Impuesto sobre Bienes Inmuebles) er en kommunal eiendomsskatt som normalt faktureres årlig. Kommunen kan også ha avfalls-/renovasjonsavgifter og andre lokale gebyrer med egne innkrevingsordninger.",
           "Dato for betalingskrav og hvem som er registrert betalingsansvarlig ved eierskifte bør undersøkes lokalt. Avtal hvem som håndterer krav knyttet til overtakelsesåret, og kontroller at autotrekk ikke fortsetter på selgerens konto ved en feil.",
+          "Se også vår guide til [[løpende kostnader ved å eie bolig i Spania|/guide/lopende-kostnader-eie-bolig-spania]].",
           "Sørg for at kommunen har riktig postadresse og at du mottar kvitteringer. Det kan være store praktiske forskjeller mellom Benidorm, Altea, l’Alfàs del Pi, Finestrat, Polop og Villajoyosa."
         ]
       },
@@ -306,7 +307,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Hvis du ikke er skattemessig bosatt i Spania og eier en urban boligeiendom til eget bruk, kan spanske regler om beregnet eiendomsinntekt (renta inmobiliaria imputada) være aktuelle selv om du ikke leier ut boligen. Dette rapporteres i relevante tilfeller gjennom Modelo 210.",
           "Skatteberegningen baseres blant annet på eiendommens cadastral-verdi og gjeldende regler. Dersom eiendommen leies ut, kan andre regler, inntektskoder og innleveringsrutiner gjelde. Ikke bland denne statlige skatteplikten sammen med kommunal IBI.",
-          "Spanske skattemyndigheters offisielle veiledning: https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html ."
+          "[[Spanske skattemyndigheters offisielle veiledning om Modelo 210|https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/impuesto-sobre-renta-no-residentes/modelo-210-irnr______a-no-residentes-permanente_/instrucciones.html]]."
         ]
       },
       {
@@ -326,7 +327,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "En feriebolig som står tom trenger et tydelig tilsynsopplegg",
         "body": [
-          "Et godt tilsyn kan være enkle, faste kontroller av dører, vinduer, fukt, sikringer, vann, terrasse og synlige skader etter regn eller uvær. Sett av ansvar og hvordan du skal få melding ved funn.",
+          "Et opplegg for [[regelmessig boligtilsyn|/magasin/hvem-passer-pa-ferieboligen-spania-norge]] kan omfatte faste kontroller av dører, vinduer, fukt, sikringer, vann, terrasse og synlige skader etter regn eller uvær. Sett av ansvar og hvordan du skal få melding ved funn.",
           "Avtal separat hva nøkkeloppbevaring, innslipp av håndverkere, rengjøring, ankomstforberedelser og akutte utrykninger innebærer. Det er stor forskjell på å holde et nøkkelsett og å ha et reelt ansvar for boligen.",
           "Be om bilder og kort rapport ved vesentlige hendelser, og etabler en kontaktliste til forsikring, administrator og lokal fagperson."
         ]
@@ -335,7 +336,7 @@ export const extraArticles: Article[] = [
         "heading": "Vedlikehold: lag en enkel årsplan",
         "body": [
           "Kontroller klimaanlegg og filtre, vannavstengning, tetninger, sluk, basseng der aktuelt og terrasse før perioder med mye regn. Følg leverandørenes vedlikeholdsanvisninger og oppbevar kvitteringer.",
-          "Særlig ved nybygg bør feil og mangler føres i en egen liste og varsles til utbygger. En oppfølgingsrutine er også nyttig for å dokumentere tilbakevendende problemer. Ved større tekniske feil bør en sakkyndig vurdere årsak."
+          "Særlig ved nybygg bør [[feil og mangler|/magasin/feil-mangler-nybygg-spania-reklamasjon]] føres i en egen liste og varsles til utbygger. En oppfølgingsrutine er også nyttig for å dokumentere tilbakevendende problemer. Ved større tekniske feil bør en sakkyndig vurdere årsak."
         ]
       },
       {
@@ -450,7 +451,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Sett av god tid og gå gjennom den konkrete boligen rom for rom. Kontroller innvendige overflater, fliser, fuger, glass, dører, vinduer og rekkverk. Test vannkraner, dusjer, toaletter, stikkontakter, lys, ventilasjon og klimaanlegg der anleggene er klare til bruk.",
           "Gå deretter gjennom terrasse, sluk og avrenning, utvendig tetting, parkeringsplass, bod, heis og fellesarealer som inngår i leveransen. Ikke prøv risikable tester av elektriske installasjoner eller membraner på egen hånd; bruk fagperson ved mistanke om feil.",
-          "Ta med tegninger og leveransebeskrivelse. Noter også hva som ikke lar seg kontrollere den dagen, for eksempel en installasjon som ennå ikke er satt i drift."
+          "Ta med tegninger og leveransebeskrivelse. Noter også hva som ikke lar seg kontrollere den dagen, for eksempel en installasjon som ennå ikke er satt i drift. For en bredere oversikt, se [[vår komplette guide til nybygg i Spania|/guide/nybygg-i-spania]]."
         ]
       },
       {
@@ -535,7 +536,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Ley 38/1999, de Ordenación de la Edificación (LOE), artikkel 17, har ulike ansvarsperioder for bygningsskader avhengig av feiltype. Dette er ikke en generell garanti for at ethvert produkt, enhver kosmetisk feil eller enhver uenighet dekkes i ti år.",
           "Periodene regnes i utgangspunktet fra mottakelsen av byggearbeidet mellom entreprenør og utbygger, eller fra retting av reservasjoner der loven bestemmer det – ikke nødvendigvis fra datoen kjøperen får nøklene. Be advokaten finne den dokumenterte startdatoen.",
-          "Offisiell lovtekst: https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567 ."
+          "Offisiell lovtekst: [[Ley 38/1999, de Ordenación de la Edificación (LOE)|https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567]]."
         ]
       },
       {
@@ -632,6 +633,7 @@ export const extraArticles: Article[] = [
         "heading": "Freddys råd: følg opp boligen etter at kontrakten er signert",
         "body": [
           "God kjøperrådgivning stopper ikke når kjøperen får nøklene. En ny bolig bør leveres i samsvar med kontrakten, og eventuelle avvik må behandles systematisk. Det krever skriftlig dokumentasjon, riktig teknisk bistand og tydelig dialog med utbygger.",
+          "Les også [[Etter boligkjøpet i Spania|/magasin/etter-boligkjop-spania-skjote-strom-vann-avgifter]] for praktiske oppgaver etter overtakelsen.",
           "Zen Eco Homes kan bidra med praktisk gjennomgang, koordinering og oppfølging av spørsmål som oppstår ved overtakelse, og koble inn uavhengig advokat eller teknisk fagperson der det er nødvendig. Det viktigste er at kjøperen ikke overser et problem eller mister oversikten over en reklamasjon."
         ]
       }
@@ -762,7 +764,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Spansk nybyggbeskyttelse for forskuddsbetalinger er regulert i tillegg én til Ley 38/1999 (LOE). Hovedregelen om garanti for innbetalte beløp knyttes til at byggetillatelsen er gitt. Dette bør avklares med advokaten før betalingsforpliktelser avtales eller penger overføres.",
           "Ikke forveksle reservasjonsavtale, byggetillatelse (licencia de obras), senere dokumentasjon for bruk/innflytting og skjøte. De dekker forskjellige trinn i prosessen.",
-          "Lovkilde: https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567 ."
+          "Lovkilde: [[Ley 38/1999 (LOE)|https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567]]."
         ]
       },
       {
@@ -815,7 +817,7 @@ export const extraArticles: Article[] = [
         "body": [
           "LOEs regler om sikring av forskudd gir et lovregulert rammeverk ved manglende igangsetting eller levering innen avtalt frist. Etter vilkårene kan det være aktuelt å kreve tilbake innbetalte beløp med relevante skatter og lovbestemt rente eller å gi en skriftlig forlengelse med ny dato. Det er ikke det samme som at enhver liten forsinkelse automatisk gir samme rettslige resultat i alle kontrakter.",
           "Krav mot utbygger og krav under bankgaranti/forsikring kan følge ulike prosesser og frister. Særlig viktig er skriftlig påkrav og dokumentasjon. Garantivilkårene kan inneholde formkrav og tidsbegrensninger. La advokaten håndtere dette før du signerer en forlengelse eller lar frister løpe.",
-          "Se Ley 38/1999, disposición adicional primera: https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567 ."
+          "Se [[Ley 38/1999, disposición adicional primera|https://www.boe.es/buscar/act.php?id=BOE-A-1999-21567]]."
         ]
       },
       {
@@ -830,7 +832,7 @@ export const extraArticles: Article[] = [
         "body": [
           "En bolig kan se ferdig ut uten at alle nødvendige tekniske og administrative forhold er på plass. I Valencia-regionen må kjøperen undersøke relevant dokumentasjon for første gangs bruk eller innflytting, ofte knyttet til declaración responsable de primera ocupación eller kommunens gjeldende ordning.",
           "Be advokaten kontrollere statusen for den konkrete kommunen, sluttdokumentasjon fra teknisk ledelse, eventuelle avvik og om nødvendige tilkoblinger er tilgjengelige. Kommunale prosedyrer varierer; en brosjyre med «ready to move in» er ikke bevis på at formalitetene er oppfylt.",
-          "Et eksempel på en offentlig kommunal beskrivelse av første gangs bruk finnes på https://sede.valencia.es/sede/registro/procedimiento/UR.LC.190?lang=1 , men lokale krav for boligen din må undersøkes separat."
+          "Et eksempel finnes i [[Valencias offentlige kommunale beskrivelse av første gangs bruk|https://sede.valencia.es/sede/registro/procedimiento/UR.LC.190?lang=1]], men lokale krav for boligen din må undersøkes separat."
         ]
       },
       {
@@ -843,14 +845,14 @@ export const extraArticles: Article[] = [
       {
         "heading": "Befaring og mangelliste før nøkkeloverlevering",
         "body": [
-          "Planlegg en grundig befaring med protokoll over synlige feil. Test dører, vinduer, vann, avløp, strøm, klimaanlegg, hvitevarer, tetting, fliser, fall på terrasser og eventuelle lekkasjer. Fotografer avvik og noter rom og dato.",
+          "Planlegg en grundig befaring med protokoll over synlige feil. Test dører, vinduer, vann, avløp, strøm, klimaanlegg, hvitevarer, tetting, fliser, fall på terrasser og eventuelle lekkasjer. Fotografer avvik og noter rom og dato. Les også om [[feil og mangler ved nybygg|/magasin/feil-mangler-nybygg-spania-reklamasjon]].",
           "Avklar hva som skal utbedres før signering og hva som kan følges opp etterpå. Muntlige lovnader må skrives ned. Vurder uavhengig teknisk kontroll ved større boligkjøp, særlig når kjøperen ikke selv kan følge byggeprosessen på stedet."
         ]
       },
       {
         "heading": "Garantier etter overtakelse er noe annet enn bankgaranti for forskudd",
         "body": [
-          "Det er viktig å skille mellom forskuddsgarantien under bygging og byggrelatert ansvar for mangler etter ferdigstillelse. LOE opererer med ulike ansvarsperioder for bestemte kategorier bygningsfeil; hva som omfattes og hvordan krav fremmes må vurderes konkret.",
+          "Det er viktig å skille mellom forskuddsgarantien under bygging og byggrelatert ansvar for mangler etter ferdigstillelse. LOE opererer med ulike [[ansvarsperioder for feil og mangler|/magasin/feil-mangler-nybygg-spania-reklamasjon]] for bestemte kategorier bygningsfeil; hva som omfattes og hvordan krav fremmes må vurderes konkret.",
           "Be om forsikringsdokumentasjon, vedlikeholdsanvisninger og kontaktinformasjon for reklamasjoner. Det at en bolig omtales som «10 års garanti», betyr ikke at enhver feil på kjøkken, maling eller utstyr er dekket i ti år."
         ]
       },
@@ -882,7 +884,8 @@ export const extraArticles: Article[] = [
         "heading": "Freddys råd: begynn med risikoen du ikke kan se på prospektet",
         "body": [
           "Jeg ville bedt om mer enn prislisten før jeg anbefalte et nybyggprosjekt. Først vil jeg vite hvem som selger, hvilke garantier som finnes, hvor sikre dokumentene og leveringstidene er, og om boligen faktisk passer kunden.",
-          "Det er ofte mulig å vurdere en ferdig bolig raskere fordi det meste kan kontrolleres fysisk. Under oppføring kreves mer dokumentarbeid og tettere oppfølging. Zen Eco Homes hjelper deg med prosjektsammenligning, spørsmål til selger og koordinering med uavhengig advokat og eventuelle tekniske fagpersoner."
+          "Det er ofte mulig å vurdere en ferdig bolig raskere fordi det meste kan kontrolleres fysisk. Under oppføring kreves mer dokumentarbeid og tettere oppfølging. Zen Eco Homes hjelper deg med prosjektsammenligning, spørsmål til selger og koordinering med uavhengig advokat og eventuelle tekniske fagpersoner.",
+          "Se våre [[boliger til salgs på Costa Blanca|/eiendommer]], og sammenlign aktuelle nybyggprosjekter ut fra beliggenhet, standard og pris."
         ]
       }
     ],
@@ -999,7 +1002,7 @@ export const extraArticles: Article[] = [
         "body": [
           "En bolig med store vindusflater og flisgulv kan virke luftig og behagelig i august, men kjølig i januar dersom isolasjon, vinduer og oppvarming er svake. Spør hvordan hele boligen varmes opp, også bad og soverom.",
           "Se etter energimerking, vindustype, ventilasjon, varmepumpe, mulige fuktproblemer og boligens faktiske strømforbruk. Vurder en faglig gjennomgang ved eldre boliger; bilder og annonser gir ikke svar på bygningens klimaskall.",
-          "Les gjerne også vår separate artikkel om livet på Costa Blanca om vinteren. Den går dypere inn i klima og sesongrytme."
+          "Les gjerne også vår separate artikkel om [[livet på Costa Blanca om vinteren|/magasin/costa-blanca-vinteren-bo-feriebolig]]. Den går dypere inn i klima og sesongrytme."
         ]
       },
       {
@@ -1020,7 +1023,7 @@ export const extraArticles: Article[] = [
         "heading": "Leilighet eller villa: hvem tar ansvar mens du er borte?",
         "body": [
           "Leilighet kan gi heis, felles basseng og organisert vedlikehold, men også comunidad-kostnader og fellesregler. En villa gir mer kontroll og privatliv, men kan kreve egen oppfølging av basseng, hage, alarm, fasade og tekniske anlegg.",
-          "Hvis du bor i Norge mesteparten av året, bør nøkkeloppbevaring, tilsyn etter uvær og praktisk tilrettelegging for ankomst være del av regnestykket. Skal du bo fast, blir særlig vedlikeholdsansvaret og daglig tilgjengelighet viktig.",
+          "Hvis du bor i Norge mesteparten av året, bør [[tilsyn med ferieboligen|/magasin/hvem-passer-pa-ferieboligen-spania-norge]], nøkkeloppbevaring og praktisk tilrettelegging for ankomst være del av regnestykket. Skal du bo fast, blir særlig vedlikeholdsansvaret og daglig tilgjengelighet viktig.",
           "Ikke glem at sameiefelleskostnader varierer med tjenestetilbud, heiser, fellesareal og vedlikeholdsplan."
         ]
       },
@@ -1029,14 +1032,14 @@ export const extraArticles: Article[] = [
         "body": [
           "Ved fast bosetting bør du kartlegge helsetjenester, medisiner, nærmeste relevante behandlingstilbud og hvordan helseforsikring eller offentlig dekning er organisert i din situasjon. Et europeisk helsetrygdkort er ikke en generell erstatning for en korrekt ordning ved fast flytting.",
           "For familier bør opptak ved skole eller barnehage, språk og reell skolevei undersøkes før valg av bolig. For eldre eller personer med bevegelsesutfordringer kan heis, fortau og bakker være avgjørende.",
-          "En adresse som virker nær et sykehus eller en skole på kartet, kan kreve bil og være vanskelig å nå uten. Test turene på en vanlig hverdag."
+          "En adresse som virker nær et sykehus eller en skole på kartet, kan kreve bil og være vanskelig å nå uten. Test turene på en vanlig hverdag. Les også om [[å bo på Costa Blanca uten bil|/magasin/bo-costa-blanca-uten-bil-beste-omrader]]."
         ]
       },
       {
         "heading": "Fast flytting til Spania: oppholdsregistrering er ikke det samme som skatt",
         "body": [
-          "Norske borgere omfattes av EØS-reglene. Ved planlagt opphold i Spania over tre måneder kreves normalt registrering som EØS-borger etter spanske regler, med nærmere vilkår og dokumentasjon. Se informasjon hos Policía Nacional: https://sede.policia.gob.es/portalCiudadano/_es/tramites_extranjeria_tramite_certificadoregistro_ciudadanoue.php .",
-          "Skattemessig bosted er en separat vurdering. Spanske skattemyndigheter viser blant annet til opphold på mer enn 183 dager i kalenderåret og hvor hovedtyngden av økonomiske interesser er. Familieforhold og skatteavtale kan også påvirke vurderingen. Det er derfor feil å behandle 183 dager som en enkel og universell sjekkliste for alle: https://sede.agenciatributaria.gob.es/Sede/no-residentes/residencia-personas-fisicas-juridicas/persona-fisica-residente-espana.html .",
+          "Norske borgere omfattes av EØS-reglene. Ved planlagt opphold i Spania over tre måneder kreves normalt registrering som EØS-borger etter spanske regler, med nærmere vilkår og dokumentasjon. Se [[Policía Nacionals informasjon om registrering som EØS-borger|https://sede.policia.gob.es/portalCiudadano/_es/tramites_extranjeria_tramite_certificadoregistro_ciudadanoue.php]].",
+          "Skattemessig bosted er en separat vurdering. Spanske skattemyndigheter viser blant annet til opphold på mer enn 183 dager i kalenderåret og hvor hovedtyngden av økonomiske interesser er. Familieforhold og skatteavtale kan også påvirke vurderingen. Det er derfor feil å behandle 183 dager som en enkel og universell sjekkliste for alle. Les [[Spanske skattemyndigheters informasjon om skattemessig bosted|https://sede.agenciatributaria.gob.es/Sede/no-residentes/residencia-personas-fisicas-juridicas/persona-fisica-residente-espana.html]].",
           "Snakk med rådgivere som kan Norge–Spania før flytting, særlig hvis du beholder bolig, arbeid, selskap eller pensjonsinntekt i Norge. Zen Eco Homes kan hjelpe med boligspørsmål, men erstatter ikke skatte- eller juridisk rådgivning."
         ]
       },
@@ -1044,7 +1047,7 @@ export const extraArticles: Article[] = [
         "heading": "Helserettigheter: avklar hvilket land som har ansvaret",
         "body": [
           "Helseordningen ved flytting avhenger blant annet av om du arbeider, er pensjonist, har trygdeytelser eller er familiemedlem. I noen tilfeller er S1-dokumentasjon relevant for tilgang til helsetjenester i bostedslandet. Andre må dokumentere forsikring eller rettigheter på annen måte.",
-          "Undersøk saken før du flytter og før du velger avstand til nødvendig behandling. EU-kommisjonens oversikt forklarer at ansvar for helsedekning avhenger av situasjon og bosted, ikke bare statsborgerskap: https://europa.eu/youreurope/citizens/health/when-living-abroad/health-insurance-cover/index_en.htm ."
+          "Undersøk saken før du flytter og før du velger avstand til nødvendig behandling. [[EU-kommisjonens oversikt over helsedekning ved utenlandsopphold|https://europa.eu/youreurope/citizens/health/when-living-abroad/health-insurance-cover/index_en.htm]] forklarer at ansvar for helsedekning avhenger av situasjon og bosted, ikke bare statsborgerskap."
         ]
       },
       {
@@ -1119,7 +1122,7 @@ export const extraArticles: Article[] = [
           "Er lyd, internett, bod og planløsning gode nok for vanlig hverdagsliv?",
           "Hvordan er transport til helse, skole og fritidsaktiviteter?",
           "Hvem passer på boligen når den står tom?",
-          "Hva er forventede årlige driftskostnader og fellesutgifter?",
+          "Hva er forventede [[årlige driftskostnader|/guide/lopende-kostnader-eie-bolig-spania]] og fellesutgifter?",
           "Er turistutleie lovlig hvis vi ønsker det?",
           "Er oppholdsregistrering, helsedekning og skatteforhold vurdert?",
           "Kan vi se boligen både på en vanlig hverdag og på andre tider av døgnet?"
@@ -1129,7 +1132,7 @@ export const extraArticles: Article[] = [
         "heading": "Freddys råd: kjøp til livet du skal leve, ikke til ferieuken du nettopp hadde",
         "body": [
           "En god kjøperrådgiver bør først avklare hvem som skal bruke boligen og hvordan. Deretter kan vi vurdere riktig mikroområde, type bolig, drift, vinterkomfort, pris og hva som krever særskilt faglig kontroll.",
-          "Zen Eco Homes hjelper deg med boligvalg, lokalkunnskap, sammenligning av alternativer og en ryddig kjøpsprosess. Vi anbefaler samtidig at skatte-, trygde- og oppholdsspørsmål blir avklart med riktige myndigheter eller rådgivere før en permanent flytting."
+          "Zen Eco Homes hjelper deg med boligvalg, lokalkunnskap, sammenligning av [[boliger til salgs i Spania|/eiendommer]] og en ryddig [[kjøpsprosess|/guide/kjope-bolig-i-spania]]. Vi anbefaler samtidig at skatte-, trygde- og oppholdsspørsmål blir avklart med riktige myndigheter eller rådgivere før en permanent flytting."
         ]
       }
     ],
@@ -1239,7 +1242,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Den Norske Skole Costa Blanca ligger i l’Alfàs del Pi, i urbanisasjonen El Oasis. Skolen tilbyr norsk grunnskole og videregående skole og har et etablert miljø for norske familier. Bekreft tilbud, kapasitet, inntaksregler, skolepenger og frister direkte med skolen før boligkjøp.",
           "Skolen oppgir at søknadsprosessen for 2027/2028 åpner i januar 2027. Det er ikke en garanti for skoleplass. Har barnet behov for spesialpedagogisk oppfølging, må dette avklares særskilt; vedtak fra Norge følger ikke automatisk.",
-          "Offisielle kilder: https://www.costablancaskolen.no/ og https://www.costablancaskole.com/kontakt-oss/ ."
+          "Offisielle kilder: [[Den Norske Skole Costa Blanca|https://www.costablancaskolen.no/]] og [[skolens kontaktinformasjon|https://www.costablancaskole.com/kontakt-oss/]]."
         ]
       },
       {
@@ -1247,7 +1250,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Offentlige og offentlig støttede skoler har et formelt opptaks- og innskrivingsløp gjennom Generalitat Valenciana. Skolekretser, prioriteringskriterier, dokumentasjon og søknadsfrister kan påvirke muligheten til å få ønsket skole. Ikke ta for gitt at nærmeste skole automatisk blir tildelt.",
           "For skoleåret 2026–2027 oppga Generalitat blant annet ordinær søknadsperiode 7.–18. mai 2026 for Infantil og Primaria. Dette er historiske datoer for dette skoleåret, ikke frister for 2027–2028. Kontroller alltid ny kalender og eventuelle ekstraordinære opptak når familien faktisk skal flytte.",
-          "Offisiell opptaksinformasjon: https://sede.gva.es/es/detall-tramit?id_proc=G236 ."
+          "[[Generalitat Valencianas offisielle opptaksinformasjon|https://sede.gva.es/es/detall-tramit?id_proc=G236]]."
         ]
       },
       {
@@ -1335,7 +1338,7 @@ export const extraArticles: Article[] = [
         "heading": "En vanlig hverdagsmorgen er en bedre boligtest enn en søndagsvisning",
         "body": [
           "Se for deg to barn som skal til forskjellige steder. Hvem leverer? Hvor lang tid tar returen i vanlig morgentrafikk? Er det trygg parkering ved skolen? Kan tenåringen komme til idrett eller venner på egen hånd?",
-          "Prøv ruten på skoledager og ikke bare midt på dagen. Legg til handling, legeavtaler og trening. Hvis hverdagen krever flere bilturer hver eneste dag, må dere ønske nettopp den livsstilen – uansett hvor flott boligen er."
+          "Prøv ruten på skoledager og ikke bare midt på dagen. Legg til handling, legeavtaler og trening. Hvis hverdagen krever flere bilturer hver eneste dag, må dere ønske nettopp den livsstilen – uansett hvor flott boligen er. Vil dere sammenligne [[områder som passer best til deres behov|/guide/omradeguide-eiendomskjop-i-spania]], kan dere lese mer i områdeguiden vår."
         ]
       },
       {
@@ -1356,14 +1359,14 @@ export const extraArticles: Article[] = [
         "heading": "Før dere kjøper: besøk skolene og området sammen med barna",
         "body": [
           "Book samtaler eller omvisninger der skolene tilbyr det, kontroller opptak og oppstart, og bruk noen hverdager i aktuelle områder. Snakk med skoleledelsen om språk og overgang, og prøv transporten fra aktuelle boliger.",
-          "Be rådgiveren finne boliger som passer skole- og aktivitetslogistikken, ikke bare ønsket antall soverom. Bruk uavhengig advokat til selve boligkjøpet, og ikke inngå bindende avtale på forutsetning av en skoleplass som ikke er bekreftet."
+          "Be rådgiveren finne boliger som passer skole- og aktivitetslogistikken, ikke bare ønsket antall soverom. Bruk uavhengig advokat til selve boligkjøpet, og ikke inngå bindende avtale på forutsetning av en skoleplass som ikke er bekreftet. Når dere har funnet et område som passer familien, er neste steg å sette seg inn i selve kjøpsprosessen. I vår [[guide til å kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]] får dere oversikt over stegene fra finansiering og juridiske undersøkelser til kontrakt og overtakelse."
         ]
       },
       {
         "heading": "Freddys råd: planlegg barnas hverdag før dere velger bolig",
         "body": [
           "Det viktigste valget er ikke nødvendigvis Albir mot La Nucía eller villa mot leilighet. Først må vi finne et skole- og nærmiljø barna kan trives i, som fungerer for foreldrenes arbeid og familiens transportbehov.",
-          "Zen Eco Homes kan hjelpe dere å identifisere egnede mikroområder og vurdere boliger ut fra skolevei, familieliv, budsjett og langvarig bruk. Målet er å finne et hjem som fungerer også på en vanlig skoledag i november."
+          "Zen Eco Homes kan hjelpe dere å identifisere egnede mikroområder og vurdere [[boliger til salgs på Costa Blanca|/eiendommer]] ut fra skolevei, familieliv, budsjett og langvarig bruk. Målet er å finne et hjem som fungerer også på en vanlig skoledag i november."
         ]
       }
     ],
@@ -1436,7 +1439,7 @@ export const extraArticles: Article[] = [
         "heading": "Kort svar: hvilke områder er best uten bil?",
         "body": [
           "Sentrale deler av Albir, Benidorm, Villajoyosa og Altea kan fungere godt uten egen bil, hvis boligen har rimelig avstand til dagligvare, apotek og de aktivitetene du faktisk bruker. Benidorm har særlig mange helårstjenester, mens Albir har en kompakt kjerne og internasjonale møteplasser.",
-          "Finestrat Hills, Sierra Cortina, Polop Hills og Altea Hills er i hovedsak bilorienterte boligområder. Selv korte avstander på kartet kan innebære lange og bratte stigninger."
+          "Finestrat Hills, Sierra Cortina, Polop Hills og Altea Hills er i hovedsak bilorienterte boligområder. Selv korte avstander på kartet kan innebære lange og bratte stigninger. Se gjerne [[boliger til salgs på Costa Blanca|/eiendommer]], og vurder beliggenheten opp mot gangavstand til butikker, kollektivtransport og andre tjenester. Vil du undersøke hvilke [[områder som passer best til dine behov|/guide/omradeguide-eiendomskjop-i-spania]], kan du lese mer i områdeguiden vår."
         ]
       },
       {
@@ -1486,7 +1489,7 @@ export const extraArticles: Article[] = [
         "body": [
           "For en pensjonist som ønsker daglige spaserturer, kafé, apotek og sosiale aktiviteter, kan en sentral leilighet være ideell. For en familie med små barn må skolerute, barnehage, fritidsaktiviteter, kveldstransport og barnevognvennlige fortau testes særskilt.",
           "For dem som har begrenset mobilitet er 400 meter med trapper, glatte fliser og kraftig stigning ikke en lett tur. Undersøk heis fra gateplan, eventuelle nivåforskjeller, ramper og tilkomst ved regn.",
-          "En fjernarbeider kan klare seg uten bil på dagtid, men bør teste hjemreisen fra flyplass, togstasjon og møter. Hvis du må bestille taxi til nesten alt, er boligen ikke bilfri i praksis, selv om du ikke eier en bil."
+          "En fjernarbeider kan klare seg uten bil på dagtid, men bør teste hjemreisen fra flyplass, togstasjon og møter. Hvis du må bestille taxi til nesten alt, er boligen ikke bilfri i praksis, selv om du ikke eier en bil. Familier bør også vurdere [[skolerute, barnehage og fritidsaktiviteter|/magasin/costa-blanca-barnefamilier-skole-hverdag]] når de velger område."
         ]
       },
       {
@@ -1494,14 +1497,14 @@ export const extraArticles: Article[] = [
         "body": [
           "Benidorm og nabobyene har et regionalt bussnett som dekker mange av de sentrale bolig- og strandområdene. Avanza oppgir blant annet linje 10 mellom Benidorm, Albir og Altea, linje 12 via Albir og Villajoyosa, linje 14 mot Finestrat og linje 30 mot Cala Finestrat.",
           "Sjekk alltid om bussen faktisk stopper nær inngangsdøren, hvor lenge du må vente ved retur, om ruten kjører på søndager og vinterstid, og om siste avgang passer dine aktiviteter. En rute som eksisterer på kartet, er ikke det samme som en praktisk forbindelse for din hverdag.",
-          "Offisielle bussruter og oppdatert informasjon finnes hos operatøren: https://alicante.avanzagrupo.com/en/routes-and-timetables ."
+          "[[Avanzas offisielle bussruter og rutetider|https://alicante.avanzagrupo.com/en/routes-and-timetables]]."
         ]
       },
       {
         "heading": "Hva med TRAM fra Alicante via Benidorm til Altea?",
         "body": [
           "TRAM d'Alacant er nyttig, men linjer og stasjoner må forstås riktig. Linje 1 forbinder Alicante og Benidorm via blant annet Villajoyosa. Linje 9 går videre fra Benidorm mot blant annet El Albir, Altea og Dénia. Reiseopplegget kan kreve overgang, og avganger, stengninger og stasjonstilgang må sjekkes på operatørens offisielle nettside.",
-          "Den avgjørende testen er ikke «finnes det TRAM i byen?», men om du klarer å gå fra inngangsdøren til stasjonen på en komfortabel måte, også i sommervarme eller regn. Offisielle rutetider og driftsmeldinger: https://www.tramalacant.es ."
+          "Den avgjørende testen er ikke «finnes det TRAM i byen?», men om du klarer å gå fra inngangsdøren til stasjonen på en komfortabel måte, også i sommervarme eller regn. Se [[TRAM d'Alacants offisielle nettside|https://www.tramalacant.es]] for rutetider og driftsmeldinger."
         ]
       },
       {
@@ -1628,6 +1631,7 @@ export const extraArticles: Article[] = [
         "heading": "En praktisk test før du kjøper: lev én dag uten bil",
         "body": [
           "Gå fra den konkrete boligen til matbutikk, apotek, strand og nærmeste holdeplass. Ta med handleposer på turen tilbake. Test bakker på en varm dag og se hva som skjer om du må hjem etter mørkets frembrudd.",
+          "Når du har funnet en bolig som fungerer for hverdagen, er det viktig å gå grundig gjennom selve kjøpsprosessen. I vår [[guide til å kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]] får du oversikt over stegene fra finansiering og juridiske undersøkelser til kontrakt og overtakelse.",
           "Undersøk fortau, fotgjengerfelt, belysning, trafikk og hvor lett du kan bestille taxi. Hvis du bruker rullator, barnevogn eller har begrenset bevegelse, bør du teste akkurat dine behov, også inne i bygget og fra garasje eller gate til heis.",
           "Spør også om det er helårsåpne butikker i nabolaget, ikke bare i juli og august."
         ]
@@ -1636,7 +1640,7 @@ export const extraArticles: Article[] = [
         "heading": "Betaler du mer for riktig gangavstand?",
         "body": [
           "En sentralt plassert bolig med litt mindre terrasse kan være bedre verdi for en kjøper uten bil enn en større bolig høyt oppe med utsikt. Når du regner på transport, tidsbruk og praktiske begrensninger, er billigere kvadratmeter ikke alltid rimeligere hverdag.",
-          "Samtidig må du vurdere støynivå og boligstandard: en godt plassert leilighet med dårlige vinduer kan være ukomfortabel om vinteren. Prioriter en helhetlig løsning."
+          "Samtidig må du vurdere støynivå og boligstandard: en godt plassert leilighet med dårlige vinduer kan være ukomfortabel om vinteren. Prioriter en helhetlig løsning. Les også [[Havutsikt eller gangavstand – hva er mest verdt når du kjøper på Costa Blanca?|/magasin/havutsikt-eller-gangavstand-costa-blanca]]."
         ]
       },
       {
@@ -1722,20 +1726,20 @@ export const extraArticles: Article[] = [
         "heading": "Kort svar: Hva skiller Finestrat og Polop?",
         "body": [
           "Polop passer særlig kjøpere som ønsker fjellnær beliggenhet, ro og dramatisk utsikt – og som er komfortable med å bruke bil. Finestrat er mer sammensatt, med nye boligområder i store deler av åssidene, kort vei til handelsområdene og flere ulike prisnivåer, fra leiligheter til eksklusive, skjermede villaer.",
-          "Det er store variasjoner innad i begge områdene. Finn den konkrete gaten, utsikten og adkomsten før du konkluderer."
+          "Det er store variasjoner innad i begge områdene. Finn den konkrete gaten, utsikten og adkomsten før du konkluderer. Vil du sammenligne flere [[områder som passer best til dine behov|/guide/omradeguide-eiendomskjop-i-spania]], kan du bruke områdeguiden vår."
         ]
       },
       {
         "heading": "Polop Hills: bil er i praksis nødvendig",
         "body": [
           "Mange av de nyere boligene ligger i og rundt høyereliggende områder som Polop Hills. Veiene opp dit er bratte, og selv en sykkeltur kan bli krevende på returen. Dersom du vil gå eller sykle til daglige gjøremål, er dette et vesentlig kompromiss.",
-          "For de fleste kjøpere av bolig i Polop Hills bør man derfor planlegge med bil – både til butikk, strand og andre daglige behov. Det er noe helt annet enn å bo i et flatt sentrum med tjenester rundt hjørnet."
+          "For de fleste kjøpere av bolig i Polop Hills bør man derfor planlegge med bil – både til butikk, strand og andre daglige behov. Det er noe helt annet enn å bo i et flatt sentrum med tjenester rundt hjørnet. Les mer om [[å bo på Costa Blanca uten bil|/magasin/bo-costa-blanca-uten-bil-beste-omrader]]."
         ]
       },
       {
         "heading": "Monte Ponoig: fjellet som gir Polop sin særegne atmosfære",
         "body": [
-          "Monte Ponoig, også kjent som Ponotx, reiser seg over Polop og er kjent som «den sovende løven» på grunn av sin karakteristiske silhuett. Fjellene gir området et dramatisk landskap og en egen atmosfære.",
+          "Monte Ponoig, også kjent som Ponotx, reiser seg over Polop og er kjent som «den sovende løven» på grunn av sin karakteristiske silhuett. Fjellene gir området et dramatisk landskap og en egen atmosfære. Les også om [[havutsikt eller gangavstand på Costa Blanca|/magasin/havutsikt-eller-gangavstand-costa-blanca]].",
           "Fra gunstig plasserte boliger i åssiden kan utsikten være slående: mot den gamle byen Polop på høyden, landskapet rundt Altea, havet og deler av Altea Hills. Hva som faktisk er synlig avhenger av boligens høyde, orientering og omkringliggende bygg. Ikke alle tomter har full panoramautsikt.",
           "Kilde om fjellnavn og landskap: Polop kommunes turbeskrivelse, polop.org/pdf/rutas_senderistas/ruta7/r7.pdf."
         ]
@@ -1751,6 +1755,7 @@ export const extraArticles: Article[] = [
         "heading": "Finestrat: stor utbygging og viktige prisforskjeller i åssiden",
         "body": [
           "Finestrat har fått mange nye boligprosjekter i åssidene over Benidorm. I en del utbygginger ligger de rimeligere enhetene lenger ned mot veier og transportårer, ofte med mer begrenset utsikt. Høyere opp kan villaer få friere utsyn, større terrasser og mer privatliv – men prisene blir vanligvis høyere.",
+          "Se våre [[boliger til salgs på Costa Blanca|/eiendommer]], og sammenlign beliggenhet, boligtype og prisnivå før du bestemmer deg.",
           "Som lokale orienteringspunkter i markedet beskriver vi nyere toroms-/to-soveromsboliger fra omkring €350.000 i enkelte prosjekter og enkelte villaer med tre soverom lenger opp mot €700.000 eller mer. Dette er omtrentlige eksempler fra markedet, ikke verifisert dagsaktuell tilgjengelighet eller løfte om at slike boliger finnes til salgs nå."
         ]
       },
@@ -1829,7 +1834,7 @@ export const extraArticles: Article[] = [
         "heading": "Freddys råd: besøk riktig delområde, ikke bare kommunen",
         "body": [
           "Jeg anbefaler at vi kjører opp til både Polop Hills, de lavere delene av Finestrat og de mer skjermede delene av Sierra Cortina. Det er først når du opplever stigningene, utsikten, veiene og avstanden til butikk og strand at valget blir konkret.",
-          "I den øverste delen av Sierra Cortina kan vi også undersøke muligheter som ikke nødvendigvis er markedsført på de største portalene. Zen Eco Homes hjelper deg å sammenligne aktuelle boliger og finne riktig nivå ut fra budsjett og livsstil."
+          "I den øverste delen av Sierra Cortina kan vi også undersøke muligheter som ikke nødvendigvis er markedsført på de største portalene. Zen Eco Homes hjelper deg å sammenligne aktuelle boliger og finne riktig nivå ut fra budsjett og livsstil. Når du har funnet et område som passer, er neste steg å undersøke boligen og gjennomføre kjøpet på en trygg måte. I vår [[guide til å kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]] får du oversikt over hele prosessen, fra finansiering og juridiske undersøkelser til kontrakt og overtakelse."
         ]
       }
     ],
@@ -1900,7 +1905,7 @@ export const extraArticles: Article[] = [
         "heading": "Hva er den viktigste forskjellen mellom Albir og Villajoyosa?",
         "body": [
           "Albir i kommunen l’Alfàs del Pi har en betydelig internasjonal befolkning, restauranter, butikker og et norsk miljø. Bebyggelsen er preget av leiligheter, etablerte boligområder og åser med villaer. Stranden er i hovedsak rullestein.",
-          "Villajoyosa, også kjent som La Vila Joiosa, er en selvstendig spansk kystby med eldre sentrum, fiske- og sjømattradisjoner, sandstrender og nyere boligprosjekter. Byen har både rolige lokalgater og moderne strandområder, og er ikke en ensartet turistdestinasjon."
+          "Villajoyosa, også kjent som La Vila Joiosa, er en selvstendig spansk kystby med eldre sentrum, fiske- og sjømattradisjoner, sandstrender og nyere boligprosjekter. Byen har både rolige lokalgater og moderne strandområder, og er ikke en ensartet turistdestinasjon. Les mer i [[områdeguiden for boligkjøpere i Spania|/guide/omradeguide-eiendomskjop-i-spania]]."
         ]
       },
       {
@@ -1927,7 +1932,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Transport og hverdagslogistikk",
         "body": [
-          "Begge områdene har tilgang til TRAM Alicante på relevante strekninger, men stasjonsplassering, linjer og reisetid må sjekkes mot den konkrete boligen og dagens rutetabell. Ikke anta at alle boligområder kan fungere uten bil.",
+          "Begge områdene har tilgang til TRAM Alicante på relevante strekninger, men stasjonsplassering, linjer og reisetid må sjekkes mot den konkrete boligen og dagens rutetabell. Ikke anta at alle boligområder kan fungere uten bil. Les mer om [[å bo på Costa Blanca uten bil|/magasin/bo-costa-blanca-uten-bil-beste-omrader]].",
           "I Albir kan en sentralt plassert leilighet gi kort vei til butikker og tjenester. I Villajoyosa kan det samme gjelde sentrum, mens enkelte nye prosjekter og boligområder lenger fra sentrum kan gjøre bil mer praktisk."
         ]
       },
@@ -1976,7 +1981,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Hvem bør velge hva?",
         "body": [
-          "Velg Albir dersom det viktigste er et kjent internasjonalt miljø, norske møteplasser og at mye av hverdagen kan ordnes på et lite geografisk område. Velg Villajoyosa dersom du ønsker sandstrand, lokal spansk identitet og muligheten til å velge mellom flere typer nabolag.",
+          "Velg Albir dersom det viktigste er et kjent internasjonalt miljø, norske møteplasser og at mye av hverdagen kan ordnes på et lite geografisk område. Velg Villajoyosa dersom du ønsker sandstrand, lokal spansk identitet og muligheten til å velge mellom flere typer nabolag. Før du går videre, er det lurt å lese vår [[guide til å kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]].",
           "Det finnes selvfølgelig unntak på begge steder. Et perfekt plassert objekt i Villajoyosa kan passe bedre enn en leilighet i utkanten av Albir – og omvendt."
         ]
       },
@@ -1984,7 +1989,7 @@ export const extraArticles: Article[] = [
         "heading": "Freddys råd: prøv en vanlig tirsdag",
         "body": [
           "Ta en tur til begge steder uten å gjøre det til en ren visningsdag. Kjøp mat, gå til stranden, finn parkering, prøv kaféene og undersøk hvor mye sol boligen og terrassen har på vinteren. Det avslører mer om hverdagen enn et kart eller annonsebilder.",
-          "Vi kan gjerne sammenligne aktuelle boliger med samme totalbudsjett i begge områder, og være åpne om hvilke kompromisser som følger med hvert valg."
+          "Vi kan gjerne sammenligne [[boliger til salgs på Costa Blanca|/eiendommer]] med samme totalbudsjett i begge områder, og være åpne om hvilke kompromisser som følger med hvert valg. Les også om [[vinteren på Costa Blanca|/magasin/costa-blanca-vinteren-bo-feriebolig]]."
         ]
       }
     ],
@@ -2033,7 +2038,7 @@ export const extraArticles: Article[] = [
     "intro": [
       "To boliger kan annonseres for henholdsvis €350.000 og €370.000. Den rimeligste kan likevel bli dyrest dersom hvitevarer, privat basseng, dusjvegger, speil, belysning og nødvendige elektriske uttak kommer i tillegg. Det er ferdig levert bolig – ikke bare annonseprisen – som må sammenlignes.",
       "Når jeg hjelper kunder med nybygg på Costa Blanca, er et av de viktigste spørsmålene: Hva er faktisk inkludert, hva kan endres, hva koster endringene, og hva bør vi forsøke å forhandle inn før reservasjon? Det er store forskjeller mellom utbyggere, prosjekter og byggetrinn.",
-      "Få en skriftlig og spesifisert leveransebeskrivelse (memoria de calidades), tegningsunderlag og tilvalgsprisliste. Muntlige løfter, dekor i visningsboligen eller formuleringen «fullt utstyrt» er ikke nok."
+      "Få en skriftlig og spesifisert leveransebeskrivelse (memoria de calidades), tegningsunderlag og tilvalgsprisliste. Muntlige løfter, dekor i visningsboligen eller formuleringen «fullt utstyrt» er ikke nok. Les også vår [[guide til nybygg i Spania|/guide/nybygg-i-spania]]."
     ],
     "sections": [
       {
@@ -2196,9 +2201,9 @@ export const extraArticles: Article[] = [
       {
         "heading": "Når må tilvalgene bestilles og hvordan betales de?",
         "body": [
-          "Spør etter siste bestillingsfrist for hvert tilvalg. Endringer i strøm, rør og konstruksjon må ofte avklares tidligere enn fargevalg eller kjøkkenfronter. Noen endringer er ikke mulige etter at bygget når en bestemt fase.",
+          "Spør etter siste bestillingsfrist for hvert tilvalg. Endringer i strøm, rør og konstruksjon må ofte avklares tidligere enn fargevalg eller kjøkkenfronter. Noen endringer er ikke mulige etter at bygget når en bestemt [[byggefase|/magasin/nybygg-under-oppforing-eller-innflyttingsklar-spania]].",
           "Få en spesifisert bestilling der både grunnpris, merpris, avgift, betalingsdato, leveringsdato, garantier og konsekvens ved forsinkelse står. Ikke betal for et muntlig lovet tilvalg.",
-          "Be juristen kontrollere reservasjonskontrakt, forskuddsbetaling, bankgaranti der relevant og hva som skjer hvis utbygger ikke leverer det avtalte."
+          "Be juristen kontrollere reservasjonskontrakt, forskuddsbetaling, bankgaranti der relevant og hva som skjer hvis utbygger ikke leverer det avtalte. Når du skal [[kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]], er det viktig å ha kontroll på hele avtalen før du signerer."
         ]
       },
       {
@@ -2219,8 +2224,8 @@ export const extraArticles: Article[] = [
       {
         "heading": "Freddys vurdering: rådgivning handler om hele avtalen – ikke bare boligen",
         "body": [
-          "Å få en pris på en bolig er enkelt. Å få en fullstendig og sammenlignbar pris for boligen du faktisk vil bo i, krever mer arbeid. En dyktig kjøperrådgiver setter seg ned med deg, går gjennom hverdagsbehovene, sjekker plantegningene, ber om dokumentasjon og forhandler med utbygger om den komplette leveransen.",
-          "Da kan det vise seg at det rimeligste prosjektet ikke er best, eller at en bedre utstyrt bolig gir høyere verdi selv om prisetiketten er større. Målet er at du skal kjenne hele avtalen før du signerer – ikke oppdage ekstrakostnadene etter at innbetalingene har startet."
+          "Å få en pris på en bolig er enkelt. Å få en fullstendig og sammenlignbar pris for boligen du faktisk vil bo i, krever mer arbeid. En dyktig kjøperrådgiver setter seg ned med deg, går gjennom hverdagsbehovene, sjekker plantegningene, ber om dokumentasjon og forhandler med utbygger om den komplette leveransen. Se også [[boliger til salgs på Costa Blanca|/eiendommer]].",
+          "Da kan det vise seg at det rimeligste prosjektet ikke er best, eller at en bedre utstyrt bolig gir høyere verdi selv om prisetiketten er større. Målet er at du skal kjenne hele avtalen før du signerer – ikke oppdage ekstrakostnadene etter at innbetalingene har startet. Det er også viktig å vite hvilke rettigheter du har dersom det oppdages [[feil og mangler ved nybygg i Spania|/magasin/feil-mangler-nybygg-spania-reklamasjon]]."
         ]
       }
     ],
@@ -2405,7 +2410,7 @@ export const extraArticles: Article[] = [
       "feriebolig Spania vinter"
     ],
     "intro": [
-      "Du kan sitte i solen på en terrasse i januar og likevel trenge jakke hjemme om kvelden. Vinteren på Costa Blanca er en av de mest undervurderte grunnene til å kjøpe bolig her – og samtidig en vanlig kilde til feil forventninger.",
+      "Du kan sitte i solen på en terrasse i januar og likevel trenge jakke hjemme om kvelden. Vinteren på Costa Blanca er en av de mest undervurderte grunnene til å [[kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]] – og samtidig en vanlig kilde til feil forventninger.",
       "Hverdagen er annerledes enn norsk vinter, men også annerledes enn spansk sommer. Det riktige området og den riktige boligen betyr mer enn et pent værbilde."
     ],
     "sections": [
@@ -2434,7 +2439,7 @@ export const extraArticles: Article[] = [
         "heading": "Hvem trives spesielt godt her om vinteren?",
         "body": [
           "Noen ønsker rolige formiddager med turer, sykkel, kafé og lokale markeder; andre vil ha et stort norsk eller internasjonalt miljø med faste aktiviteter. I Albir og Alfaz del Pi finnes etablerte norske møteplasser, mens byer som Benidorm byr på flere helårsåpne tilbud.",
-          "Costa Blanca er ikke bare for pensjonister. Også familier, fjernarbeidere og dem som ønsker lange opphold kan trives – men skole, arbeidsrutiner og transport må vurderes separat."
+          "Costa Blanca er ikke bare for pensjonister. Også familier, fjernarbeidere og dem som ønsker lange opphold kan trives – men skole, arbeidsrutiner og transport må vurderes separat. Les også om forskjellene mellom [[Albir og Villajoyosa|/magasin/albir-eller-villajoyosa-hvor-bo]]."
         ]
       },
       {
@@ -2459,7 +2464,7 @@ export const extraArticles: Article[] = [
             ],
             [
               "Turvei og kollektivtransport",
-              "Bilbehovet kan bli større enn forventet"
+              "[[Bilbehovet kan bli større enn forventet|/magasin/bo-costa-blanca-uten-bil-beste-omrader]]"
             ],
             [
               "Sosialt nettverk",
@@ -2471,13 +2476,13 @@ export const extraArticles: Article[] = [
       {
         "heading": "Freddys råd: besøk området i januar eller februar",
         "body": [
-          "Hvis du planlegger å bruke boligen mest om vinteren, bør du oppleve den aktuelle gaten, restauranten og terrasseplassen i samme sesong før du kjøper. Finn den boligen du vil trives i på en vanlig tirsdag – ikke bare på en ferieannonse."
+          "Hvis du planlegger å bruke boligen mest om vinteren, bør du oppleve den aktuelle gaten, restauranten og terrasseplassen i samme sesong før du kjøper. Finn den boligen du vil trives i på en vanlig tirsdag – ikke bare på en ferieannonse. Se [[hus og leiligheter til salgs i Spania|/eiendommer]], og vurder solforhold, beliggenhet og boligstandard med tanke på hvordan du vil bruke boligen gjennom vinteren."
         ]
       }
     ],
     "nextSteps": [
       "Prioriter vinter-sol og boligstandard.",
-      "Besøk aktuelle områder utenfor høysesong.",
+      "Besøk [[områdene som passer best til dine behov|/guide/omradeguide-eiendomskjop-i-spania]] utenfor høysesong.",
       "Prøv hverdagslogistikken og møtestedene.",
       "Sammenlign energistandard og faktisk varmekostnad."
     ],
@@ -2524,13 +2529,13 @@ export const extraArticles: Article[] = [
     ],
     "intro": [
       "Forskjellen mellom to tilbud på valutaveksling kan bli stor når du skal betale hundretusener av euro. Men lavest valutapåslag er ikke den eneste faktoren: riktige mottakeropplysninger, dokumentasjon og timing er minst like viktig.",
-      "Dette er en praktisk plan for kjøpere som har penger i norske kroner og skal betale eiendom i euro. Den erstatter ikke personlig finansrådgivning eller oppgjørsinstruks fra advokaten din."
+      "Dette er en praktisk plan for deg som skal [[kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]], har penger i norske kroner og skal betale eiendom i euro. Den erstatter ikke personlig finansrådgivning eller oppgjørsinstruks fra advokaten din."
     ],
     "sections": [
       {
         "heading": "Se på hvor mange euro mottaker faktisk får",
         "body": [
-          "Sammenlign minst to uavhengige tilbud med samme tidspunkt, beløp og mottakervaluta. Be om oppgitt valutakurs, påslag, faste gebyrer, gebyrer hos mottakerbanken og forventet overføringstid.",
+          "Sammenlign minst to uavhengige tilbud med samme tidspunkt, beløp og mottakervaluta. Be om oppgitt valutakurs, påslag, faste gebyrer, gebyrer hos mottakerbanken og forventet overføringstid. Les mer om [[valutaveksling|/guide/spansk-bankkonto-valutaveksling]] og spansk bankkonto før du velger løsning.",
           "Ikke konkluder ut fra reklame for «gebyrfri overføring». Kostnaden kan ligge i valutakursen. Sammenlign sluttbeløpet i euro etter alle kostnader."
         ]
       },
@@ -2544,7 +2549,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Nybygg med delbetalinger krever en valutaplan",
         "body": [
-          "Nybygg kan ha reserveringsbeløp, senere delbetalinger og sluttoppgjør ved overtakelse. Be om den fullstendige betalingsplanen i euro, sett opp forfallsdatoer og planlegg likviditeten.",
+          "[[Nybygg kan ha reserveringsbeløp, senere delbetalinger og sluttoppgjør ved overtakelse|/guide/nybygg-i-spania]]. Be om den fullstendige betalingsplanen i euro, sett opp forfallsdatoer og planlegg likviditeten.",
           "Noen banker og valutatilbydere kan tilby avtaler som låser en fremtidig kurs. Dette kan skape forutsigbarhet, men også innebære bindinger, sikkerhetskrav og kostnader. Få vilkårene skriftlig og vurder risikoen før du inngår avtale."
         ]
       },
@@ -2558,7 +2563,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Hvordan betaler man hos notaren?",
         "body": [
-          "Ved signering kan oppgjøret etter avtale håndteres med bankutstedt sjekk eller relevante bankoverføringer. Banco de España beskriver blant annet banker's draft og TARGET-overføringer for boligoppgjør. Løsningen må avklares med advokat, bank og notar på forhånd.",
+          "Ved signering kan oppgjøret etter avtale håndteres med bankutstedt sjekk eller relevante [[bankoverføringer|/guide/spansk-bankkonto-valutaveksling]]. Banco de España beskriver blant annet banker's draft og TARGET-overføringer for boligoppgjør. Løsningen må avklares med advokat, bank og notar på forhånd.",
           "Kilde: Banco de España, «Cheque or transfer? How do you pay for a house?» https://clientebancario.bde.es/pcb/en/blog/compra-de-vivienda-cheque-o-transferencia.html ."
         ]
       },
@@ -2962,7 +2967,7 @@ export const extraArticles: Article[] = [
         "body": [
           "En god rådgiver starter med behov, totalbudsjett og områdevalg – ikke med en tilfeldig annonse. Målet er en kortliste med boliger som passer livet du ønsker å ha i Spania.",
           "Skal du bo fast, kan skole, helårstilbud og gangavstand være avgjørende. Skal boligen brukes som feriebolig, kan vedlikehold, reisevei og praktisk oppfølging bety mer. Riktig pris hjelper lite dersom hverdagen rundt ikke passer.",
-          "Jeg begynner med å avklare bruk og kompromisser før vi ser på [[områder på Costa Blanca|/omrader]] og velger hvilke eiendommer som er verdt en visning."
+          "Jeg begynner med å avklare bruk og kompromisser før vi ser på [[eiendommer til salgs på Costa Blanca|/eiendommer]] og velger hvilke som er verdt en visning."
         ],
         "bullets": [
           "Hvordan skal boligen brukes: ferie, helårsliv, utleie eller en kombinasjon?",
@@ -2983,8 +2988,8 @@ export const extraArticles: Article[] = [
         "heading": "Hvordan vurderer rådgiveren om en bolig er riktig priset?",
         "body": [
           "Rådgiveren bør sammenligne eiendommen med reelle alternativer i samme område og standardklasse og undersøke hva totalprisen faktisk omfatter. Annonsert pris er bare ett av flere vurderingspunkter.",
-          "For nybygg bør du undersøke leveransebeskrivelse, betalingsplan, tilvalg, prosjektets fremdrift og fellesfasiliteter. For bruktbolig er teknisk tilstand, dokumentasjon og vedlikehold viktig. Forhandlingsrommet varierer; nybygg er ikke automatisk riktig priset, og en lav bruktboligpris betyr ikke automatisk at eiendommen har skjulte feil.",
-          "Be om begrunnelse for prisvurderingen, og skill mellom annonserte priser og dokumenterte salg. En rådgivers vurdering erstatter ikke en uavhengig takst når det er behov for det."
+          "For nybygg bør du undersøke leveransebeskrivelse, betalingsplan, tilvalg, prosjektets fremdrift og fellesfasiliteter. Les mer i vår [[guide til nybygg i Spania|/guide/nybygg-i-spania]]. For bruktbolig er teknisk tilstand, dokumentasjon og vedlikehold viktig. Forhandlingsrommet varierer; nybygg er ikke automatisk riktig priset, og en lav bruktboligpris betyr ikke automatisk at eiendommen har skjulte feil.",
+          "Be om begrunnelse for prisvurderingen, og skill mellom annonserte priser og dokumenterte salg. En rådgivers vurdering erstatter ikke en uavhengig takst når det er behov for det. Det er også viktig å vite hvilke rettigheter du har dersom det oppdages [[feil og mangler ved nybygg i Spania|/magasin/feil-mangler-nybygg-spania-reklamasjon]]."
         ]
       },
       {
@@ -3071,7 +3076,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Hva bør skje etter visningen og etter overtakelsen?",
         "body": [
-          "Rådgivningen bør ikke slutte når du har funnet en bolig du liker. Deretter følger spørsmål om reservasjon, dokumentasjon, finansiering, kontrakt, notar og overtakelse. Du bør vite hvem som er ansvarlig for hvert steg, og hva rådgiveren konkret leverer.",
+          "Rådgivningen bør ikke slutte når du har funnet en bolig du liker. Deretter følger spørsmål om reservasjon, dokumentasjon, [[finansiering|/guide/finansiere-bolig-i-spania]], kontrakt, notar og overtakelse. Du bør vite hvem som er ansvarlig for hvert steg, og hva rådgiveren konkret leverer. Før du går videre til reservasjon og kontrakt, er det lurt å kjenne hele [[kjøpsprosessen for bolig i Spania|/guide/kjope-bolig-i-spania]], fra juridiske undersøkelser til overtakelse.",
           "Etter kjøpet kan du trenge praktisk hjelp med nøkler, leverandører, tilsyn og klargjøring når du ikke er i Spania. Slike tjenester varierer og kan koste ekstra; få dette avklart.",
           "Hos Zen Eco Homes er målsetningen en oversiktlig prosess fra behov til overtakelse. Se [[slik jobber vi gjennom kjøpsprosessen|/kjopsprosessen]] og [[hvordan vi planlegger visningstur|/visningstur]]."
         ]
@@ -3159,7 +3164,7 @@ export const extraArticles: Article[] = [
           "Flere annonser kan vise nøyaktig den samme boligen.",
           "Samme prosjekt kan markedsføres med forskjellige bilder, enhetsnumre og fra-priser.",
           "En annonse kan ligge synlig uten at tilgjengeligheten nylig er kontrollert.",
-          "Antall søkeresultater er derfor ikke et pålitelig mål på antall kjøpsklare eiendommer."
+          "Antall søkeresultater er derfor ikke et pålitelig mål på antall kjøpsklare eiendommer. Vil du se [[hus og leiligheter til salgs på Costa Blanca|/eiendommer]], kan du utforske boligoversikten vår og sammenligne ulike boligtyper og områder."
         ]
       },
       {
@@ -3199,7 +3204,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Nei. En annonse kan være publisert fra en felles prosjektkatalog, et markedssystem eller utbyggers salgsinformasjon uten at den enkelte annonsøren selv har besøkt tomten eller sett den konkrete enheten. Det er ikke i seg selv uprofesjonelt å videreformidle et prosjekt, men rådgiveren bør være ærlig om hva han eller hun faktisk vet.",
           "Min erfaring er at enkelte annonsører først må hente inn grunnleggende prosjektinformasjon når en kunde viser interesse. For kjøperen kan det være frustrerende dersom man forventet å snakke med en lokalkjent ekspert. Dette er en praktisk observasjon, ikke grunnlag for å si at de fleste nybyggannonsører aldri har vært på stedet.",
-          "En seriøs rådgiver bør skille mellom opplysninger fra utbygger, det han eller hun selv har kontrollert, og forhold som fortsatt er uavklarte. Før du reiser på visning, be om svar på punktene under."
+          "En seriøs rådgiver bør skille mellom opplysninger fra utbygger, det han eller hun selv har kontrollert, og forhold som fortsatt er uavklarte. Før du reiser på visning, be om svar på punktene under. Skal du kjøpe nybygg, finner du flere råd i vår [[guide til nybygg i Spania|/guide/nybygg-i-spania]]."
         ],
         "bullets": [
           "Hvilken blokk, etasje og konkret enhet gjelder annonsen?",
@@ -3257,7 +3262,7 @@ export const extraArticles: Article[] = [
         "heading": "Hva bør være bekreftet før du reiser til Spania på visning?",
         "body": [
           "Før du kjøper flybilletter eller legger opp en tett visningsdag, bør du ha en kortliste med boliger som er sjekket for tilgjengelighet, pris, adresse og grunnleggende dokumentasjon. Ved nybygg må vi også vite hvilken konkret enhet som skal vises, ikke bare hvilket prosjekt annonsen gjelder.",
-          "Jeg foretrekker færre, bedre forberedte visninger framfor at vi fyller dagen med annonser som viser seg å være solgt eller uaktuelle. Et realistisk og oppdatert utvalg gir bedre mulighet til å sammenligne beliggenhet, byggekvalitet og totalbudsjett.",
+          "Jeg foretrekker færre, bedre forberedte visninger framfor at vi fyller dagen med annonser som viser seg å være solgt eller uaktuelle. Et realistisk og oppdatert utvalg gir bedre mulighet til å sammenligne beliggenhet, byggekvalitet og totalbudsjett. Før du går videre til reservasjon og kontrakt, er det lurt å kjenne hele [[kjøpsprosessen for bolig i Spania|/guide/kjope-bolig-i-spania]], fra juridiske undersøkelser til overtakelse.",
           "Les gjerne [[hva du ikke ser i boligannonsen|/magasin/det-du-ikke-ser-i-boligannonsen]] og [[hvordan vi planlegger visningstur på Costa Blanca|/visningstur]]."
         ]
       },
@@ -3336,7 +3341,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Hvor dyr bolig kan du kjøpe for 4, 6, 8 eller 10 millioner kroner?",
         "body": [
-          "Det avhenger av om millionbeløpet er maksimal kjøpesum eller hele totalbudsjettet, hva euroen koster, og om du kjøper nybygg eller bruktbolig. Når kjøpskostnadene er inkludert, blir den realistiske maksimalprisen lavere enn beløpet du får ved å veksle kroner til euro.",
+          "Det avhenger av om millionbeløpet er maksimal kjøpesum eller hele totalbudsjettet, hva euroen koster, og om du kjøper nybygg eller bruktbolig. Når kjøpskostnadene er inkludert, blir den realistiske maksimalprisen lavere enn beløpet du får ved å veksle kroner til euro. Før du legger et budsjett til grunn, bør du også sette deg inn i [[kostnadene ved å kjøpe bolig i Spania|/guide/kjope-bolig-i-spania]].",
           "Tabellen viser et regneeksempel, med valutakurs 11,50 kroner per euro (ikke dagens kurs), ordinær bruktboligskatt på 9 % i Valenciaregionen, nybygg med 10 % IVA og ordinær 1,4 % AJD, samt antatte 1 % til advokat og 0,5 % til notar/registrering. Beløpene er avrundet ned til nærmeste 1 000 euro. Møbler, finansiering og en egen kontantreserve kommer i tillegg og må trekkes fra budsjettet før beregningen hvis de skal finansieres av den samme totalrammen.",
           "Disse valgene gjenspeiler standardforutsetningene i kalkulatoren under. Endre selv valutakurs, boligtype, avgiftsforutsetninger og reserve for et mer relevant estimat før du velger bolig."
         ],
@@ -3381,7 +3386,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Ved totalramme på fire millioner kroner gir regneeksemplet plass til bruktbolig rundt 314 000 euro eller ordinært nybygg rundt 308 000 euro før en ekstra personlig reserve. I dette segmentet kan leiligheter og enkelte mer kompakte boliger være relevante alternativer, men boligtype og kvalitet varierer sterkt mellom kommuner og bydeler.",
           "I Villajoyosa eller mer tilbaketrukne boligområder kan det være verdt å undersøke leiligheter med god planløsning og praktisk beliggenhet, mens svært sentrale sjøfrontbeliggenheter kan gjøre at du må prioritere størrelse eller standard ned. Det er ikke grunnlag for å anta at en bestemt bolig står ledig til disse prisene uten å kontrollere markedet.",
-          "Bruk [[boligsøket for Costa Blanca|/eiendommer]] og [[områdeguiden for Villajoyosa|/omrader/costa-blanca-nord/villajoyosa]] til å sammenligne konkrete muligheter."
+          "Bruk [[leiligheter og boliger til salgs på Costa Blanca|/eiendommer]] og [[områdeguiden for Villajoyosa|/omrader/costa-blanca-nord/villajoyosa]] til å sammenligne konkrete muligheter."
         ]
       },
       {
@@ -3480,7 +3485,7 @@ export const extraArticles: Article[] = [
         "body": [
           "Før du bestiller visninger bør du avklare om boligen skal brukes til ferie, helårsbolig eller langtidsplaner, og om gangavstand, utsikt, uteareal, antall soverom eller minimalt vedlikehold er viktigst. To kunder med samme budsjett kan få helt forskjellige anbefalinger.",
           "Jeg bruker derfor ikke budsjettnivåene til å love en bestemt bolig. Jeg starter med beløpet du kan bruke totalt og lager deretter en kortliste som viser hvilke alternativer som faktisk er tilgjengelige. For konkrete, løpende boligsammenligninger kan du gå til [[vår oppdaterte markedssammenligning for Costa Blanca Nord|/magasin/hva-far-du-for-pengene-costa-blanca-nord-na]].",
-          "Når beliggenhet og behov er klare, kan du utforske [[boliger til salgs|/eiendommer]] eller [[bestille en boligprat|/booking]]."
+          "Når beliggenhet og behov er klare, kan du utforske [[hus og leiligheter til salgs i Spania|/eiendommer]] eller [[bestille en boligprat|/booking]]."
         ]
       }
     ],
