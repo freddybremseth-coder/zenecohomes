@@ -41,7 +41,27 @@ function PreferenceTable({rows}:{rows:string[][]}) {
   </table>
  </div>;
 }
-function Airport({title,rows}:{title:string;rows:string[][]}) { return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><div className="grid gap-2">{rows.map(([name,time])=><div key={name} className="flex flex-wrap justify-between gap-2 border-b border-slate-200 py-2"><span className="font-medium">{name}</span><span>{time}</span></div>)}</div></section>; }
+function Airport({title,rows,variant}:{title:string;rows:string[][];variant:string}) {
+ return <section className="area-airport-section my-7">
+  <h4 className="font-semibold text-xl mb-3">{title}</h4>
+  <div className={`area-guide-table area-table--${variant}`}>
+   <table>
+    <thead><tr><th scope="col">Område</th><th scope="col">Omtrentlig kjøretid</th></tr></thead>
+    <tbody>{rows.map(([name,time])=><tr key={name}>
+     <th scope="row">{name}</th>
+     <td data-label="Omtrentlig kjøretid">{time}</td>
+    </tr>)}</tbody>
+   </table>
+  </div>
+ </section>;
+}
+const winterTemperatures = [
+ ["Sør-Tenerife","18–19 °C","Vanlige dagtemperaturer over 20 °C"],
+ ["Gran Canaria","rundt 18 °C","Milde netter"],
+ ["Costa del Sol / Málaga","rundt 12 °C","Dagtemperaturer rundt 17 °C"],
+ ["Costa Blanca / Alicante","rundt 11,7 °C","Dagtemperaturer rundt 17 °C"],
+ ["Murcia / Costa Cálida","Murcia by: rundt 10,6 °C","Større forskjell mellom dag og natt; dagtemperatur rundt 16,6 °C"],
+];
 export function SpainAreaGuide(){
  return <section className="section cornerstone-section"><article className="article-main prose max-w-none area-guide-article">
  <p>Hvor i Spania du bør kjøpe eiendom avhenger av både prisnivå, klima og hvordan du ønsker å bruke boligen i hverdagen. Jeg har sett mange boligkjøpere starte med en klar idé om hvor de skal bo, for så å endre mening over tid når de besøker områdene.</p>
@@ -80,14 +100,23 @@ export function SpainAreaGuide(){
  <h3>Hvor varmt skal det være om vinteren?</h3>
  <p>Hvis du ønsker milde temperaturer også om vinteren, er Kanariøyene normalt det beste valget. Sør på Tenerife ligger normaltemperaturen i januar rundt 18,4 °C, mens Gran Canaria ligger rundt 17,9 °C. Til sammenligning ligger Málaga og Alicante rundt 12 °C. Dette er døgnmiddel, ikke dagtemperatur, og ingen av stedene garanterer sommervarme hver dag.</p>
  <p>Her er områdene i Spania med varmest vintre:</p>
- <ul><li><strong>Sør-Tenerife:</strong> rundt 18–19 °C i gjennomsnitt i januar, med vanlige dagtemperaturer over 20 °C.</li><li><strong>Gran Canaria:</strong> rundt 18 °C i januar og milde netter.</li><li><strong>Costa del Sol / Málaga:</strong> rundt 12 °C som januarmiddel og dagtemperaturer rundt 17 °C.</li><li><strong>Costa Blanca / Alicante:</strong> rundt 11,7 °C i januar og dagtemperaturer rundt 17 °C.</li><li><strong>Murcia / Costa Cálida:</strong> mildt, men større forskjell mellom dag og natt; Murcia by ligger rundt 10,6 °C i januar, med dagtemperaturer rundt 16,6 °C.</li></ul>
+ <div className="area-guide-table area-table--outline area-winter-table">
+  <table>
+   <thead><tr><th scope="col">Område</th><th scope="col">Døgnmiddel i januar</th><th scope="col">Dagtemperatur / forhold</th></tr></thead>
+   <tbody>{winterTemperatures.map(([area,average,day])=><tr key={area}>
+    <th scope="row">{area}</th>
+    <td data-label="Døgnmiddel i januar">{average}</td>
+    <td data-label="Dagtemperatur / forhold">{day}</td>
+   </tr>)}</tbody>
+  </table>
+ </div>
  <h3>Hvor ofte skal du reise til og fra Spania?</h3>
  <p>Skal du reise mye mellom Norge og Spania, ville jeg definitivt valgt et sted i nærheten av en flyplass. En time eller mer i taxi kan være ganske seigt etter en lang flytur.</p>
  <p>En tidligere kollega sluttet nesten å bruke den spanske ferieboligen sin fordi reisen til og fra flyplassen ble for lang. Med små barn, mye bagasje og halvannen time i drosje ble terskelen for hyppige reiser for høy.</p>
  <p>Det er nok også derfor mange nordmenn velger områder i nærheten av Alicante og Málaga. Begge flyplassene har direkteforbindelser til Norge på utvalgte ruter og sesonger, samtidig som mange populære boligområder ligger innenfor omtrent én times kjøring.</p>
  <p>Områdene rundt Barcelona og Madrid er også gode valg hvis nærhet til flyplass og direkteavganger er viktig for deg.</p>
  <p><em>Kjøretidene nedenfor er omtrentlige, uten garanti for trafikk, tidspunkt, terminal eller konkret adresse.</em></p>
- {airportTables.map(t=><Airport key={t.title} {...t}/>)}
+ {airportTables.map((t,index)=><Airport key={t.title} {...t} variant={["soft-header","soft-rows","framed","editorial"][index]}/>)}
  <h3>Er nærhet til andre nordmenn viktig?</h3>
  <p>Albir på Costa Blanca Nord er et særlig aktuelt område hvis du vil bo i nærheten av mange andre nordmenn. Albir ligger i kommunen l'Alfàs del Pi, hvor 2 626 norske statsborgere var registrert bosatt i starten av 2026. Det reelle antallet som oppholder seg der i løpet av året kan være høyere fordi ikke alle sesongbeboere er registrert.</p>
  <p>Her finner du også en norsk skole, Sjømannskirken og en rekke norske foreninger. Men Albir er langt fra det eneste alternativet:</p>

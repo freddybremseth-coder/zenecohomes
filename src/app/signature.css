@@ -3350,3 +3350,238 @@
     gap: 26px;
   }
 }
+
+
+/* Area guide: responsive comparison tables — five distinct visual directions. */
+.area-guide-article .area-guide-table {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+}
+.area-guide-article .area-guide-table table {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.area-guide-article .area-guide-table th,
+.area-guide-article .area-guide-table td {
+  padding: 14px 17px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.area-guide-article .area-guide-table thead th {
+  font-size: .78rem;
+  font-weight: 750;
+  letter-spacing: .035em;
+  text-transform: none;
+}
+.area-guide-article .area-guide-table tbody th {
+  color: var(--ze-ink);
+  font-size: .94rem;
+  font-weight: 700;
+}
+.area-guide-article .area-guide-table tbody td {
+  color: var(--ze-muted);
+  font-size: .93rem;
+}
+
+/* A — thin green frame, rounded corners and a quiet tinted header. */
+.area-guide-article .area-table--outline {
+  border: 1px solid #91aa98;
+  box-shadow: 0 5px 18px rgba(31, 62, 43, .045);
+}
+.area-guide-article .area-table--outline thead th {
+  color: #315b48;
+  background: #eff5f0;
+}
+.area-guide-article .area-table--outline tbody tr + tr th,
+.area-guide-article .area-table--outline tbody tr + tr td {
+  border-top: 1px solid #e7eee8;
+}
+.area-guide-article .area-table--outline tbody td:nth-child(2) {
+  color: #456e54;
+  font-weight: 650;
+}
+
+/* B — softer take on the colored header: pale green, never a dark banner. */
+.area-guide-article .area-table--soft-header {
+  border: 1px solid #dce7de;
+  box-shadow: 0 4px 16px rgba(31, 62, 43, .035);
+}
+.area-guide-article .area-table--soft-header thead th {
+  color: #456b50;
+  background: #f1f6f1;
+}
+.area-guide-article .area-table--soft-header tbody tr:nth-child(even) {
+  background: #fafcf9;
+}
+.area-guide-article .area-table--soft-header tbody tr + tr th,
+.area-guide-article .area-table--soft-header tbody tr + tr td {
+  border-top: 1px solid #edf1ed;
+}
+.area-guide-article .area-table--soft-header tbody td {
+  color: #52745e;
+  font-weight: 650;
+  text-align: right;
+}
+
+/* C — a single soft panel with quiet row separators, not button-like cards. */
+.area-guide-article .area-table--soft-rows {
+  padding: 5px 17px;
+  border: 1px solid #e0e9e1;
+  background: #f3f7f3;
+}
+.area-guide-article .area-table--soft-rows thead th {
+  padding: 12px 10px;
+  color: #52745e;
+  background: transparent;
+}
+.area-guide-article .area-table--soft-rows tbody tr {
+  background: rgba(255,255,255,.78);
+}
+.area-guide-article .area-table--soft-rows tbody tr + tr th,
+.area-guide-article .area-table--soft-rows tbody tr + tr td {
+  border-top: 1px solid #e8eee8;
+}
+.area-guide-article .area-table--soft-rows tbody tr:first-child th {
+  border-radius: 9px 0 0 0;
+}
+.area-guide-article .area-table--soft-rows tbody tr:first-child td {
+  border-radius: 0 9px 0 0;
+}
+.area-guide-article .area-table--soft-rows tbody tr:last-child th {
+  border-radius: 0 0 0 9px;
+}
+.area-guide-article .area-table--soft-rows tbody tr:last-child td {
+  border-radius: 0 0 9px 0;
+}
+.area-guide-article .area-table--soft-rows tbody td {
+  color: #456e54;
+  font-weight: 650;
+  text-align: right;
+}
+
+/* F — classic, very light grid with a green outer line. */
+.area-guide-article .area-table--framed {
+  border: 1px solid #cbd9ce;
+  border-radius: 13px;
+}
+.area-guide-article .area-table--framed thead th {
+  color: #315b48;
+  background: #eaf1eb;
+  border-bottom: 1px solid #d7e3d9;
+}
+.area-guide-article .area-table--framed tbody tr:nth-child(even) {
+  background: #f7faf7;
+}
+.area-guide-article .area-table--framed tbody tr + tr th,
+.area-guide-article .area-table--framed tbody tr + tr td {
+  border-top: 1px solid #e8eee9;
+}
+.area-guide-article .area-table--framed tbody td {
+  color: #52745e;
+  font-weight: 650;
+  text-align: right;
+}
+
+/* G — editorial layout, no numbering and no heavy table chrome. */
+.area-guide-article .area-table--editorial {
+  border-top: 1px solid #dce6dd;
+  border-bottom: 1px solid #dce6dd;
+  border-radius: 12px;
+  background: #fff;
+}
+.area-guide-article .area-table--editorial thead th {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  color: #64866b;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.area-guide-article .area-table--editorial tbody tr + tr th,
+.area-guide-article .area-table--editorial tbody tr + tr td {
+  border-top: 1px solid #edf1ed;
+}
+.area-guide-article .area-table--editorial tbody th {
+  font-weight: 600;
+}
+.area-guide-article .area-table--editorial tbody td {
+  color: #315b48;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Mobile: retain semantic labels, stack cells and prevent horizontal scrolling. */
+@media (max-width: 700px) {
+  .area-guide-article .area-guide-table {
+    overflow: hidden;
+    border-radius: 13px;
+  }
+  .area-guide-article .area-guide-table table,
+  .area-guide-article .area-guide-table tbody,
+  .area-guide-article .area-guide-table tr {
+    display: block;
+    width: 100%;
+  }
+  .area-guide-article .area-guide-table thead {
+    display: none;
+  }
+  .area-guide-article .area-guide-table tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 10px 15px;
+  }
+  .area-guide-article .area-guide-table tbody th,
+  .area-guide-article .area-guide-table tbody td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 0;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+  .area-guide-article .area-guide-table tbody th {
+    padding-bottom: 3px;
+    font-size: .96rem;
+  }
+  .area-guide-article .area-guide-table tbody td::before {
+    content: attr(data-label) ": ";
+    color: #64866b;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .015em;
+  }
+  .area-guide-article .area-table--soft-rows {
+    padding: 8px;
+  }
+  .area-guide-article .area-table--soft-rows tbody tr {
+    padding: 10px 12px;
+    border-radius: 9px;
+  }
+  .area-guide-article .area-table--soft-rows tbody tr + tr {
+    margin-top: 5px;
+  }
+  .area-guide-article .area-table--soft-rows tbody tr:first-child th,
+  .area-guide-article .area-table--soft-rows tbody tr:first-child td,
+  .area-guide-article .area-table--soft-rows tbody tr:last-child th,
+  .area-guide-article .area-table--soft-rows tbody tr:last-child td {
+    border-radius: 0;
+  }
+  .area-guide-article .area-table--editorial tbody tr {
+    padding: 12px 15px;
+  }
+  .area-guide-article .area-table--editorial tbody td {
+    font-size: 1rem;
+  }
+}
