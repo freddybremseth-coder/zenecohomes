@@ -2464,7 +2464,7 @@ export const extraArticles: Article[] = [
             ],
             [
               "Turvei og kollektivtransport",
-              "[[Bilbehovet kan bli større enn forventet|/magasin/bo-costa-blanca-uten-bil-beste-omrader]]"
+              "Bilbehovet kan bli større enn forventet"
             ],
             [
               "Sosialt nettverk",
