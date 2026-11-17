@@ -255,6 +255,7 @@ export function Footer({
         <span>Freddy Bremseth network</span>
         <a href="https://www.freddybremseth.com/">FreddyBremseth.com</a>
         <a href="https://www.pinosoecolife.com/">Pinoso Eco Life</a>
+        <a href="https://www.costablancatours.pro/?utm_source=zenecohomes&amp;utm_medium=referral&amp;utm_campaign=footer-network">Costa Blanca Tours</a>
         <a href="https://www.donaanna.com/">Doña Anna</a>
         <a href="https://www.chatgenius.pro/">ChatGenius</a>
         <a href="https://books.freddybremseth.com/">Books</a>
