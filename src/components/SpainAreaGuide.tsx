@@ -60,7 +60,7 @@ const winterTemperatures = [
  ["Gran Canaria","rundt 18 °C","Milde netter"],
  ["Costa del Sol / Málaga","rundt 12 °C","Dagtemperaturer rundt 17 °C"],
  ["Costa Blanca / Alicante","rundt 11,7 °C","Dagtemperaturer rundt 17 °C"],
- ["Murcia / Costa Cálida","rundt 10,6 °C","Dagtemperaturer rundt 16,6 °C"],
+ ["Murcia / Costa Cálida","Murcia by: rundt 10,6 °C","Større forskjell mellom dag og natt; dagtemperatur rundt 16,6 °C"],
 ];
 export function SpainAreaGuide(){
  return <section className="section cornerstone-section"><article className="article-main prose max-w-none area-guide-article">
