@@ -3666,7 +3666,8 @@
   font-size: .82rem;
 }
 @media (max-width: 700px) {
-  .area-guide-article .area-table--editorial thead th:last-child {
+  /* Align every right-hand column heading with the content beneath it. */
+  .area-guide-article table thead th:last-child {
     text-align: right;
     text-wrap: balance;
     padding-right: 14px;
