@@ -3661,11 +3661,33 @@
 }
 
 
-/* Area guide refinements: consistent table headings and a calmer winter overview. */
+/* Area guide refinements: consistent table headers, color hierarchy and spacing. */
 .area-guide-article .area-table--editorial thead th {
+  padding: 19px 17px;
+  color: #64866b;
+  background: #fff;
+  border-bottom: 1px solid #dce6dd;
   font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .035em;
+  line-height: 1.35;
+  text-transform: none;
+}
+.area-guide-article .area-table--editorial tbody th {
+  color: var(--ze-ink);
+  font-size: .94rem;
+  font-weight: 650;
+}
+.area-guide-article .area-table--editorial tbody td {
+  color: #315b48;
+  font-size: .94rem;
+  font-weight: 600;
 }
 @media (max-width: 700px) {
+  .area-guide-article .area-table--editorial thead th {
+    padding: 16px 10px;
+    vertical-align: middle;
+  }
   /* Align every right-hand column heading with the content beneath it. */
   .area-guide-article table thead th:last-child {
     text-align: right;
