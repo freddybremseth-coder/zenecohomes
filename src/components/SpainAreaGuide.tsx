@@ -116,7 +116,7 @@ export function SpainAreaGuide(){
  <p>Det er nok også derfor mange nordmenn velger områder i nærheten av Alicante og Málaga. Begge flyplassene har direkteforbindelser til Norge på utvalgte ruter og sesonger, samtidig som mange populære boligområder ligger innenfor omtrent én times kjøring.</p>
  <p>Områdene rundt Barcelona og Madrid er også gode valg hvis nærhet til flyplass og direkteavganger er viktig for deg.</p>
  <p><em>Kjøretidene nedenfor er omtrentlige, uten garanti for trafikk, tidspunkt, terminal eller konkret adresse.</em></p>
- {airportTables.map((t,index)=><Airport key={t.title} {...t} variant={["soft-header","soft-rows","framed","editorial"][index]}/>)}
+ {airportTables.map((t,index)=><Airport key={t.title} {...t} variant="editorial"/>)}
  <h3>Er nærhet til andre nordmenn viktig?</h3>
  <p>Albir på Costa Blanca Nord er et særlig aktuelt område hvis du vil bo i nærheten av mange andre nordmenn. Albir ligger i kommunen l'Alfàs del Pi, hvor 2 626 norske statsborgere var registrert bosatt i starten av 2026. Det reelle antallet som oppholder seg der i løpet av året kan være høyere fordi ikke alle sesongbeboere er registrert.</p>
  <p>Her finner du også en norsk skole, Sjømannskirken og en rekke norske foreninger. Men Albir er langt fra det eneste alternativet:</p>
