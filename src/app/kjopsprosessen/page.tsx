@@ -159,8 +159,8 @@ export default function BuyingProcessPage() {
             eller alle kostnader. Be om oppdaterte opplysninger og bruk en uavhengig spansk
             advokat til juridisk kontroll før du forplikter deg.
           </p>
-          <Link className="text-button" href="/magasin/7-dyre-feil-nordmenn-bolig-spania">
-            Les om 7 dyre feil nordmenn gjør ved boligkjøp i Spania <ArrowRight size={16} />
+          <Link className="text-button" href="/guide/kjope-bolig-i-spania">
+            Les kjøperguiden med råd om budsjett, område og juridisk kontroll <ArrowRight size={16} />
           </Link>
         </div>
       </section>
