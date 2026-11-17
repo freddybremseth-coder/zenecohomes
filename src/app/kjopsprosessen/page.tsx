@@ -144,6 +144,27 @@ export default function BuyingProcessPage() {
       </section>
 
 
+      <section className="section buying-process-common-mistakes" id="vanlige-feil" aria-labelledby="buying-mistakes-heading">
+        <div className="section-heading">
+          <p className="eyebrow">Unngå kostbare overraskelser</p>
+          <h2 id="buying-mistakes-heading">Vanlige feil ved boligkjøp i Spania</h2>
+          <p>
+            Et vellykket boligkjøp handler også om hva du undersøker før du bestemmer deg.
+            Vurder området gjennom året, beregn totalbudsjettet og få vilkårene i reservasjonsavtalen kontrollert.
+          </p>
+        </div>
+        <div>
+          <p>
+            Ikke stol på at en boligannonse alene bekrefter tilgjengelighet, dokumentasjon
+            eller alle kostnader. Be om oppdaterte opplysninger og bruk en uavhengig spansk
+            advokat til juridisk kontroll før du forplikter deg.
+          </p>
+          <Link className="text-button" href="/magasin/7-dyre-feil-nordmenn-bolig-spania">
+            Les om 7 dyre feil nordmenn gjør ved boligkjøp i Spania <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
       <Testimonials heading="Dette sier våre tidligere kunder" carousel />
 
       <Footer />
