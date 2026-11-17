@@ -3659,3 +3659,39 @@
     display: none;
   }
 }
+
+
+/* Area guide refinements: consistent table headings and a calmer winter overview. */
+.area-guide-article .area-table--editorial thead th {
+  font-size: .82rem;
+}
+@media (max-width: 700px) {
+  .area-guide-article .area-table--editorial thead th:last-child {
+    text-align: right;
+    text-wrap: balance;
+    padding-right: 14px;
+  }
+}
+.area-guide-article .area-winter-list {
+  margin: 22px 0 28px;
+}
+.area-guide-article .area-winter-item {
+  padding: 16px 0;
+}
+.area-guide-article .area-winter-item + .area-winter-item {
+  border-top: 1px solid #e7eee8;
+}
+.area-guide-article .area-winter-item h4 {
+  margin: 0;
+  color: var(--ze-ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.area-guide-article .area-winter-item p {
+  margin: 6px 0 0;
+  line-height: 1.55;
+}
+.area-guide-article .area-winter-item p + p {
+  margin-top: 3px;
+}
