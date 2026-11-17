@@ -3587,15 +3587,18 @@
 }
 
 
-/* Area guide: use the G editorial table consistently, with a soft green header.
-   On mobile keep the desktop two-column relationship and allow labels to wrap. */
+/* Area guide: retain the original G editorial header and refine the frame/mobile wrapping. */
+.area-guide-article .area-table--editorial {
+  border-top: 1.5px solid #cbd9ce;
+  border-bottom: 1.5px solid #cbd9ce;
+}
 .area-guide-article .area-table--editorial thead th {
-  color: #315b48;
-  background: #edf4ee;
-  font-size: .78rem;
-  font-weight: 750;
-  letter-spacing: .035em;
-  text-transform: none;
+  color: #64866b;
+  background: transparent;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 .area-guide-article .area-table--editorial thead th + th {
   text-align: right;
@@ -3635,12 +3638,21 @@
   .area-guide-article .area-table--editorial tbody td {
     width: 60%;
   }
+  .area-guide-article .area-table--editorial thead th:last-child {
+    text-align: center;
+    text-wrap: balance;
+    vertical-align: middle;
+    letter-spacing: .035em;
+    line-height: 1.25;
+  }
   .area-guide-article .area-table--editorial tbody th {
     font-size: .9rem;
   }
   .area-guide-article .area-table--editorial tbody td {
     font-size: .94rem;
     text-align: right;
+    text-wrap: balance;
+    line-height: 1.3;
   }
   .area-guide-article .area-table--editorial tbody td::before {
     content: none;
