@@ -41,10 +41,10 @@ function PreferenceTable({rows}:{rows:string[][]}) {
   </table>
  </div>;
 }
-function Airport({title,rows,variant}:{title:string;rows:string[][];variant:string}) {
+function Airport({title,rows}:{title:string;rows:string[][]}) {
  return <section className="area-airport-section my-7">
   <h4 className="font-semibold text-xl mb-3">{title}</h4>
-  <div className={`area-guide-table area-table--${variant}`}>
+  <div className="area-guide-table area-table--editorial">
    <table>
     <thead><tr><th scope="col">Område</th><th scope="col">Omtrentlig kjøretid</th></tr></thead>
     <tbody>{rows.map(([name,time])=><tr key={name}>
@@ -100,7 +100,7 @@ export function SpainAreaGuide(){
  <h3>Hvor varmt skal det være om vinteren?</h3>
  <p>Hvis du ønsker milde temperaturer også om vinteren, er Kanariøyene normalt det beste valget. Sør på Tenerife ligger normaltemperaturen i januar rundt 18,4 °C, mens Gran Canaria ligger rundt 17,9 °C. Til sammenligning ligger Málaga og Alicante rundt 12 °C. Dette er døgnmiddel, ikke dagtemperatur, og ingen av stedene garanterer sommervarme hver dag.</p>
  <p>Her er områdene i Spania med varmest vintre:</p>
- <div className="area-winter-table area-guide-table">
+ <div className="area-guide-table area-table--editorial area-winter-table">
   <table>
    <thead><tr><th scope="col">Område</th><th scope="col">Døgnmiddel i januar</th><th scope="col">Dagtemperatur / forhold</th></tr></thead>
    <tbody>{winterTemperatures.map(([area,average,day])=><tr key={area}>
@@ -116,7 +116,7 @@ export function SpainAreaGuide(){
  <p>Det er nok også derfor mange nordmenn velger områder i nærheten av Alicante og Málaga. Begge flyplassene har direkteforbindelser til Norge på utvalgte ruter og sesonger, samtidig som mange populære boligområder ligger innenfor omtrent én times kjøring.</p>
  <p>Områdene rundt Barcelona og Madrid er også gode valg hvis nærhet til flyplass og direkteavganger er viktig for deg.</p>
  <p><em>Kjøretidene nedenfor er omtrentlige, uten garanti for trafikk, tidspunkt, terminal eller konkret adresse.</em></p>
- {airportTables.map((t,index)=><Airport key={t.title} {...t} variant="editorial"/>)}
+ {airportTables.map(t=><Airport key={t.title} {...t}/>)}
  <h3>Er nærhet til andre nordmenn viktig?</h3>
  <p>Albir på Costa Blanca Nord er et særlig aktuelt område hvis du vil bo i nærheten av mange andre nordmenn. Albir ligger i kommunen l'Alfàs del Pi, hvor 2 626 norske statsborgere var registrert bosatt i starten av 2026. Det reelle antallet som oppholder seg der i løpet av året kan være høyere fordi ikke alle sesongbeboere er registrert.</p>
  <p>Her finner du også en norsk skole, Sjømannskirken og en rekke norske foreninger. Men Albir er langt fra det eneste alternativet:</p>

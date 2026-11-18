@@ -3692,7 +3692,7 @@
   .area-guide-article table thead th:last-child {
     text-align: right;
     text-wrap: balance;
-    padding-right: 14px;
+    padding-right: 10px;
   }
 }
 .area-guide-article .area-winter-list {
@@ -3720,35 +3720,10 @@
 }
 
 
-/* Keep the preference table header white, independent of generic table styles. */
-.area-guide-article .area-preference-table thead th {
-  background-color: #fff;
-}
-
-/* Winter climate overview: editorial table on desktop, stacked rows on mobile. */
+/* Winter climate table: keep its three-column desktop structure and stacked mobile rows.
+   All visual styling comes from the shared editorial table rules above. */
 .area-guide-article .area-winter-table {
   margin: 22px 0 28px;
-  overflow: hidden;
-  border: 1px solid #dce6dd;
-  border-radius: 13px;
-  background: #fff;
-}
-.area-guide-article .area-winter-table table {
-  width: 100%;
-  margin: 0;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-.area-guide-article .area-winter-table thead th {
-  padding: 16px 17px;
-  color: #64866b;
-  background: #fff;
-  border-bottom: 1px solid #dce6dd;
-  font-size: .82rem;
-  font-weight: 700;
-  line-height: 1.35;
-  text-align: left;
 }
 .area-guide-article .area-winter-table thead th:first-child {
   width: 26%;
@@ -3758,28 +3733,7 @@
 }
 .area-guide-article .area-winter-table thead th:nth-child(3) {
   width: 49%;
-}
-.area-guide-article .area-winter-table tbody th,
-.area-guide-article .area-winter-table tbody td {
-  padding: 15px 17px;
-  border-bottom: 1px solid #edf1ed;
-  background: #fff;
-  font-size: .94rem;
-  line-height: 1.5;
   text-align: left;
-  vertical-align: top;
-}
-.area-guide-article .area-winter-table tbody tr:last-child th,
-.area-guide-article .area-winter-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-.area-guide-article .area-winter-table tbody th {
-  color: var(--ze-ink);
-  font-weight: 700;
-}
-.area-guide-article .area-winter-table tbody td {
-  color: #315b48;
-  font-weight: 600;
 }
 @media (max-width: 700px) {
   .area-guide-article .area-winter-table table,
@@ -3792,6 +3746,7 @@
     display: none;
   }
   .area-guide-article .area-winter-table tbody tr {
+    display: block;
     padding: 12px 15px;
     border-bottom: 1px solid #edf1ed;
   }
@@ -3803,15 +3758,9 @@
     display: block;
     width: 100%;
     padding: 4px 0;
-    border: 0;
     text-align: left;
   }
   .area-guide-article .area-winter-table tbody th {
     padding-bottom: 5px;
-  }
-  .area-guide-article .area-winter-table tbody td::before {
-    content: attr(data-label) ": ";
-    color: #64866b;
-    font-weight: 700;
   }
 }
