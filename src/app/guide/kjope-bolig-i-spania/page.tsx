@@ -214,6 +214,9 @@ export default async function BuyInSpainGuidePage() {
           <p>
             Når skjøtet er signert og oppgjøret gjennomført, får du normalt nøklene til boligen. Deretter skal nødvendige skatter og avgifter håndteres, og eierskapet registreres i det spanske eiendomsregisteret (<em>Registro de la Propiedad</em>). Du må også sørge for at blant annet strøm, vann, forsikring og eventuelle felleskostnader blir fulgt opp.
           </p>
+          <p>
+            Har du spørsmål om boligkjøp i Spania? På våre <Link href="/informasjonsmote">digitale informasjonsmøter</Link> kan du lære mer om boligmarkedet og stille spørsmål direkte til våre rådgivere. Møtene er gratis og uforpliktende.
+          </p>
         </div>
       </section>
 
@@ -272,6 +275,9 @@ export default async function BuyInSpainGuidePage() {
           </p>
           <p>
             Les også hvorfor en <Link href="/magasin/hvorfor-god-eiendomsradgiver-er-viktig">god eiendomsrådgiver er viktig</Link>, mer om <Link href="/om-oss">hvordan Zen Eco Homes jobber</Link> og hvordan vi følger deg gjennom <Link href="/kjopsprosessen">kjøpsprosessen</Link>.
+          </p>
+          <p>
+            Dette er også utgangspunktet for hvordan vi hjelper deg gjennom boligkjøpet.
           </p>
           <div className="hero-actions">
             <Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link>
@@ -388,7 +394,7 @@ export default async function BuyInSpainGuidePage() {
         <div className="section-heading">
           <h2>Hva bør man se etter i en boligannonse?</h2>
           <p>
-            Mange som vurderer å kjøpe bolig i Spania starter naturligvis med faktorer som solforhold, basseng og avstand til strand og flyplass. Men det er minst like viktig å se på forholdene som kan påvirke kostnader og vedlikehold.
+            Mange som vurderer å kjøpe bolig i Spania starter naturligvis med faktorer som solforhold, basseng og avstand til strand og flyplass. Men det er minst like viktig å se på forholdene som kan påvirke kostnader og vedlikehold. I vår artikkel om <Link href="/magasin/det-du-ikke-ser-i-boligannonsen">7 ting du bør sjekke i en boligannonse i Spania</Link> går vi nærmere inn på hva du bør undersøke før du bestemmer deg for en bolig.
           </p>
         </div>
         <div className="proof-grid">
