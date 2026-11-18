@@ -1918,7 +1918,7 @@ export const extraArticles: Article[] = [
       {
         "heading": "Hvor er det lettest å finne et norsk nettverk?",
         "body": [
-          "Albir og Alfaz del Pi har et etablert norsk miljø. [[Den Norske Klubben Costa Blanca|https://dnkcb.lag247.no/omoss/annet/]] har klubbhus og aktiviteter i Alfaz del Pi. Dette kan være verdifullt for dem som ønsker møteplasser, aktiviteter og norsk språk rundt seg.",
+          "Albir og Alfaz del Pi har et etablert norsk miljø. Den Norske Klubben Costa Blanca har klubbhus og aktiviteter i Alfaz del Pi. Dette kan være verdifullt for dem som ønsker møteplasser, aktiviteter og norsk språk rundt seg.",
           "Villajoyosa kan passe bedre for dem som ønsker mer kontakt med et ordinært spansk bymiljø. Her finnes også internasjonale beboere, men sosialt nettverk bør vurderes ut fra den konkrete bydelen, egne interesser og språkferdigheter."
         ]
       },
@@ -3703,7 +3703,7 @@ export const extraArticles: Article[] = [
       {
         heading: "Norske møteplasser: Albir, Alfaz del Pi og Torrevieja",
         body: [
-          "For noen er det viktig å finne venner som snakker norsk. Albir og Alfaz del Pi har et etablert norsk miljø. Den Norske Klubben Costa Blanca har sitt eget klubbhus i Alfaz del Pi, med kafé, turer, arrangementer og aktiviteter. Klubben beskriver seg som et uavhengig, medlemseid møtested. Se klubbens informasjon på dnkcb.lag247.no.",
+          "For noen er det viktig å finne venner som snakker norsk. Albir og Alfaz del Pi har et etablert norsk miljø. [[Den Norske Klubben Costa Blanca|https://dnkcb.lag247.no/omoss/annet/]] har sitt eget klubbhus i Alfaz del Pi, med kafé, turer, arrangementer og aktiviteter. Klubben beskriver seg som et uavhengig, medlemseid møtested. Se klubbens informasjon på dnkcb.lag247.no.",
           "Torrevieja har også et stort norsk miljø. [[Sjømannskirken i Torrevieja|https://www.sjomannskirken.no/torrevieja/]] er et organisert sosialt og kulturelt møtested som tilbyr blant annet turer, konserter, kor, foredrag og møteplasser. Se sjomannskirken.no/torrevieja. I tillegg møtes mange internasjonale beboere på kaféer, restauranter og andre uformelle arenaer.",
           "Ingen av miljøene passer bare pensjonister. De kan likevel være særlig verdifulle for deg som skal tilbringe lange perioder i Spania og ønsker et sosialt nettverk fra første dag.",
         ],
