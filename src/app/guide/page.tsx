@@ -184,7 +184,6 @@ export default function GuideHub() {
             <h2>Hva vil du vite?</h2>
             <nav>
               <Link href="/guide/kjope-bolig-i-spania">Hvordan kjøper jeg bolig? <ArrowRight size={15} /></Link>
-              <Link href="/guide/kjope-bolig-i-spania">Hva koster kjøpet? <ArrowRight size={15} /></Link>
               <Link href="/guide/finansiere-bolig-i-spania">Hvordan finansierer jeg? <ArrowRight size={15} /></Link>
               <Link href="/guide/omradeguide-eiendomskjop-i-spania">Hvor bør jeg kjøpe? <ArrowRight size={15} /></Link>
               <Link href="/guide/nybygg-i-spania">Hva må jeg vite om nybygg? <ArrowRight size={15} /></Link>
