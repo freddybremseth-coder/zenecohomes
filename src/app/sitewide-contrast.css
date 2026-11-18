@@ -383,3 +383,34 @@ main .proper-name {
     padding-block: 10px 13px;
   }
 }
+
+
+/* Area guide mobile tables: match the existing responsive comparison-table layout. */
+@media (max-width: 700px) {
+  .area-guide-article .area-guide-standard-table table,
+  .area-guide-article .area-guide-standard-table tbody,
+  .area-guide-article .area-guide-standard-table tr {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .area-guide-article .area-guide-standard-table thead {
+    display: none;
+  }
+
+  .area-guide-article .area-guide-standard-table tbody tr {
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--ze-line);
+    border-radius: 10px;
+    background: white;
+  }
+
+  .area-guide-article .area-guide-standard-table tbody th,
+  .area-guide-article .area-guide-standard-table tbody td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
