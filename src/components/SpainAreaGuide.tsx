@@ -100,8 +100,7 @@ export function SpainAreaGuide(){
  <p><em>Kjøretidene nedenfor er omtrentlige, uten garanti for trafikk, tidspunkt, terminal eller konkret adresse.</em></p>
  {airportTables.map(t=><Airport key={t.title} {...t}/>)}
  <h3>Er nærhet til andre nordmenn viktig?</h3>
- <p>Albir på Costa Blanca Nord er et særlig aktuelt område hvis du vil bo i nærheten av mange andre nordmenn. Albir ligger i kommunen l'Alfàs del Pi, hvor 2 626 norske statsborgere var registrert bosatt i starten av 2026. Det reelle antallet som oppholder seg der i løpet av året kan være høyere fordi ikke alle sesongbeboere er registrert.</p>
- <p>Her finner du også en norsk skole, Sjømannskirken og en rekke norske foreninger. Men Albir er langt fra det eneste alternativet:</p>
+ <p>Albir på Costa Blanca Nord er et særlig aktuelt område hvis du vil bo i nærheten av mange andre nordmenn. Her finner du blant annet norsk skole, Sjømannskirken og en rekke norske foreninger. Men Albir er langt fra det eneste alternativet:</p>
  <StandardTable headers={["Område","Registrerte norske statsborgere","Norske tilbud / miljø"]} rows={[
  ["Albir / l'Alfàs del Pi","2 626 (starten av 2026)","Norsk skole, Sjømannskirken og flere norske foreninger"],
  ["Torrevieja","737 (mai 2026)","Etablert norsk miljø"],
