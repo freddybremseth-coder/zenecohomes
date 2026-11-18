@@ -8,6 +8,7 @@ export type ArticleSection = {
   heading: string;
   body?: string[];
   bullets?: string[];
+  afterBullets?: string[];
   table?: ArticleTable;
   tableNote?: string;
   optionalTableIntro?: string;
@@ -555,7 +556,7 @@ export const articles: Article[] = [
         "body": [
           "For Costa Blanca er det særlig viktig å skille mellom nasjonal boligmangel og tilbudet i det enkelte lokale markedet. Benidorm, Albir, Finestrat, Polop og Villajoyosa har ulike boligtyper, tomtesituasjoner, kjøpergrupper og prosjekter. En generell spansk prisprognose kan ikke erstatte vurderingen av den konkrete adressen.",
           "Som eiendomsrådgiver på Costa Blanca Nord vil jeg undersøke hvor mange sammenlignbare boliger som faktisk er tilgjengelige, om prosjekter er under bygging eller bare planlagt, og om priser samsvarer med standard, solforhold og beliggenhet.",
-          "Begynn med [[områdeoversikten på Costa Blanca|/omrader]] og se deretter [[aktuelle boliger til salgs|/eiendommer]]. Unngå å ta beslutningen bare på grunnlag av annonserte «fra-priser», som kan gjelde andre enheter enn den du ønsker."
+          "Begynn med [[områdeoversikten på Costa Blanca|/omrader]] og se deretter [[nybygg til salgs på Costa Blanca|/eiendommer]]. Unngå å ta beslutningen bare på grunnlag av annonserte «fra-priser», som kan gjelde andre enheter enn den du ønsker."
         ]
       },
       {
@@ -578,7 +579,7 @@ export const articles: Article[] = [
         "heading": "Når er det bedre å vente med boligkjøpet?",
         "body": [
           "Det er bedre å vente når lånerammen er usikker, boligtype og område ikke er avklart, du mangler økonomisk buffer, eller du vurderer å kjøpe først og finne ut av bruken etterpå. Å vente med en plan er mer nyttig enn å vente på et vilkårlig prisfall.",
-          "Bruk tiden til å sammenligne områder, få finansieringsbekreftelse, undersøke løpende utgifter og lage en kortliste. Finn også ut hvilke konkrete forhold som må endre seg før du eventuelt kjøper: pris, rente, valutakurs, boligtilbud eller egne behov.",
+          "Bruk tiden til å sammenligne områder, få finansieringsbekreftelse, undersøke [[løpende utgifter|/guide/lopende-kostnader-eie-bolig-spania]] og lage en kortliste. Finn også ut hvilke konkrete forhold som må endre seg før du eventuelt kjøper: pris, rente, valutakurs, boligtilbud eller egne behov.",
           "Det viktigste er ikke å treffe det perfekte tidspunktet i hele Spania, men å unngå et feilkjøp som blir kostbart og vanskelig å endre."
         ]
       }

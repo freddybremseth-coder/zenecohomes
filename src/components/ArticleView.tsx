@@ -1203,6 +1203,9 @@ export function ArticleView({ article }: { article: Article }) {
                       ))}
                     </ul>
                   )}
+                  {section.afterBullets?.map((paragraph) => (
+                    <p key={paragraph}>{renderInlineContent(paragraph)}</p>
+                  ))}
                   {section.table && !(article.slug === "lopende-kostnader-eie-bolig-spania" && section.heading === "Hva koster det å eie bolig i Spania?") && (
                     <div className="article-table-wrap">
                       <div className="article-table-scroll">
