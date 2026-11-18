@@ -21,8 +21,7 @@ export const monthlyMarketUpdates: Article[] = [
     ],
     sections: [
       { heading: "Hva ble vedtatt i Kongressen 12. november?", body: [
-        "Real Decreto-ley 29/2026 ble opprinnelig publisert 7. oktober og trådte i kraft 8. oktober. Kongressen stadfestet dekretloven 12. november. Stadfestelsen er offentliggjort her: https://boe.es/buscar/doc.php?id=BOE-A-2026-23755",
-        "Selve lovteksten, artikkel 7, finnes her: https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823. Den spanske skattemyndigheten forklarer endringen her: https://sede.agenciatributaria.gob.es/Sede/iva/novedades-iva/novedades-normativa-2026/real-decreto-ley-29-2026-octubre.html"
+        "Real Decreto-ley 29/2026 ble opprinnelig publisert 7. oktober og trådte i kraft 8. oktober. Kongressen stadfestet dekretloven 12. november, slik det fremgår av [[stadfestelsen i BOE|https://boe.es/buscar/doc.php?id=BOE-A-2026-23755]]. Selve [[lovteksten, artikkel 7|https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823]] beskriver endringen, og [[den spanske skattemyndigheten|https://sede.agenciatributaria.gob.es/Sede/iva/novedades-iva/novedades-normativa-2026/real-decreto-ley-29-2026-octubre.html]] forklarer hvordan reglene skal forstås."
       ]},
       { heading: "Når gjelder 10 % IVA på korttidsutleie?", body: [
         "Fra 1. desember 2026 faller utleie av møblerte boliger utenfor det vanlige IVA-fritaket når oppholdet er på høyst 30 netter og boligen ikke er utleiers egen faste bolig, slik vilkårene i loven er formulert. Disse utleietjenestene omfattes av redusert IVA-sats på 10 %. Utleie med hotellignende tilleggstjenester er også en egen kategori som kan være IVA-pliktig.",
