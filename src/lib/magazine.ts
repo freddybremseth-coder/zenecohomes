@@ -41,8 +41,8 @@ export const extraArticles: Article[] = [
     },
     "intro": [
       "Under pandemien jobbet jeg i eiendomsbransjen i Spania. Store deler av samfunnet var satt på vent, men jeg fikk tid til å sette meg grundig inn i områder, boligprosjekter og de ulike utbyggernes planer. Den perioden lærte meg noe som fortsatt er sentralt i rådgivningen min: Boligmarkedet følger ikke nødvendigvis stemningen i norske nyhetsoverskrifter.",
-      "Da jeg kom til Norge i 2023 og begynte å holde arrangementer og seminarer om boligkjøp i Spania, var budskapet mitt ganske klart: For dem som allerede hadde bestemt seg for å kjøpe og hadde økonomien i orden, mente jeg at det var et godt tidspunkt. Det sa jeg som råd, ikke som et salgstriks.",
-      "Noen lyttet og kjøpte. Mange svarte at de ville vente til euroen ble rimeligere eller boligprisene falt. Fem år etter pandemien synes jeg erfaringen er verdt å dele – ikke for å si at jeg alltid får rett, men for å vise hvorfor gode beslutninger krever mer enn en følelse av hva som burde skje."
+      "Da jeg kom til Norge i 2023 og begynte å holde arrangementer og seminarer om [[boligkjøp i Spania|/guide/kjope-bolig-i-spania]], var budskapet mitt ganske klart: For dem som allerede hadde bestemt seg for å kjøpe og hadde økonomien i orden, mente jeg at det var et godt tidspunkt. Det sa jeg som råd, ikke som et salgstriks.",
+      "Noen lyttet og kjøpte. Mange svarte at de ville vente til euroen ble rimeligere eller boligprisene falt. Fem år etter pandemien synes jeg erfaringen er verdt å dele – ikke for å si at jeg alltid får rett, men for å vise hvorfor gode beslutninger krever mer enn en følelse av hva som burde skje. Når du begynner å se på konkrete alternativer, kan du få en oversikt over [[boliger til salgs på Costa Blanca|/eiendommer]] og sammenligne hva som finnes i ulike områder og prisklasser."
     ],
     "sections": [
       {
@@ -113,7 +113,7 @@ export const extraArticles: Article[] = [
         "heading": "Hva ville jeg anbefale en boligkjøper i dag?",
         "body": [
           "Ikke begynn med spørsmålet «vil markedet falle neste år?» som om det finnes et sikkert svar. Begynn med hvorfor du ønsker bolig i Spania, hvor lenge du vil eie, hva du faktisk trenger, og hvor mye usikkerhet du tåler.",
-          "Deretter: Finn riktig område, få et realistisk totalbudsjett i både euro og norske kroner, sammenlign konkrete boliger, kontroller utbygger og kontrakter og la en uavhengig advokat gå gjennom avtalen. Har du god tid, bruk den til å lære markedet å kjenne – ikke bare til å vente på en overskrift.",
+          "Deretter: [[Finn riktig område|/guide/omradeguide-eiendomskjop-i-spania]], få et realistisk totalbudsjett i både euro og norske kroner, sammenlign konkrete boliger, kontroller utbygger og kontrakter og la en uavhengig advokat gå gjennom avtalen. Har du god tid, bruk den til å lære markedet å kjenne – ikke bare til å vente på en overskrift.",
           "Du trenger ikke kjøpe i dag. Men hvis du har bestemt deg for å kjøpe, bør du ha en bedre begrunnelse for å vente enn at kronen «må» bli sterkere eller at naboen mener boligprisene snart vil kollapse."
         ]
       },
@@ -2685,6 +2685,7 @@ export const extraArticles: Article[] = [
         body: [
           "Idealistas prisstatistikk for august 2026 viser tydelige forskjeller mellom kommunene. Benidorm lå på rundt 3.807 euro per kvadratmeter, opp 12,6 prosent fra året før. Villajoyosa lå på 3.072 euro, opp 12,2 prosent. Alfaz del Pi lå på 3.128 euro, opp 11,2 prosent.",
           "Finestrat lå på 3.328 euro per kvadratmeter, med 3,8 prosent årsvekst, mens Altea lå på 3.486 euro og 2,5 prosent årsvekst. Det viser hvorfor en generell påstand om at «Costa Blanca stiger med X prosent» blir for grov.",
+          "Kilde: Idealista – prisstatistikk for august 2026: [[Benidorm|https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/benidorm/historico/]], [[Finestrat|https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/finestrat/]], [[Villajoyosa|https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/la-villajoyosa-vila-joiosa/historico/]], [[Altea|https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/altea/]] og [[Alfaz del Pi|https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/comunitat-valenciana/alicante/alfaz-del-pi/]].",
         ],
         bullets: [
           "Benidorm: ca. €3.807/m² · +12,6 % siste år.",
@@ -3571,7 +3572,7 @@ export const extraArticles: Article[] = [
       {
         heading: "Finestrat: moderne nybygg, utsikt og mer plass",
         body: [
-          "Finestrat har et stort og variert nybyggmarked, særlig i områdene mellom fjellet, kjøpesentrene og Benidorm. Her finner du både leilighetsprosjekter og moderne villaer med basseng og utsikt.",
+          "Finestrat har et stort og variert [[nybyggmarked|/guide/nybygg-i-spania]], særlig i områdene mellom fjellet, kjøpesentrene og Benidorm. Her finner du både leilighetsprosjekter og moderne villaer med basseng og utsikt.",
           "Til gjengjeld er mange boligområder mer bilorienterte enn Albir og sentrale deler av Benidorm. Det er derfor viktig å kontrollere de reelle avstandene, ikke bare kilometer på kartet.",
         ],
         bullets: [
@@ -3628,7 +3629,7 @@ export const extraArticles: Article[] = [
       "Velg de to områdene som best passer hverdagen du ønsker.",
       "Sammenlign faktiske boliger i samme budsjett i begge områdene.",
       "Kontroller gangavstand, stigning, trafikk og service på stedet.",
-      "Bruk visningsturen til å velge område før du velger endelig bolig.",
+      "Bruk [[visningsturen|/visningstur]] til å velge område før du velger endelig bolig.",
     ],
     faq: [
       {
@@ -3664,7 +3665,7 @@ export const extraArticles: Article[] = [
     keywords: ["Costa Blanca nord eller sør", "Costa Blanca nord vs sør", "bo i Albir eller Torrevieja", "bolig Costa Blanca nord", "Costa Blanca sør bolig"],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
-      "Hvor på Costa Blanca bør du kjøpe bolig? Det ærlige svaret handler ikke bare om pris, strand og antall soldager. Det handler om hvilken livsstil du har – og hvilket miljø du føler deg hjemme i.",
+      "Hvor på Costa Blanca bør du [[kjøpe bolig|/guide/kjope-bolig-i-spania]]? Det ærlige svaret handler ikke bare om pris, strand og antall soldager. Det handler om hvilken livsstil du har – og hvilket miljø du føler deg hjemme i.",
       "Nord er ofte grønnere og mer kupert, med fjell, utsikt, småbyer og et høyere prisnivå. Sør tilbyr ofte mer bolig for pengene, langstrakte strender, flate områder og et stort internasjonalt miljø med uformelle møteplasser. Dette er hovedtendenser, ikke fasitsvar for enhver by eller gate.",
       "I Zen Eco Homes arbeider vi mest med Costa Blanca Nord. Nettopp derfor er det viktig å forklare hvem som faktisk kan passe bedre i sør. Det beste boligkjøpet er stedet du vil glede deg til å reise tilbake til.",
     ],
@@ -3673,7 +3674,7 @@ export const extraArticles: Article[] = [
         heading: "Hva er forskjellen på Costa Blanca Nord og Sør?",
         body: [
           "De to områdene deles gjerne omtrent ved Alicante, men grensene brukes ulikt i eiendomsannonser. Her mener vi med nord særlig Albir, Altea, Benidorm, Finestrat, Villajoyosa, Calpe, Moraira, Jávea og Dénia. I sør trekker vi frem Guardamar, Torrevieja, Orihuela Costa og omkringliggende steder.",
-          "Nordkysten har flere fjell, grønne skråninger, klipper, utsiktsområder og historiske sentre. Sør har oftere flatere terreng, brede sandstrender, saltsjøer, store boligområder og kortere avstander på sykkel eller til fots. Begge har unntak.",
+          "[[Nordkysten|/omrader/costa-blanca-nord]] har flere fjell, grønne skråninger, klipper, utsiktsområder og historiske sentre. Sør har oftere flatere terreng, brede sandstrender, saltsjøer, store boligområder og kortere avstander på sykkel eller til fots. Begge har unntak.",
         ],
       },
       {
@@ -3702,8 +3703,8 @@ export const extraArticles: Article[] = [
       {
         heading: "Norske møteplasser: Albir, Alfaz del Pi og Torrevieja",
         body: [
-          "For noen er det viktig å finne venner som snakker norsk. Albir og Alfaz del Pi har et etablert norsk miljø. Den Norske Klubben Costa Blanca har sitt eget klubbhus i Alfaz del Pi, med kafé, turer, arrangementer og aktiviteter. Klubben beskriver seg som et uavhengig, medlemseid møtested. Se klubbens informasjon på dnkcb.lag247.no.",
-          "Torrevieja har også et stort norsk miljø. Sjømannskirken i Torrevieja er et organisert sosialt og kulturelt møtested som tilbyr blant annet turer, konserter, kor, foredrag og møteplasser. Se sjomannskirken.no/torrevieja. I tillegg møtes mange internasjonale beboere på kaféer, restauranter og andre uformelle arenaer.",
+          "For noen er det viktig å finne venner som snakker norsk. Albir og Alfaz del Pi har et etablert norsk miljø. [[Den Norske Klubben Costa Blanca|https://dnkcb.lag247.no/omoss/annet/]] har sitt eget klubbhus i Alfaz del Pi, med kafé, turer, arrangementer og aktiviteter. Klubben beskriver seg som et uavhengig, medlemseid møtested. Se klubbens informasjon på dnkcb.lag247.no.",
+          "Torrevieja har også et stort norsk miljø. [[Sjømannskirken i Torrevieja|https://www.sjomannskirken.no/torrevieja/]] er et organisert sosialt og kulturelt møtested som tilbyr blant annet turer, konserter, kor, foredrag og møteplasser. Se sjomannskirken.no/torrevieja. I tillegg møtes mange internasjonale beboere på kaféer, restauranter og andre uformelle arenaer.",
           "Ingen av miljøene passer bare pensjonister. De kan likevel være særlig verdifulle for deg som skal tilbringe lange perioder i Spania og ønsker et sosialt nettverk fra første dag.",
         ],
       },
@@ -3732,7 +3733,7 @@ export const extraArticles: Article[] = [
         heading: "Freddys råd: velg nabolag – ikke bare kystretning",
         body: [
           "Jeg anbefaler at du besøker minst to steder som føles forskjellige, og bruker tid der du faktisk vil bo: ta morgenkaffen, prøv turen til matbutikken, kjenn på trafikken og snakk med folk. Slik oppdager du raskere hvor du hører hjemme.",
-          "Zen Eco Homes har hovedfokus på Costa Blanca Nord. Vi ønsker likevel at du velger sør dersom det passer deg bedre. En fornøyd boligkjøper er viktigere enn at alle kjøper samme sted.",
+          "Zen Eco Homes har hovedfokus på Costa Blanca Nord. Vi ønsker likevel at du velger sør dersom det passer deg bedre. En fornøyd boligkjøper er viktigere enn at alle kjøper samme sted. Når du har funnet områdene som passer deg, kan du [[se hus til salgs på Costa Blanca|/eiendommer]] og sammenligne mulighetene.",
         ],
       },
     ],
@@ -3893,7 +3894,7 @@ export const extraArticles: Article[] = [
         heading: "Nybygg: mer tid til å nyte, mindre tid til å restaurere",
         body: [
           "Fordelen med moderne nybygg er ikke bare rene flater og et nytt kjøkken. Det er muligheten til å få en feriebolig med mer forutsigbar teknisk standard, bedre klimaskall, moderne vinduer, gjennomtenkt planløsning og færre forventede større utbedringer i starten.",
-          "For mange er den viktigste gevinsten at feriene brukes til å nyte livet, ikke stadig reparere, fornye og koordinere håndverkere. Men nybygg er ikke risikofritt: kontroller utbygger, kontrakt, leveransebeskrivelse, garantier, tilvalg, ferdigstillelse og kostnader i sameiet.",
+          "For mange er den viktigste gevinsten at feriene brukes til å nyte livet, ikke stadig reparere, fornye og koordinere håndverkere. Men nybygg er ikke risikofritt: kontroller utbygger, kontrakt, leveransebeskrivelse, [[garantier|/magasin/feil-mangler-nybygg-spania-reklamasjon]], tilvalg, ferdigstillelse og kostnader i sameiet. Les også vår [[guide til nybygg i Spania|/guide/nybygg-i-spania]] for en grundigere gjennomgang av hva du bør kontrollere før kjøp.",
         ],
       },
       {
@@ -3914,7 +3915,7 @@ export const extraArticles: Article[] = [
       {
         heading: "En lavere kvadratmeterpris kan være et dyrt kompromiss",
         body: [
-          "I eksemplet er forskjellen mellom de to kjøpene ikke lenger 60.000 euro, men 18.000 euro før skatter og løpende drift. Tallene er ikke en prognose: en velholdt bruktbolig kan komme langt bedre ut, og et nybygg kan bli dyrere enn forventet med tilvalg og høyere kjøpsomkostninger.",
+          "I eksemplet er forskjellen mellom de to kjøpene ikke lenger 60.000 euro, men 18.000 euro før skatter og [[løpende drift|/guide/lopende-kostnader-eie-bolig-spania]]. Tallene er ikke en prognose: en velholdt bruktbolig kan komme langt bedre ut, og et nybygg kan bli dyrere enn forventet med tilvalg og høyere kjøpsomkostninger.",
           "Mitt råd til kjøpere med et stramt budsjett er å vurdere en litt mindre, moderne bolig med god planløsning – eller et område der kvadratmeterprisen er lavere – før de velger en større bolig med ukjent teknisk risiko. Komfort, beliggenhet og brukbarhet betyr ofte mer enn noen ekstra kvadratmeter.",
         ],
       },
@@ -4277,7 +4278,7 @@ export const extraArticles: Article[] = [
           ]
         },
         body: [
-          "Dette er områdekarakteristikker – ikke vurderinger av alle boliger i kommunen. Selv to leiligheter i samme urbanisasjon kan ha helt ulik sol, støy og gangavstand. Den konkrete adressen avgjør."
+          "Dette er områdekarakteristikker for [[Costa Blanca Nord|/omrader/costa-blanca-nord]] – ikke vurderinger av alle boliger i kommunen. Selv to leiligheter i samme urbanisasjon kan ha helt ulik sol, støy og gangavstand. Den konkrete adressen avgjør."
         ]
       },
       {
@@ -4418,7 +4419,7 @@ export const extraArticles: Article[] = [
     keywords: ["leilighet eller villa Costa Blanca","villa Spania","leilighet Spania","feriebolig Costa Blanca"],
     author: { name: "Freddy Bremseth", href: "/om-oss/freddy" },
     intro: [
-      "Mange norske kjøpere begynner med drømmen om villa. Andre vil ha en leilighet som kan låses og forlates. Ingen av delene er automatisk riktig.",
+      "Mange norske kjøpere begynner med drømmen om [[villa|/eiendommer?type=Villa]]. Andre vil ha en [[leilighet|/eiendommer?type=Leilighet]] som kan låses og forlates. Ingen av delene er automatisk riktig.",
       "Spør hvor mye av tiden du faktisk skal være i boligen, hvor mye vedlikehold du vil eie alene og om beliggenhet er viktigere enn privat tomt.",
     ],
     sections: [
@@ -4426,7 +4427,7 @@ export const extraArticles: Article[] = [
         heading: "Villa: du kjøper kontroll og privatliv",
         body: [
           "Egen tomt, privat basseng, mer uteplass og færre naboer tett på er reelle kvaliteter. For familier eller lengre opphold kan en villa gi en helt annen livsfølelse.",
-          "Men alt som er ditt, er også ditt ansvar. Basseng, hage, fasade, tekniske installasjoner og sikkerhet må håndteres selv eller gjennom lokale tjenester.",
+          "Men alt som er ditt, er også ditt ansvar. [[Basseng, hage, fasade, tekniske installasjoner og sikkerhet|/guide/lopende-kostnader-eie-bolig-spania]] må håndteres selv eller gjennom lokale tjenester.",
         ],
       },
       {
@@ -4468,7 +4469,7 @@ export const extraArticles: Article[] = [
         heading: "Ikke la boligtypen bli viktigere enn området",
         body: [
           "En villa på feil sted er fortsatt feil bolig. En leilighet med perfekt beliggenhet kan gi mer bruk og større glede enn en større eiendom du alltid må kjøre fra.",
-          "Velg derfor først hverdagen og området, og la boligtypen være en konsekvens av det.",
+          "Velg derfor først hverdagen og [[området|/omrader]], og la boligtypen være en konsekvens av det.",
         ],
       },
     ],
@@ -4510,7 +4511,7 @@ export const extraArticles: Article[] = [
         heading: "Mikrobeliggenhet slår postnummer",
         body: [
           "To boliger i samme kommune kan ha helt forskjellig etterspørsel. Solforhold, støy, adkomst, avstand til service og hva som ligger rett rundt eiendommen betyr ofte mer enn kommunenavnet.",
-          "Vurder den konkrete gaten og bygningen, ikke bare området på kartet.",
+          "Vurder den konkrete gaten og bygningen, ikke bare [[området på kartet|/omrader]].",
         ],
       },
       {

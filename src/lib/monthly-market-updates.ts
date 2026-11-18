@@ -42,6 +42,8 @@ export const monthlyMarketUpdates: Article[] = [
         "Oppdater inntektsberegningen slik at priser inkludert og ekskludert IVA ikke blandes.",
         "Ta med felleskostnader, vedlikehold, administrasjon, forsikring, skatt og perioder uten leietakere.",
         "Kontroller endringer i lovverk og lokale tillatelser på nytt før reservasjon eller signering."
+      ], afterBullets: [
+        "Les også vår guide om [[utleieinntekter og inntektspotensial på Costa Blanca|/guide/utleie-inntektspotensial-bolig-spania]] før du legger forventede leieinntekter til grunn for boligkjøpet."
       ]},
       { heading: "Hva betyr dette for boligmarkedet på Costa Blanca?", body: [
         "Regelendringen kan påvirke økonomien for enkelte utleieopplegg, men dokumenterer ikke i seg selv lavere boligpriser, redusert etterspørsel eller endret avkastning. For kjøpere som primært ønsker feriebolig eller helårsbolig, er det viktigere å vurdere boligens egen bruksverdi og totale eierkostnader.",
@@ -85,8 +87,9 @@ export const monthlyMarketUpdates: Article[] = [
       ], caption: "Annonserte priser fra Idealista september 2026, ikke gjennomførte salg. Kildens metode ble endret i juli 2026." }},
       { heading: "Benidorm, Finestrat og Villajoyosa: Hvor bør kjøpere se?", body: [
         "Benidorm er ikke ett enkelt prismarked: Poniente lå på rundt 4 947 €/m², mot rundt 2 855 €/m² i sentrum. Kjøperen må sammenligne den faktiske beliggenheten, utsikt, byggeår og sameiekostnader.",
-        "Finestrat har mer moderat årsvekst enn Benidorm og Villajoyosa. Det er et argument for å undersøke sammenlignbare prosjekter og inkluderte tilvalg grundig, ikke et bevis på at alle selgere må redusere prisen.",
-        "Villajoyosa byr på store forskjeller mellom sentrum og kystsonene. Boligens juridiske bruk og mulighetene for utleie bør kontrolleres før reservasjon."
+        "Finestrat har mer moderat årsvekst enn Benidorm og Villajoyosa. Det er et argument for å undersøke sammenlignbare prosjekter og [[inkluderte tilvalg|/magasin/hva-inngar-i-prisen-nybygg-spania]] grundig, ikke et bevis på at alle selgere må redusere prisen.",
+        "Villajoyosa byr på store forskjeller mellom sentrum og kystsonene. Boligens juridiske bruk og mulighetene for utleie bør kontrolleres før reservasjon.",
+        "Før du velger område, kan du lese vår [[guide til ulike områder på Costa Blanca|/guide/omradeguide-eiendomskjop-i-spania]] og sammenligne beliggenhet, livsstil og hva som passer best for deg."
       ]},
       { heading: "Hva er forskjellen mellom Costa Blanca Nord og Sør?", body: [
         "Flere etablerte kystområder i nord har høyere gjennomsnittlige annonserte kvadratmeterpriser enn Torrevieja og Guardamar i sør. Det gjør at kjøpere kan finne andre boligtyper innen samme budsjett ved å utvide søket. Men lavere kvadratmeterpris betyr ikke automatisk bedre kvalitet eller investering.",
@@ -94,7 +97,8 @@ export const monthlyMarketUpdates: Article[] = [
       ]},
       { heading: "Nye regler for korttidsutleie og 10 % IVA: Hva gjelder?", body: [
         "Real Decreto-ley 29/2026 ble vedtatt 6. oktober og publisert i BOE 7. oktober. Lovteksten setter 1. desember 2026 som virkningsdato for 10 % IVA på bestemte møblerte utleieforhold på maksimalt 30 netter til samme leietaker, med unntak og vilkår. Kongressen stadfestet dekretloven 12. november 2026, offentliggjort i BOE 13. november. Kjøperen må fortsatt få konkret skattefaglig vurdering av vilkår og unntak.",
-        "Kilder: BOE lovtekst https://www.boe.es/eli/es/rdl/2026/10/06/29/ og Kongressens stadfestelse https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23755 . Dette er ikke en generell ny turistlisens, og IVA-regler erstatter aldri kommunale tillatelser."
+        "Kilder: BOE lovtekst https://www.boe.es/eli/es/rdl/2026/10/06/29/ og Kongressens stadfestelse https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23755 . Dette er ikke en generell ny turistlisens, og IVA-regler erstatter aldri kommunale tillatelser.",
+        "Les mer om hva vedtaket betyr i praksis i vår artikkel om [[10 % IVA på korttidsutleie i Spania|/magasin/utleie-spania-10-prosent-iva-vedtatt-november-2026]]."
       ]},
       { heading: "Kan 21 %-IVA på en turistleilighet trekkes fra?", body: [
         "Enkelte turist- eller næringsklassifiserte nybygg selges med 21 % IVA, mot normalt 10 % på ordinære nye boliger. Hvis kjøperen faktisk driver virksomhet som gir fradragsrett, kan inngående IVA på kjøpet etter en konkret avgiftsvurdering være fradragsberettiget. Fradraget er ikke automatisk, og privat bruk eller senere endret bruk kan føre til begrensninger og justeringer.",
@@ -106,7 +110,7 @@ export const monthlyMarketUpdates: Article[] = [
         "Kilde: Villajoyosa kommune https://www.villajoyosa.com/el-pleno-de-villajoyosa-aprueba-por-unanimidad-la-suspension-cautelar-de-licencias-para-viviendas-de-uso-turistico-mientras-modifica-el-pgou-para-su-regulacion/ . Før kjøp bør kommunen og advokat verifisere eiendommens konkrete brukstillatelse."
       ]},
       { heading: "Bør jeg kjøpe nå eller vente?", body: [
-        "Det finnes ikke et generelt riktig tidspunkt. Prisindekser sier ikke hva én bestemt bolig vil koste neste år. Et godt kjøp bør vurderes ut fra egen økonomi, bruken av boligen, juridisk kontroll, finansiering og totalprisen inklusive skatter, tilvalg og vedlikehold.",
+        "Det finnes ikke et generelt riktig tidspunkt. Les også vår artikkel om [[å kjøpe bolig i Spania nå eller vente|/magasin/kjop-bolig-i-spania-na-eller-vente]] for en nærmere vurdering av boligmangel og fremtidsutsikter. Prisindekser sier ikke hva én bestemt bolig vil koste neste år. Et godt kjøp bør vurderes ut fra egen økonomi, bruken av boligen, juridisk kontroll, finansiering og totalprisen inklusive skatter, tilvalg og vedlikehold.",
         "Ved nybygg med overtakelse senere bør kjøperen be om oppdatert finansieringsvurdering, kontrollere bankgarantier og få tydelig beskrivelse av leveranse og betalingsplan."
       ]},
       { heading: "Les videre og få hjelp til å sammenligne", body: [
