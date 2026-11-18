@@ -137,7 +137,7 @@ export default async function Home() {
           {[
             { title: "Område og behov først", text: "Finn steder som passer hverdagen din.", label: "Utforsk områder", href: "/omrader" },
             { title: "Riktige boliger", text: "Se alternativer som passer budsjett og behov.", label: "Se boliger", href: "/eiendommer" },
-            { title: "Norsk oppfølging hele veien", text: "Få hjelp gjennom de viktigste stegene i prosessen.", label: "Slik hjelper vi deg", href: "/slik-hjelper-vi-deg" },
+            { title: "Norsk oppfølging hele veien", text: "Få hjelp gjennom de viktigste stegene i prosessen.", label: "Slik hjelper vi deg", href: "/kjopsprosessen" },
             { title: "Etter kjøpet", text: "Vi hjelper deg også med det praktiske rundt boligen når du ikke er i Spania.", label: "Les mer", href: CARE_URL },
           ].map((card, index) => (
             <article key={card.href}>
