@@ -3692,7 +3692,7 @@
   .area-guide-article table thead th:last-child {
     text-align: right;
     text-wrap: balance;
-    padding-right: 14px;
+    padding-right: 10px;
   }
 }
 .area-guide-article .area-winter-list {
