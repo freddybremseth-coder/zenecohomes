@@ -31,7 +31,7 @@ const faq = [
 ];
 function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
 function PreferenceTable({rows}:{rows:string[][]}) {
- return <div className="area-guide-table area-table--editorial area-preference-table my-6">
+ return <div className="buy-guide-comparison area-preference-table my-6">
   <table>
    <thead><tr><th scope="col">Hvis du prioriterer</th><th scope="col">Områder du bør se nærmere på</th></tr></thead>
    <tbody>{rows.map(([priority,areas])=><tr key={priority}>
@@ -41,27 +41,7 @@ function PreferenceTable({rows}:{rows:string[][]}) {
   </table>
  </div>;
 }
-function Airport({title,rows}:{title:string;rows:string[][]}) {
- return <section className="area-airport-section my-7">
-  <h4 className="font-semibold text-xl mb-3">{title}</h4>
-  <div className="area-guide-table area-table--editorial">
-   <table>
-    <thead><tr><th scope="col">Område</th><th scope="col">Omtrentlig kjøretid</th></tr></thead>
-    <tbody>{rows.map(([name,time])=><tr key={name}>
-     <th scope="row">{name}</th>
-     <td data-label="Omtrentlig kjøretid">{time}</td>
-    </tr>)}</tbody>
-   </table>
-  </div>
- </section>;
-}
-const winterTemperatures = [
- ["Sør-Tenerife","18–19 °C","Vanlige dagtemperaturer over 20 °C"],
- ["Gran Canaria","rundt 18 °C","Milde netter"],
- ["Costa del Sol / Málaga","rundt 12 °C","Dagtemperaturer rundt 17 °C"],
- ["Costa Blanca / Alicante","rundt 11,7 °C","Dagtemperaturer rundt 17 °C"],
- ["Murcia / Costa Cálida","Murcia by: rundt 10,6 °C","Større forskjell mellom dag og natt; dagtemperatur rundt 16,6 °C"],
-];
+function Airport({title,rows}:{title:string;rows:string[][]}) { return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><div className="grid gap-2">{rows.map(([name,time])=><div key={name} className="flex flex-wrap justify-between gap-2 border-b border-slate-200 py-2"><span className="font-medium">{name}</span><span>{time}</span></div>)}</div></section>; }
 export function SpainAreaGuide(){
  return <section className="section cornerstone-section"><article className="article-main prose max-w-none area-guide-article">
  <p>Hvor i Spania du bør kjøpe eiendom avhenger av både prisnivå, klima og hvordan du ønsker å bruke boligen i hverdagen. Jeg har sett mange boligkjøpere starte med en klar idé om hvor de skal bo, for så å endre mening over tid når de besøker områdene.</p>
@@ -100,16 +80,7 @@ export function SpainAreaGuide(){
  <h3>Hvor varmt skal det være om vinteren?</h3>
  <p>Hvis du ønsker milde temperaturer også om vinteren, er Kanariøyene normalt det beste valget. Sør på Tenerife ligger normaltemperaturen i januar rundt 18,4 °C, mens Gran Canaria ligger rundt 17,9 °C. Til sammenligning ligger Málaga og Alicante rundt 12 °C. Dette er døgnmiddel, ikke dagtemperatur, og ingen av stedene garanterer sommervarme hver dag.</p>
  <p>Her er områdene i Spania med varmest vintre:</p>
- <div className="area-guide-table area-table--editorial area-winter-table">
-  <table>
-   <thead><tr><th scope="col">Område</th><th scope="col">Døgnmiddel i januar</th><th scope="col">Dagtemperatur / forhold</th></tr></thead>
-   <tbody>{winterTemperatures.map(([area,average,day])=><tr key={area}>
-    <th scope="row">{area}</th>
-    <td data-label="Døgnmiddel i januar">{average}</td>
-    <td data-label="Dagtemperatur / forhold">{day}</td>
-   </tr>)}</tbody>
-  </table>
- </div>
+ <ul><li><strong>Sør-Tenerife:</strong> rundt 18–19 °C i gjennomsnitt i januar, med vanlige dagtemperaturer over 20 °C.</li><li><strong>Gran Canaria:</strong> rundt 18 °C i januar og milde netter.</li><li><strong>Costa del Sol / Málaga:</strong> rundt 12 °C som januarmiddel og dagtemperaturer rundt 17 °C.</li><li><strong>Costa Blanca / Alicante:</strong> rundt 11,7 °C i januar og dagtemperaturer rundt 17 °C.</li><li><strong>Murcia / Costa Cálida:</strong> mildt, men større forskjell mellom dag og natt; Murcia by ligger rundt 10,6 °C i januar, med dagtemperaturer rundt 16,6 °C.</li></ul>
  <h3>Hvor ofte skal du reise til og fra Spania?</h3>
  <p>Skal du reise mye mellom Norge og Spania, ville jeg definitivt valgt et sted i nærheten av en flyplass. En time eller mer i taxi kan være ganske seigt etter en lang flytur.</p>
  <p>En tidligere kollega sluttet nesten å bruke den spanske ferieboligen sin fordi reisen til og fra flyplassen ble for lang. Med små barn, mye bagasje og halvannen time i drosje ble terskelen for hyppige reiser for høy.</p>
