@@ -30,18 +30,23 @@ const faq = [
  ["Hvor i Spania er det best å bo?","Det avhenger av din hverdag: Costa Blanca og Costa del Sol passer ofte dem som ønsker kystliv og internasjonale miljøer, storbyene passer dem som vil gå til det meste, og innlandet passer dem som prioriterer ro og plass. Test området utenfor feriesesongen før du bestemmer deg."]
 ];
 function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
-function PreferenceTable({rows}:{rows:string[][]}) {
- return <div className="buy-guide-comparison area-preference-table my-6">
+function StandardTable({headers,rows}:{headers:string[];rows:string[][]}) {
+ return <div className="buy-guide-comparison my-6">
   <table>
-   <thead><tr><th scope="col">Hvis du prioriterer</th><th scope="col">Områder du bør se nærmere på</th></tr></thead>
-   <tbody>{rows.map(([priority,areas])=><tr key={priority}>
-    <th scope="row">{priority}</th>
-    <td data-label="Områder du bør se nærmere på">{areas}</td>
+   <thead><tr>{headers.map((header)=><th scope="col" key={header}>{header}</th>)}</tr></thead>
+   <tbody>{rows.map((row)=><tr key={row[0]}>
+    <th scope="row">{row[0]}</th>
+    {row.slice(1).map((cell,index)=><td key={index} data-label={headers[index+1]}>{cell}</td>)}
    </tr>)}</tbody>
   </table>
  </div>;
 }
-function Airport({title,rows}:{title:string;rows:string[][]}) { return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><div className="grid gap-2">{rows.map(([name,time])=><div key={name} className="flex flex-wrap justify-between gap-2 border-b border-slate-200 py-2"><span className="font-medium">{name}</span><span>{time}</span></div>)}</div></section>; }
+function PreferenceTable({rows}:{rows:string[][]}) {
+ return <StandardTable headers={["Hvis du prioriterer","Områder du bør se nærmere på"]} rows={rows}/>;
+}
+function Airport({title,rows}:{title:string;rows:string[][]}) {
+ return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><StandardTable headers={["Område","Omtrentlig kjøretid"]} rows={rows}/></section>;
+}
 export function SpainAreaGuide(){
  return <section className="section cornerstone-section"><article className="article-main prose max-w-none area-guide-article">
  <p>Hvor i Spania du bør kjøpe eiendom avhenger av både prisnivå, klima og hvordan du ønsker å bruke boligen i hverdagen. Jeg har sett mange boligkjøpere starte med en klar idé om hvor de skal bo, for så å endre mening over tid når de besøker områdene.</p>
@@ -76,11 +81,17 @@ export function SpainAreaGuide(){
  <p>Til sammenligning lå Murcia-regionen på rundt 1 689 euro per kvadratmeter, Alicante-provinsen på 2 767 euro og Málaga-provinsen på 4 317 euro. Tallene er et historisk prisøyeblikksbilde basert på annonserte priser, ikke gjennomførte salgspriser, pristilbud eller takst.</p>
  <p>Forskjellen er stor nok til at samme budsjett kan gi helt ulike typer boliger. Et beløp som rekker til en mindre leilighet i et dyrt kystområde, kan gi en langt større bolig eller tomt i innlandet.</p>
  <p>Det betyr likevel ikke at det billigste området nødvendigvis er det beste valget. Prisnivået henger ofte sammen med avstand til kysten, tilgjengelighet, servicetilbud og etterspørsel fra både lokale og utenlandske kjøpere.</p>
- <p className="text-sm">Kilde: <a href="https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/report/" target="_blank" rel="noopener noreferrer" className="underline">Idealista, rapport over annonserte boligpriser i september 2026</a>. Statistikken bruker en endret metode fra juli 2026.</p><Comparison rows={budget}/>
+ <p className="text-sm">Kilde: <a href="https://www.idealista.com/sala-de-prensa/informes-precio-vivienda/venta/report/" target="_blank" rel="noopener noreferrer" className="underline">Idealista, rapport over annonserte boligpriser i september 2026</a>. Statistikken bruker en endret metode fra juli 2026.</p><StandardTable headers={["Budsjett / prioritering","Områder du bør se nærmere på"]} rows={budget}/>
  <h3>Hvor varmt skal det være om vinteren?</h3>
  <p>Hvis du ønsker milde temperaturer også om vinteren, er Kanariøyene normalt det beste valget. Sør på Tenerife ligger normaltemperaturen i januar rundt 18,4 °C, mens Gran Canaria ligger rundt 17,9 °C. Til sammenligning ligger Málaga og Alicante rundt 12 °C. Dette er døgnmiddel, ikke dagtemperatur, og ingen av stedene garanterer sommervarme hver dag.</p>
  <p>Her er områdene i Spania med varmest vintre:</p>
- <ul><li><strong>Sør-Tenerife:</strong> rundt 18–19 °C i gjennomsnitt i januar, med vanlige dagtemperaturer over 20 °C.</li><li><strong>Gran Canaria:</strong> rundt 18 °C i januar og milde netter.</li><li><strong>Costa del Sol / Málaga:</strong> rundt 12 °C som januarmiddel og dagtemperaturer rundt 17 °C.</li><li><strong>Costa Blanca / Alicante:</strong> rundt 11,7 °C i januar og dagtemperaturer rundt 17 °C.</li><li><strong>Murcia / Costa Cálida:</strong> mildt, men større forskjell mellom dag og natt; Murcia by ligger rundt 10,6 °C i januar, med dagtemperaturer rundt 16,6 °C.</li></ul>
+ <StandardTable headers={["Område","Døgnmiddel i januar","Dagtemperatur / forhold"]} rows={[
+ ["Sør-Tenerife","18–19 °C","Vanlige dagtemperaturer over 20 °C"],
+ ["Gran Canaria","rundt 18 °C","Milde netter"],
+ ["Costa del Sol / Málaga","rundt 12 °C","Dagtemperaturer rundt 17 °C"],
+ ["Costa Blanca / Alicante","rundt 11,7 °C","Dagtemperaturer rundt 17 °C"],
+ ["Murcia / Costa Cálida","Murcia by: rundt 10,6 °C","Større forskjell mellom dag og natt; dagtemperatur rundt 16,6 °C"]
+ ]}/>
  <h3>Hvor ofte skal du reise til og fra Spania?</h3>
  <p>Skal du reise mye mellom Norge og Spania, ville jeg definitivt valgt et sted i nærheten av en flyplass. En time eller mer i taxi kan være ganske seigt etter en lang flytur.</p>
  <p>En tidligere kollega sluttet nesten å bruke den spanske ferieboligen sin fordi reisen til og fra flyplassen ble for lang. Med små barn, mye bagasje og halvannen time i drosje ble terskelen for hyppige reiser for høy.</p>
@@ -91,7 +102,17 @@ export function SpainAreaGuide(){
  <h3>Er nærhet til andre nordmenn viktig?</h3>
  <p>Albir på Costa Blanca Nord er et særlig aktuelt område hvis du vil bo i nærheten av mange andre nordmenn. Albir ligger i kommunen l'Alfàs del Pi, hvor 2 626 norske statsborgere var registrert bosatt i starten av 2026. Det reelle antallet som oppholder seg der i løpet av året kan være høyere fordi ikke alle sesongbeboere er registrert.</p>
  <p>Her finner du også en norsk skole, Sjømannskirken og en rekke norske foreninger. Men Albir er langt fra det eneste alternativet:</p>
- <ul><li><strong>Torrevieja og Ciudad Quesada:</strong> I Torrevieja var 737 norske statsborgere registrert i mai 2026, mens Rojales kommune, som Ciudad Quesada tilhører, hadde 646 i 2025. I Ciudad Quesada ligger også en norsk skole.</li><li><strong>Costa del Sol:</strong> Fuengirola hadde 682 registrerte norske statsborgere i 2025, Marbella 266 og Málaga by 95. Det finnes også norsk skole i Málaga-området.</li><li><strong>Gran Canaria:</strong> Mogán kommune, med blant annet Arguineguín og Puerto Rico, hadde 625 registrerte norske statsborgere i 2025. Her finnes Den norske skolen Gran Canaria.</li><li><strong>Andre deler av Costa Blanca:</strong> Benidorm og Villajoyosa har også norsk tilknytning. I 2025 var henholdsvis 80 og 76 norske statsborgere registrert der.</li></ul>
+ <StandardTable headers={["Område","Registrerte norske statsborgere","Norske tilbud / miljø"]} rows={[
+ ["Albir / l'Alfàs del Pi","2 626 (starten av 2026)","Norsk skole, Sjømannskirken og flere norske foreninger"],
+ ["Torrevieja","737 (mai 2026)","Etablert norsk miljø"],
+ ["Ciudad Quesada / Rojales","646 (2025)","Norsk skole i Ciudad Quesada"],
+ ["Fuengirola","682 (2025)","Etablert norsk miljø; norsk skoletilbud i Málaga-området"],
+ ["Marbella","266 (2025)","Etablert norsk miljø på Costa del Sol"],
+ ["Málaga by","95 (2025)","Norsk skole i Málaga-området"],
+ ["Mogán (Gran Canaria)","625 (2025)","Den norske skolen Gran Canaria; omfatter blant annet Arguineguín og Puerto Rico"],
+ ["Benidorm","80 (2025)","Norsk tilknytning"],
+ ["Villajoyosa","76 (2025)","Norsk tilknytning"]
+ ]}/>
  <p>Kommunetallene gjelder registrerte statsborgere på ulike telletidspunkter, ikke alle norske eiere, besøkende eller personer med norsk bakgrunn. Tallene bør kontrolleres mot de enkelte kommunenes register eller INEs kommunefordelte befolkningsstatistikk før de brukes som en oppdatert rangering.</p>
  <h3>Hvilken hverdag ser du for deg?</h3>
  <p>Det beste området er ikke nødvendigvis det med finest strand, lavest pris eller best utsikt. Det viktigste er hvordan du faktisk ønsker å bruke dagene når du er i Spania.</p>
