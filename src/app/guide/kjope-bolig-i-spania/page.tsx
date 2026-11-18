@@ -215,8 +215,11 @@ export default async function BuyInSpainGuidePage() {
             Når skjøtet er signert og oppgjøret gjennomført, får du normalt nøklene til boligen. Deretter skal nødvendige skatter og avgifter håndteres, og eierskapet registreres i det spanske eiendomsregisteret (<em>Registro de la Propiedad</em>). Du må også sørge for at blant annet strøm, vann, forsikring og eventuelle felleskostnader blir fulgt opp.
           </p>
           <p>
-            Har du spørsmål om boligkjøp i Spania? På våre <Link href="/informasjonsmote">digitale informasjonsmøter</Link> kan du lære mer om boligmarkedet og stille spørsmål direkte til våre rådgivere. Møtene er gratis og uforpliktende.
+            Har du spørsmål om boligkjøp i Spania? På våre digitale informasjonsmøter kan du lære mer om boligmarkedet og stille spørsmål direkte til våre rådgivere. Møtene er gratis og uforpliktende.
           </p>
+          <div className="hero-actions">
+            <Link className="contact-button" href="/informasjonsmote">Bli med på infomøte</Link>
+          </div>
         </div>
       </section>
 
