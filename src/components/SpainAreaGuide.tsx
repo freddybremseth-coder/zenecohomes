@@ -31,7 +31,7 @@ const faq = [
 ];
 function Comparison({rows}:{rows:string[][]}) { return <div className="grid gap-2 my-6">{rows.map(([a,b])=><div key={a} className="grid gap-1 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2"><span className="font-semibold text-slate-900">{a}</span><span>{b}</span></div>)}</div>; }
 function StandardTable({headers,rows}:{headers:string[];rows:string[][]}) {
- return <div className="buy-guide-comparison my-6">
+ return <div className="buy-guide-comparison area-guide-standard-table my-6">
   <table>
    <thead><tr>{headers.map((header)=><th scope="col" key={header}>{header}</th>)}</tr></thead>
    <tbody>{rows.map((row)=><tr key={row[0]}>
@@ -42,7 +42,15 @@ function StandardTable({headers,rows}:{headers:string[];rows:string[][]}) {
  </div>;
 }
 function PreferenceTable({rows}:{rows:string[][]}) {
- return <StandardTable headers={["Hvis du prioriterer","Områder du bør se nærmere på"]} rows={rows}/>;
+ return <div className="buy-guide-comparison area-preference-table my-6">
+  <table>
+   <thead><tr><th scope="col">Hvis du prioriterer</th><th scope="col">Områder du bør se nærmere på</th></tr></thead>
+   <tbody>{rows.map(([priority,areas])=><tr key={priority}>
+    <th scope="row">{priority}</th>
+    <td data-label="Områder du bør se nærmere på">{areas}</td>
+   </tr>)}</tbody>
+  </table>
+ </div>;
 }
 function Airport({title,rows}:{title:string;rows:string[][]}) {
  return <section className="my-7"><h4 className="font-semibold text-xl mb-3">{title}</h4><StandardTable headers={["Område","Omtrentlig kjøretid"]} rows={rows}/></section>;
