@@ -332,6 +332,47 @@ main .proper-name {
   border-bottom: 0;
 }
 
+/* Area guide: apply the existing comparison-table row treatment to newly
+   converted tables without changing the original preference table. */
+.area-guide-article .area-guide-standard-table table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.area-guide-article .area-guide-standard-table thead th:first-child,
+.area-guide-article .area-guide-standard-table tbody th {
+  width: 36%;
+}
+
+.area-guide-article .area-guide-standard-table thead th {
+  padding: 14px 16px;
+  color: var(--ze-ink);
+  background: rgba(244, 240, 231, 0.8);
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+}
+
+.area-guide-article .area-guide-standard-table tbody th,
+.area-guide-article .area-guide-standard-table tbody td {
+  padding: 15px 16px;
+  border-bottom: 1px solid rgba(22, 34, 43, 0.1);
+  vertical-align: top;
+  text-align: left;
+}
+
+.area-guide-article .area-guide-standard-table tbody tr:last-child th,
+.area-guide-article .area-guide-standard-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .area-guide-article .area-guide-standard-table tbody th,
+  .area-guide-article .area-guide-standard-table tbody td {
+    padding-block: 10px 13px;
+  }
+}
+
 @media (max-width: 700px) {
   .area-guide-article {
     font-size: 1rem;
