@@ -4,7 +4,7 @@ export const monthlyMarketUpdates: Article[] = [
   {
   "slug": "boliglan-spania-valencia-november-2026",
   "title": "Boliglån i Spania: Valenciaregionen viser sterk vekst i november 2026",
-  "excerpt": "Nye boliglånstall og renteeksempler gir boligkjøpere på Costa Blanca grunn til å gjennomgå finansieringen før reservasjon.",
+  "excerpt": "Registrerte boliglån økte 9,9 % i Valenciaregionen mot 2,3 % i Spania. Se nye INE-tall, renter og praktiske finansieringsråd for Costa Blanca.",
   "date": "2026-11-25",
   "updated": "2026-11-25",
   "category": "Markedsoppdatering Costa Blanca",
@@ -25,8 +25,8 @@ export const monthlyMarketUpdates: Article[] = [
     "href": "/om-oss/freddy"
   },
   "intro": [
-    "Boligfinansiering er en viktig del av boligkjøpet på Costa Blanca. Den foreløpige septemberstatistikken omtalt i vår markedsoppdatering 25. november peker mot sterkere vekst i registrerte boliglån i Valenciaregionen enn i Spania samlet. Statistikken må ikke forveksles med lånetilbud til utenlandske kjøpere.",
-    "Redaksjonelt forbehold: De konkrete nye septembertallene er ikke gjengitt her fordi den opprinnelige INE-publikasjonen ikke kunne kontrolleres på nytt ved publiseringsarbeidet. Se [[INEs boliglånsstatistikk|https://www.ine.es/dyngs/Prensa/H0926.htm]] for originaltall."
+    "Boligfinansiering er en viktig del av boligkjøpet på Costa Blanca. INEs foreløpige septemberstatistikk, publisert 25. november 2026, viser at antallet registrerte boliglån i Valenciaregionen steg 9,9 % fra september 2025, mot 2,3 % i hele Spania. Statistikken må ikke forveksles med lånetilbud til utenlandske kjøpere.",
+    "På landsbasis ble det registrert 46 469 boliglån. Gjennomsnittlig lånebeløp var 178 352 euro (+3,7 % på ett år), gjennomsnittsrenten 3,05 % og løpetiden 25 år. 62,5 % hadde fast rente. Kilde: [[INEs boliglånsstatistikk, 25. november 2026|https://ine.es/dyngs/Prensa/H0926.htm?print=1]]. Tallene er foreløpige."
   ],
   "sections": [
     {
@@ -38,7 +38,7 @@ export const monthlyMarketUpdates: Article[] = [
     {
       "heading": "Hva koster et boliglån i Spania?",
       "body": [
-        "Sammenlign nominell rente, effektiv rente (TAE), gebyrer, forsikringer og krav om andre bankprodukter. Ved variabel rente kan lånekostnaden endres når referanserenten justeres. Se [[Banco de España|https://www.bde.es/]] for offisielle rentereferanser.",
+        "Sammenlign nominell rente, effektiv rente (TAE), gebyrer, forsikringer og krav om andre bankprodukter. Ved variabel rente kan lånekostnaden endres når referanserenten justeres. [[Banco de España, 3. november 2026|https://www.bde.es/wbe/es/noticias-eventos/actualidad-banco-espana/notas-banco-espana/euribor-octubre-2026.html]] oppgir 12-måneders Euribor til 3,239 % i oktober, mot 3,247 % i september og 1,052 prosentpoeng høyere enn i oktober 2025.",
         "Eksempel: En bolig til 400 000 euro med 70 % finansiering gir et lån på 280 000 euro og egenkapital på 120 000 euro før kjøpskostnader. Over 25 år gir illustrerende renter følgende månedlige betalinger."
       ],
       "table": {
