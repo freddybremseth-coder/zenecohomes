@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CalendarDays, Clock } from "lucide-react";
 import type { Article, ArticleTable } from "@/lib/content";
 import { withArticleAttribution } from "@/lib/article-attribution";
+import { MortgageCalculator } from "@/components/MortgageCalculator";
 import { PurchaseBudgetCalculator } from "@/components/PurchaseBudgetCalculator";
 import { MarketBudgetComparison } from "@/components/MarketBudgetComparison";
 import { CorporateHomeCalculator } from "@/components/CorporateHomeCalculator";
@@ -1133,6 +1134,12 @@ export function ArticleView({ article }: { article: Article }) {
                       </figure>
                     );
                   })()}
+                  {article.slug === "boliglan-spania-valencia-november-2026" && section.heading === "Hva koster et boliglån i Spania?" && (
+                    <div id="boliglanskalkulator" style={{ marginBlock: 24, minWidth: 0 }}>
+                      <MortgageCalculator price={400000} locale="no" editablePrice />
+                      <p style={{ fontSize: "0.9rem" }}>Beregningen gjelder renter og avdrag, uten kjøpskostnader, gebyrer og forsikringer. Renten er et justerbart eksempel, ikke et banktilbud.</p>
+                    </div>
+                  )}
                   {section.body?.map((paragraph, paragraphIndex) => {
                     if (article.slug === "lopende-kostnader-eie-bolig-spania" && paragraph.startsWith("• ")) {
                       if (paragraphIndex > 0 && section.body?.[paragraphIndex - 1]?.startsWith("• ")) return null;
