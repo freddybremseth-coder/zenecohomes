@@ -282,12 +282,12 @@ export default async function MagazinePage() {
           </p>
         </div>
         <div className="magazine-topic-list">
-          <article><span>01</span><div><h3>Markedsoppdateringer</h3><p>Endringer i tilbud, etterspørsel, kjøperinteresse og andre signaler fra boligmarkedet.</p></div></article>
-          <article><span>02</span><div><h3>Boligprisutvikling</h3><p>Redaksjonelle oppdateringer om priser og utvikling i relevante deler av Spania.</p></div></article>
-          <article><span>03</span><div><h3>Lokale nyheter</h3><p>Endringer i områder, infrastruktur, prosjekter og forhold som kan være relevante for boligkjøpere.</p></div></article>
-          <article><span>04</span><div><h3>Livet i Spania</h3><p>Hverdagsliv, sesonger, praktiske valg og erfaringer som gir mer kontekst enn en boligannonse.</p></div></article>
-          <article><span>05</span><div><h3>Nyheter fra Costa Blanca</h3><p>Lokale utviklingstrekk fra Costa Blanca Nord og Sør som kan påvirke områdene og markedet.</p></div></article>
-          <article><span>06</span><div><h3>Redaksjonelt</h3><p>Intervjuer, analyser og andre artikler som støtter nettstedets område- og markedskunnskap.</p></div></article>
+          <article><Link href={hrefForSlug("boliglan-spania-valencia-november-2026")} className="magazine-topic-link"><span className="magazine-topic-number">01</span><div><h3>Markedsoppdateringer</h3><p>Endringer i tilbud, etterspørsel, kjøperinteresse og andre signaler fra boligmarkedet.</p><span className="magazine-topic-cta">Les siste markedsoppdatering <ArrowRight size={16} aria-hidden="true" /></span></div></Link></article>
+          <article><Link href={hrefForSlug("markedsoppdatering-costa-blanca-oktober-2026")} className="magazine-topic-link"><span className="magazine-topic-number">02</span><div><h3>Boligprisutvikling</h3><p>Redaksjonelle oppdateringer om priser og utvikling i relevante deler av Spania.</p><span className="magazine-topic-cta">Les om boligprisene <ArrowRight size={16} aria-hidden="true" /></span></div></Link></article>
+          <article><Link href={hrefForSlug("utleie-spania-10-prosent-iva-vedtatt-november-2026")} className="magazine-topic-link"><span className="magazine-topic-number">03</span><div><h3>Lokale nyheter</h3><p>Endringer i områder, infrastruktur, prosjekter og forhold som kan være relevante for boligkjøpere.</p><span className="magazine-topic-cta">Les om nye utleieregler <ArrowRight size={16} aria-hidden="true" /></span></div></Link></article>
+          <article><Link href={hrefForSlug("costa-blanca-vinteren-bo-feriebolig")} className="magazine-topic-link"><span className="magazine-topic-number">04</span><div><h3>Livet i Spania</h3><p>Hverdagsliv, sesonger, praktiske valg og erfaringer som gir mer kontekst enn en boligannonse.</p><span className="magazine-topic-cta">Les om livet i Spania <ArrowRight size={16} aria-hidden="true" /></span></div></Link></article>
+          <article><Link href={hrefForSlug("albir-eller-villajoyosa-hvor-bo")} className="magazine-topic-link"><span className="magazine-topic-number">05</span><div><h3>Nyheter fra Costa Blanca</h3><p>Lokale utviklingstrekk fra Costa Blanca Nord og Sør som kan påvirke områdene og markedet.</p><span className="magazine-topic-cta">Les lokal områdeartikkel <ArrowRight size={16} aria-hidden="true" /></span></div></Link></article>
+          <article><Link href={hrefForSlug("hvorfor-jeg-radet-nordmenn-til-a-kjope-bolig-i-spania-i-2023")} className="magazine-topic-link"><span className="magazine-topic-number">06</span><div><h3>Redaksjonelt</h3><p>Intervjuer, analyser og andre artikler som støtter nettstedets område- og markedskunnskap.</p><span className="magazine-topic-cta">Les redaksjonell kommentar <ArrowRight size={16} aria-hidden="true" /></span></div></Link></article>
         </div>
       </section>
 
@@ -301,7 +301,7 @@ export default async function MagazinePage() {
           <article className="magazine-card">
             <Image className="magazine-cover-image" src="/assets/magasin-covers/ChatGPT-bilde 19. okt. 2026, 19_14_54-1.png" alt="Markedsanalyse over Costa Blanca med prisutvikling og kystlandskap" width={1200} height={760} />
             <div className="magazine-body">
-              <p className="magazine-meta">MÅNEDLIG MARKEDSANALYSE · OKTOBER 2026</p>
+              <p className="magazine-meta">LØPENDE MARKEDSOPPDATERINGER</p>
               <h3>Markedsoppdatering Costa Blanca</h3>
               <p>Boligpriser, etterspørsel, renter, nye lover og utleieregler – med datoer, kilder og råd til kjøpere.</p>
               <div className="magazine-actions">
