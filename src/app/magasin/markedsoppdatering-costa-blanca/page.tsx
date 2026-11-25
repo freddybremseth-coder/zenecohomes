@@ -28,8 +28,8 @@ export default function MarketSeriesPage() {
   return (
     <main>
       <SiteHeader languageLinks={homeLanguageLinks("no")} />
-      <section className="section" style={{ background: "#17232a", color: "#fff", paddingTop: "clamp(5.5rem,9vw,7rem)", paddingBottom: "clamp(2rem,5vw,4.5rem)" }}>
-        <div className="mx-auto max-w-5xl px-5 md:px-8">
+      <section className="section" style={{ background: "#17232a", color: "#fff", paddingTop: "clamp(5rem,8vw,6rem)", paddingBottom: "clamp(2rem,5vw,3.5rem)", borderRadius: "0 0 18px 18px" }}>
+        <div style={{ boxSizing: "border-box", width: "100%", paddingInline: "clamp(24px,4vw,56px)", paddingTop: 24 }}>
           <p className="eyebrow" style={{ marginBottom: 12, color: "#d9e7e3" }}>MARKED OG PRISER</p>
           <h1 style={{ fontSize: "clamp(1.85rem,5vw,3.65rem)", lineHeight: 1.14, maxWidth: "100%", overflowWrap: "normal", wordBreak: "normal", hyphens: "auto", marginBottom: 16 }}>
             Markedsoppdateringer fra Costa Blanca
@@ -54,9 +54,9 @@ export default function MarketSeriesPage() {
           <div style={{ display: "grid", gap: 18 }}>
             {reports.map((report, index) => (
               <article className="market-report-card" key={report.slug} id={report.slug} style={{ scrollMarginTop: 110, display: "grid", gridTemplateColumns: "minmax(0,1fr)", border: "1px solid #d9d5c9", borderRadius: 18, background: "#fff", overflow: "hidden" }}>
-                <div className="market-report-card-inner" style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr)", gap: 0 }}>
-                  <Link className="market-report-card-image" href={articlePath(report)} style={{ display: "block", position: "relative", height: "clamp(150px,32vw,270px)" }} aria-label={`Les ${report.title}`}>
-                    <Image src={report.image} alt={report.imageAlt} fill sizes="(max-width: 768px) 100vw, 900px" style={{ objectFit: "cover" }} />
+                <div className="market-report-card-inner" style={{ display: "grid", gridTemplateColumns: "minmax(0, 34%) minmax(0, 1fr)", gap: 0 }}>
+                  <Link className="market-report-card-image" href={articlePath(report)} style={{ display: "block", position: "relative", minHeight: 180, height: "100%", background: "#e9e4d8" }} aria-label={`Les ${report.title}`}>
+                    <Image src={report.image} alt={report.imageAlt} fill sizes="(max-width: 640px) 116px, 380px" style={{ objectFit: report.image.endsWith(".svg") ? "contain" : "cover" }} />
                   </Link>
                   <div className="market-report-card-content" style={{ padding: "clamp(1rem,3vw,1.7rem)", display: "grid", gap: 10 }}>
                     <p className="eyebrow" style={{ margin: 0 }}>{index === 0 ? "NYESTE · " : ""}{fullDate.format(new Date(`${report.date}T12:00:00Z`))} · {report.readingTime}</p>
