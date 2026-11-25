@@ -21,6 +21,8 @@ export const metadata: Metadata = {
 
 const norwegianMonth = new Intl.DateTimeFormat("nb-NO", { month: "long", year: "numeric", timeZone: "UTC" });
 const reports = [...monthlyMarketUpdates].sort((a, b) => b.date.localeCompare(a.date));
+const monthReports = reports.filter((report, index) => reports.findIndex((other) => other.date.slice(0, 7) === report.date.slice(0, 7)) === index);
+const fullDate = new Intl.DateTimeFormat("nb-NO", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
 export default function MarketSeriesPage() {
   return (
@@ -43,7 +45,7 @@ export default function MarketSeriesPage() {
           <h2 style={{ fontSize: "clamp(1.55rem,3vw,2.4rem)", lineHeight: 1.2, marginBottom: 12 }}>Velg markedsrapport</h2>
           <p style={{ marginBottom: 18, maxWidth: "68ch" }}>Nyeste oppdatering ligger øverst. Bruk snarveiene for å gå direkte til en måned.</p>
           <nav aria-label="Velg rapport" style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 26 }}>
-            {reports.map((report) => (
+            {monthReports.map((report) => (
               <a key={report.slug} href={`#${report.slug}`} style={{ display: "inline-flex", padding: "9px 14px", border: "1px solid #9daaa5", borderRadius: 999, color: "#173e3b", fontWeight: 650, textDecoration: "none", background: "#fff" }}>
                 {norwegianMonth.format(new Date(`${report.date}T12:00:00Z`))}
               </a>
@@ -57,7 +59,7 @@ export default function MarketSeriesPage() {
                     <Image src={report.image} alt={report.imageAlt} fill sizes="(max-width: 768px) 100vw, 900px" style={{ objectFit: "cover" }} />
                   </Link>
                   <div className="market-report-card-content" style={{ padding: "clamp(1rem,3vw,1.7rem)", display: "grid", gap: 10 }}>
-                    <p className="eyebrow" style={{ margin: 0 }}>{index === 0 ? "NYESTE · " : ""}{norwegianMonth.format(new Date(`${report.date}T12:00:00Z`))} · {report.readingTime}</p>
+                    <p className="eyebrow" style={{ margin: 0 }}>{index === 0 ? "NYESTE · " : ""}{fullDate.format(new Date(`${report.date}T12:00:00Z`))} · {report.readingTime}</p>
                     <h3 style={{ fontSize: "clamp(1.25rem,2.5vw,1.7rem)", lineHeight: 1.25, margin: 0, overflowWrap: "break-word" }}>
                       <Link href={articlePath(report)} style={{ color: "inherit", textDecoration: "none" }}>{report.title}</Link>
                     </h3>
