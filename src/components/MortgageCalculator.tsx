@@ -47,9 +47,10 @@ function fmt(n: number, locale: Locale) {
   return `€${Math.round(n).toLocaleString(locale === "de" ? "de-DE" : locale === "en" ? "en-GB" : "nb-NO")}`;
 }
 
-export function MortgageCalculator({ price, locale = "no" }: { price?: number; locale?: Locale }) {
+export function MortgageCalculator({ price, locale = "no", editablePrice = false }: { price?: number; locale?: Locale; editablePrice?: boolean }) {
   const t = T[locale];
-  const base = price && price > 0 ? price : 400000;
+  const [customPrice, setCustomPrice] = useState(price && price > 0 ? price : 400000);
+  const base = editablePrice ? customPrice : (price && price > 0 ? price : 400000);
   const [depositPct, setDepositPct] = useState(30);
   const [rate, setRate] = useState(3.5);
   const [term, setTerm] = useState(25);
@@ -69,7 +70,7 @@ export function MortgageCalculator({ price, locale = "no" }: { price?: number; l
       </p>
       <div className="mortgage-row">
         <span>{t.price}</span>
-        <strong>{fmt(base, locale)}</strong>
+        {editablePrice ? <label style={{ display: "flex", alignItems: "center", gap: 6 }}>€ <input aria-label={t.price} type="number" min={0} max={100000000} step={1000} value={customPrice || ""} onChange={(e) => setCustomPrice(Math.min(100000000, Math.max(0, Number(e.target.value) || 0)))} style={{ width: "min(140px, 100%)", font: "inherit", padding: "8px" }} /></label> : <strong>{fmt(base, locale)}</strong>}
       </div>
       <label>
         {t.deposit}: <strong>{depositPct}%</strong> ({fmt((base * depositPct) / 100, locale)})
