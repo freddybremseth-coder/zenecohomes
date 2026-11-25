@@ -2,6 +2,116 @@ import type { Article } from "./content";
 
 export const monthlyMarketUpdates: Article[] = [
   {
+  "slug": "boliglan-spania-valencia-november-2026",
+  "title": "Boliglån i Spania: Valenciaregionen viser sterk vekst i november 2026",
+  "excerpt": "Nye boliglånstall og renteeksempler gir boligkjøpere på Costa Blanca grunn til å gjennomgå finansieringen før reservasjon.",
+  "date": "2026-11-25",
+  "updated": "2026-11-25",
+  "category": "Markedsoppdatering Costa Blanca",
+  "readingTime": "5 min lesing",
+  "image": "/assets/magasin-covers/boliglan-november-2026.svg",
+  "imageAlt": "Illustrasjon av bolig, finansiering og kalkulator på Costa Blanca",
+  "seoTitle": "Boliglån i Spania november 2026 | Costa Blanca og renter",
+  "seoDescription": "Boligfinansiering i Spania i november 2026: les om utviklingen i Valenciaregionen, renter, egenkapital og hva boligkjøpere på Costa Blanca bør kontrollere.",
+  "keywords": [
+    "boliglån Spania",
+    "finansiering Costa Blanca",
+    "boliglån Valencia",
+    "Benidorm Finestrat Villajoyosa",
+    "renter Spania 2026"
+  ],
+  "author": {
+    "name": "Freddy Bremseth",
+    "href": "/om-oss/freddy"
+  },
+  "intro": [
+    "Boligfinansiering er en viktig del av boligkjøpet på Costa Blanca. Den foreløpige septemberstatistikken omtalt i vår markedsoppdatering 25. november peker mot sterkere vekst i registrerte boliglån i Valenciaregionen enn i Spania samlet. Statistikken må ikke forveksles med lånetilbud til utenlandske kjøpere.",
+    "Redaksjonelt forbehold: De konkrete nye septembertallene er ikke gjengitt her fordi den opprinnelige INE-publikasjonen ikke kunne kontrolleres på nytt ved publiseringsarbeidet. Se [[INEs boliglånsstatistikk|https://www.ine.es/dyngs/Prensa/H0926.htm]] for originaltall."
+  ],
+  "sections": [
+    {
+      "heading": "Hva betyr finansieringsaktivitet for boligmarkedet?",
+      "body": [
+        "Registrerte boliglån måler finansieringsaktivitet, ikke boligpriser eller nye lånetilsagn samme dag. Flere registrerte lån er heller ikke alene bevis på økt utenlandsk etterspørsel eller mindre forhandlingsrom i Benidorm, Finestrat og Villajoyosa."
+      ]
+    },
+    {
+      "heading": "Hva koster et boliglån i Spania?",
+      "body": [
+        "Sammenlign nominell rente, effektiv rente (TAE), gebyrer, forsikringer og krav om andre bankprodukter. Ved variabel rente kan lånekostnaden endres når referanserenten justeres. Se [[Banco de España|https://www.bde.es/]] for offisielle rentereferanser.",
+        "Eksempel: En bolig til 400 000 euro med 70 % finansiering gir et lån på 280 000 euro og egenkapital på 120 000 euro før kjøpskostnader. Over 25 år gir illustrerende renter følgende månedlige betalinger."
+      ],
+      "table": {
+        "headers": [
+          "Eksempelrente",
+          "Månedlig betaling"
+        ],
+        "rows": [
+          [
+            "3,05 %",
+            "1 335 €"
+          ],
+          [
+            "3,40 %",
+            "1 387 €"
+          ],
+          [
+            "4,03 %",
+            "1 483 €"
+          ],
+          [
+            "4,77 %",
+            "1 600 €"
+          ],
+          [
+            "5,50 %",
+            "1 719 €"
+          ]
+        ],
+        "caption": "Annuitetslån, illustrasjon uten gebyrer, forsikringer eller kjøpsavgifter. Ikke banktilbud."
+      }
+    },
+    {
+      "heading": "Finansiering for norske kjøpere",
+      "body": [
+        "Banken vurderer blant annet skattemessig bosted, inntekt, gjeld, dokumentasjon og takst. Finansieringsgrad på 70 % er et regneeksempel, ikke en garanti. Avklar også valutarisiko dersom inntekten er i norske kroner."
+      ]
+    },
+    {
+      "heading": "Benidorm, Finestrat og Villajoyosa – hva bør du gjøre?",
+      "bullets": [
+        "Skaff finansieringsbevis før reservasjon og avklar hva som skjer dersom finansieringen ikke godkjennes.",
+        "Sammenlign totalpris, felleskostnader og faktiske leveranser ved nybygg.",
+        "På Costa Blanca Sør og i innlandet: sammenlign tilsvarende boligtyper, beliggenhet og totalbudsjett. Ved tomt og bygging må finansieringsplanen avklares separat.",
+        "Hvis utleie inngår i budsjettet, les [[vår oppdatering om IVA på korttidsutleie|/magasin/utleie-spania-10-prosent-iva-vedtatt-november-2026]] og få tillatelser og økonomi kontrollert individuelt."
+      ]
+    }
+  ],
+  "nextSteps": [
+    "Be banken om individuell finansieringsvurdering.",
+    "Beregn kjøpskostnader og en buffer for høyere rente.",
+    "Sammenlign konkrete boliger innen et realistisk totalbudsjett."
+  ],
+  "faq": [
+    {
+      "question": "Kan nordmenn få boliglån i Spania?",
+      "answer": "Ja, spanske banker kan finansiere utenlandske kjøpere, men vilkår og finansieringsgrad avhenger av individuell kredittvurdering."
+    },
+    {
+      "question": "Hvor mye egenkapital trenger jeg?",
+      "answer": "Det avhenger av bankens finansieringsgrad og takst. Ved 70 % finansiering av 400 000 euro trenger du 120 000 euro pluss kjøpskostnader."
+    },
+    {
+      "question": "Betyr flere boliglån at boligprisene stiger?",
+      "answer": "Nei. Registrerte boliglån og boligpriser er forskjellige indikatorer."
+    }
+  ],
+  "cta": {
+    "label": "Book boligprat om finansiering og boligkjøp",
+    "href": "/booking"
+  }
+},
+  {
     slug: "utleie-spania-10-prosent-iva-vedtatt-november-2026",
     title: "10 % IVA på korttidsutleie i Spania er vedtatt – dette betyr det for boligkjøpere",
     excerpt: "Kongressen stadfestet 12. november 2026 nye IVA-regler for visse korttidsopphold. Se hva 10 % IVA betyr, hvem som omfattes, og hva du bør kontrollere før boligkjøp på Costa Blanca.",
