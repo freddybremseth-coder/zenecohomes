@@ -153,7 +153,7 @@ export default async function BuyInSpainGuidePage() {
             Usikker på hvor du skal begynne? Vi kan hjelpe deg med å avklare område, budsjett og boligtype før du bestemmer deg for en konkret bolig.
           </p>
           <div className="hero-actions">
-            <Link className="contact-button" href="/booking">Book en uforpliktende boligprat</Link>
+            <Link className="contact-button" href="/booking?guide_origin=buying_guide">Book en uforpliktende boligprat</Link>
             <a className="text-button" href="#hvordan-kjope">Se de seks stegene <ArrowRight size={16} /></a>
           </div>
           <p>
