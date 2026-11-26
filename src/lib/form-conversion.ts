@@ -16,7 +16,14 @@ export function trackConfirmedFormSubmission(formType: string, submissionId: str
   const w = window as typeof window & { dataLayer?: Record<string, unknown>[]; gtag?: (...args: unknown[]) => void };
   if (typeof w.gtag !== "function") {
     // Preserve the existing dataLayer fallback when Google Tag is still loading.
-    w.dataLayer?.push({ event: "form_submission_unique", form_type: formType, submission_id: submissionId, ...guideContext });
+    try {
+      if (w.dataLayer) {
+        w.dataLayer.push({ event: "form_submission_unique", form_type: formType, submission_id: submissionId, ...guideContext });
+        // A successfully queued event must not be queued again when gtag loads.
+        // This is local duplicate control, not a GA4 delivery receipt.
+        try { window.sessionStorage.setItem(key, "1"); } catch {}
+      }
+    } catch { /* Analytics must not change the result of an accepted booking. */ }
     return Promise.resolve();
   }
   return new Promise<void>((resolve) => {
