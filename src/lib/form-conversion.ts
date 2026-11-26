@@ -6,8 +6,9 @@ import { readCookieConsent } from "@/lib/cookie-consent";
  * Await on flows that navigate immediately after submission.
  * Callback is not proof that the analytics provider accepted the event.
  */
-export function trackConfirmedFormSubmission(formType: string, submissionId: string): Promise<void> {
+export function trackConfirmedFormSubmission(formType: string, submissionId: string, guideOrigin?: "buying_guide"): Promise<void> {
   if (typeof window === "undefined" || !submissionId || !readCookieConsent()?.analytics) return Promise.resolve();
+  const guideContext = formType === "boligprat" && guideOrigin === "buying_guide" ? { guide_origin: "buying_guide" } : {};
   const key = "zeneco-ga4-conversion:" + submissionId;
   try {
     if (window.sessionStorage.getItem(key)) return Promise.resolve();
@@ -15,7 +16,7 @@ export function trackConfirmedFormSubmission(formType: string, submissionId: str
   const w = window as typeof window & { dataLayer?: Record<string, unknown>[]; gtag?: (...args: unknown[]) => void };
   if (typeof w.gtag !== "function") {
     // Preserve the existing dataLayer fallback when Google Tag is still loading.
-    w.dataLayer?.push({ event: "form_submission_unique", form_type: formType, submission_id: submissionId });
+    w.dataLayer?.push({ event: "form_submission_unique", form_type: formType, submission_id: submissionId, ...guideContext });
     return Promise.resolve();
   }
   return new Promise<void>((resolve) => {
@@ -31,6 +32,7 @@ export function trackConfirmedFormSubmission(formType: string, submissionId: str
       w.gtag?.("event", "form_submission_unique", {
         form_type: formType,
         submission_id: submissionId,
+        ...guideContext,
         event_callback: finish,
         event_timeout: 1200,
       });
