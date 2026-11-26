@@ -145,6 +145,17 @@ export default async function BuyInSpainGuidePage() {
 
       <section className="section cornerstone-section">
         <div className="section-heading">
+          <h2>Kjøpe bolig i Spania: kort fortalt</h2>
+          <p>
+            Start med å avklare totalbudsjett, finansiering og hvordan du ønsker å bruke boligen. Velg område før du går på visning, og la en uavhengig advokat kontrollere dokumentasjonen og vilkårene før du signerer eller betaler. Deretter følger kjøpekontrakt, nødvendige forberedelser, sluttoppgjør hos notar og registrering av eierskapet.
+          </p>
+          <p>
+            Usikker på hvor du skal begynne? Vi kan hjelpe deg med å avklare område, budsjett og boligtype før du bestemmer deg for en konkret bolig.
+          </p>
+          <div className="hero-actions">
+            <Link className="contact-button" href="/booking?guide_origin=buying_guide">Book en uforpliktende boligprat</Link>
+            <a className="text-button" href="#hvordan-kjope">Se de seks stegene <ArrowRight size={16} /></a>
+          </div>
           <p>
             Å kjøpe bolig i Spania skal være både inspirerende og oversiktlig. Underveis møter du gjerne mange boliger, områder og annonser – noen ganger vises den samme boligen hos flere aktører med forskjellige opplysninger. Vi hjelper deg å sortere alternativene og finne ut hva som faktisk passer.
           </p>

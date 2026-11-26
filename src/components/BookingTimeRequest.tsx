@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
+import { bookingGuideOrigin } from "@/lib/booking-guide-origin";
 import { trackConfirmedFormSubmission } from "@/lib/form-conversion";
 
 type ContactChoice = "schedule" | "asap";
@@ -69,7 +70,7 @@ export function BookingTimeRequest() {
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || result?.accepted !== true || !result?.submission_id) throw new Error("Request not accepted");
-      trackConfirmedFormSubmission("boligprat", result.submission_id);
+      trackConfirmedFormSubmission("boligprat", result.submission_id, bookingGuideOrigin(window.location.search));
       form.reset();
       setChoice("asap");
       setStatus("sent");
