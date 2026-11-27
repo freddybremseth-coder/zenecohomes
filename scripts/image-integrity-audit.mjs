@@ -28,7 +28,7 @@ assert.ok(areaVisuals.includes('"alfas del pi": commons("L\'Alfàs del Pi.jpg")'
 assert.ok(areaVisuals.includes('teulada: commons("Teulada.jpg")'), "Teulada must not show Moraira");
 assert.ok(areaVisuals.includes('"javea / xabia": commons("Jávea desde el Montgó.jpg")'), "RealtyFlow Jávea / Xàbia alias must show Jávea");
 assert.ok(areaVisuals.includes('"l’alfas del pi": commons("L\'Alfàs del Pi.jpg")'), "Curly apostrophe in L’Alfàs del Pi must show the right municipality");
-assert.ok(areaVisuals.includes('"san miguel": commons("San Miguel de Salinas.jpg")'), "San Miguel de Salinas needs its own image");
+assert.ok(areaVisuals.includes('"san miguel": "/area-images/desktop/san-miguel.webp"'), "San Miguel de Salinas needs its approved local image");
 assert.ok(areaVisuals.includes('yecla: commons("Yecla. Vista desde el Santuario del Castillo 8.JPG")'), "Yecla must have real local photo");
 assert.ok(!areaGuide.includes("profile.photo_url") && !areaGuide.includes("getPrimaryImage("), "Unverified CMS/property photos must not become town photos");
 assert.ok(!areaGuide.includes('return "/assets/areas.jpg"'), "Generic image fallback is not a photograph of the town");
@@ -74,7 +74,7 @@ assert.ok(wikimediaEntries.length >= 20, "Expected verified Commons file manifes
 const realtyflow = read("src/lib/realtyflow.ts");
 const staticProfiles = realtyflow.slice(realtyflow.indexOf("const STATIC_AREA_PROFILES:"), realtyflow.indexOf("];", realtyflow.indexOf("const STATIC_AREA_PROFILES:")) + 2);
 const staticAreaNames = [...staticProfiles.matchAll(/^  [{] name: "([^"]+)"/gm)].map((item) => item[1]);
-const photoKeys = new Set([...areaVisuals.slice(areaVisuals.indexOf("const AREA_VISUALS:"), areaVisuals.indexOf("/** Photo selection")).matchAll(/^  (?:"([^"]+)"|([a-z]+)): commons[(]/gm)].map((item) => item[1] || item[2]));
+const photoKeys = new Set([...areaVisuals.slice(areaVisuals.indexOf("const AREA_VISUALS:"), areaVisuals.indexOf("/** Photo selection")).matchAll(/^  (?:"([^"]+)"|([a-z]+)): (?:commons[(]|")/gm)].map((item) => item[1] || item[2]));
 const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim().replace(/\s+/g, " ");
 assert.ok(staticAreaNames.length >= 18, "Expected full static regional town catalog");
 for (const areaName of staticAreaNames) {
