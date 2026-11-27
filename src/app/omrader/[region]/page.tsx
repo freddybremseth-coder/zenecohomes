@@ -10,6 +10,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
+import { getEditorialAreaAltText } from "@/lib/areaVisuals";
 import { oneLineAreaText, splitAreaParagraphs } from "@/lib/areaDescriptionText.mjs";
 import { areaProfileSlug } from "@/lib/areaRoutes";
 import { getAreaMapCoordinate } from "@/lib/areaMapLocations";
@@ -402,7 +403,7 @@ export default async function RegionPage({ params }: { params: Promise<{ region:
               <article className="area-profile-card" key={profile.id || profile.name}>
                 <div className="area-profile-photo">
                   {image ? (
-                    <ResilientImage src={image} fallbackSrc="" unoptimized alt={`${profile.name} – fotografi fra stedet`} fill sizes="(max-width: 900px) 100vw, 48vw" style={{ objectFit: "cover" }} />
+                    <ResilientImage src={image} fallbackSrc="" unoptimized alt={getEditorialAreaAltText(profile.name)} fill sizes="(max-width: 900px) 100vw, 48vw" style={{ objectFit: "cover" }} />
                   ) : (
                     <div role="status" className="resilient-image-placeholder" style={{ padding: "2rem", height: "100%", display: "grid", placeItems: "center", textAlign: "center" }}>
                       Stedsfoto mangler for {profile.name}
