@@ -5,7 +5,7 @@ import { AreaExplorerMap, type AreaExplorerLocation } from "@/components/AreaExp
 import { Footer } from "@/components/Footer";
 import { ResilientImage } from "@/components/ResilientImage";
 
-import { getEditorialAreaImage } from "@/lib/areaVisuals";
+import { getEditorialAreaAltText, getEditorialAreaImage } from "@/lib/areaVisuals";
 import { AreaPhotoCredit } from "@/components/AreaPhotoCredit";
 import { SiteHeader } from "@/components/SiteHeader";
 import { homeLanguageLinks } from "@/lib/i18n";
@@ -159,7 +159,7 @@ export default async function AreasPage() {
                 src={regionImages[region.key] || ""}
                 fallbackSrc=""
                 unoptimized
-                alt={region.title}
+                alt={getEditorialAreaAltText(representativeTowns[region.key])}
                 fill
                 sizes="(max-width: 900px) 100vw, 55vw"
                 style={{ objectFit: "cover" }}

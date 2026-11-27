@@ -12,6 +12,7 @@ import { MeetFreddy } from "@/components/MeetFreddy";
 import { PropertyCard } from "@/components/PropertyCard";
 import { SiteHeader } from "@/components/SiteHeader";
 import { areaExcerpt, areaPresentationImage, placeBookForArea } from "@/lib/areaGuideContent";
+import { getEditorialAreaAltText } from "@/lib/areaVisuals";
 import { oneLineAreaText, splitAreaParagraphs } from "@/lib/areaDescriptionText.mjs";
 import { areaBuyerChecklist, verifiedAreaEditorial } from "@/lib/areaVerifiedEditorial";
 import { areaProfileSlug, areaSlug } from "@/lib/areaRoutes";
@@ -173,7 +174,7 @@ export default async function AreaTownPage({
                 src={image}
                 fallbackSrc=""
                 unoptimized
-                alt={`Dokumentert stedfoto fra ${profile.name} i ${selectedRegion.label}`}
+                alt={getEditorialAreaAltText(profile.name)}
                 width={1200}
                 height={850}
                 sizes="(max-width: 800px) 100vw, 50vw"
