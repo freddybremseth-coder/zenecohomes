@@ -111,7 +111,7 @@ const AREA_VISUALS: Record<string, string> = {
   "san juan de alicante": commons("Església de sant Joan Baptista de Sant Joan d'Alacant.jpg"),
   mutxamel: commons("Iglesia parroquial de Muchamiel.jpg"),
   muchamiel: commons("Iglesia parroquial de Muchamiel.jpg"),
-  alicante: commons("Vista Alicante-Desde Castillo Santa Bárbara.JPG"),
+  alicante: "/area-images/desktop/alicante.webp",
   alacant: commons("Vista Alicante-Desde Castillo Santa Bárbara.JPG"),
 
   // Real Xaló/Jalón town view. Joanbanjo, CC BY-SA 3.0 (attributed on area pages).
@@ -120,20 +120,21 @@ const AREA_VISUALS: Record<string, string> = {
   nucia: commons("Vista de la Nucia des del castell de Polop.JPG"),
   "la nucia": commons("Vista de la Nucia des del castell de Polop.JPG"),
   "la nucia alicante": commons("Vista de la Nucia des del castell de Polop.JPG"),
-  torrevieja: commons("Torrevieja - Playas 12.jpg"),
-  "guardamar del segura": commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
-  guardamar: commons("Guardamar del Segura - Playa Babilonia 4.jpg"),
+  torrevieja: "/area-images/desktop/torrevieja.webp",
+  "guardamar del segura": "/area-images/desktop/guardamar.webp",
+  guardamar: "/area-images/desktop/guardamar.webp",
   "ciudad quesada": commons("Ciudad Quesada 02.jpg"),
-  "san miguel": commons("San Miguel de Salinas.jpg"),
-  "san miguel de salinas": commons("San Miguel de Salinas.jpg"),
+  "el raso": "/area-images/desktop/el-raso.webp",
+  "san miguel": "/area-images/desktop/san-miguel.webp",
+  "san miguel de salinas": "/area-images/desktop/san-miguel.webp",
   yecla: commons("Yecla. Vista desde el Santuario del Castillo 8.JPG"),
   campoamor: commons("Playa de La Glea, en Dehesa de Campoamor.jpg"),
   "dehesa de campoamor": commons("Playa de La Glea, en Dehesa de Campoamor.jpg"),
   "gran alacant": commons("Gran Alacant 03.JPG"),
-  "la zenia": commons("La Zenia Boulevard (49287363646).jpg"),
+  "la zenia": "/area-images/desktop/la-zenia.webp",
   calasparra: commons("Plaza del ayuntamiento de Calasparra.jpg"),
   "la mata": commons("Playa de la Mata in La Mata, Torrevieja, Alicante, Spain, 2022 January.jpg"),
-  "san fulgencio": commons("Calle de San Fulgencio.jpg"),
+  "san fulgencio": "/area-images/desktop/san-fulgencio.webp",
   murcia: commons("Cathedral, Murcia.jpg"),
   "torre pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
   "torre-pacheco": commons("Windmühle bei Torre Pacheco - 52476806321.jpg"),
@@ -142,7 +143,7 @@ const AREA_VISUALS: Record<string, string> = {
   "playa honda": commons("Amanecer en el Mar Menor .jpg"),
   // Playa Honda requires a photograph verified as taken in Playa Honda; no La Manga substitute.
   "orihuela costa": commons("Beach in Cala Capitán in Cabo Roig in Orihuela Costa, Orihuela, Alicante, Spain, 2022 January - 2.jpg"),
-  "santa pola": commons("Santa Pola - panoramio (4).jpg"),
+  "santa pola": "/area-images/desktop/santa-pola.webp",
   "san pedro del pinatar": commons("Mar Menor desde Villananitos.jpg"),
   "san javier": commons("Iglesia San Francisco Javier.jpg"),
   "los alcazares": commons("Los Alcazares del mar menor.JPG"),
@@ -154,6 +155,25 @@ const AREA_VISUALS: Record<string, string> = {
   "xalo/jalon": commons("Xaló, Marina Alta, País Valencià.JPG"),
   jalon: commons("Xaló, Marina Alta, País Valencià.JPG"),
 };
+
+
+const AREA_ALT_TEXT: Record<string, string> = {
+  alicante: "Utsikt over Alicante havn og by fra Castillo de Santa Bárbara",
+  "el raso": "Dronebilde av boligområdet El Raso med moderne boliger og grønne uteområder",
+  guardamar: "Strandpromenaden gjennom sanddynene ved Guardamar del Segura",
+  "guardamar del segura": "Strandpromenaden gjennom sanddynene ved Guardamar del Segura",
+  "la zenia": "Kystpromenaden ved La Zenia med palmer, klipper og utsikt over Middelhavet",
+  "san fulgencio": "Utsikt over boligbebyggelsen i San Fulgencio med landskapet i bakgrunnen",
+  "san miguel": "Flyfoto av boligområder og landskapet ved San Miguel de Salinas",
+  "san miguel de salinas": "Flyfoto av boligområder og landskapet ved San Miguel de Salinas",
+  "santa pola": "Castillo-Fortaleza i Santa Pola med byplassen og palmetrær i forgrunnen",
+  torrevieja: "Sandstranden i Torrevieja med Middelhavet og kveldssol i bakgrunnen",
+};
+
+export function getEditorialAreaAltText(areaName: string): string {
+  const key = normalizeSearchText(areaName).trim().replace(/\\s+/g, " ");
+  return AREA_ALT_TEXT[key] || `Stedsfoto fra ${areaName}`;
+}
 
 /** Photo selection is exact: neither substring matching nor a nearby town counts. */
 export function getEditorialAreaImage(areaName: string): string | null {
