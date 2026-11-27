@@ -81,33 +81,18 @@ const AREA_VISUALS: Record<string, string> = {
   villajoyosa: "/area-images/desktop/villajoyosa.webp",
   "la vila joiosa": "/area-images/desktop/villajoyosa.webp",
   "alfas del pi": commons("L'Alfàs del Pi.jpg"),
-  "l albir": commons("Playa del Racó del Albir.JPG"),
   "alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "alfaz del pi": commons("L'Alfàs del Pi.jpg"),
   "l alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "l’alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "l\u0027alfas del pi": commons("L\u0027Alfàs del Pi.jpg"),
 
-  altea: commons("Vista de Altea, Alicante, España, 2023-01-21, DD 43.jpg"),
-
-  benidorm: commons("Benidorm - Playa de Poniente 26.jpg"),
-
   // Playa Centro: colorful waterfront houses, promenade and sandy beach.
-  villajoyosa: commons("Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG"),
-  "la vila joiosa": commons("Playa Centro, Villajoyosa, España, 2014-07-03, DD 28.JPG"),
 
   benissa: commons("Punta Prado in Benissa.jpg"),
 
-  calpe: commons("Vista sobre Calpe y el Peñón de Ifach.jpg"),
-  calp: commons("Vista sobre Calpe y el Peñón de Ifach.jpg"),
-
-  denia: commons("Dénia castillo 1.jpg"),
-
   finestrat: commons("Puig Campana Puig Campana.JPG"),
 
-  polop: commons("Polop i el Panoig.jpg"),
-
-  moraira: commons("CastMoraira01.jpg"),
   teulada: commons("Teulada.jpg"),
 
   javea: commons("Jávea desde el Montgó.jpg"),
@@ -116,8 +101,6 @@ const AREA_VISUALS: Record<string, string> = {
   "javea / xabia": commons("Jávea desde el Montgó.jpg"),
   "javea xabia": commons("Jávea desde el Montgó.jpg"),
 
-  "el campello": commons("El Campello - Playa 2.jpg"),
-  campello: commons("El Campello - Playa 2.jpg"),
 
   // Verified local historic center, municipal church and Alicante cityscape.
   "sant joan d'alacant": commons("Església de sant Joan Baptista de Sant Joan d'Alacant.jpg"),
