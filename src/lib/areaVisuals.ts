@@ -81,7 +81,6 @@ const AREA_VISUALS: Record<string, string> = {
   villajoyosa: "/area-images/desktop/villajoyosa.webp",
   "la vila joiosa": "/area-images/desktop/villajoyosa.webp",
   "alfas del pi": commons("L'Alfàs del Pi.jpg"),
-  "alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "alfaz del pi": commons("L'Alfàs del Pi.jpg"),
   "l alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "l’alfas del pi": commons("L'Alfàs del Pi.jpg"),
