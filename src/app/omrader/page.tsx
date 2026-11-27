@@ -101,7 +101,7 @@ export default async function AreasPage() {
   // Each regional overview has a named, documented exemplar city.
   // Never select a random feed profile or claim a single photo depicts an entire region.
   const representativeTowns: Record<string, string> = {
-    "costa-blanca-nord": "Altea",
+    "costa-blanca-nord": "Alicante",
     "costa-blanca-sor": "Guardamar del Segura",
     "costa-calida": "Los Alcázares",
     innlandet: "Biar",
