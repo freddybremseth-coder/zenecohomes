@@ -65,8 +65,22 @@ function commons(fileName: string) {
 }
 
 const AREA_VISUALS: Record<string, string> = {
-  // Costa Blanca Nord — coastal identity first
-  albir: commons("Playa del Racó del Albir.JPG"),
+  // Costa Blanca Nord — approved local editorial images
+  albir: "/area-images/desktop/albir.webp",
+  "l albir": "/area-images/desktop/albir.webp",
+  altea: "/area-images/desktop/altea.webp",
+  benidorm: "/area-images/desktop/benidorm.webp",
+  calpe: "/area-images/desktop/calpe.webp",
+  calp: "/area-images/desktop/calpe.webp",
+  denia: "/area-images/desktop/denia.webp",
+  "dénia": "/area-images/desktop/denia.webp",
+  "el campello": "/area-images/desktop/el-campello.webp",
+  campello: "/area-images/desktop/el-campello.webp",
+  moraira: "/area-images/desktop/moraira.webp",
+  polop: "/area-images/desktop/polop.webp",
+  villajoyosa: "/area-images/desktop/villajoyosa.webp",
+  "la vila joiosa": "/area-images/desktop/villajoyosa.webp",
+  "alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "l albir": commons("Playa del Racó del Albir.JPG"),
   "alfas del pi": commons("L'Alfàs del Pi.jpg"),
   "alfaz del pi": commons("L'Alfàs del Pi.jpg"),
@@ -159,6 +173,17 @@ const AREA_VISUALS: Record<string, string> = {
 
 const AREA_ALT_TEXT: Record<string, string> = {
   alicante: "Utsikt over Alicante havn og by fra Castillo de Santa Bárbara",
+  albir: "Kystlandskapet ved Albir med strand, Middelhavet og fjell i bakgrunnen",
+  altea: "Utsikt over Altea og den hvite bebyggelsen langs Costa Blanca-kysten",
+  benidorm: "Benidorms skyline med Intempo-bygningen sett fra kysten",
+  calpe: "Luftfoto av Calpe med Peñón de Ifach som rager opp ved Middelhavet",
+  denia: "Utsikt over Marina de Dénia med havnen og Dénia slott",
+  "el campello": "Kystlandskap og strand ved El Campello på Costa Blanca",
+  campello: "Kystlandskap og strand ved El Campello på Costa Blanca",
+  moraira: "Strand og kystlinje ved Moraira med Middelhavet i bakgrunnen",
+  polop: "Tradisjonell bebyggelse i Polop med fjellandskapet rundt",
+  villajoyosa: "Fargerike hus langs en gate i Villajoyosa",
+  "la vila joiosa": "Fargerike hus langs en gate i Villajoyosa",
   "el raso": "Dronebilde av boligområdet El Raso med moderne boliger og grønne uteområder",
   guardamar: "Strandpromenaden gjennom sanddynene ved Guardamar del Segura",
   "guardamar del segura": "Strandpromenaden gjennom sanddynene ved Guardamar del Segura",
