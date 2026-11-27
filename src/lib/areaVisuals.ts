@@ -171,7 +171,7 @@ const AREA_ALT_TEXT: Record<string, string> = {
 };
 
 export function getEditorialAreaAltText(areaName: string): string {
-  const key = normalizeSearchText(areaName).trim().replace(/\\s+/g, " ");
+  const key = normalizeSearchText(areaName).trim().replace(/\s+/g, " ");
   return AREA_ALT_TEXT[key] || `Stedsfoto fra ${areaName}`;
 }
 
